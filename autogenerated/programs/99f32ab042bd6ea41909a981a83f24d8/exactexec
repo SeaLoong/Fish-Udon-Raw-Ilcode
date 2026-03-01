@@ -1,0 +1,192 @@
+using System;
+using UnityEngine;
+using VRC.SDKBase;
+using VRC.Udon;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Single __intnl_SystemSingle_0 = 0f;
+private Single __const_SystemSingle_0 = 0.6f;
+private ParticleSystem __intnl_UnityEngineParticleSystem_1 = null;
+private ParticleSystem __intnl_UnityEngineParticleSystem_0 = null;
+private UInt32 __gintnl_SystemUInt32_0 = 1024;
+private Boolean __const_SystemBoolean_0 = false;
+public Color gizmoColor;
+public Boolean showGizmo;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Boolean __0_enabled__param = false;
+private Int64 __refl_typeid = 5275718243095338101;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private ParticleSystem __lcl_ps_UnityEngineParticleSystem_0 = null;
+private Single __intnl_SystemSingle_2 = 0f;
+private Color __intnl_UnityEngineColor_0 = new Color(0f, 0f, 0f, 0f);
+private Vector3 __intnl_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private object __const_SystemObject_0 = null;
+private Type __const_SystemType_0 = typeof(ParticleSystem);
+private Single __intnl_SystemSingle_1 = 0f;
+private Boolean isEmitting = true;
+public Single updateInterval;
+private Boolean __lcl_shouldEmit_SystemBoolean_0 = false;
+private Single __lcl_distance_SystemSingle_0 = 0f;
+public ParticleSystem[] particleSystems;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private Int32 __lcl_i_SystemInt32_0 = 0;
+private Single __intnl_SystemSingle_4 = 0f;
+private Vector3 __intnl_UnityEngineVector3_2 = new Vector3(0f, 0f, 0f);
+private String __refl_typename = "ParticleDistanceCuller";
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Single __intnl_SystemSingle_3 = 0f;
+private Transform __this_UnityEngineTransform_0 = this;
+public Single maxDistance;
+private Single nextUpdateTime = 0f;
+private Vector3 __intnl_UnityEngineVector3_1 = new Vector3(0f, 0f, 0f);
+private VRCPlayerApi localPlayer = null;
+private Int32 __const_SystemInt32_1 = 1;
+private Int32 __const_SystemInt32_0 = 0;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_0 = this;
+private Vector3 __intnl_UnityEngineVector3_3 = new Vector3(0f, 0f, 0f);
+private EmissionModule __lcl_emission_UnityEngineParticleSystemEmissionModule_0 = UnityEngine.ParticleSystem+EmissionModule;
+
+
+public void _start()
+{
+__intnl_SystemBoolean_0 = particleSystems == __const_SystemObject_0;
+if (__intnl_SystemBoolean_0)
+{
+}
+else
+{
+__intnl_SystemInt32_0 = particleSystems.Length;
+__intnl_SystemBoolean_0 = __intnl_SystemInt32_0 == __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_0)
+{
+__lcl_ps_UnityEngineParticleSystem_0 = (ParticleSystem)(__this_UnityEngineTransform_0.GetComponent(__const_SystemType_0));
+__intnl_UnityEngineObject_0 = __lcl_ps_UnityEngineParticleSystem_0;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_1)
+{
+particleSystems = __const_SystemInt32_1.ctor();
+particleSystems.Set(__const_SystemInt32_0, __lcl_ps_UnityEngineParticleSystem_0);
+}
+}
+__intnl_SystemBoolean_1 = particleSystems == __const_SystemObject_0;
+if (__intnl_SystemBoolean_1)
+{
+}
+else
+{
+__intnl_SystemInt32_1 = particleSystems.Length;
+__intnl_SystemBoolean_1 = __intnl_SystemInt32_1 == __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_1)
+{
+__this_VRCUdonUdonBehaviour_0.enabled = __const_SystemBoolean_0;
+return;
+}
+localPlayer = Networking.LocalPlayer;
+nextUpdateTime = Time.time;
+}
+public void _update()
+{
+__intnl_SystemSingle_0 = Time.time;
+__intnl_SystemBoolean_2 = __intnl_SystemSingle_0 < nextUpdateTime;
+if (__intnl_SystemBoolean_2)
+{
+return;
+}
+__intnl_SystemSingle_1 = Time.time;
+nextUpdateTime = __intnl_SystemSingle_1 + updateInterval;
+__intnl_SystemBoolean_3 = localPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_3)
+{
+localPlayer = Networking.LocalPlayer;
+__intnl_SystemBoolean_4 = localPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_4)
+{
+return;
+}
+}
+__intnl_UnityEngineVector3_0 = __this_UnityEngineTransform_0.position;
+__intnl_UnityEngineVector3_1 = localPlayer.GetPosition();
+__lcl_distance_SystemSingle_0 = Vector3.Distance(__intnl_UnityEngineVector3_0, __intnl_UnityEngineVector3_1);
+__lcl_shouldEmit_SystemBoolean_0 = __lcl_distance_SystemSingle_0 <= maxDistance;
+__intnl_SystemBoolean_4 = __lcl_shouldEmit_SystemBoolean_0 != isEmitting;
+if (__intnl_SystemBoolean_4)
+{
+isEmitting = __lcl_shouldEmit_SystemBoolean_0;
+__0_enabled__param = __lcl_shouldEmit_SystemBoolean_0;
+UNDEF_99f32_1412();
+}
+}
+private void UNDEF_99f32_1412()
+{
+__lcl_i_SystemInt32_0 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_2 = particleSystems.Length;
+__intnl_SystemBoolean_5 = __lcl_i_SystemInt32_0 < __intnl_SystemInt32_2;
+if (__intnl_SystemBoolean_5)
+{
+break;
+}
+__intnl_UnityEngineParticleSystem_0 = (ParticleSystem)(particleSystems[__lcl_i_SystemInt32_0]);
+__intnl_UnityEngineObject_2 = __intnl_UnityEngineParticleSystem_0;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_6 = __intnl_UnityEngineObject_2 == __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_6)
+{
+}
+else
+{
+__intnl_UnityEngineParticleSystem_1 = (ParticleSystem)(particleSystems[__lcl_i_SystemInt32_0]);
+__lcl_emission_UnityEngineParticleSystemEmissionModule_0 = __intnl_UnityEngineParticleSystem_1.emission;
+__lcl_emission_UnityEngineParticleSystemEmissionModule_0.enabled = __0_enabled__param;
+}
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_1;
+}
+}
+private void UNDEF_99f32_1464()
+{
+if (showGizmo)
+{
+UNDEF_99f32_1548();
+}
+}
+private void UNDEF_99f32_1548()
+{
+Gizmos.color = gizmoColor;
+__intnl_UnityEngineVector3_2 = __this_UnityEngineTransform_0.position;
+Gizmos.DrawWireSphere(__intnl_UnityEngineVector3_2, maxDistance);
+}
+private void UNDEF_99f32_1600()
+{
+if (showGizmo)
+{
+UNDEF_99f32_1804();
+}
+}
+private void UNDEF_99f32_1804()
+{
+__intnl_SystemSingle_2 = gizmoColor.r;
+__intnl_SystemSingle_3 = gizmoColor.g;
+__intnl_SystemSingle_4 = gizmoColor.b;
+__intnl_UnityEngineColor_0 = Color.ctor(__intnl_SystemSingle_2, __intnl_SystemSingle_3, __intnl_SystemSingle_4, __const_SystemSingle_0);
+Gizmos.color = __intnl_UnityEngineColor_0;
+__intnl_UnityEngineVector3_3 = __this_UnityEngineTransform_0.position;
+Gizmos.DrawWireSphere(__intnl_UnityEngineVector3_3, maxDistance);
+}
+}

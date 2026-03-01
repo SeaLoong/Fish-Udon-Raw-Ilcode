@@ -1,0 +1,200 @@
+void get_currentUpgradePoints()
+24 __0_get_currentUpgradePoints__ret = _currentUpgradePoints
+40 return;
+60 return;
+void _onVarChange__currentUpgradePoints()
+84 __0_value__param = _currentUpgradePoints
+104 _currentUpgradePoints = _old__currentUpgradePoints
+void __0_set_currentUpgradePoints()
+132 _currentUpgradePoints = __0_value__param
+SetInt(__0_value__param, __intnl_SystemString_0);// 184
+204 return;
+void __0_RegisterCallback()
+284 if (__intnl_SystemBoolean_0) //300
+{
+292 JUMP 348
+}
+G_callbacks.Add(__intnl_VRCSDK3DataDataToken_1);// 340
+360 return;
+void get_capacityUpgradeLevel()
+392 __0_get_capacityUpgradeLevel__ret = _capacityUpgradeLevel
+408 return;
+428 return;
+void _onVarChange__capacityUpgradeLevel()
+452 __1_value__param = _capacityUpgradeLevel
+472 _capacityUpgradeLevel = _old__capacityUpgradeLevel
+void __0_set_capacityUpgradeLevel()
+500 _capacityUpgradeLevel = __1_value__param
+SetInt(__1_value__param, __intnl_SystemString_1);// 552
+572 return;
+void get_catchSpeedUpgradeLevel()
+604 __0_get_catchSpeedUpgradeLevel__ret = _catchSpeedUpgradeLevel
+620 return;
+640 return;
+void _onVarChange__catchSpeedUpgradeLevel()
+664 __2_value__param = _catchSpeedUpgradeLevel
+684 _catchSpeedUpgradeLevel = _old__catchSpeedUpgradeLevel
+void __0_set_catchSpeedUpgradeLevel()
+712 _catchSpeedUpgradeLevel = __2_value__param
+SetInt(__2_value__param, __intnl_SystemString_2);// 764
+784 return;
+void get_luckUpgradeLevel()
+816 __0_get_luckUpgradeLevel__ret = _luckUpgradeLevel
+832 return;
+852 return;
+void _onVarChange__luckUpgradeLevel()
+876 __3_value__param = _luckUpgradeLevel
+896 _luckUpgradeLevel = _old__luckUpgradeLevel
+void __0_set_luckUpgradeLevel()
+924 _luckUpgradeLevel = __3_value__param
+SetInt(__3_value__param, __intnl_SystemString_3);// 976
+996 return;
+void get_maxWeightUpgradeLevel()
+1028 __0_get_maxWeightUpgradeLevel__ret = _maxWeightUpgradeLevel
+1044 return;
+1064 return;
+void _onVarChange__maxWeightUpgradeLevel()
+1088 __4_value__param = _maxWeightUpgradeLevel
+1108 _maxWeightUpgradeLevel = _old__maxWeightUpgradeLevel
+void __0_set_maxWeightUpgradeLevel()
+1136 _maxWeightUpgradeLevel = __4_value__param
+SetInt(__4_value__param, __intnl_SystemString_4);// 1188
+1208 return;
+void _onPlayerRestored()
+1256 if (__intnl_SystemBoolean_1) //1272
+{
+1264 JUMP 1292
+}
+1284 return;
+1748 __lcl_i_SystemInt32_0 = __const_SystemInt32_0
+1816 if (__intnl_SystemBoolean_7) //1964
+{
+1896 __lcl_callback_VRCUdonUdonBehaviour_0 = __intnl_SystemObject_0
+G_callbacks.get_Item(__lcl_i_SystemInt32_0).get_Reference().SendCustomEvent(__const_SystemString_6);// 1916
+__lcl_i_SystemInt32_0 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_0);// 1948
+1956 JUMP 1752
+}
+1976 return;
+void GetTotalLuck()
+2016 __intnl_SystemInt32_1 = baseLuck
+2020 JUMP 800
+__0_GetTotalLuck__ret = op_Addition(__intnl_SystemInt32_2, __intnl_SystemInt32_1);// 2084
+2104 return;
+2124 return;
+void GetMaxCapacity()
+2164 __intnl_SystemInt32_3 = maxCapacity
+2168 JUMP 376
+__0_GetMaxCapacity__ret = op_Addition(__intnl_SystemInt32_4, __intnl_SystemInt32_3);// 2232
+2252 return;
+2272 return;
+void GetCatchIntervalSeconds()
+2312 __intnl_SystemSingle_0 = baseCatchIntervalSeconds
+2316 JUMP 588
+__lcl_interval_SystemSingle_0 = op_Subtraction(__intnl_SystemSingle_2, __intnl_SystemSingle_0);// 2404
+__0_GetCatchIntervalSeconds__ret = Max(__lcl_interval_SystemSingle_0, __const_SystemSingle_0);// 2436
+2456 return;
+2476 return;
+void GetMaxWeightKg()
+2516 __intnl_SystemSingle_3 = maxWeightKg
+2536 __intnl_SystemSingle_4 = maxWeightMultiplierPerLevel
+2540 JUMP 1012
+__0_GetMaxWeightKg__ret = op_Multiplication(__intnl_SystemSingle_6, __intnl_SystemSingle_3);// 2628
+2648 return;
+2668 return;
+void GetLuckMultiplier()
+2692 JUMP 1992
+__0_GetLuckMultiplier__ret = op_Addition(__intnl_SystemSingle_8, __const_SystemSingle_1);// 2780
+2800 return;
+2820 return;
+void CanUpgradeCapacity()
+2844 JUMP 376
+__0_CanUpgradeCapacity__ret = op_LessThan(maxCapacityLevel, __0_get_capacityUpgradeLevel__ret);// 2876
+2896 return;
+2916 return;
+void CanUpgradeCatchSpeed()
+2940 JUMP 588
+__0_CanUpgradeCatchSpeed__ret = op_LessThan(maxCatchSpeedLevel, __0_get_catchSpeedUpgradeLevel__ret);// 2972
+2992 return;
+3012 return;
+void CanUpgradeLuck()
+3036 JUMP 800
+__0_CanUpgradeLuck__ret = op_LessThan(maxLuckLevel, __0_get_luckUpgradeLevel__ret);// 3068
+3088 return;
+3108 return;
+void CanUpgradeMaxWeight()
+3132 JUMP 1012
+__0_CanUpgradeMaxWeight__ret = op_LessThan(maxWeightLevel, __0_get_maxWeightUpgradeLevel__ret);// 3164
+3184 return;
+3204 return;
+void UpgradeCapacity()
+3228 JUMP 2836
+3244 if (__0_CanUpgradeCapacity__ret) //3376
+{
+3268 JUMP 376
+3324 __1_value__param = __intnl_SystemInt32_5
+3328 JUMP 484
+3352 __0_UpgradeCapacity__ret = __const_SystemBoolean_0
+3368 return;
+}
+3392 __0_UpgradeCapacity__ret = __const_SystemBoolean_1
+3408 return;
+3428 return;
+void UpgradeCatchSpeed()
+3452 JUMP 2932
+3468 if (__0_CanUpgradeCatchSpeed__ret) //3600
+{
+3492 JUMP 588
+3548 __2_value__param = __intnl_SystemInt32_6
+3552 JUMP 696
+3576 __0_UpgradeCatchSpeed__ret = __const_SystemBoolean_0
+3592 return;
+}
+3616 __0_UpgradeCatchSpeed__ret = __const_SystemBoolean_1
+3632 return;
+3652 return;
+void UpgradeLuck()
+3676 JUMP 3028
+3692 if (__0_CanUpgradeLuck__ret) //3824
+{
+3716 JUMP 800
+3772 __3_value__param = __intnl_SystemInt32_7
+3776 JUMP 908
+3800 __0_UpgradeLuck__ret = __const_SystemBoolean_0
+3816 return;
+}
+3840 __0_UpgradeLuck__ret = __const_SystemBoolean_1
+3856 return;
+3876 return;
+void UpgradeMaxWeight()
+3900 JUMP 3124
+3916 if (__0_CanUpgradeMaxWeight__ret) //4048
+{
+3940 JUMP 1012
+3996 __4_value__param = __intnl_SystemInt32_8
+4000 JUMP 1120
+4024 __0_UpgradeMaxWeight__ret = __const_SystemBoolean_0
+4040 return;
+}
+4064 __0_UpgradeMaxWeight__ret = __const_SystemBoolean_1
+4080 return;
+4100 return;
+void GetCapacityLevelText()
+4124 JUMP 376
+__0_GetCapacityLevelText__ret = Concat(maxCapacityLevel, __intnl_SystemString_10);// 4188
+4208 return;
+4228 return;
+void GetCatchSpeedLevelText()
+4252 JUMP 588
+__0_GetCatchSpeedLevelText__ret = Concat(maxCatchSpeedLevel, __intnl_SystemString_11);// 4316
+4336 return;
+4356 return;
+void GetLuckLevelText()
+4380 JUMP 800
+__0_GetLuckLevelText__ret = Concat(maxLuckLevel, __intnl_SystemString_12);// 4444
+4464 return;
+4484 return;
+void GetMaxWeightLevelText()
+4508 JUMP 1012
+__0_GetMaxWeightLevelText__ret = Concat(maxWeightLevel, __intnl_SystemString_13);// 4572
+4592 return;
+4612 return;

@@ -1,0 +1,694 @@
+using System;
+using VRC.Udon;
+using UnityEngine;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Boolean __intnl_SystemBoolean_13 = false;
+private Boolean __intnl_SystemBoolean_23 = false;
+private Single __lcl_accumulated_SystemSingle_1 = 0f;
+private Int32 __intnl_SystemInt32_15 = 0;
+public Single visualRoll_EpicWeight;
+public Single commonRelic_RareWeight;
+public Single epicRelic_LegendaryWeight;
+private Int32 __0_RollVisualRarity__ret = 0;
+private Single __intnl_SystemSingle_0 = 0f;
+private UdonBehaviour __lcl_selectedEnchantment_VRCUdonUdonBehaviour_0 = null;
+private object __intnl_SystemObject_0 = null;
+private String __const_SystemString_0 = "enchantmentId";
+private Single __const_SystemSingle_0 = 0f;
+private Single __lcl_commonW_SystemSingle_0 = 0f;
+private Boolean __intnl_SystemBoolean_16 = false;
+private Boolean __intnl_SystemBoolean_26 = false;
+private Int32 __lcl_j_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_12 = 0;
+private Int32 __intnl_SystemInt32_22 = 0;
+public Single visualRoll_UncommonWeight;
+private Single __lcl_total_SystemSingle_0 = 0f;
+private UInt32[] __gintnl_SystemUInt32Array_0 = System.UInt32[];
+private UdonBehaviour __0___0_RollRandomEnchantment__ret = null;
+private UInt32 __gintnl_SystemUInt32_5 = 7932;
+private UInt32 __gintnl_SystemUInt32_4 = 7804;
+private UInt32 __gintnl_SystemUInt32_1 = 5192;
+private UInt32 __gintnl_SystemUInt32_0 = 24;
+private UInt32 __gintnl_SystemUInt32_3 = 5396;
+private UInt32 __gintnl_SystemUInt32_2 = 5268;
+public Single epicRelic_CommonWeight;
+private Component[] __lcl_result_UnityEngineComponentArray_0 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_7 = null;
+private Single __lcl_rareW_SystemSingle_0 = 0f;
+public Single legendaryRelic_EpicWeight;
+public Single visualRoll_LegendaryWeight;
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+public Single epicRelic_UncommonWeight;
+private Int32 __0_equipmentType__param = 0;
+private Int32 __lcl_rolledRarity_SystemInt32_0 = 0;
+private Int32 __2_equipmentType__param = 0;
+private Int64 __refl_typeid = -148811148659687747;
+private object __intnl_SystemObject_7 = null;
+public Single rareRelic_LegendaryWeight;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_11 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_10 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_12 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_2 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_9 = null;
+private Single __lcl_epicW_SystemSingle_0 = 0f;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Int32 __1_rarity__param = 0;
+private Boolean __intnl_SystemBoolean_11 = false;
+private Boolean __intnl_SystemBoolean_21 = false;
+private Int32 __intnl_SystemInt32_17 = 0;
+private Int32 __lcl_resultIndex_SystemInt32_0 = 0;
+private Int32 __lcl_resultIndex_SystemInt32_1 = 0;
+private Single __intnl_SystemSingle_2 = 0f;
+public Single visualRoll_RareWeight;
+private object __intnl_SystemObject_2 = null;
+private object __intnl_SystemObject_9 = null;
+private Component[] __lcl_validEnchantments_UnityEngineComponentArray_0 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_1 = null;
+private String __const_SystemString_2 = "enabled";
+private Int32 __lcl_count_SystemInt32_0 = 0;
+private Int32 __lcl_count_SystemInt32_1 = 0;
+private Boolean __intnl_SystemBoolean_19 = false;
+private Boolean __intnl_SystemBoolean_29 = false;
+private Boolean __intnl_SystemBoolean_14 = false;
+private Boolean __intnl_SystemBoolean_24 = false;
+private Single __lcl_accumulated_SystemSingle_0 = 0f;
+private Int32 __intnl_SystemInt32_14 = 0;
+private Int32 __intnl_SystemInt32_24 = 0;
+private Int32 __intnl_SystemInt32_19 = 0;
+private object __const_SystemObject_0 = null;
+private Single __intnl_SystemSingle_1 = 0f;
+private UdonBehaviour __0___0_GetEnchantmentById__ret = null;
+private object __intnl_SystemObject_1 = null;
+public Single rareRelic_EpicWeight;
+private Int32 __lcl_bobberCount_SystemInt32_0 = 0;
+public Single legendaryRelic_RareWeight;
+private Component[] __0___0_GetEnchantmentsByRarityAndEquipment__ret = null;
+private Boolean __intnl_SystemBoolean_17 = false;
+private Boolean __intnl_SystemBoolean_27 = false;
+public Single epicRelic_RareWeight;
+public Single commonRelic_LegendaryWeight;
+private Int32 __intnl_SystemInt32_11 = 0;
+private Int32 __intnl_SystemInt32_21 = 0;
+private Single __lcl_total_SystemSingle_1 = 0f;
+public Single rareRelic_UncommonWeight;
+public Single epicRelic_EpicWeight;
+private Component[] __lcl_result_UnityEngineComponentArray_1 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_4 = null;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private UInt32 __intnl_SystemUInt32_0 = 0;
+private Int32 __lcl_i_SystemInt32_1 = 0;
+private Int32 __lcl_i_SystemInt32_0 = 0;
+private Int32 __lcl_i_SystemInt32_3 = 0;
+private Int32 __lcl_i_SystemInt32_2 = 0;
+private Single __intnl_SystemSingle_4 = 0f;
+private object __intnl_SystemObject_4 = null;
+private Component[] __0___0_GetEnchantmentsByEquipmentType__ret = null;
+private Int32 __0_rarity__param = 0;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_3 = null;
+public Component[] enchantments;
+private Boolean __intnl_SystemBoolean_12 = false;
+private Boolean __intnl_SystemBoolean_22 = false;
+private UdonBehaviour __0___0_GetRandomEnchantmentOfRarity__ret = null;
+private Int32 __intnl_SystemInt32_16 = 0;
+private String __refl_typename = "EnchantmentDatabase";
+public Single commonRelic_CommonWeight;
+public Single legendaryRelic_UncommonWeight;
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Int32 __intnl_SystemInt32_5 = 0;
+private Int32 __intnl_SystemInt32_4 = 0;
+private Int32 __intnl_SystemInt32_7 = 0;
+private Int32 __intnl_SystemInt32_6 = 0;
+private Int32 __intnl_SystemInt32_9 = 0;
+private Int32 __intnl_SystemInt32_8 = 0;
+private Single __intnl_SystemSingle_3 = 0f;
+public Single rareRelic_RareWeight;
+private object __intnl_SystemObject_3 = null;
+public Single commonRelic_UncommonWeight;
+private Int32 __1_equipmentType__param = 0;
+private UdonBehaviour __lcl_enchant_VRCUdonUdonBehaviour_0 = null;
+private String __const_SystemString_1 = "equipmentType";
+private Int32 __3_equipmentType__param = 0;
+private Boolean __intnl_SystemBoolean_15 = false;
+private Boolean __intnl_SystemBoolean_25 = false;
+private Int32 __intnl_SystemInt32_13 = 0;
+private Int32 __intnl_SystemInt32_23 = 0;
+private Int32 __intnl_SystemInt32_18 = 0;
+private Component[] __lcl_matches_UnityEngineComponentArray_0 = null;
+public Single commonRelic_EpicWeight;
+private Int32 __1_relicRarity__param = 0;
+private Int32 __0___0_RollEnchantmentRarity__ret = 0;
+private Single __lcl_uncommonW_SystemSingle_0 = 0f;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_6 = null;
+public Single legendaryRelic_CommonWeight;
+public Single legendaryRelic_LegendaryWeight;
+private Single __lcl_roll_SystemSingle_0 = 0f;
+private Single __lcl_roll_SystemSingle_1 = 0f;
+private Int32 __lcl_randomIndex_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_10 = 0;
+private Int32 __intnl_SystemInt32_20 = 0;
+private Int32 __lcl_duplicateCount_SystemInt32_0 = 0;
+private Int32 __0_relicRarity__param = 0;
+private object __intnl_SystemObject_6 = null;
+public Single visualRoll_CommonWeight;
+private Int32 __0_enchantmentId__param = 0;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_5 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_8 = null;
+private Int32 __lcl_lineCount_SystemInt32_0 = 0;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Boolean __intnl_SystemBoolean_20 = false;
+private Int32 __const_SystemInt32_8 = 4;
+private Int32 __const_SystemInt32_1 = 1;
+private Int32 __const_SystemInt32_0 = 0;
+private Int32 __const_SystemInt32_3 = 4;
+private Int32 __const_SystemInt32_2 = 2;
+private Int32 __const_SystemInt32_5 = 1;
+private Int32 __const_SystemInt32_4 = 0;
+private Int32 __const_SystemInt32_7 = 3;
+private Int32 __const_SystemInt32_6 = 2;
+private Int32 __lcl_rodCount_SystemInt32_0 = 0;
+private Single __lcl_legendaryW_SystemSingle_0 = 0f;
+public Single rareRelic_CommonWeight;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private Single __intnl_SystemSingle_5 = 0f;
+private object __intnl_SystemObject_5 = null;
+private object __intnl_SystemObject_8 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_0 = null;
+private String __const_SystemString_3 = "rarity";
+private Boolean __intnl_SystemBoolean_18 = false;
+private Boolean __intnl_SystemBoolean_28 = false;
+
+
+public void _start()
+{
+UNDEF_5cb0b_1656();
+}
+private void UNDEF_5cb0b_1656()
+{
+__intnl_SystemBoolean_0 = enchantments == __const_SystemObject_0;
+if (__intnl_SystemBoolean_0)
+{
+}
+else
+{
+__intnl_SystemInt32_0 = enchantments.Length;
+__intnl_SystemBoolean_0 = __intnl_SystemInt32_0 == __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_0)
+{
+return;
+}
+__lcl_duplicateCount_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_rodCount_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_lineCount_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_bobberCount_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_0 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_1 = enchantments.Length;
+__intnl_SystemBoolean_1 = __lcl_i_SystemInt32_0 < __intnl_SystemInt32_1;
+if (__intnl_SystemBoolean_1)
+{
+break;
+}
+__lcl_enchant_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(enchantments[__lcl_i_SystemInt32_0]);
+__intnl_UnityEngineObject_0 = __lcl_enchant_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_2 = __intnl_UnityEngineObject_0 == __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_2)
+{
+}
+else
+{
+__intnl_SystemObject_0 = __lcl_enchant_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_0);
+__intnl_SystemInt32_2 = Convert.ToInt32(__intnl_SystemObject_0);
+__intnl_SystemBoolean_3 = __intnl_SystemInt32_2 <= __const_SystemInt32_0;
+if (__intnl_SystemBoolean_3)
+{
+}
+__lcl_j_SystemInt32_0 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_4 = __lcl_j_SystemInt32_0 < __lcl_i_SystemInt32_0;
+if (__intnl_SystemBoolean_4)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(enchantments[__lcl_j_SystemInt32_0]);
+__intnl_UnityEngineObject_2 = __intnl_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_5 = __intnl_UnityEngineObject_2 != __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_5)
+{
+__intnl_VRCUdonUdonBehaviour_1 = (UdonBehaviour)(enchantments[__lcl_j_SystemInt32_0]);
+__intnl_SystemObject_1 = __intnl_VRCUdonUdonBehaviour_1.GetProgramVariable(__const_SystemString_0);
+__intnl_SystemInt32_3 = Convert.ToInt32(__intnl_SystemObject_1);
+__intnl_SystemObject_2 = __lcl_enchant_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_0);
+__intnl_SystemInt32_4 = Convert.ToInt32(__intnl_SystemObject_2);
+__intnl_SystemBoolean_5 = __intnl_SystemInt32_3 == __intnl_SystemInt32_4;
+}
+if (__intnl_SystemBoolean_5)
+{
+__lcl_duplicateCount_SystemInt32_0 = __lcl_duplicateCount_SystemInt32_0 + __const_SystemInt32_1;
+}
+__lcl_j_SystemInt32_0 = __lcl_j_SystemInt32_0 + __const_SystemInt32_1;
+}
+__intnl_SystemObject_1 = __lcl_enchant_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_1);
+__intnl_SystemInt32_4 = Convert.ToInt32(__intnl_SystemObject_1);
+__intnl_SystemInt32_3 = __intnl_SystemInt32_4;
+__intnl_SystemBoolean_4 = __intnl_SystemInt32_3 == __const_SystemInt32_0;
+if (__intnl_SystemBoolean_4)
+{
+__lcl_rodCount_SystemInt32_0 = __lcl_rodCount_SystemInt32_0 + __const_SystemInt32_1;
+}
+else
+{
+__intnl_SystemObject_2 = __lcl_enchant_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_1);
+__intnl_SystemInt32_6 = Convert.ToInt32(__intnl_SystemObject_2);
+__intnl_SystemInt32_5 = __intnl_SystemInt32_6;
+__intnl_SystemBoolean_5 = __intnl_SystemInt32_5 == __const_SystemInt32_1;
+if (__intnl_SystemBoolean_5)
+{
+__lcl_lineCount_SystemInt32_0 = __lcl_lineCount_SystemInt32_0 + __const_SystemInt32_1;
+}
+else
+{
+__intnl_SystemObject_3 = __lcl_enchant_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_1);
+__intnl_SystemInt32_8 = Convert.ToInt32(__intnl_SystemObject_3);
+__intnl_SystemInt32_7 = __intnl_SystemInt32_8;
+__intnl_SystemBoolean_6 = __intnl_SystemInt32_7 == __const_SystemInt32_2;
+if (__intnl_SystemBoolean_6)
+{
+__lcl_bobberCount_SystemInt32_0 = __lcl_bobberCount_SystemInt32_0 + __const_SystemInt32_1;
+}
+}
+}
+}
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_1;
+}
+__intnl_SystemBoolean_1 = __lcl_duplicateCount_SystemInt32_0 == __const_SystemInt32_0;
+if (__intnl_SystemBoolean_1)
+{
+break;
+}
+}
+public void __0_GetEnchantmentById()
+{
+__lcl_i_SystemInt32_1 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_9 = enchantments.Length;
+__intnl_SystemBoolean_7 = __lcl_i_SystemInt32_1 < __intnl_SystemInt32_9;
+if (__intnl_SystemBoolean_7)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_2 = (UdonBehaviour)(enchantments[__lcl_i_SystemInt32_1]);
+__intnl_UnityEngineObject_4 = __intnl_VRCUdonUdonBehaviour_2;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_8 = __intnl_UnityEngineObject_4 != __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_8)
+{
+__intnl_VRCUdonUdonBehaviour_3 = (UdonBehaviour)(enchantments[__lcl_i_SystemInt32_1]);
+__intnl_SystemObject_4 = __intnl_VRCUdonUdonBehaviour_3.GetProgramVariable(__const_SystemString_0);
+__intnl_SystemInt32_10 = Convert.ToInt32(__intnl_SystemObject_4);
+__intnl_SystemBoolean_8 = __intnl_SystemInt32_10 == __0_enchantmentId__param;
+}
+if (__intnl_SystemBoolean_8)
+{
+__0___0_GetEnchantmentById__ret = (UdonBehaviour)(enchantments[__lcl_i_SystemInt32_1]);
+return;
+}
+__lcl_i_SystemInt32_1 = __lcl_i_SystemInt32_1 + __const_SystemInt32_1;
+}
+__0___0_GetEnchantmentById__ret = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+public void __0_GetEnchantmentsByEquipmentType()
+{
+__lcl_count_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_2 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_11 = enchantments.Length;
+__intnl_SystemBoolean_9 = __lcl_i_SystemInt32_2 < __intnl_SystemInt32_11;
+if (__intnl_SystemBoolean_9)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_4 = (UdonBehaviour)(enchantments[__lcl_i_SystemInt32_2]);
+__intnl_UnityEngineObject_6 = __intnl_VRCUdonUdonBehaviour_4;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_11 = __intnl_UnityEngineObject_6 != __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_11)
+{
+__intnl_VRCUdonUdonBehaviour_5 = (UdonBehaviour)(enchantments[__lcl_i_SystemInt32_2]);
+__intnl_SystemObject_5 = __intnl_VRCUdonUdonBehaviour_5.GetProgramVariable(__const_SystemString_2);
+__intnl_SystemBoolean_11 = (Boolean)__intnl_SystemObject_5;
+}
+__intnl_SystemBoolean_10 = __intnl_SystemBoolean_11;
+if (__intnl_SystemBoolean_10)
+{
+__intnl_VRCUdonUdonBehaviour_6 = (UdonBehaviour)(enchantments[__lcl_i_SystemInt32_2]);
+__intnl_SystemObject_6 = __intnl_VRCUdonUdonBehaviour_6.GetProgramVariable(__const_SystemString_1);
+__intnl_SystemInt32_13 = Convert.ToInt32(__intnl_SystemObject_6);
+__intnl_SystemInt32_12 = __intnl_SystemInt32_13;
+__intnl_SystemBoolean_10 = __intnl_SystemInt32_12 == __0_equipmentType__param;
+}
+if (__intnl_SystemBoolean_10)
+{
+__lcl_count_SystemInt32_0 = __lcl_count_SystemInt32_0 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_2 = __lcl_i_SystemInt32_2 + __const_SystemInt32_1;
+}
+__lcl_result_UnityEngineComponentArray_0 = __lcl_count_SystemInt32_0.ctor();
+__lcl_resultIndex_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_2 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_11 = enchantments.Length;
+__intnl_SystemBoolean_9 = __lcl_i_SystemInt32_2 < __intnl_SystemInt32_11;
+if (__intnl_SystemBoolean_9)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_4 = (UdonBehaviour)(enchantments[__lcl_i_SystemInt32_2]);
+__intnl_UnityEngineObject_6 = __intnl_VRCUdonUdonBehaviour_4;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_11 = __intnl_UnityEngineObject_6 != __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_11)
+{
+__intnl_VRCUdonUdonBehaviour_5 = (UdonBehaviour)(enchantments[__lcl_i_SystemInt32_2]);
+__intnl_SystemObject_5 = __intnl_VRCUdonUdonBehaviour_5.GetProgramVariable(__const_SystemString_2);
+__intnl_SystemBoolean_11 = (Boolean)__intnl_SystemObject_5;
+}
+__intnl_SystemBoolean_10 = __intnl_SystemBoolean_11;
+if (__intnl_SystemBoolean_10)
+{
+__intnl_VRCUdonUdonBehaviour_6 = (UdonBehaviour)(enchantments[__lcl_i_SystemInt32_2]);
+__intnl_SystemObject_6 = __intnl_VRCUdonUdonBehaviour_6.GetProgramVariable(__const_SystemString_1);
+__intnl_SystemInt32_13 = Convert.ToInt32(__intnl_SystemObject_6);
+__intnl_SystemInt32_12 = __intnl_SystemInt32_13;
+__intnl_SystemBoolean_10 = __intnl_SystemInt32_12 == __0_equipmentType__param;
+}
+if (__intnl_SystemBoolean_10)
+{
+__intnl_VRCUdonUdonBehaviour_7 = (UdonBehaviour)(enchantments[__lcl_i_SystemInt32_2]);
+__lcl_result_UnityEngineComponentArray_0.Set(__lcl_resultIndex_SystemInt32_0, __intnl_VRCUdonUdonBehaviour_7);
+__lcl_resultIndex_SystemInt32_0 = __lcl_resultIndex_SystemInt32_0 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_2 = __lcl_i_SystemInt32_2 + __const_SystemInt32_1;
+}
+__0___0_GetEnchantmentsByEquipmentType__ret = __lcl_result_UnityEngineComponentArray_0;
+return;
+}
+public void __0_GetEnchantmentsByRarityAndEquipment()
+{
+__lcl_count_SystemInt32_1 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_3 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_14 = enchantments.Length;
+__intnl_SystemBoolean_12 = __lcl_i_SystemInt32_3 < __intnl_SystemInt32_14;
+if (__intnl_SystemBoolean_12)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_8 = (UdonBehaviour)(enchantments[__lcl_i_SystemInt32_3]);
+__intnl_UnityEngineObject_8 = __intnl_VRCUdonUdonBehaviour_8;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_15 = __intnl_UnityEngineObject_8 != __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_15)
+{
+__intnl_VRCUdonUdonBehaviour_9 = (UdonBehaviour)(enchantments[__lcl_i_SystemInt32_3]);
+__intnl_SystemObject_7 = __intnl_VRCUdonUdonBehaviour_9.GetProgramVariable(__const_SystemString_2);
+__intnl_SystemBoolean_15 = (Boolean)__intnl_SystemObject_7;
+}
+__intnl_SystemBoolean_14 = __intnl_SystemBoolean_15;
+if (__intnl_SystemBoolean_14)
+{
+__intnl_VRCUdonUdonBehaviour_10 = (UdonBehaviour)(enchantments[__lcl_i_SystemInt32_3]);
+__intnl_SystemObject_8 = __intnl_VRCUdonUdonBehaviour_10.GetProgramVariable(__const_SystemString_3);
+__intnl_SystemInt32_16 = Convert.ToInt32(__intnl_SystemObject_8);
+__intnl_SystemInt32_15 = __intnl_SystemInt32_16;
+__intnl_SystemBoolean_14 = __intnl_SystemInt32_15 == __0_rarity__param;
+}
+__intnl_SystemBoolean_13 = __intnl_SystemBoolean_14;
+if (__intnl_SystemBoolean_13)
+{
+__intnl_VRCUdonUdonBehaviour_11 = (UdonBehaviour)(enchantments[__lcl_i_SystemInt32_3]);
+__intnl_SystemObject_9 = __intnl_VRCUdonUdonBehaviour_11.GetProgramVariable(__const_SystemString_1);
+__intnl_SystemInt32_18 = Convert.ToInt32(__intnl_SystemObject_9);
+__intnl_SystemInt32_17 = __intnl_SystemInt32_18;
+__intnl_SystemBoolean_13 = __intnl_SystemInt32_17 == __1_equipmentType__param;
+}
+if (__intnl_SystemBoolean_13)
+{
+__lcl_count_SystemInt32_1 = __lcl_count_SystemInt32_1 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_3 = __lcl_i_SystemInt32_3 + __const_SystemInt32_1;
+}
+__lcl_result_UnityEngineComponentArray_1 = __lcl_count_SystemInt32_1.ctor();
+__lcl_resultIndex_SystemInt32_1 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_3 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_14 = enchantments.Length;
+__intnl_SystemBoolean_12 = __lcl_i_SystemInt32_3 < __intnl_SystemInt32_14;
+if (__intnl_SystemBoolean_12)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_8 = (UdonBehaviour)(enchantments[__lcl_i_SystemInt32_3]);
+__intnl_UnityEngineObject_8 = __intnl_VRCUdonUdonBehaviour_8;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_15 = __intnl_UnityEngineObject_8 != __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_15)
+{
+__intnl_VRCUdonUdonBehaviour_9 = (UdonBehaviour)(enchantments[__lcl_i_SystemInt32_3]);
+__intnl_SystemObject_7 = __intnl_VRCUdonUdonBehaviour_9.GetProgramVariable(__const_SystemString_2);
+__intnl_SystemBoolean_15 = (Boolean)__intnl_SystemObject_7;
+}
+__intnl_SystemBoolean_14 = __intnl_SystemBoolean_15;
+if (__intnl_SystemBoolean_14)
+{
+__intnl_VRCUdonUdonBehaviour_10 = (UdonBehaviour)(enchantments[__lcl_i_SystemInt32_3]);
+__intnl_SystemObject_8 = __intnl_VRCUdonUdonBehaviour_10.GetProgramVariable(__const_SystemString_3);
+__intnl_SystemInt32_16 = Convert.ToInt32(__intnl_SystemObject_8);
+__intnl_SystemInt32_15 = __intnl_SystemInt32_16;
+__intnl_SystemBoolean_14 = __intnl_SystemInt32_15 == __0_rarity__param;
+}
+__intnl_SystemBoolean_13 = __intnl_SystemBoolean_14;
+if (__intnl_SystemBoolean_13)
+{
+__intnl_VRCUdonUdonBehaviour_11 = (UdonBehaviour)(enchantments[__lcl_i_SystemInt32_3]);
+__intnl_SystemObject_9 = __intnl_VRCUdonUdonBehaviour_11.GetProgramVariable(__const_SystemString_1);
+__intnl_SystemInt32_18 = Convert.ToInt32(__intnl_SystemObject_9);
+__intnl_SystemInt32_17 = __intnl_SystemInt32_18;
+__intnl_SystemBoolean_13 = __intnl_SystemInt32_17 == __1_equipmentType__param;
+}
+if (__intnl_SystemBoolean_13)
+{
+__intnl_VRCUdonUdonBehaviour_12 = (UdonBehaviour)(enchantments[__lcl_i_SystemInt32_3]);
+__lcl_result_UnityEngineComponentArray_1.Set(__lcl_resultIndex_SystemInt32_1, __intnl_VRCUdonUdonBehaviour_12);
+__lcl_resultIndex_SystemInt32_1 = __lcl_resultIndex_SystemInt32_1 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_3 = __lcl_i_SystemInt32_3 + __const_SystemInt32_1;
+}
+__0___0_GetEnchantmentsByRarityAndEquipment__ret = __lcl_result_UnityEngineComponentArray_1;
+return;
+}
+public void __0_RollRandomEnchantment()
+{
+__1_relicRarity__param = __0_relicRarity__param;
+UNDEF_5cb0b_6292();
+__lcl_rolledRarity_SystemInt32_0 = __0___0_RollEnchantmentRarity__ret;
+__0_rarity__param = __lcl_rolledRarity_SystemInt32_0;
+__1_equipmentType__param = __2_equipmentType__param;
+__0_GetEnchantmentsByRarityAndEquipment();
+__lcl_validEnchantments_UnityEngineComponentArray_0 = __0___0_GetEnchantmentsByRarityAndEquipment__ret;
+__intnl_SystemInt32_19 = __lcl_validEnchantments_UnityEngineComponentArray_0.Length;
+__intnl_SystemBoolean_16 = __intnl_SystemInt32_19 == __const_SystemInt32_0;
+if (__intnl_SystemBoolean_16)
+{
+__0_equipmentType__param = __2_equipmentType__param;
+__0_GetEnchantmentsByEquipmentType();
+__lcl_validEnchantments_UnityEngineComponentArray_0 = __0___0_GetEnchantmentsByEquipmentType__ret;
+__intnl_SystemInt32_20 = __lcl_validEnchantments_UnityEngineComponentArray_0.Length;
+__intnl_SystemBoolean_17 = __intnl_SystemInt32_20 == __const_SystemInt32_0;
+if (__intnl_SystemBoolean_17)
+{
+__0___0_RollRandomEnchantment__ret = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+}
+__intnl_SystemInt32_20 = __lcl_validEnchantments_UnityEngineComponentArray_0.Length;
+__lcl_randomIndex_SystemInt32_0 = Random.Range(__const_SystemInt32_0, __intnl_SystemInt32_20);
+__lcl_selectedEnchantment_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(__lcl_validEnchantments_UnityEngineComponentArray_0[__lcl_randomIndex_SystemInt32_0]);
+__0___0_RollRandomEnchantment__ret = __lcl_selectedEnchantment_VRCUdonUdonBehaviour_0;
+return;
+}
+private void UNDEF_5cb0b_6292()
+{
+__intnl_SystemBoolean_18 = __1_relicRarity__param >= __const_SystemInt32_0;
+if (__intnl_SystemBoolean_18)
+{
+__intnl_SystemBoolean_19 = __1_relicRarity__param <= __const_SystemInt32_3;
+if (__intnl_SystemBoolean_19)
+{
+__intnl_SystemUInt32_0 = __gintnl_SystemUInt32Array_0[__1_relicRarity__param];
+__lcl_commonW_SystemSingle_0 = commonRelic_CommonWeight;
+__lcl_uncommonW_SystemSingle_0 = commonRelic_UncommonWeight;
+__lcl_rareW_SystemSingle_0 = commonRelic_RareWeight;
+__lcl_epicW_SystemSingle_0 = commonRelic_EpicWeight;
+__lcl_legendaryW_SystemSingle_0 = commonRelic_LegendaryWeight;
+__0_RollEnchantmentRarity();
+__lcl_commonW_SystemSingle_0 = rareRelic_CommonWeight;
+__lcl_uncommonW_SystemSingle_0 = rareRelic_UncommonWeight;
+__lcl_rareW_SystemSingle_0 = rareRelic_RareWeight;
+__lcl_epicW_SystemSingle_0 = rareRelic_EpicWeight;
+__lcl_legendaryW_SystemSingle_0 = rareRelic_LegendaryWeight;
+__0_RollEnchantmentRarity();
+__lcl_commonW_SystemSingle_0 = epicRelic_CommonWeight;
+__lcl_uncommonW_SystemSingle_0 = epicRelic_UncommonWeight;
+__lcl_rareW_SystemSingle_0 = epicRelic_RareWeight;
+__lcl_epicW_SystemSingle_0 = epicRelic_EpicWeight;
+__lcl_legendaryW_SystemSingle_0 = epicRelic_LegendaryWeight;
+__0_RollEnchantmentRarity();
+__lcl_commonW_SystemSingle_0 = legendaryRelic_CommonWeight;
+__lcl_uncommonW_SystemSingle_0 = legendaryRelic_UncommonWeight;
+__lcl_rareW_SystemSingle_0 = legendaryRelic_RareWeight;
+__lcl_epicW_SystemSingle_0 = legendaryRelic_EpicWeight;
+__lcl_legendaryW_SystemSingle_0 = legendaryRelic_LegendaryWeight;
+__0_RollEnchantmentRarity();
+}
+}
+__0___0_RollEnchantmentRarity__ret = __const_SystemInt32_4;
+}
+private void __0_RollEnchantmentRarity()
+{
+__intnl_SystemSingle_0 = __lcl_commonW_SystemSingle_0 + __lcl_uncommonW_SystemSingle_0;
+__intnl_SystemSingle_1 = __intnl_SystemSingle_0 + __lcl_rareW_SystemSingle_0;
+__intnl_SystemSingle_2 = __intnl_SystemSingle_1 + __lcl_epicW_SystemSingle_0;
+__lcl_total_SystemSingle_0 = __intnl_SystemSingle_2 + __lcl_legendaryW_SystemSingle_0;
+__lcl_roll_SystemSingle_0 = Random.Range(__const_SystemSingle_0, __lcl_total_SystemSingle_0);
+__lcl_accumulated_SystemSingle_0 = __const_SystemSingle_0;
+__lcl_accumulated_SystemSingle_0 = __lcl_accumulated_SystemSingle_0 + __lcl_commonW_SystemSingle_0;
+__intnl_SystemBoolean_20 = __lcl_roll_SystemSingle_0 < __lcl_accumulated_SystemSingle_0;
+if (__intnl_SystemBoolean_20)
+{
+__0___0_RollEnchantmentRarity__ret = __const_SystemInt32_4;
+return;
+}
+__lcl_accumulated_SystemSingle_0 = __lcl_accumulated_SystemSingle_0 + __lcl_uncommonW_SystemSingle_0;
+__intnl_SystemBoolean_21 = __lcl_roll_SystemSingle_0 < __lcl_accumulated_SystemSingle_0;
+if (__intnl_SystemBoolean_21)
+{
+__0___0_RollEnchantmentRarity__ret = __const_SystemInt32_5;
+return;
+}
+__lcl_accumulated_SystemSingle_0 = __lcl_accumulated_SystemSingle_0 + __lcl_rareW_SystemSingle_0;
+__intnl_SystemBoolean_22 = __lcl_roll_SystemSingle_0 < __lcl_accumulated_SystemSingle_0;
+if (__intnl_SystemBoolean_22)
+{
+__0___0_RollEnchantmentRarity__ret = __const_SystemInt32_6;
+return;
+}
+__lcl_accumulated_SystemSingle_0 = __lcl_accumulated_SystemSingle_0 + __lcl_epicW_SystemSingle_0;
+__intnl_SystemBoolean_23 = __lcl_roll_SystemSingle_0 < __lcl_accumulated_SystemSingle_0;
+if (__intnl_SystemBoolean_23)
+{
+__0___0_RollEnchantmentRarity__ret = __const_SystemInt32_7;
+return;
+}
+__0___0_RollEnchantmentRarity__ret = __const_SystemInt32_8;
+return;
+}
+public void RollVisualRarity()
+{
+__intnl_SystemSingle_3 = visualRoll_CommonWeight + visualRoll_UncommonWeight;
+__intnl_SystemSingle_4 = __intnl_SystemSingle_3 + visualRoll_RareWeight;
+__intnl_SystemSingle_5 = __intnl_SystemSingle_4 + visualRoll_EpicWeight;
+__lcl_total_SystemSingle_1 = __intnl_SystemSingle_5 + visualRoll_LegendaryWeight;
+__lcl_roll_SystemSingle_1 = Random.Range(__const_SystemSingle_0, __lcl_total_SystemSingle_1);
+__lcl_accumulated_SystemSingle_1 = __const_SystemSingle_0;
+__lcl_accumulated_SystemSingle_1 = __lcl_accumulated_SystemSingle_1 + visualRoll_CommonWeight;
+__intnl_SystemBoolean_24 = __lcl_roll_SystemSingle_1 < __lcl_accumulated_SystemSingle_1;
+if (__intnl_SystemBoolean_24)
+{
+__0_RollVisualRarity__ret = __const_SystemInt32_4;
+return;
+}
+__lcl_accumulated_SystemSingle_1 = __lcl_accumulated_SystemSingle_1 + visualRoll_UncommonWeight;
+__intnl_SystemBoolean_25 = __lcl_roll_SystemSingle_1 < __lcl_accumulated_SystemSingle_1;
+if (__intnl_SystemBoolean_25)
+{
+__0_RollVisualRarity__ret = __const_SystemInt32_5;
+return;
+}
+__lcl_accumulated_SystemSingle_1 = __lcl_accumulated_SystemSingle_1 + visualRoll_RareWeight;
+__intnl_SystemBoolean_26 = __lcl_roll_SystemSingle_1 < __lcl_accumulated_SystemSingle_1;
+if (__intnl_SystemBoolean_26)
+{
+__0_RollVisualRarity__ret = __const_SystemInt32_6;
+return;
+}
+__lcl_accumulated_SystemSingle_1 = __lcl_accumulated_SystemSingle_1 + visualRoll_EpicWeight;
+__intnl_SystemBoolean_27 = __lcl_roll_SystemSingle_1 < __lcl_accumulated_SystemSingle_1;
+if (__intnl_SystemBoolean_27)
+{
+__0_RollVisualRarity__ret = __const_SystemInt32_7;
+return;
+}
+__0_RollVisualRarity__ret = __const_SystemInt32_8;
+return;
+}
+public void __0_GetRandomEnchantmentOfRarity()
+{
+__0_rarity__param = __1_rarity__param;
+__1_equipmentType__param = __3_equipmentType__param;
+__0_GetEnchantmentsByRarityAndEquipment();
+__lcl_matches_UnityEngineComponentArray_0 = __0___0_GetEnchantmentsByRarityAndEquipment__ret;
+__intnl_SystemInt32_21 = __lcl_matches_UnityEngineComponentArray_0.Length;
+__intnl_SystemBoolean_28 = __intnl_SystemInt32_21 == __const_SystemInt32_0;
+if (__intnl_SystemBoolean_28)
+{
+__0_equipmentType__param = __3_equipmentType__param;
+__0_GetEnchantmentsByEquipmentType();
+__lcl_matches_UnityEngineComponentArray_0 = __0___0_GetEnchantmentsByEquipmentType__ret;
+}
+__intnl_SystemInt32_22 = __lcl_matches_UnityEngineComponentArray_0.Length;
+__intnl_SystemBoolean_29 = __intnl_SystemInt32_22 == __const_SystemInt32_0;
+if (__intnl_SystemBoolean_29)
+{
+__0___0_GetRandomEnchantmentOfRarity__ret = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+__intnl_SystemInt32_23 = __lcl_matches_UnityEngineComponentArray_0.Length;
+__intnl_SystemInt32_24 = Random.Range(__const_SystemInt32_0, __intnl_SystemInt32_23);
+__0___0_GetRandomEnchantmentOfRarity__ret = (UdonBehaviour)(__lcl_matches_UnityEngineComponentArray_0[__intnl_SystemInt32_24]);
+return;
+}
+}

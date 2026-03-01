@@ -1,0 +1,105 @@
+void _start()
+lineRenderer = transform.GetComponent(__const_SystemType_0);// 32
+G_lineRenderer.set_positionCount(curvePoints);// 56
+G_lineRenderer.set_useWorldSpace(useWorldSpace);// 80
+localPlayer = get_LocalPlayer();// 96
+120 targetCurveAmount = curveAmount
+pointsArray = G_curvePoints.ctor();// 140
+tValues = G_curvePoints.ctor();// 164
+sinValues = G_curvePoints.ctor();// 188
+212 __lcl_i_SystemInt32_0 = __const_SystemInt32_0
+256 if (__intnl_SystemBoolean_0) //568
+{
+G_tValues.Set(__intnl_SystemSingle_2, __lcl_i_SystemInt32_0);// 400
+G_sinValues.Set(__intnl_SystemSingle_5, __lcl_i_SystemInt32_0);// 520
+__lcl_i_SystemInt32_0 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_0);// 552
+560 JUMP 216
+}
+580 return;
+void _update()
+612 __intnl_UnityEngineObject_0 = startPoint
+632 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+676 if (__intnl_SystemBoolean_2) //692
+{
+684 JUMP 764
+}
+708 __intnl_UnityEngineObject_2 = endPoint
+728 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+780 __intnl_SystemBoolean_1 = __intnl_SystemBoolean_2
+792 if (__intnl_SystemBoolean_1) //808
+{
+800 JUMP 840
+}
+848 if (__intnl_SystemBoolean_1) //876
+{
+868 return;
+}
+distanceCheckCounter = op_Addition(__const_SystemInt32_1, distanceCheckCounter);// 900
+948 if (__intnl_SystemBoolean_3) //992
+{
+972 distanceCheckCounter = __const_SystemInt32_0
+984 JUMP 1848
+}
+1032 if (__intnl_SystemBoolean_4) //1060
+{
+1052 return;
+}
+1156 if (__intnl_SystemBoolean_5) //1252
+{
+curveAmount = Lerp(__intnl_SystemSingle_9, targetCurveAmount, curveAmount);// 1244
+}
+frameCounter = op_Addition(__const_SystemInt32_1, frameCounter);// 1276
+1324 if (__intnl_SystemBoolean_6) //1352
+{
+1344 return;
+}
+1368 frameCounter = __const_SystemInt32_0
+__lcl_currentStartPos_UnityEngineVector3_0 = G_startPoint.get_position();// 1388
+__lcl_currentEndPos_UnityEngineVector3_0 = G_endPoint.get_position();// 1412
+1436 __lcl_i_SystemInt32_1 = __const_SystemInt32_0
+1480 if (__intnl_SystemBoolean_7) //1796
+{
+__lcl_point_UnityEngineVector3_0 = Lerp(__intnl_SystemSingle_8, __lcl_currentEndPos_UnityEngineVector3_0, __lcl_currentStartPos_UnityEngineVector3_0);// 1552
+L_point.set_y(__intnl_SystemSingle_12);// 1696
+1720 __intnl_UnityEngineVector3_0 = __lcl_point_UnityEngineVector3_0
+G_pointsArray.Set(__lcl_point_UnityEngineVector3_0, __lcl_i_SystemInt32_1);// 1748
+__lcl_i_SystemInt32_1 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_1);// 1780
+1788 JUMP 1440
+}
+G_lineRenderer.SetPositions(pointsArray);// 1812
+1832 return;
+__lcl_ropeMidpoint_UnityEngineVector3_0 = op_Multiply(__const_SystemSingle_2, __intnl_UnityEngineVector3_3);// 1952
+__lcl_distance_SystemSingle_0 = Distance(__lcl_ropeMidpoint_UnityEngineVector3_0, __intnl_UnityEngineVector3_4);// 2008
+2056 if (__intnl_SystemBoolean_8) //2128
+{
+2080 updateInterval = __const_SystemInt32_1
+2108 __0_visible__param = __const_SystemBoolean_0
+2112 JUMP 2436
+2120 JUMP 2408
+}
+2168 if (__intnl_SystemBoolean_9) //2240
+{
+2192 updateInterval = __const_SystemInt32_3
+2220 __0_visible__param = __const_SystemBoolean_0
+2224 JUMP 2436
+2232 JUMP 2408
+}
+2280 if (__intnl_SystemBoolean_10) //2352
+{
+2304 updateInterval = __const_SystemInt32_4
+2332 __0_visible__param = __const_SystemBoolean_0
+2336 JUMP 2436
+2344 JUMP 2408
+}
+2368 updateInterval = __const_SystemInt32_0
+2396 __0_visible__param = __const_SystemBoolean_1
+2400 JUMP 2436
+2420 return;
+2500 if (__intnl_SystemBoolean_12) //2532
+{
+G_lineRenderer.set_enabled(__0_visible__param);// 2524
+}
+2544 return;
+void __0_SetCurveAmount()
+2576 targetCurveAmount = __0_value__param
+2592 return;

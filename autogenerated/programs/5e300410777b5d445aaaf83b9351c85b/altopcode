@@ -1,0 +1,218 @@
+void GetDisplayStats()
+24 __lcl_stats_SystemString_0 = __const_SystemString_0
+__lcl_stats_SystemString_0 = op_Addition(__intnl_SystemString_5, __lcl_stats_SystemString_0);// 276
+__lcl_stats_SystemString_0 = op_Addition(__intnl_SystemString_11, __lcl_stats_SystemString_0);// 500
+__lcl_stats_SystemString_0 = op_Addition(__intnl_SystemString_13, __lcl_stats_SystemString_0);// 596
+__lcl_stats_SystemString_0 = op_Addition(__intnl_SystemString_15, __lcl_stats_SystemString_0);// 692
+716 __0_GetDisplayStats__ret = __lcl_stats_SystemString_0
+732 return;
+752 return;
+void GetBoatClassText()
+808 if (__intnl_SystemBoolean_0) //1184
+{
+856 if (__intnl_SystemBoolean_1) //1184
+{
+896 return;
+920 __0_GetBoatClassText__ret = __const_SystemString_10
+936 return;
+960 __0_GetBoatClassText__ret = __const_SystemString_11
+976 return;
+1000 __0_GetBoatClassText__ret = __const_SystemString_12
+1016 return;
+1040 __0_GetBoatClassText__ret = __const_SystemString_13
+1056 return;
+1080 __0_GetBoatClassText__ret = __const_SystemString_14
+1096 return;
+1120 __0_GetBoatClassText__ret = __const_SystemString_15
+1136 return;
+1160 __0_GetBoatClassText__ret = __const_SystemString_16
+1176 return;
+}
+}
+1200 __0_GetBoatClassText__ret = __const_SystemString_12
+1216 return;
+1236 return;
+void __0_GetPrimaryStarFill()
+1292 if (__intnl_SystemBoolean_2) //1384
+{
+__0___0_GetPrimaryStarFill__ret = op_Division(__const_SystemSingle_1, __intnl_SystemSingle_1);// 1348
+1368 return;
+1376 JUMP 1424
+}
+1400 __0___0_GetPrimaryStarFill__ret = __const_SystemSingle_2
+1416 return;
+1436 return;
+void __0_GetSecondaryStarFill()
+1492 if (__intnl_SystemBoolean_3) //1548
+{
+1516 __0___0_GetSecondaryStarFill__ret = __const_SystemSingle_3
+1532 return;
+1540 JUMP 1656
+}
+__0___0_GetSecondaryStarFill__ret = op_Division(__const_SystemSingle_1, __intnl_SystemSingle_2);// 1628
+1648 return;
+1668 return;
+void GetTopSpeedPrimaryFill()
+__0_GetTopSpeedPrimaryFill__ret = Clamp01(__intnl_SystemSingle_3);// 1732
+1752 return;
+1772 return;
+void GetTopSpeedSecondaryFill()
+1828 if (__intnl_SystemBoolean_4) //1876
+{
+1852 __0_GetTopSpeedSecondaryFill__ret = __const_SystemSingle_3
+1868 return;
+}
+__0_GetTopSpeedSecondaryFill__ret = Clamp01(__intnl_SystemSingle_5);// 1956
+1976 return;
+1996 return;
+void GetAccelerationPrimaryFill()
+__0_GetAccelerationPrimaryFill__ret = Clamp01(__intnl_SystemSingle_6);// 2060
+2080 return;
+2100 return;
+void GetAccelerationSecondaryFill()
+2156 if (__intnl_SystemBoolean_5) //2204
+{
+2180 __0_GetAccelerationSecondaryFill__ret = __const_SystemSingle_3
+2196 return;
+}
+__0_GetAccelerationSecondaryFill__ret = Clamp01(__intnl_SystemSingle_8);// 2284
+2304 return;
+2324 return;
+void GetSturdinessPrimaryFill()
+2364 __0_statValue__param = sturdiness
+2368 JUMP 1252
+2392 __0_GetSturdinessPrimaryFill__ret = __0___0_GetPrimaryStarFill__ret
+2408 return;
+2428 return;
+void GetSturdinessSecondaryFill()
+2468 __1_statValue__param = sturdiness
+2472 JUMP 1452
+2496 __0_GetSturdinessSecondaryFill__ret = __0___0_GetSecondaryStarFill__ret
+2512 return;
+2532 return;
+void GetBoostPrimaryFill()
+2572 __0_statValue__param = boost
+2576 JUMP 1252
+2600 __0_GetBoostPrimaryFill__ret = __0___0_GetPrimaryStarFill__ret
+2616 return;
+2636 return;
+void GetBoostSecondaryFill()
+2676 __1_statValue__param = boost
+2680 JUMP 1452
+2704 __0_GetBoostSecondaryFill__ret = __0___0_GetSecondaryStarFill__ret
+2720 return;
+2740 return;
+void __0_ShouldAutoUnlockAtLevel()
+2772 __intnl_SystemBoolean_6 = isUnlockedFromLevel
+2784 if (__intnl_SystemBoolean_6) //2824
+{
+}
+2840 __0___0_ShouldAutoUnlockAtLevel__ret = __intnl_SystemBoolean_6
+2856 return;
+2876 return;
+void __0_CanUseBoat()
+2900 if (isUnlockedByDefault) //2948
+{
+2924 __0___0_CanUseBoat__ret = __const_SystemBoolean_0
+2940 return;
+}
+2956 if (isUnlockedFromLevel) //3016
+{
+__0___0_CanUseBoat__ret = op_GreaterThanOrEqual(unlockLevel, __1_playerLevel__param);// 2988
+3008 return;
+}
+3032 __0___0_CanUseBoat__ret = __const_SystemBoolean_1
+3048 return;
+3068 return;
+void __0_CanPurchaseBoat()
+3100 __intnl_SystemBoolean_7 = isUnlockedFromLevel
+3112 if (__intnl_SystemBoolean_7) //3152
+{
+}
+3160 if (__intnl_SystemBoolean_7) //3208
+{
+3184 __0___0_CanPurchaseBoat__ret = __const_SystemBoolean_1
+3200 return;
+}
+3216 if (isUnlockedByDefault) //3264
+{
+3240 __0___0_CanPurchaseBoat__ret = __const_SystemBoolean_1
+3256 return;
+}
+__0___0_CanPurchaseBoat__ret = op_GreaterThanOrEqual(price, __0_playerMoney__param);// 3288
+3308 return;
+3328 return;
+void __0_GetPurchaseRequirementsText()
+3352 if (isUnlockedByDefault) //3400
+{
+3376 __0___0_GetPurchaseRequirementsText__ret = __const_SystemString_17
+3392 return;
+}
+3416 __lcl_requirements_SystemString_0 = __const_SystemString_18
+3436 __intnl_SystemBoolean_8 = isUnlockedFromLevel
+3448 if (__intnl_SystemBoolean_8) //3488
+{
+}
+3496 if (__intnl_SystemBoolean_8) //3600
+{
+__lcl_requirements_SystemString_0 = op_Addition(__intnl_SystemString_17, __lcl_requirements_SystemString_0);// 3592
+}
+3640 if (__intnl_SystemBoolean_9) //3744
+{
+__lcl_requirements_SystemString_0 = op_Addition(__intnl_SystemString_17, __lcl_requirements_SystemString_0);// 3736
+}
+3784 if (__intnl_SystemBoolean_10) //3812
+{
+3808 __lcl_requirements_SystemString_0 = __const_SystemString_23
+}
+__0___0_GetPurchaseRequirementsText__ret = "Ready to Purchase".Trim();// 3828
+3848 return;
+3868 return;
+void __0_ComparePriceTo()
+3900 __intnl_UnityEngineObject_0 = __0_other__param
+3920 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+3964 if (__intnl_SystemBoolean_11) //4012
+{
+3988 __0___0_ComparePriceTo__ret = __const_SystemInt32_3
+4004 return;
+}
+4108 if (__intnl_SystemBoolean_12) //4156
+{
+4132 __0___0_ComparePriceTo__ret = __const_SystemInt32_4
+4148 return;
+}
+4252 if (__intnl_SystemBoolean_13) //4300
+{
+4276 __0___0_ComparePriceTo__ret = __const_SystemInt32_3
+4292 return;
+}
+4316 __0___0_ComparePriceTo__ret = __const_SystemInt32_0
+4332 return;
+4352 return;
+void GetFormattedPrice()
+4408 if (__intnl_SystemBoolean_14) //4564
+{
+__0_GetFormattedPrice__ret = op_Addition(__const_SystemString_25, __intnl_SystemString_18);// 4528
+4548 return;
+4556 JUMP 4804
+}
+4604 if (__intnl_SystemBoolean_15) //4760
+{
+__0_GetFormattedPrice__ret = op_Addition(__const_SystemString_27, __intnl_SystemString_18);// 4724
+4744 return;
+4752 JUMP 4804
+}
+__0_GetFormattedPrice__ret = G_price.ToString();// 4776
+4796 return;
+4816 return;
+void GetDetailedDescription()
+__lcl_details_SystemString_0 = op_Addition(__const_SystemString_28, description);// 4856
+4872 JUMP 4368
+__lcl_details_SystemString_0 = op_Addition(__intnl_SystemString_20, __lcl_details_SystemString_0);// 4968
+4992 __0_GetDetailedDescription__ret = __lcl_details_SystemString_0
+5008 return;
+5028 return;
+void GetValueRating()
+__0_GetValueRating__ret = op_Division(__const_SystemSingle_6, __intnl_SystemSingle_11);// 5092
+5112 return;
+5132 return;

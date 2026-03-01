@@ -1,0 +1,231 @@
+using System;
+using VRC.SDKBase;
+using UnityEngine;
+using VRC.Udon;
+using TMPro;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private String __intnl_SystemString_1 = null;
+private VRCPlayerApi __lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0 = null;
+private object __intnl_SystemObject_0 = null;
+private String __const_SystemString_0 = "__0_target__param";
+private UInt32 __gintnl_SystemUInt32_1 = 232;
+private UInt32 __gintnl_SystemUInt32_0 = 188;
+private UInt32 __gintnl_SystemUInt32_2 = 1112;
+private String __lcl_abbrev_SystemString_0 = null;
+private String __const_SystemString_5 = "Connecting to server...";
+private String __lcl_roles_SystemString_0 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private String __lcl_roleDisplay_SystemString_0 = null;
+private String __const_SystemString_16 = ", ";
+private String __const_SystemString_17 = "p";
+private String __const_SystemString_14 = "Discord:\nNot Linked!";
+private String __const_SystemString_15 = "";
+private String __const_SystemString_12 = "Discord Roles:\nNone";
+private String __const_SystemString_13 = "Discord Roles:\n";
+private String __const_SystemString_10 = "__0_GetRoles";
+private String __const_SystemString_11 = "__0___0_GetRoles__ret";
+private String __const_SystemString_18 = "Patreon";
+private String __const_SystemString_19 = "n";
+private Int64 __refl_typeid = 7742269127839688329;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Boolean __intnl_SystemBoolean_11 = false;
+private String __0_roleAbbreviations__param = null;
+private object __intnl_SystemObject_2 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_1 = null;
+public Color loadingColor;
+private String __const_SystemString_2 = "Loading...";
+private String[] __lcl_parts_SystemStringArray_0 = null;
+private object __const_SystemObject_0 = null;
+private String __intnl_SystemString_0 = null;
+private String __0___0_FormatRoles__ret = null;
+public TextMeshProUGUI statusText;
+private object __intnl_SystemObject_1 = null;
+private String __const_SystemString_7 = "__0_IsLinked";
+public Color linkedColor;
+private String __lcl_result_SystemString_0 = null;
+public UdonBehaviour discordRoleManager;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private String __const_SystemString_4 = "__0_IsReady__ret";
+private Int32 __lcl_i_SystemInt32_0 = 0;
+private String __const_SystemString_9 = "__4_displayName__param";
+private Boolean __intnl_SystemBoolean_12 = false;
+private String __refl_typename = "DiscordLinkStatus";
+private Int32 __intnl_SystemInt32_0 = 0;
+private String __const_SystemString_1 = "__0_RegisterCallback";
+public Color unlinkedColor;
+private Char __const_SystemChar_0 = ,;
+private String __const_SystemString_6 = "__3_displayName__param";
+private StringSplitOptions __const_SystemStringSplitOptions_0 = StringSplitOptions.None;
+private String __const_SystemString_22 = "Staff";
+private String __const_SystemString_20 = "Booster";
+private String __const_SystemString_21 = "s";
+private String __lcl_displayName_SystemString_0 = null;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Int32 __const_SystemInt32_1 = 1;
+private Int32 __const_SystemInt32_0 = 0;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_0 = null;
+private String __const_SystemString_3 = "IsReady";
+private UdonBehaviour __this_VRCUdonUdonBehaviour_0 = this;
+private String __const_SystemString_8 = "__0___0_IsLinked__ret";
+
+
+public void _start()
+{
+__intnl_UnityEngineObject_0 = discordRoleManager;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_0)
+{
+__intnl_VRCUdonUdonBehaviour_0 = __this_VRCUdonUdonBehaviour_0;
+discordRoleManager.SetProgramVariable(__const_SystemString_0, __intnl_VRCUdonUdonBehaviour_0);
+discordRoleManager.SendCustomEvent(__const_SystemString_1);
+}
+UNDEF_b0f8d_1360();
+}
+public void OnDiscordRolesLoaded()
+{
+UNDEF_b0f8d_1360();
+}
+private void UNDEF_b0f8d_1360()
+{
+__intnl_UnityEngineObject_2 = statusText;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_2 == __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_1)
+{
+return;
+}
+__lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0 = Networking.LocalPlayer;
+__intnl_SystemBoolean_2 = __lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0 == __const_SystemObject_0;
+if (__intnl_SystemBoolean_2)
+{
+statusText.text = __const_SystemString_2;
+statusText.color = loadingColor;
+return;
+}
+__intnl_UnityEngineObject_4 = discordRoleManager;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_3 = __intnl_UnityEngineObject_4 == __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_3)
+{
+}
+else
+{
+__intnl_VRCUdonUdonBehaviour_1 = discordRoleManager;
+discordRoleManager.SendCustomEvent(__const_SystemString_3);
+__intnl_SystemObject_0 = discordRoleManager.GetProgramVariable(__const_SystemString_4);
+__intnl_SystemBoolean_4 = (Boolean)__intnl_SystemObject_0;
+__intnl_SystemBoolean_3 = !__intnl_SystemBoolean_4;
+}
+if (__intnl_SystemBoolean_3)
+{
+statusText.text = __const_SystemString_5;
+statusText.color = loadingColor;
+return;
+}
+__lcl_displayName_SystemString_0 = __lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0.displayName;
+discordRoleManager.SetProgramVariable(__const_SystemString_6, __lcl_displayName_SystemString_0);
+discordRoleManager.SendCustomEvent(__const_SystemString_7);
+__intnl_SystemObject_1 = discordRoleManager.GetProgramVariable(__const_SystemString_8);
+__intnl_SystemBoolean_5 = (Boolean)__intnl_SystemObject_1;
+if (__intnl_SystemBoolean_5)
+{
+discordRoleManager.SetProgramVariable(__const_SystemString_9, __lcl_displayName_SystemString_0);
+discordRoleManager.SendCustomEvent(__const_SystemString_10);
+__intnl_SystemObject_2 = discordRoleManager.GetProgramVariable(__const_SystemString_11);
+__intnl_SystemString_0 = (String)__intnl_SystemObject_2;
+__lcl_roles_SystemString_0 = __intnl_SystemString_0;
+__0_roleAbbreviations__param = __lcl_roles_SystemString_0;
+__0_FormatRoles();
+__lcl_roleDisplay_SystemString_0 = __0___0_FormatRoles__ret;
+__intnl_SystemBoolean_6 = String.IsNullOrEmpty(__lcl_roleDisplay_SystemString_0);
+if (__intnl_SystemBoolean_6)
+{
+statusText.text = __const_SystemString_12;
+}
+else
+{
+__intnl_SystemString_1 = __const_SystemString_13 + __lcl_roleDisplay_SystemString_0;
+statusText.text = __intnl_SystemString_1;
+}
+statusText.color = linkedColor;
+}
+else
+{
+statusText.text = __const_SystemString_14;
+statusText.color = unlinkedColor;
+}
+}
+private void __0_FormatRoles()
+{
+__intnl_SystemBoolean_7 = String.IsNullOrEmpty(__0_roleAbbreviations__param);
+if (__intnl_SystemBoolean_7)
+{
+__0___0_FormatRoles__ret = __const_SystemString_15;
+return;
+}
+__lcl_parts_SystemStringArray_0 = __0_roleAbbreviations__param.Split(__const_SystemChar_0, __const_SystemStringSplitOptions_0);
+__lcl_result_SystemString_0 = __const_SystemString_15;
+__lcl_i_SystemInt32_0 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_0 = __lcl_parts_SystemStringArray_0.Length;
+__intnl_SystemBoolean_8 = __lcl_i_SystemInt32_0 < __intnl_SystemInt32_0;
+if (__intnl_SystemBoolean_8)
+{
+break;
+}
+__intnl_SystemBoolean_9 = __lcl_i_SystemInt32_0 > __const_SystemInt32_0;
+if (__intnl_SystemBoolean_9)
+{
+__lcl_result_SystemString_0 = __lcl_result_SystemString_0 + __const_SystemString_16;
+}
+__lcl_abbrev_SystemString_0 = __lcl_parts_SystemStringArray_0[__lcl_i_SystemInt32_0];
+__intnl_SystemBoolean_10 = __lcl_abbrev_SystemString_0 == __const_SystemString_17;
+if (__intnl_SystemBoolean_10)
+{
+__lcl_result_SystemString_0 = __lcl_result_SystemString_0 + __const_SystemString_18;
+}
+else
+{
+__intnl_SystemBoolean_11 = __lcl_abbrev_SystemString_0 == __const_SystemString_19;
+if (__intnl_SystemBoolean_11)
+{
+__lcl_result_SystemString_0 = __lcl_result_SystemString_0 + __const_SystemString_20;
+}
+else
+{
+__intnl_SystemBoolean_12 = __lcl_abbrev_SystemString_0 == __const_SystemString_21;
+if (__intnl_SystemBoolean_12)
+{
+__lcl_result_SystemString_0 = __lcl_result_SystemString_0 + __const_SystemString_22;
+}
+else
+{
+__lcl_result_SystemString_0 = __lcl_result_SystemString_0 + __lcl_abbrev_SystemString_0;
+}
+}
+}
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_1;
+}
+__0___0_FormatRoles__ret = __lcl_result_SystemString_0;
+return;
+}
+}

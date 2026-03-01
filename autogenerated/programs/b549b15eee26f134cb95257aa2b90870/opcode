@@ -1,0 +1,154 @@
+void _start
+0 PUSH UInt32 __const_SystemUInt32_0
+8 PUSH AudioSource audioSource
+16 PUSH Object __intnl_UnityEngineObject_0
+24 COPY
+28 PUSH object __const_SystemObject_0
+36 PUSH Object __intnl_UnityEngineObject_1
+44 COPY
+48 PUSH Object __intnl_UnityEngineObject_0
+56 PUSH Object __intnl_UnityEngineObject_1
+64 PUSH Boolean __intnl_SystemBoolean_0
+72 EXTERN UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean
+80 PUSH Boolean __intnl_SystemBoolean_0
+88 JUMP_IF_FALSE 116
+96 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+104 COPY
+108 JUMP_INDIRECT 2
+116 PUSH AudioSource audioSource
+124 PUSH Single __const_SystemSingle_0
+132 EXTERN UnityEngineAudioSource.__set_volume__SystemSingle__SystemVoid
+140 PUSH AudioSource audioSource
+148 PUSH Boolean __intnl_SystemBoolean_1
+156 EXTERN UnityEngineAudioSource.__get_isPlaying__SystemBoolean
+164 PUSH Boolean __intnl_SystemBoolean_1
+172 JUMP_IF_FALSE 188
+180 JUMP 204
+188 PUSH AudioSource audioSource
+196 EXTERN UnityEngineAudioSource.__Play__SystemVoid
+204 PUSH UdonBehaviour __this_VRCUdonUdonBehaviour_0
+212 PUSH String __const_SystemString_0
+220 PUSH Single startDelay
+228 PUSH EventTiming __const_VRCUdonCommonEnumsEventTiming_0
+236 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEventDelayedSeconds__SystemString_SystemSingle_VRCUdonCommonEnumsEventTiming__SystemVoid
+244 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+252 COPY
+256 JUMP_INDIRECT 2
+void StartFade
+264 PUSH UInt32 __const_SystemUInt32_0
+272 PUSH Boolean __const_SystemBoolean_0
+280 PUSH Boolean isFading
+288 COPY
+292 PUSH Single __const_SystemSingle_0
+300 PUSH Single fadeProgress
+308 COPY
+312 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+320 COPY
+324 JUMP_INDIRECT 2
+void _update
+332 PUSH UInt32 __const_SystemUInt32_0
+340 PUSH AudioSource audioSource
+348 PUSH Object __intnl_UnityEngineObject_2
+356 COPY
+360 PUSH object __const_SystemObject_0
+368 PUSH Object __intnl_UnityEngineObject_3
+376 COPY
+380 PUSH Object __intnl_UnityEngineObject_2
+388 PUSH Object __intnl_UnityEngineObject_3
+396 PUSH Boolean __intnl_SystemBoolean_2
+404 EXTERN UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean
+412 PUSH Boolean __intnl_SystemBoolean_2
+420 JUMP_IF_FALSE 448
+428 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+436 COPY
+440 JUMP_INDIRECT 2
+448 PUSH Single __const_SystemSingle_1
+456 PUSH Single __lcl_targetVolume_SystemSingle_0
+464 COPY
+468 PUSH UdonBehaviour audioSettingsManager
+476 PUSH Object __intnl_UnityEngineObject_4
+484 COPY
+488 PUSH object __const_SystemObject_0
+496 PUSH Object __intnl_UnityEngineObject_5
+504 COPY
+508 PUSH Object __intnl_UnityEngineObject_4
+516 PUSH Object __intnl_UnityEngineObject_5
+524 PUSH Boolean __intnl_SystemBoolean_3
+532 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+540 PUSH Boolean __intnl_SystemBoolean_3
+548 JUMP_IF_FALSE 676
+556 PUSH UdonBehaviour audioSettingsManager
+564 PUSH UdonBehaviour audioSettingsManager
+572 PUSH UdonBehaviour __intnl_VRCUdonUdonBehaviour_0
+580 COPY
+584 PUSH String __const_SystemString_1
+592 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+600 PUSH UdonBehaviour audioSettingsManager
+608 PUSH String __const_SystemString_2
+616 PUSH object __intnl_SystemObject_0
+624 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject
+632 PUSH object __intnl_SystemObject_0
+640 PUSH Single __intnl_SystemSingle_0
+648 EXTERN SystemConvert.__ToSingle__SystemObject__SystemSingle
+656 PUSH Single __intnl_SystemSingle_0
+664 PUSH Single __lcl_targetVolume_SystemSingle_0
+672 COPY
+676 PUSH Boolean isFading
+684 JUMP_IF_FALSE 1072
+692 PUSH Single __intnl_SystemSingle_0
+700 EXTERN UnityEngineTime.__get_deltaTime__SystemSingle
+708 PUSH Single __intnl_SystemSingle_0
+716 PUSH Single fadeInDuration
+724 PUSH Single __intnl_SystemSingle_1
+732 EXTERN SystemSingle.__op_Division__SystemSingle_SystemSingle__SystemSingle
+740 PUSH Single fadeProgress
+748 PUSH Single __intnl_SystemSingle_1
+756 PUSH Single fadeProgress
+764 EXTERN SystemSingle.__op_Addition__SystemSingle_SystemSingle__SystemSingle
+772 PUSH Single fadeProgress
+780 PUSH Single __const_SystemSingle_1
+788 PUSH Boolean __intnl_SystemBoolean_4
+796 EXTERN SystemSingle.__op_GreaterThanOrEqual__SystemSingle_SystemSingle__SystemBoolean
+804 PUSH Boolean __intnl_SystemBoolean_4
+812 JUMP_IF_FALSE 880
+820 PUSH Single __const_SystemSingle_1
+828 PUSH Single fadeProgress
+836 COPY
+840 PUSH Boolean __const_SystemBoolean_1
+848 PUSH Boolean isFading
+856 COPY
+860 PUSH Boolean __const_SystemBoolean_0
+868 PUSH Boolean fadeComplete
+876 COPY
+880 PUSH Single fadeProgress
+888 PUSH Single fadeProgress
+896 PUSH Single __intnl_SystemSingle_2
+904 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+912 PUSH Single __const_SystemSingle_3
+920 PUSH Single fadeProgress
+928 PUSH Single __intnl_SystemSingle_3
+936 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+944 PUSH Single __const_SystemSingle_2
+952 PUSH Single __intnl_SystemSingle_3
+960 PUSH Single __intnl_SystemSingle_4
+968 EXTERN SystemSingle.__op_Subtraction__SystemSingle_SystemSingle__SystemSingle
+976 PUSH Single __intnl_SystemSingle_2
+984 PUSH Single __intnl_SystemSingle_4
+992 PUSH Single __lcl_smoothProgress_SystemSingle_0
+1000 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+1008 PUSH Single __lcl_smoothProgress_SystemSingle_0
+1016 PUSH Single __lcl_targetVolume_SystemSingle_0
+1024 PUSH Single __intnl_SystemSingle_5
+1032 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+1040 PUSH AudioSource audioSource
+1048 PUSH Single __intnl_SystemSingle_5
+1056 EXTERN UnityEngineAudioSource.__set_volume__SystemSingle__SystemVoid
+1064 JUMP 1112
+1072 PUSH Boolean fadeComplete
+1080 JUMP_IF_FALSE 1112
+1088 PUSH AudioSource audioSource
+1096 PUSH Single __lcl_targetVolume_SystemSingle_0
+1104 EXTERN UnityEngineAudioSource.__set_volume__SystemSingle__SystemVoid
+1112 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1120 COPY
+1124 JUMP_INDIRECT 2

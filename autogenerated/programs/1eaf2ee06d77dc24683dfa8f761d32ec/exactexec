@@ -1,0 +1,94 @@
+using System;
+using UnityEngine;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+public Int32 price;
+private Single __intnl_SystemSingle_0 = 0f;
+private String __const_SystemString_0 = "F1";
+private Single __const_SystemSingle_0 = 1000000f;
+private UInt32[] __gintnl_SystemUInt32Array_0 = System.UInt32[];
+private String __const_SystemString_5 = "Bobber";
+private Int64 __refl_typeid = -4040198522491526591;
+public String itemName;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private String __const_SystemString_2 = "K";
+private String __0_GetFormattedPrice__ret = null;
+public String description;
+public Sprite itemIcon;
+private String __intnl_SystemString_0 = null;
+private String __0_GetItemTypeString__ret = null;
+private Single __intnl_SystemSingle_1 = 0f;
+public Int32 requiredLevel;
+private String __const_SystemString_7 = "Quest Item";
+private Single __const_SystemSingle_1 = 1000f;
+public Int32 itemType;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private String __const_SystemString_4 = "Fishing Line";
+private UInt32 __intnl_SystemUInt32_0 = 0;
+private String __refl_typename = "VladShopItem";
+private String __const_SystemString_1 = "M";
+public Int32 equipmentId;
+private String __const_SystemString_6 = "Boat";
+private Int32 __const_SystemInt32_1 = 1000;
+private Int32 __const_SystemInt32_0 = 1000000;
+private Int32 __const_SystemInt32_3 = 4;
+private Int32 __const_SystemInt32_2 = 0;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private String __const_SystemString_3 = "Fishing Rod";
+private String __const_SystemString_8 = "Item";
+
+
+public void GetFormattedPrice()
+{
+__intnl_SystemBoolean_0 = price >= __const_SystemInt32_0;
+if (__intnl_SystemBoolean_0)
+{
+__intnl_SystemSingle_0 = Convert.ToSingle(price);
+__intnl_SystemSingle_1 = __intnl_SystemSingle_0 / __const_SystemSingle_0;
+__intnl_SystemString_0 = __intnl_SystemSingle_1.ToString(__const_SystemString_0);
+__0_GetFormattedPrice__ret = __intnl_SystemString_0 + __const_SystemString_1;
+return;
+}
+else
+{
+__intnl_SystemBoolean_1 = price >= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_1)
+{
+__intnl_SystemSingle_0 = Convert.ToSingle(price);
+__intnl_SystemSingle_1 = __intnl_SystemSingle_0 / __const_SystemSingle_1;
+__intnl_SystemString_0 = __intnl_SystemSingle_1.ToString(__const_SystemString_0);
+__0_GetFormattedPrice__ret = __intnl_SystemString_0 + __const_SystemString_2;
+return;
+}
+}
+__0_GetFormattedPrice__ret = price.ToString();
+return;
+}
+public void GetItemTypeString()
+{
+__intnl_SystemBoolean_2 = itemType >= __const_SystemInt32_2;
+if (__intnl_SystemBoolean_2)
+{
+__intnl_SystemBoolean_3 = itemType <= __const_SystemInt32_3;
+if (__intnl_SystemBoolean_3)
+{
+__intnl_SystemUInt32_0 = __gintnl_SystemUInt32Array_0[itemType];
+__0_GetItemTypeString__ret = __const_SystemString_3;
+return;
+__0_GetItemTypeString__ret = __const_SystemString_4;
+return;
+__0_GetItemTypeString__ret = __const_SystemString_5;
+return;
+__0_GetItemTypeString__ret = __const_SystemString_6;
+return;
+__0_GetItemTypeString__ret = __const_SystemString_7;
+return;
+}
+}
+__0_GetItemTypeString__ret = __const_SystemString_8;
+return;
+}
+}

@@ -1,0 +1,74 @@
+void _start
+0 PUSH UInt32 __const_SystemUInt32_0
+8 PUSH Transform __this_UnityEngineTransform_0
+16 PUSH Type __const_SystemType_0
+24 PUSH Toggle toggle
+32 EXTERN UnityEngineComponent.__GetComponent__T
+40 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+48 COPY
+52 JUMP_INDIRECT 2
+void _onPlayerRestored
+60 PUSH UInt32 __const_SystemUInt32_0
+68 PUSH VRCPlayerApi onPlayerRestoredPlayer
+76 PUSH Boolean __intnl_SystemBoolean_1
+84 EXTERN VRCSDKBaseVRCPlayerApi.__get_isLocal__SystemBoolean
+92 PUSH Boolean __intnl_SystemBoolean_1
+100 PUSH Boolean __intnl_SystemBoolean_0
+108 EXTERN SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean
+116 PUSH Boolean __intnl_SystemBoolean_0
+124 JUMP_IF_FALSE 140
+132 JUMP 212
+140 PUSH Toggle toggle
+148 PUSH Object __intnl_UnityEngineObject_0
+156 COPY
+160 PUSH object __const_SystemObject_0
+168 PUSH Object __intnl_UnityEngineObject_1
+176 COPY
+180 PUSH Object __intnl_UnityEngineObject_0
+188 PUSH Object __intnl_UnityEngineObject_1
+196 PUSH Boolean __intnl_SystemBoolean_0
+204 EXTERN UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean
+212 PUSH Boolean __intnl_SystemBoolean_0
+220 JUMP_IF_FALSE 248
+228 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+236 COPY
+240 JUMP_INDIRECT 2
+248 PUSH VRCPlayerApi onPlayerRestoredPlayer
+256 PUSH String persistenceKey
+264 PUSH Boolean __lcl_savedState_SystemBoolean_0
+272 PUSH Boolean __intnl_SystemBoolean_2
+280 EXTERN VRCSDK3PersistencePlayerData.__TryGetBool__VRCSDKBaseVRCPlayerApi_SystemString_SystemBooleanRef__SystemBoolean
+288 PUSH Boolean __intnl_SystemBoolean_2
+296 JUMP_IF_FALSE 328
+304 PUSH Toggle toggle
+312 PUSH Boolean __lcl_savedState_SystemBoolean_0
+320 EXTERN UnityEngineUIToggle.__set_isOn__SystemBoolean__SystemVoid
+328 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+336 COPY
+340 JUMP_INDIRECT 2
+void OnToggleChanged
+348 PUSH UInt32 __const_SystemUInt32_0
+356 PUSH Toggle toggle
+364 PUSH Object __intnl_UnityEngineObject_2
+372 COPY
+376 PUSH object __const_SystemObject_0
+384 PUSH Object __intnl_UnityEngineObject_3
+392 COPY
+396 PUSH Object __intnl_UnityEngineObject_2
+404 PUSH Object __intnl_UnityEngineObject_3
+412 PUSH Boolean __intnl_SystemBoolean_3
+420 EXTERN UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean
+428 PUSH Boolean __intnl_SystemBoolean_3
+436 JUMP_IF_FALSE 464
+444 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+452 COPY
+456 JUMP_INDIRECT 2
+464 PUSH Toggle toggle
+472 PUSH Boolean __intnl_SystemBoolean_4
+480 EXTERN UnityEngineUIToggle.__get_isOn__SystemBoolean
+488 PUSH String persistenceKey
+496 PUSH Boolean __intnl_SystemBoolean_4
+504 EXTERN VRCSDK3PersistencePlayerData.__SetBool__SystemString_SystemBoolean__SystemVoid
+512 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+520 COPY
+524 JUMP_INDIRECT 2

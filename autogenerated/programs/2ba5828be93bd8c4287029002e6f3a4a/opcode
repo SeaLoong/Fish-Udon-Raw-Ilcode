@@ -1,0 +1,116 @@
+void _start
+0 PUSH UInt32 __const_SystemUInt32_0
+8 PUSH UInt32 __gintnl_SystemUInt32_0
+16 JUMP 176
+24 PUSH UdonBehaviour __this_VRCUdonUdonBehaviour_0
+32 PUSH String __const_SystemString_0
+40 PUSH Single __const_SystemSingle_0
+48 PUSH EventTiming __const_VRCUdonCommonEnumsEventTiming_0
+56 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEventDelayedSeconds__SystemString_SystemSingle_VRCUdonCommonEnumsEventTiming__SystemVoid
+64 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+72 COPY
+76 JUMP_INDIRECT 2
+void UpdateLoop
+84 PUSH UInt32 __const_SystemUInt32_0
+92 PUSH UInt32 __gintnl_SystemUInt32_1
+100 JUMP 176
+108 PUSH UdonBehaviour __this_VRCUdonUdonBehaviour_1
+116 PUSH String __const_SystemString_0
+124 PUSH Single __const_SystemSingle_0
+132 PUSH EventTiming __const_VRCUdonCommonEnumsEventTiming_0
+140 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEventDelayedSeconds__SystemString_SystemSingle_VRCUdonCommonEnumsEventTiming__SystemVoid
+148 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+156 COPY
+160 JUMP_INDIRECT 2
+168 PUSH UInt32 __const_SystemUInt32_0
+176 PUSH TextMeshProUGUI timeText
+184 PUSH Object __intnl_UnityEngineObject_0
+192 COPY
+196 PUSH object __const_SystemObject_0
+204 PUSH Object __intnl_UnityEngineObject_1
+212 COPY
+216 PUSH Object __intnl_UnityEngineObject_0
+224 PUSH Object __intnl_UnityEngineObject_1
+232 PUSH Boolean __intnl_SystemBoolean_0
+240 EXTERN UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean
+248 PUSH Boolean __intnl_SystemBoolean_0
+256 JUMP_IF_FALSE 272
+264 JUMP 344
+272 PUSH UdonBehaviour playerStats
+280 PUSH Object __intnl_UnityEngineObject_2
+288 COPY
+292 PUSH object __const_SystemObject_0
+300 PUSH Object __intnl_UnityEngineObject_3
+308 COPY
+312 PUSH Object __intnl_UnityEngineObject_2
+320 PUSH Object __intnl_UnityEngineObject_3
+328 PUSH Boolean __intnl_SystemBoolean_0
+336 EXTERN UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean
+344 PUSH Boolean __intnl_SystemBoolean_0
+352 JUMP_IF_FALSE 380
+360 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+368 COPY
+372 JUMP_INDIRECT 2
+380 PUSH UdonBehaviour playerStats
+388 PUSH UdonBehaviour playerStats
+396 PUSH UdonBehaviour __intnl_VRCUdonUdonBehaviour_0
+404 COPY
+408 PUSH String __const_SystemString_1
+416 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+424 PUSH UdonBehaviour playerStats
+432 PUSH String __const_SystemString_2
+440 PUSH object __intnl_SystemObject_0
+448 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject
+456 PUSH object __intnl_SystemObject_0
+464 PUSH Int32 __intnl_SystemInt32_0
+472 EXTERN SystemConvert.__ToInt32__SystemObject__SystemInt32
+480 PUSH Int32 __intnl_SystemInt32_0
+488 PUSH Int32 __lcl_totalSeconds_SystemInt32_0
+496 COPY
+500 PUSH Int32 __lcl_totalSeconds_SystemInt32_0
+508 PUSH Int32 __const_SystemInt32_0
+516 PUSH Int32 __lcl_totalMinutes_SystemInt32_0
+524 EXTERN SystemInt32.__op_Division__SystemInt32_SystemInt32__SystemInt32
+532 PUSH Int32 __lcl_totalMinutes_SystemInt32_0
+540 PUSH Int32 __const_SystemInt32_1
+548 PUSH Int32 __lcl_days_SystemInt32_0
+556 EXTERN SystemInt32.__op_Division__SystemInt32_SystemInt32__SystemInt32
+564 PUSH Int32 __lcl_totalMinutes_SystemInt32_0
+572 PUSH Int32 __const_SystemInt32_1
+580 PUSH Int32 __intnl_SystemInt32_1
+588 EXTERN SystemInt32.__op_Remainder__SystemInt32_SystemInt32__SystemInt32
+596 PUSH Int32 __intnl_SystemInt32_1
+604 PUSH Int32 __const_SystemInt32_0
+612 PUSH Int32 __lcl_hours_SystemInt32_0
+620 EXTERN SystemInt32.__op_Division__SystemInt32_SystemInt32__SystemInt32
+628 PUSH Int32 __lcl_totalMinutes_SystemInt32_0
+636 PUSH Int32 __const_SystemInt32_0
+644 PUSH Int32 __lcl_minutes_SystemInt32_0
+652 EXTERN SystemInt32.__op_Remainder__SystemInt32_SystemInt32__SystemInt32
+660 PUSH Int32 __lcl_days_SystemInt32_0
+668 PUSH Int32 __const_SystemInt32_2
+676 PUSH Boolean __intnl_SystemBoolean_1
+684 EXTERN SystemInt32.__op_GreaterThan__SystemInt32_SystemInt32__SystemBoolean
+692 PUSH Boolean __intnl_SystemBoolean_1
+700 JUMP_IF_FALSE 788
+708 PUSH String __const_SystemString_3
+716 PUSH Int32 __lcl_days_SystemInt32_0
+724 PUSH Int32 __lcl_hours_SystemInt32_0
+732 PUSH Int32 __lcl_minutes_SystemInt32_0
+740 PUSH String __intnl_SystemString_0
+748 EXTERN SystemString.__Format__SystemString_SystemObject_SystemObject_SystemObject__SystemString
+756 PUSH TextMeshProUGUI timeText
+764 PUSH String __intnl_SystemString_0
+772 EXTERN TMProTextMeshProUGUI.__set_text__SystemString__SystemVoid
+780 JUMP 852
+788 PUSH String __const_SystemString_4
+796 PUSH Int32 __lcl_hours_SystemInt32_0
+804 PUSH Int32 __lcl_minutes_SystemInt32_0
+812 PUSH String __intnl_SystemString_0
+820 EXTERN SystemString.__Format__SystemString_SystemObject_SystemObject__SystemString
+828 PUSH TextMeshProUGUI timeText
+836 PUSH String __intnl_SystemString_0
+844 EXTERN TMProTextMeshProUGUI.__set_text__SystemString__SystemVoid
+852 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+860 COPY
+864 JUMP_INDIRECT 2

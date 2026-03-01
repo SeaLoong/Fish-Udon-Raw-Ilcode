@@ -1,0 +1,43 @@
+void _start()
+startPosition = transform.get_localPosition();// 24
+startRotation = transform.get_localRotation();// 48
+localPlayer = get_LocalPlayer();// 64
+cullDistanceSq = op_Multiplication(cullDistance, cullDistance);// 96
+timeOffset = Range(__const_SystemSingle_1, __const_SystemSingle_0);// 128
+148 return;
+void _update()
+__lcl_currentTime_SystemSingle_0 = get_time();// 172
+252 if (__intnl_SystemBoolean_0) //504
+{
+276 lastDistanceCheck = __lcl_currentTime_SystemSingle_0
+320 if (__intnl_SystemBoolean_1) //352
+{
+}
+360 if (__intnl_SystemBoolean_1) //504
+{
+__lcl_distSq_SystemSingle_0 = op_Subtraction(__intnl_UnityEngineVector3_1, __intnl_UnityEngineVector3_0).get_sqrMagnitude();// 464
+isInRange = op_LessThanOrEqual(cullDistanceSq, __lcl_distSq_SystemSingle_0);// 496
+}
+}
+512 if (isInRange) //528
+{
+520 JUMP 548
+}
+540 return;
+__lcl_time_SystemSingle_0 = op_Addition(timeOffset, __lcl_currentTime_SystemSingle_0);// 572
+__lcl_bobOffset_SystemSingle_0 = op_Multiplication(bobHeight, __intnl_SystemSingle_2);// 660
+transform.set_localPosition(__intnl_UnityEngineVector3_1);// 748
+764 if (tiltX) //868
+{
+__lcl_tiltX_value_SystemSingle_0 = op_Multiplication(tiltAngle, __intnl_SystemSingle_4);// 852
+860 JUMP 888
+}
+884 __lcl_tiltX_value_SystemSingle_0 = __const_SystemSingle_0
+896 if (tiltZ) //1064
+{
+__lcl_tiltZ_value_SystemSingle_0 = op_Multiplication(tiltAngle, __intnl_SystemSingle_8);// 1048
+1056 JUMP 1084
+}
+1080 __lcl_tiltZ_value_SystemSingle_0 = __const_SystemSingle_0
+transform.set_localRotation(__intnl_UnityEngineQuaternion_1);// 1172
+1192 return;

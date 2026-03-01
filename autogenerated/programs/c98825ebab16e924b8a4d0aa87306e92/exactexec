@@ -1,0 +1,1053 @@
+using System;
+using UnityEngine;
+using VRC.SDKBase;
+using VRC.Udon;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Boolean __intnl_SystemBoolean_13 = false;
+private Boolean __intnl_SystemBoolean_23 = false;
+private Boolean __intnl_SystemBoolean_33 = false;
+private Boolean __0_isCurrentDay__param = false;
+private Int32 __intnl_SystemInt32_15 = 0;
+private Int32 __intnl_SystemInt32_25 = 0;
+private Boolean __0___0_GrantReward__ret = false;
+private Boolean __0_GrantCurrentDayReward__ret = false;
+private Object __intnl_UnityEngineObject_32 = null;
+private Object __intnl_UnityEngineObject_22 = null;
+private Object __intnl_UnityEngineObject_12 = null;
+private Int32 __lcl_toDay_SystemInt32_0 = 0;
+private Int32 __0_itemId__param = 0;
+private String __const_SystemString_46 = "__0___0_HasLineId__ret";
+private String __const_SystemString_47 = "__6_id__param";
+private String __const_SystemString_44 = "__7_id__param";
+private String __const_SystemString_45 = "__0_HasLineId";
+private String __const_SystemString_42 = "__0_id__param";
+private String __const_SystemString_43 = "__0_AddRodId";
+private String __const_SystemString_40 = "__0_HasRodId";
+private String __const_SystemString_41 = "__0___0_HasRodId__ret";
+private String __const_SystemString_48 = "__0_AddLineId";
+private String __const_SystemString_49 = "__10_id__param";
+private object __intnl_SystemObject_0 = null;
+private Int32 __1_day__param = 0;
+private String __const_SystemString_0 = "RefreshUI";
+private Int32 __0_day__param = 0;
+private String __lcl_todayDate_SystemString_0 = null;
+private Int32 __3_day__param = 0;
+private Int32 __2_day__param = 0;
+private Boolean __intnl_SystemBoolean_16 = false;
+private Boolean __intnl_SystemBoolean_26 = false;
+private Boolean __intnl_SystemBoolean_36 = false;
+private Int32 __const_SystemInt32_11 = 3;
+private Int32 __intnl_SystemInt32_12 = 0;
+private Int32 __intnl_SystemInt32_22 = 0;
+private UInt32[] __gintnl_SystemUInt32Array_0 = System.UInt32[];
+private String __lcl_monthStr_SystemString_0 = null;
+private UInt32 __gintnl_SystemUInt32_9 = 2888;
+private UInt32 __gintnl_SystemUInt32_8 = 2792;
+private UInt32 __gintnl_SystemUInt32_5 = 2200;
+private UInt32 __gintnl_SystemUInt32_4 = 2108;
+private UInt32 __gintnl_SystemUInt32_7 = 2592;
+private UInt32 __gintnl_SystemUInt32_6 = 2372;
+private UInt32 __gintnl_SystemUInt32_1 = 552;
+private UInt32 __gintnl_SystemUInt32_0 = 536;
+private UInt32 __gintnl_SystemUInt32_3 = 2004;
+private UInt32 __gintnl_SystemUInt32_2 = 1476;
+private Boolean __const_SystemBoolean_0 = true;
+private Boolean __const_SystemBoolean_1 = false;
+private Object __intnl_UnityEngineObject_31 = null;
+private Object __intnl_UnityEngineObject_21 = null;
+private Object __intnl_UnityEngineObject_11 = null;
+private Int32 __lcl_fromYear_SystemInt32_0 = 0;
+private Int32 __0_get_CurrentWeek__ret = 0;
+private Boolean __0___0_TryParseDate__ret = false;
+private Int32 __0___0_DaysSinceEpoch__ret = 0;
+private String __const_SystemString_5 = "yyyy-MM-dd";
+private String __lcl_savedDate_SystemString_0 = null;
+private Int32 __lcl_quantity_SystemInt32_0 = 0;
+private UInt32 __gintnl_SystemUInt32_13 = 6116;
+private String __0_get_LastClaimDate__ret = null;
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private VRCPlayerApi onPlayerRestoredPlayer = null;
+private Int32 __lcl_type_SystemInt32_0 = 0;
+private Object __intnl_UnityEngineObject_29 = null;
+private Object __intnl_UnityEngineObject_19 = null;
+private String __const_SystemString_16 = "__5_day__param";
+private String __const_SystemString_17 = "__0_GetDayRewardQuantity";
+private String __const_SystemString_14 = "__0_GetDayRewardItemId";
+private String __const_SystemString_15 = "__0___0_GetDayRewardItemId__ret";
+private String __const_SystemString_12 = "__0___0_GetDayRewardCurrencyAmount__ret";
+private String __const_SystemString_13 = "__4_day__param";
+private String __const_SystemString_10 = "__3_day__param";
+private String __const_SystemString_11 = "__0_GetDayRewardCurrencyAmount";
+private String __const_SystemString_18 = "__0___0_GetDayRewardQuantity__ret";
+private String __const_SystemString_19 = "__3_weekNumber__param";
+private Object __intnl_UnityEngineObject_24 = null;
+private Object __intnl_UnityEngineObject_14 = null;
+private Int64 __refl_typeid = -4830454759577254359;
+private object __intnl_SystemObject_7 = null;
+private Boolean __0___0_ClaimDayReward__ret = false;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_2 = null;
+private Int32 __1_year__param = 0;
+private Boolean __0_get_IsReady__ret = false;
+private Boolean __lcl_primarySuccess_SystemBoolean_0 = false;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Boolean __intnl_SystemBoolean_11 = false;
+private Boolean __intnl_SystemBoolean_21 = false;
+private Boolean __intnl_SystemBoolean_31 = false;
+private Boolean __intnl_SystemBoolean_41 = false;
+private UInt32 __gintnl_SystemUInt32_14 = 7088;
+private Int32 __intnl_SystemInt32_17 = 0;
+private Int32 __intnl_SystemInt32_27 = 0;
+private Int32 __lcl_fromJDN_SystemInt32_0 = 0;
+public UdonBehaviour questInventoryManager;
+private Int32 __lcl_currencyAmount_SystemInt32_0 = 0;
+private String __const_SystemString_66 = "__0___0_GetDayRewardName__ret";
+private String __const_SystemString_67 = "__1_day__param";
+private String __const_SystemString_64 = "__0_day__param";
+private String __const_SystemString_65 = "__0_GetDayRewardName";
+private String __const_SystemString_62 = "__0_AddPet";
+private String __const_SystemString_63 = "__0___0_AddPet__ret";
+private String __const_SystemString_60 = "__0_UnlockSkin";
+private String __const_SystemString_61 = "__0_petId__param";
+private String __const_SystemString_68 = "__0_GetDayRewardIcon";
+private String __const_SystemString_69 = "__0___0_GetDayRewardIcon__ret";
+private object __intnl_SystemObject_2 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_1 = null;
+private String __const_SystemString_2 = "";
+private Boolean isReady = false;
+public UdonBehaviour boatSkinDatabase;
+private Boolean canClaimToday = false;
+private Boolean __intnl_SystemBoolean_19 = false;
+private Boolean __intnl_SystemBoolean_29 = false;
+private Boolean __intnl_SystemBoolean_39 = false;
+private Boolean __intnl_SystemBoolean_14 = false;
+private Boolean __intnl_SystemBoolean_24 = false;
+private Boolean __intnl_SystemBoolean_34 = false;
+private Sprite __0_rewardIcon__param = null;
+private Int32 __const_SystemInt32_13 = 10;
+private String __0_toDate__param = null;
+private Int32 __intnl_SystemInt32_14 = 0;
+private Int32 __intnl_SystemInt32_24 = 0;
+private Int32 __intnl_SystemInt32_19 = 0;
+private object __const_SystemObject_0 = null;
+private String __intnl_SystemString_0 = null;
+private Int32 __0_quantity__param = 0;
+private Boolean __lcl_success_SystemBoolean_1 = false;
+private Boolean __lcl_success_SystemBoolean_0 = false;
+private Object __intnl_UnityEngineObject_33 = null;
+private Object __intnl_UnityEngineObject_23 = null;
+private Object __intnl_UnityEngineObject_13 = null;
+private Int32 __0_currencyAmount__param = 0;
+private object __intnl_SystemObject_1 = null;
+private Int32 __lcl_toYear_SystemInt32_0 = 0;
+private String __const_SystemString_7 = "__2_day__param";
+private Int32 __lcl_toMonth_SystemInt32_0 = 0;
+private UInt32 __gintnl_SystemUInt32_11 = 4644;
+private Boolean __intnl_SystemBoolean_17 = false;
+private Boolean __intnl_SystemBoolean_27 = false;
+private Boolean __intnl_SystemBoolean_37 = false;
+private Int32 __const_SystemInt32_10 = 153;
+private Int32 __intnl_SystemInt32_11 = 0;
+private Int32 __intnl_SystemInt32_21 = 0;
+private Int32 __lcl_bonusCurrency_SystemInt32_0 = 0;
+private Int32 __1_month__param = 0;
+private String __const_SystemString_36 = "__0_itemId__param";
+private String __const_SystemString_37 = "__0_quantity__param";
+private String __const_SystemString_34 = "__2_amount__param";
+private String __const_SystemString_35 = "__0_AddMoney";
+private String __const_SystemString_32 = "__0_GetDay7BonusCurrency";
+private String __const_SystemString_33 = "__0___0_GetDay7BonusCurrency__ret";
+private String __const_SystemString_30 = "__0___0_GetDay7RewardQuantity__ret";
+private String __const_SystemString_31 = "__7_weekNumber__param";
+private String __const_SystemString_38 = "__0_AddQuestItem";
+private String __const_SystemString_39 = "__1_id__param";
+private Object __intnl_UnityEngineObject_26 = null;
+private Object __intnl_UnityEngineObject_16 = null;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private Int32 currentDay = 1;
+private String __const_SystemString_4 = "DLR_CurrentWeek";
+private UInt32 __gintnl_SystemUInt32_12 = 5044;
+private UInt32 __intnl_SystemUInt32_0 = 0;
+private Int32 __0_get_CurrentDay__ret = 0;
+private Int32 __const_SystemInt32_15 = 6;
+private Int32 __0_year__param = 0;
+public UdonBehaviour playerInventoryData;
+private Int32 __lcl_daysSinceLastClaim_SystemInt32_0 = 0;
+private Object __intnl_UnityEngineObject_25 = null;
+private Object __intnl_UnityEngineObject_15 = null;
+private object __intnl_SystemObject_4 = null;
+private String __0_rewardName__param = null;
+private Int32 currentWeek = 1;
+public UdonBehaviour boatDatabase;
+private String __const_SystemString_9 = "__0___0_GetDayRewardType__ret";
+private Boolean __intnl_SystemBoolean_12 = false;
+private Boolean __intnl_SystemBoolean_22 = false;
+private Boolean __intnl_SystemBoolean_32 = false;
+public UdonBehaviour afkPetInventory;
+private Int32 __intnl_SystemInt32_16 = 0;
+private Int32 __intnl_SystemInt32_26 = 0;
+private String __refl_typename = "DailyRewardManager";
+public UdonBehaviour dailyRewardUI;
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Int32 __intnl_SystemInt32_5 = 0;
+private Int32 __intnl_SystemInt32_4 = 0;
+private Int32 __intnl_SystemInt32_7 = 0;
+private Int32 __intnl_SystemInt32_6 = 0;
+private Int32 __intnl_SystemInt32_9 = 0;
+private Int32 __intnl_SystemInt32_8 = 0;
+private Boolean __0_IsCurrentWeekUnique__ret = false;
+private String __const_SystemString_56 = "__0___0_IsBoatUnlocked__ret";
+private String __const_SystemString_57 = "__0_boatId__param";
+private String __const_SystemString_54 = "__1_boatId__param";
+private String __const_SystemString_55 = "__0_IsBoatUnlocked";
+private String __const_SystemString_52 = "__9_id__param";
+private String __const_SystemString_53 = "__0_AddBobberId";
+private String __const_SystemString_50 = "__0_HasBobberId";
+private String __const_SystemString_51 = "__0___0_HasBobberId__ret";
+private String __const_SystemString_58 = "__0_UnlockBoat";
+private String __const_SystemString_59 = "__0_skinId__param";
+private object __intnl_SystemObject_3 = null;
+private Int32 __lcl_fromDay_SystemInt32_0 = 0;
+public Boolean testingUnlockAllDays;
+private String __const_SystemString_1 = "DLR_LastClaimDate";
+private Boolean __0_get_CanClaimToday__ret = false;
+private Boolean __intnl_SystemBoolean_15 = false;
+private Boolean __intnl_SystemBoolean_25 = false;
+private Boolean __intnl_SystemBoolean_35 = false;
+private Int32 __const_SystemInt32_12 = 5;
+private Int32 __intnl_SystemInt32_13 = 0;
+private Int32 __intnl_SystemInt32_23 = 0;
+private Boolean __0_isClaimed__param = false;
+private Int32 __intnl_SystemInt32_18 = 0;
+private Int32 __intnl_SystemInt32_28 = 0;
+private Int32 __0_rewardType__param = 0;
+private String __lcl_dayStr_SystemString_0 = null;
+private String __0_fromDate__param = null;
+private Object __intnl_UnityEngineObject_30 = null;
+private Object __intnl_UnityEngineObject_20 = null;
+private Object __intnl_UnityEngineObject_10 = null;
+private Boolean hasLoadedData = false;
+private Int32 __0___0_CalculateDaysSince__ret = 0;
+private Int32 __lcl_itemId_SystemInt32_0 = 0;
+private String __const_SystemString_6 = "OnRewardClaimed";
+private Int32 __0_month__param = 0;
+private UInt32 __gintnl_SystemUInt32_10 = 4524;
+public UdonBehaviour rewardDatabase;
+private String lastClaimDate = "";
+private Int32 __intnl_SystemInt32_10 = 0;
+private Int32 __intnl_SystemInt32_20 = 0;
+private VRCPlayerApi localPlayer = null;
+private Object __intnl_UnityEngineObject_28 = null;
+private Object __intnl_UnityEngineObject_18 = null;
+private String __const_SystemString_26 = "__0_GetDay7RewardItemId";
+private String __const_SystemString_27 = "__0___0_GetDay7RewardItemId__ret";
+private String __const_SystemString_24 = "__0___0_GetDay7RewardCurrencyAmount__ret";
+private String __const_SystemString_25 = "__4_weekNumber__param";
+private String __const_SystemString_22 = "__5_weekNumber__param";
+private String __const_SystemString_23 = "__0_GetDay7RewardCurrencyAmount";
+private String __const_SystemString_20 = "__0_GetDay7RewardType";
+private String __const_SystemString_21 = "__0___0_GetDay7RewardType__ret";
+private String __const_SystemString_28 = "__6_weekNumber__param";
+private String __const_SystemString_29 = "__0_GetDay7RewardQuantity";
+private Object __intnl_UnityEngineObject_27 = null;
+private Object __intnl_UnityEngineObject_17 = null;
+private object __intnl_SystemObject_6 = null;
+private Int32 __lcl_toJDN_SystemInt32_0 = 0;
+private Int32 __lcl_fromMonth_SystemInt32_0 = 0;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Boolean __intnl_SystemBoolean_20 = false;
+private Boolean __intnl_SystemBoolean_30 = false;
+private Boolean __intnl_SystemBoolean_40 = false;
+private Int32 __lcl_savedDay_SystemInt32_0 = 0;
+private DateTime __lcl_serverTime_SystemDateTime_0 = 01/01/0001 00:00:00;
+private DateTime __lcl_serverTime_SystemDateTime_1 = 01/01/0001 00:00:00;
+private Int32 __const_SystemInt32_9 = 400;
+private Int32 __const_SystemInt32_8 = 100;
+private Int32 __const_SystemInt32_1 = 7;
+private Int32 __const_SystemInt32_0 = 1;
+private Int32 __const_SystemInt32_3 = 999;
+private Int32 __const_SystemInt32_2 = 2;
+private Int32 __const_SystemInt32_5 = 12;
+private Int32 __const_SystemInt32_4 = 0;
+private Int32 __const_SystemInt32_7 = 4;
+private Int32 __const_SystemInt32_6 = 365;
+private String __lcl_yearStr_SystemString_0 = null;
+private Int32 __const_SystemInt32_14 = 8;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+public UdonBehaviour playerStats;
+private Sprite __intnl_UnityEngineSprite_0 = null;
+private String __const_SystemString_76 = "__0_weekNumber__param";
+private String __const_SystemString_77 = "__0_HasUniqueDay7Reward";
+private String __const_SystemString_74 = "__0_GetDay7RewardIcon";
+private String __const_SystemString_75 = "__0___0_GetDay7RewardIcon__ret";
+private String __const_SystemString_72 = "__0___0_GetDay7RewardName__ret";
+private String __const_SystemString_73 = "__2_weekNumber__param";
+private String __const_SystemString_70 = "__1_weekNumber__param";
+private String __const_SystemString_71 = "__0_GetDay7RewardName";
+private String __const_SystemString_78 = "__0___0_HasUniqueDay7Reward__ret";
+private object __intnl_SystemObject_5 = null;
+private object __intnl_SystemObject_8 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_0 = null;
+private String __const_SystemString_3 = "DLR_CurrentDay";
+private String __const_SystemString_8 = "__0_GetDayRewardType";
+private Boolean __intnl_SystemBoolean_18 = false;
+private Boolean __intnl_SystemBoolean_28 = false;
+private Boolean __intnl_SystemBoolean_38 = false;
+private String __0_dateStr__param = null;
+
+
+public void get_IsReady()
+{
+__0_get_IsReady__ret = isReady;
+}
+public void get_CanClaimToday()
+{
+__0_get_CanClaimToday__ret = canClaimToday;
+}
+public void get_CurrentDay()
+{
+__0_get_CurrentDay__ret = currentDay;
+}
+public void get_CurrentWeek()
+{
+__0_get_CurrentWeek__ret = currentWeek;
+}
+public void get_LastClaimDate()
+{
+__0_get_LastClaimDate__ret = lastClaimDate;
+}
+public void _start()
+{
+localPlayer = Networking.LocalPlayer;
+__intnl_UnityEngineObject_0 = rewardDatabase;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_0 == __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_0)
+{
+}
+}
+public void _onPlayerRestored()
+{
+__intnl_SystemBoolean_1 = onPlayerRestoredPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_1)
+{
+}
+else
+{
+__intnl_SystemBoolean_2 = onPlayerRestoredPlayer.isLocal;
+__intnl_SystemBoolean_1 = !__intnl_SystemBoolean_2;
+}
+if (__intnl_SystemBoolean_1)
+{
+return;
+}
+UNDEF_c9882_1132();
+UNDEF_c9882_2268();
+hasLoadedData = __const_SystemBoolean_0;
+isReady = __const_SystemBoolean_0;
+__intnl_UnityEngineObject_2 = dailyRewardUI;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_3 = __intnl_UnityEngineObject_2 != __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_3)
+{
+__intnl_VRCUdonUdonBehaviour_0 = dailyRewardUI;
+dailyRewardUI.SendCustomEvent(__const_SystemString_0);
+}
+}
+private void UNDEF_c9882_1132()
+{
+__intnl_SystemBoolean_4 = PlayerData.TryGetString(localPlayer, __const_SystemString_1, __lcl_savedDate_SystemString_0);
+if (__intnl_SystemBoolean_4)
+{
+lastClaimDate = __lcl_savedDate_SystemString_0;
+}
+else
+{
+lastClaimDate = __const_SystemString_2;
+}
+currentDay = PlayerData.GetInt(localPlayer, __const_SystemString_3);
+__intnl_SystemBoolean_5 = currentDay < __const_SystemInt32_0;
+if (__intnl_SystemBoolean_5)
+{
+}
+else
+{
+__intnl_SystemBoolean_5 = currentDay > __const_SystemInt32_1;
+}
+if (__intnl_SystemBoolean_5)
+{
+currentDay = __const_SystemInt32_0;
+}
+currentWeek = PlayerData.GetInt(localPlayer, __const_SystemString_4);
+__intnl_SystemBoolean_6 = currentWeek < __const_SystemInt32_0;
+if (__intnl_SystemBoolean_6)
+{
+currentWeek = __const_SystemInt32_0;
+}
+}
+private void UNDEF_c9882_1372()
+{
+__intnl_SystemBoolean_7 = localPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_7)
+{
+}
+else
+{
+__intnl_SystemBoolean_8 = localPlayer.isLocal;
+__intnl_SystemBoolean_7 = !__intnl_SystemBoolean_8;
+}
+if (__intnl_SystemBoolean_7)
+{
+return;
+}
+PlayerData.SetString(__const_SystemString_1, lastClaimDate);
+PlayerData.SetInt(__const_SystemString_3, currentDay);
+PlayerData.SetInt(__const_SystemString_4, currentWeek);
+}
+public void ReloadFromPersistence()
+{
+lastClaimDate = __const_SystemString_2;
+currentDay = __const_SystemInt32_0;
+currentWeek = __const_SystemInt32_0;
+canClaimToday = __const_SystemBoolean_1;
+UNDEF_c9882_2268();
+__intnl_UnityEngineObject_4 = dailyRewardUI;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_9 = __intnl_UnityEngineObject_4 != __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_9)
+{
+__intnl_VRCUdonUdonBehaviour_1 = dailyRewardUI;
+dailyRewardUI.SendCustomEvent(__const_SystemString_0);
+}
+}
+private void UNDEF_c9882_2268()
+{
+if (testingUnlockAllDays)
+{
+canClaimToday = __const_SystemBoolean_0;
+return;
+}
+__lcl_serverTime_SystemDateTime_0 = Networking.GetNetworkDateTime();
+__lcl_todayDate_SystemString_0 = __lcl_serverTime_SystemDateTime_0.ToString(__const_SystemString_5);
+__intnl_SystemBoolean_10 = String.IsNullOrEmpty(lastClaimDate);
+if (__intnl_SystemBoolean_10)
+{
+canClaimToday = __const_SystemBoolean_0;
+currentDay = __const_SystemInt32_0;
+currentWeek = __const_SystemInt32_0;
+return;
+}
+__intnl_SystemBoolean_11 = lastClaimDate == __lcl_todayDate_SystemString_0;
+if (__intnl_SystemBoolean_11)
+{
+canClaimToday = __const_SystemBoolean_1;
+return;
+}
+__0_fromDate__param = lastClaimDate;
+__0_toDate__param = __lcl_todayDate_SystemString_0;
+UNDEF_c9882_2496();
+__lcl_daysSinceLastClaim_SystemInt32_0 = __0___0_CalculateDaysSince__ret;
+__intnl_SystemBoolean_12 = __lcl_daysSinceLastClaim_SystemInt32_0 == __const_SystemInt32_0;
+if (__intnl_SystemBoolean_12)
+{
+canClaimToday = __const_SystemBoolean_0;
+UNDEF_c9882_4412();
+}
+else
+{
+__intnl_SystemBoolean_13 = __lcl_daysSinceLastClaim_SystemInt32_0 == __const_SystemInt32_2;
+if (__intnl_SystemBoolean_13)
+{
+canClaimToday = __const_SystemBoolean_0;
+UNDEF_c9882_4412();
+}
+else
+{
+canClaimToday = __const_SystemBoolean_0;
+currentDay = __const_SystemInt32_0;
+}
+}
+}
+private void UNDEF_c9882_2496()
+{
+__0_dateStr__param = __0_fromDate__param;
+__1_year__param = __lcl_fromYear_SystemInt32_0;
+__1_month__param = __lcl_fromMonth_SystemInt32_0;
+__1_day__param = __lcl_fromDay_SystemInt32_0;
+UNDEF_c9882_4000();
+__lcl_fromYear_SystemInt32_0 = __1_year__param;
+__lcl_fromMonth_SystemInt32_0 = __1_month__param;
+__lcl_fromDay_SystemInt32_0 = __1_day__param;
+if (__0___0_TryParseDate__ret)
+{
+UNDEF_c9882_2716();
+}
+__0___0_CalculateDaysSince__ret = __const_SystemInt32_3;
+}
+private void UNDEF_c9882_2716()
+{
+__0_dateStr__param = __0_toDate__param;
+__1_year__param = __lcl_toYear_SystemInt32_0;
+__1_month__param = __lcl_toMonth_SystemInt32_0;
+__1_day__param = __lcl_toDay_SystemInt32_0;
+UNDEF_c9882_4000();
+__lcl_toYear_SystemInt32_0 = __1_year__param;
+__lcl_toMonth_SystemInt32_0 = __1_month__param;
+__lcl_toDay_SystemInt32_0 = __1_day__param;
+if (__0___0_TryParseDate__ret)
+{
+__0_CalculateDaysSince();
+}
+__0___0_CalculateDaysSince__ret = __const_SystemInt32_4;
+}
+private void __0_CalculateDaysSince()
+{
+__0_year__param = __lcl_fromYear_SystemInt32_0;
+__0_month__param = __lcl_fromMonth_SystemInt32_0;
+__0_day__param = __lcl_fromDay_SystemInt32_0;
+__0_DaysSinceEpoch();
+__lcl_fromJDN_SystemInt32_0 = __0___0_DaysSinceEpoch__ret;
+__0_year__param = __lcl_toYear_SystemInt32_0;
+__0_month__param = __lcl_toMonth_SystemInt32_0;
+__0_day__param = __lcl_toDay_SystemInt32_0;
+__0_DaysSinceEpoch();
+__lcl_toJDN_SystemInt32_0 = __0___0_DaysSinceEpoch__ret;
+__0___0_CalculateDaysSince__ret = __lcl_toJDN_SystemInt32_0 - __lcl_fromJDN_SystemInt32_0;
+return;
+}
+private void __0_DaysSinceEpoch()
+{
+__intnl_SystemBoolean_14 = __0_month__param <= __const_SystemInt32_2;
+if (__intnl_SystemBoolean_14)
+{
+__0_year__param = __0_year__param - __const_SystemInt32_0;
+__0_month__param = __0_month__param + __const_SystemInt32_5;
+}
+__intnl_SystemInt32_0 = __const_SystemInt32_6 * __0_year__param;
+__intnl_SystemInt32_1 = __0_year__param / __const_SystemInt32_7;
+__intnl_SystemInt32_2 = __intnl_SystemInt32_0 + __intnl_SystemInt32_1;
+__intnl_SystemInt32_3 = __0_year__param / __const_SystemInt32_8;
+__intnl_SystemInt32_4 = __intnl_SystemInt32_2 - __intnl_SystemInt32_3;
+__intnl_SystemInt32_5 = __0_year__param / __const_SystemInt32_9;
+__intnl_SystemInt32_6 = __intnl_SystemInt32_4 + __intnl_SystemInt32_5;
+__intnl_SystemInt32_7 = __0_month__param - __const_SystemInt32_11;
+__intnl_SystemInt32_8 = __const_SystemInt32_10 * __intnl_SystemInt32_7;
+__intnl_SystemInt32_9 = __intnl_SystemInt32_8 + __const_SystemInt32_2;
+__intnl_SystemInt32_10 = __intnl_SystemInt32_9 / __const_SystemInt32_12;
+__intnl_SystemInt32_11 = __intnl_SystemInt32_6 + __intnl_SystemInt32_10;
+__0___0_DaysSinceEpoch__ret = __intnl_SystemInt32_11 + __0_day__param;
+return;
+}
+private void UNDEF_c9882_4000()
+{
+__1_year__param = __const_SystemInt32_4;
+__1_month__param = __const_SystemInt32_4;
+__1_day__param = __const_SystemInt32_4;
+__intnl_SystemBoolean_15 = String.IsNullOrEmpty(__0_dateStr__param);
+if (__intnl_SystemBoolean_15)
+{
+}
+else
+{
+__intnl_SystemInt32_12 = __0_dateStr__param.Length;
+__intnl_SystemBoolean_15 = __intnl_SystemInt32_12 != __const_SystemInt32_13;
+}
+if (__intnl_SystemBoolean_15)
+{
+__0___0_TryParseDate__ret = __const_SystemBoolean_1;
+return;
+}
+__lcl_yearStr_SystemString_0 = __0_dateStr__param.Substring(__const_SystemInt32_4, __const_SystemInt32_7);
+__lcl_monthStr_SystemString_0 = __0_dateStr__param.Substring(__const_SystemInt32_12, __const_SystemInt32_2);
+__lcl_dayStr_SystemString_0 = __0_dateStr__param.Substring(__const_SystemInt32_14, __const_SystemInt32_2);
+__intnl_SystemBoolean_16 = Int32.TryParse(__lcl_yearStr_SystemString_0, __1_year__param);
+if (__intnl_SystemBoolean_16)
+{
+UNDEF_c9882_4096();
+}
+__0___0_TryParseDate__ret = __const_SystemBoolean_1;
+}
+private void UNDEF_c9882_4096()
+{
+__intnl_SystemBoolean_17 = Int32.TryParse(__lcl_monthStr_SystemString_0, __1_month__param);
+if (__intnl_SystemBoolean_17)
+{
+UNDEF_c9882_4192();
+}
+__0___0_TryParseDate__ret = __const_SystemBoolean_1;
+}
+private void UNDEF_c9882_4192()
+{
+__intnl_SystemBoolean_18 = Int32.TryParse(__lcl_dayStr_SystemString_0, __1_day__param);
+if (__intnl_SystemBoolean_18)
+{
+__0_TryParseDate();
+}
+__0___0_TryParseDate__ret = __const_SystemBoolean_1;
+}
+private void __0_TryParseDate()
+{
+__0___0_TryParseDate__ret = __const_SystemBoolean_0;
+return;
+}
+private void UNDEF_c9882_4412()
+{
+currentDay = currentDay + __const_SystemInt32_0;
+__intnl_SystemBoolean_19 = currentDay > __const_SystemInt32_1;
+if (__intnl_SystemBoolean_19)
+{
+currentDay = __const_SystemInt32_0;
+currentWeek = currentWeek + __const_SystemInt32_0;
+}
+}
+public void ClaimReward()
+{
+if (isReady)
+{
+UNDEF_c9882_4508();
+}
+}
+private void UNDEF_c9882_4508()
+{
+if (canClaimToday)
+{
+UNDEF_c9882_4804();
+}
+}
+private void UNDEF_c9882_4804()
+{
+GrantCurrentDayReward();
+__lcl_success_SystemBoolean_0 = __0_GrantCurrentDayReward__ret;
+if (__lcl_success_SystemBoolean_0)
+{
+break;
+}
+__lcl_serverTime_SystemDateTime_1 = Networking.GetNetworkDateTime();
+lastClaimDate = __lcl_serverTime_SystemDateTime_1.ToString(__const_SystemString_5);
+canClaimToday = __const_SystemBoolean_1;
+UNDEF_c9882_1372();
+__intnl_UnityEngineObject_6 = dailyRewardUI;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_20 = __intnl_UnityEngineObject_6 != __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_20)
+{
+__intnl_VRCUdonUdonBehaviour_2 = dailyRewardUI;
+dailyRewardUI.SendCustomEvent(__const_SystemString_6);
+}
+}
+public void __0_ClaimDayReward()
+{
+__intnl_SystemBoolean_21 = !isReady;
+if (__intnl_SystemBoolean_21)
+{
+}
+else
+{
+__intnl_UnityEngineObject_8 = rewardDatabase;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_21 = __intnl_UnityEngineObject_8 == __intnl_UnityEngineObject_9;
+}
+if (__intnl_SystemBoolean_21)
+{
+__0___0_ClaimDayReward__ret = __const_SystemBoolean_1;
+return;
+}
+__lcl_savedDay_SystemInt32_0 = currentDay;
+currentDay = __2_day__param;
+GrantCurrentDayReward();
+__lcl_success_SystemBoolean_1 = __0_GrantCurrentDayReward__ret;
+currentDay = __lcl_savedDay_SystemInt32_0;
+if (__lcl_success_SystemBoolean_1)
+{
+}
+__0___0_ClaimDayReward__ret = __lcl_success_SystemBoolean_1;
+return;
+}
+private void GrantCurrentDayReward()
+{
+__intnl_UnityEngineObject_10 = rewardDatabase;
+__intnl_UnityEngineObject_11 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_22 = __intnl_UnityEngineObject_10 == __intnl_UnityEngineObject_11;
+if (__intnl_SystemBoolean_22)
+{
+__0_GrantCurrentDayReward__ret = __const_SystemBoolean_1;
+return;
+}
+__intnl_SystemBoolean_23 = currentDay >= __const_SystemInt32_0;
+if (__intnl_SystemBoolean_23)
+{
+__intnl_SystemBoolean_23 = currentDay <= __const_SystemInt32_15;
+}
+if (__intnl_SystemBoolean_23)
+{
+__intnl_SystemInt32_13 = currentDay;
+rewardDatabase.SetProgramVariable(__const_SystemString_7, currentDay);
+rewardDatabase.SendCustomEvent(__const_SystemString_8);
+__intnl_SystemObject_0 = rewardDatabase.GetProgramVariable(__const_SystemString_9);
+__intnl_SystemInt32_15 = Convert.ToInt32(__intnl_SystemObject_0);
+__intnl_SystemInt32_14 = __intnl_SystemInt32_15;
+__lcl_type_SystemInt32_0 = __intnl_SystemInt32_14;
+__intnl_SystemInt32_16 = currentDay;
+rewardDatabase.SetProgramVariable(__const_SystemString_10, currentDay);
+rewardDatabase.SendCustomEvent(__const_SystemString_11);
+__intnl_SystemObject_1 = rewardDatabase.GetProgramVariable(__const_SystemString_12);
+__intnl_SystemInt32_17 = Convert.ToInt32(__intnl_SystemObject_1);
+__lcl_currencyAmount_SystemInt32_0 = __intnl_SystemInt32_17;
+__intnl_SystemInt32_18 = currentDay;
+rewardDatabase.SetProgramVariable(__const_SystemString_13, currentDay);
+rewardDatabase.SendCustomEvent(__const_SystemString_14);
+__intnl_SystemObject_2 = rewardDatabase.GetProgramVariable(__const_SystemString_15);
+__intnl_SystemInt32_19 = Convert.ToInt32(__intnl_SystemObject_2);
+__lcl_itemId_SystemInt32_0 = __intnl_SystemInt32_19;
+__intnl_SystemInt32_20 = currentDay;
+rewardDatabase.SetProgramVariable(__const_SystemString_16, currentDay);
+rewardDatabase.SendCustomEvent(__const_SystemString_17);
+__intnl_SystemObject_3 = rewardDatabase.GetProgramVariable(__const_SystemString_18);
+__intnl_SystemInt32_21 = Convert.ToInt32(__intnl_SystemObject_3);
+__lcl_quantity_SystemInt32_0 = __intnl_SystemInt32_21;
+__0_rewardType__param = __lcl_type_SystemInt32_0;
+__0_currencyAmount__param = __lcl_currencyAmount_SystemInt32_0;
+__0_itemId__param = __lcl_itemId_SystemInt32_0;
+__0_quantity__param = __lcl_quantity_SystemInt32_0;
+__0_GrantReward();
+__0_GrantCurrentDayReward__ret = __0___0_GrantReward__ret;
+return;
+}
+else
+{
+__intnl_SystemBoolean_24 = currentDay == __const_SystemInt32_1;
+if (__intnl_SystemBoolean_24)
+{
+__intnl_SystemInt32_13 = currentWeek;
+rewardDatabase.SetProgramVariable(__const_SystemString_19, currentWeek);
+rewardDatabase.SendCustomEvent(__const_SystemString_20);
+__intnl_SystemObject_0 = rewardDatabase.GetProgramVariable(__const_SystemString_21);
+__intnl_SystemInt32_15 = Convert.ToInt32(__intnl_SystemObject_0);
+__intnl_SystemInt32_14 = __intnl_SystemInt32_15;
+__lcl_type_SystemInt32_0 = __intnl_SystemInt32_14;
+__intnl_SystemInt32_16 = currentWeek;
+rewardDatabase.SetProgramVariable(__const_SystemString_22, currentWeek);
+rewardDatabase.SendCustomEvent(__const_SystemString_23);
+__intnl_SystemObject_1 = rewardDatabase.GetProgramVariable(__const_SystemString_24);
+__intnl_SystemInt32_17 = Convert.ToInt32(__intnl_SystemObject_1);
+__lcl_currencyAmount_SystemInt32_0 = __intnl_SystemInt32_17;
+__intnl_SystemInt32_18 = currentWeek;
+rewardDatabase.SetProgramVariable(__const_SystemString_25, currentWeek);
+rewardDatabase.SendCustomEvent(__const_SystemString_26);
+__intnl_SystemObject_2 = rewardDatabase.GetProgramVariable(__const_SystemString_27);
+__intnl_SystemInt32_19 = Convert.ToInt32(__intnl_SystemObject_2);
+__lcl_itemId_SystemInt32_0 = __intnl_SystemInt32_19;
+__intnl_SystemInt32_20 = currentWeek;
+rewardDatabase.SetProgramVariable(__const_SystemString_28, currentWeek);
+rewardDatabase.SendCustomEvent(__const_SystemString_29);
+__intnl_SystemObject_3 = rewardDatabase.GetProgramVariable(__const_SystemString_30);
+__intnl_SystemInt32_21 = Convert.ToInt32(__intnl_SystemObject_3);
+__lcl_quantity_SystemInt32_0 = __intnl_SystemInt32_21;
+__intnl_SystemInt32_22 = currentWeek;
+rewardDatabase.SetProgramVariable(__const_SystemString_31, currentWeek);
+rewardDatabase.SendCustomEvent(__const_SystemString_32);
+__intnl_SystemObject_4 = rewardDatabase.GetProgramVariable(__const_SystemString_33);
+__intnl_SystemInt32_23 = Convert.ToInt32(__intnl_SystemObject_4);
+__lcl_bonusCurrency_SystemInt32_0 = __intnl_SystemInt32_23;
+__0_rewardType__param = __lcl_type_SystemInt32_0;
+__0_currencyAmount__param = __lcl_currencyAmount_SystemInt32_0;
+__0_itemId__param = __lcl_itemId_SystemInt32_0;
+__0_quantity__param = __lcl_quantity_SystemInt32_0;
+__0_GrantReward();
+__lcl_primarySuccess_SystemBoolean_0 = __0___0_GrantReward__ret;
+__intnl_SystemBoolean_25 = __lcl_bonusCurrency_SystemInt32_0 > __const_SystemInt32_4;
+if (__intnl_SystemBoolean_25)
+{
+__intnl_UnityEngineObject_12 = playerStats;
+__intnl_UnityEngineObject_13 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_25 = __intnl_UnityEngineObject_12 != __intnl_UnityEngineObject_13;
+}
+if (__intnl_SystemBoolean_25)
+{
+playerStats.SetProgramVariable(__const_SystemString_34, __lcl_bonusCurrency_SystemInt32_0);
+playerStats.SendCustomEvent(__const_SystemString_35);
+}
+__0_GrantCurrentDayReward__ret = __lcl_primarySuccess_SystemBoolean_0;
+return;
+}
+}
+__0_GrantCurrentDayReward__ret = __const_SystemBoolean_1;
+return;
+}
+private void __0_GrantReward()
+{
+__intnl_SystemBoolean_26 = __0_rewardType__param >= __const_SystemInt32_4;
+if (__intnl_SystemBoolean_26)
+{
+__intnl_SystemBoolean_27 = __0_rewardType__param <= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_27)
+{
+__intnl_SystemUInt32_0 = __gintnl_SystemUInt32Array_0[__0_rewardType__param];
+__intnl_UnityEngineObject_14 = playerStats;
+__intnl_UnityEngineObject_15 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_28 = __intnl_UnityEngineObject_14 != __intnl_UnityEngineObject_15;
+if (__intnl_SystemBoolean_28)
+{
+__intnl_SystemInt32_24 = __0_currencyAmount__param;
+playerStats.SetProgramVariable(__const_SystemString_34, __0_currencyAmount__param);
+playerStats.SendCustomEvent(__const_SystemString_35);
+__0___0_GrantReward__ret = __const_SystemBoolean_0;
+return;
+}
+__0___0_GrantReward__ret = __const_SystemBoolean_1;
+return;
+__intnl_UnityEngineObject_16 = questInventoryManager;
+__intnl_UnityEngineObject_17 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_29 = __intnl_UnityEngineObject_16 != __intnl_UnityEngineObject_17;
+if (__intnl_SystemBoolean_29)
+{
+__intnl_SystemInt32_24 = __0_itemId__param;
+__intnl_SystemInt32_25 = __0_quantity__param;
+questInventoryManager.SetProgramVariable(__const_SystemString_36, __0_itemId__param);
+questInventoryManager.SetProgramVariable(__const_SystemString_37, __0_quantity__param);
+questInventoryManager.SendCustomEvent(__const_SystemString_38);
+__0___0_GrantReward__ret = __const_SystemBoolean_0;
+return;
+}
+__0___0_GrantReward__ret = __const_SystemBoolean_1;
+return;
+__intnl_UnityEngineObject_18 = playerInventoryData;
+__intnl_UnityEngineObject_19 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_30 = __intnl_UnityEngineObject_18 != __intnl_UnityEngineObject_19;
+if (__intnl_SystemBoolean_30)
+{
+__intnl_SystemInt32_24 = __0_itemId__param;
+playerInventoryData.SetProgramVariable(__const_SystemString_39, __0_itemId__param);
+playerInventoryData.SendCustomEvent(__const_SystemString_40);
+__intnl_SystemObject_5 = playerInventoryData.GetProgramVariable(__const_SystemString_41);
+__intnl_SystemBoolean_31 = (Boolean)__intnl_SystemObject_5;
+if (__intnl_SystemBoolean_31)
+{
+}
+else
+{
+__intnl_SystemInt32_25 = __0_itemId__param;
+playerInventoryData.SetProgramVariable(__const_SystemString_42, __0_itemId__param);
+playerInventoryData.SendCustomEvent(__const_SystemString_43);
+}
+__0___0_GrantReward__ret = __const_SystemBoolean_0;
+return;
+}
+__0___0_GrantReward__ret = __const_SystemBoolean_1;
+return;
+__intnl_UnityEngineObject_20 = playerInventoryData;
+__intnl_UnityEngineObject_21 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_31 = __intnl_UnityEngineObject_20 != __intnl_UnityEngineObject_21;
+if (__intnl_SystemBoolean_31)
+{
+__intnl_SystemInt32_24 = __0_itemId__param;
+playerInventoryData.SetProgramVariable(__const_SystemString_44, __0_itemId__param);
+playerInventoryData.SendCustomEvent(__const_SystemString_45);
+__intnl_SystemObject_5 = playerInventoryData.GetProgramVariable(__const_SystemString_46);
+__intnl_SystemBoolean_32 = (Boolean)__intnl_SystemObject_5;
+if (__intnl_SystemBoolean_32)
+{
+}
+else
+{
+__intnl_SystemInt32_25 = __0_itemId__param;
+playerInventoryData.SetProgramVariable(__const_SystemString_47, __0_itemId__param);
+playerInventoryData.SendCustomEvent(__const_SystemString_48);
+}
+__0___0_GrantReward__ret = __const_SystemBoolean_0;
+return;
+}
+__0___0_GrantReward__ret = __const_SystemBoolean_1;
+return;
+__intnl_UnityEngineObject_22 = playerInventoryData;
+__intnl_UnityEngineObject_23 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_32 = __intnl_UnityEngineObject_22 != __intnl_UnityEngineObject_23;
+if (__intnl_SystemBoolean_32)
+{
+__intnl_SystemInt32_24 = __0_itemId__param;
+playerInventoryData.SetProgramVariable(__const_SystemString_49, __0_itemId__param);
+playerInventoryData.SendCustomEvent(__const_SystemString_50);
+__intnl_SystemObject_5 = playerInventoryData.GetProgramVariable(__const_SystemString_51);
+__intnl_SystemBoolean_33 = (Boolean)__intnl_SystemObject_5;
+if (__intnl_SystemBoolean_33)
+{
+}
+else
+{
+__intnl_SystemInt32_25 = __0_itemId__param;
+playerInventoryData.SetProgramVariable(__const_SystemString_52, __0_itemId__param);
+playerInventoryData.SendCustomEvent(__const_SystemString_53);
+}
+__0___0_GrantReward__ret = __const_SystemBoolean_0;
+return;
+}
+__0___0_GrantReward__ret = __const_SystemBoolean_1;
+return;
+__intnl_UnityEngineObject_24 = boatDatabase;
+__intnl_UnityEngineObject_25 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_33 = __intnl_UnityEngineObject_24 != __intnl_UnityEngineObject_25;
+if (__intnl_SystemBoolean_33)
+{
+__intnl_SystemInt32_24 = __0_itemId__param;
+boatDatabase.SetProgramVariable(__const_SystemString_54, __0_itemId__param);
+boatDatabase.SendCustomEvent(__const_SystemString_55);
+__intnl_SystemObject_5 = boatDatabase.GetProgramVariable(__const_SystemString_56);
+__intnl_SystemBoolean_34 = (Boolean)__intnl_SystemObject_5;
+if (__intnl_SystemBoolean_34)
+{
+}
+else
+{
+__intnl_SystemInt32_25 = __0_itemId__param;
+boatDatabase.SetProgramVariable(__const_SystemString_57, __0_itemId__param);
+boatDatabase.SendCustomEvent(__const_SystemString_58);
+}
+__0___0_GrantReward__ret = __const_SystemBoolean_0;
+return;
+}
+__0___0_GrantReward__ret = __const_SystemBoolean_1;
+return;
+__intnl_UnityEngineObject_26 = boatSkinDatabase;
+__intnl_UnityEngineObject_27 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_34 = __intnl_UnityEngineObject_26 != __intnl_UnityEngineObject_27;
+if (__intnl_SystemBoolean_34)
+{
+__intnl_SystemInt32_24 = __0_itemId__param;
+boatSkinDatabase.SetProgramVariable(__const_SystemString_59, __0_itemId__param);
+boatSkinDatabase.SendCustomEvent(__const_SystemString_60);
+__0___0_GrantReward__ret = __const_SystemBoolean_0;
+return;
+}
+__0___0_GrantReward__ret = __const_SystemBoolean_1;
+return;
+__intnl_UnityEngineObject_28 = afkPetInventory;
+__intnl_UnityEngineObject_29 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_35 = __intnl_UnityEngineObject_28 != __intnl_UnityEngineObject_29;
+if (__intnl_SystemBoolean_35)
+{
+__intnl_SystemInt32_24 = __0_itemId__param;
+afkPetInventory.SetProgramVariable(__const_SystemString_61, __0_itemId__param);
+afkPetInventory.SendCustomEvent(__const_SystemString_62);
+__intnl_SystemObject_5 = afkPetInventory.GetProgramVariable(__const_SystemString_63);
+__intnl_SystemBoolean_36 = (Boolean)__intnl_SystemObject_5;
+__0___0_GrantReward__ret = __const_SystemBoolean_0;
+return;
+}
+__0___0_GrantReward__ret = __const_SystemBoolean_1;
+return;
+}
+}
+__0___0_GrantReward__ret = __const_SystemBoolean_1;
+return;
+}
+public void __0_GetDayRewardInfo()
+{
+__0_rewardName__param = __const_SystemString_2;
+__0_rewardIcon__param = (Sprite)__const_SystemObject_0;
+__0_isClaimed__param = __const_SystemBoolean_1;
+__0_isCurrentDay__param = __const_SystemBoolean_1;
+__intnl_UnityEngineObject_30 = rewardDatabase;
+__intnl_UnityEngineObject_31 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_37 = __intnl_UnityEngineObject_30 == __intnl_UnityEngineObject_31;
+if (__intnl_SystemBoolean_37)
+{
+return;
+}
+if (testingUnlockAllDays)
+{
+__0_isClaimed__param = __const_SystemBoolean_1;
+__0_isCurrentDay__param = __const_SystemBoolean_0;
+}
+else
+{
+if (canClaimToday)
+{
+__0_isClaimed__param = __3_day__param < currentDay;
+__0_isCurrentDay__param = __3_day__param == currentDay;
+}
+else
+{
+__0_isClaimed__param = __3_day__param <= currentDay;
+__0_isCurrentDay__param = __3_day__param == currentDay;
+}
+}
+__intnl_SystemBoolean_38 = __3_day__param >= __const_SystemInt32_0;
+if (__intnl_SystemBoolean_38)
+{
+__intnl_SystemBoolean_38 = __3_day__param <= __const_SystemInt32_15;
+}
+if (__intnl_SystemBoolean_38)
+{
+__intnl_SystemInt32_26 = __3_day__param;
+rewardDatabase.SetProgramVariable(__const_SystemString_64, __3_day__param);
+rewardDatabase.SendCustomEvent(__const_SystemString_65);
+__intnl_SystemObject_6 = rewardDatabase.GetProgramVariable(__const_SystemString_66);
+__intnl_SystemString_0 = (String)__intnl_SystemObject_6;
+__0_rewardName__param = __intnl_SystemString_0;
+__intnl_SystemInt32_27 = __3_day__param;
+rewardDatabase.SetProgramVariable(__const_SystemString_67, __3_day__param);
+rewardDatabase.SendCustomEvent(__const_SystemString_68);
+__intnl_SystemObject_7 = rewardDatabase.GetProgramVariable(__const_SystemString_69);
+__intnl_UnityEngineSprite_0 = (Sprite)__intnl_SystemObject_7;
+__0_rewardIcon__param = __intnl_UnityEngineSprite_0;
+}
+else
+{
+__intnl_SystemBoolean_39 = __3_day__param == __const_SystemInt32_1;
+if (__intnl_SystemBoolean_39)
+{
+__intnl_SystemInt32_26 = currentWeek;
+rewardDatabase.SetProgramVariable(__const_SystemString_70, currentWeek);
+rewardDatabase.SendCustomEvent(__const_SystemString_71);
+__intnl_SystemObject_6 = rewardDatabase.GetProgramVariable(__const_SystemString_72);
+__intnl_SystemString_0 = (String)__intnl_SystemObject_6;
+__0_rewardName__param = __intnl_SystemString_0;
+__intnl_SystemInt32_27 = currentWeek;
+rewardDatabase.SetProgramVariable(__const_SystemString_73, currentWeek);
+rewardDatabase.SendCustomEvent(__const_SystemString_74);
+__intnl_SystemObject_7 = rewardDatabase.GetProgramVariable(__const_SystemString_75);
+__intnl_UnityEngineSprite_0 = (Sprite)__intnl_SystemObject_7;
+__0_rewardIcon__param = __intnl_UnityEngineSprite_0;
+}
+}
+}
+public void IsCurrentWeekUnique()
+{
+__intnl_UnityEngineObject_32 = rewardDatabase;
+__intnl_UnityEngineObject_33 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_40 = __intnl_UnityEngineObject_32 != __intnl_UnityEngineObject_33;
+if (__intnl_SystemBoolean_40)
+{
+__intnl_SystemInt32_28 = currentWeek;
+rewardDatabase.SetProgramVariable(__const_SystemString_76, currentWeek);
+rewardDatabase.SendCustomEvent(__const_SystemString_77);
+__intnl_SystemObject_8 = rewardDatabase.GetProgramVariable(__const_SystemString_78);
+__intnl_SystemBoolean_41 = (Boolean)__intnl_SystemObject_8;
+__intnl_SystemBoolean_40 = __intnl_SystemBoolean_41;
+}
+__0_IsCurrentWeekUnique__ret = __intnl_SystemBoolean_40;
+return;
+}
+}

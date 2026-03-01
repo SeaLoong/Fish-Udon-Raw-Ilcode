@@ -1,0 +1,57 @@
+using System;
+using UnityEngine;
+using VRC.Udon;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private UInt32 __gintnl_SystemUInt32_0 = 248;
+private Boolean __const_SystemBoolean_0 = true;
+private Boolean __0_hasPurchased__param = false;
+private Int64 __refl_typeid = 2187050750464116576;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+public String petName;
+public String description;
+public Boolean isUnlockedByDefault;
+public Sprite petIcon;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+public UdonBehaviour requiredAchievement;
+public GameObject petMeshPrefab;
+private Boolean __0___0_IsOwnedByPlayer__ret = false;
+private String __refl_typename = "AFKPetEntry";
+public Int32 petId;
+public Int32 rarity;
+private Int32 __0_playerLevel__param = 0;
+public Int32 unlockLevel;
+private Int32 __1_playerLevel__param = 0;
+private Int32 __const_SystemInt32_0 = 0;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __0___0_ShouldAutoUnlockAtLevel__ret = false;
+
+
+public void __0_ShouldAutoUnlockAtLevel()
+{
+__intnl_SystemBoolean_0 = unlockLevel > __const_SystemInt32_0;
+if (__intnl_SystemBoolean_0)
+{
+__intnl_SystemBoolean_0 = __0_playerLevel__param >= unlockLevel;
+}
+__0___0_ShouldAutoUnlockAtLevel__ret = __intnl_SystemBoolean_0;
+return;
+}
+public void __0_IsOwnedByPlayer()
+{
+if (isUnlockedByDefault)
+{
+__0___0_IsOwnedByPlayer__ret = __const_SystemBoolean_0;
+return;
+}
+__0_playerLevel__param = __1_playerLevel__param;
+__0_ShouldAutoUnlockAtLevel();
+if (__0___0_ShouldAutoUnlockAtLevel__ret)
+{
+__0___0_IsOwnedByPlayer__ret = __const_SystemBoolean_0;
+return;
+}
+__0___0_IsOwnedByPlayer__ret = __0_hasPurchased__param;
+return;
+}
+}

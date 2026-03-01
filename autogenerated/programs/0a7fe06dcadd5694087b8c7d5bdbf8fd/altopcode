@@ -1,0 +1,90 @@
+void GetStatsString()
+24 __lcl_stats_SystemString_0 = __const_SystemString_0
+52 __0_statValue__param = luck
+56 JUMP 896
+__lcl_stats_SystemString_0 = op_Addition(__intnl_SystemString_1, __lcl_stats_SystemString_0);// 152
+184 __0_statValue__param = strength
+188 JUMP 896
+__lcl_stats_SystemString_0 = op_Addition(__intnl_SystemString_3, __lcl_stats_SystemString_0);// 284
+316 __0_statValue__param = expertise
+320 JUMP 896
+__lcl_stats_SystemString_0 = op_Addition(__intnl_SystemString_5, __lcl_stats_SystemString_0);// 416
+448 __0_statValue__param = attractionRate
+452 JUMP 896
+__lcl_stats_SystemString_0 = op_Addition(__intnl_SystemString_7, __lcl_stats_SystemString_0);// 548
+580 __0_statValue__param = bigCatchRate
+584 JUMP 896
+__lcl_stats_SystemString_0 = op_Addition(__intnl_SystemString_9, __lcl_stats_SystemString_0);// 680
+__lcl_stats_SystemString_0 = op_Addition(__intnl_SystemString_12, __lcl_stats_SystemString_0);// 808
+__0_GetStatsString__ret = "".TrimEnd(__const_SystemChar_0);// 840
+860 return;
+880 return;
+936 if (__intnl_SystemBoolean_0) //1028
+{
+__0___0_GetStatDisplayString__ret = op_Addition(__intnl_SystemString_13, __const_SystemString_11);// 992
+1012 return;
+1020 JUMP 1072
+}
+__0___0_GetStatDisplayString__ret = G_bigCatchRate.ToString();// 1044
+1064 return;
+1084 return;
+void __0_GetStatMultiplier()
+__0___0_GetStatMultiplier__ret = op_Addition(__intnl_SystemSingle_1, __const_SystemSingle_0);// 1180
+1200 return;
+1220 return;
+void GetLuckMultiplier()
+1260 __1_statValue__param = luck
+1264 JUMP 1100
+1288 __0_GetLuckMultiplier__ret = __0___0_GetStatMultiplier__ret
+1304 return;
+1324 return;
+void GetStrengthMultiplier()
+1364 __1_statValue__param = strength
+1368 JUMP 1100
+1392 __0_GetStrengthMultiplier__ret = __0___0_GetStatMultiplier__ret
+1408 return;
+1428 return;
+void GetExpertiseMultiplier()
+1468 __1_statValue__param = expertise
+1472 JUMP 1100
+1496 __0_GetExpertiseMultiplier__ret = __0___0_GetStatMultiplier__ret
+1512 return;
+1532 return;
+void GetAttractionRateMultiplier()
+1572 __1_statValue__param = attractionRate
+1576 JUMP 1100
+1600 __0_GetAttractionRateMultiplier__ret = __0___0_GetStatMultiplier__ret
+1616 return;
+1636 return;
+void GetBigCatchRateMultiplier()
+1676 __1_statValue__param = bigCatchRate
+1680 JUMP 1100
+1704 __0_GetBigCatchRateMultiplier__ret = __0___0_GetStatMultiplier__ret
+1720 return;
+1740 return;
+void GetMaxWeightCapacityKg()
+1772 __0_GetMaxWeightCapacityKg__ret = maxWeightKg
+1788 return;
+1808 return;
+void __0_ShouldAutoUnlockAtLevel()
+1840 __intnl_SystemBoolean_1 = isUnlockedFromLevel
+1852 if (__intnl_SystemBoolean_1) //1892
+{
+}
+1908 __0___0_ShouldAutoUnlockAtLevel__ret = __intnl_SystemBoolean_1
+1924 return;
+1944 return;
+void __0_CanUseRod()
+1968 if (isUnlockedByDefault) //2016
+{
+1992 __0___0_CanUseRod__ret = __const_SystemBoolean_0
+2008 return;
+}
+2024 if (isUnlockedFromLevel) //2084
+{
+__0___0_CanUseRod__ret = op_GreaterThanOrEqual(unlockLevel, __1_playerLevel__param);// 2056
+2076 return;
+}
+2100 __0___0_CanUseRod__ret = __const_SystemBoolean_1
+2116 return;
+2136 return;

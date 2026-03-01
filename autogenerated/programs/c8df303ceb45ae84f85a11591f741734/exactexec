@@ -1,0 +1,38 @@
+using VRC.SDKBase;
+using System;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private VRCPlayerApi __instance_2 = null;
+private Boolean __result_0 = false;
+private Single __impulse_0 = 0f;
+public Single jumpImpulse;
+private VRCPlayerApi __instance_1 = null;
+public Single runSpeed;
+private VRCPlayerApi __instance_3 = null;
+private VRCPlayerApi __instance_0 = null;
+public Single walkSpeed;
+public Single strafeSpeed;
+private object __object_0 = null;
+private Single __speed_0 = 0f;
+private Single __speed_1 = 0f;
+private Single __speed_2 = 0f;
+
+
+public void _start()
+{
+__object_0 = (object)(Networking.LocalPlayer);
+__result_0 = Utilities.IsValid(__object_0);
+if (__result_0)
+{
+__instance_0 = Networking.LocalPlayer;
+__instance_0.SetJumpImpulse(jumpImpulse);
+__instance_1 = __instance_0;
+__instance_0.SetWalkSpeed(walkSpeed);
+__instance_2 = __instance_0;
+__instance_0.SetRunSpeed(runSpeed);
+__instance_3 = __instance_0;
+__instance_0.SetStrafeSpeed(strafeSpeed);
+}
+}
+return;
+}

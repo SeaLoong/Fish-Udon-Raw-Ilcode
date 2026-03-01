@@ -1,0 +1,225 @@
+void _start
+0 PUSH UInt32 __const_SystemUInt32_0
+8 PUSH VRCPlayerApi localPlayer
+16 EXTERN VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi
+24 PUSH VRCPlayerApi localPlayer
+32 PUSH object __const_SystemObject_0
+40 PUSH Boolean __intnl_SystemBoolean_0
+48 EXTERN SystemObject.__op_Inequality__SystemObject_SystemObject__SystemBoolean
+56 PUSH Boolean __intnl_SystemBoolean_0
+64 JUMP_IF_FALSE 88
+72 PUSH UInt32 __gintnl_SystemUInt32_0
+80 JUMP 1000
+88 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+96 COPY
+100 JUMP_INDIRECT 2
+void _update
+108 PUSH UInt32 __const_SystemUInt32_0
+116 PUSH VRCPlayerApi localPlayer
+124 PUSH object __const_SystemObject_0
+132 PUSH Boolean __intnl_SystemBoolean_1
+140 EXTERN SystemObject.__op_Equality__SystemObject_SystemObject__SystemBoolean
+148 PUSH Boolean __intnl_SystemBoolean_1
+156 JUMP_IF_FALSE 184
+164 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+172 COPY
+176 JUMP_INDIRECT 2
+184 PUSH Single __intnl_SystemSingle_0
+192 EXTERN UnityEngineTime.__get_time__SystemSingle
+200 PUSH Single __intnl_SystemSingle_0
+208 PUSH Single lastUpdateTime
+216 PUSH Single __intnl_SystemSingle_1
+224 EXTERN SystemSingle.__op_Subtraction__SystemSingle_SystemSingle__SystemSingle
+232 PUSH Single __intnl_SystemSingle_1
+240 PUSH Single updateInterval
+248 PUSH Boolean __intnl_SystemBoolean_2
+256 EXTERN SystemSingle.__op_GreaterThanOrEqual__SystemSingle_SystemSingle__SystemBoolean
+264 PUSH Boolean __intnl_SystemBoolean_2
+272 JUMP_IF_FALSE 312
+280 PUSH UInt32 __gintnl_SystemUInt32_1
+288 JUMP 356
+296 PUSH Single lastUpdateTime
+304 EXTERN UnityEngineTime.__get_time__SystemSingle
+312 PUSH UInt32 __gintnl_SystemUInt32_2
+320 JUMP 712
+328 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+336 COPY
+340 JUMP_INDIRECT 2
+348 PUSH UInt32 __const_SystemUInt32_0
+356 PUSH UInt32 __gintnl_SystemUInt32_3
+364 JUMP 1108
+372 PUSH Vector3 __0_GetPlayerHeadPosition__ret
+380 PUSH Vector3 __lcl_playerPosition_UnityEngineVector3_0
+388 COPY
+392 PUSH Transform __this_UnityEngineTransform_0
+400 PUSH Vector3 __intnl_UnityEngineVector3_0
+408 EXTERN UnityEngineTransform.__get_position__UnityEngineVector3
+416 PUSH Vector3 __lcl_playerPosition_UnityEngineVector3_0
+424 PUSH Vector3 __intnl_UnityEngineVector3_0
+432 PUSH Vector3 __lcl_lookDirection_UnityEngineVector3_0
+440 EXTERN UnityEngineVector3.__op_Subtraction__UnityEngineVector3_UnityEngineVector3__UnityEngineVector3
+448 PUSH Boolean horizontalOnly
+456 JUMP_IF_FALSE 508
+464 PUSH Vector3 __lcl_lookDirection_UnityEngineVector3_0
+472 PUSH Single __const_SystemSingle_0
+480 EXTERN UnityEngineVector3.__set_y__SystemSingle
+488 PUSH Vector3 __lcl_lookDirection_UnityEngineVector3_0
+496 PUSH Vector3 __intnl_UnityEngineVector3_1
+504 COPY
+508 PUSH Boolean invertDirection
+516 JUMP_IF_FALSE 548
+524 PUSH Vector3 __lcl_lookDirection_UnityEngineVector3_0
+532 PUSH Vector3 __lcl_lookDirection_UnityEngineVector3_0
+540 EXTERN UnityEngineVector3.__op_UnaryNegation__UnityEngineVector3__UnityEngineVector3
+548 PUSH Vector3 __lcl_lookDirection_UnityEngineVector3_0
+556 PUSH Single __intnl_SystemSingle_2
+564 EXTERN UnityEngineVector3.__get_magnitude__SystemSingle
+572 PUSH Single __intnl_SystemSingle_2
+580 PUSH Single __const_SystemSingle_1
+588 PUSH Boolean __intnl_SystemBoolean_3
+596 EXTERN SystemSingle.__op_LessThan__SystemSingle_SystemSingle__SystemBoolean
+604 PUSH Boolean __intnl_SystemBoolean_3
+612 JUMP_IF_FALSE 640
+620 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+628 COPY
+632 JUMP_INDIRECT 2
+640 PUSH Vector3 __lcl_lookDirection_UnityEngineVector3_0
+648 PUSH Quaternion targetRotation
+656 EXTERN UnityEngineQuaternion.__LookRotation__UnityEngineVector3__UnityEngineQuaternion
+664 PUSH Boolean __const_SystemBoolean_0
+672 PUSH Boolean hasTargetRotation
+680 COPY
+684 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+692 COPY
+696 JUMP_INDIRECT 2
+704 PUSH UInt32 __const_SystemUInt32_0
+712 PUSH Boolean hasTargetRotation
+720 JUMP_IF_FALSE 736
+728 JUMP 756
+736 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+744 COPY
+748 JUMP_INDIRECT 2
+756 PUSH Single rotationSpeed
+764 PUSH Single __const_SystemSingle_0
+772 PUSH Boolean __intnl_SystemBoolean_4
+780 EXTERN SystemSingle.__op_GreaterThan__SystemSingle_SystemSingle__SystemBoolean
+788 PUSH Boolean __intnl_SystemBoolean_4
+796 JUMP_IF_FALSE 948
+804 PUSH Transform __this_UnityEngineTransform_0
+812 PUSH Quaternion __intnl_UnityEngineQuaternion_0
+820 EXTERN UnityEngineTransform.__get_rotation__UnityEngineQuaternion
+828 PUSH Single __intnl_SystemSingle_3
+836 EXTERN UnityEngineTime.__get_deltaTime__SystemSingle
+844 PUSH Single rotationSpeed
+852 PUSH Single __intnl_SystemSingle_3
+860 PUSH Single __intnl_SystemSingle_4
+868 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+876 PUSH Quaternion __intnl_UnityEngineQuaternion_0
+884 PUSH Quaternion targetRotation
+892 PUSH Single __intnl_SystemSingle_4
+900 PUSH Quaternion __intnl_UnityEngineQuaternion_1
+908 EXTERN UnityEngineQuaternion.__Slerp__UnityEngineQuaternion_UnityEngineQuaternion_SystemSingle__UnityEngineQuaternion
+916 PUSH Transform __this_UnityEngineTransform_0
+924 PUSH Quaternion __intnl_UnityEngineQuaternion_1
+932 EXTERN UnityEngineTransform.__set_rotation__UnityEngineQuaternion__SystemVoid
+940 JUMP 972
+948 PUSH Transform __this_UnityEngineTransform_0
+956 PUSH Quaternion targetRotation
+964 EXTERN UnityEngineTransform.__set_rotation__UnityEngineQuaternion__SystemVoid
+972 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+980 COPY
+984 JUMP_INDIRECT 2
+992 PUSH UInt32 __const_SystemUInt32_0
+1000 PUSH UInt32 __gintnl_SystemUInt32_4
+1008 JUMP 356
+1016 PUSH Single rotationSpeed
+1024 PUSH Single __const_SystemSingle_0
+1032 PUSH Boolean __intnl_SystemBoolean_5
+1040 EXTERN SystemSingle.__op_LessThanOrEqual__SystemSingle_SystemSingle__SystemBoolean
+1048 PUSH Boolean __intnl_SystemBoolean_5
+1056 JUMP_IF_FALSE 1080
+1064 PUSH UInt32 __gintnl_SystemUInt32_5
+1072 JUMP 712
+1080 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1088 COPY
+1092 JUMP_INDIRECT 2
+1100 PUSH UInt32 __const_SystemUInt32_0
+1108 PUSH VRCPlayerApi localPlayer
+1116 PUSH TrackingDataType __const_VRCSDKBaseVRCPlayerApiTrackingDataType_0
+1124 PUSH TrackingData __lcl_headData_VRCSDKBaseVRCPlayerApiTrackingData_0
+1132 EXTERN VRCSDKBaseVRCPlayerApi.__GetTrackingData__VRCSDKBaseVRCPlayerApiTrackingDataType__VRCSDKBaseVRCPlayerApiTrackingData
+1140 PUSH TrackingData __lcl_headData_VRCSDKBaseVRCPlayerApiTrackingData_0
+1148 PUSH Vector3 __intnl_UnityEngineVector3_2
+1156 EXTERN VRCSDKBaseVRCPlayerApiTrackingData.__get_position__UnityEngineVector3
+1164 PUSH Vector3 __intnl_UnityEngineVector3_2
+1172 PUSH Vector3 __const_UnityEngineVector3_0
+1180 PUSH Boolean __intnl_SystemBoolean_6
+1188 EXTERN UnityEngineVector3.__op_Inequality__UnityEngineVector3_UnityEngineVector3__SystemBoolean
+1196 PUSH Boolean __intnl_SystemBoolean_6
+1204 JUMP_IF_FALSE 1256
+1212 PUSH TrackingData __lcl_headData_VRCSDKBaseVRCPlayerApiTrackingData_0
+1220 PUSH Vector3 __0_GetPlayerHeadPosition__ret
+1228 EXTERN VRCSDKBaseVRCPlayerApiTrackingData.__get_position__UnityEngineVector3
+1236 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1244 COPY
+1248 JUMP_INDIRECT 2
+1256 PUSH VRCPlayerApi localPlayer
+1264 PUSH Vector3 __lcl_playerPos_UnityEngineVector3_0
+1272 EXTERN VRCSDKBaseVRCPlayerApi.__GetPosition__UnityEngineVector3
+1280 PUSH Vector3 __lcl_playerPos_UnityEngineVector3_0
+1288 PUSH Single __intnl_SystemSingle_5
+1296 EXTERN UnityEngineVector3.__get_y__SystemSingle
+1304 PUSH Single __intnl_SystemSingle_5
+1312 PUSH Single __const_SystemSingle_2
+1320 PUSH Single __intnl_SystemSingle_6
+1328 EXTERN SystemSingle.__op_Addition__SystemSingle_SystemSingle__SystemSingle
+1336 PUSH Vector3 __lcl_playerPos_UnityEngineVector3_0
+1344 PUSH Single __intnl_SystemSingle_6
+1352 EXTERN UnityEngineVector3.__set_y__SystemSingle
+1360 PUSH Vector3 __lcl_playerPos_UnityEngineVector3_0
+1368 PUSH Vector3 __intnl_UnityEngineVector3_3
+1376 COPY
+1380 PUSH Vector3 __lcl_playerPos_UnityEngineVector3_0
+1388 PUSH Vector3 __0_GetPlayerHeadPosition__ret
+1396 COPY
+1400 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1408 COPY
+1412 JUMP_INDIRECT 2
+1420 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1428 COPY
+1432 JUMP_INDIRECT 2
+void __0_SetHorizontalOnly
+1440 PUSH UInt32 __const_SystemUInt32_0
+1448 PUSH Boolean __0_horizontal__param
+1456 PUSH Boolean horizontalOnly
+1464 COPY
+1468 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1476 COPY
+1480 JUMP_INDIRECT 2
+void __0_SetInvertDirection
+1488 PUSH UInt32 __const_SystemUInt32_0
+1496 PUSH Boolean __0_invert__param
+1504 PUSH Boolean invertDirection
+1512 COPY
+1516 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1524 COPY
+1528 JUMP_INDIRECT 2
+void __0_SetRotationSpeed
+1536 PUSH UInt32 __const_SystemUInt32_0
+1544 PUSH Single __const_SystemSingle_0
+1552 PUSH Single __0_speed__param
+1560 PUSH Single rotationSpeed
+1568 EXTERN UnityEngineMathf.__Max__SystemSingle_SystemSingle__SystemSingle
+1576 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1584 COPY
+1588 JUMP_INDIRECT 2
+void __0_SetUpdateInterval
+1596 PUSH UInt32 __const_SystemUInt32_0
+1604 PUSH Single __0_interval__param
+1612 PUSH Single __const_SystemSingle_3
+1620 PUSH Single __const_SystemSingle_4
+1628 PUSH Single updateInterval
+1636 EXTERN UnityEngineMathf.__Clamp__SystemSingle_SystemSingle_SystemSingle__SystemSingle
+1644 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1652 COPY
+1656 JUMP_INDIRECT 2

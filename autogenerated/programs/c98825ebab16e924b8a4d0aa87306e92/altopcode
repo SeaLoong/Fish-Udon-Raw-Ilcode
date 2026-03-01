@@ -1,0 +1,567 @@
+void get_IsReady()
+24 __0_get_IsReady__ret = isReady
+40 return;
+void get_CanClaimToday()
+72 __0_get_CanClaimToday__ret = canClaimToday
+88 return;
+void get_CurrentDay()
+120 __0_get_CurrentDay__ret = currentDay
+136 return;
+void get_CurrentWeek()
+168 __0_get_CurrentWeek__ret = currentWeek
+184 return;
+void get_LastClaimDate()
+216 __0_get_LastClaimDate__ret = lastClaimDate
+232 return;
+void _start()
+localPlayer = get_LocalPlayer();// 256
+280 __intnl_UnityEngineObject_0 = rewardDatabase
+300 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+344 if (__intnl_SystemBoolean_0) //352
+{
+}
+364 return;
+void _onPlayerRestored()
+420 if (__intnl_SystemBoolean_1) //436
+{
+428 JUMP 484
+}
+492 if (__intnl_SystemBoolean_1) //520
+{
+512 return;
+}
+528 JUMP 752
+544 JUMP 1636
+568 hasLoadedData = __const_SystemBoolean_0
+588 isReady = __const_SystemBoolean_0
+608 __intnl_UnityEngineObject_2 = dailyRewardUI
+628 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+672 if (__intnl_SystemBoolean_3) //724
+{
+704 __intnl_VRCUdonUdonBehaviour_0 = dailyRewardUI
+G_dailyRewardUI.SendCustomEvent(__const_SystemString_0);// 716
+}
+736 return;
+800 if (__intnl_SystemBoolean_4) //836
+{
+824 lastClaimDate = __lcl_savedDate_SystemString_0
+828 JUMP 856
+}
+852 lastClaimDate = __const_SystemString_2
+currentDay = GetInt(__const_SystemString_3, localPlayer);// 880
+928 if (__intnl_SystemBoolean_5) //944
+{
+936 JUMP 976
+}
+984 if (__intnl_SystemBoolean_5) //1012
+{
+1008 currentDay = __const_SystemInt32_0
+}
+currentWeek = GetInt(__const_SystemString_4, localPlayer);// 1036
+1084 if (__intnl_SystemBoolean_6) //1112
+{
+1108 currentWeek = __const_SystemInt32_0
+}
+1124 return;
+1180 if (__intnl_SystemBoolean_7) //1196
+{
+1188 JUMP 1244
+}
+1252 if (__intnl_SystemBoolean_7) //1280
+{
+1272 return;
+}
+SetString(lastClaimDate, __const_SystemString_1);// 1296
+SetInt(currentDay, __const_SystemString_3);// 1320
+SetInt(currentWeek, __const_SystemString_4);// 1344
+1364 return;
+void ReloadFromPersistence()
+1396 lastClaimDate = __const_SystemString_2
+1416 currentDay = __const_SystemInt32_0
+1436 currentWeek = __const_SystemInt32_0
+1456 canClaimToday = __const_SystemBoolean_1
+1468 JUMP 1636
+1492 __intnl_UnityEngineObject_4 = dailyRewardUI
+1512 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+1556 if (__intnl_SystemBoolean_9) //1608
+{
+1588 __intnl_VRCUdonUdonBehaviour_1 = dailyRewardUI
+G_dailyRewardUI.SendCustomEvent(__const_SystemString_0);// 1600
+}
+1620 return;
+1644 if (testingUnlockAllDays) //1692
+{
+1668 canClaimToday = __const_SystemBoolean_0
+1684 return;
+}
+__lcl_serverTime_SystemDateTime_0 = GetNetworkDateTime();// 1700
+__lcl_todayDate_SystemString_0 = L_serverTime.ToString(__const_SystemString_5);// 1732
+1772 if (__intnl_SystemBoolean_10) //1860
+{
+1796 canClaimToday = __const_SystemBoolean_0
+1816 currentDay = __const_SystemInt32_0
+1836 currentWeek = __const_SystemInt32_0
+1852 return;
+}
+1900 if (__intnl_SystemBoolean_11) //1948
+{
+1924 canClaimToday = __const_SystemBoolean_1
+1940 return;
+}
+1972 __0_fromDate__param = lastClaimDate
+1992 __0_toDate__param = __lcl_todayDate_SystemString_0
+1996 JUMP 2276
+2020 __lcl_daysSinceLastClaim_SystemInt32_0 = __0___0_CalculateDaysSince__ret
+2064 if (__intnl_SystemBoolean_12) //2116
+{
+2088 canClaimToday = __const_SystemBoolean_0
+2100 JUMP 4260
+2108 JUMP 2248
+}
+2156 if (__intnl_SystemBoolean_13) //2208
+{
+2180 canClaimToday = __const_SystemBoolean_0
+2192 JUMP 4260
+2200 JUMP 2248
+}
+2224 canClaimToday = __const_SystemBoolean_0
+2244 currentDay = __const_SystemInt32_0
+2260 return;
+2300 __0_dateStr__param = __0_fromDate__param
+2320 __1_year__param = __lcl_fromYear_SystemInt32_0
+2340 __1_month__param = __lcl_fromMonth_SystemInt32_0
+2360 __1_day__param = __lcl_fromDay_SystemInt32_0
+2364 JUMP 3564
+2388 __lcl_fromYear_SystemInt32_0 = __1_year__param
+2408 __lcl_fromMonth_SystemInt32_0 = __1_month__param
+2428 __lcl_fromDay_SystemInt32_0 = __1_day__param
+2440 if (__0___0_TryParseDate__ret) //2456
+{
+2448 JUMP 2496
+}
+2472 __0___0_CalculateDaysSince__ret = __const_SystemInt32_3
+2488 return;
+2520 __0_dateStr__param = __0_toDate__param
+2540 __1_year__param = __lcl_toYear_SystemInt32_0
+2560 __1_month__param = __lcl_toMonth_SystemInt32_0
+2580 __1_day__param = __lcl_toDay_SystemInt32_0
+2584 JUMP 3564
+2608 __lcl_toYear_SystemInt32_0 = __1_year__param
+2628 __lcl_toMonth_SystemInt32_0 = __1_month__param
+2648 __lcl_toDay_SystemInt32_0 = __1_day__param
+2660 if (__0___0_TryParseDate__ret) //2676
+{
+2668 JUMP 2716
+}
+2692 __0___0_CalculateDaysSince__ret = __const_SystemInt32_4
+2708 return;
+2740 __0_year__param = __lcl_fromYear_SystemInt32_0
+2760 __0_month__param = __lcl_fromMonth_SystemInt32_0
+2780 __0_day__param = __lcl_fromDay_SystemInt32_0
+2784 JUMP 2988
+2808 __lcl_fromJDN_SystemInt32_0 = __0___0_DaysSinceEpoch__ret
+2836 __0_year__param = __lcl_toYear_SystemInt32_0
+2856 __0_month__param = __lcl_toMonth_SystemInt32_0
+2876 __0_day__param = __lcl_toDay_SystemInt32_0
+2880 JUMP 2988
+2904 __lcl_toJDN_SystemInt32_0 = __0___0_DaysSinceEpoch__ret
+__0___0_CalculateDaysSince__ret = op_Subtraction(__lcl_fromJDN_SystemInt32_0, __lcl_toJDN_SystemInt32_0);// 2932
+2952 return;
+2972 return;
+3028 if (__intnl_SystemBoolean_14) //3100
+{
+__0_year__param = op_Subtraction(__const_SystemInt32_0, __0_year__param);// 3060
+__0_month__param = op_Addition(__const_SystemInt32_5, __0_month__param);// 3092
+}
+__0___0_DaysSinceEpoch__ret = op_Addition(__0_day__param, __intnl_SystemInt32_11);// 3508
+3528 return;
+3548 return;
+3580 __1_year__param = __const_SystemInt32_4
+3600 __1_month__param = __const_SystemInt32_4
+3620 __1_day__param = __const_SystemInt32_4
+3656 if (__intnl_SystemBoolean_15) //3672
+{
+3664 JUMP 3728
+}
+3736 if (__intnl_SystemBoolean_15) //3784
+{
+3760 __0___0_TryParseDate__ret = __const_SystemBoolean_1
+3776 return;
+}
+__lcl_yearStr_SystemString_0 = L_todayDate.Substring(__const_SystemInt32_7, __const_SystemInt32_4);// 3816
+__lcl_monthStr_SystemString_0 = L_todayDate.Substring(__const_SystemInt32_2, __const_SystemInt32_12);// 3856
+__lcl_dayStr_SystemString_0 = L_todayDate.Substring(__const_SystemInt32_2, __const_SystemInt32_14);// 3896
+3944 if (__intnl_SystemBoolean_16) //3960
+{
+3952 JUMP 4000
+}
+3976 __0___0_TryParseDate__ret = __const_SystemBoolean_1
+3992 return;
+4040 if (__intnl_SystemBoolean_17) //4056
+{
+4048 JUMP 4096
+}
+4072 __0___0_TryParseDate__ret = __const_SystemBoolean_1
+4088 return;
+4136 if (__intnl_SystemBoolean_18) //4152
+{
+4144 JUMP 4192
+}
+4168 __0___0_TryParseDate__ret = __const_SystemBoolean_1
+4184 return;
+4208 __0___0_TryParseDate__ret = __const_SystemBoolean_0
+4224 return;
+4244 return;
+currentDay = op_Addition(__const_SystemInt32_0, currentDay);// 4284
+4332 if (__intnl_SystemBoolean_19) //4392
+{
+4356 currentDay = __const_SystemInt32_0
+currentWeek = op_Addition(__const_SystemInt32_0, currentWeek);// 4384
+}
+4404 return;
+void ClaimReward()
+4428 if (isReady) //4444
+{
+4436 JUMP 4464
+}
+4456 return;
+4472 if (canClaimToday) //4488
+{
+4480 JUMP 4508
+}
+4500 return;
+4516 JUMP 5168
+4540 __lcl_success_SystemBoolean_0 = __0_GrantCurrentDayReward__ret
+4552 if (__lcl_success_SystemBoolean_0) //4784
+{
+__lcl_serverTime_SystemDateTime_1 = GetNetworkDateTime();// 4568
+lastClaimDate = L_serverTime.ToString(__const_SystemString_5);// 4600
+4624 canClaimToday = __const_SystemBoolean_1
+4636 JUMP 1140
+4660 __intnl_UnityEngineObject_6 = dailyRewardUI
+4680 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+4724 if (__intnl_SystemBoolean_20) //4776
+{
+4756 __intnl_VRCUdonUdonBehaviour_2 = dailyRewardUI
+G_dailyRewardUI.SendCustomEvent(__const_SystemString_6);// 4768
+}
+4776 JUMP 4784
+}
+4796 return;
+void __0_ClaimDayReward()
+4844 if (__intnl_SystemBoolean_21) //4860
+{
+4852 JUMP 4932
+}
+4876 __intnl_UnityEngineObject_8 = rewardDatabase
+4896 __intnl_UnityEngineObject_9 = __const_SystemObject_0
+4940 if (__intnl_SystemBoolean_21) //4988
+{
+4964 __0___0_ClaimDayReward__ret = __const_SystemBoolean_1
+4980 return;
+}
+5004 __lcl_savedDay_SystemInt32_0 = currentDay
+5024 currentDay = __2_day__param
+5036 JUMP 5168
+5060 __lcl_success_SystemBoolean_1 = __0_GrantCurrentDayReward__ret
+5080 currentDay = __lcl_savedDay_SystemInt32_0
+5092 if (__lcl_success_SystemBoolean_1) //5100
+{
+}
+5116 __0___0_ClaimDayReward__ret = __lcl_success_SystemBoolean_1
+5132 return;
+5152 return;
+5184 __intnl_UnityEngineObject_10 = rewardDatabase
+5204 __intnl_UnityEngineObject_11 = __const_SystemObject_0
+5248 if (__intnl_SystemBoolean_22) //5296
+{
+5272 __0_GrantCurrentDayReward__ret = __const_SystemBoolean_1
+5288 return;
+}
+5336 if (__intnl_SystemBoolean_23) //5376
+{
+}
+5384 if (__intnl_SystemBoolean_23) //6164
+{
+5408 __intnl_SystemInt32_13 = currentDay
+G_rewardDatabase.SetProgramVariable(currentDay, __const_SystemString_7);// 5436
+G_rewardDatabase.SendCustomEvent(__const_SystemString_8);// 5460
+5540 __intnl_SystemInt32_14 = __intnl_SystemInt32_15
+5560 __lcl_type_SystemInt32_0 = __intnl_SystemInt32_14
+5580 __intnl_SystemInt32_16 = currentDay
+G_rewardDatabase.SetProgramVariable(currentDay, __const_SystemString_10);// 5608
+G_rewardDatabase.SendCustomEvent(__const_SystemString_11);// 5632
+5712 __lcl_currencyAmount_SystemInt32_0 = __intnl_SystemInt32_17
+5732 __intnl_SystemInt32_18 = currentDay
+G_rewardDatabase.SetProgramVariable(currentDay, __const_SystemString_13);// 5760
+G_rewardDatabase.SendCustomEvent(__const_SystemString_14);// 5784
+5864 __lcl_itemId_SystemInt32_0 = __intnl_SystemInt32_19
+5884 __intnl_SystemInt32_20 = currentDay
+G_rewardDatabase.SetProgramVariable(currentDay, __const_SystemString_16);// 5912
+G_rewardDatabase.SendCustomEvent(__const_SystemString_17);// 5936
+6016 __lcl_quantity_SystemInt32_0 = __intnl_SystemInt32_21
+6044 __0_rewardType__param = __lcl_type_SystemInt32_0
+6064 __0_currencyAmount__param = __lcl_currencyAmount_SystemInt32_0
+6084 __0_itemId__param = __lcl_itemId_SystemInt32_0
+6104 __0_quantity__param = __lcl_quantity_SystemInt32_0
+6108 JUMP 7408
+6132 __0_GrantCurrentDayReward__ret = __0___0_GrantReward__ret
+6148 return;
+6156 JUMP 7340
+}
+6204 if (__intnl_SystemBoolean_24) //7340
+{
+6228 __intnl_SystemInt32_13 = currentWeek
+G_rewardDatabase.SetProgramVariable(currentWeek, __const_SystemString_19);// 6256
+G_rewardDatabase.SendCustomEvent(__const_SystemString_20);// 6280
+6360 __intnl_SystemInt32_14 = __intnl_SystemInt32_15
+6380 __lcl_type_SystemInt32_0 = __intnl_SystemInt32_14
+6400 __intnl_SystemInt32_16 = currentWeek
+G_rewardDatabase.SetProgramVariable(currentWeek, __const_SystemString_22);// 6428
+G_rewardDatabase.SendCustomEvent(__const_SystemString_23);// 6452
+6532 __lcl_currencyAmount_SystemInt32_0 = __intnl_SystemInt32_17
+6552 __intnl_SystemInt32_18 = currentWeek
+G_rewardDatabase.SetProgramVariable(currentWeek, __const_SystemString_25);// 6580
+G_rewardDatabase.SendCustomEvent(__const_SystemString_26);// 6604
+6684 __lcl_itemId_SystemInt32_0 = __intnl_SystemInt32_19
+6704 __intnl_SystemInt32_20 = currentWeek
+G_rewardDatabase.SetProgramVariable(currentWeek, __const_SystemString_28);// 6732
+G_rewardDatabase.SendCustomEvent(__const_SystemString_29);// 6756
+6836 __lcl_quantity_SystemInt32_0 = __intnl_SystemInt32_21
+6856 __intnl_SystemInt32_22 = currentWeek
+G_rewardDatabase.SetProgramVariable(currentWeek, __const_SystemString_31);// 6884
+G_rewardDatabase.SendCustomEvent(__const_SystemString_32);// 6908
+6988 __lcl_bonusCurrency_SystemInt32_0 = __intnl_SystemInt32_23
+7016 __0_rewardType__param = __lcl_type_SystemInt32_0
+7036 __0_currencyAmount__param = __lcl_currencyAmount_SystemInt32_0
+7056 __0_itemId__param = __lcl_itemId_SystemInt32_0
+7076 __0_quantity__param = __lcl_quantity_SystemInt32_0
+7080 JUMP 7408
+7104 __lcl_primarySuccess_SystemBoolean_0 = __0___0_GrantReward__ret
+7148 if (__intnl_SystemBoolean_25) //7228
+{
+7172 __intnl_UnityEngineObject_12 = playerStats
+7192 __intnl_UnityEngineObject_13 = __const_SystemObject_0
+}
+7236 if (__intnl_SystemBoolean_25) //7300
+{
+G_playerStats.SetProgramVariable(__lcl_bonusCurrency_SystemInt32_0, __const_SystemString_34);// 7268
+G_playerStats.SendCustomEvent(__const_SystemString_35);// 7292
+}
+7316 __0_GrantCurrentDayReward__ret = __lcl_primarySuccess_SystemBoolean_0
+7332 return;
+}
+7356 __0_GrantCurrentDayReward__ret = __const_SystemBoolean_1
+7372 return;
+7392 return;
+7448 if (__intnl_SystemBoolean_26) //10208
+{
+7496 if (__intnl_SystemBoolean_27) //10208
+{
+7536 return;
+7560 __intnl_UnityEngineObject_14 = playerStats
+7580 __intnl_UnityEngineObject_15 = __const_SystemObject_0
+7624 if (__intnl_SystemBoolean_28) //7748
+{
+7648 __intnl_SystemInt32_24 = __0_currencyAmount__param
+G_playerStats.SetProgramVariable(__0_currencyAmount__param, __const_SystemString_34);// 7676
+G_playerStats.SendCustomEvent(__const_SystemString_35);// 7700
+7724 __0___0_GrantReward__ret = __const_SystemBoolean_0
+7740 return;
+}
+7764 __0___0_GrantReward__ret = __const_SystemBoolean_1
+7780 return;
+7804 __intnl_UnityEngineObject_16 = questInventoryManager
+7824 __intnl_UnityEngineObject_17 = __const_SystemObject_0
+7868 if (__intnl_SystemBoolean_29) //8044
+{
+7892 __intnl_SystemInt32_24 = __0_itemId__param
+7912 __intnl_SystemInt32_25 = __0_quantity__param
+G_questInventoryManager.SetProgramVariable(__0_itemId__param, __const_SystemString_36);// 7940
+G_questInventoryManager.SetProgramVariable(__0_quantity__param, __const_SystemString_37);// 7972
+G_questInventoryManager.SendCustomEvent(__const_SystemString_38);// 7996
+8020 __0___0_GrantReward__ret = __const_SystemBoolean_0
+8036 return;
+}
+8060 __0___0_GrantReward__ret = __const_SystemBoolean_1
+8076 return;
+8100 __intnl_UnityEngineObject_18 = playerInventoryData
+8120 __intnl_UnityEngineObject_19 = __const_SystemObject_0
+8164 if (__intnl_SystemBoolean_30) //8440
+{
+8188 __intnl_SystemInt32_24 = __0_itemId__param
+G_playerInventoryData.SetProgramVariable(__0_itemId__param, __const_SystemString_39);// 8216
+G_playerInventoryData.SendCustomEvent(__const_SystemString_40);// 8240
+8296 __intnl_SystemBoolean_31 = __intnl_SystemObject_5
+8308 if (__intnl_SystemBoolean_31) //8324
+{
+8316 JUMP 8400
+}
+8340 __intnl_SystemInt32_25 = __0_itemId__param
+G_playerInventoryData.SetProgramVariable(__0_itemId__param, __const_SystemString_42);// 8368
+G_playerInventoryData.SendCustomEvent(__const_SystemString_43);// 8392
+8416 __0___0_GrantReward__ret = __const_SystemBoolean_0
+8432 return;
+}
+8456 __0___0_GrantReward__ret = __const_SystemBoolean_1
+8472 return;
+8496 __intnl_UnityEngineObject_20 = playerInventoryData
+8516 __intnl_UnityEngineObject_21 = __const_SystemObject_0
+8560 if (__intnl_SystemBoolean_31) //8836
+{
+8584 __intnl_SystemInt32_24 = __0_itemId__param
+G_playerInventoryData.SetProgramVariable(__0_itemId__param, __const_SystemString_44);// 8612
+G_playerInventoryData.SendCustomEvent(__const_SystemString_45);// 8636
+8692 __intnl_SystemBoolean_32 = __intnl_SystemObject_5
+8704 if (__intnl_SystemBoolean_32) //8720
+{
+8712 JUMP 8796
+}
+8736 __intnl_SystemInt32_25 = __0_itemId__param
+G_playerInventoryData.SetProgramVariable(__0_itemId__param, __const_SystemString_47);// 8764
+G_playerInventoryData.SendCustomEvent(__const_SystemString_48);// 8788
+8812 __0___0_GrantReward__ret = __const_SystemBoolean_0
+8828 return;
+}
+8852 __0___0_GrantReward__ret = __const_SystemBoolean_1
+8868 return;
+8892 __intnl_UnityEngineObject_22 = playerInventoryData
+8912 __intnl_UnityEngineObject_23 = __const_SystemObject_0
+8956 if (__intnl_SystemBoolean_32) //9232
+{
+8980 __intnl_SystemInt32_24 = __0_itemId__param
+G_playerInventoryData.SetProgramVariable(__0_itemId__param, __const_SystemString_49);// 9008
+G_playerInventoryData.SendCustomEvent(__const_SystemString_50);// 9032
+9088 __intnl_SystemBoolean_33 = __intnl_SystemObject_5
+9100 if (__intnl_SystemBoolean_33) //9116
+{
+9108 JUMP 9192
+}
+9132 __intnl_SystemInt32_25 = __0_itemId__param
+G_playerInventoryData.SetProgramVariable(__0_itemId__param, __const_SystemString_52);// 9160
+G_playerInventoryData.SendCustomEvent(__const_SystemString_53);// 9184
+9208 __0___0_GrantReward__ret = __const_SystemBoolean_0
+9224 return;
+}
+9248 __0___0_GrantReward__ret = __const_SystemBoolean_1
+9264 return;
+9288 __intnl_UnityEngineObject_24 = boatDatabase
+9308 __intnl_UnityEngineObject_25 = __const_SystemObject_0
+9352 if (__intnl_SystemBoolean_33) //9628
+{
+9376 __intnl_SystemInt32_24 = __0_itemId__param
+G_boatDatabase.SetProgramVariable(__0_itemId__param, __const_SystemString_54);// 9404
+G_boatDatabase.SendCustomEvent(__const_SystemString_55);// 9428
+9484 __intnl_SystemBoolean_34 = __intnl_SystemObject_5
+9496 if (__intnl_SystemBoolean_34) //9512
+{
+9504 JUMP 9588
+}
+9528 __intnl_SystemInt32_25 = __0_itemId__param
+G_boatDatabase.SetProgramVariable(__0_itemId__param, __const_SystemString_57);// 9556
+G_boatDatabase.SendCustomEvent(__const_SystemString_58);// 9580
+9604 __0___0_GrantReward__ret = __const_SystemBoolean_0
+9620 return;
+}
+9644 __0___0_GrantReward__ret = __const_SystemBoolean_1
+9660 return;
+9684 __intnl_UnityEngineObject_26 = boatSkinDatabase
+9704 __intnl_UnityEngineObject_27 = __const_SystemObject_0
+9748 if (__intnl_SystemBoolean_34) //9872
+{
+9772 __intnl_SystemInt32_24 = __0_itemId__param
+G_boatSkinDatabase.SetProgramVariable(__0_itemId__param, __const_SystemString_59);// 9800
+G_boatSkinDatabase.SendCustomEvent(__const_SystemString_60);// 9824
+9848 __0___0_GrantReward__ret = __const_SystemBoolean_0
+9864 return;
+}
+9888 __0___0_GrantReward__ret = __const_SystemBoolean_1
+9904 return;
+9928 __intnl_UnityEngineObject_28 = afkPetInventory
+9948 __intnl_UnityEngineObject_29 = __const_SystemObject_0
+9992 if (__intnl_SystemBoolean_35) //10168
+{
+10016 __intnl_SystemInt32_24 = __0_itemId__param
+G_afkPetInventory.SetProgramVariable(__0_itemId__param, __const_SystemString_61);// 10044
+G_afkPetInventory.SendCustomEvent(__const_SystemString_62);// 10068
+10124 __intnl_SystemBoolean_36 = __intnl_SystemObject_5
+10144 __0___0_GrantReward__ret = __const_SystemBoolean_0
+10160 return;
+}
+10184 __0___0_GrantReward__ret = __const_SystemBoolean_1
+10200 return;
+}
+}
+10224 __0___0_GrantReward__ret = __const_SystemBoolean_1
+10240 return;
+10260 return;
+void __0_GetDayRewardInfo()
+10292 __0_rewardName__param = __const_SystemString_2
+10312 __0_rewardIcon__param = __const_SystemObject_0
+10332 __0_isClaimed__param = __const_SystemBoolean_1
+10352 __0_isCurrentDay__param = __const_SystemBoolean_1
+10372 __intnl_UnityEngineObject_30 = rewardDatabase
+10392 __intnl_UnityEngineObject_31 = __const_SystemObject_0
+10436 if (__intnl_SystemBoolean_37) //10464
+{
+10456 return;
+}
+10472 if (testingUnlockAllDays) //10528
+{
+10496 __0_isClaimed__param = __const_SystemBoolean_1
+10516 __0_isCurrentDay__param = __const_SystemBoolean_0
+10520 JUMP 10680
+}
+10536 if (canClaimToday) //10616
+{
+__0_isClaimed__param = op_LessThan(currentDay, __3_day__param);// 10568
+__0_isCurrentDay__param = op_Equality(currentDay, __3_day__param);// 10600
+10608 JUMP 10680
+}
+__0_isClaimed__param = op_LessThanOrEqual(currentDay, __3_day__param);// 10640
+__0_isCurrentDay__param = op_Equality(currentDay, __3_day__param);// 10672
+10720 if (__intnl_SystemBoolean_38) //10760
+{
+}
+10768 if (__intnl_SystemBoolean_38) //11080
+{
+10792 __intnl_SystemInt32_26 = __3_day__param
+G_rewardDatabase.SetProgramVariable(__3_day__param, __const_SystemString_64);// 10820
+G_rewardDatabase.SendCustomEvent(__const_SystemString_65);// 10844
+10900 __intnl_SystemString_0 = __intnl_SystemObject_6
+10920 __0_rewardName__param = __intnl_SystemString_0
+10940 __intnl_SystemInt32_27 = __3_day__param
+G_rewardDatabase.SetProgramVariable(__3_day__param, __const_SystemString_67);// 10968
+G_rewardDatabase.SendCustomEvent(__const_SystemString_68);// 10992
+11048 __intnl_UnityEngineSprite_0 = __intnl_SystemObject_7
+11068 __0_rewardIcon__param = __intnl_UnityEngineSprite_0
+11072 JUMP 11424
+}
+11120 if (__intnl_SystemBoolean_39) //11424
+{
+11144 __intnl_SystemInt32_26 = currentWeek
+G_rewardDatabase.SetProgramVariable(currentWeek, __const_SystemString_70);// 11172
+G_rewardDatabase.SendCustomEvent(__const_SystemString_71);// 11196
+11252 __intnl_SystemString_0 = __intnl_SystemObject_6
+11272 __0_rewardName__param = __intnl_SystemString_0
+11292 __intnl_SystemInt32_27 = currentWeek
+G_rewardDatabase.SetProgramVariable(currentWeek, __const_SystemString_73);// 11320
+G_rewardDatabase.SendCustomEvent(__const_SystemString_74);// 11344
+11400 __intnl_UnityEngineSprite_0 = __intnl_SystemObject_7
+11420 __0_rewardIcon__param = __intnl_UnityEngineSprite_0
+}
+11436 return;
+void IsCurrentWeekUnique()
+11468 __intnl_UnityEngineObject_32 = rewardDatabase
+11488 __intnl_UnityEngineObject_33 = __const_SystemObject_0
+11532 if (__intnl_SystemBoolean_40) //11688
+{
+11556 __intnl_SystemInt32_28 = currentWeek
+G_rewardDatabase.SetProgramVariable(currentWeek, __const_SystemString_76);// 11584
+G_rewardDatabase.SendCustomEvent(__const_SystemString_77);// 11608
+11664 __intnl_SystemBoolean_41 = __intnl_SystemObject_8
+11684 __intnl_SystemBoolean_40 = __intnl_SystemBoolean_41
+}
+11704 __0_IsCurrentWeekUnique__ret = __intnl_SystemBoolean_40
+11720 return;
+11740 return;

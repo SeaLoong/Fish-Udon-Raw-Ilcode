@@ -1,0 +1,242 @@
+void _start
+0 PUSH UInt32 __const_SystemUInt32_0
+8 PUSH VRCPlayerApi localPlayer
+16 EXTERN VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi
+24 PUSH VRCPlayerApi localPlayer
+32 PUSH object __const_SystemObject_0
+40 PUSH Boolean __intnl_SystemBoolean_0
+48 EXTERN SystemObject.__op_Equality__SystemObject_SystemObject__SystemBoolean
+56 PUSH Boolean __intnl_SystemBoolean_0
+64 JUMP_IF_FALSE 92
+72 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+80 COPY
+84 JUMP_INDIRECT 2
+92 PUSH VRCPlayerApi localPlayer
+100 PUSH Boolean isVRUser
+108 EXTERN VRCSDKBaseVRCPlayerApi.__IsUserInVR__SystemBoolean
+116 PUSH Boolean isVRUser
+124 PUSH Boolean __intnl_SystemBoolean_1
+132 EXTERN SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean
+140 PUSH Boolean __intnl_SystemBoolean_1
+148 JUMP_IF_FALSE 180
+156 PUSH Boolean enableForDesktop
+164 PUSH Boolean __intnl_SystemBoolean_1
+172 EXTERN SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean
+180 PUSH Boolean __intnl_SystemBoolean_1
+188 JUMP_IF_FALSE 256
+196 PUSH Boolean showDebugLogs
+204 JUMP_IF_FALSE 212
+212 PUSH GameObject __this_UnityEngineGameObject_0
+220 PUSH Boolean __const_SystemBoolean_0
+228 EXTERN UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid
+236 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+244 COPY
+248 JUMP_INDIRECT 2
+256 PUSH UInt32 __gintnl_SystemUInt32_0
+264 JUMP 796
+272 PUSH Transform __this_UnityEngineTransform_0
+280 PUSH Vector3 targetPosition
+288 EXTERN UnityEngineTransform.__set_position__UnityEngineVector3__SystemVoid
+296 PUSH Transform __this_UnityEngineTransform_0
+304 PUSH Quaternion targetRotation
+312 EXTERN UnityEngineTransform.__set_rotation__UnityEngineQuaternion__SystemVoid
+320 PUSH Vector3 __const_UnityEngineVector3_0
+328 PUSH Vector3 positionVelocity
+336 COPY
+340 PUSH Boolean __const_SystemBoolean_1
+348 PUSH Boolean isActive
+356 COPY
+360 PUSH Boolean showDebugLogs
+368 JUMP_IF_FALSE 376
+376 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+384 COPY
+388 JUMP_INDIRECT 2
+void _lateUpdate
+396 PUSH UInt32 __const_SystemUInt32_0
+404 PUSH Boolean isActive
+412 PUSH Boolean __intnl_SystemBoolean_2
+420 EXTERN SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean
+428 PUSH Boolean __intnl_SystemBoolean_2
+436 JUMP_IF_FALSE 452
+444 JUMP 484
+452 PUSH VRCPlayerApi localPlayer
+460 PUSH object __const_SystemObject_0
+468 PUSH Boolean __intnl_SystemBoolean_2
+476 EXTERN SystemObject.__op_Equality__SystemObject_SystemObject__SystemBoolean
+484 PUSH Boolean __intnl_SystemBoolean_2
+492 JUMP_IF_FALSE 520
+500 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+508 COPY
+512 JUMP_INDIRECT 2
+520 PUSH UInt32 __gintnl_SystemUInt32_1
+528 JUMP 796
+536 PUSH Transform __this_UnityEngineTransform_0
+544 PUSH Vector3 __intnl_UnityEngineVector3_0
+552 EXTERN UnityEngineTransform.__get_position__UnityEngineVector3
+560 PUSH Vector3 __intnl_UnityEngineVector3_0
+568 PUSH Vector3 targetPosition
+576 PUSH Vector3 positionVelocity
+584 PUSH Single positionSmoothTime
+592 PUSH Vector3 __intnl_UnityEngineVector3_1
+600 EXTERN UnityEngineVector3.__SmoothDamp__UnityEngineVector3_UnityEngineVector3_UnityEngineVector3Ref_SystemSingle__UnityEngineVector3
+608 PUSH Transform __this_UnityEngineTransform_0
+616 PUSH Vector3 __intnl_UnityEngineVector3_1
+624 EXTERN UnityEngineTransform.__set_position__UnityEngineVector3__SystemVoid
+632 PUSH Transform __this_UnityEngineTransform_0
+640 PUSH Quaternion __intnl_UnityEngineQuaternion_0
+648 EXTERN UnityEngineTransform.__get_rotation__UnityEngineQuaternion
+656 PUSH Single __intnl_SystemSingle_0
+664 EXTERN UnityEngineTime.__get_deltaTime__SystemSingle
+672 PUSH Single rotationSmoothSpeed
+680 PUSH Single __intnl_SystemSingle_0
+688 PUSH Single __intnl_SystemSingle_1
+696 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+704 PUSH Quaternion __intnl_UnityEngineQuaternion_0
+712 PUSH Quaternion targetRotation
+720 PUSH Single __intnl_SystemSingle_1
+728 PUSH Quaternion __intnl_UnityEngineQuaternion_1
+736 EXTERN UnityEngineQuaternion.__Slerp__UnityEngineQuaternion_UnityEngineQuaternion_SystemSingle__UnityEngineQuaternion
+744 PUSH Transform __this_UnityEngineTransform_0
+752 PUSH Quaternion __intnl_UnityEngineQuaternion_1
+760 EXTERN UnityEngineTransform.__set_rotation__UnityEngineQuaternion__SystemVoid
+768 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+776 COPY
+780 JUMP_INDIRECT 2
+788 PUSH UInt32 __const_SystemUInt32_0
+796 PUSH VRCPlayerApi localPlayer
+804 PUSH TrackingDataType __const_VRCSDKBaseVRCPlayerApiTrackingDataType_0
+812 PUSH TrackingData __lcl_headData_VRCSDKBaseVRCPlayerApiTrackingData_0
+820 EXTERN VRCSDKBaseVRCPlayerApi.__GetTrackingData__VRCSDKBaseVRCPlayerApiTrackingDataType__VRCSDKBaseVRCPlayerApiTrackingData
+828 PUSH TrackingData __lcl_headData_VRCSDKBaseVRCPlayerApiTrackingData_0
+836 PUSH Vector3 __lcl_headPosition_UnityEngineVector3_0
+844 EXTERN VRCSDKBaseVRCPlayerApiTrackingData.__get_position__UnityEngineVector3
+852 PUSH TrackingData __lcl_headData_VRCSDKBaseVRCPlayerApiTrackingData_0
+860 PUSH Quaternion __lcl_headRotation_UnityEngineQuaternion_0
+868 EXTERN VRCSDKBaseVRCPlayerApiTrackingData.__get_rotation__UnityEngineQuaternion
+876 PUSH Quaternion __lcl_headRotation_UnityEngineQuaternion_0
+884 PUSH Vector3 __const_UnityEngineVector3_1
+892 PUSH Vector3 __lcl_headForward_UnityEngineVector3_0
+900 EXTERN UnityEngineQuaternion.__op_Multiply__UnityEngineQuaternion_UnityEngineVector3__UnityEngineVector3
+908 PUSH Quaternion __lcl_headRotation_UnityEngineQuaternion_0
+916 PUSH Vector3 __const_UnityEngineVector3_2
+924 PUSH Vector3 __lcl_headUp_UnityEngineVector3_0
+932 EXTERN UnityEngineQuaternion.__op_Multiply__UnityEngineQuaternion_UnityEngineVector3__UnityEngineVector3
+940 PUSH Vector3 __lcl_headForward_UnityEngineVector3_0
+948 PUSH Single __intnl_SystemSingle_2
+956 EXTERN UnityEngineVector3.__get_x__SystemSingle
+964 PUSH Vector3 __lcl_headForward_UnityEngineVector3_0
+972 PUSH Single __intnl_SystemSingle_3
+980 EXTERN UnityEngineVector3.__get_z__SystemSingle
+988 PUSH Single __intnl_SystemSingle_2
+996 PUSH Single __const_SystemSingle_0
+1004 PUSH Single __intnl_SystemSingle_3
+1012 PUSH Vector3 __lcl_flatForward_UnityEngineVector3_0
+1020 EXTERN UnityEngineVector3.__ctor__SystemSingle_SystemSingle_SystemSingle__UnityEngineVector3
+1028 PUSH Vector3 __lcl_flatForward_UnityEngineVector3_0
+1036 PUSH Single __intnl_SystemSingle_4
+1044 EXTERN UnityEngineVector3.__get_sqrMagnitude__SystemSingle
+1052 PUSH Single __intnl_SystemSingle_4
+1060 PUSH Single __const_SystemSingle_1
+1068 PUSH Boolean __intnl_SystemBoolean_3
+1076 EXTERN SystemSingle.__op_LessThan__SystemSingle_SystemSingle__SystemBoolean
+1084 PUSH Boolean __intnl_SystemBoolean_3
+1092 JUMP_IF_FALSE 1164
+1100 PUSH VRCPlayerApi localPlayer
+1108 PUSH Quaternion __intnl_UnityEngineQuaternion_2
+1116 EXTERN VRCSDKBaseVRCPlayerApi.__GetRotation__UnityEngineQuaternion
+1124 PUSH Quaternion __intnl_UnityEngineQuaternion_2
+1132 PUSH Vector3 __const_UnityEngineVector3_1
+1140 PUSH Vector3 __lcl_flatForward_UnityEngineVector3_0
+1148 EXTERN UnityEngineQuaternion.__op_Multiply__UnityEngineQuaternion_UnityEngineVector3__UnityEngineVector3
+1156 JUMP 1180
+1164 PUSH Vector3 __lcl_flatForward_UnityEngineVector3_0
+1172 EXTERN UnityEngineVector3.__Normalize__SystemVoid
+1180 PUSH Vector3 __lcl_flatForward_UnityEngineVector3_0
+1188 PUSH Vector3 __lcl_headForward_UnityEngineVector3_0
+1196 PUSH Single verticalFollowAmount
+1204 PUSH Vector3 __intnl_UnityEngineVector3_2
+1212 EXTERN UnityEngineVector3.__Slerp__UnityEngineVector3_UnityEngineVector3_SystemSingle__UnityEngineVector3
+1220 PUSH Vector3 __intnl_UnityEngineVector3_2
+1228 PUSH Vector3 __lcl_visorForward_UnityEngineVector3_0
+1236 EXTERN UnityEngineVector3.__get_normalized__UnityEngineVector3
+1244 PUSH Single verticalFollowAmount
+1252 PUSH Single __const_SystemSingle_2
+1260 PUSH Single __intnl_SystemSingle_5
+1268 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+1276 PUSH Vector3 __const_UnityEngineVector3_2
+1284 PUSH Vector3 __lcl_headUp_UnityEngineVector3_0
+1292 PUSH Single __intnl_SystemSingle_5
+1300 PUSH Vector3 __intnl_UnityEngineVector3_3
+1308 EXTERN UnityEngineVector3.__Slerp__UnityEngineVector3_UnityEngineVector3_SystemSingle__UnityEngineVector3
+1316 PUSH Vector3 __intnl_UnityEngineVector3_3
+1324 PUSH Vector3 __lcl_visorUp_UnityEngineVector3_0
+1332 EXTERN UnityEngineVector3.__get_normalized__UnityEngineVector3
+1340 PUSH Vector3 __lcl_visorForward_UnityEngineVector3_0
+1348 PUSH Single followDistance
+1356 PUSH Vector3 __intnl_UnityEngineVector3_4
+1364 EXTERN UnityEngineVector3.__op_Multiply__UnityEngineVector3_SystemSingle__UnityEngineVector3
+1372 PUSH Vector3 __lcl_headPosition_UnityEngineVector3_0
+1380 PUSH Vector3 __intnl_UnityEngineVector3_4
+1388 PUSH Vector3 __intnl_UnityEngineVector3_5
+1396 EXTERN UnityEngineVector3.__op_Addition__UnityEngineVector3_UnityEngineVector3__UnityEngineVector3
+1404 PUSH Vector3 __lcl_visorUp_UnityEngineVector3_0
+1412 PUSH Single heightOffset
+1420 PUSH Vector3 __intnl_UnityEngineVector3_6
+1428 EXTERN UnityEngineVector3.__op_Multiply__UnityEngineVector3_SystemSingle__UnityEngineVector3
+1436 PUSH Vector3 __intnl_UnityEngineVector3_5
+1444 PUSH Vector3 __intnl_UnityEngineVector3_6
+1452 PUSH Vector3 targetPosition
+1460 EXTERN UnityEngineVector3.__op_Addition__UnityEngineVector3_UnityEngineVector3__UnityEngineVector3
+1468 PUSH Vector3 __lcl_visorForward_UnityEngineVector3_0
+1476 PUSH Vector3 __lcl_visorUp_UnityEngineVector3_0
+1484 PUSH Quaternion targetRotation
+1492 EXTERN UnityEngineQuaternion.__LookRotation__UnityEngineVector3_UnityEngineVector3__UnityEngineQuaternion
+1500 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1508 COPY
+1512 JUMP_INDIRECT 2
+void SnapToPlayer
+1520 PUSH UInt32 __const_SystemUInt32_0
+1528 PUSH VRCPlayerApi localPlayer
+1536 PUSH object __const_SystemObject_0
+1544 PUSH Boolean __intnl_SystemBoolean_4
+1552 EXTERN SystemObject.__op_Equality__SystemObject_SystemObject__SystemBoolean
+1560 PUSH Boolean __intnl_SystemBoolean_4
+1568 JUMP_IF_FALSE 1596
+1576 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1584 COPY
+1588 JUMP_INDIRECT 2
+1596 PUSH UInt32 __gintnl_SystemUInt32_2
+1604 JUMP 796
+1612 PUSH Transform __this_UnityEngineTransform_0
+1620 PUSH Vector3 targetPosition
+1628 EXTERN UnityEngineTransform.__set_position__UnityEngineVector3__SystemVoid
+1636 PUSH Transform __this_UnityEngineTransform_0
+1644 PUSH Quaternion targetRotation
+1652 EXTERN UnityEngineTransform.__set_rotation__UnityEngineQuaternion__SystemVoid
+1660 PUSH Vector3 __const_UnityEngineVector3_0
+1668 PUSH Vector3 positionVelocity
+1676 COPY
+1680 PUSH Boolean showDebugLogs
+1688 JUMP_IF_FALSE 1696
+1696 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1704 COPY
+1708 JUMP_INDIRECT 2
+void IsAvailable
+1716 PUSH UInt32 __const_SystemUInt32_0
+1724 PUSH Boolean isActive
+1732 PUSH Boolean __intnl_SystemBoolean_5
+1740 COPY
+1744 PUSH Boolean __intnl_SystemBoolean_5
+1752 JUMP_IF_FALSE 1784
+1760 PUSH GameObject __this_UnityEngineGameObject_0
+1768 PUSH Boolean __intnl_SystemBoolean_5
+1776 EXTERN UnityEngineGameObject.__get_activeSelf__SystemBoolean
+1784 PUSH Boolean __intnl_SystemBoolean_5
+1792 PUSH Boolean __0_IsAvailable__ret
+1800 COPY
+1804 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1812 COPY
+1816 JUMP_INDIRECT 2
+1824 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1832 COPY
+1836 JUMP_INDIRECT 2

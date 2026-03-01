@@ -1,0 +1,222 @@
+using System;
+using UnityEngine;
+using VRC.SDKBase;
+using VRC.Udon;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Single _checkOwnerTimer = 0f;
+private Int32 __0_index__param = 0;
+private Single __intnl_SystemSingle_0 = 0f;
+public Single teleportInterval;
+private String __const_SystemString_0 = "StopMoving";
+private Single __const_SystemSingle_0 = 0f;
+private UInt32 __gintnl_SystemUInt32_1 = 620;
+private UInt32 __gintnl_SystemUInt32_0 = 200;
+private UInt32 __gintnl_SystemUInt32_2 = 1400;
+private Int32 __0_value__param = 0;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_0 = null;
+private Int64 __refl_typeid = -2075169698108625753;
+private Int32 _old__currentTeleportIndex = 0;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Boolean __intnl_SystemBoolean_11 = false;
+private String __const_SystemString_2 = "__0_rotation__param";
+private Single timer = 0f;
+private Vector3 __intnl_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private GameObject __intnl_UnityEngineGameObject_1 = null;
+private GameObject __intnl_UnityEngineGameObject_0 = null;
+private Int32 __0_get_CurrentTeleportIndex__ret = 0;
+private object __const_SystemObject_0 = null;
+private Single __intnl_SystemSingle_1 = 0f;
+private Single __const_SystemSingle_1 = 10f;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private Transform __lcl_target_UnityEngineTransform_0 = null;
+private Boolean __intnl_SystemBoolean_12 = false;
+private String __refl_typename = "NPCRandomTeleport";
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Int32 __intnl_SystemInt32_5 = 0;
+private Int32 __intnl_SystemInt32_4 = 0;
+private Int32 __intnl_SystemInt32_6 = 0;
+private String __const_SystemString_1 = "__0_destination__param";
+private Int32 _currentTeleportIndex = -1;
+private GameObject __this_UnityEngineGameObject_0 = this;
+public UdonBehaviour npc;
+public Transform[] teleportPoints;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Quaternion __intnl_UnityEngineQuaternion_0 = new Quaternion(0f, 0f, 0f, 0f);
+private Int32 __const_SystemInt32_0 = 0;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_0 = null;
+private String __const_SystemString_3 = "__0_ForceWarpTo";
+private UdonBehaviour __this_VRCUdonUdonBehaviour_1 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_0 = this;
+
+
+public void get_CurrentTeleportIndex()
+{
+__0_get_CurrentTeleportIndex__ret = _currentTeleportIndex;
+}
+public void _onVarChange__currentTeleportIndex()
+{
+__0_value__param = _currentTeleportIndex;
+_currentTeleportIndex = _old__currentTeleportIndex;
+_currentTeleportIndex = __0_value__param;
+__intnl_SystemBoolean_0 = __0_value__param >= __const_SystemInt32_0;
+if (__intnl_SystemBoolean_0)
+{
+__0_index__param = __0_value__param;
+UNDEF_f48b1_2136();
+}
+}
+public void _start()
+{
+timer = teleportInterval;
+__intnl_SystemBoolean_3 = Networking.IsMaster;
+if (__intnl_SystemBoolean_3)
+{
+__intnl_UnityEngineObject_0 = npc;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_3 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+}
+__intnl_SystemBoolean_2 = __intnl_SystemBoolean_3;
+if (__intnl_SystemBoolean_2)
+{
+__intnl_SystemBoolean_2 = teleportPoints != __const_SystemObject_0;
+}
+__intnl_SystemBoolean_1 = __intnl_SystemBoolean_2;
+if (__intnl_SystemBoolean_1)
+{
+__intnl_SystemInt32_0 = teleportPoints.Length;
+__intnl_SystemBoolean_1 = __intnl_SystemInt32_0 > __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_1)
+{
+__intnl_SystemInt32_1 = teleportPoints.Length;
+__intnl_SystemInt32_2 = Random.Range(__const_SystemInt32_0, __intnl_SystemInt32_1);
+__0_value__param = __intnl_SystemInt32_2;
+__this_VRCUdonUdonBehaviour_0.RequestSerialization();
+}
+}
+public void _update()
+{
+__intnl_SystemBoolean_4 = Networking.IsOwner(__this_UnityEngineGameObject_0);
+if (__intnl_SystemBoolean_4)
+{
+UNDEF_f48b1_1456();
+}
+}
+private void UNDEF_f48b1_1456()
+{
+__intnl_UnityEngineObject_2 = npc;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_5 = __intnl_UnityEngineObject_2 == __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_5)
+{
+return;
+}
+__intnl_SystemSingle_0 = Time.deltaTime;
+timer = timer - __intnl_SystemSingle_0;
+__intnl_SystemSingle_1 = Time.deltaTime;
+_checkOwnerTimer = _checkOwnerTimer - __intnl_SystemSingle_1;
+__intnl_SystemBoolean_6 = _checkOwnerTimer <= __const_SystemSingle_0;
+if (__intnl_SystemBoolean_6)
+{
+_checkOwnerTimer = __const_SystemSingle_1;
+__intnl_UnityEngineGameObject_0 = npc.gameObject;
+__intnl_SystemBoolean_7 = Networking.IsOwner(__intnl_UnityEngineGameObject_0);
+if (__intnl_SystemBoolean_7)
+{
+}
+else
+{
+__intnl_VRCSDKBaseVRCPlayerApi_0 = Networking.LocalPlayer;
+__intnl_UnityEngineGameObject_1 = npc.gameObject;
+Networking.SetOwner(__intnl_VRCSDKBaseVRCPlayerApi_0, __intnl_UnityEngineGameObject_1);
+}
+}
+__intnl_SystemBoolean_7 = timer <= __const_SystemSingle_0;
+if (__intnl_SystemBoolean_7)
+{
+__intnl_SystemBoolean_8 = teleportPoints != __const_SystemObject_0;
+if (__intnl_SystemBoolean_8)
+{
+__intnl_SystemInt32_3 = teleportPoints.Length;
+__intnl_SystemBoolean_8 = __intnl_SystemInt32_3 > __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_8)
+{
+__intnl_SystemInt32_4 = teleportPoints.Length;
+__intnl_SystemInt32_5 = Random.Range(__const_SystemInt32_0, __intnl_SystemInt32_4);
+__0_value__param = __intnl_SystemInt32_5;
+__this_VRCUdonUdonBehaviour_1.RequestSerialization();
+}
+timer = teleportInterval;
+}
+}
+private void UNDEF_f48b1_2136()
+{
+__intnl_SystemBoolean_10 = teleportPoints == __const_SystemObject_0;
+if (__intnl_SystemBoolean_10)
+{
+}
+else
+{
+__intnl_SystemBoolean_10 = __0_index__param < __const_SystemInt32_0;
+}
+__intnl_SystemBoolean_9 = __intnl_SystemBoolean_10;
+if (__intnl_SystemBoolean_9)
+{
+}
+else
+{
+__intnl_SystemInt32_6 = teleportPoints.Length;
+__intnl_SystemBoolean_9 = __0_index__param >= __intnl_SystemInt32_6;
+}
+if (__intnl_SystemBoolean_9)
+{
+return;
+}
+__intnl_UnityEngineObject_4 = npc;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_11 = __intnl_UnityEngineObject_4 == __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_11)
+{
+return;
+}
+__lcl_target_UnityEngineTransform_0 = (Transform)(teleportPoints[__0_index__param]);
+__intnl_UnityEngineObject_6 = __lcl_target_UnityEngineTransform_0;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_12 = __intnl_UnityEngineObject_6 == __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_12)
+{
+return;
+}
+__intnl_VRCUdonUdonBehaviour_0 = npc;
+npc.SendCustomEvent(__const_SystemString_0);
+__intnl_UnityEngineVector3_0 = __lcl_target_UnityEngineTransform_0.position;
+__intnl_UnityEngineQuaternion_0 = __lcl_target_UnityEngineTransform_0.rotation;
+npc.SetProgramVariable(__const_SystemString_1, __intnl_UnityEngineVector3_0);
+npc.SetProgramVariable(__const_SystemString_2, __intnl_UnityEngineQuaternion_0);
+npc.SendCustomEvent(__const_SystemString_3);
+}
+}

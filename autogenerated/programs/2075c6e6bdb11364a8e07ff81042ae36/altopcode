@@ -1,0 +1,93 @@
+void _start()
+24 __intnl_UnityEngineObject_0 = dayNightCycle
+44 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+88 if (__intnl_SystemBoolean_0) //116
+{
+108 return;
+}
+156 if (__intnl_SystemBoolean_1) //172
+{
+164 JUMP 228
+}
+236 if (__intnl_SystemBoolean_1) //264
+{
+256 return;
+}
+288 __intnl_VRCUdonUdonBehaviour_0 = dayNightCycle
+G_dayNightCycle.SendCustomEvent(__const_SystemString_0);// 300
+380 __intnl_SystemInt32_1 = __intnl_SystemInt32_2
+400 lastTimeOfDay = __intnl_SystemInt32_1
+428 __0_time__param = lastTimeOfDay
+432 JUMP 1448
+456 targetEmissionStrength = __0___0_GetTargetEmissionForTime__ret
+476 currentEmissionStrength = targetEmissionStrength
+504 __0_strength__param = currentEmissionStrength
+508 JUMP 1732
+528 return;
+void _update()
+560 __intnl_UnityEngineObject_2 = dayNightCycle
+580 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+624 if (__intnl_SystemBoolean_3) //640
+{
+632 JUMP 672
+}
+688 __intnl_SystemBoolean_2 = __intnl_SystemBoolean_3
+700 if (__intnl_SystemBoolean_2) //716
+{
+708 JUMP 772
+}
+780 if (__intnl_SystemBoolean_2) //808
+{
+800 return;
+}
+frameCounter = op_Addition(__const_SystemInt32_1, frameCounter);// 832
+880 if (__intnl_SystemBoolean_4) //908
+{
+900 return;
+}
+924 frameCounter = __const_SystemInt32_0
+952 __intnl_VRCUdonUdonBehaviour_1 = dayNightCycle
+G_dayNightCycle.SendCustomEvent(__const_SystemString_0);// 964
+1044 __intnl_SystemInt32_4 = __intnl_SystemInt32_5
+1064 __lcl_currentTime_SystemInt32_0 = __intnl_SystemInt32_4
+1108 if (__intnl_SystemBoolean_5) //1192
+{
+1132 lastTimeOfDay = __lcl_currentTime_SystemInt32_0
+1160 __0_time__param = __lcl_currentTime_SystemInt32_0
+1164 JUMP 1448
+1188 targetEmissionStrength = __0___0_GetTargetEmissionForTime__ret
+}
+1288 if (__intnl_SystemBoolean_6) //1420
+{
+currentEmissionStrength = Lerp(__intnl_SystemSingle_3, targetEmissionStrength, currentEmissionStrength);// 1376
+1408 __0_strength__param = currentEmissionStrength
+1412 JUMP 1732
+}
+1432 return;
+1488 if (__intnl_SystemBoolean_7) //1664
+{
+1536 if (__intnl_SystemBoolean_8) //1664
+{
+1576 return;
+1600 __0___0_GetTargetEmissionForTime__ret = daytimeEmissionStrength
+1616 return;
+1640 __0___0_GetTargetEmissionForTime__ret = nighttimeEmissionStrength
+1656 return;
+}
+}
+1680 __0___0_GetTargetEmissionForTime__ret = daytimeEmissionStrength
+1696 return;
+1716 return;
+1772 __intnl_SystemInt32_7 = __const_SystemInt32_0
+1816 if (__intnl_SystemBoolean_9) //2016
+{
+__lcl_mat_UnityEngineMaterial_0 = G_buildingMaterials.Get(__intnl_SystemInt32_7);// 1848
+1872 __intnl_UnityEngineObject_4 = __lcl_mat_UnityEngineMaterial_0
+1892 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+1936 if (__intnl_SystemBoolean_10) //1976
+{
+L_mat.SetFloat(__0_strength__param, __const_SystemString_2);// 1968
+}
+2008 JUMP 1776
+}
+2028 return;

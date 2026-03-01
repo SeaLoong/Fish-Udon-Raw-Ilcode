@@ -1,0 +1,3081 @@
+using System;
+using UnityEngine;
+using VRC.Udon;
+using TMPro;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Single __lcl_baseVolume_SystemSingle_0 = 0f;
+private Single __0_duration__param = 0f;
+private Boolean __intnl_SystemBoolean_83 = false;
+private Boolean __intnl_SystemBoolean_93 = false;
+private Boolean __intnl_SystemBoolean_13 = false;
+private Boolean __intnl_SystemBoolean_23 = false;
+private Boolean __intnl_SystemBoolean_33 = false;
+private Boolean __intnl_SystemBoolean_43 = false;
+private Boolean __intnl_SystemBoolean_53 = false;
+private Boolean __intnl_SystemBoolean_63 = false;
+private Boolean __intnl_SystemBoolean_73 = false;
+private Single __lcl_accumulated_SystemSingle_1 = 0f;
+private UInt32 __gintnl_SystemUInt32_56 = 31652;
+private UInt32 __gintnl_SystemUInt32_46 = 21836;
+private UInt32 __gintnl_SystemUInt32_16 = 4208;
+private UInt32 __gintnl_SystemUInt32_36 = 13424;
+private UInt32 __gintnl_SystemUInt32_26 = 6000;
+private object __intnl_SystemObject_27 = null;
+private object __intnl_SystemObject_26 = null;
+private object __intnl_SystemObject_25 = null;
+private object __intnl_SystemObject_24 = null;
+private object __intnl_SystemObject_23 = null;
+private object __intnl_SystemObject_22 = null;
+private object __intnl_SystemObject_21 = null;
+private object __intnl_SystemObject_20 = null;
+private object __intnl_SystemObject_29 = null;
+private object __intnl_SystemObject_28 = null;
+private Single __intnl_SystemSingle_20 = 0f;
+private Int32 __intnl_SystemInt32_15 = 0;
+private Int32 __intnl_SystemInt32_35 = 0;
+private Int32 __intnl_SystemInt32_25 = 0;
+private Single __0_volume__param = 0f;
+private String __lcl_zoneToCheck_SystemString_0 = null;
+private String __intnl_SystemString_1 = null;
+private Boolean __0___0_HasPlayedIntroForWeather__ret = false;
+private Single __lcl_targetVolume_SystemSingle_0 = 0f;
+private Single __lcl_targetVolume_SystemSingle_1 = 0f;
+private Object __intnl_UnityEngineObject_92 = null;
+private Object __intnl_UnityEngineObject_82 = null;
+private Object __intnl_UnityEngineObject_72 = null;
+private Object __intnl_UnityEngineObject_62 = null;
+private Object __intnl_UnityEngineObject_52 = null;
+private Object __intnl_UnityEngineObject_42 = null;
+private Object __intnl_UnityEngineObject_32 = null;
+private Object __intnl_UnityEngineObject_22 = null;
+private Object __intnl_UnityEngineObject_12 = null;
+private UdonBehaviour __0___0_SelectWeatherIntroTrack__ret = null;
+private Single __lcl_oldTrackVolume_SystemSingle_0 = 0f;
+private String __const_SystemString_46 = "Available: ";
+private String __const_SystemString_47 = "/";
+private String __const_SystemString_44 = " | Grace: ";
+private String __const_SystemString_45 = "F1";
+private String __const_SystemString_42 = " | ";
+private String __const_SystemString_43 = " | Crossfading";
+private String __const_SystemString_40 = "s";
+private String __const_SystemString_41 = "Context: ";
+private String __const_SystemString_48 = "introPriority";
+private String __const_SystemString_49 = "GetSelectionWeight";
+private Single __intnl_SystemSingle_0 = 0f;
+private UdonBehaviour __0_newTrack__param = null;
+private UdonBehaviour __0_SelectAppropriateTrack__ret = null;
+private object __intnl_SystemObject_0 = null;
+private AudioSource __intnl_UnityEngineAudioSource_1 = null;
+private String __const_SystemString_0 = "GetCurrentWeather";
+public Single newTrackStartDelay;
+private UdonBehaviour __2_track__param = null;
+private Single __const_SystemSingle_0 = 0f;
+private Single crossfadeFromVolumeNext = 0f;
+private String __lcl_currentZone_SystemString_0 = null;
+private UdonBehaviour __lcl_selectedTrack_VRCUdonUdonBehaviour_0 = null;
+private Int32[] __intnl_SystemInt32Array_0 = null;
+private UdonBehaviour __0_GetCurrentTrack__ret = null;
+private Boolean __intnl_SystemBoolean_86 = false;
+private Boolean __intnl_SystemBoolean_96 = false;
+private Boolean __intnl_SystemBoolean_16 = false;
+private Boolean __intnl_SystemBoolean_26 = false;
+private Boolean __intnl_SystemBoolean_36 = false;
+private Boolean __intnl_SystemBoolean_46 = false;
+private Boolean __intnl_SystemBoolean_56 = false;
+private Boolean __intnl_SystemBoolean_66 = false;
+private Boolean __intnl_SystemBoolean_76 = false;
+private Int32 __lcl_invalidTracks_SystemInt32_0 = 0;
+private String __0_GetSystemStatus__ret = null;
+private object __intnl_SystemObject_17 = null;
+private object __intnl_SystemObject_16 = null;
+private object __intnl_SystemObject_15 = null;
+private object __intnl_SystemObject_14 = null;
+private object __intnl_SystemObject_13 = null;
+private object __intnl_SystemObject_12 = null;
+private object __intnl_SystemObject_11 = null;
+private object __intnl_SystemObject_10 = null;
+private object __intnl_SystemObject_19 = null;
+private object __intnl_SystemObject_18 = null;
+private Single __intnl_SystemSingle_10 = 0f;
+private Single __intnl_SystemSingle_11 = 0f;
+private Single __intnl_SystemSingle_12 = 0f;
+private Single __intnl_SystemSingle_13 = 0f;
+private Single __intnl_SystemSingle_14 = 0f;
+private Single __intnl_SystemSingle_15 = 0f;
+private Single __intnl_SystemSingle_16 = 0f;
+private Single __intnl_SystemSingle_17 = 0f;
+private Single __intnl_SystemSingle_18 = 0f;
+private Single __intnl_SystemSingle_19 = 0f;
+private Int32 __lcl_j_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_12 = 0;
+private Int32 __intnl_SystemInt32_32 = 0;
+private Int32 __intnl_SystemInt32_22 = 0;
+public UdonBehaviour dayNightCycle;
+public Single masterVolume;
+private String __intnl_SystemString_9 = null;
+private Int32 __lcl_currentWeather_SystemInt32_0 = 0;
+private Single __intnl_SystemSingle_8 = 0f;
+private UInt32 __gintnl_SystemUInt32_9 = 2480;
+private UInt32 __gintnl_SystemUInt32_8 = 2308;
+private UInt32 __gintnl_SystemUInt32_5 = 2240;
+private UInt32 __gintnl_SystemUInt32_4 = 2188;
+private UInt32 __gintnl_SystemUInt32_7 = 2272;
+private UInt32 __gintnl_SystemUInt32_6 = 2256;
+private UInt32 __gintnl_SystemUInt32_1 = 40;
+private UInt32 __gintnl_SystemUInt32_0 = 24;
+private UInt32 __gintnl_SystemUInt32_3 = 2136;
+private UInt32 __gintnl_SystemUInt32_2 = 284;
+private Boolean __const_SystemBoolean_0 = false;
+private Boolean __const_SystemBoolean_1 = true;
+private AudioClip __intnl_UnityEngineAudioClip_1 = null;
+private Object __intnl_UnityEngineObject_91 = null;
+private Object __intnl_UnityEngineObject_81 = null;
+private Object __intnl_UnityEngineObject_71 = null;
+private Object __intnl_UnityEngineObject_61 = null;
+private Object __intnl_UnityEngineObject_51 = null;
+private Object __intnl_UnityEngineObject_41 = null;
+private Object __intnl_UnityEngineObject_31 = null;
+private Object __intnl_UnityEngineObject_21 = null;
+private Object __intnl_UnityEngineObject_11 = null;
+private String __lcl_zoneList_SystemString_0 = null;
+private Single __lcl_totalWeight_SystemSingle_0 = 0f;
+private Single newTrackDelayTimer = 0f;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_29 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_28 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_21 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_20 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_23 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_22 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_25 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_24 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_27 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_26 = null;
+private Single __lcl_totalElapsed_SystemSingle_0 = 0f;
+private Int32 __lcl_index_SystemInt32_1 = 0;
+private Int32 __lcl_index_SystemInt32_0 = 0;
+private Int32 __lcl_index_SystemInt32_2 = 0;
+private Boolean __0___0_HasPlayedIntroForZone__ret = false;
+private Boolean __0_IsMusicPlaying__ret = false;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_7 = null;
+private String __const_SystemString_5 = "__0_GetCurrentTimeOfDay__ret";
+private Single lastTrackEndTime = 0f;
+private UdonBehaviour __lcl_weatherIntroTrack_VRCUdonUdonBehaviour_0 = null;
+private Boolean isUsingSourceA = true;
+private UInt32 __gintnl_SystemUInt32_53 = 30468;
+private UInt32 __gintnl_SystemUInt32_43 = 19544;
+private UInt32 __gintnl_SystemUInt32_63 = 34000;
+private UInt32 __gintnl_SystemUInt32_13 = 3636;
+private UInt32 __gintnl_SystemUInt32_33 = 8544;
+private UInt32 __gintnl_SystemUInt32_23 = 5644;
+private Single transitionFromTrackVolume = 0f;
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private UdonBehaviour __0___0_SelectIntroTrack__ret = null;
+private Boolean allowTrackToFinishNaturally = false;
+public TextMeshProUGUI availableTracksDisplay;
+private Single __lcl_elapsed_SystemSingle_0 = 0f;
+private String __lcl_prefix_SystemString_0 = null;
+private Single __lcl_graceRemaining_SystemSingle_0 = 0f;
+private UdonBehaviour __lcl_newTrack_VRCUdonUdonBehaviour_0 = null;
+private String __intnl_SystemString_6 = null;
+private Boolean isMusicPlaying = false;
+private Boolean __0___0_IsTrackSuitableForCurrentContext__ret = false;
+private Object __intnl_UnityEngineObject_99 = null;
+private Object __intnl_UnityEngineObject_89 = null;
+private Object __intnl_UnityEngineObject_79 = null;
+private Object __intnl_UnityEngineObject_69 = null;
+private Object __intnl_UnityEngineObject_59 = null;
+private Object __intnl_UnityEngineObject_49 = null;
+private Object __intnl_UnityEngineObject_39 = null;
+private Object __intnl_UnityEngineObject_29 = null;
+private Object __intnl_UnityEngineObject_19 = null;
+private String __const_SystemString_16 = "GetAdjustedWeight";
+private String __const_SystemString_17 = "__0_GetAdjustedWeight__ret";
+private String __const_SystemString_14 = "Zone";
+private String __const_SystemString_15 = "Weather";
+private String __const_SystemString_12 = "__0_CanPlayInContext";
+private String __const_SystemString_13 = "__0___0_CanPlayInContext__ret";
+private String __const_SystemString_10 = "__0_currentZone__param";
+private String __const_SystemString_11 = "__0_currentWeather__param";
+private String __const_SystemString_18 = "isIntroTrack";
+private String __const_SystemString_19 = "isWeatherIntroTrack";
+private Single __intnl_SystemSingle_7 = 0f;
+private AudioClip __intnl_UnityEngineAudioClip_2 = null;
+private Object __intnl_UnityEngineObject_94 = null;
+private Object __intnl_UnityEngineObject_84 = null;
+private Object __intnl_UnityEngineObject_74 = null;
+private Object __intnl_UnityEngineObject_64 = null;
+private Object __intnl_UnityEngineObject_54 = null;
+private Object __intnl_UnityEngineObject_44 = null;
+private Object __intnl_UnityEngineObject_34 = null;
+private Object __intnl_UnityEngineObject_24 = null;
+private Object __intnl_UnityEngineObject_14 = null;
+private Int64 __refl_typeid = -5694563084720794352;
+private object __intnl_SystemObject_7 = null;
+private UdonBehaviour __1_track__param = null;
+public Single introVolumeMultiplier;
+public Single chanceIncrease;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_19 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_18 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_11 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_10 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_13 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_12 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_15 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_14 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_17 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_16 = null;
+private Boolean __lcl_contextChanged_SystemBoolean_0 = false;
+private Component[] __0_GetSuitableTracks__ret = null;
+private Boolean __0_UpdateCurrentContext__ret = false;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_2 = null;
+public Single musicCheckInterval;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_9 = null;
+public Single zoneReturnGracePeriod;
+private Int32[] __lcl_newArray_SystemInt32Array_0 = null;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private UdonBehaviour currentTrack = null;
+private Boolean __intnl_SystemBoolean_81 = false;
+private Boolean __intnl_SystemBoolean_91 = false;
+private Boolean __intnl_SystemBoolean_11 = false;
+private Boolean __intnl_SystemBoolean_21 = false;
+private Boolean __intnl_SystemBoolean_31 = false;
+private Boolean __intnl_SystemBoolean_41 = false;
+private Boolean __intnl_SystemBoolean_51 = false;
+private Boolean __intnl_SystemBoolean_61 = false;
+private Boolean __intnl_SystemBoolean_71 = false;
+public Boolean enableDebugLogs;
+private UInt32 __gintnl_SystemUInt32_54 = 31396;
+private UInt32 __gintnl_SystemUInt32_44 = 19980;
+private UInt32 __gintnl_SystemUInt32_64 = 34100;
+private UInt32 __gintnl_SystemUInt32_14 = 3696;
+private UInt32 __gintnl_SystemUInt32_34 = 10404;
+private UInt32 __gintnl_SystemUInt32_24 = 5716;
+private Boolean lastContextChangeWasZoneChange = false;
+private Int32 __intnl_SystemInt32_17 = 0;
+private Int32 __intnl_SystemInt32_37 = 0;
+private Int32 __intnl_SystemInt32_27 = 0;
+private Component[] __lcl_suitableIntros_UnityEngineComponentArray_0 = null;
+private Single __0_fromVolume__param = 0f;
+private Int32 __lcl_i_SystemInt32_11 = 0;
+private String __0___0_GetZoneForTrack__ret = null;
+private String __intnl_SystemString_3 = null;
+public UdonBehaviour ambientZoneManager;
+private Single __lcl_nextVolume_SystemSingle_0 = 0f;
+private Single __intnl_SystemSingle_2 = 0f;
+public Boolean introsBypassDowntime;
+private TextMeshProUGUI __intnl_TMProTextMeshProUGUI_0 = null;
+private object __intnl_SystemObject_2 = null;
+private object __intnl_SystemObject_9 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_1 = null;
+private Single __0_toVolume__param = 0f;
+private String __const_SystemString_2 = "IsValid";
+private Boolean __intnl_SystemBoolean_121 = false;
+private Boolean __intnl_SystemBoolean_120 = false;
+private Boolean __intnl_SystemBoolean_123 = false;
+private Boolean __intnl_SystemBoolean_122 = false;
+public AudioSource musicSourceB;
+private Int32 __lcl_count_SystemInt32_0 = 0;
+public Boolean resetAllCooldowns;
+private Boolean __lcl_skipSilence_SystemBoolean_0 = false;
+private Single __const_SystemSingle_2 = 0.5f;
+public Single zoneVolumeMultiplier;
+private Boolean __intnl_SystemBoolean_89 = false;
+private Boolean __intnl_SystemBoolean_99 = false;
+private Boolean __intnl_SystemBoolean_19 = false;
+private Boolean __intnl_SystemBoolean_29 = false;
+private Boolean __intnl_SystemBoolean_39 = false;
+private Boolean __intnl_SystemBoolean_49 = false;
+private Boolean __intnl_SystemBoolean_59 = false;
+private Boolean __intnl_SystemBoolean_69 = false;
+private Boolean __intnl_SystemBoolean_79 = false;
+private Int32[] __intnl_SystemInt32Array_2 = null;
+private Boolean __intnl_SystemBoolean_84 = false;
+private Boolean __intnl_SystemBoolean_94 = false;
+private Boolean __intnl_SystemBoolean_14 = false;
+private Boolean __intnl_SystemBoolean_24 = false;
+private Boolean __intnl_SystemBoolean_34 = false;
+private Boolean __intnl_SystemBoolean_44 = false;
+private Boolean __intnl_SystemBoolean_54 = false;
+private Boolean __intnl_SystemBoolean_64 = false;
+private Boolean __intnl_SystemBoolean_74 = false;
+private Single __lcl_accumulated_SystemSingle_0 = 0f;
+private object __intnl_SystemObject_36 = null;
+private object __intnl_SystemObject_35 = null;
+private object __intnl_SystemObject_34 = null;
+private object __intnl_SystemObject_33 = null;
+private object __intnl_SystemObject_32 = null;
+private object __intnl_SystemObject_31 = null;
+private object __intnl_SystemObject_30 = null;
+public TextMeshProUGUI nextCheckDisplay;
+private Int32 __intnl_SystemInt32_14 = 0;
+private Int32 __intnl_SystemInt32_34 = 0;
+private Int32 __intnl_SystemInt32_24 = 0;
+private Int32 __intnl_SystemInt32_19 = 0;
+private Int32 __intnl_SystemInt32_39 = 0;
+private Int32 __intnl_SystemInt32_29 = 0;
+private object __const_SystemObject_0 = null;
+private Int32 __lcl_validTracks_SystemInt32_0 = 0;
+private Single __lcl_highestPriority_SystemSingle_0 = 0f;
+private String __intnl_SystemString_0 = null;
+private Object __intnl_UnityEngineObject_93 = null;
+private Object __intnl_UnityEngineObject_83 = null;
+private Object __intnl_UnityEngineObject_73 = null;
+private Object __intnl_UnityEngineObject_63 = null;
+private Object __intnl_UnityEngineObject_53 = null;
+private Object __intnl_UnityEngineObject_43 = null;
+private Object __intnl_UnityEngineObject_33 = null;
+private Object __intnl_UnityEngineObject_23 = null;
+private Object __intnl_UnityEngineObject_13 = null;
+public Boolean forceSilence;
+private Single __intnl_SystemSingle_1 = 0f;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_40 = null;
+public Boolean enableZoneReturnGrace;
+public Boolean forceSkipTrack;
+private object __intnl_SystemObject_1 = null;
+private String[] __lcl_newArray_SystemStringArray_0 = null;
+private AudioSource __intnl_UnityEngineAudioSource_0 = null;
+private Single __lcl_chance_SystemSingle_0 = 0f;
+private Single transitionStartTime = 0f;
+private Int32 __lcl_currentTime_SystemInt32_0 = 0;
+private UdonBehaviour __lcl_nextTrack_VRCUdonUdonBehaviour_0 = null;
+private Int32 __0_GetAvailableTrackCount__ret = 0;
+private String __const_SystemString_7 = "__0_GetCurrentZoneID__ret";
+private Single lastMusicCheckTime = 0f;
+private Single __const_SystemSingle_1 = 1f;
+private Component[] __lcl_suitable_UnityEngineComponentArray_0 = null;
+private UdonBehaviour __lcl_introTrack_VRCUdonUdonBehaviour_0 = null;
+private Boolean lastContextChangeWasTimeChange = false;
+private UInt32 __gintnl_SystemUInt32_51 = 28324;
+private UInt32 __gintnl_SystemUInt32_41 = 18464;
+private UInt32 __gintnl_SystemUInt32_61 = 33172;
+private UInt32 __gintnl_SystemUInt32_11 = 3356;
+private UInt32 __gintnl_SystemUInt32_31 = 8348;
+private UInt32 __gintnl_SystemUInt32_21 = 5380;
+private Int32[] __intnl_SystemInt32Array_1 = null;
+private Boolean __intnl_SystemBoolean_87 = false;
+private Boolean __intnl_SystemBoolean_97 = false;
+private Boolean __intnl_SystemBoolean_17 = false;
+private Boolean __intnl_SystemBoolean_27 = false;
+private Boolean __intnl_SystemBoolean_37 = false;
+private Boolean __intnl_SystemBoolean_47 = false;
+private Boolean __intnl_SystemBoolean_57 = false;
+private Boolean __intnl_SystemBoolean_67 = false;
+private Boolean __intnl_SystemBoolean_77 = false;
+public Single maximumSilenceDuration;
+private Int32 __intnl_SystemInt32_11 = 0;
+private Int32 __intnl_SystemInt32_31 = 0;
+private Int32 __intnl_SystemInt32_21 = 0;
+private Int32 __lcl_previousWeather_SystemInt32_0 = 0;
+private String __intnl_SystemString_8 = null;
+private Single crossfadeFromVolume = 0f;
+private String transitionFromZoneID = "";
+private String __const_SystemString_36 = "F0";
+private String __const_SystemString_37 = "s)";
+private String __const_SystemString_34 = "__0_GetTrackName__ret";
+private String __const_SystemString_35 = "Silence (";
+private String __const_SystemString_32 = "Playing: ";
+private String __const_SystemString_33 = "GetTrackName";
+private String __const_SystemString_30 = "__0_GetVolume__ret";
+private String __const_SystemString_31 = "[INTRO] ";
+private String __const_SystemString_38 = "Waiting for music...";
+private String __const_SystemString_39 = "Next check: ";
+private Single __intnl_SystemSingle_9 = 0f;
+private AudioClip __intnl_UnityEngineAudioClip_0 = null;
+private Object __intnl_UnityEngineObject_96 = null;
+private Object __intnl_UnityEngineObject_86 = null;
+private Object __intnl_UnityEngineObject_76 = null;
+private Object __intnl_UnityEngineObject_66 = null;
+private Object __intnl_UnityEngineObject_56 = null;
+private Object __intnl_UnityEngineObject_46 = null;
+private Object __intnl_UnityEngineObject_36 = null;
+private Object __intnl_UnityEngineObject_26 = null;
+private Object __intnl_UnityEngineObject_16 = null;
+private UdonBehaviour __0_introTrack__param = null;
+private Boolean __lcl_shouldPlayWeatherIntro_SystemBoolean_0 = false;
+private Single __lcl_totalWeight_SystemSingle_1 = 0f;
+public Boolean replayWeatherIntrosEachTime;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_39 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_38 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_31 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_30 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_33 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_32 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_35 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_34 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_37 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_36 = null;
+private Int32 __2_weather__param = 0;
+private UdonBehaviour __0_track__param = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_4 = null;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private String __const_SystemString_4 = "GetCurrentTimeOfDay";
+private UInt32 __gintnl_SystemUInt32_59 = 32332;
+private UInt32 __gintnl_SystemUInt32_49 = 26120;
+private UInt32 __gintnl_SystemUInt32_19 = 4832;
+private UInt32 __gintnl_SystemUInt32_39 = 14956;
+private UInt32 __gintnl_SystemUInt32_29 = 7152;
+private Single __const_SystemSingle_4 = 1.5f;
+private Object __intnl_UnityEngineObject_108 = null;
+private Object __intnl_UnityEngineObject_109 = null;
+private Object __intnl_UnityEngineObject_106 = null;
+private Object __intnl_UnityEngineObject_107 = null;
+private Object __intnl_UnityEngineObject_104 = null;
+private Object __intnl_UnityEngineObject_105 = null;
+private Object __intnl_UnityEngineObject_102 = null;
+private Object __intnl_UnityEngineObject_103 = null;
+private Object __intnl_UnityEngineObject_100 = null;
+private Object __intnl_UnityEngineObject_101 = null;
+private UInt32 __gintnl_SystemUInt32_52 = 30424;
+private UInt32 __gintnl_SystemUInt32_42 = 19424;
+private UInt32 __gintnl_SystemUInt32_62 = 33444;
+private UInt32 __gintnl_SystemUInt32_12 = 3472;
+private UInt32 __gintnl_SystemUInt32_32 = 8476;
+private UInt32 __gintnl_SystemUInt32_22 = 5500;
+private Int32 __lcl_i_SystemInt32_9 = 0;
+private Int32 __lcl_i_SystemInt32_8 = 0;
+private Int32 __lcl_i_SystemInt32_1 = 0;
+private Int32 __lcl_i_SystemInt32_0 = 0;
+private Int32 __lcl_i_SystemInt32_3 = 0;
+private Int32 __lcl_i_SystemInt32_2 = 0;
+private Int32 __lcl_i_SystemInt32_5 = 0;
+private Int32 __lcl_i_SystemInt32_4 = 0;
+private Int32 __lcl_i_SystemInt32_7 = 0;
+private Int32 __lcl_i_SystemInt32_6 = 0;
+private String __intnl_SystemString_5 = null;
+private Boolean __lcl_canPlay_SystemBoolean_0 = false;
+private Single __lcl_weight_SystemSingle_0 = 0f;
+private Boolean isTransitioningToIntro = false;
+private String[] __intnl_SystemStringArray_3 = null;
+private String[] __intnl_SystemStringArray_2 = null;
+private String[] __intnl_SystemStringArray_1 = null;
+private String[] __intnl_SystemStringArray_0 = null;
+private String[] __intnl_SystemStringArray_4 = null;
+private Single __intnl_SystemSingle_4 = 0f;
+public Single basePlayChance;
+private Object __intnl_UnityEngineObject_95 = null;
+private Object __intnl_UnityEngineObject_85 = null;
+private Object __intnl_UnityEngineObject_75 = null;
+private Object __intnl_UnityEngineObject_65 = null;
+private Object __intnl_UnityEngineObject_55 = null;
+private Object __intnl_UnityEngineObject_45 = null;
+private Object __intnl_UnityEngineObject_35 = null;
+private Object __intnl_UnityEngineObject_25 = null;
+private Object __intnl_UnityEngineObject_15 = null;
+private object __intnl_SystemObject_4 = null;
+public Single crossfadeDuration;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_3 = null;
+private Single __0_CalculatePlayChance__ret = 0f;
+private String __1_zoneID__param = null;
+private Boolean __intnl_SystemBoolean_109 = false;
+private Boolean __intnl_SystemBoolean_108 = false;
+private Boolean __intnl_SystemBoolean_101 = false;
+private Boolean __intnl_SystemBoolean_100 = false;
+private Boolean __intnl_SystemBoolean_103 = false;
+private Boolean __intnl_SystemBoolean_102 = false;
+private Boolean __intnl_SystemBoolean_105 = false;
+private Boolean __intnl_SystemBoolean_104 = false;
+private Boolean __intnl_SystemBoolean_107 = false;
+private Boolean __intnl_SystemBoolean_106 = false;
+private AudioClip __lcl_clip_UnityEngineAudioClip_2 = null;
+private AudioClip __lcl_clip_UnityEngineAudioClip_1 = null;
+private AudioClip __lcl_clip_UnityEngineAudioClip_0 = null;
+public Single minimumSilenceDuration;
+private String __const_SystemString_9 = "__0_currentTime__param";
+private Boolean isInTransitionGracePeriod = false;
+private Boolean __intnl_SystemBoolean_82 = false;
+private Boolean __intnl_SystemBoolean_92 = false;
+private Boolean __intnl_SystemBoolean_12 = false;
+private Boolean __intnl_SystemBoolean_22 = false;
+private Boolean __intnl_SystemBoolean_32 = false;
+private Boolean __intnl_SystemBoolean_42 = false;
+private Boolean __intnl_SystemBoolean_52 = false;
+private Boolean __intnl_SystemBoolean_62 = false;
+private Boolean __intnl_SystemBoolean_72 = false;
+private UInt32 __gintnl_SystemUInt32_57 = 31924;
+private UInt32 __gintnl_SystemUInt32_47 = 21980;
+private UInt32 __gintnl_SystemUInt32_17 = 4352;
+private UInt32 __gintnl_SystemUInt32_37 = 13520;
+private UInt32 __gintnl_SystemUInt32_27 = 6144;
+private UdonBehaviour __4_track__param = null;
+private Int32 __intnl_SystemInt32_16 = 0;
+private Int32 __intnl_SystemInt32_36 = 0;
+private Int32 __intnl_SystemInt32_26 = 0;
+private String __refl_typename = "DynamicMusicSystem";
+private Single __lcl_nextCheck_SystemSingle_0 = 0f;
+private Single __lcl_t_SystemSingle_0 = 0f;
+private Int32 __lcl_i_SystemInt32_10 = 0;
+private Single __lcl_remaining_SystemSingle_0 = 0f;
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Int32 __intnl_SystemInt32_5 = 0;
+private Int32 __intnl_SystemInt32_4 = 0;
+private Int32 __intnl_SystemInt32_7 = 0;
+private Int32 __intnl_SystemInt32_6 = 0;
+private Int32 __intnl_SystemInt32_9 = 0;
+private Int32 __intnl_SystemInt32_8 = 0;
+private String __intnl_SystemString_2 = null;
+private String __const_SystemString_54 = "Unknown";
+private String __const_SystemString_55 = " | Available tracks: ";
+private String __const_SystemString_52 = "ResetCooldown";
+private String __const_SystemString_53 = "Music System - ";
+private String __const_SystemString_50 = "__0_GetSelectionWeight__ret";
+private String __const_SystemString_51 = "introWeatherTypes";
+private Single __intnl_SystemSingle_3 = 0f;
+private Int32 consecutiveFailures = 0;
+private object __intnl_SystemObject_3 = null;
+private UdonBehaviour __1_introTrack__param = null;
+private Single __0_toVolumeB__param = 0f;
+private Single __0_toVolumeA__param = 0f;
+private Single __lcl_playChance_SystemSingle_0 = 0f;
+private Int32 __0_weather__param = 0;
+private Boolean lastContextChangeWasWeatherChange = false;
+private String __const_SystemString_1 = "__0_GetCurrentWeather__ret";
+public TextMeshProUGUI systemStatusDisplay;
+private String __2_zoneID__param = null;
+private AudioSource __lcl_temp_UnityEngineAudioSource_0 = null;
+private AudioSource __lcl_temp_UnityEngineAudioSource_1 = null;
+private Single __const_SystemSingle_3 = 0.01f;
+private Single __0_multiplier__param = 0f;
+private UdonBehaviour __lcl_selectedTrack_VRCUdonUdonBehaviour_1 = null;
+private String __intnl_SystemString_16 = null;
+private String __intnl_SystemString_17 = null;
+private String __intnl_SystemString_14 = null;
+private String __intnl_SystemString_15 = null;
+private String __intnl_SystemString_12 = null;
+private String __intnl_SystemString_13 = null;
+private String __intnl_SystemString_10 = null;
+private String __intnl_SystemString_11 = null;
+private Int32[] __intnl_SystemInt32Array_3 = null;
+private Boolean __intnl_SystemBoolean_85 = false;
+private Boolean __intnl_SystemBoolean_95 = false;
+private Boolean __intnl_SystemBoolean_15 = false;
+private Boolean __intnl_SystemBoolean_25 = false;
+private Boolean __intnl_SystemBoolean_35 = false;
+private Boolean __intnl_SystemBoolean_45 = false;
+private Boolean __intnl_SystemBoolean_55 = false;
+private Boolean __intnl_SystemBoolean_65 = false;
+private Boolean __intnl_SystemBoolean_75 = false;
+public Boolean letMusicFinishOnTimeChange;
+private Int32 __intnl_SystemInt32_13 = 0;
+private Int32 __intnl_SystemInt32_33 = 0;
+private Int32 __intnl_SystemInt32_23 = 0;
+private UdonBehaviour transitionFromTrack = null;
+private Int32 __lcl_suitableCount_SystemInt32_1 = 0;
+private Int32 __lcl_suitableCount_SystemInt32_0 = 0;
+private Int32 __lcl_suitableCount_SystemInt32_2 = 0;
+private Single crossfadeToVolumeNext = 0f;
+private Int32 __intnl_SystemInt32_18 = 0;
+private Int32 __intnl_SystemInt32_38 = 0;
+private Int32 __intnl_SystemInt32_28 = 0;
+private Single __lcl_totalTransitionTime_SystemSingle_0 = 0f;
+private Boolean isCrossfading = false;
+private Component[] __lcl_suitableTracks_UnityEngineComponentArray_0 = null;
+private Boolean isPlayingIntro = false;
+public TextMeshProUGUI currentTrackDisplay;
+public Boolean enableWeatherIntroSongs;
+private AudioSource nextMusicSource = null;
+private Int32[] playedWeatherIntros = System.Int32[];
+private Object __intnl_UnityEngineObject_90 = null;
+private Object __intnl_UnityEngineObject_80 = null;
+private Object __intnl_UnityEngineObject_70 = null;
+private Object __intnl_UnityEngineObject_60 = null;
+private Object __intnl_UnityEngineObject_50 = null;
+private Object __intnl_UnityEngineObject_40 = null;
+private Object __intnl_UnityEngineObject_30 = null;
+private Object __intnl_UnityEngineObject_20 = null;
+private Object __intnl_UnityEngineObject_10 = null;
+private Single __0_GetSilenceDuration__ret = 0f;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_6 = null;
+private Single __0_fromVolumeA__param = 0f;
+private Single __0_fromVolumeB__param = 0f;
+private String lastZoneID = "";
+private Int32 __3_weather__param = 0;
+private UdonBehaviour __3_track__param = null;
+private Boolean introJustFinished = false;
+private String __const_SystemString_6 = "GetCurrentZoneID";
+private Single __lcl_roll_SystemSingle_0 = 0f;
+private Single __lcl_roll_SystemSingle_1 = 0f;
+private Single __lcl_roll_SystemSingle_2 = 0f;
+private Boolean __lcl_changed_SystemBoolean_0 = false;
+private Component[] __lcl_suitable_UnityEngineComponentArray_1 = null;
+private UInt32 __gintnl_SystemUInt32_50 = 27484;
+private UInt32 __gintnl_SystemUInt32_40 = 17824;
+private UInt32 __gintnl_SystemUInt32_60 = 32732;
+private UInt32 __gintnl_SystemUInt32_10 = 2496;
+private UInt32 __gintnl_SystemUInt32_30 = 8116;
+private UInt32 __gintnl_SystemUInt32_20 = 5236;
+private UdonBehaviour __lcl_bestIntro_VRCUdonUdonBehaviour_0 = null;
+private Boolean __0___0_IsTrackForWeatherType__ret = false;
+private Int32 __intnl_SystemInt32_10 = 0;
+private Int32 __intnl_SystemInt32_30 = 0;
+private Int32 __intnl_SystemInt32_20 = 0;
+private Int32 __intnl_SystemInt32_40 = 0;
+public Component[] musicTracks;
+private AudioSource currentMusicSource = null;
+private String __intnl_SystemString_7 = null;
+private Single crossfadeToVolume = 0f;
+public Single weatherIntroVolumeMultiplier;
+private Object __intnl_UnityEngineObject_98 = null;
+private Object __intnl_UnityEngineObject_88 = null;
+private Object __intnl_UnityEngineObject_78 = null;
+private Object __intnl_UnityEngineObject_68 = null;
+private Object __intnl_UnityEngineObject_58 = null;
+private Object __intnl_UnityEngineObject_48 = null;
+private Object __intnl_UnityEngineObject_38 = null;
+private Object __intnl_UnityEngineObject_28 = null;
+private Object __intnl_UnityEngineObject_18 = null;
+private String __const_SystemString_26 = "__0_IsOnCooldown__ret";
+private String __const_SystemString_27 = "GetAudioClip";
+private String __const_SystemString_24 = "ANY";
+private String __const_SystemString_25 = "IsOnCooldown";
+private String __const_SystemString_22 = "'";
+private String __const_SystemString_23 = ", ";
+private String __const_SystemString_20 = "";
+private String __const_SystemString_21 = "allowedZones";
+private String __const_SystemString_28 = "__0_GetAudioClip__ret";
+private String __const_SystemString_29 = "GetVolume";
+private Single __intnl_SystemSingle_6 = 0f;
+public Single introTrackStartDelay;
+private AudioClip __intnl_UnityEngineAudioClip_3 = null;
+private Object __intnl_UnityEngineObject_97 = null;
+private Object __intnl_UnityEngineObject_87 = null;
+private Object __intnl_UnityEngineObject_77 = null;
+private Object __intnl_UnityEngineObject_67 = null;
+private Object __intnl_UnityEngineObject_57 = null;
+private Object __intnl_UnityEngineObject_47 = null;
+private Object __intnl_UnityEngineObject_37 = null;
+private Object __intnl_UnityEngineObject_27 = null;
+private Object __intnl_UnityEngineObject_17 = null;
+private object __intnl_SystemObject_6 = null;
+private String __lcl_changeType_SystemString_0 = null;
+private Single __lcl_newTrackTargetVolume_SystemSingle_0 = 0f;
+private Single __lcl_timeSinceTransition_SystemSingle_0 = 0f;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_5 = null;
+private Single __0___0_GetEffectiveTrackVolume__ret = 0f;
+private Single __lcl_currentVolume_SystemSingle_0 = 0f;
+private String[] playedIntroZones = new string[] {  };
+public Boolean letMusicFinishOnWeatherChange;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_8 = null;
+private UInt32 __gintnl_SystemUInt32_58 = 32144;
+private UInt32 __gintnl_SystemUInt32_48 = 26076;
+private UInt32 __gintnl_SystemUInt32_18 = 4388;
+private UInt32 __gintnl_SystemUInt32_38 = 14676;
+private UInt32 __gintnl_SystemUInt32_28 = 7052;
+private Single __const_SystemSingle_5 = 2f;
+private Object __intnl_UnityEngineObject_112 = null;
+private Object __intnl_UnityEngineObject_113 = null;
+private Object __intnl_UnityEngineObject_110 = null;
+private Object __intnl_UnityEngineObject_111 = null;
+private Boolean __intnl_SystemBoolean_80 = false;
+private Boolean __intnl_SystemBoolean_90 = false;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Boolean __intnl_SystemBoolean_20 = false;
+private Boolean __intnl_SystemBoolean_30 = false;
+private Boolean __intnl_SystemBoolean_40 = false;
+private Boolean __intnl_SystemBoolean_50 = false;
+private Boolean __intnl_SystemBoolean_60 = false;
+private Boolean __intnl_SystemBoolean_70 = false;
+private Int32 lastWeatherType = 0;
+private UInt32 __gintnl_SystemUInt32_55 = 31628;
+private UInt32 __gintnl_SystemUInt32_45 = 20076;
+private UInt32 __gintnl_SystemUInt32_15 = 4132;
+private UInt32 __gintnl_SystemUInt32_35 = 12416;
+private UInt32 __gintnl_SystemUInt32_25 = 5868;
+private Int32 __0_GetValidTrackCount__ret = 0;
+private Component[] __lcl_suitableIntros_UnityEngineComponentArray_1 = null;
+private Int32 __const_SystemInt32_1 = 1;
+private Int32 __const_SystemInt32_0 = 0;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private Single __lcl_fadeOutProgress_SystemSingle_0 = 0f;
+private String __0_zoneID__param = null;
+private String previousZoneID = "";
+private String __intnl_SystemString_4 = null;
+private Single crossfadeStartTime = 0f;
+private Int32 lastTimeOfDay = 0;
+private Single __intnl_SystemSingle_5 = 0f;
+private String __lcl_status_SystemString_0 = null;
+private String __lcl_status_SystemString_1 = null;
+private object __intnl_SystemObject_5 = null;
+private object __intnl_SystemObject_8 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_0 = null;
+private String __const_SystemString_3 = "__0_IsValid__ret";
+private Boolean __intnl_SystemBoolean_119 = false;
+private Boolean __intnl_SystemBoolean_118 = false;
+private Boolean __intnl_SystemBoolean_111 = false;
+private Boolean __intnl_SystemBoolean_110 = false;
+private Boolean __intnl_SystemBoolean_113 = false;
+private Boolean __intnl_SystemBoolean_112 = false;
+private Boolean __intnl_SystemBoolean_115 = false;
+private Boolean __intnl_SystemBoolean_114 = false;
+private Boolean __intnl_SystemBoolean_117 = false;
+private Boolean __intnl_SystemBoolean_116 = false;
+public Boolean enableIntroSongs;
+private Single silenceDuration = 0f;
+public AudioSource musicSourceA;
+private Int32 __1_weather__param = 0;
+private String __const_SystemString_8 = "MarkAsPlayed";
+private Int32 __4_weather__param = 0;
+private Boolean __intnl_SystemBoolean_88 = false;
+private Boolean __intnl_SystemBoolean_98 = false;
+private Boolean __intnl_SystemBoolean_18 = false;
+private Boolean __intnl_SystemBoolean_28 = false;
+private Boolean __intnl_SystemBoolean_38 = false;
+private Boolean __intnl_SystemBoolean_48 = false;
+private Boolean __intnl_SystemBoolean_58 = false;
+private Boolean __intnl_SystemBoolean_68 = false;
+private Boolean __intnl_SystemBoolean_78 = false;
+
+
+public void _start()
+{
+UNDEF_a2784_1688();
+UNDEF_a2784_2076();
+__intnl_UnityEngineObject_0 = dayNightCycle;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_0)
+{
+__intnl_VRCUdonUdonBehaviour_0 = dayNightCycle;
+dayNightCycle.SendCustomEvent(__const_SystemString_0);
+__intnl_SystemObject_0 = dayNightCycle.GetProgramVariable(__const_SystemString_1);
+__intnl_SystemInt32_1 = Convert.ToInt32(__intnl_SystemObject_0);
+__intnl_SystemInt32_0 = __intnl_SystemInt32_1;
+lastWeatherType = __intnl_SystemInt32_0;
+}
+UpdateCurrentContext();
+previousZoneID = lastZoneID;
+lastMusicCheckTime = Time.time;
+lastTrackEndTime = Time.time;
+if (enableDebugLogs)
+{
+}
+}
+private void UNDEF_a2784_1688()
+{
+__intnl_UnityEngineObject_2 = dayNightCycle;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_2 == __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_1)
+{
+}
+__intnl_UnityEngineObject_4 = ambientZoneManager;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_2 = __intnl_UnityEngineObject_4 == __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_2)
+{
+}
+__intnl_UnityEngineObject_6 = musicSourceA;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_3 = __intnl_UnityEngineObject_6 == __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_3)
+{
+}
+__intnl_UnityEngineObject_8 = musicSourceB;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_4 = __intnl_UnityEngineObject_8 == __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_4)
+{
+}
+__lcl_validTracks_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_invalidTracks_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_0 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_2 = musicTracks.Length;
+__intnl_SystemBoolean_5 = __lcl_i_SystemInt32_0 < __intnl_SystemInt32_2;
+if (__intnl_SystemBoolean_5)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_1 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_0]);
+__intnl_UnityEngineObject_10 = __intnl_VRCUdonUdonBehaviour_1;
+__intnl_UnityEngineObject_11 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_6 = __intnl_UnityEngineObject_10 != __intnl_UnityEngineObject_11;
+if (__intnl_SystemBoolean_6)
+{
+__intnl_VRCUdonUdonBehaviour_2 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_0]);
+__intnl_VRCUdonUdonBehaviour_2.SendCustomEvent(__const_SystemString_2);
+__intnl_SystemObject_1 = __intnl_VRCUdonUdonBehaviour_2.GetProgramVariable(__const_SystemString_3);
+__intnl_SystemBoolean_7 = (Boolean)__intnl_SystemObject_1;
+if (__intnl_SystemBoolean_7)
+{
+__lcl_validTracks_SystemInt32_0 = __lcl_validTracks_SystemInt32_0 + __const_SystemInt32_1;
+}
+else
+{
+__lcl_invalidTracks_SystemInt32_0 = __lcl_invalidTracks_SystemInt32_0 + __const_SystemInt32_1;
+}
+}
+else
+{
+__lcl_invalidTracks_SystemInt32_0 = __lcl_invalidTracks_SystemInt32_0 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_1;
+}
+__intnl_SystemBoolean_5 = __lcl_validTracks_SystemInt32_0 == __const_SystemInt32_0;
+if (__intnl_SystemBoolean_5)
+{
+break;
+}
+__intnl_SystemBoolean_6 = basePlayChance < __const_SystemSingle_0;
+if (__intnl_SystemBoolean_6)
+{
+basePlayChance = __const_SystemSingle_0;
+}
+__intnl_SystemBoolean_7 = basePlayChance > __const_SystemSingle_1;
+if (__intnl_SystemBoolean_7)
+{
+basePlayChance = __const_SystemSingle_1;
+}
+__intnl_SystemBoolean_8 = chanceIncrease < __const_SystemSingle_0;
+if (__intnl_SystemBoolean_8)
+{
+chanceIncrease = __const_SystemSingle_0;
+}
+__intnl_SystemBoolean_9 = chanceIncrease > __const_SystemSingle_1;
+if (__intnl_SystemBoolean_9)
+{
+chanceIncrease = __const_SystemSingle_1;
+}
+__intnl_SystemBoolean_10 = minimumSilenceDuration > maximumSilenceDuration;
+if (__intnl_SystemBoolean_10)
+{
+minimumSilenceDuration = maximumSilenceDuration * __const_SystemSingle_2;
+}
+}
+private void UNDEF_a2784_2076()
+{
+__intnl_UnityEngineObject_12 = musicSourceA;
+__intnl_UnityEngineObject_13 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_11 = __intnl_UnityEngineObject_12 != __intnl_UnityEngineObject_13;
+if (__intnl_SystemBoolean_11)
+{
+musicSourceA.volume = __const_SystemSingle_0;
+musicSourceA.loop = __const_SystemBoolean_0;
+musicSourceA.playOnAwake = __const_SystemBoolean_0;
+}
+__intnl_UnityEngineObject_14 = musicSourceB;
+__intnl_UnityEngineObject_15 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_12 = __intnl_UnityEngineObject_14 != __intnl_UnityEngineObject_15;
+if (__intnl_SystemBoolean_12)
+{
+musicSourceB.volume = __const_SystemSingle_0;
+musicSourceB.loop = __const_SystemBoolean_0;
+musicSourceB.playOnAwake = __const_SystemBoolean_0;
+}
+currentMusicSource = musicSourceA;
+nextMusicSource = musicSourceB;
+}
+public void _update()
+{
+if (forceSkipTrack)
+{
+forceSkipTrack = __const_SystemBoolean_0;
+ForceSkipToNextTrack();
+}
+if (forceSilence)
+{
+forceSilence = __const_SystemBoolean_0;
+ForceSilence();
+}
+if (resetAllCooldowns)
+{
+resetAllCooldowns = __const_SystemBoolean_0;
+UNDEF_a2784_31328();
+}
+UNDEF_a2784_16560();
+UpdateCurrentContext();
+__lcl_contextChanged_SystemBoolean_0 = __0_UpdateCurrentContext__ret;
+UNDEF_a2784_4516();
+__intnl_SystemSingle_0 = Time.time;
+__intnl_SystemSingle_1 = __intnl_SystemSingle_0 - lastMusicCheckTime;
+__intnl_SystemBoolean_13 = __intnl_SystemSingle_1 >= musicCheckInterval;
+if (__intnl_SystemBoolean_13)
+{
+}
+else
+{
+__intnl_SystemBoolean_13 = __lcl_contextChanged_SystemBoolean_0;
+}
+if (__intnl_SystemBoolean_13)
+{
+lastMusicCheckTime = Time.time;
+UNDEF_a2784_6280();
+}
+UNDEF_a2784_22056();
+}
+private void UpdateCurrentContext()
+{
+__lcl_changed_SystemBoolean_0 = __const_SystemBoolean_0;
+lastContextChangeWasTimeChange = __const_SystemBoolean_0;
+lastContextChangeWasZoneChange = __const_SystemBoolean_0;
+lastContextChangeWasWeatherChange = __const_SystemBoolean_0;
+__intnl_UnityEngineObject_16 = dayNightCycle;
+__intnl_UnityEngineObject_17 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_14 = __intnl_UnityEngineObject_16 != __intnl_UnityEngineObject_17;
+if (__intnl_SystemBoolean_14)
+{
+__intnl_VRCUdonUdonBehaviour_3 = dayNightCycle;
+dayNightCycle.SendCustomEvent(__const_SystemString_4);
+__intnl_SystemObject_2 = dayNightCycle.GetProgramVariable(__const_SystemString_5);
+__intnl_SystemInt32_4 = Convert.ToInt32(__intnl_SystemObject_2);
+__intnl_SystemInt32_3 = __intnl_SystemInt32_4;
+__lcl_currentTime_SystemInt32_0 = __intnl_SystemInt32_3;
+__intnl_SystemBoolean_15 = __lcl_currentTime_SystemInt32_0 != lastTimeOfDay;
+if (__intnl_SystemBoolean_15)
+{
+lastTimeOfDay = __lcl_currentTime_SystemInt32_0;
+__lcl_changed_SystemBoolean_0 = __const_SystemBoolean_1;
+lastContextChangeWasTimeChange = __const_SystemBoolean_1;
+if (enableDebugLogs)
+{
+}
+}
+__intnl_VRCUdonUdonBehaviour_4 = dayNightCycle;
+dayNightCycle.SendCustomEvent(__const_SystemString_0);
+__intnl_SystemObject_3 = dayNightCycle.GetProgramVariable(__const_SystemString_1);
+__intnl_SystemInt32_6 = Convert.ToInt32(__intnl_SystemObject_3);
+__intnl_SystemInt32_5 = __intnl_SystemInt32_6;
+__lcl_currentWeather_SystemInt32_0 = __intnl_SystemInt32_5;
+__intnl_SystemBoolean_16 = __lcl_currentWeather_SystemInt32_0 != lastWeatherType;
+if (__intnl_SystemBoolean_16)
+{
+__lcl_previousWeather_SystemInt32_0 = lastWeatherType;
+lastWeatherType = __lcl_currentWeather_SystemInt32_0;
+__lcl_changed_SystemBoolean_0 = __const_SystemBoolean_1;
+lastContextChangeWasWeatherChange = __const_SystemBoolean_1;
+if (enableDebugLogs)
+{
+}
+__intnl_SystemBoolean_17 = enableWeatherIntroSongs;
+if (__intnl_SystemBoolean_17)
+{
+__intnl_SystemBoolean_18 = replayWeatherIntrosEachTime;
+if (__intnl_SystemBoolean_18)
+{
+}
+else
+{
+__0_weather__param = __lcl_currentWeather_SystemInt32_0;
+__0_HasPlayedIntroForWeather();
+__intnl_SystemBoolean_18 = !__0___0_HasPlayedIntroForWeather__ret;
+}
+__intnl_SystemBoolean_17 = __intnl_SystemBoolean_18;
+}
+__lcl_shouldPlayWeatherIntro_SystemBoolean_0 = __intnl_SystemBoolean_17;
+if (__lcl_shouldPlayWeatherIntro_SystemBoolean_0)
+{
+__2_weather__param = __lcl_currentWeather_SystemInt32_0;
+__0_SelectWeatherIntroTrack();
+__lcl_weatherIntroTrack_VRCUdonUdonBehaviour_0 = __0___0_SelectWeatherIntroTrack__ret;
+__intnl_UnityEngineObject_18 = __lcl_weatherIntroTrack_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_19 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_19 = __intnl_UnityEngineObject_18 != __intnl_UnityEngineObject_19;
+if (__intnl_SystemBoolean_19)
+{
+__1_introTrack__param = __lcl_weatherIntroTrack_VRCUdonUdonBehaviour_0;
+__4_weather__param = __lcl_currentWeather_SystemInt32_0;
+UNDEF_a2784_30504();
+if (replayWeatherIntrosEachTime)
+{
+}
+else
+{
+__1_weather__param = __lcl_currentWeather_SystemInt32_0;
+UNDEF_a2784_26872();
+}
+if (enableDebugLogs)
+{
+}
+}
+}
+}
+}
+__intnl_UnityEngineObject_18 = ambientZoneManager;
+__intnl_UnityEngineObject_19 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_15 = __intnl_UnityEngineObject_18 != __intnl_UnityEngineObject_19;
+if (__intnl_SystemBoolean_15)
+{
+__intnl_VRCUdonUdonBehaviour_3 = ambientZoneManager;
+ambientZoneManager.SendCustomEvent(__const_SystemString_6);
+__intnl_SystemObject_2 = ambientZoneManager.GetProgramVariable(__const_SystemString_7);
+__intnl_SystemString_0 = (String)__intnl_SystemObject_2;
+__lcl_currentZone_SystemString_0 = __intnl_SystemString_0;
+__intnl_SystemBoolean_16 = __lcl_currentZone_SystemString_0 != lastZoneID;
+if (__intnl_SystemBoolean_16)
+{
+previousZoneID = lastZoneID;
+lastZoneID = __lcl_currentZone_SystemString_0;
+__lcl_changed_SystemBoolean_0 = __const_SystemBoolean_1;
+lastContextChangeWasZoneChange = __const_SystemBoolean_1;
+if (enableDebugLogs)
+{
+}
+__intnl_SystemBoolean_17 = enableIntroSongs;
+if (__intnl_SystemBoolean_17)
+{
+__0_zoneID__param = __lcl_currentZone_SystemString_0;
+__0_HasPlayedIntroForZone();
+__intnl_SystemBoolean_17 = !__0___0_HasPlayedIntroForZone__ret;
+}
+if (__intnl_SystemBoolean_17)
+{
+__2_zoneID__param = __lcl_currentZone_SystemString_0;
+__0_SelectIntroTrack();
+__lcl_introTrack_VRCUdonUdonBehaviour_0 = __0___0_SelectIntroTrack__ret;
+__intnl_UnityEngineObject_20 = __lcl_introTrack_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_21 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_18 = __intnl_UnityEngineObject_20 != __intnl_UnityEngineObject_21;
+if (__intnl_SystemBoolean_18)
+{
+__0_introTrack__param = __lcl_introTrack_VRCUdonUdonBehaviour_0;
+UNDEF_a2784_26156();
+__1_zoneID__param = __lcl_currentZone_SystemString_0;
+UNDEF_a2784_23288();
+if (enableDebugLogs)
+{
+}
+}
+}
+}
+}
+__0_UpdateCurrentContext__ret = __lcl_changed_SystemBoolean_0;
+return;
+}
+private void UNDEF_a2784_4516()
+{
+if (isMusicPlaying)
+{
+UNDEF_a2784_4852();
+}
+}
+private void UNDEF_a2784_4852()
+{
+__intnl_UnityEngineObject_22 = currentMusicSource;
+__intnl_UnityEngineObject_23 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_21 = __intnl_UnityEngineObject_22 != __intnl_UnityEngineObject_23;
+if (__intnl_SystemBoolean_21)
+{
+__intnl_SystemBoolean_22 = currentMusicSource.isPlaying;
+__intnl_SystemBoolean_21 = !__intnl_SystemBoolean_22;
+}
+__intnl_SystemBoolean_20 = __intnl_SystemBoolean_21;
+if (__intnl_SystemBoolean_20)
+{
+__intnl_SystemBoolean_20 = !isCrossfading;
+}
+if (__intnl_SystemBoolean_20)
+{
+if (enableDebugLogs)
+{
+}
+if (isPlayingIntro)
+{
+introJustFinished = __const_SystemBoolean_1;
+isPlayingIntro = __const_SystemBoolean_0;
+if (enableDebugLogs)
+{
+}
+}
+UNDEF_a2784_5424();
+}
+}
+private void UNDEF_a2784_5424()
+{
+__intnl_UnityEngineObject_24 = currentTrack;
+__intnl_UnityEngineObject_25 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_23 = __intnl_UnityEngineObject_24 != __intnl_UnityEngineObject_25;
+if (__intnl_SystemBoolean_23)
+{
+__intnl_VRCUdonUdonBehaviour_5 = currentTrack;
+currentTrack.SendCustomEvent(__const_SystemString_8);
+}
+__lcl_skipSilence_SystemBoolean_0 = allowTrackToFinishNaturally;
+isMusicPlaying = __const_SystemBoolean_0;
+currentTrack = (UdonBehaviour)__const_SystemObject_0;
+lastTrackEndTime = Time.time;
+silenceDuration = __const_SystemSingle_0;
+consecutiveFailures = __const_SystemInt32_0;
+isInTransitionGracePeriod = __const_SystemBoolean_0;
+newTrackDelayTimer = __const_SystemSingle_0;
+isTransitioningToIntro = __const_SystemBoolean_0;
+allowTrackToFinishNaturally = __const_SystemBoolean_0;
+if (__lcl_skipSilence_SystemBoolean_0)
+{
+if (enableDebugLogs)
+{
+}
+SelectAppropriateTrack();
+__lcl_selectedTrack_VRCUdonUdonBehaviour_0 = __0_SelectAppropriateTrack__ret;
+__intnl_UnityEngineObject_26 = __lcl_selectedTrack_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_27 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_24 = __intnl_UnityEngineObject_26 != __intnl_UnityEngineObject_27;
+if (__intnl_SystemBoolean_24)
+{
+__0_track__param = __lcl_selectedTrack_VRCUdonUdonBehaviour_0;
+UNDEF_a2784_13596();
+}
+}
+else
+{
+if (enableDebugLogs)
+{
+}
+}
+}
+private void UNDEF_a2784_6280()
+{
+if (introJustFinished)
+{
+introJustFinished = __const_SystemBoolean_0;
+if (enableDebugLogs)
+{
+}
+SelectAppropriateTrack();
+__lcl_selectedTrack_VRCUdonUdonBehaviour_1 = __0_SelectAppropriateTrack__ret;
+__intnl_UnityEngineObject_28 = __lcl_selectedTrack_VRCUdonUdonBehaviour_1;
+__intnl_UnityEngineObject_29 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_25 = __intnl_UnityEngineObject_28 != __intnl_UnityEngineObject_29;
+if (__intnl_SystemBoolean_25)
+{
+__0_track__param = __lcl_selectedTrack_VRCUdonUdonBehaviour_1;
+UNDEF_a2784_13596();
+consecutiveFailures = __const_SystemInt32_0;
+}
+return;
+}
+if (isMusicPlaying)
+{
+UNDEF_a2784_8520();
+return;
+}
+__intnl_SystemSingle_2 = Time.time;
+silenceDuration = __intnl_SystemSingle_2 - lastTrackEndTime;
+__intnl_SystemBoolean_25 = silenceDuration < minimumSilenceDuration;
+if (__intnl_SystemBoolean_25)
+{
+return;
+}
+CalculatePlayChance();
+__lcl_playChance_SystemSingle_0 = __0_CalculatePlayChance__ret;
+__lcl_roll_SystemSingle_0 = Random.Range(__const_SystemSingle_0, __const_SystemSingle_1);
+if (enableDebugLogs)
+{
+}
+__intnl_SystemBoolean_26 = __lcl_roll_SystemSingle_0 <= __lcl_playChance_SystemSingle_0;
+if (__intnl_SystemBoolean_26)
+{
+SelectAppropriateTrack();
+__lcl_selectedTrack_VRCUdonUdonBehaviour_1 = __0_SelectAppropriateTrack__ret;
+__intnl_UnityEngineObject_28 = __lcl_selectedTrack_VRCUdonUdonBehaviour_1;
+__intnl_UnityEngineObject_29 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_27 = __intnl_UnityEngineObject_28 != __intnl_UnityEngineObject_29;
+if (__intnl_SystemBoolean_27)
+{
+__0_track__param = __lcl_selectedTrack_VRCUdonUdonBehaviour_1;
+UNDEF_a2784_13596();
+consecutiveFailures = __const_SystemInt32_0;
+}
+else
+{
+consecutiveFailures = consecutiveFailures + __const_SystemInt32_1;
+if (enableDebugLogs)
+{
+}
+}
+}
+else
+{
+consecutiveFailures = consecutiveFailures + __const_SystemInt32_1;
+}
+}
+private void CalculatePlayChance()
+{
+__lcl_chance_SystemSingle_0 = basePlayChance;
+__intnl_SystemSingle_3 = Convert.ToSingle(consecutiveFailures);
+__intnl_SystemSingle_4 = __intnl_SystemSingle_3 * chanceIncrease;
+__lcl_chance_SystemSingle_0 = __lcl_chance_SystemSingle_0 + __intnl_SystemSingle_4;
+__intnl_SystemBoolean_28 = silenceDuration >= maximumSilenceDuration;
+if (__intnl_SystemBoolean_28)
+{
+__lcl_chance_SystemSingle_0 = __const_SystemSingle_1;
+if (enableDebugLogs)
+{
+}
+}
+__0_CalculatePlayChance__ret = Mathf.Clamp01(__lcl_chance_SystemSingle_0);
+return;
+}
+private void UNDEF_a2784_8520()
+{
+__intnl_UnityEngineObject_30 = currentTrack;
+__intnl_UnityEngineObject_31 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_29 = __intnl_UnityEngineObject_30 == __intnl_UnityEngineObject_31;
+if (__intnl_SystemBoolean_29)
+{
+return;
+}
+if (isPlayingIntro)
+{
+if (enableDebugLogs)
+{
+}
+return;
+}
+__intnl_SystemBoolean_30 = lastContextChangeWasZoneChange;
+if (__intnl_SystemBoolean_30)
+{
+__intnl_SystemBoolean_30 = allowTrackToFinishNaturally;
+}
+if (__intnl_SystemBoolean_30)
+{
+allowTrackToFinishNaturally = __const_SystemBoolean_0;
+if (enableDebugLogs)
+{
+}
+}
+__intnl_SystemBoolean_31 = isInTransitionGracePeriod;
+if (__intnl_SystemBoolean_31)
+{
+__intnl_SystemBoolean_31 = enableZoneReturnGrace;
+}
+if (__intnl_SystemBoolean_31)
+{
+__intnl_SystemSingle_5 = Time.time;
+__lcl_timeSinceTransition_SystemSingle_0 = __intnl_SystemSingle_5 - transitionStartTime;
+__intnl_SystemBoolean_32 = __lcl_timeSinceTransition_SystemSingle_0 < zoneReturnGracePeriod;
+if (__intnl_SystemBoolean_32)
+{
+__intnl_SystemBoolean_33 = lastZoneID == transitionFromZoneID;
+if (__intnl_SystemBoolean_33)
+{
+UNDEF_a2784_20172();
+return;
+}
+}
+else
+{
+isInTransitionGracePeriod = __const_SystemBoolean_0;
+if (enableDebugLogs)
+{
+}
+}
+}
+__3_track__param = currentTrack;
+__0_GetZoneForTrack();
+__lcl_zoneToCheck_SystemString_0 = __0___0_GetZoneForTrack__ret;
+__intnl_SystemInt32_7 = lastTimeOfDay;
+__intnl_SystemInt32_8 = lastWeatherType;
+currentTrack.SetProgramVariable(__const_SystemString_9, lastTimeOfDay);
+currentTrack.SetProgramVariable(__const_SystemString_10, __lcl_zoneToCheck_SystemString_0);
+currentTrack.SetProgramVariable(__const_SystemString_11, lastWeatherType);
+currentTrack.SendCustomEvent(__const_SystemString_12);
+__intnl_SystemObject_4 = currentTrack.GetProgramVariable(__const_SystemString_13);
+__intnl_SystemBoolean_32 = (Boolean)__intnl_SystemObject_4;
+if (__intnl_SystemBoolean_32)
+{
+}
+else
+{
+if (enableDebugLogs)
+{
+}
+__intnl_SystemBoolean_34 = letMusicFinishOnTimeChange;
+if (__intnl_SystemBoolean_34)
+{
+__intnl_SystemBoolean_34 = lastContextChangeWasTimeChange;
+}
+__intnl_SystemBoolean_33 = __intnl_SystemBoolean_34;
+if (__intnl_SystemBoolean_33)
+{
+__intnl_SystemBoolean_33 = !lastContextChangeWasZoneChange;
+}
+if (__intnl_SystemBoolean_33)
+{
+allowTrackToFinishNaturally = __const_SystemBoolean_1;
+if (enableDebugLogs)
+{
+}
+return;
+}
+__intnl_SystemBoolean_36 = letMusicFinishOnWeatherChange;
+if (__intnl_SystemBoolean_36)
+{
+__intnl_SystemBoolean_36 = lastContextChangeWasWeatherChange;
+}
+__intnl_SystemBoolean_35 = __intnl_SystemBoolean_36;
+if (__intnl_SystemBoolean_35)
+{
+__intnl_SystemBoolean_35 = !lastContextChangeWasZoneChange;
+}
+if (__intnl_SystemBoolean_35)
+{
+allowTrackToFinishNaturally = __const_SystemBoolean_1;
+if (enableDebugLogs)
+{
+}
+return;
+}
+if (allowTrackToFinishNaturally)
+{
+if (enableDebugLogs)
+{
+}
+return;
+}
+if (enableDebugLogs)
+{
+if (lastContextChangeWasZoneChange)
+{
+__lcl_changeType_SystemString_0 = __const_SystemString_14;
+}
+else
+{
+__lcl_changeType_SystemString_0 = __const_SystemString_15;
+}
+}
+allowTrackToFinishNaturally = __const_SystemBoolean_0;
+__intnl_UnityEngineObject_32 = currentTrack;
+__intnl_UnityEngineObject_33 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_37 = __intnl_UnityEngineObject_32 != __intnl_UnityEngineObject_33;
+if (__intnl_SystemBoolean_37)
+{
+__intnl_VRCUdonUdonBehaviour_6 = currentTrack;
+currentTrack.SendCustomEvent(__const_SystemString_8);
+if (enableDebugLogs)
+{
+}
+}
+SelectAppropriateTrack();
+__lcl_newTrack_VRCUdonUdonBehaviour_0 = __0_SelectAppropriateTrack__ret;
+__intnl_UnityEngineObject_34 = __lcl_newTrack_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_35 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_38 = __intnl_UnityEngineObject_34 != __intnl_UnityEngineObject_35;
+if (__intnl_SystemBoolean_38)
+{
+__intnl_UnityEngineObject_36 = __lcl_newTrack_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_37 = currentTrack;
+__intnl_SystemBoolean_38 = __intnl_UnityEngineObject_36 != __intnl_UnityEngineObject_37;
+}
+if (__intnl_SystemBoolean_38)
+{
+__0_newTrack__param = __lcl_newTrack_VRCUdonUdonBehaviour_0;
+UNDEF_a2784_15320();
+}
+else
+{
+__intnl_UnityEngineObject_38 = __lcl_newTrack_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_39 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_39 = __intnl_UnityEngineObject_38 == __intnl_UnityEngineObject_39;
+if (__intnl_SystemBoolean_39)
+{
+if (enableDebugLogs)
+{
+}
+ForceSilence();
+}
+else
+{
+if (enableDebugLogs)
+{
+}
+}
+}
+}
+}
+private void SelectAppropriateTrack()
+{
+GetSuitableTracks();
+__lcl_suitableTracks_UnityEngineComponentArray_0 = __0_GetSuitableTracks__ret;
+__intnl_SystemInt32_9 = __lcl_suitableTracks_UnityEngineComponentArray_0.Length;
+__intnl_SystemBoolean_40 = __intnl_SystemInt32_9 == __const_SystemInt32_0;
+if (__intnl_SystemBoolean_40)
+{
+if (enableDebugLogs)
+{
+}
+__0_SelectAppropriateTrack__ret = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+__lcl_totalWeight_SystemSingle_0 = __const_SystemSingle_0;
+__lcl_i_SystemInt32_1 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_10 = __lcl_suitableTracks_UnityEngineComponentArray_0.Length;
+__intnl_SystemBoolean_41 = __lcl_i_SystemInt32_1 < __intnl_SystemInt32_10;
+if (__intnl_SystemBoolean_41)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_7 = (UdonBehaviour)(__lcl_suitableTracks_UnityEngineComponentArray_0[__lcl_i_SystemInt32_1]);
+__intnl_VRCUdonUdonBehaviour_7.SendCustomEvent(__const_SystemString_16);
+__intnl_SystemObject_5 = __intnl_VRCUdonUdonBehaviour_7.GetProgramVariable(__const_SystemString_17);
+__intnl_SystemSingle_6 = Convert.ToSingle(__intnl_SystemObject_5);
+__lcl_weight_SystemSingle_0 = __intnl_SystemSingle_6;
+__lcl_totalWeight_SystemSingle_0 = __lcl_totalWeight_SystemSingle_0 + __lcl_weight_SystemSingle_0;
+__lcl_i_SystemInt32_1 = __lcl_i_SystemInt32_1 + __const_SystemInt32_1;
+}
+__intnl_SystemBoolean_41 = __lcl_totalWeight_SystemSingle_0 <= __const_SystemSingle_0;
+if (__intnl_SystemBoolean_41)
+{
+if (enableDebugLogs)
+{
+}
+__0_SelectAppropriateTrack__ret = (UdonBehaviour)(__lcl_suitableTracks_UnityEngineComponentArray_0[__const_SystemInt32_0]);
+return;
+}
+__lcl_roll_SystemSingle_1 = Random.Range(__const_SystemSingle_0, __lcl_totalWeight_SystemSingle_0);
+__lcl_accumulated_SystemSingle_0 = __const_SystemSingle_0;
+__lcl_i_SystemInt32_1 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_10 = __lcl_suitableTracks_UnityEngineComponentArray_0.Length;
+__intnl_SystemBoolean_42 = __lcl_i_SystemInt32_1 < __intnl_SystemInt32_10;
+if (__intnl_SystemBoolean_42)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_7 = (UdonBehaviour)(__lcl_suitableTracks_UnityEngineComponentArray_0[__lcl_i_SystemInt32_1]);
+__intnl_VRCUdonUdonBehaviour_7.SendCustomEvent(__const_SystemString_16);
+__intnl_SystemObject_5 = __intnl_VRCUdonUdonBehaviour_7.GetProgramVariable(__const_SystemString_17);
+__intnl_SystemSingle_6 = Convert.ToSingle(__intnl_SystemObject_5);
+__lcl_weight_SystemSingle_0 = __intnl_SystemSingle_6;
+__lcl_accumulated_SystemSingle_0 = __lcl_accumulated_SystemSingle_0 + __lcl_weight_SystemSingle_0;
+__intnl_SystemBoolean_43 = __lcl_roll_SystemSingle_1 <= __lcl_accumulated_SystemSingle_0;
+if (__intnl_SystemBoolean_43)
+{
+if (enableDebugLogs)
+{
+}
+__0_SelectAppropriateTrack__ret = (UdonBehaviour)(__lcl_suitableTracks_UnityEngineComponentArray_0[__lcl_i_SystemInt32_1]);
+return;
+}
+__lcl_i_SystemInt32_1 = __lcl_i_SystemInt32_1 + __const_SystemInt32_1;
+}
+__intnl_SystemInt32_10 = __lcl_suitableTracks_UnityEngineComponentArray_0.Length;
+__intnl_SystemInt32_11 = __intnl_SystemInt32_10 - __const_SystemInt32_1;
+__0_SelectAppropriateTrack__ret = (UdonBehaviour)(__lcl_suitableTracks_UnityEngineComponentArray_0[__intnl_SystemInt32_11]);
+return;
+}
+private void GetSuitableTracks()
+{
+__lcl_suitableCount_SystemInt32_0 = __const_SystemInt32_0;
+if (enableDebugLogs)
+{
+}
+__lcl_i_SystemInt32_2 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_12 = musicTracks.Length;
+__intnl_SystemBoolean_44 = __lcl_i_SystemInt32_2 < __intnl_SystemInt32_12;
+if (__intnl_SystemBoolean_44)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_8 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_2]);
+__intnl_UnityEngineObject_40 = __intnl_VRCUdonUdonBehaviour_8;
+__intnl_UnityEngineObject_41 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_45 = __intnl_UnityEngineObject_40 == __intnl_UnityEngineObject_41;
+if (__intnl_SystemBoolean_45)
+{
+}
+else
+{
+__intnl_VRCUdonUdonBehaviour_9 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_2]);
+__intnl_VRCUdonUdonBehaviour_9.SendCustomEvent(__const_SystemString_2);
+__intnl_SystemObject_6 = __intnl_VRCUdonUdonBehaviour_9.GetProgramVariable(__const_SystemString_3);
+__intnl_SystemBoolean_46 = (Boolean)__intnl_SystemObject_6;
+if (__intnl_SystemBoolean_46)
+{
+}
+else
+{
+}
+__intnl_VRCUdonUdonBehaviour_10 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_2]);
+__intnl_SystemObject_7 = __intnl_VRCUdonUdonBehaviour_10.GetProgramVariable(__const_SystemString_18);
+__intnl_SystemBoolean_47 = (Boolean)__intnl_SystemObject_7;
+if (__intnl_SystemBoolean_47)
+{
+}
+else
+{
+__intnl_VRCUdonUdonBehaviour_11 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_2]);
+__intnl_SystemObject_8 = __intnl_VRCUdonUdonBehaviour_11.GetProgramVariable(__const_SystemString_19);
+__intnl_SystemBoolean_47 = (Boolean)__intnl_SystemObject_8;
+}
+if (__intnl_SystemBoolean_47)
+{
+}
+else
+{
+__intnl_VRCUdonUdonBehaviour_12 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_2]);
+__4_track__param = __intnl_VRCUdonUdonBehaviour_12;
+__0_IsTrackSuitableForCurrentContext();
+if (__0___0_IsTrackSuitableForCurrentContext__ret)
+{
+}
+else
+{
+if (enableDebugLogs)
+{
+__lcl_zoneList_SystemString_0 = __const_SystemString_20;
+__intnl_VRCUdonUdonBehaviour_13 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_2]);
+__intnl_SystemObject_9 = __intnl_VRCUdonUdonBehaviour_13.GetProgramVariable(__const_SystemString_21);
+__intnl_SystemStringArray_0 = (String[])__intnl_SystemObject_9;
+__intnl_SystemBoolean_48 = __intnl_SystemStringArray_0 != __const_SystemObject_0;
+if (__intnl_SystemBoolean_48)
+{
+__intnl_VRCUdonUdonBehaviour_14 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_2]);
+__intnl_SystemObject_10 = __intnl_VRCUdonUdonBehaviour_14.GetProgramVariable(__const_SystemString_21);
+__intnl_SystemStringArray_1 = (String[])__intnl_SystemObject_10;
+__intnl_SystemInt32_13 = __intnl_SystemStringArray_1.Length;
+__intnl_SystemBoolean_48 = __intnl_SystemInt32_13 > __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_48)
+{
+__lcl_j_SystemInt32_0 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_VRCUdonUdonBehaviour_15 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_2]);
+__intnl_SystemObject_11 = __intnl_VRCUdonUdonBehaviour_15.GetProgramVariable(__const_SystemString_21);
+__intnl_SystemStringArray_2 = (String[])__intnl_SystemObject_11;
+__intnl_SystemInt32_14 = __intnl_SystemStringArray_2.Length;
+__intnl_SystemBoolean_49 = __lcl_j_SystemInt32_0 < __intnl_SystemInt32_14;
+if (__intnl_SystemBoolean_49)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_16 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_2]);
+__intnl_SystemObject_12 = __intnl_VRCUdonUdonBehaviour_16.GetProgramVariable(__const_SystemString_21);
+__intnl_SystemStringArray_3 = (String[])__intnl_SystemObject_12;
+__intnl_SystemString_1 = __intnl_SystemStringArray_3[__lcl_j_SystemInt32_0];
+__intnl_SystemString_2 = __const_SystemString_22 + __intnl_SystemString_1;
+__intnl_SystemString_3 = __intnl_SystemString_2 + __const_SystemString_22;
+__lcl_zoneList_SystemString_0 = __lcl_zoneList_SystemString_0 + __intnl_SystemString_3;
+__intnl_VRCUdonUdonBehaviour_17 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_2]);
+__intnl_SystemObject_13 = __intnl_VRCUdonUdonBehaviour_17.GetProgramVariable(__const_SystemString_21);
+__intnl_SystemStringArray_4 = (String[])__intnl_SystemObject_13;
+__intnl_SystemInt32_15 = __intnl_SystemStringArray_4.Length;
+__intnl_SystemInt32_16 = __intnl_SystemInt32_15 - __const_SystemInt32_1;
+__intnl_SystemBoolean_50 = __lcl_j_SystemInt32_0 < __intnl_SystemInt32_16;
+if (__intnl_SystemBoolean_50)
+{
+__lcl_zoneList_SystemString_0 = __lcl_zoneList_SystemString_0 + __const_SystemString_23;
+}
+__lcl_j_SystemInt32_0 = __lcl_j_SystemInt32_0 + __const_SystemInt32_1;
+}
+}
+else
+{
+__lcl_zoneList_SystemString_0 = __const_SystemString_24;
+}
+}
+}
+__intnl_VRCUdonUdonBehaviour_13 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_2]);
+__intnl_VRCUdonUdonBehaviour_13.SendCustomEvent(__const_SystemString_25);
+__intnl_SystemObject_9 = __intnl_VRCUdonUdonBehaviour_13.GetProgramVariable(__const_SystemString_26);
+__intnl_SystemBoolean_48 = (Boolean)__intnl_SystemObject_9;
+if (__intnl_SystemBoolean_48)
+{
+}
+else
+{
+__lcl_suitableCount_SystemInt32_0 = __lcl_suitableCount_SystemInt32_0 + __const_SystemInt32_1;
+}
+}
+}
+__lcl_i_SystemInt32_2 = __lcl_i_SystemInt32_2 + __const_SystemInt32_1;
+}
+__lcl_suitable_UnityEngineComponentArray_0 = __lcl_suitableCount_SystemInt32_0.ctor();
+__lcl_index_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_2 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_12 = musicTracks.Length;
+__intnl_SystemBoolean_44 = __lcl_i_SystemInt32_2 < __intnl_SystemInt32_12;
+if (__intnl_SystemBoolean_44)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_8 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_2]);
+__intnl_UnityEngineObject_40 = __intnl_VRCUdonUdonBehaviour_8;
+__intnl_UnityEngineObject_41 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_49 = __intnl_UnityEngineObject_40 != __intnl_UnityEngineObject_41;
+if (__intnl_SystemBoolean_49)
+{
+__intnl_VRCUdonUdonBehaviour_9 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_2]);
+__intnl_VRCUdonUdonBehaviour_9.SendCustomEvent(__const_SystemString_2);
+__intnl_SystemObject_6 = __intnl_VRCUdonUdonBehaviour_9.GetProgramVariable(__const_SystemString_3);
+__intnl_SystemBoolean_50 = (Boolean)__intnl_SystemObject_6;
+__intnl_SystemBoolean_49 = __intnl_SystemBoolean_50;
+}
+__intnl_SystemBoolean_48 = __intnl_SystemBoolean_49;
+if (__intnl_SystemBoolean_48)
+{
+__intnl_VRCUdonUdonBehaviour_10 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_2]);
+__intnl_SystemObject_7 = __intnl_VRCUdonUdonBehaviour_10.GetProgramVariable(__const_SystemString_18);
+__intnl_SystemBoolean_51 = (Boolean)__intnl_SystemObject_7;
+__intnl_SystemBoolean_48 = !__intnl_SystemBoolean_51;
+}
+__intnl_SystemBoolean_47 = __intnl_SystemBoolean_48;
+if (__intnl_SystemBoolean_47)
+{
+__intnl_VRCUdonUdonBehaviour_11 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_2]);
+__intnl_SystemObject_8 = __intnl_VRCUdonUdonBehaviour_11.GetProgramVariable(__const_SystemString_19);
+__intnl_SystemBoolean_52 = (Boolean)__intnl_SystemObject_8;
+__intnl_SystemBoolean_47 = !__intnl_SystemBoolean_52;
+}
+__intnl_SystemBoolean_46 = __intnl_SystemBoolean_47;
+if (__intnl_SystemBoolean_46)
+{
+__intnl_VRCUdonUdonBehaviour_12 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_2]);
+__4_track__param = __intnl_VRCUdonUdonBehaviour_12;
+__0_IsTrackSuitableForCurrentContext();
+__intnl_SystemBoolean_46 = __0___0_IsTrackSuitableForCurrentContext__ret;
+}
+__intnl_SystemBoolean_45 = __intnl_SystemBoolean_46;
+if (__intnl_SystemBoolean_45)
+{
+__intnl_VRCUdonUdonBehaviour_13 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_2]);
+__intnl_VRCUdonUdonBehaviour_13.SendCustomEvent(__const_SystemString_25);
+__intnl_SystemObject_9 = __intnl_VRCUdonUdonBehaviour_13.GetProgramVariable(__const_SystemString_26);
+__intnl_SystemBoolean_53 = (Boolean)__intnl_SystemObject_9;
+__intnl_SystemBoolean_45 = !__intnl_SystemBoolean_53;
+}
+if (__intnl_SystemBoolean_45)
+{
+__intnl_VRCUdonUdonBehaviour_14 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_2]);
+__lcl_suitable_UnityEngineComponentArray_0.Set(__lcl_index_SystemInt32_0, __intnl_VRCUdonUdonBehaviour_14);
+__lcl_index_SystemInt32_0 = __lcl_index_SystemInt32_0 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_2 = __lcl_i_SystemInt32_2 + __const_SystemInt32_1;
+}
+__0_GetSuitableTracks__ret = __lcl_suitable_UnityEngineComponentArray_0;
+return;
+}
+private void UNDEF_a2784_13596()
+{
+__intnl_UnityEngineObject_42 = __0_track__param;
+__intnl_UnityEngineObject_43 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_54 = __intnl_UnityEngineObject_42 == __intnl_UnityEngineObject_43;
+if (__intnl_SystemBoolean_54)
+{
+}
+else
+{
+__intnl_VRCUdonUdonBehaviour_18 = __0_track__param;
+__0_track__param.SendCustomEvent(__const_SystemString_2);
+__intnl_SystemObject_14 = __0_track__param.GetProgramVariable(__const_SystemString_3);
+__intnl_SystemBoolean_55 = (Boolean)__intnl_SystemObject_14;
+__intnl_SystemBoolean_54 = !__intnl_SystemBoolean_55;
+}
+if (__intnl_SystemBoolean_54)
+{
+return;
+}
+__intnl_VRCUdonUdonBehaviour_19 = __0_track__param;
+__0_track__param.SendCustomEvent(__const_SystemString_27);
+__intnl_SystemObject_15 = __0_track__param.GetProgramVariable(__const_SystemString_28);
+__intnl_UnityEngineAudioClip_0 = (AudioClip)__intnl_SystemObject_15;
+__lcl_clip_UnityEngineAudioClip_0 = __intnl_UnityEngineAudioClip_0;
+__intnl_UnityEngineObject_44 = __lcl_clip_UnityEngineAudioClip_0;
+__intnl_UnityEngineObject_45 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_56 = __intnl_UnityEngineObject_44 == __intnl_UnityEngineObject_45;
+if (__intnl_SystemBoolean_56)
+{
+return;
+}
+currentMusicSource.clip = __lcl_clip_UnityEngineAudioClip_0;
+currentMusicSource.time = __const_SystemSingle_0;
+currentMusicSource.volume = __const_SystemSingle_0;
+currentMusicSource.Play();
+__1_track__param = __0_track__param;
+__0_GetEffectiveTrackVolume();
+__lcl_targetVolume_SystemSingle_0 = __0___0_GetEffectiveTrackVolume__ret;
+__0_fromVolume__param = __const_SystemSingle_0;
+__0_toVolume__param = __lcl_targetVolume_SystemSingle_0;
+__0_duration__param = crossfadeDuration;
+UNDEF_a2784_16140();
+currentTrack = __0_track__param;
+isMusicPlaying = __const_SystemBoolean_1;
+if (enableDebugLogs)
+{
+}
+}
+private void UNDEF_a2784_15320()
+{
+__intnl_UnityEngineObject_46 = __0_newTrack__param;
+__intnl_UnityEngineObject_47 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_57 = __intnl_UnityEngineObject_46 == __intnl_UnityEngineObject_47;
+if (__intnl_SystemBoolean_57)
+{
+}
+else
+{
+__intnl_VRCUdonUdonBehaviour_20 = __0_newTrack__param;
+__0_newTrack__param.SendCustomEvent(__const_SystemString_2);
+__intnl_SystemObject_16 = __0_newTrack__param.GetProgramVariable(__const_SystemString_3);
+__intnl_SystemBoolean_58 = (Boolean)__intnl_SystemObject_16;
+__intnl_SystemBoolean_57 = !__intnl_SystemBoolean_58;
+}
+if (__intnl_SystemBoolean_57)
+{
+return;
+}
+__intnl_VRCUdonUdonBehaviour_21 = __0_newTrack__param;
+__0_newTrack__param.SendCustomEvent(__const_SystemString_27);
+__intnl_SystemObject_17 = __0_newTrack__param.GetProgramVariable(__const_SystemString_28);
+__intnl_UnityEngineAudioClip_1 = (AudioClip)__intnl_SystemObject_17;
+__lcl_clip_UnityEngineAudioClip_1 = __intnl_UnityEngineAudioClip_1;
+__intnl_UnityEngineObject_48 = __lcl_clip_UnityEngineAudioClip_1;
+__intnl_UnityEngineObject_49 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_59 = __intnl_UnityEngineObject_48 == __intnl_UnityEngineObject_49;
+if (__intnl_SystemBoolean_59)
+{
+return;
+}
+__intnl_SystemBoolean_61 = enableZoneReturnGrace;
+if (__intnl_SystemBoolean_61)
+{
+__intnl_SystemObject_18 = __0_newTrack__param.GetProgramVariable(__const_SystemString_18);
+__intnl_SystemBoolean_62 = (Boolean)__intnl_SystemObject_18;
+__intnl_SystemBoolean_61 = !__intnl_SystemBoolean_62;
+}
+__intnl_SystemBoolean_60 = __intnl_SystemBoolean_61;
+if (__intnl_SystemBoolean_60)
+{
+__intnl_SystemBoolean_60 = !isPlayingIntro;
+}
+if (__intnl_SystemBoolean_60)
+{
+isInTransitionGracePeriod = __const_SystemBoolean_1;
+transitionStartTime = Time.time;
+transitionFromZoneID = previousZoneID;
+transitionFromTrack = currentTrack;
+__intnl_UnityEngineObject_50 = currentMusicSource;
+__intnl_UnityEngineObject_51 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_63 = __intnl_UnityEngineObject_50 != __intnl_UnityEngineObject_51;
+if (__intnl_SystemBoolean_63)
+{
+transitionFromTrackVolume = currentMusicSource.volume;
+}
+else
+{
+transitionFromTrackVolume = __const_SystemSingle_0;
+}
+if (enableDebugLogs)
+{
+}
+}
+__intnl_UnityEngineObject_50 = currentMusicSource;
+__intnl_UnityEngineObject_51 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_63 = __intnl_UnityEngineObject_50 != __intnl_UnityEngineObject_51;
+if (__intnl_SystemBoolean_63)
+{
+__lcl_oldTrackVolume_SystemSingle_0 = currentMusicSource.volume;
+}
+else
+{
+__lcl_oldTrackVolume_SystemSingle_0 = __const_SystemSingle_0;
+}
+__1_track__param = __0_newTrack__param;
+__0_GetEffectiveTrackVolume();
+__lcl_newTrackTargetVolume_SystemSingle_0 = __0___0_GetEffectiveTrackVolume__ret;
+__intnl_SystemObject_19 = __0_newTrack__param.GetProgramVariable(__const_SystemString_18);
+isTransitioningToIntro = (Boolean)__intnl_SystemObject_19;
+nextMusicSource.clip = __lcl_clip_UnityEngineAudioClip_1;
+nextMusicSource.time = __const_SystemSingle_0;
+nextMusicSource.volume = __const_SystemSingle_0;
+if (isTransitioningToIntro)
+{
+}
+else
+{
+nextMusicSource.Play();
+}
+__0_fromVolumeA__param = __const_SystemSingle_0;
+__0_toVolumeA__param = __lcl_newTrackTargetVolume_SystemSingle_0;
+__0_fromVolumeB__param = __lcl_oldTrackVolume_SystemSingle_0;
+__0_toVolumeB__param = __const_SystemSingle_0;
+UNDEF_a2784_16508();
+__lcl_temp_UnityEngineAudioSource_0 = currentMusicSource;
+currentMusicSource = nextMusicSource;
+nextMusicSource = __lcl_temp_UnityEngineAudioSource_0;
+isUsingSourceA = !isUsingSourceA;
+__intnl_UnityEngineObject_52 = currentTrack;
+__intnl_UnityEngineObject_53 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_64 = __intnl_UnityEngineObject_52 != __intnl_UnityEngineObject_53;
+if (__intnl_SystemBoolean_64)
+{
+__intnl_VRCUdonUdonBehaviour_22 = currentTrack;
+currentTrack.SendCustomEvent(__const_SystemString_8);
+}
+currentTrack = __0_newTrack__param;
+if (isTransitioningToIntro)
+{
+newTrackDelayTimer = crossfadeDuration + introTrackStartDelay;
+if (enableDebugLogs)
+{
+}
+}
+else
+{
+newTrackDelayTimer = newTrackStartDelay;
+if (enableDebugLogs)
+{
+}
+}
+}
+private void __0_GetEffectiveTrackVolume()
+{
+__intnl_UnityEngineObject_54 = __1_track__param;
+__intnl_UnityEngineObject_55 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_65 = __intnl_UnityEngineObject_54 == __intnl_UnityEngineObject_55;
+if (__intnl_SystemBoolean_65)
+{
+__0___0_GetEffectiveTrackVolume__ret = __const_SystemSingle_0;
+return;
+}
+__intnl_VRCUdonUdonBehaviour_23 = __1_track__param;
+__1_track__param.SendCustomEvent(__const_SystemString_29);
+__intnl_SystemObject_20 = __1_track__param.GetProgramVariable(__const_SystemString_30);
+__intnl_SystemSingle_7 = Convert.ToSingle(__intnl_SystemObject_20);
+__intnl_SystemSingle_8 = __intnl_SystemSingle_7 * masterVolume;
+__lcl_baseVolume_SystemSingle_0 = __intnl_SystemSingle_8 * zoneVolumeMultiplier;
+if (isPlayingIntro)
+{
+__intnl_SystemObject_21 = __1_track__param.GetProgramVariable(__const_SystemString_19);
+__intnl_SystemBoolean_66 = (Boolean)__intnl_SystemObject_21;
+if (__intnl_SystemBoolean_66)
+{
+__lcl_baseVolume_SystemSingle_0 = __lcl_baseVolume_SystemSingle_0 * weatherIntroVolumeMultiplier;
+}
+else
+{
+__intnl_SystemObject_22 = __1_track__param.GetProgramVariable(__const_SystemString_18);
+__intnl_SystemBoolean_67 = (Boolean)__intnl_SystemObject_22;
+if (__intnl_SystemBoolean_67)
+{
+__lcl_baseVolume_SystemSingle_0 = __lcl_baseVolume_SystemSingle_0 * introVolumeMultiplier;
+}
+}
+}
+__0___0_GetEffectiveTrackVolume__ret = __lcl_baseVolume_SystemSingle_0;
+return;
+}
+private void UNDEF_a2784_16140()
+{
+crossfadeStartTime = Time.time;
+crossfadeDuration = __0_duration__param;
+crossfadeFromVolume = __0_fromVolume__param;
+crossfadeToVolume = __0_toVolume__param;
+isCrossfading = __const_SystemBoolean_1;
+__intnl_UnityEngineObject_56 = currentMusicSource;
+__intnl_UnityEngineObject_57 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_68 = __intnl_UnityEngineObject_56 != __intnl_UnityEngineObject_57;
+if (__intnl_SystemBoolean_68)
+{
+currentMusicSource.volume = __0_fromVolume__param;
+}
+}
+private void UNDEF_a2784_16508()
+{
+crossfadeStartTime = Time.time;
+isCrossfading = __const_SystemBoolean_1;
+__intnl_UnityEngineObject_58 = currentMusicSource;
+__intnl_UnityEngineObject_59 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_69 = __intnl_UnityEngineObject_58 != __intnl_UnityEngineObject_59;
+if (__intnl_SystemBoolean_69)
+{
+currentMusicSource.volume = __0_fromVolumeA__param;
+}
+__intnl_UnityEngineObject_60 = nextMusicSource;
+__intnl_UnityEngineObject_61 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_70 = __intnl_UnityEngineObject_60 != __intnl_UnityEngineObject_61;
+if (__intnl_SystemBoolean_70)
+{
+nextMusicSource.volume = __0_fromVolumeB__param;
+}
+crossfadeFromVolume = __0_fromVolumeA__param;
+crossfadeToVolume = __0_toVolumeA__param;
+crossfadeFromVolumeNext = __0_fromVolumeB__param;
+crossfadeToVolumeNext = __0_toVolumeB__param;
+}
+private void UNDEF_a2784_16560()
+{
+if (isCrossfading)
+{
+UNDEF_a2784_18484();
+}
+}
+private void UNDEF_a2784_18484()
+{
+__intnl_SystemBoolean_71 = newTrackDelayTimer > __const_SystemSingle_0;
+if (__intnl_SystemBoolean_71)
+{
+__intnl_SystemSingle_9 = Time.deltaTime;
+newTrackDelayTimer = newTrackDelayTimer - __intnl_SystemSingle_9;
+__intnl_SystemSingle_10 = Time.time;
+__lcl_elapsed_SystemSingle_0 = __intnl_SystemSingle_10 - crossfadeStartTime;
+if (isTransitioningToIntro)
+{
+__intnl_SystemSingle_11 = __lcl_elapsed_SystemSingle_0 / crossfadeDuration;
+__lcl_fadeOutProgress_SystemSingle_0 = Mathf.Clamp01(__intnl_SystemSingle_11);
+__intnl_UnityEngineObject_62 = nextMusicSource;
+__intnl_UnityEngineObject_63 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_72 = __intnl_UnityEngineObject_62 != __intnl_UnityEngineObject_63;
+if (__intnl_SystemBoolean_72)
+{
+__intnl_SystemBoolean_72 = nextMusicSource.isPlaying;
+}
+if (__intnl_SystemBoolean_72)
+{
+__lcl_nextVolume_SystemSingle_0 = Mathf.Lerp(crossfadeFromVolumeNext, crossfadeToVolumeNext, __lcl_fadeOutProgress_SystemSingle_0);
+nextMusicSource.volume = __lcl_nextVolume_SystemSingle_0;
+}
+}
+else
+{
+__lcl_totalTransitionTime_SystemSingle_0 = newTrackStartDelay + crossfadeDuration;
+__intnl_SystemSingle_11 = __lcl_elapsed_SystemSingle_0 / __lcl_totalTransitionTime_SystemSingle_0;
+__lcl_fadeOutProgress_SystemSingle_0 = Mathf.Clamp01(__intnl_SystemSingle_11);
+__intnl_UnityEngineObject_62 = nextMusicSource;
+__intnl_UnityEngineObject_63 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_72 = __intnl_UnityEngineObject_62 != __intnl_UnityEngineObject_63;
+if (__intnl_SystemBoolean_72)
+{
+__intnl_SystemBoolean_72 = nextMusicSource.isPlaying;
+}
+if (__intnl_SystemBoolean_72)
+{
+__lcl_nextVolume_SystemSingle_0 = Mathf.Lerp(crossfadeFromVolumeNext, crossfadeToVolumeNext, __lcl_fadeOutProgress_SystemSingle_0);
+nextMusicSource.volume = __lcl_nextVolume_SystemSingle_0;
+}
+}
+__intnl_UnityEngineObject_62 = currentMusicSource;
+__intnl_UnityEngineObject_63 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_72 = __intnl_UnityEngineObject_62 != __intnl_UnityEngineObject_63;
+if (__intnl_SystemBoolean_72)
+{
+currentMusicSource.volume = __const_SystemSingle_0;
+}
+__intnl_SystemBoolean_73 = newTrackDelayTimer <= __const_SystemSingle_0;
+if (__intnl_SystemBoolean_73)
+{
+if (isTransitioningToIntro)
+{
+__intnl_UnityEngineObject_64 = currentMusicSource;
+__intnl_UnityEngineObject_65 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_74 = __intnl_UnityEngineObject_64 != __intnl_UnityEngineObject_65;
+if (__intnl_SystemBoolean_74)
+{
+currentMusicSource.Play();
+currentMusicSource.volume = crossfadeToVolume;
+}
+if (enableDebugLogs)
+{
+}
+}
+else
+{
+crossfadeStartTime = Time.time;
+if (enableDebugLogs)
+{
+}
+}
+}
+}
+else
+{
+if (isTransitioningToIntro)
+{
+__intnl_UnityEngineObject_62 = nextMusicSource;
+__intnl_UnityEngineObject_63 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_72 = __intnl_UnityEngineObject_62 != __intnl_UnityEngineObject_63;
+if (__intnl_SystemBoolean_72)
+{
+__intnl_SystemBoolean_72 = nextMusicSource.isPlaying;
+}
+if (__intnl_SystemBoolean_72)
+{
+nextMusicSource.Stop();
+nextMusicSource.volume = __const_SystemSingle_0;
+}
+UNDEF_a2784_18860();
+}
+else
+{
+__intnl_SystemSingle_9 = Time.time;
+__lcl_elapsed_SystemSingle_0 = __intnl_SystemSingle_9 - crossfadeStartTime;
+__intnl_SystemSingle_10 = __lcl_elapsed_SystemSingle_0 / crossfadeDuration;
+__lcl_t_SystemSingle_0 = Mathf.Clamp01(__intnl_SystemSingle_10);
+__intnl_UnityEngineObject_62 = currentMusicSource;
+__intnl_UnityEngineObject_63 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_72 = __intnl_UnityEngineObject_62 != __intnl_UnityEngineObject_63;
+if (__intnl_SystemBoolean_72)
+{
+__lcl_currentVolume_SystemSingle_0 = Mathf.Lerp(crossfadeFromVolume, crossfadeToVolume, __lcl_t_SystemSingle_0);
+currentMusicSource.volume = __lcl_currentVolume_SystemSingle_0;
+}
+__lcl_totalTransitionTime_SystemSingle_0 = newTrackStartDelay + crossfadeDuration;
+__lcl_totalElapsed_SystemSingle_0 = newTrackStartDelay + __lcl_elapsed_SystemSingle_0;
+__intnl_SystemSingle_11 = __lcl_totalElapsed_SystemSingle_0 / __lcl_totalTransitionTime_SystemSingle_0;
+__lcl_fadeOutProgress_SystemSingle_0 = Mathf.Clamp01(__intnl_SystemSingle_11);
+__intnl_UnityEngineObject_64 = nextMusicSource;
+__intnl_UnityEngineObject_65 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_73 = __intnl_UnityEngineObject_64 != __intnl_UnityEngineObject_65;
+if (__intnl_SystemBoolean_73)
+{
+__intnl_SystemBoolean_73 = nextMusicSource.isPlaying;
+}
+if (__intnl_SystemBoolean_73)
+{
+__lcl_nextVolume_SystemSingle_0 = Mathf.Lerp(crossfadeFromVolumeNext, crossfadeToVolumeNext, __lcl_fadeOutProgress_SystemSingle_0);
+nextMusicSource.volume = __lcl_nextVolume_SystemSingle_0;
+}
+__intnl_SystemBoolean_74 = __lcl_t_SystemSingle_0 >= __const_SystemSingle_1;
+if (__intnl_SystemBoolean_74)
+{
+UNDEF_a2784_18860();
+}
+}
+}
+}
+private void UNDEF_a2784_18860()
+{
+isCrossfading = __const_SystemBoolean_0;
+newTrackDelayTimer = __const_SystemSingle_0;
+isTransitioningToIntro = __const_SystemBoolean_0;
+if (isInTransitionGracePeriod)
+{
+isInTransitionGracePeriod = __const_SystemBoolean_0;
+if (enableDebugLogs)
+{
+}
+}
+__intnl_UnityEngineObject_66 = nextMusicSource;
+__intnl_UnityEngineObject_67 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_75 = __intnl_UnityEngineObject_66 != __intnl_UnityEngineObject_67;
+if (__intnl_SystemBoolean_75)
+{
+__intnl_SystemSingle_12 = nextMusicSource.volume;
+__intnl_SystemBoolean_75 = __intnl_SystemSingle_12 <= __const_SystemSingle_3;
+}
+if (__intnl_SystemBoolean_75)
+{
+nextMusicSource.Stop();
+__intnl_UnityEngineAudioClip_2 = (AudioClip)__const_SystemObject_0;
+nextMusicSource.clip = __intnl_UnityEngineAudioClip_2;
+}
+if (enableDebugLogs)
+{
+}
+}
+private void UNDEF_a2784_20172()
+{
+__intnl_UnityEngineObject_68 = transitionFromTrack;
+__intnl_UnityEngineObject_69 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_76 = __intnl_UnityEngineObject_68 == __intnl_UnityEngineObject_69;
+if (__intnl_SystemBoolean_76)
+{
+if (enableDebugLogs)
+{
+}
+return;
+}
+if (enableDebugLogs)
+{
+}
+__intnl_UnityEngineObject_70 = currentMusicSource;
+__intnl_UnityEngineObject_71 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_77 = __intnl_UnityEngineObject_70 != __intnl_UnityEngineObject_71;
+if (__intnl_SystemBoolean_77)
+{
+__intnl_SystemBoolean_77 = currentMusicSource.isPlaying;
+}
+if (__intnl_SystemBoolean_77)
+{
+currentMusicSource.Stop();
+__intnl_UnityEngineAudioClip_3 = (AudioClip)__const_SystemObject_0;
+currentMusicSource.clip = __intnl_UnityEngineAudioClip_3;
+currentMusicSource.volume = __const_SystemSingle_0;
+}
+currentTrack = transitionFromTrack;
+isMusicPlaying = __const_SystemBoolean_1;
+__intnl_UnityEngineObject_72 = nextMusicSource;
+__intnl_UnityEngineObject_73 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_78 = __intnl_UnityEngineObject_72 != __intnl_UnityEngineObject_73;
+if (__intnl_SystemBoolean_78)
+{
+__intnl_SystemBoolean_78 = nextMusicSource.isPlaying;
+}
+if (__intnl_SystemBoolean_78)
+{
+__1_track__param = transitionFromTrack;
+__0_GetEffectiveTrackVolume();
+__lcl_targetVolume_SystemSingle_1 = __0___0_GetEffectiveTrackVolume__ret;
+__intnl_SystemSingle_13 = nextMusicSource.volume;
+__0_fromVolume__param = __intnl_SystemSingle_13;
+__0_toVolume__param = __lcl_targetVolume_SystemSingle_1;
+__0_duration__param = __const_SystemSingle_4;
+UNDEF_a2784_16140();
+__lcl_temp_UnityEngineAudioSource_1 = currentMusicSource;
+currentMusicSource = nextMusicSource;
+nextMusicSource = __lcl_temp_UnityEngineAudioSource_1;
+isUsingSourceA = !isUsingSourceA;
+}
+else
+{
+if (enableDebugLogs)
+{
+}
+__intnl_VRCUdonUdonBehaviour_24 = transitionFromTrack;
+transitionFromTrack.SendCustomEvent(__const_SystemString_27);
+__intnl_SystemObject_23 = transitionFromTrack.GetProgramVariable(__const_SystemString_28);
+__intnl_UnityEngineAudioClip_3 = (AudioClip)__intnl_SystemObject_23;
+__lcl_clip_UnityEngineAudioClip_2 = __intnl_UnityEngineAudioClip_3;
+__intnl_UnityEngineObject_74 = __lcl_clip_UnityEngineAudioClip_2;
+__intnl_UnityEngineObject_75 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_79 = __intnl_UnityEngineObject_74 != __intnl_UnityEngineObject_75;
+if (__intnl_SystemBoolean_79)
+{
+break;
+}
+currentMusicSource.clip = __lcl_clip_UnityEngineAudioClip_2;
+currentMusicSource.time = __const_SystemSingle_0;
+currentMusicSource.volume = __const_SystemSingle_0;
+currentMusicSource.Play();
+__1_track__param = transitionFromTrack;
+__0_GetEffectiveTrackVolume();
+__lcl_targetVolume_SystemSingle_1 = __0___0_GetEffectiveTrackVolume__ret;
+__0_fromVolume__param = __const_SystemSingle_0;
+__0_toVolume__param = __lcl_targetVolume_SystemSingle_1;
+__0_duration__param = __const_SystemSingle_4;
+UNDEF_a2784_16140();
+}
+isInTransitionGracePeriod = __const_SystemBoolean_0;
+newTrackDelayTimer = __const_SystemSingle_0;
+isTransitioningToIntro = __const_SystemBoolean_0;
+if (enableDebugLogs)
+{
+}
+}
+private void UNDEF_a2784_22056()
+{
+__intnl_UnityEngineObject_76 = currentTrackDisplay;
+__intnl_UnityEngineObject_77 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_80 = __intnl_UnityEngineObject_76 != __intnl_UnityEngineObject_77;
+if (__intnl_SystemBoolean_80)
+{
+__intnl_SystemBoolean_81 = isMusicPlaying;
+if (__intnl_SystemBoolean_81)
+{
+__intnl_UnityEngineObject_78 = currentTrack;
+__intnl_UnityEngineObject_79 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_81 = __intnl_UnityEngineObject_78 != __intnl_UnityEngineObject_79;
+}
+if (__intnl_SystemBoolean_81)
+{
+if (isPlayingIntro)
+{
+__lcl_prefix_SystemString_0 = __const_SystemString_31;
+}
+else
+{
+__lcl_prefix_SystemString_0 = __const_SystemString_20;
+}
+__intnl_SystemString_4 = __lcl_prefix_SystemString_0 + __const_SystemString_32;
+__intnl_TMProTextMeshProUGUI_0 = currentTrackDisplay;
+__intnl_VRCUdonUdonBehaviour_25 = currentTrack;
+currentTrack.SendCustomEvent(__const_SystemString_33);
+__intnl_SystemObject_24 = currentTrack.GetProgramVariable(__const_SystemString_34);
+__intnl_SystemString_5 = (String)__intnl_SystemObject_24;
+__intnl_SystemString_6 = __intnl_SystemString_4 + __intnl_SystemString_5;
+__intnl_TMProTextMeshProUGUI_0.text = __intnl_SystemString_6;
+}
+else
+{
+__lcl_remaining_SystemSingle_0 = minimumSilenceDuration - silenceDuration;
+__intnl_SystemBoolean_82 = __lcl_remaining_SystemSingle_0 > __const_SystemSingle_0;
+if (__intnl_SystemBoolean_82)
+{
+__intnl_SystemString_4 = __lcl_remaining_SystemSingle_0.ToString(__const_SystemString_36);
+__intnl_SystemString_5 = __const_SystemString_35 + __intnl_SystemString_4;
+__intnl_SystemString_6 = __intnl_SystemString_5 + __const_SystemString_37;
+currentTrackDisplay.text = __intnl_SystemString_6;
+}
+else
+{
+currentTrackDisplay.text = __const_SystemString_38;
+}
+}
+}
+__intnl_UnityEngineObject_78 = nextCheckDisplay;
+__intnl_UnityEngineObject_79 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_81 = __intnl_UnityEngineObject_78 != __intnl_UnityEngineObject_79;
+if (__intnl_SystemBoolean_81)
+{
+__intnl_SystemSingle_14 = Time.time;
+__intnl_SystemSingle_15 = __intnl_SystemSingle_14 - lastMusicCheckTime;
+__lcl_nextCheck_SystemSingle_0 = musicCheckInterval - __intnl_SystemSingle_15;
+__intnl_SystemString_4 = __lcl_nextCheck_SystemSingle_0.ToString(__const_SystemString_36);
+__intnl_SystemString_5 = __const_SystemString_39 + __intnl_SystemString_4;
+__intnl_SystemString_6 = __intnl_SystemString_5 + __const_SystemString_40;
+nextCheckDisplay.text = __intnl_SystemString_6;
+}
+__intnl_UnityEngineObject_80 = systemStatusDisplay;
+__intnl_UnityEngineObject_81 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_82 = __intnl_UnityEngineObject_80 != __intnl_UnityEngineObject_81;
+if (__intnl_SystemBoolean_82)
+{
+__intnl_SystemString_4 = String.Concat(__const_SystemString_41, lastTimeOfDay);
+__intnl_SystemString_5 = __intnl_SystemString_4 + __const_SystemString_42;
+__intnl_SystemString_6 = __intnl_SystemString_5 + lastZoneID;
+__intnl_SystemString_7 = __intnl_SystemString_6 + __const_SystemString_42;
+__lcl_status_SystemString_0 = String.Concat(__intnl_SystemString_7, lastWeatherType);
+if (isCrossfading)
+{
+__lcl_status_SystemString_0 = __lcl_status_SystemString_0 + __const_SystemString_43;
+}
+if (isInTransitionGracePeriod)
+{
+__intnl_SystemSingle_14 = Time.time;
+__intnl_SystemSingle_15 = __intnl_SystemSingle_14 - transitionStartTime;
+__lcl_graceRemaining_SystemSingle_0 = zoneReturnGracePeriod - __intnl_SystemSingle_15;
+__intnl_SystemString_8 = __lcl_graceRemaining_SystemSingle_0.ToString(__const_SystemString_45);
+__intnl_SystemString_9 = __const_SystemString_44 + __intnl_SystemString_8;
+__intnl_SystemString_10 = __intnl_SystemString_9 + __const_SystemString_40;
+__lcl_status_SystemString_0 = __lcl_status_SystemString_0 + __intnl_SystemString_10;
+}
+systemStatusDisplay.text = __lcl_status_SystemString_0;
+}
+__intnl_UnityEngineObject_82 = availableTracksDisplay;
+__intnl_UnityEngineObject_83 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_83 = __intnl_UnityEngineObject_82 != __intnl_UnityEngineObject_83;
+if (__intnl_SystemBoolean_83)
+{
+GetSuitableTracks();
+__lcl_suitable_UnityEngineComponentArray_1 = __0_GetSuitableTracks__ret;
+__intnl_SystemInt32_17 = __lcl_suitable_UnityEngineComponentArray_1.Length;
+__intnl_SystemString_4 = String.Concat(__const_SystemString_46, __intnl_SystemInt32_17);
+__intnl_SystemString_5 = __intnl_SystemString_4 + __const_SystemString_47;
+__intnl_TMProTextMeshProUGUI_0 = availableTracksDisplay;
+GetValidTrackCount();
+__intnl_SystemString_6 = String.Concat(__intnl_SystemString_5, __0_GetValidTrackCount__ret);
+__intnl_TMProTextMeshProUGUI_0.text = __intnl_SystemString_6;
+}
+}
+private void GetValidTrackCount()
+{
+__lcl_count_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_3 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_18 = musicTracks.Length;
+__intnl_SystemBoolean_84 = __lcl_i_SystemInt32_3 < __intnl_SystemInt32_18;
+if (__intnl_SystemBoolean_84)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_26 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_3]);
+__intnl_UnityEngineObject_84 = __intnl_VRCUdonUdonBehaviour_26;
+__intnl_UnityEngineObject_85 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_85 = __intnl_UnityEngineObject_84 != __intnl_UnityEngineObject_85;
+if (__intnl_SystemBoolean_85)
+{
+__intnl_VRCUdonUdonBehaviour_27 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_3]);
+__intnl_VRCUdonUdonBehaviour_27.SendCustomEvent(__const_SystemString_2);
+__intnl_SystemObject_25 = __intnl_VRCUdonUdonBehaviour_27.GetProgramVariable(__const_SystemString_3);
+__intnl_SystemBoolean_86 = (Boolean)__intnl_SystemObject_25;
+__intnl_SystemBoolean_85 = __intnl_SystemBoolean_86;
+}
+if (__intnl_SystemBoolean_85)
+{
+__lcl_count_SystemInt32_0 = __lcl_count_SystemInt32_0 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_3 = __lcl_i_SystemInt32_3 + __const_SystemInt32_1;
+}
+__0_GetValidTrackCount__ret = __lcl_count_SystemInt32_0;
+return;
+}
+private void __0_HasPlayedIntroForZone()
+{
+__lcl_i_SystemInt32_4 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_19 = playedIntroZones.Length;
+__intnl_SystemBoolean_87 = __lcl_i_SystemInt32_4 < __intnl_SystemInt32_19;
+if (__intnl_SystemBoolean_87)
+{
+break;
+}
+__intnl_SystemString_11 = playedIntroZones[__lcl_i_SystemInt32_4];
+__intnl_SystemBoolean_88 = __intnl_SystemString_11 == __0_zoneID__param;
+if (__intnl_SystemBoolean_88)
+{
+__0___0_HasPlayedIntroForZone__ret = __const_SystemBoolean_1;
+return;
+}
+__lcl_i_SystemInt32_4 = __lcl_i_SystemInt32_4 + __const_SystemInt32_1;
+}
+__0___0_HasPlayedIntroForZone__ret = __const_SystemBoolean_0;
+return;
+}
+private void UNDEF_a2784_23288()
+{
+__intnl_SystemInt32_20 = playedIntroZones.Length;
+__intnl_SystemInt32_21 = __intnl_SystemInt32_20 + __const_SystemInt32_1;
+__lcl_newArray_SystemStringArray_0 = __intnl_SystemInt32_21.ctor();
+__lcl_i_SystemInt32_5 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_22 = playedIntroZones.Length;
+__intnl_SystemBoolean_89 = __lcl_i_SystemInt32_5 < __intnl_SystemInt32_22;
+if (__intnl_SystemBoolean_89)
+{
+break;
+}
+__intnl_SystemString_12 = playedIntroZones[__lcl_i_SystemInt32_5];
+__lcl_newArray_SystemStringArray_0.Set(__lcl_i_SystemInt32_5, __intnl_SystemString_12);
+__lcl_i_SystemInt32_5 = __lcl_i_SystemInt32_5 + __const_SystemInt32_1;
+}
+__intnl_SystemInt32_22 = playedIntroZones.Length;
+__lcl_newArray_SystemStringArray_0.Set(__intnl_SystemInt32_22, __1_zoneID__param);
+playedIntroZones = __lcl_newArray_SystemStringArray_0;
+if (enableDebugLogs)
+{
+}
+}
+private void __0_SelectIntroTrack()
+{
+__lcl_suitableCount_SystemInt32_1 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_6 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_23 = musicTracks.Length;
+__intnl_SystemBoolean_90 = __lcl_i_SystemInt32_6 < __intnl_SystemInt32_23;
+if (__intnl_SystemBoolean_90)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_28 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_6]);
+__intnl_UnityEngineObject_86 = __intnl_VRCUdonUdonBehaviour_28;
+__intnl_UnityEngineObject_87 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_93 = __intnl_UnityEngineObject_86 != __intnl_UnityEngineObject_87;
+if (__intnl_SystemBoolean_93)
+{
+__intnl_VRCUdonUdonBehaviour_29 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_6]);
+__intnl_VRCUdonUdonBehaviour_29.SendCustomEvent(__const_SystemString_2);
+__intnl_SystemObject_26 = __intnl_VRCUdonUdonBehaviour_29.GetProgramVariable(__const_SystemString_3);
+__intnl_SystemBoolean_94 = (Boolean)__intnl_SystemObject_26;
+__intnl_SystemBoolean_93 = __intnl_SystemBoolean_94;
+}
+__intnl_SystemBoolean_92 = __intnl_SystemBoolean_93;
+if (__intnl_SystemBoolean_92)
+{
+__intnl_VRCUdonUdonBehaviour_30 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_6]);
+__intnl_SystemObject_27 = __intnl_VRCUdonUdonBehaviour_30.GetProgramVariable(__const_SystemString_18);
+__intnl_SystemBoolean_92 = (Boolean)__intnl_SystemObject_27;
+}
+__intnl_SystemBoolean_91 = __intnl_SystemBoolean_92;
+if (__intnl_SystemBoolean_91)
+{
+__intnl_VRCUdonUdonBehaviour_31 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_6]);
+__intnl_SystemInt32_24 = lastTimeOfDay;
+__intnl_SystemInt32_25 = lastWeatherType;
+__intnl_SystemString_13 = __2_zoneID__param;
+__intnl_VRCUdonUdonBehaviour_31.SetProgramVariable(__const_SystemString_9, lastTimeOfDay);
+__intnl_VRCUdonUdonBehaviour_31.SetProgramVariable(__const_SystemString_10, __2_zoneID__param);
+__intnl_VRCUdonUdonBehaviour_31.SetProgramVariable(__const_SystemString_11, lastWeatherType);
+__intnl_VRCUdonUdonBehaviour_31.SendCustomEvent(__const_SystemString_12);
+__intnl_SystemObject_28 = __intnl_VRCUdonUdonBehaviour_31.GetProgramVariable(__const_SystemString_13);
+__intnl_SystemBoolean_95 = (Boolean)__intnl_SystemObject_28;
+__intnl_SystemBoolean_91 = __intnl_SystemBoolean_95;
+}
+if (__intnl_SystemBoolean_91)
+{
+__lcl_suitableCount_SystemInt32_1 = __lcl_suitableCount_SystemInt32_1 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_6 = __lcl_i_SystemInt32_6 + __const_SystemInt32_1;
+}
+__intnl_SystemBoolean_90 = __lcl_suitableCount_SystemInt32_1 == __const_SystemInt32_0;
+if (__intnl_SystemBoolean_90)
+{
+if (enableDebugLogs)
+{
+}
+__0___0_SelectIntroTrack__ret = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+__lcl_suitableIntros_UnityEngineComponentArray_0 = __lcl_suitableCount_SystemInt32_1.ctor();
+__lcl_index_SystemInt32_1 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_6 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_23 = musicTracks.Length;
+__intnl_SystemBoolean_91 = __lcl_i_SystemInt32_6 < __intnl_SystemInt32_23;
+if (__intnl_SystemBoolean_91)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_28 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_6]);
+__intnl_UnityEngineObject_86 = __intnl_VRCUdonUdonBehaviour_28;
+__intnl_UnityEngineObject_87 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_94 = __intnl_UnityEngineObject_86 != __intnl_UnityEngineObject_87;
+if (__intnl_SystemBoolean_94)
+{
+__intnl_VRCUdonUdonBehaviour_29 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_6]);
+__intnl_VRCUdonUdonBehaviour_29.SendCustomEvent(__const_SystemString_2);
+__intnl_SystemObject_26 = __intnl_VRCUdonUdonBehaviour_29.GetProgramVariable(__const_SystemString_3);
+__intnl_SystemBoolean_95 = (Boolean)__intnl_SystemObject_26;
+__intnl_SystemBoolean_94 = __intnl_SystemBoolean_95;
+}
+__intnl_SystemBoolean_93 = __intnl_SystemBoolean_94;
+if (__intnl_SystemBoolean_93)
+{
+__intnl_VRCUdonUdonBehaviour_30 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_6]);
+__intnl_SystemObject_27 = __intnl_VRCUdonUdonBehaviour_30.GetProgramVariable(__const_SystemString_18);
+__intnl_SystemBoolean_93 = (Boolean)__intnl_SystemObject_27;
+}
+__intnl_SystemBoolean_92 = __intnl_SystemBoolean_93;
+if (__intnl_SystemBoolean_92)
+{
+__intnl_VRCUdonUdonBehaviour_31 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_6]);
+__intnl_SystemInt32_24 = lastTimeOfDay;
+__intnl_SystemInt32_25 = lastWeatherType;
+__intnl_SystemString_13 = __2_zoneID__param;
+__intnl_VRCUdonUdonBehaviour_31.SetProgramVariable(__const_SystemString_9, lastTimeOfDay);
+__intnl_VRCUdonUdonBehaviour_31.SetProgramVariable(__const_SystemString_10, __2_zoneID__param);
+__intnl_VRCUdonUdonBehaviour_31.SetProgramVariable(__const_SystemString_11, lastWeatherType);
+__intnl_VRCUdonUdonBehaviour_31.SendCustomEvent(__const_SystemString_12);
+__intnl_SystemObject_28 = __intnl_VRCUdonUdonBehaviour_31.GetProgramVariable(__const_SystemString_13);
+__intnl_SystemBoolean_96 = (Boolean)__intnl_SystemObject_28;
+__intnl_SystemBoolean_92 = __intnl_SystemBoolean_96;
+}
+if (__intnl_SystemBoolean_92)
+{
+__intnl_VRCUdonUdonBehaviour_32 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_6]);
+__lcl_suitableIntros_UnityEngineComponentArray_0.Set(__lcl_index_SystemInt32_1, __intnl_VRCUdonUdonBehaviour_32);
+__lcl_index_SystemInt32_1 = __lcl_index_SystemInt32_1 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_6 = __lcl_i_SystemInt32_6 + __const_SystemInt32_1;
+}
+__lcl_bestIntro_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(__lcl_suitableIntros_UnityEngineComponentArray_0[__const_SystemInt32_0]);
+__intnl_VRCUdonUdonBehaviour_28 = (UdonBehaviour)(__lcl_suitableIntros_UnityEngineComponentArray_0[__const_SystemInt32_0]);
+__intnl_SystemObject_26 = __intnl_VRCUdonUdonBehaviour_28.GetProgramVariable(__const_SystemString_48);
+__lcl_highestPriority_SystemSingle_0 = Convert.ToSingle(__intnl_SystemObject_26);
+__lcl_i_SystemInt32_6 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_23 = __lcl_suitableIntros_UnityEngineComponentArray_0.Length;
+__intnl_SystemBoolean_91 = __lcl_i_SystemInt32_6 < __intnl_SystemInt32_23;
+if (__intnl_SystemBoolean_91)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_29 = (UdonBehaviour)(__lcl_suitableIntros_UnityEngineComponentArray_0[__lcl_i_SystemInt32_6]);
+__intnl_SystemObject_27 = __intnl_VRCUdonUdonBehaviour_29.GetProgramVariable(__const_SystemString_48);
+__intnl_SystemSingle_16 = Convert.ToSingle(__intnl_SystemObject_27);
+__intnl_SystemBoolean_92 = __intnl_SystemSingle_16 > __lcl_highestPriority_SystemSingle_0;
+if (__intnl_SystemBoolean_92)
+{
+__intnl_VRCUdonUdonBehaviour_30 = (UdonBehaviour)(__lcl_suitableIntros_UnityEngineComponentArray_0[__lcl_i_SystemInt32_6]);
+__intnl_SystemObject_28 = __intnl_VRCUdonUdonBehaviour_30.GetProgramVariable(__const_SystemString_48);
+__lcl_highestPriority_SystemSingle_0 = Convert.ToSingle(__intnl_SystemObject_28);
+__lcl_bestIntro_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(__lcl_suitableIntros_UnityEngineComponentArray_0[__lcl_i_SystemInt32_6]);
+}
+__lcl_i_SystemInt32_6 = __lcl_i_SystemInt32_6 + __const_SystemInt32_1;
+}
+if (enableDebugLogs)
+{
+}
+__0___0_SelectIntroTrack__ret = __lcl_bestIntro_VRCUdonUdonBehaviour_0;
+return;
+}
+private void UNDEF_a2784_26156()
+{
+__intnl_UnityEngineObject_88 = __0_introTrack__param;
+__intnl_UnityEngineObject_89 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_97 = __intnl_UnityEngineObject_88 == __intnl_UnityEngineObject_89;
+if (__intnl_SystemBoolean_97)
+{
+return;
+}
+isInTransitionGracePeriod = __const_SystemBoolean_0;
+newTrackDelayTimer = __const_SystemSingle_0;
+isPlayingIntro = __const_SystemBoolean_1;
+if (isMusicPlaying)
+{
+__0_newTrack__param = __0_introTrack__param;
+UNDEF_a2784_15320();
+}
+else
+{
+__0_track__param = __0_introTrack__param;
+UNDEF_a2784_13596();
+}
+if (enableDebugLogs)
+{
+}
+}
+private void __0_HasPlayedIntroForWeather()
+{
+__lcl_i_SystemInt32_7 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_26 = playedWeatherIntros.Length;
+__intnl_SystemBoolean_98 = __lcl_i_SystemInt32_7 < __intnl_SystemInt32_26;
+if (__intnl_SystemBoolean_98)
+{
+break;
+}
+__intnl_SystemInt32_27 = playedWeatherIntros[__lcl_i_SystemInt32_7];
+__intnl_SystemBoolean_99 = __intnl_SystemInt32_27 == __0_weather__param;
+if (__intnl_SystemBoolean_99)
+{
+__0___0_HasPlayedIntroForWeather__ret = __const_SystemBoolean_1;
+return;
+}
+__lcl_i_SystemInt32_7 = __lcl_i_SystemInt32_7 + __const_SystemInt32_1;
+}
+__0___0_HasPlayedIntroForWeather__ret = __const_SystemBoolean_0;
+return;
+}
+private void UNDEF_a2784_26872()
+{
+__intnl_SystemInt32_28 = playedWeatherIntros.Length;
+__intnl_SystemInt32_29 = __intnl_SystemInt32_28 + __const_SystemInt32_1;
+__lcl_newArray_SystemInt32Array_0 = __intnl_SystemInt32_29.ctor();
+__lcl_i_SystemInt32_8 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_30 = playedWeatherIntros.Length;
+__intnl_SystemBoolean_100 = __lcl_i_SystemInt32_8 < __intnl_SystemInt32_30;
+if (__intnl_SystemBoolean_100)
+{
+break;
+}
+__intnl_SystemInt32_31 = playedWeatherIntros[__lcl_i_SystemInt32_8];
+__lcl_newArray_SystemInt32Array_0.Set(__lcl_i_SystemInt32_8, __intnl_SystemInt32_31);
+__lcl_i_SystemInt32_8 = __lcl_i_SystemInt32_8 + __const_SystemInt32_1;
+}
+__intnl_SystemInt32_30 = playedWeatherIntros.Length;
+__lcl_newArray_SystemInt32Array_0.Set(__intnl_SystemInt32_30, __1_weather__param);
+playedWeatherIntros = __lcl_newArray_SystemInt32Array_0;
+if (enableDebugLogs)
+{
+}
+}
+private void __0_SelectWeatherIntroTrack()
+{
+__lcl_suitableCount_SystemInt32_2 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_9 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_32 = musicTracks.Length;
+__intnl_SystemBoolean_101 = __lcl_i_SystemInt32_9 < __intnl_SystemInt32_32;
+if (__intnl_SystemBoolean_101)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_33 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_9]);
+__intnl_UnityEngineObject_90 = __intnl_VRCUdonUdonBehaviour_33;
+__intnl_UnityEngineObject_91 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_104 = __intnl_UnityEngineObject_90 != __intnl_UnityEngineObject_91;
+if (__intnl_SystemBoolean_104)
+{
+__intnl_VRCUdonUdonBehaviour_34 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_9]);
+__intnl_VRCUdonUdonBehaviour_34.SendCustomEvent(__const_SystemString_2);
+__intnl_SystemObject_29 = __intnl_VRCUdonUdonBehaviour_34.GetProgramVariable(__const_SystemString_3);
+__intnl_SystemBoolean_105 = (Boolean)__intnl_SystemObject_29;
+__intnl_SystemBoolean_104 = __intnl_SystemBoolean_105;
+}
+__intnl_SystemBoolean_103 = __intnl_SystemBoolean_104;
+if (__intnl_SystemBoolean_103)
+{
+__intnl_VRCUdonUdonBehaviour_35 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_9]);
+__intnl_SystemObject_30 = __intnl_VRCUdonUdonBehaviour_35.GetProgramVariable(__const_SystemString_19);
+__intnl_SystemBoolean_103 = (Boolean)__intnl_SystemObject_30;
+}
+__intnl_SystemBoolean_102 = __intnl_SystemBoolean_103;
+if (__intnl_SystemBoolean_102)
+{
+__intnl_VRCUdonUdonBehaviour_36 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_9]);
+__2_track__param = __intnl_VRCUdonUdonBehaviour_36;
+__3_weather__param = __2_weather__param;
+__0_IsTrackForWeatherType();
+__intnl_SystemBoolean_102 = __0___0_IsTrackForWeatherType__ret;
+}
+if (__intnl_SystemBoolean_102)
+{
+__lcl_suitableCount_SystemInt32_2 = __lcl_suitableCount_SystemInt32_2 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_9 = __lcl_i_SystemInt32_9 + __const_SystemInt32_1;
+}
+__intnl_SystemBoolean_101 = __lcl_suitableCount_SystemInt32_2 == __const_SystemInt32_0;
+if (__intnl_SystemBoolean_101)
+{
+if (enableDebugLogs)
+{
+}
+__0___0_SelectWeatherIntroTrack__ret = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+__lcl_suitableIntros_UnityEngineComponentArray_1 = __lcl_suitableCount_SystemInt32_2.ctor();
+__lcl_index_SystemInt32_2 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_9 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_32 = musicTracks.Length;
+__intnl_SystemBoolean_102 = __lcl_i_SystemInt32_9 < __intnl_SystemInt32_32;
+if (__intnl_SystemBoolean_102)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_33 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_9]);
+__intnl_UnityEngineObject_90 = __intnl_VRCUdonUdonBehaviour_33;
+__intnl_UnityEngineObject_91 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_105 = __intnl_UnityEngineObject_90 != __intnl_UnityEngineObject_91;
+if (__intnl_SystemBoolean_105)
+{
+__intnl_VRCUdonUdonBehaviour_34 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_9]);
+__intnl_VRCUdonUdonBehaviour_34.SendCustomEvent(__const_SystemString_2);
+__intnl_SystemObject_29 = __intnl_VRCUdonUdonBehaviour_34.GetProgramVariable(__const_SystemString_3);
+__intnl_SystemBoolean_106 = (Boolean)__intnl_SystemObject_29;
+__intnl_SystemBoolean_105 = __intnl_SystemBoolean_106;
+}
+__intnl_SystemBoolean_104 = __intnl_SystemBoolean_105;
+if (__intnl_SystemBoolean_104)
+{
+__intnl_VRCUdonUdonBehaviour_35 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_9]);
+__intnl_SystemObject_30 = __intnl_VRCUdonUdonBehaviour_35.GetProgramVariable(__const_SystemString_19);
+__intnl_SystemBoolean_104 = (Boolean)__intnl_SystemObject_30;
+}
+__intnl_SystemBoolean_103 = __intnl_SystemBoolean_104;
+if (__intnl_SystemBoolean_103)
+{
+__intnl_VRCUdonUdonBehaviour_36 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_9]);
+__2_track__param = __intnl_VRCUdonUdonBehaviour_36;
+__3_weather__param = __2_weather__param;
+__0_IsTrackForWeatherType();
+__intnl_SystemBoolean_103 = __0___0_IsTrackForWeatherType__ret;
+}
+if (__intnl_SystemBoolean_103)
+{
+__intnl_VRCUdonUdonBehaviour_37 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_9]);
+__lcl_suitableIntros_UnityEngineComponentArray_1.Set(__lcl_index_SystemInt32_2, __intnl_VRCUdonUdonBehaviour_37);
+__lcl_index_SystemInt32_2 = __lcl_index_SystemInt32_2 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_9 = __lcl_i_SystemInt32_9 + __const_SystemInt32_1;
+}
+__lcl_totalWeight_SystemSingle_1 = __const_SystemSingle_0;
+__lcl_i_SystemInt32_9 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_32 = __lcl_suitableIntros_UnityEngineComponentArray_1.Length;
+__intnl_SystemBoolean_102 = __lcl_i_SystemInt32_9 < __intnl_SystemInt32_32;
+if (__intnl_SystemBoolean_102)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_33 = (UdonBehaviour)(__lcl_suitableIntros_UnityEngineComponentArray_1[__lcl_i_SystemInt32_9]);
+__intnl_VRCUdonUdonBehaviour_33.SendCustomEvent(__const_SystemString_49);
+__intnl_SystemObject_29 = __intnl_VRCUdonUdonBehaviour_33.GetProgramVariable(__const_SystemString_50);
+__intnl_SystemSingle_17 = Convert.ToSingle(__intnl_SystemObject_29);
+__lcl_totalWeight_SystemSingle_1 = __lcl_totalWeight_SystemSingle_1 + __intnl_SystemSingle_17;
+__lcl_i_SystemInt32_9 = __lcl_i_SystemInt32_9 + __const_SystemInt32_1;
+}
+__intnl_SystemBoolean_102 = __lcl_totalWeight_SystemSingle_1 <= __const_SystemSingle_0;
+if (__intnl_SystemBoolean_102)
+{
+if (enableDebugLogs)
+{
+}
+__0___0_SelectWeatherIntroTrack__ret = (UdonBehaviour)(__lcl_suitableIntros_UnityEngineComponentArray_1[__const_SystemInt32_0]);
+return;
+}
+__lcl_roll_SystemSingle_2 = Random.Range(__const_SystemSingle_0, __lcl_totalWeight_SystemSingle_1);
+__lcl_accumulated_SystemSingle_1 = __const_SystemSingle_0;
+__lcl_i_SystemInt32_9 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_32 = __lcl_suitableIntros_UnityEngineComponentArray_1.Length;
+__intnl_SystemBoolean_103 = __lcl_i_SystemInt32_9 < __intnl_SystemInt32_32;
+if (__intnl_SystemBoolean_103)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_33 = (UdonBehaviour)(__lcl_suitableIntros_UnityEngineComponentArray_1[__lcl_i_SystemInt32_9]);
+__intnl_VRCUdonUdonBehaviour_33.SendCustomEvent(__const_SystemString_49);
+__intnl_SystemObject_29 = __intnl_VRCUdonUdonBehaviour_33.GetProgramVariable(__const_SystemString_50);
+__intnl_SystemSingle_17 = Convert.ToSingle(__intnl_SystemObject_29);
+__lcl_accumulated_SystemSingle_1 = __lcl_accumulated_SystemSingle_1 + __intnl_SystemSingle_17;
+__intnl_SystemBoolean_104 = __lcl_roll_SystemSingle_2 <= __lcl_accumulated_SystemSingle_1;
+if (__intnl_SystemBoolean_104)
+{
+if (enableDebugLogs)
+{
+}
+__0___0_SelectWeatherIntroTrack__ret = (UdonBehaviour)(__lcl_suitableIntros_UnityEngineComponentArray_1[__lcl_i_SystemInt32_9]);
+return;
+}
+__lcl_i_SystemInt32_9 = __lcl_i_SystemInt32_9 + __const_SystemInt32_1;
+}
+__intnl_SystemInt32_32 = __lcl_suitableIntros_UnityEngineComponentArray_1.Length;
+__intnl_SystemInt32_33 = __intnl_SystemInt32_32 - __const_SystemInt32_1;
+__0___0_SelectWeatherIntroTrack__ret = (UdonBehaviour)(__lcl_suitableIntros_UnityEngineComponentArray_1[__intnl_SystemInt32_33]);
+return;
+}
+private void __0_IsTrackForWeatherType()
+{
+__intnl_SystemObject_31 = __2_track__param.GetProgramVariable(__const_SystemString_51);
+__intnl_SystemInt32Array_0 = (Int32[])__intnl_SystemObject_31;
+__intnl_SystemBoolean_107 = __intnl_SystemInt32Array_0 == __const_SystemObject_0;
+if (__intnl_SystemBoolean_107)
+{
+}
+else
+{
+__intnl_SystemObject_32 = __2_track__param.GetProgramVariable(__const_SystemString_51);
+__intnl_SystemInt32Array_1 = (Int32[])__intnl_SystemObject_32;
+__intnl_SystemInt32_34 = __intnl_SystemInt32Array_1.Length;
+__intnl_SystemBoolean_107 = __intnl_SystemInt32_34 == __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_107)
+{
+__0___0_IsTrackForWeatherType__ret = __const_SystemBoolean_0;
+return;
+}
+__lcl_i_SystemInt32_10 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemObject_33 = __2_track__param.GetProgramVariable(__const_SystemString_51);
+__intnl_SystemInt32Array_2 = (Int32[])__intnl_SystemObject_33;
+__intnl_SystemInt32_35 = __intnl_SystemInt32Array_2.Length;
+__intnl_SystemBoolean_108 = __lcl_i_SystemInt32_10 < __intnl_SystemInt32_35;
+if (__intnl_SystemBoolean_108)
+{
+break;
+}
+__intnl_SystemObject_34 = __2_track__param.GetProgramVariable(__const_SystemString_51);
+__intnl_SystemInt32Array_3 = (Int32[])__intnl_SystemObject_34;
+__intnl_SystemInt32_36 = __intnl_SystemInt32Array_3[__lcl_i_SystemInt32_10];
+__intnl_SystemBoolean_109 = __intnl_SystemInt32_36 == __3_weather__param;
+if (__intnl_SystemBoolean_109)
+{
+__0___0_IsTrackForWeatherType__ret = __const_SystemBoolean_1;
+return;
+}
+__lcl_i_SystemInt32_10 = __lcl_i_SystemInt32_10 + __const_SystemInt32_1;
+}
+__0___0_IsTrackForWeatherType__ret = __const_SystemBoolean_0;
+return;
+}
+private void UNDEF_a2784_30504()
+{
+__intnl_UnityEngineObject_92 = __1_introTrack__param;
+__intnl_UnityEngineObject_93 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_110 = __intnl_UnityEngineObject_92 == __intnl_UnityEngineObject_93;
+if (__intnl_SystemBoolean_110)
+{
+return;
+}
+isInTransitionGracePeriod = __const_SystemBoolean_0;
+newTrackDelayTimer = __const_SystemSingle_0;
+allowTrackToFinishNaturally = __const_SystemBoolean_0;
+isPlayingIntro = __const_SystemBoolean_1;
+if (isMusicPlaying)
+{
+__0_newTrack__param = __1_introTrack__param;
+UNDEF_a2784_15320();
+}
+else
+{
+__0_track__param = __1_introTrack__param;
+UNDEF_a2784_13596();
+}
+if (enableDebugLogs)
+{
+}
+}
+public void ResetWeatherIntroTracking()
+{
+playedWeatherIntros = __const_SystemInt32_0.ctor();
+if (enableDebugLogs)
+{
+}
+}
+private void __0_GetZoneForTrack()
+{
+__0___0_GetZoneForTrack__ret = lastZoneID;
+return;
+}
+private void __0_IsTrackSuitableForCurrentContext()
+{
+__intnl_SystemInt32_37 = lastTimeOfDay;
+__intnl_SystemString_14 = lastZoneID;
+__intnl_SystemInt32_38 = lastWeatherType;
+__4_track__param.SetProgramVariable(__const_SystemString_9, lastTimeOfDay);
+__4_track__param.SetProgramVariable(__const_SystemString_10, lastZoneID);
+__4_track__param.SetProgramVariable(__const_SystemString_11, lastWeatherType);
+__4_track__param.SendCustomEvent(__const_SystemString_12);
+__intnl_SystemObject_35 = __4_track__param.GetProgramVariable(__const_SystemString_13);
+__intnl_SystemBoolean_111 = (Boolean)__intnl_SystemObject_35;
+__lcl_canPlay_SystemBoolean_0 = __intnl_SystemBoolean_111;
+if (enableDebugLogs)
+{
+}
+__0___0_IsTrackSuitableForCurrentContext__ret = __lcl_canPlay_SystemBoolean_0;
+return;
+}
+private void UNDEF_a2784_31328()
+{
+__lcl_i_SystemInt32_11 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_39 = musicTracks.Length;
+__intnl_SystemBoolean_112 = __lcl_i_SystemInt32_11 < __intnl_SystemInt32_39;
+if (__intnl_SystemBoolean_112)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_38 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_11]);
+__intnl_UnityEngineObject_94 = __intnl_VRCUdonUdonBehaviour_38;
+__intnl_UnityEngineObject_95 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_113 = __intnl_UnityEngineObject_94 != __intnl_UnityEngineObject_95;
+if (__intnl_SystemBoolean_113)
+{
+__intnl_VRCUdonUdonBehaviour_39 = (UdonBehaviour)(musicTracks[__lcl_i_SystemInt32_11]);
+__intnl_VRCUdonUdonBehaviour_39.SendCustomEvent(__const_SystemString_52);
+}
+__lcl_i_SystemInt32_11 = __lcl_i_SystemInt32_11 + __const_SystemInt32_1;
+}
+if (enableDebugLogs)
+{
+}
+}
+public void ForceSkipToNextTrack()
+{
+if (isMusicPlaying)
+{
+UNDEF_a2784_31688();
+}
+}
+private void UNDEF_a2784_31688()
+{
+SelectAppropriateTrack();
+__lcl_nextTrack_VRCUdonUdonBehaviour_0 = __0_SelectAppropriateTrack__ret;
+__intnl_UnityEngineObject_96 = __lcl_nextTrack_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_97 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_114 = __intnl_UnityEngineObject_96 != __intnl_UnityEngineObject_97;
+if (__intnl_SystemBoolean_114)
+{
+__intnl_UnityEngineObject_98 = __lcl_nextTrack_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_99 = currentTrack;
+__intnl_SystemBoolean_114 = __intnl_UnityEngineObject_98 != __intnl_UnityEngineObject_99;
+}
+if (__intnl_SystemBoolean_114)
+{
+__0_newTrack__param = __lcl_nextTrack_VRCUdonUdonBehaviour_0;
+UNDEF_a2784_15320();
+}
+else
+{
+ForceSilence();
+}
+if (enableDebugLogs)
+{
+}
+}
+public void ForceSilence()
+{
+__intnl_UnityEngineObject_100 = currentMusicSource;
+__intnl_UnityEngineObject_101 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_115 = __intnl_UnityEngineObject_100 != __intnl_UnityEngineObject_101;
+if (__intnl_SystemBoolean_115)
+{
+__intnl_SystemBoolean_115 = currentMusicSource.isPlaying;
+}
+if (__intnl_SystemBoolean_115)
+{
+break;
+}
+__intnl_SystemSingle_18 = currentMusicSource.volume;
+__0_fromVolume__param = __intnl_SystemSingle_18;
+__0_toVolume__param = __const_SystemSingle_0;
+__0_duration__param = __const_SystemSingle_1;
+UNDEF_a2784_16140();
+__intnl_UnityEngineObject_102 = nextMusicSource;
+__intnl_UnityEngineObject_103 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_116 = __intnl_UnityEngineObject_102 != __intnl_UnityEngineObject_103;
+if (__intnl_SystemBoolean_116)
+{
+__intnl_SystemBoolean_116 = nextMusicSource.isPlaying;
+}
+if (__intnl_SystemBoolean_116)
+{
+nextMusicSource.Stop();
+}
+isInTransitionGracePeriod = __const_SystemBoolean_0;
+newTrackDelayTimer = __const_SystemSingle_0;
+isTransitioningToIntro = __const_SystemBoolean_0;
+UNDEF_a2784_5424();
+if (enableDebugLogs)
+{
+}
+}
+public void ResumeFromForcedSilence()
+{
+__intnl_SystemSingle_19 = Time.time;
+__intnl_SystemSingle_20 = __intnl_SystemSingle_19 - minimumSilenceDuration;
+lastTrackEndTime = __intnl_SystemSingle_20 - __const_SystemSingle_1;
+silenceDuration = minimumSilenceDuration + __const_SystemSingle_1;
+if (enableDebugLogs)
+{
+}
+UNDEF_a2784_6280();
+}
+public void __0_SetMasterVolume()
+{
+masterVolume = Mathf.Clamp01(__0_volume__param);
+__intnl_SystemBoolean_119 = isMusicPlaying;
+if (__intnl_SystemBoolean_119)
+{
+__intnl_UnityEngineObject_104 = currentTrack;
+__intnl_UnityEngineObject_105 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_119 = __intnl_UnityEngineObject_104 != __intnl_UnityEngineObject_105;
+}
+__intnl_SystemBoolean_118 = __intnl_SystemBoolean_119;
+if (__intnl_SystemBoolean_118)
+{
+__intnl_UnityEngineObject_106 = currentMusicSource;
+__intnl_UnityEngineObject_107 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_118 = __intnl_UnityEngineObject_106 != __intnl_UnityEngineObject_107;
+}
+__intnl_SystemBoolean_117 = __intnl_SystemBoolean_118;
+if (__intnl_SystemBoolean_117)
+{
+__intnl_SystemBoolean_117 = !isCrossfading;
+}
+if (__intnl_SystemBoolean_117)
+{
+__1_track__param = currentTrack;
+__intnl_UnityEngineAudioSource_0 = currentMusicSource;
+__0_GetEffectiveTrackVolume();
+__intnl_UnityEngineAudioSource_0.volume = __0___0_GetEffectiveTrackVolume__ret;
+}
+}
+public void __0_SetZoneVolumeMultiplier()
+{
+zoneVolumeMultiplier = Mathf.Clamp(__0_multiplier__param, __const_SystemSingle_0, __const_SystemSingle_5);
+__intnl_SystemBoolean_122 = isMusicPlaying;
+if (__intnl_SystemBoolean_122)
+{
+__intnl_UnityEngineObject_108 = currentTrack;
+__intnl_UnityEngineObject_109 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_122 = __intnl_UnityEngineObject_108 != __intnl_UnityEngineObject_109;
+}
+__intnl_SystemBoolean_121 = __intnl_SystemBoolean_122;
+if (__intnl_SystemBoolean_121)
+{
+__intnl_UnityEngineObject_110 = currentMusicSource;
+__intnl_UnityEngineObject_111 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_121 = __intnl_UnityEngineObject_110 != __intnl_UnityEngineObject_111;
+}
+__intnl_SystemBoolean_120 = __intnl_SystemBoolean_121;
+if (__intnl_SystemBoolean_120)
+{
+__intnl_SystemBoolean_120 = !isCrossfading;
+}
+if (__intnl_SystemBoolean_120)
+{
+__1_track__param = currentTrack;
+__intnl_UnityEngineAudioSource_1 = currentMusicSource;
+__0_GetEffectiveTrackVolume();
+__intnl_UnityEngineAudioSource_1.volume = __0___0_GetEffectiveTrackVolume__ret;
+}
+}
+public void IsMusicPlaying()
+{
+__0_IsMusicPlaying__ret = isMusicPlaying;
+return;
+}
+public void GetCurrentTrack()
+{
+__0_GetCurrentTrack__ret = currentTrack;
+return;
+}
+public void GetSilenceDuration()
+{
+__0_GetSilenceDuration__ret = silenceDuration;
+return;
+}
+public void GetAvailableTrackCount()
+{
+GetSuitableTracks();
+__0_GetAvailableTrackCount__ret = __0_GetSuitableTracks__ret.Length;
+return;
+}
+public void GetSystemStatus()
+{
+__lcl_status_SystemString_1 = __const_SystemString_53;
+if (isMusicPlaying)
+{
+__intnl_UnityEngineObject_112 = currentTrack;
+__intnl_UnityEngineObject_113 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_123 = __intnl_UnityEngineObject_112 != __intnl_UnityEngineObject_113;
+if (__intnl_SystemBoolean_123)
+{
+__intnl_VRCUdonUdonBehaviour_40 = currentTrack;
+currentTrack.SendCustomEvent(__const_SystemString_33);
+__intnl_SystemObject_36 = currentTrack.GetProgramVariable(__const_SystemString_34);
+__intnl_SystemString_16 = (String)__intnl_SystemObject_36;
+__intnl_SystemString_15 = __intnl_SystemString_16;
+}
+else
+{
+__intnl_SystemString_15 = __const_SystemString_54;
+}
+__intnl_SystemString_17 = __const_SystemString_32 + __intnl_SystemString_15;
+__lcl_status_SystemString_1 = __lcl_status_SystemString_1 + __intnl_SystemString_17;
+}
+else
+{
+__intnl_SystemString_15 = silenceDuration.ToString(__const_SystemString_45);
+__intnl_SystemString_16 = __const_SystemString_35 + __intnl_SystemString_15;
+__intnl_SystemString_17 = __intnl_SystemString_16 + __const_SystemString_37;
+__lcl_status_SystemString_1 = __lcl_status_SystemString_1 + __intnl_SystemString_17;
+}
+GetAvailableTrackCount();
+__intnl_SystemString_15 = String.Concat(__const_SystemString_55, __0_GetAvailableTrackCount__ret);
+__intnl_SystemString_16 = __intnl_SystemString_15 + __const_SystemString_47;
+__intnl_SystemInt32_40 = __0_GetAvailableTrackCount__ret;
+GetValidTrackCount();
+__intnl_SystemString_17 = String.Concat(__intnl_SystemString_16, __0_GetValidTrackCount__ret);
+__lcl_status_SystemString_1 = __lcl_status_SystemString_1 + __intnl_SystemString_17;
+__0_GetSystemStatus__ret = __lcl_status_SystemString_1;
+return;
+}
+}

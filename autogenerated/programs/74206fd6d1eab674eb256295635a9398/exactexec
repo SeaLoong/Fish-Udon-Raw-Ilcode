@@ -1,0 +1,55 @@
+using System;
+using UnityEngine;
+using VRC.Udon;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private String __const_SystemString_0 = "OnTriggerInteraction";
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Int64 __refl_typeid = -8396321497755367489;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_1 = null;
+private object __const_SystemObject_0 = null;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private Int32 __lcl_i_SystemInt32_0 = 0;
+private String __refl_typename = "MobileInteractButton";
+private Int32 __intnl_SystemInt32_0 = 0;
+public Component[] npcs;
+private Int32 __const_SystemInt32_1 = 1;
+private Int32 __const_SystemInt32_0 = 0;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_0 = null;
+
+
+public void OnInteractPressed()
+{
+__intnl_SystemBoolean_0 = npcs == __const_SystemObject_0;
+if (__intnl_SystemBoolean_0)
+{
+return;
+}
+__lcl_i_SystemInt32_0 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_0 = npcs.Length;
+__intnl_SystemBoolean_1 = __lcl_i_SystemInt32_0 < __intnl_SystemInt32_0;
+if (__intnl_SystemBoolean_1)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(npcs[__lcl_i_SystemInt32_0]);
+__intnl_UnityEngineObject_0 = __intnl_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_2 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_2)
+{
+__intnl_VRCUdonUdonBehaviour_1 = (UdonBehaviour)(npcs[__lcl_i_SystemInt32_0]);
+__intnl_VRCUdonUdonBehaviour_1.SendCustomEvent(__const_SystemString_0);
+}
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_1;
+}
+}
+}

@@ -1,0 +1,712 @@
+using System;
+using UnityEngine;
+using VRC.Udon;
+using TMPro;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Boolean __intnl_SystemBoolean_13 = false;
+private Boolean __intnl_SystemBoolean_23 = false;
+public AudioClip tickSound;
+private UdonBehaviour __0_GetVisualRollEnchantment__ret = null;
+private String __intnl_SystemString_1 = null;
+private Single animationStartTime = 0f;
+public UdonBehaviour enchantmentManager;
+private Object __intnl_UnityEngineObject_42 = null;
+private Object __intnl_UnityEngineObject_32 = null;
+private Object __intnl_UnityEngineObject_22 = null;
+private Object __intnl_UnityEngineObject_12 = null;
+private Single __intnl_SystemSingle_0 = 0f;
+private Int32 __lcl_r_SystemInt32_0 = 0;
+private object __intnl_SystemObject_0 = null;
+private String equipmentType = null;
+private Int32 __lcl_attempts_SystemInt32_0 = 0;
+private String __const_SystemString_0 = "rod";
+private Transform __intnl_UnityEngineTransform_0 = null;
+private Single __const_SystemSingle_0 = 0f;
+public Single endTicksPerSecond;
+private Boolean __intnl_SystemBoolean_16 = false;
+private Single __intnl_SystemSingle_10 = 0f;
+private Single __intnl_SystemSingle_11 = 0f;
+private String __intnl_SystemString_9 = null;
+private Single __intnl_SystemSingle_8 = 0f;
+private UInt32 __gintnl_SystemUInt32_9 = 4432;
+private UInt32 __gintnl_SystemUInt32_8 = 4056;
+private UInt32 __gintnl_SystemUInt32_5 = 2796;
+private UInt32 __gintnl_SystemUInt32_4 = 2740;
+private UInt32 __gintnl_SystemUInt32_7 = 3828;
+private UInt32 __gintnl_SystemUInt32_6 = 3272;
+private UInt32 __gintnl_SystemUInt32_1 = 460;
+private UInt32 __gintnl_SystemUInt32_0 = 312;
+private UInt32 __gintnl_SystemUInt32_3 = 1140;
+private UInt32 __gintnl_SystemUInt32_2 = 536;
+private Boolean __const_SystemBoolean_0 = false;
+private Boolean __const_SystemBoolean_1 = true;
+private Object __intnl_UnityEngineObject_41 = null;
+private Object __intnl_UnityEngineObject_31 = null;
+private Object __intnl_UnityEngineObject_21 = null;
+private Object __intnl_UnityEngineObject_11 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_7 = null;
+private String __const_SystemString_5 = "__3_equipmentType__param";
+private Int32 __lcl_visualRarity_SystemInt32_0 = 0;
+private GameObject __3__intnlparam = null;
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private UdonBehaviour __lcl_selected_VRCUdonUdonBehaviour_0 = null;
+public Single rollingDuration;
+private Single __lcl_elapsed_SystemSingle_0 = 0f;
+private String __intnl_SystemString_6 = null;
+public UdonBehaviour equipmentStatsManager;
+private Object __intnl_UnityEngineObject_39 = null;
+private Object __intnl_UnityEngineObject_29 = null;
+private Object __intnl_UnityEngineObject_19 = null;
+public TextMeshProUGUI rarityText;
+private String __const_SystemString_16 = "<color=#";
+private String __const_SystemString_17 = ">";
+private String __const_SystemString_14 = "GetRarityColor";
+private String __const_SystemString_15 = "__0_GetRarityColor__ret";
+private String __const_SystemString_12 = "__0_rarity__param";
+private String __const_SystemString_13 = "__0_PlayVictorySound";
+private String __const_SystemString_10 = "__0___0_GetEnchantmentsByEquipmentType__ret";
+private String __const_SystemString_11 = "rarity";
+private String __const_SystemString_18 = "enchantmentName";
+private String __const_SystemString_19 = "</color>";
+private UdonBehaviour __lcl_displayEnchant_VRCUdonUdonBehaviour_0 = null;
+private Single __intnl_SystemSingle_7 = 0f;
+private Object __intnl_UnityEngineObject_44 = null;
+private Object __intnl_UnityEngineObject_34 = null;
+private Object __intnl_UnityEngineObject_24 = null;
+private Object __intnl_UnityEngineObject_14 = null;
+private Int64 __refl_typeid = -7304111274389577740;
+private object __intnl_SystemObject_7 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_2 = null;
+private Transform __intnl_UnityEngineTransform_5 = null;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Boolean __intnl_SystemBoolean_11 = false;
+private Boolean __intnl_SystemBoolean_21 = false;
+public UdonBehaviour enchantmentDatabase;
+public UdonBehaviour questInventoryManager;
+private String __intnl_SystemString_3 = null;
+private GameObject __0__intnlparam = null;
+private Single __intnl_SystemSingle_2 = 0f;
+private TextMeshProUGUI __intnl_TMProTextMeshProUGUI_0 = null;
+private object __intnl_SystemObject_2 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_1 = null;
+private String __const_SystemString_2 = "RollVisualRarity";
+private Int32 currentDisplayIndex = 0;
+private Transform __intnl_UnityEngineTransform_2 = null;
+private Single __const_SystemSingle_2 = 255f;
+private Color __intnl_UnityEngineColor_0 = new Color(0f, 0f, 0f, 0f);
+private Boolean __intnl_SystemBoolean_19 = false;
+public TextMeshProUGUI enchantmentNameText;
+private Single nextTickTime = 0f;
+private Vector3 __intnl_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Boolean __intnl_SystemBoolean_14 = false;
+private Boolean __intnl_SystemBoolean_24 = false;
+private Component[] __intnl_UnityEngineComponentArray_0 = null;
+private Int32 currentEquipmentType = 0;
+public GameObject rollingParticlesPrefab;
+private Single __lcl_progress_SystemSingle_0 = 0f;
+private object __const_SystemObject_0 = null;
+private String __intnl_SystemString_0 = null;
+private Boolean __lcl_success_SystemBoolean_0 = false;
+private Object __intnl_UnityEngineObject_43 = null;
+private Object __intnl_UnityEngineObject_33 = null;
+private Object __intnl_UnityEngineObject_23 = null;
+private Object __intnl_UnityEngineObject_13 = null;
+private String __lcl_hexColor_SystemString_0 = null;
+private Single __intnl_SystemSingle_1 = 0f;
+private object __intnl_SystemObject_1 = null;
+private UdonBehaviour __0_rolledEnchant__param = null;
+private String __const_SystemString_7 = "__0___0_GetRandomEnchantmentOfRarity__ret";
+private Single __const_SystemSingle_1 = 1f;
+private Boolean __intnl_SystemBoolean_17 = false;
+private Boolean hasShownFinalResult = false;
+private GameObject activeRollingParticles = null;
+private String __intnl_SystemString_8 = null;
+private Int32 __lcl_b_SystemInt32_0 = 0;
+private String __const_SystemString_32 = "NotifyUIOpened";
+private String __const_SystemString_30 = "altarUI";
+private String __const_SystemString_31 = "OpenUI";
+private Single __intnl_SystemSingle_9 = 0f;
+private Int32 __lcl_g_SystemInt32_0 = 0;
+private Object __intnl_UnityEngineObject_36 = null;
+private Object __intnl_UnityEngineObject_26 = null;
+private Object __intnl_UnityEngineObject_16 = null;
+private String __0_eqType__param = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_4 = null;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private Color __0_color__param = new Color(0f, 0f, 0f, 0f);
+private String __const_SystemString_4 = "__1_rarity__param";
+private UdonBehaviour __0_enchant__param = null;
+public AudioSource audioSource;
+private Boolean isAnimating = false;
+private String __intnl_SystemString_5 = null;
+private Single __intnl_SystemSingle_4 = 0f;
+private GameObject __1__intnlparam = null;
+private Object __intnl_UnityEngineObject_45 = null;
+private Object __intnl_UnityEngineObject_35 = null;
+private Object __intnl_UnityEngineObject_25 = null;
+private Object __intnl_UnityEngineObject_15 = null;
+private object __intnl_SystemObject_4 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_3 = null;
+private Transform __intnl_UnityEngineTransform_4 = null;
+private String __const_SystemString_9 = "__0_GetEnchantmentsByEquipmentType";
+private Boolean __intnl_SystemBoolean_12 = false;
+private Boolean __intnl_SystemBoolean_22 = false;
+public UdonBehaviour altar;
+private String __refl_typename = "EnchantmentAnimationController";
+public GameObject resultParticlesPrefab;
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Int32 __intnl_SystemInt32_5 = 0;
+private Int32 __intnl_SystemInt32_4 = 0;
+private Int32 __intnl_SystemInt32_6 = 0;
+private String __intnl_SystemString_2 = null;
+private Int32 __lcl_maxAttempts_SystemInt32_0 = 0;
+private Single __intnl_SystemSingle_3 = 0f;
+private object __intnl_SystemObject_3 = null;
+private String __const_SystemString_1 = "line";
+private Transform __intnl_UnityEngineTransform_1 = null;
+private Int32 equipmentId = 0;
+private Vector3 __intnl_UnityEngineVector3_1 = new Vector3(0f, 0f, 0f);
+private Boolean __intnl_SystemBoolean_15 = false;
+private Boolean __intnl_SystemBoolean_25 = false;
+private UdonBehaviour finalEnchantment = null;
+private Single resultShownTime = 0f;
+private Int32 __0_eqId__param = 0;
+private String __0___0_ColorToHex__ret = null;
+private Single __lcl_currentTickRate_SystemSingle_0 = 0f;
+private Object __intnl_UnityEngineObject_40 = null;
+private Object __intnl_UnityEngineObject_30 = null;
+private Object __intnl_UnityEngineObject_20 = null;
+private Object __intnl_UnityEngineObject_10 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_6 = null;
+private String __const_SystemString_6 = "__0_GetRandomEnchantmentOfRarity";
+public Single startTicksPerSecond;
+private UInt32 __gintnl_SystemUInt32_10 = 4896;
+private UdonBehaviour usedRelic = null;
+private String __intnl_SystemString_7 = null;
+private Object __intnl_UnityEngineObject_38 = null;
+private Object __intnl_UnityEngineObject_28 = null;
+private Object __intnl_UnityEngineObject_18 = null;
+private String __const_SystemString_26 = "__0_ApplySpecificEnchantment";
+private String __const_SystemString_27 = "__0___0_ApplySpecificEnchantment__ret";
+private String __const_SystemString_24 = "__1_equipmentType__param";
+private String __const_SystemString_25 = "__0_enchantment__param";
+private String __const_SystemString_22 = "X2";
+private String __const_SystemString_23 = "__1_equipmentId__param";
+private String __const_SystemString_20 = "GetRarityName";
+private String __const_SystemString_21 = "__0_GetRarityName__ret";
+private String __const_SystemString_28 = "OnEquipmentChanged";
+private String __const_SystemString_29 = "OnEnchantmentSuccess";
+private Component[] __lcl_allForType_UnityEngineComponentArray_0 = null;
+private Single __intnl_SystemSingle_6 = 0f;
+private Color __lcl_rarityColor_UnityEngineColor_0 = new Color(0f, 0f, 0f, 0f);
+private Object __intnl_UnityEngineObject_37 = null;
+private Object __intnl_UnityEngineObject_27 = null;
+private Object __intnl_UnityEngineObject_17 = null;
+private object __intnl_SystemObject_6 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_5 = null;
+public Single resultDisplayDuration;
+private GameObject __2__intnlparam = null;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Boolean __intnl_SystemBoolean_20 = false;
+private Quaternion __intnl_UnityEngineQuaternion_0 = new Quaternion(0f, 0f, 0f, 0f);
+private Quaternion __intnl_UnityEngineQuaternion_1 = new Quaternion(0f, 0f, 0f, 0f);
+private Int32 __const_SystemInt32_1 = 1;
+private Int32 __const_SystemInt32_0 = 0;
+private Int32 __const_SystemInt32_3 = 0;
+private Int32 __const_SystemInt32_2 = 2;
+private Int32 __const_SystemInt32_5 = 1;
+private Int32 __const_SystemInt32_4 = 10;
+private GameObject activeResultParticles = null;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private UdonBehaviour lastDisplayedEnchantment = null;
+private String __intnl_SystemString_4 = null;
+private UdonBehaviour __0_relic__param = null;
+public GameObject animationPanel;
+private Single __intnl_SystemSingle_5 = 0f;
+private object __intnl_SystemObject_5 = null;
+public Transform particleSpawnPoint;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_0 = null;
+private String __const_SystemString_3 = "__0_RollVisualRarity__ret";
+private Transform __intnl_UnityEngineTransform_3 = null;
+private String __const_SystemString_8 = "__0_equipmentType__param";
+private Boolean __intnl_SystemBoolean_18 = false;
+
+
+public void _start()
+{
+__intnl_UnityEngineObject_0 = animationPanel;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_0)
+{
+animationPanel.SetActive(__const_SystemBoolean_0);
+}
+}
+public void _update()
+{
+if (isAnimating)
+{
+UNDEF_7cc31_480();
+}
+}
+private void UNDEF_7cc31_480()
+{
+__intnl_SystemBoolean_1 = !hasShownFinalResult;
+if (__intnl_SystemBoolean_1)
+{
+__intnl_SystemSingle_0 = Time.time;
+__intnl_SystemBoolean_1 = __intnl_SystemSingle_0 >= nextTickTime;
+}
+if (__intnl_SystemBoolean_1)
+{
+UNDEF_7cc31_4076();
+}
+__intnl_SystemBoolean_2 = hasShownFinalResult;
+if (__intnl_SystemBoolean_2)
+{
+__intnl_SystemSingle_1 = Time.time;
+__intnl_SystemSingle_2 = resultShownTime + resultDisplayDuration;
+__intnl_SystemBoolean_2 = __intnl_SystemSingle_1 >= __intnl_SystemSingle_2;
+}
+if (__intnl_SystemBoolean_2)
+{
+EndAnimation();
+}
+}
+public void __0_StartEnchantAnimation()
+{
+if (isAnimating)
+{
+if (hasShownFinalResult)
+{
+UNDEF_7cc31_7400();
+}
+else
+{
+return;
+}
+}
+equipmentId = __0_eqId__param;
+equipmentType = __0_eqType__param;
+usedRelic = __0_relic__param;
+finalEnchantment = __0_rolledEnchant__param;
+__intnl_SystemBoolean_3 = __0_eqType__param == __const_SystemString_0;
+if (__intnl_SystemBoolean_3)
+{
+currentEquipmentType = __const_SystemInt32_0;
+}
+else
+{
+__intnl_SystemBoolean_4 = __0_eqType__param == __const_SystemString_1;
+if (__intnl_SystemBoolean_4)
+{
+currentEquipmentType = __const_SystemInt32_1;
+}
+else
+{
+currentEquipmentType = __const_SystemInt32_2;
+}
+}
+__intnl_UnityEngineObject_2 = animationPanel;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_5 = __intnl_UnityEngineObject_2 != __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_5)
+{
+animationPanel.SetActive(__const_SystemBoolean_1);
+}
+__intnl_UnityEngineObject_4 = rollingParticlesPrefab;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_6 = __intnl_UnityEngineObject_4 != __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_6)
+{
+__intnl_UnityEngineObject_6 = particleSpawnPoint;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_6 = __intnl_UnityEngineObject_6 != __intnl_UnityEngineObject_7;
+}
+if (__intnl_SystemBoolean_6)
+{
+__1__intnlparam = rollingParticlesPrefab;
+UNDEF_7cc31_7464();
+activeRollingParticles = __0__intnlparam;
+__intnl_UnityEngineTransform_0 = activeRollingParticles.transform;
+__intnl_UnityEngineVector3_0 = particleSpawnPoint.position;
+__intnl_UnityEngineTransform_0.position = __intnl_UnityEngineVector3_0;
+__intnl_UnityEngineTransform_1 = activeRollingParticles.transform;
+__intnl_UnityEngineQuaternion_0 = particleSpawnPoint.rotation;
+__intnl_UnityEngineTransform_1.rotation = __intnl_UnityEngineQuaternion_0;
+__intnl_UnityEngineTransform_2 = activeRollingParticles.transform;
+__intnl_UnityEngineTransform_2.SetParent(particleSpawnPoint);
+}
+isAnimating = __const_SystemBoolean_1;
+animationStartTime = Time.time;
+nextTickTime = Time.time;
+currentDisplayIndex = __const_SystemInt32_3;
+hasShownFinalResult = __const_SystemBoolean_0;
+resultShownTime = __const_SystemSingle_0;
+lastDisplayedEnchantment = (UdonBehaviour)__const_SystemObject_0;
+}
+private void GetVisualRollEnchantment()
+{
+__lcl_selected_VRCUdonUdonBehaviour_0 = (UdonBehaviour)__const_SystemObject_0;
+__lcl_maxAttempts_SystemInt32_0 = __const_SystemInt32_4;
+__lcl_attempts_SystemInt32_0 = __const_SystemInt32_3;
+for (;;)
+{
+for (;;)
+{
+__intnl_VRCUdonUdonBehaviour_0 = enchantmentDatabase;
+enchantmentDatabase.SendCustomEvent(__const_SystemString_2);
+__intnl_SystemObject_0 = enchantmentDatabase.GetProgramVariable(__const_SystemString_3);
+__intnl_SystemInt32_1 = Convert.ToInt32(__intnl_SystemObject_0);
+__intnl_SystemInt32_0 = __intnl_SystemInt32_1;
+__lcl_visualRarity_SystemInt32_0 = __intnl_SystemInt32_0;
+__intnl_SystemInt32_2 = currentEquipmentType;
+enchantmentDatabase.SetProgramVariable(__const_SystemString_4, __lcl_visualRarity_SystemInt32_0);
+enchantmentDatabase.SetProgramVariable(__const_SystemString_5, currentEquipmentType);
+enchantmentDatabase.SendCustomEvent(__const_SystemString_6);
+__intnl_SystemObject_1 = enchantmentDatabase.GetProgramVariable(__const_SystemString_7);
+__intnl_VRCUdonUdonBehaviour_1 = (UdonBehaviour)__intnl_SystemObject_1;
+__lcl_selected_VRCUdonUdonBehaviour_0 = __intnl_VRCUdonUdonBehaviour_1;
+__lcl_attempts_SystemInt32_0 = __lcl_attempts_SystemInt32_0 + __const_SystemInt32_5;
+__intnl_UnityEngineObject_8 = __lcl_selected_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_7 = __intnl_UnityEngineObject_8 == __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_7)
+{
+break;
+}
+}
+__intnl_UnityEngineObject_8 = __lcl_selected_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_9 = lastDisplayedEnchantment;
+__intnl_SystemBoolean_7 = __intnl_UnityEngineObject_8 == __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_7)
+{
+__intnl_SystemBoolean_7 = __lcl_attempts_SystemInt32_0 < __lcl_maxAttempts_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_7)
+{
+break;
+}
+}
+__intnl_UnityEngineObject_10 = __lcl_selected_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_11 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_8 = __intnl_UnityEngineObject_10 == __intnl_UnityEngineObject_11;
+if (__intnl_SystemBoolean_8)
+{
+__intnl_SystemInt32_0 = currentEquipmentType;
+enchantmentDatabase.SetProgramVariable(__const_SystemString_8, currentEquipmentType);
+enchantmentDatabase.SendCustomEvent(__const_SystemString_9);
+__intnl_SystemObject_0 = enchantmentDatabase.GetProgramVariable(__const_SystemString_10);
+__intnl_UnityEngineComponentArray_0 = (Component[])__intnl_SystemObject_0;
+__lcl_allForType_UnityEngineComponentArray_0 = __intnl_UnityEngineComponentArray_0;
+__intnl_SystemInt32_1 = __lcl_allForType_UnityEngineComponentArray_0.Length;
+__intnl_SystemBoolean_9 = __intnl_SystemInt32_1 > __const_SystemInt32_3;
+if (__intnl_SystemBoolean_9)
+{
+__intnl_SystemInt32_2 = __lcl_allForType_UnityEngineComponentArray_0.Length;
+__intnl_SystemInt32_3 = Random.Range(__const_SystemInt32_3, __intnl_SystemInt32_2);
+__lcl_selected_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(__lcl_allForType_UnityEngineComponentArray_0[__intnl_SystemInt32_3]);
+}
+}
+__0_GetVisualRollEnchantment__ret = __lcl_selected_VRCUdonUdonBehaviour_0;
+return;
+}
+private void UNDEF_7cc31_4076()
+{
+__intnl_SystemSingle_3 = Time.time;
+__lcl_elapsed_SystemSingle_0 = __intnl_SystemSingle_3 - animationStartTime;
+__intnl_SystemBoolean_10 = __lcl_elapsed_SystemSingle_0 < rollingDuration;
+if (__intnl_SystemBoolean_10)
+{
+GetVisualRollEnchantment();
+__lcl_displayEnchant_VRCUdonUdonBehaviour_0 = __0_GetVisualRollEnchantment__ret;
+__0_enchant__param = __lcl_displayEnchant_VRCUdonUdonBehaviour_0;
+UNDEF_7cc31_5204();
+lastDisplayedEnchantment = __lcl_displayEnchant_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_12 = audioSource;
+__intnl_UnityEngineObject_13 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_11 = __intnl_UnityEngineObject_12 != __intnl_UnityEngineObject_13;
+if (__intnl_SystemBoolean_11)
+{
+__intnl_UnityEngineObject_14 = tickSound;
+__intnl_UnityEngineObject_15 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_11 = __intnl_UnityEngineObject_14 != __intnl_UnityEngineObject_15;
+}
+if (__intnl_SystemBoolean_11)
+{
+audioSource.PlayOneShot(tickSound);
+}
+__lcl_progress_SystemSingle_0 = __lcl_elapsed_SystemSingle_0 / rollingDuration;
+__lcl_currentTickRate_SystemSingle_0 = Mathf.Lerp(startTicksPerSecond, endTicksPerSecond, __lcl_progress_SystemSingle_0);
+__intnl_SystemSingle_4 = Time.time;
+__intnl_SystemSingle_5 = __const_SystemSingle_1 / __lcl_currentTickRate_SystemSingle_0;
+nextTickTime = __intnl_SystemSingle_4 + __intnl_SystemSingle_5;
+}
+else
+{
+if (hasShownFinalResult)
+{
+}
+else
+{
+hasShownFinalResult = __const_SystemBoolean_1;
+resultShownTime = Time.time;
+__0_enchant__param = finalEnchantment;
+UNDEF_7cc31_5204();
+__intnl_UnityEngineObject_12 = altar;
+__intnl_UnityEngineObject_13 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_11 = __intnl_UnityEngineObject_12 != __intnl_UnityEngineObject_13;
+if (__intnl_SystemBoolean_11)
+{
+__intnl_SystemObject_2 = finalEnchantment.GetProgramVariable(__const_SystemString_11);
+__intnl_SystemInt32_5 = Convert.ToInt32(__intnl_SystemObject_2);
+__intnl_SystemInt32_4 = __intnl_SystemInt32_5;
+altar.SetProgramVariable(__const_SystemString_12, __intnl_SystemInt32_4);
+altar.SendCustomEvent(__const_SystemString_13);
+}
+__intnl_UnityEngineObject_14 = activeRollingParticles;
+__intnl_UnityEngineObject_15 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_12 = __intnl_UnityEngineObject_14 != __intnl_UnityEngineObject_15;
+if (__intnl_SystemBoolean_12)
+{
+__intnl_UnityEngineObject_16 = activeRollingParticles;
+Object.Destroy(__intnl_UnityEngineObject_16);
+}
+__intnl_UnityEngineObject_16 = resultParticlesPrefab;
+__intnl_UnityEngineObject_17 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_13 = __intnl_UnityEngineObject_16 != __intnl_UnityEngineObject_17;
+if (__intnl_SystemBoolean_13)
+{
+__intnl_UnityEngineObject_18 = particleSpawnPoint;
+__intnl_UnityEngineObject_19 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_13 = __intnl_UnityEngineObject_18 != __intnl_UnityEngineObject_19;
+}
+if (__intnl_SystemBoolean_13)
+{
+__1__intnlparam = resultParticlesPrefab;
+UNDEF_7cc31_7464();
+activeResultParticles = __0__intnlparam;
+__intnl_UnityEngineTransform_3 = activeResultParticles.transform;
+__intnl_UnityEngineVector3_1 = particleSpawnPoint.position;
+__intnl_UnityEngineTransform_3.position = __intnl_UnityEngineVector3_1;
+__intnl_UnityEngineTransform_4 = activeResultParticles.transform;
+__intnl_UnityEngineQuaternion_1 = particleSpawnPoint.rotation;
+__intnl_UnityEngineTransform_4.rotation = __intnl_UnityEngineQuaternion_1;
+__intnl_UnityEngineTransform_5 = activeResultParticles.transform;
+__intnl_UnityEngineTransform_5.SetParent(particleSpawnPoint);
+}
+UNDEF_7cc31_6300();
+}
+}
+}
+private void UNDEF_7cc31_5204()
+{
+__intnl_UnityEngineObject_20 = __0_enchant__param;
+__intnl_UnityEngineObject_21 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_14 = __intnl_UnityEngineObject_20 == __intnl_UnityEngineObject_21;
+if (__intnl_SystemBoolean_14)
+{
+return;
+}
+__intnl_UnityEngineObject_22 = enchantmentNameText;
+__intnl_UnityEngineObject_23 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_15 = __intnl_UnityEngineObject_22 != __intnl_UnityEngineObject_23;
+if (__intnl_SystemBoolean_15)
+{
+__intnl_VRCUdonUdonBehaviour_2 = __0_enchant__param;
+__0_enchant__param.SendCustomEvent(__const_SystemString_14);
+__intnl_SystemObject_3 = __0_enchant__param.GetProgramVariable(__const_SystemString_15);
+__intnl_UnityEngineColor_0 = (Color)__intnl_SystemObject_3;
+__lcl_rarityColor_UnityEngineColor_0 = __intnl_UnityEngineColor_0;
+__0_color__param = __lcl_rarityColor_UnityEngineColor_0;
+__0_ColorToHex();
+__lcl_hexColor_SystemString_0 = __0___0_ColorToHex__ret;
+__intnl_SystemString_0 = __const_SystemString_16 + __lcl_hexColor_SystemString_0;
+__intnl_SystemString_1 = __intnl_SystemString_0 + __const_SystemString_17;
+__intnl_SystemObject_4 = __0_enchant__param.GetProgramVariable(__const_SystemString_18);
+__intnl_SystemString_2 = (String)__intnl_SystemObject_4;
+__intnl_SystemString_3 = __intnl_SystemString_1 + __intnl_SystemString_2;
+__intnl_SystemString_4 = __intnl_SystemString_3 + __const_SystemString_19;
+enchantmentNameText.text = __intnl_SystemString_4;
+}
+__intnl_UnityEngineObject_24 = rarityText;
+__intnl_UnityEngineObject_25 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_16 = __intnl_UnityEngineObject_24 != __intnl_UnityEngineObject_25;
+if (__intnl_SystemBoolean_16)
+{
+__intnl_VRCUdonUdonBehaviour_2 = __0_enchant__param;
+__0_enchant__param.SendCustomEvent(__const_SystemString_14);
+__intnl_SystemObject_3 = __0_enchant__param.GetProgramVariable(__const_SystemString_15);
+__intnl_UnityEngineColor_0 = (Color)__intnl_SystemObject_3;
+__lcl_rarityColor_UnityEngineColor_0 = __intnl_UnityEngineColor_0;
+__0_color__param = __lcl_rarityColor_UnityEngineColor_0;
+__0_ColorToHex();
+__lcl_hexColor_SystemString_0 = __0___0_ColorToHex__ret;
+__intnl_SystemString_0 = __const_SystemString_16 + __lcl_hexColor_SystemString_0;
+__intnl_SystemString_1 = __intnl_SystemString_0 + __const_SystemString_17;
+__intnl_TMProTextMeshProUGUI_0 = rarityText;
+__intnl_VRCUdonUdonBehaviour_3 = __0_enchant__param;
+__0_enchant__param.SendCustomEvent(__const_SystemString_20);
+__intnl_SystemObject_4 = __0_enchant__param.GetProgramVariable(__const_SystemString_21);
+__intnl_SystemString_2 = (String)__intnl_SystemObject_4;
+__intnl_SystemString_3 = __intnl_SystemString_1 + __intnl_SystemString_2;
+__intnl_SystemString_4 = __intnl_SystemString_3 + __const_SystemString_19;
+__intnl_TMProTextMeshProUGUI_0.text = __intnl_SystemString_4;
+}
+}
+private void __0_ColorToHex()
+{
+__intnl_SystemSingle_6 = __0_color__param.r;
+__intnl_SystemSingle_7 = __intnl_SystemSingle_6 * __const_SystemSingle_2;
+__lcl_r_SystemInt32_0 = Mathf.RoundToInt(__intnl_SystemSingle_7);
+__intnl_SystemSingle_8 = __0_color__param.g;
+__intnl_SystemSingle_9 = __intnl_SystemSingle_8 * __const_SystemSingle_2;
+__lcl_g_SystemInt32_0 = Mathf.RoundToInt(__intnl_SystemSingle_9);
+__intnl_SystemSingle_10 = __0_color__param.b;
+__intnl_SystemSingle_11 = __intnl_SystemSingle_10 * __const_SystemSingle_2;
+__lcl_b_SystemInt32_0 = Mathf.RoundToInt(__intnl_SystemSingle_11);
+__intnl_SystemString_5 = __lcl_r_SystemInt32_0.ToString(__const_SystemString_22);
+__intnl_SystemString_6 = __lcl_g_SystemInt32_0.ToString(__const_SystemString_22);
+__intnl_SystemString_7 = __intnl_SystemString_5 + __intnl_SystemString_6;
+__intnl_SystemString_8 = __lcl_b_SystemInt32_0.ToString(__const_SystemString_22);
+__0___0_ColorToHex__ret = __intnl_SystemString_7 + __intnl_SystemString_8;
+return;
+}
+private void UNDEF_7cc31_6300()
+{
+__intnl_UnityEngineObject_26 = enchantmentManager;
+__intnl_UnityEngineObject_27 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_17 = __intnl_UnityEngineObject_26 != __intnl_UnityEngineObject_27;
+if (__intnl_SystemBoolean_17)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_4 = finalEnchantment;
+__intnl_SystemInt32_6 = equipmentId;
+__intnl_SystemString_9 = equipmentType;
+enchantmentManager.SetProgramVariable(__const_SystemString_23, equipmentId);
+enchantmentManager.SetProgramVariable(__const_SystemString_24, equipmentType);
+enchantmentManager.SetProgramVariable(__const_SystemString_25, finalEnchantment);
+enchantmentManager.SendCustomEvent(__const_SystemString_26);
+__intnl_SystemObject_5 = enchantmentManager.GetProgramVariable(__const_SystemString_27);
+__intnl_SystemBoolean_18 = (Boolean)__intnl_SystemObject_5;
+__lcl_success_SystemBoolean_0 = __intnl_SystemBoolean_18;
+__intnl_UnityEngineObject_28 = equipmentStatsManager;
+__intnl_UnityEngineObject_29 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_18 = __intnl_UnityEngineObject_28 != __intnl_UnityEngineObject_29;
+if (__intnl_SystemBoolean_18)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_4 = equipmentStatsManager;
+equipmentStatsManager.SendCustomEvent(__const_SystemString_28);
+__intnl_UnityEngineObject_30 = altar;
+__intnl_UnityEngineObject_31 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_19 = __intnl_UnityEngineObject_30 != __intnl_UnityEngineObject_31;
+if (__intnl_SystemBoolean_19)
+{
+__intnl_VRCUdonUdonBehaviour_4 = altar;
+altar.SendCustomEvent(__const_SystemString_29);
+}
+}
+public void EndAnimation()
+{
+__intnl_UnityEngineObject_32 = activeResultParticles;
+__intnl_UnityEngineObject_33 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_20 = __intnl_UnityEngineObject_32 != __intnl_UnityEngineObject_33;
+if (__intnl_SystemBoolean_20)
+{
+__intnl_UnityEngineObject_34 = activeResultParticles;
+Object.Destroy(__intnl_UnityEngineObject_34);
+}
+__intnl_UnityEngineObject_34 = animationPanel;
+__intnl_UnityEngineObject_35 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_21 = __intnl_UnityEngineObject_34 != __intnl_UnityEngineObject_35;
+if (__intnl_SystemBoolean_21)
+{
+animationPanel.SetActive(__const_SystemBoolean_0);
+}
+isAnimating = __const_SystemBoolean_0;
+__intnl_UnityEngineObject_36 = altar;
+__intnl_UnityEngineObject_37 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_22 = __intnl_UnityEngineObject_36 != __intnl_UnityEngineObject_37;
+if (__intnl_SystemBoolean_22)
+{
+__intnl_SystemObject_6 = altar.GetProgramVariable(__const_SystemString_30);
+__intnl_VRCUdonUdonBehaviour_5 = (UdonBehaviour)__intnl_SystemObject_6;
+__intnl_UnityEngineObject_38 = __intnl_VRCUdonUdonBehaviour_5;
+__intnl_UnityEngineObject_39 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_22 = __intnl_UnityEngineObject_38 != __intnl_UnityEngineObject_39;
+}
+if (__intnl_SystemBoolean_22)
+{
+__intnl_SystemObject_7 = altar.GetProgramVariable(__const_SystemString_30);
+__intnl_VRCUdonUdonBehaviour_6 = (UdonBehaviour)__intnl_SystemObject_7;
+__intnl_VRCUdonUdonBehaviour_6.SendCustomEvent(__const_SystemString_31);
+__intnl_VRCUdonUdonBehaviour_7 = altar;
+altar.SendCustomEvent(__const_SystemString_32);
+}
+}
+private void UNDEF_7cc31_7400()
+{
+__intnl_UnityEngineObject_40 = activeRollingParticles;
+__intnl_UnityEngineObject_41 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_23 = __intnl_UnityEngineObject_40 != __intnl_UnityEngineObject_41;
+if (__intnl_SystemBoolean_23)
+{
+__intnl_UnityEngineObject_42 = activeRollingParticles;
+Object.Destroy(__intnl_UnityEngineObject_42);
+activeRollingParticles = (GameObject)__const_SystemObject_0;
+}
+__intnl_UnityEngineObject_42 = activeResultParticles;
+__intnl_UnityEngineObject_43 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_24 = __intnl_UnityEngineObject_42 != __intnl_UnityEngineObject_43;
+if (__intnl_SystemBoolean_24)
+{
+__intnl_UnityEngineObject_44 = activeResultParticles;
+Object.Destroy(__intnl_UnityEngineObject_44);
+activeResultParticles = (GameObject)__const_SystemObject_0;
+}
+__intnl_UnityEngineObject_44 = animationPanel;
+__intnl_UnityEngineObject_45 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_25 = __intnl_UnityEngineObject_44 != __intnl_UnityEngineObject_45;
+if (__intnl_SystemBoolean_25)
+{
+animationPanel.SetActive(__const_SystemBoolean_0);
+}
+isAnimating = __const_SystemBoolean_0;
+hasShownFinalResult = __const_SystemBoolean_0;
+}
+private void UNDEF_7cc31_7464()
+{
+__0__intnlparam = Object.Instantiate(__1__intnlparam);
+return;
+}
+private void UNDEF_7cc31_7504()
+{
+__2__intnlparam = (GameObject)__const_SystemObject_0;
+}
+}

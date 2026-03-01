@@ -1,0 +1,88 @@
+using System;
+using UnityEngine;
+using VRC.Udon;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private String __0_tipText__param = null;
+private String __intnl_SystemString_1 = null;
+private object __intnl_SystemObject_0 = null;
+private String __const_SystemString_0 = "I don't have any tips right now, check back later!";
+private String __const_SystemString_5 = "{negative}";
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Int64 __refl_typeid = 6096727911455882621;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private String __intnl_SystemString_3 = null;
+private object __intnl_SystemObject_2 = null;
+public String[] tips;
+private String __const_SystemString_2 = "nicknameForPlayer";
+private object __const_SystemObject_0 = null;
+private String __intnl_SystemString_0 = null;
+private object __intnl_SystemObject_1 = null;
+private String __const_SystemString_7 = "{oneliner}";
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private String __0___0_GetFormattedTip__ret = null;
+private String __const_SystemString_4 = "positiveWord";
+private String __refl_typename = "TipDatabase";
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private String __intnl_SystemString_2 = null;
+private object __intnl_SystemObject_3 = null;
+private String __const_SystemString_1 = "{nickname}";
+private String __0_GetRandomTip__ret = null;
+private String __const_SystemString_6 = "negativeWord";
+private Int32 __lcl_randomIndex_SystemInt32_0 = 0;
+private UdonBehaviour __0_dialogueData__param = null;
+private Int32 __const_SystemInt32_0 = 0;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private String __const_SystemString_3 = "{positive}";
+private String __const_SystemString_8 = "oneLiner";
+
+
+public void GetRandomTip()
+{
+__intnl_SystemBoolean_0 = tips == __const_SystemObject_0;
+if (__intnl_SystemBoolean_0)
+{
+}
+else
+{
+__intnl_SystemInt32_0 = tips.Length;
+__intnl_SystemBoolean_0 = __intnl_SystemInt32_0 == __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_0)
+{
+__0_GetRandomTip__ret = __const_SystemString_0;
+return;
+}
+__intnl_SystemInt32_1 = tips.Length;
+__lcl_randomIndex_SystemInt32_0 = Random.Range(__const_SystemInt32_0, __intnl_SystemInt32_1);
+__0_GetRandomTip__ret = tips[__lcl_randomIndex_SystemInt32_0];
+return;
+}
+public void __0_GetFormattedTip()
+{
+__intnl_UnityEngineObject_0 = __0_dialogueData__param;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_1)
+{
+__intnl_SystemObject_0 = __0_dialogueData__param.GetProgramVariable(__const_SystemString_2);
+__intnl_SystemString_0 = (String)__intnl_SystemObject_0;
+__0_tipText__param = __0_tipText__param.Replace(__const_SystemString_1, __intnl_SystemString_0);
+__intnl_SystemObject_1 = __0_dialogueData__param.GetProgramVariable(__const_SystemString_4);
+__intnl_SystemString_1 = (String)__intnl_SystemObject_1;
+__0_tipText__param = __0_tipText__param.Replace(__const_SystemString_3, __intnl_SystemString_1);
+__intnl_SystemObject_2 = __0_dialogueData__param.GetProgramVariable(__const_SystemString_6);
+__intnl_SystemString_2 = (String)__intnl_SystemObject_2;
+__0_tipText__param = __0_tipText__param.Replace(__const_SystemString_5, __intnl_SystemString_2);
+__intnl_SystemObject_3 = __0_dialogueData__param.GetProgramVariable(__const_SystemString_8);
+__intnl_SystemString_3 = (String)__intnl_SystemObject_3;
+__0_tipText__param = __0_tipText__param.Replace(__const_SystemString_7, __intnl_SystemString_3);
+}
+__0___0_GetFormattedTip__ret = __0_tipText__param;
+return;
+}
+}

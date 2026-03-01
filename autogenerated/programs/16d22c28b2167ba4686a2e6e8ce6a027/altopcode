@@ -1,0 +1,193 @@
+void get_CurrentHealth()
+24 __0_get_CurrentHealth__ret = _currentHealth
+40 return;
+void _onVarChange__currentHealth()
+64 __0_value__param = _currentHealth
+84 _currentHealth = _old__currentHealth
+void __0_set_CurrentHealth()
+_currentHealth = Clamp(maxHealth, __const_SystemInt32_0, __0_value__param);// 128
+144 JUMP 2960
+192 if (__intnl_SystemBoolean_0) //224
+{
+}
+232 if (__intnl_SystemBoolean_0) //256
+{
+248 JUMP 1496
+}
+268 return;
+void get_IsDead()
+300 __0_get_IsDead__ret = _isDead
+316 return;
+void _onVarChange__isDead()
+340 __1_value__param = _isDead
+360 _isDead = _old__isDead
+void __0_set_IsDead()
+388 _isDead = __1_value__param
+400 if (__1_value__param) //424
+{
+416 JUMP 1924
+}
+436 return;
+void _start()
+localPlayer = get_LocalPlayer();// 460
+lastRegenTime = get_time();// 476
+508 __0_value__param = maxHealth
+512 JUMP 96
+544 __1_value__param = __const_SystemBoolean_0
+548 JUMP 372
+564 JUMP 2960
+588 __intnl_UnityEngineObject_0 = homePointManager
+608 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+652 if (__intnl_SystemBoolean_1) //660
+{
+}
+676 __intnl_UnityEngineObject_2 = screenFade
+696 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+740 if (__intnl_SystemBoolean_2) //748
+{
+}
+760 return;
+void _update()
+784 JUMP 284
+824 if (__intnl_SystemBoolean_3) //880
+{
+840 JUMP 8
+}
+888 if (__intnl_SystemBoolean_3) //1044
+{
+984 if (__intnl_SystemBoolean_4) //1044
+{
+1016 __0_healAmount__param = healthRegenPerSecond
+1020 JUMP 1384
+lastRegenTime = get_time();// 1036
+}
+}
+1056 return;
+void __0_TakeDamage()
+1080 JUMP 8
+1144 __0_value__param = __intnl_SystemInt32_0
+1148 JUMP 96
+1172 __intnl_UnityEngineObject_4 = deathSoundSource
+1192 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+1236 if (__intnl_SystemBoolean_5) //1316
+{
+1260 __intnl_UnityEngineObject_6 = damageSound
+1280 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+}
+1324 if (__intnl_SystemBoolean_5) //1356
+{
+G_deathSoundSource.PlayOneShot(damageSound);// 1348
+}
+1368 return;
+void __0_Heal()
+1392 JUMP 8
+1456 __0_value__param = __intnl_SystemInt32_1
+1460 JUMP 96
+1480 return;
+1512 __intnl_UnityEngineObject_8 = deathSoundSource
+1532 __intnl_UnityEngineObject_9 = __const_SystemObject_0
+1576 if (__intnl_SystemBoolean_6) //1656
+{
+1600 __intnl_UnityEngineObject_10 = deathSound
+1620 __intnl_UnityEngineObject_11 = __const_SystemObject_0
+}
+1664 if (__intnl_SystemBoolean_6) //1696
+{
+G_deathSoundSource.PlayOneShot(deathSound);// 1688
+}
+1712 __intnl_UnityEngineObject_12 = screenFade
+1732 __intnl_UnityEngineObject_13 = __const_SystemObject_0
+1776 if (__intnl_SystemBoolean_7) //1860
+{
+1800 __intnl_SystemSingle_2 = deathFadeDuration
+G_screenFade.SetProgramVariable(deathFadeDuration, __const_SystemString_0);// 1828
+G_screenFade.SendCustomEvent(__const_SystemString_1);// 1852
+}
+1884 __1_value__param = __const_SystemBoolean_1
+1888 JUMP 372
+1908 return;
+1932 if (isRespawning) //1960
+{
+1952 return;
+}
+1976 isRespawning = __const_SystemBoolean_1
+this.SendCustomEventDelayedSeconds(__const_VRCUdonCommonEnumsEventTiming_0, respawnDelay, __const_SystemString_2);// 2012
+2032 return;
+void Respawn()
+2064 __intnl_UnityEngineObject_14 = homePointManager
+2084 __intnl_UnityEngineObject_15 = __const_SystemObject_0
+2128 if (__intnl_SystemBoolean_8) //2156
+{
+2148 return;
+}
+2180 __intnl_VRCUdonUdonBehaviour_0 = homePointManager
+G_homePointManager.SendCustomEvent(__const_SystemString_3);// 2192
+G_homePointManager.SetProgramVariable(__intnl_SystemInt32_2, __const_SystemString_5);// 2280
+G_homePointManager.SendCustomEvent(__const_SystemString_6);// 2304
+2360 __intnl_UnityEngineTransform_0 = __intnl_SystemObject_1
+2380 __lcl_spawnPoint_UnityEngineTransform_0 = __intnl_UnityEngineTransform_0
+2400 __intnl_UnityEngineObject_16 = __lcl_spawnPoint_UnityEngineTransform_0
+2420 __intnl_UnityEngineObject_17 = __const_SystemObject_0
+2464 if (__intnl_SystemBoolean_9) //2492
+{
+2484 return;
+}
+2532 if (__intnl_SystemBoolean_10) //2564
+{
+}
+2572 if (__intnl_SystemBoolean_10) //2660
+{
+G_localPlayer.TeleportTo(__intnl_UnityEngineQuaternion_0, __intnl_UnityEngineVector3_0);// 2652
+}
+2676 __intnl_UnityEngineObject_18 = screenFade
+2696 __intnl_UnityEngineObject_19 = __const_SystemObject_0
+2740 if (__intnl_SystemBoolean_11) //2824
+{
+2764 __intnl_SystemSingle_3 = deathFadeDuration
+G_screenFade.SetProgramVariable(deathFadeDuration, __const_SystemString_8);// 2792
+G_screenFade.SendCustomEvent(__const_SystemString_9);// 2816
+}
+2848 __0_value__param = maxHealth
+2852 JUMP 96
+2884 __1_value__param = __const_SystemBoolean_0
+2888 JUMP 372
+2912 isRespawning = __const_SystemBoolean_0
+lastRegenTime = get_time();// 2924
+2944 return;
+2976 __intnl_UnityEngineObject_20 = healthText
+2996 __intnl_UnityEngineObject_21 = __const_SystemObject_0
+3040 if (__intnl_SystemBoolean_12) //3232
+{
+3056 JUMP 8
+__lcl_healthPercent_SystemSingle_0 = op_Multiplication(__const_SystemSingle_1, __intnl_SystemSingle_6);// 3168
+G_healthText.set_text(__intnl_SystemString_0);// 3224
+}
+3248 __intnl_UnityEngineObject_22 = healthBarFill
+3268 __intnl_UnityEngineObject_23 = __const_SystemObject_0
+3312 if (__intnl_SystemBoolean_13) //3460
+{
+3344 __intnl_UnityEngineUIImage_0 = healthBarFill
+3348 JUMP 8
+G_healthBarFill.set_fillAmount(__intnl_SystemSingle_6);// 3452
+}
+3472 return;
+void __0_SetHealth()
+3512 __0_value__param = __0_newHealth__param
+3516 JUMP 96
+3536 return;
+void Kill()
+3576 __0_value__param = __const_SystemInt32_0
+3580 JUMP 96
+3600 return;
+void ForceRespawn()
+3624 JUMP 2048
+3644 return;
+void _onTriggerEnter()
+3668 JUMP 284
+3684 if (__0_get_IsDead__ret) //3700
+{
+3692 JUMP 3736
+}
+3724 __0_damage__param = __const_SystemInt32_1
+3728 JUMP 1072
+3748 return;

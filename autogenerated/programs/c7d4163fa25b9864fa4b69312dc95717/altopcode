@@ -1,0 +1,948 @@
+void _start()
+localPlayer = get_LocalPlayer();// 16
+40 __intnl_UnityEngineObject_0 = detailsPanel
+60 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+104 if (__intnl_SystemBoolean_0) //136
+{
+G_detailsPanel.SetActive(__const_SystemBoolean_0);// 128
+}
+152 __intnl_UnityEngineObject_2 = panelRoot
+172 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+216 if (__intnl_SystemBoolean_1) //248
+{
+G_panelRoot.SetActive(__const_SystemBoolean_0);// 240
+}
+260 return;
+void _update()
+292 __intnl_SystemBoolean_3 = rotatePreview
+304 if (__intnl_SystemBoolean_3) //384
+{
+328 __intnl_UnityEngineObject_4 = previewMeshFilter
+348 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+}
+400 __intnl_SystemBoolean_2 = __intnl_SystemBoolean_3
+412 if (__intnl_SystemBoolean_2) //468
+{
+}
+476 if (__intnl_SystemBoolean_2) //588
+{
+G_previewMeshFilter.get_transform().Rotate(__intnl_SystemSingle_1, __const_UnityEngineVector3_0);// 580
+}
+596 JUMP 632
+616 return;
+672 if (__intnl_SystemBoolean_4) //688
+{
+680 JUMP 760
+}
+704 __intnl_UnityEngineObject_6 = shopCenter
+724 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+768 if (__intnl_SystemBoolean_4) //796
+{
+788 return;
+}
+__lcl_distance_SystemSingle_0 = Distance(__intnl_UnityEngineVector3_1, __intnl_UnityEngineVector3_0);// 868
+916 if (__intnl_SystemBoolean_5) //948
+{
+}
+956 if (__intnl_SystemBoolean_5) //988
+{
+972 JUMP 1116
+980 JUMP 1088
+}
+1028 if (__intnl_SystemBoolean_6) //1056
+{
+1052 __intnl_SystemBoolean_6 = isShopOpen
+}
+1064 if (__intnl_SystemBoolean_6) //1088
+{
+1080 JUMP 1544
+}
+1100 return;
+void OpenShop()
+1124 if (isShopOpen) //1152
+{
+1144 return;
+}
+1168 isShopOpen = __const_SystemBoolean_1
+1188 __intnl_UnityEngineObject_8 = panelRoot
+1208 __intnl_UnityEngineObject_9 = __const_SystemObject_0
+1252 if (__intnl_SystemBoolean_7) //1284
+{
+G_panelRoot.SetActive(__const_SystemBoolean_1);// 1276
+}
+1292 JUMP 18440
+1308 JUMP 1860
+1356 if (__intnl_SystemBoolean_8) //1420
+{
+}
+1428 if (__intnl_SystemBoolean_8) //1480
+{
+1460 __1_boatIndex__param = __const_SystemInt32_0
+1464 JUMP 3836
+1472 JUMP 1496
+}
+1488 JUMP 8416
+1512 isInitialized = __const_SystemBoolean_1
+1528 return;
+void CloseShop()
+1552 if (isShopOpen) //1568
+{
+1560 JUMP 1588
+}
+1580 return;
+1604 isShopOpen = __const_SystemBoolean_0
+1624 __intnl_UnityEngineObject_10 = panelRoot
+1644 __intnl_UnityEngineObject_11 = __const_SystemObject_0
+1688 if (__intnl_SystemBoolean_9) //1720
+{
+G_panelRoot.SetActive(__const_SystemBoolean_0);// 1712
+}
+1728 JUMP 3356
+1744 JUMP 8416
+1768 selectedBoat = __const_SystemObject_0
+1788 selectedSkin = __const_SystemObject_0
+1808 selectedSkinIndex = __const_SystemInt32_1
+1828 isInitialized = __const_SystemBoolean_0
+1844 return;
+1868 JUMP 3356
+1892 __intnl_UnityEngineObject_12 = boatDatabase
+1912 __intnl_UnityEngineObject_13 = __const_SystemObject_0
+1956 if (__intnl_SystemBoolean_10) //1972
+{
+1964 JUMP 2044
+}
+1988 __intnl_UnityEngineObject_14 = playerStats
+2008 __intnl_UnityEngineObject_15 = __const_SystemObject_0
+2052 if (__intnl_SystemBoolean_10) //2080
+{
+2072 return;
+}
+2104 __intnl_VRCUdonUdonBehaviour_0 = playerStats
+G_playerStats.SendCustomEvent(__const_SystemString_0);// 2116
+2196 __lcl_playerLevel_SystemInt32_0 = __intnl_SystemInt32_1
+G_boatDatabase.SetProgramVariable(__lcl_playerLevel_SystemInt32_0, __const_SystemString_2);// 2224
+G_boatDatabase.SendCustomEvent(__const_SystemString_3);// 2248
+2304 __intnl_UnityEngineComponentArray_0 = __intnl_SystemObject_1
+2324 ownedBoats = __intnl_UnityEngineComponentArray_0
+2368 if (__intnl_SystemBoolean_11) //2384
+{
+2376 JUMP 2440
+}
+2448 if (__intnl_SystemBoolean_11) //2476
+{
+2468 return;
+}
+instantiatedBoatSlots = G_boatDatabase.GetProgramVariable(__const_SystemString_4).get_Length().ctor();// 2516
+2540 __lcl_i_SystemInt32_0 = __const_SystemInt32_0
+2608 if (__intnl_SystemBoolean_12) //3328
+{
+2632 __intnl_UnityEngineObject_16 = boatSlotPrefab
+2652 __intnl_UnityEngineObject_17 = __const_SystemObject_0
+2696 if (__intnl_SystemBoolean_13) //2712
+{
+2704 JUMP 2784
+}
+2728 __intnl_UnityEngineObject_18 = boatListParent
+2748 __intnl_UnityEngineObject_19 = __const_SystemObject_0
+2792 if (__intnl_SystemBoolean_13) //2808
+{
+2800 JUMP 3288
+}
+2832 __1__intnlparam = boatSlotPrefab
+2852 __2__intnlparam = boatListParent
+2856 JUMP 18804
+2880 __lcl_slot_UnityEngineGameObject_0 = __0__intnlparam
+G_instantiatedBoatSlots.Set(__lcl_slot_UnityEngineGameObject_0, __lcl_i_SystemInt32_0);// 2908
+2964 __4__intnlparam = __intnl_UnityEngineTransform_1
+2968 JUMP 18976
+2992 __lcl_handler_VRCUdonUdonBehaviour_0 = __3__intnlparam
+3012 __intnl_UnityEngineObject_20 = __lcl_handler_VRCUdonUdonBehaviour_0
+3032 __intnl_UnityEngineObject_21 = __const_SystemObject_0
+3076 if (__intnl_SystemBoolean_14) //3288
+{
+__3__intnlparam.SetProgramVariable(__this_VRCUdonUdonBehaviour_0, __const_SystemString_5);// 3108
+__3__intnlparam.SetProgramVariable(__lcl_i_SystemInt32_0, __const_SystemString_6);// 3140
+3228 __intnl_UnityEngineSprite_0 = __intnl_SystemObject_2
+__3__intnlparam.SetProgramVariable(__intnl_UnityEngineSprite_0, __const_SystemString_8);// 3256
+__3__intnlparam.SendCustomEvent(__const_SystemString_9);// 3280
+}
+__lcl_i_SystemInt32_0 = op_Addition(__const_SystemInt32_2, __lcl_i_SystemInt32_0);// 3312
+3320 JUMP 2544
+}
+3340 return;
+3396 if (__intnl_SystemBoolean_15) //3744
+{
+3420 __lcl_i_SystemInt32_1 = __const_SystemInt32_0
+3488 if (__intnl_SystemBoolean_16) //3724
+{
+3544 __intnl_UnityEngineObject_22 = __intnl_UnityEngineGameObject_1
+3564 __intnl_UnityEngineObject_23 = __const_SystemObject_0
+3608 if (__intnl_SystemBoolean_17) //3684
+{
+3664 __intnl_UnityEngineObject_24 = __intnl_UnityEngineGameObject_2
+Destroy(__intnl_UnityEngineObject_24);// 3676
+}
+__lcl_i_SystemInt32_1 = op_Addition(__const_SystemInt32_2, __lcl_i_SystemInt32_1);// 3708
+3716 JUMP 3424
+}
+3740 instantiatedBoatSlots = __const_SystemObject_0
+}
+3756 return;
+void __0_OnBoatSlotClicked()
+3796 __1_boatIndex__param = __0_boatIndex__param
+3800 JUMP 3836
+3820 return;
+3876 if (__intnl_SystemBoolean_19) //3892
+{
+3884 JUMP 3924
+}
+3940 __intnl_SystemBoolean_18 = __intnl_SystemBoolean_19
+3952 if (__intnl_SystemBoolean_18) //3968
+{
+3960 JUMP 4024
+}
+4032 if (__intnl_SystemBoolean_18) //4060
+{
+4052 return;
+}
+selectedBoat = G_boatDatabase.GetProgramVariable(__const_SystemString_4).Get(__1_boatIndex__param);// 4084
+4108 selectedSkin = __const_SystemObject_0
+4128 selectedSkinIndex = __const_SystemInt32_1
+4140 JUMP 4304
+4156 JUMP 5648
+4180 __intnl_UnityEngineObject_25 = detailsPanel
+4200 __intnl_UnityEngineObject_26 = __const_SystemObject_0
+4244 if (__intnl_SystemBoolean_20) //4276
+{
+G_detailsPanel.SetActive(__const_SystemBoolean_0);// 4268
+}
+4288 return;
+4320 __intnl_UnityEngineObject_27 = previewMeshFilter
+4340 __intnl_UnityEngineObject_28 = __const_SystemObject_0
+4384 if (__intnl_SystemBoolean_21) //4400
+{
+4392 JUMP 4472
+}
+4416 __intnl_UnityEngineObject_29 = selectedBoat
+4436 __intnl_UnityEngineObject_30 = __const_SystemObject_0
+4480 if (__intnl_SystemBoolean_21) //4508
+{
+4500 return;
+}
+4556 __intnl_UnityEngineMesh_0 = __intnl_SystemObject_3
+4576 __intnl_UnityEngineObject_31 = __intnl_UnityEngineMesh_0
+4596 __intnl_UnityEngineObject_32 = __const_SystemObject_0
+4640 if (__intnl_SystemBoolean_22) //4780
+{
+4696 __intnl_UnityEngineMesh_1 = __intnl_SystemObject_4
+G_previewMeshFilter.set_mesh(__intnl_UnityEngineMesh_1);// 4716
+G_previewMeshFilter.get_gameObject().SetActive(__const_SystemBoolean_1);// 4764
+4772 JUMP 4828
+}
+G_previewMeshFilter.get_gameObject().SetActive(__const_SystemBoolean_0);// 4820
+4916 __intnl_VRCUdonUdonBehaviour_2 = boatSkinDatabase
+4936 __intnl_VRCUdonUdonBehaviour_3 = playerStats
+G_playerStats.SendCustomEvent(__const_SystemString_0);// 4948
+G_boatSkinDatabase.SetProgramVariable(__intnl_SystemInt32_7, __const_SystemString_12);// 5036
+G_boatSkinDatabase.SetProgramVariable(__intnl_SystemInt32_8, __const_SystemString_13);// 5068
+G_boatSkinDatabase.SendCustomEvent(__const_SystemString_14);// 5092
+5148 __intnl_VRCUdonUdonBehaviour_4 = __intnl_SystemObject_6
+5168 __0_skin__param = __intnl_VRCUdonUdonBehaviour_4
+5172 JUMP 5208
+5192 return;
+5224 __intnl_UnityEngineObject_33 = previewMeshRenderer
+5244 __intnl_UnityEngineObject_34 = __const_SystemObject_0
+5288 if (__intnl_SystemBoolean_23) //5316
+{
+5308 return;
+}
+5332 __intnl_UnityEngineObject_35 = __0_skin__param
+5352 __intnl_UnityEngineObject_36 = __const_SystemObject_0
+5396 if (__intnl_SystemBoolean_24) //5528
+{
+5452 __intnl_UnityEngineMaterial_0 = __intnl_SystemObject_7
+5472 __intnl_UnityEngineObject_37 = __intnl_UnityEngineMaterial_0
+5492 __intnl_UnityEngineObject_38 = __const_SystemObject_0
+}
+5536 if (__intnl_SystemBoolean_24) //5620
+{
+5592 __intnl_UnityEngineMaterial_1 = __intnl_SystemObject_8
+G_previewMeshRenderer.set_material(__intnl_UnityEngineMaterial_1);// 5612
+}
+5632 return;
+5656 JUMP 8416
+5680 __intnl_UnityEngineObject_39 = boatSkinDatabase
+5700 __intnl_UnityEngineObject_40 = __const_SystemObject_0
+5744 if (__intnl_SystemBoolean_26) //5760
+{
+5752 JUMP 5832
+}
+5776 __intnl_UnityEngineObject_41 = selectedBoat
+5796 __intnl_UnityEngineObject_42 = __const_SystemObject_0
+5848 __intnl_SystemBoolean_25 = __intnl_SystemBoolean_26
+5860 if (__intnl_SystemBoolean_25) //5876
+{
+5868 JUMP 5948
+}
+5892 __intnl_UnityEngineObject_43 = playerStats
+5912 __intnl_UnityEngineObject_44 = __const_SystemObject_0
+5956 if (__intnl_SystemBoolean_25) //5984
+{
+5976 return;
+}
+6000 __intnl_UnityEngineObject_45 = skinSlotPrefab
+6020 __intnl_UnityEngineObject_46 = __const_SystemObject_0
+6064 if (__intnl_SystemBoolean_27) //6080
+{
+6072 JUMP 6152
+}
+6096 __intnl_UnityEngineObject_47 = skinListParent
+6116 __intnl_UnityEngineObject_48 = __const_SystemObject_0
+6160 if (__intnl_SystemBoolean_27) //6188
+{
+6180 return;
+}
+G_boatSkinDatabase.SetProgramVariable(__intnl_SystemInt32_9, __const_SystemString_17);// 6268
+G_boatSkinDatabase.SendCustomEvent(__const_SystemString_18);// 6292
+6348 __intnl_UnityEngineComponentArray_1 = __intnl_SystemObject_10
+6368 currentBoatSkins = __intnl_UnityEngineComponentArray_1
+6412 if (__intnl_SystemBoolean_28) //6428
+{
+6420 JUMP 6484
+}
+6492 if (__intnl_SystemBoolean_28) //6520
+{
+6512 return;
+}
+6544 __intnl_VRCUdonUdonBehaviour_5 = playerStats
+G_playerStats.SendCustomEvent(__const_SystemString_0);// 6556
+6636 __lcl_playerLevel_SystemInt32_1 = __intnl_SystemInt32_11
+instantiatedSkinSlots = G_boatSkinDatabase.GetProgramVariable(__const_SystemString_19).get_Length().ctor();// 6680
+6704 __lcl_i_SystemInt32_2 = __const_SystemInt32_0
+6772 if (__intnl_SystemBoolean_29) //8388
+{
+__lcl_skin_VRCUdonUdonBehaviour_0 = G_boatSkinDatabase.GetProgramVariable(__const_SystemString_19).Get(__lcl_i_SystemInt32_2);// 6804
+6860 __intnl_VRCEconomyUdonProduct_0 = __intnl_SystemObject_12
+6880 __intnl_UnityEngineObject_49 = __intnl_VRCEconomyUdonProduct_0
+6900 __intnl_UnityEngineObject_50 = __const_SystemObject_0
+6944 if (__intnl_SystemBoolean_30) //7056
+{
+7000 __intnl_VRCEconomyUdonProduct_1 = __intnl_SystemObject_13
+7020 __intnl_VRCEconomyIProduct_0 = __intnl_VRCEconomyUdonProduct_1
+}
+7072 __lcl_ownsProduct_SystemBoolean_0 = __intnl_SystemBoolean_30
+7124 __intnl_VRCUdonUdonBehaviour_6 = __intnl_SystemObject_14
+7144 __intnl_UnityEngineObject_51 = __intnl_VRCUdonUdonBehaviour_6
+7164 __intnl_UnityEngineObject_52 = __const_SystemObject_0
+7208 if (__intnl_SystemBoolean_32) //7288
+{
+7232 __intnl_UnityEngineObject_53 = achievementManager
+7252 __intnl_UnityEngineObject_54 = __const_SystemObject_0
+}
+7304 __intnl_SystemBoolean_31 = __intnl_SystemBoolean_32
+7316 if (__intnl_SystemBoolean_31) //7504
+{
+7372 __intnl_VRCUdonUdonBehaviour_7 = __intnl_SystemObject_15
+G_achievementManager.SetProgramVariable(__intnl_VRCUdonUdonBehaviour_7, __const_SystemString_22);// 7400
+G_achievementManager.SendCustomEvent(__const_SystemString_23);// 7424
+7480 __intnl_SystemBoolean_33 = __intnl_SystemObject_16
+7500 __intnl_SystemBoolean_31 = __intnl_SystemBoolean_33
+}
+7520 __lcl_hasAchievement_SystemBoolean_0 = __intnl_SystemBoolean_31
+G_boatSkinDatabase.SetProgramVariable(__intnl_SystemInt32_14, __const_SystemString_26);// 7604
+G_boatSkinDatabase.SetProgramVariable(__lcl_playerLevel_SystemInt32_1, __const_SystemString_27);// 7636
+G_boatSkinDatabase.SendCustomEvent(__const_SystemString_28);// 7660
+7716 __intnl_SystemBoolean_36 = __intnl_SystemObject_18
+7736 __intnl_SystemBoolean_35 = __intnl_SystemBoolean_36
+7748 if (__intnl_SystemBoolean_35) //7764
+{
+7756 JUMP 7784
+}
+7780 __intnl_SystemBoolean_35 = __lcl_ownsProduct_SystemBoolean_0
+7800 __intnl_SystemBoolean_34 = __intnl_SystemBoolean_35
+7812 if (__intnl_SystemBoolean_34) //7828
+{
+7820 JUMP 7848
+}
+7844 __intnl_SystemBoolean_34 = __lcl_hasAchievement_SystemBoolean_0
+7864 __lcl_isOwned_SystemBoolean_0 = __intnl_SystemBoolean_34
+7892 __1__intnlparam = skinSlotPrefab
+7912 __2__intnlparam = skinListParent
+7916 JUMP 18804
+7940 __lcl_slot_UnityEngineGameObject_1 = __0__intnlparam
+G_instantiatedSkinSlots.Set(__lcl_slot_UnityEngineGameObject_1, __lcl_i_SystemInt32_2);// 7968
+8024 __6__intnlparam = __intnl_UnityEngineTransform_2
+8028 JUMP 19484
+8052 __lcl_handler_VRCUdonUdonBehaviour_1 = __5__intnlparam
+8072 __intnl_UnityEngineObject_55 = __lcl_handler_VRCUdonUdonBehaviour_1
+8092 __intnl_UnityEngineObject_56 = __const_SystemObject_0
+8136 if (__intnl_SystemBoolean_37) //8348
+{
+__5__intnlparam.SetProgramVariable(__this_VRCUdonUdonBehaviour_1, __const_SystemString_5);// 8168
+__5__intnlparam.SetProgramVariable(__lcl_i_SystemInt32_2, __const_SystemString_30);// 8200
+8256 __intnl_UnityEngineSprite_1 = __intnl_SystemObject_19
+__5__intnlparam.SetProgramVariable(__intnl_UnityEngineSprite_1, __const_SystemString_8);// 8284
+__5__intnlparam.SetProgramVariable(__lcl_isOwned_SystemBoolean_0, __const_SystemString_32);// 8316
+__5__intnlparam.SendCustomEvent(__const_SystemString_9);// 8340
+}
+__lcl_i_SystemInt32_2 = op_Addition(__const_SystemInt32_2, __lcl_i_SystemInt32_2);// 8372
+8380 JUMP 6708
+}
+8400 return;
+8456 if (__intnl_SystemBoolean_38) //8804
+{
+8480 __lcl_i_SystemInt32_3 = __const_SystemInt32_0
+8548 if (__intnl_SystemBoolean_39) //8784
+{
+8604 __intnl_UnityEngineObject_57 = __intnl_UnityEngineGameObject_4
+8624 __intnl_UnityEngineObject_58 = __const_SystemObject_0
+8668 if (__intnl_SystemBoolean_40) //8744
+{
+8724 __intnl_UnityEngineObject_59 = __intnl_UnityEngineGameObject_5
+Destroy(__intnl_UnityEngineObject_59);// 8736
+}
+__lcl_i_SystemInt32_3 = op_Addition(__const_SystemInt32_2, __lcl_i_SystemInt32_3);// 8768
+8776 JUMP 8484
+}
+8800 instantiatedSkinSlots = __const_SystemObject_0
+}
+8820 currentBoatSkins = __const_SystemObject_0
+8836 return;
+void __0_OnSkinSlotClicked()
+8892 if (__intnl_SystemBoolean_42) //8908
+{
+8900 JUMP 8940
+}
+8956 __intnl_SystemBoolean_41 = __intnl_SystemBoolean_42
+8968 if (__intnl_SystemBoolean_41) //8984
+{
+8976 JUMP 9040
+}
+9048 if (__intnl_SystemBoolean_41) //9076
+{
+9068 return;
+}
+9092 selectedSkinIndex = __0_slotIndex__param
+selectedSkin = null.Get(__0_slotIndex__param);// 9120
+9152 __0_skin__param = selectedSkin
+9156 JUMP 5208
+9172 JUMP 9208
+9192 return;
+9224 __intnl_UnityEngineObject_60 = detailsPanel
+9244 __intnl_UnityEngineObject_61 = __const_SystemObject_0
+9288 if (__intnl_SystemBoolean_43) //9304
+{
+9296 JUMP 9376
+}
+9320 __intnl_UnityEngineObject_62 = selectedSkin
+9340 __intnl_UnityEngineObject_63 = __const_SystemObject_0
+9384 if (__intnl_SystemBoolean_43) //9412
+{
+9404 return;
+}
+G_detailsPanel.SetActive(__const_SystemBoolean_1);// 9428
+9452 __intnl_UnityEngineObject_64 = skinImage
+9472 __intnl_UnityEngineObject_65 = __const_SystemObject_0
+9516 if (__intnl_SystemBoolean_44) //9648
+{
+9572 __intnl_UnityEngineSprite_2 = __intnl_SystemObject_20
+9592 __intnl_UnityEngineObject_66 = __intnl_UnityEngineSprite_2
+9612 __intnl_UnityEngineObject_67 = __const_SystemObject_0
+}
+9656 if (__intnl_SystemBoolean_44) //9740
+{
+9712 __intnl_UnityEngineSprite_3 = __intnl_SystemObject_21
+G_skinImage.set_sprite(__intnl_UnityEngineSprite_3);// 9732
+}
+9756 __intnl_UnityEngineObject_68 = skinNameText
+9776 __intnl_UnityEngineObject_69 = __const_SystemObject_0
+9820 if (__intnl_SystemBoolean_45) //9904
+{
+9876 __intnl_SystemString_0 = __intnl_SystemObject_21
+G_skinNameText.set_text(__intnl_SystemString_0);// 9896
+}
+9912 JUMP 9948
+9932 return;
+9964 __intnl_UnityEngineObject_70 = actionButton
+9984 __intnl_UnityEngineObject_71 = __const_SystemObject_0
+10028 if (__intnl_SystemBoolean_48) //10044
+{
+10036 JUMP 10116
+}
+10060 __intnl_UnityEngineObject_72 = selectedSkin
+10080 __intnl_UnityEngineObject_73 = __const_SystemObject_0
+10132 __intnl_SystemBoolean_47 = __intnl_SystemBoolean_48
+10144 if (__intnl_SystemBoolean_47) //10160
+{
+10152 JUMP 10232
+}
+10176 __intnl_UnityEngineObject_74 = playerStats
+10196 __intnl_UnityEngineObject_75 = __const_SystemObject_0
+10248 __intnl_SystemBoolean_46 = __intnl_SystemBoolean_47
+10260 if (__intnl_SystemBoolean_46) //10276
+{
+10268 JUMP 10348
+}
+10292 __intnl_UnityEngineObject_76 = boatSkinDatabase
+10312 __intnl_UnityEngineObject_77 = __const_SystemObject_0
+10356 if (__intnl_SystemBoolean_46) //10384
+{
+10376 return;
+}
+10408 __intnl_VRCUdonUdonBehaviour_8 = playerStats
+G_playerStats.SendCustomEvent(__const_SystemString_0);// 10420
+10500 __lcl_playerLevel_SystemInt32_2 = __intnl_SystemInt32_17
+10552 __lcl_isNonPurchaseable_SystemBoolean_0 = __intnl_SystemObject_23
+10604 __intnl_VRCEconomyUdonProduct_2 = __intnl_SystemObject_24
+10624 __intnl_UnityEngineObject_78 = __intnl_VRCEconomyUdonProduct_2
+10644 __intnl_UnityEngineObject_79 = __const_SystemObject_0
+10688 if (__intnl_SystemBoolean_49) //10800
+{
+10744 __intnl_VRCEconomyUdonProduct_3 = __intnl_SystemObject_25
+10764 __intnl_VRCEconomyIProduct_1 = __intnl_VRCEconomyUdonProduct_3
+}
+10816 __lcl_ownsProduct_SystemBoolean_1 = __intnl_SystemBoolean_49
+10868 __intnl_VRCUdonUdonBehaviour_9 = __intnl_SystemObject_26
+10888 __intnl_UnityEngineObject_80 = __intnl_VRCUdonUdonBehaviour_9
+10908 __intnl_UnityEngineObject_81 = __const_SystemObject_0
+10952 if (__intnl_SystemBoolean_51) //11032
+{
+10976 __intnl_UnityEngineObject_82 = achievementManager
+10996 __intnl_UnityEngineObject_83 = __const_SystemObject_0
+}
+11048 __intnl_SystemBoolean_50 = __intnl_SystemBoolean_51
+11060 if (__intnl_SystemBoolean_50) //11248
+{
+11116 __intnl_VRCUdonUdonBehaviour_10 = __intnl_SystemObject_27
+G_achievementManager.SetProgramVariable(__intnl_VRCUdonUdonBehaviour_10, __const_SystemString_22);// 11144
+G_achievementManager.SendCustomEvent(__const_SystemString_23);// 11168
+11224 __intnl_SystemBoolean_52 = __intnl_SystemObject_28
+11244 __intnl_SystemBoolean_50 = __intnl_SystemBoolean_52
+}
+11264 __lcl_hasAchievement_SystemBoolean_1 = __intnl_SystemBoolean_50
+G_boatSkinDatabase.SetProgramVariable(__intnl_SystemInt32_18, __const_SystemString_26);// 11348
+G_boatSkinDatabase.SetProgramVariable(__lcl_playerLevel_SystemInt32_2, __const_SystemString_27);// 11380
+G_boatSkinDatabase.SendCustomEvent(__const_SystemString_28);// 11404
+11460 __intnl_SystemBoolean_55 = __intnl_SystemObject_30
+11480 __intnl_SystemBoolean_54 = __intnl_SystemBoolean_55
+11492 if (__intnl_SystemBoolean_54) //11508
+{
+11500 JUMP 11528
+}
+11524 __intnl_SystemBoolean_54 = __lcl_ownsProduct_SystemBoolean_1
+11544 __intnl_SystemBoolean_53 = __intnl_SystemBoolean_54
+11556 if (__intnl_SystemBoolean_53) //11572
+{
+11564 JUMP 11592
+}
+11588 __intnl_SystemBoolean_53 = __lcl_hasAchievement_SystemBoolean_1
+11608 __lcl_isOwned_SystemBoolean_1 = __intnl_SystemBoolean_53
+G_boatSkinDatabase.SetProgramVariable(__intnl_SystemInt32_19, __const_SystemString_12);// 11692
+G_boatSkinDatabase.SetProgramVariable(__lcl_playerLevel_SystemInt32_2, __const_SystemString_13);// 11724
+G_boatSkinDatabase.SendCustomEvent(__const_SystemString_14);// 11748
+11804 __intnl_VRCUdonUdonBehaviour_11 = __intnl_SystemObject_32
+11824 __lcl_equippedSkin_VRCUdonUdonBehaviour_0 = __intnl_VRCUdonUdonBehaviour_11
+11844 __intnl_UnityEngineObject_84 = __lcl_equippedSkin_VRCUdonUdonBehaviour_0
+11864 __intnl_UnityEngineObject_85 = __const_SystemObject_0
+11908 if (__intnl_SystemBoolean_56) //12060
+{
+}
+12076 __lcl_isEquipped_SystemBoolean_0 = __intnl_SystemBoolean_56
+12096 __intnl_UnityEngineObject_86 = skinPriceText
+12116 __intnl_UnityEngineObject_87 = __const_SystemObject_0
+12160 if (__intnl_SystemBoolean_57) //12440
+{
+12176 if (__lcl_isOwned_SystemBoolean_1) //12240
+{
+G_skinPriceText.set_text(__const_SystemString_35);// 12200
+G_skinPriceText.set_color(__const_UnityEngineColor_0);// 12224
+12232 JUMP 12440
+}
+12248 if (__lcl_isNonPurchaseable_SystemBoolean_0) //12312
+{
+G_skinPriceText.set_text(__const_SystemString_36);// 12272
+G_skinPriceText.set_color(dlcColor);// 12296
+12304 JUMP 12440
+}
+G_skinPriceText.set_text(__intnl_SystemString_1);// 12408
+G_skinPriceText.set_color(__const_UnityEngineColor_0);// 12432
+}
+12448 if (__lcl_isEquipped_SystemBoolean_0) //12712
+{
+G_actionButton.set_interactable(__const_SystemBoolean_0);// 12472
+12496 __intnl_UnityEngineObject_88 = actionButtonText
+12516 __intnl_UnityEngineObject_89 = __const_SystemObject_0
+12560 if (__intnl_SystemBoolean_58) //12592
+{
+G_actionButtonText.set_text(__const_SystemString_38);// 12584
+}
+12608 __intnl_UnityEngineObject_90 = actionButtonImage
+12628 __intnl_UnityEngineObject_91 = __const_SystemObject_0
+12672 if (__intnl_SystemBoolean_59) //12704
+{
+G_actionButtonImage.set_color(equippedColor);// 12696
+}
+12704 JUMP 13776
+}
+12720 if (__lcl_isOwned_SystemBoolean_1) //12984
+{
+G_actionButton.set_interactable(__const_SystemBoolean_1);// 12744
+12768 __intnl_UnityEngineObject_88 = actionButtonText
+12788 __intnl_UnityEngineObject_89 = __const_SystemObject_0
+12832 if (__intnl_SystemBoolean_58) //12864
+{
+G_actionButtonText.set_text(__const_SystemString_39);// 12856
+}
+12880 __intnl_UnityEngineObject_90 = actionButtonImage
+12900 __intnl_UnityEngineObject_91 = __const_SystemObject_0
+12944 if (__intnl_SystemBoolean_59) //12976
+{
+G_actionButtonImage.set_color(equipColor);// 12968
+}
+12976 JUMP 13776
+}
+12992 if (__lcl_isNonPurchaseable_SystemBoolean_0) //13256
+{
+G_actionButton.set_interactable(__const_SystemBoolean_0);// 13016
+13040 __intnl_UnityEngineObject_88 = actionButtonText
+13060 __intnl_UnityEngineObject_89 = __const_SystemObject_0
+13104 if (__intnl_SystemBoolean_58) //13136
+{
+G_actionButtonText.set_text(__const_SystemString_36);// 13128
+}
+13152 __intnl_UnityEngineObject_90 = actionButtonImage
+13172 __intnl_UnityEngineObject_91 = __const_SystemObject_0
+13216 if (__intnl_SystemBoolean_59) //13248
+{
+G_actionButtonImage.set_color(dlcColor);// 13240
+}
+13248 JUMP 13776
+}
+13280 __intnl_VRCUdonUdonBehaviour_12 = playerStats
+G_playerStats.SendCustomEvent(__const_SystemString_40);// 13292
+__lcl_canAfford_SystemBoolean_0 = op_GreaterThanOrEqual(__intnl_SystemInt32_23, __intnl_SystemInt32_22);// 13436
+G_actionButton.set_interactable(__lcl_canAfford_SystemBoolean_0);// 13460
+13484 __intnl_UnityEngineObject_88 = actionButtonText
+13504 __intnl_UnityEngineObject_89 = __const_SystemObject_0
+13548 if (__intnl_SystemBoolean_58) //13664
+{
+13572 __intnl_TMProTextMeshProUGUI_0 = actionButtonText
+13584 if (__lcl_canAfford_SystemBoolean_0) //13620
+{
+13608 __intnl_SystemString_1 = __const_SystemString_42
+13612 JUMP 13640
+}
+13636 __intnl_SystemString_1 = __const_SystemString_43
+G_actionButtonText.set_text(__intnl_SystemString_1);// 13656
+}
+13680 __intnl_UnityEngineObject_90 = actionButtonImage
+13700 __intnl_UnityEngineObject_91 = __const_SystemObject_0
+13744 if (__intnl_SystemBoolean_59) //13776
+{
+G_actionButtonImage.set_color(buyColor);// 13768
+}
+13788 return;
+void OnActionButtonClick()
+13820 __intnl_UnityEngineObject_92 = selectedSkin
+13840 __intnl_UnityEngineObject_93 = __const_SystemObject_0
+13884 if (__intnl_SystemBoolean_62) //13900
+{
+13892 JUMP 13972
+}
+13916 __intnl_UnityEngineObject_94 = selectedBoat
+13936 __intnl_UnityEngineObject_95 = __const_SystemObject_0
+13988 __intnl_SystemBoolean_61 = __intnl_SystemBoolean_62
+14000 if (__intnl_SystemBoolean_61) //14016
+{
+14008 JUMP 14088
+}
+14032 __intnl_UnityEngineObject_96 = playerStats
+14052 __intnl_UnityEngineObject_97 = __const_SystemObject_0
+14104 __intnl_SystemBoolean_60 = __intnl_SystemBoolean_61
+14116 if (__intnl_SystemBoolean_60) //14132
+{
+14124 JUMP 14204
+}
+14148 __intnl_UnityEngineObject_98 = boatSkinDatabase
+14168 __intnl_UnityEngineObject_99 = __const_SystemObject_0
+14212 if (__intnl_SystemBoolean_60) //14240
+{
+14232 return;
+}
+14264 __intnl_VRCUdonUdonBehaviour_13 = playerStats
+G_playerStats.SendCustomEvent(__const_SystemString_0);// 14276
+14356 __lcl_playerLevel_SystemInt32_3 = __intnl_SystemInt32_24
+14408 __intnl_VRCEconomyUdonProduct_4 = __intnl_SystemObject_38
+14428 __intnl_UnityEngineObject_100 = __intnl_VRCEconomyUdonProduct_4
+14448 __intnl_UnityEngineObject_101 = __const_SystemObject_0
+14492 if (__intnl_SystemBoolean_63) //14604
+{
+14548 __intnl_VRCEconomyUdonProduct_5 = __intnl_SystemObject_39
+14568 __intnl_VRCEconomyIProduct_2 = __intnl_VRCEconomyUdonProduct_5
+}
+14620 __lcl_ownsProduct_SystemBoolean_2 = __intnl_SystemBoolean_63
+14672 __intnl_VRCUdonUdonBehaviour_14 = __intnl_SystemObject_40
+14692 __intnl_UnityEngineObject_102 = __intnl_VRCUdonUdonBehaviour_14
+14712 __intnl_UnityEngineObject_103 = __const_SystemObject_0
+14756 if (__intnl_SystemBoolean_65) //14836
+{
+14780 __intnl_UnityEngineObject_104 = achievementManager
+14800 __intnl_UnityEngineObject_105 = __const_SystemObject_0
+}
+14852 __intnl_SystemBoolean_64 = __intnl_SystemBoolean_65
+14864 if (__intnl_SystemBoolean_64) //15052
+{
+14920 __intnl_VRCUdonUdonBehaviour_15 = __intnl_SystemObject_41
+G_achievementManager.SetProgramVariable(__intnl_VRCUdonUdonBehaviour_15, __const_SystemString_22);// 14948
+G_achievementManager.SendCustomEvent(__const_SystemString_23);// 14972
+15028 __intnl_SystemBoolean_66 = __intnl_SystemObject_42
+15048 __intnl_SystemBoolean_64 = __intnl_SystemBoolean_66
+}
+15068 __lcl_hasAchievement_SystemBoolean_2 = __intnl_SystemBoolean_64
+G_boatSkinDatabase.SetProgramVariable(__intnl_SystemInt32_25, __const_SystemString_26);// 15152
+G_boatSkinDatabase.SetProgramVariable(__lcl_playerLevel_SystemInt32_3, __const_SystemString_27);// 15184
+G_boatSkinDatabase.SendCustomEvent(__const_SystemString_28);// 15208
+15264 __intnl_SystemBoolean_69 = __intnl_SystemObject_44
+15284 __intnl_SystemBoolean_68 = __intnl_SystemBoolean_69
+15296 if (__intnl_SystemBoolean_68) //15312
+{
+15304 JUMP 15332
+}
+15328 __intnl_SystemBoolean_68 = __lcl_ownsProduct_SystemBoolean_2
+15348 __intnl_SystemBoolean_67 = __intnl_SystemBoolean_68
+15360 if (__intnl_SystemBoolean_67) //15376
+{
+15368 JUMP 15396
+}
+15392 __intnl_SystemBoolean_67 = __lcl_hasAchievement_SystemBoolean_2
+15412 __lcl_isOwned_SystemBoolean_2 = __intnl_SystemBoolean_67
+15424 if (__lcl_isOwned_SystemBoolean_2) //15456
+{
+15440 JUMP 16760
+15448 JUMP 15548
+}
+15504 __intnl_SystemBoolean_70 = __intnl_SystemObject_45
+15516 if (__intnl_SystemBoolean_70) //15532
+{
+15524 JUMP 15548
+}
+15540 JUMP 15576
+15560 return;
+15592 __intnl_UnityEngineObject_106 = selectedSkin
+15612 __intnl_UnityEngineObject_107 = __const_SystemObject_0
+15656 if (__intnl_SystemBoolean_72) //15672
+{
+15664 JUMP 15744
+}
+15688 __intnl_UnityEngineObject_108 = playerStats
+15708 __intnl_UnityEngineObject_109 = __const_SystemObject_0
+15760 __intnl_SystemBoolean_71 = __intnl_SystemBoolean_72
+15772 if (__intnl_SystemBoolean_71) //15788
+{
+15780 JUMP 15860
+}
+15804 __intnl_UnityEngineObject_110 = boatSkinDatabase
+15824 __intnl_UnityEngineObject_111 = __const_SystemObject_0
+15868 if (__intnl_SystemBoolean_71) //15896
+{
+15888 return;
+}
+15944 __intnl_SystemBoolean_73 = __intnl_SystemObject_46
+15956 if (__intnl_SystemBoolean_73) //15984
+{
+15976 return;
+}
+__lcl_price_SystemInt32_0 = ToInt32(__intnl_SystemObject_47);// 16032
+16064 __intnl_VRCUdonUdonBehaviour_16 = playerStats
+G_playerStats.SendCustomEvent(__const_SystemString_40);// 16076
+16180 if (__intnl_SystemBoolean_74) //16208
+{
+16200 return;
+}
+16224 __intnl_UnityEngineObject_112 = purchaseSFXSource
+16244 __intnl_UnityEngineObject_113 = __const_SystemObject_0
+16288 if (__intnl_SystemBoolean_75) //16368
+{
+16312 __intnl_UnityEngineObject_114 = purchaseSFXClip
+16332 __intnl_UnityEngineObject_115 = __const_SystemObject_0
+}
+16376 if (__intnl_SystemBoolean_75) //16408
+{
+G_purchaseSFXSource.PlayOneShot(purchaseSFXClip);// 16400
+}
+G_playerStats.SetProgramVariable(__intnl_SystemInt32_27, __const_SystemString_44);// 16456
+G_playerStats.SendCustomEvent(__const_SystemString_45);// 16480
+G_boatSkinDatabase.SetProgramVariable(__intnl_SystemInt32_28, __const_SystemString_46);// 16568
+G_boatSkinDatabase.SendCustomEvent(__const_SystemString_47);// 16592
+16608 JUMP 18440
+16624 JUMP 5648
+16640 JUMP 9208
+16688 if (__intnl_SystemBoolean_76) //16732
+{
+16720 __0_slotIndex__param = selectedSkinIndex
+16724 JUMP 8852
+}
+16744 return;
+16776 __intnl_UnityEngineObject_116 = selectedSkin
+16796 __intnl_UnityEngineObject_117 = __const_SystemObject_0
+16840 if (__intnl_SystemBoolean_78) //16856
+{
+16848 JUMP 16928
+}
+16872 __intnl_UnityEngineObject_118 = selectedBoat
+16892 __intnl_UnityEngineObject_119 = __const_SystemObject_0
+16944 __intnl_SystemBoolean_77 = __intnl_SystemBoolean_78
+16956 if (__intnl_SystemBoolean_77) //16972
+{
+16964 JUMP 17044
+}
+16988 __intnl_UnityEngineObject_120 = boatSkinDatabase
+17008 __intnl_UnityEngineObject_121 = __const_SystemObject_0
+17052 if (__intnl_SystemBoolean_77) //17080
+{
+17072 return;
+}
+G_boatSkinDatabase.SetProgramVariable(__intnl_SystemInt32_29, __const_SystemString_48);// 17216
+G_boatSkinDatabase.SetProgramVariable(__intnl_SystemInt32_30, __const_SystemString_49);// 17248
+G_boatSkinDatabase.SendCustomEvent(__const_SystemString_50);// 17272
+17288 JUMP 17440
+17304 JUMP 5648
+17320 JUMP 9208
+17368 if (__intnl_SystemBoolean_79) //17412
+{
+17400 __0_slotIndex__param = selectedSkinIndex
+17404 JUMP 8852
+}
+17424 return;
+17456 __intnl_UnityEngineObject_122 = currentSpawnedBoat
+17476 __intnl_UnityEngineObject_123 = __const_SystemObject_0
+17520 if (__intnl_SystemBoolean_80) //17536
+{
+17528 JUMP 17608
+}
+17552 __intnl_UnityEngineObject_124 = selectedSkin
+17572 __intnl_UnityEngineObject_125 = __const_SystemObject_0
+17616 if (__intnl_SystemBoolean_80) //17644
+{
+17636 return;
+}
+17692 __8__intnlparam = __intnl_UnityEngineTransform_3
+17696 JUMP 19992
+17720 __lcl_boatController_VRCUdonUdonBehaviour_0 = __7__intnlparam
+17740 __intnl_UnityEngineObject_126 = __lcl_boatController_VRCUdonUdonBehaviour_0
+17760 __intnl_UnityEngineObject_127 = __const_SystemObject_0
+17804 if (__intnl_SystemBoolean_81) //17832
+{
+17824 return;
+}
+17848 __lcl_skinIndex_SystemInt32_0 = __const_SystemInt32_1
+17868 __lcl_i_SystemInt32_4 = __const_SystemInt32_0
+17920 __intnl_UnityEngineComponentArray_2 = __intnl_SystemObject_52
+17988 if (__intnl_SystemBoolean_82) //18308
+{
+18044 __intnl_UnityEngineComponentArray_3 = __intnl_SystemObject_53
+18232 if (__intnl_SystemBoolean_83) //18268
+{
+18256 __lcl_skinIndex_SystemInt32_0 = __lcl_i_SystemInt32_4
+18260 JUMP 18308
+}
+__lcl_i_SystemInt32_4 = op_Addition(__const_SystemInt32_2, __lcl_i_SystemInt32_4);// 18292
+18300 JUMP 17872
+}
+18348 if (__intnl_SystemBoolean_82) //18412
+{
+__7__intnlparam.SetProgramVariable(__lcl_skinIndex_SystemInt32_0, __const_SystemString_52);// 18380
+__7__intnlparam.SendCustomEvent(__const_SystemString_53);// 18404
+}
+18424 return;
+18456 __intnl_UnityEngineObject_128 = moneyText
+18476 __intnl_UnityEngineObject_129 = __const_SystemObject_0
+18520 if (__intnl_SystemBoolean_84) //18600
+{
+18544 __intnl_UnityEngineObject_130 = playerStats
+18564 __intnl_UnityEngineObject_131 = __const_SystemObject_0
+}
+18608 if (__intnl_SystemBoolean_84) //18784
+{
+18640 __intnl_VRCUdonUdonBehaviour_18 = playerStats
+18660 __intnl_TMProTextMeshProUGUI_1 = moneyText
+G_playerStats.SendCustomEvent(__const_SystemString_40);// 18672
+G_moneyText.set_text(__intnl_SystemString_2);// 18776
+}
+18796 return;
+18828 __10__intnlparam = __1__intnlparam
+18832 JUMP 20500
+18856 __lcl_instantiatedObject_UnityEngineGameObject_0 = __9__intnlparam
+__lcl_objectTransform_UnityEngineTransform_0 = __9__intnlparam.get_transform();// 18876
+L_objectTransform.SetParent(__const_SystemBoolean_0, __2__intnlparam);// 18908
+18932 __0__intnlparam = __lcl_instantiatedObject_UnityEngineGameObject_0
+18948 return;
+18968 return;
+19024 __lcl_udonBehaviours_UnityEngineComponentArray_0 = __intnl_UnityEngineComponentArray_4
+19044 __lcl_targetID_SystemInt64_0 = __const_SystemInt64_0
+19088 __intnl_SystemInt32_36 = __const_SystemInt32_0
+19132 if (__intnl_SystemBoolean_85) //19424
+{
+__lcl_behaviour_VRCUdonUdonBehaviour_0 = __0__intnlparam.get_transform().GetComponents(__const_SystemType_0).Get(__intnl_SystemInt32_36);// 19164
+__lcl_idValue_SystemObject_0 = L_behaviour.GetProgramVariable(__const_SystemString_54);// 19196
+19244 if (__intnl_SystemBoolean_86) //19308
+{
+}
+19316 if (__intnl_SystemBoolean_86) //19384
+{
+19340 __intnl_UnityEngineComponent_0 = __lcl_behaviour_VRCUdonUdonBehaviour_0
+19360 __3__intnlparam = __intnl_UnityEngineComponent_0
+19376 return;
+}
+19416 JUMP 19092
+}
+19440 __3__intnlparam = __const_SystemObject_0
+19456 return;
+19476 return;
+19532 __lcl_udonBehaviours_UnityEngineComponentArray_1 = __intnl_UnityEngineComponentArray_5
+19552 __lcl_targetID_SystemInt64_1 = __const_SystemInt64_1
+19596 __intnl_SystemInt32_38 = __const_SystemInt32_0
+19640 if (__intnl_SystemBoolean_87) //19932
+{
+__lcl_behaviour_VRCUdonUdonBehaviour_1 = __0__intnlparam.get_transform().GetComponents(__const_SystemType_0).Get(__intnl_SystemInt32_38);// 19672
+__lcl_idValue_SystemObject_1 = L_behaviour.GetProgramVariable(__const_SystemString_54);// 19704
+19752 if (__intnl_SystemBoolean_88) //19816
+{
+}
+19824 if (__intnl_SystemBoolean_88) //19892
+{
+19848 __intnl_UnityEngineComponent_1 = __lcl_behaviour_VRCUdonUdonBehaviour_1
+19868 __5__intnlparam = __intnl_UnityEngineComponent_1
+19884 return;
+}
+19924 JUMP 19600
+}
+19948 __5__intnlparam = __const_SystemObject_0
+19964 return;
+19984 return;
+20040 __lcl_udonBehaviours_UnityEngineComponentArray_2 = __intnl_UnityEngineComponentArray_6
+20060 __lcl_targetID_SystemInt64_2 = __const_SystemInt64_2
+20104 __intnl_SystemInt32_40 = __const_SystemInt32_0
+20148 if (__intnl_SystemBoolean_89) //20440
+{
+__lcl_behaviour_VRCUdonUdonBehaviour_2 = G_currentSpawnedBoat.get_transform().GetComponents(__const_SystemType_0).Get(__intnl_SystemInt32_40);// 20180
+__lcl_idValue_SystemObject_2 = L_behaviour.GetProgramVariable(__const_SystemString_54);// 20212
+20260 if (__intnl_SystemBoolean_90) //20324
+{
+}
+20332 if (__intnl_SystemBoolean_90) //20400
+{
+20356 __intnl_UnityEngineComponent_2 = __lcl_behaviour_VRCUdonUdonBehaviour_2
+20376 __7__intnlparam = __intnl_UnityEngineComponent_2
+20392 return;
+}
+20432 JUMP 20108
+}
+20456 __7__intnlparam = __const_SystemObject_0
+20472 return;
+20492 return;
+__9__intnlparam = Instantiate(__10__intnlparam);// 20516
+20536 return;
+20556 return;
+20580 __11__intnlparam = __const_SystemObject_0
+20596 return;

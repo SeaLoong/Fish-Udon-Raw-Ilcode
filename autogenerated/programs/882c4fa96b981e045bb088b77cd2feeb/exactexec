@@ -1,0 +1,61 @@
+using System;
+using VRC.Economy;
+using UnityEngine;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private String __0___0_GetProgressDescription__ret = null;
+private Int32 __1_currentValue__param = 0;
+private String __intnl_SystemString_1 = null;
+public Int32 requiredValue;
+public Int32 luckBonus;
+private String __const_SystemString_0 = " ✓";
+public String achievementName;
+private Int32 __0_currentValue__param = 0;
+public Boolean isDiscordExclusive;
+private Int64 __refl_typeid = -3743901293884311827;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+public UdonProduct requiredProduct;
+private String __intnl_SystemString_3 = null;
+private String __const_SystemString_2 = "/";
+public Int32 xpReward;
+public Color titleColor;
+private String __intnl_SystemString_0 = null;
+public Int32 moneyReward;
+public String achievementDescription;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+public Boolean isHidden;
+public Int32 sortOrder;
+private String __refl_typename = "AchievementEntry";
+private String __intnl_SystemString_2 = null;
+public String trackingKey;
+private String __const_SystemString_1 = " (";
+public Sprite achievementIcon;
+private Boolean __0___0_ShouldUnlock__ret = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private String __const_SystemString_3 = ")";
+
+
+public void __0_GetProgressDescription()
+{
+__intnl_SystemBoolean_0 = __0_currentValue__param >= requiredValue;
+if (__intnl_SystemBoolean_0)
+{
+__0___0_GetProgressDescription__ret = achievementDescription + __const_SystemString_0;
+return;
+}
+else
+{
+__intnl_SystemString_0 = achievementDescription + __const_SystemString_1;
+__intnl_SystemString_1 = String.Concat(__intnl_SystemString_0, __0_currentValue__param);
+__intnl_SystemString_2 = __intnl_SystemString_1 + __const_SystemString_2;
+__intnl_SystemString_3 = String.Concat(__intnl_SystemString_2, requiredValue);
+__0___0_GetProgressDescription__ret = __intnl_SystemString_3 + __const_SystemString_3;
+return;
+}
+}
+public void __0_ShouldUnlock()
+{
+__0___0_ShouldUnlock__ret = __1_currentValue__param >= requiredValue;
+return;
+}
+}

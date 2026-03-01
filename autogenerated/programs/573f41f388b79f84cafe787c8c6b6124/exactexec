@@ -1,0 +1,606 @@
+using UnityEngine;
+using System;
+using VRC.Udon;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+public AudioClip nightAudioClip;
+private Boolean __intnl_SystemBoolean_13 = false;
+private Boolean __intnl_SystemBoolean_23 = false;
+private Boolean __intnl_SystemBoolean_33 = false;
+private AudioSource __0_to__param = null;
+private Single __0_volume__param = 0f;
+private AudioSource __lcl_newAudioSource_UnityEngineAudioSource_1 = null;
+private AudioSource __lcl_newAudioSource_UnityEngineAudioSource_0 = null;
+private Object __intnl_UnityEngineObject_52 = null;
+private Object __intnl_UnityEngineObject_42 = null;
+private Object __intnl_UnityEngineObject_32 = null;
+private Object __intnl_UnityEngineObject_22 = null;
+private Object __intnl_UnityEngineObject_12 = null;
+private Single __intnl_SystemSingle_0 = 0f;
+private object __intnl_SystemObject_0 = null;
+private String __const_SystemString_0 = "GetCurrentTimeOfDay";
+private Single __const_SystemSingle_0 = 0.5f;
+private Boolean __intnl_SystemBoolean_16 = false;
+private Boolean __intnl_SystemBoolean_26 = false;
+public UdonBehaviour dayNightCycle;
+public Single baseAmbienceVolume;
+private UInt32[] __gintnl_SystemUInt32Array_0 = System.UInt32[];
+private Single __0___0_GetVolumeForTime__ret = 0f;
+private UInt32 __gintnl_SystemUInt32_9 = 3676;
+private UInt32 __gintnl_SystemUInt32_8 = 2376;
+private UInt32 __gintnl_SystemUInt32_5 = 1824;
+private UInt32 __gintnl_SystemUInt32_4 = 712;
+private UInt32 __gintnl_SystemUInt32_7 = 2320;
+private UInt32 __gintnl_SystemUInt32_6 = 2008;
+private UInt32 __gintnl_SystemUInt32_1 = 40;
+private UInt32 __gintnl_SystemUInt32_0 = 24;
+private UInt32 __gintnl_SystemUInt32_3 = 680;
+private UInt32 __gintnl_SystemUInt32_2 = 304;
+private Boolean __const_SystemBoolean_0 = true;
+private Boolean __const_SystemBoolean_1 = false;
+private Object __intnl_UnityEngineObject_51 = null;
+private Object __intnl_UnityEngineObject_41 = null;
+private Object __intnl_UnityEngineObject_31 = null;
+private Object __intnl_UnityEngineObject_21 = null;
+private Object __intnl_UnityEngineObject_11 = null;
+private Single fromStartVolume = 0f;
+private Int32 __2_timeOfDay__param = 0;
+private Boolean isUsingSourceA = true;
+private UInt32 __gintnl_SystemUInt32_13 = 6100;
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Single __lcl_elapsed_SystemSingle_0 = 0f;
+private Object __intnl_UnityEngineObject_49 = null;
+private Object __intnl_UnityEngineObject_39 = null;
+private Object __intnl_UnityEngineObject_29 = null;
+private Object __intnl_UnityEngineObject_19 = null;
+public AudioClip baseAmbienceClip;
+private Object __intnl_UnityEngineObject_44 = null;
+private Object __intnl_UnityEngineObject_34 = null;
+private Object __intnl_UnityEngineObject_24 = null;
+private Object __intnl_UnityEngineObject_14 = null;
+private Int64 __refl_typeid = -4358012273136206715;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_2 = null;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Boolean __intnl_SystemBoolean_11 = false;
+private Boolean __intnl_SystemBoolean_21 = false;
+private Boolean __intnl_SystemBoolean_31 = false;
+public Boolean enableDebugLogs;
+public AudioClip morningAudioClip;
+private Single __intnl_SystemSingle_2 = 0f;
+private object __intnl_SystemObject_2 = null;
+private Int32 __5_timeOfDay__param = 0;
+private Int32 __lcl_newTimeOfDay_SystemInt32_0 = 0;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_1 = null;
+public AudioSource timeAudioSourceB;
+private Single __const_SystemSingle_2 = 1f;
+private AudioSource toAudioSource = null;
+private Boolean __intnl_SystemBoolean_19 = false;
+private Boolean __intnl_SystemBoolean_29 = false;
+private Single toTargetVolume = 0f;
+private Boolean __intnl_SystemBoolean_14 = false;
+private Boolean __intnl_SystemBoolean_24 = false;
+private object __const_SystemObject_0 = null;
+private AudioSource currentTimeAudioSource = null;
+private Object __intnl_UnityEngineObject_53 = null;
+private Object __intnl_UnityEngineObject_43 = null;
+private Object __intnl_UnityEngineObject_33 = null;
+private Object __intnl_UnityEngineObject_23 = null;
+private Object __intnl_UnityEngineObject_13 = null;
+private AudioSource __0_from__param = null;
+private Single __intnl_SystemSingle_1 = 0f;
+private AudioSource fromAudioSource = null;
+private object __intnl_SystemObject_1 = null;
+private Single transitionStartTime = 0f;
+public Single dayVolume;
+private Single __const_SystemSingle_1 = 0f;
+private UInt32 __gintnl_SystemUInt32_11 = 4036;
+private Boolean __intnl_SystemBoolean_17 = false;
+private Boolean __intnl_SystemBoolean_27 = false;
+private UInt32[] __gintnl_SystemUInt32Array_1 = System.UInt32[];
+private Object __intnl_UnityEngineObject_46 = null;
+private Object __intnl_UnityEngineObject_36 = null;
+private Object __intnl_UnityEngineObject_26 = null;
+private Object __intnl_UnityEngineObject_16 = null;
+private AudioClip __0___0_GetAudioClipForTime__ret = null;
+private Int32 __4_timeOfDay__param = 0;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private AudioClip __lcl_newClip_UnityEngineAudioClip_0 = null;
+private UInt32 __gintnl_SystemUInt32_12 = 4844;
+private UInt32 __intnl_SystemUInt32_0 = 0;
+private Int32 __1_timeOfDay__param = 0;
+public Single audioTransitionDuration;
+private Object __intnl_UnityEngineObject_45 = null;
+private Object __intnl_UnityEngineObject_35 = null;
+private Object __intnl_UnityEngineObject_25 = null;
+private Object __intnl_UnityEngineObject_15 = null;
+public AudioSource baseAmbienceSource;
+private Int32 currentTimeOfDay = 1;
+private Boolean __intnl_SystemBoolean_12 = false;
+private Boolean __intnl_SystemBoolean_22 = false;
+private Boolean __intnl_SystemBoolean_32 = false;
+private String __refl_typename = "AudioMasterScript";
+private Single __lcl_t_SystemSingle_0 = 0f;
+private Single __lcl_newVolume_SystemSingle_0 = 0f;
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Int32 __intnl_SystemInt32_5 = 0;
+private Int32 __intnl_SystemInt32_4 = 0;
+private Single __intnl_SystemSingle_3 = 0f;
+private Single __1_volume__param = 0f;
+private Boolean isTransitioning = false;
+private AudioSource __0_GetNextAvailableAudioSource__ret = null;
+private String __const_SystemString_1 = "__0_GetCurrentTimeOfDay__ret";
+private Boolean __intnl_SystemBoolean_15 = false;
+private Boolean __intnl_SystemBoolean_25 = false;
+private Int32 __0_timeOfDay__param = 0;
+private Object __intnl_UnityEngineObject_50 = null;
+private Object __intnl_UnityEngineObject_40 = null;
+private Object __intnl_UnityEngineObject_30 = null;
+private Object __intnl_UnityEngineObject_20 = null;
+private Object __intnl_UnityEngineObject_10 = null;
+public Single nightVolume;
+private UInt32 __gintnl_SystemUInt32_10 = 3892;
+private UInt32 __intnl_SystemUInt32_2 = 0;
+private UInt32[] __gintnl_SystemUInt32Array_2 = System.UInt32[];
+private Object __intnl_UnityEngineObject_48 = null;
+private Object __intnl_UnityEngineObject_38 = null;
+private Object __intnl_UnityEngineObject_28 = null;
+private Object __intnl_UnityEngineObject_18 = null;
+private Object __intnl_UnityEngineObject_47 = null;
+private Object __intnl_UnityEngineObject_37 = null;
+private Object __intnl_UnityEngineObject_27 = null;
+private Object __intnl_UnityEngineObject_17 = null;
+public Single morningVolume;
+public Single eveningVolume;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Boolean __intnl_SystemBoolean_20 = false;
+private Boolean __intnl_SystemBoolean_30 = false;
+private AudioClip __lcl_newClip_UnityEngineAudioClip_1 = null;
+public AudioClip dayAudioClip;
+private UInt32 __intnl_SystemUInt32_1 = 0;
+private Int32 __const_SystemInt32_1 = 3;
+private Int32 __const_SystemInt32_0 = 0;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+public AudioClip eveningAudioClip;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_0 = null;
+private Int32 __3_timeOfDay__param = 0;
+public AudioSource timeAudioSourceA;
+private Boolean __intnl_SystemBoolean_18 = false;
+private Boolean __intnl_SystemBoolean_28 = false;
+
+
+public void _start()
+{
+UNDEF_573f4_1464();
+UNDEF_573f4_1800();
+__intnl_UnityEngineObject_0 = dayNightCycle;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_0)
+{
+__intnl_VRCUdonUdonBehaviour_0 = dayNightCycle;
+dayNightCycle.SendCustomEvent(__const_SystemString_0);
+__intnl_SystemObject_0 = dayNightCycle.GetProgramVariable(__const_SystemString_1);
+__intnl_SystemInt32_1 = Convert.ToInt32(__intnl_SystemObject_0);
+__intnl_SystemInt32_0 = __intnl_SystemInt32_1;
+currentTimeOfDay = __intnl_SystemInt32_0;
+__1_timeOfDay__param = currentTimeOfDay;
+UNDEF_573f4_2736();
+}
+if (enableDebugLogs)
+{
+}
+}
+public void _update()
+{
+__intnl_UnityEngineObject_2 = dayNightCycle;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_2 != __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_1)
+{
+__intnl_VRCUdonUdonBehaviour_1 = dayNightCycle;
+dayNightCycle.SendCustomEvent(__const_SystemString_0);
+__intnl_SystemObject_1 = dayNightCycle.GetProgramVariable(__const_SystemString_1);
+__intnl_SystemInt32_3 = Convert.ToInt32(__intnl_SystemObject_1);
+__intnl_SystemInt32_2 = __intnl_SystemInt32_3;
+__lcl_newTimeOfDay_SystemInt32_0 = __intnl_SystemInt32_2;
+__intnl_SystemBoolean_2 = __lcl_newTimeOfDay_SystemInt32_0 != currentTimeOfDay;
+if (__intnl_SystemBoolean_2)
+{
+currentTimeOfDay = __lcl_newTimeOfDay_SystemInt32_0;
+__0_timeOfDay__param = currentTimeOfDay;
+UNDEF_573f4_2048();
+if (enableDebugLogs)
+{
+}
+}
+}
+UNDEF_573f4_4356();
+}
+private void UNDEF_573f4_1464()
+{
+__intnl_UnityEngineObject_4 = dayNightCycle;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_3 = __intnl_UnityEngineObject_4 == __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_3)
+{
+}
+__intnl_UnityEngineObject_6 = baseAmbienceSource;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_4 = __intnl_UnityEngineObject_6 == __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_4)
+{
+}
+__intnl_UnityEngineObject_8 = timeAudioSourceA;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_5 = __intnl_UnityEngineObject_8 == __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_5)
+{
+}
+__intnl_UnityEngineObject_10 = timeAudioSourceB;
+__intnl_UnityEngineObject_11 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_6 = __intnl_UnityEngineObject_10 == __intnl_UnityEngineObject_11;
+if (__intnl_SystemBoolean_6)
+{
+}
+__intnl_UnityEngineObject_12 = morningAudioClip;
+__intnl_UnityEngineObject_13 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_7 = __intnl_UnityEngineObject_12 == __intnl_UnityEngineObject_13;
+if (__intnl_SystemBoolean_7)
+{
+}
+__intnl_UnityEngineObject_14 = dayAudioClip;
+__intnl_UnityEngineObject_15 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_8 = __intnl_UnityEngineObject_14 == __intnl_UnityEngineObject_15;
+if (__intnl_SystemBoolean_8)
+{
+}
+__intnl_UnityEngineObject_16 = eveningAudioClip;
+__intnl_UnityEngineObject_17 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_9 = __intnl_UnityEngineObject_16 == __intnl_UnityEngineObject_17;
+if (__intnl_SystemBoolean_9)
+{
+}
+__intnl_UnityEngineObject_18 = nightAudioClip;
+__intnl_UnityEngineObject_19 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_10 = __intnl_UnityEngineObject_18 == __intnl_UnityEngineObject_19;
+if (__intnl_SystemBoolean_10)
+{
+}
+}
+private void UNDEF_573f4_1800()
+{
+__intnl_UnityEngineObject_20 = baseAmbienceSource;
+__intnl_UnityEngineObject_21 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_11 = __intnl_UnityEngineObject_20 == __intnl_UnityEngineObject_21;
+if (__intnl_SystemBoolean_11)
+{
+}
+else
+{
+__intnl_UnityEngineObject_22 = baseAmbienceClip;
+__intnl_UnityEngineObject_23 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_11 = __intnl_UnityEngineObject_22 == __intnl_UnityEngineObject_23;
+}
+if (__intnl_SystemBoolean_11)
+{
+return;
+}
+baseAmbienceSource.clip = baseAmbienceClip;
+baseAmbienceSource.volume = baseAmbienceVolume;
+baseAmbienceSource.loop = __const_SystemBoolean_0;
+baseAmbienceSource.Play();
+if (enableDebugLogs)
+{
+}
+}
+private void UNDEF_573f4_2048()
+{
+GetNextAvailableAudioSource();
+__lcl_newAudioSource_UnityEngineAudioSource_0 = __0_GetNextAvailableAudioSource__ret;
+__intnl_UnityEngineObject_24 = __lcl_newAudioSource_UnityEngineAudioSource_0;
+__intnl_UnityEngineObject_25 = currentTimeAudioSource;
+__intnl_SystemBoolean_12 = __intnl_UnityEngineObject_24 != __intnl_UnityEngineObject_25;
+if (__intnl_SystemBoolean_12)
+{
+__0_from__param = currentTimeAudioSource;
+__0_to__param = __lcl_newAudioSource_UnityEngineAudioSource_0;
+__4_timeOfDay__param = __0_timeOfDay__param;
+UNDEF_573f4_4304();
+currentTimeAudioSource = __lcl_newAudioSource_UnityEngineAudioSource_0;
+}
+}
+private void UNDEF_573f4_2736()
+{
+__intnl_UnityEngineObject_26 = timeAudioSourceA;
+__intnl_UnityEngineObject_27 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_13 = __intnl_UnityEngineObject_26 != __intnl_UnityEngineObject_27;
+if (__intnl_SystemBoolean_13)
+{
+timeAudioSourceA.Stop();
+}
+__intnl_UnityEngineObject_28 = timeAudioSourceB;
+__intnl_UnityEngineObject_29 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_14 = __intnl_UnityEngineObject_28 != __intnl_UnityEngineObject_29;
+if (__intnl_SystemBoolean_14)
+{
+timeAudioSourceB.Stop();
+}
+__lcl_newAudioSource_UnityEngineAudioSource_1 = timeAudioSourceA;
+__2_timeOfDay__param = __1_timeOfDay__param;
+__0_GetAudioClipForTime();
+__lcl_newClip_UnityEngineAudioClip_0 = __0___0_GetAudioClipForTime__ret;
+__3_timeOfDay__param = __1_timeOfDay__param;
+__0_GetVolumeForTime();
+__lcl_newVolume_SystemSingle_0 = __0___0_GetVolumeForTime__ret;
+__intnl_UnityEngineObject_30 = __lcl_newAudioSource_UnityEngineAudioSource_1;
+__intnl_UnityEngineObject_31 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_15 = __intnl_UnityEngineObject_30 != __intnl_UnityEngineObject_31;
+if (__intnl_SystemBoolean_15)
+{
+__intnl_UnityEngineObject_32 = __lcl_newClip_UnityEngineAudioClip_0;
+__intnl_UnityEngineObject_33 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_15 = __intnl_UnityEngineObject_32 != __intnl_UnityEngineObject_33;
+}
+if (__intnl_SystemBoolean_15)
+{
+__lcl_newAudioSource_UnityEngineAudioSource_1.clip = __lcl_newClip_UnityEngineAudioClip_0;
+__lcl_newAudioSource_UnityEngineAudioSource_1.volume = __lcl_newVolume_SystemSingle_0;
+__lcl_newAudioSource_UnityEngineAudioSource_1.loop = __const_SystemBoolean_0;
+__lcl_newAudioSource_UnityEngineAudioSource_1.Play();
+}
+currentTimeAudioSource = __lcl_newAudioSource_UnityEngineAudioSource_1;
+isUsingSourceA = __const_SystemBoolean_0;
+if (enableDebugLogs)
+{
+}
+}
+private void GetNextAvailableAudioSource()
+{
+if (isUsingSourceA)
+{
+isUsingSourceA = __const_SystemBoolean_1;
+__0_GetNextAvailableAudioSource__ret = timeAudioSourceB;
+return;
+}
+else
+{
+isUsingSourceA = __const_SystemBoolean_0;
+__0_GetNextAvailableAudioSource__ret = timeAudioSourceA;
+return;
+}
+}
+private void __0_GetAudioClipForTime()
+{
+__intnl_SystemBoolean_16 = __2_timeOfDay__param >= __const_SystemInt32_0;
+if (__intnl_SystemBoolean_16)
+{
+__intnl_SystemBoolean_17 = __2_timeOfDay__param <= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_17)
+{
+__intnl_SystemUInt32_0 = __gintnl_SystemUInt32Array_0[__2_timeOfDay__param];
+__0___0_GetAudioClipForTime__ret = morningAudioClip;
+return;
+__0___0_GetAudioClipForTime__ret = dayAudioClip;
+return;
+__0___0_GetAudioClipForTime__ret = eveningAudioClip;
+return;
+__0___0_GetAudioClipForTime__ret = nightAudioClip;
+return;
+}
+}
+__0___0_GetAudioClipForTime__ret = (AudioClip)__const_SystemObject_0;
+return;
+}
+private void __0_GetVolumeForTime()
+{
+__intnl_SystemBoolean_18 = __3_timeOfDay__param >= __const_SystemInt32_0;
+if (__intnl_SystemBoolean_18)
+{
+__intnl_SystemBoolean_19 = __3_timeOfDay__param <= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_19)
+{
+__intnl_SystemUInt32_1 = __gintnl_SystemUInt32Array_1[__3_timeOfDay__param];
+__0___0_GetVolumeForTime__ret = morningVolume;
+return;
+__0___0_GetVolumeForTime__ret = dayVolume;
+return;
+__0___0_GetVolumeForTime__ret = eveningVolume;
+return;
+__0___0_GetVolumeForTime__ret = nightVolume;
+return;
+}
+}
+__0___0_GetVolumeForTime__ret = __const_SystemSingle_0;
+return;
+}
+private void UNDEF_573f4_4304()
+{
+if (isTransitioning)
+{
+UNDEF_573f4_5144();
+}
+fromAudioSource = __0_from__param;
+toAudioSource = __0_to__param;
+__intnl_UnityEngineObject_34 = fromAudioSource;
+__intnl_UnityEngineObject_35 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_20 = __intnl_UnityEngineObject_34 != __intnl_UnityEngineObject_35;
+if (__intnl_SystemBoolean_20)
+{
+fromStartVolume = fromAudioSource.volume;
+}
+else
+{
+fromStartVolume = __const_SystemSingle_1;
+}
+__3_timeOfDay__param = __4_timeOfDay__param;
+__0_GetVolumeForTime();
+toTargetVolume = __0___0_GetVolumeForTime__ret;
+__intnl_UnityEngineObject_36 = toAudioSource;
+__intnl_UnityEngineObject_37 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_21 = __intnl_UnityEngineObject_36 != __intnl_UnityEngineObject_37;
+if (__intnl_SystemBoolean_21)
+{
+__2_timeOfDay__param = __4_timeOfDay__param;
+__0_GetAudioClipForTime();
+__lcl_newClip_UnityEngineAudioClip_1 = __0___0_GetAudioClipForTime__ret;
+__intnl_UnityEngineObject_38 = __lcl_newClip_UnityEngineAudioClip_1;
+__intnl_UnityEngineObject_39 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_22 = __intnl_UnityEngineObject_38 != __intnl_UnityEngineObject_39;
+if (__intnl_SystemBoolean_22)
+{
+toAudioSource.clip = __lcl_newClip_UnityEngineAudioClip_1;
+toAudioSource.volume = __const_SystemSingle_1;
+toAudioSource.loop = __const_SystemBoolean_0;
+toAudioSource.Play();
+}
+}
+transitionStartTime = Time.time;
+isTransitioning = __const_SystemBoolean_0;
+if (enableDebugLogs)
+{
+}
+}
+private void UNDEF_573f4_4356()
+{
+if (isTransitioning)
+{
+UNDEF_573f4_4864();
+}
+}
+private void UNDEF_573f4_4864()
+{
+__intnl_SystemSingle_0 = Time.time;
+__lcl_elapsed_SystemSingle_0 = __intnl_SystemSingle_0 - transitionStartTime;
+__intnl_SystemSingle_1 = __lcl_elapsed_SystemSingle_0 / audioTransitionDuration;
+__lcl_t_SystemSingle_0 = Mathf.Clamp01(__intnl_SystemSingle_1);
+__intnl_UnityEngineObject_40 = fromAudioSource;
+__intnl_UnityEngineObject_41 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_23 = __intnl_UnityEngineObject_40 != __intnl_UnityEngineObject_41;
+if (__intnl_SystemBoolean_23)
+{
+__intnl_SystemSingle_2 = __const_SystemSingle_2 - __lcl_t_SystemSingle_0;
+__intnl_SystemSingle_3 = fromStartVolume * __intnl_SystemSingle_2;
+fromAudioSource.volume = __intnl_SystemSingle_3;
+}
+__intnl_UnityEngineObject_42 = toAudioSource;
+__intnl_UnityEngineObject_43 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_24 = __intnl_UnityEngineObject_42 != __intnl_UnityEngineObject_43;
+if (__intnl_SystemBoolean_24)
+{
+__intnl_SystemSingle_2 = toTargetVolume * __lcl_t_SystemSingle_0;
+toAudioSource.volume = __intnl_SystemSingle_2;
+}
+__intnl_SystemBoolean_25 = __lcl_t_SystemSingle_0 >= __const_SystemSingle_2;
+if (__intnl_SystemBoolean_25)
+{
+UNDEF_573f4_5144();
+}
+}
+private void UNDEF_573f4_5144()
+{
+__intnl_UnityEngineObject_44 = fromAudioSource;
+__intnl_UnityEngineObject_45 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_26 = __intnl_UnityEngineObject_44 != __intnl_UnityEngineObject_45;
+if (__intnl_SystemBoolean_26)
+{
+fromAudioSource.Stop();
+}
+__intnl_UnityEngineObject_46 = toAudioSource;
+__intnl_UnityEngineObject_47 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_27 = __intnl_UnityEngineObject_46 != __intnl_UnityEngineObject_47;
+if (__intnl_SystemBoolean_27)
+{
+toAudioSource.volume = toTargetVolume;
+}
+isTransitioning = __const_SystemBoolean_1;
+if (enableDebugLogs)
+{
+}
+}
+public void __0_SetBaseAmbienceVolume()
+{
+baseAmbienceVolume = Mathf.Clamp01(__0_volume__param);
+__intnl_UnityEngineObject_48 = baseAmbienceSource;
+__intnl_UnityEngineObject_49 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_28 = __intnl_UnityEngineObject_48 != __intnl_UnityEngineObject_49;
+if (__intnl_SystemBoolean_28)
+{
+baseAmbienceSource.volume = baseAmbienceVolume;
+}
+}
+public void __0_SetTimeAmbienceVolume()
+{
+__1_volume__param = Mathf.Clamp01(__1_volume__param);
+__intnl_SystemBoolean_29 = __5_timeOfDay__param >= __const_SystemInt32_0;
+if (__intnl_SystemBoolean_29)
+{
+break;
+}
+__intnl_SystemBoolean_30 = __5_timeOfDay__param <= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_30)
+{
+break;
+}
+__intnl_SystemUInt32_2 = __gintnl_SystemUInt32Array_2[__5_timeOfDay__param];
+morningVolume = __1_volume__param;
+dayVolume = __1_volume__param;
+eveningVolume = __1_volume__param;
+nightVolume = __1_volume__param;
+__intnl_SystemBoolean_32 = currentTimeOfDay == __5_timeOfDay__param;
+if (__intnl_SystemBoolean_32)
+{
+__intnl_UnityEngineObject_50 = currentTimeAudioSource;
+__intnl_UnityEngineObject_51 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_32 = __intnl_UnityEngineObject_50 != __intnl_UnityEngineObject_51;
+}
+__intnl_SystemBoolean_31 = __intnl_SystemBoolean_32;
+if (__intnl_SystemBoolean_31)
+{
+__intnl_SystemBoolean_31 = !isTransitioning;
+}
+if (__intnl_SystemBoolean_31)
+{
+currentTimeAudioSource.volume = __1_volume__param;
+}
+}
+public void ForceTimeAmbienceUpdate()
+{
+__intnl_UnityEngineObject_52 = dayNightCycle;
+__intnl_UnityEngineObject_53 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_33 = __intnl_UnityEngineObject_52 != __intnl_UnityEngineObject_53;
+if (__intnl_SystemBoolean_33)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_2 = dayNightCycle;
+dayNightCycle.SendCustomEvent(__const_SystemString_0);
+__intnl_SystemObject_2 = dayNightCycle.GetProgramVariable(__const_SystemString_1);
+__intnl_SystemInt32_5 = Convert.ToInt32(__intnl_SystemObject_2);
+__intnl_SystemInt32_4 = __intnl_SystemInt32_5;
+currentTimeOfDay = __intnl_SystemInt32_4;
+__0_timeOfDay__param = currentTimeOfDay;
+UNDEF_573f4_2048();
+}
+}

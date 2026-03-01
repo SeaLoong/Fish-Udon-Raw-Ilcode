@@ -1,0 +1,583 @@
+using System;
+using VRC.Udon;
+using UnityEngine;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Boolean __intnl_SystemBoolean_13 = false;
+private Boolean __intnl_SystemBoolean_23 = false;
+private UdonBehaviour __lcl_zone_VRCUdonUdonBehaviour_2 = null;
+private UdonBehaviour __lcl_zone_VRCUdonUdonBehaviour_0 = null;
+private UdonBehaviour __lcl_zone_VRCUdonUdonBehaviour_1 = null;
+private Int32 __intnl_SystemInt32_15 = 0;
+private String __intnl_SystemString_1 = null;
+private Object __intnl_UnityEngineObject_12 = null;
+private object __intnl_SystemObject_0 = null;
+private UdonBehaviour __lcl_highestPriorityZone_VRCUdonUdonBehaviour_0 = null;
+private String __const_SystemString_0 = "Open_Sea";
+private Int32[] __intnl_SystemInt32Array_0 = null;
+private Boolean __intnl_SystemBoolean_16 = false;
+private object __intnl_SystemObject_10 = null;
+private Int32 __lcl_j_SystemInt32_0 = 0;
+private Int32 __lcl_j_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_12 = 0;
+public UdonBehaviour dayNightCycle;
+private Int32 __lcl_currentWeather_SystemInt32_0 = 0;
+private UInt32 __gintnl_SystemUInt32_4 = 2180;
+private UInt32 __gintnl_SystemUInt32_1 = 936;
+private UInt32 __gintnl_SystemUInt32_0 = 728;
+private UInt32 __gintnl_SystemUInt32_3 = 2100;
+private UInt32 __gintnl_SystemUInt32_2 = 972;
+private Boolean __const_SystemBoolean_0 = true;
+private Boolean __const_SystemBoolean_1 = false;
+private Object __intnl_UnityEngineObject_11 = null;
+private String __const_SystemString_5 = "__0_GetCurrentWeather__ret";
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+public Component[] allZones;
+private String __0_GetCurrentZoneID__ret = null;
+private String __const_SystemString_16 = "ShouldHideWeatherEffects";
+private String __const_SystemString_17 = "__0_ShouldHideWeatherEffects__ret";
+private String __const_SystemString_14 = "__0_visible__param";
+private String __const_SystemString_15 = "__0_SetWeatherEffectsVisible";
+private String __const_SystemString_12 = "GetZoneName";
+private String __const_SystemString_13 = "__0_GetZoneName__ret";
+private String __const_SystemString_10 = "GetZoneID";
+private String __const_SystemString_11 = "__0_GetZoneID__ret";
+private String __const_SystemString_18 = "GetAllowedWeatherTypes";
+private String __const_SystemString_19 = "__0_GetAllowedWeatherTypes__ret";
+private String currentZoneID = null;
+private Int64 __refl_typeid = -590801669623789168;
+private object __intnl_SystemObject_7 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_2 = null;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Boolean __intnl_SystemBoolean_11 = false;
+private Boolean __intnl_SystemBoolean_21 = false;
+public Boolean showDebugLogs;
+private Int32 __intnl_SystemInt32_17 = 0;
+private Int32[] __lcl_allowedTypes_SystemInt32Array_0 = null;
+private Int32[] __lcl_allowedTypes_SystemInt32Array_1 = null;
+private String __intnl_SystemString_3 = null;
+private object __intnl_SystemObject_2 = null;
+private object __intnl_SystemObject_9 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_1 = null;
+private String __const_SystemString_2 = "__0_allowedTypes__param";
+private String __lcl_previousZoneName_SystemString_0 = null;
+private Boolean __intnl_SystemBoolean_19 = false;
+private Vector3 __intnl_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Int32[] __intnl_SystemInt32Array_2 = null;
+private Boolean __intnl_SystemBoolean_14 = false;
+private Boolean __intnl_SystemBoolean_24 = false;
+private Int32 __intnl_SystemInt32_14 = 0;
+private object __const_SystemObject_0 = null;
+private String __intnl_SystemString_0 = null;
+private Int32 __lcl_highestPriority_SystemInt32_0 = 0;
+private Object __intnl_UnityEngineObject_13 = null;
+private object __intnl_SystemObject_1 = null;
+private String __const_SystemString_7 = "__0_IsPositionInZone";
+private Int32[] __intnl_SystemInt32Array_1 = null;
+private Boolean __intnl_SystemBoolean_17 = false;
+private Int32 __intnl_SystemInt32_11 = 0;
+private String currentZoneName = null;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private String __const_SystemString_4 = "GetCurrentWeather";
+private String __0_GetCurrentZoneName__ret = null;
+private Int32 __lcl_i_SystemInt32_1 = 0;
+private Int32 __lcl_i_SystemInt32_0 = 0;
+private Int32 __lcl_i_SystemInt32_2 = 0;
+private object __intnl_SystemObject_4 = null;
+private String __1_zoneID__param = null;
+private String __const_SystemString_9 = "zonePriority";
+private Boolean __intnl_SystemBoolean_12 = false;
+private Boolean __intnl_SystemBoolean_22 = false;
+private Int32 __intnl_SystemInt32_16 = 0;
+private String __refl_typename = "SimpleZoneManager";
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Int32 __intnl_SystemInt32_5 = 0;
+private Int32 __intnl_SystemInt32_4 = 0;
+private Int32 __intnl_SystemInt32_7 = 0;
+private Int32 __intnl_SystemInt32_6 = 0;
+private Int32 __intnl_SystemInt32_9 = 0;
+private Int32 __intnl_SystemInt32_8 = 0;
+private String __intnl_SystemString_2 = null;
+private object __intnl_SystemObject_3 = null;
+public Int32[] openOceanWeatherTypes;
+private Boolean __lcl_isWeatherAllowed_SystemBoolean_0 = false;
+private String __const_SystemString_1 = "Open Sea";
+private String __2_zoneID__param = null;
+private Boolean __intnl_SystemBoolean_15 = false;
+private Boolean __intnl_SystemBoolean_25 = false;
+private Int32 __lcl_newWeather_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_13 = 0;
+private String __lcl_typesStr_SystemString_0 = null;
+private Int32 __intnl_SystemInt32_18 = 0;
+private Object __intnl_UnityEngineObject_10 = null;
+private String __const_SystemString_6 = "__0_position__param";
+private Int32 __intnl_SystemInt32_10 = 0;
+private String __const_SystemString_22 = ", ";
+private String __const_SystemString_20 = "";
+private String __const_SystemString_21 = "All";
+private String __0_zoneName__param = null;
+private object __intnl_SystemObject_6 = null;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Boolean __intnl_SystemBoolean_20 = false;
+private Int32 __const_SystemInt32_1 = -1;
+private Int32 __const_SystemInt32_0 = 0;
+private Int32 __const_SystemInt32_2 = 1;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private String __0_zoneID__param = null;
+private String __intnl_SystemString_4 = null;
+private Int32 currentWeather = 0;
+private object __intnl_SystemObject_5 = null;
+private object __intnl_SystemObject_8 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_0 = null;
+private Vector3 __0_playerPosition__param = new Vector3(0f, 0f, 0f);
+private String __const_SystemString_3 = "__0_SetAllowedWeatherTypes";
+private String __const_SystemString_8 = "__0___0_IsPositionInZone__ret";
+private Boolean __intnl_SystemBoolean_18 = false;
+
+
+public void _start()
+{
+currentZoneID = __const_SystemString_0;
+currentZoneName = __const_SystemString_1;
+__intnl_UnityEngineObject_0 = dayNightCycle;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_0)
+{
+__intnl_SystemInt32Array_0 = openOceanWeatherTypes;
+dayNightCycle.SetProgramVariable(__const_SystemString_2, openOceanWeatherTypes);
+dayNightCycle.SendCustomEvent(__const_SystemString_3);
+__intnl_VRCUdonUdonBehaviour_0 = dayNightCycle;
+dayNightCycle.SendCustomEvent(__const_SystemString_4);
+__intnl_SystemObject_0 = dayNightCycle.GetProgramVariable(__const_SystemString_5);
+__intnl_SystemInt32_1 = Convert.ToInt32(__intnl_SystemObject_0);
+__intnl_SystemInt32_0 = __intnl_SystemInt32_1;
+currentWeather = __intnl_SystemInt32_0;
+}
+if (showDebugLogs)
+{
+}
+}
+public void _update()
+{
+__intnl_UnityEngineObject_2 = dayNightCycle;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_2 != __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_1)
+{
+__intnl_VRCUdonUdonBehaviour_1 = dayNightCycle;
+dayNightCycle.SendCustomEvent(__const_SystemString_4);
+__intnl_SystemObject_1 = dayNightCycle.GetProgramVariable(__const_SystemString_5);
+__intnl_SystemInt32_3 = Convert.ToInt32(__intnl_SystemObject_1);
+__intnl_SystemInt32_2 = __intnl_SystemInt32_3;
+__lcl_newWeather_SystemInt32_0 = __intnl_SystemInt32_2;
+__intnl_SystemBoolean_2 = __lcl_newWeather_SystemInt32_0 != currentWeather;
+if (__intnl_SystemBoolean_2)
+{
+currentWeather = __lcl_newWeather_SystemInt32_0;
+__1_zoneID__param = currentZoneID;
+UNDEF_7e3b8_3964();
+if (showDebugLogs)
+{
+}
+}
+}
+}
+public void __0_SetCurrentZone()
+{
+__intnl_SystemBoolean_3 = __0_zoneID__param == currentZoneID;
+if (__intnl_SystemBoolean_3)
+{
+return;
+}
+__lcl_previousZoneName_SystemString_0 = currentZoneName;
+currentZoneID = __0_zoneID__param;
+currentZoneName = __0_zoneName__param;
+__1_zoneID__param = __0_zoneID__param;
+UNDEF_7e3b8_3964();
+__2_zoneID__param = __0_zoneID__param;
+UNDEF_7e3b8_6012();
+if (showDebugLogs)
+{
+}
+}
+public void __0_ReevaluateCurrentZone()
+{
+__intnl_SystemBoolean_4 = allZones == __const_SystemObject_0;
+if (__intnl_SystemBoolean_4)
+{
+}
+else
+{
+__intnl_SystemInt32_4 = allZones.Length;
+__intnl_SystemBoolean_4 = __intnl_SystemInt32_4 == __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_4)
+{
+if (showDebugLogs)
+{
+}
+return;
+}
+__lcl_highestPriorityZone_VRCUdonUdonBehaviour_0 = (UdonBehaviour)__const_SystemObject_0;
+__lcl_highestPriority_SystemInt32_0 = __const_SystemInt32_1;
+__lcl_i_SystemInt32_0 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_5 = allZones.Length;
+__intnl_SystemBoolean_5 = __lcl_i_SystemInt32_0 < __intnl_SystemInt32_5;
+if (__intnl_SystemBoolean_5)
+{
+break;
+}
+__lcl_zone_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(allZones[__lcl_i_SystemInt32_0]);
+__intnl_UnityEngineObject_4 = __lcl_zone_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_6 = __intnl_UnityEngineObject_4 == __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_6)
+{
+}
+else
+{
+__intnl_UnityEngineVector3_0 = __0_playerPosition__param;
+__lcl_zone_VRCUdonUdonBehaviour_0.SetProgramVariable(__const_SystemString_6, __0_playerPosition__param);
+__lcl_zone_VRCUdonUdonBehaviour_0.SendCustomEvent(__const_SystemString_7);
+__intnl_SystemObject_2 = __lcl_zone_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_8);
+__intnl_SystemBoolean_7 = (Boolean)__intnl_SystemObject_2;
+if (__intnl_SystemBoolean_7)
+{
+__intnl_SystemObject_3 = __lcl_zone_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_9);
+__intnl_SystemInt32_6 = Convert.ToInt32(__intnl_SystemObject_3);
+__intnl_SystemBoolean_8 = __intnl_SystemInt32_6 > __lcl_highestPriority_SystemInt32_0;
+if (__intnl_SystemBoolean_8)
+{
+__intnl_SystemObject_4 = __lcl_zone_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_9);
+__lcl_highestPriority_SystemInt32_0 = Convert.ToInt32(__intnl_SystemObject_4);
+__lcl_highestPriorityZone_VRCUdonUdonBehaviour_0 = __lcl_zone_VRCUdonUdonBehaviour_0;
+}
+}
+}
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_2;
+}
+__intnl_UnityEngineObject_4 = __lcl_highestPriorityZone_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_5 = __intnl_UnityEngineObject_4 != __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_5)
+{
+__lcl_highestPriorityZone_VRCUdonUdonBehaviour_0.SendCustomEvent(__const_SystemString_10);
+__intnl_SystemObject_2 = __lcl_highestPriorityZone_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_11);
+__intnl_SystemString_0 = (String)__intnl_SystemObject_2;
+__lcl_highestPriorityZone_VRCUdonUdonBehaviour_0.SendCustomEvent(__const_SystemString_12);
+__intnl_SystemObject_3 = __lcl_highestPriorityZone_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_13);
+__intnl_SystemString_1 = (String)__intnl_SystemObject_3;
+__0_zoneID__param = __intnl_SystemString_0;
+__0_zoneName__param = __intnl_SystemString_1;
+__0_SetCurrentZone();
+if (showDebugLogs)
+{
+}
+}
+else
+{
+__0_zoneID__param = __const_SystemString_0;
+__0_zoneName__param = __const_SystemString_1;
+__0_SetCurrentZone();
+if (showDebugLogs)
+{
+}
+}
+}
+private void UNDEF_7e3b8_3964()
+{
+__intnl_UnityEngineObject_6 = dayNightCycle;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_9 = __intnl_UnityEngineObject_6 == __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_9)
+{
+return;
+}
+__intnl_SystemBoolean_10 = __1_zoneID__param == __const_SystemString_0;
+if (__intnl_SystemBoolean_10)
+{
+dayNightCycle.SetProgramVariable(__const_SystemString_14, __const_SystemBoolean_0);
+dayNightCycle.SendCustomEvent(__const_SystemString_15);
+return;
+}
+__intnl_SystemBoolean_11 = allZones != __const_SystemObject_0;
+if (__intnl_SystemBoolean_11)
+{
+break;
+}
+__lcl_i_SystemInt32_1 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_7 = allZones.Length;
+__intnl_SystemBoolean_12 = __lcl_i_SystemInt32_1 < __intnl_SystemInt32_7;
+if (__intnl_SystemBoolean_12)
+{
+break;
+}
+__lcl_zone_VRCUdonUdonBehaviour_1 = (UdonBehaviour)(allZones[__lcl_i_SystemInt32_1]);
+__intnl_UnityEngineObject_8 = __lcl_zone_VRCUdonUdonBehaviour_1;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_13 = __intnl_UnityEngineObject_8 != __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_13)
+{
+__lcl_zone_VRCUdonUdonBehaviour_1.SendCustomEvent(__const_SystemString_10);
+__intnl_SystemObject_5 = __lcl_zone_VRCUdonUdonBehaviour_1.GetProgramVariable(__const_SystemString_11);
+__intnl_SystemString_2 = (String)__intnl_SystemObject_5;
+__intnl_SystemBoolean_13 = __intnl_SystemString_2 == __1_zoneID__param;
+}
+if (__intnl_SystemBoolean_13)
+{
+__lcl_zone_VRCUdonUdonBehaviour_1.SendCustomEvent(__const_SystemString_16);
+__intnl_SystemObject_6 = __lcl_zone_VRCUdonUdonBehaviour_1.GetProgramVariable(__const_SystemString_17);
+__intnl_SystemBoolean_14 = (Boolean)__intnl_SystemObject_6;
+if (__intnl_SystemBoolean_14)
+{
+dayNightCycle.SetProgramVariable(__const_SystemString_14, __const_SystemBoolean_1);
+dayNightCycle.SendCustomEvent(__const_SystemString_15);
+if (showDebugLogs)
+{
+}
+return;
+}
+__intnl_VRCUdonUdonBehaviour_2 = dayNightCycle;
+dayNightCycle.SendCustomEvent(__const_SystemString_4);
+__intnl_SystemObject_7 = dayNightCycle.GetProgramVariable(__const_SystemString_5);
+__intnl_SystemInt32_9 = Convert.ToInt32(__intnl_SystemObject_7);
+__intnl_SystemInt32_8 = __intnl_SystemInt32_9;
+__lcl_currentWeather_SystemInt32_0 = __intnl_SystemInt32_8;
+__lcl_zone_VRCUdonUdonBehaviour_1.SendCustomEvent(__const_SystemString_18);
+__intnl_SystemObject_8 = __lcl_zone_VRCUdonUdonBehaviour_1.GetProgramVariable(__const_SystemString_19);
+__intnl_SystemInt32Array_1 = (Int32[])__intnl_SystemObject_8;
+__lcl_allowedTypes_SystemInt32Array_0 = __intnl_SystemInt32Array_1;
+__intnl_SystemBoolean_15 = __lcl_allowedTypes_SystemInt32Array_0 != __const_SystemObject_0;
+if (__intnl_SystemBoolean_15)
+{
+__intnl_SystemInt32_10 = __lcl_allowedTypes_SystemInt32Array_0.Length;
+__intnl_SystemBoolean_15 = __intnl_SystemInt32_10 > __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_15)
+{
+__lcl_isWeatherAllowed_SystemBoolean_0 = __const_SystemBoolean_1;
+__lcl_j_SystemInt32_0 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_11 = __lcl_allowedTypes_SystemInt32Array_0.Length;
+__intnl_SystemBoolean_16 = __lcl_j_SystemInt32_0 < __intnl_SystemInt32_11;
+if (__intnl_SystemBoolean_16)
+{
+break;
+}
+__intnl_SystemInt32_12 = __lcl_allowedTypes_SystemInt32Array_0[__lcl_j_SystemInt32_0];
+__intnl_SystemBoolean_17 = __intnl_SystemInt32_12 == __lcl_currentWeather_SystemInt32_0;
+if (__intnl_SystemBoolean_17)
+{
+__lcl_isWeatherAllowed_SystemBoolean_0 = __const_SystemBoolean_0;
+}
+else
+{
+__lcl_j_SystemInt32_0 = __lcl_j_SystemInt32_0 + __const_SystemInt32_2;
+}
+}
+if (__lcl_isWeatherAllowed_SystemBoolean_0)
+{
+}
+else
+{
+dayNightCycle.SetProgramVariable(__const_SystemString_14, __const_SystemBoolean_1);
+dayNightCycle.SendCustomEvent(__const_SystemString_15);
+if (showDebugLogs)
+{
+}
+return;
+}
+}
+dayNightCycle.SetProgramVariable(__const_SystemString_14, __const_SystemBoolean_0);
+dayNightCycle.SendCustomEvent(__const_SystemString_15);
+if (showDebugLogs)
+{
+}
+return;
+}
+__lcl_i_SystemInt32_1 = __lcl_i_SystemInt32_1 + __const_SystemInt32_2;
+}
+dayNightCycle.SetProgramVariable(__const_SystemString_14, __const_SystemBoolean_0);
+dayNightCycle.SendCustomEvent(__const_SystemString_15);
+}
+private void UNDEF_7e3b8_6012()
+{
+__intnl_UnityEngineObject_10 = dayNightCycle;
+__intnl_UnityEngineObject_11 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_18 = __intnl_UnityEngineObject_10 == __intnl_UnityEngineObject_11;
+if (__intnl_SystemBoolean_18)
+{
+return;
+}
+__intnl_SystemBoolean_19 = __2_zoneID__param == __const_SystemString_0;
+if (__intnl_SystemBoolean_19)
+{
+__intnl_SystemInt32Array_2 = openOceanWeatherTypes;
+dayNightCycle.SetProgramVariable(__const_SystemString_2, openOceanWeatherTypes);
+dayNightCycle.SendCustomEvent(__const_SystemString_3);
+if (showDebugLogs)
+{
+break;
+}
+__lcl_typesStr_SystemString_0 = __const_SystemString_20;
+__intnl_SystemBoolean_20 = openOceanWeatherTypes == __const_SystemObject_0;
+if (__intnl_SystemBoolean_20)
+{
+}
+else
+{
+__intnl_SystemInt32_13 = openOceanWeatherTypes.Length;
+__intnl_SystemBoolean_20 = __intnl_SystemInt32_13 == __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_20)
+{
+__lcl_typesStr_SystemString_0 = __const_SystemString_21;
+}
+else
+{
+__lcl_i_SystemInt32_2 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_14 = openOceanWeatherTypes.Length;
+__intnl_SystemBoolean_21 = __lcl_i_SystemInt32_2 < __intnl_SystemInt32_14;
+if (__intnl_SystemBoolean_21)
+{
+break;
+}
+__intnl_SystemInt32_15 = openOceanWeatherTypes[__lcl_i_SystemInt32_2];
+__intnl_SystemString_3 = __intnl_SystemInt32_15.ToString();
+__lcl_typesStr_SystemString_0 = __lcl_typesStr_SystemString_0 + __intnl_SystemString_3;
+__intnl_SystemInt32_16 = openOceanWeatherTypes.Length;
+__intnl_SystemInt32_17 = __intnl_SystemInt32_16 - __const_SystemInt32_2;
+__intnl_SystemBoolean_22 = __lcl_i_SystemInt32_2 < __intnl_SystemInt32_17;
+if (__intnl_SystemBoolean_22)
+{
+__lcl_typesStr_SystemString_0 = __lcl_typesStr_SystemString_0 + __const_SystemString_22;
+}
+__lcl_i_SystemInt32_2 = __lcl_i_SystemInt32_2 + __const_SystemInt32_2;
+}
+}
+return;
+}
+__intnl_SystemBoolean_20 = allZones != __const_SystemObject_0;
+if (__intnl_SystemBoolean_20)
+{
+break;
+}
+__lcl_i_SystemInt32_2 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_13 = allZones.Length;
+__intnl_SystemBoolean_21 = __lcl_i_SystemInt32_2 < __intnl_SystemInt32_13;
+if (__intnl_SystemBoolean_21)
+{
+break;
+}
+__lcl_zone_VRCUdonUdonBehaviour_2 = (UdonBehaviour)(allZones[__lcl_i_SystemInt32_2]);
+__intnl_UnityEngineObject_12 = __lcl_zone_VRCUdonUdonBehaviour_2;
+__intnl_UnityEngineObject_13 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_22 = __intnl_UnityEngineObject_12 != __intnl_UnityEngineObject_13;
+if (__intnl_SystemBoolean_22)
+{
+__lcl_zone_VRCUdonUdonBehaviour_2.SendCustomEvent(__const_SystemString_10);
+__intnl_SystemObject_9 = __lcl_zone_VRCUdonUdonBehaviour_2.GetProgramVariable(__const_SystemString_11);
+__intnl_SystemString_3 = (String)__intnl_SystemObject_9;
+__intnl_SystemBoolean_22 = __intnl_SystemString_3 == __2_zoneID__param;
+}
+if (__intnl_SystemBoolean_22)
+{
+__lcl_zone_VRCUdonUdonBehaviour_2.SendCustomEvent(__const_SystemString_18);
+__intnl_SystemObject_10 = __lcl_zone_VRCUdonUdonBehaviour_2.GetProgramVariable(__const_SystemString_19);
+__intnl_SystemInt32Array_2 = (Int32[])__intnl_SystemObject_10;
+__lcl_allowedTypes_SystemInt32Array_1 = __intnl_SystemInt32Array_2;
+dayNightCycle.SetProgramVariable(__const_SystemString_2, __lcl_allowedTypes_SystemInt32Array_1);
+dayNightCycle.SendCustomEvent(__const_SystemString_3);
+if (showDebugLogs)
+{
+break;
+}
+__lcl_typesStr_SystemString_0 = __const_SystemString_20;
+__intnl_SystemBoolean_23 = __lcl_allowedTypes_SystemInt32Array_1 == __const_SystemObject_0;
+if (__intnl_SystemBoolean_23)
+{
+}
+else
+{
+__intnl_SystemInt32_14 = __lcl_allowedTypes_SystemInt32Array_1.Length;
+__intnl_SystemBoolean_23 = __intnl_SystemInt32_14 == __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_23)
+{
+__lcl_typesStr_SystemString_0 = __const_SystemString_21;
+}
+else
+{
+__lcl_j_SystemInt32_1 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_15 = __lcl_allowedTypes_SystemInt32Array_1.Length;
+__intnl_SystemBoolean_24 = __lcl_j_SystemInt32_1 < __intnl_SystemInt32_15;
+if (__intnl_SystemBoolean_24)
+{
+break;
+}
+__intnl_SystemInt32_16 = __lcl_allowedTypes_SystemInt32Array_1[__lcl_j_SystemInt32_1];
+__intnl_SystemString_4 = __intnl_SystemInt32_16.ToString();
+__lcl_typesStr_SystemString_0 = __lcl_typesStr_SystemString_0 + __intnl_SystemString_4;
+__intnl_SystemInt32_17 = __lcl_allowedTypes_SystemInt32Array_1.Length;
+__intnl_SystemInt32_18 = __intnl_SystemInt32_17 - __const_SystemInt32_2;
+__intnl_SystemBoolean_25 = __lcl_j_SystemInt32_1 < __intnl_SystemInt32_18;
+if (__intnl_SystemBoolean_25)
+{
+__lcl_typesStr_SystemString_0 = __lcl_typesStr_SystemString_0 + __const_SystemString_22;
+}
+__lcl_j_SystemInt32_1 = __lcl_j_SystemInt32_1 + __const_SystemInt32_2;
+}
+}
+return;
+}
+__lcl_i_SystemInt32_2 = __lcl_i_SystemInt32_2 + __const_SystemInt32_2;
+}
+__intnl_SystemInt32Array_2 = (Int32[])__const_SystemObject_0;
+dayNightCycle.SetProgramVariable(__const_SystemString_2, __intnl_SystemInt32Array_2);
+dayNightCycle.SendCustomEvent(__const_SystemString_3);
+}
+public void GetCurrentZoneID()
+{
+__0_GetCurrentZoneID__ret = currentZoneID;
+return;
+}
+public void GetCurrentZoneName()
+{
+__0_GetCurrentZoneName__ret = currentZoneName;
+return;
+}
+}

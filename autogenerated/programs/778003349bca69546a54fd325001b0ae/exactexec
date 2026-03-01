@@ -1,0 +1,323 @@
+using System;
+using UnityEngine;
+using VRC.SDKBase;
+using VRC.Udon;
+using VRC.Udon.Common.Enums;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Boolean __intnl_SystemBoolean_13 = false;
+private Object __intnl_UnityEngineObject_22 = null;
+private Object __intnl_UnityEngineObject_12 = null;
+private Single __intnl_SystemSingle_0 = 0f;
+private String __const_SystemString_0 = "Initialize";
+private Transform __intnl_UnityEngineTransform_0 = null;
+private Single __const_SystemSingle_0 = 0f;
+private Boolean __intnl_SystemBoolean_16 = false;
+private Int32 syncedDeathTick = 0;
+public Single deathCooldown;
+private UInt32 __gintnl_SystemUInt32_1 = 960;
+private UInt32 __gintnl_SystemUInt32_0 = 688;
+private UInt32 __gintnl_SystemUInt32_2 = 1868;
+private Boolean __const_SystemBoolean_0 = false;
+private Boolean __const_SystemBoolean_1 = true;
+private AudioClip __intnl_UnityEngineAudioClip_1 = null;
+private Object __intnl_UnityEngineObject_21 = null;
+private Object __intnl_UnityEngineObject_11 = null;
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Object __intnl_UnityEngineObject_19 = null;
+private AudioClip __intnl_UnityEngineAudioClip_2 = null;
+private Object __intnl_UnityEngineObject_14 = null;
+private Int64 __refl_typeid = 3669648978516982768;
+private VRCPlayerApi onPlayerTriggerEnterPlayer = null;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Boolean __intnl_SystemBoolean_11 = false;
+private Single __intnl_SystemSingle_2 = 0f;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_1 = null;
+private Single __const_SystemSingle_2 = 3f;
+private Vector3 __intnl_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Boolean __intnl_SystemBoolean_14 = false;
+private Vector3 syncedDeathPosition = new Vector3(0f, 0f, 0f);
+private object __const_SystemObject_0 = null;
+private Object __intnl_UnityEngineObject_23 = null;
+private Object __intnl_UnityEngineObject_13 = null;
+private Single __intnl_SystemSingle_1 = 0f;
+private Single __const_SystemSingle_1 = 1f;
+private Boolean __intnl_SystemBoolean_17 = false;
+private EventTiming __const_VRCUdonCommonEnumsEventTiming_0 = EventTiming.Update;
+private AudioClip __intnl_UnityEngineAudioClip_0 = null;
+private Object __intnl_UnityEngineObject_16 = null;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private Boolean initialized = false;
+private Single lastDeathTime = -999f;
+public Transform respawnPoint;
+private Object __intnl_UnityEngineObject_15 = null;
+public ParticleSystem deathParticles;
+private Boolean __intnl_SystemBoolean_12 = false;
+private String __refl_typename = "KillZone";
+private Single __intnl_SystemSingle_3 = 0f;
+public AudioSource remoteDeathSound;
+private String __const_SystemString_1 = "ForceSilence";
+private Transform __intnl_UnityEngineTransform_1 = null;
+private Vector3 __intnl_UnityEngineVector3_1 = new Vector3(0f, 0f, 0f);
+private VRCPlayerApi onPlayerTriggerStayPlayer = null;
+private Boolean __intnl_SystemBoolean_15 = false;
+private Object __intnl_UnityEngineObject_20 = null;
+private Object __intnl_UnityEngineObject_10 = null;
+private Int32 lastProcessedTick = 0;
+private VRCPlayerApi onPlayerRespawnPlayer = null;
+private VRCPlayerApi localPlayer = null;
+private GameObject __this_UnityEngineGameObject_0 = this;
+private Object __intnl_UnityEngineObject_18 = null;
+private Object __intnl_UnityEngineObject_17 = null;
+public UdonBehaviour dynamicMusicSystem;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Quaternion __intnl_UnityEngineQuaternion_0 = new Quaternion(0f, 0f, 0f, 0f);
+private Int32 __const_SystemInt32_0 = 1;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_0 = null;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_1 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_0 = this;
+public AudioSource deathSound;
+private Boolean __intnl_SystemBoolean_18 = false;
+
+
+public void _start()
+{
+localPlayer = Networking.LocalPlayer;
+__intnl_UnityEngineObject_0 = deathSound;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_0)
+{
+deathSound.Stop();
+deathSound.playOnAwake = __const_SystemBoolean_0;
+deathSound.spatialBlend = __const_SystemSingle_0;
+}
+__intnl_UnityEngineObject_2 = remoteDeathSound;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_2 != __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_1)
+{
+remoteDeathSound.Stop();
+remoteDeathSound.playOnAwake = __const_SystemBoolean_0;
+remoteDeathSound.spatialBlend = __const_SystemSingle_1;
+}
+__this_VRCUdonUdonBehaviour_0.SendCustomEventDelayedSeconds(__const_SystemString_0, __const_SystemSingle_2, __const_VRCUdonCommonEnumsEventTiming_0);
+}
+public void Initialize()
+{
+initialized = __const_SystemBoolean_1;
+}
+public void _onPlayerTriggerEnter()
+{
+__intnl_SystemBoolean_2 = onPlayerTriggerEnterPlayer.isLocal;
+if (__intnl_SystemBoolean_2)
+{
+UNDEF_77800_556();
+}
+}
+private void UNDEF_77800_556()
+{
+if (initialized)
+{
+UNDEF_77800_708();
+}
+}
+private void UNDEF_77800_708()
+{
+__intnl_SystemSingle_0 = Time.time;
+__intnl_SystemSingle_1 = __intnl_SystemSingle_0 - lastDeathTime;
+__intnl_SystemBoolean_3 = __intnl_SystemSingle_1 < deathCooldown;
+if (__intnl_SystemBoolean_3)
+{
+return;
+}
+UNDEF_77800_1888();
+}
+public void _onPlayerTriggerStay()
+{
+__intnl_SystemBoolean_4 = onPlayerTriggerStayPlayer.isLocal;
+if (__intnl_SystemBoolean_4)
+{
+UNDEF_77800_828();
+}
+}
+private void UNDEF_77800_828()
+{
+if (initialized)
+{
+UNDEF_77800_980();
+}
+}
+private void UNDEF_77800_980()
+{
+__intnl_SystemSingle_2 = Time.time;
+__intnl_SystemSingle_3 = __intnl_SystemSingle_2 - lastDeathTime;
+__intnl_SystemBoolean_5 = __intnl_SystemSingle_3 < deathCooldown;
+if (__intnl_SystemBoolean_5)
+{
+return;
+}
+UNDEF_77800_1888();
+}
+private void UNDEF_77800_1888()
+{
+__intnl_SystemBoolean_6 = localPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_6)
+{
+}
+else
+{
+__intnl_SystemBoolean_7 = localPlayer.IsValid();
+__intnl_SystemBoolean_6 = !__intnl_SystemBoolean_7;
+}
+if (__intnl_SystemBoolean_6)
+{
+return;
+}
+lastDeathTime = Time.time;
+__intnl_UnityEngineObject_4 = deathSound;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_8 = __intnl_UnityEngineObject_4 != __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_8)
+{
+__intnl_UnityEngineAudioClip_0 = deathSound.clip;
+__intnl_UnityEngineObject_6 = __intnl_UnityEngineAudioClip_0;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_8 = __intnl_UnityEngineObject_6 != __intnl_UnityEngineObject_7;
+}
+if (__intnl_SystemBoolean_8)
+{
+deathSound.Play();
+}
+__intnl_UnityEngineObject_8 = deathParticles;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_9 = __intnl_UnityEngineObject_8 != __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_9)
+{
+__intnl_UnityEngineTransform_0 = deathParticles.transform;
+__intnl_UnityEngineVector3_0 = localPlayer.GetPosition();
+__intnl_UnityEngineTransform_0.position = __intnl_UnityEngineVector3_0;
+deathParticles.Play();
+}
+__intnl_UnityEngineObject_10 = remoteDeathSound;
+__intnl_UnityEngineObject_11 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_10 = __intnl_UnityEngineObject_10 != __intnl_UnityEngineObject_11;
+if (__intnl_SystemBoolean_10)
+{
+__intnl_UnityEngineAudioClip_1 = remoteDeathSound.clip;
+__intnl_UnityEngineObject_12 = __intnl_UnityEngineAudioClip_1;
+__intnl_UnityEngineObject_13 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_10 = __intnl_UnityEngineObject_12 != __intnl_UnityEngineObject_13;
+}
+if (__intnl_SystemBoolean_10)
+{
+Networking.SetOwner(localPlayer, __this_UnityEngineGameObject_0);
+syncedDeathPosition = localPlayer.GetPosition();
+syncedDeathTick = syncedDeathTick + __const_SystemInt32_0;
+lastProcessedTick = syncedDeathTick;
+__this_VRCUdonUdonBehaviour_1.RequestSerialization();
+}
+RespawnPlayer();
+}
+public void _onDeserialization()
+{
+__intnl_SystemBoolean_11 = syncedDeathTick == lastProcessedTick;
+if (__intnl_SystemBoolean_11)
+{
+return;
+}
+lastProcessedTick = syncedDeathTick;
+__intnl_UnityEngineObject_14 = remoteDeathSound;
+__intnl_UnityEngineObject_15 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_12 = __intnl_UnityEngineObject_14 != __intnl_UnityEngineObject_15;
+if (__intnl_SystemBoolean_12)
+{
+__intnl_UnityEngineAudioClip_2 = remoteDeathSound.clip;
+__intnl_UnityEngineObject_16 = __intnl_UnityEngineAudioClip_2;
+__intnl_UnityEngineObject_17 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_12 = __intnl_UnityEngineObject_16 != __intnl_UnityEngineObject_17;
+}
+if (__intnl_SystemBoolean_12)
+{
+__intnl_UnityEngineTransform_1 = remoteDeathSound.transform;
+__intnl_UnityEngineTransform_1.position = syncedDeathPosition;
+remoteDeathSound.Play();
+}
+}
+public void RespawnPlayer()
+{
+__intnl_SystemBoolean_13 = localPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_13)
+{
+}
+else
+{
+__intnl_SystemBoolean_14 = localPlayer.IsValid();
+__intnl_SystemBoolean_13 = !__intnl_SystemBoolean_14;
+}
+if (__intnl_SystemBoolean_13)
+{
+return;
+}
+__intnl_UnityEngineObject_18 = dynamicMusicSystem;
+__intnl_UnityEngineObject_19 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_15 = __intnl_UnityEngineObject_18 != __intnl_UnityEngineObject_19;
+if (__intnl_SystemBoolean_15)
+{
+__intnl_VRCUdonUdonBehaviour_0 = dynamicMusicSystem;
+dynamicMusicSystem.SendCustomEvent(__const_SystemString_1);
+}
+__intnl_UnityEngineObject_20 = respawnPoint;
+__intnl_UnityEngineObject_21 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_16 = __intnl_UnityEngineObject_20 != __intnl_UnityEngineObject_21;
+if (__intnl_SystemBoolean_16)
+{
+__intnl_UnityEngineVector3_1 = respawnPoint.position;
+__intnl_UnityEngineQuaternion_0 = respawnPoint.rotation;
+localPlayer.TeleportTo(__intnl_UnityEngineVector3_1, __intnl_UnityEngineQuaternion_0);
+}
+else
+{
+localPlayer.Respawn();
+}
+}
+public void _onPlayerRespawn()
+{
+__intnl_SystemBoolean_17 = onPlayerRespawnPlayer.isLocal;
+if (__intnl_SystemBoolean_17)
+{
+UNDEF_77800_2988();
+}
+}
+private void UNDEF_77800_2988()
+{
+__intnl_UnityEngineObject_22 = dynamicMusicSystem;
+__intnl_UnityEngineObject_23 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_18 = __intnl_UnityEngineObject_22 != __intnl_UnityEngineObject_23;
+if (__intnl_SystemBoolean_18)
+{
+__intnl_VRCUdonUdonBehaviour_1 = dynamicMusicSystem;
+dynamicMusicSystem.SendCustomEvent(__const_SystemString_1);
+}
+}
+}

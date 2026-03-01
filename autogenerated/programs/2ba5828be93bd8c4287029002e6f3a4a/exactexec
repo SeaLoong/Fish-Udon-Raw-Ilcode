@@ -1,0 +1,98 @@
+using System;
+using UnityEngine;
+using TMPro;
+using VRC.Udon.Common.Enums;
+using VRC.Udon;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private object __intnl_SystemObject_0 = null;
+private String __const_SystemString_0 = "UpdateLoop";
+private Single __const_SystemSingle_0 = 60f;
+private UInt32 __gintnl_SystemUInt32_1 = 108;
+private UInt32 __gintnl_SystemUInt32_0 = 24;
+private Int32 __lcl_totalSeconds_SystemInt32_0 = 0;
+private Int32 __lcl_hours_SystemInt32_0 = 0;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Int64 __refl_typeid = 3133520360229630725;
+public TextMeshProUGUI timeText;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private String __const_SystemString_2 = "__0_GetTotalTimePlayed__ret";
+private object __const_SystemObject_0 = null;
+private String __intnl_SystemString_0 = null;
+private Int32 __lcl_minutes_SystemInt32_0 = 0;
+private EventTiming __const_VRCUdonCommonEnumsEventTiming_0 = EventTiming.Update;
+private Int32 __lcl_totalMinutes_SystemInt32_0 = 0;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private String __const_SystemString_4 = "Time played: [{0}h {1}m]";
+private String __refl_typename = "TimePlayedDisplay";
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private String __const_SystemString_1 = "GetTotalTimePlayed";
+private Int32 __lcl_days_SystemInt32_0 = 0;
+private Int32 __const_SystemInt32_1 = 1440;
+private Int32 __const_SystemInt32_0 = 60;
+private Int32 __const_SystemInt32_2 = 0;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+public UdonBehaviour playerStats;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_0 = null;
+private String __const_SystemString_3 = "Time played: [{0}d {1}h {2}m]";
+private UdonBehaviour __this_VRCUdonUdonBehaviour_1 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_0 = this;
+
+
+public void _start()
+{
+UNDEF_2ba58_872();
+__this_VRCUdonUdonBehaviour_0.SendCustomEventDelayedSeconds(__const_SystemString_0, __const_SystemSingle_0, __const_VRCUdonCommonEnumsEventTiming_0);
+}
+public void UpdateLoop()
+{
+UNDEF_2ba58_872();
+__this_VRCUdonUdonBehaviour_1.SendCustomEventDelayedSeconds(__const_SystemString_0, __const_SystemSingle_0, __const_VRCUdonCommonEnumsEventTiming_0);
+}
+private void UNDEF_2ba58_872()
+{
+__intnl_UnityEngineObject_0 = timeText;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_0 == __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_0)
+{
+}
+else
+{
+__intnl_UnityEngineObject_2 = playerStats;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_2 == __intnl_UnityEngineObject_3;
+}
+if (__intnl_SystemBoolean_0)
+{
+return;
+}
+__intnl_VRCUdonUdonBehaviour_0 = playerStats;
+playerStats.SendCustomEvent(__const_SystemString_1);
+__intnl_SystemObject_0 = playerStats.GetProgramVariable(__const_SystemString_2);
+__intnl_SystemInt32_0 = Convert.ToInt32(__intnl_SystemObject_0);
+__lcl_totalSeconds_SystemInt32_0 = __intnl_SystemInt32_0;
+__lcl_totalMinutes_SystemInt32_0 = __lcl_totalSeconds_SystemInt32_0 / __const_SystemInt32_0;
+__lcl_days_SystemInt32_0 = __lcl_totalMinutes_SystemInt32_0 / __const_SystemInt32_1;
+__intnl_SystemInt32_1 = __lcl_totalMinutes_SystemInt32_0 / __const_SystemInt32_1;
+__lcl_hours_SystemInt32_0 = __intnl_SystemInt32_1 / __const_SystemInt32_0;
+__lcl_minutes_SystemInt32_0 = __lcl_totalMinutes_SystemInt32_0 / __const_SystemInt32_0;
+__intnl_SystemBoolean_1 = __lcl_days_SystemInt32_0 > __const_SystemInt32_2;
+if (__intnl_SystemBoolean_1)
+{
+__intnl_SystemString_0 = String.Format(__const_SystemString_3, __lcl_days_SystemInt32_0, __lcl_hours_SystemInt32_0, __lcl_minutes_SystemInt32_0);
+timeText.text = __intnl_SystemString_0;
+}
+else
+{
+__intnl_SystemString_0 = String.Format(__const_SystemString_4, __lcl_hours_SystemInt32_0, __lcl_minutes_SystemInt32_0);
+timeText.text = __intnl_SystemString_0;
+}
+}
+}

@@ -1,0 +1,249 @@
+using System;
+using TMPro;
+using UnityEngine;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Single __intnl_SystemSingle_0 = 0f;
+private Single __const_SystemSingle_0 = 0f;
+private UInt32 __gintnl_SystemUInt32_9 = 1488;
+private UInt32 __gintnl_SystemUInt32_8 = 1228;
+private UInt32 __gintnl_SystemUInt32_5 = 808;
+private UInt32 __gintnl_SystemUInt32_4 = 668;
+private UInt32 __gintnl_SystemUInt32_7 = 952;
+private UInt32 __gintnl_SystemUInt32_6 = 880;
+private UInt32 __gintnl_SystemUInt32_1 = 244;
+private UInt32 __gintnl_SystemUInt32_0 = 176;
+private UInt32 __gintnl_SystemUInt32_3 = 544;
+private UInt32 __gintnl_SystemUInt32_2 = 368;
+private Boolean __const_SystemBoolean_0 = true;
+private Boolean __const_SystemBoolean_1 = false;
+public TextMeshProUGUI zoneText;
+public Single fadeInTime;
+public Single displayTime;
+private UInt32 __gintnl_SystemUInt32_13 = 2264;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Int64 __refl_typeid = 6694209802465560313;
+private Single __lcl_alpha_SystemSingle_0 = 0f;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Color targetColor = new Color(0f, 0f, 0f, 0f);
+private Single __intnl_SystemSingle_2 = 0f;
+private Single __0_alpha__param = 0f;
+private Int32 currentPhase = 0;
+private Color __intnl_UnityEngineColor_0 = new Color(0f, 0f, 0f, 0f);
+private Single __lcl_progress_SystemSingle_0 = 0f;
+private Single __lcl_progress_SystemSingle_1 = 0f;
+private object __const_SystemObject_0 = null;
+private Single __intnl_SystemSingle_1 = 0f;
+private Single __const_SystemSingle_1 = 1f;
+private UInt32 __gintnl_SystemUInt32_11 = 1916;
+private Color originalTextColor = new Color(0f, 0f, 0f, 0f);
+public String currentZoneName;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private UInt32 __gintnl_SystemUInt32_12 = 1976;
+private Boolean isAnimating = false;
+private Single __lcl_alpha_SystemSingle_1 = 0f;
+public Single fadeOutTime;
+private Single animationTimer = 0f;
+private String __refl_typename = "ZonePopupAnimator";
+private Boolean __0_visible__param = false;
+private Single __intnl_SystemSingle_3 = 0f;
+private Boolean __0_IsAnimating__ret = false;
+private UInt32 __gintnl_SystemUInt32_10 = 1588;
+private String __0_zoneName__param = null;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Int32 __const_SystemInt32_1 = 2;
+private Int32 __const_SystemInt32_0 = 1;
+private Int32 __const_SystemInt32_3 = 0;
+private Int32 __const_SystemInt32_2 = 3;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private Color __lcl_color_UnityEngineColor_0 = new Color(0f, 0f, 0f, 0f);
+
+
+public void _start()
+{
+__intnl_UnityEngineObject_0 = zoneText;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_0)
+{
+break;
+}
+originalTextColor = zoneText.color;
+targetColor = originalTextColor;
+__0_alpha__param = __const_SystemSingle_0;
+UNDEF_07f51_1832();
+}
+public void _update()
+{
+if (isAnimating)
+{
+UNDEF_07f51_980();
+}
+}
+public void TriggerZoneAnimation()
+{
+__intnl_SystemBoolean_1 = String.IsNullOrEmpty(currentZoneName);
+if (__intnl_SystemBoolean_1)
+{
+return;
+}
+__0_zoneName__param = currentZoneName;
+__0_ShowZoneChange();
+}
+public void __0_ShowZoneChange()
+{
+__intnl_UnityEngineObject_2 = zoneText;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_2 = __intnl_UnityEngineObject_2 == __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_2)
+{
+return;
+}
+zoneText.text = __0_zoneName__param;
+UNDEF_07f51_688();
+}
+private void UNDEF_07f51_688()
+{
+isAnimating = __const_SystemBoolean_0;
+currentPhase = __const_SystemInt32_0;
+animationTimer = __const_SystemSingle_0;
+__0_alpha__param = __const_SystemSingle_0;
+UNDEF_07f51_1832();
+}
+private void UNDEF_07f51_980()
+{
+__intnl_SystemSingle_0 = Time.deltaTime;
+animationTimer = animationTimer + __intnl_SystemSingle_0;
+__intnl_SystemBoolean_3 = currentPhase == __const_SystemInt32_0;
+if (__intnl_SystemBoolean_3)
+{
+UNDEF_07f51_1248();
+}
+else
+{
+__intnl_SystemBoolean_4 = currentPhase == __const_SystemInt32_1;
+if (__intnl_SystemBoolean_4)
+{
+UNDEF_07f51_1364();
+}
+else
+{
+__intnl_SystemBoolean_5 = currentPhase == __const_SystemInt32_2;
+if (__intnl_SystemBoolean_5)
+{
+break;
+}
+UNDEF_07f51_1608();
+}
+}
+}
+private void UNDEF_07f51_1248()
+{
+__lcl_progress_SystemSingle_0 = animationTimer / fadeInTime;
+__intnl_SystemBoolean_6 = __lcl_progress_SystemSingle_0 >= __const_SystemSingle_1;
+if (__intnl_SystemBoolean_6)
+{
+__lcl_progress_SystemSingle_0 = __const_SystemSingle_1;
+currentPhase = __const_SystemInt32_1;
+animationTimer = __const_SystemSingle_0;
+}
+__intnl_SystemSingle_1 = originalTextColor.a;
+__lcl_alpha_SystemSingle_0 = Mathf.Lerp(__const_SystemSingle_0, __intnl_SystemSingle_1, __lcl_progress_SystemSingle_0);
+__0_alpha__param = __lcl_alpha_SystemSingle_0;
+UNDEF_07f51_1832();
+}
+private void UNDEF_07f51_1364()
+{
+__intnl_SystemBoolean_7 = animationTimer >= displayTime;
+if (__intnl_SystemBoolean_7)
+{
+currentPhase = __const_SystemInt32_2;
+animationTimer = __const_SystemSingle_0;
+}
+}
+private void UNDEF_07f51_1608()
+{
+__lcl_progress_SystemSingle_1 = animationTimer / fadeOutTime;
+__intnl_SystemBoolean_8 = __lcl_progress_SystemSingle_1 >= __const_SystemSingle_1;
+if (__intnl_SystemBoolean_8)
+{
+__lcl_progress_SystemSingle_1 = __const_SystemSingle_1;
+UNDEF_07f51_1936();
+}
+__intnl_SystemSingle_2 = originalTextColor.a;
+__lcl_alpha_SystemSingle_1 = Mathf.Lerp(__intnl_SystemSingle_2, __const_SystemSingle_0, __lcl_progress_SystemSingle_1);
+__0_alpha__param = __lcl_alpha_SystemSingle_1;
+UNDEF_07f51_1832();
+}
+private void UNDEF_07f51_1832()
+{
+__intnl_UnityEngineObject_4 = zoneText;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_9 = __intnl_UnityEngineObject_4 == __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_9)
+{
+return;
+}
+__lcl_color_UnityEngineColor_0 = targetColor;
+__lcl_color_UnityEngineColor_0.a = __0_alpha__param;
+__intnl_UnityEngineColor_0 = __lcl_color_UnityEngineColor_0;
+zoneText.color = __lcl_color_UnityEngineColor_0;
+}
+private void UNDEF_07f51_1936()
+{
+isAnimating = __const_SystemBoolean_1;
+currentPhase = __const_SystemInt32_3;
+__0_alpha__param = __const_SystemSingle_0;
+UNDEF_07f51_1832();
+}
+public void StopAnimation()
+{
+if (isAnimating)
+{
+break;
+}
+UNDEF_07f51_1936();
+}
+public void IsAnimating()
+{
+__0_IsAnimating__ret = isAnimating;
+return;
+}
+public void __0_SetVisible()
+{
+__intnl_UnityEngineObject_6 = zoneText;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_10 = __intnl_UnityEngineObject_6 != __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_10)
+{
+break;
+}
+if (__0_visible__param)
+{
+__intnl_SystemSingle_3 = originalTextColor.a;
+}
+else
+{
+__intnl_SystemSingle_3 = __const_SystemSingle_0;
+}
+__0_alpha__param = __intnl_SystemSingle_3;
+UNDEF_07f51_1832();
+}
+}

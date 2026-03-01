@@ -1,0 +1,22 @@
+void _update()
+__lcl_rotationThisFrame_SystemSingle_0 = op_Multiplication(__intnl_SystemSingle_0, spinSpeed);// 48
+64 if (spinX) //100
+{
+88 __lcl_xRotation_SystemSingle_0 = __lcl_rotationThisFrame_SystemSingle_0
+92 JUMP 120
+}
+116 __lcl_xRotation_SystemSingle_0 = __const_SystemSingle_0
+128 if (spinY) //164
+{
+152 __lcl_yRotation_SystemSingle_0 = __lcl_rotationThisFrame_SystemSingle_0
+156 JUMP 184
+}
+180 __lcl_yRotation_SystemSingle_0 = __const_SystemSingle_0
+192 if (spinZ) //228
+{
+216 __lcl_zRotation_SystemSingle_0 = __lcl_rotationThisFrame_SystemSingle_0
+220 JUMP 248
+}
+244 __lcl_zRotation_SystemSingle_0 = __const_SystemSingle_0
+transform.Rotate(__lcl_zRotation_SystemSingle_0, __lcl_yRotation_SystemSingle_0, __lcl_xRotation_SystemSingle_0);// 280
+300 return;

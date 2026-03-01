@@ -1,0 +1,1030 @@
+using System;
+using UnityEngine;
+using VRC.Udon;
+using VRC.SDKBase;
+using UnityEngine.UI;
+using VRC.Udon.Common;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Single __lcl_headY_SystemSingle_0 = 0f;
+private Boolean __intnl_SystemBoolean_13 = false;
+private Boolean __intnl_SystemBoolean_23 = false;
+private Boolean __intnl_SystemBoolean_33 = false;
+private Boolean exitedViaJump = false;
+public Single maxStamina;
+private UInt32 __gintnl_SystemUInt32_16 = 5076;
+private UInt32 __gintnl_SystemUInt32_26 = 6724;
+private Single currentStamina = 0f;
+private Boolean udonJumping = false;
+private Single swimExitTime = 0f;
+private Boolean __lcl_spaceAllowed_SystemBoolean_0 = false;
+private Object __intnl_UnityEngineObject_32 = null;
+private Object __intnl_UnityEngineObject_22 = null;
+private Object __intnl_UnityEngineObject_12 = null;
+private Single __0_GetCurrentStamina__ret = 0f;
+private Type __const_SystemType_1 = typeof(ParticleSystem);
+private Vector3 __lcl_forward_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Single __intnl_SystemSingle_0 = 0f;
+private object __intnl_SystemObject_0 = null;
+private String __const_SystemString_0 = "swimZone";
+private Transform __intnl_UnityEngineTransform_0 = null;
+private Vector3 __lcl_splashPos_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Single __const_SystemSingle_0 = 0f;
+private Vector3 __intnl_UnityEngineVector3_6 = new Vector3(0f, 0f, 0f);
+private Single __0_GetWaterSurfaceY__ret = 0f;
+private Boolean __intnl_SystemBoolean_16 = false;
+private Boolean __intnl_SystemBoolean_26 = false;
+private UdonBehaviour __0_GetCurrentSafeZone__ret = null;
+private Boolean __lcl_regenDelayPassed_SystemBoolean_0 = false;
+private Single __intnl_SystemSingle_10 = 0f;
+private Single __intnl_SystemSingle_11 = 0f;
+private Single __intnl_SystemSingle_12 = 0f;
+private Single __intnl_SystemSingle_13 = 0f;
+private Single __intnl_SystemSingle_14 = 0f;
+private Single __intnl_SystemSingle_15 = 0f;
+private Single __intnl_SystemSingle_16 = 0f;
+private Single __intnl_SystemSingle_17 = 0f;
+private Single __intnl_SystemSingle_18 = 0f;
+private Single __intnl_SystemSingle_19 = 0f;
+private Single udonVertical = 0f;
+private Color __lcl_bgColor_UnityEngineColor_0 = new Color(0f, 0f, 0f, 0f);
+private Single __intnl_SystemSingle_8 = 0f;
+private UInt32 __gintnl_SystemUInt32_9 = 1992;
+private UInt32 __gintnl_SystemUInt32_8 = 1900;
+private UInt32 __gintnl_SystemUInt32_5 = 708;
+private UInt32 __gintnl_SystemUInt32_4 = 668;
+private UInt32 __gintnl_SystemUInt32_7 = 1804;
+private UInt32 __gintnl_SystemUInt32_6 = 744;
+private UInt32 __gintnl_SystemUInt32_1 = 468;
+private UInt32 __gintnl_SystemUInt32_0 = 60;
+private UInt32 __gintnl_SystemUInt32_3 = 632;
+private UInt32 __gintnl_SystemUInt32_2 = 484;
+private Boolean __const_SystemBoolean_0 = true;
+private Boolean __const_SystemBoolean_1 = false;
+private Object __intnl_UnityEngineObject_31 = null;
+private Object __intnl_UnityEngineObject_21 = null;
+private Object __intnl_UnityEngineObject_11 = null;
+private Boolean isSwimming = false;
+private Boolean __0_IsHeadAboveWater__ret = false;
+private String __const_SystemString_5 = "__0_TakeDamage";
+private Single __const_SystemSingle_7 = 0.25f;
+public AudioClip drowningSound;
+private Vector3 __intnl_UnityEngineVector3_5 = new Vector3(0f, 0f, 0f);
+public Single surfaceBufferHeight;
+private UInt32 __gintnl_SystemUInt32_13 = 3852;
+private UInt32 __gintnl_SystemUInt32_33 = 10500;
+private UInt32 __gintnl_SystemUInt32_23 = 6248;
+public Single healthDamageRate;
+private GameObject __3__intnlparam = null;
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Vector3 __lcl_right_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Object __intnl_UnityEngineObject_29 = null;
+private Object __intnl_UnityEngineObject_19 = null;
+private Single __intnl_SystemSingle_7 = 0f;
+private Object __intnl_UnityEngineObject_34 = null;
+private Object __intnl_UnityEngineObject_24 = null;
+private Object __intnl_UnityEngineObject_14 = null;
+private Int64 __refl_typeid = 1797017706195598166;
+private Boolean __lcl_shouldDrain_SystemBoolean_0 = false;
+private Boolean __lcl_isFastEntry_SystemBoolean_0 = false;
+private Vector3 __lcl_playerPos_UnityEngineVector3_3 = new Vector3(0f, 0f, 0f);
+private Vector3 currentVelocity = new Vector3(0f, 0f, 0f);
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_2 = null;
+private Single __lcl_waterSurfaceY_SystemSingle_1 = 0f;
+private Boolean __0_IsNearSurface__ret = false;
+private Collider activeWaterCollider = null;
+public Single swimSpeed;
+private VRCPlayerApi onPlayerTriggerEnterPlayer = null;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Boolean __intnl_SystemBoolean_11 = false;
+private Boolean __intnl_SystemBoolean_21 = false;
+private Boolean __intnl_SystemBoolean_31 = false;
+public Single fadeSpeed;
+private UInt32 __gintnl_SystemUInt32_14 = 4864;
+private UInt32 __gintnl_SystemUInt32_24 = 6608;
+private Vector3 __const_UnityEngineVector3_0 = new Vector3(0f, 0f, 1f);
+private Single __lcl_targetAlpha_SystemSingle_0 = 0f;
+private ParticleSystem __lcl_ps_UnityEngineParticleSystem_0 = null;
+private GameObject __0__intnlparam = null;
+private Vector3 __lcl_inputDirection_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Boolean __0_IsPlayerDrowning__ret = false;
+private Single __intnl_SystemSingle_2 = 0f;
+private Bounds __intnl_UnityEngineBounds_0 = Center: (0.00, 0.00, 0.00), Extents: (0.00, 0.00, 0.00);
+private Bounds __intnl_UnityEngineBounds_1 = Center: (0.00, 0.00, 0.00), Extents: (0.00, 0.00, 0.00);
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_1 = null;
+private String __const_SystemString_2 = "__0_IsPositionInZone";
+private Transform __intnl_UnityEngineTransform_2 = null;
+private Color __const_UnityEngineColor_0 = new Color(1f, 0f, 0f, 1f);
+private Single __const_SystemSingle_2 = 0.1f;
+private Double __intnl_SystemDouble_1 = 0;
+private Color __intnl_UnityEngineColor_0 = new Color(0f, 0f, 0f, 0f);
+private Boolean __intnl_SystemBoolean_19 = false;
+private Boolean __intnl_SystemBoolean_29 = false;
+private Single udonHorizontal = 0f;
+private Vector3 __intnl_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Boolean __intnl_SystemBoolean_14 = false;
+private Boolean __intnl_SystemBoolean_24 = false;
+private Boolean __intnl_SystemBoolean_34 = false;
+private object __const_SystemObject_0 = null;
+private UdonBehaviour __lcl_safeZone_VRCUdonUdonBehaviour_0 = null;
+public Component[] extraSwimZones;
+private Object __intnl_UnityEngineObject_33 = null;
+private Object __intnl_UnityEngineObject_23 = null;
+private Object __intnl_UnityEngineObject_13 = null;
+private Type __const_SystemType_0 = typeof(Collider);
+private Single __intnl_SystemSingle_1 = 0f;
+public Image staminaBarFill;
+private Single __0_GetStaminaPercentage__ret = 0f;
+public Component[] swimSafeZones;
+private Single __const_SystemSingle_1 = 1f;
+private Vector3 __intnl_UnityEngineVector3_7 = new Vector3(0f, 0f, 0f);
+private TrackingDataType __const_VRCSDKBaseVRCPlayerApiTrackingDataType_0 = TrackingDataType.Head;
+private UInt32 __gintnl_SystemUInt32_11 = 3524;
+private UInt32 __gintnl_SystemUInt32_31 = 10224;
+private UInt32 __gintnl_SystemUInt32_21 = 6088;
+private Boolean __intnl_SystemBoolean_17 = false;
+private Boolean __intnl_SystemBoolean_27 = false;
+public Single staminaRegenRate;
+private Single currentUIAlpha = 0f;
+public Single staminaDrainRate;
+private TrackingData __lcl_headData_VRCSDKBaseVRCPlayerApiTrackingData_1 = VRC.SDKBase.VRCPlayerApi+TrackingData;
+private TrackingData __lcl_headData_VRCSDKBaseVRCPlayerApiTrackingData_0 = VRC.SDKBase.VRCPlayerApi+TrackingData;
+private Single inputMoveVerticalFloatValue = 0f;
+private Single __intnl_SystemSingle_9 = 0f;
+private AudioClip __intnl_UnityEngineAudioClip_0 = null;
+private Object __intnl_UnityEngineObject_36 = null;
+private Object __intnl_UnityEngineObject_26 = null;
+private Object __intnl_UnityEngineObject_16 = null;
+private Single swimStartTime = 0f;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private Boolean __0_IsPlayerSwimming__ret = false;
+private String __const_SystemString_4 = "__0_damage__param";
+private Boolean __0_IsPlayerInWaterBounds__ret = false;
+private UInt32 __gintnl_SystemUInt32_19 = 5824;
+private UInt32 __gintnl_SystemUInt32_29 = 10112;
+private Single __const_SystemSingle_4 = 0.9f;
+private UInt32 __gintnl_SystemUInt32_12 = 3708;
+private UInt32 __gintnl_SystemUInt32_32 = 10464;
+private UInt32 __gintnl_SystemUInt32_22 = 6224;
+private Vector3 __const_UnityEngineVector3_2 = new Vector3(0f, 0f, 0f);
+private Int32 __lcl_i_SystemInt32_1 = 0;
+private Int32 __lcl_i_SystemInt32_0 = 0;
+public AudioSource audioSource;
+private Single __intnl_SystemSingle_4 = 0f;
+private GameObject __1__intnlparam = null;
+private Color __lcl_barColor_UnityEngineColor_0 = new Color(0f, 0f, 0f, 0f);
+private Object __intnl_UnityEngineObject_35 = null;
+private Object __intnl_UnityEngineObject_25 = null;
+private Object __intnl_UnityEngineObject_15 = null;
+private Collider __lcl_col_UnityEngineCollider_1 = null;
+private Collider __lcl_col_UnityEngineCollider_0 = null;
+private VRCPlayerApi onPlayerTriggerExitPlayer = null;
+private Vector3 __lcl_playerPos_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_3 = null;
+private Single __lcl_waterSurfaceY_SystemSingle_0 = 0f;
+public Single riseSpeed;
+private Color __const_UnityEngineColor_2 = new Color(0f, 1f, 1f, 1f);
+private Vector3 __intnl_UnityEngineVector3_2 = new Vector3(0f, 0f, 0f);
+private Collider __0_zoneCollider__param = null;
+private Boolean __intnl_SystemBoolean_12 = false;
+private Boolean __intnl_SystemBoolean_22 = false;
+private Boolean __intnl_SystemBoolean_32 = false;
+private Vector3 __lcl_targetVelocity_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private UInt32 __gintnl_SystemUInt32_17 = 5636;
+private UInt32 __gintnl_SystemUInt32_27 = 6848;
+private Vector3 __const_UnityEngineVector3_1 = new Vector3(1f, 0f, 0f);
+private String __refl_typename = "SwimZone";
+private Boolean __lcl_inSafeZone_SystemBoolean_0 = false;
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Single __intnl_SystemSingle_3 = 0f;
+private Transform __this_UnityEngineTransform_0 = this;
+public Single swimDrag;
+public Image staminaBarBackground;
+private String __const_SystemString_1 = "__0_position__param";
+private Transform __intnl_UnityEngineTransform_1 = null;
+private Color __const_UnityEngineColor_1 = new Color(1f, 0.9215686f, 0.01568628f, 1f);
+private Single __const_SystemSingle_3 = 0.5f;
+private Double __intnl_SystemDouble_0 = 0;
+private Vector3 __intnl_UnityEngineVector3_1 = new Vector3(0f, 0f, 0f);
+private Boolean __0_IsPlayerSeatedInStation__ret = false;
+private Boolean __intnl_SystemBoolean_15 = false;
+private Boolean __intnl_SystemBoolean_25 = false;
+private Boolean __intnl_SystemBoolean_35 = false;
+private Single inputMoveHorizontalFloatValue = 0f;
+private Single __lcl_entrySpeed_SystemSingle_0 = 0f;
+private Object __intnl_UnityEngineObject_30 = null;
+private Object __intnl_UnityEngineObject_20 = null;
+private Object __intnl_UnityEngineObject_10 = null;
+private UdonInputEventArgs inputMoveVerticalArgs = VRC.Udon.Common.UdonInputEventArgs;
+public Single splashParticleLifetime;
+private Single __const_SystemSingle_6 = 5f;
+private UdonInputEventArgs inputMoveHorizontalArgs = VRC.Udon.Common.UdonInputEventArgs;
+private Boolean __0_seated__param = false;
+private Vector3 __intnl_UnityEngineVector3_4 = new Vector3(0f, 0f, 0f);
+private UInt32 __gintnl_SystemUInt32_10 = 3312;
+private UInt32 __gintnl_SystemUInt32_30 = 10192;
+private UInt32 __gintnl_SystemUInt32_20 = 5876;
+public GameObject splashParticlePrefab;
+private Int32 activeZoneCount = 0;
+private VRCPlayerApi onPlayerRespawnPlayer = null;
+public AudioClip fastEnterSound;
+private Single __lcl_waterY_SystemSingle_0 = 0f;
+private Boolean __0_ShouldDrainStamina__ret = false;
+private UdonInputEventArgs inputJumpArgs = VRC.Udon.Common.UdonInputEventArgs;
+private VRCPlayerApi localPlayer = null;
+private Object __intnl_UnityEngineObject_38 = null;
+private Object __intnl_UnityEngineObject_28 = null;
+private Object __intnl_UnityEngineObject_18 = null;
+private Single __intnl_SystemSingle_6 = 0f;
+private Object __intnl_UnityEngineObject_37 = null;
+private Object __intnl_UnityEngineObject_27 = null;
+private Object __intnl_UnityEngineObject_17 = null;
+public Single staminaRegenDelay;
+private Quaternion __const_UnityEngineQuaternion_0 = new Quaternion(1f, 0f, 0f, 0f);
+private Vector3 __lcl_playerPos_UnityEngineVector3_2 = new Vector3(0f, 0f, 0f);
+private Single drowningDamageAccumulator = 0f;
+private Single __0_amount__param = 0f;
+private Boolean inputJumpBoolValue = false;
+private UInt32 __gintnl_SystemUInt32_18 = 5696;
+private UInt32 __gintnl_SystemUInt32_28 = 7860;
+private Single __const_SystemSingle_5 = 1.1f;
+private GameObject __2__intnlparam = null;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Boolean __intnl_SystemBoolean_20 = false;
+private Boolean __intnl_SystemBoolean_30 = false;
+private Quaternion __intnl_UnityEngineQuaternion_0 = new Quaternion(0f, 0f, 0f, 0f);
+private Quaternion __intnl_UnityEngineQuaternion_1 = new Quaternion(0f, 0f, 0f, 0f);
+private UInt32 __gintnl_SystemUInt32_15 = 4932;
+private UInt32 __gintnl_SystemUInt32_25 = 6624;
+public Single surfaceJumpForce;
+private Int32 __const_SystemInt32_1 = 1;
+private Int32 __const_SystemInt32_0 = 0;
+private GameObject __lcl_splash_UnityEngineGameObject_0 = null;
+private Boolean isDrowning = false;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private Collider __1_zoneCollider__param = null;
+public Single swimAcceleration;
+private Boolean __lcl_hasInput_SystemBoolean_0 = false;
+private Boolean isPlayerSeated = false;
+private Single __intnl_SystemSingle_5 = 0f;
+private Vector3 __lcl_playerPos_UnityEngineVector3_1 = new Vector3(0f, 0f, 0f);
+private Vector3 __lcl_entryVelocity_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_0 = null;
+private String __const_SystemString_3 = "__0___0_IsPositionInZone__ret";
+private UdonBehaviour __this_VRCUdonUdonBehaviour_0 = this;
+public Single fastEntrySpeedThreshold;
+private Boolean __intnl_SystemBoolean_18 = false;
+private Boolean __intnl_SystemBoolean_28 = false;
+public AudioClip slowEnterSound;
+public UdonBehaviour playerHPSystem;
+private Vector3 __intnl_UnityEngineVector3_3 = new Vector3(0f, 0f, 0f);
+
+
+public void _start()
+{
+localPlayer = Networking.LocalPlayer;
+currentStamina = maxStamina;
+UNDEF_72e01_9820();
+__intnl_SystemBoolean_0 = extraSwimZones != __const_SystemObject_0;
+if (__intnl_SystemBoolean_0)
+{
+break;
+}
+__lcl_i_SystemInt32_0 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_0 = extraSwimZones.Length;
+__intnl_SystemBoolean_1 = __lcl_i_SystemInt32_0 < __intnl_SystemInt32_0;
+if (__intnl_SystemBoolean_1)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(extraSwimZones[__lcl_i_SystemInt32_0]);
+__intnl_UnityEngineObject_0 = __intnl_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_2 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_2)
+{
+__intnl_VRCUdonUdonBehaviour_1 = (UdonBehaviour)(extraSwimZones[__lcl_i_SystemInt32_0]);
+__intnl_VRCUdonUdonBehaviour_1.SetProgramVariable(__const_SystemString_0, __this_VRCUdonUdonBehaviour_0);
+}
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_1;
+}
+}
+public void _update()
+{
+UNDEF_72e01_6644();
+UNDEF_72e01_9196();
+__intnl_SystemBoolean_3 = !isSwimming;
+if (__intnl_SystemBoolean_3)
+{
+}
+else
+{
+__intnl_SystemBoolean_3 = localPlayer == __const_SystemObject_0;
+}
+if (__intnl_SystemBoolean_3)
+{
+return;
+}
+if (isPlayerSeated)
+{
+UNDEF_72e01_5492();
+return;
+}
+IsPlayerInWaterBounds();
+if (__0_IsPlayerInWaterBounds__ret)
+{
+UNDEF_72e01_764();
+}
+UNDEF_72e01_5492();
+}
+private void UNDEF_72e01_764()
+{
+UNDEF_72e01_1944();
+}
+public void _inputJump()
+{
+udonJumping = inputJumpBoolValue;
+}
+public void _inputMoveHorizontal()
+{
+udonHorizontal = inputMoveHorizontalFloatValue;
+}
+public void _inputMoveVertical()
+{
+udonVertical = inputMoveVerticalFloatValue;
+}
+private void UNDEF_72e01_1944()
+{
+__lcl_headData_VRCSDKBaseVRCPlayerApiTrackingData_0 = localPlayer.GetTrackingData(__const_VRCSDKBaseVRCPlayerApiTrackingDataType_0);
+__intnl_UnityEngineQuaternion_0 = __lcl_headData_VRCSDKBaseVRCPlayerApiTrackingData_0.rotation;
+__lcl_forward_UnityEngineVector3_0 = __intnl_UnityEngineQuaternion_0 * __const_UnityEngineVector3_0;
+__intnl_UnityEngineQuaternion_1 = __lcl_headData_VRCSDKBaseVRCPlayerApiTrackingData_0.rotation;
+__lcl_right_UnityEngineVector3_0 = __intnl_UnityEngineQuaternion_1 * __const_UnityEngineVector3_1;
+__lcl_right_UnityEngineVector3_0.y = __const_SystemSingle_0;
+__intnl_UnityEngineVector3_0 = __lcl_right_UnityEngineVector3_0;
+__lcl_right_UnityEngineVector3_0.Normalize();
+__intnl_UnityEngineVector3_1 = __lcl_forward_UnityEngineVector3_0 * udonVertical;
+__intnl_UnityEngineVector3_2 = __lcl_right_UnityEngineVector3_0 * udonHorizontal;
+__lcl_inputDirection_UnityEngineVector3_0 = __intnl_UnityEngineVector3_1 + __intnl_UnityEngineVector3_2;
+__intnl_SystemSingle_0 = __lcl_inputDirection_UnityEngineVector3_0.magnitude;
+__intnl_SystemBoolean_4 = __intnl_SystemSingle_0 > __const_SystemSingle_1;
+if (__intnl_SystemBoolean_4)
+{
+__lcl_inputDirection_UnityEngineVector3_0.Normalize();
+}
+__lcl_targetVelocity_UnityEngineVector3_0 = __lcl_inputDirection_UnityEngineVector3_0 * swimSpeed;
+__intnl_SystemSingle_1 = __lcl_inputDirection_UnityEngineVector3_0.magnitude;
+__lcl_hasInput_SystemBoolean_0 = __intnl_SystemSingle_1 > __const_SystemSingle_2;
+if (__lcl_hasInput_SystemBoolean_0)
+{
+__intnl_SystemSingle_2 = Time.deltaTime;
+__intnl_SystemSingle_3 = swimAcceleration * __intnl_SystemSingle_2;
+currentVelocity = Vector3.MoveTowards(currentVelocity, __lcl_targetVelocity_UnityEngineVector3_0, __intnl_SystemSingle_3);
+}
+else
+{
+__intnl_SystemSingle_2 = Time.deltaTime;
+__intnl_SystemSingle_3 = swimDrag * __intnl_SystemSingle_2;
+currentVelocity = Vector3.MoveTowards(currentVelocity, __const_UnityEngineVector3_2, __intnl_SystemSingle_3);
+}
+__intnl_SystemSingle_2 = Time.time;
+__intnl_SystemSingle_3 = __intnl_SystemSingle_2 - swimStartTime;
+__lcl_spaceAllowed_SystemBoolean_0 = __intnl_SystemSingle_3 >= __const_SystemSingle_1;
+__intnl_SystemBoolean_5 = udonJumping;
+if (__intnl_SystemBoolean_5)
+{
+__intnl_SystemBoolean_5 = __lcl_spaceAllowed_SystemBoolean_0;
+}
+if (__intnl_SystemBoolean_5)
+{
+currentVelocity.y = riseSpeed;
+__intnl_UnityEngineVector3_3 = currentVelocity;
+IsNearSurface();
+if (__0_IsNearSurface__ret)
+{
+currentVelocity.y = surfaceJumpForce;
+__intnl_UnityEngineVector3_4 = currentVelocity;
+exitedViaJump = __const_SystemBoolean_0;
+UNDEF_72e01_5492();
+}
+}
+localPlayer.SetVelocity(currentVelocity);
+}
+private void IsNearSurface()
+{
+__lcl_playerPos_UnityEngineVector3_0 = localPlayer.GetPosition();
+GetWaterSurfaceY();
+__lcl_waterSurfaceY_SystemSingle_0 = __0_GetWaterSurfaceY__ret;
+__intnl_SystemSingle_4 = __lcl_playerPos_UnityEngineVector3_0.y;
+__intnl_SystemSingle_5 = __lcl_waterSurfaceY_SystemSingle_0 - __const_SystemSingle_3;
+__0_IsNearSurface__ret = __intnl_SystemSingle_4 >= __intnl_SystemSingle_5;
+return;
+}
+private void GetWaterSurfaceY()
+{
+__intnl_UnityEngineObject_2 = activeWaterCollider;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_6 = __intnl_UnityEngineObject_2 != __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_6)
+{
+__intnl_UnityEngineBounds_0 = activeWaterCollider.bounds;
+__intnl_UnityEngineVector3_5 = __intnl_UnityEngineBounds_0.max;
+__0_GetWaterSurfaceY__ret = __intnl_UnityEngineVector3_5.y;
+return;
+}
+__lcl_col_UnityEngineCollider_0 = (Collider)(__this_UnityEngineTransform_0.GetComponent(__const_SystemType_0));
+__intnl_UnityEngineObject_4 = __lcl_col_UnityEngineCollider_0;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_7 = __intnl_UnityEngineObject_4 != __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_7)
+{
+__intnl_UnityEngineBounds_0 = __lcl_col_UnityEngineCollider_0.bounds;
+__intnl_UnityEngineVector3_5 = __intnl_UnityEngineBounds_0.max;
+__0_GetWaterSurfaceY__ret = __intnl_UnityEngineVector3_5.y;
+}
+else
+{
+__intnl_UnityEngineVector3_6 = __this_UnityEngineTransform_0.position;
+__0_GetWaterSurfaceY__ret = __intnl_UnityEngineVector3_6.y;
+}
+return;
+}
+private void IsPlayerInWaterBounds()
+{
+__intnl_SystemBoolean_8 = localPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_8)
+{
+__0_IsPlayerInWaterBounds__ret = __const_SystemBoolean_1;
+return;
+}
+__lcl_playerPos_UnityEngineVector3_1 = localPlayer.GetPosition();
+__intnl_UnityEngineObject_6 = activeWaterCollider;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_9 = __intnl_UnityEngineObject_6 != __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_9)
+{
+__intnl_UnityEngineBounds_1 = activeWaterCollider.bounds;
+__0_IsPlayerInWaterBounds__ret = __intnl_UnityEngineBounds_1.Contains(__lcl_playerPos_UnityEngineVector3_1);
+return;
+}
+__lcl_col_UnityEngineCollider_1 = (Collider)(__this_UnityEngineTransform_0.GetComponent(__const_SystemType_0));
+__intnl_UnityEngineObject_8 = __lcl_col_UnityEngineCollider_1;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_10 = __intnl_UnityEngineObject_8 != __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_10)
+{
+__intnl_UnityEngineBounds_1 = __lcl_col_UnityEngineCollider_1.bounds;
+__0_IsPlayerInWaterBounds__ret = __intnl_UnityEngineBounds_1.Contains(__lcl_playerPos_UnityEngineVector3_1);
+return;
+}
+__0_IsPlayerInWaterBounds__ret = __const_SystemBoolean_1;
+return;
+}
+public void _onPlayerTriggerEnter()
+{
+__intnl_SystemBoolean_11 = onPlayerTriggerEnterPlayer.isLocal;
+if (__intnl_SystemBoolean_11)
+{
+UNDEF_72e01_3332();
+}
+}
+private void UNDEF_72e01_3332()
+{
+activeZoneCount = activeZoneCount + __const_SystemInt32_1;
+activeWaterCollider = (Collider)(__this_UnityEngineTransform_0.GetComponent(__const_SystemType_0));
+UNDEF_72e01_4884();
+}
+public void _onPlayerTriggerExit()
+{
+__intnl_SystemBoolean_12 = onPlayerTriggerExitPlayer.isLocal;
+if (__intnl_SystemBoolean_12)
+{
+UNDEF_72e01_3544();
+}
+}
+private void UNDEF_72e01_3544()
+{
+activeZoneCount = activeZoneCount - __const_SystemInt32_1;
+__intnl_SystemBoolean_13 = activeZoneCount <= __const_SystemInt32_0;
+if (__intnl_SystemBoolean_13)
+{
+activeZoneCount = __const_SystemInt32_0;
+UNDEF_72e01_5492();
+}
+}
+public void __0_OnExtraZoneEnter()
+{
+activeZoneCount = activeZoneCount + __const_SystemInt32_1;
+__intnl_UnityEngineObject_10 = __0_zoneCollider__param;
+__intnl_UnityEngineObject_11 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_14 = __intnl_UnityEngineObject_10 != __intnl_UnityEngineObject_11;
+if (__intnl_SystemBoolean_14)
+{
+activeWaterCollider = __0_zoneCollider__param;
+}
+UNDEF_72e01_4884();
+}
+public void __0_OnExtraZoneExit()
+{
+activeZoneCount = activeZoneCount - __const_SystemInt32_1;
+__intnl_SystemBoolean_15 = activeZoneCount <= __const_SystemInt32_0;
+if (__intnl_SystemBoolean_15)
+{
+activeZoneCount = __const_SystemInt32_0;
+UNDEF_72e01_5492();
+}
+}
+private void UNDEF_72e01_4884()
+{
+if (isSwimming)
+{
+return;
+}
+if (isPlayerSeated)
+{
+return;
+}
+__lcl_entryVelocity_UnityEngineVector3_0 = localPlayer.GetVelocity();
+__lcl_entrySpeed_SystemSingle_0 = __lcl_entryVelocity_UnityEngineVector3_0.magnitude;
+isSwimming = __const_SystemBoolean_0;
+if (exitedViaJump)
+{
+swimStartTime = Time.time;
+exitedViaJump = __const_SystemBoolean_1;
+}
+else
+{
+__intnl_SystemSingle_6 = Time.time;
+swimStartTime = __intnl_SystemSingle_6 - __const_SystemSingle_1;
+}
+currentVelocity = __lcl_entryVelocity_UnityEngineVector3_0 * __const_SystemSingle_3;
+localPlayer.SetGravityStrength(__const_SystemSingle_0);
+__lcl_isFastEntry_SystemBoolean_0 = __lcl_entrySpeed_SystemSingle_0 >= fastEntrySpeedThreshold;
+__intnl_UnityEngineObject_12 = audioSource;
+__intnl_UnityEngineObject_13 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_16 = __intnl_UnityEngineObject_12 != __intnl_UnityEngineObject_13;
+if (__intnl_SystemBoolean_16)
+{
+__intnl_SystemBoolean_17 = __lcl_isFastEntry_SystemBoolean_0;
+if (__intnl_SystemBoolean_17)
+{
+__intnl_UnityEngineObject_14 = fastEnterSound;
+__intnl_UnityEngineObject_15 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_17 = __intnl_UnityEngineObject_14 != __intnl_UnityEngineObject_15;
+}
+if (__intnl_SystemBoolean_17)
+{
+__intnl_SystemSingle_6 = Random.Range(__const_SystemSingle_4, __const_SystemSingle_5);
+audioSource.pitch = __intnl_SystemSingle_6;
+audioSource.PlayOneShot(fastEnterSound);
+}
+else
+{
+__intnl_SystemBoolean_18 = !__lcl_isFastEntry_SystemBoolean_0;
+if (__intnl_SystemBoolean_18)
+{
+__intnl_UnityEngineObject_16 = slowEnterSound;
+__intnl_UnityEngineObject_17 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_18 = __intnl_UnityEngineObject_16 != __intnl_UnityEngineObject_17;
+}
+if (__intnl_SystemBoolean_18)
+{
+__intnl_SystemSingle_6 = Random.Range(__const_SystemSingle_4, __const_SystemSingle_5);
+audioSource.pitch = __intnl_SystemSingle_6;
+audioSource.PlayOneShot(slowEnterSound);
+}
+}
+}
+__intnl_SystemBoolean_17 = __lcl_isFastEntry_SystemBoolean_0;
+if (__intnl_SystemBoolean_17)
+{
+__intnl_UnityEngineObject_14 = splashParticlePrefab;
+__intnl_UnityEngineObject_15 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_17 = __intnl_UnityEngineObject_14 != __intnl_UnityEngineObject_15;
+}
+if (__intnl_SystemBoolean_17)
+{
+UNDEF_72e01_5440();
+}
+}
+private void UNDEF_72e01_5440()
+{
+__lcl_playerPos_UnityEngineVector3_2 = localPlayer.GetPosition();
+GetWaterSurfaceY();
+__lcl_waterY_SystemSingle_0 = __0_GetWaterSurfaceY__ret;
+__intnl_SystemSingle_7 = __lcl_playerPos_UnityEngineVector3_2.x;
+__intnl_SystemSingle_8 = __lcl_playerPos_UnityEngineVector3_2.z;
+__lcl_splashPos_UnityEngineVector3_0 = Vector3.ctor(__intnl_SystemSingle_7, __lcl_waterY_SystemSingle_0, __intnl_SystemSingle_8);
+__1__intnlparam = splashParticlePrefab;
+UNDEF_72e01_10584();
+__lcl_splash_UnityEngineGameObject_0 = __0__intnlparam;
+__intnl_UnityEngineTransform_0 = __lcl_splash_UnityEngineGameObject_0.transform;
+__intnl_UnityEngineTransform_0.position = __lcl_splashPos_UnityEngineVector3_0;
+__intnl_UnityEngineTransform_1 = __lcl_splash_UnityEngineGameObject_0.transform;
+__intnl_UnityEngineTransform_1.rotation = __const_UnityEngineQuaternion_0;
+__lcl_splash_UnityEngineGameObject_0.SetActive(__const_SystemBoolean_0);
+__intnl_UnityEngineTransform_2 = __lcl_splash_UnityEngineGameObject_0.transform;
+__lcl_ps_UnityEngineParticleSystem_0 = (ParticleSystem)(__intnl_UnityEngineTransform_2.GetComponent(__const_SystemType_1));
+__intnl_UnityEngineObject_18 = __lcl_ps_UnityEngineParticleSystem_0;
+__intnl_UnityEngineObject_19 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_19 = __intnl_UnityEngineObject_18 != __intnl_UnityEngineObject_19;
+if (__intnl_SystemBoolean_19)
+{
+__lcl_ps_UnityEngineParticleSystem_0.Play();
+}
+__intnl_UnityEngineObject_20 = __lcl_splash_UnityEngineGameObject_0;
+Object.Destroy(__intnl_UnityEngineObject_20, __const_SystemSingle_6);
+}
+private void UNDEF_72e01_5492()
+{
+if (isSwimming)
+{
+UNDEF_72e01_5656();
+}
+}
+private void UNDEF_72e01_5656()
+{
+isSwimming = __const_SystemBoolean_1;
+swimExitTime = Time.time;
+localPlayer.SetGravityStrength(__const_SystemSingle_1);
+__intnl_SystemBoolean_20 = activeZoneCount == __const_SystemInt32_0;
+if (__intnl_SystemBoolean_20)
+{
+activeWaterCollider = (Collider)__const_SystemObject_0;
+}
+UNDEF_72e01_8728();
+}
+private void UNDEF_72e01_6644()
+{
+if (isPlayerSeated)
+{
+UNDEF_72e01_8728();
+__intnl_SystemSingle_9 = Time.deltaTime;
+__intnl_SystemSingle_10 = staminaRegenRate * __intnl_SystemSingle_9;
+currentStamina = currentStamina + __intnl_SystemSingle_10;
+currentStamina = Mathf.Min(maxStamina, currentStamina);
+UNDEF_72e01_9820();
+return;
+}
+if (isSwimming)
+{
+ShouldDrainStamina();
+__lcl_shouldDrain_SystemBoolean_0 = __0_ShouldDrainStamina__ret;
+if (__lcl_shouldDrain_SystemBoolean_0)
+{
+__intnl_SystemSingle_9 = Time.deltaTime;
+__intnl_SystemSingle_10 = staminaDrainRate * __intnl_SystemSingle_9;
+currentStamina = currentStamina - __intnl_SystemSingle_10;
+currentStamina = Mathf.Max(__const_SystemSingle_0, currentStamina);
+__intnl_SystemBoolean_21 = currentStamina <= __const_SystemSingle_0;
+if (__intnl_SystemBoolean_21)
+{
+UNDEF_72e01_8676();
+}
+}
+else
+{
+__intnl_SystemSingle_9 = Time.deltaTime;
+__intnl_SystemSingle_10 = staminaRegenRate * __intnl_SystemSingle_9;
+currentStamina = currentStamina + __intnl_SystemSingle_10;
+currentStamina = Mathf.Min(maxStamina, currentStamina);
+UNDEF_72e01_8728();
+}
+}
+else
+{
+GetCurrentSafeZone();
+__intnl_UnityEngineObject_21 = __0_GetCurrentSafeZone__ret;
+__intnl_UnityEngineObject_22 = (Object)__const_SystemObject_0;
+__lcl_inSafeZone_SystemBoolean_0 = __intnl_UnityEngineObject_21 != __intnl_UnityEngineObject_22;
+__intnl_SystemSingle_9 = Time.time;
+__intnl_SystemSingle_10 = __intnl_SystemSingle_9 - swimExitTime;
+__lcl_regenDelayPassed_SystemBoolean_0 = __intnl_SystemSingle_10 >= staminaRegenDelay;
+__intnl_SystemBoolean_21 = __lcl_inSafeZone_SystemBoolean_0;
+if (__intnl_SystemBoolean_21)
+{
+}
+else
+{
+__intnl_SystemBoolean_21 = __lcl_regenDelayPassed_SystemBoolean_0;
+}
+if (__intnl_SystemBoolean_21)
+{
+__intnl_SystemSingle_11 = Time.deltaTime;
+__intnl_SystemSingle_12 = staminaRegenRate * __intnl_SystemSingle_11;
+currentStamina = currentStamina + __intnl_SystemSingle_12;
+currentStamina = Mathf.Min(maxStamina, currentStamina);
+}
+UNDEF_72e01_8728();
+}
+UNDEF_72e01_9820();
+}
+private void ShouldDrainStamina()
+{
+if (isPlayerSeated)
+{
+__0_ShouldDrainStamina__ret = __const_SystemBoolean_1;
+return;
+}
+GetCurrentSafeZone();
+__lcl_safeZone_VRCUdonUdonBehaviour_0 = __0_GetCurrentSafeZone__ret;
+__intnl_UnityEngineObject_23 = __lcl_safeZone_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_24 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_22 = __intnl_UnityEngineObject_23 != __intnl_UnityEngineObject_24;
+if (__intnl_SystemBoolean_22)
+{
+IsHeadAboveWater();
+__0_ShouldDrainStamina__ret = !__0_IsHeadAboveWater__ret;
+return;
+}
+__0_ShouldDrainStamina__ret = __const_SystemBoolean_0;
+return;
+}
+private void GetCurrentSafeZone()
+{
+__intnl_SystemBoolean_23 = localPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_23)
+{
+}
+else
+{
+__intnl_SystemBoolean_23 = swimSafeZones == __const_SystemObject_0;
+}
+if (__intnl_SystemBoolean_23)
+{
+__0_GetCurrentSafeZone__ret = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+__lcl_playerPos_UnityEngineVector3_3 = localPlayer.GetPosition();
+__lcl_i_SystemInt32_1 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_1 = swimSafeZones.Length;
+__intnl_SystemBoolean_24 = __lcl_i_SystemInt32_1 < __intnl_SystemInt32_1;
+if (__intnl_SystemBoolean_24)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_2 = (UdonBehaviour)(swimSafeZones[__lcl_i_SystemInt32_1]);
+__intnl_UnityEngineObject_25 = __intnl_VRCUdonUdonBehaviour_2;
+__intnl_UnityEngineObject_26 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_25 = __intnl_UnityEngineObject_25 != __intnl_UnityEngineObject_26;
+if (__intnl_SystemBoolean_25)
+{
+__intnl_VRCUdonUdonBehaviour_3 = (UdonBehaviour)(swimSafeZones[__lcl_i_SystemInt32_1]);
+__intnl_VRCUdonUdonBehaviour_3.SetProgramVariable(__const_SystemString_1, __lcl_playerPos_UnityEngineVector3_3);
+__intnl_VRCUdonUdonBehaviour_3.SendCustomEvent(__const_SystemString_2);
+__intnl_SystemObject_0 = __intnl_VRCUdonUdonBehaviour_3.GetProgramVariable(__const_SystemString_3);
+__intnl_SystemBoolean_26 = (Boolean)__intnl_SystemObject_0;
+__intnl_SystemBoolean_25 = __intnl_SystemBoolean_26;
+}
+if (__intnl_SystemBoolean_25)
+{
+__0_GetCurrentSafeZone__ret = (UdonBehaviour)(swimSafeZones[__lcl_i_SystemInt32_1]);
+return;
+}
+__lcl_i_SystemInt32_1 = __lcl_i_SystemInt32_1 + __const_SystemInt32_1;
+}
+__0_GetCurrentSafeZone__ret = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+private void IsHeadAboveWater()
+{
+__intnl_SystemBoolean_27 = localPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_27)
+{
+__0_IsHeadAboveWater__ret = __const_SystemBoolean_1;
+return;
+}
+__lcl_headData_VRCSDKBaseVRCPlayerApiTrackingData_1 = localPlayer.GetTrackingData(__const_VRCSDKBaseVRCPlayerApiTrackingDataType_0);
+__intnl_UnityEngineVector3_7 = __lcl_headData_VRCSDKBaseVRCPlayerApiTrackingData_1.position;
+__lcl_headY_SystemSingle_0 = __intnl_UnityEngineVector3_7.y;
+GetWaterSurfaceY();
+__lcl_waterSurfaceY_SystemSingle_1 = __0_GetWaterSurfaceY__ret;
+__intnl_SystemSingle_13 = __lcl_waterSurfaceY_SystemSingle_1 + surfaceBufferHeight;
+__0_IsHeadAboveWater__ret = __lcl_headY_SystemSingle_0 > __intnl_SystemSingle_13;
+return;
+}
+private void UNDEF_72e01_8676()
+{
+if (isDrowning)
+{
+}
+else
+{
+isDrowning = __const_SystemBoolean_0;
+drowningDamageAccumulator = __const_SystemSingle_0;
+__intnl_UnityEngineObject_27 = audioSource;
+__intnl_UnityEngineObject_28 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_28 = __intnl_UnityEngineObject_27 != __intnl_UnityEngineObject_28;
+if (__intnl_SystemBoolean_28)
+{
+__intnl_UnityEngineObject_29 = drowningSound;
+__intnl_UnityEngineObject_30 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_28 = __intnl_UnityEngineObject_29 != __intnl_UnityEngineObject_30;
+}
+if (__intnl_SystemBoolean_28)
+{
+audioSource.clip = drowningSound;
+audioSource.loop = __const_SystemBoolean_0;
+audioSource.Play();
+}
+}
+__intnl_SystemSingle_14 = Time.deltaTime;
+drowningDamageAccumulator = drowningDamageAccumulator + __intnl_SystemSingle_14;
+__intnl_SystemBoolean_28 = drowningDamageAccumulator >= __const_SystemSingle_1;
+if (__intnl_SystemBoolean_28)
+{
+__intnl_UnityEngineObject_27 = playerHPSystem;
+__intnl_UnityEngineObject_28 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_29 = __intnl_UnityEngineObject_27 != __intnl_UnityEngineObject_28;
+if (__intnl_SystemBoolean_29)
+{
+__intnl_SystemDouble_0 = Convert.ToDouble(healthDamageRate);
+__intnl_SystemDouble_1 = Math.Truncate(__intnl_SystemDouble_0);
+__intnl_SystemInt32_2 = Convert.ToInt32(__intnl_SystemDouble_1);
+playerHPSystem.SetProgramVariable(__const_SystemString_4, __intnl_SystemInt32_2);
+playerHPSystem.SendCustomEvent(__const_SystemString_5);
+drowningDamageAccumulator = __const_SystemSingle_0;
+}
+else
+{
+drowningDamageAccumulator = __const_SystemSingle_0;
+}
+}
+}
+private void UNDEF_72e01_8728()
+{
+if (isDrowning)
+{
+UNDEF_72e01_8984();
+}
+}
+private void UNDEF_72e01_8984()
+{
+isDrowning = __const_SystemBoolean_1;
+__intnl_UnityEngineObject_31 = audioSource;
+__intnl_UnityEngineObject_32 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_30 = __intnl_UnityEngineObject_31 != __intnl_UnityEngineObject_32;
+if (__intnl_SystemBoolean_30)
+{
+__intnl_UnityEngineAudioClip_0 = audioSource.clip;
+__intnl_UnityEngineObject_33 = __intnl_UnityEngineAudioClip_0;
+__intnl_UnityEngineObject_34 = drowningSound;
+__intnl_SystemBoolean_30 = __intnl_UnityEngineObject_33 == __intnl_UnityEngineObject_34;
+}
+if (__intnl_SystemBoolean_30)
+{
+audioSource.Stop();
+}
+}
+private void UNDEF_72e01_9196()
+{
+__intnl_SystemBoolean_31 = currentStamina >= maxStamina;
+if (__intnl_SystemBoolean_31)
+{
+__lcl_targetAlpha_SystemSingle_0 = __const_SystemSingle_0;
+}
+else
+{
+__lcl_targetAlpha_SystemSingle_0 = __const_SystemSingle_1;
+}
+__intnl_SystemSingle_15 = Time.deltaTime;
+__intnl_SystemSingle_16 = fadeSpeed * __intnl_SystemSingle_15;
+currentUIAlpha = Mathf.MoveTowards(currentUIAlpha, __lcl_targetAlpha_SystemSingle_0, __intnl_SystemSingle_16);
+}
+private void UNDEF_72e01_9820()
+{
+__intnl_UnityEngineObject_35 = staminaBarFill;
+__intnl_UnityEngineObject_36 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_32 = __intnl_UnityEngineObject_35 != __intnl_UnityEngineObject_36;
+if (__intnl_SystemBoolean_32)
+{
+__intnl_SystemSingle_17 = currentStamina / maxStamina;
+staminaBarFill.fillAmount = __intnl_SystemSingle_17;
+__intnl_SystemBoolean_33 = currentStamina <= __const_SystemSingle_0;
+if (__intnl_SystemBoolean_33)
+{
+__lcl_barColor_UnityEngineColor_0 = __const_UnityEngineColor_0;
+}
+else
+{
+__intnl_SystemSingle_18 = maxStamina * __const_SystemSingle_7;
+__intnl_SystemBoolean_34 = currentStamina <= __intnl_SystemSingle_18;
+if (__intnl_SystemBoolean_34)
+{
+__lcl_barColor_UnityEngineColor_0 = __const_UnityEngineColor_1;
+}
+else
+{
+__lcl_barColor_UnityEngineColor_0 = __const_UnityEngineColor_2;
+}
+}
+__lcl_barColor_UnityEngineColor_0.a = currentUIAlpha;
+__intnl_UnityEngineColor_0 = __lcl_barColor_UnityEngineColor_0;
+staminaBarFill.color = __lcl_barColor_UnityEngineColor_0;
+}
+__intnl_UnityEngineObject_37 = staminaBarBackground;
+__intnl_UnityEngineObject_38 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_33 = __intnl_UnityEngineObject_37 != __intnl_UnityEngineObject_38;
+if (__intnl_SystemBoolean_33)
+{
+__lcl_bgColor_UnityEngineColor_0 = staminaBarBackground.color;
+__lcl_bgColor_UnityEngineColor_0.a = currentUIAlpha;
+__intnl_UnityEngineColor_0 = __lcl_bgColor_UnityEngineColor_0;
+staminaBarBackground.color = __lcl_bgColor_UnityEngineColor_0;
+}
+}
+public void IsPlayerSwimming()
+{
+__0_IsPlayerSwimming__ret = isSwimming;
+}
+public void GetCurrentStamina()
+{
+__0_GetCurrentStamina__ret = currentStamina;
+}
+public void GetStaminaPercentage()
+{
+__0_GetStaminaPercentage__ret = currentStamina / maxStamina;
+}
+public void IsPlayerDrowning()
+{
+__0_IsPlayerDrowning__ret = isDrowning;
+}
+public void __0_AddStamina()
+{
+__intnl_SystemSingle_19 = currentStamina + __0_amount__param;
+currentStamina = Mathf.Min(maxStamina, __intnl_SystemSingle_19);
+UNDEF_72e01_9820();
+}
+public void __0_SetPlayerSeated()
+{
+isPlayerSeated = __0_seated__param;
+if (__0_seated__param)
+{
+break;
+}
+UNDEF_72e01_8728();
+if (isSwimming)
+{
+break;
+}
+UNDEF_72e01_5492();
+}
+public void IsPlayerSeatedInStation()
+{
+__0_IsPlayerSeatedInStation__ret = isPlayerSeated;
+}
+public void _onPlayerRespawn()
+{
+__intnl_SystemBoolean_35 = onPlayerRespawnPlayer.isLocal;
+if (__intnl_SystemBoolean_35)
+{
+UNDEF_72e01_10520();
+}
+}
+private void UNDEF_72e01_10520()
+{
+if (isSwimming)
+{
+isSwimming = __const_SystemBoolean_1;
+localPlayer.SetGravityStrength(__const_SystemSingle_1);
+}
+currentVelocity = __const_UnityEngineVector3_2;
+UNDEF_72e01_8728();
+currentStamina = maxStamina;
+UNDEF_72e01_9820();
+}
+private void UNDEF_72e01_10584()
+{
+__0__intnlparam = Object.Instantiate(__1__intnlparam);
+return;
+}
+private void UNDEF_72e01_10624()
+{
+__2__intnlparam = (GameObject)__const_SystemObject_0;
+}
+}

@@ -1,0 +1,256 @@
+using System;
+using UnityEngine;
+using VRC.SDKBase;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Single __intnl_SystemSingle_0 = 0f;
+private Int32 distanceCheckCounter = 0;
+private Single __const_SystemSingle_0 = 3.141593f;
+private Single __intnl_SystemSingle_10 = 0f;
+private Single __intnl_SystemSingle_11 = 0f;
+private Single __intnl_SystemSingle_12 = 0f;
+private Single __intnl_SystemSingle_8 = 0f;
+private UInt32 __gintnl_SystemUInt32_4 = 2408;
+private UInt32 __gintnl_SystemUInt32_1 = 2120;
+private UInt32 __gintnl_SystemUInt32_0 = 992;
+private UInt32 __gintnl_SystemUInt32_3 = 2344;
+private UInt32 __gintnl_SystemUInt32_2 = 2232;
+private Boolean __const_SystemBoolean_0 = true;
+private Boolean __const_SystemBoolean_1 = false;
+private Single __0_value__param = 0f;
+private Single[] sinValues = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Single __intnl_SystemSingle_7 = 0f;
+private Int64 __refl_typeid = -9139159957315791594;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Vector3 __lcl_point_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Boolean __intnl_SystemBoolean_11 = false;
+public Transform startPoint;
+public Boolean useWorldSpace;
+private Single __intnl_SystemSingle_2 = 0f;
+private Single __const_SystemSingle_2 = 0.5f;
+private Vector3 __intnl_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+public Transform endPoint;
+private object __const_SystemObject_0 = null;
+private Type __const_SystemType_0 = typeof(LineRenderer);
+private Single __intnl_SystemSingle_1 = 0f;
+private Single __const_SystemSingle_1 = 0.001f;
+private Vector3 __lcl_currentEndPos_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+public Single mediumDistance;
+private Single[] tValues = null;
+private Int32 updateInterval = 1;
+public Int32 curvePoints;
+private Single __lcl_distance_SystemSingle_0 = 0f;
+private Single __intnl_SystemSingle_9 = 0f;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private Single targetCurveAmount = 0f;
+private Vector3[] pointsArray = null;
+private Int32 __lcl_i_SystemInt32_1 = 0;
+private Int32 __lcl_i_SystemInt32_0 = 0;
+private Single __intnl_SystemSingle_4 = 0f;
+private LineRenderer lineRenderer = null;
+private Vector3 __intnl_UnityEngineVector3_2 = new Vector3(0f, 0f, 0f);
+private Boolean __intnl_SystemBoolean_12 = false;
+private String __refl_typename = "RopeRendererUdon";
+private Boolean __0_visible__param = false;
+public Single farDistance;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Single __intnl_SystemSingle_3 = 0f;
+private Transform __this_UnityEngineTransform_0 = this;
+private Vector3 __intnl_UnityEngineVector3_1 = new Vector3(0f, 0f, 0f);
+public Single closeDistance;
+private Vector3 __intnl_UnityEngineVector3_4 = new Vector3(0f, 0f, 0f);
+public Single curveAmount;
+private VRCPlayerApi localPlayer = null;
+private Single __intnl_SystemSingle_6 = 0f;
+private Vector3 __lcl_ropeMidpoint_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Int32 frameCounter = 0;
+public Single curveLerpSpeed;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Vector3 __lcl_currentStartPos_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Int32 __const_SystemInt32_1 = 1;
+private Int32 __const_SystemInt32_0 = 0;
+private Int32 __const_SystemInt32_3 = 2;
+private Int32 __const_SystemInt32_2 = 10;
+private Int32 __const_SystemInt32_4 = 5;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private Single __intnl_SystemSingle_5 = 0f;
+private Vector3 __intnl_UnityEngineVector3_3 = new Vector3(0f, 0f, 0f);
+
+
+public void _start()
+{
+lineRenderer = (LineRenderer)(__this_UnityEngineTransform_0.GetComponent(__const_SystemType_0));
+lineRenderer.positionCount = curvePoints;
+lineRenderer.useWorldSpace = useWorldSpace;
+localPlayer = Networking.LocalPlayer;
+targetCurveAmount = curveAmount;
+pointsArray = curvePoints.ctor();
+tValues = curvePoints.ctor();
+sinValues = curvePoints.ctor();
+__lcl_i_SystemInt32_0 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_0 = __lcl_i_SystemInt32_0 < curvePoints;
+if (__intnl_SystemBoolean_0)
+{
+break;
+}
+__intnl_SystemSingle_0 = Convert.ToSingle(__lcl_i_SystemInt32_0);
+__intnl_SystemInt32_0 = curvePoints - __const_SystemInt32_1;
+__intnl_SystemSingle_1 = Convert.ToSingle(__intnl_SystemInt32_0);
+__intnl_SystemSingle_2 = __intnl_SystemSingle_0 / __intnl_SystemSingle_1;
+tValues.Set(__lcl_i_SystemInt32_0, __intnl_SystemSingle_2);
+__intnl_SystemSingle_3 = tValues[__lcl_i_SystemInt32_0];
+__intnl_SystemSingle_4 = __intnl_SystemSingle_3 * __const_SystemSingle_0;
+__intnl_SystemSingle_5 = Mathf.Sin(__intnl_SystemSingle_4);
+sinValues.Set(__lcl_i_SystemInt32_0, __intnl_SystemSingle_5);
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_1;
+}
+}
+public void _update()
+{
+__intnl_UnityEngineObject_0 = startPoint;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_2 = __intnl_UnityEngineObject_0 == __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_2)
+{
+}
+else
+{
+__intnl_UnityEngineObject_2 = endPoint;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_2 = __intnl_UnityEngineObject_2 == __intnl_UnityEngineObject_3;
+}
+__intnl_SystemBoolean_1 = __intnl_SystemBoolean_2;
+if (__intnl_SystemBoolean_1)
+{
+}
+else
+{
+__intnl_SystemBoolean_1 = localPlayer == __const_SystemObject_0;
+}
+if (__intnl_SystemBoolean_1)
+{
+return;
+}
+distanceCheckCounter = distanceCheckCounter + __const_SystemInt32_1;
+__intnl_SystemBoolean_3 = distanceCheckCounter >= __const_SystemInt32_2;
+if (__intnl_SystemBoolean_3)
+{
+distanceCheckCounter = __const_SystemInt32_0;
+UNDEF_990da_2428();
+}
+__intnl_SystemBoolean_4 = updateInterval <= __const_SystemInt32_0;
+if (__intnl_SystemBoolean_4)
+{
+return;
+}
+__intnl_SystemSingle_6 = curveAmount - targetCurveAmount;
+__intnl_SystemSingle_7 = Mathf.Abs(__intnl_SystemSingle_6);
+__intnl_SystemBoolean_5 = __intnl_SystemSingle_7 > __const_SystemSingle_1;
+if (__intnl_SystemBoolean_5)
+{
+__intnl_SystemSingle_8 = Time.deltaTime;
+__intnl_SystemSingle_9 = __intnl_SystemSingle_8 * curveLerpSpeed;
+curveAmount = Mathf.Lerp(curveAmount, targetCurveAmount, __intnl_SystemSingle_9);
+}
+frameCounter = frameCounter + __const_SystemInt32_1;
+__intnl_SystemBoolean_6 = frameCounter < updateInterval;
+if (__intnl_SystemBoolean_6)
+{
+return;
+}
+frameCounter = __const_SystemInt32_0;
+__lcl_currentStartPos_UnityEngineVector3_0 = startPoint.position;
+__lcl_currentEndPos_UnityEngineVector3_0 = endPoint.position;
+__lcl_i_SystemInt32_1 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_7 = __lcl_i_SystemInt32_1 < curvePoints;
+if (__intnl_SystemBoolean_7)
+{
+break;
+}
+__intnl_SystemSingle_8 = tValues[__lcl_i_SystemInt32_1];
+__lcl_point_UnityEngineVector3_0 = Vector3.Lerp(__lcl_currentStartPos_UnityEngineVector3_0, __lcl_currentEndPos_UnityEngineVector3_0, __intnl_SystemSingle_8);
+__intnl_SystemSingle_9 = __lcl_point_UnityEngineVector3_0.y;
+__intnl_SystemSingle_10 = sinValues[__lcl_i_SystemInt32_1];
+__intnl_SystemSingle_11 = __intnl_SystemSingle_10 * curveAmount;
+__intnl_SystemSingle_12 = __intnl_SystemSingle_9 - __intnl_SystemSingle_11;
+__lcl_point_UnityEngineVector3_0.y = __intnl_SystemSingle_12;
+__intnl_UnityEngineVector3_0 = __lcl_point_UnityEngineVector3_0;
+pointsArray.Set(__lcl_i_SystemInt32_1, __lcl_point_UnityEngineVector3_0);
+__lcl_i_SystemInt32_1 = __lcl_i_SystemInt32_1 + __const_SystemInt32_1;
+}
+lineRenderer.SetPositions(pointsArray);
+}
+private void UNDEF_990da_2428()
+{
+__intnl_UnityEngineVector3_1 = startPoint.position;
+__intnl_UnityEngineVector3_2 = endPoint.position;
+__intnl_UnityEngineVector3_3 = __intnl_UnityEngineVector3_1 + __intnl_UnityEngineVector3_2;
+__lcl_ropeMidpoint_UnityEngineVector3_0 = __intnl_UnityEngineVector3_3 * __const_SystemSingle_2;
+__intnl_UnityEngineVector3_4 = localPlayer.GetPosition();
+__lcl_distance_SystemSingle_0 = Vector3.Distance(__intnl_UnityEngineVector3_4, __lcl_ropeMidpoint_UnityEngineVector3_0);
+__intnl_SystemBoolean_8 = __lcl_distance_SystemSingle_0 <= closeDistance;
+if (__intnl_SystemBoolean_8)
+{
+updateInterval = __const_SystemInt32_1;
+__0_visible__param = __const_SystemBoolean_0;
+UNDEF_990da_2552();
+}
+else
+{
+__intnl_SystemBoolean_9 = __lcl_distance_SystemSingle_0 <= mediumDistance;
+if (__intnl_SystemBoolean_9)
+{
+updateInterval = __const_SystemInt32_3;
+__0_visible__param = __const_SystemBoolean_0;
+UNDEF_990da_2552();
+}
+else
+{
+__intnl_SystemBoolean_10 = __lcl_distance_SystemSingle_0 <= farDistance;
+if (__intnl_SystemBoolean_10)
+{
+updateInterval = __const_SystemInt32_4;
+__0_visible__param = __const_SystemBoolean_0;
+UNDEF_990da_2552();
+}
+else
+{
+updateInterval = __const_SystemInt32_0;
+__0_visible__param = __const_SystemBoolean_1;
+UNDEF_990da_2552();
+}
+}
+}
+}
+private void UNDEF_990da_2552()
+{
+__intnl_SystemBoolean_11 = lineRenderer.enabled;
+__intnl_SystemBoolean_12 = __intnl_SystemBoolean_11 != __0_visible__param;
+if (__intnl_SystemBoolean_12)
+{
+lineRenderer.enabled = __0_visible__param;
+}
+}
+public void __0_SetCurveAmount()
+{
+targetCurveAmount = __0_value__param;
+}
+}

@@ -1,0 +1,413 @@
+void _start()
+24 __intnl_UnityEngineObject_0 = feedbackText
+44 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+88 if (__intnl_SystemBoolean_0) //120
+{
+G_feedbackText.set_text(__const_SystemString_0);// 112
+}
+132 return;
+void _update()
+156 if (feedbackActive) //276
+{
+feedbackTimer = op_Subtraction(__intnl_SystemSingle_0, feedbackTimer);// 204
+252 if (__intnl_SystemBoolean_1) //276
+{
+268 JUMP 9260
+}
+}
+288 return;
+void _onPlayerRestored()
+344 if (__intnl_SystemBoolean_2) //360
+{
+352 JUMP 408
+}
+416 if (__intnl_SystemBoolean_2) //444
+{
+436 return;
+}
+452 JUMP 7320
+476 isInitialized = __const_SystemBoolean_0
+488 if (enableDebugLogs) //496
+{
+}
+508 return;
+void OnRedeemButtonClicked()
+532 JUMP 612
+552 return;
+void OnInputSubmit()
+576 JUMP 612
+596 return;
+620 if (isInitialized) //636
+{
+628 JUMP 712
+}
+660 __0_message__param = __const_SystemString_1
+680 __0_isSuccess__param = __const_SystemBoolean_1
+684 JUMP 8708
+704 return;
+728 __intnl_UnityEngineObject_2 = codeInputField
+748 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+792 if (__intnl_SystemBoolean_4) //808
+{
+800 JUMP 880
+}
+824 __intnl_UnityEngineObject_4 = codeDatabase
+844 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+888 if (__intnl_SystemBoolean_4) //972
+{
+920 __0_message__param = __const_SystemString_2
+940 __0_isSuccess__param = __const_SystemBoolean_1
+944 JUMP 8708
+964 return;
+}
+__lcl_input_SystemString_0 = G_codeInputField.get_text();// 988
+1028 if (__intnl_SystemBoolean_5) //1044
+{
+1036 JUMP 1124
+}
+1132 if (__intnl_SystemBoolean_5) //1216
+{
+1164 __0_message__param = __const_SystemString_3
+1184 __0_isSuccess__param = __const_SystemBoolean_1
+1188 JUMP 8708
+1208 return;
+}
+__lcl_input_SystemString_0 = L_input.Trim();// 1232
+G_codeDatabase.SetProgramVariable(__lcl_input_SystemString_0, __const_SystemString_4);// 1264
+G_codeDatabase.SendCustomEvent(__const_SystemString_5);// 1288
+1368 __lcl_codeIndex_SystemInt32_0 = __intnl_SystemInt32_1
+1412 if (__intnl_SystemBoolean_6) //1496
+{
+1444 __0_message__param = __const_SystemString_7
+1464 __0_isSuccess__param = __const_SystemBoolean_1
+1468 JUMP 8708
+1488 return;
+}
+G_codeDatabase.SetProgramVariable(__lcl_codeIndex_SystemInt32_0, __const_SystemString_8);// 1520
+G_codeDatabase.SendCustomEvent(__const_SystemString_9);// 1544
+1600 __intnl_SystemBoolean_7 = __intnl_SystemObject_1
+1612 if (__intnl_SystemBoolean_7) //1628
+{
+1620 JUMP 1704
+}
+1652 __0_message__param = __const_SystemString_7
+1672 __0_isSuccess__param = __const_SystemBoolean_1
+1676 JUMP 8708
+1696 return;
+G_codeDatabase.SetProgramVariable(__lcl_codeIndex_SystemInt32_0, __const_SystemString_11);// 1728
+G_codeDatabase.SendCustomEvent(__const_SystemString_12);// 1752
+1808 __intnl_SystemBoolean_8 = __intnl_SystemObject_2
+1820 if (__intnl_SystemBoolean_8) //1904
+{
+1852 __0_message__param = __const_SystemString_14
+1872 __0_isSuccess__param = __const_SystemBoolean_1
+1876 JUMP 8708
+1896 return;
+}
+G_codeDatabase.SetProgramVariable(__lcl_codeIndex_SystemInt32_0, __const_SystemString_15);// 1928
+G_codeDatabase.SendCustomEvent(__const_SystemString_16);// 1952
+2032 __lcl_codeId_SystemInt32_0 = __intnl_SystemInt32_2
+2060 __0_codeId__param = __lcl_codeId_SystemInt32_0
+2064 JUMP 5784
+2080 if (__0___0_HasRedeemedCode__ret) //2164
+{
+2112 __0_message__param = __const_SystemString_18
+2132 __0_isSuccess__param = __const_SystemBoolean_1
+2136 JUMP 8708
+2156 return;
+}
+2188 __0_index__param = __lcl_codeIndex_SystemInt32_0
+2192 JUMP 2516
+2216 __lcl_rewardText_SystemString_0 = __0___0_GrantAllRewards__ret
+2252 if (__intnl_SystemBoolean_9) //2324
+{
+2284 __0_message__param = __const_SystemString_19
+2304 __0_isSuccess__param = __const_SystemBoolean_1
+2308 JUMP 8708
+2316 JUMP 2488
+}
+2348 __1_codeId__param = __lcl_codeId_SystemInt32_0
+2352 JUMP 6940
+2368 JUMP 8240
+2432 __0_message__param = __intnl_SystemString_1
+2452 __0_isSuccess__param = __const_SystemBoolean_0
+2456 JUMP 8708
+G_codeInputField.set_text(__const_SystemString_0);// 2480
+2500 return;
+__lcl_rewards_SystemStringArray_0 = 5.ctor();// 2532
+2556 __lcl_rewardCount_SystemInt32_0 = __const_SystemInt32_0
+2576 __intnl_SystemInt32_3 = __0_index__param
+G_codeDatabase.SetProgramVariable(__0_index__param, __const_SystemString_21);// 2604
+G_codeDatabase.SendCustomEvent(__const_SystemString_22);// 2628
+2708 __lcl_currency_SystemInt32_0 = __intnl_SystemInt32_4
+2752 if (__intnl_SystemBoolean_10) //2832
+{
+2776 __intnl_UnityEngineObject_6 = playerStats
+2796 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+}
+2840 if (__intnl_SystemBoolean_10) //3020
+{
+G_playerStats.SetProgramVariable(__lcl_currency_SystemInt32_0, __const_SystemString_24);// 2872
+G_playerStats.SendCustomEvent(__const_SystemString_25);// 2896
+2920 __intnl_SystemInt32_5 = __lcl_rewardCount_SystemInt32_0
+__lcl_rewardCount_SystemInt32_0 = op_Addition(__const_SystemInt32_2, __intnl_SystemInt32_5);// 2948
+L_rewards.Set(__intnl_SystemString_2, __intnl_SystemInt32_5);// 3012
+}
+3036 __intnl_SystemInt32_5 = __0_index__param
+G_codeDatabase.SetProgramVariable(__0_index__param, __const_SystemString_27);// 3064
+G_codeDatabase.SendCustomEvent(__const_SystemString_28);// 3088
+3168 __lcl_questItemId_SystemInt32_0 = __intnl_SystemInt32_6
+3212 if (__intnl_SystemBoolean_11) //3292
+{
+3236 __intnl_UnityEngineObject_8 = questInventoryManager
+3256 __intnl_UnityEngineObject_9 = __const_SystemObject_0
+}
+3300 if (__intnl_SystemBoolean_11) //3752
+{
+3324 __intnl_SystemInt32_7 = __0_index__param
+G_codeDatabase.SetProgramVariable(__0_index__param, __const_SystemString_30);// 3352
+G_codeDatabase.SendCustomEvent(__const_SystemString_31);// 3376
+3456 __lcl_qty_SystemInt32_0 = __intnl_SystemInt32_8
+G_questInventoryManager.SetProgramVariable(__lcl_questItemId_SystemInt32_0, __const_SystemString_33);// 3484
+G_questInventoryManager.SetProgramVariable(__lcl_qty_SystemInt32_0, __const_SystemString_34);// 3516
+G_questInventoryManager.SendCustomEvent(__const_SystemString_35);// 3540
+3572 __0_itemId__param = __lcl_questItemId_SystemInt32_0
+3576 JUMP 6104
+3600 __lcl_itemName_SystemString_0 = __0___0_GetQuestItemName__ret
+3620 __intnl_SystemInt32_9 = __lcl_rewardCount_SystemInt32_0
+__lcl_rewardCount_SystemInt32_0 = op_Addition(__const_SystemInt32_2, __intnl_SystemInt32_9);// 3648
+L_rewards.Set(__intnl_SystemString_3, __intnl_SystemInt32_9);// 3744
+}
+3768 __intnl_SystemInt32_7 = __0_index__param
+G_codeDatabase.SetProgramVariable(__0_index__param, __const_SystemString_37);// 3796
+G_codeDatabase.SendCustomEvent(__const_SystemString_38);// 3820
+3900 __lcl_questItemId2_SystemInt32_0 = __intnl_SystemInt32_8
+3944 if (__intnl_SystemBoolean_12) //4024
+{
+3968 __intnl_UnityEngineObject_10 = questInventoryManager
+3988 __intnl_UnityEngineObject_11 = __const_SystemObject_0
+}
+4032 if (__intnl_SystemBoolean_12) //4484
+{
+4056 __intnl_SystemInt32_9 = __0_index__param
+G_codeDatabase.SetProgramVariable(__0_index__param, __const_SystemString_40);// 4084
+G_codeDatabase.SendCustomEvent(__const_SystemString_41);// 4108
+4188 __lcl_qty2_SystemInt32_0 = __intnl_SystemInt32_10
+G_questInventoryManager.SetProgramVariable(__lcl_questItemId2_SystemInt32_0, __const_SystemString_33);// 4216
+G_questInventoryManager.SetProgramVariable(__lcl_qty2_SystemInt32_0, __const_SystemString_34);// 4248
+G_questInventoryManager.SendCustomEvent(__const_SystemString_35);// 4272
+4304 __0_itemId__param = __lcl_questItemId2_SystemInt32_0
+4308 JUMP 6104
+4332 __lcl_itemName2_SystemString_0 = __0___0_GetQuestItemName__ret
+4352 __intnl_SystemInt32_11 = __lcl_rewardCount_SystemInt32_0
+__lcl_rewardCount_SystemInt32_0 = op_Addition(__const_SystemInt32_2, __intnl_SystemInt32_11);// 4380
+L_rewards.Set(__intnl_SystemString_3, __intnl_SystemInt32_11);// 4476
+}
+4500 __intnl_SystemInt32_9 = __0_index__param
+G_codeDatabase.SetProgramVariable(__0_index__param, __const_SystemString_43);// 4528
+G_codeDatabase.SendCustomEvent(__const_SystemString_44);// 4552
+4632 __lcl_skinId_SystemInt32_0 = __intnl_SystemInt32_10
+4676 if (__intnl_SystemBoolean_13) //4756
+{
+4700 __intnl_UnityEngineObject_12 = boatSkinDatabase
+4720 __intnl_UnityEngineObject_13 = __const_SystemObject_0
+}
+4764 if (__intnl_SystemBoolean_13) //4912
+{
+G_boatSkinDatabase.SetProgramVariable(__lcl_skinId_SystemInt32_0, __const_SystemString_46);// 4796
+G_boatSkinDatabase.SendCustomEvent(__const_SystemString_47);// 4820
+4844 __intnl_SystemInt32_11 = __lcl_rewardCount_SystemInt32_0
+__lcl_rewardCount_SystemInt32_0 = op_Addition(__const_SystemInt32_2, __intnl_SystemInt32_11);// 4872
+L_rewards.Set(__const_SystemString_48, __intnl_SystemInt32_11);// 4904
+}
+4928 __intnl_SystemInt32_11 = __0_index__param
+G_codeDatabase.SetProgramVariable(__0_index__param, __const_SystemString_49);// 4956
+G_codeDatabase.SendCustomEvent(__const_SystemString_50);// 4980
+5060 __lcl_petId_SystemInt32_0 = __intnl_SystemInt32_12
+5104 if (__intnl_SystemBoolean_14) //5184
+{
+5128 __intnl_UnityEngineObject_14 = afkPetInventory
+5148 __intnl_UnityEngineObject_15 = __const_SystemObject_0
+}
+5192 if (__intnl_SystemBoolean_14) //5392
+{
+G_afkPetInventory.SetProgramVariable(__lcl_petId_SystemInt32_0, __const_SystemString_52);// 5224
+G_afkPetInventory.SendCustomEvent(__const_SystemString_53);// 5248
+5304 __intnl_SystemBoolean_15 = __intnl_SystemObject_9
+5324 __intnl_SystemInt32_13 = __lcl_rewardCount_SystemInt32_0
+__lcl_rewardCount_SystemInt32_0 = op_Addition(__const_SystemInt32_2, __intnl_SystemInt32_13);// 5352
+L_rewards.Set(__const_SystemString_55, __intnl_SystemInt32_13);// 5384
+}
+5432 if (__intnl_SystemBoolean_15) //5480
+{
+5456 __0___0_GrantAllRewards__ret = __const_SystemObject_0
+5472 return;
+}
+__lcl_result_SystemString_0 = L_rewards.Get(__const_SystemInt32_0);// 5504
+5528 __lcl_i_SystemInt32_0 = __const_SystemInt32_2
+5572 if (__intnl_SystemBoolean_16) //5716
+{
+__lcl_result_SystemString_0 = op_Addition(__intnl_SystemString_3, __lcl_result_SystemString_0);// 5668
+__lcl_i_SystemInt32_0 = op_Addition(__const_SystemInt32_2, __lcl_i_SystemInt32_0);// 5700
+5708 JUMP 5532
+}
+5732 __0___0_GrantAllRewards__ret = __lcl_result_SystemString_0
+5748 return;
+5768 return;
+5800 __lcl_i_SystemInt32_1 = __const_SystemInt32_0
+5868 if (__intnl_SystemBoolean_17) //6036
+{
+5948 if (__intnl_SystemBoolean_18) //5996
+{
+5972 __0___0_HasRedeemedCode__ret = __const_SystemBoolean_0
+5988 return;
+}
+__lcl_i_SystemInt32_1 = op_Addition(__const_SystemInt32_2, __lcl_i_SystemInt32_1);// 6020
+6028 JUMP 5804
+}
+6052 __0___0_HasRedeemedCode__ret = __const_SystemBoolean_1
+6068 return;
+6088 return;
+6120 __intnl_UnityEngineObject_16 = questItemDatabase
+6140 __intnl_UnityEngineObject_17 = __const_SystemObject_0
+6184 if (__intnl_SystemBoolean_19) //6200
+{
+6192 JUMP 6284
+}
+6248 __intnl_UnityEngineComponentArray_0 = __intnl_SystemObject_10
+6292 if (__intnl_SystemBoolean_19) //6340
+{
+6316 __0___0_GetQuestItemName__ret = __const_SystemString_58
+6332 return;
+}
+6356 __lcl_i_SystemInt32_2 = __const_SystemInt32_0
+6408 __intnl_UnityEngineComponentArray_1 = __intnl_SystemObject_11
+6476 if (__intnl_SystemBoolean_20) //6872
+{
+6532 __intnl_UnityEngineComponentArray_2 = __intnl_SystemObject_12
+__lcl_item_VRCUdonUdonBehaviour_0 = G_questItemDatabase.GetProgramVariable(__const_SystemString_57).Get(__lcl_i_SystemInt32_2);// 6560
+6584 __intnl_UnityEngineObject_18 = __lcl_item_VRCUdonUdonBehaviour_0
+6604 __intnl_UnityEngineObject_19 = __const_SystemObject_0
+6648 if (__intnl_SystemBoolean_21) //6744
+{
+}
+6752 if (__intnl_SystemBoolean_21) //6832
+{
+6808 __0___0_GetQuestItemName__ret = __intnl_SystemObject_14
+6824 return;
+}
+__lcl_i_SystemInt32_2 = op_Addition(__const_SystemInt32_2, __lcl_i_SystemInt32_2);// 6856
+6864 JUMP 6360
+}
+6888 __0___0_GetQuestItemName__ret = __const_SystemString_58
+6904 return;
+6924 return;
+__lcl_newArray_SystemInt32Array_0 = op_Addition(__const_SystemInt32_2, __intnl_SystemInt32_18).ctor();// 7012
+7036 __lcl_i_SystemInt32_3 = __const_SystemInt32_0
+7104 if (__intnl_SystemBoolean_22) //7216
+{
+L_newArray.Set(__intnl_SystemInt32_21, __lcl_i_SystemInt32_3);// 7168
+__lcl_i_SystemInt32_3 = op_Addition(__const_SystemInt32_2, __lcl_i_SystemInt32_3);// 7200
+7208 JUMP 7040
+}
+L_newArray.Set(__1_codeId__param, __intnl_SystemInt32_20);// 7264
+7288 redeemedCodeIds = __lcl_newArray_SystemInt32Array_0
+7304 return;
+__lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0 = get_LocalPlayer();// 7328
+7376 if (__intnl_SystemBoolean_23) //7404
+{
+7396 return;
+}
+7452 if (__intnl_SystemBoolean_24) //8188
+{
+7492 if (__intnl_SystemBoolean_25) //7508
+{
+7500 JUMP 8180
+}
+__lcl_parts_SystemStringArray_0 = L_savedData.Split(__const_SystemStringSplitOptions_0, __const_SystemChar_0);// 7540
+redeemedCodeIds = L_parts.get_Length().ctor();// 7588
+7612 __lcl_validCount_SystemInt32_0 = __const_SystemInt32_0
+7632 __lcl_i_SystemInt32_4 = __const_SystemInt32_0
+7700 if (__intnl_SystemBoolean_26) //7892
+{
+7780 if (__intnl_SystemBoolean_27) //7852
+{
+L_newArray.Set(__lcl_codeId_SystemInt32_1, __lcl_validCount_SystemInt32_0);// 7812
+__lcl_validCount_SystemInt32_0 = op_Addition(__const_SystemInt32_2, __lcl_validCount_SystemInt32_0);// 7844
+}
+__lcl_i_SystemInt32_4 = op_Addition(__const_SystemInt32_2, __lcl_i_SystemInt32_4);// 7876
+7884 JUMP 7636
+}
+7956 if (__intnl_SystemBoolean_26) //8180
+{
+__lcl_trimmed_SystemInt32Array_0 = 0.ctor();// 7980
+8004 __lcl_i_SystemInt32_4 = __const_SystemInt32_0
+8048 if (__intnl_SystemBoolean_27) //8160
+{
+L_trimmed.Set(__intnl_SystemInt32_24, __lcl_i_SystemInt32_4);// 8112
+__lcl_i_SystemInt32_4 = op_Addition(__const_SystemInt32_2, __lcl_i_SystemInt32_4);// 8144
+8152 JUMP 8008
+}
+8176 redeemedCodeIds = __lcl_trimmed_SystemInt32Array_0
+}
+8180 JUMP 8212
+}
+redeemedCodeIds = 0.ctor();// 8204
+8224 return;
+8304 if (__intnl_SystemBoolean_28) //8356
+{
+SetString(__const_SystemString_0, __const_SystemString_61);// 8328
+8348 return;
+}
+__lcl_parts_SystemStringArray_1 = L_trimmed.get_Length().ctor();// 8396
+8420 __lcl_i_SystemInt32_5 = __const_SystemInt32_0
+8488 if (__intnl_SystemBoolean_29) //8624
+{
+L_parts.Set(__intnl_SystemString_5, __lcl_i_SystemInt32_5);// 8576
+__lcl_i_SystemInt32_5 = op_Addition(__const_SystemInt32_2, __lcl_i_SystemInt32_5);// 8608
+8616 JUMP 8424
+}
+SetString(__intnl_SystemString_5, __const_SystemString_61);// 8672
+8692 return;
+8724 __intnl_UnityEngineObject_20 = feedbackText
+8744 __intnl_UnityEngineObject_21 = __const_SystemObject_0
+8788 if (__intnl_SystemBoolean_30) //8928
+{
+G_feedbackText.set_text(__0_message__param);// 8812
+8836 __intnl_TMProTextMeshProUGUI_0 = feedbackText
+8848 if (__0_isSuccess__param) //8884
+{
+8872 __intnl_UnityEngineColor_0 = successColor
+8876 JUMP 8904
+}
+8900 __intnl_UnityEngineColor_0 = errorColor
+G_feedbackText.set_color(__intnl_UnityEngineColor_0);// 8920
+}
+8944 feedbackTimer = feedbackDuration
+8964 feedbackActive = __const_SystemBoolean_0
+8984 __intnl_UnityEngineObject_22 = audioSource
+9004 __intnl_UnityEngineObject_23 = __const_SystemObject_0
+9048 if (__intnl_SystemBoolean_31) //9232
+{
+9064 if (__0_isSuccess__param) //9100
+{
+9088 __lcl_clip_UnityEngineAudioClip_0 = successClip
+9092 JUMP 9120
+}
+9116 __lcl_clip_UnityEngineAudioClip_0 = errorClip
+9136 __intnl_UnityEngineObject_24 = __lcl_clip_UnityEngineAudioClip_0
+9156 __intnl_UnityEngineObject_25 = __const_SystemObject_0
+9200 if (__intnl_SystemBoolean_32) //9232
+{
+G_audioSource.PlayOneShot(__lcl_clip_UnityEngineAudioClip_0);// 9224
+}
+}
+9244 return;
+9276 feedbackActive = __const_SystemBoolean_1
+9296 __intnl_UnityEngineObject_26 = feedbackText
+9316 __intnl_UnityEngineObject_27 = __const_SystemObject_0
+9360 if (__intnl_SystemBoolean_33) //9392
+{
+G_feedbackText.set_text(__const_SystemString_0);// 9384
+}
+9404 return;

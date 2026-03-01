@@ -1,0 +1,452 @@
+using System;
+using UnityEngine;
+using VRC.SDKBase;
+using VRC.Economy;
+using VRC.Udon;
+using VRC.Udon.Common.Enums;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Boolean __intnl_SystemBoolean_13 = false;
+private Boolean __intnl_SystemBoolean_23 = false;
+private Int32 __0_index__param = 0;
+private String __intnl_SystemString_1 = null;
+public Int32[] rewardQuantities;
+public Boolean[] oneTimePurchase;
+private String __const_SystemString_0 = "UPR_";
+private Single __const_SystemSingle_0 = 2f;
+private Boolean __intnl_SystemBoolean_16 = false;
+private Boolean __intnl_SystemBoolean_26 = false;
+private UInt32 __gintnl_SystemUInt32_4 = 3236;
+private UInt32 __gintnl_SystemUInt32_1 = 1772;
+private UInt32 __gintnl_SystemUInt32_0 = 40;
+private UInt32 __gintnl_SystemUInt32_3 = 2632;
+private UInt32 __gintnl_SystemUInt32_2 = 2588;
+private Boolean __const_SystemBoolean_0 = false;
+private Boolean __const_SystemBoolean_1 = true;
+private String __const_SystemString_5 = "__1_AddQuestItem";
+private Int32 __lcl_quantity_SystemInt32_0 = 0;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private VRCPlayerApi onPlayerRestoredPlayer = null;
+private UdonProduct __intnl_VRCEconomyUdonProduct_2 = null;
+private UdonProduct __intnl_VRCEconomyUdonProduct_3 = null;
+private UdonProduct __intnl_VRCEconomyUdonProduct_0 = null;
+private UdonProduct __intnl_VRCEconomyUdonProduct_1 = null;
+private Int64 __refl_typeid = 8600177068241366957;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Boolean __intnl_SystemBoolean_11 = false;
+private Boolean __intnl_SystemBoolean_21 = false;
+private Boolean __intnl_SystemBoolean_31 = false;
+public UdonBehaviour questInventoryManager;
+private String __const_SystemString_2 = "__0_item__param";
+private Int32 __lcl_count_SystemInt32_0 = 0;
+private Boolean __intnl_SystemBoolean_19 = false;
+private Boolean __intnl_SystemBoolean_29 = false;
+private Boolean __intnl_SystemBoolean_14 = false;
+private Boolean __intnl_SystemBoolean_24 = false;
+private object __const_SystemObject_0 = null;
+private String __intnl_SystemString_0 = null;
+public Boolean debugBypassOwnership;
+private String __lcl_key_SystemString_0 = null;
+private Boolean __intnl_SystemBoolean_17 = false;
+private Boolean __intnl_SystemBoolean_27 = false;
+private EventTiming __const_VRCUdonCommonEnumsEventTiming_0 = EventTiming.Update;
+private Int32 __intnl_SystemInt32_11 = 0;
+private Int32 __0_ValidateConfig__ret = 0;
+private VRCPlayerApi onPurchaseConfirmedPlayer = null;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private String __const_SystemString_4 = "__0_modifyPersistence__param";
+private Int32 __lcl_i_SystemInt32_1 = 0;
+private Int32 __lcl_i_SystemInt32_0 = 0;
+private Int32 __lcl_i_SystemInt32_3 = 0;
+private Int32 __lcl_i_SystemInt32_2 = 0;
+private IProduct onPurchaseConfirmedResult = null;
+public Component[] rewardItems;
+private Boolean persistenceLoaded = false;
+private Boolean __intnl_SystemBoolean_12 = false;
+private Boolean __intnl_SystemBoolean_22 = false;
+private String __refl_typename = "UdonProductRewardManager";
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Int32 __intnl_SystemInt32_5 = 0;
+private Int32 __intnl_SystemInt32_4 = 0;
+private Int32 __intnl_SystemInt32_7 = 0;
+private Int32 __intnl_SystemInt32_6 = 0;
+private Int32 __intnl_SystemInt32_9 = 0;
+private Int32 __intnl_SystemInt32_8 = 0;
+private String __intnl_SystemString_2 = null;
+private Int32 __1_index__param = 0;
+private IProduct __intnl_VRCEconomyIProduct_0 = null;
+private String __const_SystemString_1 = "_CheckAndGrantRewards";
+private Boolean __intnl_SystemBoolean_15 = false;
+private Boolean __intnl_SystemBoolean_25 = false;
+public UdonProduct[] products;
+private Boolean[] claimed = null;
+private Int32 __intnl_SystemInt32_10 = 0;
+private VRCPlayerApi localPlayer = null;
+private Boolean __lcl_ownsProduct_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Boolean __intnl_SystemBoolean_20 = false;
+private Boolean __intnl_SystemBoolean_30 = false;
+private Int32 __const_SystemInt32_1 = -1;
+private Int32 __const_SystemInt32_0 = 0;
+private Int32 __const_SystemInt32_2 = 1;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private Boolean onPurchaseConfirmedPurchasedNow = false;
+private UdonBehaviour __lcl_item_VRCUdonUdonBehaviour_0 = null;
+private String __const_SystemString_3 = "__1_quantity__param";
+private UdonBehaviour __this_VRCUdonUdonBehaviour_2 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_1 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_0 = this;
+private Boolean __intnl_SystemBoolean_18 = false;
+private Boolean __intnl_SystemBoolean_28 = false;
+
+
+public void _start()
+{
+localPlayer = Networking.LocalPlayer;
+ValidateConfig();
+__lcl_count_SystemInt32_0 = __0_ValidateConfig__ret;
+__intnl_SystemBoolean_0 = __lcl_count_SystemInt32_0 < __const_SystemInt32_0;
+if (__intnl_SystemBoolean_0)
+{
+__this_VRCUdonUdonBehaviour_0.enabled = __const_SystemBoolean_0;
+return;
+}
+claimed = __lcl_count_SystemInt32_0.ctor();
+}
+private void ValidateConfig()
+{
+__intnl_SystemBoolean_1 = products == __const_SystemObject_0;
+if (__intnl_SystemBoolean_1)
+{
+}
+else
+{
+__intnl_SystemInt32_0 = products.Length;
+__intnl_SystemBoolean_1 = __intnl_SystemInt32_0 == __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_1)
+{
+__0_ValidateConfig__ret = __const_SystemInt32_0;
+return;
+}
+__intnl_SystemBoolean_3 = rewardItems == __const_SystemObject_0;
+if (__intnl_SystemBoolean_3)
+{
+}
+else
+{
+__intnl_SystemBoolean_3 = rewardQuantities == __const_SystemObject_0;
+}
+__intnl_SystemBoolean_2 = __intnl_SystemBoolean_3;
+if (__intnl_SystemBoolean_2)
+{
+}
+else
+{
+__intnl_SystemBoolean_2 = oneTimePurchase == __const_SystemObject_0;
+}
+if (__intnl_SystemBoolean_2)
+{
+__0_ValidateConfig__ret = __const_SystemInt32_1;
+return;
+}
+__intnl_SystemInt32_1 = rewardItems.Length;
+__intnl_SystemInt32_2 = products.Length;
+__intnl_SystemBoolean_5 = __intnl_SystemInt32_1 != __intnl_SystemInt32_2;
+if (__intnl_SystemBoolean_5)
+{
+}
+else
+{
+__intnl_SystemInt32_3 = rewardQuantities.Length;
+__intnl_SystemInt32_4 = products.Length;
+__intnl_SystemBoolean_5 = __intnl_SystemInt32_3 != __intnl_SystemInt32_4;
+}
+__intnl_SystemBoolean_4 = __intnl_SystemBoolean_5;
+if (__intnl_SystemBoolean_4)
+{
+}
+else
+{
+__intnl_SystemInt32_5 = oneTimePurchase.Length;
+__intnl_SystemInt32_6 = products.Length;
+__intnl_SystemBoolean_4 = __intnl_SystemInt32_5 != __intnl_SystemInt32_6;
+}
+if (__intnl_SystemBoolean_4)
+{
+__0_ValidateConfig__ret = __const_SystemInt32_1;
+return;
+}
+__0_ValidateConfig__ret = products.Length;
+return;
+}
+public void _onPlayerRestored()
+{
+__intnl_SystemBoolean_6 = onPlayerRestoredPlayer.isLocal;
+if (__intnl_SystemBoolean_6)
+{
+UNDEF_6069f_1516();
+}
+}
+private void UNDEF_6069f_1516()
+{
+persistenceLoaded = __const_SystemBoolean_1;
+__lcl_i_SystemInt32_0 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_7 = products.Length;
+__intnl_SystemBoolean_7 = __lcl_i_SystemInt32_0 < __intnl_SystemInt32_7;
+if (__intnl_SystemBoolean_7)
+{
+break;
+}
+__intnl_SystemBoolean_8 = oneTimePurchase[__lcl_i_SystemInt32_0];
+if (__intnl_SystemBoolean_8)
+{
+}
+else
+{
+}
+__lcl_key_SystemString_0 = String.Concat(__const_SystemString_0, __lcl_i_SystemInt32_0);
+__intnl_SystemBoolean_9 = PlayerData.HasKey(localPlayer, __lcl_key_SystemString_0);
+if (__intnl_SystemBoolean_9)
+{
+__intnl_SystemBoolean_10 = PlayerData.GetBool(localPlayer, __lcl_key_SystemString_0);
+claimed.Set(__lcl_i_SystemInt32_0, __intnl_SystemBoolean_10);
+}
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_2;
+}
+__this_VRCUdonUdonBehaviour_1.SendCustomEventDelayedSeconds(__const_SystemString_1, __const_SystemSingle_0, __const_VRCUdonCommonEnumsEventTiming_0);
+}
+public void _CheckAndGrantRewards()
+{
+__lcl_i_SystemInt32_1 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_8 = products.Length;
+__intnl_SystemBoolean_11 = __lcl_i_SystemInt32_1 < __intnl_SystemInt32_8;
+if (__intnl_SystemBoolean_11)
+{
+break;
+}
+__intnl_SystemBoolean_12 = oneTimePurchase[__lcl_i_SystemInt32_1];
+if (__intnl_SystemBoolean_12)
+{
+__intnl_SystemBoolean_13 = claimed[__lcl_i_SystemInt32_1];
+__intnl_SystemBoolean_12 = !__intnl_SystemBoolean_13;
+}
+if (__intnl_SystemBoolean_12)
+{
+__0_index__param = __lcl_i_SystemInt32_1;
+UNDEF_6069f_3256();
+}
+__lcl_i_SystemInt32_1 = __lcl_i_SystemInt32_1 + __const_SystemInt32_2;
+}
+}
+public void _onPurchaseConfirmed()
+{
+__intnl_SystemBoolean_14 = onPurchaseConfirmedPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_14)
+{
+}
+else
+{
+__intnl_SystemBoolean_15 = onPurchaseConfirmedPlayer.isLocal;
+__intnl_SystemBoolean_14 = !__intnl_SystemBoolean_15;
+}
+if (__intnl_SystemBoolean_14)
+{
+return;
+}
+__intnl_SystemBoolean_16 = onPurchaseConfirmedResult == __const_SystemObject_0;
+if (__intnl_SystemBoolean_16)
+{
+return;
+}
+if (persistenceLoaded)
+{
+UNDEF_6069f_2692();
+}
+}
+private void UNDEF_6069f_2692()
+{
+__lcl_i_SystemInt32_2 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_9 = products.Length;
+__intnl_SystemBoolean_17 = __lcl_i_SystemInt32_2 < __intnl_SystemInt32_9;
+if (__intnl_SystemBoolean_17)
+{
+break;
+}
+__intnl_VRCEconomyUdonProduct_0 = (UdonProduct)(products[__lcl_i_SystemInt32_2]);
+__intnl_UnityEngineObject_0 = __intnl_VRCEconomyUdonProduct_0;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_18 = __intnl_UnityEngineObject_0 == __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_18)
+{
+}
+else
+{
+__intnl_SystemString_0 = onPurchaseConfirmedResult.ID;
+__intnl_VRCEconomyUdonProduct_1 = (UdonProduct)(products[__lcl_i_SystemInt32_2]);
+__intnl_SystemString_1 = __intnl_VRCEconomyUdonProduct_1.ID;
+__intnl_SystemBoolean_19 = __intnl_SystemString_0 != __intnl_SystemString_1;
+if (__intnl_SystemBoolean_19)
+{
+}
+else
+{
+__intnl_SystemBoolean_20 = oneTimePurchase[__lcl_i_SystemInt32_2];
+if (__intnl_SystemBoolean_20)
+{
+__intnl_SystemBoolean_21 = claimed[__lcl_i_SystemInt32_2];
+if (__intnl_SystemBoolean_21)
+{
+}
+else
+{
+__1_index__param = __lcl_i_SystemInt32_2;
+UNDEF_6069f_4304();
+}
+}
+else
+{
+__1_index__param = __lcl_i_SystemInt32_2;
+UNDEF_6069f_4304();
+}
+}
+}
+__lcl_i_SystemInt32_2 = __lcl_i_SystemInt32_2 + __const_SystemInt32_2;
+}
+}
+private void UNDEF_6069f_3256()
+{
+__intnl_SystemBoolean_22 = __0_index__param < __const_SystemInt32_0;
+if (__intnl_SystemBoolean_22)
+{
+}
+else
+{
+__intnl_SystemInt32_10 = products.Length;
+__intnl_SystemBoolean_22 = __0_index__param >= __intnl_SystemInt32_10;
+}
+if (__intnl_SystemBoolean_22)
+{
+return;
+}
+__intnl_VRCEconomyUdonProduct_2 = (UdonProduct)(products[__0_index__param]);
+__intnl_UnityEngineObject_2 = __intnl_VRCEconomyUdonProduct_2;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_23 = __intnl_UnityEngineObject_2 == __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_23)
+{
+return;
+}
+__intnl_SystemBoolean_24 = claimed[__0_index__param];
+if (__intnl_SystemBoolean_24)
+{
+return;
+}
+if (debugBypassOwnership)
+{
+__lcl_ownsProduct_SystemBoolean_0 = __const_SystemBoolean_1;
+}
+else
+{
+__intnl_VRCEconomyUdonProduct_3 = (UdonProduct)(products[__0_index__param]);
+__intnl_VRCEconomyIProduct_0 = __intnl_VRCEconomyUdonProduct_3;
+__lcl_ownsProduct_SystemBoolean_0 = Store.DoesPlayerOwnProduct(localPlayer, __intnl_VRCEconomyIProduct_0);
+}
+if (__lcl_ownsProduct_SystemBoolean_0)
+{
+__1_index__param = __0_index__param;
+UNDEF_6069f_4304();
+}
+}
+public void ReloadFromPersistence()
+{
+__intnl_SystemBoolean_25 = claimed == __const_SystemObject_0;
+if (__intnl_SystemBoolean_25)
+{
+return;
+}
+__lcl_i_SystemInt32_3 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_11 = claimed.Length;
+__intnl_SystemBoolean_26 = __lcl_i_SystemInt32_3 < __intnl_SystemInt32_11;
+if (__intnl_SystemBoolean_26)
+{
+break;
+}
+claimed.Set(__lcl_i_SystemInt32_3, __const_SystemBoolean_0);
+__lcl_i_SystemInt32_3 = __lcl_i_SystemInt32_3 + __const_SystemInt32_2;
+}
+__this_VRCUdonUdonBehaviour_2.SendCustomEventDelayedSeconds(__const_SystemString_1, __const_SystemSingle_0, __const_VRCUdonCommonEnumsEventTiming_0);
+}
+private void UNDEF_6069f_4304()
+{
+__intnl_SystemBoolean_27 = oneTimePurchase[__1_index__param];
+if (__intnl_SystemBoolean_27)
+{
+__intnl_SystemBoolean_27 = claimed[__1_index__param];
+}
+if (__intnl_SystemBoolean_27)
+{
+return;
+}
+__lcl_item_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(rewardItems[__1_index__param]);
+__lcl_quantity_SystemInt32_0 = rewardQuantities[__1_index__param];
+__intnl_UnityEngineObject_4 = __lcl_item_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_28 = __intnl_UnityEngineObject_4 == __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_28)
+{
+return;
+}
+__intnl_SystemBoolean_29 = __lcl_quantity_SystemInt32_0 <= __const_SystemInt32_0;
+if (__intnl_SystemBoolean_29)
+{
+return;
+}
+__intnl_UnityEngineObject_6 = questInventoryManager;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_30 = __intnl_UnityEngineObject_6 == __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_30)
+{
+return;
+}
+questInventoryManager.SetProgramVariable(__const_SystemString_2, __lcl_item_VRCUdonUdonBehaviour_0);
+questInventoryManager.SetProgramVariable(__const_SystemString_3, __lcl_quantity_SystemInt32_0);
+questInventoryManager.SetProgramVariable(__const_SystemString_4, __const_SystemBoolean_1);
+questInventoryManager.SendCustomEvent(__const_SystemString_5);
+__intnl_SystemBoolean_31 = oneTimePurchase[__1_index__param];
+if (__intnl_SystemBoolean_31)
+{
+claimed.Set(__1_index__param, __const_SystemBoolean_1);
+__intnl_SystemString_2 = String.Concat(__const_SystemString_0, __1_index__param);
+PlayerData.SetBool(__intnl_SystemString_2, __const_SystemBoolean_1);
+}
+}
+}

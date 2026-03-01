@@ -1,0 +1,136 @@
+using System;
+using UnityEngine;
+using VRC.Udon;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Int64 __const_SystemInt64_0 = 7981217609164212806;
+private String __const_SystemString_0 = "SupporterTrailManager";
+private Transform __intnl_UnityEngineTransform_0 = null;
+private UInt32[] __gintnl_SystemUInt32Array_0 = System.UInt32[];
+private UInt32 __gintnl_SystemUInt32_0 = 268;
+private String __const_SystemString_5 = "__refl_typeid";
+public Int32 sliderType;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Int64 __refl_typeid = -567843151379888854;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_2 = null;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Component __intnl_UnityEngineComponent_0 = null;
+private UdonBehaviour __0__intnlparam = null;
+private GameObject __lcl_managerObj_UnityEngineGameObject_0 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_1 = null;
+private String __const_SystemString_2 = "OnSaturationChanged";
+private Component[] __intnl_UnityEngineComponentArray_0 = null;
+private object __const_SystemObject_0 = null;
+private Type __const_SystemType_0 = typeof(UdonBehaviour);
+public UdonBehaviour trailManager;
+private Int64 __intnl_SystemInt64_0 = 0;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private String __const_SystemString_4 = "OnIntensityChanged";
+private UInt32 __intnl_SystemUInt32_0 = 0;
+private UdonBehaviour __lcl_behaviour_VRCUdonUdonBehaviour_0 = null;
+private Component __1__intnlparam = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_3 = null;
+private String __refl_typename = "SupporterTrailSliderHandler";
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int64 __lcl_targetID_SystemInt64_0 = 0;
+private String __const_SystemString_1 = "OnHueChanged";
+private object __lcl_idValue_SystemObject_0 = null;
+private Int32 __const_SystemInt32_1 = 3;
+private Int32 __const_SystemInt32_0 = 0;
+private Int32 __const_SystemInt32_2 = 1;
+private Component[] __lcl_udonBehaviours_UnityEngineComponentArray_0 = null;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_0 = null;
+private String __const_SystemString_3 = "OnLightnessChanged";
+
+
+public void OnSliderChanged()
+{
+__intnl_UnityEngineObject_0 = trailManager;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_0 == __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_0)
+{
+__lcl_managerObj_UnityEngineGameObject_0 = GameObject.Find(__const_SystemString_0);
+__intnl_UnityEngineObject_2 = __lcl_managerObj_UnityEngineGameObject_0;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_2 != __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_1)
+{
+__intnl_UnityEngineTransform_0 = __lcl_managerObj_UnityEngineGameObject_0.transform;
+__1__intnlparam = __intnl_UnityEngineTransform_0;
+UNDEF_ca739_1268();
+trailManager = __0__intnlparam;
+}
+}
+__intnl_UnityEngineObject_2 = trailManager;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_2 == __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_1)
+{
+return;
+}
+__intnl_SystemBoolean_2 = sliderType >= __const_SystemInt32_0;
+if (__intnl_SystemBoolean_2)
+{
+break;
+}
+__intnl_SystemBoolean_3 = sliderType <= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_3)
+{
+break;
+}
+__intnl_SystemUInt32_0 = __gintnl_SystemUInt32Array_0[sliderType];
+__intnl_VRCUdonUdonBehaviour_0 = trailManager;
+trailManager.SendCustomEvent(__const_SystemString_1);
+__intnl_VRCUdonUdonBehaviour_1 = trailManager;
+trailManager.SendCustomEvent(__const_SystemString_2);
+__intnl_VRCUdonUdonBehaviour_2 = trailManager;
+trailManager.SendCustomEvent(__const_SystemString_3);
+__intnl_VRCUdonUdonBehaviour_3 = trailManager;
+trailManager.SendCustomEvent(__const_SystemString_4);
+}
+private void UNDEF_ca739_1268()
+{
+__intnl_UnityEngineComponentArray_0 = __1__intnlparam.GetComponents(__const_SystemType_0);
+__lcl_udonBehaviours_UnityEngineComponentArray_0 = __intnl_UnityEngineComponentArray_0;
+__lcl_targetID_SystemInt64_0 = __const_SystemInt64_0;
+__intnl_SystemInt32_0 = __lcl_udonBehaviours_UnityEngineComponentArray_0.Length;
+__intnl_SystemInt32_1 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_4 = __intnl_SystemInt32_1 < __intnl_SystemInt32_0;
+if (__intnl_SystemBoolean_4)
+{
+break;
+}
+__lcl_behaviour_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(__lcl_udonBehaviours_UnityEngineComponentArray_0[__intnl_SystemInt32_1]);
+__lcl_idValue_SystemObject_0 = __lcl_behaviour_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_5);
+__intnl_SystemBoolean_5 = __lcl_idValue_SystemObject_0 != __const_SystemObject_0;
+if (__intnl_SystemBoolean_5)
+{
+__intnl_SystemInt64_0 = Convert.ToInt64(__lcl_idValue_SystemObject_0);
+__intnl_SystemBoolean_5 = __intnl_SystemInt64_0 == __lcl_targetID_SystemInt64_0;
+}
+if (__intnl_SystemBoolean_5)
+{
+__intnl_UnityEngineComponent_0 = __lcl_behaviour_VRCUdonUdonBehaviour_0;
+__0__intnlparam = (UdonBehaviour)__intnl_UnityEngineComponent_0;
+return;
+}
+__intnl_SystemInt32_1 = __intnl_SystemInt32_1 + __const_SystemInt32_2;
+}
+__0__intnlparam = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+}

@@ -1,0 +1,100 @@
+void _start()
+this.SendCustomEventDelayedSeconds(__const_VRCUdonCommonEnumsEventTiming_0, __const_SystemSingle_0, __const_SystemString_0);// 40
+60 return;
+void _onPlayerJoined()
+100 if (__intnl_SystemBoolean_0) //116
+{
+108 JUMP 136
+}
+128 return;
+144 JUMP 396
+164 return;
+void _onPlayerLeft()
+204 if (__intnl_SystemBoolean_1) //220
+{
+212 JUMP 240
+}
+232 return;
+248 JUMP 396
+268 return;
+void _onMasterTransferred()
+316 if (__intnl_SystemBoolean_2) //332
+{
+324 JUMP 352
+}
+344 return;
+360 JUMP 396
+380 return;
+404 if (rebalancePending) //432
+{
+424 return;
+}
+448 rebalancePending = __const_SystemBoolean_0
+this.SendCustomEventDelayedSeconds(__const_VRCUdonCommonEnumsEventTiming_0, rebalanceDelay, __const_SystemString_0);// 484
+504 return;
+void RebalanceOwnership()
+536 rebalancePending = __const_SystemBoolean_1
+564 if (__intnl_SystemBoolean_3) //580
+{
+572 JUMP 600
+}
+592 return;
+640 if (__intnl_SystemBoolean_4) //656
+{
+648 JUMP 712
+}
+720 if (__intnl_SystemBoolean_4) //748
+{
+740 return;
+}
+__lcl_players_VRCSDKBaseVRCPlayerApiArray_0 = GetPlayerCount().ctor();// 780
+828 __lcl_validCount_SystemInt32_0 = __const_SystemInt32_0
+848 __lcl_i_SystemInt32_0 = __const_SystemInt32_0
+916 if (__intnl_SystemBoolean_5) //1148
+{
+996 if (__intnl_SystemBoolean_6) //1060
+{
+}
+1068 if (__intnl_SystemBoolean_6) //1108
+{
+__lcl_validCount_SystemInt32_0 = op_Addition(__const_SystemInt32_1, __lcl_validCount_SystemInt32_0);// 1100
+}
+__lcl_i_SystemInt32_0 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_0);// 1132
+1140 JUMP 852
+}
+1188 if (__intnl_SystemBoolean_5) //1216
+{
+1208 return;
+}
+__lcl_validPlayers_VRCSDKBaseVRCPlayerApiArray_0 = 0.ctor();// 1232
+1256 __lcl_idx_SystemInt32_0 = __const_SystemInt32_0
+1276 __lcl_i_SystemInt32_0 = __const_SystemInt32_0
+1344 if (__intnl_SystemBoolean_6) //1660
+{
+1424 if (__intnl_SystemBoolean_7) //1488
+{
+}
+1496 if (__intnl_SystemBoolean_7) //1620
+{
+1520 __intnl_SystemInt32_3 = __lcl_idx_SystemInt32_0
+__lcl_idx_SystemInt32_0 = op_Addition(__const_SystemInt32_1, __intnl_SystemInt32_3);// 1548
+L_validPlayers.Set(__intnl_VRCSDKBaseVRCPlayerApi_2, __intnl_SystemInt32_3);// 1612
+}
+__lcl_i_SystemInt32_0 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_0);// 1644
+1652 JUMP 1280
+}
+1676 __lcl_i_SystemInt32_0 = __const_SystemInt32_0
+1744 if (__intnl_SystemBoolean_6) //2040
+{
+1800 __intnl_UnityEngineObject_0 = __intnl_UnityEngineGameObject_0
+1820 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+1864 if (__intnl_SystemBoolean_7) //1880
+{
+1872 JUMP 2000
+}
+__lcl_target_VRCSDKBaseVRCPlayerApi_0 = L_validPlayers.Get(__intnl_SystemInt32_3);// 1936
+SetOwner(__intnl_UnityEngineGameObject_1, __lcl_target_VRCSDKBaseVRCPlayerApi_0);// 1992
+__lcl_i_SystemInt32_0 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_0);// 2024
+2032 JUMP 1680
+}
+2052 return;

@@ -1,0 +1,304 @@
+void _update
+0 PUSH UInt32 __const_SystemUInt32_0
+8 PUSH UdonBehaviour zoneManager
+16 PUSH Object __intnl_UnityEngineObject_0
+24 COPY
+28 PUSH object __const_SystemObject_0
+36 PUSH Object __intnl_UnityEngineObject_1
+44 COPY
+48 PUSH Object __intnl_UnityEngineObject_0
+56 PUSH Object __intnl_UnityEngineObject_1
+64 PUSH Boolean __intnl_SystemBoolean_0
+72 EXTERN UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean
+80 PUSH Boolean __intnl_SystemBoolean_0
+88 JUMP_IF_FALSE 116
+96 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+104 COPY
+108 JUMP_INDIRECT 2
+116 PUSH Single __intnl_SystemSingle_0
+124 EXTERN UnityEngineTime.__get_time__SystemSingle
+132 PUSH Single __intnl_SystemSingle_0
+140 PUSH Single lastCheckTime
+148 PUSH Single __intnl_SystemSingle_1
+156 EXTERN SystemSingle.__op_Subtraction__SystemSingle_SystemSingle__SystemSingle
+164 PUSH Single __intnl_SystemSingle_1
+172 PUSH Single checkInterval
+180 PUSH Boolean __intnl_SystemBoolean_1
+188 EXTERN SystemSingle.__op_GreaterThanOrEqual__SystemSingle_SystemSingle__SystemBoolean
+196 PUSH Boolean __intnl_SystemBoolean_1
+204 JUMP_IF_FALSE 244
+212 PUSH Single lastCheckTime
+220 EXTERN UnityEngineTime.__get_time__SystemSingle
+228 PUSH UInt32 __gintnl_SystemUInt32_0
+236 JUMP 272
+244 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+252 COPY
+256 JUMP_INDIRECT 2
+264 PUSH UInt32 __const_SystemUInt32_0
+272 PUSH VRCPlayerApi __lcl_player_VRCSDKBaseVRCPlayerApi_0
+280 EXTERN VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi
+288 PUSH VRCPlayerApi __lcl_player_VRCSDKBaseVRCPlayerApi_0
+296 PUSH object __const_SystemObject_0
+304 PUSH Boolean __intnl_SystemBoolean_2
+312 EXTERN SystemObject.__op_Equality__SystemObject_SystemObject__SystemBoolean
+320 PUSH Boolean __intnl_SystemBoolean_2
+328 JUMP_IF_FALSE 356
+336 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+344 COPY
+348 JUMP_INDIRECT 2
+356 PUSH VRCPlayerApi __lcl_player_VRCSDKBaseVRCPlayerApi_0
+364 PUSH Vector3 __lcl_playerPos_UnityEngineVector3_0
+372 EXTERN VRCSDKBaseVRCPlayerApi.__GetPosition__UnityEngineVector3
+380 PUSH Transform __this_UnityEngineTransform_0
+388 PUSH Vector3 __intnl_UnityEngineVector3_0
+396 EXTERN UnityEngineTransform.__get_position__UnityEngineVector3
+404 PUSH Vector3 __intnl_UnityEngineVector3_0
+412 PUSH Vector3 __lcl_playerPos_UnityEngineVector3_0
+420 PUSH Single __lcl_distance_SystemSingle_0
+428 EXTERN UnityEngineVector3.__Distance__UnityEngineVector3_UnityEngineVector3__SystemSingle
+436 PUSH Single __lcl_distance_SystemSingle_0
+444 PUSH Single zoneRadius
+452 PUSH Boolean __lcl_shouldBeInZone_SystemBoolean_0
+460 EXTERN SystemSingle.__op_LessThanOrEqual__SystemSingle_SystemSingle__SystemBoolean
+468 PUSH Boolean __lcl_shouldBeInZone_SystemBoolean_0
+476 PUSH Boolean __intnl_SystemBoolean_3
+484 COPY
+488 PUSH Boolean __intnl_SystemBoolean_3
+496 JUMP_IF_FALSE 528
+504 PUSH Boolean playerIsInZone
+512 PUSH Boolean __intnl_SystemBoolean_3
+520 EXTERN SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean
+528 PUSH Boolean __intnl_SystemBoolean_3
+536 JUMP_IF_FALSE 628
+544 PUSH Boolean __const_SystemBoolean_0
+552 PUSH Boolean playerIsInZone
+560 COPY
+564 PUSH UdonBehaviour zoneManager
+572 PUSH String __const_SystemString_0
+580 PUSH Vector3 __lcl_playerPos_UnityEngineVector3_0
+588 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid
+596 PUSH UdonBehaviour zoneManager
+604 PUSH String __const_SystemString_1
+612 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+620 JUMP 764
+628 PUSH Boolean __lcl_shouldBeInZone_SystemBoolean_0
+636 PUSH Boolean __intnl_SystemBoolean_4
+644 EXTERN SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean
+652 PUSH Boolean __intnl_SystemBoolean_4
+660 JUMP_IF_FALSE 688
+668 PUSH Boolean playerIsInZone
+676 PUSH Boolean __intnl_SystemBoolean_4
+684 COPY
+688 PUSH Boolean __intnl_SystemBoolean_4
+696 JUMP_IF_FALSE 764
+704 PUSH Boolean __const_SystemBoolean_1
+712 PUSH Boolean playerIsInZone
+720 COPY
+724 PUSH UdonBehaviour __this_VRCUdonUdonBehaviour_0
+732 PUSH String __const_SystemString_2
+740 PUSH Single __const_SystemSingle_0
+748 PUSH EventTiming __const_VRCUdonCommonEnumsEventTiming_0
+756 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEventDelayedSeconds__SystemString_SystemSingle_VRCUdonCommonEnumsEventTiming__SystemVoid
+764 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+772 COPY
+776 JUMP_INDIRECT 2
+void CheckIfStillOutside
+784 PUSH UInt32 __const_SystemUInt32_0
+792 PUSH VRCPlayerApi __lcl_player_VRCSDKBaseVRCPlayerApi_1
+800 EXTERN VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi
+808 PUSH VRCPlayerApi __lcl_player_VRCSDKBaseVRCPlayerApi_1
+816 PUSH object __const_SystemObject_0
+824 PUSH Boolean __intnl_SystemBoolean_5
+832 EXTERN SystemObject.__op_Equality__SystemObject_SystemObject__SystemBoolean
+840 PUSH Boolean __intnl_SystemBoolean_5
+848 JUMP_IF_FALSE 876
+856 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+864 COPY
+868 JUMP_INDIRECT 2
+876 PUSH VRCPlayerApi __lcl_player_VRCSDKBaseVRCPlayerApi_1
+884 PUSH Vector3 __lcl_playerPos_UnityEngineVector3_1
+892 EXTERN VRCSDKBaseVRCPlayerApi.__GetPosition__UnityEngineVector3
+900 PUSH Transform __this_UnityEngineTransform_0
+908 PUSH Vector3 __intnl_UnityEngineVector3_1
+916 EXTERN UnityEngineTransform.__get_position__UnityEngineVector3
+924 PUSH Vector3 __intnl_UnityEngineVector3_1
+932 PUSH Vector3 __lcl_playerPos_UnityEngineVector3_1
+940 PUSH Single __lcl_distance_SystemSingle_1
+948 EXTERN UnityEngineVector3.__Distance__UnityEngineVector3_UnityEngineVector3__SystemSingle
+956 PUSH Single __lcl_distance_SystemSingle_1
+964 PUSH Single zoneRadius
+972 PUSH Boolean __intnl_SystemBoolean_6
+980 EXTERN SystemSingle.__op_GreaterThan__SystemSingle_SystemSingle__SystemBoolean
+988 PUSH Boolean __intnl_SystemBoolean_6
+996 JUMP_IF_FALSE 1076
+1004 PUSH UdonBehaviour zoneManager
+1012 PUSH Object __intnl_UnityEngineObject_2
+1020 COPY
+1024 PUSH object __const_SystemObject_0
+1032 PUSH Object __intnl_UnityEngineObject_3
+1040 COPY
+1044 PUSH Object __intnl_UnityEngineObject_2
+1052 PUSH Object __intnl_UnityEngineObject_3
+1060 PUSH Boolean __intnl_SystemBoolean_6
+1068 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+1076 PUSH Boolean __intnl_SystemBoolean_6
+1084 JUMP_IF_FALSE 1292
+1092 PUSH UdonBehaviour zoneManager
+1100 PUSH UdonBehaviour zoneManager
+1108 PUSH UdonBehaviour __intnl_VRCUdonUdonBehaviour_0
+1116 COPY
+1120 PUSH String __const_SystemString_3
+1128 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+1136 PUSH UdonBehaviour zoneManager
+1144 PUSH String __const_SystemString_4
+1152 PUSH object __intnl_SystemObject_0
+1160 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject
+1168 PUSH object __intnl_SystemObject_0
+1176 PUSH String __intnl_SystemString_0
+1184 COPY
+1188 PUSH String __intnl_SystemString_0
+1196 PUSH String zoneID
+1204 PUSH Boolean __intnl_SystemBoolean_7
+1212 EXTERN SystemString.__op_Equality__SystemString_SystemString__SystemBoolean
+1220 PUSH Boolean __intnl_SystemBoolean_7
+1228 JUMP_IF_FALSE 1292
+1236 PUSH UdonBehaviour zoneManager
+1244 PUSH String __const_SystemString_0
+1252 PUSH Vector3 __lcl_playerPos_UnityEngineVector3_1
+1260 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid
+1268 PUSH UdonBehaviour zoneManager
+1276 PUSH String __const_SystemString_1
+1284 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+1292 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1300 COPY
+1304 JUMP_INDIRECT 2
+void __0_IsPositionInZone
+1312 PUSH UInt32 __const_SystemUInt32_0
+1320 PUSH Transform __this_UnityEngineTransform_0
+1328 PUSH Vector3 __intnl_UnityEngineVector3_2
+1336 EXTERN UnityEngineTransform.__get_position__UnityEngineVector3
+1344 PUSH Vector3 __intnl_UnityEngineVector3_2
+1352 PUSH Vector3 __0_position__param
+1360 PUSH Single __lcl_distance_SystemSingle_2
+1368 EXTERN UnityEngineVector3.__Distance__UnityEngineVector3_UnityEngineVector3__SystemSingle
+1376 PUSH Single __lcl_distance_SystemSingle_2
+1384 PUSH Single zoneRadius
+1392 PUSH Boolean __0___0_IsPositionInZone__ret
+1400 EXTERN SystemSingle.__op_LessThanOrEqual__SystemSingle_SystemSingle__SystemBoolean
+1408 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1416 COPY
+1420 JUMP_INDIRECT 2
+1428 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1436 COPY
+1440 JUMP_INDIRECT 2
+void __0_GetDistanceFromZone
+1448 PUSH UInt32 __const_SystemUInt32_0
+1456 PUSH Transform __this_UnityEngineTransform_0
+1464 PUSH Vector3 __intnl_UnityEngineVector3_3
+1472 EXTERN UnityEngineTransform.__get_position__UnityEngineVector3
+1480 PUSH Vector3 __intnl_UnityEngineVector3_3
+1488 PUSH Vector3 __1_position__param
+1496 PUSH Single __0___0_GetDistanceFromZone__ret
+1504 EXTERN UnityEngineVector3.__Distance__UnityEngineVector3_UnityEngineVector3__SystemSingle
+1512 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1520 COPY
+1524 JUMP_INDIRECT 2
+1532 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1540 COPY
+1544 JUMP_INDIRECT 2
+void GetZoneID
+1552 PUSH UInt32 __const_SystemUInt32_0
+1560 PUSH String zoneID
+1568 PUSH String __0_GetZoneID__ret
+1576 COPY
+1580 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1588 COPY
+1592 JUMP_INDIRECT 2
+1600 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1608 COPY
+1612 JUMP_INDIRECT 2
+void GetZoneName
+1620 PUSH UInt32 __const_SystemUInt32_0
+1628 PUSH String zoneName
+1636 PUSH String __0_GetZoneName__ret
+1644 COPY
+1648 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1656 COPY
+1660 JUMP_INDIRECT 2
+1668 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1676 COPY
+1680 JUMP_INDIRECT 2
+void GetRadius
+1688 PUSH UInt32 __const_SystemUInt32_0
+1696 PUSH Single zoneRadius
+1704 PUSH Single __0_GetRadius__ret
+1712 COPY
+1716 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1724 COPY
+1728 JUMP_INDIRECT 2
+1736 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1744 COPY
+1748 JUMP_INDIRECT 2
+void ShouldHideWeatherEffects
+1756 PUSH UInt32 __const_SystemUInt32_0
+1764 PUSH Boolean hideWeatherEffects
+1772 PUSH Boolean __0_ShouldHideWeatherEffects__ret
+1780 COPY
+1784 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1792 COPY
+1796 JUMP_INDIRECT 2
+1804 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1812 COPY
+1816 JUMP_INDIRECT 2
+void GetAllowedWeatherTypes
+1824 PUSH UInt32 __const_SystemUInt32_0
+1832 PUSH Int32[] allowedWeatherTypes
+1840 PUSH Int32[] __0_GetAllowedWeatherTypes__ret
+1848 COPY
+1852 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1860 COPY
+1864 JUMP_INDIRECT 2
+1872 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1880 COPY
+1884 JUMP_INDIRECT 2
+1892 PUSH UInt32 __const_SystemUInt32_0
+1900 PUSH Boolean drawGizmos
+1908 JUMP_IF_FALSE 1924
+1916 JUMP 1944
+1924 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1932 COPY
+1936 JUMP_INDIRECT 2
+1944 PUSH Color gizmoColor
+1952 EXTERN UnityEngineGizmos.__set_color__UnityEngineColor__SystemVoid
+1960 PUSH Transform __this_UnityEngineTransform_0
+1968 PUSH Vector3 __intnl_UnityEngineVector3_4
+1976 EXTERN UnityEngineTransform.__get_position__UnityEngineVector3
+1984 PUSH Vector3 __intnl_UnityEngineVector3_4
+1992 PUSH Single zoneRadius
+2000 EXTERN UnityEngineGizmos.__DrawSphere__UnityEngineVector3_SystemSingle__SystemVoid
+2008 PUSH Color gizmoColor
+2016 PUSH Single __intnl_SystemSingle_2
+2024 EXTERN UnityEngineColor.__get_r__SystemSingle
+2032 PUSH Color gizmoColor
+2040 PUSH Single __intnl_SystemSingle_3
+2048 EXTERN UnityEngineColor.__get_g__SystemSingle
+2056 PUSH Color gizmoColor
+2064 PUSH Single __intnl_SystemSingle_4
+2072 EXTERN UnityEngineColor.__get_b__SystemSingle
+2080 PUSH Single __intnl_SystemSingle_2
+2088 PUSH Single __intnl_SystemSingle_3
+2096 PUSH Single __intnl_SystemSingle_4
+2104 PUSH Single __const_SystemSingle_1
+2112 PUSH Color __intnl_UnityEngineColor_0
+2120 EXTERN UnityEngineColor.__ctor__SystemSingle_SystemSingle_SystemSingle_SystemSingle__UnityEngineColor
+2128 PUSH Color __intnl_UnityEngineColor_0
+2136 EXTERN UnityEngineGizmos.__set_color__UnityEngineColor__SystemVoid
+2144 PUSH Transform __this_UnityEngineTransform_0
+2152 PUSH Vector3 __intnl_UnityEngineVector3_5
+2160 EXTERN UnityEngineTransform.__get_position__UnityEngineVector3
+2168 PUSH Vector3 __intnl_UnityEngineVector3_5
+2176 PUSH Single zoneRadius
+2184 EXTERN UnityEngineGizmos.__DrawWireSphere__UnityEngineVector3_SystemSingle__SystemVoid
+2192 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2200 COPY
+2204 JUMP_INDIRECT 2

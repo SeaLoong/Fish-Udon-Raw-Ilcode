@@ -1,0 +1,105 @@
+void get_CurrentTeleportIndex()
+24 __0_get_CurrentTeleportIndex__ret = _currentTeleportIndex
+40 return;
+void _onVarChange__currentTeleportIndex()
+64 __0_value__param = _currentTeleportIndex
+84 _currentTeleportIndex = _old__currentTeleportIndex
+void __0_set_CurrentTeleportIndex()
+112 _currentTeleportIndex = __0_value__param
+156 if (__intnl_SystemBoolean_0) //200
+{
+188 __0_index__param = __0_value__param
+192 JUMP 1464
+}
+212 return;
+void _start()
+244 timer = teleportInterval
+272 if (__intnl_SystemBoolean_3) //352
+{
+296 __intnl_UnityEngineObject_0 = npc
+316 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+}
+368 __intnl_SystemBoolean_2 = __intnl_SystemBoolean_3
+380 if (__intnl_SystemBoolean_2) //420
+{
+}
+436 __intnl_SystemBoolean_1 = __intnl_SystemBoolean_2
+448 if (__intnl_SystemBoolean_1) //512
+{
+}
+520 if (__intnl_SystemBoolean_1) //636
+{
+608 __0_value__param = __intnl_SystemInt32_2
+612 JUMP 96
+this.RequestSerialization();// 628
+}
+648 return;
+void _update()
+696 if (__intnl_SystemBoolean_4) //712
+{
+704 JUMP 732
+}
+724 return;
+748 __intnl_UnityEngineObject_2 = npc
+768 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+812 if (__intnl_SystemBoolean_5) //840
+{
+832 return;
+}
+timer = op_Subtraction(__intnl_SystemSingle_0, timer);// 880
+_checkOwnerTimer = op_Subtraction(__intnl_SystemSingle_1, _checkOwnerTimer);// 928
+976 if (__intnl_SystemBoolean_6) //1140
+{
+1000 _checkOwnerTimer = __const_SystemSingle_1
+1060 if (__intnl_SystemBoolean_7) //1076
+{
+1068 JUMP 1140
+}
+SetOwner(__intnl_UnityEngineGameObject_1, __intnl_VRCSDKBaseVRCPlayerApi_0);// 1132
+}
+1180 if (__intnl_SystemBoolean_7) //1436
+{
+1228 if (__intnl_SystemBoolean_8) //1292
+{
+}
+1300 if (__intnl_SystemBoolean_8) //1416
+{
+1388 __0_value__param = __intnl_SystemInt32_5
+1392 JUMP 96
+this.RequestSerialization();// 1408
+}
+1432 timer = teleportInterval
+}
+1448 return;
+1504 if (__intnl_SystemBoolean_10) //1520
+{
+1512 JUMP 1552
+}
+1568 __intnl_SystemBoolean_9 = __intnl_SystemBoolean_10
+1580 if (__intnl_SystemBoolean_9) //1596
+{
+1588 JUMP 1652
+}
+1660 if (__intnl_SystemBoolean_9) //1688
+{
+1680 return;
+}
+1704 __intnl_UnityEngineObject_4 = npc
+1724 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+1768 if (__intnl_SystemBoolean_11) //1796
+{
+1788 return;
+}
+__lcl_target_UnityEngineTransform_0 = G_teleportPoints.Get(__0_index__param);// 1820
+1844 __intnl_UnityEngineObject_6 = __lcl_target_UnityEngineTransform_0
+1864 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+1908 if (__intnl_SystemBoolean_12) //1936
+{
+1928 return;
+}
+1960 __intnl_VRCUdonUdonBehaviour_0 = npc
+G_npc.SendCustomEvent(__const_SystemString_0);// 1972
+G_npc.SetProgramVariable(__intnl_UnityEngineVector3_0, __const_SystemString_1);// 2052
+G_npc.SetProgramVariable(__intnl_UnityEngineQuaternion_0, __const_SystemString_2);// 2084
+G_npc.SendCustomEvent(__const_SystemString_3);// 2108
+2128 return;

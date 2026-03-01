@@ -1,0 +1,332 @@
+void _start()
+24 __intnl_UnityEngineObject_0 = animationPanel
+44 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+88 if (__intnl_SystemBoolean_0) //120
+{
+G_animationPanel.SetActive(__const_SystemBoolean_0);// 112
+}
+132 return;
+void _update()
+156 if (isAnimating) //172
+{
+164 JUMP 192
+}
+184 return;
+224 if (__intnl_SystemBoolean_1) //280
+{
+}
+288 if (__intnl_SystemBoolean_1) //312
+{
+304 JUMP 2628
+}
+328 __intnl_SystemBoolean_2 = hasShownFinalResult
+340 if (__intnl_SystemBoolean_2) //428
+{
+}
+436 if (__intnl_SystemBoolean_2) //460
+{
+452 JUMP 6308
+}
+472 return;
+void __0_StartEnchantAnimation()
+496 if (isAnimating) //564
+{
+512 if (hasShownFinalResult) //544
+{
+528 JUMP 6940
+536 JUMP 564
+}
+556 return;
+}
+580 equipmentId = __0_eqId__param
+600 equipmentType = __0_eqType__param
+620 usedRelic = __0_relic__param
+640 finalEnchantment = __0_rolledEnchant__param
+684 if (__intnl_SystemBoolean_3) //720
+{
+708 currentEquipmentType = __const_SystemInt32_0
+712 JUMP 816
+}
+760 if (__intnl_SystemBoolean_4) //796
+{
+784 currentEquipmentType = __const_SystemInt32_1
+788 JUMP 816
+}
+812 currentEquipmentType = __const_SystemInt32_2
+832 __intnl_UnityEngineObject_2 = animationPanel
+852 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+896 if (__intnl_SystemBoolean_5) //928
+{
+G_animationPanel.SetActive(__const_SystemBoolean_1);// 920
+}
+944 __intnl_UnityEngineObject_4 = rollingParticlesPrefab
+964 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+1008 if (__intnl_SystemBoolean_6) //1088
+{
+1032 __intnl_UnityEngineObject_6 = particleSpawnPoint
+1052 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+}
+1096 if (__intnl_SystemBoolean_6) //1352
+{
+1128 __1__intnlparam = rollingParticlesPrefab
+1132 JUMP 7400
+1156 activeRollingParticles = __0__intnlparam
+__0__intnlparam.get_transform().set_position(__intnl_UnityEngineVector3_0);// 1224
+__0__intnlparam.get_transform().set_rotation(__intnl_UnityEngineQuaternion_0);// 1296
+__0__intnlparam.get_transform().SetParent(particleSpawnPoint);// 1344
+}
+1368 isAnimating = __const_SystemBoolean_1
+animationStartTime = get_time();// 1380
+nextTickTime = get_time();// 1396
+1420 currentDisplayIndex = __const_SystemInt32_3
+1440 hasShownFinalResult = __const_SystemBoolean_0
+1460 resultShownTime = __const_SystemSingle_0
+1480 lastDisplayedEnchantment = __const_SystemObject_0
+1496 return;
+1528 __lcl_selected_VRCUdonUdonBehaviour_0 = __const_SystemObject_0
+1548 __lcl_maxAttempts_SystemInt32_0 = __const_SystemInt32_4
+1568 __lcl_attempts_SystemInt32_0 = __const_SystemInt32_3
+1596 __intnl_VRCUdonUdonBehaviour_0 = enchantmentDatabase
+G_enchantmentDatabase.SendCustomEvent(__const_SystemString_2);// 1608
+1688 __intnl_SystemInt32_0 = __intnl_SystemInt32_1
+1708 __lcl_visualRarity_SystemInt32_0 = __intnl_SystemInt32_0
+1728 __intnl_SystemInt32_2 = currentEquipmentType
+G_enchantmentDatabase.SetProgramVariable(__lcl_visualRarity_SystemInt32_0, __const_SystemString_4);// 1756
+G_enchantmentDatabase.SetProgramVariable(currentEquipmentType, __const_SystemString_5);// 1788
+G_enchantmentDatabase.SendCustomEvent(__const_SystemString_6);// 1812
+1868 __intnl_VRCUdonUdonBehaviour_1 = __intnl_SystemObject_1
+1888 __lcl_selected_VRCUdonUdonBehaviour_0 = __intnl_VRCUdonUdonBehaviour_1
+__lcl_attempts_SystemInt32_0 = op_Addition(__const_SystemInt32_5, __lcl_attempts_SystemInt32_0);// 1916
+1940 __intnl_UnityEngineObject_8 = __lcl_selected_VRCUdonUdonBehaviour_0
+1960 __intnl_UnityEngineObject_9 = __const_SystemObject_0
+2004 if (__intnl_SystemBoolean_7) //2020
+{
+2012 JUMP 1572
+}
+2036 __intnl_UnityEngineObject_8 = __lcl_selected_VRCUdonUdonBehaviour_0
+2056 __intnl_UnityEngineObject_9 = lastDisplayedEnchantment
+2100 if (__intnl_SystemBoolean_7) //2140
+{
+}
+2148 if (__intnl_SystemBoolean_7) //2164
+{
+2156 JUMP 1572
+}
+2180 __intnl_UnityEngineObject_10 = __lcl_selected_VRCUdonUdonBehaviour_0
+2200 __intnl_UnityEngineObject_11 = __const_SystemObject_0
+2244 if (__intnl_SystemBoolean_8) //2560
+{
+2268 __intnl_SystemInt32_0 = currentEquipmentType
+G_enchantmentDatabase.SetProgramVariable(currentEquipmentType, __const_SystemString_8);// 2296
+G_enchantmentDatabase.SendCustomEvent(__const_SystemString_9);// 2320
+2376 __intnl_UnityEngineComponentArray_0 = __intnl_SystemObject_0
+2396 __lcl_allForType_UnityEngineComponentArray_0 = __intnl_UnityEngineComponentArray_0
+2464 if (__intnl_SystemBoolean_9) //2560
+{
+__lcl_selected_VRCUdonUdonBehaviour_0 = G_enchantmentDatabase.GetProgramVariable(__const_SystemString_10).Get(__intnl_SystemInt32_3);// 2552
+}
+}
+2576 __0_GetVisualRollEnchantment__ret = __lcl_selected_VRCUdonUdonBehaviour_0
+2592 return;
+2612 return;
+__lcl_elapsed_SystemSingle_0 = op_Subtraction(animationStartTime, __intnl_SystemSingle_3);// 2668
+2716 if (__intnl_SystemBoolean_10) //3176
+{
+2732 JUMP 1512
+2756 __lcl_displayEnchant_VRCUdonUdonBehaviour_0 = __0_GetVisualRollEnchantment__ret
+2784 __0_enchant__param = __lcl_displayEnchant_VRCUdonUdonBehaviour_0
+2788 JUMP 4084
+2812 lastDisplayedEnchantment = __lcl_displayEnchant_VRCUdonUdonBehaviour_0
+2832 __intnl_UnityEngineObject_12 = audioSource
+2852 __intnl_UnityEngineObject_13 = __const_SystemObject_0
+2896 if (__intnl_SystemBoolean_11) //2976
+{
+2920 __intnl_UnityEngineObject_14 = tickSound
+2940 __intnl_UnityEngineObject_15 = __const_SystemObject_0
+}
+2984 if (__intnl_SystemBoolean_11) //3016
+{
+G_audioSource.PlayOneShot(tickSound);// 3008
+}
+__lcl_progress_SystemSingle_0 = op_Division(rollingDuration, __lcl_elapsed_SystemSingle_0);// 3040
+__lcl_currentTickRate_SystemSingle_0 = Lerp(__lcl_progress_SystemSingle_0, endTicksPerSecond, startTicksPerSecond);// 3080
+nextTickTime = op_Addition(__intnl_SystemSingle_5, __intnl_SystemSingle_4);// 3160
+3168 JUMP 4056
+}
+3184 if (hasShownFinalResult) //3200
+{
+3192 JUMP 4056
+}
+3216 hasShownFinalResult = __const_SystemBoolean_1
+resultShownTime = get_time();// 3228
+3260 __0_enchant__param = finalEnchantment
+3264 JUMP 4084
+3288 __intnl_UnityEngineObject_12 = altar
+3308 __intnl_UnityEngineObject_13 = __const_SystemObject_0
+3352 if (__intnl_SystemBoolean_11) //3492
+{
+3432 __intnl_SystemInt32_4 = __intnl_SystemInt32_5
+G_altar.SetProgramVariable(__intnl_SystemInt32_4, __const_SystemString_12);// 3460
+G_altar.SendCustomEvent(__const_SystemString_13);// 3484
+}
+3508 __intnl_UnityEngineObject_14 = activeRollingParticles
+3528 __intnl_UnityEngineObject_15 = __const_SystemObject_0
+3572 if (__intnl_SystemBoolean_12) //3616
+{
+3596 __intnl_UnityEngineObject_16 = activeRollingParticles
+Destroy(__intnl_UnityEngineObject_16);// 3608
+}
+3632 __intnl_UnityEngineObject_16 = resultParticlesPrefab
+3652 __intnl_UnityEngineObject_17 = __const_SystemObject_0
+3696 if (__intnl_SystemBoolean_13) //3776
+{
+3720 __intnl_UnityEngineObject_18 = particleSpawnPoint
+3740 __intnl_UnityEngineObject_19 = __const_SystemObject_0
+}
+3784 if (__intnl_SystemBoolean_13) //4040
+{
+3816 __1__intnlparam = resultParticlesPrefab
+3820 JUMP 7400
+3844 activeResultParticles = __0__intnlparam
+__0__intnlparam.get_transform().set_position(__intnl_UnityEngineVector3_1);// 3912
+__0__intnlparam.get_transform().set_rotation(__intnl_UnityEngineQuaternion_1);// 3984
+__0__intnlparam.get_transform().SetParent(particleSpawnPoint);// 4032
+}
+4048 JUMP 5660
+4068 return;
+4100 __intnl_UnityEngineObject_20 = __0_enchant__param
+4120 __intnl_UnityEngineObject_21 = __const_SystemObject_0
+4164 if (__intnl_SystemBoolean_14) //4192
+{
+4184 return;
+}
+4208 __intnl_UnityEngineObject_22 = enchantmentNameText
+4228 __intnl_UnityEngineObject_23 = __const_SystemObject_0
+4272 if (__intnl_SystemBoolean_15) //4656
+{
+4304 __intnl_VRCUdonUdonBehaviour_2 = __0_enchant__param
+__0_rolledEnchant__param.SendCustomEvent(__const_SystemString_14);// 4316
+4372 __intnl_UnityEngineColor_0 = __intnl_SystemObject_3
+4392 __lcl_rarityColor_UnityEngineColor_0 = __intnl_UnityEngineColor_0
+4420 __0_color__param = __lcl_rarityColor_UnityEngineColor_0
+4424 JUMP 5212
+4448 __lcl_hexColor_SystemString_0 = __0___0_ColorToHex__ret
+4564 __intnl_SystemString_2 = __intnl_SystemObject_4
+G_enchantmentNameText.set_text(__intnl_SystemString_4);// 4648
+}
+4672 __intnl_UnityEngineObject_24 = rarityText
+4692 __intnl_UnityEngineObject_25 = __const_SystemObject_0
+4736 if (__intnl_SystemBoolean_16) //5184
+{
+4768 __intnl_VRCUdonUdonBehaviour_2 = __0_enchant__param
+__0_rolledEnchant__param.SendCustomEvent(__const_SystemString_14);// 4780
+4836 __intnl_UnityEngineColor_0 = __intnl_SystemObject_3
+4856 __lcl_rarityColor_UnityEngineColor_0 = __intnl_UnityEngineColor_0
+4884 __0_color__param = __lcl_rarityColor_UnityEngineColor_0
+4888 JUMP 5212
+4912 __lcl_hexColor_SystemString_0 = __0___0_ColorToHex__ret
+5004 __intnl_TMProTextMeshProUGUI_0 = rarityText
+5024 __intnl_VRCUdonUdonBehaviour_3 = __0_enchant__param
+__0_rolledEnchant__param.SendCustomEvent(__const_SystemString_20);// 5036
+5092 __intnl_SystemString_2 = __intnl_SystemObject_4
+G_rarityText.set_text(__intnl_SystemString_4);// 5176
+}
+5196 return;
+__lcl_r_SystemInt32_0 = RoundToInt(__intnl_SystemSingle_7);// 5284
+__lcl_g_SystemInt32_0 = RoundToInt(__intnl_SystemSingle_9);// 5364
+__lcl_b_SystemInt32_0 = RoundToInt(__intnl_SystemSingle_11);// 5444
+__0___0_ColorToHex__ret = op_Addition(__intnl_SystemString_8, __intnl_SystemString_7);// 5604
+5624 return;
+5644 return;
+5676 __intnl_UnityEngineObject_26 = enchantmentManager
+5696 __intnl_UnityEngineObject_27 = __const_SystemObject_0
+5740 if (__intnl_SystemBoolean_17) //6008
+{
+5764 __intnl_VRCUdonUdonBehaviour_4 = finalEnchantment
+5784 __intnl_SystemInt32_6 = equipmentId
+5804 __intnl_SystemString_9 = equipmentType
+G_enchantmentManager.SetProgramVariable(equipmentId, __const_SystemString_23);// 5832
+G_enchantmentManager.SetProgramVariable(equipmentType, __const_SystemString_24);// 5864
+G_enchantmentManager.SetProgramVariable(finalEnchantment, __const_SystemString_25);// 5896
+G_enchantmentManager.SendCustomEvent(__const_SystemString_26);// 5920
+5976 __intnl_SystemBoolean_18 = __intnl_SystemObject_5
+5996 __lcl_success_SystemBoolean_0 = __intnl_SystemBoolean_18
+6000 JUMP 6008
+}
+6024 __intnl_UnityEngineObject_28 = equipmentStatsManager
+6044 __intnl_UnityEngineObject_29 = __const_SystemObject_0
+6088 if (__intnl_SystemBoolean_18) //6148
+{
+6120 __intnl_VRCUdonUdonBehaviour_4 = equipmentStatsManager
+G_equipmentStatsManager.SendCustomEvent(__const_SystemString_28);// 6132
+6140 JUMP 6148
+}
+6164 __intnl_UnityEngineObject_30 = altar
+6184 __intnl_UnityEngineObject_31 = __const_SystemObject_0
+6228 if (__intnl_SystemBoolean_19) //6280
+{
+6260 __intnl_VRCUdonUdonBehaviour_4 = altar
+G_altar.SendCustomEvent(__const_SystemString_29);// 6272
+}
+6292 return;
+void EndAnimation()
+6324 __intnl_UnityEngineObject_32 = activeResultParticles
+6344 __intnl_UnityEngineObject_33 = __const_SystemObject_0
+6388 if (__intnl_SystemBoolean_20) //6432
+{
+6412 __intnl_UnityEngineObject_34 = activeResultParticles
+Destroy(__intnl_UnityEngineObject_34);// 6424
+}
+6448 __intnl_UnityEngineObject_34 = animationPanel
+6468 __intnl_UnityEngineObject_35 = __const_SystemObject_0
+6512 if (__intnl_SystemBoolean_21) //6544
+{
+G_animationPanel.SetActive(__const_SystemBoolean_0);// 6536
+}
+6560 isAnimating = __const_SystemBoolean_0
+6580 __intnl_UnityEngineObject_36 = altar
+6600 __intnl_UnityEngineObject_37 = __const_SystemObject_0
+6644 if (__intnl_SystemBoolean_22) //6776
+{
+6700 __intnl_VRCUdonUdonBehaviour_5 = __intnl_SystemObject_6
+6720 __intnl_UnityEngineObject_38 = __intnl_VRCUdonUdonBehaviour_5
+6740 __intnl_UnityEngineObject_39 = __const_SystemObject_0
+}
+6784 if (__intnl_SystemBoolean_22) //6912
+{
+6840 __intnl_VRCUdonUdonBehaviour_6 = __intnl_SystemObject_7
+G_altar.GetProgramVariable(__const_SystemString_30).SendCustomEvent(__const_SystemString_31);// 6860
+6892 __intnl_VRCUdonUdonBehaviour_7 = altar
+G_altar.SendCustomEvent(__const_SystemString_32);// 6904
+}
+6924 return;
+6956 __intnl_UnityEngineObject_40 = activeRollingParticles
+6976 __intnl_UnityEngineObject_41 = __const_SystemObject_0
+7020 if (__intnl_SystemBoolean_23) //7084
+{
+7044 __intnl_UnityEngineObject_42 = activeRollingParticles
+Destroy(__intnl_UnityEngineObject_42);// 7056
+7080 activeRollingParticles = __const_SystemObject_0
+}
+7100 __intnl_UnityEngineObject_42 = activeResultParticles
+7120 __intnl_UnityEngineObject_43 = __const_SystemObject_0
+7164 if (__intnl_SystemBoolean_24) //7228
+{
+7188 __intnl_UnityEngineObject_44 = activeResultParticles
+Destroy(__intnl_UnityEngineObject_44);// 7200
+7224 activeResultParticles = __const_SystemObject_0
+}
+7244 __intnl_UnityEngineObject_44 = animationPanel
+7264 __intnl_UnityEngineObject_45 = __const_SystemObject_0
+7308 if (__intnl_SystemBoolean_25) //7340
+{
+G_animationPanel.SetActive(__const_SystemBoolean_0);// 7332
+}
+7356 isAnimating = __const_SystemBoolean_0
+7376 hasShownFinalResult = __const_SystemBoolean_0
+7392 return;
+__0__intnlparam = Instantiate(__1__intnlparam);// 7416
+7436 return;
+7456 return;
+7480 __2__intnlparam = __const_SystemObject_0
+7496 return;

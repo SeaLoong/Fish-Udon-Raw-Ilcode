@@ -1,0 +1,2092 @@
+using System;
+using UnityEngine;
+using VRC.Udon;
+using TMPro;
+using UnityEngine.UI;
+using VRC.SDKBase;
+using VRC.Udon.Common.Enums;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Boolean __intnl_SystemBoolean_83 = false;
+private Boolean __intnl_SystemBoolean_13 = false;
+private Boolean __intnl_SystemBoolean_23 = false;
+private Boolean __intnl_SystemBoolean_33 = false;
+private Boolean __intnl_SystemBoolean_43 = false;
+private Boolean __intnl_SystemBoolean_53 = false;
+private Boolean __intnl_SystemBoolean_63 = false;
+private Boolean __intnl_SystemBoolean_73 = false;
+private Component __13__intnlparam = null;
+private UInt32 __gintnl_SystemUInt32_56 = 18428;
+private UInt32 __gintnl_SystemUInt32_46 = 16884;
+private UInt32 __gintnl_SystemUInt32_66 = 19728;
+private UInt32 __gintnl_SystemUInt32_16 = 7228;
+private UInt32 __gintnl_SystemUInt32_36 = 15540;
+private UInt32 __gintnl_SystemUInt32_26 = 12008;
+private object __intnl_SystemObject_27 = null;
+private object __intnl_SystemObject_26 = null;
+private object __intnl_SystemObject_25 = null;
+private object __intnl_SystemObject_24 = null;
+private object __intnl_SystemObject_23 = null;
+private object __intnl_SystemObject_22 = null;
+private object __intnl_SystemObject_21 = null;
+private object __intnl_SystemObject_20 = null;
+private object __intnl_SystemObject_29 = null;
+private object __intnl_SystemObject_28 = null;
+private Int32 __intnl_SystemInt32_15 = 0;
+private Int32 __intnl_SystemInt32_25 = 0;
+private Int64 __const_SystemInt64_2 = 101180356198669697;
+private Int64 __const_SystemInt64_1 = 9117604706513487623;
+private Int64 __const_SystemInt64_0 = -8699714123331288960;
+private Int32 __0_itemIndex__param = 0;
+private String __intnl_SystemString_1 = null;
+private UdonBehaviour __6__intnlparam = null;
+private Object __intnl_UnityEngineObject_92 = null;
+private Object __intnl_UnityEngineObject_82 = null;
+private Object __intnl_UnityEngineObject_72 = null;
+private Object __intnl_UnityEngineObject_62 = null;
+private Object __intnl_UnityEngineObject_52 = null;
+private Object __intnl_UnityEngineObject_42 = null;
+private Object __intnl_UnityEngineObject_32 = null;
+private Object __intnl_UnityEngineObject_22 = null;
+private Object __intnl_UnityEngineObject_12 = null;
+private UdonBehaviour __8__intnlparam = null;
+private Int32 __0_itemId__param = 0;
+private Type __const_SystemType_1 = typeof(Image);
+private String __const_SystemString_46 = "__0_GetLocalPlayerRods";
+private String __const_SystemString_47 = "__0___0_GetLocalPlayerRods__ret";
+private String __const_SystemString_44 = "__0_get_Level__ret";
+private String __const_SystemString_45 = "__0_playerLevel__param";
+private String __const_SystemString_42 = "__0___0_GetEquipmentStatsString__ret";
+private String __const_SystemString_43 = "get_Level";
+private String __const_SystemString_40 = "__0_equipmentId__param";
+private String __const_SystemString_41 = "__0_GetEquipmentStatsString";
+private String __const_SystemString_48 = "Locked";
+private String __const_SystemString_49 = "__0_GetLocalPlayerLines";
+public GameObject rodSelectionArea;
+private object __intnl_SystemObject_0 = null;
+private Int32 __0_rodId__param = 0;
+public TextMeshProUGUI selectedItemDescriptionText;
+private Int32 __0_id__param = 0;
+private Int64 __lcl_targetID_SystemInt64_1 = 0;
+private String __const_SystemString_0 = "_LateStart";
+private Transform __intnl_UnityEngineTransform_0 = null;
+public GameObject lineSelectionButtonPrefab;
+private object __lcl_idValue_SystemObject_1 = null;
+private String __lcl_itemName_SystemString_0 = null;
+private Boolean __intnl_SystemBoolean_16 = false;
+private Boolean __intnl_SystemBoolean_26 = false;
+private Boolean __intnl_SystemBoolean_36 = false;
+private Boolean __intnl_SystemBoolean_46 = false;
+private Boolean __intnl_SystemBoolean_56 = false;
+private Boolean __intnl_SystemBoolean_66 = false;
+private Boolean __intnl_SystemBoolean_76 = false;
+private object __intnl_SystemObject_17 = null;
+private object __intnl_SystemObject_16 = null;
+private object __intnl_SystemObject_15 = null;
+private object __intnl_SystemObject_14 = null;
+private object __intnl_SystemObject_13 = null;
+private object __intnl_SystemObject_12 = null;
+private object __intnl_SystemObject_11 = null;
+private object __intnl_SystemObject_10 = null;
+private object __intnl_SystemObject_19 = null;
+private object __intnl_SystemObject_18 = null;
+public Image equippedRodIcon;
+private Int32 __intnl_SystemInt32_12 = 0;
+private Int32 __intnl_SystemInt32_22 = 0;
+private UdonBehaviour __10__intnlparam = null;
+private String __0_itemName__param = null;
+public Image equippedLineIcon;
+private UInt32 __gintnl_SystemUInt32_9 = 2152;
+private UInt32 __gintnl_SystemUInt32_8 = 2136;
+private UInt32 __gintnl_SystemUInt32_5 = 2044;
+private UInt32 __gintnl_SystemUInt32_4 = 2000;
+private UInt32 __gintnl_SystemUInt32_7 = 2120;
+private UInt32 __gintnl_SystemUInt32_6 = 2104;
+private UInt32 __gintnl_SystemUInt32_1 = 472;
+private UInt32 __gintnl_SystemUInt32_0 = 152;
+private UInt32 __gintnl_SystemUInt32_3 = 880;
+private UInt32 __gintnl_SystemUInt32_2 = 836;
+private Boolean __const_SystemBoolean_0 = false;
+private Boolean __const_SystemBoolean_1 = true;
+public GameObject lineSelectionArea;
+private Object __intnl_UnityEngineObject_91 = null;
+private Object __intnl_UnityEngineObject_81 = null;
+private Object __intnl_UnityEngineObject_71 = null;
+private Object __intnl_UnityEngineObject_61 = null;
+private Object __intnl_UnityEngineObject_51 = null;
+private Object __intnl_UnityEngineObject_41 = null;
+private Object __intnl_UnityEngineObject_31 = null;
+private Object __intnl_UnityEngineObject_21 = null;
+private Object __intnl_UnityEngineObject_11 = null;
+private UdonBehaviour __0_value__param = null;
+private Type __const_SystemType_2 = typeof(Transform);
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_29 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_28 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_21 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_20 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_23 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_22 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_25 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_24 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_27 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_26 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_7 = null;
+private Int32 __lcl_bobberId_SystemInt32_0 = 0;
+private String __const_SystemString_5 = "__0_GetCurrentRod__ret";
+private Object __intnl_UnityEngineObject_132 = null;
+private Object __intnl_UnityEngineObject_130 = null;
+private Object __intnl_UnityEngineObject_131 = null;
+private Boolean isInitialized = false;
+private UdonBehaviour _localRod = null;
+private UInt32 __gintnl_SystemUInt32_53 = 17728;
+private UInt32 __gintnl_SystemUInt32_43 = 16432;
+private UInt32 __gintnl_SystemUInt32_63 = 19608;
+private UInt32 __gintnl_SystemUInt32_13 = 4496;
+private UInt32 __gintnl_SystemUInt32_33 = 15292;
+private UInt32 __gintnl_SystemUInt32_23 = 10648;
+private Int32 __lcl_currentIndex_SystemInt32_2 = 0;
+private GameObject __3__intnlparam = null;
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+public UdonBehaviour bobberDatabase;
+private Int32 __0_lineId__param = 0;
+private Image __lcl_iconImage_UnityEngineUIImage_0 = null;
+private VRCPlayerApi onPlayerRestoredPlayer = null;
+private String __lcl_itemDescription_SystemString_0 = null;
+private Boolean __0_AllDatabasesReady__ret = false;
+private Object __intnl_UnityEngineObject_99 = null;
+private Object __intnl_UnityEngineObject_89 = null;
+private Object __intnl_UnityEngineObject_79 = null;
+private Object __intnl_UnityEngineObject_69 = null;
+private Object __intnl_UnityEngineObject_59 = null;
+private Object __intnl_UnityEngineObject_49 = null;
+private Object __intnl_UnityEngineObject_39 = null;
+private Object __intnl_UnityEngineObject_29 = null;
+private Object __intnl_UnityEngineObject_19 = null;
+private String __const_SystemString_16 = "__0_rodId__param";
+private String __const_SystemString_17 = "__0_lineId__param";
+private String __const_SystemString_14 = "lineId";
+private String __const_SystemString_15 = "bobberId";
+private String __const_SystemString_12 = "bobberIcon";
+private String __const_SystemString_13 = "rodId";
+private String __const_SystemString_10 = "rodIcon";
+private String __const_SystemString_11 = "lineIcon";
+private String __const_SystemString_18 = "__0_bobberId__param";
+private String __const_SystemString_19 = "__0_SetEquipmentIds";
+private VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_0 = null;
+private TextMeshProUGUI __lcl_emptyText_TMProTextMeshProUGUI_0 = null;
+private Object __intnl_UnityEngineObject_94 = null;
+private Object __intnl_UnityEngineObject_84 = null;
+private Object __intnl_UnityEngineObject_74 = null;
+private Object __intnl_UnityEngineObject_64 = null;
+private Object __intnl_UnityEngineObject_54 = null;
+private Object __intnl_UnityEngineObject_44 = null;
+private Object __intnl_UnityEngineObject_34 = null;
+private Object __intnl_UnityEngineObject_24 = null;
+private Object __intnl_UnityEngineObject_14 = null;
+private Int64 __refl_typeid = -7730414276332643614;
+private object __intnl_SystemObject_7 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_19 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_18 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_11 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_10 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_13 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_12 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_15 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_14 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_17 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_16 = null;
+private Int32 __lcl_rodId_SystemInt32_0 = 0;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_2 = null;
+private Transform __intnl_UnityEngineTransform_5 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_9 = null;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Component __intnl_UnityEngineComponent_0 = null;
+private GameObject[] __lcl_objects_UnityEngineGameObjectArray_1 = null;
+private Boolean __intnl_SystemBoolean_81 = false;
+private Boolean __intnl_SystemBoolean_11 = false;
+private Boolean __intnl_SystemBoolean_21 = false;
+private Boolean __intnl_SystemBoolean_31 = false;
+private Boolean __intnl_SystemBoolean_41 = false;
+private Boolean __intnl_SystemBoolean_51 = false;
+private Boolean __intnl_SystemBoolean_61 = false;
+private Boolean __intnl_SystemBoolean_71 = false;
+private Transform __intnl_UnityEngineTransform_13 = null;
+private Transform __intnl_UnityEngineTransform_12 = null;
+private Transform __intnl_UnityEngineTransform_11 = null;
+private Transform __intnl_UnityEngineTransform_10 = null;
+private Transform __intnl_UnityEngineTransform_16 = null;
+private Transform __intnl_UnityEngineTransform_15 = null;
+private Transform __intnl_UnityEngineTransform_14 = null;
+private UInt32 __gintnl_SystemUInt32_54 = 17904;
+private UInt32 __gintnl_SystemUInt32_44 = 16852;
+private UInt32 __gintnl_SystemUInt32_64 = 19652;
+private UInt32 __gintnl_SystemUInt32_14 = 7196;
+private UInt32 __gintnl_SystemUInt32_34 = 15308;
+private UInt32 __gintnl_SystemUInt32_24 = 10884;
+private object __intnl_SystemObject_46 = null;
+private object __intnl_SystemObject_45 = null;
+private object __intnl_SystemObject_44 = null;
+private object __intnl_SystemObject_43 = null;
+private object __intnl_SystemObject_42 = null;
+private object __intnl_SystemObject_41 = null;
+private object __intnl_SystemObject_40 = null;
+private Int32 __intnl_SystemInt32_17 = 0;
+private Int32 __intnl_SystemInt32_27 = 0;
+private Int32 __0_lineIndex__param = 0;
+private String __intnl_SystemString_3 = null;
+private UdonBehaviour __0__intnlparam = null;
+public GameObject bobberSelectionArea;
+private String __const_SystemString_66 = "__0_index__param";
+private String __const_SystemString_67 = "__0_SelectLine";
+private String __const_SystemString_64 = "__0_SelectLineById";
+private String __const_SystemString_65 = "__0___0_SelectLineById__ret";
+private String __const_SystemString_62 = "__0___0_SelectRodById__ret";
+private String __const_SystemString_63 = "OnEquipmentChanged";
+private String __const_SystemString_60 = "__0_ShouldBlockEquipmentSwap__ret";
+private String __const_SystemString_61 = "__0_SelectRodById";
+private String __const_SystemString_68 = "__0___0_SelectLine__ret";
+private String __const_SystemString_69 = "__0_SelectBobberById";
+private VRCPlayerApi __7__intnlparam = null;
+private TextMeshProUGUI __intnl_TMProTextMeshProUGUI_0 = null;
+private object __intnl_SystemObject_2 = null;
+private VRCPlayerApi __9__intnlparam = null;
+private object __intnl_SystemObject_9 = null;
+private GameObject __lcl_button_UnityEngineGameObject_1 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_1 = null;
+private String __const_SystemString_2 = "__0_RegisterCallbacks";
+private Transform __intnl_UnityEngineTransform_2 = null;
+private UdonBehaviour _old__playerInventoryData = null;
+private Component[] __lcl_rods_UnityEngineComponentArray_0 = null;
+private UdonBehaviour __lcl_rod_VRCUdonUdonBehaviour_0 = null;
+private Boolean __intnl_SystemBoolean_19 = false;
+private Boolean __intnl_SystemBoolean_29 = false;
+private Boolean __intnl_SystemBoolean_39 = false;
+private Boolean __intnl_SystemBoolean_49 = false;
+private Boolean __intnl_SystemBoolean_59 = false;
+private Boolean __intnl_SystemBoolean_69 = false;
+private Boolean __intnl_SystemBoolean_79 = false;
+private UdonBehaviour __lcl_foundScript_VRCUdonUdonBehaviour_0 = null;
+private GameObject __intnl_UnityEngineGameObject_3 = null;
+private GameObject __intnl_UnityEngineGameObject_2 = null;
+private GameObject __intnl_UnityEngineGameObject_1 = null;
+private GameObject __intnl_UnityEngineGameObject_0 = null;
+private GameObject __intnl_UnityEngineGameObject_5 = null;
+private GameObject __intnl_UnityEngineGameObject_4 = null;
+private UdonBehaviour _old__localRod = null;
+private Boolean __intnl_SystemBoolean_14 = false;
+private Boolean __intnl_SystemBoolean_24 = false;
+private Boolean __intnl_SystemBoolean_34 = false;
+private Boolean __intnl_SystemBoolean_44 = false;
+private Boolean __intnl_SystemBoolean_54 = false;
+private Boolean __intnl_SystemBoolean_64 = false;
+private Boolean __intnl_SystemBoolean_74 = false;
+private object __intnl_SystemObject_37 = null;
+private object __intnl_SystemObject_36 = null;
+private object __intnl_SystemObject_35 = null;
+private object __intnl_SystemObject_34 = null;
+private object __intnl_SystemObject_33 = null;
+private object __intnl_SystemObject_32 = null;
+private object __intnl_SystemObject_31 = null;
+private object __intnl_SystemObject_30 = null;
+private object __intnl_SystemObject_39 = null;
+private object __intnl_SystemObject_38 = null;
+private Component[] __intnl_UnityEngineComponentArray_1 = null;
+private Component[] __intnl_UnityEngineComponentArray_0 = null;
+private Component[] __intnl_UnityEngineComponentArray_3 = null;
+private Component[] __intnl_UnityEngineComponentArray_2 = null;
+private Component[] __intnl_UnityEngineComponentArray_5 = null;
+private Component[] __intnl_UnityEngineComponentArray_4 = null;
+private UdonBehaviour __lcl_line_VRCUdonUdonBehaviour_0 = null;
+private Int32 __intnl_SystemInt32_14 = 0;
+private Int32 __intnl_SystemInt32_24 = 0;
+private String __0_pieceType__param = null;
+private Int32 __intnl_SystemInt32_19 = 0;
+private Int32 __intnl_SystemInt32_29 = 0;
+private object __const_SystemObject_0 = null;
+private GameObject __15__intnlparam = null;
+private String __intnl_SystemString_0 = null;
+private Object __intnl_UnityEngineObject_93 = null;
+private Object __intnl_UnityEngineObject_83 = null;
+private Object __intnl_UnityEngineObject_73 = null;
+private Object __intnl_UnityEngineObject_63 = null;
+private Object __intnl_UnityEngineObject_53 = null;
+private Object __intnl_UnityEngineObject_43 = null;
+private Object __intnl_UnityEngineObject_33 = null;
+private Object __intnl_UnityEngineObject_23 = null;
+private Object __intnl_UnityEngineObject_13 = null;
+private Type __const_SystemType_0 = typeof(TextMeshProUGUI);
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_48 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_41 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_40 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_43 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_42 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_45 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_44 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_47 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_46 = null;
+private object __intnl_SystemObject_1 = null;
+private Component[] __lcl_bobbers_UnityEngineComponentArray_0 = null;
+private Int64 __lcl_targetID_SystemInt64_2 = 0;
+private GameObject __lcl_button_UnityEngineGameObject_2 = null;
+private String __const_SystemString_7 = "__0_GetCurrentLine__ret";
+private UdonBehaviour __4__intnlparam = null;
+private UdonBehaviour __lcl_currentRod_VRCUdonUdonBehaviour_0 = null;
+private UInt32 __gintnl_SystemUInt32_51 = 17656;
+private UInt32 __gintnl_SystemUInt32_41 = 16152;
+private UInt32 __gintnl_SystemUInt32_71 = 20916;
+private UInt32 __gintnl_SystemUInt32_61 = 19024;
+private UInt32 __gintnl_SystemUInt32_11 = 3852;
+private UInt32 __gintnl_SystemUInt32_31 = 14856;
+private UInt32 __gintnl_SystemUInt32_21 = 9724;
+public Int32 minimumSlotsToShow;
+private Int32 __lcl_currentIndex_SystemInt32_0 = 0;
+private Boolean __intnl_SystemBoolean_17 = false;
+private Boolean __intnl_SystemBoolean_27 = false;
+private Boolean __intnl_SystemBoolean_37 = false;
+private Boolean __intnl_SystemBoolean_47 = false;
+private Boolean __intnl_SystemBoolean_57 = false;
+private Boolean __intnl_SystemBoolean_67 = false;
+private Boolean __intnl_SystemBoolean_77 = false;
+private EventTiming __const_VRCUdonCommonEnumsEventTiming_0 = EventTiming.Update;
+private UdonBehaviour __12__intnlparam = null;
+private Int32 __intnl_SystemInt32_11 = 0;
+private Int32 __intnl_SystemInt32_21 = 0;
+private Sprite __0_icon__param = null;
+private UdonBehaviour _playerInventoryData = null;
+private String __const_SystemString_36 = "__0_GetBobberById";
+private String __const_SystemString_37 = "__0___0_GetBobberById__ret";
+private String __const_SystemString_34 = "bobber";
+private String __const_SystemString_35 = "__1_bobberId__param";
+private String __const_SystemString_32 = "__0___0_GetLineById__ret";
+private String __const_SystemString_33 = "lineName";
+private String __const_SystemString_30 = "__1_lineId__param";
+private String __const_SystemString_31 = "__0_GetLineById";
+private String __const_SystemString_38 = "bobberName";
+private String __const_SystemString_39 = "__0_equipmentType__param";
+private UdonBehaviour __lcl_handler_VRCUdonUdonBehaviour_0 = null;
+private Object __intnl_UnityEngineObject_96 = null;
+private Object __intnl_UnityEngineObject_86 = null;
+private Object __intnl_UnityEngineObject_76 = null;
+private Object __intnl_UnityEngineObject_66 = null;
+private Object __intnl_UnityEngineObject_56 = null;
+private Object __intnl_UnityEngineObject_46 = null;
+private Object __intnl_UnityEngineObject_36 = null;
+private Object __intnl_UnityEngineObject_26 = null;
+private Object __intnl_UnityEngineObject_16 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_39 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_38 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_31 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_30 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_33 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_32 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_35 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_34 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_37 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_36 = null;
+private Int64 __intnl_SystemInt64_2 = 0;
+private Int64 __intnl_SystemInt64_1 = 0;
+private Int64 __intnl_SystemInt64_0 = 0;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_4 = null;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private Transform __intnl_UnityEngineTransform_7 = null;
+private String __const_SystemString_4 = "GetCurrentRod";
+private UInt32 __gintnl_SystemUInt32_59 = 18516;
+private UInt32 __gintnl_SystemUInt32_49 = 17220;
+private UInt32 __gintnl_SystemUInt32_69 = 19876;
+private UInt32 __gintnl_SystemUInt32_19 = 8796;
+private UInt32 __gintnl_SystemUInt32_39 = 16080;
+private UInt32 __gintnl_SystemUInt32_29 = 13872;
+private Object __intnl_UnityEngineObject_108 = null;
+private Object __intnl_UnityEngineObject_109 = null;
+private Object __intnl_UnityEngineObject_106 = null;
+private Object __intnl_UnityEngineObject_107 = null;
+private Object __intnl_UnityEngineObject_104 = null;
+private Object __intnl_UnityEngineObject_105 = null;
+private Object __intnl_UnityEngineObject_102 = null;
+private Object __intnl_UnityEngineObject_103 = null;
+private Object __intnl_UnityEngineObject_100 = null;
+private Object __intnl_UnityEngineObject_101 = null;
+private Component __intnl_UnityEngineComponent_2 = null;
+private Int32 __lcl_lineId_SystemInt32_0 = 0;
+private UInt32 __gintnl_SystemUInt32_52 = 17672;
+private UInt32 __gintnl_SystemUInt32_42 = 16328;
+private UInt32 __gintnl_SystemUInt32_72 = 21412;
+private UInt32 __gintnl_SystemUInt32_62 = 19316;
+private UInt32 __gintnl_SystemUInt32_12 = 3964;
+private UInt32 __gintnl_SystemUInt32_32 = 15276;
+private UInt32 __gintnl_SystemUInt32_22 = 10156;
+public UdonBehaviour lineDatabase;
+private Int32 __lcl_i_SystemInt32_1 = 0;
+private Int32 __lcl_i_SystemInt32_0 = 0;
+private Int32 __lcl_i_SystemInt32_3 = 0;
+private Int32 __lcl_i_SystemInt32_2 = 0;
+private Int32 __lcl_i_SystemInt32_5 = 0;
+private Int32 __lcl_i_SystemInt32_4 = 0;
+private UdonBehaviour __lcl_behaviour_VRCUdonUdonBehaviour_0 = null;
+private Component[] __lcl_udonBehaviours_UnityEngineComponentArray_1 = null;
+private String __intnl_SystemString_5 = null;
+public GameObject emptySlotPrefab;
+public TextMeshProUGUI finalStatsText;
+private UdonBehaviour __1__intnlparam = null;
+private TextMeshProUGUI __lcl_emptyText_TMProTextMeshProUGUI_1 = null;
+private Object __intnl_UnityEngineObject_95 = null;
+private Object __intnl_UnityEngineObject_85 = null;
+private Object __intnl_UnityEngineObject_75 = null;
+private Object __intnl_UnityEngineObject_65 = null;
+private Object __intnl_UnityEngineObject_55 = null;
+private Object __intnl_UnityEngineObject_45 = null;
+private Object __intnl_UnityEngineObject_35 = null;
+private Object __intnl_UnityEngineObject_25 = null;
+private Object __intnl_UnityEngineObject_15 = null;
+private object __intnl_SystemObject_4 = null;
+private UdonBehaviour __lcl_bobber_VRCUdonUdonBehaviour_0 = null;
+private String __1_itemType__param = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_3 = null;
+private Int32 __lcl_totalSlotsToShow_SystemInt32_1 = 0;
+private Transform __intnl_UnityEngineTransform_4 = null;
+private String __const_SystemString_9 = "__0_GetCurrentBobber__ret";
+private Transform __intnl_UnityEngineTransform_9 = null;
+private UdonBehaviour __0_get_LocalRod__ret = null;
+private Transform[] __lcl_children_UnityEngineTransformArray_0 = null;
+private Boolean __intnl_SystemBoolean_82 = false;
+private Boolean __intnl_SystemBoolean_12 = false;
+private Boolean __intnl_SystemBoolean_22 = false;
+private Boolean __intnl_SystemBoolean_32 = false;
+private Boolean __intnl_SystemBoolean_42 = false;
+private Boolean __intnl_SystemBoolean_52 = false;
+private Boolean __intnl_SystemBoolean_62 = false;
+private Boolean __intnl_SystemBoolean_72 = false;
+private UInt32 __gintnl_SystemUInt32_57 = 18444;
+private UInt32 __gintnl_SystemUInt32_47 = 16940;
+private UInt32 __gintnl_SystemUInt32_67 = 19744;
+private UInt32 __gintnl_SystemUInt32_17 = 7612;
+private UInt32 __gintnl_SystemUInt32_37 = 15644;
+private UInt32 __gintnl_SystemUInt32_27 = 12500;
+private Int32 __intnl_SystemInt32_16 = 0;
+private Int32 __intnl_SystemInt32_26 = 0;
+private Component __11__intnlparam = null;
+private String __refl_typename = "RodCustomizationManager";
+private Component[] __lcl_udonBehaviours_UnityEngineComponentArray_2 = null;
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Int32 __intnl_SystemInt32_5 = 0;
+private Int32 __intnl_SystemInt32_4 = 0;
+private Int32 __intnl_SystemInt32_7 = 0;
+private Int32 __intnl_SystemInt32_6 = 0;
+private Int32 __intnl_SystemInt32_9 = 0;
+private Int32 __intnl_SystemInt32_8 = 0;
+private String __intnl_SystemString_2 = null;
+private String __const_SystemString_56 = "itemIndex";
+private String __const_SystemString_57 = "itemName";
+private String __const_SystemString_54 = "customizationManager";
+private String __const_SystemString_55 = "itemType";
+private String __const_SystemString_52 = "__0___0_GetLocalPlayerBobbers__ret";
+private String __const_SystemString_53 = "Image";
+private String __const_SystemString_50 = "__0___0_GetLocalPlayerLines__ret";
+private String __const_SystemString_51 = "__0_GetLocalPlayerBobbers";
+private String __const_SystemString_58 = "itemId";
+private String __const_SystemString_59 = "ShouldBlockEquipmentSwap";
+private object __intnl_SystemObject_3 = null;
+public GameObject rodSelectionButtonPrefab;
+public Image equippedBobberIcon;
+private Int64 __lcl_targetID_SystemInt64_0 = 0;
+private GameObject __lcl_button_UnityEngineGameObject_0 = null;
+private Int32 __lcl_totalSlotsToShow_SystemInt32_2 = 0;
+public TextMeshProUGUI selectedPieceStatsText;
+private String __const_SystemString_1 = "__0_behaviour__param";
+private Transform __intnl_UnityEngineTransform_1 = null;
+public TextMeshProUGUI selectedItemNameText;
+private object __lcl_idValue_SystemObject_0 = null;
+private UdonBehaviour __lcl_foundScript_VRCUdonUdonBehaviour_1 = null;
+private Component[] __lcl_lines_UnityEngineComponentArray_0 = null;
+private Component __5__intnlparam = null;
+private Boolean __intnl_SystemBoolean_15 = false;
+private Boolean __intnl_SystemBoolean_25 = false;
+private Boolean __intnl_SystemBoolean_35 = false;
+private Boolean __intnl_SystemBoolean_45 = false;
+private Boolean __intnl_SystemBoolean_55 = false;
+private Boolean __intnl_SystemBoolean_65 = false;
+private Boolean __intnl_SystemBoolean_75 = false;
+private Int32 __intnl_SystemInt32_13 = 0;
+private Int32 __intnl_SystemInt32_23 = 0;
+public UdonBehaviour statsManager;
+private Int32 __intnl_SystemInt32_18 = 0;
+private Int32 __intnl_SystemInt32_28 = 0;
+private Int32 __0_bobberIndex__param = 0;
+private Object __intnl_UnityEngineObject_90 = null;
+private Object __intnl_UnityEngineObject_80 = null;
+private Object __intnl_UnityEngineObject_70 = null;
+private Object __intnl_UnityEngineObject_60 = null;
+private Object __intnl_UnityEngineObject_50 = null;
+private Object __intnl_UnityEngineObject_40 = null;
+private Object __intnl_UnityEngineObject_30 = null;
+private Object __intnl_UnityEngineObject_20 = null;
+private Object __intnl_UnityEngineObject_10 = null;
+private Type __const_SystemType_3 = typeof(UdonBehaviour);
+private GameObject __lcl_emptySlot_UnityEngineGameObject_2 = null;
+private GameObject __lcl_emptySlot_UnityEngineGameObject_0 = null;
+private GameObject __lcl_emptySlot_UnityEngineGameObject_1 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_6 = null;
+private String __const_SystemString_6 = "GetCurrentLine";
+private UdonBehaviour __0_get_playerInventoryData__ret = null;
+private Object __intnl_UnityEngineObject_128 = null;
+private Object __intnl_UnityEngineObject_129 = null;
+private Object __intnl_UnityEngineObject_126 = null;
+private Object __intnl_UnityEngineObject_127 = null;
+private Object __intnl_UnityEngineObject_124 = null;
+private Object __intnl_UnityEngineObject_125 = null;
+private Object __intnl_UnityEngineObject_122 = null;
+private Object __intnl_UnityEngineObject_123 = null;
+private Object __intnl_UnityEngineObject_120 = null;
+private Object __intnl_UnityEngineObject_121 = null;
+private UInt32 __gintnl_SystemUInt32_50 = 17640;
+private UInt32 __gintnl_SystemUInt32_40 = 16096;
+private UInt32 __gintnl_SystemUInt32_70 = 19988;
+private UInt32 __gintnl_SystemUInt32_60 = 18732;
+private UInt32 __gintnl_SystemUInt32_10 = 2216;
+private UInt32 __gintnl_SystemUInt32_30 = 14752;
+private UInt32 __gintnl_SystemUInt32_20 = 9032;
+private TextMeshProUGUI __lcl_nameText_TMProTextMeshProUGUI_0 = null;
+private Int32 __lcl_currentIndex_SystemInt32_1 = 0;
+private UdonBehaviour __lcl_behaviour_VRCUdonUdonBehaviour_2 = null;
+private Int32 __intnl_SystemInt32_10 = 0;
+private Int32 __intnl_SystemInt32_20 = 0;
+public UdonBehaviour rodDatabase;
+private Transform __lcl_imageTransform_UnityEngineTransform_0 = null;
+private Object __intnl_UnityEngineObject_98 = null;
+private Object __intnl_UnityEngineObject_88 = null;
+private Object __intnl_UnityEngineObject_78 = null;
+private Object __intnl_UnityEngineObject_68 = null;
+private Object __intnl_UnityEngineObject_58 = null;
+private Object __intnl_UnityEngineObject_48 = null;
+private Object __intnl_UnityEngineObject_38 = null;
+private Object __intnl_UnityEngineObject_28 = null;
+private Object __intnl_UnityEngineObject_18 = null;
+private UdonBehaviour __1_value__param = null;
+private GameObject __14__intnlparam = null;
+private String __const_SystemString_26 = "__0___0_GetRodById__ret";
+private String __const_SystemString_27 = "rodName";
+private String __const_SystemString_24 = "__1_rodId__param";
+private String __const_SystemString_25 = "__0_GetRodById";
+private String __const_SystemString_22 = "";
+private String __const_SystemString_23 = "rod";
+private String __const_SystemString_20 = "GetFinalStatsDisplayString";
+private String __const_SystemString_21 = "__0_GetFinalStatsDisplayString__ret";
+private String __const_SystemString_28 = "description";
+private String __const_SystemString_29 = "line";
+private VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_1 = null;
+private Object __intnl_UnityEngineObject_97 = null;
+private Object __intnl_UnityEngineObject_87 = null;
+private Object __intnl_UnityEngineObject_77 = null;
+private Object __intnl_UnityEngineObject_67 = null;
+private Object __intnl_UnityEngineObject_57 = null;
+private Object __intnl_UnityEngineObject_47 = null;
+private Object __intnl_UnityEngineObject_37 = null;
+private Object __intnl_UnityEngineObject_27 = null;
+private Object __intnl_UnityEngineObject_17 = null;
+private object __intnl_SystemObject_6 = null;
+private Int32 __0_bobberId__param = 0;
+private UdonBehaviour __lcl_currentLine_VRCUdonUdonBehaviour_0 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_5 = null;
+private UdonBehaviour __lcl_currentBobber_VRCUdonUdonBehaviour_0 = null;
+private Transform __intnl_UnityEngineTransform_6 = null;
+private GameObject __0_button__param = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_8 = null;
+private UInt32 __gintnl_SystemUInt32_58 = 18460;
+private UInt32 __gintnl_SystemUInt32_48 = 17116;
+private UInt32 __gintnl_SystemUInt32_68 = 19760;
+private UInt32 __gintnl_SystemUInt32_18 = 8304;
+private UInt32 __gintnl_SystemUInt32_38 = 16064;
+private UInt32 __gintnl_SystemUInt32_28 = 12736;
+private Object __intnl_UnityEngineObject_118 = null;
+private Object __intnl_UnityEngineObject_119 = null;
+private Object __intnl_UnityEngineObject_116 = null;
+private Object __intnl_UnityEngineObject_117 = null;
+private Object __intnl_UnityEngineObject_114 = null;
+private Object __intnl_UnityEngineObject_115 = null;
+private Object __intnl_UnityEngineObject_112 = null;
+private Object __intnl_UnityEngineObject_113 = null;
+private Object __intnl_UnityEngineObject_110 = null;
+private Object __intnl_UnityEngineObject_111 = null;
+private GameObject __2__intnlparam = null;
+private Component __intnl_UnityEngineComponent_1 = null;
+private GameObject[] __lcl_objects_UnityEngineGameObjectArray_0 = null;
+private Int32 __0_pieceId__param = 0;
+private Boolean __intnl_SystemBoolean_80 = false;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Boolean __intnl_SystemBoolean_20 = false;
+private Boolean __intnl_SystemBoolean_30 = false;
+private Boolean __intnl_SystemBoolean_40 = false;
+private Boolean __intnl_SystemBoolean_50 = false;
+private Boolean __intnl_SystemBoolean_60 = false;
+private Boolean __intnl_SystemBoolean_70 = false;
+private UInt32 __gintnl_SystemUInt32_55 = 18008;
+private UInt32 __gintnl_SystemUInt32_45 = 16868;
+private UInt32 __gintnl_SystemUInt32_65 = 19712;
+private UInt32 __gintnl_SystemUInt32_15 = 7212;
+private UInt32 __gintnl_SystemUInt32_35 = 15364;
+private UInt32 __gintnl_SystemUInt32_25 = 11576;
+private Int32 __const_SystemInt32_1 = 0;
+private Int32 __const_SystemInt32_0 = 1;
+private UdonBehaviour __lcl_behaviour_VRCUdonUdonBehaviour_1 = null;
+private Component[] __lcl_udonBehaviours_UnityEngineComponentArray_0 = null;
+private GameObject __0_area__param = null;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+public UdonBehaviour playerStats;
+private String __intnl_SystemString_4 = null;
+private String __0_itemType__param = null;
+private Sprite __intnl_UnityEngineSprite_0 = null;
+private Sprite __intnl_UnityEngineSprite_1 = null;
+private Sprite __intnl_UnityEngineSprite_2 = null;
+private Sprite __intnl_UnityEngineSprite_3 = null;
+private Sprite __intnl_UnityEngineSprite_4 = null;
+private String __const_SystemString_76 = "__0_GetCurrentLineIndex__ret";
+private String __const_SystemString_77 = "GetCurrentBobberIndex";
+private String __const_SystemString_74 = "__0_GetCurrentRodIndex__ret";
+private String __const_SystemString_75 = "GetCurrentLineIndex";
+private String __const_SystemString_72 = "__0___0_SelectBobber__ret";
+private String __const_SystemString_73 = "GetCurrentRodIndex";
+private String __const_SystemString_70 = "__0___0_SelectBobberById__ret";
+private String __const_SystemString_71 = "__0_SelectBobber";
+private String __const_SystemString_78 = "__0_GetCurrentBobberIndex__ret";
+private String __const_SystemString_79 = "__refl_typeid";
+private TextMeshProUGUI __lcl_emptyText_TMProTextMeshProUGUI_2 = null;
+private TextMeshProUGUI __intnl_TMProTextMeshProUGUI_1 = null;
+private object __intnl_SystemObject_5 = null;
+public GameObject bobberSelectionButtonPrefab;
+private object __intnl_SystemObject_8 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_0 = null;
+private Int32 __lcl_totalSlotsToShow_SystemInt32_0 = 0;
+private String __const_SystemString_3 = "Ready";
+private UdonBehaviour __this_VRCUdonUdonBehaviour_2 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_1 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_0 = this;
+private Transform __intnl_UnityEngineTransform_3 = null;
+private object __lcl_idValue_SystemObject_2 = null;
+private String __const_SystemString_8 = "GetCurrentBobber";
+private Boolean __intnl_SystemBoolean_18 = false;
+private Boolean __intnl_SystemBoolean_28 = false;
+private Boolean __intnl_SystemBoolean_38 = false;
+private Boolean __intnl_SystemBoolean_48 = false;
+private Boolean __intnl_SystemBoolean_58 = false;
+private Boolean __intnl_SystemBoolean_68 = false;
+private Boolean __intnl_SystemBoolean_78 = false;
+private Transform __intnl_UnityEngineTransform_8 = null;
+
+
+public void get_playerInventoryData()
+{
+__intnl_UnityEngineObject_0 = _playerInventoryData;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_0)
+{
+__0_get_playerInventoryData__ret = _playerInventoryData;
+return;
+}
+UNDEF_a3c85_19936();
+_playerInventoryData = __0__intnlparam;
+__0_get_playerInventoryData__ret = _playerInventoryData;
+return;
+}
+public void _onVarChange__playerInventoryData()
+{
+__0_value__param = _playerInventoryData;
+_playerInventoryData = _old__playerInventoryData;
+_playerInventoryData = __0_value__param;
+}
+public void get_LocalRod()
+{
+__intnl_UnityEngineObject_2 = _localRod;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_2 != __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_1)
+{
+__0_get_LocalRod__ret = _localRod;
+return;
+}
+UNDEF_a3c85_20048();
+_localRod = __1__intnlparam;
+__0_get_LocalRod__ret = _localRod;
+return;
+}
+public void _onVarChange__localRod()
+{
+__1_value__param = _localRod;
+_localRod = _old__localRod;
+_localRod = __1_value__param;
+}
+public void _start()
+{
+__this_VRCUdonUdonBehaviour_0.SendCustomEventDelayedFrames(__const_SystemString_0, __const_SystemInt32_0, __const_VRCUdonCommonEnumsEventTiming_0);
+}
+public void _LateStart()
+{
+__intnl_VRCUdonUdonBehaviour_0 = __this_VRCUdonUdonBehaviour_1;
+playerStats.SetProgramVariable(__const_SystemString_1, __intnl_VRCUdonUdonBehaviour_0);
+playerStats.SendCustomEvent(__const_SystemString_2);
+}
+public void OnPlayerStatChanged()
+{
+UNDEF_a3c85_7248();
+}
+private void UNDEF_a3c85_996()
+{
+get_playerInventoryData();
+__intnl_SystemObject_0 = __0_get_playerInventoryData__ret.GetProgramVariable(__const_SystemString_3);
+__intnl_SystemBoolean_2 = (Boolean)__intnl_SystemObject_0;
+if (__intnl_SystemBoolean_2)
+{
+AllDatabasesReady();
+}
+__0_AllDatabasesReady__ret = __const_SystemBoolean_0;
+}
+private void AllDatabasesReady()
+{
+__intnl_UnityEngineObject_4 = rodDatabase;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_7 = __intnl_UnityEngineObject_4 != __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_7)
+{
+__intnl_UnityEngineObject_6 = lineDatabase;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_7 = __intnl_UnityEngineObject_6 != __intnl_UnityEngineObject_7;
+}
+__intnl_SystemBoolean_6 = __intnl_SystemBoolean_7;
+if (__intnl_SystemBoolean_6)
+{
+__intnl_UnityEngineObject_8 = bobberDatabase;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_6 = __intnl_UnityEngineObject_8 != __intnl_UnityEngineObject_9;
+}
+__intnl_SystemBoolean_5 = __intnl_SystemBoolean_6;
+if (__intnl_SystemBoolean_5)
+{
+__intnl_VRCUdonUdonBehaviour_1 = rodDatabase;
+rodDatabase.SendCustomEvent(__const_SystemString_4);
+__intnl_SystemObject_1 = rodDatabase.GetProgramVariable(__const_SystemString_5);
+__intnl_VRCUdonUdonBehaviour_2 = (UdonBehaviour)__intnl_SystemObject_1;
+__intnl_UnityEngineObject_10 = __intnl_VRCUdonUdonBehaviour_2;
+__intnl_UnityEngineObject_11 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_5 = __intnl_UnityEngineObject_10 != __intnl_UnityEngineObject_11;
+}
+__intnl_SystemBoolean_4 = __intnl_SystemBoolean_5;
+if (__intnl_SystemBoolean_4)
+{
+__intnl_VRCUdonUdonBehaviour_3 = lineDatabase;
+lineDatabase.SendCustomEvent(__const_SystemString_6);
+__intnl_SystemObject_2 = lineDatabase.GetProgramVariable(__const_SystemString_7);
+__intnl_VRCUdonUdonBehaviour_4 = (UdonBehaviour)__intnl_SystemObject_2;
+__intnl_UnityEngineObject_12 = __intnl_VRCUdonUdonBehaviour_4;
+__intnl_UnityEngineObject_13 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_4 = __intnl_UnityEngineObject_12 != __intnl_UnityEngineObject_13;
+}
+__intnl_SystemBoolean_3 = __intnl_SystemBoolean_4;
+if (__intnl_SystemBoolean_3)
+{
+__intnl_VRCUdonUdonBehaviour_5 = bobberDatabase;
+bobberDatabase.SendCustomEvent(__const_SystemString_8);
+__intnl_SystemObject_3 = bobberDatabase.GetProgramVariable(__const_SystemString_9);
+__intnl_VRCUdonUdonBehaviour_6 = (UdonBehaviour)__intnl_SystemObject_3;
+__intnl_UnityEngineObject_14 = __intnl_VRCUdonUdonBehaviour_6;
+__intnl_UnityEngineObject_15 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_3 = __intnl_UnityEngineObject_14 != __intnl_UnityEngineObject_15;
+}
+__0_AllDatabasesReady__ret = __intnl_SystemBoolean_3;
+return;
+}
+public void _onPlayerRestored()
+{
+__intnl_SystemBoolean_8 = onPlayerRestoredPlayer.isLocal;
+if (__intnl_SystemBoolean_8)
+{
+InitializeEquipped();
+}
+}
+public void InitializeEquipped()
+{
+UNDEF_a3c85_996();
+if (__0_AllDatabasesReady__ret)
+{
+UNDEF_a3c85_2192();
+}
+}
+private void UNDEF_a3c85_2192()
+{
+UpdateEquippedIcons();
+UNDEF_a3c85_4636();
+UpdateFinalStats();
+UNDEF_a3c85_7248();
+isInitialized = __const_SystemBoolean_1;
+}
+public void UpdateEquippedIcons()
+{
+UNDEF_a3c85_996();
+if (__0_AllDatabasesReady__ret)
+{
+UNDEF_a3c85_3828();
+}
+}
+private void UNDEF_a3c85_3828()
+{
+__intnl_VRCUdonUdonBehaviour_7 = rodDatabase;
+rodDatabase.SendCustomEvent(__const_SystemString_4);
+__intnl_SystemObject_4 = rodDatabase.GetProgramVariable(__const_SystemString_5);
+__intnl_VRCUdonUdonBehaviour_8 = (UdonBehaviour)__intnl_SystemObject_4;
+__lcl_currentRod_VRCUdonUdonBehaviour_0 = __intnl_VRCUdonUdonBehaviour_8;
+__intnl_UnityEngineObject_16 = __lcl_currentRod_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_17 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_9 = __intnl_UnityEngineObject_16 != __intnl_UnityEngineObject_17;
+if (__intnl_SystemBoolean_9)
+{
+__intnl_UnityEngineObject_18 = equippedRodIcon;
+__intnl_UnityEngineObject_19 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_9 = __intnl_UnityEngineObject_18 != __intnl_UnityEngineObject_19;
+}
+if (__intnl_SystemBoolean_9)
+{
+__intnl_SystemObject_5 = __lcl_currentRod_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_10);
+__intnl_UnityEngineSprite_0 = (Sprite)__intnl_SystemObject_5;
+equippedRodIcon.sprite = __intnl_UnityEngineSprite_0;
+__intnl_SystemObject_6 = __lcl_currentRod_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_10);
+__intnl_UnityEngineSprite_1 = (Sprite)__intnl_SystemObject_6;
+__intnl_UnityEngineObject_20 = __intnl_UnityEngineSprite_1;
+__intnl_UnityEngineObject_21 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_10 = __intnl_UnityEngineObject_20 != __intnl_UnityEngineObject_21;
+equippedRodIcon.enabled = __intnl_SystemBoolean_10;
+}
+__intnl_VRCUdonUdonBehaviour_9 = lineDatabase;
+lineDatabase.SendCustomEvent(__const_SystemString_6);
+__intnl_SystemObject_5 = lineDatabase.GetProgramVariable(__const_SystemString_7);
+__intnl_VRCUdonUdonBehaviour_10 = (UdonBehaviour)__intnl_SystemObject_5;
+__lcl_currentLine_VRCUdonUdonBehaviour_0 = __intnl_VRCUdonUdonBehaviour_10;
+__intnl_UnityEngineObject_20 = __lcl_currentLine_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_21 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_10 = __intnl_UnityEngineObject_20 != __intnl_UnityEngineObject_21;
+if (__intnl_SystemBoolean_10)
+{
+__intnl_UnityEngineObject_22 = equippedLineIcon;
+__intnl_UnityEngineObject_23 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_10 = __intnl_UnityEngineObject_22 != __intnl_UnityEngineObject_23;
+}
+if (__intnl_SystemBoolean_10)
+{
+__intnl_SystemObject_6 = __lcl_currentLine_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_11);
+__intnl_UnityEngineSprite_0 = (Sprite)__intnl_SystemObject_6;
+equippedLineIcon.sprite = __intnl_UnityEngineSprite_0;
+__intnl_SystemObject_7 = __lcl_currentLine_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_11);
+__intnl_UnityEngineSprite_1 = (Sprite)__intnl_SystemObject_7;
+__intnl_UnityEngineObject_24 = __intnl_UnityEngineSprite_1;
+__intnl_UnityEngineObject_25 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_11 = __intnl_UnityEngineObject_24 != __intnl_UnityEngineObject_25;
+equippedLineIcon.enabled = __intnl_SystemBoolean_11;
+}
+__intnl_VRCUdonUdonBehaviour_11 = bobberDatabase;
+bobberDatabase.SendCustomEvent(__const_SystemString_8);
+__intnl_SystemObject_6 = bobberDatabase.GetProgramVariable(__const_SystemString_9);
+__intnl_VRCUdonUdonBehaviour_12 = (UdonBehaviour)__intnl_SystemObject_6;
+__lcl_currentBobber_VRCUdonUdonBehaviour_0 = __intnl_VRCUdonUdonBehaviour_12;
+__intnl_UnityEngineObject_24 = __lcl_currentBobber_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_25 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_11 = __intnl_UnityEngineObject_24 != __intnl_UnityEngineObject_25;
+if (__intnl_SystemBoolean_11)
+{
+__intnl_UnityEngineObject_26 = equippedBobberIcon;
+__intnl_UnityEngineObject_27 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_11 = __intnl_UnityEngineObject_26 != __intnl_UnityEngineObject_27;
+}
+if (__intnl_SystemBoolean_11)
+{
+__intnl_SystemObject_7 = __lcl_currentBobber_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_12);
+__intnl_UnityEngineSprite_0 = (Sprite)__intnl_SystemObject_7;
+equippedBobberIcon.sprite = __intnl_UnityEngineSprite_0;
+__intnl_SystemObject_8 = __lcl_currentBobber_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_12);
+__intnl_UnityEngineSprite_1 = (Sprite)__intnl_SystemObject_8;
+__intnl_UnityEngineObject_28 = __intnl_UnityEngineSprite_1;
+__intnl_UnityEngineObject_29 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_12 = __intnl_UnityEngineObject_28 != __intnl_UnityEngineObject_29;
+equippedBobberIcon.enabled = __intnl_SystemBoolean_12;
+}
+}
+private void UNDEF_a3c85_4636()
+{
+get_LocalRod();
+__intnl_UnityEngineObject_30 = __0_get_LocalRod__ret;
+__intnl_UnityEngineObject_31 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_13 = __intnl_UnityEngineObject_30 == __intnl_UnityEngineObject_31;
+if (__intnl_SystemBoolean_13)
+{
+}
+else
+{
+UNDEF_a3c85_996();
+__intnl_SystemBoolean_13 = !__0_AllDatabasesReady__ret;
+}
+if (__intnl_SystemBoolean_13)
+{
+return;
+}
+__intnl_VRCUdonUdonBehaviour_13 = rodDatabase;
+rodDatabase.SendCustomEvent(__const_SystemString_4);
+__intnl_SystemObject_9 = rodDatabase.GetProgramVariable(__const_SystemString_5);
+__intnl_VRCUdonUdonBehaviour_14 = (UdonBehaviour)__intnl_SystemObject_9;
+__intnl_SystemObject_10 = __intnl_VRCUdonUdonBehaviour_14.GetProgramVariable(__const_SystemString_13);
+__lcl_rodId_SystemInt32_0 = Convert.ToInt32(__intnl_SystemObject_10);
+__intnl_VRCUdonUdonBehaviour_15 = lineDatabase;
+lineDatabase.SendCustomEvent(__const_SystemString_6);
+__intnl_SystemObject_11 = lineDatabase.GetProgramVariable(__const_SystemString_7);
+__intnl_VRCUdonUdonBehaviour_16 = (UdonBehaviour)__intnl_SystemObject_11;
+__intnl_SystemObject_12 = __intnl_VRCUdonUdonBehaviour_16.GetProgramVariable(__const_SystemString_14);
+__lcl_lineId_SystemInt32_0 = Convert.ToInt32(__intnl_SystemObject_12);
+__intnl_VRCUdonUdonBehaviour_17 = bobberDatabase;
+bobberDatabase.SendCustomEvent(__const_SystemString_8);
+__intnl_SystemObject_13 = bobberDatabase.GetProgramVariable(__const_SystemString_9);
+__intnl_VRCUdonUdonBehaviour_18 = (UdonBehaviour)__intnl_SystemObject_13;
+__intnl_SystemObject_14 = __intnl_VRCUdonUdonBehaviour_18.GetProgramVariable(__const_SystemString_15);
+__lcl_bobberId_SystemInt32_0 = Convert.ToInt32(__intnl_SystemObject_14);
+get_LocalRod();
+__0_get_LocalRod__ret.SetProgramVariable(__const_SystemString_16, __lcl_rodId_SystemInt32_0);
+__0_get_LocalRod__ret.SetProgramVariable(__const_SystemString_17, __lcl_lineId_SystemInt32_0);
+__0_get_LocalRod__ret.SetProgramVariable(__const_SystemString_18, __lcl_bobberId_SystemInt32_0);
+__0_get_LocalRod__ret.SendCustomEvent(__const_SystemString_19);
+}
+public void UpdateFinalStats()
+{
+__intnl_UnityEngineObject_32 = finalStatsText;
+__intnl_UnityEngineObject_33 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_14 = __intnl_UnityEngineObject_32 == __intnl_UnityEngineObject_33;
+if (__intnl_SystemBoolean_14)
+{
+}
+else
+{
+__intnl_UnityEngineObject_34 = statsManager;
+__intnl_UnityEngineObject_35 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_14 = __intnl_UnityEngineObject_34 == __intnl_UnityEngineObject_35;
+}
+if (__intnl_SystemBoolean_14)
+{
+return;
+}
+__intnl_VRCUdonUdonBehaviour_19 = statsManager;
+__intnl_TMProTextMeshProUGUI_0 = finalStatsText;
+statsManager.SendCustomEvent(__const_SystemString_20);
+__intnl_SystemObject_15 = statsManager.GetProgramVariable(__const_SystemString_21);
+__intnl_SystemString_0 = (String)__intnl_SystemObject_15;
+__intnl_TMProTextMeshProUGUI_0.text = __intnl_SystemString_0;
+}
+public void __0_ShowSelectedPieceStats()
+{
+__intnl_UnityEngineObject_36 = selectedPieceStatsText;
+__intnl_UnityEngineObject_37 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_15 = __intnl_UnityEngineObject_36 == __intnl_UnityEngineObject_37;
+if (__intnl_SystemBoolean_15)
+{
+}
+else
+{
+__intnl_UnityEngineObject_38 = statsManager;
+__intnl_UnityEngineObject_39 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_15 = __intnl_UnityEngineObject_38 == __intnl_UnityEngineObject_39;
+}
+if (__intnl_SystemBoolean_15)
+{
+return;
+}
+__lcl_itemName_SystemString_0 = __const_SystemString_22;
+__lcl_itemDescription_SystemString_0 = __const_SystemString_22;
+__intnl_SystemBoolean_16 = __0_pieceType__param == __const_SystemString_23;
+if (__intnl_SystemBoolean_16)
+{
+__intnl_UnityEngineObject_40 = rodDatabase;
+__intnl_UnityEngineObject_41 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_16 = __intnl_UnityEngineObject_40 != __intnl_UnityEngineObject_41;
+}
+if (__intnl_SystemBoolean_16)
+{
+__intnl_SystemInt32_0 = __0_pieceId__param;
+rodDatabase.SetProgramVariable(__const_SystemString_24, __0_pieceId__param);
+rodDatabase.SendCustomEvent(__const_SystemString_25);
+__intnl_SystemObject_16 = rodDatabase.GetProgramVariable(__const_SystemString_26);
+__intnl_VRCUdonUdonBehaviour_20 = (UdonBehaviour)__intnl_SystemObject_16;
+__lcl_rod_VRCUdonUdonBehaviour_0 = __intnl_VRCUdonUdonBehaviour_20;
+__intnl_UnityEngineObject_42 = __lcl_rod_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_43 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_17 = __intnl_UnityEngineObject_42 != __intnl_UnityEngineObject_43;
+if (__intnl_SystemBoolean_17)
+{
+__intnl_SystemObject_17 = __lcl_rod_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_27);
+__lcl_itemName_SystemString_0 = (String)__intnl_SystemObject_17;
+__intnl_SystemObject_18 = __lcl_rod_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_28);
+__lcl_itemDescription_SystemString_0 = (String)__intnl_SystemObject_18;
+}
+}
+else
+{
+__intnl_SystemBoolean_17 = __0_pieceType__param == __const_SystemString_29;
+if (__intnl_SystemBoolean_17)
+{
+__intnl_UnityEngineObject_42 = lineDatabase;
+__intnl_UnityEngineObject_43 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_17 = __intnl_UnityEngineObject_42 != __intnl_UnityEngineObject_43;
+}
+if (__intnl_SystemBoolean_17)
+{
+__intnl_SystemInt32_0 = __0_pieceId__param;
+lineDatabase.SetProgramVariable(__const_SystemString_30, __0_pieceId__param);
+lineDatabase.SendCustomEvent(__const_SystemString_31);
+__intnl_SystemObject_16 = lineDatabase.GetProgramVariable(__const_SystemString_32);
+__intnl_VRCUdonUdonBehaviour_20 = (UdonBehaviour)__intnl_SystemObject_16;
+__lcl_line_VRCUdonUdonBehaviour_0 = __intnl_VRCUdonUdonBehaviour_20;
+__intnl_UnityEngineObject_44 = __lcl_line_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_45 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_18 = __intnl_UnityEngineObject_44 != __intnl_UnityEngineObject_45;
+if (__intnl_SystemBoolean_18)
+{
+__intnl_SystemObject_17 = __lcl_line_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_33);
+__lcl_itemName_SystemString_0 = (String)__intnl_SystemObject_17;
+__intnl_SystemObject_18 = __lcl_line_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_28);
+__lcl_itemDescription_SystemString_0 = (String)__intnl_SystemObject_18;
+}
+}
+else
+{
+__intnl_SystemBoolean_18 = __0_pieceType__param == __const_SystemString_34;
+if (__intnl_SystemBoolean_18)
+{
+__intnl_UnityEngineObject_44 = bobberDatabase;
+__intnl_UnityEngineObject_45 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_18 = __intnl_UnityEngineObject_44 != __intnl_UnityEngineObject_45;
+}
+if (__intnl_SystemBoolean_18)
+{
+__intnl_SystemInt32_0 = __0_pieceId__param;
+bobberDatabase.SetProgramVariable(__const_SystemString_35, __0_pieceId__param);
+bobberDatabase.SendCustomEvent(__const_SystemString_36);
+__intnl_SystemObject_16 = bobberDatabase.GetProgramVariable(__const_SystemString_37);
+__intnl_VRCUdonUdonBehaviour_20 = (UdonBehaviour)__intnl_SystemObject_16;
+__lcl_bobber_VRCUdonUdonBehaviour_0 = __intnl_VRCUdonUdonBehaviour_20;
+__intnl_UnityEngineObject_46 = __lcl_bobber_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_47 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_19 = __intnl_UnityEngineObject_46 != __intnl_UnityEngineObject_47;
+if (__intnl_SystemBoolean_19)
+{
+__intnl_SystemObject_17 = __lcl_bobber_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_38);
+__lcl_itemName_SystemString_0 = (String)__intnl_SystemObject_17;
+__intnl_SystemObject_18 = __lcl_bobber_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_28);
+__lcl_itemDescription_SystemString_0 = (String)__intnl_SystemObject_18;
+}
+}
+}
+}
+__intnl_TMProTextMeshProUGUI_1 = selectedPieceStatsText;
+__intnl_SystemString_1 = __0_pieceType__param;
+__intnl_SystemInt32_0 = __0_pieceId__param;
+statsManager.SetProgramVariable(__const_SystemString_39, __0_pieceType__param);
+statsManager.SetProgramVariable(__const_SystemString_40, __0_pieceId__param);
+statsManager.SendCustomEvent(__const_SystemString_41);
+__intnl_SystemObject_16 = statsManager.GetProgramVariable(__const_SystemString_42);
+__intnl_SystemString_2 = (String)__intnl_SystemObject_16;
+__intnl_TMProTextMeshProUGUI_1.text = __intnl_SystemString_2;
+__intnl_UnityEngineObject_46 = selectedItemNameText;
+__intnl_UnityEngineObject_47 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_19 = __intnl_UnityEngineObject_46 != __intnl_UnityEngineObject_47;
+if (__intnl_SystemBoolean_19)
+{
+selectedItemNameText.text = __lcl_itemName_SystemString_0;
+}
+__intnl_UnityEngineObject_48 = selectedItemDescriptionText;
+__intnl_UnityEngineObject_49 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_20 = __intnl_UnityEngineObject_48 != __intnl_UnityEngineObject_49;
+if (__intnl_SystemBoolean_20)
+{
+selectedItemDescriptionText.text = __lcl_itemDescription_SystemString_0;
+}
+}
+private void UNDEF_a3c85_7248()
+{
+UNDEF_a3c85_9360();
+UNDEF_a3c85_11212();
+UNDEF_a3c85_13064();
+}
+private void UNDEF_a3c85_9360()
+{
+__intnl_UnityEngineObject_50 = rodDatabase;
+__intnl_UnityEngineObject_51 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_22 = __intnl_UnityEngineObject_50 == __intnl_UnityEngineObject_51;
+if (__intnl_SystemBoolean_22)
+{
+}
+else
+{
+__intnl_UnityEngineObject_52 = rodSelectionArea;
+__intnl_UnityEngineObject_53 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_22 = __intnl_UnityEngineObject_52 == __intnl_UnityEngineObject_53;
+}
+__intnl_SystemBoolean_21 = __intnl_SystemBoolean_22;
+if (__intnl_SystemBoolean_21)
+{
+}
+else
+{
+__intnl_UnityEngineObject_54 = rodSelectionButtonPrefab;
+__intnl_UnityEngineObject_55 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_21 = __intnl_UnityEngineObject_54 == __intnl_UnityEngineObject_55;
+}
+if (__intnl_SystemBoolean_21)
+{
+return;
+}
+__0_area__param = rodSelectionArea;
+UNDEF_a3c85_14728();
+__intnl_VRCUdonUdonBehaviour_21 = rodDatabase;
+__intnl_VRCUdonUdonBehaviour_22 = playerStats;
+playerStats.SendCustomEvent(__const_SystemString_43);
+__intnl_SystemObject_19 = playerStats.GetProgramVariable(__const_SystemString_44);
+__intnl_SystemInt32_1 = Convert.ToInt32(__intnl_SystemObject_19);
+__intnl_VRCUdonUdonBehaviour_21.SetProgramVariable(__const_SystemString_45, __intnl_SystemInt32_1);
+__intnl_VRCUdonUdonBehaviour_21.SendCustomEvent(__const_SystemString_46);
+__intnl_SystemObject_20 = __intnl_VRCUdonUdonBehaviour_21.GetProgramVariable(__const_SystemString_47);
+__intnl_UnityEngineComponentArray_0 = (Component[])__intnl_SystemObject_20;
+__lcl_rods_UnityEngineComponentArray_0 = __intnl_UnityEngineComponentArray_0;
+__lcl_i_SystemInt32_0 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_2 = __lcl_rods_UnityEngineComponentArray_0.Length;
+__intnl_SystemBoolean_23 = __lcl_i_SystemInt32_0 < __intnl_SystemInt32_2;
+if (__intnl_SystemBoolean_23)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_23 = (UdonBehaviour)(__lcl_rods_UnityEngineComponentArray_0[__lcl_i_SystemInt32_0]);
+__intnl_UnityEngineObject_56 = __intnl_VRCUdonUdonBehaviour_23;
+__intnl_UnityEngineObject_57 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_24 = __intnl_UnityEngineObject_56 == __intnl_UnityEngineObject_57;
+if (__intnl_SystemBoolean_24)
+{
+break;
+}
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_0;
+}
+__intnl_SystemInt32_2 = __lcl_rods_UnityEngineComponentArray_0.Length;
+__lcl_totalSlotsToShow_SystemInt32_0 = Mathf.Max(__intnl_SystemInt32_2, minimumSlotsToShow);
+__lcl_i_SystemInt32_0 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_3 = __lcl_rods_UnityEngineComponentArray_0.Length;
+__intnl_SystemBoolean_23 = __lcl_i_SystemInt32_0 < __intnl_SystemInt32_3;
+if (__intnl_SystemBoolean_23)
+{
+break;
+}
+__3__intnlparam = rodSelectionButtonPrefab;
+UNDEF_a3c85_20112();
+__lcl_button_UnityEngineGameObject_0 = __2__intnlparam;
+__intnl_UnityEngineTransform_0 = __lcl_button_UnityEngineGameObject_0.transform;
+__intnl_UnityEngineTransform_1 = rodSelectionArea.transform;
+__intnl_UnityEngineTransform_0.SetParent(__intnl_UnityEngineTransform_1, __const_SystemBoolean_0);
+__intnl_VRCUdonUdonBehaviour_23 = (UdonBehaviour)(__lcl_rods_UnityEngineComponentArray_0[__lcl_i_SystemInt32_0]);
+__intnl_SystemObject_21 = __intnl_VRCUdonUdonBehaviour_23.GetProgramVariable(__const_SystemString_10);
+__intnl_UnityEngineSprite_2 = (Sprite)__intnl_SystemObject_21;
+__intnl_VRCUdonUdonBehaviour_24 = (UdonBehaviour)(__lcl_rods_UnityEngineComponentArray_0[__lcl_i_SystemInt32_0]);
+__intnl_SystemObject_22 = __intnl_VRCUdonUdonBehaviour_24.GetProgramVariable(__const_SystemString_27);
+__intnl_SystemString_3 = (String)__intnl_SystemObject_22;
+__intnl_VRCUdonUdonBehaviour_25 = (UdonBehaviour)(__lcl_rods_UnityEngineComponentArray_0[__lcl_i_SystemInt32_0]);
+__intnl_SystemObject_23 = __intnl_VRCUdonUdonBehaviour_25.GetProgramVariable(__const_SystemString_13);
+__intnl_SystemInt32_4 = Convert.ToInt32(__intnl_SystemObject_23);
+__0_button__param = __lcl_button_UnityEngineGameObject_0;
+__0_icon__param = __intnl_UnityEngineSprite_2;
+__0_itemName__param = __intnl_SystemString_3;
+__0_itemType__param = __const_SystemString_23;
+__0_itemIndex__param = __lcl_i_SystemInt32_0;
+__0_id__param = __intnl_SystemInt32_4;
+UNDEF_a3c85_14168();
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_0;
+}
+__lcl_i_SystemInt32_0 = __lcl_rods_UnityEngineComponentArray_0.Length;
+for (;;)
+{
+__intnl_SystemBoolean_23 = __lcl_i_SystemInt32_0 < __lcl_totalSlotsToShow_SystemInt32_0;
+if (__intnl_SystemBoolean_23)
+{
+break;
+}
+__intnl_UnityEngineObject_56 = emptySlotPrefab;
+__intnl_UnityEngineObject_57 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_24 = __intnl_UnityEngineObject_56 != __intnl_UnityEngineObject_57;
+if (__intnl_SystemBoolean_24)
+{
+__3__intnlparam = emptySlotPrefab;
+UNDEF_a3c85_20112();
+__lcl_emptySlot_UnityEngineGameObject_0 = __2__intnlparam;
+__intnl_UnityEngineTransform_0 = __lcl_emptySlot_UnityEngineGameObject_0.transform;
+__intnl_UnityEngineTransform_1 = rodSelectionArea.transform;
+__intnl_UnityEngineTransform_0.SetParent(__intnl_UnityEngineTransform_1, __const_SystemBoolean_0);
+__intnl_UnityEngineTransform_2 = __lcl_emptySlot_UnityEngineGameObject_0.transform;
+__lcl_emptyText_TMProTextMeshProUGUI_0 = (TextMeshProUGUI)(__intnl_UnityEngineTransform_2.GetComponentInChildren(__const_SystemType_0));
+__intnl_UnityEngineObject_58 = __lcl_emptyText_TMProTextMeshProUGUI_0;
+__intnl_UnityEngineObject_59 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_25 = __intnl_UnityEngineObject_58 != __intnl_UnityEngineObject_59;
+if (__intnl_SystemBoolean_25)
+{
+__lcl_emptyText_TMProTextMeshProUGUI_0.text = __const_SystemString_48;
+}
+}
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_0;
+}
+}
+private void UNDEF_a3c85_11212()
+{
+__intnl_UnityEngineObject_60 = lineDatabase;
+__intnl_UnityEngineObject_61 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_27 = __intnl_UnityEngineObject_60 == __intnl_UnityEngineObject_61;
+if (__intnl_SystemBoolean_27)
+{
+}
+else
+{
+__intnl_UnityEngineObject_62 = lineSelectionArea;
+__intnl_UnityEngineObject_63 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_27 = __intnl_UnityEngineObject_62 == __intnl_UnityEngineObject_63;
+}
+__intnl_SystemBoolean_26 = __intnl_SystemBoolean_27;
+if (__intnl_SystemBoolean_26)
+{
+}
+else
+{
+__intnl_UnityEngineObject_64 = lineSelectionButtonPrefab;
+__intnl_UnityEngineObject_65 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_26 = __intnl_UnityEngineObject_64 == __intnl_UnityEngineObject_65;
+}
+if (__intnl_SystemBoolean_26)
+{
+return;
+}
+__0_area__param = lineSelectionArea;
+UNDEF_a3c85_14728();
+__intnl_VRCUdonUdonBehaviour_26 = lineDatabase;
+__intnl_VRCUdonUdonBehaviour_27 = playerStats;
+playerStats.SendCustomEvent(__const_SystemString_43);
+__intnl_SystemObject_24 = playerStats.GetProgramVariable(__const_SystemString_44);
+__intnl_SystemInt32_5 = Convert.ToInt32(__intnl_SystemObject_24);
+__intnl_VRCUdonUdonBehaviour_26.SetProgramVariable(__const_SystemString_45, __intnl_SystemInt32_5);
+__intnl_VRCUdonUdonBehaviour_26.SendCustomEvent(__const_SystemString_49);
+__intnl_SystemObject_25 = __intnl_VRCUdonUdonBehaviour_26.GetProgramVariable(__const_SystemString_50);
+__intnl_UnityEngineComponentArray_1 = (Component[])__intnl_SystemObject_25;
+__lcl_lines_UnityEngineComponentArray_0 = __intnl_UnityEngineComponentArray_1;
+__intnl_SystemInt32_6 = __lcl_lines_UnityEngineComponentArray_0.Length;
+__lcl_totalSlotsToShow_SystemInt32_1 = Mathf.Max(__intnl_SystemInt32_6, minimumSlotsToShow);
+__lcl_i_SystemInt32_1 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_7 = __lcl_lines_UnityEngineComponentArray_0.Length;
+__intnl_SystemBoolean_28 = __lcl_i_SystemInt32_1 < __intnl_SystemInt32_7;
+if (__intnl_SystemBoolean_28)
+{
+break;
+}
+__3__intnlparam = lineSelectionButtonPrefab;
+UNDEF_a3c85_20112();
+__lcl_button_UnityEngineGameObject_1 = __2__intnlparam;
+__intnl_UnityEngineTransform_3 = __lcl_button_UnityEngineGameObject_1.transform;
+__intnl_UnityEngineTransform_4 = lineSelectionArea.transform;
+__intnl_UnityEngineTransform_3.SetParent(__intnl_UnityEngineTransform_4, __const_SystemBoolean_0);
+__intnl_VRCUdonUdonBehaviour_28 = (UdonBehaviour)(__lcl_lines_UnityEngineComponentArray_0[__lcl_i_SystemInt32_1]);
+__intnl_SystemObject_26 = __intnl_VRCUdonUdonBehaviour_28.GetProgramVariable(__const_SystemString_11);
+__intnl_UnityEngineSprite_3 = (Sprite)__intnl_SystemObject_26;
+__intnl_VRCUdonUdonBehaviour_29 = (UdonBehaviour)(__lcl_lines_UnityEngineComponentArray_0[__lcl_i_SystemInt32_1]);
+__intnl_SystemObject_27 = __intnl_VRCUdonUdonBehaviour_29.GetProgramVariable(__const_SystemString_33);
+__intnl_SystemString_4 = (String)__intnl_SystemObject_27;
+__intnl_VRCUdonUdonBehaviour_30 = (UdonBehaviour)(__lcl_lines_UnityEngineComponentArray_0[__lcl_i_SystemInt32_1]);
+__intnl_SystemObject_28 = __intnl_VRCUdonUdonBehaviour_30.GetProgramVariable(__const_SystemString_14);
+__intnl_SystemInt32_8 = Convert.ToInt32(__intnl_SystemObject_28);
+__0_button__param = __lcl_button_UnityEngineGameObject_1;
+__0_icon__param = __intnl_UnityEngineSprite_3;
+__0_itemName__param = __intnl_SystemString_4;
+__0_itemType__param = __const_SystemString_29;
+__0_itemIndex__param = __lcl_i_SystemInt32_1;
+__0_id__param = __intnl_SystemInt32_8;
+UNDEF_a3c85_14168();
+__lcl_i_SystemInt32_1 = __lcl_i_SystemInt32_1 + __const_SystemInt32_0;
+}
+__lcl_i_SystemInt32_1 = __lcl_lines_UnityEngineComponentArray_0.Length;
+for (;;)
+{
+__intnl_SystemBoolean_28 = __lcl_i_SystemInt32_1 < __lcl_totalSlotsToShow_SystemInt32_1;
+if (__intnl_SystemBoolean_28)
+{
+break;
+}
+__intnl_UnityEngineObject_66 = emptySlotPrefab;
+__intnl_UnityEngineObject_67 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_29 = __intnl_UnityEngineObject_66 != __intnl_UnityEngineObject_67;
+if (__intnl_SystemBoolean_29)
+{
+__3__intnlparam = emptySlotPrefab;
+UNDEF_a3c85_20112();
+__lcl_emptySlot_UnityEngineGameObject_1 = __2__intnlparam;
+__intnl_UnityEngineTransform_3 = __lcl_emptySlot_UnityEngineGameObject_1.transform;
+__intnl_UnityEngineTransform_4 = lineSelectionArea.transform;
+__intnl_UnityEngineTransform_3.SetParent(__intnl_UnityEngineTransform_4, __const_SystemBoolean_0);
+__intnl_UnityEngineTransform_5 = __lcl_emptySlot_UnityEngineGameObject_1.transform;
+__lcl_emptyText_TMProTextMeshProUGUI_1 = (TextMeshProUGUI)(__intnl_UnityEngineTransform_5.GetComponentInChildren(__const_SystemType_0));
+__intnl_UnityEngineObject_68 = __lcl_emptyText_TMProTextMeshProUGUI_1;
+__intnl_UnityEngineObject_69 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_30 = __intnl_UnityEngineObject_68 != __intnl_UnityEngineObject_69;
+if (__intnl_SystemBoolean_30)
+{
+__lcl_emptyText_TMProTextMeshProUGUI_1.text = __const_SystemString_48;
+}
+}
+__lcl_i_SystemInt32_1 = __lcl_i_SystemInt32_1 + __const_SystemInt32_0;
+}
+}
+private void UNDEF_a3c85_13064()
+{
+__intnl_UnityEngineObject_70 = bobberDatabase;
+__intnl_UnityEngineObject_71 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_32 = __intnl_UnityEngineObject_70 == __intnl_UnityEngineObject_71;
+if (__intnl_SystemBoolean_32)
+{
+}
+else
+{
+__intnl_UnityEngineObject_72 = bobberSelectionArea;
+__intnl_UnityEngineObject_73 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_32 = __intnl_UnityEngineObject_72 == __intnl_UnityEngineObject_73;
+}
+__intnl_SystemBoolean_31 = __intnl_SystemBoolean_32;
+if (__intnl_SystemBoolean_31)
+{
+}
+else
+{
+__intnl_UnityEngineObject_74 = bobberSelectionButtonPrefab;
+__intnl_UnityEngineObject_75 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_31 = __intnl_UnityEngineObject_74 == __intnl_UnityEngineObject_75;
+}
+if (__intnl_SystemBoolean_31)
+{
+return;
+}
+__0_area__param = bobberSelectionArea;
+UNDEF_a3c85_14728();
+__intnl_VRCUdonUdonBehaviour_31 = bobberDatabase;
+__intnl_VRCUdonUdonBehaviour_32 = playerStats;
+playerStats.SendCustomEvent(__const_SystemString_43);
+__intnl_SystemObject_29 = playerStats.GetProgramVariable(__const_SystemString_44);
+__intnl_SystemInt32_9 = Convert.ToInt32(__intnl_SystemObject_29);
+__intnl_VRCUdonUdonBehaviour_31.SetProgramVariable(__const_SystemString_45, __intnl_SystemInt32_9);
+__intnl_VRCUdonUdonBehaviour_31.SendCustomEvent(__const_SystemString_51);
+__intnl_SystemObject_30 = __intnl_VRCUdonUdonBehaviour_31.GetProgramVariable(__const_SystemString_52);
+__intnl_UnityEngineComponentArray_2 = (Component[])__intnl_SystemObject_30;
+__lcl_bobbers_UnityEngineComponentArray_0 = __intnl_UnityEngineComponentArray_2;
+__intnl_SystemInt32_10 = __lcl_bobbers_UnityEngineComponentArray_0.Length;
+__lcl_totalSlotsToShow_SystemInt32_2 = Mathf.Max(__intnl_SystemInt32_10, minimumSlotsToShow);
+__lcl_i_SystemInt32_2 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_11 = __lcl_bobbers_UnityEngineComponentArray_0.Length;
+__intnl_SystemBoolean_33 = __lcl_i_SystemInt32_2 < __intnl_SystemInt32_11;
+if (__intnl_SystemBoolean_33)
+{
+break;
+}
+__3__intnlparam = bobberSelectionButtonPrefab;
+UNDEF_a3c85_20112();
+__lcl_button_UnityEngineGameObject_2 = __2__intnlparam;
+__intnl_UnityEngineTransform_6 = __lcl_button_UnityEngineGameObject_2.transform;
+__intnl_UnityEngineTransform_7 = bobberSelectionArea.transform;
+__intnl_UnityEngineTransform_6.SetParent(__intnl_UnityEngineTransform_7, __const_SystemBoolean_0);
+__intnl_VRCUdonUdonBehaviour_33 = (UdonBehaviour)(__lcl_bobbers_UnityEngineComponentArray_0[__lcl_i_SystemInt32_2]);
+__intnl_SystemObject_31 = __intnl_VRCUdonUdonBehaviour_33.GetProgramVariable(__const_SystemString_12);
+__intnl_UnityEngineSprite_4 = (Sprite)__intnl_SystemObject_31;
+__intnl_VRCUdonUdonBehaviour_34 = (UdonBehaviour)(__lcl_bobbers_UnityEngineComponentArray_0[__lcl_i_SystemInt32_2]);
+__intnl_SystemObject_32 = __intnl_VRCUdonUdonBehaviour_34.GetProgramVariable(__const_SystemString_38);
+__intnl_SystemString_5 = (String)__intnl_SystemObject_32;
+__intnl_VRCUdonUdonBehaviour_35 = (UdonBehaviour)(__lcl_bobbers_UnityEngineComponentArray_0[__lcl_i_SystemInt32_2]);
+__intnl_SystemObject_33 = __intnl_VRCUdonUdonBehaviour_35.GetProgramVariable(__const_SystemString_15);
+__intnl_SystemInt32_12 = Convert.ToInt32(__intnl_SystemObject_33);
+__0_button__param = __lcl_button_UnityEngineGameObject_2;
+__0_icon__param = __intnl_UnityEngineSprite_4;
+__0_itemName__param = __intnl_SystemString_5;
+__0_itemType__param = __const_SystemString_34;
+__0_itemIndex__param = __lcl_i_SystemInt32_2;
+__0_id__param = __intnl_SystemInt32_12;
+UNDEF_a3c85_14168();
+__lcl_i_SystemInt32_2 = __lcl_i_SystemInt32_2 + __const_SystemInt32_0;
+}
+__lcl_i_SystemInt32_2 = __lcl_bobbers_UnityEngineComponentArray_0.Length;
+for (;;)
+{
+__intnl_SystemBoolean_33 = __lcl_i_SystemInt32_2 < __lcl_totalSlotsToShow_SystemInt32_2;
+if (__intnl_SystemBoolean_33)
+{
+break;
+}
+__intnl_UnityEngineObject_76 = emptySlotPrefab;
+__intnl_UnityEngineObject_77 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_34 = __intnl_UnityEngineObject_76 != __intnl_UnityEngineObject_77;
+if (__intnl_SystemBoolean_34)
+{
+__3__intnlparam = emptySlotPrefab;
+UNDEF_a3c85_20112();
+__lcl_emptySlot_UnityEngineGameObject_2 = __2__intnlparam;
+__intnl_UnityEngineTransform_6 = __lcl_emptySlot_UnityEngineGameObject_2.transform;
+__intnl_UnityEngineTransform_7 = bobberSelectionArea.transform;
+__intnl_UnityEngineTransform_6.SetParent(__intnl_UnityEngineTransform_7, __const_SystemBoolean_0);
+__intnl_UnityEngineTransform_8 = __lcl_emptySlot_UnityEngineGameObject_2.transform;
+__lcl_emptyText_TMProTextMeshProUGUI_2 = (TextMeshProUGUI)(__intnl_UnityEngineTransform_8.GetComponentInChildren(__const_SystemType_0));
+__intnl_UnityEngineObject_78 = __lcl_emptyText_TMProTextMeshProUGUI_2;
+__intnl_UnityEngineObject_79 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_35 = __intnl_UnityEngineObject_78 != __intnl_UnityEngineObject_79;
+if (__intnl_SystemBoolean_35)
+{
+__lcl_emptyText_TMProTextMeshProUGUI_2.text = __const_SystemString_48;
+}
+}
+__lcl_i_SystemInt32_2 = __lcl_i_SystemInt32_2 + __const_SystemInt32_0;
+}
+}
+private void UNDEF_a3c85_14168()
+{
+__intnl_UnityEngineTransform_9 = __0_button__param.transform;
+__lcl_imageTransform_UnityEngineTransform_0 = __intnl_UnityEngineTransform_9.Find(__const_SystemString_53);
+__lcl_iconImage_UnityEngineUIImage_0 = (Image)__const_SystemObject_0;
+__intnl_UnityEngineObject_80 = __lcl_imageTransform_UnityEngineTransform_0;
+__intnl_UnityEngineObject_81 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_36 = __intnl_UnityEngineObject_80 != __intnl_UnityEngineObject_81;
+if (__intnl_SystemBoolean_36)
+{
+__intnl_UnityEngineTransform_10 = __lcl_imageTransform_UnityEngineTransform_0.transform;
+__lcl_iconImage_UnityEngineUIImage_0 = (Image)(__intnl_UnityEngineTransform_10.GetComponent(__const_SystemType_1));
+}
+__intnl_UnityEngineObject_82 = __lcl_iconImage_UnityEngineUIImage_0;
+__intnl_UnityEngineObject_83 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_37 = __intnl_UnityEngineObject_82 == __intnl_UnityEngineObject_83;
+if (__intnl_SystemBoolean_37)
+{
+__intnl_UnityEngineTransform_10 = __0_button__param.transform;
+__lcl_iconImage_UnityEngineUIImage_0 = (Image)(__intnl_UnityEngineTransform_10.GetComponentInChildren(__const_SystemType_1));
+}
+__intnl_UnityEngineTransform_10 = __0_button__param.transform;
+__lcl_nameText_TMProTextMeshProUGUI_0 = (TextMeshProUGUI)(__intnl_UnityEngineTransform_10.GetComponentInChildren(__const_SystemType_0));
+__intnl_UnityEngineObject_84 = __lcl_iconImage_UnityEngineUIImage_0;
+__intnl_UnityEngineObject_85 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_38 = __intnl_UnityEngineObject_84 != __intnl_UnityEngineObject_85;
+if (__intnl_SystemBoolean_38)
+{
+__intnl_UnityEngineObject_86 = __0_icon__param;
+__intnl_UnityEngineObject_87 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_38 = __intnl_UnityEngineObject_86 != __intnl_UnityEngineObject_87;
+}
+if (__intnl_SystemBoolean_38)
+{
+break;
+}
+__lcl_iconImage_UnityEngineUIImage_0.sprite = __0_icon__param;
+__intnl_UnityEngineObject_88 = __lcl_nameText_TMProTextMeshProUGUI_0;
+__intnl_UnityEngineObject_89 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_39 = __intnl_UnityEngineObject_88 != __intnl_UnityEngineObject_89;
+if (__intnl_SystemBoolean_39)
+{
+__lcl_nameText_TMProTextMeshProUGUI_0.text = __0_itemName__param;
+}
+__intnl_UnityEngineTransform_11 = __0_button__param.transform;
+__5__intnlparam = __intnl_UnityEngineTransform_11;
+UNDEF_a3c85_20620();
+__lcl_handler_VRCUdonUdonBehaviour_0 = __4__intnlparam;
+__intnl_UnityEngineObject_90 = __lcl_handler_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_91 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_40 = __intnl_UnityEngineObject_90 != __intnl_UnityEngineObject_91;
+if (__intnl_SystemBoolean_40)
+{
+break;
+}
+__lcl_handler_VRCUdonUdonBehaviour_0.SetProgramVariable(__const_SystemString_54, __this_VRCUdonUdonBehaviour_2);
+__lcl_handler_VRCUdonUdonBehaviour_0.SetProgramVariable(__const_SystemString_55, __0_itemType__param);
+__lcl_handler_VRCUdonUdonBehaviour_0.SetProgramVariable(__const_SystemString_56, __0_itemIndex__param);
+__lcl_handler_VRCUdonUdonBehaviour_0.SetProgramVariable(__const_SystemString_57, __0_itemName__param);
+__lcl_handler_VRCUdonUdonBehaviour_0.SetProgramVariable(__const_SystemString_58, __0_id__param);
+}
+private void UNDEF_a3c85_14728()
+{
+__intnl_UnityEngineObject_92 = __0_area__param;
+__intnl_UnityEngineObject_93 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_41 = __intnl_UnityEngineObject_92 == __intnl_UnityEngineObject_93;
+if (__intnl_SystemBoolean_41)
+{
+return;
+}
+__intnl_UnityEngineTransform_12 = __0_area__param.transform;
+__lcl_children_UnityEngineTransformArray_0 = (Transform[])(__intnl_UnityEngineTransform_12.GetComponentsInChildren(__const_SystemType_2));
+__lcl_i_SystemInt32_3 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_13 = __lcl_children_UnityEngineTransformArray_0.Length;
+__intnl_SystemBoolean_42 = __lcl_i_SystemInt32_3 < __intnl_SystemInt32_13;
+if (__intnl_SystemBoolean_42)
+{
+break;
+}
+__intnl_UnityEngineTransform_13 = (Transform)(__lcl_children_UnityEngineTransformArray_0[__lcl_i_SystemInt32_3]);
+__intnl_UnityEngineGameObject_0 = __intnl_UnityEngineTransform_13.gameObject;
+__intnl_UnityEngineObject_94 = __intnl_UnityEngineGameObject_0;
+__intnl_UnityEngineObject_95 = __0_area__param;
+__intnl_SystemBoolean_43 = __intnl_UnityEngineObject_94 != __intnl_UnityEngineObject_95;
+if (__intnl_SystemBoolean_43)
+{
+__intnl_UnityEngineTransform_14 = (Transform)(__lcl_children_UnityEngineTransformArray_0[__lcl_i_SystemInt32_3]);
+__intnl_UnityEngineGameObject_1 = __intnl_UnityEngineTransform_14.gameObject;
+__intnl_UnityEngineObject_96 = __intnl_UnityEngineGameObject_1;
+Object.Destroy(__intnl_UnityEngineObject_96);
+}
+__lcl_i_SystemInt32_3 = __lcl_i_SystemInt32_3 + __const_SystemInt32_0;
+}
+}
+public void __0_SelectRodById()
+{
+get_LocalRod();
+__intnl_UnityEngineObject_97 = __0_get_LocalRod__ret;
+__intnl_UnityEngineObject_98 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_44 = __intnl_UnityEngineObject_97 != __intnl_UnityEngineObject_98;
+if (__intnl_SystemBoolean_44)
+{
+get_LocalRod();
+__intnl_VRCUdonUdonBehaviour_36 = __0_get_LocalRod__ret;
+__0_get_LocalRod__ret.SendCustomEvent(__const_SystemString_59);
+__intnl_SystemObject_34 = __0_get_LocalRod__ret.GetProgramVariable(__const_SystemString_60);
+__intnl_SystemBoolean_45 = (Boolean)__intnl_SystemObject_34;
+__intnl_SystemBoolean_44 = __intnl_SystemBoolean_45;
+}
+if (__intnl_SystemBoolean_44)
+{
+return;
+}
+__intnl_UnityEngineObject_99 = rodDatabase;
+__intnl_UnityEngineObject_100 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_46 = __intnl_UnityEngineObject_99 != __intnl_UnityEngineObject_100;
+if (__intnl_SystemBoolean_46)
+{
+__intnl_SystemInt32_14 = __0_rodId__param;
+rodDatabase.SetProgramVariable(__const_SystemString_16, __0_rodId__param);
+rodDatabase.SendCustomEvent(__const_SystemString_61);
+__intnl_SystemObject_35 = rodDatabase.GetProgramVariable(__const_SystemString_62);
+__intnl_SystemBoolean_47 = (Boolean)__intnl_SystemObject_35;
+__intnl_SystemBoolean_46 = __intnl_SystemBoolean_47;
+}
+if (__intnl_SystemBoolean_46)
+{
+UpdateEquippedIcons();
+UNDEF_a3c85_4636();
+UpdateFinalStats();
+__0_pieceType__param = __const_SystemString_23;
+__0_pieceId__param = __0_rodId__param;
+__0_ShowSelectedPieceStats();
+__intnl_UnityEngineObject_101 = statsManager;
+__intnl_UnityEngineObject_102 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_48 = __intnl_UnityEngineObject_101 != __intnl_UnityEngineObject_102;
+if (__intnl_SystemBoolean_48)
+{
+__intnl_VRCUdonUdonBehaviour_37 = statsManager;
+statsManager.SendCustomEvent(__const_SystemString_63);
+}
+}
+}
+public void __0_SelectLineById()
+{
+get_LocalRod();
+__intnl_UnityEngineObject_103 = __0_get_LocalRod__ret;
+__intnl_UnityEngineObject_104 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_49 = __intnl_UnityEngineObject_103 != __intnl_UnityEngineObject_104;
+if (__intnl_SystemBoolean_49)
+{
+get_LocalRod();
+__intnl_VRCUdonUdonBehaviour_38 = __0_get_LocalRod__ret;
+__0_get_LocalRod__ret.SendCustomEvent(__const_SystemString_59);
+__intnl_SystemObject_36 = __0_get_LocalRod__ret.GetProgramVariable(__const_SystemString_60);
+__intnl_SystemBoolean_50 = (Boolean)__intnl_SystemObject_36;
+__intnl_SystemBoolean_49 = __intnl_SystemBoolean_50;
+}
+if (__intnl_SystemBoolean_49)
+{
+return;
+}
+__intnl_UnityEngineObject_105 = lineDatabase;
+__intnl_UnityEngineObject_106 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_51 = __intnl_UnityEngineObject_105 != __intnl_UnityEngineObject_106;
+if (__intnl_SystemBoolean_51)
+{
+__intnl_SystemInt32_15 = __0_lineId__param;
+lineDatabase.SetProgramVariable(__const_SystemString_17, __0_lineId__param);
+lineDatabase.SendCustomEvent(__const_SystemString_64);
+__intnl_SystemObject_37 = lineDatabase.GetProgramVariable(__const_SystemString_65);
+__intnl_SystemBoolean_52 = (Boolean)__intnl_SystemObject_37;
+__intnl_SystemBoolean_51 = __intnl_SystemBoolean_52;
+}
+if (__intnl_SystemBoolean_51)
+{
+UpdateEquippedIcons();
+UNDEF_a3c85_4636();
+UpdateFinalStats();
+__0_pieceType__param = __const_SystemString_29;
+__0_pieceId__param = __0_lineId__param;
+__0_ShowSelectedPieceStats();
+__intnl_UnityEngineObject_107 = statsManager;
+__intnl_UnityEngineObject_108 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_53 = __intnl_UnityEngineObject_107 != __intnl_UnityEngineObject_108;
+if (__intnl_SystemBoolean_53)
+{
+__intnl_VRCUdonUdonBehaviour_39 = statsManager;
+statsManager.SendCustomEvent(__const_SystemString_63);
+}
+}
+}
+public void __0_SelectLine()
+{
+get_LocalRod();
+__intnl_UnityEngineObject_109 = __0_get_LocalRod__ret;
+__intnl_UnityEngineObject_110 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_54 = __intnl_UnityEngineObject_109 != __intnl_UnityEngineObject_110;
+if (__intnl_SystemBoolean_54)
+{
+get_LocalRod();
+__intnl_VRCUdonUdonBehaviour_40 = __0_get_LocalRod__ret;
+__0_get_LocalRod__ret.SendCustomEvent(__const_SystemString_59);
+__intnl_SystemObject_38 = __0_get_LocalRod__ret.GetProgramVariable(__const_SystemString_60);
+__intnl_SystemBoolean_55 = (Boolean)__intnl_SystemObject_38;
+__intnl_SystemBoolean_54 = __intnl_SystemBoolean_55;
+}
+if (__intnl_SystemBoolean_54)
+{
+return;
+}
+__intnl_UnityEngineObject_111 = lineDatabase;
+__intnl_UnityEngineObject_112 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_56 = __intnl_UnityEngineObject_111 != __intnl_UnityEngineObject_112;
+if (__intnl_SystemBoolean_56)
+{
+__intnl_SystemInt32_16 = __0_lineIndex__param;
+lineDatabase.SetProgramVariable(__const_SystemString_66, __0_lineIndex__param);
+lineDatabase.SendCustomEvent(__const_SystemString_67);
+__intnl_SystemObject_39 = lineDatabase.GetProgramVariable(__const_SystemString_68);
+__intnl_SystemBoolean_57 = (Boolean)__intnl_SystemObject_39;
+__intnl_SystemBoolean_56 = __intnl_SystemBoolean_57;
+}
+if (__intnl_SystemBoolean_56)
+{
+UpdateEquippedIcons();
+UNDEF_a3c85_4636();
+UpdateFinalStats();
+__0_pieceType__param = __const_SystemString_29;
+__0_pieceId__param = __0_lineIndex__param;
+__0_ShowSelectedPieceStats();
+__intnl_UnityEngineObject_113 = statsManager;
+__intnl_UnityEngineObject_114 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_58 = __intnl_UnityEngineObject_113 != __intnl_UnityEngineObject_114;
+if (__intnl_SystemBoolean_58)
+{
+__intnl_VRCUdonUdonBehaviour_41 = statsManager;
+statsManager.SendCustomEvent(__const_SystemString_63);
+}
+}
+}
+public void __0_SelectBobberById()
+{
+get_LocalRod();
+__intnl_UnityEngineObject_115 = __0_get_LocalRod__ret;
+__intnl_UnityEngineObject_116 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_59 = __intnl_UnityEngineObject_115 != __intnl_UnityEngineObject_116;
+if (__intnl_SystemBoolean_59)
+{
+get_LocalRod();
+__intnl_VRCUdonUdonBehaviour_42 = __0_get_LocalRod__ret;
+__0_get_LocalRod__ret.SendCustomEvent(__const_SystemString_59);
+__intnl_SystemObject_40 = __0_get_LocalRod__ret.GetProgramVariable(__const_SystemString_60);
+__intnl_SystemBoolean_60 = (Boolean)__intnl_SystemObject_40;
+__intnl_SystemBoolean_59 = __intnl_SystemBoolean_60;
+}
+if (__intnl_SystemBoolean_59)
+{
+return;
+}
+__intnl_UnityEngineObject_117 = bobberDatabase;
+__intnl_UnityEngineObject_118 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_61 = __intnl_UnityEngineObject_117 != __intnl_UnityEngineObject_118;
+if (__intnl_SystemBoolean_61)
+{
+__intnl_SystemInt32_17 = __0_bobberId__param;
+bobberDatabase.SetProgramVariable(__const_SystemString_18, __0_bobberId__param);
+bobberDatabase.SendCustomEvent(__const_SystemString_69);
+__intnl_SystemObject_41 = bobberDatabase.GetProgramVariable(__const_SystemString_70);
+__intnl_SystemBoolean_62 = (Boolean)__intnl_SystemObject_41;
+__intnl_SystemBoolean_61 = __intnl_SystemBoolean_62;
+}
+if (__intnl_SystemBoolean_61)
+{
+UpdateEquippedIcons();
+UNDEF_a3c85_4636();
+UpdateFinalStats();
+__0_pieceType__param = __const_SystemString_34;
+__0_pieceId__param = __0_bobberId__param;
+__0_ShowSelectedPieceStats();
+__intnl_UnityEngineObject_119 = statsManager;
+__intnl_UnityEngineObject_120 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_63 = __intnl_UnityEngineObject_119 != __intnl_UnityEngineObject_120;
+if (__intnl_SystemBoolean_63)
+{
+__intnl_VRCUdonUdonBehaviour_43 = statsManager;
+statsManager.SendCustomEvent(__const_SystemString_63);
+}
+}
+}
+public void __0_SelectBobber()
+{
+get_LocalRod();
+__intnl_UnityEngineObject_121 = __0_get_LocalRod__ret;
+__intnl_UnityEngineObject_122 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_64 = __intnl_UnityEngineObject_121 != __intnl_UnityEngineObject_122;
+if (__intnl_SystemBoolean_64)
+{
+get_LocalRod();
+__intnl_VRCUdonUdonBehaviour_44 = __0_get_LocalRod__ret;
+__0_get_LocalRod__ret.SendCustomEvent(__const_SystemString_59);
+__intnl_SystemObject_42 = __0_get_LocalRod__ret.GetProgramVariable(__const_SystemString_60);
+__intnl_SystemBoolean_65 = (Boolean)__intnl_SystemObject_42;
+__intnl_SystemBoolean_64 = __intnl_SystemBoolean_65;
+}
+if (__intnl_SystemBoolean_64)
+{
+return;
+}
+__intnl_UnityEngineObject_123 = bobberDatabase;
+__intnl_UnityEngineObject_124 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_66 = __intnl_UnityEngineObject_123 != __intnl_UnityEngineObject_124;
+if (__intnl_SystemBoolean_66)
+{
+__intnl_SystemInt32_18 = __0_bobberIndex__param;
+bobberDatabase.SetProgramVariable(__const_SystemString_66, __0_bobberIndex__param);
+bobberDatabase.SendCustomEvent(__const_SystemString_71);
+__intnl_SystemObject_43 = bobberDatabase.GetProgramVariable(__const_SystemString_72);
+__intnl_SystemBoolean_67 = (Boolean)__intnl_SystemObject_43;
+__intnl_SystemBoolean_66 = __intnl_SystemBoolean_67;
+}
+if (__intnl_SystemBoolean_66)
+{
+UpdateEquippedIcons();
+UNDEF_a3c85_4636();
+UpdateFinalStats();
+__0_pieceType__param = __const_SystemString_34;
+__0_pieceId__param = __0_bobberIndex__param;
+__0_ShowSelectedPieceStats();
+__intnl_UnityEngineObject_125 = statsManager;
+__intnl_UnityEngineObject_126 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_68 = __intnl_UnityEngineObject_125 != __intnl_UnityEngineObject_126;
+if (__intnl_SystemBoolean_68)
+{
+__intnl_VRCUdonUdonBehaviour_45 = statsManager;
+statsManager.SendCustomEvent(__const_SystemString_63);
+}
+}
+}
+public void __0_PreviewPieceStats()
+{
+__0_pieceType__param = __1_itemType__param;
+__0_pieceId__param = __0_itemId__param;
+__0_ShowSelectedPieceStats();
+}
+public void ShowEquippedRodInfo()
+{
+__intnl_UnityEngineObject_127 = rodDatabase;
+__intnl_UnityEngineObject_128 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_69 = __intnl_UnityEngineObject_127 != __intnl_UnityEngineObject_128;
+if (__intnl_SystemBoolean_69)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_46 = rodDatabase;
+rodDatabase.SendCustomEvent(__const_SystemString_73);
+__intnl_SystemObject_44 = rodDatabase.GetProgramVariable(__const_SystemString_74);
+__intnl_SystemInt32_19 = Convert.ToInt32(__intnl_SystemObject_44);
+__lcl_currentIndex_SystemInt32_0 = __intnl_SystemInt32_19;
+__0_pieceType__param = __const_SystemString_23;
+__0_pieceId__param = __lcl_currentIndex_SystemInt32_0;
+__0_ShowSelectedPieceStats();
+}
+public void ShowEquippedLineInfo()
+{
+__intnl_UnityEngineObject_129 = lineDatabase;
+__intnl_UnityEngineObject_130 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_70 = __intnl_UnityEngineObject_129 != __intnl_UnityEngineObject_130;
+if (__intnl_SystemBoolean_70)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_47 = lineDatabase;
+lineDatabase.SendCustomEvent(__const_SystemString_75);
+__intnl_SystemObject_45 = lineDatabase.GetProgramVariable(__const_SystemString_76);
+__intnl_SystemInt32_20 = Convert.ToInt32(__intnl_SystemObject_45);
+__lcl_currentIndex_SystemInt32_1 = __intnl_SystemInt32_20;
+__0_pieceType__param = __const_SystemString_29;
+__0_pieceId__param = __lcl_currentIndex_SystemInt32_1;
+__0_ShowSelectedPieceStats();
+}
+public void ShowEquippedBobberInfo()
+{
+__intnl_UnityEngineObject_131 = bobberDatabase;
+__intnl_UnityEngineObject_132 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_71 = __intnl_UnityEngineObject_131 != __intnl_UnityEngineObject_132;
+if (__intnl_SystemBoolean_71)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_48 = bobberDatabase;
+bobberDatabase.SendCustomEvent(__const_SystemString_77);
+__intnl_SystemObject_46 = bobberDatabase.GetProgramVariable(__const_SystemString_78);
+__intnl_SystemInt32_21 = Convert.ToInt32(__intnl_SystemObject_46);
+__lcl_currentIndex_SystemInt32_2 = __intnl_SystemInt32_21;
+__0_pieceType__param = __const_SystemString_34;
+__0_pieceId__param = __lcl_currentIndex_SystemInt32_2;
+__0_ShowSelectedPieceStats();
+}
+public void RefreshUI()
+{
+UNDEF_a3c85_996();
+if (__0_AllDatabasesReady__ret)
+{
+UNDEF_a3c85_19824();
+}
+}
+private void UNDEF_a3c85_19824()
+{
+UpdateEquippedIcons();
+UNDEF_a3c85_4636();
+UpdateFinalStats();
+UNDEF_a3c85_7248();
+if (isInitialized)
+{
+}
+else
+{
+isInitialized = __const_SystemBoolean_1;
+}
+}
+private void UNDEF_a3c85_19936()
+{
+__intnl_VRCSDKBaseVRCPlayerApi_0 = Networking.LocalPlayer;
+__7__intnlparam = __intnl_VRCSDKBaseVRCPlayerApi_0;
+UNDEF_a3c85_21116();
+__0__intnlparam = __6__intnlparam;
+return;
+}
+private void UNDEF_a3c85_20048()
+{
+__intnl_VRCSDKBaseVRCPlayerApi_1 = Networking.LocalPlayer;
+__9__intnlparam = __intnl_VRCSDKBaseVRCPlayerApi_1;
+UNDEF_a3c85_21612();
+__1__intnlparam = __8__intnlparam;
+return;
+}
+private void UNDEF_a3c85_20112()
+{
+__2__intnlparam = Object.Instantiate(__3__intnlparam);
+return;
+}
+private void UNDEF_a3c85_20620()
+{
+__intnl_UnityEngineComponentArray_3 = __5__intnlparam.GetComponents(__const_SystemType_3);
+__lcl_udonBehaviours_UnityEngineComponentArray_0 = __intnl_UnityEngineComponentArray_3;
+__lcl_targetID_SystemInt64_0 = __const_SystemInt64_0;
+__intnl_SystemInt32_22 = __lcl_udonBehaviours_UnityEngineComponentArray_0.Length;
+__intnl_SystemInt32_23 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemBoolean_72 = __intnl_SystemInt32_23 < __intnl_SystemInt32_22;
+if (__intnl_SystemBoolean_72)
+{
+break;
+}
+__lcl_behaviour_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(__lcl_udonBehaviours_UnityEngineComponentArray_0[__intnl_SystemInt32_23]);
+__lcl_idValue_SystemObject_0 = __lcl_behaviour_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_79);
+__intnl_SystemBoolean_73 = __lcl_idValue_SystemObject_0 != __const_SystemObject_0;
+if (__intnl_SystemBoolean_73)
+{
+__intnl_SystemInt64_0 = Convert.ToInt64(__lcl_idValue_SystemObject_0);
+__intnl_SystemBoolean_73 = __intnl_SystemInt64_0 == __lcl_targetID_SystemInt64_0;
+}
+if (__intnl_SystemBoolean_73)
+{
+__intnl_UnityEngineComponent_0 = __lcl_behaviour_VRCUdonUdonBehaviour_0;
+__4__intnlparam = (UdonBehaviour)__intnl_UnityEngineComponent_0;
+return;
+}
+__intnl_SystemInt32_23 = __intnl_SystemInt32_23 + __const_SystemInt32_0;
+}
+__4__intnlparam = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+private void UNDEF_a3c85_21116()
+{
+__lcl_objects_UnityEngineGameObjectArray_0 = Networking.GetPlayerObjects(__7__intnlparam);
+__lcl_i_SystemInt32_4 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_24 = __lcl_objects_UnityEngineGameObjectArray_0.Length;
+__intnl_SystemBoolean_74 = __lcl_i_SystemInt32_4 < __intnl_SystemInt32_24;
+if (__intnl_SystemBoolean_74)
+{
+break;
+}
+__intnl_UnityEngineGameObject_2 = (GameObject)(__lcl_objects_UnityEngineGameObjectArray_0[__lcl_i_SystemInt32_4]);
+__intnl_SystemBoolean_75 = Utilities.IsValid(__intnl_UnityEngineGameObject_2);
+if (__intnl_SystemBoolean_75)
+{
+}
+else
+{
+}
+__intnl_UnityEngineGameObject_3 = (GameObject)(__lcl_objects_UnityEngineGameObjectArray_0[__lcl_i_SystemInt32_4]);
+__intnl_UnityEngineTransform_15 = __intnl_UnityEngineGameObject_3.transform;
+__11__intnlparam = __intnl_UnityEngineTransform_15;
+UNDEF_a3c85_22160();
+__lcl_foundScript_VRCUdonUdonBehaviour_0 = __10__intnlparam;
+__intnl_SystemBoolean_76 = Utilities.IsValid(__lcl_foundScript_VRCUdonUdonBehaviour_0);
+if (__intnl_SystemBoolean_76)
+{
+__6__intnlparam = __lcl_foundScript_VRCUdonUdonBehaviour_0;
+return;
+}
+__lcl_i_SystemInt32_4 = __lcl_i_SystemInt32_4 + __const_SystemInt32_0;
+}
+__6__intnlparam = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+private void UNDEF_a3c85_21612()
+{
+__lcl_objects_UnityEngineGameObjectArray_1 = Networking.GetPlayerObjects(__9__intnlparam);
+__lcl_i_SystemInt32_5 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_25 = __lcl_objects_UnityEngineGameObjectArray_1.Length;
+__intnl_SystemBoolean_77 = __lcl_i_SystemInt32_5 < __intnl_SystemInt32_25;
+if (__intnl_SystemBoolean_77)
+{
+break;
+}
+__intnl_UnityEngineGameObject_4 = (GameObject)(__lcl_objects_UnityEngineGameObjectArray_1[__lcl_i_SystemInt32_5]);
+__intnl_SystemBoolean_78 = Utilities.IsValid(__intnl_UnityEngineGameObject_4);
+if (__intnl_SystemBoolean_78)
+{
+}
+else
+{
+}
+__intnl_UnityEngineGameObject_5 = (GameObject)(__lcl_objects_UnityEngineGameObjectArray_1[__lcl_i_SystemInt32_5]);
+__intnl_UnityEngineTransform_16 = __intnl_UnityEngineGameObject_5.transform;
+__13__intnlparam = __intnl_UnityEngineTransform_16;
+UNDEF_a3c85_22668();
+__lcl_foundScript_VRCUdonUdonBehaviour_1 = __12__intnlparam;
+__intnl_SystemBoolean_79 = Utilities.IsValid(__lcl_foundScript_VRCUdonUdonBehaviour_1);
+if (__intnl_SystemBoolean_79)
+{
+__8__intnlparam = __lcl_foundScript_VRCUdonUdonBehaviour_1;
+return;
+}
+__lcl_i_SystemInt32_5 = __lcl_i_SystemInt32_5 + __const_SystemInt32_0;
+}
+__8__intnlparam = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+private void UNDEF_a3c85_21652()
+{
+__14__intnlparam = (GameObject)__const_SystemObject_0;
+}
+private void UNDEF_a3c85_22160()
+{
+__intnl_UnityEngineComponentArray_4 = __11__intnlparam.GetComponentsInChildren(__const_SystemType_3);
+__lcl_udonBehaviours_UnityEngineComponentArray_1 = __intnl_UnityEngineComponentArray_4;
+__lcl_targetID_SystemInt64_1 = __const_SystemInt64_1;
+__intnl_SystemInt32_26 = __lcl_udonBehaviours_UnityEngineComponentArray_1.Length;
+__intnl_SystemInt32_27 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemBoolean_80 = __intnl_SystemInt32_27 < __intnl_SystemInt32_26;
+if (__intnl_SystemBoolean_80)
+{
+break;
+}
+__lcl_behaviour_VRCUdonUdonBehaviour_1 = (UdonBehaviour)(__lcl_udonBehaviours_UnityEngineComponentArray_1[__intnl_SystemInt32_27]);
+__lcl_idValue_SystemObject_1 = __lcl_behaviour_VRCUdonUdonBehaviour_1.GetProgramVariable(__const_SystemString_79);
+__intnl_SystemBoolean_81 = __lcl_idValue_SystemObject_1 != __const_SystemObject_0;
+if (__intnl_SystemBoolean_81)
+{
+__intnl_SystemInt64_1 = Convert.ToInt64(__lcl_idValue_SystemObject_1);
+__intnl_SystemBoolean_81 = __intnl_SystemInt64_1 == __lcl_targetID_SystemInt64_1;
+}
+if (__intnl_SystemBoolean_81)
+{
+__intnl_UnityEngineComponent_1 = __lcl_behaviour_VRCUdonUdonBehaviour_1;
+__10__intnlparam = (UdonBehaviour)__intnl_UnityEngineComponent_1;
+return;
+}
+__intnl_SystemInt32_27 = __intnl_SystemInt32_27 + __const_SystemInt32_0;
+}
+__10__intnlparam = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+private void UNDEF_a3c85_22668()
+{
+__intnl_UnityEngineComponentArray_5 = __13__intnlparam.GetComponentsInChildren(__const_SystemType_3);
+__lcl_udonBehaviours_UnityEngineComponentArray_2 = __intnl_UnityEngineComponentArray_5;
+__lcl_targetID_SystemInt64_2 = __const_SystemInt64_2;
+__intnl_SystemInt32_28 = __lcl_udonBehaviours_UnityEngineComponentArray_2.Length;
+__intnl_SystemInt32_29 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemBoolean_82 = __intnl_SystemInt32_29 < __intnl_SystemInt32_28;
+if (__intnl_SystemBoolean_82)
+{
+break;
+}
+__lcl_behaviour_VRCUdonUdonBehaviour_2 = (UdonBehaviour)(__lcl_udonBehaviours_UnityEngineComponentArray_2[__intnl_SystemInt32_29]);
+__lcl_idValue_SystemObject_2 = __lcl_behaviour_VRCUdonUdonBehaviour_2.GetProgramVariable(__const_SystemString_79);
+__intnl_SystemBoolean_83 = __lcl_idValue_SystemObject_2 != __const_SystemObject_0;
+if (__intnl_SystemBoolean_83)
+{
+__intnl_SystemInt64_2 = Convert.ToInt64(__lcl_idValue_SystemObject_2);
+__intnl_SystemBoolean_83 = __intnl_SystemInt64_2 == __lcl_targetID_SystemInt64_2;
+}
+if (__intnl_SystemBoolean_83)
+{
+__intnl_UnityEngineComponent_2 = __lcl_behaviour_VRCUdonUdonBehaviour_2;
+__12__intnlparam = (UdonBehaviour)__intnl_UnityEngineComponent_2;
+return;
+}
+__intnl_SystemInt32_29 = __intnl_SystemInt32_29 + __const_SystemInt32_0;
+}
+__12__intnlparam = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+}

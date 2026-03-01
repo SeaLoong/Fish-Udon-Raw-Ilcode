@@ -1,0 +1,529 @@
+using System;
+using VRC.SDKBase;
+using UnityEngine;
+using VRC.Udon.Common.Enums;
+using VRC.Udon.Common;
+using VRC.Udon;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Single __const_SystemSingle_8 = 0.1f;
+private Boolean __intnl_SystemBoolean_13 = false;
+private TrackingData __intnl_VRCSDKBaseVRCPlayerApiTrackingData_0 = VRC.SDKBase.VRCPlayerApi+TrackingData;
+private Single InputMoveH = 0f;
+private Single __intnl_SystemSingle_0 = 0f;
+private String __const_SystemString_0 = "isHooked";
+private Int32 unhookThreshold = 0;
+private Transform __intnl_UnityEngineTransform_0 = null;
+private Single __const_SystemSingle_0 = 1024f;
+private Vector3 __intnl_UnityEngineVector3_6 = new Vector3(0f, 0f, 0f);
+private Boolean __intnl_SystemBoolean_16 = false;
+private Int32 __const_SystemInt32_11 = -1;
+private Single __intnl_SystemSingle_10 = 0f;
+private Single __intnl_SystemSingle_11 = 0f;
+private Single __intnl_SystemSingle_12 = 0f;
+private Single __intnl_SystemSingle_13 = 0f;
+private Single __intnl_SystemSingle_14 = 0f;
+private Single __intnl_SystemSingle_15 = 0f;
+private BoxCollider platformOverride = null;
+private Transform playerTracker = null;
+private Single __intnl_SystemSingle_8 = 0f;
+private UInt32 __gintnl_SystemUInt32_5 = 4812;
+private UInt32 __gintnl_SystemUInt32_4 = 704;
+private UInt32 __gintnl_SystemUInt32_1 = 600;
+private UInt32 __gintnl_SystemUInt32_0 = 428;
+private UInt32 __gintnl_SystemUInt32_3 = 660;
+private UInt32 __gintnl_SystemUInt32_2 = 616;
+private Boolean __const_SystemBoolean_0 = true;
+private Boolean __const_SystemBoolean_1 = false;
+private Boolean __0_value__param = false;
+public Boolean reduceIKDrift;
+private Vector3 hookLastPos = new Vector3(0f, 0f, 0f);
+private Single __const_SystemSingle_7 = 0.5f;
+private Vector3 __intnl_UnityEngineVector3_5 = new Vector3(0f, 0f, 0f);
+private Collider __intnl_UnityEngineCollider_0 = null;
+private Vector3 hookOffsetPos = new Vector3(0f, 0f, 0f);
+private Single InputMoveV = 0f;
+private Single __intnl_SystemSingle_7 = 0f;
+private VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_0 = null;
+private Int64 __refl_typeid = -3675259408619922421;
+public Boolean mainMenuPause;
+private Boolean _old_isHooked = false;
+private RaycastHit hitInfo = UnityEngine.RaycastHit;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Boolean __intnl_SystemBoolean_11 = false;
+private Vector3 __const_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Collider[] __intnl_UnityEngineColliderArray_0 = null;
+private Single __intnl_SystemSingle_2 = 0f;
+private SpawnOrientation __const_VRCSDKBaseVRC_SceneDescriptorSpawnOrientation_0 = SpawnOrientation.AlignRoomWithSpawnPoint;
+private Quaternion headRotation = new Quaternion(0f, 0f, 0f, 0f);
+private Int32 intUI = 0;
+private String __const_SystemString_2 = "IgnoreSceneCollision";
+private Transform __intnl_UnityEngineTransform_2 = null;
+private Single __const_SystemSingle_2 = 4f;
+private Vector3 __intnl_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Single __const_SystemSingle_9 = 0f;
+private Boolean __intnl_SystemBoolean_14 = false;
+private TrackingData __intnl_VRCSDKBaseVRCPlayerApiTrackingData_1 = VRC.SDKBase.VRCPlayerApi+TrackingData;
+private Int32 localColliders = 0;
+private Vector3 playerVelocity = new Vector3(0f, 0f, 0f);
+private Type __const_SystemType_0 = typeof(BoxCollider);
+private Single __intnl_SystemSingle_1 = 0f;
+private Vector3 lastFramePos = new Vector3(0f, 0f, 0f);
+private Transform PlayerOffset = null;
+private Vector3 __intnl_UnityEngineVector3_8 = new Vector3(0f, 0f, 0f);
+private Single __const_SystemSingle_1 = 3f;
+private Vector3 __intnl_UnityEngineVector3_7 = new Vector3(0f, 0f, 0f);
+private TrackingDataType __const_VRCSDKBaseVRCPlayerApiTrackingDataType_0 = TrackingDataType.Origin;
+private Boolean __intnl_SystemBoolean_17 = false;
+private Int32 __const_SystemInt32_10 = 2147483647;
+private EventTiming __const_VRCUdonCommonEnumsEventTiming_0 = EventTiming.Update;
+private Boolean isHooked = false;
+private Single inputMoveVerticalFloatValue = 0f;
+public LayerMask hookLayerMask;
+private Vector3 __intnl_UnityEngineVector3_10 = new Vector3(0f, 0f, 0f);
+private Vector3 __intnl_UnityEngineVector3_11 = new Vector3(0f, 0f, 0f);
+private Vector3 __intnl_UnityEngineVector3_12 = new Vector3(0f, 0f, 0f);
+private Single __intnl_SystemSingle_9 = 0f;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private Single __const_SystemSingle_4 = 0.25f;
+private Vector3 __const_UnityEngineVector3_2 = new Vector3(0f, -1f, 0f);
+private Int32 __lcl_i_SystemInt32_0 = 0;
+public Boolean inheritVelocity;
+private Single __intnl_SystemSingle_4 = 0f;
+public Single hookDistance;
+private Boolean menuOpen = false;
+private Vector3 __intnl_UnityEngineVector3_2 = new Vector3(0f, 0f, 0f);
+private Boolean __intnl_SystemBoolean_12 = false;
+private Vector3 __const_UnityEngineVector3_1 = new Vector3(0f, 0.3f, 0f);
+private Collider[] __intnl_UnityEngineColliderArray_1 = null;
+private String __refl_typename = "Superbstingray.UdonPlatformHook";
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Int32 __intnl_SystemInt32_5 = 0;
+private Int32 __intnl_SystemInt32_4 = 0;
+private Single __intnl_SystemSingle_3 = 0f;
+private Transform __this_UnityEngineTransform_0 = this;
+private String __const_SystemString_1 = "OverridesOff";
+private Transform __intnl_UnityEngineTransform_1 = null;
+private Single __const_SystemSingle_3 = 100f;
+private Transform hook = null;
+private Vector3 __intnl_UnityEngineVector3_1 = new Vector3(0f, 0f, 0f);
+private Boolean __intnl_SystemBoolean_15 = false;
+private Int32 __const_SystemInt32_12 = -263369;
+private Single inputMoveHorizontalFloatValue = 0f;
+private UdonInputEventArgs inputMoveVerticalArgs = VRC.Udon.Common.UdonInputEventArgs;
+public Boolean quickMenuPause;
+private Vector3 __intnl_UnityEngineVector3_9 = new Vector3(0f, 0f, 0f);
+private Single __const_SystemSingle_6 = 0.3f;
+private UdonInputEventArgs inputMoveHorizontalArgs = VRC.Udon.Common.UdonInputEventArgs;
+private Vector3 __intnl_UnityEngineVector3_4 = new Vector3(0f, 0f, 0f);
+private TrackingDataType __const_VRCSDKBaseVRCPlayerApiTrackingDataType_1 = TrackingDataType.Head;
+private VRCPlayerApi onPlayerRespawnPlayer = null;
+private UdonInputEventArgs inputJumpArgs = VRC.Udon.Common.UdonInputEventArgs;
+private VRCPlayerApi localPlayer = null;
+private Single __intnl_SystemSingle_6 = 0f;
+private Collider[] colliderArray = null;
+private Boolean inputJumpBoolValue = false;
+private Single __const_SystemSingle_5 = 10f;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Quaternion __intnl_UnityEngineQuaternion_0 = new Quaternion(0f, 0f, 0f, 0f);
+private Quaternion __intnl_UnityEngineQuaternion_1 = new Quaternion(0f, 0f, 0f, 0f);
+private Quaternion __intnl_UnityEngineQuaternion_2 = new Quaternion(0f, 0f, 0f, 0f);
+private Quaternion __intnl_UnityEngineQuaternion_3 = new Quaternion(0f, 0f, 0f, 0f);
+private Vector3 __const_UnityEngineVector3_3 = new Vector3(0.5f, 0.05f, 0.5f);
+private Int32 __const_SystemInt32_9 = 0;
+private Int32 __const_SystemInt32_8 = 19;
+private Int32 __const_SystemInt32_1 = 1;
+private Int32 __const_SystemInt32_0 = 1024;
+private Int32 __const_SystemInt32_3 = 10;
+private Int32 __const_SystemInt32_2 = 100;
+private Int32 __const_SystemInt32_5 = 7;
+private Int32 __const_SystemInt32_4 = 524288;
+private Int32 __const_SystemInt32_7 = 15;
+private Int32 __const_SystemInt32_6 = 14;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private Single __intnl_SystemSingle_5 = 0f;
+private Single __const_SystemSingle_10 = 0.01f;
+private Single __const_SystemSingle_11 = 90f;
+private Single __const_SystemSingle_12 = 60f;
+private Single __const_SystemSingle_13 = 3.402823E+38f;
+private Collider sceneCollider = null;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_3 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_2 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_1 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_0 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_4 = this;
+private Boolean __intnl_SystemBoolean_18 = false;
+private Vector3 __intnl_UnityEngineVector3_3 = new Vector3(0f, 0f, 0f);
+
+
+public void _onVarChange_isHooked()
+{
+__0_value__param = isHooked;
+isHooked = _old_isHooked;
+isHooked = __0_value__param;
+if (isHooked)
+{
+hook.localPosition = __const_UnityEngineVector3_0;
+hook.eulerAngles = __const_UnityEngineVector3_0;
+platformOverride.enabled = __const_SystemBoolean_0;
+__intnl_UnityEngineVector3_0 = hook.position;
+__intnl_UnityEngineQuaternion_0 = hook.rotation;
+PlayerOffset.SetPositionAndRotation(__intnl_UnityEngineVector3_0, __intnl_UnityEngineQuaternion_0);
+__intnl_UnityEngineVector3_1 = localPlayer.GetPosition();
+__intnl_UnityEngineColliderArray_0 = Physics.OverlapSphere(__intnl_UnityEngineVector3_1, __const_SystemSingle_0, __const_SystemInt32_0);
+__intnl_SystemInt32_0 = __intnl_UnityEngineColliderArray_0.Length;
+localColliders = Mathf.Clamp(__intnl_SystemInt32_0, __const_SystemInt32_1, __const_SystemInt32_2);
+}
+else
+{
+if (inheritVelocity)
+{
+localPlayer.SetVelocity(playerVelocity);
+}
+UNDEF_32470_5784();
+hook.localPosition = __const_UnityEngineVector3_0;
+hook.eulerAngles = __const_UnityEngineVector3_0;
+__intnl_UnityEngineVector3_0 = hook.position;
+__intnl_UnityEngineQuaternion_0 = hook.rotation;
+PlayerOffset.SetPositionAndRotation(__intnl_UnityEngineVector3_0, __intnl_UnityEngineQuaternion_0);
+}
+}
+public void _start()
+{
+UNDEF_32470_5272();
+IgnoreSceneCollision();
+}
+public void _fixedUpdate()
+{
+UNDEF_32470_800();
+}
+public void _lateUpdate()
+{
+UNDEF_32470_1852();
+}
+private void UNDEF_32470_800()
+{
+__intnl_SystemBoolean_0 = Utilities.IsValid(localPlayer);
+if (__intnl_SystemBoolean_0)
+{
+UNDEF_32470_1776();
+}
+}
+private void UNDEF_32470_1776()
+{
+__intnl_SystemBoolean_1 = isHooked;
+if (__intnl_SystemBoolean_1)
+{
+__intnl_SystemBoolean_1 = inheritVelocity;
+}
+if (__intnl_SystemBoolean_1)
+{
+__intnl_UnityEngineVector3_2 = playerVelocity * __const_SystemSingle_1;
+__intnl_UnityEngineVector3_3 = localPlayer.GetPosition();
+__intnl_UnityEngineVector3_4 = __intnl_UnityEngineVector3_3 - lastFramePos;
+__intnl_SystemSingle_0 = Time.deltaTime;
+__intnl_UnityEngineVector3_5 = __intnl_UnityEngineVector3_4 / __intnl_SystemSingle_0;
+__intnl_UnityEngineVector3_6 = __intnl_UnityEngineVector3_2 + __intnl_UnityEngineVector3_5;
+__intnl_UnityEngineVector3_7 = __intnl_UnityEngineVector3_6 / __const_SystemSingle_2;
+playerVelocity = Vector3.ClampMagnitude(__intnl_UnityEngineVector3_7, __const_SystemSingle_3);
+lastFramePos = localPlayer.GetPosition();
+}
+if (menuOpen)
+{
+}
+else
+{
+__intnl_UnityEngineVector3_2 = localPlayer.GetPosition();
+__intnl_UnityEngineVector3_3 = __intnl_UnityEngineVector3_2 + __const_UnityEngineVector3_1;
+__intnl_SystemInt32_1 = hookLayerMask.value;
+__intnl_SystemBoolean_2 = Physics.SphereCast(__intnl_UnityEngineVector3_3, __const_SystemSingle_4, __const_UnityEngineVector3_2, hitInfo, __const_SystemSingle_5, __intnl_SystemInt32_1);
+__intnl_UnityEngineVector3_4 = hitInfo.point;
+platformOverride.center = __intnl_UnityEngineVector3_4;
+__intnl_UnityEngineVector3_5 = localPlayer.GetPosition();
+__intnl_UnityEngineVector3_6 = __intnl_UnityEngineVector3_5 + __const_UnityEngineVector3_1;
+__intnl_SystemSingle_0 = hookDistance + __const_SystemSingle_6;
+__intnl_SystemInt32_2 = hookLayerMask.value;
+__intnl_SystemBoolean_3 = Physics.SphereCast(__intnl_UnityEngineVector3_6, __const_SystemSingle_4, __const_UnityEngineVector3_2, hitInfo, __intnl_SystemSingle_0, __intnl_SystemInt32_2);
+if (__intnl_SystemBoolean_3)
+{
+}
+else
+{
+unhookThreshold = unhookThreshold + __const_SystemInt32_1;
+__intnl_SystemBoolean_4 = unhookThreshold > __const_SystemInt32_3;
+if (__intnl_SystemBoolean_4)
+{
+__intnl_SystemBoolean_4 = isHooked;
+}
+if (__intnl_SystemBoolean_4)
+{
+hook.parent = __this_UnityEngineTransform_0;
+__this_VRCUdonUdonBehaviour_0.SetProgramVariable(__const_SystemString_0, __const_SystemBoolean_1);
+__this_VRCUdonUdonBehaviour_1.SendCustomEventDelayedSeconds(__const_SystemString_1, __const_SystemSingle_7, __const_VRCUdonCommonEnumsEventTiming_0);
+}
+}
+}
+}
+private void UNDEF_32470_1852()
+{
+__intnl_SystemBoolean_5 = Utilities.IsValid(localPlayer);
+if (__intnl_SystemBoolean_5)
+{
+UNDEF_32470_4516();
+}
+}
+private void UNDEF_32470_4516()
+{
+if (isHooked)
+{
+__intnl_UnityEngineVector3_8 = localPlayer.GetPosition();
+intUI = Physics.OverlapSphereNonAlloc(__intnl_UnityEngineVector3_8, __const_SystemSingle_5, colliderArray, __const_SystemInt32_4);
+__intnl_SystemBoolean_7 = mainMenuPause;
+if (__intnl_SystemBoolean_7)
+{
+__intnl_SystemBoolean_8 = intUI >= __const_SystemInt32_5;
+if (__intnl_SystemBoolean_8)
+{
+__intnl_SystemBoolean_8 = intUI <= __const_SystemInt32_6;
+}
+__intnl_SystemBoolean_7 = __intnl_SystemBoolean_8;
+}
+__intnl_SystemBoolean_6 = __intnl_SystemBoolean_7;
+if (__intnl_SystemBoolean_6)
+{
+}
+else
+{
+__intnl_SystemBoolean_9 = quickMenuPause;
+if (__intnl_SystemBoolean_9)
+{
+__intnl_SystemBoolean_10 = intUI >= __const_SystemInt32_7;
+if (__intnl_SystemBoolean_10)
+{
+__intnl_SystemBoolean_10 = intUI <= __const_SystemInt32_8;
+}
+__intnl_SystemBoolean_9 = __intnl_SystemBoolean_10;
+}
+__intnl_SystemBoolean_6 = __intnl_SystemBoolean_9;
+}
+menuOpen = __intnl_SystemBoolean_6;
+}
+__intnl_SystemBoolean_6 = isHooked;
+if (__intnl_SystemBoolean_6)
+{
+__intnl_SystemBoolean_6 = !menuOpen;
+}
+if (__intnl_SystemBoolean_6)
+{
+hookLastPos = hook.position;
+__intnl_UnityEngineVector3_8 = localPlayer.GetPosition();
+hook.position = __intnl_UnityEngineVector3_8;
+__intnl_UnityEngineVector3_9 = hook.position;
+hookOffsetPos = __intnl_UnityEngineVector3_9 - hookLastPos;
+}
+__intnl_SystemBoolean_7 = isHooked;
+if (__intnl_SystemBoolean_7)
+{
+__intnl_SystemBoolean_7 = menuOpen;
+}
+if (__intnl_SystemBoolean_7)
+{
+localPlayer.SetVelocity(__const_UnityEngineVector3_0);
+}
+__intnl_SystemBoolean_8 = isHooked;
+if (__intnl_SystemBoolean_8)
+{
+__intnl_SystemBoolean_8 = !menuOpen;
+}
+if (__intnl_SystemBoolean_8)
+{
+__intnl_VRCSDKBaseVRCPlayerApiTrackingData_0 = localPlayer.GetTrackingData(__const_VRCSDKBaseVRCPlayerApiTrackingDataType_0);
+__intnl_UnityEngineVector3_8 = __intnl_VRCSDKBaseVRCPlayerApiTrackingData_0.position;
+__intnl_VRCSDKBaseVRCPlayerApiTrackingData_1 = localPlayer.GetTrackingData(__const_VRCSDKBaseVRCPlayerApiTrackingDataType_0);
+__intnl_UnityEngineQuaternion_1 = __intnl_VRCSDKBaseVRCPlayerApiTrackingData_1.rotation;
+playerTracker.SetPositionAndRotation(__intnl_UnityEngineVector3_8, __intnl_UnityEngineQuaternion_1);
+__intnl_UnityEngineVector3_9 = hook.position;
+__intnl_UnityEngineQuaternion_2 = hook.rotation;
+PlayerOffset.SetPositionAndRotation(__intnl_UnityEngineVector3_9, __intnl_UnityEngineQuaternion_2);
+__intnl_UnityEngineVector3_10 = localPlayer.GetPosition();
+__intnl_UnityEngineColliderArray_1 = Physics.OverlapSphere(__intnl_UnityEngineVector3_10, __const_SystemSingle_0, __const_SystemInt32_0);
+__intnl_SystemInt32_3 = __intnl_UnityEngineColliderArray_1.Length;
+__intnl_SystemBoolean_9 = __intnl_SystemInt32_3 >= localColliders;
+if (__intnl_SystemBoolean_9)
+{
+__intnl_UnityEngineVector3_11 = playerTracker.position;
+__intnl_UnityEngineVector3_12 = __intnl_UnityEngineVector3_11 - hookOffsetPos;
+__intnl_UnityEngineQuaternion_3 = playerTracker.rotation;
+localPlayer.TeleportTo(__intnl_UnityEngineVector3_12, __intnl_UnityEngineQuaternion_3, __const_VRCSDKBaseVRC_SceneDescriptorSpawnOrientation_0, __const_SystemBoolean_0);
+}
+}
+__intnl_SystemBoolean_9 = reduceIKDrift;
+if (__intnl_SystemBoolean_9)
+{
+__intnl_SystemBoolean_9 = isHooked;
+}
+if (__intnl_SystemBoolean_9)
+{
+__intnl_VRCSDKBaseVRCPlayerApiTrackingData_0 = localPlayer.GetTrackingData(__const_VRCSDKBaseVRCPlayerApiTrackingDataType_1);
+headRotation = __intnl_VRCSDKBaseVRCPlayerApiTrackingData_0.rotation;
+__intnl_VRCSDKBaseVRCPlayerApi_0 = localPlayer;
+__intnl_SystemSingle_1 = InputMoveH * __const_SystemSingle_8;
+__intnl_SystemSingle_2 = __intnl_SystemSingle_1 + InputMoveV;
+__intnl_SystemBoolean_13 = __intnl_SystemSingle_2 != __const_SystemSingle_9;
+__intnl_SystemBoolean_12 = !__intnl_SystemBoolean_13;
+if (__intnl_SystemBoolean_12)
+{
+__intnl_SystemSingle_3 = playerVelocity.x;
+__intnl_SystemSingle_4 = Mathf.Abs(__intnl_SystemSingle_3);
+__intnl_SystemSingle_5 = playerVelocity.z;
+__intnl_SystemSingle_6 = Mathf.Abs(__intnl_SystemSingle_5);
+__intnl_SystemSingle_7 = __intnl_SystemSingle_4 + __intnl_SystemSingle_6;
+__intnl_SystemBoolean_12 = __intnl_SystemSingle_7 > __const_SystemSingle_8;
+}
+__intnl_SystemBoolean_11 = __intnl_SystemBoolean_12;
+if (__intnl_SystemBoolean_11)
+{
+__intnl_UnityEngineVector3_8 = localPlayer.GetVelocity();
+__intnl_SystemSingle_8 = __intnl_UnityEngineVector3_8.x;
+__intnl_SystemSingle_9 = Mathf.Abs(__intnl_SystemSingle_8);
+__intnl_UnityEngineVector3_9 = localPlayer.GetVelocity();
+__intnl_SystemSingle_10 = __intnl_UnityEngineVector3_9.z;
+__intnl_SystemSingle_11 = Mathf.Abs(__intnl_SystemSingle_10);
+__intnl_SystemSingle_12 = __intnl_SystemSingle_9 + __intnl_SystemSingle_11;
+__intnl_SystemBoolean_11 = __intnl_SystemSingle_12 < __const_SystemSingle_10;
+}
+__intnl_SystemBoolean_10 = __intnl_SystemBoolean_11;
+if (__intnl_SystemBoolean_10)
+{
+__intnl_SystemSingle_13 = headRotation.y;
+__intnl_SystemSingle_14 = headRotation.w;
+__intnl_UnityEngineQuaternion_1 = Quaternion.ctor(__const_SystemSingle_9, __intnl_SystemSingle_13, __const_SystemSingle_9, __intnl_SystemSingle_14);
+__intnl_UnityEngineQuaternion_2 = __intnl_UnityEngineQuaternion_1.normalized;
+__intnl_UnityEngineQuaternion_3 = localPlayer.GetRotation();
+__intnl_SystemSingle_15 = Quaternion.Angle(__intnl_UnityEngineQuaternion_2, __intnl_UnityEngineQuaternion_3);
+__intnl_SystemBoolean_10 = __intnl_SystemSingle_15 < __const_SystemSingle_11;
+}
+__intnl_VRCSDKBaseVRCPlayerApi_0.Immobilize(__intnl_SystemBoolean_10);
+}
+__intnl_UnityEngineVector3_8 = localPlayer.GetPosition();
+__intnl_UnityEngineVector3_9 = __intnl_UnityEngineVector3_8 + __const_UnityEngineVector3_1;
+__intnl_SystemSingle_1 = hookDistance + __const_SystemSingle_6;
+__intnl_SystemInt32_3 = hookLayerMask.value;
+__intnl_SystemBoolean_10 = Physics.SphereCast(__intnl_UnityEngineVector3_9, __const_SystemSingle_4, __const_UnityEngineVector3_2, hitInfo, __intnl_SystemSingle_1, __intnl_SystemInt32_3);
+if (__intnl_SystemBoolean_10)
+{
+unhookThreshold = __const_SystemInt32_9;
+__intnl_SystemBoolean_11 = unhookThreshold < __const_SystemInt32_3;
+if (__intnl_SystemBoolean_11)
+{
+__intnl_SystemBoolean_11 = localPlayer.IsPlayerGrounded();
+}
+if (__intnl_SystemBoolean_11)
+{
+__intnl_UnityEngineTransform_0 = hitInfo.transform;
+hook.parent = __intnl_UnityEngineTransform_0;
+__this_VRCUdonUdonBehaviour_2.SetProgramVariable(__const_SystemString_0, __const_SystemBoolean_0);
+}
+}
+}
+public void _inputMoveVertical()
+{
+InputMoveV = inputMoveVerticalArgs.floatValue;
+}
+public void _inputMoveHorizontal()
+{
+InputMoveH = inputMoveHorizontalArgs.floatValue;
+}
+public void _inputJump()
+{
+if (reduceIKDrift)
+{
+localPlayer.Immobilize(__const_SystemBoolean_1);
+}
+}
+public void _onPlayerRespawn()
+{
+hook.parent = __this_UnityEngineTransform_0;
+unhookThreshold = __const_SystemInt32_10;
+localPlayer.SetVelocity(__const_UnityEngineVector3_0);
+__this_VRCUdonUdonBehaviour_3.SetProgramVariable(__const_SystemString_0, __const_SystemBoolean_1);
+UNDEF_32470_5784();
+}
+public void IgnoreSceneCollision()
+{
+__this_VRCUdonUdonBehaviour_4.SendCustomEventDelayedSeconds(__const_SystemString_2, __const_SystemSingle_12, __const_VRCUdonCommonEnumsEventTiming_0);
+colliderArray = Physics.OverlapSphere(__const_UnityEngineVector3_0, __const_SystemSingle_13);
+__lcl_i_SystemInt32_0 = __const_SystemInt32_9;
+for (;;)
+{
+__intnl_SystemInt32_4 = colliderArray.Length;
+__intnl_SystemBoolean_14 = __lcl_i_SystemInt32_0 < __intnl_SystemInt32_4;
+if (__intnl_SystemBoolean_14)
+{
+break;
+}
+sceneCollider = (Collider)(colliderArray[__lcl_i_SystemInt32_0]);
+__intnl_SystemBoolean_15 = Utilities.IsValid(sceneCollider);
+if (__intnl_SystemBoolean_15)
+{
+__intnl_UnityEngineCollider_0 = platformOverride;
+Physics.IgnoreCollision(sceneCollider, __intnl_UnityEngineCollider_0);
+}
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_1;
+}
+}
+private void UNDEF_32470_5272()
+{
+localPlayer = Networking.LocalPlayer;
+__intnl_SystemBoolean_16 = Utilities.IsValid(localPlayer);
+if (__intnl_SystemBoolean_16)
+{
+UNDEF_32470_5644();
+}
+}
+private void UNDEF_32470_5644()
+{
+lastFramePos = localPlayer.GetPosition();
+__intnl_UnityEngineTransform_1 = __this_UnityEngineTransform_0.GetChild(__const_SystemInt32_9);
+playerTracker = __intnl_UnityEngineTransform_1.GetChild(__const_SystemInt32_9);
+PlayerOffset = __this_UnityEngineTransform_0.GetChild(__const_SystemInt32_9);
+hook = __this_UnityEngineTransform_0.GetChild(__const_SystemInt32_1);
+__intnl_UnityEngineTransform_2 = __this_UnityEngineTransform_0.transform;
+platformOverride = (BoxCollider)(__intnl_UnityEngineTransform_2.GetComponent(__const_SystemType_0));
+platformOverride.size = __const_UnityEngineVector3_3;
+__this_UnityEngineTransform_0.position = __const_UnityEngineVector3_0;
+__intnl_SystemInt32_5 = hookLayerMask.value;
+__intnl_SystemBoolean_17 = __intnl_SystemInt32_5 == __const_SystemInt32_11;
+if (__intnl_SystemBoolean_17)
+{
+hookLayerMask.value = __const_SystemInt32_12;
+}
+}
+private void UNDEF_32470_5784()
+{
+__intnl_SystemBoolean_18 = localPlayer.IsPlayerGrounded();
+if (__intnl_SystemBoolean_18)
+{
+}
+else
+{
+platformOverride.enabled = __const_SystemBoolean_1;
+}
+if (reduceIKDrift)
+{
+localPlayer.Immobilize(__const_SystemBoolean_1);
+}
+}
+}

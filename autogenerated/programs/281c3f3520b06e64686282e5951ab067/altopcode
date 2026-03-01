@@ -1,0 +1,309 @@
+void _start()
+20 return;
+void RollBothModifiers()
+60 __0_chanceMultiplier__param = __const_SystemSingle_0
+80 __0_boostedSizeModifier__param = __const_SystemInt32_0
+100 __0_boostedShaderModifier__param = __const_SystemInt32_0
+120 __0_boostedShaderModifier2__param = __const_SystemInt32_0
+140 __0_boostTypeChance__param = __const_SystemSingle_1
+144 JUMP 180
+164 return;
+void __0_RollBothModifiersWithBoost()
+196 lastSizeModifier = __const_SystemInt32_1
+216 lastShaderModifier = __const_SystemInt32_2
+__lcl_boostedDoubleChance_SystemSingle_0 = op_Multiplication(__0_chanceMultiplier__param, doubleModifierChancePercent);// 244
+__lcl_boostedSizeChance_SystemSingle_0 = op_Multiplication(__0_chanceMultiplier__param, sizeModifierChancePercent);// 276
+__lcl_boostedShaderChance_SystemSingle_0 = op_Multiplication(__0_chanceMultiplier__param, shaderModifierChancePercent);// 308
+__lcl_doubleRoll_SystemSingle_0 = Range(__const_SystemSingle_2, __const_SystemSingle_1);// 340
+388 if (__intnl_SystemBoolean_0) //588
+{
+420 __0_boostedType__param = __0_boostedSizeModifier__param
+440 __1_boostTypeChance__param = __0_boostTypeChance__param
+444 JUMP 1196
+468 lastSizeModifier = __0___0_RollSizeModifierWithBoost__ret
+496 __1_boostedType__param = __0_boostedShaderModifier__param
+516 __0_boostedType2__param = __0_boostedShaderModifier2__param
+536 __2_boostTypeChance__param = __0_boostTypeChance__param
+540 JUMP 1532
+564 lastShaderModifier = __0___0_RollShaderModifierWithBoost__ret
+580 return;
+}
+__lcl_sizeRoll_SystemSingle_0 = Range(__const_SystemSingle_2, __const_SystemSingle_1);// 612
+660 if (__intnl_SystemBoolean_1) //744
+{
+692 __0_boostedType__param = __0_boostedSizeModifier__param
+712 __1_boostTypeChance__param = __0_boostTypeChance__param
+716 JUMP 1196
+740 lastSizeModifier = __0___0_RollSizeModifierWithBoost__ret
+}
+__lcl_shaderRoll_SystemSingle_0 = Range(__const_SystemSingle_2, __const_SystemSingle_1);// 768
+816 if (__intnl_SystemBoolean_2) //920
+{
+848 __1_boostedType__param = __0_boostedShaderModifier__param
+868 __0_boostedType2__param = __0_boostedShaderModifier2__param
+888 __2_boostTypeChance__param = __0_boostTypeChance__param
+892 JUMP 1532
+916 lastShaderModifier = __0___0_RollShaderModifierWithBoost__ret
+}
+960 if (__intnl_SystemBoolean_4) //976
+{
+968 JUMP 1008
+}
+1024 __intnl_SystemBoolean_3 = __intnl_SystemBoolean_4
+1036 if (__intnl_SystemBoolean_3) //1152
+{
+1084 if (__intnl_SystemBoolean_5) //1100
+{
+1092 JUMP 1132
+}
+1148 __intnl_SystemBoolean_3 = __intnl_SystemBoolean_5
+}
+1160 if (__intnl_SystemBoolean_3) //1168
+{
+}
+1180 return;
+1236 if (__intnl_SystemBoolean_6) //1276
+{
+}
+1284 if (__intnl_SystemBoolean_6) //1448
+{
+__lcl_boostRoll_SystemSingle_0 = Range(__const_SystemSingle_2, __const_SystemSingle_1);// 1316
+1364 if (__intnl_SystemBoolean_7) //1448
+{
+1396 __1__intnlparam = __0_boostedType__param
+1400 JUMP 4332
+1424 __0___0_RollSizeModifierWithBoost__ret = __0__intnlparam
+1440 return;
+}
+}
+1456 JUMP 2120
+1480 __0___0_RollSizeModifierWithBoost__ret = __0_RollSizeModifierInternal__ret
+1496 return;
+1516 return;
+1572 if (__intnl_SystemBoolean_8) //1612
+{
+}
+1620 if (__intnl_SystemBoolean_8) //2036
+{
+__lcl_boostRoll_SystemSingle_1 = Range(__const_SystemSingle_2, __const_SystemSingle_1);// 1652
+1700 if (__intnl_SystemBoolean_9) //2036
+{
+1748 if (__intnl_SystemBoolean_10) //1960
+{
+1812 if (__intnl_SystemBoolean_11) //1884
+{
+1844 __3__intnlparam = __1_boostedType__param
+1848 JUMP 4672
+1872 __0___0_RollShaderModifierWithBoost__ret = __2__intnlparam
+1876 JUMP 1940
+}
+1908 __3__intnlparam = __0_boostedType2__param
+1912 JUMP 4672
+1936 __0___0_RollShaderModifierWithBoost__ret = __2__intnlparam
+1952 return;
+}
+1984 __3__intnlparam = __1_boostedType__param
+1988 JUMP 4672
+2012 __0___0_RollShaderModifierWithBoost__ret = __2__intnlparam
+2028 return;
+}
+}
+2044 JUMP 2316
+2068 __0___0_RollShaderModifierWithBoost__ret = __0_RollShaderModifierInternal__ret
+2084 return;
+2104 return;
+__lcl_modifierRoll_SystemSingle_0 = Range(__const_SystemSingle_2, __const_SystemSingle_1);// 2144
+2192 if (__intnl_SystemBoolean_12) //2248
+{
+2216 __0_RollSizeModifierInternal__ret = __const_SystemInt32_3
+2232 return;
+2240 JUMP 2288
+}
+2264 __0_RollSizeModifierInternal__ret = __const_SystemInt32_4
+2280 return;
+2300 return;
+__lcl_randomIndex_SystemInt32_0 = Range(__const_SystemInt32_6, __const_SystemInt32_5);// 2340
+2364 __0_RollShaderModifierInternal__ret = __lcl_randomIndex_SystemInt32_0
+2380 return;
+2400 return;
+void GetLastSizeModifier()
+2432 __0_GetLastSizeModifier__ret = lastSizeModifier
+2448 return;
+2468 return;
+void GetLastShaderModifier()
+2500 __0_GetLastShaderModifier__ret = lastShaderModifier
+2516 return;
+2536 return;
+void RollModifier()
+2560 JUMP 36
+2584 __0_RollModifier__ret = lastSizeModifier
+2600 return;
+2620 return;
+void __0_GetShaderModifierValueMultiplierInstance()
+2676 if (__intnl_SystemBoolean_13) //3732
+{
+2724 if (__intnl_SystemBoolean_14) //3732
+{
+2764 return;
+2788 __0___0_GetShaderModifierValueMultiplierInstance__ret = __const_SystemSingle_0
+2804 return;
+2828 __0___0_GetShaderModifierValueMultiplierInstance__ret = albinoValueMultiplier
+2844 return;
+2868 __0___0_GetShaderModifierValueMultiplierInstance__ret = shinyValueMultiplier
+2884 return;
+2908 __0___0_GetShaderModifierValueMultiplierInstance__ret = goldenValueMultiplier
+2924 return;
+2948 __0___0_GetShaderModifierValueMultiplierInstance__ret = ghastlyValueMultiplier
+2964 return;
+2988 __0___0_GetShaderModifierValueMultiplierInstance__ret = blessedValueMultiplier
+3004 return;
+3028 __0___0_GetShaderModifierValueMultiplierInstance__ret = cursedValueMultiplier
+3044 return;
+3068 __0___0_GetShaderModifierValueMultiplierInstance__ret = radioactiveValueMultiplier
+3084 return;
+3108 __0___0_GetShaderModifierValueMultiplierInstance__ret = missingShaderValueMultiplier
+3124 return;
+3148 __0___0_GetShaderModifierValueMultiplierInstance__ret = sandyValueMultiplier
+3164 return;
+3188 __0___0_GetShaderModifierValueMultiplierInstance__ret = holographicValueMultiplier
+3204 return;
+3228 __0___0_GetShaderModifierValueMultiplierInstance__ret = burningValueMultiplier
+3244 return;
+3268 __0___0_GetShaderModifierValueMultiplierInstance__ret = rainbowValueMultiplier
+3284 return;
+3308 __0___0_GetShaderModifierValueMultiplierInstance__ret = stoneValueMultiplier
+3324 return;
+3348 __0___0_GetShaderModifierValueMultiplierInstance__ret = zebraValueMultiplier
+3364 return;
+3388 __0___0_GetShaderModifierValueMultiplierInstance__ret = tigerValueMultiplier
+3404 return;
+3428 __0___0_GetShaderModifierValueMultiplierInstance__ret = camoValueMultiplier
+3444 return;
+3468 __0___0_GetShaderModifierValueMultiplierInstance__ret = electricValueMultiplier
+3484 return;
+3508 __0___0_GetShaderModifierValueMultiplierInstance__ret = staticValueMultiplier
+3524 return;
+3548 __0___0_GetShaderModifierValueMultiplierInstance__ret = voidValueMultiplier
+3564 return;
+3588 __0___0_GetShaderModifierValueMultiplierInstance__ret = frozenValueMultiplier
+3604 return;
+3628 __0___0_GetShaderModifierValueMultiplierInstance__ret = shadowValueMultiplier
+3644 return;
+3668 __0___0_GetShaderModifierValueMultiplierInstance__ret = negativeValueMultiplier
+3684 return;
+3708 __0___0_GetShaderModifierValueMultiplierInstance__ret = galaxyValueMultiplier
+3724 return;
+}
+}
+3748 __0___0_GetShaderModifierValueMultiplierInstance__ret = __const_SystemSingle_0
+3764 return;
+3784 return;
+void __0_GetSizeModifierValueMultiplierInstance()
+3840 if (__intnl_SystemBoolean_15) //3888
+{
+3864 __0___0_GetSizeModifierValueMultiplierInstance__ret = __const_SystemSingle_0
+3880 return;
+}
+3928 if (__intnl_SystemBoolean_16) //3976
+{
+3952 __0___0_GetSizeModifierValueMultiplierInstance__ret = hugeValueMultiplier
+3968 return;
+}
+4016 if (__intnl_SystemBoolean_17) //4112
+{
+4040 __0___0_GetSizeModifierValueMultiplierInstance__ret = __const_SystemSingle_0
+4056 return;
+4064 JUMP 4112
+4088 __0___0_GetSizeModifierValueMultiplierInstance__ret = __const_SystemSingle_0
+4104 return;
+}
+4112 JUMP 4072
+4132 return;
+void __0_GetCombinedValueMultiplierInstance()
+4172 __1_modifier__param = __0_sizeModifier__param
+4176 JUMP 3800
+4200 __lcl_sizeMultiplier_SystemSingle_0 = __0___0_GetSizeModifierValueMultiplierInstance__ret
+4228 __0_modifier__param = __0_shaderModifier__param
+4232 JUMP 2636
+4256 __lcl_shaderMultiplier_SystemSingle_0 = __0___0_GetShaderModifierValueMultiplierInstance__ret
+__0___0_GetCombinedValueMultiplierInstance__ret = op_Multiplication(__lcl_shaderMultiplier_SystemSingle_0, __lcl_sizeMultiplier_SystemSingle_0);// 4284
+4304 return;
+4324 return;
+4372 if (__intnl_SystemBoolean_18) //4420
+{
+4396 __0__intnlparam = __const_SystemInt32_1
+4412 return;
+}
+4460 if (__intnl_SystemBoolean_19) //4508
+{
+4484 __0__intnlparam = __const_SystemInt32_3
+4500 return;
+}
+4548 if (__intnl_SystemBoolean_20) //4644
+{
+4572 __0__intnlparam = __const_SystemInt32_4
+4588 return;
+4596 JUMP 4644
+4620 __0__intnlparam = __const_SystemInt32_1
+4636 return;
+}
+4644 JUMP 4604
+4664 return;
+4712 if (__intnl_SystemBoolean_21) //5768
+{
+4760 if (__intnl_SystemBoolean_22) //5768
+{
+4800 return;
+4824 __2__intnlparam = __const_SystemInt32_2
+4840 return;
+4864 __2__intnlparam = __const_SystemInt32_9
+4880 return;
+4904 __2__intnlparam = __const_SystemInt32_10
+4920 return;
+4944 __2__intnlparam = __const_SystemInt32_11
+4960 return;
+4984 __2__intnlparam = __const_SystemInt32_12
+5000 return;
+5024 __2__intnlparam = __const_SystemInt32_13
+5040 return;
+5064 __2__intnlparam = __const_SystemInt32_14
+5080 return;
+5104 __2__intnlparam = __const_SystemInt32_15
+5120 return;
+5144 __2__intnlparam = __const_SystemInt32_16
+5160 return;
+5184 __2__intnlparam = __const_SystemInt32_17
+5200 return;
+5224 __2__intnlparam = __const_SystemInt32_18
+5240 return;
+5264 __2__intnlparam = __const_SystemInt32_19
+5280 return;
+5304 __2__intnlparam = __const_SystemInt32_20
+5320 return;
+5344 __2__intnlparam = __const_SystemInt32_21
+5360 return;
+5384 __2__intnlparam = __const_SystemInt32_22
+5400 return;
+5424 __2__intnlparam = __const_SystemInt32_23
+5440 return;
+5464 __2__intnlparam = __const_SystemInt32_24
+5480 return;
+5504 __2__intnlparam = __const_SystemInt32_25
+5520 return;
+5544 __2__intnlparam = __const_SystemInt32_26
+5560 return;
+5584 __2__intnlparam = __const_SystemInt32_27
+5600 return;
+5624 __2__intnlparam = __const_SystemInt32_28
+5640 return;
+5664 __2__intnlparam = __const_SystemInt32_29
+5680 return;
+5704 __2__intnlparam = __const_SystemInt32_30
+5720 return;
+5744 __2__intnlparam = __const_SystemInt32_31
+5760 return;
+}
+}
+5784 __2__intnlparam = __const_SystemInt32_2
+5800 return;
+5820 return;

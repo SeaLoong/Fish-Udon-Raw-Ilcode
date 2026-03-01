@@ -1,0 +1,155 @@
+void _start
+0 PUSH UInt32 __const_SystemUInt32_0
+8 PUSH Transform __this_UnityEngineTransform_0
+16 PUSH Vector3 startPosition
+24 EXTERN UnityEngineTransform.__get_localPosition__UnityEngineVector3
+32 PUSH Transform __this_UnityEngineTransform_0
+40 PUSH Quaternion startRotation
+48 EXTERN UnityEngineTransform.__get_localRotation__UnityEngineQuaternion
+56 PUSH VRCPlayerApi localPlayer
+64 EXTERN VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi
+72 PUSH Single cullDistance
+80 PUSH Single cullDistance
+88 PUSH Single cullDistanceSq
+96 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+104 PUSH Single __const_SystemSingle_0
+112 PUSH Single __const_SystemSingle_1
+120 PUSH Single timeOffset
+128 EXTERN UnityEngineRandom.__Range__SystemSingle_SystemSingle__SystemSingle
+136 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+144 COPY
+148 JUMP_INDIRECT 2
+void _update
+156 PUSH UInt32 __const_SystemUInt32_0
+164 PUSH Single __lcl_currentTime_SystemSingle_0
+172 EXTERN UnityEngineTime.__get_time__SystemSingle
+180 PUSH Single __lcl_currentTime_SystemSingle_0
+188 PUSH Single lastDistanceCheck
+196 PUSH Single __intnl_SystemSingle_0
+204 EXTERN SystemSingle.__op_Subtraction__SystemSingle_SystemSingle__SystemSingle
+212 PUSH Single __intnl_SystemSingle_0
+220 PUSH Single distanceCheckInterval
+228 PUSH Boolean __intnl_SystemBoolean_0
+236 EXTERN SystemSingle.__op_GreaterThanOrEqual__SystemSingle_SystemSingle__SystemBoolean
+244 PUSH Boolean __intnl_SystemBoolean_0
+252 JUMP_IF_FALSE 504
+260 PUSH Single __lcl_currentTime_SystemSingle_0
+268 PUSH Single lastDistanceCheck
+276 COPY
+280 PUSH VRCPlayerApi localPlayer
+288 PUSH object __const_SystemObject_0
+296 PUSH Boolean __intnl_SystemBoolean_1
+304 EXTERN SystemObject.__op_Inequality__SystemObject_SystemObject__SystemBoolean
+312 PUSH Boolean __intnl_SystemBoolean_1
+320 JUMP_IF_FALSE 352
+328 PUSH VRCPlayerApi localPlayer
+336 PUSH Boolean __intnl_SystemBoolean_1
+344 EXTERN VRCSDKBaseVRCPlayerApi.__IsValid__SystemBoolean
+352 PUSH Boolean __intnl_SystemBoolean_1
+360 JUMP_IF_FALSE 504
+368 PUSH VRCPlayerApi localPlayer
+376 PUSH Vector3 __intnl_UnityEngineVector3_0
+384 EXTERN VRCSDKBaseVRCPlayerApi.__GetPosition__UnityEngineVector3
+392 PUSH Transform __this_UnityEngineTransform_0
+400 PUSH Vector3 __intnl_UnityEngineVector3_1
+408 EXTERN UnityEngineTransform.__get_position__UnityEngineVector3
+416 PUSH Vector3 __intnl_UnityEngineVector3_0
+424 PUSH Vector3 __intnl_UnityEngineVector3_1
+432 PUSH Vector3 __intnl_UnityEngineVector3_2
+440 EXTERN UnityEngineVector3.__op_Subtraction__UnityEngineVector3_UnityEngineVector3__UnityEngineVector3
+448 PUSH Vector3 __intnl_UnityEngineVector3_2
+456 PUSH Single __lcl_distSq_SystemSingle_0
+464 EXTERN UnityEngineVector3.__get_sqrMagnitude__SystemSingle
+472 PUSH Single __lcl_distSq_SystemSingle_0
+480 PUSH Single cullDistanceSq
+488 PUSH Boolean isInRange
+496 EXTERN SystemSingle.__op_LessThanOrEqual__SystemSingle_SystemSingle__SystemBoolean
+504 PUSH Boolean isInRange
+512 JUMP_IF_FALSE 528
+520 JUMP 548
+528 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+536 COPY
+540 JUMP_INDIRECT 2
+548 PUSH Single __lcl_currentTime_SystemSingle_0
+556 PUSH Single timeOffset
+564 PUSH Single __lcl_time_SystemSingle_0
+572 EXTERN SystemSingle.__op_Addition__SystemSingle_SystemSingle__SystemSingle
+580 PUSH Single __lcl_time_SystemSingle_0
+588 PUSH Single bobSpeed
+596 PUSH Single __intnl_SystemSingle_1
+604 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+612 PUSH Single __intnl_SystemSingle_1
+620 PUSH Single __intnl_SystemSingle_2
+628 EXTERN UnityEngineMathf.__Sin__SystemSingle__SystemSingle
+636 PUSH Single __intnl_SystemSingle_2
+644 PUSH Single bobHeight
+652 PUSH Single __lcl_bobOffset_SystemSingle_0
+660 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+668 PUSH Vector3 __const_UnityEngineVector3_0
+676 PUSH Single __lcl_bobOffset_SystemSingle_0
+684 PUSH Vector3 __intnl_UnityEngineVector3_0
+692 EXTERN UnityEngineVector3.__op_Multiply__UnityEngineVector3_SystemSingle__UnityEngineVector3
+700 PUSH Vector3 startPosition
+708 PUSH Vector3 __intnl_UnityEngineVector3_0
+716 PUSH Vector3 __intnl_UnityEngineVector3_1
+724 EXTERN UnityEngineVector3.__op_Addition__UnityEngineVector3_UnityEngineVector3__UnityEngineVector3
+732 PUSH Transform __this_UnityEngineTransform_0
+740 PUSH Vector3 __intnl_UnityEngineVector3_1
+748 EXTERN UnityEngineTransform.__set_localPosition__UnityEngineVector3__SystemVoid
+756 PUSH Boolean tiltX
+764 JUMP_IF_FALSE 868
+772 PUSH Single __lcl_time_SystemSingle_0
+780 PUSH Single tiltSpeed
+788 PUSH Single __intnl_SystemSingle_3
+796 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+804 PUSH Single __intnl_SystemSingle_3
+812 PUSH Single __intnl_SystemSingle_4
+820 EXTERN UnityEngineMathf.__Sin__SystemSingle__SystemSingle
+828 PUSH Single __intnl_SystemSingle_4
+836 PUSH Single tiltAngle
+844 PUSH Single __lcl_tiltX_value_SystemSingle_0
+852 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+860 JUMP 888
+868 PUSH Single __const_SystemSingle_0
+876 PUSH Single __lcl_tiltX_value_SystemSingle_0
+884 COPY
+888 PUSH Boolean tiltZ
+896 JUMP_IF_FALSE 1064
+904 PUSH Single __lcl_time_SystemSingle_0
+912 PUSH Single tiltSpeed
+920 PUSH Single __intnl_SystemSingle_5
+928 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+936 PUSH Single __intnl_SystemSingle_5
+944 PUSH Single __const_SystemSingle_2
+952 PUSH Single __intnl_SystemSingle_6
+960 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+968 PUSH Single __intnl_SystemSingle_6
+976 PUSH Single __const_SystemSingle_3
+984 PUSH Single __intnl_SystemSingle_7
+992 EXTERN SystemSingle.__op_Addition__SystemSingle_SystemSingle__SystemSingle
+1000 PUSH Single __intnl_SystemSingle_7
+1008 PUSH Single __intnl_SystemSingle_8
+1016 EXTERN UnityEngineMathf.__Sin__SystemSingle__SystemSingle
+1024 PUSH Single __intnl_SystemSingle_8
+1032 PUSH Single tiltAngle
+1040 PUSH Single __lcl_tiltZ_value_SystemSingle_0
+1048 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+1056 JUMP 1084
+1064 PUSH Single __const_SystemSingle_0
+1072 PUSH Single __lcl_tiltZ_value_SystemSingle_0
+1080 COPY
+1084 PUSH Single __lcl_tiltX_value_SystemSingle_0
+1092 PUSH Single __const_SystemSingle_0
+1100 PUSH Single __lcl_tiltZ_value_SystemSingle_0
+1108 PUSH Quaternion __intnl_UnityEngineQuaternion_0
+1116 EXTERN UnityEngineQuaternion.__Euler__SystemSingle_SystemSingle_SystemSingle__UnityEngineQuaternion
+1124 PUSH Quaternion startRotation
+1132 PUSH Quaternion __intnl_UnityEngineQuaternion_0
+1140 PUSH Quaternion __intnl_UnityEngineQuaternion_1
+1148 EXTERN UnityEngineQuaternion.__op_Multiply__UnityEngineQuaternion_UnityEngineQuaternion__UnityEngineQuaternion
+1156 PUSH Transform __this_UnityEngineTransform_0
+1164 PUSH Quaternion __intnl_UnityEngineQuaternion_1
+1172 EXTERN UnityEngineTransform.__set_localRotation__UnityEngineQuaternion__SystemVoid
+1180 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1188 COPY
+1192 JUMP_INDIRECT 2

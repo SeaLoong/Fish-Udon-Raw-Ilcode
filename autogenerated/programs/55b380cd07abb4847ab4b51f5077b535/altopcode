@@ -1,0 +1,117 @@
+void _start()
+16 if (UseLocalTimeZone) //48
+{
+timeZoneInfo = get_Local();// 32
+40 JUMP 72
+}
+timeZoneInfo = FindSystemTimeZoneById(TimeZoneID);// 64
+80 JUMP 116
+100 return;
+void _ClockUpdate()
+124 if (UseAudioTick) //204
+{
+G_AudioTick.set_pitch(__intnl_SystemSingle_0);// 180
+G_AudioTick.Play();// 196
+}
+__lcl_currentTime_SystemDateTime_0 = ConvertTimeFromUtc(timeZoneInfo, __intnl_SystemDateTime_0);// 244
+292 if (__intnl_SystemBoolean_0) //1240
+{
+316 __lcl_i_SystemInt32_0 = __const_SystemInt32_0
+384 if (__intnl_SystemBoolean_1) //1240
+{
+__lcl_hand_UnityEngineTransform_0 = G_Hands.Get(__lcl_i_SystemInt32_0);// 416
+496 if (__intnl_SystemBoolean_2) //800
+{
+L_hand.set_localRotation(__intnl_UnityEngineQuaternion_0);// 784
+792 JUMP 1200
+}
+840 if (__intnl_SystemBoolean_3) //1000
+{
+L_hand.set_localRotation(__intnl_UnityEngineQuaternion_1);// 984
+992 JUMP 1200
+}
+1040 if (__intnl_SystemBoolean_4) //1200
+{
+L_hand.set_localRotation(__intnl_UnityEngineQuaternion_2);// 1184
+1192 JUMP 1200
+}
+__lcl_i_SystemInt32_0 = op_Addition(__const_SystemInt32_6, __lcl_i_SystemInt32_0);// 1224
+1232 JUMP 320
+}
+}
+1280 if (__intnl_SystemBoolean_1) //1972
+{
+1304 __lcl_i_SystemInt32_0 = __const_SystemInt32_0
+1372 if (__intnl_SystemBoolean_2) //1972
+{
+__lcl_fill_UnityEngineUIImage_0 = G_Fills.Get(__lcl_i_SystemInt32_0);// 1404
+1484 if (__intnl_SystemBoolean_3) //1612
+{
+L_fill.set_fillAmount(__intnl_SystemSingle_1);// 1596
+1604 JUMP 1932
+}
+1652 if (__intnl_SystemBoolean_4) //1772
+{
+L_fill.set_fillAmount(__intnl_SystemSingle_3);// 1756
+1764 JUMP 1932
+}
+1812 if (__intnl_SystemBoolean_5) //1932
+{
+L_fill.set_fillAmount(__intnl_SystemSingle_5);// 1916
+1924 JUMP 1932
+}
+__lcl_i_SystemInt32_0 = op_Addition(__const_SystemInt32_6, __lcl_i_SystemInt32_0);// 1956
+1964 JUMP 1308
+}
+}
+2012 if (__intnl_SystemBoolean_2) //3216
+{
+2036 __lcl_i_SystemInt32_0 = __const_SystemInt32_0
+2104 if (__intnl_SystemBoolean_3) //3216
+{
+__lcl_label_TMProTextMeshProUGUI_0 = G_Labels.Get(__lcl_i_SystemInt32_0);// 2136
+2216 if (__intnl_SystemBoolean_4) //3176
+{
+2264 if (__intnl_SystemBoolean_5) //3176
+{
+2304 return;
+L_label.set_text(__intnl_SystemString_0);// 2360
+2368 JUMP 3176
+L_label.set_text(__intnl_SystemString_1);// 2424
+2432 JUMP 3176
+L_label.set_text(__intnl_SystemString_2);// 2488
+2496 JUMP 3176
+2512 if (Use24HourTime) //2584
+{
+L_label.set_text(__intnl_SystemString_3);// 2568
+2576 JUMP 2640
+}
+L_label.set_text(__intnl_SystemString_3);// 2632
+2640 JUMP 3176
+2656 if (Use24HourTime) //2728
+{
+L_label.set_text(__intnl_SystemString_3);// 2712
+2720 JUMP 2784
+}
+L_label.set_text(__intnl_SystemString_3);// 2776
+2784 JUMP 3176
+L_label.set_text(__intnl_SystemString_3);// 2840
+2848 JUMP 3176
+L_label.set_text(__intnl_SystemString_4);// 2904
+2912 JUMP 3176
+L_label.set_text(__intnl_SystemString_5);// 2968
+2976 JUMP 3176
+L_label.set_text(__intnl_SystemString_6);// 3032
+3040 JUMP 3176
+L_label.set_text(__intnl_SystemString_7);// 3096
+3104 JUMP 3176
+L_label.set_text(__intnl_SystemString_8);// 3160
+3168 JUMP 3176
+}
+}
+__lcl_i_SystemInt32_0 = op_Addition(__const_SystemInt32_6, __lcl_i_SystemInt32_0);// 3200
+3208 JUMP 2040
+}
+}
+this.SendCustomEventDelayedSeconds(__const_VRCUdonCommonEnumsEventTiming_0, __const_SystemSingle_6, __const_SystemString_13);// 3248
+3268 return;

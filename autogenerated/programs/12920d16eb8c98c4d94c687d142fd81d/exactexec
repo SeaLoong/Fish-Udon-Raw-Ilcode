@@ -1,0 +1,1160 @@
+using System;
+using UnityEngine;
+using VRC.SDKBase;
+using TMPro;
+using UnityEngine.UI;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Single __const_SystemSingle_8 = 0.8f;
+private Vector2 __intnl_UnityEngineVector2_2 = (0.00, 0.00);
+private Boolean __intnl_SystemBoolean_13 = false;
+private Boolean __intnl_SystemBoolean_23 = false;
+private Boolean __intnl_SystemBoolean_33 = false;
+private Boolean __intnl_SystemBoolean_43 = false;
+private TrackingData __intnl_VRCSDKBaseVRCPlayerApiTrackingData_0 = VRC.SDKBase.VRCPlayerApi+TrackingData;
+private UInt32 __gintnl_SystemUInt32_16 = 4252;
+private Single __intnl_SystemSingle_20 = 0f;
+private Single __intnl_SystemSingle_21 = 0f;
+private Single __intnl_SystemSingle_22 = 0f;
+private Single __intnl_SystemSingle_23 = 0f;
+public Single floatDistance;
+private Int32 __4_xpAmount__param = 0;
+private Boolean worldCanvas2Available = true;
+private String __intnl_SystemString_1 = null;
+private Object __intnl_UnityEngineObject_12 = null;
+private Single __intnl_SystemSingle_0 = 0f;
+private Boolean screenText1Available = true;
+private Boolean screenText2Available = true;
+private TextMeshProUGUI __0_textComponent__param = null;
+private String __const_SystemString_0 = "+";
+private Transform __intnl_UnityEngineTransform_0 = null;
+private RectTransform __lcl_rectTransform_UnityEngineRectTransform_1 = null;
+private Single __const_SystemSingle_0 = 0f;
+private Transform __0_worldPosition__param = null;
+private Vector3 __intnl_UnityEngineVector3_6 = new Vector3(0f, 0f, 0f);
+private Boolean __intnl_SystemBoolean_16 = false;
+private Boolean __intnl_SystemBoolean_26 = false;
+private Boolean __intnl_SystemBoolean_36 = false;
+private Single __intnl_SystemSingle_10 = 0f;
+private Single __intnl_SystemSingle_11 = 0f;
+private Single __intnl_SystemSingle_12 = 0f;
+private Single __intnl_SystemSingle_13 = 0f;
+private Single __intnl_SystemSingle_14 = 0f;
+private Single __intnl_SystemSingle_15 = 0f;
+private Single __intnl_SystemSingle_16 = 0f;
+private Single __intnl_SystemSingle_17 = 0f;
+private Single __intnl_SystemSingle_18 = 0f;
+private Single __intnl_SystemSingle_19 = 0f;
+private Vector3 __1_startPos__param = new Vector3(0f, 0f, 0f);
+private Single __lcl_elapsed_SystemSingle_3 = 0f;
+private Int32 __5_xpAmount__param = 0;
+private Vector3 __lcl_directionToPlayer_UnityEngineVector3_3 = new Vector3(0f, 0f, 0f);
+private Vector3 screenText1StartPos = new Vector3(0f, 0f, 0f);
+private Single __intnl_SystemSingle_8 = 0f;
+private UInt32 __gintnl_SystemUInt32_9 = 1028;
+private UInt32 __gintnl_SystemUInt32_8 = 868;
+private UInt32 __gintnl_SystemUInt32_5 = 564;
+private UInt32 __gintnl_SystemUInt32_4 = 520;
+private UInt32 __gintnl_SystemUInt32_7 = 784;
+private UInt32 __gintnl_SystemUInt32_6 = 684;
+private UInt32 __gintnl_SystemUInt32_1 = 132;
+private UInt32 __gintnl_SystemUInt32_0 = 40;
+private UInt32 __gintnl_SystemUInt32_3 = 200;
+private UInt32 __gintnl_SystemUInt32_2 = 184;
+private Vector3 screenText2StartPos = new Vector3(0f, 0f, 0f);
+private Vector3 levelUpVRStartScale = new Vector3(0f, 0f, 0f);
+private Boolean __const_SystemBoolean_0 = false;
+private Boolean __const_SystemBoolean_1 = true;
+private Single __lcl_scale_SystemSingle_3 = 0f;
+private Object __intnl_UnityEngineObject_21 = null;
+private Object __intnl_UnityEngineObject_11 = null;
+private Single worldCanvas2StartTime = 0f;
+public Canvas screenOverlayCanvas;
+private Vector3 __lcl_endPosition_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Transform __lcl_worldPosition_UnityEngineTransform_0 = null;
+private GameObject __intnl_UnityEngineGameObject_11 = null;
+private Color __intnl_UnityEngineColor_6 = new Color(0f, 0f, 0f, 0f);
+private Canvas __1_canvas__param = null;
+private Color __lcl_textColor_UnityEngineColor_2 = new Color(0f, 0f, 0f, 0f);
+private Single __const_SystemSingle_7 = 1.2f;
+private Vector3 __intnl_UnityEngineVector3_5 = new Vector3(0f, 0f, 0f);
+private UInt32 __gintnl_SystemUInt32_13 = 3548;
+private Vector2 __intnl_UnityEngineVector2_4 = (0.00, 0.00);
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Single __lcl_elapsed_SystemSingle_0 = 0f;
+private Int32 __1_canvasIndex__param = 0;
+private Transform __2_worldPosition__param = null;
+private Object __intnl_UnityEngineObject_19 = null;
+private Single __intnl_SystemSingle_7 = 0f;
+private Vector3 __lcl_playerHeadPos_UnityEngineVector3_3 = new Vector3(0f, 0f, 0f);
+private Single __0_startTime__param = 0f;
+private Vector3 __lcl_playerHeadForward_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Object __intnl_UnityEngineObject_14 = null;
+private Int64 __refl_typeid = -5404707973241881710;
+private Int32[] xpQueue = System.Int32[];
+private Single __lcl_alpha_SystemSingle_0 = 0f;
+private Vector3 __lcl_endPosition_UnityEngineVector3_3 = new Vector3(0f, 0f, 0f);
+private Vector3 worldCanvas1StartPos = new Vector3(0f, 0f, 0f);
+private GameObject __intnl_UnityEngineGameObject_14 = null;
+private Transform __intnl_UnityEngineTransform_5 = null;
+private Color __intnl_UnityEngineColor_5 = new Color(0f, 0f, 0f, 0f);
+public TextMeshProUGUI screenText1;
+public TextMeshProUGUI screenText2;
+private Int32 __0_xpAmount__param = 0;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Int32 queueCount = 0;
+private Boolean __intnl_SystemBoolean_11 = false;
+private Boolean __intnl_SystemBoolean_21 = false;
+private Boolean __intnl_SystemBoolean_31 = false;
+private Boolean __intnl_SystemBoolean_41 = false;
+private TrackingData __intnl_VRCSDKBaseVRCPlayerApiTrackingData_2 = VRC.SDKBase.VRCPlayerApi+TrackingData;
+private Transform __intnl_UnityEngineTransform_19 = null;
+private Transform __intnl_UnityEngineTransform_18 = null;
+private Transform __intnl_UnityEngineTransform_13 = null;
+private Transform __intnl_UnityEngineTransform_12 = null;
+private Transform __intnl_UnityEngineTransform_11 = null;
+private Transform __intnl_UnityEngineTransform_10 = null;
+private Transform __intnl_UnityEngineTransform_17 = null;
+private Transform __intnl_UnityEngineTransform_16 = null;
+private Transform __intnl_UnityEngineTransform_15 = null;
+private Transform __intnl_UnityEngineTransform_14 = null;
+private UInt32 __gintnl_SystemUInt32_14 = 3788;
+private Single __lcl_normalizedDistance_SystemSingle_0 = 0f;
+private Single __lcl_normalizedDistance_SystemSingle_1 = 0f;
+private Vector3 __const_UnityEngineVector3_0 = new Vector3(0.5f, 0.5f, 0.5f);
+private String __intnl_SystemString_3 = null;
+private Single __lcl_scaleMultiplier_SystemSingle_1 = 0f;
+private Single worldCanvas1StartTime = 0f;
+private Vector3 worldCanvas2StartScale = new Vector3(0f, 0f, 0f);
+private Single __intnl_SystemSingle_2 = 0f;
+private Vector3 __lcl_playerHeadPos_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Boolean __lcl_isVR_SystemBoolean_0 = false;
+private Transform __intnl_UnityEngineTransform_2 = null;
+private RectTransform __lcl_rectTransform_UnityEngineRectTransform_3 = null;
+private Single __const_SystemSingle_2 = 1f;
+private Int32 __2_xpAmount__param = 0;
+private Color __intnl_UnityEngineColor_0 = new Color(0f, 0f, 0f, 0f);
+private Boolean __intnl_SystemBoolean_19 = false;
+private Boolean __intnl_SystemBoolean_29 = false;
+private Boolean __intnl_SystemBoolean_39 = false;
+private Vector3 __intnl_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Int32 __1_xpAmount__param = 0;
+private GameObject __intnl_UnityEngineGameObject_9 = null;
+private GameObject __intnl_UnityEngineGameObject_8 = null;
+private GameObject __intnl_UnityEngineGameObject_3 = null;
+private GameObject __intnl_UnityEngineGameObject_2 = null;
+private GameObject __intnl_UnityEngineGameObject_1 = null;
+private GameObject __intnl_UnityEngineGameObject_0 = null;
+private GameObject __intnl_UnityEngineGameObject_7 = null;
+private GameObject __intnl_UnityEngineGameObject_6 = null;
+private GameObject __intnl_UnityEngineGameObject_5 = null;
+private GameObject __intnl_UnityEngineGameObject_4 = null;
+private Vector3 __lcl_popupPosition_UnityEngineVector3_1 = new Vector3(0f, 0f, 0f);
+private Single __const_SystemSingle_9 = 2.4f;
+private Vector2 __intnl_UnityEngineVector2_1 = (0.00, 0.00);
+private Boolean __intnl_SystemBoolean_14 = false;
+private Boolean __intnl_SystemBoolean_24 = false;
+private Boolean __intnl_SystemBoolean_34 = false;
+private Boolean __intnl_SystemBoolean_44 = false;
+private TrackingData __intnl_VRCSDKBaseVRCPlayerApiTrackingData_1 = VRC.SDKBase.VRCPlayerApi+TrackingData;
+private Single __lcl_progress_SystemSingle_0 = 0f;
+private Single __lcl_progress_SystemSingle_1 = 0f;
+private Single __lcl_progress_SystemSingle_2 = 0f;
+private Single __lcl_progress_SystemSingle_3 = 0f;
+private object __const_SystemObject_0 = null;
+private Vector3 __lcl_directionToPlayer_UnityEngineVector3_1 = new Vector3(0f, 0f, 0f);
+private String __intnl_SystemString_0 = null;
+private Transform __1_worldPosition__param = null;
+private Vector3 __intnl_UnityEngineVector3_20 = new Vector3(0f, 0f, 0f);
+private Vector3 __intnl_UnityEngineVector3_21 = new Vector3(0f, 0f, 0f);
+private Vector3 __intnl_UnityEngineVector3_22 = new Vector3(0f, 0f, 0f);
+private Vector3 __intnl_UnityEngineVector3_23 = new Vector3(0f, 0f, 0f);
+private Vector3 __intnl_UnityEngineVector3_24 = new Vector3(0f, 0f, 0f);
+private Single __lcl_scale_SystemSingle_1 = 0f;
+private Object __intnl_UnityEngineObject_13 = null;
+private Type __const_SystemType_0 = typeof(RectTransform);
+private Single __intnl_SystemSingle_1 = 0f;
+private Boolean levelUpVRAnimating = false;
+private Vector3 __intnl_UnityEngineVector3_8 = new Vector3(0f, 0f, 0f);
+private Vector3 __0_startScale__param = new Vector3(0f, 0f, 0f);
+private RectTransform __lcl_rectTransform_UnityEngineRectTransform_0 = null;
+private Single __const_SystemSingle_1 = 0.5f;
+private Vector3 __intnl_UnityEngineVector3_7 = new Vector3(0f, 0f, 0f);
+private TrackingDataType __const_VRCSDKBaseVRCPlayerApiTrackingDataType_0 = TrackingDataType.Head;
+private UInt32 __gintnl_SystemUInt32_11 = 1232;
+private Boolean __intnl_SystemBoolean_17 = false;
+private Boolean __intnl_SystemBoolean_27 = false;
+private Boolean __intnl_SystemBoolean_37 = false;
+private TrackingData __intnl_VRCSDKBaseVRCPlayerApiTrackingData_4 = VRC.SDKBase.VRCPlayerApi+TrackingData;
+private Boolean __0_HasAvailableElement__ret = false;
+private Single __lcl_elapsed_SystemSingle_2 = 0f;
+private Int32 __0_textIndex__param = 0;
+private Single __1_startTime__param = 0f;
+private Vector3 __lcl_directionToPlayer_UnityEngineVector3_2 = new Vector3(0f, 0f, 0f);
+private Single __lcl_distance_SystemSingle_1 = 0f;
+private Single __lcl_distance_SystemSingle_0 = 0f;
+private Vector3 __intnl_UnityEngineVector3_10 = new Vector3(0f, 0f, 0f);
+private Vector3 __intnl_UnityEngineVector3_11 = new Vector3(0f, 0f, 0f);
+private Vector3 __intnl_UnityEngineVector3_12 = new Vector3(0f, 0f, 0f);
+private Vector3 __intnl_UnityEngineVector3_13 = new Vector3(0f, 0f, 0f);
+private Vector3 __intnl_UnityEngineVector3_14 = new Vector3(0f, 0f, 0f);
+private Vector3 __intnl_UnityEngineVector3_15 = new Vector3(0f, 0f, 0f);
+private Vector3 __intnl_UnityEngineVector3_16 = new Vector3(0f, 0f, 0f);
+private Vector3 __intnl_UnityEngineVector3_17 = new Vector3(0f, 0f, 0f);
+private Vector3 __intnl_UnityEngineVector3_18 = new Vector3(0f, 0f, 0f);
+private Vector3 __intnl_UnityEngineVector3_19 = new Vector3(0f, 0f, 0f);
+private Single __intnl_SystemSingle_9 = 0f;
+private Color __lcl_imageColor_UnityEngineColor_3 = new Color(0f, 0f, 0f, 0f);
+private Color __lcl_imageColor_UnityEngineColor_2 = new Color(0f, 0f, 0f, 0f);
+private Color __lcl_imageColor_UnityEngineColor_1 = new Color(0f, 0f, 0f, 0f);
+private Color __lcl_imageColor_UnityEngineColor_0 = new Color(0f, 0f, 0f, 0f);
+private Single __lcl_scale_SystemSingle_2 = 0f;
+private Single screenText1StartTime = 0f;
+private Object __intnl_UnityEngineObject_16 = null;
+private Single screenText2StartTime = 0f;
+private Single __lcl_alpha_SystemSingle_2 = 0f;
+private Vector3 __lcl_endPosition_UnityEngineVector3_1 = new Vector3(0f, 0f, 0f);
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private GameObject __intnl_UnityEngineGameObject_12 = null;
+private Transform __intnl_UnityEngineTransform_7 = null;
+private Transform __3_worldPosition__param = null;
+private Color __intnl_UnityEngineColor_7 = new Color(0f, 0f, 0f, 0f);
+private Color __lcl_textColor_UnityEngineColor_1 = new Color(0f, 0f, 0f, 0f);
+private UInt32 __gintnl_SystemUInt32_19 = 9440;
+private Single __const_SystemSingle_4 = 0.25f;
+private UInt32 __gintnl_SystemUInt32_12 = 3348;
+private Vector3 __const_UnityEngineVector3_2 = new Vector3(1f, 1f, 1f);
+private Int32 __lcl_i_SystemInt32_1 = 0;
+private Int32 __lcl_i_SystemInt32_0 = 0;
+private Vector3 __lcl_currentPos_UnityEngineVector3_1 = new Vector3(0f, 0f, 0f);
+private Vector3 __lcl_currentPos_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Vector3 __lcl_currentPos_UnityEngineVector3_3 = new Vector3(0f, 0f, 0f);
+private Vector3 __lcl_currentPos_UnityEngineVector3_2 = new Vector3(0f, 0f, 0f);
+public Image levelUpImageVR;
+private Single __intnl_SystemSingle_4 = 0f;
+private Int32 __lcl_xpAmount_SystemInt32_0 = 0;
+private Vector3 __lcl_playerHeadPos_UnityEngineVector3_2 = new Vector3(0f, 0f, 0f);
+private Object __intnl_UnityEngineObject_15 = null;
+private Vector3 worldCanvas1StartScale = new Vector3(0f, 0f, 0f);
+private Single __lcl_alpha_SystemSingle_1 = 0f;
+private Vector3 worldCanvas2StartPos = new Vector3(0f, 0f, 0f);
+public Image levelUpImageDesktop;
+private Transform __intnl_UnityEngineTransform_4 = null;
+private TextMeshProUGUI __3_textComponent__param = null;
+private Color __intnl_UnityEngineColor_2 = new Color(0f, 0f, 0f, 0f);
+private Transform __intnl_UnityEngineTransform_9 = null;
+private Vector3 __intnl_UnityEngineVector3_2 = new Vector3(0f, 0f, 0f);
+private Vector2 __intnl_UnityEngineVector2_3 = (0.00, 0.00);
+private Boolean __intnl_SystemBoolean_12 = false;
+private Boolean __intnl_SystemBoolean_22 = false;
+private Boolean __intnl_SystemBoolean_32 = false;
+private Boolean __intnl_SystemBoolean_42 = false;
+private TrackingData __intnl_VRCSDKBaseVRCPlayerApiTrackingData_3 = VRC.SDKBase.VRCPlayerApi+TrackingData;
+private UInt32 __gintnl_SystemUInt32_17 = 4476;
+private Vector3 __const_UnityEngineVector3_1 = new Vector3(0f, 1f, 0f);
+private String __refl_typename = "XPPopupManager";
+private Single levelUpDesktopStartTime = 0f;
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Int32 __intnl_SystemInt32_5 = 0;
+private Int32 __intnl_SystemInt32_4 = 0;
+private Int32 __intnl_SystemInt32_7 = 0;
+private Int32 __intnl_SystemInt32_6 = 0;
+private Int32 __intnl_SystemInt32_9 = 0;
+private Int32 __intnl_SystemInt32_8 = 0;
+private String __intnl_SystemString_2 = null;
+private Single __intnl_SystemSingle_3 = 0f;
+public TextMeshProUGUI worldText2;
+private Boolean __lcl_isVR_SystemBoolean_1 = false;
+public Single maxDistance;
+private TextMeshProUGUI __1_textComponent__param = null;
+public Single animationDuration;
+private String __const_SystemString_1 = " XP";
+private Boolean levelUpDesktopAnimating = false;
+private Transform __intnl_UnityEngineTransform_1 = null;
+private RectTransform __lcl_rectTransform_UnityEngineRectTransform_2 = null;
+private Single __const_SystemSingle_3 = 50f;
+private Color __intnl_UnityEngineColor_1 = new Color(0f, 0f, 0f, 0f);
+private Vector3 __intnl_UnityEngineVector3_1 = new Vector3(0f, 0f, 0f);
+private Vector2 __intnl_UnityEngineVector2_0 = (0.00, 0.00);
+private Boolean __intnl_SystemBoolean_15 = false;
+private Boolean __intnl_SystemBoolean_25 = false;
+private Boolean __intnl_SystemBoolean_35 = false;
+private Boolean __intnl_SystemBoolean_45 = false;
+private Int32 __0_canvasIndex__param = 0;
+public Single minWorldScale;
+private Vector3 __lcl_directionToPlayer_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Single __lcl_scale_SystemSingle_0 = 0f;
+private Object __intnl_UnityEngineObject_20 = null;
+private Object __intnl_UnityEngineObject_10 = null;
+private Int32 __3_xpAmount__param = 0;
+public TextMeshProUGUI worldText1;
+public Single worldPopupOffsetY;
+private GameObject __intnl_UnityEngineGameObject_10 = null;
+private Color __lcl_textColor_UnityEngineColor_3 = new Color(0f, 0f, 0f, 0f);
+public Single minDistance;
+private Vector3 __intnl_UnityEngineVector3_9 = new Vector3(0f, 0f, 0f);
+private Vector3 __lcl_targetScale_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+public Single maxWorldScale;
+private Single __const_SystemSingle_6 = 0.2f;
+private Vector3 __intnl_UnityEngineVector3_4 = new Vector3(0f, 0f, 0f);
+private UInt32 __gintnl_SystemUInt32_10 = 1168;
+private UInt32 __gintnl_SystemUInt32_20 = 9464;
+public Single animationFrameRate;
+public Canvas worldSpaceCanvas2;
+public Canvas worldSpaceCanvas1;
+private Single __lcl_elapsed_SystemSingle_1 = 0f;
+private Vector3 levelUpDesktopStartPos = new Vector3(0f, 0f, 0f);
+private VRCPlayerApi localPlayer = null;
+private Boolean worldCanvas1Available = true;
+private Int32 __1_textIndex__param = 0;
+private Vector3 __0_startPos__param = new Vector3(0f, 0f, 0f);
+private Object __intnl_UnityEngineObject_18 = null;
+private Single __intnl_SystemSingle_6 = 0f;
+private Object __intnl_UnityEngineObject_17 = null;
+private Single __lcl_alpha_SystemSingle_3 = 0f;
+private Vector3 __lcl_endPosition_UnityEngineVector3_2 = new Vector3(0f, 0f, 0f);
+private Transform[] positionQueue = UnityEngine.Transform[];
+private Vector3 levelUpVRStartPos = new Vector3(0f, 0f, 0f);
+private GameObject __intnl_UnityEngineGameObject_13 = null;
+private Transform __intnl_UnityEngineTransform_6 = null;
+private Color __intnl_UnityEngineColor_4 = new Color(0f, 0f, 0f, 0f);
+private Color __lcl_textColor_UnityEngineColor_0 = new Color(0f, 0f, 0f, 0f);
+private UInt32 __gintnl_SystemUInt32_18 = 8184;
+private Single __const_SystemSingle_5 = 0.75f;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Boolean __intnl_SystemBoolean_20 = false;
+private Boolean __intnl_SystemBoolean_30 = false;
+private Boolean __intnl_SystemBoolean_40 = false;
+private Quaternion __intnl_UnityEngineQuaternion_0 = new Quaternion(0f, 0f, 0f, 0f);
+private Quaternion __intnl_UnityEngineQuaternion_1 = new Quaternion(0f, 0f, 0f, 0f);
+private Quaternion __intnl_UnityEngineQuaternion_2 = new Quaternion(0f, 0f, 0f, 0f);
+private Quaternion __intnl_UnityEngineQuaternion_3 = new Quaternion(0f, 0f, 0f, 0f);
+private Quaternion __intnl_UnityEngineQuaternion_4 = new Quaternion(0f, 0f, 0f, 0f);
+private Transform __intnl_UnityEngineTransform_22 = null;
+private Transform __intnl_UnityEngineTransform_21 = null;
+private Transform __intnl_UnityEngineTransform_20 = null;
+private UInt32 __gintnl_SystemUInt32_15 = 4028;
+private Vector3 __const_UnityEngineVector3_3 = new Vector3(0f, 0f, 1f);
+private Int32 __const_SystemInt32_1 = 1;
+private Int32 __const_SystemInt32_0 = 0;
+private Int32 __const_SystemInt32_2 = 2;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private Single __lcl_scaleMultiplier_SystemSingle_0 = 0f;
+private Canvas __0_canvas__param = null;
+public Vector3 screenPopupOffset;
+private Single __intnl_SystemSingle_5 = 0f;
+private Vector3 __lcl_playerHeadPos_UnityEngineVector3_1 = new Vector3(0f, 0f, 0f);
+private Single levelUpVRStartTime = 0f;
+private Single __const_SystemSingle_10 = 2f;
+private Single __const_SystemSingle_11 = 1.5f;
+private Boolean __lcl_useWorldSpace_SystemBoolean_0 = false;
+private Transform __intnl_UnityEngineTransform_3 = null;
+private Color __intnl_UnityEngineColor_3 = new Color(0f, 0f, 0f, 0f);
+private Boolean __intnl_SystemBoolean_18 = false;
+private Boolean __intnl_SystemBoolean_28 = false;
+private Boolean __intnl_SystemBoolean_38 = false;
+private Transform __intnl_UnityEngineTransform_8 = null;
+private TextMeshProUGUI __2_textComponent__param = null;
+private Vector3 __intnl_UnityEngineVector3_3 = new Vector3(0f, 0f, 0f);
+private Vector3 __lcl_popupPosition_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+
+
+public void _start()
+{
+localPlayer = Networking.LocalPlayer;
+UNDEF_12920_9308();
+}
+public void _update()
+{
+__intnl_SystemBoolean_0 = queueCount > __const_SystemInt32_0;
+if (__intnl_SystemBoolean_0)
+{
+HasAvailableElement();
+__intnl_SystemBoolean_0 = __0_HasAvailableElement__ret;
+}
+if (__intnl_SystemBoolean_0)
+{
+UNDEF_12920_8204();
+}
+UNDEF_12920_4496();
+}
+public void __0_ShowXPGain()
+{
+__intnl_SystemBoolean_1 = localPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_1)
+{
+return;
+}
+__lcl_isVR_SystemBoolean_0 = localPlayer.IsUserInVR();
+__intnl_SystemBoolean_2 = __lcl_isVR_SystemBoolean_0;
+if (__intnl_SystemBoolean_2)
+{
+__intnl_UnityEngineObject_0 = __0_worldPosition__param;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_2 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+}
+__lcl_useWorldSpace_SystemBoolean_0 = __intnl_SystemBoolean_2;
+if (__lcl_useWorldSpace_SystemBoolean_0)
+{
+__2_xpAmount__param = __0_xpAmount__param;
+__1_worldPosition__param = __0_worldPosition__param;
+UNDEF_12920_1252();
+}
+else
+{
+__1_xpAmount__param = __0_xpAmount__param;
+UNDEF_12920_888();
+}
+}
+private void UNDEF_12920_888()
+{
+if (screenText1Available)
+{
+__0_textComponent__param = screenText1;
+__3_xpAmount__param = __1_xpAmount__param;
+__0_textIndex__param = __const_SystemInt32_1;
+UNDEF_12920_1892();
+}
+else
+{
+if (screenText2Available)
+{
+__0_textComponent__param = screenText2;
+__3_xpAmount__param = __1_xpAmount__param;
+__0_textIndex__param = __const_SystemInt32_2;
+UNDEF_12920_1892();
+}
+else
+{
+__intnl_UnityEngineTransform_0 = (Transform)__const_SystemObject_0;
+__5_xpAmount__param = __1_xpAmount__param;
+__3_worldPosition__param = __intnl_UnityEngineTransform_0;
+UNDEF_12920_7624();
+}
+}
+}
+private void UNDEF_12920_1252()
+{
+if (worldCanvas1Available)
+{
+__0_canvas__param = worldSpaceCanvas1;
+__1_textComponent__param = worldText1;
+__4_xpAmount__param = __2_xpAmount__param;
+__2_worldPosition__param = __1_worldPosition__param;
+__0_canvasIndex__param = __const_SystemInt32_1;
+UNDEF_12920_3140();
+}
+else
+{
+if (worldCanvas2Available)
+{
+__0_canvas__param = worldSpaceCanvas2;
+__1_textComponent__param = worldText2;
+__4_xpAmount__param = __2_xpAmount__param;
+__2_worldPosition__param = __1_worldPosition__param;
+__0_canvasIndex__param = __const_SystemInt32_2;
+UNDEF_12920_3140();
+}
+else
+{
+__5_xpAmount__param = __2_xpAmount__param;
+__3_worldPosition__param = __1_worldPosition__param;
+UNDEF_12920_7624();
+}
+}
+}
+private void UNDEF_12920_1892()
+{
+__intnl_SystemBoolean_3 = __0_textIndex__param == __const_SystemInt32_1;
+if (__intnl_SystemBoolean_3)
+{
+screenText1Available = __const_SystemBoolean_0;
+screenText1StartTime = Time.time;
+}
+else
+{
+screenText2Available = __const_SystemBoolean_0;
+screenText2StartTime = Time.time;
+}
+__intnl_SystemString_0 = String.Concat(__const_SystemString_0, __3_xpAmount__param);
+__intnl_SystemString_1 = __intnl_SystemString_0 + __const_SystemString_1;
+__0_textComponent__param.text = __intnl_SystemString_1;
+__intnl_UnityEngineTransform_1 = __0_textComponent__param.transform;
+__lcl_rectTransform_UnityEngineRectTransform_0 = (RectTransform)(__intnl_UnityEngineTransform_1.GetComponent(__const_SystemType_0));
+__intnl_SystemBoolean_4 = __0_textIndex__param == __const_SystemInt32_1;
+if (__intnl_SystemBoolean_4)
+{
+__intnl_UnityEngineVector2_0 = __lcl_rectTransform_UnityEngineRectTransform_0.anchoredPosition;
+screenText1StartPos = __intnl_UnityEngineVector2_0;
+}
+else
+{
+__intnl_UnityEngineVector2_1 = __lcl_rectTransform_UnityEngineRectTransform_0.anchoredPosition;
+screenText2StartPos = __intnl_UnityEngineVector2_1;
+}
+__intnl_UnityEngineTransform_2 = __0_textComponent__param.transform;
+__intnl_UnityEngineTransform_2.localScale = __const_UnityEngineVector3_0;
+__lcl_textColor_UnityEngineColor_0 = __0_textComponent__param.color;
+__lcl_textColor_UnityEngineColor_0.a = __const_SystemSingle_0;
+__intnl_UnityEngineColor_0 = __lcl_textColor_UnityEngineColor_0;
+__0_textComponent__param.color = __lcl_textColor_UnityEngineColor_0;
+__intnl_UnityEngineGameObject_0 = __0_textComponent__param.gameObject;
+__intnl_UnityEngineGameObject_0.SetActive(__const_SystemBoolean_1);
+}
+private void UNDEF_12920_3140()
+{
+__intnl_SystemBoolean_5 = __0_canvasIndex__param == __const_SystemInt32_1;
+if (__intnl_SystemBoolean_5)
+{
+worldCanvas1Available = __const_SystemBoolean_0;
+worldCanvas1StartTime = Time.time;
+}
+else
+{
+worldCanvas2Available = __const_SystemBoolean_0;
+worldCanvas2StartTime = Time.time;
+}
+__intnl_SystemString_2 = String.Concat(__const_SystemString_0, __4_xpAmount__param);
+__intnl_SystemString_3 = __intnl_SystemString_2 + __const_SystemString_1;
+__1_textComponent__param.text = __intnl_SystemString_3;
+__intnl_UnityEngineVector3_0 = __2_worldPosition__param.position;
+__intnl_UnityEngineVector3_1 = __const_UnityEngineVector3_1 * worldPopupOffsetY;
+__lcl_popupPosition_UnityEngineVector3_0 = __intnl_UnityEngineVector3_0 + __intnl_UnityEngineVector3_1;
+__intnl_UnityEngineTransform_3 = __0_canvas__param.transform;
+__intnl_UnityEngineTransform_3.position = __lcl_popupPosition_UnityEngineVector3_0;
+__intnl_SystemBoolean_6 = __0_canvasIndex__param == __const_SystemInt32_1;
+if (__intnl_SystemBoolean_6)
+{
+worldCanvas1StartPos = __lcl_popupPosition_UnityEngineVector3_0;
+__intnl_UnityEngineTransform_4 = __0_canvas__param.transform;
+worldCanvas1StartScale = __intnl_UnityEngineTransform_4.localScale;
+}
+else
+{
+worldCanvas2StartPos = __lcl_popupPosition_UnityEngineVector3_0;
+__intnl_UnityEngineTransform_4 = __0_canvas__param.transform;
+worldCanvas2StartScale = __intnl_UnityEngineTransform_4.localScale;
+}
+__intnl_VRCSDKBaseVRCPlayerApiTrackingData_0 = localPlayer.GetTrackingData(__const_VRCSDKBaseVRCPlayerApiTrackingDataType_0);
+__lcl_playerHeadPos_UnityEngineVector3_0 = __intnl_VRCSDKBaseVRCPlayerApiTrackingData_0.position;
+__intnl_UnityEngineVector3_2 = __lcl_playerHeadPos_UnityEngineVector3_0 - __lcl_popupPosition_UnityEngineVector3_0;
+__lcl_directionToPlayer_UnityEngineVector3_0 = __intnl_UnityEngineVector3_2.normalized;
+__intnl_UnityEngineTransform_4 = __0_canvas__param.transform;
+__intnl_UnityEngineVector3_3 = !__lcl_directionToPlayer_UnityEngineVector3_0;
+__intnl_UnityEngineQuaternion_0 = Quaternion.LookRotation(__intnl_UnityEngineVector3_3, __const_UnityEngineVector3_1);
+__intnl_UnityEngineTransform_4.rotation = __intnl_UnityEngineQuaternion_0;
+__lcl_distance_SystemSingle_0 = Vector3.Distance(__lcl_playerHeadPos_UnityEngineVector3_0, __lcl_popupPosition_UnityEngineVector3_0);
+__lcl_normalizedDistance_SystemSingle_0 = Mathf.InverseLerp(minDistance, maxDistance, __lcl_distance_SystemSingle_0);
+__lcl_scale_SystemSingle_0 = Mathf.Lerp(minWorldScale, maxWorldScale, __lcl_normalizedDistance_SystemSingle_0);
+__lcl_targetScale_UnityEngineVector3_0 = __const_UnityEngineVector3_2 * __lcl_scale_SystemSingle_0;
+__intnl_UnityEngineTransform_5 = __0_canvas__param.transform;
+__intnl_UnityEngineVector3_4 = __lcl_targetScale_UnityEngineVector3_0 * __const_SystemSingle_1;
+__intnl_UnityEngineTransform_5.localScale = __intnl_UnityEngineVector3_4;
+__intnl_SystemBoolean_7 = __0_canvasIndex__param == __const_SystemInt32_1;
+if (__intnl_SystemBoolean_7)
+{
+worldCanvas1StartScale = __lcl_targetScale_UnityEngineVector3_0;
+}
+else
+{
+worldCanvas2StartScale = __lcl_targetScale_UnityEngineVector3_0;
+}
+__lcl_textColor_UnityEngineColor_1 = __1_textComponent__param.color;
+__lcl_textColor_UnityEngineColor_1.a = __const_SystemSingle_0;
+__intnl_UnityEngineColor_1 = __lcl_textColor_UnityEngineColor_1;
+__1_textComponent__param.color = __lcl_textColor_UnityEngineColor_1;
+__intnl_UnityEngineGameObject_1 = __0_canvas__param.gameObject;
+__intnl_UnityEngineGameObject_1.SetActive(__const_SystemBoolean_1);
+}
+private void UNDEF_12920_4496()
+{
+__intnl_SystemBoolean_8 = !screenText1Available;
+if (__intnl_SystemBoolean_8)
+{
+__intnl_UnityEngineGameObject_2 = screenText1.gameObject;
+__intnl_SystemBoolean_8 = __intnl_UnityEngineGameObject_2.activeInHierarchy;
+}
+if (__intnl_SystemBoolean_8)
+{
+__2_textComponent__param = screenText1;
+__0_startTime__param = screenText1StartTime;
+__0_startPos__param = screenText1StartPos;
+__1_textIndex__param = __const_SystemInt32_1;
+UNDEF_12920_5692();
+}
+__intnl_SystemBoolean_9 = !screenText2Available;
+if (__intnl_SystemBoolean_9)
+{
+__intnl_UnityEngineGameObject_3 = screenText2.gameObject;
+__intnl_SystemBoolean_9 = __intnl_UnityEngineGameObject_3.activeInHierarchy;
+}
+if (__intnl_SystemBoolean_9)
+{
+__2_textComponent__param = screenText2;
+__0_startTime__param = screenText2StartTime;
+__0_startPos__param = screenText2StartPos;
+__1_textIndex__param = __const_SystemInt32_2;
+UNDEF_12920_5692();
+}
+__intnl_SystemBoolean_10 = !worldCanvas1Available;
+if (__intnl_SystemBoolean_10)
+{
+__intnl_UnityEngineGameObject_4 = worldSpaceCanvas1.gameObject;
+__intnl_SystemBoolean_10 = __intnl_UnityEngineGameObject_4.activeInHierarchy;
+}
+if (__intnl_SystemBoolean_10)
+{
+__1_canvas__param = worldSpaceCanvas1;
+__3_textComponent__param = worldText1;
+__1_startTime__param = worldCanvas1StartTime;
+__1_startPos__param = worldCanvas1StartPos;
+__0_startScale__param = worldCanvas1StartScale;
+__1_canvasIndex__param = __const_SystemInt32_1;
+UNDEF_12920_7016();
+}
+__intnl_SystemBoolean_11 = !worldCanvas2Available;
+if (__intnl_SystemBoolean_11)
+{
+__intnl_UnityEngineGameObject_5 = worldSpaceCanvas2.gameObject;
+__intnl_SystemBoolean_11 = __intnl_UnityEngineGameObject_5.activeInHierarchy;
+}
+if (__intnl_SystemBoolean_11)
+{
+__1_canvas__param = worldSpaceCanvas2;
+__3_textComponent__param = worldText2;
+__1_startTime__param = worldCanvas2StartTime;
+__1_startPos__param = worldCanvas2StartPos;
+__0_startScale__param = worldCanvas2StartScale;
+__1_canvasIndex__param = __const_SystemInt32_2;
+UNDEF_12920_7016();
+}
+__intnl_SystemBoolean_13 = levelUpDesktopAnimating;
+if (__intnl_SystemBoolean_13)
+{
+__intnl_UnityEngineObject_2 = levelUpImageDesktop;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_13 = __intnl_UnityEngineObject_2 != __intnl_UnityEngineObject_3;
+}
+__intnl_SystemBoolean_12 = __intnl_SystemBoolean_13;
+if (__intnl_SystemBoolean_12)
+{
+__intnl_UnityEngineGameObject_6 = levelUpImageDesktop.gameObject;
+__intnl_SystemBoolean_12 = __intnl_UnityEngineGameObject_6.activeInHierarchy;
+}
+if (__intnl_SystemBoolean_12)
+{
+UNDEF_12920_12104();
+}
+__intnl_SystemBoolean_15 = levelUpVRAnimating;
+if (__intnl_SystemBoolean_15)
+{
+__intnl_UnityEngineObject_4 = levelUpImageVR;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_15 = __intnl_UnityEngineObject_4 != __intnl_UnityEngineObject_5;
+}
+__intnl_SystemBoolean_14 = __intnl_SystemBoolean_15;
+if (__intnl_SystemBoolean_14)
+{
+__intnl_UnityEngineGameObject_7 = levelUpImageVR.gameObject;
+__intnl_SystemBoolean_14 = __intnl_UnityEngineGameObject_7.activeInHierarchy;
+}
+if (__intnl_SystemBoolean_14)
+{
+UNDEF_12920_13352();
+}
+}
+private void UNDEF_12920_5692()
+{
+__intnl_SystemSingle_0 = Time.time;
+__lcl_elapsed_SystemSingle_0 = __intnl_SystemSingle_0 - __0_startTime__param;
+__lcl_progress_SystemSingle_0 = __lcl_elapsed_SystemSingle_0 / animationDuration;
+__intnl_UnityEngineTransform_6 = __2_textComponent__param.transform;
+__lcl_rectTransform_UnityEngineRectTransform_1 = (RectTransform)(__intnl_UnityEngineTransform_6.GetComponent(__const_SystemType_0));
+__intnl_SystemBoolean_16 = __lcl_progress_SystemSingle_0 >= __const_SystemSingle_2;
+if (__intnl_SystemBoolean_16)
+{
+__intnl_UnityEngineVector2_2 = __0_startPos__param;
+__lcl_rectTransform_UnityEngineRectTransform_1.anchoredPosition = __intnl_UnityEngineVector2_2;
+__intnl_UnityEngineGameObject_8 = __2_textComponent__param.gameObject;
+__intnl_UnityEngineGameObject_8.SetActive(__const_SystemBoolean_0);
+__intnl_SystemBoolean_17 = __1_textIndex__param == __const_SystemInt32_1;
+if (__intnl_SystemBoolean_17)
+{
+screenText1Available = __const_SystemBoolean_1;
+}
+else
+{
+screenText2Available = __const_SystemBoolean_1;
+}
+return;
+}
+__intnl_UnityEngineVector3_5 = __const_UnityEngineVector3_1 * floatDistance;
+__intnl_UnityEngineVector3_6 = __intnl_UnityEngineVector3_5 * __const_SystemSingle_3;
+__lcl_endPosition_UnityEngineVector3_0 = __0_startPos__param + __intnl_UnityEngineVector3_6;
+__intnl_SystemBoolean_17 = __lcl_progress_SystemSingle_0 < __const_SystemSingle_4;
+if (__intnl_SystemBoolean_17)
+{
+__lcl_alpha_SystemSingle_0 = __lcl_progress_SystemSingle_0 / __const_SystemSingle_4;
+}
+else
+{
+__intnl_SystemSingle_1 = __lcl_progress_SystemSingle_0 - __const_SystemSingle_4;
+__intnl_SystemSingle_2 = __intnl_SystemSingle_1 / __const_SystemSingle_5;
+__lcl_alpha_SystemSingle_0 = __const_SystemSingle_2 - __intnl_SystemSingle_2;
+}
+__lcl_textColor_UnityEngineColor_2 = __2_textComponent__param.color;
+__lcl_textColor_UnityEngineColor_2.a = __lcl_alpha_SystemSingle_0;
+__intnl_UnityEngineColor_2 = __lcl_textColor_UnityEngineColor_2;
+__2_textComponent__param.color = __lcl_textColor_UnityEngineColor_2;
+__intnl_SystemBoolean_18 = __lcl_progress_SystemSingle_0 < __const_SystemSingle_6;
+if (__intnl_SystemBoolean_18)
+{
+__intnl_SystemSingle_3 = __lcl_progress_SystemSingle_0 / __const_SystemSingle_6;
+__lcl_scale_SystemSingle_1 = Mathf.Lerp(__const_SystemSingle_1, __const_SystemSingle_7, __intnl_SystemSingle_3);
+}
+else
+{
+__intnl_SystemSingle_4 = __lcl_progress_SystemSingle_0 - __const_SystemSingle_6;
+__intnl_SystemSingle_5 = __intnl_SystemSingle_4 / __const_SystemSingle_8;
+__lcl_scale_SystemSingle_1 = Mathf.Lerp(__const_SystemSingle_7, __const_SystemSingle_2, __intnl_SystemSingle_5);
+}
+__intnl_UnityEngineTransform_7 = __2_textComponent__param.transform;
+__intnl_UnityEngineVector3_7 = __const_UnityEngineVector3_2 * __lcl_scale_SystemSingle_1;
+__intnl_UnityEngineTransform_7.localScale = __intnl_UnityEngineVector3_7;
+__lcl_currentPos_UnityEngineVector3_0 = Vector3.Lerp(__0_startPos__param, __lcl_endPosition_UnityEngineVector3_0, __lcl_progress_SystemSingle_0);
+__intnl_UnityEngineVector2_2 = __lcl_currentPos_UnityEngineVector3_0;
+__lcl_rectTransform_UnityEngineRectTransform_1.anchoredPosition = __intnl_UnityEngineVector2_2;
+}
+private void UNDEF_12920_7016()
+{
+__intnl_SystemSingle_6 = Time.time;
+__lcl_elapsed_SystemSingle_1 = __intnl_SystemSingle_6 - __1_startTime__param;
+__lcl_progress_SystemSingle_1 = __lcl_elapsed_SystemSingle_1 / animationDuration;
+__intnl_SystemBoolean_19 = __lcl_progress_SystemSingle_1 >= __const_SystemSingle_2;
+if (__intnl_SystemBoolean_19)
+{
+__intnl_UnityEngineGameObject_9 = __1_canvas__param.gameObject;
+__intnl_UnityEngineGameObject_9.SetActive(__const_SystemBoolean_0);
+__intnl_SystemBoolean_20 = __1_canvasIndex__param == __const_SystemInt32_1;
+if (__intnl_SystemBoolean_20)
+{
+worldCanvas1Available = __const_SystemBoolean_1;
+}
+else
+{
+worldCanvas2Available = __const_SystemBoolean_1;
+}
+return;
+}
+__intnl_UnityEngineVector3_8 = __const_UnityEngineVector3_1 * floatDistance;
+__lcl_endPosition_UnityEngineVector3_1 = __1_startPos__param + __intnl_UnityEngineVector3_8;
+__intnl_SystemBoolean_20 = __lcl_progress_SystemSingle_1 < __const_SystemSingle_4;
+if (__intnl_SystemBoolean_20)
+{
+__lcl_alpha_SystemSingle_1 = __lcl_progress_SystemSingle_1 / __const_SystemSingle_4;
+}
+else
+{
+__intnl_SystemSingle_7 = __lcl_progress_SystemSingle_1 - __const_SystemSingle_4;
+__intnl_SystemSingle_8 = __intnl_SystemSingle_7 / __const_SystemSingle_5;
+__lcl_alpha_SystemSingle_1 = __const_SystemSingle_2 - __intnl_SystemSingle_8;
+}
+__lcl_textColor_UnityEngineColor_3 = __3_textComponent__param.color;
+__lcl_textColor_UnityEngineColor_3.a = __lcl_alpha_SystemSingle_1;
+__intnl_UnityEngineColor_3 = __lcl_textColor_UnityEngineColor_3;
+__3_textComponent__param.color = __lcl_textColor_UnityEngineColor_3;
+__intnl_SystemBoolean_21 = __lcl_progress_SystemSingle_1 < __const_SystemSingle_6;
+if (__intnl_SystemBoolean_21)
+{
+__intnl_SystemSingle_9 = __lcl_progress_SystemSingle_1 / __const_SystemSingle_6;
+__lcl_scaleMultiplier_SystemSingle_0 = Mathf.Lerp(__const_SystemSingle_2, __const_SystemSingle_9, __intnl_SystemSingle_9);
+}
+else
+{
+__intnl_SystemSingle_10 = __lcl_progress_SystemSingle_1 - __const_SystemSingle_6;
+__intnl_SystemSingle_11 = __intnl_SystemSingle_10 / __const_SystemSingle_8;
+__lcl_scaleMultiplier_SystemSingle_0 = Mathf.Lerp(__const_SystemSingle_9, __const_SystemSingle_10, __intnl_SystemSingle_11);
+}
+__intnl_UnityEngineTransform_8 = __1_canvas__param.transform;
+__intnl_UnityEngineVector3_9 = __0_startScale__param * __lcl_scaleMultiplier_SystemSingle_0;
+__intnl_UnityEngineTransform_8.localScale = __intnl_UnityEngineVector3_9;
+__lcl_currentPos_UnityEngineVector3_1 = Vector3.Lerp(__1_startPos__param, __lcl_endPosition_UnityEngineVector3_1, __lcl_progress_SystemSingle_1);
+__intnl_UnityEngineTransform_9 = __1_canvas__param.transform;
+__intnl_UnityEngineTransform_9.position = __lcl_currentPos_UnityEngineVector3_1;
+__intnl_SystemBoolean_22 = localPlayer != __const_SystemObject_0;
+if (__intnl_SystemBoolean_22)
+{
+__intnl_VRCSDKBaseVRCPlayerApiTrackingData_1 = localPlayer.GetTrackingData(__const_VRCSDKBaseVRCPlayerApiTrackingDataType_0);
+__lcl_playerHeadPos_UnityEngineVector3_1 = __intnl_VRCSDKBaseVRCPlayerApiTrackingData_1.position;
+__intnl_UnityEngineVector3_10 = __lcl_playerHeadPos_UnityEngineVector3_1 - __lcl_currentPos_UnityEngineVector3_1;
+__lcl_directionToPlayer_UnityEngineVector3_1 = __intnl_UnityEngineVector3_10.normalized;
+__intnl_UnityEngineTransform_10 = __1_canvas__param.transform;
+__intnl_UnityEngineVector3_11 = !__lcl_directionToPlayer_UnityEngineVector3_1;
+__intnl_UnityEngineQuaternion_1 = Quaternion.LookRotation(__intnl_UnityEngineVector3_11, __const_UnityEngineVector3_1);
+__intnl_UnityEngineTransform_10.rotation = __intnl_UnityEngineQuaternion_1;
+}
+}
+private void UNDEF_12920_7624()
+{
+__intnl_SystemInt32_0 = xpQueue.Length;
+__intnl_SystemBoolean_23 = queueCount >= __intnl_SystemInt32_0;
+if (__intnl_SystemBoolean_23)
+{
+__lcl_i_SystemInt32_0 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_1 = xpQueue.Length;
+__intnl_SystemInt32_2 = __intnl_SystemInt32_1 - __const_SystemInt32_1;
+__intnl_SystemBoolean_24 = __lcl_i_SystemInt32_0 < __intnl_SystemInt32_2;
+if (__intnl_SystemBoolean_24)
+{
+break;
+}
+__intnl_SystemInt32_3 = __lcl_i_SystemInt32_0 + __const_SystemInt32_1;
+__intnl_SystemInt32_4 = xpQueue[__intnl_SystemInt32_3];
+xpQueue.Set(__lcl_i_SystemInt32_0, __intnl_SystemInt32_4);
+__intnl_SystemInt32_5 = __lcl_i_SystemInt32_0 + __const_SystemInt32_1;
+__intnl_UnityEngineTransform_11 = (Transform)(positionQueue[__intnl_SystemInt32_5]);
+positionQueue.Set(__lcl_i_SystemInt32_0, __intnl_UnityEngineTransform_11);
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_1;
+}
+__intnl_SystemInt32_1 = xpQueue.Length;
+queueCount = __intnl_SystemInt32_1 - __const_SystemInt32_1;
+}
+xpQueue.Set(queueCount, __5_xpAmount__param);
+positionQueue.Set(queueCount, __3_worldPosition__param);
+queueCount = queueCount + __const_SystemInt32_1;
+}
+private void UNDEF_12920_8204()
+{
+__intnl_SystemBoolean_25 = queueCount <= __const_SystemInt32_0;
+if (__intnl_SystemBoolean_25)
+{
+return;
+}
+__lcl_xpAmount_SystemInt32_0 = xpQueue[__const_SystemInt32_0];
+__lcl_worldPosition_UnityEngineTransform_0 = (Transform)(positionQueue[__const_SystemInt32_0]);
+__lcl_i_SystemInt32_1 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_6 = queueCount - __const_SystemInt32_1;
+__intnl_SystemBoolean_26 = __lcl_i_SystemInt32_1 < __intnl_SystemInt32_6;
+if (__intnl_SystemBoolean_26)
+{
+break;
+}
+__intnl_SystemInt32_7 = __lcl_i_SystemInt32_1 + __const_SystemInt32_1;
+__intnl_SystemInt32_8 = xpQueue[__intnl_SystemInt32_7];
+xpQueue.Set(__lcl_i_SystemInt32_1, __intnl_SystemInt32_8);
+__intnl_SystemInt32_9 = __lcl_i_SystemInt32_1 + __const_SystemInt32_1;
+__intnl_UnityEngineTransform_12 = (Transform)(positionQueue[__intnl_SystemInt32_9]);
+positionQueue.Set(__lcl_i_SystemInt32_1, __intnl_UnityEngineTransform_12);
+__lcl_i_SystemInt32_1 = __lcl_i_SystemInt32_1 + __const_SystemInt32_1;
+}
+queueCount = queueCount - __const_SystemInt32_1;
+__0_xpAmount__param = __lcl_xpAmount_SystemInt32_0;
+__0_worldPosition__param = __lcl_worldPosition_UnityEngineTransform_0;
+__0_ShowXPGain();
+}
+private void HasAvailableElement()
+{
+__intnl_SystemBoolean_29 = screenText1Available;
+if (__intnl_SystemBoolean_29)
+{
+}
+else
+{
+__intnl_SystemBoolean_29 = screenText2Available;
+}
+__intnl_SystemBoolean_28 = __intnl_SystemBoolean_29;
+if (__intnl_SystemBoolean_28)
+{
+}
+else
+{
+__intnl_SystemBoolean_28 = worldCanvas1Available;
+}
+__intnl_SystemBoolean_27 = __intnl_SystemBoolean_28;
+if (__intnl_SystemBoolean_27)
+{
+}
+else
+{
+__intnl_SystemBoolean_27 = worldCanvas2Available;
+}
+__0_HasAvailableElement__ret = __intnl_SystemBoolean_27;
+return;
+}
+private void UNDEF_12920_9308()
+{
+__intnl_UnityEngineObject_6 = screenText1;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_30 = __intnl_UnityEngineObject_6 != __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_30)
+{
+__intnl_UnityEngineGameObject_10 = screenText1.gameObject;
+__intnl_UnityEngineGameObject_10.SetActive(__const_SystemBoolean_0);
+}
+__intnl_UnityEngineObject_8 = screenText2;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_31 = __intnl_UnityEngineObject_8 != __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_31)
+{
+__intnl_UnityEngineGameObject_10 = screenText2.gameObject;
+__intnl_UnityEngineGameObject_10.SetActive(__const_SystemBoolean_0);
+}
+__intnl_UnityEngineObject_10 = worldSpaceCanvas1;
+__intnl_UnityEngineObject_11 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_32 = __intnl_UnityEngineObject_10 != __intnl_UnityEngineObject_11;
+if (__intnl_SystemBoolean_32)
+{
+__intnl_UnityEngineGameObject_10 = worldSpaceCanvas1.gameObject;
+__intnl_UnityEngineGameObject_10.SetActive(__const_SystemBoolean_0);
+}
+__intnl_UnityEngineObject_12 = worldSpaceCanvas2;
+__intnl_UnityEngineObject_13 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_33 = __intnl_UnityEngineObject_12 != __intnl_UnityEngineObject_13;
+if (__intnl_SystemBoolean_33)
+{
+__intnl_UnityEngineGameObject_10 = worldSpaceCanvas2.gameObject;
+__intnl_UnityEngineGameObject_10.SetActive(__const_SystemBoolean_0);
+}
+__intnl_UnityEngineObject_14 = levelUpImageDesktop;
+__intnl_UnityEngineObject_15 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_34 = __intnl_UnityEngineObject_14 != __intnl_UnityEngineObject_15;
+if (__intnl_SystemBoolean_34)
+{
+__intnl_UnityEngineGameObject_10 = levelUpImageDesktop.gameObject;
+__intnl_UnityEngineGameObject_10.SetActive(__const_SystemBoolean_0);
+}
+__intnl_UnityEngineObject_16 = levelUpImageVR;
+__intnl_UnityEngineObject_17 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_35 = __intnl_UnityEngineObject_16 != __intnl_UnityEngineObject_17;
+if (__intnl_SystemBoolean_35)
+{
+__intnl_UnityEngineGameObject_10 = levelUpImageVR.gameObject;
+__intnl_UnityEngineGameObject_10.SetActive(__const_SystemBoolean_0);
+}
+}
+public void ShowLevelUp()
+{
+__intnl_SystemBoolean_36 = localPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_36)
+{
+return;
+}
+__lcl_isVR_SystemBoolean_1 = localPlayer.IsUserInVR();
+if (__lcl_isVR_SystemBoolean_1)
+{
+UNDEF_12920_10984();
+}
+else
+{
+UNDEF_12920_9948();
+}
+}
+private void UNDEF_12920_9948()
+{
+__intnl_UnityEngineObject_18 = levelUpImageDesktop;
+__intnl_UnityEngineObject_19 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_37 = __intnl_UnityEngineObject_18 == __intnl_UnityEngineObject_19;
+if (__intnl_SystemBoolean_37)
+{
+return;
+}
+levelUpDesktopAnimating = __const_SystemBoolean_1;
+levelUpDesktopStartTime = Time.time;
+__intnl_UnityEngineTransform_13 = levelUpImageDesktop.transform;
+__lcl_rectTransform_UnityEngineRectTransform_2 = (RectTransform)(__intnl_UnityEngineTransform_13.GetComponent(__const_SystemType_0));
+__intnl_UnityEngineVector2_3 = __lcl_rectTransform_UnityEngineRectTransform_2.anchoredPosition;
+levelUpDesktopStartPos = __intnl_UnityEngineVector2_3;
+__intnl_UnityEngineTransform_14 = levelUpImageDesktop.transform;
+__intnl_UnityEngineTransform_14.localScale = __const_UnityEngineVector3_0;
+__lcl_imageColor_UnityEngineColor_0 = levelUpImageDesktop.color;
+__lcl_imageColor_UnityEngineColor_0.a = __const_SystemSingle_0;
+__intnl_UnityEngineColor_4 = __lcl_imageColor_UnityEngineColor_0;
+levelUpImageDesktop.color = __lcl_imageColor_UnityEngineColor_0;
+__intnl_UnityEngineGameObject_11 = levelUpImageDesktop.gameObject;
+__intnl_UnityEngineGameObject_11.SetActive(__const_SystemBoolean_1);
+}
+private void UNDEF_12920_10984()
+{
+__intnl_UnityEngineObject_20 = levelUpImageVR;
+__intnl_UnityEngineObject_21 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_38 = __intnl_UnityEngineObject_20 == __intnl_UnityEngineObject_21;
+if (__intnl_SystemBoolean_38)
+{
+return;
+}
+levelUpVRAnimating = __const_SystemBoolean_1;
+levelUpVRStartTime = Time.time;
+__intnl_VRCSDKBaseVRCPlayerApiTrackingData_2 = localPlayer.GetTrackingData(__const_VRCSDKBaseVRCPlayerApiTrackingDataType_0);
+__lcl_playerHeadPos_UnityEngineVector3_2 = __intnl_VRCSDKBaseVRCPlayerApiTrackingData_2.position;
+__intnl_VRCSDKBaseVRCPlayerApiTrackingData_3 = localPlayer.GetTrackingData(__const_VRCSDKBaseVRCPlayerApiTrackingDataType_0);
+__intnl_UnityEngineQuaternion_2 = __intnl_VRCSDKBaseVRCPlayerApiTrackingData_3.rotation;
+__lcl_playerHeadForward_UnityEngineVector3_0 = __intnl_UnityEngineQuaternion_2 * __const_UnityEngineVector3_3;
+__intnl_UnityEngineVector3_12 = __lcl_playerHeadForward_UnityEngineVector3_0 * __const_SystemSingle_11;
+__intnl_UnityEngineVector3_13 = __lcl_playerHeadPos_UnityEngineVector3_2 + __intnl_UnityEngineVector3_12;
+__intnl_UnityEngineVector3_14 = __const_UnityEngineVector3_1 * worldPopupOffsetY;
+__lcl_popupPosition_UnityEngineVector3_1 = __intnl_UnityEngineVector3_13 + __intnl_UnityEngineVector3_14;
+__intnl_UnityEngineTransform_15 = levelUpImageVR.transform;
+__intnl_UnityEngineTransform_15.position = __lcl_popupPosition_UnityEngineVector3_1;
+levelUpVRStartPos = __lcl_popupPosition_UnityEngineVector3_1;
+__intnl_UnityEngineVector3_15 = __lcl_playerHeadPos_UnityEngineVector3_2 - __lcl_popupPosition_UnityEngineVector3_1;
+__lcl_directionToPlayer_UnityEngineVector3_2 = __intnl_UnityEngineVector3_15.normalized;
+__intnl_UnityEngineTransform_16 = levelUpImageVR.transform;
+__intnl_UnityEngineVector3_16 = !__lcl_directionToPlayer_UnityEngineVector3_2;
+__intnl_UnityEngineQuaternion_3 = Quaternion.LookRotation(__intnl_UnityEngineVector3_16, __const_UnityEngineVector3_1);
+__intnl_UnityEngineTransform_16.rotation = __intnl_UnityEngineQuaternion_3;
+__lcl_distance_SystemSingle_1 = Vector3.Distance(__lcl_playerHeadPos_UnityEngineVector3_2, __lcl_popupPosition_UnityEngineVector3_1);
+__lcl_normalizedDistance_SystemSingle_1 = Mathf.InverseLerp(minDistance, maxDistance, __lcl_distance_SystemSingle_1);
+__lcl_scale_SystemSingle_2 = Mathf.Lerp(minWorldScale, maxWorldScale, __lcl_normalizedDistance_SystemSingle_1);
+levelUpVRStartScale = __const_UnityEngineVector3_2 * __lcl_scale_SystemSingle_2;
+__intnl_UnityEngineTransform_17 = levelUpImageVR.transform;
+__intnl_UnityEngineVector3_17 = levelUpVRStartScale * __const_SystemSingle_1;
+__intnl_UnityEngineTransform_17.localScale = __intnl_UnityEngineVector3_17;
+__lcl_imageColor_UnityEngineColor_1 = levelUpImageVR.color;
+__lcl_imageColor_UnityEngineColor_1.a = __const_SystemSingle_0;
+__intnl_UnityEngineColor_5 = __lcl_imageColor_UnityEngineColor_1;
+levelUpImageVR.color = __lcl_imageColor_UnityEngineColor_1;
+__intnl_UnityEngineGameObject_12 = levelUpImageVR.gameObject;
+__intnl_UnityEngineGameObject_12.SetActive(__const_SystemBoolean_1);
+}
+private void UNDEF_12920_12104()
+{
+__intnl_SystemSingle_12 = Time.time;
+__lcl_elapsed_SystemSingle_2 = __intnl_SystemSingle_12 - levelUpDesktopStartTime;
+__lcl_progress_SystemSingle_2 = __lcl_elapsed_SystemSingle_2 / animationDuration;
+__intnl_UnityEngineTransform_18 = levelUpImageDesktop.transform;
+__lcl_rectTransform_UnityEngineRectTransform_3 = (RectTransform)(__intnl_UnityEngineTransform_18.GetComponent(__const_SystemType_0));
+__intnl_SystemBoolean_39 = __lcl_progress_SystemSingle_2 >= __const_SystemSingle_2;
+if (__intnl_SystemBoolean_39)
+{
+__intnl_UnityEngineVector2_4 = levelUpDesktopStartPos;
+__lcl_rectTransform_UnityEngineRectTransform_3.anchoredPosition = __intnl_UnityEngineVector2_4;
+__intnl_UnityEngineGameObject_13 = levelUpImageDesktop.gameObject;
+__intnl_UnityEngineGameObject_13.SetActive(__const_SystemBoolean_0);
+levelUpDesktopAnimating = __const_SystemBoolean_0;
+return;
+}
+__intnl_UnityEngineVector3_18 = __const_UnityEngineVector3_1 * floatDistance;
+__intnl_UnityEngineVector3_19 = __intnl_UnityEngineVector3_18 * __const_SystemSingle_3;
+__lcl_endPosition_UnityEngineVector3_2 = levelUpDesktopStartPos + __intnl_UnityEngineVector3_19;
+__intnl_SystemBoolean_40 = __lcl_progress_SystemSingle_2 < __const_SystemSingle_4;
+if (__intnl_SystemBoolean_40)
+{
+__lcl_alpha_SystemSingle_2 = __lcl_progress_SystemSingle_2 / __const_SystemSingle_4;
+}
+else
+{
+__intnl_SystemSingle_13 = __lcl_progress_SystemSingle_2 - __const_SystemSingle_4;
+__intnl_SystemSingle_14 = __intnl_SystemSingle_13 / __const_SystemSingle_5;
+__lcl_alpha_SystemSingle_2 = __const_SystemSingle_2 - __intnl_SystemSingle_14;
+}
+__lcl_imageColor_UnityEngineColor_2 = levelUpImageDesktop.color;
+__lcl_imageColor_UnityEngineColor_2.a = __lcl_alpha_SystemSingle_2;
+__intnl_UnityEngineColor_6 = __lcl_imageColor_UnityEngineColor_2;
+levelUpImageDesktop.color = __lcl_imageColor_UnityEngineColor_2;
+__intnl_SystemBoolean_41 = __lcl_progress_SystemSingle_2 < __const_SystemSingle_6;
+if (__intnl_SystemBoolean_41)
+{
+__intnl_SystemSingle_15 = __lcl_progress_SystemSingle_2 / __const_SystemSingle_6;
+__lcl_scale_SystemSingle_3 = Mathf.Lerp(__const_SystemSingle_1, __const_SystemSingle_7, __intnl_SystemSingle_15);
+}
+else
+{
+__intnl_SystemSingle_16 = __lcl_progress_SystemSingle_2 - __const_SystemSingle_6;
+__intnl_SystemSingle_17 = __intnl_SystemSingle_16 / __const_SystemSingle_8;
+__lcl_scale_SystemSingle_3 = Mathf.Lerp(__const_SystemSingle_7, __const_SystemSingle_2, __intnl_SystemSingle_17);
+}
+__intnl_UnityEngineTransform_19 = levelUpImageDesktop.transform;
+__intnl_UnityEngineVector3_20 = __const_UnityEngineVector3_2 * __lcl_scale_SystemSingle_3;
+__intnl_UnityEngineTransform_19.localScale = __intnl_UnityEngineVector3_20;
+__lcl_currentPos_UnityEngineVector3_2 = Vector3.Lerp(levelUpDesktopStartPos, __lcl_endPosition_UnityEngineVector3_2, __lcl_progress_SystemSingle_2);
+__intnl_UnityEngineVector2_4 = __lcl_currentPos_UnityEngineVector3_2;
+__lcl_rectTransform_UnityEngineRectTransform_3.anchoredPosition = __intnl_UnityEngineVector2_4;
+}
+private void UNDEF_12920_13352()
+{
+__intnl_SystemSingle_18 = Time.time;
+__lcl_elapsed_SystemSingle_3 = __intnl_SystemSingle_18 - levelUpVRStartTime;
+__lcl_progress_SystemSingle_3 = __lcl_elapsed_SystemSingle_3 / animationDuration;
+__intnl_SystemBoolean_42 = __lcl_progress_SystemSingle_3 >= __const_SystemSingle_2;
+if (__intnl_SystemBoolean_42)
+{
+__intnl_UnityEngineGameObject_14 = levelUpImageVR.gameObject;
+__intnl_UnityEngineGameObject_14.SetActive(__const_SystemBoolean_0);
+levelUpVRAnimating = __const_SystemBoolean_0;
+return;
+}
+__intnl_UnityEngineVector3_21 = __const_UnityEngineVector3_1 * floatDistance;
+__lcl_endPosition_UnityEngineVector3_3 = levelUpVRStartPos + __intnl_UnityEngineVector3_21;
+__intnl_SystemBoolean_43 = __lcl_progress_SystemSingle_3 < __const_SystemSingle_4;
+if (__intnl_SystemBoolean_43)
+{
+__lcl_alpha_SystemSingle_3 = __lcl_progress_SystemSingle_3 / __const_SystemSingle_4;
+}
+else
+{
+__intnl_SystemSingle_19 = __lcl_progress_SystemSingle_3 - __const_SystemSingle_4;
+__intnl_SystemSingle_20 = __intnl_SystemSingle_19 / __const_SystemSingle_5;
+__lcl_alpha_SystemSingle_3 = __const_SystemSingle_2 - __intnl_SystemSingle_20;
+}
+__lcl_imageColor_UnityEngineColor_3 = levelUpImageVR.color;
+__lcl_imageColor_UnityEngineColor_3.a = __lcl_alpha_SystemSingle_3;
+__intnl_UnityEngineColor_7 = __lcl_imageColor_UnityEngineColor_3;
+levelUpImageVR.color = __lcl_imageColor_UnityEngineColor_3;
+__intnl_SystemBoolean_44 = __lcl_progress_SystemSingle_3 < __const_SystemSingle_6;
+if (__intnl_SystemBoolean_44)
+{
+__intnl_SystemSingle_21 = __lcl_progress_SystemSingle_3 / __const_SystemSingle_6;
+__lcl_scaleMultiplier_SystemSingle_1 = Mathf.Lerp(__const_SystemSingle_2, __const_SystemSingle_9, __intnl_SystemSingle_21);
+}
+else
+{
+__intnl_SystemSingle_22 = __lcl_progress_SystemSingle_3 - __const_SystemSingle_6;
+__intnl_SystemSingle_23 = __intnl_SystemSingle_22 / __const_SystemSingle_8;
+__lcl_scaleMultiplier_SystemSingle_1 = Mathf.Lerp(__const_SystemSingle_9, __const_SystemSingle_10, __intnl_SystemSingle_23);
+}
+__intnl_UnityEngineTransform_20 = levelUpImageVR.transform;
+__intnl_UnityEngineVector3_22 = levelUpVRStartScale * __lcl_scaleMultiplier_SystemSingle_1;
+__intnl_UnityEngineTransform_20.localScale = __intnl_UnityEngineVector3_22;
+__lcl_currentPos_UnityEngineVector3_3 = Vector3.Lerp(levelUpVRStartPos, __lcl_endPosition_UnityEngineVector3_3, __lcl_progress_SystemSingle_3);
+__intnl_UnityEngineTransform_21 = levelUpImageVR.transform;
+__intnl_UnityEngineTransform_21.position = __lcl_currentPos_UnityEngineVector3_3;
+__intnl_SystemBoolean_45 = localPlayer != __const_SystemObject_0;
+if (__intnl_SystemBoolean_45)
+{
+__intnl_VRCSDKBaseVRCPlayerApiTrackingData_4 = localPlayer.GetTrackingData(__const_VRCSDKBaseVRCPlayerApiTrackingDataType_0);
+__lcl_playerHeadPos_UnityEngineVector3_3 = __intnl_VRCSDKBaseVRCPlayerApiTrackingData_4.position;
+__intnl_UnityEngineVector3_23 = __lcl_playerHeadPos_UnityEngineVector3_3 - __lcl_currentPos_UnityEngineVector3_3;
+__lcl_directionToPlayer_UnityEngineVector3_3 = __intnl_UnityEngineVector3_23.normalized;
+__intnl_UnityEngineTransform_22 = levelUpImageVR.transform;
+__intnl_UnityEngineVector3_24 = !__lcl_directionToPlayer_UnityEngineVector3_3;
+__intnl_UnityEngineQuaternion_4 = Quaternion.LookRotation(__intnl_UnityEngineVector3_24, __const_UnityEngineVector3_1);
+__intnl_UnityEngineTransform_22.rotation = __intnl_UnityEngineQuaternion_4;
+}
+}
+}

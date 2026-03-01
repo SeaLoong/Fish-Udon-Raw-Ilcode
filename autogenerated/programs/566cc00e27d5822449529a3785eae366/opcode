@@ -1,0 +1,88 @@
+void _start
+0 PUSH object __object_0
+8 EXTERN VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi
+16 PUSH object __object_0
+24 PUSH Boolean __result_0
+32 EXTERN VRCSDKBaseUtilities.__IsValid__SystemObject__SystemBoolean
+40 PUSH Boolean __result_0
+48 JUMP_IF_FALSE 300
+56 PUSH Boolean disableAvatarScaling
+64 JUMP_IF_FALSE 156
+72 PUSH VRCPlayerApi __instance_0
+80 EXTERN VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi
+88 PUSH VRCPlayerApi __instance_0
+96 PUSH Boolean __enabled_0
+104 EXTERN VRCSDKBaseVRCPlayerApi.__SetManualAvatarScalingAllowed__SystemBoolean__SystemVoid
+112 PUSH String __String_0
+120 PUSH object __message_0
+128 COPY
+132 PUSH object __message_0
+140 EXTERN UnityEngineDebug.__Log__SystemObject__SystemVoid
+148 JUMP 156
+156 PUSH VRCPlayerApi __instance_1
+164 EXTERN VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi
+172 PUSH VRCPlayerApi __instance_1
+180 PUSH Single minimumHeight
+188 EXTERN VRCSDKBaseVRCPlayerApi.__SetAvatarEyeHeightMinimumByMeters__SystemSingle__SystemVoid
+196 PUSH VRCPlayerApi __instance_2
+204 EXTERN VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi
+212 PUSH VRCPlayerApi __instance_2
+220 PUSH Single maximumHeight
+228 EXTERN VRCSDKBaseVRCPlayerApi.__SetAvatarEyeHeightMaximumByMeters__SystemSingle__SystemVoid
+236 PUSH String __format_0
+244 PUSH Single minimumHeight
+252 PUSH Single maximumHeight
+260 PUSH object __message_1
+268 EXTERN SystemString.__Format__SystemString_SystemObject_SystemObject__SystemString
+276 PUSH object __message_1
+284 EXTERN UnityEngineDebug.__Log__SystemObject__SystemVoid
+292 JUMP 300
+300 JUMP 4294967292
+void _onAvatarEyeHeightChanged
+308 PUSH VRCPlayerApi onAvatarEyeHeightChangedPlayer
+316 PUSH VRCPlayerApi __instance_3
+324 COPY
+328 PUSH VRCPlayerApi __instance_3
+336 PUSH Boolean __Boolean_2
+344 EXTERN VRCSDKBaseVRCPlayerApi.__get_isLocal__SystemBoolean
+352 PUSH Boolean __Boolean_2
+360 PUSH Boolean alwaysEnforceHeight
+368 PUSH Boolean __Boolean_1
+376 EXTERN SystemBoolean.__op_LogicalAnd__SystemBoolean_SystemBoolean__SystemBoolean
+384 PUSH Boolean __Boolean_1
+392 JUMP_IF_FALSE 672
+400 PUSH VRCPlayerApi __instance_4
+408 EXTERN VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi
+416 PUSH VRCPlayerApi __instance_4
+424 PUSH Single __value_0
+432 EXTERN VRCSDKBaseVRCPlayerApi.__GetAvatarEyeHeightAsMeters__SystemSingle
+440 PUSH Single __value_0
+448 PUSH Single minimumHeight
+456 PUSH Single maximumHeight
+464 PUSH Single clampedHeight
+472 EXTERN UnityEngineMathf.__Clamp__SystemSingle_SystemSingle_SystemSingle__SystemSingle
+480 PUSH VRCPlayerApi __instance_5
+488 EXTERN VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi
+496 PUSH VRCPlayerApi __instance_5
+504 PUSH Single __Single_1
+512 EXTERN VRCSDKBaseVRCPlayerApi.__GetAvatarEyeHeightAsMeters__SystemSingle
+520 PUSH Single clampedHeight
+528 PUSH Single __Single_1
+536 PUSH Boolean __Boolean_4
+544 EXTERN SystemSingle.__op_Inequality__SystemSingle_SystemSingle__SystemBoolean
+552 PUSH Boolean __Boolean_4
+560 JUMP_IF_FALSE 664
+568 PUSH VRCPlayerApi __instance_6
+576 EXTERN VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi
+584 PUSH VRCPlayerApi __instance_6
+592 PUSH Single clampedHeight
+600 EXTERN VRCSDKBaseVRCPlayerApi.__SetAvatarEyeHeightByMeters__SystemSingle__SystemVoid
+608 PUSH String __format_1
+616 PUSH Single clampedHeight
+624 PUSH object __message_2
+632 EXTERN SystemString.__Format__SystemString_SystemObject__SystemString
+640 PUSH object __message_2
+648 EXTERN UnityEngineDebug.__Log__SystemObject__SystemVoid
+656 JUMP 664
+664 JUMP 672
+672 JUMP 4294967292

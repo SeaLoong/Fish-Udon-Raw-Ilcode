@@ -1,0 +1,661 @@
+void _start
+0 PUSH UInt32 __const_SystemUInt32_0
+8 PUSH VRCPlayerApi localPlayer
+16 EXTERN VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi
+24 PUSH VRCPlayerApi localPlayer
+32 PUSH object __const_SystemObject_0
+40 PUSH Boolean __intnl_SystemBoolean_0
+48 EXTERN SystemObject.__op_Equality__SystemObject_SystemObject__SystemBoolean
+56 PUSH Boolean __intnl_SystemBoolean_0
+64 JUMP_IF_FALSE 92
+72 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+80 COPY
+84 JUMP_INDIRECT 2
+92 PUSH UInt32 __gintnl_SystemUInt32_0
+100 JUMP 516
+108 PUSH UInt32 __gintnl_SystemUInt32_1
+116 JUMP 944
+124 PUSH Boolean enableDebugLogs
+132 JUMP_IF_FALSE 140
+140 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+148 COPY
+152 JUMP_INDIRECT 2
+void _update
+160 PUSH UInt32 __const_SystemUInt32_0
+168 PUSH Boolean isEnabled
+176 PUSH Boolean __intnl_SystemBoolean_1
+184 EXTERN SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean
+192 PUSH Boolean __intnl_SystemBoolean_1
+200 JUMP_IF_FALSE 216
+208 JUMP 248
+216 PUSH VRCPlayerApi localPlayer
+224 PUSH object __const_SystemObject_0
+232 PUSH Boolean __intnl_SystemBoolean_1
+240 EXTERN SystemObject.__op_Equality__SystemObject_SystemObject__SystemBoolean
+248 PUSH Boolean __intnl_SystemBoolean_1
+256 JUMP_IF_FALSE 284
+264 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+272 COPY
+276 JUMP_INDIRECT 2
+284 PUSH VRCPlayerApi localPlayer
+292 PUSH Vector3 __intnl_UnityEngineVector3_0
+300 EXTERN VRCSDKBaseVRCPlayerApi.__GetPosition__UnityEngineVector3
+308 PUSH Vector3 __intnl_UnityEngineVector3_0
+316 PUSH Single __lcl_playerY_SystemSingle_0
+324 EXTERN UnityEngineVector3.__get_y__SystemSingle
+332 PUSH UInt32 __gintnl_SystemUInt32_2
+340 PUSH Single __lcl_playerY_SystemSingle_0
+348 PUSH Single __0_playerY__param
+356 COPY
+360 JUMP 1520
+368 PUSH Int32 __0___0_DetermineWaterState__ret
+376 PUSH Int32 __lcl_newState_SystemInt32_0
+384 COPY
+388 PUSH Int32 __lcl_newState_SystemInt32_0
+396 PUSH Int32 currentState
+404 PUSH Boolean __intnl_SystemBoolean_2
+412 EXTERN SystemInt32.__op_Inequality__SystemInt32_SystemInt32__SystemBoolean
+420 PUSH Boolean __intnl_SystemBoolean_2
+428 JUMP_IF_FALSE 472
+436 PUSH UInt32 __gintnl_SystemUInt32_3
+444 PUSH Int32 __lcl_newState_SystemInt32_0
+452 PUSH Int32 __0_newState__param
+460 COPY
+464 JUMP 1780
+472 PUSH UInt32 __gintnl_SystemUInt32_4
+480 JUMP 2864
+488 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+496 COPY
+500 JUMP_INDIRECT 2
+508 PUSH UInt32 __const_SystemUInt32_0
+516 PUSH AudioSource oceanAudioSource
+524 PUSH Object __intnl_UnityEngineObject_0
+532 COPY
+536 PUSH object __const_SystemObject_0
+544 PUSH Object __intnl_UnityEngineObject_1
+552 COPY
+556 PUSH Object __intnl_UnityEngineObject_0
+564 PUSH Object __intnl_UnityEngineObject_1
+572 PUSH Boolean __intnl_SystemBoolean_3
+580 EXTERN UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean
+588 PUSH Boolean __intnl_SystemBoolean_3
+596 JUMP_IF_FALSE 604
+604 PUSH AudioSource underwaterAudioSource
+612 PUSH Object __intnl_UnityEngineObject_2
+620 COPY
+624 PUSH object __const_SystemObject_0
+632 PUSH Object __intnl_UnityEngineObject_3
+640 COPY
+644 PUSH Object __intnl_UnityEngineObject_2
+652 PUSH Object __intnl_UnityEngineObject_3
+660 PUSH Boolean __intnl_SystemBoolean_4
+668 EXTERN UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean
+676 PUSH Boolean __intnl_SystemBoolean_4
+684 JUMP_IF_FALSE 692
+692 PUSH AudioClip oceanAmbienceClip
+700 PUSH Object __intnl_UnityEngineObject_4
+708 COPY
+712 PUSH object __const_SystemObject_0
+720 PUSH Object __intnl_UnityEngineObject_5
+728 COPY
+732 PUSH Object __intnl_UnityEngineObject_4
+740 PUSH Object __intnl_UnityEngineObject_5
+748 PUSH Boolean __intnl_SystemBoolean_5
+756 EXTERN UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean
+764 PUSH Boolean __intnl_SystemBoolean_5
+772 JUMP_IF_FALSE 780
+780 PUSH AudioClip underwaterAmbienceClip
+788 PUSH Object __intnl_UnityEngineObject_6
+796 COPY
+800 PUSH object __const_SystemObject_0
+808 PUSH Object __intnl_UnityEngineObject_7
+816 COPY
+820 PUSH Object __intnl_UnityEngineObject_6
+828 PUSH Object __intnl_UnityEngineObject_7
+836 PUSH Boolean __intnl_SystemBoolean_6
+844 EXTERN UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean
+852 PUSH Boolean __intnl_SystemBoolean_6
+860 JUMP_IF_FALSE 868
+868 PUSH Single oceanFloorHeight
+876 PUSH Single waterSurfaceHeight
+884 PUSH Boolean __intnl_SystemBoolean_7
+892 EXTERN SystemSingle.__op_GreaterThanOrEqual__SystemSingle_SystemSingle__SystemBoolean
+900 PUSH Boolean __intnl_SystemBoolean_7
+908 JUMP_IF_FALSE 916
+916 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+924 COPY
+928 JUMP_INDIRECT 2
+936 PUSH UInt32 __const_SystemUInt32_0
+944 PUSH AudioSource oceanAudioSource
+952 PUSH Object __intnl_UnityEngineObject_8
+960 COPY
+964 PUSH object __const_SystemObject_0
+972 PUSH Object __intnl_UnityEngineObject_9
+980 COPY
+984 PUSH Object __intnl_UnityEngineObject_8
+992 PUSH Object __intnl_UnityEngineObject_9
+1000 PUSH Boolean __intnl_SystemBoolean_8
+1008 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+1016 PUSH Boolean __intnl_SystemBoolean_8
+1024 JUMP_IF_FALSE 1104
+1032 PUSH AudioClip oceanAmbienceClip
+1040 PUSH Object __intnl_UnityEngineObject_10
+1048 COPY
+1052 PUSH object __const_SystemObject_0
+1060 PUSH Object __intnl_UnityEngineObject_11
+1068 COPY
+1072 PUSH Object __intnl_UnityEngineObject_10
+1080 PUSH Object __intnl_UnityEngineObject_11
+1088 PUSH Boolean __intnl_SystemBoolean_8
+1096 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+1104 PUSH Boolean __intnl_SystemBoolean_8
+1112 JUMP_IF_FALSE 1208
+1120 PUSH AudioSource oceanAudioSource
+1128 PUSH AudioClip oceanAmbienceClip
+1136 EXTERN UnityEngineAudioSource.__set_clip__UnityEngineAudioClip__SystemVoid
+1144 PUSH AudioSource oceanAudioSource
+1152 PUSH Boolean __const_SystemBoolean_0
+1160 EXTERN UnityEngineAudioSource.__set_loop__SystemBoolean__SystemVoid
+1168 PUSH AudioSource oceanAudioSource
+1176 PUSH Single oceanVolume
+1184 EXTERN UnityEngineAudioSource.__set_volume__SystemSingle__SystemVoid
+1192 PUSH AudioSource oceanAudioSource
+1200 EXTERN UnityEngineAudioSource.__Play__SystemVoid
+1208 PUSH AudioSource underwaterAudioSource
+1216 PUSH Object __intnl_UnityEngineObject_12
+1224 COPY
+1228 PUSH object __const_SystemObject_0
+1236 PUSH Object __intnl_UnityEngineObject_13
+1244 COPY
+1248 PUSH Object __intnl_UnityEngineObject_12
+1256 PUSH Object __intnl_UnityEngineObject_13
+1264 PUSH Boolean __intnl_SystemBoolean_9
+1272 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+1280 PUSH Boolean __intnl_SystemBoolean_9
+1288 JUMP_IF_FALSE 1368
+1296 PUSH AudioClip underwaterAmbienceClip
+1304 PUSH Object __intnl_UnityEngineObject_14
+1312 COPY
+1316 PUSH object __const_SystemObject_0
+1324 PUSH Object __intnl_UnityEngineObject_15
+1332 COPY
+1336 PUSH Object __intnl_UnityEngineObject_14
+1344 PUSH Object __intnl_UnityEngineObject_15
+1352 PUSH Boolean __intnl_SystemBoolean_9
+1360 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+1368 PUSH Boolean __intnl_SystemBoolean_9
+1376 JUMP_IF_FALSE 1472
+1384 PUSH AudioSource underwaterAudioSource
+1392 PUSH AudioClip underwaterAmbienceClip
+1400 EXTERN UnityEngineAudioSource.__set_clip__UnityEngineAudioClip__SystemVoid
+1408 PUSH AudioSource underwaterAudioSource
+1416 PUSH Boolean __const_SystemBoolean_0
+1424 EXTERN UnityEngineAudioSource.__set_loop__SystemBoolean__SystemVoid
+1432 PUSH AudioSource underwaterAudioSource
+1440 PUSH Single __const_SystemSingle_0
+1448 EXTERN UnityEngineAudioSource.__set_volume__SystemSingle__SystemVoid
+1456 PUSH AudioSource underwaterAudioSource
+1464 EXTERN UnityEngineAudioSource.__Play__SystemVoid
+1472 PUSH Int32 __const_SystemInt32_0
+1480 PUSH Int32 currentState
+1488 COPY
+1492 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1500 COPY
+1504 JUMP_INDIRECT 2
+1512 PUSH UInt32 __const_SystemUInt32_0
+1520 PUSH Single __0_playerY__param
+1528 PUSH Single oceanFloorHeight
+1536 PUSH Boolean __intnl_SystemBoolean_10
+1544 EXTERN SystemSingle.__op_LessThan__SystemSingle_SystemSingle__SystemBoolean
+1552 PUSH Boolean __intnl_SystemBoolean_10
+1560 JUMP_IF_FALSE 1616
+1568 PUSH Int32 __const_SystemInt32_1
+1576 PUSH Int32 __0___0_DetermineWaterState__ret
+1584 COPY
+1588 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1596 COPY
+1600 JUMP_INDIRECT 2
+1608 JUMP 1752
+1616 PUSH Single __0_playerY__param
+1624 PUSH Single waterSurfaceHeight
+1632 PUSH Boolean __intnl_SystemBoolean_11
+1640 EXTERN SystemSingle.__op_LessThan__SystemSingle_SystemSingle__SystemBoolean
+1648 PUSH Boolean __intnl_SystemBoolean_11
+1656 JUMP_IF_FALSE 1712
+1664 PUSH Int32 __const_SystemInt32_2
+1672 PUSH Int32 __0___0_DetermineWaterState__ret
+1680 COPY
+1684 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1692 COPY
+1696 JUMP_INDIRECT 2
+1704 JUMP 1752
+1712 PUSH Int32 __const_SystemInt32_0
+1720 PUSH Int32 __0___0_DetermineWaterState__ret
+1728 COPY
+1732 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1740 COPY
+1744 JUMP_INDIRECT 2
+1752 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1760 COPY
+1764 JUMP_INDIRECT 2
+1772 PUSH UInt32 __const_SystemUInt32_0
+1780 PUSH Boolean enableDebugLogs
+1788 JUMP_IF_FALSE 1796
+1796 PUSH Int32 __0_newState__param
+1804 PUSH Int32 currentState
+1812 COPY
+1816 PUSH Int32 __0_newState__param
+1824 PUSH Int32 targetState
+1832 COPY
+1836 PUSH Int32 __0_newState__param
+1844 PUSH Int32 __const_SystemInt32_0
+1852 PUSH Boolean __intnl_SystemBoolean_12
+1860 EXTERN SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean
+1868 PUSH Boolean __intnl_SystemBoolean_12
+1876 JUMP_IF_FALSE 1988
+1884 PUSH UInt32 __gintnl_SystemUInt32_5
+1892 PUSH AudioSource underwaterAudioSource
+1900 PUSH AudioSource __0_from__param
+1908 COPY
+1912 PUSH AudioSource oceanAudioSource
+1920 PUSH AudioSource __0_to__param
+1928 COPY
+1932 PUSH Single __const_SystemSingle_0
+1940 PUSH Single __0_targetFromVolume__param
+1948 COPY
+1952 PUSH Single oceanVolume
+1960 PUSH Single __0_targetToVolume__param
+1968 COPY
+1972 JUMP 2320
+1980 JUMP 2292
+1988 PUSH Int32 __0_newState__param
+1996 PUSH Int32 __const_SystemInt32_2
+2004 PUSH Boolean __intnl_SystemBoolean_13
+2012 EXTERN SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean
+2020 PUSH Boolean __intnl_SystemBoolean_13
+2028 JUMP_IF_FALSE 2140
+2036 PUSH UInt32 __gintnl_SystemUInt32_6
+2044 PUSH AudioSource oceanAudioSource
+2052 PUSH AudioSource __0_from__param
+2060 COPY
+2064 PUSH AudioSource underwaterAudioSource
+2072 PUSH AudioSource __0_to__param
+2080 COPY
+2084 PUSH Single __const_SystemSingle_0
+2092 PUSH Single __0_targetFromVolume__param
+2100 COPY
+2104 PUSH Single underwaterVolume
+2112 PUSH Single __0_targetToVolume__param
+2120 COPY
+2124 JUMP 2320
+2132 JUMP 2292
+2140 PUSH Int32 __0_newState__param
+2148 PUSH Int32 __const_SystemInt32_1
+2156 PUSH Boolean __intnl_SystemBoolean_14
+2164 EXTERN SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean
+2172 PUSH Boolean __intnl_SystemBoolean_14
+2180 JUMP_IF_FALSE 2292
+2188 PUSH UInt32 __gintnl_SystemUInt32_7
+2196 PUSH AudioSource oceanAudioSource
+2204 PUSH AudioSource __0_from__param
+2212 COPY
+2216 PUSH AudioSource underwaterAudioSource
+2224 PUSH AudioSource __0_to__param
+2232 COPY
+2236 PUSH Single __const_SystemSingle_0
+2244 PUSH Single __0_targetFromVolume__param
+2252 COPY
+2256 PUSH Single __const_SystemSingle_0
+2264 PUSH Single __0_targetToVolume__param
+2272 COPY
+2276 JUMP 2320
+2284 JUMP 2292
+2292 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2300 COPY
+2304 JUMP_INDIRECT 2
+2312 PUSH UInt32 __const_SystemUInt32_0
+2320 PUSH Boolean isTransitioning
+2328 JUMP_IF_FALSE 2352
+2336 PUSH UInt32 __gintnl_SystemUInt32_8
+2344 JUMP 3408
+2352 PUSH AudioSource __0_from__param
+2360 PUSH AudioSource fromSource
+2368 COPY
+2372 PUSH AudioSource __0_to__param
+2380 PUSH AudioSource toSource
+2388 COPY
+2392 PUSH AudioSource __0_from__param
+2400 PUSH Object __intnl_UnityEngineObject_16
+2408 COPY
+2412 PUSH object __const_SystemObject_0
+2420 PUSH Object __intnl_UnityEngineObject_17
+2428 COPY
+2432 PUSH Object __intnl_UnityEngineObject_16
+2440 PUSH Object __intnl_UnityEngineObject_17
+2448 PUSH Boolean __intnl_SystemBoolean_15
+2456 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+2464 PUSH Boolean __intnl_SystemBoolean_15
+2472 JUMP_IF_FALSE 2512
+2480 PUSH AudioSource __0_from__param
+2488 PUSH Single fromVolume
+2496 EXTERN UnityEngineAudioSource.__get_volume__SystemSingle
+2504 JUMP 2532
+2512 PUSH Single __const_SystemSingle_0
+2520 PUSH Single fromVolume
+2528 COPY
+2532 PUSH Single __0_targetToVolume__param
+2540 PUSH Single masterVolume
+2548 PUSH Single toVolume
+2556 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+2564 PUSH Single transitionStartTime
+2572 EXTERN UnityEngineTime.__get_time__SystemSingle
+2580 PUSH Boolean __const_SystemBoolean_0
+2588 PUSH Boolean isTransitioning
+2596 COPY
+2600 PUSH AudioSource toSource
+2608 PUSH Object __intnl_UnityEngineObject_18
+2616 COPY
+2620 PUSH object __const_SystemObject_0
+2628 PUSH Object __intnl_UnityEngineObject_19
+2636 COPY
+2640 PUSH Object __intnl_UnityEngineObject_18
+2648 PUSH Object __intnl_UnityEngineObject_19
+2656 PUSH Boolean __intnl_SystemBoolean_17
+2664 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+2672 PUSH Boolean __intnl_SystemBoolean_17
+2680 JUMP_IF_FALSE 2720
+2688 PUSH Single toVolume
+2696 PUSH Single __const_SystemSingle_0
+2704 PUSH Boolean __intnl_SystemBoolean_17
+2712 EXTERN SystemSingle.__op_GreaterThan__SystemSingle_SystemSingle__SystemBoolean
+2720 PUSH Boolean __intnl_SystemBoolean_17
+2728 PUSH Boolean __intnl_SystemBoolean_16
+2736 COPY
+2740 PUSH Boolean __intnl_SystemBoolean_16
+2748 JUMP_IF_FALSE 2804
+2756 PUSH AudioSource toSource
+2764 PUSH Boolean __intnl_SystemBoolean_18
+2772 EXTERN UnityEngineAudioSource.__get_isPlaying__SystemBoolean
+2780 PUSH Boolean __intnl_SystemBoolean_18
+2788 PUSH Boolean __intnl_SystemBoolean_16
+2796 EXTERN SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean
+2804 PUSH Boolean __intnl_SystemBoolean_16
+2812 JUMP_IF_FALSE 2836
+2820 PUSH AudioSource toSource
+2828 EXTERN UnityEngineAudioSource.__Play__SystemVoid
+2836 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2844 COPY
+2848 JUMP_INDIRECT 2
+2856 PUSH UInt32 __const_SystemUInt32_0
+2864 PUSH Boolean isTransitioning
+2872 JUMP_IF_FALSE 2888
+2880 JUMP 2908
+2888 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2896 COPY
+2900 JUMP_INDIRECT 2
+2908 PUSH Single __intnl_SystemSingle_0
+2916 EXTERN UnityEngineTime.__get_time__SystemSingle
+2924 PUSH Single __intnl_SystemSingle_0
+2932 PUSH Single transitionStartTime
+2940 PUSH Single __lcl_elapsed_SystemSingle_0
+2948 EXTERN SystemSingle.__op_Subtraction__SystemSingle_SystemSingle__SystemSingle
+2956 PUSH Single __lcl_elapsed_SystemSingle_0
+2964 PUSH Single transitionDuration
+2972 PUSH Single __intnl_SystemSingle_1
+2980 EXTERN SystemSingle.__op_Division__SystemSingle_SystemSingle__SystemSingle
+2988 PUSH Single __intnl_SystemSingle_1
+2996 PUSH Single __lcl_t_SystemSingle_0
+3004 EXTERN UnityEngineMathf.__Clamp01__SystemSingle__SystemSingle
+3012 PUSH AudioSource fromSource
+3020 PUSH Object __intnl_UnityEngineObject_20
+3028 COPY
+3032 PUSH object __const_SystemObject_0
+3040 PUSH Object __intnl_UnityEngineObject_21
+3048 COPY
+3052 PUSH Object __intnl_UnityEngineObject_20
+3060 PUSH Object __intnl_UnityEngineObject_21
+3068 PUSH Boolean __intnl_SystemBoolean_19
+3076 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+3084 PUSH Boolean __intnl_SystemBoolean_19
+3092 JUMP_IF_FALSE 3164
+3100 PUSH Single fromVolume
+3108 PUSH Single __const_SystemSingle_0
+3116 PUSH Single __lcl_t_SystemSingle_0
+3124 PUSH Single __intnl_SystemSingle_2
+3132 EXTERN UnityEngineMathf.__Lerp__SystemSingle_SystemSingle_SystemSingle__SystemSingle
+3140 PUSH AudioSource fromSource
+3148 PUSH Single __intnl_SystemSingle_2
+3156 EXTERN UnityEngineAudioSource.__set_volume__SystemSingle__SystemVoid
+3164 PUSH AudioSource toSource
+3172 PUSH Object __intnl_UnityEngineObject_22
+3180 COPY
+3184 PUSH object __const_SystemObject_0
+3192 PUSH Object __intnl_UnityEngineObject_23
+3200 COPY
+3204 PUSH Object __intnl_UnityEngineObject_22
+3212 PUSH Object __intnl_UnityEngineObject_23
+3220 PUSH Boolean __intnl_SystemBoolean_20
+3228 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+3236 PUSH Boolean __intnl_SystemBoolean_20
+3244 JUMP_IF_FALSE 3316
+3252 PUSH Single __const_SystemSingle_0
+3260 PUSH Single toVolume
+3268 PUSH Single __lcl_t_SystemSingle_0
+3276 PUSH Single __intnl_SystemSingle_2
+3284 EXTERN UnityEngineMathf.__Lerp__SystemSingle_SystemSingle_SystemSingle__SystemSingle
+3292 PUSH AudioSource toSource
+3300 PUSH Single __intnl_SystemSingle_2
+3308 EXTERN UnityEngineAudioSource.__set_volume__SystemSingle__SystemVoid
+3316 PUSH Single __lcl_t_SystemSingle_0
+3324 PUSH Single __const_SystemSingle_1
+3332 PUSH Boolean __intnl_SystemBoolean_21
+3340 EXTERN SystemSingle.__op_GreaterThanOrEqual__SystemSingle_SystemSingle__SystemBoolean
+3348 PUSH Boolean __intnl_SystemBoolean_21
+3356 JUMP_IF_FALSE 3380
+3364 PUSH UInt32 __gintnl_SystemUInt32_9
+3372 JUMP 3408
+3380 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+3388 COPY
+3392 JUMP_INDIRECT 2
+3400 PUSH UInt32 __const_SystemUInt32_0
+3408 PUSH AudioSource fromSource
+3416 PUSH Object __intnl_UnityEngineObject_24
+3424 COPY
+3428 PUSH object __const_SystemObject_0
+3436 PUSH Object __intnl_UnityEngineObject_25
+3444 COPY
+3448 PUSH Object __intnl_UnityEngineObject_24
+3456 PUSH Object __intnl_UnityEngineObject_25
+3464 PUSH Boolean __intnl_SystemBoolean_22
+3472 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+3480 PUSH Boolean __intnl_SystemBoolean_22
+3488 JUMP_IF_FALSE 3552
+3496 PUSH AudioSource fromSource
+3504 PUSH Single __intnl_SystemSingle_3
+3512 EXTERN UnityEngineAudioSource.__get_volume__SystemSingle
+3520 PUSH Single __intnl_SystemSingle_3
+3528 PUSH Single __const_SystemSingle_2
+3536 PUSH Boolean __intnl_SystemBoolean_22
+3544 EXTERN SystemSingle.__op_LessThanOrEqual__SystemSingle_SystemSingle__SystemBoolean
+3552 PUSH Boolean __intnl_SystemBoolean_22
+3560 JUMP_IF_FALSE 3584
+3568 PUSH AudioSource fromSource
+3576 EXTERN UnityEngineAudioSource.__Stop__SystemVoid
+3584 PUSH AudioSource toSource
+3592 PUSH Object __intnl_UnityEngineObject_26
+3600 COPY
+3604 PUSH object __const_SystemObject_0
+3612 PUSH Object __intnl_UnityEngineObject_27
+3620 COPY
+3624 PUSH Object __intnl_UnityEngineObject_26
+3632 PUSH Object __intnl_UnityEngineObject_27
+3640 PUSH Boolean __intnl_SystemBoolean_23
+3648 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+3656 PUSH Boolean __intnl_SystemBoolean_23
+3664 JUMP_IF_FALSE 3696
+3672 PUSH AudioSource toSource
+3680 PUSH Single toVolume
+3688 EXTERN UnityEngineAudioSource.__set_volume__SystemSingle__SystemVoid
+3696 PUSH Boolean __const_SystemBoolean_1
+3704 PUSH Boolean isTransitioning
+3712 COPY
+3716 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+3724 COPY
+3728 JUMP_INDIRECT 2
+void __0_SetEnabled
+3736 PUSH UInt32 __const_SystemUInt32_0
+3744 PUSH Boolean __0_enabled__param
+3752 PUSH Boolean isEnabled
+3760 COPY
+3764 PUSH Boolean __0_enabled__param
+3772 JUMP_IF_FALSE 3956
+3780 PUSH VRCPlayerApi localPlayer
+3788 PUSH object __const_SystemObject_0
+3796 PUSH Boolean __intnl_SystemBoolean_24
+3804 EXTERN SystemObject.__op_Inequality__SystemObject_SystemObject__SystemBoolean
+3812 PUSH Boolean __intnl_SystemBoolean_24
+3820 JUMP_IF_FALSE 3948
+3828 PUSH VRCPlayerApi localPlayer
+3836 PUSH Vector3 __intnl_UnityEngineVector3_1
+3844 EXTERN VRCSDKBaseVRCPlayerApi.__GetPosition__UnityEngineVector3
+3852 PUSH Vector3 __intnl_UnityEngineVector3_1
+3860 PUSH Single __lcl_playerY_SystemSingle_1
+3868 EXTERN UnityEngineVector3.__get_y__SystemSingle
+3876 PUSH UInt32 __gintnl_SystemUInt32_10
+3884 PUSH UInt32 __gintnl_SystemUInt32_11
+3892 PUSH Single __lcl_playerY_SystemSingle_1
+3900 PUSH Single __0_playerY__param
+3908 COPY
+3912 JUMP 1520
+3920 PUSH Int32 __0___0_DetermineWaterState__ret
+3928 PUSH Int32 __0_newState__param
+3936 COPY
+3940 JUMP 1780
+3948 JUMP 4180
+3956 PUSH AudioSource oceanAudioSource
+3964 PUSH Object __intnl_UnityEngineObject_28
+3972 COPY
+3976 PUSH object __const_SystemObject_0
+3984 PUSH Object __intnl_UnityEngineObject_29
+3992 COPY
+3996 PUSH Object __intnl_UnityEngineObject_28
+4004 PUSH Object __intnl_UnityEngineObject_29
+4012 PUSH Boolean __intnl_SystemBoolean_24
+4020 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+4028 PUSH Boolean __intnl_SystemBoolean_24
+4036 JUMP_IF_FALSE 4068
+4044 PUSH AudioSource oceanAudioSource
+4052 PUSH Single __const_SystemSingle_0
+4060 EXTERN UnityEngineAudioSource.__set_volume__SystemSingle__SystemVoid
+4068 PUSH AudioSource underwaterAudioSource
+4076 PUSH Object __intnl_UnityEngineObject_30
+4084 COPY
+4088 PUSH object __const_SystemObject_0
+4096 PUSH Object __intnl_UnityEngineObject_31
+4104 COPY
+4108 PUSH Object __intnl_UnityEngineObject_30
+4116 PUSH Object __intnl_UnityEngineObject_31
+4124 PUSH Boolean __intnl_SystemBoolean_25
+4132 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+4140 PUSH Boolean __intnl_SystemBoolean_25
+4148 JUMP_IF_FALSE 4180
+4156 PUSH AudioSource underwaterAudioSource
+4164 PUSH Single __const_SystemSingle_0
+4172 EXTERN UnityEngineAudioSource.__set_volume__SystemSingle__SystemVoid
+4180 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+4188 COPY
+4192 JUMP_INDIRECT 2
+void GetCurrentState
+4200 PUSH UInt32 __const_SystemUInt32_0
+4208 PUSH Int32 currentState
+4216 PUSH Int32 __0_GetCurrentState__ret
+4224 COPY
+4228 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+4236 COPY
+4240 JUMP_INDIRECT 2
+4248 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+4256 COPY
+4260 JUMP_INDIRECT 2
+void IsInWaterAudioZone
+4268 PUSH UInt32 __const_SystemUInt32_0
+4276 PUSH Int32 currentState
+4284 PUSH Int32 __const_SystemInt32_3
+4292 PUSH Boolean __0_IsInWaterAudioZone__ret
+4300 EXTERN SystemInt32.__op_Inequality__SystemInt32_SystemInt32__SystemBoolean
+4308 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+4316 COPY
+4320 JUMP_INDIRECT 2
+4328 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+4336 COPY
+4340 JUMP_INDIRECT 2
+void __0_SetMasterVolume
+4348 PUSH UInt32 __const_SystemUInt32_0
+4356 PUSH Single __0_volume__param
+4364 PUSH Single masterVolume
+4372 EXTERN UnityEngineMathf.__Clamp01__SystemSingle__SystemSingle
+4380 PUSH AudioSource oceanAudioSource
+4388 PUSH Object __intnl_UnityEngineObject_32
+4396 COPY
+4400 PUSH object __const_SystemObject_0
+4408 PUSH Object __intnl_UnityEngineObject_33
+4416 COPY
+4420 PUSH Object __intnl_UnityEngineObject_32
+4428 PUSH Object __intnl_UnityEngineObject_33
+4436 PUSH Boolean __intnl_SystemBoolean_26
+4444 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+4452 PUSH Boolean __intnl_SystemBoolean_26
+4460 JUMP_IF_FALSE 4500
+4468 PUSH Int32 currentState
+4476 PUSH Int32 __const_SystemInt32_4
+4484 PUSH Boolean __intnl_SystemBoolean_26
+4492 EXTERN SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean
+4500 PUSH Boolean __intnl_SystemBoolean_26
+4508 JUMP_IF_FALSE 4572
+4516 PUSH Single oceanVolume
+4524 PUSH Single masterVolume
+4532 PUSH Single __intnl_SystemSingle_4
+4540 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+4548 PUSH AudioSource oceanAudioSource
+4556 PUSH Single __intnl_SystemSingle_4
+4564 EXTERN UnityEngineAudioSource.__set_volume__SystemSingle__SystemVoid
+4572 PUSH AudioSource underwaterAudioSource
+4580 PUSH Object __intnl_UnityEngineObject_34
+4588 COPY
+4592 PUSH object __const_SystemObject_0
+4600 PUSH Object __intnl_UnityEngineObject_35
+4608 COPY
+4612 PUSH Object __intnl_UnityEngineObject_34
+4620 PUSH Object __intnl_UnityEngineObject_35
+4628 PUSH Boolean __intnl_SystemBoolean_27
+4636 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+4644 PUSH Boolean __intnl_SystemBoolean_27
+4652 JUMP_IF_FALSE 4692
+4660 PUSH Int32 currentState
+4668 PUSH Int32 __const_SystemInt32_5
+4676 PUSH Boolean __intnl_SystemBoolean_27
+4684 EXTERN SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean
+4692 PUSH Boolean __intnl_SystemBoolean_27
+4700 JUMP_IF_FALSE 4764
+4708 PUSH Single underwaterVolume
+4716 PUSH Single masterVolume
+4724 PUSH Single __intnl_SystemSingle_4
+4732 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+4740 PUSH AudioSource underwaterAudioSource
+4748 PUSH Single __intnl_SystemSingle_4
+4756 EXTERN UnityEngineAudioSource.__set_volume__SystemSingle__SystemVoid
+4764 PUSH Boolean enableDebugLogs
+4772 JUMP_IF_FALSE 4780
+4780 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+4788 COPY
+4792 JUMP_INDIRECT 2
+void GetMasterVolume
+4800 PUSH UInt32 __const_SystemUInt32_0
+4808 PUSH Single masterVolume
+4816 PUSH Single __0_GetMasterVolume__ret
+4824 COPY
+4828 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+4836 COPY
+4840 JUMP_INDIRECT 2
+4848 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+4856 COPY
+4860 JUMP_INDIRECT 2

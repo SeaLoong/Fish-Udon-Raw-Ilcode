@@ -1,0 +1,183 @@
+using System;
+using UnityEngine;
+using VRC.SDKBase;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Single __intnl_SystemSingle_0 = 0f;
+private Single __const_SystemSingle_0 = 0f;
+private Vector3 __intnl_UnityEngineVector3_6 = new Vector3(0f, 0f, 0f);
+private UInt32 __gintnl_SystemUInt32_1 = 536;
+private UInt32 __gintnl_SystemUInt32_0 = 272;
+private UInt32 __gintnl_SystemUInt32_2 = 1612;
+private Boolean __const_SystemBoolean_0 = false;
+private Boolean __const_SystemBoolean_1 = true;
+private Vector3 __lcl_flatForward_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+public Single heightOffset;
+private Vector3 __intnl_UnityEngineVector3_5 = new Vector3(0f, 0f, 0f);
+private Vector3 __lcl_headForward_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Vector3 __lcl_headPosition_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Int64 __refl_typeid = -5856496315493486578;
+private Vector3 __lcl_headUp_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+public Boolean showDebugLogs;
+private Vector3 __const_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Quaternion targetRotation = new Quaternion(0f, 0f, 0f, 0f);
+private Vector3 targetPosition = new Vector3(0f, 0f, 0f);
+private Single __intnl_SystemSingle_2 = 0f;
+public Single rotationSmoothSpeed;
+private Single __const_SystemSingle_2 = 0.5f;
+private Vector3 __intnl_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+public Boolean isActive;
+private object __const_SystemObject_0 = null;
+public Single positionSmoothTime;
+private Single __intnl_SystemSingle_1 = 0f;
+private Single __const_SystemSingle_1 = 0.001f;
+private TrackingDataType __const_VRCSDKBaseVRCPlayerApiTrackingDataType_0 = TrackingDataType.Head;
+private Quaternion __lcl_headRotation_UnityEngineQuaternion_0 = new Quaternion(0f, 0f, 0f, 0f);
+private TrackingData __lcl_headData_VRCSDKBaseVRCPlayerApiTrackingData_0 = VRC.SDKBase.VRCPlayerApi+TrackingData;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private Vector3 __const_UnityEngineVector3_2 = new Vector3(0f, 1f, 0f);
+private Vector3 __lcl_visorUp_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Single __intnl_SystemSingle_4 = 0f;
+private Vector3 __intnl_UnityEngineVector3_2 = new Vector3(0f, 0f, 0f);
+private Vector3 __const_UnityEngineVector3_1 = new Vector3(0f, 0f, 1f);
+private String __refl_typename = "WorldSpaceHUD";
+private Single __intnl_SystemSingle_3 = 0f;
+private Transform __this_UnityEngineTransform_0 = this;
+private Vector3 __intnl_UnityEngineVector3_1 = new Vector3(0f, 0f, 0f);
+private Vector3 positionVelocity = new Vector3(0f, 0f, 0f);
+public Single followDistance;
+private Vector3 __intnl_UnityEngineVector3_4 = new Vector3(0f, 0f, 0f);
+private VRCPlayerApi localPlayer = null;
+private GameObject __this_UnityEngineGameObject_0 = this;
+private Boolean __0_IsAvailable__ret = false;
+public Single verticalFollowAmount;
+private Quaternion __intnl_UnityEngineQuaternion_0 = new Quaternion(0f, 0f, 0f, 0f);
+private Quaternion __intnl_UnityEngineQuaternion_1 = new Quaternion(0f, 0f, 0f, 0f);
+private Quaternion __intnl_UnityEngineQuaternion_2 = new Quaternion(0f, 0f, 0f, 0f);
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Vector3 __lcl_visorForward_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+public Boolean enableForDesktop;
+public Boolean isVRUser;
+private Single __intnl_SystemSingle_5 = 0f;
+private Vector3 __intnl_UnityEngineVector3_3 = new Vector3(0f, 0f, 0f);
+
+
+public void _start()
+{
+localPlayer = Networking.LocalPlayer;
+__intnl_SystemBoolean_0 = localPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_0)
+{
+return;
+}
+isVRUser = localPlayer.IsUserInVR();
+__intnl_SystemBoolean_1 = !isVRUser;
+if (__intnl_SystemBoolean_1)
+{
+__intnl_SystemBoolean_1 = !enableForDesktop;
+}
+if (__intnl_SystemBoolean_1)
+{
+if (showDebugLogs)
+{
+}
+__this_UnityEngineGameObject_0.SetActive(__const_SystemBoolean_0);
+return;
+}
+UNDEF_0fb67_1520();
+__this_UnityEngineTransform_0.position = targetPosition;
+__this_UnityEngineTransform_0.rotation = targetRotation;
+positionVelocity = __const_UnityEngineVector3_0;
+isActive = __const_SystemBoolean_1;
+if (showDebugLogs)
+{
+}
+}
+public void _lateUpdate()
+{
+__intnl_SystemBoolean_2 = !isActive;
+if (__intnl_SystemBoolean_2)
+{
+}
+else
+{
+__intnl_SystemBoolean_2 = localPlayer == __const_SystemObject_0;
+}
+if (__intnl_SystemBoolean_2)
+{
+return;
+}
+UNDEF_0fb67_1520();
+__intnl_UnityEngineVector3_0 = __this_UnityEngineTransform_0.position;
+__intnl_UnityEngineVector3_1 = Vector3.SmoothDamp(__intnl_UnityEngineVector3_0, targetPosition, positionVelocity, positionSmoothTime);
+__this_UnityEngineTransform_0.position = __intnl_UnityEngineVector3_1;
+__intnl_UnityEngineQuaternion_0 = __this_UnityEngineTransform_0.rotation;
+__intnl_SystemSingle_0 = Time.deltaTime;
+__intnl_SystemSingle_1 = rotationSmoothSpeed * __intnl_SystemSingle_0;
+__intnl_UnityEngineQuaternion_1 = Quaternion.Slerp(__intnl_UnityEngineQuaternion_0, targetRotation, __intnl_SystemSingle_1);
+__this_UnityEngineTransform_0.rotation = __intnl_UnityEngineQuaternion_1;
+}
+private void UNDEF_0fb67_1520()
+{
+__lcl_headData_VRCSDKBaseVRCPlayerApiTrackingData_0 = localPlayer.GetTrackingData(__const_VRCSDKBaseVRCPlayerApiTrackingDataType_0);
+__lcl_headPosition_UnityEngineVector3_0 = __lcl_headData_VRCSDKBaseVRCPlayerApiTrackingData_0.position;
+__lcl_headRotation_UnityEngineQuaternion_0 = __lcl_headData_VRCSDKBaseVRCPlayerApiTrackingData_0.rotation;
+__lcl_headForward_UnityEngineVector3_0 = __lcl_headRotation_UnityEngineQuaternion_0 * __const_UnityEngineVector3_1;
+__lcl_headUp_UnityEngineVector3_0 = __lcl_headRotation_UnityEngineQuaternion_0 * __const_UnityEngineVector3_2;
+__intnl_SystemSingle_2 = __lcl_headForward_UnityEngineVector3_0.x;
+__intnl_SystemSingle_3 = __lcl_headForward_UnityEngineVector3_0.z;
+__lcl_flatForward_UnityEngineVector3_0 = Vector3.ctor(__intnl_SystemSingle_2, __const_SystemSingle_0, __intnl_SystemSingle_3);
+__intnl_SystemSingle_4 = __lcl_flatForward_UnityEngineVector3_0.sqrMagnitude;
+__intnl_SystemBoolean_3 = __intnl_SystemSingle_4 < __const_SystemSingle_1;
+if (__intnl_SystemBoolean_3)
+{
+__intnl_UnityEngineQuaternion_2 = localPlayer.GetRotation();
+__lcl_flatForward_UnityEngineVector3_0 = __intnl_UnityEngineQuaternion_2 * __const_UnityEngineVector3_1;
+}
+else
+{
+__lcl_flatForward_UnityEngineVector3_0.Normalize();
+}
+__intnl_UnityEngineVector3_2 = Vector3.Slerp(__lcl_flatForward_UnityEngineVector3_0, __lcl_headForward_UnityEngineVector3_0, verticalFollowAmount);
+__lcl_visorForward_UnityEngineVector3_0 = __intnl_UnityEngineVector3_2.normalized;
+__intnl_SystemSingle_5 = verticalFollowAmount * __const_SystemSingle_2;
+__intnl_UnityEngineVector3_3 = Vector3.Slerp(__const_UnityEngineVector3_2, __lcl_headUp_UnityEngineVector3_0, __intnl_SystemSingle_5);
+__lcl_visorUp_UnityEngineVector3_0 = __intnl_UnityEngineVector3_3.normalized;
+__intnl_UnityEngineVector3_4 = __lcl_visorForward_UnityEngineVector3_0 * followDistance;
+__intnl_UnityEngineVector3_5 = __lcl_headPosition_UnityEngineVector3_0 + __intnl_UnityEngineVector3_4;
+__intnl_UnityEngineVector3_6 = __lcl_visorUp_UnityEngineVector3_0 * heightOffset;
+targetPosition = __intnl_UnityEngineVector3_5 + __intnl_UnityEngineVector3_6;
+targetRotation = Quaternion.LookRotation(__lcl_visorForward_UnityEngineVector3_0, __lcl_visorUp_UnityEngineVector3_0);
+}
+public void SnapToPlayer()
+{
+__intnl_SystemBoolean_4 = localPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_4)
+{
+return;
+}
+UNDEF_0fb67_1520();
+__this_UnityEngineTransform_0.position = targetPosition;
+__this_UnityEngineTransform_0.rotation = targetRotation;
+positionVelocity = __const_UnityEngineVector3_0;
+if (showDebugLogs)
+{
+}
+}
+public void IsAvailable()
+{
+__intnl_SystemBoolean_5 = isActive;
+if (__intnl_SystemBoolean_5)
+{
+__intnl_SystemBoolean_5 = __this_UnityEngineGameObject_0.activeSelf;
+}
+__0_IsAvailable__ret = __intnl_SystemBoolean_5;
+return;
+}
+}

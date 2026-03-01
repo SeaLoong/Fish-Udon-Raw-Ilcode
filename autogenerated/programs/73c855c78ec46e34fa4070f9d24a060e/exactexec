@@ -1,0 +1,376 @@
+using System;
+using UnityEngine;
+using VRC.SDKBase;
+using VRC.Udon;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Boolean __intnl_SystemBoolean_13 = false;
+private String __intnl_SystemString_1 = null;
+private Object __intnl_UnityEngineObject_12 = null;
+private Single __intnl_SystemSingle_0 = 0f;
+private VRCPlayerApi __lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0 = null;
+private object __intnl_SystemObject_0 = null;
+private String __const_SystemString_0 = "__3_itemId__param";
+private Single __const_SystemSingle_0 = 100f;
+public String noGemMessage;
+private Int32[] __intnl_SystemInt32Array_0 = null;
+private Boolean __intnl_SystemBoolean_16 = false;
+private Int32 __lcl_j_SystemInt32_0 = 0;
+private Single animTimer = 0f;
+private UInt32 __gintnl_SystemUInt32_1 = 720;
+private UInt32 __gintnl_SystemUInt32_0 = 536;
+private Boolean __const_SystemBoolean_0 = false;
+private Boolean __const_SystemBoolean_1 = true;
+private Object __intnl_UnityEngineObject_11 = null;
+private String __const_SystemString_5 = "__0_RemoveQuestItem";
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private VRCPlayerApi onPlayerRestoredPlayer = null;
+public SkinnedMeshRenderer shrineRenderer;
+private Object __intnl_UnityEngineObject_19 = null;
+private String __const_SystemString_10 = "__0_quantity__param";
+private String __const_SystemString_11 = "__0_AddQuestItem";
+private Object __intnl_UnityEngineObject_14 = null;
+private Int64 __refl_typeid = -3111697145111174480;
+public Int32 rewardItemId;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Boolean __intnl_SystemBoolean_11 = false;
+public AudioClip shrineCompleteSound;
+private Boolean[] gemsPlaced = null;
+private Single __intnl_SystemSingle_2 = 0f;
+private String __const_SystemString_2 = "__0___0_HasQuestItem__ret";
+public Int32[] gemItemIds;
+private Single __const_SystemSingle_2 = 0f;
+private Boolean __intnl_SystemBoolean_19 = false;
+private Boolean __intnl_SystemBoolean_14 = false;
+private Boolean __lcl_foundGem_SystemBoolean_0 = false;
+private object __const_SystemObject_0 = null;
+private String __intnl_SystemString_0 = null;
+public Single blendShapeAnimDuration;
+private Object __intnl_UnityEngineObject_13 = null;
+private Single __intnl_SystemSingle_1 = 0f;
+private Boolean pendingCompletion = false;
+private String __const_SystemString_7 = "__0_message__param";
+private Single __const_SystemSingle_1 = 1f;
+private Int32[] __intnl_SystemInt32Array_1 = null;
+private Boolean __intnl_SystemBoolean_17 = false;
+private Object __intnl_UnityEngineObject_16 = null;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private String __const_SystemString_4 = "__2_quantity__param";
+private Int32 __lcl_i_SystemInt32_1 = 0;
+private Int32 __lcl_i_SystemInt32_0 = 0;
+public AudioClip gemPlaceSound;
+public AudioSource audioSource;
+private Object __intnl_UnityEngineObject_15 = null;
+private String __const_SystemString_9 = "__0_itemId__param";
+private Boolean __intnl_SystemBoolean_12 = false;
+private Boolean allPlaced = false;
+private String __refl_typename = "AncientShrine";
+private Single __lcl_t_SystemSingle_0 = 0f;
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Int32 __intnl_SystemInt32_5 = 0;
+private Int32 __intnl_SystemInt32_4 = 0;
+private String __intnl_SystemString_2 = null;
+private String __const_SystemString_1 = "__0_HasQuestItem";
+private Boolean __intnl_SystemBoolean_15 = false;
+public String completionMessage;
+private Object __intnl_UnityEngineObject_10 = null;
+private String __const_SystemString_6 = "SHRINE_GEM_";
+public UdonBehaviour inventoryManager;
+public UdonBehaviour announcementManager;
+private Object __intnl_UnityEngineObject_18 = null;
+private Object __intnl_UnityEngineObject_17 = null;
+private Boolean __lcl_allDone_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Boolean __intnl_SystemBoolean_20 = false;
+private Int32 animatingIndex = -1;
+private Int32 __const_SystemInt32_1 = 0;
+private Int32 __const_SystemInt32_0 = 3;
+private Int32 __const_SystemInt32_3 = 1;
+private Int32 __const_SystemInt32_2 = -1;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+public UdonBehaviour itemDatabase;
+private String __const_SystemString_3 = "__1_itemId__param";
+public Int32[] blendShapeIndices;
+private String __const_SystemString_8 = "__0_ShowAnnouncement";
+private Boolean __intnl_SystemBoolean_18 = false;
+
+
+public void _start()
+{
+gemsPlaced = __const_SystemInt32_0.ctor();
+}
+public void _update()
+{
+__intnl_SystemBoolean_0 = animatingIndex < __const_SystemInt32_1;
+if (__intnl_SystemBoolean_0)
+{
+return;
+}
+__intnl_SystemSingle_0 = Time.deltaTime;
+animTimer = animTimer + __intnl_SystemSingle_0;
+__intnl_SystemSingle_1 = animTimer / blendShapeAnimDuration;
+__lcl_t_SystemSingle_0 = Mathf.Clamp01(__intnl_SystemSingle_1);
+__intnl_UnityEngineObject_0 = shrineRenderer;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_1)
+{
+__intnl_SystemInt32_0 = blendShapeIndices[animatingIndex];
+__intnl_SystemSingle_2 = __lcl_t_SystemSingle_0 * __const_SystemSingle_0;
+shrineRenderer.SetBlendShapeWeight(__intnl_SystemInt32_0, __intnl_SystemSingle_2);
+}
+__intnl_SystemBoolean_2 = __lcl_t_SystemSingle_0 >= __const_SystemSingle_1;
+if (__intnl_SystemBoolean_2)
+{
+animatingIndex = __const_SystemInt32_2;
+if (pendingCompletion)
+{
+pendingCompletion = __const_SystemBoolean_0;
+UNDEF_73c85_3660();
+}
+}
+}
+public void _onPlayerRestored()
+{
+__intnl_SystemBoolean_3 = onPlayerRestoredPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_3)
+{
+}
+else
+{
+__intnl_SystemBoolean_4 = onPlayerRestoredPlayer.isLocal;
+__intnl_SystemBoolean_3 = !__intnl_SystemBoolean_4;
+}
+if (__intnl_SystemBoolean_3)
+{
+return;
+}
+UNDEF_73c85_3024();
+}
+public void _interact()
+{
+if (allPlaced)
+{
+return;
+}
+__intnl_UnityEngineObject_2 = inventoryManager;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_5 = __intnl_UnityEngineObject_2 == __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_5)
+{
+}
+else
+{
+__intnl_UnityEngineObject_4 = itemDatabase;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_5 = __intnl_UnityEngineObject_4 == __intnl_UnityEngineObject_5;
+}
+if (__intnl_SystemBoolean_5)
+{
+return;
+}
+__intnl_SystemBoolean_6 = animatingIndex >= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_6)
+{
+return;
+}
+__lcl_foundGem_SystemBoolean_0 = __const_SystemBoolean_0;
+__lcl_i_SystemInt32_0 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_1 = gemItemIds.Length;
+__intnl_SystemBoolean_7 = __lcl_i_SystemInt32_0 < __intnl_SystemInt32_1;
+if (__intnl_SystemBoolean_7)
+{
+break;
+}
+__intnl_SystemBoolean_8 = gemsPlaced[__lcl_i_SystemInt32_0];
+if (__intnl_SystemBoolean_8)
+{
+}
+else
+{
+__intnl_SystemInt32_2 = gemItemIds[__lcl_i_SystemInt32_0];
+__intnl_SystemInt32Array_0 = gemItemIds;
+inventoryManager.SetProgramVariable(__const_SystemString_0, __intnl_SystemInt32_2);
+inventoryManager.SendCustomEvent(__const_SystemString_1);
+__intnl_SystemObject_0 = inventoryManager.GetProgramVariable(__const_SystemString_2);
+__intnl_SystemBoolean_9 = (Boolean)__intnl_SystemObject_0;
+if (__intnl_SystemBoolean_9)
+{
+__lcl_foundGem_SystemBoolean_0 = __const_SystemBoolean_1;
+__intnl_SystemInt32_3 = gemItemIds[__lcl_i_SystemInt32_0];
+__intnl_SystemInt32Array_1 = gemItemIds;
+inventoryManager.SetProgramVariable(__const_SystemString_3, __intnl_SystemInt32_3);
+inventoryManager.SetProgramVariable(__const_SystemString_4, __const_SystemInt32_3);
+inventoryManager.SendCustomEvent(__const_SystemString_5);
+gemsPlaced.Set(__lcl_i_SystemInt32_0, __const_SystemBoolean_1);
+__intnl_SystemString_0 = String.Concat(__const_SystemString_6, __lcl_i_SystemInt32_0);
+PlayerData.SetBool(__intnl_SystemString_0, __const_SystemBoolean_1);
+animatingIndex = __lcl_i_SystemInt32_0;
+animTimer = __const_SystemSingle_2;
+__intnl_UnityEngineObject_6 = audioSource;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_10 = __intnl_UnityEngineObject_6 != __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_10)
+{
+__intnl_UnityEngineObject_8 = gemPlaceSound;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_10 = __intnl_UnityEngineObject_8 != __intnl_UnityEngineObject_9;
+}
+if (__intnl_SystemBoolean_10)
+{
+audioSource.PlayOneShot(gemPlaceSound);
+}
+__lcl_allDone_SystemBoolean_0 = __const_SystemBoolean_1;
+__lcl_j_SystemInt32_0 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemBoolean_11 = __lcl_j_SystemInt32_0 < __const_SystemInt32_0;
+if (__intnl_SystemBoolean_11)
+{
+break;
+}
+__intnl_SystemBoolean_12 = gemsPlaced[__lcl_j_SystemInt32_0];
+if (__intnl_SystemBoolean_12)
+{
+}
+else
+{
+__lcl_allDone_SystemBoolean_0 = __const_SystemBoolean_0;
+}
+__lcl_j_SystemInt32_0 = __lcl_j_SystemInt32_0 + __const_SystemInt32_3;
+}
+if (__lcl_allDone_SystemBoolean_0)
+{
+allPlaced = __const_SystemBoolean_1;
+pendingCompletion = __const_SystemBoolean_1;
+}
+}
+}
+else
+{
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_3;
+}
+}
+if (__lcl_foundGem_SystemBoolean_0)
+{
+}
+else
+{
+__intnl_UnityEngineObject_6 = announcementManager;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_7 = __intnl_UnityEngineObject_6 != __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_7)
+{
+__intnl_SystemString_0 = noGemMessage;
+announcementManager.SetProgramVariable(__const_SystemString_7, noGemMessage);
+announcementManager.SendCustomEvent(__const_SystemString_8);
+}
+}
+}
+private void UNDEF_73c85_3024()
+{
+__lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0 = Networking.LocalPlayer;
+__intnl_SystemBoolean_13 = __lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0 == __const_SystemObject_0;
+if (__intnl_SystemBoolean_13)
+{
+return;
+}
+allPlaced = __const_SystemBoolean_1;
+__lcl_i_SystemInt32_1 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemBoolean_14 = __lcl_i_SystemInt32_1 < __const_SystemInt32_0;
+if (__intnl_SystemBoolean_14)
+{
+break;
+}
+__intnl_SystemString_1 = String.Concat(__const_SystemString_6, __lcl_i_SystemInt32_1);
+__intnl_SystemBoolean_15 = PlayerData.GetBool(__lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0, __intnl_SystemString_1);
+gemsPlaced.Set(__lcl_i_SystemInt32_1, __intnl_SystemBoolean_15);
+__intnl_SystemBoolean_16 = gemsPlaced[__lcl_i_SystemInt32_1];
+if (__intnl_SystemBoolean_16)
+{
+__intnl_UnityEngineObject_10 = shrineRenderer;
+__intnl_UnityEngineObject_11 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_16 = __intnl_UnityEngineObject_10 != __intnl_UnityEngineObject_11;
+}
+if (__intnl_SystemBoolean_16)
+{
+__intnl_SystemInt32_4 = blendShapeIndices[__lcl_i_SystemInt32_1];
+shrineRenderer.SetBlendShapeWeight(__intnl_SystemInt32_4, __const_SystemSingle_0);
+}
+__intnl_SystemBoolean_17 = gemsPlaced[__lcl_i_SystemInt32_1];
+if (__intnl_SystemBoolean_17)
+{
+}
+else
+{
+allPlaced = __const_SystemBoolean_0;
+}
+__lcl_i_SystemInt32_1 = __lcl_i_SystemInt32_1 + __const_SystemInt32_3;
+}
+}
+private void UNDEF_73c85_3660()
+{
+__intnl_UnityEngineObject_12 = inventoryManager;
+__intnl_UnityEngineObject_13 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_18 = __intnl_UnityEngineObject_12 != __intnl_UnityEngineObject_13;
+if (__intnl_SystemBoolean_18)
+{
+__intnl_SystemBoolean_18 = rewardItemId > __const_SystemInt32_1;
+}
+if (__intnl_SystemBoolean_18)
+{
+__intnl_SystemInt32_5 = rewardItemId;
+inventoryManager.SetProgramVariable(__const_SystemString_9, rewardItemId);
+inventoryManager.SetProgramVariable(__const_SystemString_10, __const_SystemInt32_3);
+inventoryManager.SendCustomEvent(__const_SystemString_11);
+}
+__intnl_UnityEngineObject_14 = audioSource;
+__intnl_UnityEngineObject_15 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_19 = __intnl_UnityEngineObject_14 != __intnl_UnityEngineObject_15;
+if (__intnl_SystemBoolean_19)
+{
+__intnl_UnityEngineObject_16 = shrineCompleteSound;
+__intnl_UnityEngineObject_17 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_19 = __intnl_UnityEngineObject_16 != __intnl_UnityEngineObject_17;
+}
+if (__intnl_SystemBoolean_19)
+{
+audioSource.PlayOneShot(shrineCompleteSound);
+}
+__intnl_UnityEngineObject_18 = announcementManager;
+__intnl_UnityEngineObject_19 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_20 = __intnl_UnityEngineObject_18 != __intnl_UnityEngineObject_19;
+if (__intnl_SystemBoolean_20)
+{
+__intnl_SystemString_2 = completionMessage;
+announcementManager.SetProgramVariable(__const_SystemString_7, completionMessage);
+announcementManager.SendCustomEvent(__const_SystemString_8);
+}
+}
+}

@@ -1,0 +1,918 @@
+using System;
+using UnityEngine;
+using UnityEngine.UI;
+using VRC.Udon;
+using VRC.SDKBase;
+using VRC.Udon.Common.Enums;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Boolean __intnl_SystemBoolean_13 = false;
+private Boolean __intnl_SystemBoolean_23 = false;
+private Boolean __intnl_SystemBoolean_33 = false;
+private UInt32 __gintnl_SystemUInt32_16 = 8408;
+private Int64 __const_SystemInt64_0 = -3386024659716451193;
+public Single reminderInterval;
+private Object __intnl_UnityEngineObject_42 = null;
+private Object __intnl_UnityEngineObject_32 = null;
+private Object __intnl_UnityEngineObject_22 = null;
+private Object __intnl_UnityEngineObject_12 = null;
+private Single __intnl_SystemSingle_0 = 0f;
+private object __intnl_SystemObject_0 = null;
+public GameObject afkPetUnlockPopup;
+private Boolean showingIcon1 = true;
+private String __const_SystemString_0 = "togglePreviewKey";
+private Transform __intnl_UnityEngineTransform_0 = null;
+private Boolean isBackpackReminderActive = false;
+private Single __const_SystemSingle_0 = 1.7f;
+private Boolean __intnl_SystemBoolean_16 = false;
+private Boolean __intnl_SystemBoolean_26 = false;
+public Transform afkPetImageVR;
+private Image __intnl_UnityEngineUIImage_0 = null;
+private Single __intnl_SystemSingle_10 = 0f;
+private Single __intnl_SystemSingle_11 = 0f;
+private Single __intnl_SystemSingle_12 = 0f;
+private Single __intnl_SystemSingle_13 = 0f;
+private Single __intnl_SystemSingle_14 = 0f;
+private Single __intnl_SystemSingle_15 = 0f;
+private Single __intnl_SystemSingle_16 = 0f;
+private Single __intnl_SystemSingle_17 = 0f;
+private Single __intnl_SystemSingle_18 = 0f;
+private Single petPopupAnimTimer = 0f;
+private Single __intnl_SystemSingle_8 = 0f;
+private UInt32 __gintnl_SystemUInt32_9 = 4624;
+private UInt32 __gintnl_SystemUInt32_8 = 4324;
+private UInt32 __gintnl_SystemUInt32_5 = 2624;
+private UInt32 __gintnl_SystemUInt32_4 = 2452;
+private UInt32 __gintnl_SystemUInt32_7 = 3580;
+private UInt32 __gintnl_SystemUInt32_6 = 3388;
+private UInt32 __gintnl_SystemUInt32_1 = 720;
+private UInt32 __gintnl_SystemUInt32_0 = 688;
+private UInt32 __gintnl_SystemUInt32_3 = 2412;
+private UInt32 __gintnl_SystemUInt32_2 = 1808;
+private Boolean __const_SystemBoolean_0 = false;
+private Boolean __const_SystemBoolean_1 = true;
+private Object __intnl_UnityEngineObject_41 = null;
+private Object __intnl_UnityEngineObject_31 = null;
+private Object __intnl_UnityEngineObject_21 = null;
+private Object __intnl_UnityEngineObject_11 = null;
+public Image backpackIconImage;
+private String __const_SystemString_5 = "extendSpringOnClick";
+private Single petPopupVisibleTimer = 0f;
+public Sprite controlIcon2;
+private UInt32 __gintnl_SystemUInt32_13 = 8252;
+private UdonBehaviour __3__intnlparam = null;
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Object __intnl_UnityEngineObject_39 = null;
+private Object __intnl_UnityEngineObject_29 = null;
+private Object __intnl_UnityEngineObject_19 = null;
+private String __const_SystemString_10 = "requiredLevel";
+private String __const_SystemString_11 = "__refl_typeid";
+private Single __intnl_SystemSingle_7 = 0f;
+private VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_0 = null;
+private Object __intnl_UnityEngineObject_44 = null;
+private Object __intnl_UnityEngineObject_34 = null;
+private Object __intnl_UnityEngineObject_24 = null;
+private Object __intnl_UnityEngineObject_14 = null;
+private Int64 __refl_typeid = 3473547167871063700;
+private Vector3 __lcl_rodPos_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_2 = null;
+private Transform __intnl_UnityEngineTransform_5 = null;
+public Single petImageWobbleAmplitude;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private UdonBehaviour __lcl_rodHolder_VRCUdonUdonBehaviour_0 = null;
+private Component __intnl_UnityEngineComponent_0 = null;
+private Boolean __intnl_SystemBoolean_11 = false;
+private Boolean __intnl_SystemBoolean_21 = false;
+private Boolean __intnl_SystemBoolean_31 = false;
+private UInt32 __gintnl_SystemUInt32_14 = 8268;
+private Vector3 __const_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private UdonBehaviour __0__intnlparam = null;
+public Single petImageWobbleSpeed;
+private Single __intnl_SystemSingle_2 = 0f;
+private object __intnl_SystemObject_2 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_1 = null;
+private String __const_SystemString_2 = "CheckBackpackReminder";
+private Transform __intnl_UnityEngineTransform_2 = null;
+private Boolean isPetPopupAnimating = false;
+private KeyCode __intnl_UnityEngineKeyCode_0 = KeyCode.None;
+private Single __const_SystemSingle_2 = 0f;
+private Boolean __intnl_SystemBoolean_19 = false;
+private Boolean __intnl_SystemBoolean_29 = false;
+private UdonBehaviour __lcl_foundScript_VRCUdonUdonBehaviour_0 = null;
+public Single backpackInitialDelay;
+private GameObject __intnl_UnityEngineGameObject_1 = null;
+private GameObject __intnl_UnityEngineGameObject_0 = null;
+private Boolean __intnl_SystemBoolean_14 = false;
+private Boolean __intnl_SystemBoolean_24 = false;
+private Boolean __intnl_SystemBoolean_34 = false;
+public Single petPopupScaleInDuration;
+private Component[] __intnl_UnityEngineComponentArray_0 = null;
+private Boolean __lcl_shouldDismiss_SystemBoolean_0 = false;
+private object __const_SystemObject_0 = null;
+private Object __intnl_UnityEngineObject_43 = null;
+private Object __intnl_UnityEngineObject_33 = null;
+private Object __intnl_UnityEngineObject_23 = null;
+private Object __intnl_UnityEngineObject_13 = null;
+private Type __const_SystemType_0 = typeof(UdonBehaviour);
+private Single __intnl_SystemSingle_1 = 0f;
+public Single initialReminderDelay;
+private object __intnl_SystemObject_1 = null;
+private String __const_SystemString_7 = "HideRodSummonReminder";
+private Component __4__intnlparam = null;
+private Single __const_SystemSingle_1 = 0.3f;
+private UInt32 __gintnl_SystemUInt32_11 = 5572;
+private Boolean __intnl_SystemBoolean_17 = false;
+private Boolean __intnl_SystemBoolean_27 = false;
+private EventTiming __const_VRCUdonCommonEnumsEventTiming_0 = EventTiming.Update;
+public Single petPopupScaleOutDuration;
+public UdonBehaviour afkPetPlacer;
+public GameObject afkPetUnlockPopupVR;
+private Single __lcl_wobble_SystemSingle_0 = 0f;
+private Single __lcl_distance_SystemSingle_0 = 0f;
+private Single __intnl_SystemSingle_9 = 0f;
+private Object __intnl_UnityEngineObject_46 = null;
+private Object __intnl_UnityEngineObject_36 = null;
+private Object __intnl_UnityEngineObject_26 = null;
+private Object __intnl_UnityEngineObject_16 = null;
+private Int64 __intnl_SystemInt64_0 = 0;
+public Single rodNearbyDistance;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private Transform __intnl_UnityEngineTransform_7 = null;
+public Single reminderDisplayDuration;
+private String __const_SystemString_4 = "__0_GetTotalTimePlayed__ret";
+private KeyCode __const_UnityEngineKeyCode_0 = KeyCode.B;
+private UInt32 __gintnl_SystemUInt32_19 = 8512;
+private Single __const_SystemSingle_4 = 3.7f;
+public Sprite controlIcon1;
+private UInt32 __gintnl_SystemUInt32_12 = 6528;
+public GameObject backpackReminder;
+private Int32 __lcl_i_SystemInt32_0 = 0;
+private UdonBehaviour __lcl_behaviour_VRCUdonUdonBehaviour_0 = null;
+private Boolean isPetPopupScalingIn = true;
+private Single __intnl_SystemSingle_4 = 0f;
+private UdonBehaviour __1__intnlparam = null;
+public Int32 maxPlaytimeForReminders;
+private Object __intnl_UnityEngineObject_45 = null;
+private Object __intnl_UnityEngineObject_35 = null;
+private Object __intnl_UnityEngineObject_25 = null;
+private Object __intnl_UnityEngineObject_15 = null;
+private object __intnl_SystemObject_4 = null;
+private Vector3 __lcl_playerPos_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_3 = null;
+public Sprite backpackIcon1;
+public Sprite backpackIcon2;
+private Transform __intnl_UnityEngineTransform_4 = null;
+private String __const_SystemString_9 = "HideBackpackReminder";
+public Single petPopupAutoDismissTime;
+private Boolean isRodReminderActive = false;
+private Boolean __intnl_SystemBoolean_12 = false;
+private Boolean __intnl_SystemBoolean_22 = false;
+private Boolean __intnl_SystemBoolean_32 = false;
+private UInt32 __gintnl_SystemUInt32_17 = 8424;
+private Vector3 __const_UnityEngineVector3_1 = new Vector3(1f, 1f, 1f);
+private String __refl_typename = "TutorialTips";
+public Image controlIconImage;
+private Single __lcl_t_SystemSingle_0 = 0f;
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Int32 __intnl_SystemInt32_5 = 0;
+private Int32 __intnl_SystemInt32_4 = 0;
+private Single __0_t__param = 0f;
+private Single __intnl_SystemSingle_3 = 0f;
+private object __intnl_SystemObject_3 = null;
+private Boolean isPetPopupVisible = false;
+private Int64 __lcl_targetID_SystemInt64_0 = 0;
+private String __const_SystemString_1 = "CheckRodSummonReminder";
+private Transform __intnl_UnityEngineTransform_1 = null;
+private Single __const_SystemSingle_3 = 1f;
+private object __lcl_idValue_SystemObject_0 = null;
+private Boolean __intnl_SystemBoolean_15 = false;
+private Boolean __intnl_SystemBoolean_25 = false;
+private Boolean __intnl_SystemBoolean_35 = false;
+private Image __intnl_UnityEngineUIImage_1 = null;
+private Boolean __0_IsRodNearby__ret = false;
+private Boolean showingBackpackIcon1 = true;
+public Transform afkPetImage;
+private Single __lcl_scale_SystemSingle_0 = 0f;
+private Object __intnl_UnityEngineObject_40 = null;
+private Object __intnl_UnityEngineObject_30 = null;
+private Object __intnl_UnityEngineObject_20 = null;
+private Object __intnl_UnityEngineObject_10 = null;
+public Single backpackReminderInterval;
+private String __const_SystemString_6 = "CycleControlIcon";
+private UInt32 __gintnl_SystemUInt32_10 = 4816;
+private UInt32 __gintnl_SystemUInt32_20 = 8868;
+private VRCPlayerApi localPlayer = null;
+private Boolean hasLeftSpawn = false;
+private Object __intnl_UnityEngineObject_38 = null;
+private Object __intnl_UnityEngineObject_28 = null;
+private Object __intnl_UnityEngineObject_18 = null;
+private Single __intnl_SystemSingle_6 = 0f;
+public Single iconCycleInterval;
+private Object __intnl_UnityEngineObject_47 = null;
+private Object __intnl_UnityEngineObject_37 = null;
+private Object __intnl_UnityEngineObject_27 = null;
+private Object __intnl_UnityEngineObject_17 = null;
+private Quaternion __const_UnityEngineQuaternion_0 = new Quaternion(1f, 0f, 0f, 0f);
+public GameObject rodSummonReminder;
+private Transform __intnl_UnityEngineTransform_6 = null;
+private UInt32 __gintnl_SystemUInt32_18 = 8440;
+private Single __const_SystemSingle_5 = 2.7f;
+private VRCPlayerApi __2__intnlparam = null;
+private GameObject[] __lcl_objects_UnityEngineGameObjectArray_0 = null;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Boolean __intnl_SystemBoolean_20 = false;
+private Boolean __intnl_SystemBoolean_30 = false;
+private UInt32 __gintnl_SystemUInt32_15 = 8284;
+private Quaternion __lcl_wobbleRot_UnityEngineQuaternion_0 = new Quaternion(0f, 0f, 0f, 0f);
+private Int32 __const_SystemInt32_1 = 1;
+private Int32 __const_SystemInt32_0 = 0;
+private Vector3 __lcl_scaleVec_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Component[] __lcl_udonBehaviours_UnityEngineComponentArray_0 = null;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+public UdonBehaviour playerStats;
+private Int32 __0_newLevel__param = 0;
+private Sprite __intnl_UnityEngineSprite_0 = null;
+private Sprite __intnl_UnityEngineSprite_1 = null;
+public Single backpackDisplayDuration;
+private Single __intnl_SystemSingle_5 = 0f;
+private object __intnl_SystemObject_5 = null;
+private Boolean hasShownPetPopup = false;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_0 = null;
+private String __const_SystemString_3 = "GetTotalTimePlayed";
+private Single __0___0_EaseOutBack__ret = 0f;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_9 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_8 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_3 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_2 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_1 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_0 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_7 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_6 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_5 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_4 = this;
+private Transform __intnl_UnityEngineTransform_3 = null;
+private String __const_SystemString_8 = "CycleBackpackIcon";
+private Boolean __intnl_SystemBoolean_18 = false;
+private Boolean __intnl_SystemBoolean_28 = false;
+private Single __lcl_tm1_SystemSingle_0 = 0f;
+private Transform __intnl_UnityEngineTransform_8 = null;
+
+
+public void _start()
+{
+localPlayer = Networking.LocalPlayer;
+__intnl_UnityEngineObject_0 = rodSummonReminder;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_0)
+{
+rodSummonReminder.SetActive(__const_SystemBoolean_0);
+}
+__intnl_UnityEngineObject_2 = backpackReminder;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_2 != __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_1)
+{
+backpackReminder.SetActive(__const_SystemBoolean_0);
+}
+__intnl_UnityEngineObject_4 = afkPetUnlockPopup;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_2 = __intnl_UnityEngineObject_4 != __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_2)
+{
+__intnl_UnityEngineTransform_0 = afkPetUnlockPopup.transform;
+__intnl_UnityEngineTransform_0.localScale = __const_UnityEngineVector3_0;
+afkPetUnlockPopup.SetActive(__const_SystemBoolean_0);
+}
+__intnl_UnityEngineObject_6 = afkPetUnlockPopupVR;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_3 = __intnl_UnityEngineObject_6 != __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_3)
+{
+__intnl_UnityEngineTransform_0 = afkPetUnlockPopupVR.transform;
+__intnl_UnityEngineTransform_0.localScale = __const_UnityEngineVector3_0;
+afkPetUnlockPopupVR.SetActive(__const_SystemBoolean_0);
+}
+}
+public void _update()
+{
+__intnl_SystemBoolean_4 = isBackpackReminderActive;
+if (__intnl_SystemBoolean_4)
+{
+__intnl_SystemBoolean_4 = Input.GetKeyDown(__const_UnityEngineKeyCode_0);
+}
+if (__intnl_SystemBoolean_4)
+{
+HideBackpackReminder();
+}
+if (isPetPopupAnimating)
+{
+UNDEF_bb589_7924();
+}
+__intnl_SystemBoolean_5 = isPetPopupVisible;
+if (__intnl_SystemBoolean_5)
+{
+}
+else
+{
+__intnl_SystemBoolean_6 = isPetPopupAnimating;
+if (__intnl_SystemBoolean_6)
+{
+__intnl_SystemBoolean_6 = isPetPopupScalingIn;
+}
+__intnl_SystemBoolean_5 = __intnl_SystemBoolean_6;
+}
+if (__intnl_SystemBoolean_5)
+{
+__intnl_SystemSingle_0 = Time.time;
+__intnl_SystemSingle_1 = __intnl_SystemSingle_0 * petImageWobbleSpeed;
+__intnl_SystemSingle_2 = Mathf.Sin(__intnl_SystemSingle_1);
+__intnl_SystemSingle_3 = __intnl_SystemSingle_2 * petImageWobbleAmplitude;
+__intnl_SystemSingle_4 = Time.time;
+__intnl_SystemSingle_5 = __intnl_SystemSingle_4 * petImageWobbleSpeed;
+__intnl_SystemSingle_6 = __intnl_SystemSingle_5 * __const_SystemSingle_0;
+__intnl_SystemSingle_7 = Mathf.Sin(__intnl_SystemSingle_6);
+__intnl_SystemSingle_8 = __intnl_SystemSingle_7 * petImageWobbleAmplitude;
+__intnl_SystemSingle_9 = __intnl_SystemSingle_8 * __const_SystemSingle_1;
+__lcl_wobble_SystemSingle_0 = __intnl_SystemSingle_3 + __intnl_SystemSingle_9;
+__lcl_wobbleRot_UnityEngineQuaternion_0 = Quaternion.Euler(__const_SystemSingle_2, __const_SystemSingle_2, __lcl_wobble_SystemSingle_0);
+__intnl_UnityEngineObject_8 = afkPetImage;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_7 = __intnl_UnityEngineObject_8 != __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_7)
+{
+afkPetImage.localRotation = __lcl_wobbleRot_UnityEngineQuaternion_0;
+}
+__intnl_UnityEngineObject_10 = afkPetImageVR;
+__intnl_UnityEngineObject_11 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_8 = __intnl_UnityEngineObject_10 != __intnl_UnityEngineObject_11;
+if (__intnl_SystemBoolean_8)
+{
+afkPetImageVR.localRotation = __lcl_wobbleRot_UnityEngineQuaternion_0;
+}
+}
+if (isPetPopupVisible)
+{
+__intnl_SystemSingle_0 = Time.deltaTime;
+petPopupVisibleTimer = petPopupVisibleTimer + __intnl_SystemSingle_0;
+__lcl_shouldDismiss_SystemBoolean_0 = __const_SystemBoolean_0;
+__intnl_UnityEngineObject_8 = afkPetPlacer;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_7 = __intnl_UnityEngineObject_8 != __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_7)
+{
+__intnl_SystemObject_0 = afkPetPlacer.GetProgramVariable(__const_SystemString_0);
+__intnl_UnityEngineKeyCode_0 = (KeyCode)__intnl_SystemObject_0;
+__intnl_SystemBoolean_7 = Input.GetKeyDown(__intnl_UnityEngineKeyCode_0);
+}
+if (__intnl_SystemBoolean_7)
+{
+__lcl_shouldDismiss_SystemBoolean_0 = __const_SystemBoolean_1;
+}
+__intnl_SystemBoolean_8 = petPopupVisibleTimer >= petPopupAutoDismissTime;
+if (__intnl_SystemBoolean_8)
+{
+__lcl_shouldDismiss_SystemBoolean_0 = __const_SystemBoolean_1;
+}
+if (__lcl_shouldDismiss_SystemBoolean_0)
+{
+HidePetUnlockPopup();
+}
+}
+}
+public void OnPlayerLeftSpawn()
+{
+if (hasLeftSpawn)
+{
+return;
+}
+hasLeftSpawn = __const_SystemBoolean_1;
+__intnl_SystemBoolean_9 = localPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_9)
+{
+}
+else
+{
+__intnl_SystemBoolean_10 = localPlayer.IsUserInVR();
+__intnl_SystemBoolean_9 = !__intnl_SystemBoolean_10;
+}
+if (__intnl_SystemBoolean_9)
+{
+return;
+}
+__this_VRCUdonUdonBehaviour_0.SendCustomEventDelayedSeconds(__const_SystemString_1, initialReminderDelay, __const_VRCUdonCommonEnumsEventTiming_0);
+__this_VRCUdonUdonBehaviour_1.SendCustomEventDelayedSeconds(__const_SystemString_2, backpackInitialDelay, __const_VRCUdonCommonEnumsEventTiming_0);
+}
+public void CheckRodSummonReminder()
+{
+__intnl_UnityEngineObject_12 = playerStats;
+__intnl_UnityEngineObject_13 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_11 = __intnl_UnityEngineObject_12 != __intnl_UnityEngineObject_13;
+if (__intnl_SystemBoolean_11)
+{
+__intnl_VRCUdonUdonBehaviour_0 = playerStats;
+playerStats.SendCustomEvent(__const_SystemString_3);
+__intnl_SystemObject_1 = playerStats.GetProgramVariable(__const_SystemString_4);
+__intnl_SystemInt32_0 = Convert.ToInt32(__intnl_SystemObject_1);
+__intnl_SystemBoolean_11 = __intnl_SystemInt32_0 >= maxPlaytimeForReminders;
+}
+if (__intnl_SystemBoolean_11)
+{
+return;
+}
+IsRodNearby();
+if (__0_IsRodNearby__ret)
+{
+}
+else
+{
+UNDEF_bb589_3488();
+}
+__this_VRCUdonUdonBehaviour_2.SendCustomEventDelayedSeconds(__const_SystemString_1, reminderInterval, __const_VRCUdonCommonEnumsEventTiming_0);
+}
+private void IsRodNearby()
+{
+__intnl_SystemBoolean_12 = localPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_12)
+{
+__0_IsRodNearby__ret = __const_SystemBoolean_1;
+return;
+}
+UNDEF_bb589_8572();
+__lcl_rodHolder_VRCUdonUdonBehaviour_0 = __0__intnlparam;
+__intnl_UnityEngineObject_14 = __lcl_rodHolder_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_15 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_13 = __intnl_UnityEngineObject_14 == __intnl_UnityEngineObject_15;
+if (__intnl_SystemBoolean_13)
+{
+}
+else
+{
+__intnl_SystemObject_2 = __lcl_rodHolder_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_5);
+__intnl_VRCUdonUdonBehaviour_1 = (UdonBehaviour)__intnl_SystemObject_2;
+__intnl_UnityEngineObject_16 = __intnl_VRCUdonUdonBehaviour_1;
+__intnl_UnityEngineObject_17 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_13 = __intnl_UnityEngineObject_16 == __intnl_UnityEngineObject_17;
+}
+if (__intnl_SystemBoolean_13)
+{
+__0_IsRodNearby__ret = __const_SystemBoolean_1;
+return;
+}
+__lcl_playerPos_UnityEngineVector3_0 = localPlayer.GetPosition();
+__intnl_SystemObject_3 = __lcl_rodHolder_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_5);
+__intnl_VRCUdonUdonBehaviour_2 = (UdonBehaviour)__intnl_SystemObject_3;
+__intnl_UnityEngineTransform_1 = __intnl_VRCUdonUdonBehaviour_2.transform;
+__lcl_rodPos_UnityEngineVector3_0 = __intnl_UnityEngineTransform_1.position;
+__lcl_distance_SystemSingle_0 = Vector3.Distance(__lcl_playerPos_UnityEngineVector3_0, __lcl_rodPos_UnityEngineVector3_0);
+__0_IsRodNearby__ret = __lcl_distance_SystemSingle_0 <= rodNearbyDistance;
+return;
+}
+private void UNDEF_bb589_3488()
+{
+__intnl_UnityEngineObject_18 = rodSummonReminder;
+__intnl_UnityEngineObject_19 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_14 = __intnl_UnityEngineObject_18 == __intnl_UnityEngineObject_19;
+if (__intnl_SystemBoolean_14)
+{
+}
+else
+{
+__intnl_SystemBoolean_14 = isRodReminderActive;
+}
+if (__intnl_SystemBoolean_14)
+{
+return;
+}
+isRodReminderActive = __const_SystemBoolean_1;
+rodSummonReminder.SetActive(__const_SystemBoolean_1);
+showingIcon1 = __const_SystemBoolean_1;
+UNDEF_bb589_3884();
+__this_VRCUdonUdonBehaviour_3.SendCustomEventDelayedSeconds(__const_SystemString_6, iconCycleInterval, __const_VRCUdonCommonEnumsEventTiming_0);
+__this_VRCUdonUdonBehaviour_4.SendCustomEventDelayedSeconds(__const_SystemString_7, reminderDisplayDuration, __const_VRCUdonCommonEnumsEventTiming_0);
+}
+public void CycleControlIcon()
+{
+if (isRodReminderActive)
+{
+UNDEF_bb589_3640();
+}
+}
+private void UNDEF_bb589_3640()
+{
+showingIcon1 = !showingIcon1;
+UNDEF_bb589_3884();
+__this_VRCUdonUdonBehaviour_5.SendCustomEventDelayedSeconds(__const_SystemString_6, iconCycleInterval, __const_VRCUdonCommonEnumsEventTiming_0);
+}
+private void UNDEF_bb589_3884()
+{
+__intnl_UnityEngineObject_20 = controlIconImage;
+__intnl_UnityEngineObject_21 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_15 = __intnl_UnityEngineObject_20 == __intnl_UnityEngineObject_21;
+if (__intnl_SystemBoolean_15)
+{
+return;
+}
+__intnl_UnityEngineUIImage_0 = controlIconImage;
+if (showingIcon1)
+{
+__intnl_UnityEngineSprite_0 = controlIcon1;
+}
+else
+{
+__intnl_UnityEngineSprite_0 = controlIcon2;
+}
+__intnl_UnityEngineUIImage_0.sprite = __intnl_UnityEngineSprite_0;
+}
+public void HideRodSummonReminder()
+{
+__intnl_UnityEngineObject_22 = rodSummonReminder;
+__intnl_UnityEngineObject_23 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_16 = __intnl_UnityEngineObject_22 != __intnl_UnityEngineObject_23;
+if (__intnl_SystemBoolean_16)
+{
+rodSummonReminder.SetActive(__const_SystemBoolean_0);
+}
+isRodReminderActive = __const_SystemBoolean_0;
+}
+public void CheckBackpackReminder()
+{
+__intnl_UnityEngineObject_24 = playerStats;
+__intnl_UnityEngineObject_25 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_17 = __intnl_UnityEngineObject_24 != __intnl_UnityEngineObject_25;
+if (__intnl_SystemBoolean_17)
+{
+__intnl_VRCUdonUdonBehaviour_3 = playerStats;
+playerStats.SendCustomEvent(__const_SystemString_3);
+__intnl_SystemObject_4 = playerStats.GetProgramVariable(__const_SystemString_4);
+__intnl_SystemInt32_1 = Convert.ToInt32(__intnl_SystemObject_4);
+__intnl_SystemBoolean_17 = __intnl_SystemInt32_1 >= maxPlaytimeForReminders;
+}
+if (__intnl_SystemBoolean_17)
+{
+return;
+}
+UNDEF_bb589_4724();
+__this_VRCUdonUdonBehaviour_6.SendCustomEventDelayedSeconds(__const_SystemString_2, backpackReminderInterval, __const_VRCUdonCommonEnumsEventTiming_0);
+}
+private void UNDEF_bb589_4724()
+{
+__intnl_UnityEngineObject_26 = backpackReminder;
+__intnl_UnityEngineObject_27 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_18 = __intnl_UnityEngineObject_26 == __intnl_UnityEngineObject_27;
+if (__intnl_SystemBoolean_18)
+{
+}
+else
+{
+__intnl_SystemBoolean_18 = isBackpackReminderActive;
+}
+if (__intnl_SystemBoolean_18)
+{
+return;
+}
+isBackpackReminderActive = __const_SystemBoolean_1;
+backpackReminder.SetActive(__const_SystemBoolean_1);
+showingBackpackIcon1 = __const_SystemBoolean_1;
+UNDEF_bb589_5120();
+__this_VRCUdonUdonBehaviour_7.SendCustomEventDelayedSeconds(__const_SystemString_8, iconCycleInterval, __const_VRCUdonCommonEnumsEventTiming_0);
+__this_VRCUdonUdonBehaviour_8.SendCustomEventDelayedSeconds(__const_SystemString_9, backpackDisplayDuration, __const_VRCUdonCommonEnumsEventTiming_0);
+}
+public void CycleBackpackIcon()
+{
+if (isBackpackReminderActive)
+{
+UNDEF_bb589_4876();
+}
+}
+private void UNDEF_bb589_4876()
+{
+showingBackpackIcon1 = !showingBackpackIcon1;
+UNDEF_bb589_5120();
+__this_VRCUdonUdonBehaviour_9.SendCustomEventDelayedSeconds(__const_SystemString_8, iconCycleInterval, __const_VRCUdonCommonEnumsEventTiming_0);
+}
+private void UNDEF_bb589_5120()
+{
+__intnl_UnityEngineObject_28 = backpackIconImage;
+__intnl_UnityEngineObject_29 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_19 = __intnl_UnityEngineObject_28 == __intnl_UnityEngineObject_29;
+if (__intnl_SystemBoolean_19)
+{
+return;
+}
+__intnl_UnityEngineUIImage_1 = backpackIconImage;
+if (showingBackpackIcon1)
+{
+__intnl_UnityEngineSprite_1 = backpackIcon1;
+}
+else
+{
+__intnl_UnityEngineSprite_1 = backpackIcon2;
+}
+__intnl_UnityEngineUIImage_1.sprite = __intnl_UnityEngineSprite_1;
+}
+public void HideBackpackReminder()
+{
+__intnl_UnityEngineObject_30 = backpackReminder;
+__intnl_UnityEngineObject_31 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_20 = __intnl_UnityEngineObject_30 != __intnl_UnityEngineObject_31;
+if (__intnl_SystemBoolean_20)
+{
+backpackReminder.SetActive(__const_SystemBoolean_0);
+}
+isBackpackReminderActive = __const_SystemBoolean_0;
+}
+public void __0_NotifyLevelUp()
+{
+if (hasShownPetPopup)
+{
+return;
+}
+__intnl_UnityEngineObject_32 = afkPetPlacer;
+__intnl_UnityEngineObject_33 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_21 = __intnl_UnityEngineObject_32 == __intnl_UnityEngineObject_33;
+if (__intnl_SystemBoolean_21)
+{
+return;
+}
+__intnl_SystemObject_5 = afkPetPlacer.GetProgramVariable(__const_SystemString_10);
+__intnl_SystemInt32_2 = Convert.ToInt32(__intnl_SystemObject_5);
+__intnl_SystemBoolean_22 = __0_newLevel__param != __intnl_SystemInt32_2;
+if (__intnl_SystemBoolean_22)
+{
+return;
+}
+UNDEF_bb589_6104();
+}
+private void UNDEF_bb589_6104()
+{
+__intnl_UnityEngineObject_34 = afkPetUnlockPopup;
+__intnl_UnityEngineObject_35 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_23 = __intnl_UnityEngineObject_34 == __intnl_UnityEngineObject_35;
+if (__intnl_SystemBoolean_23)
+{
+}
+else
+{
+__intnl_SystemBoolean_23 = hasShownPetPopup;
+}
+if (__intnl_SystemBoolean_23)
+{
+return;
+}
+hasShownPetPopup = __const_SystemBoolean_1;
+isPetPopupAnimating = __const_SystemBoolean_1;
+isPetPopupScalingIn = __const_SystemBoolean_1;
+petPopupAnimTimer = __const_SystemSingle_2;
+petPopupVisibleTimer = __const_SystemSingle_2;
+__intnl_UnityEngineTransform_2 = afkPetUnlockPopup.transform;
+__intnl_UnityEngineTransform_2.localScale = __const_UnityEngineVector3_0;
+afkPetUnlockPopup.SetActive(__const_SystemBoolean_1);
+__intnl_UnityEngineObject_36 = afkPetUnlockPopupVR;
+__intnl_UnityEngineObject_37 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_24 = __intnl_UnityEngineObject_36 != __intnl_UnityEngineObject_37;
+if (__intnl_SystemBoolean_24)
+{
+__intnl_UnityEngineTransform_3 = afkPetUnlockPopupVR.transform;
+__intnl_UnityEngineTransform_3.localScale = __const_UnityEngineVector3_0;
+afkPetUnlockPopupVR.SetActive(__const_SystemBoolean_1);
+}
+}
+public void HidePetUnlockPopup()
+{
+if (isPetPopupVisible)
+{
+UNDEF_bb589_6256();
+}
+}
+private void UNDEF_bb589_6256()
+{
+isPetPopupVisible = __const_SystemBoolean_0;
+isPetPopupAnimating = __const_SystemBoolean_1;
+isPetPopupScalingIn = __const_SystemBoolean_0;
+petPopupAnimTimer = __const_SystemSingle_2;
+}
+private void UNDEF_bb589_7924()
+{
+__intnl_UnityEngineObject_38 = afkPetUnlockPopup;
+__intnl_UnityEngineObject_39 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_25 = __intnl_UnityEngineObject_38 == __intnl_UnityEngineObject_39;
+if (__intnl_SystemBoolean_25)
+{
+return;
+}
+__intnl_SystemSingle_10 = Time.deltaTime;
+petPopupAnimTimer = petPopupAnimTimer + __intnl_SystemSingle_10;
+if (isPetPopupScalingIn)
+{
+__intnl_SystemSingle_11 = petPopupAnimTimer / petPopupScaleInDuration;
+__lcl_t_SystemSingle_0 = Mathf.Clamp01(__intnl_SystemSingle_11);
+__0_t__param = __lcl_t_SystemSingle_0;
+__0_EaseOutBack();
+__lcl_scale_SystemSingle_0 = __0___0_EaseOutBack__ret;
+__lcl_scaleVec_UnityEngineVector3_0 = __const_UnityEngineVector3_1 * __lcl_scale_SystemSingle_0;
+__intnl_UnityEngineTransform_4 = afkPetUnlockPopup.transform;
+__intnl_UnityEngineTransform_4.localScale = __lcl_scaleVec_UnityEngineVector3_0;
+__intnl_UnityEngineObject_40 = afkPetUnlockPopupVR;
+__intnl_UnityEngineObject_41 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_26 = __intnl_UnityEngineObject_40 != __intnl_UnityEngineObject_41;
+if (__intnl_SystemBoolean_26)
+{
+__intnl_UnityEngineTransform_5 = afkPetUnlockPopupVR.transform;
+__intnl_UnityEngineTransform_5.localScale = __lcl_scaleVec_UnityEngineVector3_0;
+}
+__intnl_SystemBoolean_27 = __lcl_t_SystemSingle_0 >= __const_SystemSingle_3;
+if (__intnl_SystemBoolean_27)
+{
+__intnl_UnityEngineTransform_6 = afkPetUnlockPopup.transform;
+__intnl_UnityEngineTransform_6.localScale = __const_UnityEngineVector3_1;
+__intnl_UnityEngineObject_42 = afkPetUnlockPopupVR;
+__intnl_UnityEngineObject_43 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_28 = __intnl_UnityEngineObject_42 != __intnl_UnityEngineObject_43;
+if (__intnl_SystemBoolean_28)
+{
+__intnl_UnityEngineTransform_7 = afkPetUnlockPopupVR.transform;
+__intnl_UnityEngineTransform_7.localScale = __const_UnityEngineVector3_1;
+}
+isPetPopupAnimating = __const_SystemBoolean_0;
+isPetPopupVisible = __const_SystemBoolean_1;
+}
+}
+else
+{
+__intnl_SystemSingle_11 = petPopupAnimTimer / petPopupScaleOutDuration;
+__lcl_t_SystemSingle_0 = Mathf.Clamp01(__intnl_SystemSingle_11);
+__intnl_SystemSingle_12 = __lcl_t_SystemSingle_0 * __lcl_t_SystemSingle_0;
+__lcl_scale_SystemSingle_0 = __const_SystemSingle_3 - __intnl_SystemSingle_12;
+__lcl_scaleVec_UnityEngineVector3_0 = __const_UnityEngineVector3_1 * __lcl_scale_SystemSingle_0;
+__intnl_UnityEngineTransform_4 = afkPetUnlockPopup.transform;
+__intnl_UnityEngineTransform_4.localScale = __lcl_scaleVec_UnityEngineVector3_0;
+__intnl_UnityEngineObject_40 = afkPetUnlockPopupVR;
+__intnl_UnityEngineObject_41 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_26 = __intnl_UnityEngineObject_40 != __intnl_UnityEngineObject_41;
+if (__intnl_SystemBoolean_26)
+{
+__intnl_UnityEngineTransform_5 = afkPetUnlockPopupVR.transform;
+__intnl_UnityEngineTransform_5.localScale = __lcl_scaleVec_UnityEngineVector3_0;
+}
+__intnl_SystemBoolean_27 = __lcl_t_SystemSingle_0 >= __const_SystemSingle_3;
+if (__intnl_SystemBoolean_27)
+{
+__intnl_UnityEngineTransform_6 = afkPetUnlockPopup.transform;
+__intnl_UnityEngineTransform_6.localScale = __const_UnityEngineVector3_0;
+isPetPopupAnimating = __const_SystemBoolean_0;
+afkPetUnlockPopup.SetActive(__const_SystemBoolean_0);
+__intnl_UnityEngineObject_42 = afkPetUnlockPopupVR;
+__intnl_UnityEngineObject_43 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_28 = __intnl_UnityEngineObject_42 != __intnl_UnityEngineObject_43;
+if (__intnl_SystemBoolean_28)
+{
+__intnl_UnityEngineTransform_7 = afkPetUnlockPopupVR.transform;
+__intnl_UnityEngineTransform_7.localScale = __const_UnityEngineVector3_0;
+afkPetUnlockPopupVR.SetActive(__const_SystemBoolean_0);
+}
+__intnl_UnityEngineObject_44 = afkPetImage;
+__intnl_UnityEngineObject_45 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_29 = __intnl_UnityEngineObject_44 != __intnl_UnityEngineObject_45;
+if (__intnl_SystemBoolean_29)
+{
+afkPetImage.localRotation = __const_UnityEngineQuaternion_0;
+}
+__intnl_UnityEngineObject_46 = afkPetImageVR;
+__intnl_UnityEngineObject_47 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_30 = __intnl_UnityEngineObject_46 != __intnl_UnityEngineObject_47;
+if (__intnl_SystemBoolean_30)
+{
+afkPetImageVR.localRotation = __const_UnityEngineQuaternion_0;
+}
+}
+}
+}
+private void __0_EaseOutBack()
+{
+__lcl_tm1_SystemSingle_0 = __0_t__param - __const_SystemSingle_3;
+__intnl_SystemSingle_13 = __const_SystemSingle_4 * __lcl_tm1_SystemSingle_0;
+__intnl_SystemSingle_14 = __intnl_SystemSingle_13 * __lcl_tm1_SystemSingle_0;
+__intnl_SystemSingle_15 = __intnl_SystemSingle_14 * __lcl_tm1_SystemSingle_0;
+__intnl_SystemSingle_16 = __const_SystemSingle_3 + __intnl_SystemSingle_15;
+__intnl_SystemSingle_17 = __const_SystemSingle_5 * __lcl_tm1_SystemSingle_0;
+__intnl_SystemSingle_18 = __intnl_SystemSingle_17 * __lcl_tm1_SystemSingle_0;
+__0___0_EaseOutBack__ret = __intnl_SystemSingle_16 + __intnl_SystemSingle_18;
+return;
+}
+public void DismissAllReminders()
+{
+HideRodSummonReminder();
+HideBackpackReminder();
+HidePetUnlockPopup();
+}
+public void ResetTutorials()
+{
+hasLeftSpawn = __const_SystemBoolean_0;
+isRodReminderActive = __const_SystemBoolean_0;
+isBackpackReminderActive = __const_SystemBoolean_0;
+hasShownPetPopup = __const_SystemBoolean_0;
+HideRodSummonReminder();
+HideBackpackReminder();
+HidePetUnlockPopup();
+}
+private void UNDEF_bb589_8572()
+{
+__intnl_VRCSDKBaseVRCPlayerApi_0 = Networking.LocalPlayer;
+__2__intnlparam = __intnl_VRCSDKBaseVRCPlayerApi_0;
+UNDEF_bb589_9068();
+__0__intnlparam = __1__intnlparam;
+return;
+}
+private void UNDEF_bb589_9068()
+{
+__lcl_objects_UnityEngineGameObjectArray_0 = Networking.GetPlayerObjects(__2__intnlparam);
+__lcl_i_SystemInt32_0 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_3 = __lcl_objects_UnityEngineGameObjectArray_0.Length;
+__intnl_SystemBoolean_31 = __lcl_i_SystemInt32_0 < __intnl_SystemInt32_3;
+if (__intnl_SystemBoolean_31)
+{
+break;
+}
+__intnl_UnityEngineGameObject_0 = (GameObject)(__lcl_objects_UnityEngineGameObjectArray_0[__lcl_i_SystemInt32_0]);
+__intnl_SystemBoolean_32 = Utilities.IsValid(__intnl_UnityEngineGameObject_0);
+if (__intnl_SystemBoolean_32)
+{
+}
+else
+{
+}
+__intnl_UnityEngineGameObject_1 = (GameObject)(__lcl_objects_UnityEngineGameObjectArray_0[__lcl_i_SystemInt32_0]);
+__intnl_UnityEngineTransform_8 = __intnl_UnityEngineGameObject_1.transform;
+__4__intnlparam = __intnl_UnityEngineTransform_8;
+UNDEF_bb589_9576();
+__lcl_foundScript_VRCUdonUdonBehaviour_0 = __3__intnlparam;
+__intnl_SystemBoolean_33 = Utilities.IsValid(__lcl_foundScript_VRCUdonUdonBehaviour_0);
+if (__intnl_SystemBoolean_33)
+{
+__1__intnlparam = __lcl_foundScript_VRCUdonUdonBehaviour_0;
+return;
+}
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_1;
+}
+__1__intnlparam = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+private void UNDEF_bb589_9576()
+{
+__intnl_UnityEngineComponentArray_0 = __4__intnlparam.GetComponentsInChildren(__const_SystemType_0);
+__lcl_udonBehaviours_UnityEngineComponentArray_0 = __intnl_UnityEngineComponentArray_0;
+__lcl_targetID_SystemInt64_0 = __const_SystemInt64_0;
+__intnl_SystemInt32_4 = __lcl_udonBehaviours_UnityEngineComponentArray_0.Length;
+__intnl_SystemInt32_5 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_34 = __intnl_SystemInt32_5 < __intnl_SystemInt32_4;
+if (__intnl_SystemBoolean_34)
+{
+break;
+}
+__lcl_behaviour_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(__lcl_udonBehaviours_UnityEngineComponentArray_0[__intnl_SystemInt32_5]);
+__lcl_idValue_SystemObject_0 = __lcl_behaviour_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_11);
+__intnl_SystemBoolean_35 = __lcl_idValue_SystemObject_0 != __const_SystemObject_0;
+if (__intnl_SystemBoolean_35)
+{
+__intnl_SystemInt64_0 = Convert.ToInt64(__lcl_idValue_SystemObject_0);
+__intnl_SystemBoolean_35 = __intnl_SystemInt64_0 == __lcl_targetID_SystemInt64_0;
+}
+if (__intnl_SystemBoolean_35)
+{
+__intnl_UnityEngineComponent_0 = __lcl_behaviour_VRCUdonUdonBehaviour_0;
+__3__intnlparam = (UdonBehaviour)__intnl_UnityEngineComponent_0;
+return;
+}
+__intnl_SystemInt32_5 = __intnl_SystemInt32_5 + __const_SystemInt32_1;
+}
+__3__intnlparam = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+}

@@ -1,0 +1,299 @@
+using UnityEngine.UI;
+using System;
+using TMPro;
+using UnityEngine;
+using VRC.Udon.Common.Enums;
+using VRC.Udon;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Image __lcl_fill_UnityEngineUIImage_0 = null;
+private String __intnl_SystemString_1 = null;
+private Single __intnl_SystemSingle_0 = 0f;
+public Image[] Fills;
+private TimeZoneInfo timeZoneInfo = null;
+private String __const_SystemString_0 = "hh";
+private Single __const_SystemSingle_0 = 0.9f;
+private UInt32[] __gintnl_SystemUInt32Array_0 = System.UInt32[];
+private UInt32 __gintnl_SystemUInt32_0 = 88;
+private String __const_SystemString_5 = "HH:mm:ss";
+private String __intnl_SystemString_6 = null;
+private String __const_SystemString_12 = "dddd  dd MMMM, yyyy";
+private String __const_SystemString_13 = "_ClockUpdate";
+private String __const_SystemString_10 = "dd MMMM, yyyy";
+private String __const_SystemString_11 = "dddd  MMMM dd, yyyy";
+private Int64 __refl_typeid = -1522304559298657516;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+public String TimeZoneID;
+private String __intnl_SystemString_3 = null;
+private Single __intnl_SystemSingle_2 = 0f;
+private String __const_SystemString_2 = "ss";
+public Int32[] FillModes;
+private TextMeshProUGUI __lcl_label_TMProTextMeshProUGUI_0 = null;
+private Single __const_SystemSingle_2 = 0f;
+private Transform __lcl_hand_UnityEngineTransform_0 = null;
+private object __const_SystemObject_0 = null;
+private String __intnl_SystemString_0 = null;
+private Single __intnl_SystemSingle_1 = 0f;
+private String __const_SystemString_7 = "tt";
+public AudioSource AudioTick;
+private Single __const_SystemSingle_1 = 1.1f;
+private EventTiming __const_VRCUdonCommonEnumsEventTiming_0 = EventTiming.Update;
+private String __intnl_SystemString_8 = null;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private String __const_SystemString_4 = "hh:mm";
+private Single __const_SystemSingle_4 = 30f;
+private UInt32 __intnl_SystemUInt32_0 = 0;
+private Int32 __lcl_i_SystemInt32_0 = 0;
+private String __intnl_SystemString_5 = null;
+private Single __intnl_SystemSingle_4 = 0f;
+public Boolean Use24HourTime;
+private String __const_SystemString_9 = "MMMM dd, yyyy";
+private String __refl_typename = "Vowgan.Clocks.ClockModular";
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Int32 __intnl_SystemInt32_5 = 0;
+private Int32 __intnl_SystemInt32_4 = 0;
+private Int32 __intnl_SystemInt32_7 = 0;
+private Int32 __intnl_SystemInt32_6 = 0;
+private Int32 __intnl_SystemInt32_8 = 0;
+private String __intnl_SystemString_2 = null;
+private DateTime __intnl_SystemDateTime_0 = 01/01/0001 00:00:00;
+private Single __intnl_SystemSingle_3 = 0f;
+public Boolean UseLocalTimeZone;
+public Int32[] HandModes;
+private String __const_SystemString_1 = "mm";
+public Boolean UseAudioTick;
+private Single __const_SystemSingle_3 = 60f;
+public Transform[] Hands;
+public Int32[] LabelModes;
+private String __const_SystemString_6 = "hh:mm:ss";
+private Single __const_SystemSingle_6 = 1f;
+private String __intnl_SystemString_7 = null;
+private Single __intnl_SystemSingle_6 = 0f;
+private Single __const_SystemSingle_5 = 12f;
+private DateTime __lcl_currentTime_SystemDateTime_0 = 01/01/0001 00:00:00;
+private Quaternion __intnl_UnityEngineQuaternion_0 = new Quaternion(0f, 0f, 0f, 0f);
+private Quaternion __intnl_UnityEngineQuaternion_1 = new Quaternion(0f, 0f, 0f, 0f);
+private Quaternion __intnl_UnityEngineQuaternion_2 = new Quaternion(0f, 0f, 0f, 0f);
+public TextMeshProUGUI[] Labels;
+private Int32 __const_SystemInt32_1 = 0;
+private Int32 __const_SystemInt32_0 = 0;
+private Int32 __const_SystemInt32_3 = 1;
+private Int32 __const_SystemInt32_2 = 30;
+private Int32 __const_SystemInt32_5 = 2;
+private Int32 __const_SystemInt32_4 = 6;
+private Int32 __const_SystemInt32_7 = 10;
+private Int32 __const_SystemInt32_6 = 1;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private String __intnl_SystemString_4 = null;
+private Single __intnl_SystemSingle_5 = 0f;
+private String __const_SystemString_3 = "HH:mm";
+private UdonBehaviour __this_VRCUdonUdonBehaviour_0 = this;
+private String __const_SystemString_8 = "dddd";
+
+
+public void _start()
+{
+if (UseLocalTimeZone)
+{
+timeZoneInfo = TimeZoneInfo.Local;
+}
+else
+{
+timeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById(TimeZoneID);
+}
+_ClockUpdate();
+}
+public void _ClockUpdate()
+{
+if (UseAudioTick)
+{
+__intnl_SystemSingle_0 = Random.Range(__const_SystemSingle_0, __const_SystemSingle_1);
+AudioTick.pitch = __intnl_SystemSingle_0;
+AudioTick.Play();
+}
+__intnl_SystemDateTime_0 = DateTime.UtcNow;
+__lcl_currentTime_SystemDateTime_0 = TimeZoneInfo.ConvertTimeFromUtc(__intnl_SystemDateTime_0, timeZoneInfo);
+__intnl_SystemBoolean_0 = Hands != __const_SystemObject_0;
+if (__intnl_SystemBoolean_0)
+{
+break;
+}
+__lcl_i_SystemInt32_0 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_0 = Hands.Length;
+__intnl_SystemBoolean_1 = __lcl_i_SystemInt32_0 < __intnl_SystemInt32_0;
+if (__intnl_SystemBoolean_1)
+{
+break;
+}
+__lcl_hand_UnityEngineTransform_0 = (Transform)(Hands[__lcl_i_SystemInt32_0]);
+__intnl_SystemInt32_1 = HandModes[__lcl_i_SystemInt32_0];
+__intnl_SystemBoolean_2 = __intnl_SystemInt32_1 == __const_SystemInt32_1;
+if (__intnl_SystemBoolean_2)
+{
+__intnl_SystemInt32_2 = __lcl_currentTime_SystemDateTime_0.Hour;
+__intnl_SystemInt32_3 = __intnl_SystemInt32_2 * __const_SystemInt32_2;
+__intnl_SystemSingle_0 = Convert.ToSingle(__intnl_SystemInt32_3);
+__intnl_SystemInt32_4 = __lcl_currentTime_SystemDateTime_0.Minute;
+__intnl_SystemSingle_1 = Convert.ToSingle(__intnl_SystemInt32_4);
+__intnl_SystemSingle_2 = __intnl_SystemSingle_1 / __const_SystemSingle_3;
+__intnl_SystemSingle_3 = __intnl_SystemSingle_2 * __const_SystemSingle_4;
+__intnl_SystemSingle_4 = __intnl_SystemSingle_0 + __intnl_SystemSingle_3;
+__intnl_UnityEngineQuaternion_0 = Quaternion.Euler(__const_SystemSingle_2, __const_SystemSingle_2, __intnl_SystemSingle_4);
+__lcl_hand_UnityEngineTransform_0.localRotation = __intnl_UnityEngineQuaternion_0;
+}
+else
+{
+__intnl_SystemBoolean_3 = __intnl_SystemInt32_1 == __const_SystemInt32_3;
+if (__intnl_SystemBoolean_3)
+{
+__intnl_SystemInt32_5 = __lcl_currentTime_SystemDateTime_0.Minute;
+__intnl_SystemInt32_6 = __intnl_SystemInt32_5 * __const_SystemInt32_4;
+__intnl_SystemSingle_5 = Convert.ToSingle(__intnl_SystemInt32_6);
+__intnl_UnityEngineQuaternion_1 = Quaternion.Euler(__const_SystemSingle_2, __const_SystemSingle_2, __intnl_SystemSingle_5);
+__lcl_hand_UnityEngineTransform_0.localRotation = __intnl_UnityEngineQuaternion_1;
+}
+else
+{
+__intnl_SystemBoolean_4 = __intnl_SystemInt32_1 == __const_SystemInt32_5;
+if (__intnl_SystemBoolean_4)
+{
+break;
+}
+__intnl_SystemInt32_7 = __lcl_currentTime_SystemDateTime_0.Second;
+__intnl_SystemInt32_8 = __intnl_SystemInt32_7 * __const_SystemInt32_4;
+__intnl_SystemSingle_6 = Convert.ToSingle(__intnl_SystemInt32_8);
+__intnl_UnityEngineQuaternion_2 = Quaternion.Euler(__const_SystemSingle_2, __const_SystemSingle_2, __intnl_SystemSingle_6);
+__lcl_hand_UnityEngineTransform_0.localRotation = __intnl_UnityEngineQuaternion_2;
+}
+}
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_6;
+}
+__intnl_SystemBoolean_1 = Fills != __const_SystemObject_0;
+if (__intnl_SystemBoolean_1)
+{
+break;
+}
+__lcl_i_SystemInt32_0 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_0 = Fills.Length;
+__intnl_SystemBoolean_2 = __lcl_i_SystemInt32_0 < __intnl_SystemInt32_0;
+if (__intnl_SystemBoolean_2)
+{
+break;
+}
+__lcl_fill_UnityEngineUIImage_0 = (Image)(Fills[__lcl_i_SystemInt32_0]);
+__intnl_SystemInt32_1 = FillModes[__lcl_i_SystemInt32_0];
+__intnl_SystemBoolean_3 = __intnl_SystemInt32_1 == __const_SystemInt32_1;
+if (__intnl_SystemBoolean_3)
+{
+__intnl_SystemString_0 = __lcl_currentTime_SystemDateTime_0.ToString(__const_SystemString_0);
+__intnl_SystemSingle_0 = Single.Parse(__intnl_SystemString_0);
+__intnl_SystemSingle_1 = __intnl_SystemSingle_0 / __const_SystemSingle_5;
+__lcl_fill_UnityEngineUIImage_0.fillAmount = __intnl_SystemSingle_1;
+}
+else
+{
+__intnl_SystemBoolean_4 = __intnl_SystemInt32_1 == __const_SystemInt32_3;
+if (__intnl_SystemBoolean_4)
+{
+__intnl_SystemInt32_2 = __lcl_currentTime_SystemDateTime_0.Minute;
+__intnl_SystemSingle_2 = Convert.ToSingle(__intnl_SystemInt32_2);
+__intnl_SystemSingle_3 = __intnl_SystemSingle_2 / __const_SystemSingle_3;
+__lcl_fill_UnityEngineUIImage_0.fillAmount = __intnl_SystemSingle_3;
+}
+else
+{
+__intnl_SystemBoolean_5 = __intnl_SystemInt32_1 == __const_SystemInt32_5;
+if (__intnl_SystemBoolean_5)
+{
+break;
+}
+__intnl_SystemInt32_3 = __lcl_currentTime_SystemDateTime_0.Second;
+__intnl_SystemSingle_4 = Convert.ToSingle(__intnl_SystemInt32_3);
+__intnl_SystemSingle_5 = __intnl_SystemSingle_4 / __const_SystemSingle_3;
+__lcl_fill_UnityEngineUIImage_0.fillAmount = __intnl_SystemSingle_5;
+}
+}
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_6;
+}
+__intnl_SystemBoolean_2 = Labels != __const_SystemObject_0;
+if (__intnl_SystemBoolean_2)
+{
+break;
+}
+__lcl_i_SystemInt32_0 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_0 = Labels.Length;
+__intnl_SystemBoolean_3 = __lcl_i_SystemInt32_0 < __intnl_SystemInt32_0;
+if (__intnl_SystemBoolean_3)
+{
+break;
+}
+__lcl_label_TMProTextMeshProUGUI_0 = (TextMeshProUGUI)(Labels[__lcl_i_SystemInt32_0]);
+__intnl_SystemInt32_1 = LabelModes[__lcl_i_SystemInt32_0];
+__intnl_SystemBoolean_4 = __intnl_SystemInt32_1 >= __const_SystemInt32_0;
+if (__intnl_SystemBoolean_4)
+{
+break;
+}
+__intnl_SystemBoolean_5 = __intnl_SystemInt32_1 <= __const_SystemInt32_7;
+if (__intnl_SystemBoolean_5)
+{
+break;
+}
+__intnl_SystemUInt32_0 = __gintnl_SystemUInt32Array_0[__intnl_SystemInt32_1];
+__intnl_SystemString_0 = __lcl_currentTime_SystemDateTime_0.ToString(__const_SystemString_0);
+__lcl_label_TMProTextMeshProUGUI_0.text = __intnl_SystemString_0;
+__intnl_SystemString_1 = __lcl_currentTime_SystemDateTime_0.ToString(__const_SystemString_1);
+__lcl_label_TMProTextMeshProUGUI_0.text = __intnl_SystemString_1;
+__intnl_SystemString_2 = __lcl_currentTime_SystemDateTime_0.ToString(__const_SystemString_2);
+__lcl_label_TMProTextMeshProUGUI_0.text = __intnl_SystemString_2;
+if (Use24HourTime)
+{
+__intnl_SystemString_3 = __lcl_currentTime_SystemDateTime_0.ToString(__const_SystemString_3);
+__lcl_label_TMProTextMeshProUGUI_0.text = __intnl_SystemString_3;
+}
+else
+{
+__intnl_SystemString_3 = __lcl_currentTime_SystemDateTime_0.ToString(__const_SystemString_4);
+__lcl_label_TMProTextMeshProUGUI_0.text = __intnl_SystemString_3;
+}
+if (Use24HourTime)
+{
+__intnl_SystemString_3 = __lcl_currentTime_SystemDateTime_0.ToString(__const_SystemString_5);
+__lcl_label_TMProTextMeshProUGUI_0.text = __intnl_SystemString_3;
+}
+else
+{
+__intnl_SystemString_3 = __lcl_currentTime_SystemDateTime_0.ToString(__const_SystemString_6);
+__lcl_label_TMProTextMeshProUGUI_0.text = __intnl_SystemString_3;
+}
+__intnl_SystemString_3 = __lcl_currentTime_SystemDateTime_0.ToString(__const_SystemString_7);
+__lcl_label_TMProTextMeshProUGUI_0.text = __intnl_SystemString_3;
+__intnl_SystemString_4 = __lcl_currentTime_SystemDateTime_0.ToString(__const_SystemString_8);
+__lcl_label_TMProTextMeshProUGUI_0.text = __intnl_SystemString_4;
+__intnl_SystemString_5 = __lcl_currentTime_SystemDateTime_0.ToString(__const_SystemString_9);
+__lcl_label_TMProTextMeshProUGUI_0.text = __intnl_SystemString_5;
+__intnl_SystemString_6 = __lcl_currentTime_SystemDateTime_0.ToString(__const_SystemString_10);
+__lcl_label_TMProTextMeshProUGUI_0.text = __intnl_SystemString_6;
+__intnl_SystemString_7 = __lcl_currentTime_SystemDateTime_0.ToString(__const_SystemString_11);
+__lcl_label_TMProTextMeshProUGUI_0.text = __intnl_SystemString_7;
+__intnl_SystemString_8 = __lcl_currentTime_SystemDateTime_0.ToString(__const_SystemString_12);
+__lcl_label_TMProTextMeshProUGUI_0.text = __intnl_SystemString_8;
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_6;
+}
+__this_VRCUdonUdonBehaviour_0.SendCustomEventDelayedSeconds(__const_SystemString_13, __const_SystemSingle_6, __const_VRCUdonCommonEnumsEventTiming_0);
+}
+}

@@ -1,0 +1,383 @@
+using System;
+using VRC.SDKBase;
+using VRC.Udon;
+using UnityEngine;
+using TMPro;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Boolean __intnl_SystemBoolean_13 = false;
+private Boolean __lcl_shouldSilence_SystemBoolean_0 = false;
+private String __0_newZoneID__param = null;
+private String __intnl_SystemString_1 = null;
+private VRCPlayerApi __lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0 = null;
+public UdonBehaviour zonePopupAnimator;
+private object __intnl_SystemObject_0 = null;
+private String __const_SystemString_0 = "open_sea";
+private Boolean __intnl_SystemBoolean_16 = false;
+private UInt32 __gintnl_SystemUInt32_5 = 1980;
+private UInt32 __gintnl_SystemUInt32_4 = 1748;
+private UInt32 __gintnl_SystemUInt32_6 = 2168;
+private UInt32 __gintnl_SystemUInt32_1 = 488;
+private UInt32 __gintnl_SystemUInt32_0 = 260;
+private UInt32 __gintnl_SystemUInt32_3 = 1576;
+private UInt32 __gintnl_SystemUInt32_2 = 1512;
+private Boolean __const_SystemBoolean_0 = true;
+private Boolean __const_SystemBoolean_1 = false;
+private Object __intnl_UnityEngineObject_11 = null;
+private Boolean isMusicSilencedByZone = false;
+private String __const_SystemString_5 = "GetPriority";
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+public Component[] allZones;
+private String __0_GetCurrentZoneID__ret = null;
+private String __const_SystemString_16 = "ResumeFromForcedSilence";
+private String __const_SystemString_14 = "__0_ShouldSilenceDynamicMusic__ret";
+private String __const_SystemString_15 = "ForceSilence";
+private String __const_SystemString_12 = "TriggerZoneAnimation";
+private String __const_SystemString_13 = "ShouldSilenceDynamicMusic";
+private String __const_SystemString_10 = "__0_GetZoneName__ret";
+private String __const_SystemString_11 = "currentZoneName";
+private String currentZoneID = "open_sea";
+private Int64 __refl_typeid = -4045030615638945229;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_2 = null;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Boolean __intnl_SystemBoolean_11 = false;
+public Boolean enableDebugLogs;
+private UdonBehaviour __lcl_newZone_VRCUdonUdonBehaviour_0 = null;
+private object __intnl_SystemObject_2 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_1 = null;
+private String __const_SystemString_2 = "__0_position__param";
+private String __lcl_previousZoneName_SystemString_0 = null;
+private Vector3 __intnl_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Boolean __intnl_SystemBoolean_14 = false;
+private object __const_SystemObject_0 = null;
+private String __intnl_SystemString_0 = null;
+private Int32 __lcl_highestPriority_SystemInt32_0 = 0;
+private object __intnl_SystemObject_1 = null;
+private String __const_SystemString_7 = "GetZoneID";
+private Boolean __intnl_SystemBoolean_17 = false;
+private String currentZoneName = "Open Sea";
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_4 = null;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private String __const_SystemString_4 = "__0___0_IsPositionInZone__ret";
+private String __0_GetCurrentZoneName__ret = null;
+private Int32 __lcl_i_SystemInt32_1 = 0;
+private Int32 __lcl_i_SystemInt32_0 = 0;
+public TextMeshProUGUI zoneDisplayText;
+private Int32 __lcl_priority_SystemInt32_0 = 0;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_3 = null;
+private String __1_zoneID__param = null;
+private String __const_SystemString_9 = "GetZoneName";
+private Boolean __intnl_SystemBoolean_12 = false;
+private UdonBehaviour __lcl_bestZone_VRCUdonUdonBehaviour_0 = null;
+private String __refl_typename = "AmbientZoneManager";
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Int32 __intnl_SystemInt32_4 = 0;
+private String __intnl_SystemString_2 = null;
+private object __intnl_SystemObject_3 = null;
+private String __const_SystemString_1 = "Open Sea";
+private Vector3 __intnl_UnityEngineVector3_1 = new Vector3(0f, 0f, 0f);
+private Boolean __intnl_SystemBoolean_15 = false;
+private Object __intnl_UnityEngineObject_10 = null;
+private UdonBehaviour __0___0_GetZoneByID__ret = null;
+private String __const_SystemString_6 = "__0_GetPriority__ret";
+private String __0_zoneName__param = null;
+public UdonBehaviour dynamicMusicSystem;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_5 = null;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Int32 __const_SystemInt32_1 = -1;
+private Int32 __const_SystemInt32_0 = 0;
+private Int32 __const_SystemInt32_2 = 1;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private String __0_zoneID__param = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_0 = null;
+private Vector3 __0_playerPosition__param = new Vector3(0f, 0f, 0f);
+private String __const_SystemString_3 = "__0_IsPositionInZone";
+private String __const_SystemString_8 = "__0_GetZoneID__ret";
+public Boolean showZoneChangePopup;
+
+
+public void _start()
+{
+__intnl_SystemBoolean_0 = allZones == __const_SystemObject_0;
+if (__intnl_SystemBoolean_0)
+{
+}
+else
+{
+__intnl_SystemInt32_0 = allZones.Length;
+__intnl_SystemBoolean_0 = __intnl_SystemInt32_0 == __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_0)
+{
+}
+__lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0 = Networking.LocalPlayer;
+__intnl_SystemBoolean_1 = __lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0 != __const_SystemObject_0;
+if (__intnl_SystemBoolean_1)
+{
+__intnl_UnityEngineVector3_0 = __lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0.GetPosition();
+__0_playerPosition__param = __intnl_UnityEngineVector3_0;
+__0_ReevaluateCurrentZone();
+}
+if (enableDebugLogs)
+{
+}
+}
+public void __0_ReevaluateCurrentZone()
+{
+__intnl_SystemBoolean_2 = allZones == __const_SystemObject_0;
+if (__intnl_SystemBoolean_2)
+{
+}
+else
+{
+__intnl_SystemInt32_1 = allZones.Length;
+__intnl_SystemBoolean_2 = __intnl_SystemInt32_1 == __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_2)
+{
+__0_zoneID__param = __const_SystemString_0;
+__0_zoneName__param = __const_SystemString_1;
+__0_SetCurrentZone();
+return;
+}
+__lcl_bestZone_VRCUdonUdonBehaviour_0 = (UdonBehaviour)__const_SystemObject_0;
+__lcl_highestPriority_SystemInt32_0 = __const_SystemInt32_1;
+__lcl_i_SystemInt32_0 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_2 = allZones.Length;
+__intnl_SystemBoolean_3 = __lcl_i_SystemInt32_0 < __intnl_SystemInt32_2;
+if (__intnl_SystemBoolean_3)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(allZones[__lcl_i_SystemInt32_0]);
+__intnl_UnityEngineObject_0 = __intnl_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_4 = __intnl_UnityEngineObject_0 == __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_4)
+{
+}
+else
+{
+__intnl_VRCUdonUdonBehaviour_1 = (UdonBehaviour)(allZones[__lcl_i_SystemInt32_0]);
+__intnl_UnityEngineVector3_1 = __0_playerPosition__param;
+__intnl_VRCUdonUdonBehaviour_1.SetProgramVariable(__const_SystemString_2, __0_playerPosition__param);
+__intnl_VRCUdonUdonBehaviour_1.SendCustomEvent(__const_SystemString_3);
+__intnl_SystemObject_0 = __intnl_VRCUdonUdonBehaviour_1.GetProgramVariable(__const_SystemString_4);
+__intnl_SystemBoolean_5 = (Boolean)__intnl_SystemObject_0;
+if (__intnl_SystemBoolean_5)
+{
+__intnl_VRCUdonUdonBehaviour_2 = (UdonBehaviour)(allZones[__lcl_i_SystemInt32_0]);
+__intnl_VRCUdonUdonBehaviour_2.SendCustomEvent(__const_SystemString_5);
+__intnl_SystemObject_1 = __intnl_VRCUdonUdonBehaviour_2.GetProgramVariable(__const_SystemString_6);
+__intnl_SystemInt32_3 = Convert.ToInt32(__intnl_SystemObject_1);
+__lcl_priority_SystemInt32_0 = __intnl_SystemInt32_3;
+__intnl_SystemBoolean_6 = __lcl_priority_SystemInt32_0 > __lcl_highestPriority_SystemInt32_0;
+if (__intnl_SystemBoolean_6)
+{
+__lcl_highestPriority_SystemInt32_0 = __lcl_priority_SystemInt32_0;
+__lcl_bestZone_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(allZones[__lcl_i_SystemInt32_0]);
+}
+}
+}
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_2;
+}
+__intnl_UnityEngineObject_0 = __lcl_bestZone_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_3 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_3)
+{
+__lcl_bestZone_VRCUdonUdonBehaviour_0.SendCustomEvent(__const_SystemString_7);
+__intnl_SystemObject_0 = __lcl_bestZone_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_8);
+__intnl_SystemString_0 = (String)__intnl_SystemObject_0;
+__lcl_bestZone_VRCUdonUdonBehaviour_0.SendCustomEvent(__const_SystemString_9);
+__intnl_SystemObject_1 = __lcl_bestZone_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_10);
+__intnl_SystemString_1 = (String)__intnl_SystemObject_1;
+__0_zoneID__param = __intnl_SystemString_0;
+__0_zoneName__param = __intnl_SystemString_1;
+__0_SetCurrentZone();
+}
+else
+{
+__0_zoneID__param = __const_SystemString_0;
+__0_zoneName__param = __const_SystemString_1;
+__0_SetCurrentZone();
+}
+}
+public void __0_SetCurrentZone()
+{
+__intnl_SystemBoolean_7 = __0_zoneID__param == currentZoneID;
+if (__intnl_SystemBoolean_7)
+{
+return;
+}
+__lcl_previousZoneName_SystemString_0 = currentZoneName;
+currentZoneID = __0_zoneID__param;
+currentZoneName = __0_zoneName__param;
+UNDEF_760e9_2872();
+__intnl_SystemBoolean_8 = showZoneChangePopup;
+if (__intnl_SystemBoolean_8)
+{
+__intnl_UnityEngineObject_2 = zonePopupAnimator;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_8 = __intnl_UnityEngineObject_2 != __intnl_UnityEngineObject_3;
+}
+if (__intnl_SystemBoolean_8)
+{
+zonePopupAnimator.SetProgramVariable(__const_SystemString_11, __0_zoneName__param);
+zonePopupAnimator.SendCustomEvent(__const_SystemString_12);
+if (enableDebugLogs)
+{
+}
+}
+__0_newZoneID__param = __0_zoneID__param;
+UNDEF_760e9_2732();
+if (enableDebugLogs)
+{
+}
+}
+private void UNDEF_760e9_2732()
+{
+__intnl_UnityEngineObject_4 = dynamicMusicSystem;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_9 = __intnl_UnityEngineObject_4 == __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_9)
+{
+return;
+}
+__1_zoneID__param = __0_newZoneID__param;
+__0_GetZoneByID();
+__lcl_newZone_VRCUdonUdonBehaviour_0 = __0___0_GetZoneByID__ret;
+__intnl_UnityEngineObject_6 = __lcl_newZone_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_10 = __intnl_UnityEngineObject_6 != __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_10)
+{
+__lcl_newZone_VRCUdonUdonBehaviour_0.SendCustomEvent(__const_SystemString_13);
+__intnl_SystemObject_2 = __lcl_newZone_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_14);
+__intnl_SystemBoolean_11 = (Boolean)__intnl_SystemObject_2;
+__intnl_SystemBoolean_10 = __intnl_SystemBoolean_11;
+}
+__lcl_shouldSilence_SystemBoolean_0 = __intnl_SystemBoolean_10;
+__intnl_SystemBoolean_12 = __lcl_shouldSilence_SystemBoolean_0;
+if (__intnl_SystemBoolean_12)
+{
+__intnl_SystemBoolean_12 = !isMusicSilencedByZone;
+}
+if (__intnl_SystemBoolean_12)
+{
+isMusicSilencedByZone = __const_SystemBoolean_0;
+__intnl_VRCUdonUdonBehaviour_3 = dynamicMusicSystem;
+dynamicMusicSystem.SendCustomEvent(__const_SystemString_15);
+if (enableDebugLogs)
+{
+}
+}
+else
+{
+__intnl_SystemBoolean_13 = !__lcl_shouldSilence_SystemBoolean_0;
+if (__intnl_SystemBoolean_13)
+{
+__intnl_SystemBoolean_13 = isMusicSilencedByZone;
+}
+if (__intnl_SystemBoolean_13)
+{
+isMusicSilencedByZone = __const_SystemBoolean_1;
+__intnl_VRCUdonUdonBehaviour_3 = dynamicMusicSystem;
+dynamicMusicSystem.SendCustomEvent(__const_SystemString_16);
+if (enableDebugLogs)
+{
+}
+}
+}
+}
+private void UNDEF_760e9_2872()
+{
+__intnl_UnityEngineObject_8 = zoneDisplayText;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_14 = __intnl_UnityEngineObject_8 != __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_14)
+{
+zoneDisplayText.text = currentZoneName;
+}
+}
+public void GetCurrentZoneID()
+{
+__0_GetCurrentZoneID__ret = currentZoneID;
+return;
+}
+public void GetCurrentZoneName()
+{
+__0_GetCurrentZoneName__ret = currentZoneName;
+return;
+}
+public void __0_GetZoneByID()
+{
+__intnl_SystemBoolean_15 = allZones == __const_SystemObject_0;
+if (__intnl_SystemBoolean_15)
+{
+}
+else
+{
+__intnl_SystemBoolean_15 = String.IsNullOrEmpty(__1_zoneID__param);
+}
+if (__intnl_SystemBoolean_15)
+{
+__0___0_GetZoneByID__ret = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+__lcl_i_SystemInt32_1 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_4 = allZones.Length;
+__intnl_SystemBoolean_16 = __lcl_i_SystemInt32_1 < __intnl_SystemInt32_4;
+if (__intnl_SystemBoolean_16)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_4 = (UdonBehaviour)(allZones[__lcl_i_SystemInt32_1]);
+__intnl_UnityEngineObject_10 = __intnl_VRCUdonUdonBehaviour_4;
+__intnl_UnityEngineObject_11 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_17 = __intnl_UnityEngineObject_10 != __intnl_UnityEngineObject_11;
+if (__intnl_SystemBoolean_17)
+{
+__intnl_VRCUdonUdonBehaviour_5 = (UdonBehaviour)(allZones[__lcl_i_SystemInt32_1]);
+__intnl_VRCUdonUdonBehaviour_5.SendCustomEvent(__const_SystemString_7);
+__intnl_SystemObject_3 = __intnl_VRCUdonUdonBehaviour_5.GetProgramVariable(__const_SystemString_8);
+__intnl_SystemString_2 = (String)__intnl_SystemObject_3;
+__intnl_SystemBoolean_17 = __intnl_SystemString_2 == __1_zoneID__param;
+}
+if (__intnl_SystemBoolean_17)
+{
+__0___0_GetZoneByID__ret = (UdonBehaviour)(allZones[__lcl_i_SystemInt32_1]);
+return;
+}
+__lcl_i_SystemInt32_1 = __lcl_i_SystemInt32_1 + __const_SystemInt32_2;
+}
+__0___0_GetZoneByID__ret = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+}

@@ -1,0 +1,32 @@
+using UnityEngine;
+using System;
+using VRC.Udon;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Int64 __refl_typeid = -5086014100027296906;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+public String eventName;
+public UdonBehaviour targetBehaviour;
+private object __const_SystemObject_0 = null;
+private String __intnl_SystemString_0 = null;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private String __refl_typename = "InteractEvent";
+private Boolean __intnl_SystemBoolean_0 = false;
+
+
+public void _interact()
+{
+__intnl_UnityEngineObject_0 = targetBehaviour;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_0 == __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_0)
+{
+return;
+}
+__intnl_SystemString_0 = eventName;
+targetBehaviour.SendCustomEvent(eventName);
+}
+}

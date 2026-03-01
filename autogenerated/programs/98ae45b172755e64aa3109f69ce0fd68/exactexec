@@ -1,0 +1,64 @@
+using System;
+using UnityEngine;
+using VRC.Udon;
+using UnityEngine.UI;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private String __const_SystemString_0 = "__2_index__param";
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Int64 __refl_typeid = -8100672611354745019;
+public Boolean isPurchaseMode;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private String __const_SystemString_2 = "__3_index__param";
+private object __const_SystemObject_0 = null;
+private Type __const_SystemType_0 = typeof(Button);
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private String __refl_typename = "BoatSlotHandler";
+public Int32 boatIndex;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Transform __this_UnityEngineTransform_0 = this;
+private String __const_SystemString_1 = "__0_OnPurchaseBoatSlotClicked";
+public UdonBehaviour shopUI;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Button button = null;
+private String __const_SystemString_3 = "__0_OnOwnedBoatSlotClicked";
+
+
+public void _start()
+{
+button = (Button)(__this_UnityEngineTransform_0.GetComponent(__const_SystemType_0));
+__intnl_UnityEngineObject_0 = button;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_0)
+{
+}
+}
+public void OnSlotClick()
+{
+__intnl_UnityEngineObject_2 = shopUI;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_2 == __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_1)
+{
+return;
+}
+if (isPurchaseMode)
+{
+__intnl_SystemInt32_0 = boatIndex;
+shopUI.SetProgramVariable(__const_SystemString_0, boatIndex);
+shopUI.SendCustomEvent(__const_SystemString_1);
+}
+else
+{
+__intnl_SystemInt32_0 = boatIndex;
+shopUI.SetProgramVariable(__const_SystemString_2, boatIndex);
+shopUI.SendCustomEvent(__const_SystemString_3);
+}
+}
+}

@@ -1,0 +1,42 @@
+using System;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private String __const_SystemString_0 = "grp_";
+private UInt32 __gintnl_SystemUInt32_0 = 24;
+private Int64 __refl_typeid = -2749261270067826392;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+public String groupId;
+public Boolean openToStorePage;
+private String __refl_typename = "OpenGroupPageButton";
+private Boolean __intnl_SystemBoolean_0 = false;
+
+
+public void _interact()
+{
+OpenGroup();
+}
+public void OpenGroup()
+{
+__intnl_SystemBoolean_0 = String.IsNullOrEmpty(groupId);
+if (__intnl_SystemBoolean_0)
+{
+}
+else
+{
+__intnl_SystemBoolean_0 = groupId == __const_SystemString_0;
+}
+if (__intnl_SystemBoolean_0)
+{
+return;
+}
+if (openToStorePage)
+{
+Store.OpenGroupStorePage(groupId);
+}
+else
+{
+Store.OpenGroupPage(groupId);
+}
+}
+}

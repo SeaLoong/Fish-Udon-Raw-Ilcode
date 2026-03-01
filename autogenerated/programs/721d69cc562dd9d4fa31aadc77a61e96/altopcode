@@ -1,0 +1,177 @@
+void _start()
+48 if (__intnl_SystemBoolean_0) //64
+{
+56 JUMP 120
+}
+128 if (__intnl_SystemBoolean_0) //192
+{
+targetObjects = 1.ctor();// 152
+G_targetObjects.Set(__this_UnityEngineGameObject_0, __const_SystemInt32_0);// 184
+}
+__lcl_count_SystemInt32_0 = G_targetObjects.get_Length();// 208
+originalScales = L_count.ctor();// 232
+animationTimers = L_count.ctor();// 256
+isAnimatingIn = L_count.ctor();// 280
+isAnimating = L_count.ctor();// 304
+currentScales = L_count.ctor();// 328
+352 __lcl_i_SystemInt32_0 = __const_SystemInt32_0
+396 if (__intnl_SystemBoolean_1) //788
+{
+452 __intnl_UnityEngineObject_0 = __intnl_UnityEngineGameObject_0
+472 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+516 if (__intnl_SystemBoolean_2) //748
+{
+G_originalScales.Set(__intnl_UnityEngineVector3_0, __lcl_i_SystemInt32_0);// 628
+G_targetObjects.Get(__lcl_i_SystemInt32_0).get_transform().set_localScale(__const_UnityEngineVector3_0);// 708
+G_currentScales.Set(__const_SystemSingle_0, __lcl_i_SystemInt32_0);// 740
+}
+__lcl_i_SystemInt32_0 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_0);// 772
+780 JUMP 356
+}
+nextUpdateTime = get_time();// 796
+816 return;
+void _update()
+840 JUMP 2128
+904 if (__intnl_SystemBoolean_3) //932
+{
+924 return;
+}
+nextUpdateTime = op_Addition(updateInterval, __intnl_SystemSingle_1);// 972
+1020 if (__intnl_SystemBoolean_4) //1112
+{
+localPlayer = get_LocalPlayer();// 1036
+1084 if (__intnl_SystemBoolean_5) //1112
+{
+1104 return;
+}
+}
+__lcl_distance_SystemSingle_0 = Distance(__intnl_UnityEngineVector3_2, __intnl_UnityEngineVector3_1);// 1184
+__lcl_shouldBeInRange_SystemBoolean_0 = op_LessThanOrEqual(maxDistance, __lcl_distance_SystemSingle_0);// 1216
+1264 if (__intnl_SystemBoolean_5) //1348
+{
+1288 isInRange = __lcl_shouldBeInRange_SystemBoolean_0
+1300 if (isInRange) //1332
+{
+1316 JUMP 1376
+1324 JUMP 1348
+}
+1340 JUMP 1752
+}
+1360 return;
+1392 __lcl_i_SystemInt32_1 = __const_SystemInt32_0
+1460 if (__intnl_SystemBoolean_6) //1724
+{
+1516 __intnl_UnityEngineObject_2 = __intnl_UnityEngineGameObject_3
+1536 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+1580 if (__intnl_SystemBoolean_7) //1684
+{
+G_animationTimers.Set(__const_SystemSingle_0, __lcl_i_SystemInt32_1);// 1612
+G_isAnimatingIn.Set(__const_SystemBoolean_0, __lcl_i_SystemInt32_1);// 1644
+G_isAnimating.Set(__const_SystemBoolean_0, __lcl_i_SystemInt32_1);// 1676
+}
+__lcl_i_SystemInt32_1 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_1);// 1708
+1716 JUMP 1396
+}
+1736 return;
+1768 __lcl_i_SystemInt32_2 = __const_SystemInt32_0
+1836 if (__intnl_SystemBoolean_8) //2100
+{
+1892 __intnl_UnityEngineObject_4 = __intnl_UnityEngineGameObject_4
+1912 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+1956 if (__intnl_SystemBoolean_9) //2060
+{
+G_animationTimers.Set(__const_SystemSingle_0, __lcl_i_SystemInt32_2);// 1988
+G_isAnimatingIn.Set(__const_SystemBoolean_1, __lcl_i_SystemInt32_2);// 2020
+G_isAnimating.Set(__const_SystemBoolean_0, __lcl_i_SystemInt32_2);// 2052
+}
+__lcl_i_SystemInt32_2 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_2);// 2084
+2092 JUMP 1772
+}
+2112 return;
+__lcl_deltaTime_SystemSingle_0 = get_deltaTime();// 2136
+2160 __lcl_i_SystemInt32_3 = __const_SystemInt32_0
+2228 if (__intnl_SystemBoolean_10) //3468
+{
+2300 if (__intnl_SystemBoolean_11) //2316
+{
+2308 JUMP 2420
+}
+2364 __intnl_UnityEngineObject_6 = __intnl_UnityEngineGameObject_5
+2384 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+2428 if (__intnl_SystemBoolean_11) //2444
+{
+2436 JUMP 3428
+}
+G_animationTimers.Set(__intnl_SystemSingle_3, __lcl_i_SystemInt32_3);// 2532
+__lcl_t_SystemSingle_0 = Clamp01(__intnl_SystemSingle_5);// 2620
+2668 if (__intnl_SystemBoolean_13) //2772
+{
+2700 __0_t__param = __lcl_t_SystemSingle_0
+2720 __intnl_SystemSingleArray_0 = currentScales
+2724 JUMP 3496
+G_currentScales.Set(__0___0_EvaluatePopIn__ret, __lcl_i_SystemInt32_3);// 2756
+2764 JUMP 2860
+}
+2796 __1_t__param = __lcl_t_SystemSingle_0
+2816 __intnl_SystemSingleArray_0 = currentScales
+2820 JUMP 4164
+G_currentScales.Set(__0___0_EvaluatePopOut__ret, __lcl_i_SystemInt32_3);// 2852
+G_targetObjects.Get(__lcl_i_SystemInt32_3).get_transform().set_localScale(__intnl_UnityEngineVector3_4);// 3028
+3076 if (__intnl_SystemBoolean_14) //3428
+{
+G_isAnimating.Set(__const_SystemBoolean_1, __lcl_i_SystemInt32_3);// 3108
+3156 if (__intnl_SystemBoolean_15) //3316
+{
+G_currentScales.Set(__const_SystemSingle_1, __lcl_i_SystemInt32_3);// 3188
+G_targetObjects.Get(__lcl_i_SystemInt32_3).get_transform().set_localScale(__intnl_UnityEngineVector3_5);// 3300
+3308 JUMP 3428
+}
+G_targetObjects.Get(__lcl_i_SystemInt32_3).get_transform().set_localScale(__const_UnityEngineVector3_0);// 3388
+G_currentScales.Set(__const_SystemSingle_0, __lcl_i_SystemInt32_3);// 3420
+}
+__lcl_i_SystemInt32_3 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_3);// 3452
+3460 JUMP 2164
+}
+3480 return;
+3536 if (__intnl_SystemBoolean_16) //3828
+{
+__lcl_localT_SystemSingle_0 = op_Division(__const_SystemSingle_2, __0_t__param);// 3568
+__lcl_eased_SystemSingle_0 = op_Subtraction(__intnl_SystemSingle_11, __const_SystemSingle_1);// 3760
+__0___0_EvaluatePopIn__ret = op_Multiplication(overshootAmount, __lcl_eased_SystemSingle_0);// 3792
+3812 return;
+3820 JUMP 4136
+}
+__lcl_localT_SystemSingle_0 = op_Division(__const_SystemSingle_3, __intnl_SystemSingle_7);// 3884
+__lcl_eased_SystemSingle_0 = op_Multiplication(__intnl_SystemSingle_10, __intnl_SystemSingle_8);// 4012
+__0___0_EvaluatePopIn__ret = op_Subtraction(__intnl_SystemSingle_12, overshootAmount);// 4108
+4128 return;
+4148 return;
+4204 if (__intnl_SystemBoolean_17) //4496
+{
+__lcl_localT_SystemSingle_1 = op_Division(__const_SystemSingle_6, __1_t__param);// 4236
+__lcl_eased_SystemSingle_1 = op_Subtraction(__intnl_SystemSingle_15, __const_SystemSingle_1);// 4364
+__0___0_EvaluatePopOut__ret = op_Addition(__intnl_SystemSingle_17, __const_SystemSingle_1);// 4460
+4480 return;
+4488 JUMP 4708
+}
+__lcl_localT_SystemSingle_1 = op_Division(__const_SystemSingle_7, __intnl_SystemSingle_13);// 4552
+__lcl_eased_SystemSingle_1 = op_Multiplication(__lcl_localT_SystemSingle_1, __intnl_SystemSingle_14);// 4616
+__0___0_EvaluatePopOut__ret = op_Multiplication(__intnl_SystemSingle_15, overshootAmount);// 4680
+4700 return;
+4720 return;
+4744 if (showGizmo) //4760
+{
+4752 JUMP 4780
+}
+4772 return;
+set_color(gizmoColor);// 4788
+DrawWireSphere(maxDistance, __intnl_UnityEngineVector3_6);// 4836
+4856 return;
+4880 if (showGizmo) //4896
+{
+4888 JUMP 4916
+}
+4908 return;
+set_color(__intnl_UnityEngineColor_0);// 5044
+DrawWireSphere(maxDistance, __intnl_UnityEngineVector3_7);// 5092
+5112 return;

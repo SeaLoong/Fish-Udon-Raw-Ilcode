@@ -1,0 +1,342 @@
+void _start
+0 PUSH UInt32 __const_SystemUInt32_0
+8 PUSH Transform __this_UnityEngineTransform_0
+16 PUSH Type __const_SystemType_0
+24 PUSH LineRenderer lineRenderer
+32 EXTERN UnityEngineComponent.__GetComponent__T
+40 PUSH LineRenderer lineRenderer
+48 PUSH Int32 curvePoints
+56 EXTERN UnityEngineLineRenderer.__set_positionCount__SystemInt32__SystemVoid
+64 PUSH LineRenderer lineRenderer
+72 PUSH Boolean useWorldSpace
+80 EXTERN UnityEngineLineRenderer.__set_useWorldSpace__SystemBoolean__SystemVoid
+88 PUSH VRCPlayerApi localPlayer
+96 EXTERN VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi
+104 PUSH Single curveAmount
+112 PUSH Single targetCurveAmount
+120 COPY
+124 PUSH Int32 curvePoints
+132 PUSH Vector3[] pointsArray
+140 EXTERN UnityEngineVector3Array.__ctor__SystemInt32__UnityEngineVector3Array
+148 PUSH Int32 curvePoints
+156 PUSH Single[] tValues
+164 EXTERN SystemSingleArray.__ctor__SystemInt32__SystemSingleArray
+172 PUSH Int32 curvePoints
+180 PUSH Single[] sinValues
+188 EXTERN SystemSingleArray.__ctor__SystemInt32__SystemSingleArray
+196 PUSH Int32 __const_SystemInt32_0
+204 PUSH Int32 __lcl_i_SystemInt32_0
+212 COPY
+216 PUSH Int32 __lcl_i_SystemInt32_0
+224 PUSH Int32 curvePoints
+232 PUSH Boolean __intnl_SystemBoolean_0
+240 EXTERN SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean
+248 PUSH Boolean __intnl_SystemBoolean_0
+256 JUMP_IF_FALSE 568
+264 PUSH Int32 __lcl_i_SystemInt32_0
+272 PUSH Single __intnl_SystemSingle_0
+280 EXTERN SystemConvert.__ToSingle__SystemInt32__SystemSingle
+288 PUSH Int32 curvePoints
+296 PUSH Int32 __const_SystemInt32_1
+304 PUSH Int32 __intnl_SystemInt32_0
+312 EXTERN SystemInt32.__op_Subtraction__SystemInt32_SystemInt32__SystemInt32
+320 PUSH Int32 __intnl_SystemInt32_0
+328 PUSH Single __intnl_SystemSingle_1
+336 EXTERN SystemConvert.__ToSingle__SystemInt32__SystemSingle
+344 PUSH Single __intnl_SystemSingle_0
+352 PUSH Single __intnl_SystemSingle_1
+360 PUSH Single __intnl_SystemSingle_2
+368 EXTERN SystemSingle.__op_Division__SystemSingle_SystemSingle__SystemSingle
+376 PUSH Single[] tValues
+384 PUSH Int32 __lcl_i_SystemInt32_0
+392 PUSH Single __intnl_SystemSingle_2
+400 EXTERN SystemSingleArray.__Set__SystemInt32_SystemSingle__SystemVoid
+408 PUSH Single[] tValues
+416 PUSH Int32 __lcl_i_SystemInt32_0
+424 PUSH Single __intnl_SystemSingle_3
+432 EXTERN SystemSingleArray.__Get__SystemInt32__SystemSingle
+440 PUSH Single __intnl_SystemSingle_3
+448 PUSH Single __const_SystemSingle_0
+456 PUSH Single __intnl_SystemSingle_4
+464 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+472 PUSH Single __intnl_SystemSingle_4
+480 PUSH Single __intnl_SystemSingle_5
+488 EXTERN UnityEngineMathf.__Sin__SystemSingle__SystemSingle
+496 PUSH Single[] sinValues
+504 PUSH Int32 __lcl_i_SystemInt32_0
+512 PUSH Single __intnl_SystemSingle_5
+520 EXTERN SystemSingleArray.__Set__SystemInt32_SystemSingle__SystemVoid
+528 PUSH Int32 __lcl_i_SystemInt32_0
+536 PUSH Int32 __const_SystemInt32_1
+544 PUSH Int32 __lcl_i_SystemInt32_0
+552 EXTERN SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32
+560 JUMP 216
+568 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+576 COPY
+580 JUMP_INDIRECT 2
+void _update
+588 PUSH UInt32 __const_SystemUInt32_0
+596 PUSH Transform startPoint
+604 PUSH Object __intnl_UnityEngineObject_0
+612 COPY
+616 PUSH object __const_SystemObject_0
+624 PUSH Object __intnl_UnityEngineObject_1
+632 COPY
+636 PUSH Object __intnl_UnityEngineObject_0
+644 PUSH Object __intnl_UnityEngineObject_1
+652 PUSH Boolean __intnl_SystemBoolean_2
+660 EXTERN UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean
+668 PUSH Boolean __intnl_SystemBoolean_2
+676 JUMP_IF_FALSE 692
+684 JUMP 764
+692 PUSH Transform endPoint
+700 PUSH Object __intnl_UnityEngineObject_2
+708 COPY
+712 PUSH object __const_SystemObject_0
+720 PUSH Object __intnl_UnityEngineObject_3
+728 COPY
+732 PUSH Object __intnl_UnityEngineObject_2
+740 PUSH Object __intnl_UnityEngineObject_3
+748 PUSH Boolean __intnl_SystemBoolean_2
+756 EXTERN UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean
+764 PUSH Boolean __intnl_SystemBoolean_2
+772 PUSH Boolean __intnl_SystemBoolean_1
+780 COPY
+784 PUSH Boolean __intnl_SystemBoolean_1
+792 JUMP_IF_FALSE 808
+800 JUMP 840
+808 PUSH VRCPlayerApi localPlayer
+816 PUSH object __const_SystemObject_0
+824 PUSH Boolean __intnl_SystemBoolean_1
+832 EXTERN SystemObject.__op_Equality__SystemObject_SystemObject__SystemBoolean
+840 PUSH Boolean __intnl_SystemBoolean_1
+848 JUMP_IF_FALSE 876
+856 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+864 COPY
+868 JUMP_INDIRECT 2
+876 PUSH Int32 distanceCheckCounter
+884 PUSH Int32 __const_SystemInt32_1
+892 PUSH Int32 distanceCheckCounter
+900 EXTERN SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32
+908 PUSH Int32 distanceCheckCounter
+916 PUSH Int32 __const_SystemInt32_2
+924 PUSH Boolean __intnl_SystemBoolean_3
+932 EXTERN SystemInt32.__op_GreaterThanOrEqual__SystemInt32_SystemInt32__SystemBoolean
+940 PUSH Boolean __intnl_SystemBoolean_3
+948 JUMP_IF_FALSE 992
+956 PUSH Int32 __const_SystemInt32_0
+964 PUSH Int32 distanceCheckCounter
+972 COPY
+976 PUSH UInt32 __gintnl_SystemUInt32_0
+984 JUMP 1848
+992 PUSH Int32 updateInterval
+1000 PUSH Int32 __const_SystemInt32_0
+1008 PUSH Boolean __intnl_SystemBoolean_4
+1016 EXTERN SystemInt32.__op_LessThanOrEqual__SystemInt32_SystemInt32__SystemBoolean
+1024 PUSH Boolean __intnl_SystemBoolean_4
+1032 JUMP_IF_FALSE 1060
+1040 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1048 COPY
+1052 JUMP_INDIRECT 2
+1060 PUSH Single curveAmount
+1068 PUSH Single targetCurveAmount
+1076 PUSH Single __intnl_SystemSingle_6
+1084 EXTERN SystemSingle.__op_Subtraction__SystemSingle_SystemSingle__SystemSingle
+1092 PUSH Single __intnl_SystemSingle_6
+1100 PUSH Single __intnl_SystemSingle_7
+1108 EXTERN UnityEngineMathf.__Abs__SystemSingle__SystemSingle
+1116 PUSH Single __intnl_SystemSingle_7
+1124 PUSH Single __const_SystemSingle_1
+1132 PUSH Boolean __intnl_SystemBoolean_5
+1140 EXTERN SystemSingle.__op_GreaterThan__SystemSingle_SystemSingle__SystemBoolean
+1148 PUSH Boolean __intnl_SystemBoolean_5
+1156 JUMP_IF_FALSE 1252
+1164 PUSH Single __intnl_SystemSingle_8
+1172 EXTERN UnityEngineTime.__get_deltaTime__SystemSingle
+1180 PUSH Single __intnl_SystemSingle_8
+1188 PUSH Single curveLerpSpeed
+1196 PUSH Single __intnl_SystemSingle_9
+1204 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+1212 PUSH Single curveAmount
+1220 PUSH Single targetCurveAmount
+1228 PUSH Single __intnl_SystemSingle_9
+1236 PUSH Single curveAmount
+1244 EXTERN UnityEngineMathf.__Lerp__SystemSingle_SystemSingle_SystemSingle__SystemSingle
+1252 PUSH Int32 frameCounter
+1260 PUSH Int32 __const_SystemInt32_1
+1268 PUSH Int32 frameCounter
+1276 EXTERN SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32
+1284 PUSH Int32 frameCounter
+1292 PUSH Int32 updateInterval
+1300 PUSH Boolean __intnl_SystemBoolean_6
+1308 EXTERN SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean
+1316 PUSH Boolean __intnl_SystemBoolean_6
+1324 JUMP_IF_FALSE 1352
+1332 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1340 COPY
+1344 JUMP_INDIRECT 2
+1352 PUSH Int32 __const_SystemInt32_0
+1360 PUSH Int32 frameCounter
+1368 COPY
+1372 PUSH Transform startPoint
+1380 PUSH Vector3 __lcl_currentStartPos_UnityEngineVector3_0
+1388 EXTERN UnityEngineTransform.__get_position__UnityEngineVector3
+1396 PUSH Transform endPoint
+1404 PUSH Vector3 __lcl_currentEndPos_UnityEngineVector3_0
+1412 EXTERN UnityEngineTransform.__get_position__UnityEngineVector3
+1420 PUSH Int32 __const_SystemInt32_0
+1428 PUSH Int32 __lcl_i_SystemInt32_1
+1436 COPY
+1440 PUSH Int32 __lcl_i_SystemInt32_1
+1448 PUSH Int32 curvePoints
+1456 PUSH Boolean __intnl_SystemBoolean_7
+1464 EXTERN SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean
+1472 PUSH Boolean __intnl_SystemBoolean_7
+1480 JUMP_IF_FALSE 1796
+1488 PUSH Single[] tValues
+1496 PUSH Int32 __lcl_i_SystemInt32_1
+1504 PUSH Single __intnl_SystemSingle_8
+1512 EXTERN SystemSingleArray.__Get__SystemInt32__SystemSingle
+1520 PUSH Vector3 __lcl_currentStartPos_UnityEngineVector3_0
+1528 PUSH Vector3 __lcl_currentEndPos_UnityEngineVector3_0
+1536 PUSH Single __intnl_SystemSingle_8
+1544 PUSH Vector3 __lcl_point_UnityEngineVector3_0
+1552 EXTERN UnityEngineVector3.__Lerp__UnityEngineVector3_UnityEngineVector3_SystemSingle__UnityEngineVector3
+1560 PUSH Vector3 __lcl_point_UnityEngineVector3_0
+1568 PUSH Single __intnl_SystemSingle_9
+1576 EXTERN UnityEngineVector3.__get_y__SystemSingle
+1584 PUSH Single[] sinValues
+1592 PUSH Int32 __lcl_i_SystemInt32_1
+1600 PUSH Single __intnl_SystemSingle_10
+1608 EXTERN SystemSingleArray.__Get__SystemInt32__SystemSingle
+1616 PUSH Single __intnl_SystemSingle_10
+1624 PUSH Single curveAmount
+1632 PUSH Single __intnl_SystemSingle_11
+1640 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+1648 PUSH Single __intnl_SystemSingle_9
+1656 PUSH Single __intnl_SystemSingle_11
+1664 PUSH Single __intnl_SystemSingle_12
+1672 EXTERN SystemSingle.__op_Subtraction__SystemSingle_SystemSingle__SystemSingle
+1680 PUSH Vector3 __lcl_point_UnityEngineVector3_0
+1688 PUSH Single __intnl_SystemSingle_12
+1696 EXTERN UnityEngineVector3.__set_y__SystemSingle
+1704 PUSH Vector3 __lcl_point_UnityEngineVector3_0
+1712 PUSH Vector3 __intnl_UnityEngineVector3_0
+1720 COPY
+1724 PUSH Vector3[] pointsArray
+1732 PUSH Int32 __lcl_i_SystemInt32_1
+1740 PUSH Vector3 __lcl_point_UnityEngineVector3_0
+1748 EXTERN UnityEngineVector3Array.__Set__SystemInt32_UnityEngineVector3__SystemVoid
+1756 PUSH Int32 __lcl_i_SystemInt32_1
+1764 PUSH Int32 __const_SystemInt32_1
+1772 PUSH Int32 __lcl_i_SystemInt32_1
+1780 EXTERN SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32
+1788 JUMP 1440
+1796 PUSH LineRenderer lineRenderer
+1804 PUSH Vector3[] pointsArray
+1812 EXTERN UnityEngineLineRenderer.__SetPositions__UnityEngineVector3Array__SystemVoid
+1820 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1828 COPY
+1832 JUMP_INDIRECT 2
+1840 PUSH UInt32 __const_SystemUInt32_0
+1848 PUSH Transform startPoint
+1856 PUSH Vector3 __intnl_UnityEngineVector3_1
+1864 EXTERN UnityEngineTransform.__get_position__UnityEngineVector3
+1872 PUSH Transform endPoint
+1880 PUSH Vector3 __intnl_UnityEngineVector3_2
+1888 EXTERN UnityEngineTransform.__get_position__UnityEngineVector3
+1896 PUSH Vector3 __intnl_UnityEngineVector3_1
+1904 PUSH Vector3 __intnl_UnityEngineVector3_2
+1912 PUSH Vector3 __intnl_UnityEngineVector3_3
+1920 EXTERN UnityEngineVector3.__op_Addition__UnityEngineVector3_UnityEngineVector3__UnityEngineVector3
+1928 PUSH Vector3 __intnl_UnityEngineVector3_3
+1936 PUSH Single __const_SystemSingle_2
+1944 PUSH Vector3 __lcl_ropeMidpoint_UnityEngineVector3_0
+1952 EXTERN UnityEngineVector3.__op_Multiply__UnityEngineVector3_SystemSingle__UnityEngineVector3
+1960 PUSH VRCPlayerApi localPlayer
+1968 PUSH Vector3 __intnl_UnityEngineVector3_4
+1976 EXTERN VRCSDKBaseVRCPlayerApi.__GetPosition__UnityEngineVector3
+1984 PUSH Vector3 __intnl_UnityEngineVector3_4
+1992 PUSH Vector3 __lcl_ropeMidpoint_UnityEngineVector3_0
+2000 PUSH Single __lcl_distance_SystemSingle_0
+2008 EXTERN UnityEngineVector3.__Distance__UnityEngineVector3_UnityEngineVector3__SystemSingle
+2016 PUSH Single __lcl_distance_SystemSingle_0
+2024 PUSH Single closeDistance
+2032 PUSH Boolean __intnl_SystemBoolean_8
+2040 EXTERN SystemSingle.__op_LessThanOrEqual__SystemSingle_SystemSingle__SystemBoolean
+2048 PUSH Boolean __intnl_SystemBoolean_8
+2056 JUMP_IF_FALSE 2128
+2064 PUSH Int32 __const_SystemInt32_1
+2072 PUSH Int32 updateInterval
+2080 COPY
+2084 PUSH UInt32 __gintnl_SystemUInt32_1
+2092 PUSH Boolean __const_SystemBoolean_0
+2100 PUSH Boolean __0_visible__param
+2108 COPY
+2112 JUMP 2436
+2120 JUMP 2408
+2128 PUSH Single __lcl_distance_SystemSingle_0
+2136 PUSH Single mediumDistance
+2144 PUSH Boolean __intnl_SystemBoolean_9
+2152 EXTERN SystemSingle.__op_LessThanOrEqual__SystemSingle_SystemSingle__SystemBoolean
+2160 PUSH Boolean __intnl_SystemBoolean_9
+2168 JUMP_IF_FALSE 2240
+2176 PUSH Int32 __const_SystemInt32_3
+2184 PUSH Int32 updateInterval
+2192 COPY
+2196 PUSH UInt32 __gintnl_SystemUInt32_2
+2204 PUSH Boolean __const_SystemBoolean_0
+2212 PUSH Boolean __0_visible__param
+2220 COPY
+2224 JUMP 2436
+2232 JUMP 2408
+2240 PUSH Single __lcl_distance_SystemSingle_0
+2248 PUSH Single farDistance
+2256 PUSH Boolean __intnl_SystemBoolean_10
+2264 EXTERN SystemSingle.__op_LessThanOrEqual__SystemSingle_SystemSingle__SystemBoolean
+2272 PUSH Boolean __intnl_SystemBoolean_10
+2280 JUMP_IF_FALSE 2352
+2288 PUSH Int32 __const_SystemInt32_4
+2296 PUSH Int32 updateInterval
+2304 COPY
+2308 PUSH UInt32 __gintnl_SystemUInt32_3
+2316 PUSH Boolean __const_SystemBoolean_0
+2324 PUSH Boolean __0_visible__param
+2332 COPY
+2336 JUMP 2436
+2344 JUMP 2408
+2352 PUSH Int32 __const_SystemInt32_0
+2360 PUSH Int32 updateInterval
+2368 COPY
+2372 PUSH UInt32 __gintnl_SystemUInt32_4
+2380 PUSH Boolean __const_SystemBoolean_1
+2388 PUSH Boolean __0_visible__param
+2396 COPY
+2400 JUMP 2436
+2408 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2416 COPY
+2420 JUMP_INDIRECT 2
+2428 PUSH UInt32 __const_SystemUInt32_0
+2436 PUSH LineRenderer lineRenderer
+2444 PUSH Boolean __intnl_SystemBoolean_11
+2452 EXTERN UnityEngineRenderer.__get_enabled__SystemBoolean
+2460 PUSH Boolean __intnl_SystemBoolean_11
+2468 PUSH Boolean __0_visible__param
+2476 PUSH Boolean __intnl_SystemBoolean_12
+2484 EXTERN SystemBoolean.__op_Inequality__SystemBoolean_SystemBoolean__SystemBoolean
+2492 PUSH Boolean __intnl_SystemBoolean_12
+2500 JUMP_IF_FALSE 2532
+2508 PUSH LineRenderer lineRenderer
+2516 PUSH Boolean __0_visible__param
+2524 EXTERN UnityEngineRenderer.__set_enabled__SystemBoolean__SystemVoid
+2532 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2540 COPY
+2544 JUMP_INDIRECT 2
+void __0_SetCurveAmount
+2552 PUSH UInt32 __const_SystemUInt32_0
+2560 PUSH Single __0_value__param
+2568 PUSH Single targetCurveAmount
+2576 COPY
+2580 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2588 COPY
+2592 JUMP_INDIRECT 2

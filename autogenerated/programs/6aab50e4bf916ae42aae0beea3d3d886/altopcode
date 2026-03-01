@@ -1,0 +1,160 @@
+void _start()
+16 JUMP 52
+36 return;
+60 if (isInitialized) //88
+{
+80 return;
+}
+button = transform.GetComponent(__const_SystemType_0);// 112
+buttonImage = transform.GetComponent(__const_SystemType_1);// 144
+168 __intnl_UnityEngineObject_0 = button
+188 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+232 if (__intnl_SystemBoolean_0) //268
+{
+256 isInitialized = __const_SystemBoolean_0
+260 JUMP 268
+}
+280 return;
+void OnButtonClick()
+304 if (isInitialized) //320
+{
+312 JUMP 336
+}
+328 JUMP 52
+352 __intnl_UnityEngineObject_2 = customizationManager
+372 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+416 if (__intnl_SystemBoolean_1) //444
+{
+436 return;
+}
+460 __intnl_SystemString_0 = itemType
+480 __intnl_SystemInt32_0 = itemId
+G_customizationManager.SetProgramVariable(itemType, __const_SystemString_0);// 508
+G_customizationManager.SetProgramVariable(itemId, __const_SystemString_1);// 540
+G_customizationManager.SendCustomEvent(__const_SystemString_2);// 564
+588 __lcl_selectionSuccessful_SystemBoolean_0 = __const_SystemBoolean_1
+632 if (__intnl_SystemBoolean_2) //744
+{
+656 __intnl_SystemInt32_1 = itemId
+G_customizationManager.SetProgramVariable(itemId, __const_SystemString_4);// 684
+G_customizationManager.SendCustomEvent(__const_SystemString_5);// 708
+732 __lcl_selectionSuccessful_SystemBoolean_0 = __const_SystemBoolean_0
+736 JUMP 1048
+}
+784 if (__intnl_SystemBoolean_3) //896
+{
+808 __intnl_SystemInt32_1 = itemId
+G_customizationManager.SetProgramVariable(itemId, __const_SystemString_7);// 836
+G_customizationManager.SendCustomEvent(__const_SystemString_8);// 860
+884 __lcl_selectionSuccessful_SystemBoolean_0 = __const_SystemBoolean_0
+888 JUMP 1048
+}
+936 if (__intnl_SystemBoolean_4) //1048
+{
+960 __intnl_SystemInt32_1 = itemId
+G_customizationManager.SetProgramVariable(itemId, __const_SystemString_10);// 988
+G_customizationManager.SendCustomEvent(__const_SystemString_11);// 1012
+1036 __lcl_selectionSuccessful_SystemBoolean_0 = __const_SystemBoolean_0
+1040 JUMP 1048
+}
+1056 if (__lcl_selectionSuccessful_SystemBoolean_0) //1080
+{
+1072 JUMP 1108
+}
+1092 return;
+1120 return;
+void OnPreviewStats()
+1144 if (isInitialized) //1160
+{
+1152 JUMP 1176
+}
+1168 JUMP 52
+1192 __intnl_UnityEngineObject_4 = customizationManager
+1212 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+1256 if (__intnl_SystemBoolean_5) //1400
+{
+1280 __intnl_SystemString_1 = itemType
+1300 __intnl_SystemInt32_2 = itemId
+G_customizationManager.SetProgramVariable(itemType, __const_SystemString_0);// 1328
+G_customizationManager.SetProgramVariable(itemId, __const_SystemString_1);// 1360
+G_customizationManager.SendCustomEvent(__const_SystemString_2);// 1384
+1392 JUMP 1400
+}
+1412 return;
+void __0_SetButtonInfo()
+1444 customizationManager = __0_manager__param
+1464 itemType = __0_type__param
+1484 itemIndex = __0_index__param
+1504 itemId = __0_id__param
+1524 itemName = __0_name__param
+1540 return;
+void IsProperlyConfigured()
+1572 __intnl_UnityEngineObject_6 = customizationManager
+1592 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+1636 if (__intnl_SystemBoolean_8) //1692
+{
+}
+1708 __intnl_SystemBoolean_7 = __intnl_SystemBoolean_8
+1720 if (__intnl_SystemBoolean_7) //1776
+{
+}
+1792 __intnl_SystemBoolean_6 = __intnl_SystemBoolean_7
+1804 if (__intnl_SystemBoolean_6) //1844
+{
+}
+1860 __0_IsProperlyConfigured__ret = __intnl_SystemBoolean_6
+1876 return;
+1896 return;
+void ValidateConfiguration()
+1920 JUMP 1556
+1936 if (__0_IsProperlyConfigured__ret) //1952
+{
+1944 JUMP 1952
+}
+1964 return;
+void __0_SetButtonEnabled()
+1988 if (isInitialized) //2004
+{
+1996 JUMP 2020
+}
+2012 JUMP 52
+2036 __intnl_UnityEngineObject_8 = button
+2056 __intnl_UnityEngineObject_9 = __const_SystemObject_0
+2100 if (__intnl_SystemBoolean_11) //2132
+{
+G_button.set_interactable(__0_enabled__param);// 2124
+}
+2148 __intnl_UnityEngineObject_10 = buttonImage
+2168 __intnl_UnityEngineObject_11 = __const_SystemObject_0
+2212 if (__intnl_SystemBoolean_12) //2376
+{
+__lcl_currentColor_UnityEngineColor_0 = G_buttonImage.get_color();// 2236
+2252 if (__0_enabled__param) //2288
+{
+2276 __intnl_SystemSingle_0 = __const_SystemSingle_0
+2280 JUMP 2308
+}
+2304 __intnl_SystemSingle_0 = __const_SystemSingle_1
+L_currentColor.set_a(__intnl_SystemSingle_0);// 2324
+2348 __intnl_UnityEngineColor_0 = __lcl_currentColor_UnityEngineColor_0
+G_buttonImage.set_color(__lcl_currentColor_UnityEngineColor_0);// 2368
+}
+2388 return;
+void IsButtonEnabled()
+2412 if (isInitialized) //2428
+{
+2420 JUMP 2444
+}
+2436 JUMP 52
+2460 __intnl_UnityEngineObject_12 = button
+2480 __intnl_UnityEngineObject_13 = __const_SystemObject_0
+2524 if (__intnl_SystemBoolean_13) //2564
+{
+__0_IsButtonEnabled__ret = G_button.get_interactable();// 2548
+2556 JUMP 2584
+}
+2580 __0_IsButtonEnabled__ret = __const_SystemBoolean_1
+2596 return;
+2616 return;
+void DebugLogConfiguration()
+2644 return;

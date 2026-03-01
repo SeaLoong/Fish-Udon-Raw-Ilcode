@@ -1,0 +1,66 @@
+void _onPlayerRestored
+0 PUSH UInt32 __const_SystemUInt32_0
+8 PUSH VRCPlayerApi onPlayerRestoredPlayer
+16 PUSH Boolean __intnl_SystemBoolean_0
+24 EXTERN VRCSDKBaseVRCPlayerApi.__get_isLocal__SystemBoolean
+32 PUSH Boolean __intnl_SystemBoolean_0
+40 JUMP_IF_FALSE 56
+48 JUMP 76
+56 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+64 COPY
+68 JUMP_INDIRECT 2
+76 PUSH UdonBehaviour __this_VRCUdonUdonBehaviour_0
+84 PUSH String __const_SystemString_0
+92 PUSH Single checkDelay
+100 PUSH EventTiming __const_VRCUdonCommonEnumsEventTiming_0
+108 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEventDelayedSeconds__SystemString_SystemSingle_VRCUdonCommonEnumsEventTiming__SystemVoid
+116 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+124 COPY
+128 JUMP_INDIRECT 2
+void _RunRetroactiveChecks
+136 PUSH UInt32 __const_SystemUInt32_0
+144 PUSH UdonBehaviour achievementManager
+152 PUSH Object __intnl_UnityEngineObject_0
+160 COPY
+164 PUSH object __const_SystemObject_0
+172 PUSH Object __intnl_UnityEngineObject_1
+180 COPY
+184 PUSH Object __intnl_UnityEngineObject_0
+192 PUSH Object __intnl_UnityEngineObject_1
+200 PUSH Boolean __intnl_SystemBoolean_1
+208 EXTERN UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean
+216 PUSH Boolean __intnl_SystemBoolean_1
+224 JUMP_IF_FALSE 252
+232 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+240 COPY
+244 JUMP_INDIRECT 2
+252 PUSH GameObject glorpingoQuestObject
+260 PUSH Object __intnl_UnityEngineObject_2
+268 COPY
+272 PUSH object __const_SystemObject_0
+280 PUSH Object __intnl_UnityEngineObject_3
+288 COPY
+292 PUSH Object __intnl_UnityEngineObject_2
+300 PUSH Object __intnl_UnityEngineObject_3
+308 PUSH Boolean __intnl_SystemBoolean_2
+316 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+324 PUSH Boolean __intnl_SystemBoolean_2
+332 JUMP_IF_FALSE 364
+340 PUSH GameObject glorpingoQuestObject
+348 PUSH Boolean __intnl_SystemBoolean_2
+356 EXTERN UnityEngineGameObject.__get_activeSelf__SystemBoolean
+364 PUSH Boolean __intnl_SystemBoolean_2
+372 JUMP_IF_FALSE 456
+380 PUSH Int32 glorpingoAchievementIndex
+388 PUSH Int32 __intnl_SystemInt32_0
+396 COPY
+400 PUSH UdonBehaviour achievementManager
+408 PUSH String __const_SystemString_1
+416 PUSH Int32 glorpingoAchievementIndex
+424 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid
+432 PUSH UdonBehaviour achievementManager
+440 PUSH String __const_SystemString_2
+448 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+456 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+464 COPY
+468 JUMP_INDIRECT 2

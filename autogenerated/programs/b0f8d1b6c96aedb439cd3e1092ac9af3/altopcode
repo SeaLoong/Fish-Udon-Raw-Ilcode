@@ -1,0 +1,104 @@
+void _start()
+24 __intnl_UnityEngineObject_0 = discordRoleManager
+44 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+88 if (__intnl_SystemBoolean_0) //172
+{
+112 __intnl_VRCUdonUdonBehaviour_0 = __this_VRCUdonUdonBehaviour_0
+G_discordRoleManager.SetProgramVariable(__intnl_VRCUdonUdonBehaviour_0, __const_SystemString_0);// 140
+G_discordRoleManager.SendCustomEvent(__const_SystemString_1);// 164
+}
+180 JUMP 260
+200 return;
+void OnDiscordRolesLoaded()
+224 JUMP 260
+244 return;
+276 __intnl_UnityEngineObject_2 = statusText
+296 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+340 if (__intnl_SystemBoolean_1) //368
+{
+360 return;
+}
+__lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0 = get_LocalPlayer();// 376
+424 if (__intnl_SystemBoolean_2) //500
+{
+G_statusText.set_text(__const_SystemString_2);// 448
+G_statusText.set_color(loadingColor);// 472
+492 return;
+}
+516 __intnl_UnityEngineObject_4 = discordRoleManager
+536 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+580 if (__intnl_SystemBoolean_3) //596
+{
+588 JUMP 716
+}
+620 __intnl_VRCUdonUdonBehaviour_1 = discordRoleManager
+G_discordRoleManager.SendCustomEvent(__const_SystemString_3);// 632
+688 __intnl_SystemBoolean_4 = __intnl_SystemObject_0
+724 if (__intnl_SystemBoolean_3) //800
+{
+G_statusText.set_text(__const_SystemString_5);// 748
+G_statusText.set_color(loadingColor);// 772
+792 return;
+}
+__lcl_displayName_SystemString_0 = L_localPlayer.get_displayName();// 816
+G_discordRoleManager.SetProgramVariable(__lcl_displayName_SystemString_0, __const_SystemString_6);// 848
+G_discordRoleManager.SendCustomEvent(__const_SystemString_7);// 872
+928 __intnl_SystemBoolean_5 = __intnl_SystemObject_1
+940 if (__intnl_SystemBoolean_5) //1292
+{
+G_discordRoleManager.SetProgramVariable(__lcl_displayName_SystemString_0, __const_SystemString_9);// 972
+G_discordRoleManager.SendCustomEvent(__const_SystemString_10);// 996
+1052 __intnl_SystemString_0 = __intnl_SystemObject_2
+1072 __lcl_roles_SystemString_0 = __intnl_SystemString_0
+1100 __0_roleAbbreviations__param = __lcl_roles_SystemString_0
+1104 JUMP 1368
+1128 __lcl_roleDisplay_SystemString_0 = __0___0_FormatRoles__ret
+1164 if (__intnl_SystemBoolean_6) //1204
+{
+G_statusText.set_text(__const_SystemString_12);// 1188
+1196 JUMP 1260
+}
+G_statusText.set_text(__intnl_SystemString_1);// 1252
+G_statusText.set_color(linkedColor);// 1276
+1284 JUMP 1340
+}
+G_statusText.set_text(__const_SystemString_14);// 1308
+G_statusText.set_color(unlinkedColor);// 1332
+1352 return;
+1400 if (__intnl_SystemBoolean_7) //1448
+{
+1424 __0___0_FormatRoles__ret = __const_SystemString_15
+1440 return;
+}
+__lcl_parts_SystemStringArray_0 = G_discordRoleManager.GetProgramVariable(__const_SystemString_11).Split(__const_SystemStringSplitOptions_0, __const_SystemChar_0);// 1480
+1504 __lcl_result_SystemString_0 = __const_SystemString_15
+1524 __lcl_i_SystemInt32_0 = __const_SystemInt32_0
+1592 if (__intnl_SystemBoolean_8) //2048
+{
+1640 if (__intnl_SystemBoolean_9) //1680
+{
+__lcl_result_SystemString_0 = op_Addition(__const_SystemString_16, __lcl_result_SystemString_0);// 1672
+}
+__lcl_abbrev_SystemString_0 = L_parts.Get(__lcl_i_SystemInt32_0);// 1704
+1752 if (__intnl_SystemBoolean_10) //1800
+{
+__lcl_result_SystemString_0 = op_Addition(__const_SystemString_18, __lcl_result_SystemString_0);// 1784
+1792 JUMP 2008
+}
+1840 if (__intnl_SystemBoolean_11) //1888
+{
+__lcl_result_SystemString_0 = op_Addition(__const_SystemString_20, __lcl_result_SystemString_0);// 1872
+1880 JUMP 2008
+}
+1928 if (__intnl_SystemBoolean_12) //1976
+{
+__lcl_result_SystemString_0 = op_Addition(__const_SystemString_22, __lcl_result_SystemString_0);// 1960
+1968 JUMP 2008
+}
+__lcl_result_SystemString_0 = op_Addition(__lcl_abbrev_SystemString_0, __lcl_result_SystemString_0);// 2000
+__lcl_i_SystemInt32_0 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_0);// 2032
+2040 JUMP 1528
+}
+2064 __0___0_FormatRoles__ret = __lcl_result_SystemString_0
+2080 return;
+2100 return;

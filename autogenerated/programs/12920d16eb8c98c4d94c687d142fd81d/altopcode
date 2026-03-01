@@ -1,0 +1,514 @@
+void _start()
+localPlayer = get_LocalPlayer();// 16
+32 JUMP 8472
+52 return;
+void _update()
+108 if (__intnl_SystemBoolean_0) //152
+{
+124 JUMP 8212
+148 __intnl_SystemBoolean_0 = __0_HasAvailableElement__ret
+}
+160 if (__intnl_SystemBoolean_0) //184
+{
+176 JUMP 7632
+}
+192 JUMP 3148
+212 return;
+void __0_ShowXPGain()
+268 if (__intnl_SystemBoolean_1) //296
+{
+288 return;
+}
+__lcl_isVR_SystemBoolean_0 = G_localPlayer.IsUserInVR();// 312
+336 __intnl_SystemBoolean_2 = __lcl_isVR_SystemBoolean_0
+348 if (__intnl_SystemBoolean_2) //428
+{
+372 __intnl_UnityEngineObject_0 = __0_worldPosition__param
+392 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+}
+444 __lcl_useWorldSpace_SystemBoolean_0 = __intnl_SystemBoolean_2
+456 if (__lcl_useWorldSpace_SystemBoolean_0) //528
+{
+488 __2_xpAmount__param = __0_xpAmount__param
+508 __1_worldPosition__param = __0_worldPosition__param
+512 JUMP 896
+520 JUMP 564
+}
+552 __1_xpAmount__param = __0_xpAmount__param
+556 JUMP 592
+576 return;
+600 if (screenText1Available) //692
+{
+632 __0_textComponent__param = screenText1
+652 __3_xpAmount__param = __1_xpAmount__param
+672 __0_textIndex__param = __const_SystemInt32_1
+676 JUMP 1260
+684 JUMP 868
+}
+700 if (screenText2Available) //792
+{
+732 __0_textComponent__param = screenText2
+752 __3_xpAmount__param = __1_xpAmount__param
+772 __0_textIndex__param = __const_SystemInt32_2
+776 JUMP 1260
+784 JUMP 868
+}
+816 __intnl_UnityEngineTransform_0 = __const_SystemObject_0
+836 __5_xpAmount__param = __1_xpAmount__param
+856 __3_worldPosition__param = __intnl_UnityEngineTransform_0
+860 JUMP 7024
+880 return;
+904 if (worldCanvas1Available) //1036
+{
+936 __0_canvas__param = worldSpaceCanvas1
+956 __1_textComponent__param = worldText1
+976 __4_xpAmount__param = __2_xpAmount__param
+996 __2_worldPosition__param = __1_worldPosition__param
+1016 __0_canvasIndex__param = __const_SystemInt32_1
+1020 JUMP 1900
+1028 JUMP 1232
+}
+1044 if (worldCanvas2Available) //1176
+{
+1076 __0_canvas__param = worldSpaceCanvas2
+1096 __1_textComponent__param = worldText2
+1116 __4_xpAmount__param = __2_xpAmount__param
+1136 __2_worldPosition__param = __1_worldPosition__param
+1156 __0_canvasIndex__param = __const_SystemInt32_2
+1160 JUMP 1900
+1168 JUMP 1232
+}
+1200 __5_xpAmount__param = __2_xpAmount__param
+1220 __3_worldPosition__param = __1_worldPosition__param
+1224 JUMP 7024
+1244 return;
+1300 if (__intnl_SystemBoolean_3) //1352
+{
+1324 screenText1Available = __const_SystemBoolean_0
+screenText1StartTime = get_time();// 1336
+1344 JUMP 1388
+}
+1368 screenText2Available = __const_SystemBoolean_0
+screenText2StartTime = get_time();// 1380
+G_screenText2.set_text(__intnl_SystemString_1);// 1468
+__lcl_rectTransform_UnityEngineRectTransform_0 = G_screenText2.get_transform().GetComponent(__const_SystemType_0);// 1524
+1572 if (__intnl_SystemBoolean_4) //1636
+{
+screenText1StartPos = op_Implicit(__intnl_UnityEngineVector2_0);// 1620
+1628 JUMP 1684
+}
+screenText2StartPos = op_Implicit(__intnl_UnityEngineVector2_1);// 1676
+G_screenText2.get_transform().set_localScale(__const_UnityEngineVector3_0);// 1724
+__lcl_textColor_UnityEngineColor_0 = G_screenText2.get_color();// 1748
+L_textColor.set_a(__const_SystemSingle_0);// 1772
+1796 __intnl_UnityEngineColor_0 = __lcl_textColor_UnityEngineColor_0
+G_screenText2.set_color(__lcl_textColor_UnityEngineColor_0);// 1816
+G_screenText2.get_gameObject().SetActive(__const_SystemBoolean_1);// 1864
+1884 return;
+1940 if (__intnl_SystemBoolean_5) //1992
+{
+1964 worldCanvas1Available = __const_SystemBoolean_0
+worldCanvas1StartTime = get_time();// 1976
+1984 JUMP 2028
+}
+2008 worldCanvas2Available = __const_SystemBoolean_0
+worldCanvas2StartTime = get_time();// 2020
+G_worldText2.set_text(__intnl_SystemString_3);// 2108
+__lcl_popupPosition_UnityEngineVector3_0 = op_Addition(__intnl_UnityEngineVector3_1, __intnl_UnityEngineVector3_0);// 2196
+G_worldSpaceCanvas2.get_transform().set_position(__lcl_popupPosition_UnityEngineVector3_0);// 2244
+2292 if (__intnl_SystemBoolean_6) //2376
+{
+2316 worldCanvas1StartPos = __lcl_popupPosition_UnityEngineVector3_0
+worldCanvas1StartScale = G_worldSpaceCanvas2.get_transform().get_localScale();// 2360
+2368 JUMP 2444
+}
+2392 worldCanvas2StartPos = __lcl_popupPosition_UnityEngineVector3_0
+worldCanvas2StartScale = G_worldSpaceCanvas2.get_transform().get_localScale();// 2436
+__lcl_playerHeadPos_UnityEngineVector3_0 = G_localPlayer.GetTrackingData(__const_VRCSDKBaseVRCPlayerApiTrackingDataType_0).get_position();// 2492
+__lcl_directionToPlayer_UnityEngineVector3_0 = op_Subtraction(__lcl_popupPosition_UnityEngineVector3_0, __lcl_playerHeadPos_UnityEngineVector3_0).get_normalized();// 2548
+G_worldSpaceCanvas2.get_transform().set_rotation(__intnl_UnityEngineQuaternion_0);// 2652
+__lcl_distance_SystemSingle_0 = Distance(__lcl_popupPosition_UnityEngineVector3_0, __lcl_playerHeadPos_UnityEngineVector3_0);// 2684
+__lcl_normalizedDistance_SystemSingle_0 = InverseLerp(__lcl_distance_SystemSingle_0, maxDistance, minDistance);// 2724
+__lcl_scale_SystemSingle_0 = Lerp(__lcl_normalizedDistance_SystemSingle_0, maxWorldScale, minWorldScale);// 2764
+__lcl_targetScale_UnityEngineVector3_0 = op_Multiply(__lcl_scale_SystemSingle_0, __const_UnityEngineVector3_2);// 2796
+G_worldSpaceCanvas2.get_transform().set_localScale(__intnl_UnityEngineVector3_4);// 2876
+2924 if (__intnl_SystemBoolean_7) //2960
+{
+2948 worldCanvas1StartScale = __lcl_targetScale_UnityEngineVector3_0
+2952 JUMP 2980
+}
+2976 worldCanvas2StartScale = __lcl_targetScale_UnityEngineVector3_0
+__lcl_textColor_UnityEngineColor_1 = G_worldText2.get_color();// 2996
+L_textColor.set_a(__const_SystemSingle_0);// 3020
+3044 __intnl_UnityEngineColor_1 = __lcl_textColor_UnityEngineColor_1
+G_worldText2.set_color(__lcl_textColor_UnityEngineColor_1);// 3064
+G_worldSpaceCanvas2.get_gameObject().SetActive(__const_SystemBoolean_1);// 3112
+3132 return;
+3180 if (__intnl_SystemBoolean_8) //3236
+{
+}
+3244 if (__intnl_SystemBoolean_8) //3348
+{
+3276 __2_textComponent__param = screenText1
+3296 __0_startTime__param = screenText1StartTime
+3316 __0_startPos__param = screenText1StartPos
+3336 __1_textIndex__param = __const_SystemInt32_1
+3340 JUMP 4504
+}
+3380 if (__intnl_SystemBoolean_9) //3436
+{
+}
+3444 if (__intnl_SystemBoolean_9) //3548
+{
+3476 __2_textComponent__param = screenText2
+3496 __0_startTime__param = screenText2StartTime
+3516 __0_startPos__param = screenText2StartPos
+3536 __1_textIndex__param = __const_SystemInt32_2
+3540 JUMP 4504
+}
+3580 if (__intnl_SystemBoolean_10) //3636
+{
+}
+3644 if (__intnl_SystemBoolean_10) //3788
+{
+3676 __1_canvas__param = worldSpaceCanvas1
+3696 __3_textComponent__param = worldText1
+3716 __1_startTime__param = worldCanvas1StartTime
+3736 __1_startPos__param = worldCanvas1StartPos
+3756 __0_startScale__param = worldCanvas1StartScale
+3776 __1_canvasIndex__param = __const_SystemInt32_1
+3780 JUMP 5700
+}
+3820 if (__intnl_SystemBoolean_11) //3876
+{
+}
+3884 if (__intnl_SystemBoolean_11) //4028
+{
+3916 __1_canvas__param = worldSpaceCanvas2
+3936 __3_textComponent__param = worldText2
+3956 __1_startTime__param = worldCanvas2StartTime
+3976 __1_startPos__param = worldCanvas2StartPos
+3996 __0_startScale__param = worldCanvas2StartScale
+4016 __1_canvasIndex__param = __const_SystemInt32_2
+4020 JUMP 5700
+}
+4044 __intnl_SystemBoolean_13 = levelUpDesktopAnimating
+4056 if (__intnl_SystemBoolean_13) //4136
+{
+4080 __intnl_UnityEngineObject_2 = levelUpImageDesktop
+4100 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+}
+4152 __intnl_SystemBoolean_12 = __intnl_SystemBoolean_13
+4164 if (__intnl_SystemBoolean_12) //4220
+{
+}
+4228 if (__intnl_SystemBoolean_12) //4252
+{
+4244 JUMP 10992
+}
+4268 __intnl_SystemBoolean_15 = levelUpVRAnimating
+4280 if (__intnl_SystemBoolean_15) //4360
+{
+4304 __intnl_UnityEngineObject_4 = levelUpImageVR
+4324 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+}
+4376 __intnl_SystemBoolean_14 = __intnl_SystemBoolean_15
+4388 if (__intnl_SystemBoolean_14) //4444
+{
+}
+4452 if (__intnl_SystemBoolean_14) //4476
+{
+4468 JUMP 12112
+}
+4488 return;
+__lcl_elapsed_SystemSingle_0 = op_Subtraction(__0_startTime__param, __intnl_SystemSingle_0);// 4544
+__lcl_progress_SystemSingle_0 = op_Division(animationDuration, __lcl_elapsed_SystemSingle_0);// 4576
+__lcl_rectTransform_UnityEngineRectTransform_1 = G_screenText2.get_transform().GetComponent(__const_SystemType_0);// 4632
+4680 if (__intnl_SystemBoolean_16) //4900
+{
+L_rectTransform.set_anchoredPosition(__intnl_UnityEngineVector2_2);// 4728
+G_screenText2.get_gameObject().SetActive(__const_SystemBoolean_0);// 4776
+4824 if (__intnl_SystemBoolean_17) //4860
+{
+4848 screenText1Available = __const_SystemBoolean_1
+4852 JUMP 4880
+}
+4876 screenText2Available = __const_SystemBoolean_1
+4892 return;
+}
+__lcl_endPosition_UnityEngineVector3_0 = op_Addition(__intnl_UnityEngineVector3_6, __0_startPos__param);// 4988
+5036 if (__intnl_SystemBoolean_17) //5084
+{
+__lcl_alpha_SystemSingle_0 = op_Division(__const_SystemSingle_4, __lcl_progress_SystemSingle_0);// 5068
+5076 JUMP 5180
+}
+__lcl_alpha_SystemSingle_0 = op_Subtraction(__intnl_SystemSingle_2, __const_SystemSingle_2);// 5172
+__lcl_textColor_UnityEngineColor_2 = G_screenText2.get_color();// 5196
+L_textColor.set_a(__lcl_alpha_SystemSingle_0);// 5220
+5244 __intnl_UnityEngineColor_2 = __lcl_textColor_UnityEngineColor_2
+G_screenText2.set_color(__lcl_textColor_UnityEngineColor_2);// 5264
+5312 if (__intnl_SystemBoolean_18) //5400
+{
+__lcl_scale_SystemSingle_1 = Lerp(__intnl_SystemSingle_3, __const_SystemSingle_7, __const_SystemSingle_1);// 5384
+5392 JUMP 5504
+}
+__lcl_scale_SystemSingle_1 = Lerp(__intnl_SystemSingle_5, __const_SystemSingle_2, __const_SystemSingle_7);// 5496
+G_screenText2.get_transform().set_localScale(__intnl_UnityEngineVector3_7);// 5576
+__lcl_currentPos_UnityEngineVector3_0 = Lerp(__lcl_progress_SystemSingle_0, __lcl_endPosition_UnityEngineVector3_0, __0_startPos__param);// 5616
+L_rectTransform.set_anchoredPosition(__intnl_UnityEngineVector2_2);// 5664
+5684 return;
+__lcl_elapsed_SystemSingle_1 = op_Subtraction(__1_startTime__param, __intnl_SystemSingle_6);// 5740
+__lcl_progress_SystemSingle_1 = op_Division(animationDuration, __lcl_elapsed_SystemSingle_1);// 5772
+5820 if (__intnl_SystemBoolean_19) //5992
+{
+G_worldSpaceCanvas2.get_gameObject().SetActive(__const_SystemBoolean_0);// 5868
+5916 if (__intnl_SystemBoolean_20) //5952
+{
+5940 worldCanvas1Available = __const_SystemBoolean_1
+5944 JUMP 5972
+}
+5968 worldCanvas2Available = __const_SystemBoolean_1
+5984 return;
+}
+__lcl_endPosition_UnityEngineVector3_1 = op_Addition(__intnl_UnityEngineVector3_8, __1_startPos__param);// 6048
+6096 if (__intnl_SystemBoolean_20) //6144
+{
+__lcl_alpha_SystemSingle_1 = op_Division(__const_SystemSingle_4, __lcl_progress_SystemSingle_1);// 6128
+6136 JUMP 6240
+}
+__lcl_alpha_SystemSingle_1 = op_Subtraction(__intnl_SystemSingle_8, __const_SystemSingle_2);// 6232
+__lcl_textColor_UnityEngineColor_3 = G_worldText2.get_color();// 6256
+L_textColor.set_a(__lcl_alpha_SystemSingle_1);// 6280
+6304 __intnl_UnityEngineColor_3 = __lcl_textColor_UnityEngineColor_3
+G_worldText2.set_color(__lcl_textColor_UnityEngineColor_3);// 6324
+6372 if (__intnl_SystemBoolean_21) //6460
+{
+__lcl_scaleMultiplier_SystemSingle_0 = Lerp(__intnl_SystemSingle_9, __const_SystemSingle_9, __const_SystemSingle_2);// 6444
+6452 JUMP 6564
+}
+__lcl_scaleMultiplier_SystemSingle_0 = Lerp(__intnl_SystemSingle_11, __const_SystemSingle_10, __const_SystemSingle_9);// 6556
+G_worldSpaceCanvas2.get_transform().set_localScale(__intnl_UnityEngineVector3_9);// 6636
+__lcl_currentPos_UnityEngineVector3_1 = Lerp(__lcl_progress_SystemSingle_1, __lcl_endPosition_UnityEngineVector3_1, __1_startPos__param);// 6676
+G_worldSpaceCanvas2.get_transform().set_position(__lcl_currentPos_UnityEngineVector3_1);// 6724
+6772 if (__intnl_SystemBoolean_22) //6996
+{
+__lcl_playerHeadPos_UnityEngineVector3_1 = G_localPlayer.GetTrackingData(__const_VRCSDKBaseVRCPlayerApiTrackingDataType_0).get_position();// 6828
+__lcl_directionToPlayer_UnityEngineVector3_1 = op_Subtraction(__lcl_currentPos_UnityEngineVector3_1, __lcl_playerHeadPos_UnityEngineVector3_1).get_normalized();// 6884
+G_worldSpaceCanvas2.get_transform().set_rotation(__intnl_UnityEngineQuaternion_1);// 6988
+}
+7008 return;
+7088 if (__intnl_SystemBoolean_23) //7508
+{
+7112 __lcl_i_SystemInt32_0 = __const_SystemInt32_0
+7212 if (__intnl_SystemBoolean_24) //7452
+{
+G_xpQueue.Set(__intnl_SystemInt32_4, __lcl_i_SystemInt32_0);// 7308
+G_positionQueue.Set(__intnl_UnityEngineTransform_11, __lcl_i_SystemInt32_0);// 7404
+__lcl_i_SystemInt32_0 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_0);// 7436
+7444 JUMP 7116
+}
+queueCount = op_Subtraction(__const_SystemInt32_1, __intnl_SystemInt32_1);// 7500
+}
+G_xpQueue.Set(__5_xpAmount__param, queueCount);// 7532
+G_positionQueue.Set(__3_worldPosition__param, queueCount);// 7564
+queueCount = op_Addition(__const_SystemInt32_1, queueCount);// 7596
+7616 return;
+7672 if (__intnl_SystemBoolean_25) //7700
+{
+7692 return;
+}
+__lcl_xpAmount_SystemInt32_0 = G_xpQueue.Get(__const_SystemInt32_0);// 7724
+__lcl_worldPosition_UnityEngineTransform_0 = G_positionQueue.Get(__const_SystemInt32_0);// 7756
+7780 __lcl_i_SystemInt32_1 = __const_SystemInt32_0
+7856 if (__intnl_SystemBoolean_26) //8096
+{
+G_xpQueue.Set(__intnl_SystemInt32_8, __lcl_i_SystemInt32_1);// 7952
+G_positionQueue.Set(__intnl_UnityEngineTransform_12, __lcl_i_SystemInt32_1);// 8048
+__lcl_i_SystemInt32_1 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_1);// 8080
+8088 JUMP 7784
+}
+queueCount = op_Subtraction(__const_SystemInt32_1, queueCount);// 8120
+8152 __0_xpAmount__param = __lcl_xpAmount_SystemInt32_0
+8172 __0_worldPosition__param = __lcl_worldPosition_UnityEngineTransform_0
+8176 JUMP 228
+8196 return;
+8228 __intnl_SystemBoolean_29 = screenText1Available
+8240 if (__intnl_SystemBoolean_29) //8256
+{
+8248 JUMP 8276
+}
+8272 __intnl_SystemBoolean_29 = screenText2Available
+8292 __intnl_SystemBoolean_28 = __intnl_SystemBoolean_29
+8304 if (__intnl_SystemBoolean_28) //8320
+{
+8312 JUMP 8340
+}
+8336 __intnl_SystemBoolean_28 = worldCanvas1Available
+8356 __intnl_SystemBoolean_27 = __intnl_SystemBoolean_28
+8368 if (__intnl_SystemBoolean_27) //8384
+{
+8376 JUMP 8404
+}
+8400 __intnl_SystemBoolean_27 = worldCanvas2Available
+8420 __0_HasAvailableElement__ret = __intnl_SystemBoolean_27
+8436 return;
+8456 return;
+8488 __intnl_UnityEngineObject_6 = screenText1
+8508 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+8552 if (__intnl_SystemBoolean_30) //8608
+{
+G_screenText1.get_gameObject().SetActive(__const_SystemBoolean_0);// 8600
+}
+8624 __intnl_UnityEngineObject_8 = screenText2
+8644 __intnl_UnityEngineObject_9 = __const_SystemObject_0
+8688 if (__intnl_SystemBoolean_31) //8744
+{
+G_screenText2.get_gameObject().SetActive(__const_SystemBoolean_0);// 8736
+}
+8760 __intnl_UnityEngineObject_10 = worldSpaceCanvas1
+8780 __intnl_UnityEngineObject_11 = __const_SystemObject_0
+8824 if (__intnl_SystemBoolean_32) //8880
+{
+G_worldSpaceCanvas1.get_gameObject().SetActive(__const_SystemBoolean_0);// 8872
+}
+8896 __intnl_UnityEngineObject_12 = worldSpaceCanvas2
+8916 __intnl_UnityEngineObject_13 = __const_SystemObject_0
+8960 if (__intnl_SystemBoolean_33) //9016
+{
+G_worldSpaceCanvas2.get_gameObject().SetActive(__const_SystemBoolean_0);// 9008
+}
+9032 __intnl_UnityEngineObject_14 = levelUpImageDesktop
+9052 __intnl_UnityEngineObject_15 = __const_SystemObject_0
+9096 if (__intnl_SystemBoolean_34) //9152
+{
+G_levelUpImageDesktop.get_gameObject().SetActive(__const_SystemBoolean_0);// 9144
+}
+9168 __intnl_UnityEngineObject_16 = levelUpImageVR
+9188 __intnl_UnityEngineObject_17 = __const_SystemObject_0
+9232 if (__intnl_SystemBoolean_35) //9288
+{
+G_levelUpImageVR.get_gameObject().SetActive(__const_SystemBoolean_0);// 9280
+}
+9300 return;
+void ShowLevelUp()
+9356 if (__intnl_SystemBoolean_36) //9384
+{
+9376 return;
+}
+__lcl_isVR_SystemBoolean_1 = G_localPlayer.IsUserInVR();// 9400
+9416 if (__lcl_isVR_SystemBoolean_1) //9448
+{
+9432 JUMP 9956
+9440 JUMP 9464
+}
+9456 JUMP 9492
+9476 return;
+9508 __intnl_UnityEngineObject_18 = levelUpImageDesktop
+9528 __intnl_UnityEngineObject_19 = __const_SystemObject_0
+9572 if (__intnl_SystemBoolean_37) //9600
+{
+9592 return;
+}
+9616 levelUpDesktopAnimating = __const_SystemBoolean_1
+levelUpDesktopStartTime = get_time();// 9628
+__lcl_rectTransform_UnityEngineRectTransform_2 = G_levelUpImageDesktop.get_transform().GetComponent(__const_SystemType_0);// 9684
+levelUpDesktopStartPos = op_Implicit(__intnl_UnityEngineVector2_3);// 9732
+G_levelUpImageDesktop.get_transform().set_localScale(__const_UnityEngineVector3_0);// 9780
+__lcl_imageColor_UnityEngineColor_0 = G_levelUpImageDesktop.get_color();// 9804
+L_imageColor.set_a(__const_SystemSingle_0);// 9828
+9852 __intnl_UnityEngineColor_4 = __lcl_imageColor_UnityEngineColor_0
+G_levelUpImageDesktop.set_color(__lcl_imageColor_UnityEngineColor_0);// 9872
+G_levelUpImageDesktop.get_gameObject().SetActive(__const_SystemBoolean_1);// 9920
+9940 return;
+9972 __intnl_UnityEngineObject_20 = levelUpImageVR
+9992 __intnl_UnityEngineObject_21 = __const_SystemObject_0
+10036 if (__intnl_SystemBoolean_38) //10064
+{
+10056 return;
+}
+10080 levelUpVRAnimating = __const_SystemBoolean_1
+levelUpVRStartTime = get_time();// 10092
+__lcl_playerHeadPos_UnityEngineVector3_2 = G_localPlayer.GetTrackingData(__const_VRCSDKBaseVRCPlayerApiTrackingDataType_0).get_position();// 10148
+__lcl_playerHeadForward_UnityEngineVector3_0 = op_Multiply(__const_UnityEngineVector3_3, __intnl_UnityEngineQuaternion_2);// 10236
+__lcl_popupPosition_UnityEngineVector3_1 = op_Addition(__intnl_UnityEngineVector3_14, __intnl_UnityEngineVector3_13);// 10364
+G_levelUpImageVR.get_transform().set_position(__lcl_popupPosition_UnityEngineVector3_1);// 10412
+10436 levelUpVRStartPos = __lcl_popupPosition_UnityEngineVector3_1
+__lcl_directionToPlayer_UnityEngineVector3_2 = op_Subtraction(__lcl_popupPosition_UnityEngineVector3_1, __lcl_playerHeadPos_UnityEngineVector3_2).get_normalized();// 10488
+G_levelUpImageVR.get_transform().set_rotation(__intnl_UnityEngineQuaternion_3);// 10592
+__lcl_distance_SystemSingle_1 = Distance(__lcl_popupPosition_UnityEngineVector3_1, __lcl_playerHeadPos_UnityEngineVector3_2);// 10624
+__lcl_normalizedDistance_SystemSingle_1 = InverseLerp(__lcl_distance_SystemSingle_1, maxDistance, minDistance);// 10664
+__lcl_scale_SystemSingle_2 = Lerp(__lcl_normalizedDistance_SystemSingle_1, maxWorldScale, minWorldScale);// 10704
+levelUpVRStartScale = op_Multiply(__lcl_scale_SystemSingle_2, __const_UnityEngineVector3_2);// 10736
+G_levelUpImageVR.get_transform().set_localScale(__intnl_UnityEngineVector3_17);// 10816
+__lcl_imageColor_UnityEngineColor_1 = G_levelUpImageVR.get_color();// 10840
+L_imageColor.set_a(__const_SystemSingle_0);// 10864
+10888 __intnl_UnityEngineColor_5 = __lcl_imageColor_UnityEngineColor_1
+G_levelUpImageVR.set_color(__lcl_imageColor_UnityEngineColor_1);// 10908
+G_levelUpImageVR.get_gameObject().SetActive(__const_SystemBoolean_1);// 10956
+10976 return;
+__lcl_elapsed_SystemSingle_2 = op_Subtraction(levelUpDesktopStartTime, __intnl_SystemSingle_12);// 11032
+__lcl_progress_SystemSingle_2 = op_Division(animationDuration, __lcl_elapsed_SystemSingle_2);// 11064
+__lcl_rectTransform_UnityEngineRectTransform_3 = G_levelUpImageDesktop.get_transform().GetComponent(__const_SystemType_0);// 11120
+11168 if (__intnl_SystemBoolean_39) //11312
+{
+L_rectTransform.set_anchoredPosition(__intnl_UnityEngineVector2_4);// 11216
+G_levelUpImageDesktop.get_gameObject().SetActive(__const_SystemBoolean_0);// 11264
+11288 levelUpDesktopAnimating = __const_SystemBoolean_0
+11304 return;
+}
+__lcl_endPosition_UnityEngineVector3_2 = op_Addition(__intnl_UnityEngineVector3_19, levelUpDesktopStartPos);// 11400
+11448 if (__intnl_SystemBoolean_40) //11496
+{
+__lcl_alpha_SystemSingle_2 = op_Division(__const_SystemSingle_4, __lcl_progress_SystemSingle_2);// 11480
+11488 JUMP 11592
+}
+__lcl_alpha_SystemSingle_2 = op_Subtraction(__intnl_SystemSingle_14, __const_SystemSingle_2);// 11584
+__lcl_imageColor_UnityEngineColor_2 = G_levelUpImageDesktop.get_color();// 11608
+L_imageColor.set_a(__lcl_alpha_SystemSingle_2);// 11632
+11656 __intnl_UnityEngineColor_6 = __lcl_imageColor_UnityEngineColor_2
+G_levelUpImageDesktop.set_color(__lcl_imageColor_UnityEngineColor_2);// 11676
+11724 if (__intnl_SystemBoolean_41) //11812
+{
+__lcl_scale_SystemSingle_3 = Lerp(__intnl_SystemSingle_15, __const_SystemSingle_7, __const_SystemSingle_1);// 11796
+11804 JUMP 11916
+}
+__lcl_scale_SystemSingle_3 = Lerp(__intnl_SystemSingle_17, __const_SystemSingle_2, __const_SystemSingle_7);// 11908
+G_levelUpImageDesktop.get_transform().set_localScale(__intnl_UnityEngineVector3_20);// 11988
+__lcl_currentPos_UnityEngineVector3_2 = Lerp(__lcl_progress_SystemSingle_2, __lcl_endPosition_UnityEngineVector3_2, levelUpDesktopStartPos);// 12028
+L_rectTransform.set_anchoredPosition(__intnl_UnityEngineVector2_4);// 12076
+12096 return;
+__lcl_elapsed_SystemSingle_3 = op_Subtraction(levelUpVRStartTime, __intnl_SystemSingle_18);// 12152
+__lcl_progress_SystemSingle_3 = op_Division(animationDuration, __lcl_elapsed_SystemSingle_3);// 12184
+12232 if (__intnl_SystemBoolean_42) //12328
+{
+G_levelUpImageVR.get_gameObject().SetActive(__const_SystemBoolean_0);// 12280
+12304 levelUpVRAnimating = __const_SystemBoolean_0
+12320 return;
+}
+__lcl_endPosition_UnityEngineVector3_3 = op_Addition(__intnl_UnityEngineVector3_21, levelUpVRStartPos);// 12384
+12432 if (__intnl_SystemBoolean_43) //12480
+{
+__lcl_alpha_SystemSingle_3 = op_Division(__const_SystemSingle_4, __lcl_progress_SystemSingle_3);// 12464
+12472 JUMP 12576
+}
+__lcl_alpha_SystemSingle_3 = op_Subtraction(__intnl_SystemSingle_20, __const_SystemSingle_2);// 12568
+__lcl_imageColor_UnityEngineColor_3 = G_levelUpImageVR.get_color();// 12592
+L_imageColor.set_a(__lcl_alpha_SystemSingle_3);// 12616
+12640 __intnl_UnityEngineColor_7 = __lcl_imageColor_UnityEngineColor_3
+G_levelUpImageVR.set_color(__lcl_imageColor_UnityEngineColor_3);// 12660
+12708 if (__intnl_SystemBoolean_44) //12796
+{
+__lcl_scaleMultiplier_SystemSingle_1 = Lerp(__intnl_SystemSingle_21, __const_SystemSingle_9, __const_SystemSingle_2);// 12780
+12788 JUMP 12900
+}
+__lcl_scaleMultiplier_SystemSingle_1 = Lerp(__intnl_SystemSingle_23, __const_SystemSingle_10, __const_SystemSingle_9);// 12892
+G_levelUpImageVR.get_transform().set_localScale(__intnl_UnityEngineVector3_22);// 12972
+__lcl_currentPos_UnityEngineVector3_3 = Lerp(__lcl_progress_SystemSingle_3, __lcl_endPosition_UnityEngineVector3_3, levelUpVRStartPos);// 13012
+G_levelUpImageVR.get_transform().set_position(__lcl_currentPos_UnityEngineVector3_3);// 13060
+13108 if (__intnl_SystemBoolean_45) //13332
+{
+__lcl_playerHeadPos_UnityEngineVector3_3 = G_localPlayer.GetTrackingData(__const_VRCSDKBaseVRCPlayerApiTrackingDataType_0).get_position();// 13164
+__lcl_directionToPlayer_UnityEngineVector3_3 = op_Subtraction(__lcl_currentPos_UnityEngineVector3_3, __lcl_playerHeadPos_UnityEngineVector3_3).get_normalized();// 13220
+G_levelUpImageVR.get_transform().set_rotation(__intnl_UnityEngineQuaternion_4);// 13324
+}
+13344 return;

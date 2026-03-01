@@ -1,0 +1,55 @@
+using System;
+using UnityEngine;
+using VRC.SDKBase;
+using VRC.Udon.Common.Enums;
+using VRC.Udon;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private String __const_SystemString_0 = "_GrantLoginAchievement";
+private Single __const_SystemSingle_0 = 2f;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private VRCPlayerApi onPlayerRestoredPlayer = null;
+private Int64 __refl_typeid = -6884778570096715618;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private String __const_SystemString_2 = "__0_ForceUnlockAchievement";
+private object __const_SystemObject_0 = null;
+private EventTiming __const_VRCUdonCommonEnumsEventTiming_0 = EventTiming.Update;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private String __refl_typename = "LoginAchievementGranter";
+private Int32 __intnl_SystemInt32_0 = 0;
+private String __const_SystemString_1 = "__0_achievementIndex__param";
+public UdonBehaviour achievementManager;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_0 = this;
+public Int32 achievementIndex;
+
+
+public void _onPlayerRestored()
+{
+__intnl_SystemBoolean_0 = onPlayerRestoredPlayer.isLocal;
+if (__intnl_SystemBoolean_0)
+{
+UNDEF_74c2d_136();
+}
+}
+private void UNDEF_74c2d_136()
+{
+__this_VRCUdonUdonBehaviour_0.SendCustomEventDelayedSeconds(__const_SystemString_0, __const_SystemSingle_0, __const_VRCUdonCommonEnumsEventTiming_0);
+}
+public void _GrantLoginAchievement()
+{
+__intnl_UnityEngineObject_0 = achievementManager;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_0 == __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_1)
+{
+return;
+}
+__intnl_SystemInt32_0 = achievementIndex;
+achievementManager.SetProgramVariable(__const_SystemString_1, achievementIndex);
+achievementManager.SendCustomEvent(__const_SystemString_2);
+}
+}

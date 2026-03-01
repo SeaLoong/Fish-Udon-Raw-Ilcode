@@ -1,0 +1,236 @@
+void _start()
+localPlayer = get_LocalPlayer();// 16
+48 __1__intnlparam = __this_UnityEngineTransform_0
+52 JUMP 3796
+76 station = __0__intnlparam
+__lcl_current_UnityEngineTransform_0 = transform.get_parent();// 96
+120 __intnl_UnityEngineObject_0 = __lcl_current_UnityEngineTransform_0
+140 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+184 if (__intnl_SystemBoolean_0) //264
+{
+208 __intnl_UnityEngineObject_2 = boatController
+228 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+}
+272 if (__intnl_SystemBoolean_0) //392
+{
+328 __3__intnlparam = __intnl_UnityEngineTransform_0
+332 JUMP 3888
+356 boatController = __2__intnlparam
+__lcl_current_UnityEngineTransform_0 = L_current.get_parent();// 376
+384 JUMP 104
+}
+408 __intnl_UnityEngineObject_4 = boatController
+428 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+472 if (__intnl_SystemBoolean_1) //552
+{
+496 __intnl_UnityEngineObject_6 = station
+516 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+}
+560 if (__intnl_SystemBoolean_1) //644
+{
+584 __intnl_VRCSDK3ComponentsVRCStation_0 = station
+__2__intnlparam.SetProgramVariable(station, __const_SystemString_0);// 612
+__2__intnlparam.SendCustomEvent(__const_SystemString_1);// 636
+}
+660 __intnl_UnityEngineObject_8 = seatIndicator
+680 __intnl_UnityEngineObject_9 = __const_SystemObject_0
+724 if (__intnl_SystemBoolean_2) //756
+{
+G_seatIndicator.SetActive(__const_SystemBoolean_0);// 748
+}
+768 return;
+void _update()
+800 __intnl_UnityEngineObject_10 = seatIndicator
+820 __intnl_UnityEngineObject_11 = __const_SystemObject_0
+864 if (__intnl_SystemBoolean_3) //880
+{
+872 JUMP 900
+}
+896 __intnl_SystemBoolean_3 = isPlayerSeated
+908 if (__intnl_SystemBoolean_3) //936
+{
+928 return;
+}
+976 if (__intnl_SystemBoolean_4) //992
+{
+984 JUMP 1040
+}
+1048 if (__intnl_SystemBoolean_4) //1076
+{
+1068 return;
+}
+__lcl_distance_SystemSingle_0 = Distance(__intnl_UnityEngineVector3_1, __intnl_UnityEngineVector3_0);// 1148
+isPlayerInRange = op_LessThanOrEqual(indicatorShowDistance, __lcl_distance_SystemSingle_0);// 1180
+1196 JUMP 1232
+1216 return;
+1248 __intnl_UnityEngineObject_12 = seatIndicator
+1268 __intnl_UnityEngineObject_13 = __const_SystemObject_0
+1312 if (__intnl_SystemBoolean_6) //1340
+{
+1332 return;
+}
+1380 if (__intnl_SystemBoolean_7) //1396
+{
+1388 JUMP 1444
+}
+1452 if (__intnl_SystemBoolean_7) //1480
+{
+1472 return;
+}
+1496 __lcl_canDrive_SystemBoolean_0 = __const_SystemBoolean_0
+1516 __intnl_UnityEngineObject_14 = boatController
+1536 __intnl_UnityEngineObject_15 = __const_SystemObject_0
+1580 if (__intnl_SystemBoolean_9) //1704
+{
+1612 __intnl_VRCUdonUdonBehaviour_0 = boatController
+__2__intnlparam.SendCustomEvent(__const_SystemString_2);// 1624
+1680 __intnl_SystemBoolean_10 = __intnl_SystemObject_0
+1700 __lcl_canDrive_SystemBoolean_0 = __intnl_SystemBoolean_10
+}
+1720 __intnl_SystemBoolean_11 = isPlayerInRange
+1732 if (__intnl_SystemBoolean_11) //1764
+{
+}
+1780 __intnl_SystemBoolean_10 = __intnl_SystemBoolean_11
+1792 if (__intnl_SystemBoolean_10) //1820
+{
+1816 __intnl_SystemBoolean_10 = __lcl_canDrive_SystemBoolean_0
+}
+1836 __lcl_shouldShow_SystemBoolean_0 = __intnl_SystemBoolean_10
+G_seatIndicator.SetActive(__lcl_shouldShow_SystemBoolean_0);// 1856
+1876 return;
+void _interact()
+1932 if (__intnl_SystemBoolean_12) //1948
+{
+1940 JUMP 1996
+}
+2004 if (__intnl_SystemBoolean_12) //2032
+{
+2024 return;
+}
+2048 __intnl_UnityEngineObject_16 = boatController
+2068 __intnl_UnityEngineObject_17 = __const_SystemObject_0
+2112 if (__intnl_SystemBoolean_14) //2140
+{
+2132 return;
+}
+2164 __intnl_VRCUdonUdonBehaviour_1 = boatController
+__2__intnlparam.SendCustomEvent(__const_SystemString_2);// 2176
+2232 __intnl_SystemBoolean_15 = __intnl_SystemObject_1
+2244 if (__intnl_SystemBoolean_15) //2260
+{
+2252 JUMP 2280
+}
+2272 return;
+G_localPlayer.UseAttachedStation();// 2288
+2308 return;
+void _onStationEntered()
+2364 if (__intnl_SystemBoolean_16) //2380
+{
+2372 JUMP 2428
+}
+2436 if (__intnl_SystemBoolean_16) //2464
+{
+2456 return;
+}
+2496 if (__intnl_SystemBoolean_18) //2576
+{
+2520 __intnl_UnityEngineObject_18 = swimZone
+2540 __intnl_UnityEngineObject_19 = __const_SystemObject_0
+}
+2584 if (__intnl_SystemBoolean_18) //2648
+{
+G_swimZone.SetProgramVariable(__const_SystemBoolean_1, __const_SystemString_4);// 2616
+G_swimZone.SendCustomEvent(__const_SystemString_5);// 2640
+}
+2664 __intnl_SystemBoolean_20 = isDriverSeat
+2676 if (__intnl_SystemBoolean_20) //2708
+{
+}
+2724 __intnl_SystemBoolean_19 = __intnl_SystemBoolean_20
+2736 if (__intnl_SystemBoolean_19) //2816
+{
+2760 __intnl_UnityEngineObject_20 = boatController
+2780 __intnl_UnityEngineObject_21 = __const_SystemObject_0
+}
+2824 if (__intnl_SystemBoolean_19) //3160
+{
+2856 __intnl_VRCUdonUdonBehaviour_2 = boatController
+__2__intnlparam.SendCustomEvent(__const_SystemString_2);// 2868
+2924 __intnl_SystemBoolean_21 = __intnl_SystemObject_2
+2936 if (__intnl_SystemBoolean_21) //2952
+{
+2944 JUMP 2952
+}
+2968 isPlayerSeated = __const_SystemBoolean_1
+2980 JUMP 1232
+3052 if (__intnl_SystemBoolean_22) //3068
+{
+3060 JUMP 3116
+}
+SetOwner(__intnl_UnityEngineGameObject_1, onStationEnteredPlayer);// 3108
+3140 __intnl_VRCUdonUdonBehaviour_3 = boatController
+__2__intnlparam.SendCustomEvent(__const_SystemString_6);// 3152
+}
+3172 return;
+void _onStationExited()
+3228 if (__intnl_SystemBoolean_23) //3244
+{
+3236 JUMP 3292
+}
+3300 if (__intnl_SystemBoolean_23) //3328
+{
+3320 return;
+}
+3360 if (__intnl_SystemBoolean_25) //3440
+{
+3384 __intnl_UnityEngineObject_22 = swimZone
+3404 __intnl_UnityEngineObject_23 = __const_SystemObject_0
+}
+3448 if (__intnl_SystemBoolean_25) //3512
+{
+G_swimZone.SetProgramVariable(__const_SystemBoolean_0, __const_SystemString_4);// 3480
+G_swimZone.SendCustomEvent(__const_SystemString_5);// 3504
+}
+3528 __intnl_SystemBoolean_27 = isDriverSeat
+3540 if (__intnl_SystemBoolean_27) //3572
+{
+}
+3588 __intnl_SystemBoolean_26 = __intnl_SystemBoolean_27
+3600 if (__intnl_SystemBoolean_26) //3680
+{
+3624 __intnl_UnityEngineObject_24 = boatController
+3644 __intnl_UnityEngineObject_25 = __const_SystemObject_0
+}
+3688 if (__intnl_SystemBoolean_26) //3776
+{
+3712 isPlayerSeated = __const_SystemBoolean_0
+3724 JUMP 1232
+3756 __intnl_VRCUdonUdonBehaviour_4 = boatController
+__2__intnlparam.SendCustomEvent(__const_SystemString_7);// 3768
+}
+3788 return;
+3844 __0__intnlparam = __intnl_UnityEngineComponent_0
+3860 return;
+3880 return;
+3936 __lcl_udonBehaviours_UnityEngineComponentArray_0 = __intnl_UnityEngineComponentArray_0
+3956 __lcl_targetID_SystemInt64_0 = __const_SystemInt64_0
+4000 __intnl_SystemInt32_1 = __const_SystemInt32_0
+4044 if (__intnl_SystemBoolean_28) //4336
+{
+__lcl_behaviour_VRCUdonUdonBehaviour_0 = L_current.get_transform().GetComponents(__const_SystemType_1).Get(__intnl_SystemInt32_1);// 4076
+__lcl_idValue_SystemObject_0 = L_behaviour.GetProgramVariable(__const_SystemString_8);// 4108
+4156 if (__intnl_SystemBoolean_29) //4220
+{
+}
+4228 if (__intnl_SystemBoolean_29) //4296
+{
+4252 __intnl_UnityEngineComponent_1 = __lcl_behaviour_VRCUdonUdonBehaviour_0
+4272 __2__intnlparam = __intnl_UnityEngineComponent_1
+4288 return;
+}
+4328 JUMP 4004
+}
+4352 __2__intnlparam = __const_SystemObject_0
+4368 return;
+4388 return;

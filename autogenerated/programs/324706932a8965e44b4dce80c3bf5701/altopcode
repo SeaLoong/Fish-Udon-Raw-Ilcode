@@ -1,0 +1,230 @@
+void _onVarChange_isHooked()
+16 __0_value__param = isHooked
+36 isHooked = _old_isHooked
+64 isHooked = __0_value__param
+76 if (isHooked) //372
+{
+G_hook.set_localPosition(__const_UnityEngineVector3_0);// 100
+G_hook.set_eulerAngles(__const_UnityEngineVector3_0);// 124
+G_platformOverride.set_enabled(__const_SystemBoolean_0);// 148
+G_PlayerOffset.SetPositionAndRotation(__intnl_UnityEngineQuaternion_0, __intnl_UnityEngineVector3_0);// 228
+localColliders = Clamp(__const_SystemInt32_2, __const_SystemInt32_1, __intnl_SystemInt32_0);// 356
+364 JUMP 556
+}
+380 if (inheritVelocity) //412
+{
+G_localPlayer.SetVelocity(playerVelocity);// 404
+}
+420 JUMP 5652
+G_hook.set_localPosition(__const_UnityEngineVector3_0);// 444
+G_hook.set_eulerAngles(__const_UnityEngineVector3_0);// 468
+G_PlayerOffset.SetPositionAndRotation(__intnl_UnityEngineQuaternion_0, __intnl_UnityEngineVector3_0);// 548
+568 return;
+void _start()
+592 JUMP 5188
+608 JUMP 4840
+628 return;
+void _fixedUpdate()
+652 JUMP 732
+672 return;
+void _lateUpdate()
+696 JUMP 1784
+716 return;
+764 if (__intnl_SystemBoolean_0) //780
+{
+772 JUMP 800
+}
+792 return;
+816 __intnl_SystemBoolean_1 = isHooked
+828 if (__intnl_SystemBoolean_1) //856
+{
+852 __intnl_SystemBoolean_1 = inheritVelocity
+}
+864 if (__intnl_SystemBoolean_1) //1128
+{
+playerVelocity = ClampMagnitude(__const_SystemSingle_3, __intnl_UnityEngineVector3_7);// 1096
+lastFramePos = G_localPlayer.GetPosition();// 1120
+}
+1136 if (menuOpen) //1152
+{
+1144 JUMP 1756
+}
+G_platformOverride.set_center(__intnl_UnityEngineVector3_4);// 1336
+1528 if (__intnl_SystemBoolean_3) //1544
+{
+1536 JUMP 1756
+}
+unhookThreshold = op_Addition(__const_SystemInt32_1, unhookThreshold);// 1568
+1616 if (__intnl_SystemBoolean_4) //1644
+{
+1640 __intnl_SystemBoolean_4 = isHooked
+}
+1652 if (__intnl_SystemBoolean_4) //1756
+{
+G_hook.set_parent(__this_UnityEngineTransform_0);// 1676
+this.SetProgramVariable(__const_SystemBoolean_1, __const_SystemString_0);// 1708
+this.SendCustomEventDelayedSeconds(__const_VRCUdonCommonEnumsEventTiming_0, __const_SystemSingle_7, __const_SystemString_1);// 1748
+}
+1768 return;
+1816 if (__intnl_SystemBoolean_5) //1832
+{
+1824 JUMP 1852
+}
+1844 return;
+1860 if (isHooked) //2296
+{
+intUI = OverlapSphereNonAlloc(__const_SystemInt32_4, colliderArray, __const_SystemSingle_5, __intnl_UnityEngineVector3_8);// 1932
+1956 __intnl_SystemBoolean_7 = mainMenuPause
+1968 if (__intnl_SystemBoolean_7) //2076
+{
+2016 if (__intnl_SystemBoolean_8) //2056
+{
+}
+2072 __intnl_SystemBoolean_7 = __intnl_SystemBoolean_8
+}
+2092 __intnl_SystemBoolean_6 = __intnl_SystemBoolean_7
+2104 if (__intnl_SystemBoolean_6) //2120
+{
+2112 JUMP 2276
+}
+2136 __intnl_SystemBoolean_9 = quickMenuPause
+2148 if (__intnl_SystemBoolean_9) //2256
+{
+2196 if (__intnl_SystemBoolean_10) //2236
+{
+}
+2252 __intnl_SystemBoolean_9 = __intnl_SystemBoolean_10
+}
+2272 __intnl_SystemBoolean_6 = __intnl_SystemBoolean_9
+2292 menuOpen = __intnl_SystemBoolean_6
+}
+2312 __intnl_SystemBoolean_6 = isHooked
+2324 if (__intnl_SystemBoolean_6) //2356
+{
+}
+2364 if (__intnl_SystemBoolean_6) //2500
+{
+hookLastPos = G_hook.get_position();// 2388
+G_hook.set_position(__intnl_UnityEngineVector3_8);// 2436
+hookOffsetPos = op_Subtraction(hookLastPos, __intnl_UnityEngineVector3_9);// 2492
+}
+2516 __intnl_SystemBoolean_7 = isHooked
+2528 if (__intnl_SystemBoolean_7) //2556
+{
+2552 __intnl_SystemBoolean_7 = menuOpen
+}
+2564 if (__intnl_SystemBoolean_7) //2596
+{
+G_localPlayer.SetVelocity(__const_UnityEngineVector3_0);// 2588
+}
+2612 __intnl_SystemBoolean_8 = isHooked
+2624 if (__intnl_SystemBoolean_8) //2656
+{
+}
+2664 if (__intnl_SystemBoolean_8) //3160
+{
+G_playerTracker.SetPositionAndRotation(__intnl_UnityEngineQuaternion_1, __intnl_UnityEngineVector3_8);// 2808
+G_PlayerOffset.SetPositionAndRotation(__intnl_UnityEngineQuaternion_2, __intnl_UnityEngineVector3_9);// 2888
+3024 if (__intnl_SystemBoolean_9) //3160
+{
+G_localPlayer.TeleportTo(__const_SystemBoolean_0, __const_VRCSDKBaseVRC_SceneDescriptorSpawnOrientation_0, __intnl_UnityEngineQuaternion_3, __intnl_UnityEngineVector3_12);// 3152
+}
+}
+3176 __intnl_SystemBoolean_9 = reduceIKDrift
+3188 if (__intnl_SystemBoolean_9) //3216
+{
+3212 __intnl_SystemBoolean_9 = isHooked
+}
+3224 if (__intnl_SystemBoolean_9) //4116
+{
+headRotation = G_localPlayer.GetTrackingData(__const_VRCSDKBaseVRCPlayerApiTrackingDataType_1).get_rotation();// 3280
+3304 __intnl_VRCSDKBaseVRCPlayerApi_0 = localPlayer
+3436 if (__intnl_SystemBoolean_12) //3604
+{
+}
+3620 __intnl_SystemBoolean_11 = __intnl_SystemBoolean_12
+3632 if (__intnl_SystemBoolean_11) //3848
+{
+}
+3864 __intnl_SystemBoolean_10 = __intnl_SystemBoolean_11
+3876 if (__intnl_SystemBoolean_10) //4092
+{
+}
+G_localPlayer.Immobilize(__intnl_SystemBoolean_10);// 4108
+}
+4300 if (__intnl_SystemBoolean_10) //4496
+{
+4324 unhookThreshold = __const_SystemInt32_9
+4368 if (__intnl_SystemBoolean_11) //4400
+{
+}
+4408 if (__intnl_SystemBoolean_11) //4496
+{
+G_hook.set_parent(__intnl_UnityEngineTransform_0);// 4456
+this.SetProgramVariable(__const_SystemBoolean_0, __const_SystemString_0);// 4488
+}
+}
+4508 return;
+void _inputMoveVertical()
+InputMoveV = G_inputMoveVerticalArgs.get_floatValue();// 4540
+4560 return;
+void _inputMoveHorizontal()
+InputMoveH = G_inputMoveHorizontalArgs.get_floatValue();// 4592
+4612 return;
+void _inputJump()
+4636 if (reduceIKDrift) //4668
+{
+G_localPlayer.Immobilize(__const_SystemBoolean_1);// 4660
+}
+4680 return;
+void _onPlayerRespawn()
+G_hook.set_parent(__this_UnityEngineTransform_0);// 4712
+4736 unhookThreshold = __const_SystemInt32_10
+G_localPlayer.SetVelocity(__const_UnityEngineVector3_0);// 4756
+this.SetProgramVariable(__const_SystemBoolean_1, __const_SystemString_0);// 4788
+4804 JUMP 5652
+4824 return;
+void IgnoreSceneCollision()
+this.SendCustomEventDelayedSeconds(__const_VRCUdonCommonEnumsEventTiming_0, __const_SystemSingle_12, __const_SystemString_2);// 4872
+colliderArray = OverlapSphere(__const_SystemSingle_13, __const_UnityEngineVector3_0);// 4904
+4928 __lcl_i_SystemInt32_0 = __const_SystemInt32_9
+4996 if (__intnl_SystemBoolean_14) //5160
+{
+sceneCollider = G_colliderArray.Get(__lcl_i_SystemInt32_0);// 5028
+5068 if (__intnl_SystemBoolean_15) //5120
+{
+5092 __intnl_UnityEngineCollider_0 = platformOverride
+IgnoreCollision(__intnl_UnityEngineCollider_0, sceneCollider);// 5112
+}
+__lcl_i_SystemInt32_0 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_0);// 5144
+5152 JUMP 4932
+}
+5172 return;
+localPlayer = get_LocalPlayer();// 5196
+5236 if (__intnl_SystemBoolean_16) //5252
+{
+5244 JUMP 5272
+}
+5264 return;
+lastFramePos = G_localPlayer.GetPosition();// 5288
+playerTracker = transform.GetChild(__const_SystemInt32_9).GetChild(__const_SystemInt32_9);// 5352
+PlayerOffset = transform.GetChild(__const_SystemInt32_9);// 5384
+hook = transform.GetChild(__const_SystemInt32_1);// 5416
+platformOverride = transform.get_transform().GetComponent(__const_SystemType_0);// 5472
+G_platformOverride.set_size(__const_UnityEngineVector3_3);// 5496
+transform.set_position(__const_UnityEngineVector3_0);// 5520
+5592 if (__intnl_SystemBoolean_17) //5624
+{
+G_hookLayerMask.set_value(__const_SystemInt32_12);// 5616
+}
+5636 return;
+5684 if (__intnl_SystemBoolean_18) //5700
+{
+5692 JUMP 5724
+}
+G_platformOverride.set_enabled(__const_SystemBoolean_1);// 5716
+5732 if (reduceIKDrift) //5764
+{
+G_localPlayer.Immobilize(__const_SystemBoolean_1);// 5756
+}
+5776 return;

@@ -1,0 +1,531 @@
+void _start
+0 PUSH UInt32 __const_SystemUInt32_0
+8 PUSH Int32 __const_SystemInt32_0
+16 PUSH Int32 currentSlide
+24 COPY
+28 PUSH Vector2 __const_UnityEngineVector2_0
+36 PUSH Vector2 startOffset
+44 COPY
+48 PUSH Vector2 __const_UnityEngineVector2_0
+56 PUSH Vector2 targetOffset
+64 COPY
+68 PUSH UInt32 __gintnl_SystemUInt32_0
+76 JUMP 2612
+84 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+92 COPY
+96 JUMP_INDIRECT 2
+void _update
+104 PUSH UInt32 __const_SystemUInt32_0
+112 PUSH Boolean isCountingDown
+120 JUMP_IF_FALSE 920
+128 PUSH Single __intnl_SystemSingle_0
+136 EXTERN UnityEngineTime.__get_deltaTime__SystemSingle
+144 PUSH Single countdownTimer
+152 PUSH Single __intnl_SystemSingle_0
+160 PUSH Single countdownTimer
+168 EXTERN SystemSingle.__op_Subtraction__SystemSingle_SystemSingle__SystemSingle
+176 PUSH Single countdownTimer
+184 PUSH Int32 __lcl_displaySecond_SystemInt32_0
+192 EXTERN UnityEngineMathf.__CeilToInt__SystemSingle__SystemInt32
+200 PUSH Int32 __lcl_displaySecond_SystemInt32_0
+208 PUSH Int32 lastDisplayedSecond
+216 PUSH Boolean __intnl_SystemBoolean_0
+224 EXTERN SystemInt32.__op_Inequality__SystemInt32_SystemInt32__SystemBoolean
+232 PUSH Boolean __intnl_SystemBoolean_0
+240 JUMP_IF_FALSE 280
+248 PUSH Int32 __lcl_displaySecond_SystemInt32_0
+256 PUSH Int32 __const_SystemInt32_0
+264 PUSH Boolean __intnl_SystemBoolean_0
+272 EXTERN SystemInt32.__op_GreaterThan__SystemInt32_SystemInt32__SystemBoolean
+280 PUSH Boolean __intnl_SystemBoolean_0
+288 JUMP_IF_FALSE 460
+296 PUSH Int32 __lcl_displaySecond_SystemInt32_0
+304 PUSH Int32 lastDisplayedSecond
+312 COPY
+316 PUSH TextMeshProUGUI nextButtonText
+324 PUSH Object __intnl_UnityEngineObject_0
+332 COPY
+336 PUSH object __const_SystemObject_0
+344 PUSH Object __intnl_UnityEngineObject_1
+352 COPY
+356 PUSH Object __intnl_UnityEngineObject_0
+364 PUSH Object __intnl_UnityEngineObject_1
+372 PUSH Boolean __intnl_SystemBoolean_1
+380 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+388 PUSH Boolean __intnl_SystemBoolean_1
+396 JUMP_IF_FALSE 460
+404 PUSH Int32 __lcl_displaySecond_SystemInt32_0
+412 PUSH String __const_SystemString_0
+420 PUSH String __intnl_SystemString_0
+428 EXTERN SystemString.__Concat__SystemObject_SystemObject__SystemString
+436 PUSH TextMeshProUGUI nextButtonText
+444 PUSH String __intnl_SystemString_0
+452 EXTERN TMProTextMeshProUGUI.__set_text__SystemString__SystemVoid
+460 PUSH Single countdownTimer
+468 PUSH Single __const_SystemSingle_0
+476 PUSH Boolean __intnl_SystemBoolean_1
+484 EXTERN SystemSingle.__op_LessThanOrEqual__SystemSingle_SystemSingle__SystemBoolean
+492 PUSH Boolean __intnl_SystemBoolean_1
+500 JUMP_IF_FALSE 920
+508 PUSH Boolean __const_SystemBoolean_0
+516 PUSH Boolean isCountingDown
+524 COPY
+528 PUSH Int32 __const_SystemInt32_1
+536 PUSH Int32 lastDisplayedSecond
+544 COPY
+548 PUSH Button nextButton
+556 PUSH Object __intnl_UnityEngineObject_0
+564 COPY
+568 PUSH object __const_SystemObject_0
+576 PUSH Object __intnl_UnityEngineObject_1
+584 COPY
+588 PUSH Object __intnl_UnityEngineObject_0
+596 PUSH Object __intnl_UnityEngineObject_1
+604 PUSH Boolean __intnl_SystemBoolean_2
+612 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+620 PUSH Boolean __intnl_SystemBoolean_2
+628 JUMP_IF_FALSE 660
+636 PUSH Button nextButton
+644 PUSH Boolean __const_SystemBoolean_1
+652 EXTERN UnityEngineUISelectable.__set_interactable__SystemBoolean__SystemVoid
+660 PUSH TextMeshProUGUI nextButtonText
+668 PUSH Object __intnl_UnityEngineObject_2
+676 COPY
+680 PUSH object __const_SystemObject_0
+688 PUSH Object __intnl_UnityEngineObject_3
+696 COPY
+700 PUSH Object __intnl_UnityEngineObject_2
+708 PUSH Object __intnl_UnityEngineObject_3
+716 PUSH Boolean __intnl_SystemBoolean_3
+724 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+732 PUSH Boolean __intnl_SystemBoolean_3
+740 JUMP_IF_FALSE 920
+748 PUSH Int32 totalSlides
+756 PUSH Int32 __const_SystemInt32_2
+764 PUSH Int32 __intnl_SystemInt32_0
+772 EXTERN SystemInt32.__op_Subtraction__SystemInt32_SystemInt32__SystemInt32
+780 PUSH Int32 currentSlide
+788 PUSH Int32 __intnl_SystemInt32_0
+796 PUSH Boolean __intnl_SystemBoolean_4
+804 EXTERN SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean
+812 PUSH TextMeshProUGUI nextButtonText
+820 PUSH TextMeshProUGUI __intnl_TMProTextMeshProUGUI_0
+828 COPY
+832 PUSH Boolean __intnl_SystemBoolean_4
+840 JUMP_IF_FALSE 876
+848 PUSH String __const_SystemString_1
+856 PUSH String __intnl_SystemString_0
+864 COPY
+868 JUMP 896
+876 PUSH String __const_SystemString_2
+884 PUSH String __intnl_SystemString_0
+892 COPY
+896 PUSH TextMeshProUGUI __intnl_TMProTextMeshProUGUI_0
+904 PUSH String __intnl_SystemString_0
+912 EXTERN TMProTextMeshProUGUI.__set_text__SystemString__SystemVoid
+920 PUSH Boolean isAnimating
+928 PUSH Boolean __intnl_SystemBoolean_0
+936 EXTERN SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean
+944 PUSH Boolean __intnl_SystemBoolean_0
+952 JUMP_IF_FALSE 968
+960 JUMP 1040
+968 PUSH Material slideMaterial
+976 PUSH Object __intnl_UnityEngineObject_0
+984 COPY
+988 PUSH object __const_SystemObject_0
+996 PUSH Object __intnl_UnityEngineObject_1
+1004 COPY
+1008 PUSH Object __intnl_UnityEngineObject_0
+1016 PUSH Object __intnl_UnityEngineObject_1
+1024 PUSH Boolean __intnl_SystemBoolean_0
+1032 EXTERN UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean
+1040 PUSH Boolean __intnl_SystemBoolean_0
+1048 JUMP_IF_FALSE 1076
+1056 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1064 COPY
+1068 JUMP_INDIRECT 2
+1076 PUSH Single __intnl_SystemSingle_0
+1084 EXTERN UnityEngineTime.__get_deltaTime__SystemSingle
+1092 PUSH Single animationTime
+1100 PUSH Single __intnl_SystemSingle_0
+1108 PUSH Single animationTime
+1116 EXTERN SystemSingle.__op_Addition__SystemSingle_SystemSingle__SystemSingle
+1124 PUSH Single animationTime
+1132 PUSH Single slideDuration
+1140 PUSH Single __intnl_SystemSingle_1
+1148 EXTERN SystemSingle.__op_Division__SystemSingle_SystemSingle__SystemSingle
+1156 PUSH Single __intnl_SystemSingle_1
+1164 PUSH Single __lcl_t_SystemSingle_0
+1172 EXTERN UnityEngineMathf.__Clamp01__SystemSingle__SystemSingle
+1180 PUSH Single __lcl_t_SystemSingle_0
+1188 PUSH Single __const_SystemSingle_1
+1196 PUSH Boolean __intnl_SystemBoolean_1
+1204 EXTERN SystemSingle.__op_LessThan__SystemSingle_SystemSingle__SystemBoolean
+1212 PUSH Boolean __intnl_SystemBoolean_1
+1220 JUMP_IF_FALSE 1396
+1228 PUSH Single __const_SystemSingle_2
+1236 PUSH Single __lcl_t_SystemSingle_0
+1244 PUSH Single __intnl_SystemSingle_2
+1252 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+1260 PUSH Single __intnl_SystemSingle_2
+1268 PUSH Single __lcl_t_SystemSingle_0
+1276 PUSH Single __intnl_SystemSingle_3
+1284 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+1292 PUSH Single __intnl_SystemSingle_3
+1300 PUSH Single __lcl_t_SystemSingle_0
+1308 PUSH Single __intnl_SystemSingle_4
+1316 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+1324 PUSH Single __intnl_SystemSingle_4
+1332 PUSH Single __lcl_t_SystemSingle_0
+1340 PUSH Single __intnl_SystemSingle_5
+1348 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+1356 PUSH Single __intnl_SystemSingle_5
+1364 PUSH Single __lcl_t_SystemSingle_0
+1372 PUSH Single __lcl_t_SystemSingle_0
+1380 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+1388 JUMP 1652
+1396 PUSH Single __const_SystemSingle_3
+1404 PUSH Single __lcl_t_SystemSingle_0
+1412 PUSH Single __intnl_SystemSingle_2
+1420 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+1428 PUSH Single __intnl_SystemSingle_2
+1436 PUSH Single __const_SystemSingle_4
+1444 PUSH Single __lcl_p_SystemSingle_0
+1452 EXTERN SystemSingle.__op_Addition__SystemSingle_SystemSingle__SystemSingle
+1460 PUSH Single __lcl_p_SystemSingle_0
+1468 PUSH Single __lcl_p_SystemSingle_0
+1476 PUSH Single __intnl_SystemSingle_3
+1484 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+1492 PUSH Single __intnl_SystemSingle_3
+1500 PUSH Single __lcl_p_SystemSingle_0
+1508 PUSH Single __intnl_SystemSingle_4
+1516 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+1524 PUSH Single __intnl_SystemSingle_4
+1532 PUSH Single __lcl_p_SystemSingle_0
+1540 PUSH Single __intnl_SystemSingle_5
+1548 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+1556 PUSH Single __intnl_SystemSingle_5
+1564 PUSH Single __lcl_p_SystemSingle_0
+1572 PUSH Single __intnl_SystemSingle_6
+1580 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+1588 PUSH Single __intnl_SystemSingle_6
+1596 PUSH Single __const_SystemSingle_4
+1604 PUSH Single __intnl_SystemSingle_7
+1612 EXTERN SystemSingle.__op_Division__SystemSingle_SystemSingle__SystemSingle
+1620 PUSH Single __const_SystemSingle_5
+1628 PUSH Single __intnl_SystemSingle_7
+1636 PUSH Single __lcl_t_SystemSingle_0
+1644 EXTERN SystemSingle.__op_Subtraction__SystemSingle_SystemSingle__SystemSingle
+1652 PUSH Vector2 startOffset
+1660 PUSH Vector2 targetOffset
+1668 PUSH Single __lcl_t_SystemSingle_0
+1676 PUSH Vector2 __lcl_offset_UnityEngineVector2_0
+1684 EXTERN UnityEngineVector2.__Lerp__UnityEngineVector2_UnityEngineVector2_SystemSingle__UnityEngineVector2
+1692 PUSH Material slideMaterial
+1700 PUSH Vector2 __lcl_offset_UnityEngineVector2_0
+1708 EXTERN UnityEngineMaterial.__set_mainTextureOffset__UnityEngineVector2__SystemVoid
+1716 PUSH Single __lcl_t_SystemSingle_0
+1724 PUSH Single __const_SystemSingle_5
+1732 PUSH Boolean __intnl_SystemBoolean_2
+1740 EXTERN SystemSingle.__op_GreaterThanOrEqual__SystemSingle_SystemSingle__SystemBoolean
+1748 PUSH Boolean __intnl_SystemBoolean_2
+1756 JUMP_IF_FALSE 1784
+1764 PUSH Boolean __const_SystemBoolean_0
+1772 PUSH Boolean isAnimating
+1780 COPY
+1784 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1792 COPY
+1796 JUMP_INDIRECT 2
+void NextSlide
+1804 PUSH UInt32 __const_SystemUInt32_0
+1812 PUSH Boolean isCountingDown
+1820 JUMP_IF_FALSE 1848
+1828 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1836 COPY
+1840 JUMP_INDIRECT 2
+1848 PUSH Int32 totalSlides
+1856 PUSH Int32 __const_SystemInt32_2
+1864 PUSH Int32 __intnl_SystemInt32_1
+1872 EXTERN SystemInt32.__op_Subtraction__SystemInt32_SystemInt32__SystemInt32
+1880 PUSH Int32 currentSlide
+1888 PUSH Int32 __intnl_SystemInt32_1
+1896 PUSH Boolean __intnl_SystemBoolean_5
+1904 EXTERN SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean
+1912 PUSH Boolean __intnl_SystemBoolean_5
+1920 JUMP_IF_FALSE 2000
+1928 PUSH Int32 currentSlide
+1936 PUSH Int32 __const_SystemInt32_2
+1944 PUSH Int32 currentSlide
+1952 EXTERN SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32
+1960 PUSH UInt32 __gintnl_SystemUInt32_1
+1968 JUMP 2612
+1976 PUSH UInt32 __gintnl_SystemUInt32_2
+1984 JUMP 2140
+1992 JUMP 2112
+2000 PUSH GameObject tutorialWindow
+2008 PUSH Object __intnl_UnityEngineObject_4
+2016 COPY
+2020 PUSH object __const_SystemObject_0
+2028 PUSH Object __intnl_UnityEngineObject_5
+2036 COPY
+2040 PUSH Object __intnl_UnityEngineObject_4
+2048 PUSH Object __intnl_UnityEngineObject_5
+2056 PUSH Boolean __intnl_SystemBoolean_6
+2064 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+2072 PUSH Boolean __intnl_SystemBoolean_6
+2080 JUMP_IF_FALSE 2112
+2088 PUSH GameObject tutorialWindow
+2096 PUSH Boolean __const_SystemBoolean_0
+2104 EXTERN UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid
+2112 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2120 COPY
+2124 JUMP_INDIRECT 2
+2132 PUSH UInt32 __const_SystemUInt32_0
+2140 PUSH Boolean __const_SystemBoolean_1
+2148 PUSH Boolean isCountingDown
+2156 COPY
+2160 PUSH Int32 countdownSeconds
+2168 PUSH Single countdownTimer
+2176 EXTERN SystemConvert.__ToSingle__SystemInt32__SystemSingle
+2184 PUSH Int32 countdownSeconds
+2192 PUSH Int32 lastDisplayedSecond
+2200 COPY
+2204 PUSH Button nextButton
+2212 PUSH Object __intnl_UnityEngineObject_6
+2220 COPY
+2224 PUSH object __const_SystemObject_0
+2232 PUSH Object __intnl_UnityEngineObject_7
+2240 COPY
+2244 PUSH Object __intnl_UnityEngineObject_6
+2252 PUSH Object __intnl_UnityEngineObject_7
+2260 PUSH Boolean __intnl_SystemBoolean_7
+2268 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+2276 PUSH Boolean __intnl_SystemBoolean_7
+2284 JUMP_IF_FALSE 2316
+2292 PUSH Button nextButton
+2300 PUSH Boolean __const_SystemBoolean_0
+2308 EXTERN UnityEngineUISelectable.__set_interactable__SystemBoolean__SystemVoid
+2316 PUSH TextMeshProUGUI nextButtonText
+2324 PUSH Object __intnl_UnityEngineObject_8
+2332 COPY
+2336 PUSH object __const_SystemObject_0
+2344 PUSH Object __intnl_UnityEngineObject_9
+2352 COPY
+2356 PUSH Object __intnl_UnityEngineObject_8
+2364 PUSH Object __intnl_UnityEngineObject_9
+2372 PUSH Boolean __intnl_SystemBoolean_8
+2380 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+2388 PUSH Boolean __intnl_SystemBoolean_8
+2396 JUMP_IF_FALSE 2460
+2404 PUSH Int32 countdownSeconds
+2412 PUSH String __const_SystemString_0
+2420 PUSH String __intnl_SystemString_1
+2428 EXTERN SystemString.__Concat__SystemObject_SystemObject__SystemString
+2436 PUSH TextMeshProUGUI nextButtonText
+2444 PUSH String __intnl_SystemString_1
+2452 EXTERN TMProTextMeshProUGUI.__set_text__SystemString__SystemVoid
+2460 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2468 COPY
+2472 JUMP_INDIRECT 2
+void PreviousSlide
+2480 PUSH UInt32 __const_SystemUInt32_0
+2488 PUSH Int32 currentSlide
+2496 PUSH Int32 __const_SystemInt32_0
+2504 PUSH Boolean __intnl_SystemBoolean_9
+2512 EXTERN SystemInt32.__op_GreaterThan__SystemInt32_SystemInt32__SystemBoolean
+2520 PUSH Boolean __intnl_SystemBoolean_9
+2528 JUMP_IF_FALSE 2584
+2536 PUSH Int32 currentSlide
+2544 PUSH Int32 __const_SystemInt32_2
+2552 PUSH Int32 currentSlide
+2560 EXTERN SystemInt32.__op_Subtraction__SystemInt32_SystemInt32__SystemInt32
+2568 PUSH UInt32 __gintnl_SystemUInt32_3
+2576 JUMP 2612
+2584 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2592 COPY
+2596 JUMP_INDIRECT 2
+2604 PUSH UInt32 __const_SystemUInt32_0
+2612 PUSH Material slideMaterial
+2620 PUSH Object __intnl_UnityEngineObject_10
+2628 COPY
+2632 PUSH object __const_SystemObject_0
+2640 PUSH Object __intnl_UnityEngineObject_11
+2648 COPY
+2652 PUSH Object __intnl_UnityEngineObject_10
+2660 PUSH Object __intnl_UnityEngineObject_11
+2668 PUSH Boolean __intnl_SystemBoolean_10
+2676 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+2684 PUSH Boolean __intnl_SystemBoolean_10
+2692 JUMP_IF_FALSE 2732
+2700 PUSH Material slideMaterial
+2708 PUSH Vector2 startOffset
+2716 EXTERN UnityEngineMaterial.__get_mainTextureOffset__UnityEngineVector2
+2724 JUMP 2752
+2732 PUSH Vector2 __const_UnityEngineVector2_0
+2740 PUSH Vector2 startOffset
+2748 COPY
+2752 PUSH Vector2 slideOffset
+2760 PUSH Single __intnl_SystemSingle_8
+2768 EXTERN UnityEngineVector2.__get_x__SystemSingle
+2776 PUSH Int32 currentSlide
+2784 PUSH Single __intnl_SystemSingle_9
+2792 EXTERN SystemConvert.__ToSingle__SystemInt32__SystemSingle
+2800 PUSH Single __intnl_SystemSingle_8
+2808 PUSH Single __intnl_SystemSingle_9
+2816 PUSH Single __intnl_SystemSingle_10
+2824 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+2832 PUSH Vector2 slideOffset
+2840 PUSH Single __intnl_SystemSingle_11
+2848 EXTERN UnityEngineVector2.__get_y__SystemSingle
+2856 PUSH Int32 currentSlide
+2864 PUSH Single __intnl_SystemSingle_12
+2872 EXTERN SystemConvert.__ToSingle__SystemInt32__SystemSingle
+2880 PUSH Single __intnl_SystemSingle_11
+2888 PUSH Single __intnl_SystemSingle_12
+2896 PUSH Single __intnl_SystemSingle_13
+2904 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+2912 PUSH Single __intnl_SystemSingle_10
+2920 PUSH Single __intnl_SystemSingle_13
+2928 PUSH Vector2 targetOffset
+2936 EXTERN UnityEngineVector2.__ctor__SystemSingle_SystemSingle__UnityEngineVector2
+2944 PUSH Single __const_SystemSingle_0
+2952 PUSH Single animationTime
+2960 COPY
+2964 PUSH Boolean __const_SystemBoolean_1
+2972 PUSH Boolean isAnimating
+2980 COPY
+2984 PUSH TextMeshProUGUI slideCounterText
+2992 PUSH Object __intnl_UnityEngineObject_12
+3000 COPY
+3004 PUSH object __const_SystemObject_0
+3012 PUSH Object __intnl_UnityEngineObject_13
+3020 COPY
+3024 PUSH Object __intnl_UnityEngineObject_12
+3032 PUSH Object __intnl_UnityEngineObject_13
+3040 PUSH Boolean __intnl_SystemBoolean_11
+3048 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+3056 PUSH Boolean __intnl_SystemBoolean_11
+3064 JUMP_IF_FALSE 3192
+3072 PUSH Int32 currentSlide
+3080 PUSH Int32 __const_SystemInt32_2
+3088 PUSH Int32 __intnl_SystemInt32_2
+3096 EXTERN SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32
+3104 PUSH Int32 __intnl_SystemInt32_2
+3112 PUSH String __const_SystemString_3
+3120 PUSH String __intnl_SystemString_2
+3128 EXTERN SystemString.__Concat__SystemObject_SystemObject__SystemString
+3136 PUSH String __intnl_SystemString_2
+3144 PUSH Int32 totalSlides
+3152 PUSH String __intnl_SystemString_3
+3160 EXTERN SystemString.__Concat__SystemObject_SystemObject__SystemString
+3168 PUSH TextMeshProUGUI slideCounterText
+3176 PUSH String __intnl_SystemString_3
+3184 EXTERN TMProTextMeshProUGUI.__set_text__SystemString__SystemVoid
+3192 PUSH GameObject previousButton
+3200 PUSH Object __intnl_UnityEngineObject_14
+3208 COPY
+3212 PUSH object __const_SystemObject_0
+3220 PUSH Object __intnl_UnityEngineObject_15
+3228 COPY
+3232 PUSH Object __intnl_UnityEngineObject_14
+3240 PUSH Object __intnl_UnityEngineObject_15
+3248 PUSH Boolean __intnl_SystemBoolean_12
+3256 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+3264 PUSH Boolean __intnl_SystemBoolean_12
+3272 JUMP_IF_FALSE 3336
+3280 PUSH Int32 currentSlide
+3288 PUSH Int32 __const_SystemInt32_0
+3296 PUSH Boolean __intnl_SystemBoolean_13
+3304 EXTERN SystemInt32.__op_GreaterThan__SystemInt32_SystemInt32__SystemBoolean
+3312 PUSH GameObject previousButton
+3320 PUSH Boolean __intnl_SystemBoolean_13
+3328 EXTERN UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid
+3336 PUSH TextMeshProUGUI nextButtonText
+3344 PUSH Object __intnl_UnityEngineObject_16
+3352 COPY
+3356 PUSH object __const_SystemObject_0
+3364 PUSH Object __intnl_UnityEngineObject_17
+3372 COPY
+3376 PUSH Object __intnl_UnityEngineObject_16
+3384 PUSH Object __intnl_UnityEngineObject_17
+3392 PUSH Boolean __intnl_SystemBoolean_13
+3400 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+3408 PUSH Boolean __intnl_SystemBoolean_13
+3416 JUMP_IF_FALSE 3596
+3424 PUSH Int32 totalSlides
+3432 PUSH Int32 __const_SystemInt32_2
+3440 PUSH Int32 __intnl_SystemInt32_2
+3448 EXTERN SystemInt32.__op_Subtraction__SystemInt32_SystemInt32__SystemInt32
+3456 PUSH Int32 currentSlide
+3464 PUSH Int32 __intnl_SystemInt32_2
+3472 PUSH Boolean __intnl_SystemBoolean_14
+3480 EXTERN SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean
+3488 PUSH TextMeshProUGUI nextButtonText
+3496 PUSH TextMeshProUGUI __intnl_TMProTextMeshProUGUI_1
+3504 COPY
+3508 PUSH Boolean __intnl_SystemBoolean_14
+3516 JUMP_IF_FALSE 3552
+3524 PUSH String __const_SystemString_1
+3532 PUSH String __intnl_SystemString_2
+3540 COPY
+3544 JUMP 3572
+3552 PUSH String __const_SystemString_2
+3560 PUSH String __intnl_SystemString_2
+3568 COPY
+3572 PUSH TextMeshProUGUI __intnl_TMProTextMeshProUGUI_1
+3580 PUSH String __intnl_SystemString_2
+3588 EXTERN TMProTextMeshProUGUI.__set_text__SystemString__SystemVoid
+3596 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+3604 COPY
+3608 JUMP_INDIRECT 2
+void _onEnable
+3616 PUSH UInt32 __const_SystemUInt32_0
+3624 PUSH Int32 __const_SystemInt32_0
+3632 PUSH Int32 currentSlide
+3640 COPY
+3644 PUSH Vector2 __const_UnityEngineVector2_0
+3652 PUSH Vector2 startOffset
+3660 COPY
+3664 PUSH Vector2 __const_UnityEngineVector2_0
+3672 PUSH Vector2 targetOffset
+3680 COPY
+3684 PUSH Single __const_SystemSingle_0
+3692 PUSH Single animationTime
+3700 COPY
+3704 PUSH Boolean __const_SystemBoolean_0
+3712 PUSH Boolean isAnimating
+3720 COPY
+3724 PUSH Boolean __const_SystemBoolean_0
+3732 PUSH Boolean isCountingDown
+3740 COPY
+3744 PUSH Single __const_SystemSingle_0
+3752 PUSH Single countdownTimer
+3760 COPY
+3764 PUSH Int32 __const_SystemInt32_1
+3772 PUSH Int32 lastDisplayedSecond
+3780 COPY
+3784 PUSH Material slideMaterial
+3792 PUSH Object __intnl_UnityEngineObject_18
+3800 COPY
+3804 PUSH object __const_SystemObject_0
+3812 PUSH Object __intnl_UnityEngineObject_19
+3820 COPY
+3824 PUSH Object __intnl_UnityEngineObject_18
+3832 PUSH Object __intnl_UnityEngineObject_19
+3840 PUSH Boolean __intnl_SystemBoolean_15
+3848 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+3856 PUSH Boolean __intnl_SystemBoolean_15
+3864 JUMP_IF_FALSE 3896
+3872 PUSH Material slideMaterial
+3880 PUSH Vector2 __const_UnityEngineVector2_0
+3888 EXTERN UnityEngineMaterial.__set_mainTextureOffset__UnityEngineVector2__SystemVoid
+3896 PUSH UInt32 __gintnl_SystemUInt32_4
+3904 JUMP 2612
+3912 PUSH Boolean __const_SystemBoolean_0
+3920 PUSH Boolean isAnimating
+3928 COPY
+3932 PUSH UInt32 __gintnl_SystemUInt32_5
+3940 JUMP 2140
+3948 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+3956 COPY
+3960 JUMP_INDIRECT 2

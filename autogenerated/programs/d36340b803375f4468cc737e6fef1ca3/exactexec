@@ -1,0 +1,292 @@
+using System;
+using UnityEngine;
+using VRC.SDKBase;
+using VRC.Udon;
+using ;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Boolean __intnl_SystemBoolean_13 = false;
+private Int32 __0_index__param = 0;
+private Transform __lcl_home_UnityEngineTransform_0 = null;
+private object __intnl_SystemObject_0 = null;
+private String __const_SystemString_0 = "HP_HomePoint";
+private Transform __intnl_UnityEngineTransform_0 = null;
+private Transform __0___0_GetHomePointTransform__ret = null;
+private Boolean __intnl_SystemBoolean_16 = false;
+private UInt32 __gintnl_SystemUInt32_4 = 1532;
+private UInt32 __gintnl_SystemUInt32_1 = 272;
+private UInt32 __gintnl_SystemUInt32_0 = 188;
+private UInt32 __gintnl_SystemUInt32_3 = 1388;
+private UInt32 __gintnl_SystemUInt32_2 = 1256;
+private Boolean __const_SystemBoolean_0 = true;
+private Boolean __lcl_tutorialCompleted_SystemBoolean_0 = false;
+private String __const_SystemString_5 = "DisableSpawnRoom";
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Int32 __lcl_savedHome_SystemInt32_0 = 0;
+private VRCPlayerApi onPlayerDataUpdatedPlayer = null;
+private Int64 __refl_typeid = -424320209238145599;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_2 = null;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Boolean __intnl_SystemBoolean_11 = false;
+private Boolean __lcl_started_SystemBoolean_0 = false;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_1 = null;
+public UdonBehaviour tutorialManager;
+private String __const_SystemString_2 = "get_TutorialsCompleted";
+private Vector3 __intnl_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Boolean __intnl_SystemBoolean_14 = false;
+public Int32 defaultHomePoint;
+private object __const_SystemObject_0 = null;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private String __const_SystemString_4 = "StartTutorialFromLobby";
+public Boolean hasStartedGame;
+private Boolean __intnl_SystemBoolean_12 = false;
+private String __refl_typename = "HomePointManager";
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private String __const_SystemString_1 = "HP_HasStarted";
+private Int32 __0_GetCurrentHomePoint__ret = 0;
+private Boolean __intnl_SystemBoolean_15 = false;
+public Transform[] homePoints;
+private VRCPlayerApi onPlayerRespawnPlayer = null;
+private VRCPlayerApi localPlayer = null;
+private Int32 currentHomePoint = 0;
+private Int32 __0_homePointIndex__param = 0;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Quaternion __intnl_UnityEngineQuaternion_0 = new Quaternion(0f, 0f, 0f, 0f);
+private Int32 __const_SystemInt32_0 = 0;
+private Info[] onPlayerDataUpdatedInfos = null;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+public UdonBehaviour playerStats;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_0 = null;
+private String __const_SystemString_3 = "__0_get_TutorialsCompleted__ret";
+public UdonBehaviour spawnRoomManager;
+
+
+public void _start()
+{
+localPlayer = Networking.LocalPlayer;
+__intnl_SystemBoolean_0 = homePoints == __const_SystemObject_0;
+if (__intnl_SystemBoolean_0)
+{
+}
+else
+{
+__intnl_SystemInt32_0 = homePoints.Length;
+__intnl_SystemBoolean_0 = __intnl_SystemInt32_0 == __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_0)
+{
+return;
+}
+UNDEF_d3634_716();
+}
+public void _onPlayerDataUpdated()
+{
+__intnl_SystemBoolean_1 = onPlayerDataUpdatedPlayer.isLocal;
+if (__intnl_SystemBoolean_1)
+{
+UNDEF_d3634_716();
+}
+}
+private void UNDEF_d3634_716()
+{
+__intnl_SystemBoolean_2 = localPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_2)
+{
+return;
+}
+__intnl_SystemBoolean_3 = PlayerData.TryGetInt(localPlayer, __const_SystemString_0, __lcl_savedHome_SystemInt32_0);
+if (__intnl_SystemBoolean_3)
+{
+__intnl_SystemBoolean_4 = __lcl_savedHome_SystemInt32_0 >= __const_SystemInt32_0;
+if (__intnl_SystemBoolean_4)
+{
+__intnl_SystemInt32_1 = homePoints.Length;
+__intnl_SystemBoolean_4 = __lcl_savedHome_SystemInt32_0 < __intnl_SystemInt32_1;
+}
+if (__intnl_SystemBoolean_4)
+{
+currentHomePoint = __lcl_savedHome_SystemInt32_0;
+}
+else
+{
+currentHomePoint = defaultHomePoint;
+}
+}
+else
+{
+currentHomePoint = defaultHomePoint;
+}
+__intnl_SystemBoolean_4 = PlayerData.TryGetBool(localPlayer, __const_SystemString_1, __lcl_started_SystemBoolean_0);
+if (__intnl_SystemBoolean_4)
+{
+hasStartedGame = __lcl_started_SystemBoolean_0;
+}
+}
+public void StartGame()
+{
+__intnl_SystemBoolean_5 = localPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_5)
+{
+return;
+}
+hasStartedGame = __const_SystemBoolean_0;
+PlayerData.SetBool(__const_SystemString_1, __const_SystemBoolean_0);
+__intnl_UnityEngineObject_0 = playerStats;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_6 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_6)
+{
+__intnl_VRCUdonUdonBehaviour_0 = playerStats;
+playerStats.SendCustomEvent(__const_SystemString_2);
+__intnl_SystemObject_0 = playerStats.GetProgramVariable(__const_SystemString_3);
+__intnl_SystemBoolean_7 = (Boolean)__intnl_SystemObject_0;
+__intnl_SystemBoolean_6 = __intnl_SystemBoolean_7;
+}
+__lcl_tutorialCompleted_SystemBoolean_0 = __intnl_SystemBoolean_6;
+__intnl_SystemBoolean_8 = !__lcl_tutorialCompleted_SystemBoolean_0;
+if (__intnl_SystemBoolean_8)
+{
+__intnl_UnityEngineObject_2 = tutorialManager;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_8 = __intnl_UnityEngineObject_2 != __intnl_UnityEngineObject_3;
+}
+if (__intnl_SystemBoolean_8)
+{
+__intnl_VRCUdonUdonBehaviour_1 = tutorialManager;
+tutorialManager.SendCustomEvent(__const_SystemString_4);
+}
+else
+{
+TeleportToHome();
+}
+}
+public void TeleportToHome()
+{
+__intnl_SystemBoolean_9 = localPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_9)
+{
+return;
+}
+__0_index__param = currentHomePoint;
+__0_GetHomePointTransform();
+__lcl_home_UnityEngineTransform_0 = __0___0_GetHomePointTransform__ret;
+__intnl_UnityEngineObject_4 = __lcl_home_UnityEngineTransform_0;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_10 = __intnl_UnityEngineObject_4 == __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_10)
+{
+__0_index__param = defaultHomePoint;
+__0_GetHomePointTransform();
+__lcl_home_UnityEngineTransform_0 = __0___0_GetHomePointTransform__ret;
+__intnl_UnityEngineObject_6 = __lcl_home_UnityEngineTransform_0;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_11 = __intnl_UnityEngineObject_6 == __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_11)
+{
+return;
+}
+}
+__intnl_UnityEngineObject_6 = spawnRoomManager;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_11 = __intnl_UnityEngineObject_6 != __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_11)
+{
+__intnl_VRCUdonUdonBehaviour_2 = spawnRoomManager;
+spawnRoomManager.SendCustomEvent(__const_SystemString_5);
+}
+__intnl_UnityEngineVector3_0 = __lcl_home_UnityEngineTransform_0.position;
+__intnl_UnityEngineQuaternion_0 = __lcl_home_UnityEngineTransform_0.rotation;
+localPlayer.TeleportTo(__intnl_UnityEngineVector3_0, __intnl_UnityEngineQuaternion_0);
+}
+public void __0_SetHomePoint()
+{
+__intnl_SystemBoolean_12 = __0_homePointIndex__param < __const_SystemInt32_0;
+if (__intnl_SystemBoolean_12)
+{
+}
+else
+{
+__intnl_SystemInt32_2 = homePoints.Length;
+__intnl_SystemBoolean_12 = __0_homePointIndex__param >= __intnl_SystemInt32_2;
+}
+if (__intnl_SystemBoolean_12)
+{
+return;
+}
+__intnl_UnityEngineTransform_0 = (Transform)(homePoints[__0_homePointIndex__param]);
+__intnl_UnityEngineObject_8 = __intnl_UnityEngineTransform_0;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_13 = __intnl_UnityEngineObject_8 == __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_13)
+{
+return;
+}
+currentHomePoint = __0_homePointIndex__param;
+PlayerData.SetInt(__const_SystemString_0, __0_homePointIndex__param);
+}
+public void __0_GetHomePointTransform()
+{
+__intnl_SystemBoolean_15 = homePoints == __const_SystemObject_0;
+if (__intnl_SystemBoolean_15)
+{
+}
+else
+{
+__intnl_SystemBoolean_15 = __0_index__param < __const_SystemInt32_0;
+}
+__intnl_SystemBoolean_14 = __intnl_SystemBoolean_15;
+if (__intnl_SystemBoolean_14)
+{
+}
+else
+{
+__intnl_SystemInt32_3 = homePoints.Length;
+__intnl_SystemBoolean_14 = __0_index__param >= __intnl_SystemInt32_3;
+}
+if (__intnl_SystemBoolean_14)
+{
+__0___0_GetHomePointTransform__ret = (Transform)__const_SystemObject_0;
+return;
+}
+__0___0_GetHomePointTransform__ret = (Transform)(homePoints[__0_index__param]);
+return;
+}
+public void GetCurrentHomePoint()
+{
+__0_GetCurrentHomePoint__ret = currentHomePoint;
+return;
+}
+public void _onPlayerRespawn()
+{
+__intnl_SystemBoolean_16 = onPlayerRespawnPlayer.isLocal;
+if (__intnl_SystemBoolean_16)
+{
+}
+else
+{
+return;
+}
+}
+}

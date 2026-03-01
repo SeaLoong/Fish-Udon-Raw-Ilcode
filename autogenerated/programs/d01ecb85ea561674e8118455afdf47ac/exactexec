@@ -1,0 +1,781 @@
+using System;
+using UnityEngine;
+using VRC.SDKBase;
+using VRC.Udon;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Boolean __intnl_SystemBoolean_13 = false;
+private Boolean __intnl_SystemBoolean_23 = false;
+private Boolean __intnl_SystemBoolean_33 = false;
+private Int32 __intnl_SystemInt32_15 = 0;
+private Int64 __const_SystemInt64_1 = 1409816203479184024;
+private Int64 __const_SystemInt64_0 = -4484942539136040770;
+private Int32[] __lcl_allIndices_SystemInt32Array_0 = null;
+private String __intnl_SystemString_1 = null;
+private Single __intnl_SystemSingle_0 = 0f;
+private Int64 __lcl_targetID_SystemInt64_1 = 0;
+private Boolean[] pickedUpFlags = null;
+private String __const_SystemString_0 = "QuestInventoryManager";
+private Transform __intnl_UnityEngineTransform_0 = null;
+private String __lcl_todayDate_SystemString_0 = null;
+private object __lcl_idValue_SystemObject_1 = null;
+private Boolean __intnl_SystemBoolean_16 = false;
+private Boolean __intnl_SystemBoolean_26 = false;
+private Boolean __intnl_SystemBoolean_36 = false;
+private Int32 __lcl_j_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_12 = 0;
+public Transform[] scrapObjects;
+private UInt32 __gintnl_SystemUInt32_9 = 6252;
+private UInt32 __gintnl_SystemUInt32_8 = 4200;
+private UInt32 __gintnl_SystemUInt32_5 = 984;
+private UInt32 __gintnl_SystemUInt32_4 = 948;
+private UInt32 __gintnl_SystemUInt32_7 = 1040;
+private UInt32 __gintnl_SystemUInt32_6 = 1024;
+private UInt32 __gintnl_SystemUInt32_1 = 612;
+private UInt32 __gintnl_SystemUInt32_0 = 332;
+private UInt32 __gintnl_SystemUInt32_3 = 868;
+private UInt32 __gintnl_SystemUInt32_2 = 832;
+private Boolean __const_SystemBoolean_0 = true;
+private Boolean __const_SystemBoolean_1 = false;
+private Object __intnl_UnityEngineObject_11 = null;
+private Int32 __0_GetPickedUpCount__ret = 0;
+private String __const_SystemString_5 = "__0_itemId__param";
+private String __lcl_savedDate_SystemString_0 = null;
+private Component __3__intnlparam = null;
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private VRCPlayerApi onPlayerRestoredPlayer = null;
+private String __const_SystemString_10 = "SCR_Picked_";
+private String __const_SystemString_11 = "__refl_typeid";
+private Int64 __refl_typeid = 8145960554482169115;
+private Boolean __0_get_IsReady__ret = false;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private String lastDate = "";
+private Component __intnl_UnityEngineComponent_0 = null;
+private Boolean __intnl_SystemBoolean_11 = false;
+private Boolean __intnl_SystemBoolean_21 = false;
+private Boolean __intnl_SystemBoolean_31 = false;
+private Int32 __lcl_activeCount_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_17 = 0;
+private Int32 __2_scrapIndex__param = 0;
+public UdonBehaviour questInventoryManager;
+private String __intnl_SystemString_3 = null;
+private Int32 __3_scrapIndex__param = 0;
+private UdonBehaviour __0__intnlparam = null;
+private GameObject __lcl_managerObj_UnityEngineGameObject_0 = null;
+private String __const_SystemString_2 = "yyyy-MM-dd";
+private Transform __intnl_UnityEngineTransform_2 = null;
+private Int32 __lcl_count_SystemInt32_2 = 0;
+private Int32 __lcl_count_SystemInt32_0 = 0;
+private Int32 __lcl_count_SystemInt32_1 = 0;
+private Boolean isReady = false;
+private Boolean __intnl_SystemBoolean_19 = false;
+private Boolean __intnl_SystemBoolean_29 = false;
+private Boolean __intnl_SystemBoolean_39 = false;
+private GameObject __intnl_UnityEngineGameObject_1 = null;
+private GameObject __intnl_UnityEngineGameObject_0 = null;
+private Int32 __0_scrapIndex__param = 0;
+private Boolean __intnl_SystemBoolean_14 = false;
+private Boolean __intnl_SystemBoolean_24 = false;
+private Boolean __intnl_SystemBoolean_34 = false;
+private Component[] __intnl_UnityEngineComponentArray_1 = null;
+private Component[] __intnl_UnityEngineComponentArray_0 = null;
+private Int32 __intnl_SystemInt32_14 = 0;
+private Int32 __1_scrapIndex__param = 0;
+private object __const_SystemObject_0 = null;
+private String __intnl_SystemString_0 = null;
+private Type __const_SystemType_0 = typeof(UdonBehaviour);
+private Single __intnl_SystemSingle_1 = 0f;
+private GameObject __lcl_dbObj_UnityEngineGameObject_0 = null;
+private Int32 __lcl_totalPoints_SystemInt32_0 = 0;
+private String __const_SystemString_7 = "__0_AddQuestItem";
+private UInt32 __gintnl_SystemUInt32_11 = 6912;
+private Boolean __lcl_shouldBeVisible_SystemBoolean_1 = false;
+private Boolean __lcl_shouldBeVisible_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_17 = false;
+private Boolean __intnl_SystemBoolean_27 = false;
+private Boolean __intnl_SystemBoolean_37 = false;
+private Int32 __intnl_SystemInt32_11 = 0;
+private Int64 __intnl_SystemInt64_1 = 0;
+private Int64 __intnl_SystemInt64_0 = 0;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private String __const_SystemString_4 = "";
+private Boolean __0___0_IsPickedUp__ret = false;
+private UInt32 __gintnl_SystemUInt32_12 = 6984;
+private Int32 __lcl_i_SystemInt32_1 = 0;
+private Int32 __lcl_i_SystemInt32_0 = 0;
+private Int32 __lcl_i_SystemInt32_3 = 0;
+private Int32 __lcl_i_SystemInt32_2 = 0;
+private Int32 __lcl_i_SystemInt32_5 = 0;
+private Int32 __lcl_i_SystemInt32_4 = 0;
+private Int32 __lcl_i_SystemInt32_7 = 0;
+private Int32 __lcl_i_SystemInt32_6 = 0;
+private UdonBehaviour __lcl_behaviour_VRCUdonUdonBehaviour_0 = null;
+private Component[] __lcl_udonBehaviours_UnityEngineComponentArray_1 = null;
+public UdonBehaviour questItemDatabase;
+private Component __1__intnlparam = null;
+private Transform __intnl_UnityEngineTransform_4 = null;
+private Int32 __lcl_activeArrayIndex_SystemInt32_0 = 0;
+private String __const_SystemString_9 = "SCR_Active_";
+private Boolean __intnl_SystemBoolean_12 = false;
+private Boolean __intnl_SystemBoolean_22 = false;
+private Boolean __intnl_SystemBoolean_32 = false;
+private Int32 __intnl_SystemInt32_16 = 0;
+private String __refl_typename = "ScrapMetalManager";
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Int32 __intnl_SystemInt32_5 = 0;
+private Int32 __intnl_SystemInt32_4 = 0;
+private Int32 __intnl_SystemInt32_7 = 0;
+private Int32 __intnl_SystemInt32_6 = 0;
+private Int32 __intnl_SystemInt32_9 = 0;
+private Int32 __intnl_SystemInt32_8 = 0;
+private String __intnl_SystemString_2 = null;
+private Int32[] activeIndices = null;
+private Int32 __lcl_temp_SystemInt32_0 = 0;
+public Boolean debugMode;
+private Int64 __lcl_targetID_SystemInt64_0 = 0;
+private String __const_SystemString_1 = "QuestItemDatabase";
+private Transform __intnl_UnityEngineTransform_1 = null;
+private object __lcl_idValue_SystemObject_0 = null;
+private Boolean __0___0_PickUp__ret = false;
+private Boolean __intnl_SystemBoolean_15 = false;
+private Boolean __intnl_SystemBoolean_25 = false;
+private Boolean __intnl_SystemBoolean_35 = false;
+private String __0_GetTodayDate__ret = null;
+private Int32 __intnl_SystemInt32_13 = 0;
+private Int32 __intnl_SystemInt32_18 = 0;
+private Object __intnl_UnityEngineObject_10 = null;
+private Int32 __0_activeArrayIndex__param = 0;
+public Single activeFraction;
+private String __const_SystemString_6 = "__0_quantity__param";
+private UInt32 __gintnl_SystemUInt32_10 = 6324;
+public Int32 scrapQuantity;
+private Int32 __intnl_SystemInt32_10 = 0;
+private VRCPlayerApi localPlayer = null;
+public Int32 scrapQuestItemId;
+private Int32 __0_GetActiveCount__ret = 0;
+private UdonBehaviour __2__intnlparam = null;
+private Component __intnl_UnityEngineComponent_1 = null;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Boolean __intnl_SystemBoolean_20 = false;
+private Boolean __intnl_SystemBoolean_30 = false;
+private DateTime __lcl_serverTime_SystemDateTime_0 = 01/01/0001 00:00:00;
+private Int32 __const_SystemInt32_1 = 1;
+private Int32 __const_SystemInt32_0 = 0;
+private Int32 __const_SystemInt32_2 = -1;
+private UdonBehaviour __lcl_behaviour_VRCUdonUdonBehaviour_1 = null;
+private Component[] __lcl_udonBehaviours_UnityEngineComponentArray_0 = null;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private String __intnl_SystemString_4 = null;
+private Boolean __0___0_IsScrapActive__ret = false;
+private String __const_SystemString_3 = "SCR_LastDate";
+private Transform __intnl_UnityEngineTransform_3 = null;
+private String __const_SystemString_8 = "SCR_ActiveCount";
+private Boolean __intnl_SystemBoolean_18 = false;
+private Boolean __intnl_SystemBoolean_28 = false;
+private Boolean __intnl_SystemBoolean_38 = false;
+
+
+public void get_IsReady()
+{
+__0_get_IsReady__ret = isReady;
+}
+public void _start()
+{
+localPlayer = Networking.LocalPlayer;
+__intnl_UnityEngineObject_0 = questInventoryManager;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_0 == __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_0)
+{
+__lcl_managerObj_UnityEngineGameObject_0 = GameObject.Find(__const_SystemString_0);
+__intnl_UnityEngineObject_2 = __lcl_managerObj_UnityEngineGameObject_0;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_2 != __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_1)
+{
+__intnl_UnityEngineTransform_0 = __lcl_managerObj_UnityEngineGameObject_0.transform;
+__1__intnlparam = __intnl_UnityEngineTransform_0;
+UNDEF_d01ec_7636();
+questInventoryManager = __0__intnlparam;
+}
+}
+__intnl_UnityEngineObject_2 = questItemDatabase;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_2 == __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_1)
+{
+__lcl_dbObj_UnityEngineGameObject_0 = GameObject.Find(__const_SystemString_1);
+__intnl_UnityEngineObject_4 = __lcl_dbObj_UnityEngineGameObject_0;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_2 = __intnl_UnityEngineObject_4 != __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_2)
+{
+__intnl_UnityEngineTransform_0 = __lcl_dbObj_UnityEngineGameObject_0.transform;
+__3__intnlparam = __intnl_UnityEngineTransform_0;
+UNDEF_d01ec_8144();
+questItemDatabase = __2__intnlparam;
+}
+}
+}
+public void _onPlayerRestored()
+{
+__intnl_SystemBoolean_3 = onPlayerRestoredPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_3)
+{
+}
+else
+{
+__intnl_SystemBoolean_4 = onPlayerRestoredPlayer.isLocal;
+__intnl_SystemBoolean_3 = !__intnl_SystemBoolean_4;
+}
+if (__intnl_SystemBoolean_3)
+{
+return;
+}
+if (debugMode)
+{
+}
+GetTodayDate();
+__lcl_todayDate_SystemString_0 = __0_GetTodayDate__ret;
+UNDEF_d01ec_1308();
+__intnl_SystemBoolean_5 = lastDate != __lcl_todayDate_SystemString_0;
+if (__intnl_SystemBoolean_5)
+{
+if (debugMode)
+{
+}
+UNDEF_d01ec_2428();
+lastDate = __lcl_todayDate_SystemString_0;
+UNDEF_d01ec_5288();
+}
+else
+{
+if (debugMode)
+{
+}
+UNDEF_d01ec_5928();
+}
+UNDEF_d01ec_6524();
+isReady = __const_SystemBoolean_0;
+}
+private void GetTodayDate()
+{
+__lcl_serverTime_SystemDateTime_0 = Networking.GetNetworkDateTime();
+__0_GetTodayDate__ret = __lcl_serverTime_SystemDateTime_0.ToString(__const_SystemString_2);
+return;
+}
+private void UNDEF_d01ec_1308()
+{
+__intnl_SystemBoolean_6 = PlayerData.TryGetString(localPlayer, __const_SystemString_3, __lcl_savedDate_SystemString_0);
+if (__intnl_SystemBoolean_6)
+{
+lastDate = __lcl_savedDate_SystemString_0;
+}
+else
+{
+lastDate = __const_SystemString_4;
+}
+}
+private void UNDEF_d01ec_2428()
+{
+__intnl_SystemBoolean_7 = scrapObjects == __const_SystemObject_0;
+if (__intnl_SystemBoolean_7)
+{
+}
+else
+{
+__intnl_SystemInt32_0 = scrapObjects.Length;
+__intnl_SystemBoolean_7 = __intnl_SystemInt32_0 == __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_7)
+{
+activeIndices = __const_SystemInt32_0.ctor();
+pickedUpFlags = __const_SystemInt32_0.ctor();
+return;
+}
+__lcl_totalPoints_SystemInt32_0 = scrapObjects.Length;
+__intnl_SystemSingle_0 = Convert.ToSingle(__lcl_totalPoints_SystemInt32_0);
+__intnl_SystemSingle_1 = __intnl_SystemSingle_0 * activeFraction;
+__intnl_SystemInt32_1 = Mathf.RoundToInt(__intnl_SystemSingle_1);
+__lcl_activeCount_SystemInt32_0 = Mathf.Max(__const_SystemInt32_1, __intnl_SystemInt32_1);
+if (debugMode)
+{
+}
+__lcl_allIndices_SystemInt32Array_0 = __lcl_totalPoints_SystemInt32_0.ctor();
+__lcl_i_SystemInt32_0 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_8 = __lcl_i_SystemInt32_0 < __lcl_totalPoints_SystemInt32_0;
+if (__intnl_SystemBoolean_8)
+{
+break;
+}
+__lcl_allIndices_SystemInt32Array_0.Set(__lcl_i_SystemInt32_0, __lcl_i_SystemInt32_0);
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_0 = __lcl_totalPoints_SystemInt32_0 - __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemBoolean_8 = __lcl_i_SystemInt32_0 > __const_SystemInt32_0;
+if (__intnl_SystemBoolean_8)
+{
+break;
+}
+__intnl_SystemInt32_2 = __lcl_i_SystemInt32_0 + __const_SystemInt32_1;
+__lcl_j_SystemInt32_0 = Random.Range(__const_SystemInt32_0, __intnl_SystemInt32_2);
+__lcl_temp_SystemInt32_0 = __lcl_allIndices_SystemInt32Array_0[__lcl_i_SystemInt32_0];
+__intnl_SystemInt32_3 = __lcl_allIndices_SystemInt32Array_0[__lcl_j_SystemInt32_0];
+__lcl_allIndices_SystemInt32Array_0.Set(__lcl_i_SystemInt32_0, __intnl_SystemInt32_3);
+__lcl_allIndices_SystemInt32Array_0.Set(__lcl_j_SystemInt32_0, __lcl_temp_SystemInt32_0);
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 - __const_SystemInt32_1;
+}
+activeIndices = __lcl_activeCount_SystemInt32_0.ctor();
+pickedUpFlags = __lcl_activeCount_SystemInt32_0.ctor();
+__lcl_i_SystemInt32_0 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_8 = __lcl_i_SystemInt32_0 < __lcl_activeCount_SystemInt32_0;
+if (__intnl_SystemBoolean_8)
+{
+break;
+}
+__intnl_SystemInt32_2 = __lcl_allIndices_SystemInt32Array_0[__lcl_i_SystemInt32_0];
+activeIndices.Set(__lcl_i_SystemInt32_0, __intnl_SystemInt32_2);
+pickedUpFlags.Set(__lcl_i_SystemInt32_0, __const_SystemBoolean_1);
+if (debugMode)
+{
+}
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_1;
+}
+}
+public void __0_IsScrapActive()
+{
+__intnl_SystemBoolean_9 = activeIndices == __const_SystemObject_0;
+if (__intnl_SystemBoolean_9)
+{
+__0___0_IsScrapActive__ret = __const_SystemBoolean_1;
+return;
+}
+__lcl_i_SystemInt32_1 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_4 = activeIndices.Length;
+__intnl_SystemBoolean_10 = __lcl_i_SystemInt32_1 < __intnl_SystemInt32_4;
+if (__intnl_SystemBoolean_10)
+{
+break;
+}
+__intnl_SystemInt32_5 = activeIndices[__lcl_i_SystemInt32_1];
+__intnl_SystemBoolean_11 = __intnl_SystemInt32_5 == __0_scrapIndex__param;
+if (__intnl_SystemBoolean_11)
+{
+__0___0_IsScrapActive__ret = __const_SystemBoolean_0;
+return;
+}
+__lcl_i_SystemInt32_1 = __lcl_i_SystemInt32_1 + __const_SystemInt32_1;
+}
+__0___0_IsScrapActive__ret = __const_SystemBoolean_1;
+return;
+}
+public void __0_IsPickedUp()
+{
+__intnl_SystemBoolean_12 = activeIndices == __const_SystemObject_0;
+if (__intnl_SystemBoolean_12)
+{
+}
+else
+{
+__intnl_SystemBoolean_12 = pickedUpFlags == __const_SystemObject_0;
+}
+if (__intnl_SystemBoolean_12)
+{
+__0___0_IsPickedUp__ret = __const_SystemBoolean_0;
+return;
+}
+__lcl_i_SystemInt32_2 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_6 = activeIndices.Length;
+__intnl_SystemBoolean_13 = __lcl_i_SystemInt32_2 < __intnl_SystemInt32_6;
+if (__intnl_SystemBoolean_13)
+{
+break;
+}
+__intnl_SystemInt32_7 = activeIndices[__lcl_i_SystemInt32_2];
+__intnl_SystemBoolean_14 = __intnl_SystemInt32_7 == __1_scrapIndex__param;
+if (__intnl_SystemBoolean_14)
+{
+__0___0_IsPickedUp__ret = pickedUpFlags[__lcl_i_SystemInt32_2];
+return;
+}
+__lcl_i_SystemInt32_2 = __lcl_i_SystemInt32_2 + __const_SystemInt32_1;
+}
+__0___0_IsPickedUp__ret = __const_SystemBoolean_0;
+return;
+}
+public void __0_PickUp()
+{
+if (isReady)
+{
+UNDEF_d01ec_4132();
+}
+__0___0_PickUp__ret = __const_SystemBoolean_1;
+}
+private void UNDEF_d01ec_4132()
+{
+__lcl_activeArrayIndex_SystemInt32_0 = __const_SystemInt32_2;
+__lcl_i_SystemInt32_3 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_8 = activeIndices.Length;
+__intnl_SystemBoolean_15 = __lcl_i_SystemInt32_3 < __intnl_SystemInt32_8;
+if (__intnl_SystemBoolean_15)
+{
+break;
+}
+__intnl_SystemInt32_9 = activeIndices[__lcl_i_SystemInt32_3];
+__intnl_SystemBoolean_16 = __intnl_SystemInt32_9 == __2_scrapIndex__param;
+if (__intnl_SystemBoolean_16)
+{
+__lcl_activeArrayIndex_SystemInt32_0 = __lcl_i_SystemInt32_3;
+}
+else
+{
+__lcl_i_SystemInt32_3 = __lcl_i_SystemInt32_3 + __const_SystemInt32_1;
+}
+}
+__intnl_SystemBoolean_15 = __lcl_activeArrayIndex_SystemInt32_0 < __const_SystemInt32_0;
+if (__intnl_SystemBoolean_15)
+{
+if (debugMode)
+{
+}
+__0___0_PickUp__ret = __const_SystemBoolean_1;
+return;
+}
+__intnl_SystemBoolean_16 = pickedUpFlags[__lcl_activeArrayIndex_SystemInt32_0];
+if (__intnl_SystemBoolean_16)
+{
+if (debugMode)
+{
+}
+__0___0_PickUp__ret = __const_SystemBoolean_1;
+return;
+}
+__intnl_UnityEngineObject_6 = questInventoryManager;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_17 = __intnl_UnityEngineObject_6 != __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_17)
+{
+__intnl_SystemInt32_8 = scrapQuestItemId;
+__intnl_SystemInt32_9 = scrapQuantity;
+questInventoryManager.SetProgramVariable(__const_SystemString_5, scrapQuestItemId);
+questInventoryManager.SetProgramVariable(__const_SystemString_6, scrapQuantity);
+questInventoryManager.SendCustomEvent(__const_SystemString_7);
+if (debugMode)
+{
+}
+__0_PickUp();
+}
+__0___0_PickUp__ret = __const_SystemBoolean_1;
+}
+private void __0_PickUp()
+{
+pickedUpFlags.Set(__lcl_activeArrayIndex_SystemInt32_0, __const_SystemBoolean_0);
+__0_activeArrayIndex__param = __lcl_activeArrayIndex_SystemInt32_0;
+UNDEF_d01ec_5372();
+if (debugMode)
+{
+}
+__0___0_PickUp__ret = __const_SystemBoolean_0;
+return;
+}
+public void GetActiveCount()
+{
+__intnl_SystemBoolean_18 = activeIndices != __const_SystemObject_0;
+if (__intnl_SystemBoolean_18)
+{
+__0_GetActiveCount__ret = activeIndices.Length;
+}
+else
+{
+__0_GetActiveCount__ret = __const_SystemInt32_0;
+}
+return;
+}
+public void GetPickedUpCount()
+{
+__intnl_SystemBoolean_19 = pickedUpFlags == __const_SystemObject_0;
+if (__intnl_SystemBoolean_19)
+{
+__0_GetPickedUpCount__ret = __const_SystemInt32_0;
+return;
+}
+__lcl_count_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_4 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_10 = pickedUpFlags.Length;
+__intnl_SystemBoolean_20 = __lcl_i_SystemInt32_4 < __intnl_SystemInt32_10;
+if (__intnl_SystemBoolean_20)
+{
+break;
+}
+__intnl_SystemBoolean_21 = pickedUpFlags[__lcl_i_SystemInt32_4];
+if (__intnl_SystemBoolean_21)
+{
+__lcl_count_SystemInt32_0 = __lcl_count_SystemInt32_0 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_4 = __lcl_i_SystemInt32_4 + __const_SystemInt32_1;
+}
+__0_GetPickedUpCount__ret = __lcl_count_SystemInt32_0;
+return;
+}
+private void UNDEF_d01ec_5288()
+{
+PlayerData.SetString(__const_SystemString_3, lastDate);
+__intnl_SystemBoolean_22 = activeIndices != __const_SystemObject_0;
+if (__intnl_SystemBoolean_22)
+{
+__lcl_count_SystemInt32_1 = activeIndices.Length;
+}
+else
+{
+__lcl_count_SystemInt32_1 = __const_SystemInt32_0;
+}
+PlayerData.SetInt(__const_SystemString_8, __lcl_count_SystemInt32_1);
+__lcl_i_SystemInt32_5 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_23 = __lcl_i_SystemInt32_5 < __lcl_count_SystemInt32_1;
+if (__intnl_SystemBoolean_23)
+{
+break;
+}
+__intnl_SystemString_0 = String.Concat(__const_SystemString_9, __lcl_i_SystemInt32_5);
+__intnl_SystemInt32_11 = activeIndices[__lcl_i_SystemInt32_5];
+PlayerData.SetInt(__intnl_SystemString_0, __intnl_SystemInt32_11);
+__intnl_SystemString_1 = String.Concat(__const_SystemString_10, __lcl_i_SystemInt32_5);
+__intnl_SystemBoolean_24 = pickedUpFlags[__lcl_i_SystemInt32_5];
+PlayerData.SetBool(__intnl_SystemString_1, __intnl_SystemBoolean_24);
+__lcl_i_SystemInt32_5 = __lcl_i_SystemInt32_5 + __const_SystemInt32_1;
+}
+if (debugMode)
+{
+}
+}
+private void UNDEF_d01ec_5372()
+{
+__intnl_SystemString_2 = String.Concat(__const_SystemString_10, __0_activeArrayIndex__param);
+PlayerData.SetBool(__intnl_SystemString_2, __const_SystemBoolean_0);
+}
+private void UNDEF_d01ec_5928()
+{
+__lcl_count_SystemInt32_2 = PlayerData.GetInt(localPlayer, __const_SystemString_8);
+__intnl_SystemBoolean_25 = __lcl_count_SystemInt32_2 <= __const_SystemInt32_0;
+if (__intnl_SystemBoolean_25)
+{
+if (debugMode)
+{
+}
+activeIndices = __const_SystemInt32_0.ctor();
+pickedUpFlags = __const_SystemInt32_0.ctor();
+return;
+}
+activeIndices = __lcl_count_SystemInt32_2.ctor();
+pickedUpFlags = __lcl_count_SystemInt32_2.ctor();
+__lcl_i_SystemInt32_6 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_26 = __lcl_i_SystemInt32_6 < __lcl_count_SystemInt32_2;
+if (__intnl_SystemBoolean_26)
+{
+break;
+}
+__intnl_SystemString_3 = String.Concat(__const_SystemString_9, __lcl_i_SystemInt32_6);
+__intnl_SystemInt32_12 = PlayerData.GetInt(localPlayer, __intnl_SystemString_3);
+activeIndices.Set(__lcl_i_SystemInt32_6, __intnl_SystemInt32_12);
+__intnl_SystemString_4 = String.Concat(__const_SystemString_10, __lcl_i_SystemInt32_6);
+__intnl_SystemBoolean_27 = PlayerData.GetBool(localPlayer, __intnl_SystemString_4);
+pickedUpFlags.Set(__lcl_i_SystemInt32_6, __intnl_SystemBoolean_27);
+if (debugMode)
+{
+}
+__lcl_i_SystemInt32_6 = __lcl_i_SystemInt32_6 + __const_SystemInt32_1;
+}
+}
+private void UNDEF_d01ec_6524()
+{
+__intnl_SystemBoolean_28 = scrapObjects == __const_SystemObject_0;
+if (__intnl_SystemBoolean_28)
+{
+return;
+}
+__lcl_i_SystemInt32_7 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_13 = scrapObjects.Length;
+__intnl_SystemBoolean_29 = __lcl_i_SystemInt32_7 < __intnl_SystemInt32_13;
+if (__intnl_SystemBoolean_29)
+{
+break;
+}
+__intnl_UnityEngineTransform_1 = (Transform)(scrapObjects[__lcl_i_SystemInt32_7]);
+__intnl_UnityEngineObject_8 = __intnl_UnityEngineTransform_1;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_30 = __intnl_UnityEngineObject_8 != __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_30)
+{
+__0_scrapIndex__param = __lcl_i_SystemInt32_7;
+__0_IsScrapActive();
+__intnl_SystemBoolean_31 = __0___0_IsScrapActive__ret;
+if (__intnl_SystemBoolean_31)
+{
+__1_scrapIndex__param = __lcl_i_SystemInt32_7;
+__0_IsPickedUp();
+__intnl_SystemBoolean_31 = !__0___0_IsPickedUp__ret;
+}
+__lcl_shouldBeVisible_SystemBoolean_0 = __intnl_SystemBoolean_31;
+__intnl_UnityEngineTransform_2 = (Transform)(scrapObjects[__lcl_i_SystemInt32_7]);
+__intnl_UnityEngineGameObject_0 = __intnl_UnityEngineTransform_2.gameObject;
+__intnl_UnityEngineGameObject_0.SetActive(__lcl_shouldBeVisible_SystemBoolean_0);
+}
+__lcl_i_SystemInt32_7 = __lcl_i_SystemInt32_7 + __const_SystemInt32_1;
+}
+if (debugMode)
+{
+}
+}
+public void __0_UpdateVisual()
+{
+__intnl_SystemBoolean_33 = scrapObjects == __const_SystemObject_0;
+if (__intnl_SystemBoolean_33)
+{
+}
+else
+{
+__intnl_SystemBoolean_33 = __3_scrapIndex__param < __const_SystemInt32_0;
+}
+__intnl_SystemBoolean_32 = __intnl_SystemBoolean_33;
+if (__intnl_SystemBoolean_32)
+{
+}
+else
+{
+__intnl_SystemInt32_14 = scrapObjects.Length;
+__intnl_SystemBoolean_32 = __3_scrapIndex__param >= __intnl_SystemInt32_14;
+}
+if (__intnl_SystemBoolean_32)
+{
+return;
+}
+__intnl_UnityEngineTransform_3 = (Transform)(scrapObjects[__3_scrapIndex__param]);
+__intnl_UnityEngineObject_10 = __intnl_UnityEngineTransform_3;
+__intnl_UnityEngineObject_11 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_34 = __intnl_UnityEngineObject_10 != __intnl_UnityEngineObject_11;
+if (__intnl_SystemBoolean_34)
+{
+__0_scrapIndex__param = __3_scrapIndex__param;
+__0_IsScrapActive();
+__intnl_SystemBoolean_35 = __0___0_IsScrapActive__ret;
+if (__intnl_SystemBoolean_35)
+{
+__1_scrapIndex__param = __3_scrapIndex__param;
+__0_IsPickedUp();
+__intnl_SystemBoolean_35 = !__0___0_IsPickedUp__ret;
+}
+__lcl_shouldBeVisible_SystemBoolean_1 = __intnl_SystemBoolean_35;
+__intnl_UnityEngineTransform_4 = (Transform)(scrapObjects[__3_scrapIndex__param]);
+__intnl_UnityEngineGameObject_1 = __intnl_UnityEngineTransform_4.gameObject;
+__intnl_UnityEngineGameObject_1.SetActive(__lcl_shouldBeVisible_SystemBoolean_1);
+}
+}
+private void UNDEF_d01ec_7636()
+{
+__intnl_UnityEngineComponentArray_0 = __1__intnlparam.GetComponents(__const_SystemType_0);
+__lcl_udonBehaviours_UnityEngineComponentArray_0 = __intnl_UnityEngineComponentArray_0;
+__lcl_targetID_SystemInt64_0 = __const_SystemInt64_0;
+__intnl_SystemInt32_15 = __lcl_udonBehaviours_UnityEngineComponentArray_0.Length;
+__intnl_SystemInt32_16 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_36 = __intnl_SystemInt32_16 < __intnl_SystemInt32_15;
+if (__intnl_SystemBoolean_36)
+{
+break;
+}
+__lcl_behaviour_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(__lcl_udonBehaviours_UnityEngineComponentArray_0[__intnl_SystemInt32_16]);
+__lcl_idValue_SystemObject_0 = __lcl_behaviour_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_11);
+__intnl_SystemBoolean_37 = __lcl_idValue_SystemObject_0 != __const_SystemObject_0;
+if (__intnl_SystemBoolean_37)
+{
+__intnl_SystemInt64_0 = Convert.ToInt64(__lcl_idValue_SystemObject_0);
+__intnl_SystemBoolean_37 = __intnl_SystemInt64_0 == __lcl_targetID_SystemInt64_0;
+}
+if (__intnl_SystemBoolean_37)
+{
+__intnl_UnityEngineComponent_0 = __lcl_behaviour_VRCUdonUdonBehaviour_0;
+__0__intnlparam = (UdonBehaviour)__intnl_UnityEngineComponent_0;
+return;
+}
+__intnl_SystemInt32_16 = __intnl_SystemInt32_16 + __const_SystemInt32_1;
+}
+__0__intnlparam = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+private void UNDEF_d01ec_8144()
+{
+__intnl_UnityEngineComponentArray_1 = __3__intnlparam.GetComponents(__const_SystemType_0);
+__lcl_udonBehaviours_UnityEngineComponentArray_1 = __intnl_UnityEngineComponentArray_1;
+__lcl_targetID_SystemInt64_1 = __const_SystemInt64_1;
+__intnl_SystemInt32_17 = __lcl_udonBehaviours_UnityEngineComponentArray_1.Length;
+__intnl_SystemInt32_18 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_38 = __intnl_SystemInt32_18 < __intnl_SystemInt32_17;
+if (__intnl_SystemBoolean_38)
+{
+break;
+}
+__lcl_behaviour_VRCUdonUdonBehaviour_1 = (UdonBehaviour)(__lcl_udonBehaviours_UnityEngineComponentArray_1[__intnl_SystemInt32_18]);
+__lcl_idValue_SystemObject_1 = __lcl_behaviour_VRCUdonUdonBehaviour_1.GetProgramVariable(__const_SystemString_11);
+__intnl_SystemBoolean_39 = __lcl_idValue_SystemObject_1 != __const_SystemObject_0;
+if (__intnl_SystemBoolean_39)
+{
+__intnl_SystemInt64_1 = Convert.ToInt64(__lcl_idValue_SystemObject_1);
+__intnl_SystemBoolean_39 = __intnl_SystemInt64_1 == __lcl_targetID_SystemInt64_1;
+}
+if (__intnl_SystemBoolean_39)
+{
+__intnl_UnityEngineComponent_1 = __lcl_behaviour_VRCUdonUdonBehaviour_1;
+__2__intnlparam = (UdonBehaviour)__intnl_UnityEngineComponent_1;
+return;
+}
+__intnl_SystemInt32_18 = __intnl_SystemInt32_18 + __const_SystemInt32_1;
+}
+__2__intnlparam = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+}

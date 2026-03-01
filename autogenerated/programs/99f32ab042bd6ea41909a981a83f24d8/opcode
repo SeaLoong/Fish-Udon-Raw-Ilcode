@@ -1,0 +1,236 @@
+void _start
+0 PUSH UInt32 __const_SystemUInt32_0
+8 PUSH ParticleSystem[] particleSystems
+16 PUSH object __const_SystemObject_0
+24 PUSH Boolean __intnl_SystemBoolean_0
+32 EXTERN SystemObject.__op_Equality__SystemObject_SystemObject__SystemBoolean
+40 PUSH Boolean __intnl_SystemBoolean_0
+48 JUMP_IF_FALSE 64
+56 JUMP 120
+64 PUSH ParticleSystem[] particleSystems
+72 PUSH Int32 __intnl_SystemInt32_0
+80 EXTERN SystemArray.__get_Length__SystemInt32
+88 PUSH Int32 __intnl_SystemInt32_0
+96 PUSH Int32 __const_SystemInt32_0
+104 PUSH Boolean __intnl_SystemBoolean_0
+112 EXTERN SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean
+120 PUSH Boolean __intnl_SystemBoolean_0
+128 JUMP_IF_FALSE 312
+136 PUSH Transform __this_UnityEngineTransform_0
+144 PUSH Type __const_SystemType_0
+152 PUSH ParticleSystem __lcl_ps_UnityEngineParticleSystem_0
+160 EXTERN UnityEngineComponent.__GetComponent__T
+168 PUSH ParticleSystem __lcl_ps_UnityEngineParticleSystem_0
+176 PUSH Object __intnl_UnityEngineObject_0
+184 COPY
+188 PUSH object __const_SystemObject_0
+196 PUSH Object __intnl_UnityEngineObject_1
+204 COPY
+208 PUSH Object __intnl_UnityEngineObject_0
+216 PUSH Object __intnl_UnityEngineObject_1
+224 PUSH Boolean __intnl_SystemBoolean_1
+232 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+240 PUSH Boolean __intnl_SystemBoolean_1
+248 JUMP_IF_FALSE 312
+256 PUSH Int32 __const_SystemInt32_1
+264 PUSH ParticleSystem[] particleSystems
+272 EXTERN UnityEngineParticleSystemArray.__ctor__SystemInt32__UnityEngineParticleSystemArray
+280 PUSH ParticleSystem[] particleSystems
+288 PUSH Int32 __const_SystemInt32_0
+296 PUSH ParticleSystem __lcl_ps_UnityEngineParticleSystem_0
+304 EXTERN SystemObjectArray.__Set__SystemInt32_SystemObject__SystemVoid
+312 PUSH ParticleSystem[] particleSystems
+320 PUSH object __const_SystemObject_0
+328 PUSH Boolean __intnl_SystemBoolean_1
+336 EXTERN SystemObject.__op_Equality__SystemObject_SystemObject__SystemBoolean
+344 PUSH Boolean __intnl_SystemBoolean_1
+352 JUMP_IF_FALSE 368
+360 JUMP 424
+368 PUSH ParticleSystem[] particleSystems
+376 PUSH Int32 __intnl_SystemInt32_1
+384 EXTERN SystemArray.__get_Length__SystemInt32
+392 PUSH Int32 __intnl_SystemInt32_1
+400 PUSH Int32 __const_SystemInt32_0
+408 PUSH Boolean __intnl_SystemBoolean_1
+416 EXTERN SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean
+424 PUSH Boolean __intnl_SystemBoolean_1
+432 JUMP_IF_FALSE 484
+440 PUSH UdonBehaviour __this_VRCUdonUdonBehaviour_0
+448 PUSH Boolean __const_SystemBoolean_0
+456 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__set_enabled__SystemBoolean__SystemVoid
+464 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+472 COPY
+476 JUMP_INDIRECT 2
+484 PUSH VRCPlayerApi localPlayer
+492 EXTERN VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi
+500 PUSH Single nextUpdateTime
+508 EXTERN UnityEngineTime.__get_time__SystemSingle
+516 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+524 COPY
+528 JUMP_INDIRECT 2
+void _update
+536 PUSH UInt32 __const_SystemUInt32_0
+544 PUSH Single __intnl_SystemSingle_0
+552 EXTERN UnityEngineTime.__get_time__SystemSingle
+560 PUSH Single __intnl_SystemSingle_0
+568 PUSH Single nextUpdateTime
+576 PUSH Boolean __intnl_SystemBoolean_2
+584 EXTERN SystemSingle.__op_LessThan__SystemSingle_SystemSingle__SystemBoolean
+592 PUSH Boolean __intnl_SystemBoolean_2
+600 JUMP_IF_FALSE 628
+608 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+616 COPY
+620 JUMP_INDIRECT 2
+628 PUSH Single __intnl_SystemSingle_1
+636 EXTERN UnityEngineTime.__get_time__SystemSingle
+644 PUSH Single __intnl_SystemSingle_1
+652 PUSH Single updateInterval
+660 PUSH Single nextUpdateTime
+668 EXTERN SystemSingle.__op_Addition__SystemSingle_SystemSingle__SystemSingle
+676 PUSH VRCPlayerApi localPlayer
+684 PUSH object __const_SystemObject_0
+692 PUSH Boolean __intnl_SystemBoolean_3
+700 EXTERN SystemObject.__op_Equality__SystemObject_SystemObject__SystemBoolean
+708 PUSH Boolean __intnl_SystemBoolean_3
+716 JUMP_IF_FALSE 808
+724 PUSH VRCPlayerApi localPlayer
+732 EXTERN VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi
+740 PUSH VRCPlayerApi localPlayer
+748 PUSH object __const_SystemObject_0
+756 PUSH Boolean __intnl_SystemBoolean_4
+764 EXTERN SystemObject.__op_Equality__SystemObject_SystemObject__SystemBoolean
+772 PUSH Boolean __intnl_SystemBoolean_4
+780 JUMP_IF_FALSE 808
+788 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+796 COPY
+800 JUMP_INDIRECT 2
+808 PUSH Transform __this_UnityEngineTransform_0
+816 PUSH Vector3 __intnl_UnityEngineVector3_0
+824 EXTERN UnityEngineTransform.__get_position__UnityEngineVector3
+832 PUSH VRCPlayerApi localPlayer
+840 PUSH Vector3 __intnl_UnityEngineVector3_1
+848 EXTERN VRCSDKBaseVRCPlayerApi.__GetPosition__UnityEngineVector3
+856 PUSH Vector3 __intnl_UnityEngineVector3_0
+864 PUSH Vector3 __intnl_UnityEngineVector3_1
+872 PUSH Single __lcl_distance_SystemSingle_0
+880 EXTERN UnityEngineVector3.__Distance__UnityEngineVector3_UnityEngineVector3__SystemSingle
+888 PUSH Single __lcl_distance_SystemSingle_0
+896 PUSH Single maxDistance
+904 PUSH Boolean __lcl_shouldEmit_SystemBoolean_0
+912 EXTERN SystemSingle.__op_LessThanOrEqual__SystemSingle_SystemSingle__SystemBoolean
+920 PUSH Boolean __lcl_shouldEmit_SystemBoolean_0
+928 PUSH Boolean isEmitting
+936 PUSH Boolean __intnl_SystemBoolean_4
+944 EXTERN SystemBoolean.__op_Inequality__SystemBoolean_SystemBoolean__SystemBoolean
+952 PUSH Boolean __intnl_SystemBoolean_4
+960 JUMP_IF_FALSE 1024
+968 PUSH Boolean __lcl_shouldEmit_SystemBoolean_0
+976 PUSH Boolean isEmitting
+984 COPY
+988 PUSH UInt32 __gintnl_SystemUInt32_0
+996 PUSH Boolean __lcl_shouldEmit_SystemBoolean_0
+1004 PUSH Boolean __0_enabled__param
+1012 COPY
+1016 JUMP 1052
+1024 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1032 COPY
+1036 JUMP_INDIRECT 2
+1044 PUSH UInt32 __const_SystemUInt32_0
+1052 PUSH Int32 __const_SystemInt32_0
+1060 PUSH Int32 __lcl_i_SystemInt32_0
+1068 COPY
+1072 PUSH ParticleSystem[] particleSystems
+1080 PUSH Int32 __intnl_SystemInt32_2
+1088 EXTERN SystemArray.__get_Length__SystemInt32
+1096 PUSH Int32 __lcl_i_SystemInt32_0
+1104 PUSH Int32 __intnl_SystemInt32_2
+1112 PUSH Boolean __intnl_SystemBoolean_5
+1120 EXTERN SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean
+1128 PUSH Boolean __intnl_SystemBoolean_5
+1136 JUMP_IF_FALSE 1392
+1144 PUSH ParticleSystem[] particleSystems
+1152 PUSH Int32 __lcl_i_SystemInt32_0
+1160 PUSH ParticleSystem __intnl_UnityEngineParticleSystem_0
+1168 EXTERN SystemObjectArray.__Get__SystemInt32__SystemObject
+1176 PUSH ParticleSystem __intnl_UnityEngineParticleSystem_0
+1184 PUSH Object __intnl_UnityEngineObject_2
+1192 COPY
+1196 PUSH object __const_SystemObject_0
+1204 PUSH Object __intnl_UnityEngineObject_3
+1212 COPY
+1216 PUSH Object __intnl_UnityEngineObject_2
+1224 PUSH Object __intnl_UnityEngineObject_3
+1232 PUSH Boolean __intnl_SystemBoolean_6
+1240 EXTERN UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean
+1248 PUSH Boolean __intnl_SystemBoolean_6
+1256 JUMP_IF_FALSE 1272
+1264 JUMP 1352
+1272 PUSH ParticleSystem[] particleSystems
+1280 PUSH Int32 __lcl_i_SystemInt32_0
+1288 PUSH ParticleSystem __intnl_UnityEngineParticleSystem_1
+1296 EXTERN SystemObjectArray.__Get__SystemInt32__SystemObject
+1304 PUSH ParticleSystem __intnl_UnityEngineParticleSystem_1
+1312 PUSH EmissionModule __lcl_emission_UnityEngineParticleSystemEmissionModule_0
+1320 EXTERN UnityEngineParticleSystem.__get_emission__UnityEngineParticleSystemEmissionModule
+1328 PUSH EmissionModule __lcl_emission_UnityEngineParticleSystemEmissionModule_0
+1336 PUSH Boolean __0_enabled__param
+1344 EXTERN UnityEngineParticleSystemEmissionModule.__set_enabled__SystemBoolean__SystemVoid
+1352 PUSH Int32 __lcl_i_SystemInt32_0
+1360 PUSH Int32 __const_SystemInt32_1
+1368 PUSH Int32 __lcl_i_SystemInt32_0
+1376 EXTERN SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32
+1384 JUMP 1072
+1392 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1400 COPY
+1404 JUMP_INDIRECT 2
+1412 PUSH UInt32 __const_SystemUInt32_0
+1420 PUSH Boolean showGizmo
+1428 JUMP_IF_FALSE 1444
+1436 JUMP 1464
+1444 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1452 COPY
+1456 JUMP_INDIRECT 2
+1464 PUSH Color gizmoColor
+1472 EXTERN UnityEngineGizmos.__set_color__UnityEngineColor__SystemVoid
+1480 PUSH Transform __this_UnityEngineTransform_0
+1488 PUSH Vector3 __intnl_UnityEngineVector3_2
+1496 EXTERN UnityEngineTransform.__get_position__UnityEngineVector3
+1504 PUSH Vector3 __intnl_UnityEngineVector3_2
+1512 PUSH Single maxDistance
+1520 EXTERN UnityEngineGizmos.__DrawWireSphere__UnityEngineVector3_SystemSingle__SystemVoid
+1528 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1536 COPY
+1540 JUMP_INDIRECT 2
+1548 PUSH UInt32 __const_SystemUInt32_0
+1556 PUSH Boolean showGizmo
+1564 JUMP_IF_FALSE 1580
+1572 JUMP 1600
+1580 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1588 COPY
+1592 JUMP_INDIRECT 2
+1600 PUSH Color gizmoColor
+1608 PUSH Single __intnl_SystemSingle_2
+1616 EXTERN UnityEngineColor.__get_r__SystemSingle
+1624 PUSH Color gizmoColor
+1632 PUSH Single __intnl_SystemSingle_3
+1640 EXTERN UnityEngineColor.__get_g__SystemSingle
+1648 PUSH Color gizmoColor
+1656 PUSH Single __intnl_SystemSingle_4
+1664 EXTERN UnityEngineColor.__get_b__SystemSingle
+1672 PUSH Single __intnl_SystemSingle_2
+1680 PUSH Single __intnl_SystemSingle_3
+1688 PUSH Single __intnl_SystemSingle_4
+1696 PUSH Single __const_SystemSingle_0
+1704 PUSH Color __intnl_UnityEngineColor_0
+1712 EXTERN UnityEngineColor.__ctor__SystemSingle_SystemSingle_SystemSingle_SystemSingle__UnityEngineColor
+1720 PUSH Color __intnl_UnityEngineColor_0
+1728 EXTERN UnityEngineGizmos.__set_color__UnityEngineColor__SystemVoid
+1736 PUSH Transform __this_UnityEngineTransform_0
+1744 PUSH Vector3 __intnl_UnityEngineVector3_3
+1752 EXTERN UnityEngineTransform.__get_position__UnityEngineVector3
+1760 PUSH Vector3 __intnl_UnityEngineVector3_3
+1768 PUSH Single maxDistance
+1776 EXTERN UnityEngineGizmos.__DrawWireSphere__UnityEngineVector3_SystemSingle__SystemVoid
+1784 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1792 COPY
+1796 JUMP_INDIRECT 2

@@ -1,0 +1,217 @@
+using System;
+using VRC.SDKBase;
+using UnityEngine;
+using VRC.Udon.Common.Enums;
+using VRC.Udon;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+public Single rebalanceDelay;
+private VRCPlayerApi[] __lcl_validPlayers_VRCSDKBaseVRCPlayerApiArray_0 = null;
+private String __const_SystemString_0 = "RebalanceOwnership";
+private Single __const_SystemSingle_0 = 5f;
+private UInt32 __gintnl_SystemUInt32_1 = 256;
+private UInt32 __gintnl_SystemUInt32_0 = 152;
+private UInt32 __gintnl_SystemUInt32_2 = 368;
+private Boolean __const_SystemBoolean_0 = true;
+private Boolean __const_SystemBoolean_1 = false;
+private Int32 __lcl_validCount_SystemInt32_0 = 0;
+private VRCPlayerApi onMasterTransferredNewMaster = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private VRCPlayerApi[] __lcl_players_VRCSDKBaseVRCPlayerApiArray_0 = null;
+private VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_0 = null;
+private Int64 __refl_typeid = 9033083287891311839;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private GameObject __intnl_UnityEngineGameObject_1 = null;
+private GameObject __intnl_UnityEngineGameObject_0 = null;
+public GameObject[] npcMovementObjects;
+private object __const_SystemObject_0 = null;
+private VRCPlayerApi __lcl_target_VRCSDKBaseVRCPlayerApi_0 = null;
+private Int32 __lcl_idx_SystemInt32_0 = 0;
+private EventTiming __const_VRCUdonCommonEnumsEventTiming_0 = EventTiming.Update;
+private VRCPlayerApi[] __intnl_VRCSDKBaseVRCPlayerApiArray_0 = null;
+private VRCPlayerApi onPlayerJoinedPlayer = null;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private Int32 __lcl_i_SystemInt32_0 = 0;
+private String __refl_typename = "NPCOwnershipBalancer";
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private VRCPlayerApi onPlayerLeftPlayer = null;
+private VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_1 = null;
+private Int32 __const_SystemInt32_1 = 1;
+private Int32 __const_SystemInt32_0 = 0;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_2 = null;
+private Boolean rebalancePending = false;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_1 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_0 = this;
+
+
+public void _start()
+{
+__this_VRCUdonUdonBehaviour_0.SendCustomEventDelayedSeconds(__const_SystemString_0, __const_SystemSingle_0, __const_VRCUdonCommonEnumsEventTiming_0);
+}
+public void _onPlayerJoined()
+{
+__intnl_SystemBoolean_0 = Networking.IsMaster;
+if (__intnl_SystemBoolean_0)
+{
+UNDEF_34adc_172();
+}
+}
+private void UNDEF_34adc_172()
+{
+UNDEF_34adc_512();
+}
+public void _onPlayerLeft()
+{
+__intnl_SystemBoolean_1 = Networking.IsMaster;
+if (__intnl_SystemBoolean_1)
+{
+UNDEF_34adc_276();
+}
+}
+private void UNDEF_34adc_276()
+{
+UNDEF_34adc_512();
+}
+public void _onMasterTransferred()
+{
+__intnl_SystemBoolean_2 = onMasterTransferredNewMaster.isLocal;
+if (__intnl_SystemBoolean_2)
+{
+UNDEF_34adc_388();
+}
+}
+private void UNDEF_34adc_388()
+{
+UNDEF_34adc_512();
+}
+private void UNDEF_34adc_512()
+{
+if (rebalancePending)
+{
+return;
+}
+rebalancePending = __const_SystemBoolean_0;
+__this_VRCUdonUdonBehaviour_1.SendCustomEventDelayedSeconds(__const_SystemString_0, rebalanceDelay, __const_VRCUdonCommonEnumsEventTiming_0);
+}
+public void RebalanceOwnership()
+{
+rebalancePending = __const_SystemBoolean_1;
+__intnl_SystemBoolean_3 = Networking.IsMaster;
+if (__intnl_SystemBoolean_3)
+{
+UNDEF_34adc_2060();
+}
+}
+private void UNDEF_34adc_2060()
+{
+__intnl_SystemBoolean_4 = npcMovementObjects == __const_SystemObject_0;
+if (__intnl_SystemBoolean_4)
+{
+}
+else
+{
+__intnl_SystemInt32_0 = npcMovementObjects.Length;
+__intnl_SystemBoolean_4 = __intnl_SystemInt32_0 == __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_4)
+{
+return;
+}
+__intnl_SystemInt32_1 = VRCPlayerApi.GetPlayerCount();
+__lcl_players_VRCSDKBaseVRCPlayerApiArray_0 = __intnl_SystemInt32_1.ctor();
+__intnl_VRCSDKBaseVRCPlayerApiArray_0 = VRCPlayerApi.GetPlayers(__lcl_players_VRCSDKBaseVRCPlayerApiArray_0);
+__lcl_validCount_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_0 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_2 = __lcl_players_VRCSDKBaseVRCPlayerApiArray_0.Length;
+__intnl_SystemBoolean_5 = __lcl_i_SystemInt32_0 < __intnl_SystemInt32_2;
+if (__intnl_SystemBoolean_5)
+{
+break;
+}
+__intnl_VRCSDKBaseVRCPlayerApi_0 = __lcl_players_VRCSDKBaseVRCPlayerApiArray_0[__lcl_i_SystemInt32_0];
+__intnl_SystemBoolean_6 = __intnl_VRCSDKBaseVRCPlayerApi_0 != __const_SystemObject_0;
+if (__intnl_SystemBoolean_6)
+{
+__intnl_VRCSDKBaseVRCPlayerApi_1 = __lcl_players_VRCSDKBaseVRCPlayerApiArray_0[__lcl_i_SystemInt32_0];
+__intnl_SystemBoolean_6 = __intnl_VRCSDKBaseVRCPlayerApi_1.IsValid();
+}
+if (__intnl_SystemBoolean_6)
+{
+__lcl_validCount_SystemInt32_0 = __lcl_validCount_SystemInt32_0 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_1;
+}
+__intnl_SystemBoolean_5 = __lcl_validCount_SystemInt32_0 == __const_SystemInt32_0;
+if (__intnl_SystemBoolean_5)
+{
+return;
+}
+__lcl_validPlayers_VRCSDKBaseVRCPlayerApiArray_0 = __lcl_validCount_SystemInt32_0.ctor();
+__lcl_idx_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_0 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_2 = __lcl_players_VRCSDKBaseVRCPlayerApiArray_0.Length;
+__intnl_SystemBoolean_6 = __lcl_i_SystemInt32_0 < __intnl_SystemInt32_2;
+if (__intnl_SystemBoolean_6)
+{
+break;
+}
+__intnl_VRCSDKBaseVRCPlayerApi_0 = __lcl_players_VRCSDKBaseVRCPlayerApiArray_0[__lcl_i_SystemInt32_0];
+__intnl_SystemBoolean_7 = __intnl_VRCSDKBaseVRCPlayerApi_0 != __const_SystemObject_0;
+if (__intnl_SystemBoolean_7)
+{
+__intnl_VRCSDKBaseVRCPlayerApi_1 = __lcl_players_VRCSDKBaseVRCPlayerApiArray_0[__lcl_i_SystemInt32_0];
+__intnl_SystemBoolean_7 = __intnl_VRCSDKBaseVRCPlayerApi_1.IsValid();
+}
+if (__intnl_SystemBoolean_7)
+{
+__intnl_SystemInt32_3 = __lcl_idx_SystemInt32_0;
+__lcl_idx_SystemInt32_0 = __intnl_SystemInt32_3 + __const_SystemInt32_1;
+__intnl_VRCSDKBaseVRCPlayerApi_2 = __lcl_players_VRCSDKBaseVRCPlayerApiArray_0[__lcl_i_SystemInt32_0];
+__lcl_validPlayers_VRCSDKBaseVRCPlayerApiArray_0.Set(__intnl_SystemInt32_3, __intnl_VRCSDKBaseVRCPlayerApi_2);
+}
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_0 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_2 = npcMovementObjects.Length;
+__intnl_SystemBoolean_6 = __lcl_i_SystemInt32_0 < __intnl_SystemInt32_2;
+if (__intnl_SystemBoolean_6)
+{
+break;
+}
+__intnl_UnityEngineGameObject_0 = (GameObject)(npcMovementObjects[__lcl_i_SystemInt32_0]);
+__intnl_UnityEngineObject_0 = __intnl_UnityEngineGameObject_0;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_7 = __intnl_UnityEngineObject_0 == __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_7)
+{
+}
+else
+{
+__intnl_SystemInt32_3 = __lcl_i_SystemInt32_0 / __lcl_validCount_SystemInt32_0;
+__lcl_target_VRCSDKBaseVRCPlayerApi_0 = __lcl_validPlayers_VRCSDKBaseVRCPlayerApiArray_0[__intnl_SystemInt32_3];
+__intnl_UnityEngineGameObject_1 = (GameObject)(npcMovementObjects[__lcl_i_SystemInt32_0]);
+Networking.SetOwner(__lcl_target_VRCSDKBaseVRCPlayerApi_0, __intnl_UnityEngineGameObject_1);
+}
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_1;
+}
+}
+}

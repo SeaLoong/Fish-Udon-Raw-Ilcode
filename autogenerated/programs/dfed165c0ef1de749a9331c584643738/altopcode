@@ -1,0 +1,243 @@
+void _start()
+localPlayer = get_LocalPlayer();// 16
+64 if (__intnl_SystemBoolean_0) //116
+{
+this.set_enabled(__const_SystemBoolean_0);// 88
+108 return;
+}
+132 __intnl_UnityEngineObject_0 = interactionPrompt
+152 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+196 if (__intnl_SystemBoolean_1) //228
+{
+G_interactionPrompt.SetActive(__const_SystemBoolean_0);// 220
+}
+244 __intnl_UnityEngineObject_2 = idleVFXPrefab
+264 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+308 if (__intnl_SystemBoolean_2) //388
+{
+332 __intnl_UnityEngineObject_4 = vfxSpawnPoint
+352 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+}
+396 if (__intnl_SystemBoolean_2) //652
+{
+428 __1__intnlparam = idleVFXPrefab
+432 JUMP 4392
+456 activeIdleVFX = __0__intnlparam
+__0__intnlparam.get_transform().set_position(__intnl_UnityEngineVector3_0);// 524
+__0__intnlparam.get_transform().set_rotation(__intnl_UnityEngineQuaternion_0);// 596
+__0__intnlparam.get_transform().SetParent(vfxSpawnPoint);// 644
+}
+664 return;
+void _update()
+688 JUMP 756
+704 JUMP 1176
+720 JUMP 1796
+740 return;
+796 if (__intnl_SystemBoolean_3) //824
+{
+816 return;
+}
+__lcl_playerPosition_UnityEngineVector3_0 = G_localPlayer.GetPosition();// 840
+__lcl_distance_SystemSingle_0 = Distance(__lcl_playerPosition_UnityEngineVector3_0, __intnl_UnityEngineVector3_1);// 896
+920 __lcl_wasInRange_SystemBoolean_0 = playerInRange
+playerInRange = op_LessThanOrEqual(interactionDistance, __lcl_distance_SystemSingle_0);// 948
+972 __intnl_SystemBoolean_4 = playerInRange
+984 if (__intnl_SystemBoolean_4) //1016
+{
+}
+1024 if (__intnl_SystemBoolean_4) //1056
+{
+1040 JUMP 2016
+1048 JUMP 1148
+}
+1088 if (__intnl_SystemBoolean_5) //1116
+{
+1112 __intnl_SystemBoolean_5 = __lcl_wasInRange_SystemBoolean_0
+}
+1124 if (__intnl_SystemBoolean_5) //1148
+{
+1140 JUMP 2044
+}
+1160 return;
+1208 if (__intnl_SystemBoolean_6) //1224
+{
+1216 JUMP 1244
+}
+1240 __intnl_SystemBoolean_6 = isUIOpen
+1252 if (__intnl_SystemBoolean_6) //1280
+{
+1272 return;
+}
+__lcl_interactionPressed_SystemBoolean_0 = GetKeyDown(interactionKey);// 1296
+1312 if (__lcl_interactionPressed_SystemBoolean_0) //1328
+{
+1320 JUMP 1620
+}
+1360 if (__intnl_SystemBoolean_9) //1376
+{
+1368 JUMP 1400
+}
+1416 __intnl_SystemBoolean_8 = __intnl_SystemBoolean_9
+1428 if (__intnl_SystemBoolean_8) //1444
+{
+1436 JUMP 1500
+}
+1516 __intnl_SystemBoolean_7 = __intnl_SystemBoolean_8
+1528 if (__intnl_SystemBoolean_7) //1544
+{
+1536 JUMP 1600
+}
+1616 __lcl_interactionPressed_SystemBoolean_0 = __intnl_SystemBoolean_7
+1636 __intnl_SystemBoolean_7 = __lcl_interactionPressed_SystemBoolean_0
+1648 if (__intnl_SystemBoolean_7) //1736
+{
+}
+1744 if (__intnl_SystemBoolean_7) //1768
+{
+1760 JUMP 2364
+}
+1780 return;
+1812 __intnl_UnityEngineObject_6 = interactionPrompt
+1832 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+1876 if (__intnl_SystemBoolean_10) //1988
+{
+1900 __intnl_SystemBoolean_11 = playerInRange
+1912 if (__intnl_SystemBoolean_11) //1944
+{
+}
+1960 __lcl_shouldShow_SystemBoolean_0 = __intnl_SystemBoolean_11
+G_interactionPrompt.SetActive(__lcl_shouldShow_SystemBoolean_0);// 1980
+}
+2000 return;
+2028 return;
+2052 if (isUIOpen) //2076
+{
+2068 JUMP 2816
+}
+2088 return;
+void _interact()
+2144 if (__intnl_SystemBoolean_12) //2172
+{
+2164 return;
+}
+__lcl_distance_SystemSingle_1 = Distance(__intnl_UnityEngineVector3_3, __intnl_UnityEngineVector3_2);// 2244
+2292 if (__intnl_SystemBoolean_13) //2320
+{
+2312 return;
+}
+2328 JUMP 2364
+2348 return;
+2380 __intnl_UnityEngineObject_8 = altarUI
+2400 __intnl_UnityEngineObject_9 = __const_SystemObject_0
+2444 if (__intnl_SystemBoolean_14) //2472
+{
+2464 return;
+}
+2480 if (isUIOpen) //2508
+{
+2500 return;
+}
+lastInteractionTime = get_time();// 2516
+2540 isUIOpen = __const_SystemBoolean_1
+2560 __intnl_UnityEngineObject_10 = audioSource
+2580 __intnl_UnityEngineObject_11 = __const_SystemObject_0
+2624 if (__intnl_SystemBoolean_15) //2704
+{
+2648 __intnl_UnityEngineObject_12 = altarOpenSound
+2668 __intnl_UnityEngineObject_13 = __const_SystemObject_0
+}
+2712 if (__intnl_SystemBoolean_15) //2744
+{
+G_audioSource.PlayOneShot(altarOpenSound);// 2736
+}
+2768 __intnl_VRCUdonUdonBehaviour_0 = altarUI
+G_altarUI.SendCustomEvent(__const_SystemString_2);// 2780
+2800 return;
+void CloseAltarUI()
+2832 isUIOpen = __const_SystemBoolean_0
+2852 __intnl_UnityEngineObject_14 = altarUI
+2872 __intnl_UnityEngineObject_15 = __const_SystemObject_0
+2916 if (__intnl_SystemBoolean_16) //2968
+{
+2948 __intnl_VRCUdonUdonBehaviour_1 = altarUI
+G_altarUI.SendCustomEvent(__const_SystemString_3);// 2960
+}
+2980 return;
+void OnUIClose()
+3012 isUIOpen = __const_SystemBoolean_0
+3028 return;
+void NotifyUIOpened()
+3060 isUIOpen = __const_SystemBoolean_1
+lastInteractionTime = get_time();// 3072
+3092 return;
+void OnEnchantmentSuccess()
+3124 __intnl_UnityEngineObject_16 = enchantSuccessVFXPrefab
+3144 __intnl_UnityEngineObject_17 = __const_SystemObject_0
+3188 if (__intnl_SystemBoolean_17) //3268
+{
+3212 __intnl_UnityEngineObject_18 = vfxSpawnPoint
+3232 __intnl_UnityEngineObject_19 = __const_SystemObject_0
+}
+3276 if (__intnl_SystemBoolean_17) //3528
+{
+3308 __1__intnlparam = enchantSuccessVFXPrefab
+3312 JUMP 4392
+3336 __lcl_successVFX_UnityEngineGameObject_0 = __0__intnlparam
+__0__intnlparam.get_transform().set_position(__intnl_UnityEngineVector3_4);// 3404
+__0__intnlparam.get_transform().set_rotation(__intnl_UnityEngineQuaternion_1);// 3476
+3500 __intnl_UnityEngineObject_20 = __lcl_successVFX_UnityEngineGameObject_0
+Destroy(__const_SystemSingle_1, __intnl_UnityEngineObject_20);// 3520
+}
+3544 __intnl_UnityEngineObject_20 = audioSource
+3564 __intnl_UnityEngineObject_21 = __const_SystemObject_0
+3608 if (__intnl_SystemBoolean_18) //3688
+{
+3632 __intnl_UnityEngineObject_22 = enchantSuccessSound
+3652 __intnl_UnityEngineObject_23 = __const_SystemObject_0
+}
+3696 if (__intnl_SystemBoolean_18) //3728
+{
+G_audioSource.PlayOneShot(enchantSuccessSound);// 3720
+}
+3740 return;
+void __0_PlayVictorySound()
+3772 __intnl_UnityEngineObject_24 = audioSource
+3792 __intnl_UnityEngineObject_25 = __const_SystemObject_0
+3836 if (__intnl_SystemBoolean_19) //3864
+{
+3856 return;
+}
+3880 __lcl_victoryClip_UnityEngineAudioClip_0 = __const_SystemObject_0
+3924 if (__intnl_SystemBoolean_20) //4160
+{
+3972 if (__intnl_SystemBoolean_21) //4160
+{
+4012 return;
+4036 __lcl_victoryClip_UnityEngineAudioClip_0 = commonVictorySound
+4040 JUMP 4160
+4064 __lcl_victoryClip_UnityEngineAudioClip_0 = uncommonVictorySound
+4068 JUMP 4160
+4092 __lcl_victoryClip_UnityEngineAudioClip_0 = rareVictorySound
+4096 JUMP 4160
+4120 __lcl_victoryClip_UnityEngineAudioClip_0 = epicVictorySound
+4124 JUMP 4160
+4148 __lcl_victoryClip_UnityEngineAudioClip_0 = legendaryVictorySound
+4152 JUMP 4160
+}
+}
+4176 __intnl_UnityEngineObject_26 = __lcl_victoryClip_UnityEngineAudioClip_0
+4196 __intnl_UnityEngineObject_27 = __const_SystemObject_0
+4240 if (__intnl_SystemBoolean_22) //4280
+{
+G_audioSource.PlayOneShot(__lcl_victoryClip_UnityEngineAudioClip_0);// 4264
+4272 JUMP 4280
+}
+4292 return;
+set_color(__const_UnityEngineColor_0);// 4316
+DrawWireSphere(interactionDistance, __intnl_UnityEngineVector3_5);// 4364
+4384 return;
+__0__intnlparam = Instantiate(__1__intnlparam);// 4408
+4428 return;
+4448 return;
+4472 __2__intnlparam = __const_SystemObject_0
+4488 return;

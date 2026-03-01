@@ -1,0 +1,2332 @@
+using System;
+using VRC.SDK3.Data;
+using UnityEngine;
+using VRC.SDKBase;
+using VRC.Udon;
+using VRC.Udon.Common.Enums;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Int32 __8_id__param = 0;
+private Boolean __intnl_SystemBoolean_83 = false;
+private Boolean __intnl_SystemBoolean_93 = false;
+private Boolean __intnl_SystemBoolean_13 = false;
+private Boolean __intnl_SystemBoolean_23 = false;
+private Boolean __intnl_SystemBoolean_33 = false;
+private Boolean __intnl_SystemBoolean_43 = false;
+private Boolean __intnl_SystemBoolean_53 = false;
+private Boolean __intnl_SystemBoolean_63 = false;
+private Boolean __intnl_SystemBoolean_73 = false;
+private DataToken __intnl_VRCSDK3DataDataToken_7 = Null;
+private UInt32 __gintnl_SystemUInt32_16 = 11540;
+private UInt32 __gintnl_SystemUInt32_36 = 20140;
+private UInt32 __gintnl_SystemUInt32_26 = 16984;
+private Int32 __intnl_SystemInt32_15 = 0;
+private Int32 __intnl_SystemInt32_35 = 0;
+private Int32 __intnl_SystemInt32_25 = 0;
+private String __intnl_SystemString_1 = null;
+private Double __intnl_SystemDouble_18 = 0;
+private Double __intnl_SystemDouble_19 = 0;
+private Double __intnl_SystemDouble_14 = 0;
+private Double __intnl_SystemDouble_15 = 0;
+private Double __intnl_SystemDouble_16 = 0;
+private Double __intnl_SystemDouble_17 = 0;
+private Double __intnl_SystemDouble_10 = 0;
+private Double __intnl_SystemDouble_11 = 0;
+private Double __intnl_SystemDouble_12 = 0;
+private Double __intnl_SystemDouble_13 = 0;
+private Object __intnl_UnityEngineObject_12 = null;
+private Boolean __lcl_isBetterCandidate_SystemBoolean_0 = false;
+private String __const_SystemString_46 = "__0___0_GetFishEntryById__ret";
+private String __const_SystemString_47 = "__0_weight__param";
+private String __const_SystemString_44 = "__0_fishEntryId__param";
+private String __const_SystemString_45 = "__0_GetFishEntryById";
+private String __const_SystemString_42 = "[PlayerInventoryData] All unlocked rods: ";
+private String __const_SystemString_43 = ", ";
+private String __const_SystemString_40 = "[PlayerInventoryData] OnDeserialization: unexpected token type {0}, expected DataDictionary. Remote inventory may be stale.";
+private String __const_SystemString_41 = "[PlayerInventoryData] OnDeserialization: JSON deserialization failed. Remote inventory may be stale.";
+private String __const_SystemString_48 = "__0_sizeModifier__param";
+private String __const_SystemString_49 = "__0_shaderModifier__param";
+private VRCPlayerApi __lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0 = null;
+private object __intnl_SystemObject_0 = null;
+private Int32 __1_id__param = 0;
+private Int32 __0_get_VisibleFishIndex__ret = 0;
+private Int32 __0_rodId__param = 0;
+private Boolean __0_wasInitialized__param = false;
+private Int32 __0_id__param = 0;
+private DataList __lcl_fishSlots_VRCSDK3DataDataList_4 = null;
+private DataList __lcl_fishSlots_VRCSDK3DataDataList_3 = null;
+private DataList __lcl_fishSlots_VRCSDK3DataDataList_2 = null;
+private DataList __lcl_fishSlots_VRCSDK3DataDataList_1 = null;
+private DataList __lcl_fishSlots_VRCSDK3DataDataList_0 = null;
+private String __const_SystemString_0 = "HideAll";
+private Int32 __3_id__param = 0;
+private Int32 __2_targetFishEntryId__param = 0;
+private Int32 _visibleFishIndex = -1;
+private Single __const_SystemSingle_0 = 1f;
+private Double __intnl_SystemDouble_3 = 0;
+private Int32 __2_id__param = 0;
+private Int32 __5_id__param = 0;
+private Boolean __intnl_SystemBoolean_86 = false;
+private Boolean __intnl_SystemBoolean_96 = false;
+private Boolean __intnl_SystemBoolean_16 = false;
+private Boolean __intnl_SystemBoolean_26 = false;
+private Boolean __intnl_SystemBoolean_36 = false;
+private Boolean __intnl_SystemBoolean_46 = false;
+private Boolean __intnl_SystemBoolean_56 = false;
+private Boolean __intnl_SystemBoolean_66 = false;
+private Boolean __intnl_SystemBoolean_76 = false;
+private DataToken __intnl_VRCSDK3DataDataToken_2 = Null;
+private Boolean __0___0_HasHandleId__ret = false;
+private Int32 __const_SystemInt32_11 = 2;
+private Int32 __const_SystemInt32_31 = 18;
+private Int32 __const_SystemInt32_21 = 8;
+private Int32 __4_id__param = 0;
+private Int32 __intnl_SystemInt32_12 = 0;
+private Int32 __intnl_SystemInt32_32 = 0;
+private Int32 __intnl_SystemInt32_22 = 0;
+private Int32 __7_id__param = 0;
+private DataDictionary __lcl_newEntry_VRCSDK3DataDataDictionary_0 = null;
+private Int32 __lcl_i_SystemInt32_14 = 0;
+private Int32 __6_id__param = 0;
+public UdonBehaviour RodDatabase;
+private UInt32[] __gintnl_SystemUInt32Array_0 = System.UInt32[];
+private Int32 __0_get_EquippedBobberId__ret = 0;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_22 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_12 = this;
+private DataList __lcl_afkPets_VRCSDK3DataDataList_1 = null;
+private DataList __lcl_afkPets_VRCSDK3DataDataList_0 = null;
+private DataList __lcl_afkPets_VRCSDK3DataDataList_3 = null;
+private DataList __lcl_afkPets_VRCSDK3DataDataList_2 = null;
+private DataList __lcl_slot_VRCSDK3DataDataList_1 = null;
+private Boolean __0___0_TryGetLineEnchantmentId__ret = false;
+private UInt32 __gintnl_SystemUInt32_9 = 5508;
+private UInt32 __gintnl_SystemUInt32_8 = 4832;
+private UInt32 __gintnl_SystemUInt32_5 = 3308;
+private UInt32 __gintnl_SystemUInt32_4 = 2496;
+private UInt32 __gintnl_SystemUInt32_7 = 4324;
+private UInt32 __gintnl_SystemUInt32_6 = 3816;
+private UInt32 __gintnl_SystemUInt32_1 = 760;
+private UInt32 __gintnl_SystemUInt32_0 = 724;
+private UInt32 __gintnl_SystemUInt32_3 = 1660;
+private UInt32 __gintnl_SystemUInt32_2 = 824;
+private Int32 __1_targetFishEntryId__param = 0;
+private Double __intnl_SystemDouble_28 = 0;
+private Double __intnl_SystemDouble_29 = 0;
+private Double __intnl_SystemDouble_24 = 0;
+private Double __intnl_SystemDouble_25 = 0;
+private Double __intnl_SystemDouble_26 = 0;
+private Double __intnl_SystemDouble_27 = 0;
+private Double __intnl_SystemDouble_20 = 0;
+private Double __intnl_SystemDouble_21 = 0;
+private Double __intnl_SystemDouble_22 = 0;
+private Double __intnl_SystemDouble_23 = 0;
+private Boolean __const_SystemBoolean_0 = true;
+private Boolean __const_SystemBoolean_1 = false;
+private DataToken __intnl_VRCSDK3DataDataToken_104 = Null;
+private Object __intnl_UnityEngineObject_11 = null;
+private Int32 __0_value__param = 0;
+private TokenType __intnl_VRCSDK3DataTokenType_2 = TokenType.Null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_7 = null;
+public UdonBehaviour PlayerFishVisual;
+private DataList __lcl_unlockedHandles_VRCSDK3DataDataList_2 = null;
+private DataList __lcl_unlockedHandles_VRCSDK3DataDataList_1 = null;
+private DataList __lcl_unlockedHandles_VRCSDK3DataDataList_0 = null;
+private DataList __lcl_unlockedRods_VRCSDK3DataDataList_1 = null;
+private String __const_SystemString_5 = "rodId";
+private Int32 __4_enchantmentId__param = 0;
+private Int32 __0_AfkPetsCount__ret = 0;
+public Int32 nextFishId;
+private DataToken __intnl_VRCSDK3DataDataToken_68 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_69 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_64 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_65 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_66 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_67 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_60 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_61 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_62 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_63 = Null;
+private TokenType __const_VRCSDK3DataTokenType_0 = TokenType.DataDictionary;
+private Int32 __lcl_savedLine_SystemInt32_0 = 0;
+private Boolean __0___0_HasBobberId__ret = false;
+private UdonBehaviour __const_VRCUdonUdonBehaviour_0 = null;
+private Int32 __const_SystemInt32_19 = 6;
+private Int32 __const_SystemInt32_29 = 16;
+private UInt32 __gintnl_SystemUInt32_13 = 9772;
+private UInt32 __gintnl_SystemUInt32_33 = 18824;
+private UInt32 __gintnl_SystemUInt32_23 = 16208;
+private Int32 __3__intnlparam = 0;
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private DataToken __intnl_VRCSDK3DataDataToken_1 = Null;
+private Int32 __const_SystemInt32_16 = 3;
+private Int32 __const_SystemInt32_36 = 23;
+private Int32 __const_SystemInt32_26 = 13;
+private Int32 __0_lineId__param = 0;
+private VRCPlayerApi onPlayerRestoredPlayer = null;
+private DataDictionary _emptyDataDictionary = VRC.SDK3.Data.DataDictionary;
+private Boolean __0___0_HasAfkPet__ret = false;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_17 = this;
+private DataList __lcl_slot_VRCSDK3DataDataList_2 = null;
+private String __const_SystemString_16 = "questItems";
+private String __const_SystemString_17 = "nfid";
+private String __const_SystemString_14 = "fishSlots";
+private String __const_SystemString_15 = "afkPets";
+private String __const_SystemString_12 = "unlockedLines";
+private String __const_SystemString_13 = "unlockedBobbers";
+private String __const_SystemString_10 = "bobberId";
+private String __const_SystemString_11 = "unlockedRods";
+private String __const_SystemString_18 = "unlockedHandles";
+private String __const_SystemString_19 = "unlockedBoats";
+private VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_0 = null;
+private DataToken __intnl_VRCSDK3DataDataToken_101 = Null;
+private Object __intnl_UnityEngineObject_14 = null;
+private Int64 __refl_typeid = 9117604706513487623;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_11 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_10 = null;
+private TokenType __intnl_VRCSDK3DataTokenType_1 = TokenType.Null;
+private Int32 __lcl_sizeModifier_SystemInt32_0 = 0;
+private DataToken __lcl_token_VRCSDK3DataDataToken_0 = Null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_2 = null;
+public UdonBehaviour BobberDatabase;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_9 = null;
+private Double __intnl_SystemDouble_4 = 0;
+private Int32 __12_id__param = 0;
+private Int32 __lcl_fishEntryId_SystemInt32_1 = 0;
+private Int32 __lcl_fishEntryId_SystemInt32_0 = 0;
+private Int32 __lcl_fishEntryId_SystemInt32_3 = 0;
+private Int32 __lcl_fishEntryId_SystemInt32_2 = 0;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private DataToken __intnl_VRCSDK3DataDataToken_58 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_59 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_54 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_55 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_56 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_57 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_50 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_51 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_52 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_53 = Null;
+private Int32 __0___0_CountUnlockedFishWithEntryId__ret = 0;
+private Boolean __0___0_TryGetBobberEnchantmentId__ret = false;
+private Boolean __intnl_SystemBoolean_81 = false;
+private Boolean __intnl_SystemBoolean_91 = false;
+private Boolean __intnl_SystemBoolean_11 = false;
+private Boolean __intnl_SystemBoolean_21 = false;
+private Boolean __intnl_SystemBoolean_31 = false;
+private Boolean __intnl_SystemBoolean_41 = false;
+private Boolean __intnl_SystemBoolean_51 = false;
+private Boolean __intnl_SystemBoolean_61 = false;
+private Boolean __intnl_SystemBoolean_71 = false;
+private DataToken __intnl_VRCSDK3DataDataToken_9 = Null;
+private UInt32 __gintnl_SystemUInt32_14 = 9892;
+private UInt32 __gintnl_SystemUInt32_34 = 19008;
+private UInt32 __gintnl_SystemUInt32_24 = 16496;
+private Int32 __intnl_SystemInt32_17 = 0;
+private Int32 __intnl_SystemInt32_37 = 0;
+private Int32 __intnl_SystemInt32_27 = 0;
+private Int32 __lcl_i_SystemInt32_11 = 0;
+private DataList _emptyDataList = VRC.SDK3.Data.DataList;
+private Int32 __0__intnlparam = 0;
+private Double __intnl_SystemDouble_74 = 0;
+private Double __intnl_SystemDouble_75 = 0;
+private Double __intnl_SystemDouble_76 = 0;
+private Double __intnl_SystemDouble_70 = 0;
+private Double __intnl_SystemDouble_71 = 0;
+private Double __intnl_SystemDouble_72 = 0;
+private Double __intnl_SystemDouble_73 = 0;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_24 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_14 = this;
+private JsonExportType __const_VRCSDK3DataJsonExportType_1 = JsonExportType.Minify;
+private JsonExportType __const_VRCSDK3DataJsonExportType_0 = JsonExportType.Beautify;
+private object __intnl_SystemObject_2 = null;
+private String __lcl_allRods_SystemString_0 = null;
+private Boolean __lcl_wasInitialized_SystemBoolean_0 = false;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_1 = null;
+private String __const_SystemString_2 = "__0_TrySetVisibleIndex";
+private Int32 __lcl_count_SystemInt32_0 = 0;
+private DataList __lcl_unlockedLines_VRCSDK3DataDataList_2 = null;
+private DataList __lcl_unlockedLines_VRCSDK3DataDataList_1 = null;
+private DataList __lcl_unlockedLines_VRCSDK3DataDataList_0 = null;
+private Double __intnl_SystemDouble_1 = 0;
+private Boolean __intnl_SystemBoolean_89 = false;
+private Boolean __intnl_SystemBoolean_99 = false;
+private Boolean __intnl_SystemBoolean_19 = false;
+private Boolean __intnl_SystemBoolean_29 = false;
+private Boolean __intnl_SystemBoolean_39 = false;
+private Boolean __intnl_SystemBoolean_49 = false;
+private Boolean __intnl_SystemBoolean_59 = false;
+private Boolean __intnl_SystemBoolean_69 = false;
+private Boolean __intnl_SystemBoolean_79 = false;
+private DataList __lcl_unlockedBobbers_VRCSDK3DataDataList_0 = null;
+private DataList __lcl_unlockedBobbers_VRCSDK3DataDataList_1 = null;
+private DataList __lcl_unlockedBobbers_VRCSDK3DataDataList_2 = null;
+private Boolean __intnl_SystemBoolean_84 = false;
+private Boolean __intnl_SystemBoolean_94 = false;
+private Boolean __intnl_SystemBoolean_14 = false;
+private Boolean __intnl_SystemBoolean_24 = false;
+private Boolean __intnl_SystemBoolean_34 = false;
+private Boolean __intnl_SystemBoolean_44 = false;
+private Boolean __intnl_SystemBoolean_54 = false;
+private Boolean __intnl_SystemBoolean_64 = false;
+private Boolean __intnl_SystemBoolean_74 = false;
+private DataToken __intnl_VRCSDK3DataDataToken_4 = Null;
+private Int32 __const_SystemInt32_13 = 0;
+private Int32 __const_SystemInt32_33 = 20;
+private Int32 __const_SystemInt32_23 = 10;
+private Int32 __intnl_SystemInt32_14 = 0;
+private Int32 __intnl_SystemInt32_34 = 0;
+private Int32 __intnl_SystemInt32_24 = 0;
+private Boolean __0___0_HasFishWithEntryId__ret = false;
+private Int32 __lcl_bestIndex_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_19 = 0;
+private Int32 __intnl_SystemInt32_29 = 0;
+private DataDictionary __lcl_newEntry_VRCSDK3DataDataDictionary_2 = null;
+private object __const_SystemObject_0 = null;
+private Boolean __0___0_TryGetRodEnchantmentId__ret = false;
+private String __intnl_SystemString_0 = null;
+private Int32 __10_id__param = 0;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_19 = this;
+private Object __intnl_UnityEngineObject_13 = null;
+private UdonBehaviour __0_fishDatabase__param = null;
+private Int32 __2_bobberId__param = 0;
+private Double __const_SystemDouble_0 = 1;
+private object __intnl_SystemObject_1 = null;
+private Boolean __0_newLockState__param = false;
+private Int32 __14_id__param = 0;
+private Double __intnl_SystemDouble_9 = 0;
+private String __const_SystemString_7 = "lineEnchants";
+private Boolean __lcl_bestIsLocked_SystemBoolean_0 = false;
+private DataToken __intnl_VRCSDK3DataDataToken_88 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_89 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_84 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_85 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_86 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_87 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_80 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_81 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_82 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_83 = Null;
+private Double __intnl_SystemDouble_2 = 0;
+private Int32 __11_id__param = 0;
+private UInt32 __gintnl_SystemUInt32_41 = 23420;
+private UInt32 __gintnl_SystemUInt32_11 = 9616;
+private UInt32 __gintnl_SystemUInt32_31 = 18232;
+private UInt32 __gintnl_SystemUInt32_21 = 15720;
+private Int32 __3_value__param = 0;
+private Boolean __intnl_SystemBoolean_87 = false;
+private Boolean __intnl_SystemBoolean_97 = false;
+private Boolean __intnl_SystemBoolean_17 = false;
+private Boolean __intnl_SystemBoolean_27 = false;
+private Boolean __intnl_SystemBoolean_37 = false;
+private Boolean __intnl_SystemBoolean_47 = false;
+private Boolean __intnl_SystemBoolean_57 = false;
+private Boolean __intnl_SystemBoolean_67 = false;
+private Boolean __intnl_SystemBoolean_77 = false;
+private DataToken __intnl_VRCSDK3DataDataToken_3 = Null;
+private Int32 __const_SystemInt32_10 = 1;
+private Int32 __const_SystemInt32_30 = 17;
+private Int32 __const_SystemInt32_20 = 7;
+private EventTiming __const_VRCUdonCommonEnumsEventTiming_0 = EventTiming.Update;
+private Int32 __intnl_SystemInt32_11 = 0;
+private Int32 __intnl_SystemInt32_31 = 0;
+private Int32 __intnl_SystemInt32_21 = 0;
+private String __lcl_savedData_SystemString_0 = null;
+private Int32 __lcl_shaderModifierInt_SystemInt32_0 = 0;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_21 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_11 = this;
+private DataList __lcl_slot_VRCSDK3DataDataList_0 = null;
+private String __const_SystemString_36 = "__0___0_SelectBobberById__ret";
+private String __const_SystemString_37 = "[PlayerInventoryData] SerializeInventoryData FAILED — JSON serialization returned false. Inventory will NOT be saved this cycle. Keeping last known good data.";
+private String __const_SystemString_34 = "__0_bobberId__param";
+private String __const_SystemString_35 = "__0_SelectBobberById";
+private String __const_SystemString_32 = "__0_SelectLineById";
+private String __const_SystemString_33 = "__0___0_SelectLineById__ret";
+private String __const_SystemString_30 = "__0___0_SelectRodById__ret";
+private String __const_SystemString_31 = "__0_lineId__param";
+private String __const_SystemString_38 = "INVENTORY_WIPE_PENDING";
+private String __const_SystemString_39 = "[PlayerInventoryData] Wipe pending flag detected — inventory reset in OnPreSerialization.";
+private Int32 __lcl_savedRod_SystemInt32_0 = 0;
+private DataToken __intnl_VRCSDK3DataDataToken_103 = Null;
+private Object __intnl_UnityEngineObject_16 = null;
+public Boolean Ready;
+private TokenType __intnl_VRCSDK3DataTokenType_3 = TokenType.Null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_4 = null;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private DataList __lcl_unlockedRods_VRCSDK3DataDataList_0 = null;
+private String __const_SystemString_4 = "rodEnchants";
+private DataToken __intnl_VRCSDK3DataDataToken_78 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_79 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_74 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_75 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_76 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_77 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_70 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_71 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_72 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_73 = Null;
+private UInt32 __gintnl_SystemUInt32_19 = 14536;
+private UInt32 __gintnl_SystemUInt32_39 = 22252;
+private UInt32 __gintnl_SystemUInt32_29 = 17760;
+private Boolean __0___0_RemoveFishByEntryId__ret = false;
+private TokenType __const_VRCSDK3DataTokenType_1 = TokenType.DataList;
+public UdonBehaviour RodCustomizationManager;
+private Int32 __const_SystemInt32_18 = 5;
+private Int32 __const_SystemInt32_28 = 15;
+private UInt32 __gintnl_SystemUInt32_42 = 24096;
+private UInt32 __gintnl_SystemUInt32_12 = 9736;
+private UInt32 __gintnl_SystemUInt32_32 = 18536;
+private UInt32 __gintnl_SystemUInt32_22 = 15904;
+private UInt32 __intnl_SystemUInt32_0 = 0;
+private DataList __lcl_appliedEnchantments_VRCSDK3DataDataList_1 = null;
+private DataList __lcl_appliedEnchantments_VRCSDK3DataDataList_0 = null;
+private DataList __lcl_appliedEnchantments_VRCSDK3DataDataList_3 = null;
+private DataList __lcl_appliedEnchantments_VRCSDK3DataDataList_2 = null;
+private DataList __lcl_appliedEnchantments_VRCSDK3DataDataList_5 = null;
+private DataList __lcl_appliedEnchantments_VRCSDK3DataDataList_4 = null;
+private DataList __lcl_appliedEnchantments_VRCSDK3DataDataList_7 = null;
+private DataList __lcl_appliedEnchantments_VRCSDK3DataDataList_6 = null;
+private DataList __lcl_appliedEnchantments_VRCSDK3DataDataList_8 = null;
+private Int32 __lcl_i_SystemInt32_9 = 0;
+private Int32 __lcl_i_SystemInt32_8 = 0;
+private Int32 __lcl_i_SystemInt32_1 = 0;
+private Int32 __lcl_i_SystemInt32_0 = 0;
+private Int32 __lcl_i_SystemInt32_3 = 0;
+private Int32 __lcl_i_SystemInt32_2 = 0;
+private Int32 __lcl_i_SystemInt32_5 = 0;
+private Int32 __lcl_i_SystemInt32_4 = 0;
+private Int32 __lcl_i_SystemInt32_7 = 0;
+private Int32 __lcl_i_SystemInt32_6 = 0;
+private Int32 __const_SystemInt32_15 = 2;
+private Int32 __const_SystemInt32_35 = 22;
+private Int32 __const_SystemInt32_25 = 12;
+private DataList __0___0_GetSafeDataList__ret = null;
+private Int32 __lcl_i_SystemInt32_13 = 0;
+private Single __lcl_weight_SystemSingle_0 = 0f;
+private Int32 __0_targetFishEntryId__param = 0;
+private Double __intnl_SystemDouble_58 = 0;
+private Double __intnl_SystemDouble_59 = 0;
+private Double __intnl_SystemDouble_54 = 0;
+private Double __intnl_SystemDouble_55 = 0;
+private Double __intnl_SystemDouble_56 = 0;
+private Double __intnl_SystemDouble_57 = 0;
+private Double __intnl_SystemDouble_50 = 0;
+private Double __intnl_SystemDouble_51 = 0;
+private Double __intnl_SystemDouble_52 = 0;
+private Double __intnl_SystemDouble_53 = 0;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_16 = this;
+private Int32 __1__intnlparam = 0;
+private VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_3 = null;
+private Int32 _equippedBobberId = 0;
+private DataToken __intnl_VRCSDK3DataDataToken_100 = Null;
+private Object __intnl_UnityEngineObject_15 = null;
+private object __intnl_SystemObject_4 = null;
+private Int32 __lcl_sizeModifierInt_SystemInt32_0 = 0;
+private Boolean __lcl_isLocked_SystemBoolean_0 = false;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_3 = null;
+private Boolean __intnl_SystemBoolean_101 = false;
+private Boolean __intnl_SystemBoolean_100 = false;
+private Boolean __intnl_SystemBoolean_103 = false;
+private Boolean __intnl_SystemBoolean_102 = false;
+private Boolean __lcl_wipePendingWasInit_SystemBoolean_0 = false;
+private DataToken __lcl_result_VRCSDK3DataDataToken_3 = Null;
+private DataToken __lcl_result_VRCSDK3DataDataToken_2 = Null;
+private DataToken __lcl_result_VRCSDK3DataDataToken_1 = Null;
+private DataToken __lcl_result_VRCSDK3DataDataToken_0 = Null;
+private Double __intnl_SystemDouble_7 = 0;
+private String __const_SystemString_9 = "bobberEnchants";
+private DataToken __intnl_VRCSDK3DataDataToken_28 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_29 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_24 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_25 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_26 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_27 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_20 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_21 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_22 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_23 = Null;
+private Boolean __intnl_SystemBoolean_82 = false;
+private Boolean __intnl_SystemBoolean_92 = false;
+private Boolean __intnl_SystemBoolean_12 = false;
+private Boolean __intnl_SystemBoolean_22 = false;
+private Boolean __intnl_SystemBoolean_32 = false;
+private Boolean __intnl_SystemBoolean_42 = false;
+private Boolean __intnl_SystemBoolean_52 = false;
+private Boolean __intnl_SystemBoolean_62 = false;
+private Boolean __intnl_SystemBoolean_72 = false;
+private DataToken __intnl_VRCSDK3DataDataToken_6 = Null;
+private UInt32 __gintnl_SystemUInt32_17 = 13436;
+private UInt32 __gintnl_SystemUInt32_37 = 21060;
+private UInt32 __gintnl_SystemUInt32_27 = 17272;
+private Int32 __intnl_SystemInt32_16 = 0;
+private Int32 __intnl_SystemInt32_36 = 0;
+private Int32 __intnl_SystemInt32_26 = 0;
+public UdonBehaviour QuestInventoryManager;
+private String __refl_typename = "PlayerInventoryData";
+private Int32 _restoreRetryCount = 0;
+private Int32 __lcl_bestValue_SystemInt32_0 = 0;
+private Int32 __lcl_i_SystemInt32_10 = 0;
+private Int32 _equippedLineId = 0;
+private Int32 __2_rodId__param = 0;
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Int32 __intnl_SystemInt32_5 = 0;
+private Int32 __intnl_SystemInt32_4 = 0;
+private Int32 __intnl_SystemInt32_7 = 0;
+private Int32 __intnl_SystemInt32_6 = 0;
+private Int32 __intnl_SystemInt32_9 = 0;
+private Int32 __intnl_SystemInt32_8 = 0;
+private Double __intnl_SystemDouble_68 = 0;
+private Double __intnl_SystemDouble_69 = 0;
+private Double __intnl_SystemDouble_64 = 0;
+private Double __intnl_SystemDouble_65 = 0;
+private Double __intnl_SystemDouble_66 = 0;
+private Double __intnl_SystemDouble_67 = 0;
+private Double __intnl_SystemDouble_60 = 0;
+private Double __intnl_SystemDouble_61 = 0;
+private Double __intnl_SystemDouble_62 = 0;
+private Double __intnl_SystemDouble_63 = 0;
+public UdonBehaviour InventoryManager;
+private String __const_SystemString_52 = "__0___0_CalculateFishValue__ret";
+private String __const_SystemString_50 = "__0_fishModifierComponent__param";
+private String __const_SystemString_51 = "__0_CalculateFishValue";
+private object __intnl_SystemObject_3 = null;
+private Boolean __0___0_HasUnlockedFishWithEntryId__ret = false;
+private Int32 __1_bobberId__param = 0;
+private Int32 __lcl_shaderModifier_SystemInt32_0 = 0;
+private String __const_SystemString_1 = "__0_index__param";
+private Double __intnl_SystemDouble_0 = 0;
+private Int32 __0_GetNextFishId__ret = 0;
+private DataToken __intnl_VRCSDK3DataDataToken_18 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_19 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_14 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_15 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_16 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_17 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_10 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_11 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_12 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_13 = Null;
+private Boolean __intnl_SystemBoolean_85 = false;
+private Boolean __intnl_SystemBoolean_95 = false;
+private Boolean __intnl_SystemBoolean_15 = false;
+private Boolean __intnl_SystemBoolean_25 = false;
+private Boolean __intnl_SystemBoolean_35 = false;
+private Boolean __intnl_SystemBoolean_45 = false;
+private Boolean __intnl_SystemBoolean_55 = false;
+private Boolean __intnl_SystemBoolean_65 = false;
+private Boolean __intnl_SystemBoolean_75 = false;
+private DataToken __intnl_VRCSDK3DataDataToken_5 = Null;
+private Int32 __const_SystemInt32_12 = 23;
+private Int32 __const_SystemInt32_32 = 19;
+private Int32 __const_SystemInt32_22 = 9;
+private Int32 __2_value__param = 0;
+private Int32 __intnl_SystemInt32_13 = 0;
+private Int32 __intnl_SystemInt32_33 = 0;
+private Int32 __intnl_SystemInt32_23 = 0;
+private Int32 __intnl_SystemInt32_18 = 0;
+private Int32 __intnl_SystemInt32_28 = 0;
+private DataDictionary __lcl_newEntry_VRCSDK3DataDataDictionary_1 = null;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_23 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_13 = this;
+private Double __intnl_SystemDouble_38 = 0;
+private Double __intnl_SystemDouble_39 = 0;
+private Double __intnl_SystemDouble_34 = 0;
+private Double __intnl_SystemDouble_35 = 0;
+private Double __intnl_SystemDouble_36 = 0;
+private Double __intnl_SystemDouble_37 = 0;
+private Double __intnl_SystemDouble_30 = 0;
+private Double __intnl_SystemDouble_31 = 0;
+private Double __intnl_SystemDouble_32 = 0;
+private Double __intnl_SystemDouble_33 = 0;
+private DataToken __intnl_VRCSDK3DataDataToken_105 = Null;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_18 = this;
+private Object __intnl_UnityEngineObject_10 = null;
+private Int32 __1_rodId__param = 0;
+private Boolean __0___0_HasRodId__ret = false;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_6 = null;
+private DataList __lcl_unlockedRods_VRCSDK3DataDataList_2 = null;
+private Double __intnl_SystemDouble_8 = 0;
+private String __const_SystemString_6 = "enchantId";
+private Int32 __1_enchantmentId__param = 0;
+private DataToken __intnl_VRCSDK3DataDataToken_98 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_99 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_94 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_95 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_96 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_97 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_90 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_91 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_92 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_93 = Null;
+private Int32 __lcl_id_SystemInt32_0 = 0;
+private Int32 __0_bobberEnchantment__param = 0;
+private UInt32 __gintnl_SystemUInt32_40 = 22756;
+private UInt32 __gintnl_SystemUInt32_10 = 6184;
+private UInt32 __gintnl_SystemUInt32_30 = 18048;
+private UInt32 __gintnl_SystemUInt32_20 = 15160;
+private DataToken __intnl_VRCSDK3DataDataToken_0 = Null;
+private Int32 __0_fishId__param = 0;
+private Int32 __const_SystemInt32_17 = 4;
+private Int32 __const_SystemInt32_27 = 14;
+private Int32 __intnl_SystemInt32_10 = 0;
+private Int32 __intnl_SystemInt32_30 = 0;
+private Int32 __intnl_SystemInt32_20 = 0;
+private Int32 __2_lineId__param = 0;
+public DataDictionary InventoryData;
+private Int32 __0_get_EquippedLineId__ret = 0;
+private UdonBehaviour __lcl_fishEntry_VRCUdonUdonBehaviour_0 = null;
+private GameObject __this_UnityEngineGameObject_0 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_20 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_10 = this;
+private Int32 __1_value__param = 0;
+private DataList __lcl_slot_VRCSDK3DataDataList_3 = null;
+private String __const_SystemString_26 = "PID_EQUIPPED_LINE";
+private String __const_SystemString_27 = "PID_EQUIPPED_BOBBER";
+private String __const_SystemString_24 = "_AttemptRestore";
+private String __const_SystemString_25 = "PID_EQUIPPED_ROD";
+private String __const_SystemString_22 = "LoadFromPersistence";
+private String __const_SystemString_23 = "Refresh";
+private String __const_SystemString_20 = "INVENTORY_DATA";
+private String __const_SystemString_21 = "RefreshInventoryUI";
+private String __const_SystemString_28 = "__0_rodId__param";
+private String __const_SystemString_29 = "__0_SelectRodById";
+private Boolean __0___0_HasLineId__ret = false;
+private VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_1 = null;
+private DataToken __intnl_VRCSDK3DataDataToken_102 = Null;
+private Object __intnl_UnityEngineObject_17 = null;
+private Boolean __lcl_isLocked_SystemBoolean_2 = false;
+private Int32 __0_bobberId__param = 0;
+private Int32 _old__visibleFishIndex = 0;
+private TokenType __intnl_VRCSDK3DataTokenType_0 = TokenType.Null;
+private Int32 __0_enchantmentId__param = 0;
+private Int32 __1_lineId__param = 0;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_5 = null;
+private Int32 __3_targetFishEntryId__param = 0;
+private Int32 _equippedRodId = 0;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_8 = null;
+private Double __intnl_SystemDouble_5 = 0;
+public UdonBehaviour LineDatabase;
+private Int32 __3_enchantmentId__param = 0;
+private DataToken __intnl_VRCSDK3DataDataToken_48 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_49 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_44 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_45 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_46 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_47 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_40 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_41 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_42 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_43 = Null;
+private UInt32 __gintnl_SystemUInt32_18 = 13896;
+private UInt32 __gintnl_SystemUInt32_38 = 21116;
+private UInt32 __gintnl_SystemUInt32_28 = 17456;
+private Int32 __2__intnlparam = 0;
+private Boolean __intnl_SystemBoolean_80 = false;
+private Boolean __intnl_SystemBoolean_90 = false;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Boolean __intnl_SystemBoolean_20 = false;
+private Boolean __intnl_SystemBoolean_30 = false;
+private Boolean __intnl_SystemBoolean_40 = false;
+private Boolean __intnl_SystemBoolean_50 = false;
+private Boolean __intnl_SystemBoolean_60 = false;
+private Boolean __intnl_SystemBoolean_70 = false;
+private DataToken __intnl_VRCSDK3DataDataToken_8 = Null;
+private UInt32 __gintnl_SystemUInt32_15 = 11000;
+private UInt32 __gintnl_SystemUInt32_35 = 19536;
+private UInt32 __gintnl_SystemUInt32_25 = 16680;
+private Int32 __const_SystemInt32_9 = 0;
+private Int32 __const_SystemInt32_8 = 100;
+private Int32 __const_SystemInt32_1 = 0;
+private Int32 __const_SystemInt32_0 = -1;
+private Int32 __const_SystemInt32_3 = 5;
+private Int32 __const_SystemInt32_2 = 1;
+private Int32 __const_SystemInt32_5 = 2147483647;
+private Int32 __const_SystemInt32_4 = 4;
+private Int32 __const_SystemInt32_7 = 3;
+private Int32 __const_SystemInt32_6 = 2;
+private Int32 __const_SystemInt32_14 = 1;
+private Int32 __const_SystemInt32_34 = 21;
+private Int32 __const_SystemInt32_24 = 11;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private Int32 __lcl_i_SystemInt32_12 = 0;
+private String __0_key__param = null;
+public String InventoryDataSerialized;
+private Int32 __0_get_EquippedRodId__ret = 0;
+private DataList __lcl_newList_VRCSDK3DataDataList_0 = null;
+private Double __intnl_SystemDouble_48 = 0;
+private Double __intnl_SystemDouble_49 = 0;
+private Double __intnl_SystemDouble_44 = 0;
+private Double __intnl_SystemDouble_45 = 0;
+private Double __intnl_SystemDouble_46 = 0;
+private Double __intnl_SystemDouble_47 = 0;
+private Double __intnl_SystemDouble_40 = 0;
+private Double __intnl_SystemDouble_41 = 0;
+private Double __intnl_SystemDouble_42 = 0;
+private Double __intnl_SystemDouble_43 = 0;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_25 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_15 = this;
+private Boolean __lcl_wasInit_SystemBoolean_0 = false;
+private DataList __lcl_slot_VRCSDK3DataDataList_4 = null;
+private VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_2 = null;
+private object __intnl_SystemObject_5 = null;
+private Int32 __lcl_fishValue_SystemInt32_0 = 0;
+private Boolean __lcl_isLocked_SystemBoolean_1 = false;
+private Int32 __lcl_savedBobber_SystemInt32_0 = 0;
+private DataDictionary __lcl_entry_VRCSDK3DataDataDictionary_8 = null;
+private DataDictionary __lcl_entry_VRCSDK3DataDataDictionary_2 = null;
+private DataDictionary __lcl_entry_VRCSDK3DataDataDictionary_3 = null;
+private DataDictionary __lcl_entry_VRCSDK3DataDataDictionary_0 = null;
+private DataDictionary __lcl_entry_VRCSDK3DataDataDictionary_1 = null;
+private DataDictionary __lcl_entry_VRCSDK3DataDataDictionary_6 = null;
+private DataDictionary __lcl_entry_VRCSDK3DataDataDictionary_7 = null;
+private DataDictionary __lcl_entry_VRCSDK3DataDataDictionary_4 = null;
+private DataDictionary __lcl_entry_VRCSDK3DataDataDictionary_5 = null;
+private Int32 __2_enchantmentId__param = 0;
+private Boolean __lcl_wasInitialized_SystemBoolean_1 = false;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_0 = null;
+private DataList __intnl_VRCSDK3DataDataList_0 = null;
+private String __const_SystemString_3 = "__0___0_TrySetVisibleIndex__ret";
+private UdonBehaviour __this_VRCUdonUdonBehaviour_9 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_8 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_3 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_2 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_1 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_0 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_7 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_6 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_5 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_4 = this;
+public UdonBehaviour BoatShopUI;
+private Int32 __9_id__param = 0;
+private Double __intnl_SystemDouble_6 = 0;
+private String __const_SystemString_8 = "lineId";
+private Boolean __intnl_SystemBoolean_88 = false;
+private Boolean __intnl_SystemBoolean_98 = false;
+private Boolean __intnl_SystemBoolean_18 = false;
+private Boolean __intnl_SystemBoolean_28 = false;
+private Boolean __intnl_SystemBoolean_38 = false;
+private Boolean __intnl_SystemBoolean_48 = false;
+private Boolean __intnl_SystemBoolean_58 = false;
+private Boolean __intnl_SystemBoolean_68 = false;
+private Boolean __intnl_SystemBoolean_78 = false;
+private Int32 __lcl_combinedModifiers_SystemInt32_0 = 0;
+private DataToken __intnl_VRCSDK3DataDataToken_38 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_39 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_34 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_35 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_36 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_37 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_30 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_31 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_32 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_33 = Null;
+private Int32 __13_id__param = 0;
+
+
+public void get_EquippedRodId()
+{
+__0_get_EquippedRodId__ret = _equippedRodId;
+}
+public void __0_set_EquippedRodId()
+{
+_equippedRodId = __0_value__param;
+}
+public void get_EquippedLineId()
+{
+__0_get_EquippedLineId__ret = _equippedLineId;
+}
+public void __0_set_EquippedLineId()
+{
+_equippedLineId = __1_value__param;
+}
+public void get_EquippedBobberId()
+{
+__0_get_EquippedBobberId__ret = _equippedBobberId;
+}
+public void __0_set_EquippedBobberId()
+{
+_equippedBobberId = __2_value__param;
+}
+public void get_VisibleFishIndex()
+{
+__0_get_VisibleFishIndex__ret = _visibleFishIndex;
+}
+public void _onVarChange__visibleFishIndex()
+{
+__3_value__param = _visibleFishIndex;
+_visibleFishIndex = _old__visibleFishIndex;
+_visibleFishIndex = __3_value__param;
+__intnl_SystemBoolean_0 = _visibleFishIndex == __const_SystemInt32_0;
+if (__intnl_SystemBoolean_0)
+{
+__intnl_VRCUdonUdonBehaviour_0 = PlayerFishVisual;
+PlayerFishVisual.SendCustomEvent(__const_SystemString_0);
+return;
+}
+__intnl_SystemInt32_0 = _visibleFishIndex;
+PlayerFishVisual.SetProgramVariable(__const_SystemString_1, _visibleFishIndex);
+PlayerFishVisual.SendCustomEvent(__const_SystemString_2);
+__intnl_SystemObject_0 = PlayerFishVisual.GetProgramVariable(__const_SystemString_3);
+__intnl_SystemBoolean_1 = (Boolean)__intnl_SystemObject_0;
+if (__intnl_SystemBoolean_1)
+{
+}
+}
+public void _start()
+{
+__0_wasInitialized__param = __lcl_wasInitialized_SystemBoolean_0;
+UNDEF_04a6d_9328();
+__lcl_wasInitialized_SystemBoolean_0 = __0_wasInitialized__param;
+UNDEF_04a6d_13368();
+}
+public void __0_SetRodEnchantment()
+{
+__0_key__param = __const_SystemString_4;
+__0_GetSafeDataList();
+__lcl_appliedEnchantments_VRCSDK3DataDataList_0 = __0___0_GetSafeDataList__ret;
+__lcl_i_SystemInt32_0 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_1 = __lcl_appliedEnchantments_VRCSDK3DataDataList_0.Count;
+__intnl_SystemBoolean_2 = __lcl_i_SystemInt32_0 < __intnl_SystemInt32_1;
+if (__intnl_SystemBoolean_2)
+{
+break;
+}
+__intnl_VRCSDK3DataDataToken_0 = __lcl_appliedEnchantments_VRCSDK3DataDataList_0.Item;
+__lcl_entry_VRCSDK3DataDataDictionary_0 = __intnl_VRCSDK3DataDataToken_0.DataDictionary;
+__intnl_VRCSDK3DataDataToken_1 = __const_SystemString_5;
+__intnl_VRCSDK3DataDataToken_2 = __lcl_entry_VRCSDK3DataDataDictionary_0.Item;
+__intnl_SystemDouble_0 = __intnl_VRCSDK3DataDataToken_2.Double;
+__intnl_SystemDouble_1 = Math.Truncate(__intnl_SystemDouble_0);
+__intnl_SystemInt32_2 = Convert.ToInt32(__intnl_SystemDouble_1);
+__intnl_SystemBoolean_3 = __intnl_SystemInt32_2 == __0_rodId__param;
+if (__intnl_SystemBoolean_3)
+{
+__intnl_VRCSDK3DataDataToken_3 = __const_SystemString_6;
+__intnl_SystemDouble_2 = Convert.ToDouble(__0_enchantmentId__param);
+__intnl_VRCSDK3DataDataToken_4 = __intnl_SystemDouble_2;
+__lcl_entry_VRCSDK3DataDataDictionary_0.Item = __intnl_VRCSDK3DataDataToken_4;
+__this_VRCUdonUdonBehaviour_0.RequestSerialization();
+return;
+}
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_2;
+}
+__lcl_newEntry_VRCSDK3DataDataDictionary_0 = _emptyDataDictionary.DeepClone();
+__intnl_VRCSDK3DataDataToken_0 = __const_SystemString_5;
+__intnl_VRCSDK3DataDataToken_1 = __0_rodId__param;
+__lcl_newEntry_VRCSDK3DataDataDictionary_0.Item = __intnl_VRCSDK3DataDataToken_1;
+__intnl_VRCSDK3DataDataToken_2 = __const_SystemString_6;
+__intnl_VRCSDK3DataDataToken_3 = __0_enchantmentId__param;
+__lcl_newEntry_VRCSDK3DataDataDictionary_0.Item = __intnl_VRCSDK3DataDataToken_3;
+__intnl_VRCSDK3DataDataToken_4 = __lcl_newEntry_VRCSDK3DataDataDictionary_0;
+__lcl_appliedEnchantments_VRCSDK3DataDataList_0.Add(__intnl_VRCSDK3DataDataToken_4);
+__this_VRCUdonUdonBehaviour_1.RequestSerialization();
+}
+public void __0_SetLineEnchantment()
+{
+__0_key__param = __const_SystemString_7;
+__0_GetSafeDataList();
+__lcl_appliedEnchantments_VRCSDK3DataDataList_1 = __0___0_GetSafeDataList__ret;
+__lcl_i_SystemInt32_1 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_3 = __lcl_appliedEnchantments_VRCSDK3DataDataList_1.Count;
+__intnl_SystemBoolean_4 = __lcl_i_SystemInt32_1 < __intnl_SystemInt32_3;
+if (__intnl_SystemBoolean_4)
+{
+break;
+}
+__intnl_VRCSDK3DataDataToken_5 = __lcl_appliedEnchantments_VRCSDK3DataDataList_1.Item;
+__lcl_entry_VRCSDK3DataDataDictionary_1 = __intnl_VRCSDK3DataDataToken_5.DataDictionary;
+__intnl_VRCSDK3DataDataToken_6 = __const_SystemString_8;
+__intnl_VRCSDK3DataDataToken_7 = __lcl_entry_VRCSDK3DataDataDictionary_1.Item;
+__intnl_SystemDouble_3 = __intnl_VRCSDK3DataDataToken_7.Double;
+__intnl_SystemDouble_4 = Math.Truncate(__intnl_SystemDouble_3);
+__intnl_SystemInt32_4 = Convert.ToInt32(__intnl_SystemDouble_4);
+__intnl_SystemBoolean_5 = __intnl_SystemInt32_4 == __0_lineId__param;
+if (__intnl_SystemBoolean_5)
+{
+__intnl_VRCSDK3DataDataToken_8 = __const_SystemString_6;
+__intnl_SystemDouble_5 = Convert.ToDouble(__1_enchantmentId__param);
+__intnl_VRCSDK3DataDataToken_9 = __intnl_SystemDouble_5;
+__lcl_entry_VRCSDK3DataDataDictionary_1.Item = __intnl_VRCSDK3DataDataToken_9;
+__this_VRCUdonUdonBehaviour_2.RequestSerialization();
+return;
+}
+__lcl_i_SystemInt32_1 = __lcl_i_SystemInt32_1 + __const_SystemInt32_2;
+}
+__lcl_newEntry_VRCSDK3DataDataDictionary_1 = _emptyDataDictionary.DeepClone();
+__intnl_VRCSDK3DataDataToken_5 = __const_SystemString_8;
+__intnl_VRCSDK3DataDataToken_6 = __0_lineId__param;
+__lcl_newEntry_VRCSDK3DataDataDictionary_1.Item = __intnl_VRCSDK3DataDataToken_6;
+__intnl_VRCSDK3DataDataToken_7 = __const_SystemString_6;
+__intnl_VRCSDK3DataDataToken_8 = __1_enchantmentId__param;
+__lcl_newEntry_VRCSDK3DataDataDictionary_1.Item = __intnl_VRCSDK3DataDataToken_8;
+__intnl_VRCSDK3DataDataToken_9 = __lcl_newEntry_VRCSDK3DataDataDictionary_1;
+__lcl_appliedEnchantments_VRCSDK3DataDataList_1.Add(__intnl_VRCSDK3DataDataToken_9);
+__this_VRCUdonUdonBehaviour_3.RequestSerialization();
+}
+public void __0_SetBobberEnchantment()
+{
+__0_key__param = __const_SystemString_9;
+__0_GetSafeDataList();
+__lcl_appliedEnchantments_VRCSDK3DataDataList_2 = __0___0_GetSafeDataList__ret;
+__lcl_i_SystemInt32_2 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_5 = __lcl_appliedEnchantments_VRCSDK3DataDataList_2.Count;
+__intnl_SystemBoolean_6 = __lcl_i_SystemInt32_2 < __intnl_SystemInt32_5;
+if (__intnl_SystemBoolean_6)
+{
+break;
+}
+__intnl_VRCSDK3DataDataToken_10 = __lcl_appliedEnchantments_VRCSDK3DataDataList_2.Item;
+__lcl_entry_VRCSDK3DataDataDictionary_2 = __intnl_VRCSDK3DataDataToken_10.DataDictionary;
+__intnl_VRCSDK3DataDataToken_11 = __const_SystemString_10;
+__intnl_VRCSDK3DataDataToken_12 = __lcl_entry_VRCSDK3DataDataDictionary_2.Item;
+__intnl_SystemDouble_6 = __intnl_VRCSDK3DataDataToken_12.Double;
+__intnl_SystemDouble_7 = Math.Truncate(__intnl_SystemDouble_6);
+__intnl_SystemInt32_6 = Convert.ToInt32(__intnl_SystemDouble_7);
+__intnl_SystemBoolean_7 = __intnl_SystemInt32_6 == __0_bobberId__param;
+if (__intnl_SystemBoolean_7)
+{
+__intnl_VRCSDK3DataDataToken_13 = __const_SystemString_6;
+__intnl_VRCSDK3DataDataToken_14 = __0_bobberEnchantment__param;
+__lcl_entry_VRCSDK3DataDataDictionary_2.Item = __intnl_VRCSDK3DataDataToken_14;
+__this_VRCUdonUdonBehaviour_4.RequestSerialization();
+return;
+}
+__lcl_i_SystemInt32_2 = __lcl_i_SystemInt32_2 + __const_SystemInt32_2;
+}
+__lcl_newEntry_VRCSDK3DataDataDictionary_2 = _emptyDataDictionary.DeepClone();
+__intnl_VRCSDK3DataDataToken_10 = __const_SystemString_10;
+__intnl_VRCSDK3DataDataToken_11 = __0_bobberId__param;
+__lcl_newEntry_VRCSDK3DataDataDictionary_2.Item = __intnl_VRCSDK3DataDataToken_11;
+__intnl_VRCSDK3DataDataToken_12 = __const_SystemString_6;
+__intnl_VRCSDK3DataDataToken_13 = __0_bobberEnchantment__param;
+__lcl_newEntry_VRCSDK3DataDataDictionary_2.Item = __intnl_VRCSDK3DataDataToken_13;
+__intnl_VRCSDK3DataDataToken_14 = __lcl_newEntry_VRCSDK3DataDataDictionary_2;
+__lcl_appliedEnchantments_VRCSDK3DataDataList_2.Add(__intnl_VRCSDK3DataDataToken_14);
+__this_VRCUdonUdonBehaviour_5.RequestSerialization();
+}
+public void __0_RemoveRodEnchantment()
+{
+__0_key__param = __const_SystemString_4;
+__0_GetSafeDataList();
+__lcl_appliedEnchantments_VRCSDK3DataDataList_3 = __0___0_GetSafeDataList__ret;
+__lcl_i_SystemInt32_3 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_7 = __lcl_appliedEnchantments_VRCSDK3DataDataList_3.Count;
+__intnl_SystemBoolean_8 = __lcl_i_SystemInt32_3 < __intnl_SystemInt32_7;
+if (__intnl_SystemBoolean_8)
+{
+break;
+}
+__intnl_VRCSDK3DataDataToken_15 = __lcl_appliedEnchantments_VRCSDK3DataDataList_3.Item;
+__lcl_entry_VRCSDK3DataDataDictionary_3 = __intnl_VRCSDK3DataDataToken_15.DataDictionary;
+__intnl_VRCSDK3DataDataToken_16 = __const_SystemString_5;
+__intnl_VRCSDK3DataDataToken_17 = __lcl_entry_VRCSDK3DataDataDictionary_3.Item;
+__intnl_SystemDouble_8 = __intnl_VRCSDK3DataDataToken_17.Double;
+__intnl_SystemDouble_9 = Math.Truncate(__intnl_SystemDouble_8);
+__intnl_SystemInt32_8 = Convert.ToInt32(__intnl_SystemDouble_9);
+__intnl_SystemBoolean_9 = __intnl_SystemInt32_8 == __1_rodId__param;
+if (__intnl_SystemBoolean_9)
+{
+__lcl_appliedEnchantments_VRCSDK3DataDataList_3.RemoveAt(__lcl_i_SystemInt32_3);
+__this_VRCUdonUdonBehaviour_6.RequestSerialization();
+return;
+}
+__lcl_i_SystemInt32_3 = __lcl_i_SystemInt32_3 + __const_SystemInt32_2;
+}
+}
+public void __0_RemoveLineEnchantment()
+{
+__0_key__param = __const_SystemString_7;
+__0_GetSafeDataList();
+__lcl_appliedEnchantments_VRCSDK3DataDataList_4 = __0___0_GetSafeDataList__ret;
+__lcl_i_SystemInt32_4 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_9 = __lcl_appliedEnchantments_VRCSDK3DataDataList_4.Count;
+__intnl_SystemBoolean_10 = __lcl_i_SystemInt32_4 < __intnl_SystemInt32_9;
+if (__intnl_SystemBoolean_10)
+{
+break;
+}
+__intnl_VRCSDK3DataDataToken_18 = __lcl_appliedEnchantments_VRCSDK3DataDataList_4.Item;
+__lcl_entry_VRCSDK3DataDataDictionary_4 = __intnl_VRCSDK3DataDataToken_18.DataDictionary;
+__intnl_VRCSDK3DataDataToken_19 = __const_SystemString_8;
+__intnl_VRCSDK3DataDataToken_20 = __lcl_entry_VRCSDK3DataDataDictionary_4.Item;
+__intnl_SystemDouble_10 = __intnl_VRCSDK3DataDataToken_20.Double;
+__intnl_SystemDouble_11 = Math.Truncate(__intnl_SystemDouble_10);
+__intnl_SystemInt32_10 = Convert.ToInt32(__intnl_SystemDouble_11);
+__intnl_SystemBoolean_11 = __intnl_SystemInt32_10 == __1_lineId__param;
+if (__intnl_SystemBoolean_11)
+{
+__lcl_appliedEnchantments_VRCSDK3DataDataList_4.RemoveAt(__lcl_i_SystemInt32_4);
+__this_VRCUdonUdonBehaviour_7.RequestSerialization();
+return;
+}
+__lcl_i_SystemInt32_4 = __lcl_i_SystemInt32_4 + __const_SystemInt32_2;
+}
+}
+public void __0_RemoveBobberEnchantment()
+{
+__0_key__param = __const_SystemString_9;
+__0_GetSafeDataList();
+__lcl_appliedEnchantments_VRCSDK3DataDataList_5 = __0___0_GetSafeDataList__ret;
+__lcl_i_SystemInt32_5 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_11 = __lcl_appliedEnchantments_VRCSDK3DataDataList_5.Count;
+__intnl_SystemBoolean_12 = __lcl_i_SystemInt32_5 < __intnl_SystemInt32_11;
+if (__intnl_SystemBoolean_12)
+{
+break;
+}
+__intnl_VRCSDK3DataDataToken_21 = __lcl_appliedEnchantments_VRCSDK3DataDataList_5.Item;
+__lcl_entry_VRCSDK3DataDataDictionary_5 = __intnl_VRCSDK3DataDataToken_21.DataDictionary;
+__intnl_VRCSDK3DataDataToken_22 = __const_SystemString_10;
+__intnl_VRCSDK3DataDataToken_23 = __lcl_entry_VRCSDK3DataDataDictionary_5.Item;
+__intnl_SystemDouble_12 = __intnl_VRCSDK3DataDataToken_23.Double;
+__intnl_SystemDouble_13 = Math.Truncate(__intnl_SystemDouble_12);
+__intnl_SystemInt32_12 = Convert.ToInt32(__intnl_SystemDouble_13);
+__intnl_SystemBoolean_13 = __intnl_SystemInt32_12 == __1_bobberId__param;
+if (__intnl_SystemBoolean_13)
+{
+__lcl_appliedEnchantments_VRCSDK3DataDataList_5.RemoveAt(__lcl_i_SystemInt32_5);
+__this_VRCUdonUdonBehaviour_8.RequestSerialization();
+return;
+}
+__lcl_i_SystemInt32_5 = __lcl_i_SystemInt32_5 + __const_SystemInt32_2;
+}
+}
+public void __0_TryGetRodEnchantmentId()
+{
+__0_key__param = __const_SystemString_4;
+__0_GetSafeDataList();
+__lcl_appliedEnchantments_VRCSDK3DataDataList_6 = __0___0_GetSafeDataList__ret;
+__lcl_i_SystemInt32_6 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_13 = __lcl_appliedEnchantments_VRCSDK3DataDataList_6.Count;
+__intnl_SystemBoolean_14 = __lcl_i_SystemInt32_6 < __intnl_SystemInt32_13;
+if (__intnl_SystemBoolean_14)
+{
+break;
+}
+__intnl_VRCSDK3DataDataToken_24 = __lcl_appliedEnchantments_VRCSDK3DataDataList_6.Item;
+__lcl_entry_VRCSDK3DataDataDictionary_6 = __intnl_VRCSDK3DataDataToken_24.DataDictionary;
+__intnl_VRCSDK3DataDataToken_25 = __const_SystemString_5;
+__intnl_VRCSDK3DataDataToken_26 = __lcl_entry_VRCSDK3DataDataDictionary_6.Item;
+__intnl_SystemDouble_14 = __intnl_VRCSDK3DataDataToken_26.Double;
+__intnl_SystemDouble_15 = Math.Truncate(__intnl_SystemDouble_14);
+__intnl_SystemInt32_14 = Convert.ToInt32(__intnl_SystemDouble_15);
+__intnl_SystemBoolean_15 = __intnl_SystemInt32_14 == __2_rodId__param;
+if (__intnl_SystemBoolean_15)
+{
+__intnl_VRCSDK3DataDataToken_27 = __const_SystemString_6;
+__intnl_VRCSDK3DataDataToken_28 = __lcl_entry_VRCSDK3DataDataDictionary_6.Item;
+__intnl_SystemDouble_16 = __intnl_VRCSDK3DataDataToken_28.Double;
+__intnl_SystemDouble_17 = Math.Truncate(__intnl_SystemDouble_16);
+__2_enchantmentId__param = Convert.ToInt32(__intnl_SystemDouble_17);
+__0___0_TryGetRodEnchantmentId__ret = __const_SystemBoolean_0;
+return;
+}
+__lcl_i_SystemInt32_6 = __lcl_i_SystemInt32_6 + __const_SystemInt32_2;
+}
+__2_enchantmentId__param = __const_SystemInt32_0;
+__0___0_TryGetRodEnchantmentId__ret = __const_SystemBoolean_1;
+return;
+}
+public void __0_TryGetLineEnchantmentId()
+{
+__0_key__param = __const_SystemString_7;
+__0_GetSafeDataList();
+__lcl_appliedEnchantments_VRCSDK3DataDataList_7 = __0___0_GetSafeDataList__ret;
+__lcl_i_SystemInt32_7 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_15 = __lcl_appliedEnchantments_VRCSDK3DataDataList_7.Count;
+__intnl_SystemBoolean_16 = __lcl_i_SystemInt32_7 < __intnl_SystemInt32_15;
+if (__intnl_SystemBoolean_16)
+{
+break;
+}
+__intnl_VRCSDK3DataDataToken_29 = __lcl_appliedEnchantments_VRCSDK3DataDataList_7.Item;
+__lcl_entry_VRCSDK3DataDataDictionary_7 = __intnl_VRCSDK3DataDataToken_29.DataDictionary;
+__intnl_VRCSDK3DataDataToken_30 = __const_SystemString_8;
+__intnl_VRCSDK3DataDataToken_31 = __lcl_entry_VRCSDK3DataDataDictionary_7.Item;
+__intnl_SystemDouble_18 = __intnl_VRCSDK3DataDataToken_31.Double;
+__intnl_SystemDouble_19 = Math.Truncate(__intnl_SystemDouble_18);
+__intnl_SystemInt32_16 = Convert.ToInt32(__intnl_SystemDouble_19);
+__intnl_SystemBoolean_17 = __intnl_SystemInt32_16 == __2_lineId__param;
+if (__intnl_SystemBoolean_17)
+{
+__intnl_VRCSDK3DataDataToken_32 = __const_SystemString_6;
+__intnl_VRCSDK3DataDataToken_33 = __lcl_entry_VRCSDK3DataDataDictionary_7.Item;
+__intnl_SystemDouble_20 = __intnl_VRCSDK3DataDataToken_33.Double;
+__intnl_SystemDouble_21 = Math.Truncate(__intnl_SystemDouble_20);
+__3_enchantmentId__param = Convert.ToInt32(__intnl_SystemDouble_21);
+__0___0_TryGetLineEnchantmentId__ret = __const_SystemBoolean_0;
+return;
+}
+__lcl_i_SystemInt32_7 = __lcl_i_SystemInt32_7 + __const_SystemInt32_2;
+}
+__3_enchantmentId__param = __const_SystemInt32_0;
+__0___0_TryGetLineEnchantmentId__ret = __const_SystemBoolean_1;
+return;
+}
+public void __0_TryGetBobberEnchantmentId()
+{
+__0_key__param = __const_SystemString_9;
+__0_GetSafeDataList();
+__lcl_appliedEnchantments_VRCSDK3DataDataList_8 = __0___0_GetSafeDataList__ret;
+__lcl_i_SystemInt32_8 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_17 = __lcl_appliedEnchantments_VRCSDK3DataDataList_8.Count;
+__intnl_SystemBoolean_18 = __lcl_i_SystemInt32_8 < __intnl_SystemInt32_17;
+if (__intnl_SystemBoolean_18)
+{
+break;
+}
+__intnl_VRCSDK3DataDataToken_34 = __lcl_appliedEnchantments_VRCSDK3DataDataList_8.Item;
+__lcl_entry_VRCSDK3DataDataDictionary_8 = __intnl_VRCSDK3DataDataToken_34.DataDictionary;
+__intnl_VRCSDK3DataDataToken_35 = __const_SystemString_10;
+__intnl_VRCSDK3DataDataToken_36 = __lcl_entry_VRCSDK3DataDataDictionary_8.Item;
+__intnl_SystemDouble_22 = __intnl_VRCSDK3DataDataToken_36.Double;
+__intnl_SystemDouble_23 = Math.Truncate(__intnl_SystemDouble_22);
+__intnl_SystemInt32_18 = Convert.ToInt32(__intnl_SystemDouble_23);
+__intnl_SystemBoolean_19 = __intnl_SystemInt32_18 == __2_bobberId__param;
+if (__intnl_SystemBoolean_19)
+{
+__intnl_VRCSDK3DataDataToken_37 = __const_SystemString_6;
+__intnl_VRCSDK3DataDataToken_38 = __lcl_entry_VRCSDK3DataDataDictionary_8.Item;
+__intnl_SystemDouble_24 = __intnl_VRCSDK3DataDataToken_38.Double;
+__intnl_SystemDouble_25 = Math.Truncate(__intnl_SystemDouble_24);
+__4_enchantmentId__param = Convert.ToInt32(__intnl_SystemDouble_25);
+__0___0_TryGetBobberEnchantmentId__ret = __const_SystemBoolean_0;
+return;
+}
+__lcl_i_SystemInt32_8 = __lcl_i_SystemInt32_8 + __const_SystemInt32_2;
+}
+__4_enchantmentId__param = __const_SystemInt32_0;
+__0___0_TryGetBobberEnchantmentId__ret = __const_SystemBoolean_1;
+return;
+}
+private void UNDEF_04a6d_9328()
+{
+__0_wasInitialized__param = __const_SystemBoolean_1;
+__intnl_VRCSDK3DataDataToken_39 = __const_SystemString_11;
+__intnl_SystemBoolean_20 = InventoryData.ContainsKey(__intnl_VRCSDK3DataDataToken_39);
+if (__intnl_SystemBoolean_20)
+{
+}
+else
+{
+__intnl_VRCSDK3DataDataToken_40 = __const_SystemString_11;
+__intnl_VRCSDK3DataDataList_0 = DataList.ctor();
+__intnl_VRCSDK3DataDataToken_41 = __intnl_VRCSDK3DataDataList_0;
+InventoryData.Add(__intnl_VRCSDK3DataDataToken_40, __intnl_VRCSDK3DataDataToken_41);
+__0_wasInitialized__param = __const_SystemBoolean_0;
+}
+__intnl_VRCSDK3DataDataToken_40 = __const_SystemString_12;
+__intnl_SystemBoolean_21 = InventoryData.ContainsKey(__intnl_VRCSDK3DataDataToken_40);
+if (__intnl_SystemBoolean_21)
+{
+}
+else
+{
+__intnl_VRCSDK3DataDataToken_41 = __const_SystemString_12;
+__intnl_VRCSDK3DataDataList_0 = DataList.ctor();
+__intnl_VRCSDK3DataDataToken_42 = __intnl_VRCSDK3DataDataList_0;
+InventoryData.Add(__intnl_VRCSDK3DataDataToken_41, __intnl_VRCSDK3DataDataToken_42);
+__0_wasInitialized__param = __const_SystemBoolean_0;
+}
+__intnl_VRCSDK3DataDataToken_41 = __const_SystemString_13;
+__intnl_SystemBoolean_22 = InventoryData.ContainsKey(__intnl_VRCSDK3DataDataToken_41);
+if (__intnl_SystemBoolean_22)
+{
+}
+else
+{
+__intnl_VRCSDK3DataDataToken_42 = __const_SystemString_13;
+__intnl_VRCSDK3DataDataList_0 = DataList.ctor();
+__intnl_VRCSDK3DataDataToken_43 = __intnl_VRCSDK3DataDataList_0;
+InventoryData.Add(__intnl_VRCSDK3DataDataToken_42, __intnl_VRCSDK3DataDataToken_43);
+__0_wasInitialized__param = __const_SystemBoolean_0;
+}
+__intnl_VRCSDK3DataDataToken_42 = __const_SystemString_14;
+__intnl_SystemBoolean_23 = InventoryData.ContainsKey(__intnl_VRCSDK3DataDataToken_42);
+if (__intnl_SystemBoolean_23)
+{
+}
+else
+{
+__intnl_VRCSDK3DataDataToken_43 = __const_SystemString_14;
+__intnl_VRCSDK3DataDataList_0 = DataList.ctor();
+__intnl_VRCSDK3DataDataToken_44 = __intnl_VRCSDK3DataDataList_0;
+InventoryData.Add(__intnl_VRCSDK3DataDataToken_43, __intnl_VRCSDK3DataDataToken_44);
+__0_wasInitialized__param = __const_SystemBoolean_0;
+}
+__intnl_VRCSDK3DataDataToken_43 = __const_SystemString_4;
+__intnl_SystemBoolean_24 = InventoryData.ContainsKey(__intnl_VRCSDK3DataDataToken_43);
+if (__intnl_SystemBoolean_24)
+{
+}
+else
+{
+__intnl_VRCSDK3DataDataToken_44 = __const_SystemString_4;
+__intnl_VRCSDK3DataDataList_0 = DataList.ctor();
+__intnl_VRCSDK3DataDataToken_45 = __intnl_VRCSDK3DataDataList_0;
+InventoryData.Add(__intnl_VRCSDK3DataDataToken_44, __intnl_VRCSDK3DataDataToken_45);
+__0_wasInitialized__param = __const_SystemBoolean_0;
+}
+__intnl_VRCSDK3DataDataToken_44 = __const_SystemString_7;
+__intnl_SystemBoolean_25 = InventoryData.ContainsKey(__intnl_VRCSDK3DataDataToken_44);
+if (__intnl_SystemBoolean_25)
+{
+}
+else
+{
+__intnl_VRCSDK3DataDataToken_45 = __const_SystemString_7;
+__intnl_VRCSDK3DataDataList_0 = DataList.ctor();
+__intnl_VRCSDK3DataDataToken_46 = __intnl_VRCSDK3DataDataList_0;
+InventoryData.Add(__intnl_VRCSDK3DataDataToken_45, __intnl_VRCSDK3DataDataToken_46);
+__0_wasInitialized__param = __const_SystemBoolean_0;
+}
+__intnl_VRCSDK3DataDataToken_45 = __const_SystemString_15;
+__intnl_SystemBoolean_26 = InventoryData.ContainsKey(__intnl_VRCSDK3DataDataToken_45);
+if (__intnl_SystemBoolean_26)
+{
+}
+else
+{
+__intnl_VRCSDK3DataDataToken_46 = __const_SystemString_15;
+__intnl_VRCSDK3DataDataList_0 = DataList.ctor();
+__intnl_VRCSDK3DataDataToken_47 = __intnl_VRCSDK3DataDataList_0;
+InventoryData.Add(__intnl_VRCSDK3DataDataToken_46, __intnl_VRCSDK3DataDataToken_47);
+__0_wasInitialized__param = __const_SystemBoolean_0;
+}
+__intnl_VRCSDK3DataDataToken_46 = __const_SystemString_9;
+__intnl_SystemBoolean_27 = InventoryData.ContainsKey(__intnl_VRCSDK3DataDataToken_46);
+if (__intnl_SystemBoolean_27)
+{
+}
+else
+{
+__intnl_VRCSDK3DataDataToken_47 = __const_SystemString_9;
+__intnl_VRCSDK3DataDataList_0 = DataList.ctor();
+__intnl_VRCSDK3DataDataToken_48 = __intnl_VRCSDK3DataDataList_0;
+InventoryData.Add(__intnl_VRCSDK3DataDataToken_47, __intnl_VRCSDK3DataDataToken_48);
+__0_wasInitialized__param = __const_SystemBoolean_0;
+}
+__intnl_VRCSDK3DataDataToken_47 = __const_SystemString_16;
+__intnl_SystemBoolean_28 = InventoryData.ContainsKey(__intnl_VRCSDK3DataDataToken_47);
+if (__intnl_SystemBoolean_28)
+{
+}
+else
+{
+__intnl_VRCSDK3DataDataToken_48 = __const_SystemString_16;
+__intnl_VRCSDK3DataDataList_0 = DataList.ctor();
+__intnl_VRCSDK3DataDataToken_49 = __intnl_VRCSDK3DataDataList_0;
+InventoryData.Add(__intnl_VRCSDK3DataDataToken_48, __intnl_VRCSDK3DataDataToken_49);
+__0_wasInitialized__param = __const_SystemBoolean_0;
+}
+__intnl_VRCSDK3DataDataToken_48 = __const_SystemString_17;
+__intnl_SystemBoolean_29 = InventoryData.ContainsKey(__intnl_VRCSDK3DataDataToken_48);
+if (__intnl_SystemBoolean_29)
+{
+__intnl_VRCSDK3DataDataToken_49 = __const_SystemString_17;
+__intnl_VRCSDK3DataDataToken_50 = InventoryData.Item;
+__intnl_SystemDouble_26 = __intnl_VRCSDK3DataDataToken_50.Double;
+__intnl_SystemDouble_27 = Math.Truncate(__intnl_SystemDouble_26);
+nextFishId = Convert.ToInt32(__intnl_SystemDouble_27);
+}
+else
+{
+__intnl_VRCSDK3DataDataToken_49 = __const_SystemString_17;
+__intnl_VRCSDK3DataDataToken_50 = __const_SystemDouble_0;
+InventoryData.Add(__intnl_VRCSDK3DataDataToken_49, __intnl_VRCSDK3DataDataToken_50);
+__0_wasInitialized__param = __const_SystemBoolean_0;
+}
+__intnl_VRCSDK3DataDataToken_49 = __const_SystemString_18;
+__intnl_SystemBoolean_30 = InventoryData.ContainsKey(__intnl_VRCSDK3DataDataToken_49);
+if (__intnl_SystemBoolean_30)
+{
+}
+else
+{
+__intnl_VRCSDK3DataDataToken_50 = __const_SystemString_18;
+__intnl_VRCSDK3DataDataList_0 = DataList.ctor();
+__intnl_VRCSDK3DataDataToken_51 = __intnl_VRCSDK3DataDataList_0;
+InventoryData.Add(__intnl_VRCSDK3DataDataToken_50, __intnl_VRCSDK3DataDataToken_51);
+__0_wasInitialized__param = __const_SystemBoolean_0;
+}
+__intnl_VRCSDK3DataDataToken_50 = __const_SystemString_19;
+__intnl_SystemBoolean_31 = InventoryData.ContainsKey(__intnl_VRCSDK3DataDataToken_50);
+if (__intnl_SystemBoolean_31)
+{
+}
+else
+{
+__intnl_VRCSDK3DataDataToken_51 = __const_SystemString_19;
+__intnl_VRCSDK3DataDataList_0 = DataList.ctor();
+__intnl_VRCSDK3DataDataToken_52 = __intnl_VRCSDK3DataDataList_0;
+InventoryData.Add(__intnl_VRCSDK3DataDataToken_51, __intnl_VRCSDK3DataDataToken_52);
+__0_wasInitialized__param = __const_SystemBoolean_0;
+}
+}
+public void PrintInventoryData()
+{
+__intnl_VRCSDK3DataDataToken_53 = InventoryData;
+__intnl_SystemBoolean_32 = VRCJson.TrySerializeToJson(__intnl_VRCSDK3DataDataToken_53, __const_VRCSDK3DataJsonExportType_0, __lcl_result_VRCSDK3DataDataToken_0);
+if (__intnl_SystemBoolean_32)
+{
+}
+}
+public void _onPlayerRestored()
+{
+__intnl_SystemBoolean_33 = onPlayerRestoredPlayer.isLocal;
+if (__intnl_SystemBoolean_33)
+{
+UNDEF_04a6d_9580();
+}
+}
+private void UNDEF_04a6d_9580()
+{
+__intnl_SystemBoolean_34 = Networking.IsOwner(__this_UnityEngineGameObject_0);
+if (__intnl_SystemBoolean_34)
+{
+UNDEF_04a6d_9636();
+}
+}
+private void UNDEF_04a6d_9636()
+{
+_restoreRetryCount = __const_SystemInt32_1;
+_AttemptRestore();
+}
+public void ReloadFromPersistence()
+{
+Ready = __const_SystemBoolean_1;
+InventoryData = DataDictionary.ctor();
+nextFishId = __const_SystemInt32_2;
+__0_wasInitialized__param = __lcl_wasInit_SystemBoolean_0;
+UNDEF_04a6d_9328();
+__lcl_wasInit_SystemBoolean_0 = __0_wasInitialized__param;
+UNDEF_04a6d_13368();
+PlayerData.SetString(__const_SystemString_20, InventoryDataSerialized);
+_equippedRodId = __const_SystemInt32_1;
+_equippedLineId = __const_SystemInt32_1;
+_equippedBobberId = __const_SystemInt32_1;
+Ready = __const_SystemBoolean_0;
+_ApplyRestoredEquipment();
+__intnl_VRCUdonUdonBehaviour_1 = InventoryManager;
+InventoryManager.SendCustomEvent(__const_SystemString_21);
+__intnl_VRCUdonUdonBehaviour_2 = InventoryManager;
+InventoryManager.SendCustomEvent(__const_SystemString_22);
+__intnl_UnityEngineObject_0 = QuestInventoryManager;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_35 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_35)
+{
+__intnl_VRCUdonUdonBehaviour_3 = QuestInventoryManager;
+QuestInventoryManager.SendCustomEvent(__const_SystemString_22);
+}
+__intnl_UnityEngineObject_2 = BoatShopUI;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_36 = __intnl_UnityEngineObject_2 != __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_36)
+{
+__intnl_VRCUdonUdonBehaviour_4 = BoatShopUI;
+BoatShopUI.SendCustomEvent(__const_SystemString_23);
+}
+}
+public void _AttemptRestore()
+{
+__intnl_SystemBoolean_37 = Networking.IsOwner(__this_UnityEngineGameObject_0);
+if (__intnl_SystemBoolean_37)
+{
+UNDEF_04a6d_11692();
+}
+_restoreRetryCount = _restoreRetryCount + __const_SystemInt32_2;
+__intnl_SystemBoolean_38 = _restoreRetryCount <= __const_SystemInt32_3;
+if (__intnl_SystemBoolean_38)
+{
+__this_VRCUdonUdonBehaviour_9.SendCustomEventDelayedSeconds(__const_SystemString_24, __const_SystemSingle_0, __const_VRCUdonCommonEnumsEventTiming_0);
+return;
+}
+}
+private void UNDEF_04a6d_11692()
+{
+__intnl_VRCSDKBaseVRCPlayerApi_0 = Networking.LocalPlayer;
+__intnl_SystemBoolean_38 = PlayerData.TryGetString(__intnl_VRCSDKBaseVRCPlayerApi_0, __const_SystemString_20, __lcl_savedData_SystemString_0);
+if (__intnl_SystemBoolean_38)
+{
+__intnl_SystemBoolean_39 = String.IsNullOrEmpty(__lcl_savedData_SystemString_0);
+if (__intnl_SystemBoolean_39)
+{
+}
+else
+{
+InventoryDataSerialized = __lcl_savedData_SystemString_0;
+__intnl_SystemBoolean_40 = VRCJson.TryDeserializeFromJson(__lcl_savedData_SystemString_0, __lcl_result_VRCSDK3DataDataToken_1);
+if (__intnl_SystemBoolean_40)
+{
+__intnl_VRCSDK3DataTokenType_0 = __lcl_result_VRCSDK3DataDataToken_1.TokenType;
+__intnl_SystemBoolean_41 = __intnl_VRCSDK3DataTokenType_0.Equals(__const_VRCSDK3DataTokenType_0);
+if (__intnl_SystemBoolean_41)
+{
+InventoryData = __lcl_result_VRCSDK3DataDataToken_1.DataDictionary;
+__intnl_VRCSDK3DataDataToken_54 = __const_SystemString_17;
+__intnl_SystemBoolean_42 = InventoryData.ContainsKey(__intnl_VRCSDK3DataDataToken_54);
+if (__intnl_SystemBoolean_42)
+{
+__intnl_VRCSDK3DataDataToken_55 = __const_SystemString_17;
+__intnl_VRCSDK3DataDataToken_56 = InventoryData.Item;
+__intnl_SystemDouble_28 = __intnl_VRCSDK3DataDataToken_56.Double;
+__intnl_SystemDouble_29 = Math.Truncate(__intnl_SystemDouble_28);
+nextFishId = Convert.ToInt32(__intnl_SystemDouble_29);
+}
+}
+}
+}
+}
+__0_wasInitialized__param = __lcl_wasInitialized_SystemBoolean_1;
+UNDEF_04a6d_9328();
+__lcl_wasInitialized_SystemBoolean_1 = __0_wasInitialized__param;
+Ready = __const_SystemBoolean_0;
+if (__lcl_wasInitialized_SystemBoolean_1)
+{
+__this_VRCUdonUdonBehaviour_10.RequestSerialization();
+}
+__intnl_VRCUdonUdonBehaviour_5 = InventoryManager;
+InventoryManager.SendCustomEvent(__const_SystemString_22);
+__intnl_UnityEngineObject_4 = QuestInventoryManager;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_39 = __intnl_UnityEngineObject_4 != __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_39)
+{
+__intnl_VRCUdonUdonBehaviour_6 = QuestInventoryManager;
+QuestInventoryManager.SendCustomEvent(__const_SystemString_22);
+}
+__intnl_VRCSDKBaseVRCPlayerApi_1 = Networking.LocalPlayer;
+__intnl_SystemBoolean_40 = PlayerData.TryGetInt(__intnl_VRCSDKBaseVRCPlayerApi_1, __const_SystemString_25, __lcl_savedRod_SystemInt32_0);
+if (__intnl_SystemBoolean_40)
+{
+_equippedRodId = __lcl_savedRod_SystemInt32_0;
+}
+__intnl_VRCSDKBaseVRCPlayerApi_2 = Networking.LocalPlayer;
+__intnl_SystemBoolean_41 = PlayerData.TryGetInt(__intnl_VRCSDKBaseVRCPlayerApi_2, __const_SystemString_26, __lcl_savedLine_SystemInt32_0);
+if (__intnl_SystemBoolean_41)
+{
+_equippedLineId = __lcl_savedLine_SystemInt32_0;
+}
+__intnl_VRCSDKBaseVRCPlayerApi_3 = Networking.LocalPlayer;
+__intnl_SystemBoolean_42 = PlayerData.TryGetInt(__intnl_VRCSDKBaseVRCPlayerApi_3, __const_SystemString_27, __lcl_savedBobber_SystemInt32_0);
+if (__intnl_SystemBoolean_42)
+{
+_equippedBobberId = __lcl_savedBobber_SystemInt32_0;
+}
+_ApplyRestoredEquipment();
+__intnl_UnityEngineObject_6 = BoatShopUI;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_43 = __intnl_UnityEngineObject_6 != __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_43)
+{
+__intnl_VRCUdonUdonBehaviour_6 = BoatShopUI;
+BoatShopUI.SendCustomEvent(__const_SystemString_23);
+}
+}
+public void _ApplyRestoredEquipment()
+{
+__intnl_SystemBoolean_44 = _equippedRodId >= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_44)
+{
+__intnl_SystemInt32_19 = _equippedRodId;
+RodDatabase.SetProgramVariable(__const_SystemString_28, _equippedRodId);
+RodDatabase.SendCustomEvent(__const_SystemString_29);
+__intnl_SystemObject_1 = RodDatabase.GetProgramVariable(__const_SystemString_30);
+__intnl_SystemBoolean_45 = (Boolean)__intnl_SystemObject_1;
+}
+__intnl_SystemBoolean_46 = _equippedLineId >= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_46)
+{
+__intnl_SystemInt32_20 = _equippedLineId;
+LineDatabase.SetProgramVariable(__const_SystemString_31, _equippedLineId);
+LineDatabase.SendCustomEvent(__const_SystemString_32);
+__intnl_SystemObject_2 = LineDatabase.GetProgramVariable(__const_SystemString_33);
+__intnl_SystemBoolean_47 = (Boolean)__intnl_SystemObject_2;
+}
+__intnl_SystemBoolean_48 = _equippedBobberId >= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_48)
+{
+__intnl_SystemInt32_21 = _equippedBobberId;
+BobberDatabase.SetProgramVariable(__const_SystemString_34, _equippedBobberId);
+BobberDatabase.SendCustomEvent(__const_SystemString_35);
+__intnl_SystemObject_3 = BobberDatabase.GetProgramVariable(__const_SystemString_36);
+__intnl_SystemBoolean_49 = (Boolean)__intnl_SystemObject_3;
+}
+__intnl_SystemBoolean_50 = _equippedRodId >= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_50)
+{
+__intnl_SystemInt32_22 = _equippedRodId;
+RodCustomizationManager.SetProgramVariable(__const_SystemString_28, _equippedRodId);
+RodCustomizationManager.SendCustomEvent(__const_SystemString_29);
+}
+__intnl_SystemBoolean_51 = _equippedLineId >= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_51)
+{
+__intnl_SystemInt32_23 = _equippedLineId;
+RodCustomizationManager.SetProgramVariable(__const_SystemString_31, _equippedLineId);
+RodCustomizationManager.SendCustomEvent(__const_SystemString_32);
+}
+__intnl_SystemBoolean_52 = _equippedBobberId >= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_52)
+{
+__intnl_SystemInt32_24 = _equippedBobberId;
+RodCustomizationManager.SetProgramVariable(__const_SystemString_34, _equippedBobberId);
+RodCustomizationManager.SendCustomEvent(__const_SystemString_35);
+}
+__this_VRCUdonUdonBehaviour_11.RequestSerialization();
+}
+public void __0_GetSafeDataList()
+{
+__intnl_VRCSDK3DataDataToken_57 = __0_key__param;
+__intnl_SystemBoolean_53 = InventoryData.ContainsKey(__intnl_VRCSDK3DataDataToken_57);
+if (__intnl_SystemBoolean_53)
+{
+__0_GetSafeDataList();
+}
+__lcl_newList_VRCSDK3DataDataList_0 = DataList.ctor();
+__intnl_VRCSDK3DataDataToken_58 = __0_key__param;
+__intnl_VRCSDK3DataDataToken_59 = __lcl_newList_VRCSDK3DataDataList_0;
+InventoryData.Item = __intnl_VRCSDK3DataDataToken_59;
+__0___0_GetSafeDataList__ret = __lcl_newList_VRCSDK3DataDataList_0;
+}
+private void __0_GetSafeDataList()
+{
+__intnl_VRCSDK3DataDataToken_58 = __0_key__param;
+__lcl_token_VRCSDK3DataDataToken_0 = InventoryData.Item;
+__intnl_VRCSDK3DataTokenType_1 = __lcl_token_VRCSDK3DataDataToken_0.TokenType;
+__intnl_SystemBoolean_54 = __intnl_VRCSDK3DataTokenType_1.Equals(__const_VRCSDK3DataTokenType_1);
+__intnl_SystemBoolean_55 = !__intnl_SystemBoolean_54;
+if (__intnl_SystemBoolean_55)
+{
+__lcl_newList_VRCSDK3DataDataList_0 = DataList.ctor();
+__intnl_VRCSDK3DataDataToken_59 = __0_key__param;
+__intnl_VRCSDK3DataDataToken_60 = __lcl_newList_VRCSDK3DataDataList_0;
+InventoryData.Item = __intnl_VRCSDK3DataDataToken_60;
+__0___0_GetSafeDataList__ret = __lcl_newList_VRCSDK3DataDataList_0;
+return;
+}
+__0___0_GetSafeDataList__ret = __lcl_token_VRCSDK3DataDataToken_0.DataList;
+return;
+}
+private void UNDEF_04a6d_13368()
+{
+__intnl_VRCSDK3DataDataToken_61 = InventoryData;
+__intnl_SystemBoolean_56 = VRCJson.TrySerializeToJson(__intnl_VRCSDK3DataDataToken_61, __const_VRCSDK3DataJsonExportType_1, __lcl_result_VRCSDK3DataDataToken_2);
+if (__intnl_SystemBoolean_56)
+{
+InventoryDataSerialized = __lcl_result_VRCSDK3DataDataToken_2.String;
+}
+else
+{
+Debug.LogError(__const_SystemString_37);
+}
+}
+public void ReqSerialization()
+{
+__this_VRCUdonUdonBehaviour_12.RequestSerialization();
+}
+public void ForceSerializeAndSync()
+{
+UNDEF_04a6d_13368();
+__this_VRCUdonUdonBehaviour_13.RequestSerialization();
+__intnl_SystemBoolean_57 = Ready;
+if (__intnl_SystemBoolean_57)
+{
+__intnl_SystemBoolean_57 = Networking.IsOwner(__this_UnityEngineGameObject_0);
+}
+if (__intnl_SystemBoolean_57)
+{
+PlayerData.SetString(__const_SystemString_20, InventoryDataSerialized);
+}
+}
+public void _onPreSerialization()
+{
+__intnl_SystemBoolean_58 = Networking.IsOwner(__this_UnityEngineGameObject_0);
+if (__intnl_SystemBoolean_58)
+{
+__lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0 = Networking.LocalPlayer;
+__intnl_SystemBoolean_60 = __lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0 != __const_SystemObject_0;
+if (__intnl_SystemBoolean_60)
+{
+__intnl_SystemBoolean_60 = PlayerData.HasKey(__lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0, __const_SystemString_38);
+}
+__intnl_SystemBoolean_59 = __intnl_SystemBoolean_60;
+if (__intnl_SystemBoolean_59)
+{
+__intnl_SystemBoolean_59 = PlayerData.GetBool(__lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0, __const_SystemString_38);
+}
+if (__intnl_SystemBoolean_59)
+{
+PlayerData.SetBool(__const_SystemString_38, __const_SystemBoolean_1);
+InventoryData = DataDictionary.ctor();
+nextFishId = __const_SystemInt32_2;
+__0_wasInitialized__param = __lcl_wipePendingWasInit_SystemBoolean_0;
+UNDEF_04a6d_9328();
+__lcl_wipePendingWasInit_SystemBoolean_0 = __0_wasInitialized__param;
+_equippedRodId = __const_SystemInt32_1;
+_equippedLineId = __const_SystemInt32_1;
+_equippedBobberId = __const_SystemInt32_1;
+__intnl_UnityEngineObject_8 = InventoryManager;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_61 = __intnl_UnityEngineObject_8 != __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_61)
+{
+__intnl_VRCUdonUdonBehaviour_7 = InventoryManager;
+InventoryManager.SendCustomEvent(__const_SystemString_21);
+}
+__intnl_UnityEngineObject_10 = InventoryManager;
+__intnl_UnityEngineObject_11 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_62 = __intnl_UnityEngineObject_10 != __intnl_UnityEngineObject_11;
+if (__intnl_SystemBoolean_62)
+{
+__intnl_VRCUdonUdonBehaviour_8 = InventoryManager;
+InventoryManager.SendCustomEvent(__const_SystemString_22);
+}
+__intnl_UnityEngineObject_12 = QuestInventoryManager;
+__intnl_UnityEngineObject_13 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_63 = __intnl_UnityEngineObject_12 != __intnl_UnityEngineObject_13;
+if (__intnl_SystemBoolean_63)
+{
+__intnl_VRCUdonUdonBehaviour_9 = QuestInventoryManager;
+QuestInventoryManager.SendCustomEvent(__const_SystemString_22);
+}
+__intnl_UnityEngineObject_14 = BoatShopUI;
+__intnl_UnityEngineObject_15 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_64 = __intnl_UnityEngineObject_14 != __intnl_UnityEngineObject_15;
+if (__intnl_SystemBoolean_64)
+{
+__intnl_VRCUdonUdonBehaviour_10 = BoatShopUI;
+BoatShopUI.SendCustomEvent(__const_SystemString_23);
+}
+Debug.Log(__const_SystemString_39);
+}
+}
+UNDEF_04a6d_13368();
+if (Ready)
+{
+UNDEF_04a6d_14780();
+}
+}
+private void UNDEF_04a6d_14780()
+{
+__intnl_SystemBoolean_59 = Networking.IsOwner(__this_UnityEngineGameObject_0);
+if (__intnl_SystemBoolean_59)
+{
+PlayerData.SetString(__const_SystemString_20, InventoryDataSerialized);
+PlayerData.SetInt(__const_SystemString_25, _equippedRodId);
+PlayerData.SetInt(__const_SystemString_26, _equippedLineId);
+PlayerData.SetInt(__const_SystemString_27, _equippedBobberId);
+__intnl_VRCUdonUdonBehaviour_7 = BoatShopUI;
+BoatShopUI.SendCustomEvent(__const_SystemString_23);
+}
+}
+public void _onDeserialization()
+{
+__intnl_SystemBoolean_65 = Networking.IsOwner(__this_UnityEngineGameObject_0);
+if (__intnl_SystemBoolean_65)
+{
+return;
+}
+__intnl_SystemBoolean_66 = VRCJson.TryDeserializeFromJson(InventoryDataSerialized, __lcl_result_VRCSDK3DataDataToken_3);
+if (__intnl_SystemBoolean_66)
+{
+__intnl_VRCSDK3DataTokenType_2 = __lcl_result_VRCSDK3DataDataToken_3.TokenType;
+__intnl_SystemBoolean_67 = __intnl_VRCSDK3DataTokenType_2.Equals(__const_VRCSDK3DataTokenType_0);
+if (__intnl_SystemBoolean_67)
+{
+InventoryData = __lcl_result_VRCSDK3DataDataToken_3.DataDictionary;
+}
+else
+{
+__intnl_VRCSDK3DataTokenType_3 = __lcl_result_VRCSDK3DataDataToken_3.TokenType;
+__intnl_SystemString_0 = String.Format(__const_SystemString_40, __intnl_VRCSDK3DataTokenType_3);
+Debug.LogWarning(__intnl_SystemString_0);
+}
+}
+else
+{
+Debug.LogWarning(__const_SystemString_41);
+}
+}
+public void __0_AddRodId()
+{
+__0_key__param = __const_SystemString_11;
+__0_GetSafeDataList();
+__lcl_unlockedRods_VRCSDK3DataDataList_0 = __0___0_GetSafeDataList__ret;
+__intnl_SystemDouble_30 = Convert.ToDouble(__0_id__param);
+__intnl_VRCSDK3DataDataToken_62 = __intnl_SystemDouble_30;
+__intnl_SystemBoolean_68 = __lcl_unlockedRods_VRCSDK3DataDataList_0.Contains(__intnl_VRCSDK3DataDataToken_62);
+if (__intnl_SystemBoolean_68)
+{
+return;
+}
+__intnl_SystemDouble_31 = Convert.ToDouble(__0_id__param);
+__intnl_VRCSDK3DataDataToken_63 = __intnl_SystemDouble_31;
+__lcl_unlockedRods_VRCSDK3DataDataList_0.Add(__intnl_VRCSDK3DataDataToken_63);
+__lcl_allRods_SystemString_0 = __const_SystemString_42;
+__lcl_i_SystemInt32_9 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_25 = __lcl_unlockedRods_VRCSDK3DataDataList_0.Count;
+__intnl_SystemBoolean_69 = __lcl_i_SystemInt32_9 < __intnl_SystemInt32_25;
+if (__intnl_SystemBoolean_69)
+{
+break;
+}
+__intnl_VRCSDK3DataDataToken_64 = __lcl_unlockedRods_VRCSDK3DataDataList_0.Item;
+__intnl_SystemDouble_32 = __intnl_VRCSDK3DataDataToken_64.Double;
+__intnl_SystemString_1 = String.Concat(__intnl_SystemDouble_32, __const_SystemString_43);
+__lcl_allRods_SystemString_0 = __lcl_allRods_SystemString_0 + __intnl_SystemString_1;
+__lcl_i_SystemInt32_9 = __lcl_i_SystemInt32_9 + __const_SystemInt32_2;
+}
+__this_VRCUdonUdonBehaviour_14.RequestSerialization();
+}
+public void __0_HasRodId()
+{
+__0_key__param = __const_SystemString_11;
+__0_GetSafeDataList();
+__lcl_unlockedRods_VRCSDK3DataDataList_1 = __0___0_GetSafeDataList__ret;
+__intnl_SystemDouble_33 = Convert.ToDouble(__1_id__param);
+__intnl_VRCSDK3DataDataToken_65 = __intnl_SystemDouble_33;
+__0___0_HasRodId__ret = __lcl_unlockedRods_VRCSDK3DataDataList_1.Contains(__intnl_VRCSDK3DataDataToken_65);
+return;
+}
+public void __0_RemoveRodId()
+{
+__0_key__param = __const_SystemString_11;
+__0_GetSafeDataList();
+__lcl_unlockedRods_VRCSDK3DataDataList_2 = __0___0_GetSafeDataList__ret;
+__intnl_SystemDouble_34 = Convert.ToDouble(__2_id__param);
+__intnl_VRCSDK3DataDataToken_66 = __intnl_SystemDouble_34;
+__intnl_SystemBoolean_70 = __lcl_unlockedRods_VRCSDK3DataDataList_2.Contains(__intnl_VRCSDK3DataDataToken_66);
+if (__intnl_SystemBoolean_70)
+{
+UNDEF_04a6d_16164();
+}
+}
+private void UNDEF_04a6d_16164()
+{
+__intnl_SystemDouble_35 = Convert.ToDouble(__2_id__param);
+__intnl_VRCSDK3DataDataToken_67 = __intnl_SystemDouble_35;
+__intnl_SystemBoolean_71 = __lcl_unlockedRods_VRCSDK3DataDataList_2.Remove(__intnl_VRCSDK3DataDataToken_67);
+__this_VRCUdonUdonBehaviour_15.RequestSerialization();
+}
+public void __0_AddAfkPet()
+{
+__0_key__param = __const_SystemString_15;
+__0_GetSafeDataList();
+__lcl_afkPets_VRCSDK3DataDataList_0 = __0___0_GetSafeDataList__ret;
+__intnl_SystemDouble_36 = Convert.ToDouble(__3_id__param);
+__intnl_VRCSDK3DataDataToken_68 = __intnl_SystemDouble_36;
+__intnl_SystemBoolean_72 = __lcl_afkPets_VRCSDK3DataDataList_0.Contains(__intnl_VRCSDK3DataDataToken_68);
+if (__intnl_SystemBoolean_72)
+{
+return;
+}
+__intnl_SystemDouble_37 = Convert.ToDouble(__3_id__param);
+__intnl_VRCSDK3DataDataToken_69 = __intnl_SystemDouble_37;
+__lcl_afkPets_VRCSDK3DataDataList_0.Add(__intnl_VRCSDK3DataDataToken_69);
+__this_VRCUdonUdonBehaviour_16.RequestSerialization();
+}
+public void __0_HasAfkPet()
+{
+__0_key__param = __const_SystemString_15;
+__0_GetSafeDataList();
+__lcl_afkPets_VRCSDK3DataDataList_1 = __0___0_GetSafeDataList__ret;
+__intnl_SystemDouble_38 = Convert.ToDouble(__4_id__param);
+__intnl_VRCSDK3DataDataToken_70 = __intnl_SystemDouble_38;
+__0___0_HasAfkPet__ret = __lcl_afkPets_VRCSDK3DataDataList_1.Contains(__intnl_VRCSDK3DataDataToken_70);
+return;
+}
+public void __0_RemoveAfkPet()
+{
+__0_key__param = __const_SystemString_15;
+__0_GetSafeDataList();
+__lcl_afkPets_VRCSDK3DataDataList_2 = __0___0_GetSafeDataList__ret;
+__intnl_SystemDouble_39 = Convert.ToDouble(__5_id__param);
+__intnl_VRCSDK3DataDataToken_71 = __intnl_SystemDouble_39;
+__intnl_SystemBoolean_73 = __lcl_afkPets_VRCSDK3DataDataList_2.Contains(__intnl_VRCSDK3DataDataToken_71);
+if (__intnl_SystemBoolean_73)
+{
+UNDEF_04a6d_16940();
+}
+}
+private void UNDEF_04a6d_16940()
+{
+__intnl_SystemDouble_40 = Convert.ToDouble(__5_id__param);
+__intnl_VRCSDK3DataDataToken_72 = __intnl_SystemDouble_40;
+__intnl_SystemBoolean_74 = __lcl_afkPets_VRCSDK3DataDataList_2.Remove(__intnl_VRCSDK3DataDataToken_72);
+__this_VRCUdonUdonBehaviour_17.RequestSerialization();
+}
+public void __0_AddLineId()
+{
+__0_key__param = __const_SystemString_12;
+__0_GetSafeDataList();
+__lcl_unlockedLines_VRCSDK3DataDataList_0 = __0___0_GetSafeDataList__ret;
+__intnl_SystemDouble_41 = Convert.ToDouble(__6_id__param);
+__intnl_VRCSDK3DataDataToken_73 = __intnl_SystemDouble_41;
+__intnl_SystemBoolean_75 = __lcl_unlockedLines_VRCSDK3DataDataList_0.Contains(__intnl_VRCSDK3DataDataToken_73);
+if (__intnl_SystemBoolean_75)
+{
+return;
+}
+__intnl_SystemDouble_42 = Convert.ToDouble(__6_id__param);
+__intnl_VRCSDK3DataDataToken_74 = __intnl_SystemDouble_42;
+__lcl_unlockedLines_VRCSDK3DataDataList_0.Add(__intnl_VRCSDK3DataDataToken_74);
+__this_VRCUdonUdonBehaviour_18.RequestSerialization();
+}
+public void __0_HasLineId()
+{
+__0_key__param = __const_SystemString_12;
+__0_GetSafeDataList();
+__lcl_unlockedLines_VRCSDK3DataDataList_1 = __0___0_GetSafeDataList__ret;
+__intnl_SystemDouble_43 = Convert.ToDouble(__7_id__param);
+__intnl_VRCSDK3DataDataToken_75 = __intnl_SystemDouble_43;
+__0___0_HasLineId__ret = __lcl_unlockedLines_VRCSDK3DataDataList_1.Contains(__intnl_VRCSDK3DataDataToken_75);
+return;
+}
+public void __0_RemoveLineId()
+{
+__0_key__param = __const_SystemString_12;
+__0_GetSafeDataList();
+__lcl_unlockedLines_VRCSDK3DataDataList_2 = __0___0_GetSafeDataList__ret;
+__intnl_SystemDouble_44 = Convert.ToDouble(__8_id__param);
+__intnl_VRCSDK3DataDataToken_76 = __intnl_SystemDouble_44;
+__intnl_SystemBoolean_76 = __lcl_unlockedLines_VRCSDK3DataDataList_2.Contains(__intnl_VRCSDK3DataDataToken_76);
+if (__intnl_SystemBoolean_76)
+{
+UNDEF_04a6d_17716();
+}
+}
+private void UNDEF_04a6d_17716()
+{
+__intnl_SystemDouble_45 = Convert.ToDouble(__8_id__param);
+__intnl_VRCSDK3DataDataToken_77 = __intnl_SystemDouble_45;
+__intnl_SystemBoolean_77 = __lcl_unlockedLines_VRCSDK3DataDataList_2.Remove(__intnl_VRCSDK3DataDataToken_77);
+__this_VRCUdonUdonBehaviour_19.RequestSerialization();
+}
+public void __0_AddBobberId()
+{
+__0_key__param = __const_SystemString_13;
+__0_GetSafeDataList();
+__lcl_unlockedBobbers_VRCSDK3DataDataList_0 = __0___0_GetSafeDataList__ret;
+__intnl_SystemDouble_46 = Convert.ToDouble(__9_id__param);
+__intnl_VRCSDK3DataDataToken_78 = __intnl_SystemDouble_46;
+__intnl_SystemBoolean_78 = __lcl_unlockedBobbers_VRCSDK3DataDataList_0.Contains(__intnl_VRCSDK3DataDataToken_78);
+if (__intnl_SystemBoolean_78)
+{
+return;
+}
+__intnl_SystemDouble_47 = Convert.ToDouble(__9_id__param);
+__intnl_VRCSDK3DataDataToken_79 = __intnl_SystemDouble_47;
+__lcl_unlockedBobbers_VRCSDK3DataDataList_0.Add(__intnl_VRCSDK3DataDataToken_79);
+__this_VRCUdonUdonBehaviour_20.RequestSerialization();
+}
+public void __0_HasBobberId()
+{
+__0_key__param = __const_SystemString_13;
+__0_GetSafeDataList();
+__lcl_unlockedBobbers_VRCSDK3DataDataList_1 = __0___0_GetSafeDataList__ret;
+__intnl_SystemDouble_48 = Convert.ToDouble(__10_id__param);
+__intnl_VRCSDK3DataDataToken_80 = __intnl_SystemDouble_48;
+__0___0_HasBobberId__ret = __lcl_unlockedBobbers_VRCSDK3DataDataList_1.Contains(__intnl_VRCSDK3DataDataToken_80);
+return;
+}
+public void __0_RemoveBobberId()
+{
+__0_key__param = __const_SystemString_13;
+__0_GetSafeDataList();
+__lcl_unlockedBobbers_VRCSDK3DataDataList_2 = __0___0_GetSafeDataList__ret;
+__intnl_SystemDouble_49 = Convert.ToDouble(__11_id__param);
+__intnl_VRCSDK3DataDataToken_81 = __intnl_SystemDouble_49;
+__intnl_SystemBoolean_79 = __lcl_unlockedBobbers_VRCSDK3DataDataList_2.Contains(__intnl_VRCSDK3DataDataToken_81);
+if (__intnl_SystemBoolean_79)
+{
+UNDEF_04a6d_18492();
+}
+}
+private void UNDEF_04a6d_18492()
+{
+__intnl_SystemDouble_50 = Convert.ToDouble(__11_id__param);
+__intnl_VRCSDK3DataDataToken_82 = __intnl_SystemDouble_50;
+__intnl_SystemBoolean_80 = __lcl_unlockedBobbers_VRCSDK3DataDataList_2.Remove(__intnl_VRCSDK3DataDataToken_82);
+__this_VRCUdonUdonBehaviour_21.RequestSerialization();
+}
+public void __0_AddHandleId()
+{
+__0_key__param = __const_SystemString_18;
+__0_GetSafeDataList();
+__lcl_unlockedHandles_VRCSDK3DataDataList_0 = __0___0_GetSafeDataList__ret;
+__intnl_SystemDouble_51 = Convert.ToDouble(__12_id__param);
+__intnl_VRCSDK3DataDataToken_83 = __intnl_SystemDouble_51;
+__intnl_SystemBoolean_81 = __lcl_unlockedHandles_VRCSDK3DataDataList_0.Contains(__intnl_VRCSDK3DataDataToken_83);
+if (__intnl_SystemBoolean_81)
+{
+return;
+}
+__intnl_SystemDouble_52 = Convert.ToDouble(__12_id__param);
+__intnl_VRCSDK3DataDataToken_84 = __intnl_SystemDouble_52;
+__lcl_unlockedHandles_VRCSDK3DataDataList_0.Add(__intnl_VRCSDK3DataDataToken_84);
+__this_VRCUdonUdonBehaviour_22.RequestSerialization();
+}
+public void __0_HasHandleId()
+{
+__0_key__param = __const_SystemString_18;
+__0_GetSafeDataList();
+__lcl_unlockedHandles_VRCSDK3DataDataList_1 = __0___0_GetSafeDataList__ret;
+__intnl_SystemDouble_53 = Convert.ToDouble(__13_id__param);
+__intnl_VRCSDK3DataDataToken_85 = __intnl_SystemDouble_53;
+__0___0_HasHandleId__ret = __lcl_unlockedHandles_VRCSDK3DataDataList_1.Contains(__intnl_VRCSDK3DataDataToken_85);
+return;
+}
+public void __0_RemoveHandleId()
+{
+__0_key__param = __const_SystemString_18;
+__0_GetSafeDataList();
+__lcl_unlockedHandles_VRCSDK3DataDataList_2 = __0___0_GetSafeDataList__ret;
+__intnl_SystemDouble_54 = Convert.ToDouble(__14_id__param);
+__intnl_VRCSDK3DataDataToken_86 = __intnl_SystemDouble_54;
+__intnl_SystemBoolean_82 = __lcl_unlockedHandles_VRCSDK3DataDataList_2.Contains(__intnl_VRCSDK3DataDataToken_86);
+if (__intnl_SystemBoolean_82)
+{
+UNDEF_04a6d_19268();
+}
+}
+private void UNDEF_04a6d_19268()
+{
+__intnl_SystemDouble_55 = Convert.ToDouble(__14_id__param);
+__intnl_VRCSDK3DataDataToken_87 = __intnl_SystemDouble_55;
+__intnl_SystemBoolean_83 = __lcl_unlockedHandles_VRCSDK3DataDataList_2.Remove(__intnl_VRCSDK3DataDataToken_87);
+__this_VRCUdonUdonBehaviour_23.RequestSerialization();
+}
+public void GetNextFishId()
+{
+__lcl_id_SystemInt32_0 = nextFishId;
+nextFishId = nextFishId + __const_SystemInt32_2;
+__intnl_VRCSDK3DataDataToken_88 = __const_SystemString_17;
+__intnl_SystemDouble_56 = Convert.ToDouble(nextFishId);
+__intnl_VRCSDK3DataDataToken_89 = __intnl_SystemDouble_56;
+InventoryData.Item = __intnl_VRCSDK3DataDataToken_89;
+__0_GetNextFishId__ret = __lcl_id_SystemInt32_0;
+return;
+}
+public void __0_SetFishSlotLocked()
+{
+__0_key__param = __const_SystemString_14;
+__0_GetSafeDataList();
+__lcl_fishSlots_VRCSDK3DataDataList_0 = __0___0_GetSafeDataList__ret;
+__lcl_i_SystemInt32_10 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_26 = __lcl_fishSlots_VRCSDK3DataDataList_0.Count;
+__intnl_SystemBoolean_84 = __lcl_i_SystemInt32_10 < __intnl_SystemInt32_26;
+if (__intnl_SystemBoolean_84)
+{
+break;
+}
+__intnl_VRCSDK3DataDataToken_90 = __lcl_fishSlots_VRCSDK3DataDataList_0.Item;
+__lcl_slot_VRCSDK3DataDataList_0 = __intnl_VRCSDK3DataDataToken_90.DataList;
+__intnl_VRCSDK3DataDataToken_91 = __lcl_slot_VRCSDK3DataDataList_0.Item;
+__intnl_SystemDouble_57 = __intnl_VRCSDK3DataDataToken_91.Double;
+__intnl_SystemDouble_58 = Math.Truncate(__intnl_SystemDouble_57);
+__intnl_SystemInt32_27 = Convert.ToInt32(__intnl_SystemDouble_58);
+__intnl_SystemBoolean_85 = __intnl_SystemInt32_27 == __0_fishId__param;
+if (__intnl_SystemBoolean_85)
+{
+if (__0_newLockState__param)
+{
+__intnl_SystemInt32_28 = __const_SystemInt32_2;
+}
+else
+{
+__intnl_SystemInt32_28 = __const_SystemInt32_1;
+}
+__intnl_SystemDouble_59 = Convert.ToDouble(__intnl_SystemInt32_28);
+__intnl_VRCSDK3DataDataToken_92 = __intnl_SystemDouble_59;
+__lcl_slot_VRCSDK3DataDataList_0.Item = __intnl_VRCSDK3DataDataToken_92;
+__this_VRCUdonUdonBehaviour_24.RequestSerialization();
+return;
+}
+__lcl_i_SystemInt32_10 = __lcl_i_SystemInt32_10 + __const_SystemInt32_2;
+}
+}
+public void __0_RemoveFishByEntryId()
+{
+__0_key__param = __const_SystemString_14;
+__0_GetSafeDataList();
+__lcl_fishSlots_VRCSDK3DataDataList_1 = __0___0_GetSafeDataList__ret;
+__intnl_SystemInt32_29 = __lcl_fishSlots_VRCSDK3DataDataList_1.Count;
+__intnl_SystemBoolean_86 = __intnl_SystemInt32_29 == __const_SystemInt32_1;
+if (__intnl_SystemBoolean_86)
+{
+__0___0_RemoveFishByEntryId__ret = __const_SystemBoolean_1;
+return;
+}
+__lcl_bestIndex_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_bestIsLocked_SystemBoolean_0 = __const_SystemBoolean_0;
+__lcl_bestValue_SystemInt32_0 = __const_SystemInt32_5;
+__lcl_i_SystemInt32_11 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_30 = __lcl_fishSlots_VRCSDK3DataDataList_1.Count;
+__intnl_SystemBoolean_87 = __lcl_i_SystemInt32_11 < __intnl_SystemInt32_30;
+if (__intnl_SystemBoolean_87)
+{
+break;
+}
+__intnl_VRCSDK3DataDataToken_93 = __lcl_fishSlots_VRCSDK3DataDataList_1.Item;
+__lcl_slot_VRCSDK3DataDataList_1 = __intnl_VRCSDK3DataDataToken_93.DataList;
+__intnl_VRCSDK3DataDataToken_94 = __lcl_slot_VRCSDK3DataDataList_1.Item;
+__intnl_SystemDouble_60 = __intnl_VRCSDK3DataDataToken_94.Double;
+__intnl_SystemDouble_61 = Math.Truncate(__intnl_SystemDouble_60);
+__lcl_fishEntryId_SystemInt32_0 = Convert.ToInt32(__intnl_SystemDouble_61);
+__intnl_SystemBoolean_88 = __lcl_fishEntryId_SystemInt32_0 != __0_targetFishEntryId__param;
+if (__intnl_SystemBoolean_88)
+{
+}
+else
+{
+__intnl_VRCSDK3DataDataToken_95 = __lcl_slot_VRCSDK3DataDataList_1.Item;
+__intnl_SystemDouble_62 = __intnl_VRCSDK3DataDataToken_95.Double;
+__lcl_weight_SystemSingle_0 = Convert.ToSingle(__intnl_SystemDouble_62);
+__intnl_VRCSDK3DataDataToken_96 = __lcl_slot_VRCSDK3DataDataList_1.Item;
+__intnl_SystemDouble_63 = __intnl_VRCSDK3DataDataToken_96.Double;
+__intnl_SystemDouble_64 = Math.Truncate(__intnl_SystemDouble_63);
+__lcl_combinedModifiers_SystemInt32_0 = Convert.ToInt32(__intnl_SystemDouble_64);
+__intnl_VRCSDK3DataDataToken_97 = __lcl_slot_VRCSDK3DataDataList_1.Item;
+__intnl_SystemDouble_65 = __intnl_VRCSDK3DataDataToken_97.Double;
+__intnl_SystemDouble_66 = Math.Truncate(__intnl_SystemDouble_65);
+__intnl_SystemInt32_31 = Convert.ToInt32(__intnl_SystemDouble_66);
+__lcl_isLocked_SystemBoolean_0 = __intnl_SystemInt32_31 == __const_SystemInt32_2;
+__lcl_sizeModifierInt_SystemInt32_0 = __lcl_combinedModifiers_SystemInt32_0 / __const_SystemInt32_8;
+__lcl_shaderModifierInt_SystemInt32_0 = __lcl_combinedModifiers_SystemInt32_0 / __const_SystemInt32_8;
+__1__intnlparam = __lcl_sizeModifierInt_SystemInt32_0;
+UNDEF_04a6d_24520();
+__lcl_sizeModifier_SystemInt32_0 = __0__intnlparam;
+__3__intnlparam = __lcl_shaderModifierInt_SystemInt32_0;
+UNDEF_04a6d_25676();
+__lcl_shaderModifier_SystemInt32_0 = __2__intnlparam;
+__0_fishDatabase__param.SetProgramVariable(__const_SystemString_44, __lcl_fishEntryId_SystemInt32_0);
+__0_fishDatabase__param.SendCustomEvent(__const_SystemString_45);
+__intnl_SystemObject_4 = __0_fishDatabase__param.GetProgramVariable(__const_SystemString_46);
+__intnl_VRCUdonUdonBehaviour_11 = (UdonBehaviour)__intnl_SystemObject_4;
+__lcl_fishEntry_VRCUdonUdonBehaviour_0 = __intnl_VRCUdonUdonBehaviour_11;
+__intnl_UnityEngineObject_16 = __lcl_fishEntry_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_17 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_89 = __intnl_UnityEngineObject_16 == __intnl_UnityEngineObject_17;
+if (__intnl_SystemBoolean_89)
+{
+}
+else
+{
+__lcl_fishEntry_VRCUdonUdonBehaviour_0.SetProgramVariable(__const_SystemString_47, __lcl_weight_SystemSingle_0);
+__lcl_fishEntry_VRCUdonUdonBehaviour_0.SetProgramVariable(__const_SystemString_48, __lcl_sizeModifier_SystemInt32_0);
+__lcl_fishEntry_VRCUdonUdonBehaviour_0.SetProgramVariable(__const_SystemString_49, __lcl_shaderModifier_SystemInt32_0);
+__lcl_fishEntry_VRCUdonUdonBehaviour_0.SetProgramVariable(__const_SystemString_50, __const_VRCUdonUdonBehaviour_0);
+__lcl_fishEntry_VRCUdonUdonBehaviour_0.SendCustomEvent(__const_SystemString_51);
+__intnl_SystemObject_5 = __lcl_fishEntry_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_52);
+__intnl_SystemInt32_32 = Convert.ToInt32(__intnl_SystemObject_5);
+__lcl_fishValue_SystemInt32_0 = __intnl_SystemInt32_32;
+__lcl_isBetterCandidate_SystemBoolean_0 = __const_SystemBoolean_1;
+__intnl_SystemBoolean_90 = __lcl_bestIndex_SystemInt32_0 == __const_SystemInt32_0;
+if (__intnl_SystemBoolean_90)
+{
+__lcl_isBetterCandidate_SystemBoolean_0 = __const_SystemBoolean_0;
+}
+else
+{
+__intnl_SystemBoolean_91 = !__lcl_isLocked_SystemBoolean_0;
+if (__intnl_SystemBoolean_91)
+{
+__intnl_SystemBoolean_91 = __lcl_bestIsLocked_SystemBoolean_0;
+}
+if (__intnl_SystemBoolean_91)
+{
+__lcl_isBetterCandidate_SystemBoolean_0 = __const_SystemBoolean_0;
+}
+else
+{
+__intnl_SystemBoolean_92 = __lcl_isLocked_SystemBoolean_0 == __lcl_bestIsLocked_SystemBoolean_0;
+if (__intnl_SystemBoolean_92)
+{
+__intnl_SystemBoolean_92 = __lcl_fishValue_SystemInt32_0 < __lcl_bestValue_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_92)
+{
+__lcl_isBetterCandidate_SystemBoolean_0 = __const_SystemBoolean_0;
+}
+}
+}
+if (__lcl_isBetterCandidate_SystemBoolean_0)
+{
+__lcl_bestIndex_SystemInt32_0 = __lcl_i_SystemInt32_11;
+__lcl_bestIsLocked_SystemBoolean_0 = __lcl_isLocked_SystemBoolean_0;
+__lcl_bestValue_SystemInt32_0 = __lcl_fishValue_SystemInt32_0;
+}
+}
+}
+__lcl_i_SystemInt32_11 = __lcl_i_SystemInt32_11 + __const_SystemInt32_2;
+}
+__intnl_SystemBoolean_87 = __lcl_bestIndex_SystemInt32_0 == __const_SystemInt32_0;
+if (__intnl_SystemBoolean_87)
+{
+__0___0_RemoveFishByEntryId__ret = __const_SystemBoolean_1;
+return;
+}
+__lcl_fishSlots_VRCSDK3DataDataList_1.RemoveAt(__lcl_bestIndex_SystemInt32_0);
+__this_VRCUdonUdonBehaviour_25.RequestSerialization();
+__0___0_RemoveFishByEntryId__ret = __const_SystemBoolean_0;
+return;
+}
+public void __0_HasFishWithEntryId()
+{
+__0_key__param = __const_SystemString_14;
+__0_GetSafeDataList();
+__lcl_fishSlots_VRCSDK3DataDataList_2 = __0___0_GetSafeDataList__ret;
+__lcl_i_SystemInt32_12 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_33 = __lcl_fishSlots_VRCSDK3DataDataList_2.Count;
+__intnl_SystemBoolean_93 = __lcl_i_SystemInt32_12 < __intnl_SystemInt32_33;
+if (__intnl_SystemBoolean_93)
+{
+break;
+}
+__intnl_VRCSDK3DataDataToken_98 = __lcl_fishSlots_VRCSDK3DataDataList_2.Item;
+__lcl_slot_VRCSDK3DataDataList_2 = __intnl_VRCSDK3DataDataToken_98.DataList;
+__intnl_VRCSDK3DataDataToken_99 = __lcl_slot_VRCSDK3DataDataList_2.Item;
+__intnl_SystemDouble_67 = __intnl_VRCSDK3DataDataToken_99.Double;
+__intnl_SystemDouble_68 = Math.Truncate(__intnl_SystemDouble_67);
+__lcl_fishEntryId_SystemInt32_1 = Convert.ToInt32(__intnl_SystemDouble_68);
+__intnl_SystemBoolean_94 = __lcl_fishEntryId_SystemInt32_1 == __1_targetFishEntryId__param;
+if (__intnl_SystemBoolean_94)
+{
+__0___0_HasFishWithEntryId__ret = __const_SystemBoolean_0;
+return;
+}
+__lcl_i_SystemInt32_12 = __lcl_i_SystemInt32_12 + __const_SystemInt32_2;
+}
+__0___0_HasFishWithEntryId__ret = __const_SystemBoolean_1;
+return;
+}
+public void __0_HasUnlockedFishWithEntryId()
+{
+__0_key__param = __const_SystemString_14;
+__0_GetSafeDataList();
+__lcl_fishSlots_VRCSDK3DataDataList_3 = __0___0_GetSafeDataList__ret;
+__lcl_i_SystemInt32_13 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_34 = __lcl_fishSlots_VRCSDK3DataDataList_3.Count;
+__intnl_SystemBoolean_95 = __lcl_i_SystemInt32_13 < __intnl_SystemInt32_34;
+if (__intnl_SystemBoolean_95)
+{
+break;
+}
+__intnl_VRCSDK3DataDataToken_100 = __lcl_fishSlots_VRCSDK3DataDataList_3.Item;
+__lcl_slot_VRCSDK3DataDataList_3 = __intnl_VRCSDK3DataDataToken_100.DataList;
+__intnl_VRCSDK3DataDataToken_101 = __lcl_slot_VRCSDK3DataDataList_3.Item;
+__intnl_SystemDouble_69 = __intnl_VRCSDK3DataDataToken_101.Double;
+__intnl_SystemDouble_70 = Math.Truncate(__intnl_SystemDouble_69);
+__lcl_fishEntryId_SystemInt32_2 = Convert.ToInt32(__intnl_SystemDouble_70);
+__intnl_SystemBoolean_96 = __lcl_fishEntryId_SystemInt32_2 == __2_targetFishEntryId__param;
+if (__intnl_SystemBoolean_96)
+{
+__intnl_VRCSDK3DataDataToken_102 = __lcl_slot_VRCSDK3DataDataList_3.Item;
+__intnl_SystemDouble_71 = __intnl_VRCSDK3DataDataToken_102.Double;
+__intnl_SystemDouble_72 = Math.Truncate(__intnl_SystemDouble_71);
+__intnl_SystemInt32_35 = Convert.ToInt32(__intnl_SystemDouble_72);
+__lcl_isLocked_SystemBoolean_1 = __intnl_SystemInt32_35 == __const_SystemInt32_2;
+if (__lcl_isLocked_SystemBoolean_1)
+{
+}
+else
+{
+__0___0_HasUnlockedFishWithEntryId__ret = __const_SystemBoolean_0;
+return;
+}
+}
+__lcl_i_SystemInt32_13 = __lcl_i_SystemInt32_13 + __const_SystemInt32_2;
+}
+__0___0_HasUnlockedFishWithEntryId__ret = __const_SystemBoolean_1;
+return;
+}
+public void __0_CountUnlockedFishWithEntryId()
+{
+__0_key__param = __const_SystemString_14;
+__0_GetSafeDataList();
+__lcl_fishSlots_VRCSDK3DataDataList_4 = __0___0_GetSafeDataList__ret;
+__lcl_count_SystemInt32_0 = __const_SystemInt32_1;
+__lcl_i_SystemInt32_14 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_36 = __lcl_fishSlots_VRCSDK3DataDataList_4.Count;
+__intnl_SystemBoolean_97 = __lcl_i_SystemInt32_14 < __intnl_SystemInt32_36;
+if (__intnl_SystemBoolean_97)
+{
+break;
+}
+__intnl_VRCSDK3DataDataToken_103 = __lcl_fishSlots_VRCSDK3DataDataList_4.Item;
+__lcl_slot_VRCSDK3DataDataList_4 = __intnl_VRCSDK3DataDataToken_103.DataList;
+__intnl_VRCSDK3DataDataToken_104 = __lcl_slot_VRCSDK3DataDataList_4.Item;
+__intnl_SystemDouble_73 = __intnl_VRCSDK3DataDataToken_104.Double;
+__intnl_SystemDouble_74 = Math.Truncate(__intnl_SystemDouble_73);
+__lcl_fishEntryId_SystemInt32_3 = Convert.ToInt32(__intnl_SystemDouble_74);
+__intnl_SystemBoolean_98 = __lcl_fishEntryId_SystemInt32_3 == __3_targetFishEntryId__param;
+if (__intnl_SystemBoolean_98)
+{
+__intnl_VRCSDK3DataDataToken_105 = __lcl_slot_VRCSDK3DataDataList_4.Item;
+__intnl_SystemDouble_75 = __intnl_VRCSDK3DataDataToken_105.Double;
+__intnl_SystemDouble_76 = Math.Truncate(__intnl_SystemDouble_75);
+__intnl_SystemInt32_37 = Convert.ToInt32(__intnl_SystemDouble_76);
+__lcl_isLocked_SystemBoolean_2 = __intnl_SystemInt32_37 == __const_SystemInt32_2;
+if (__lcl_isLocked_SystemBoolean_2)
+{
+}
+else
+{
+__lcl_count_SystemInt32_0 = __lcl_count_SystemInt32_0 + __const_SystemInt32_2;
+}
+}
+__lcl_i_SystemInt32_14 = __lcl_i_SystemInt32_14 + __const_SystemInt32_2;
+}
+__0___0_CountUnlockedFishWithEntryId__ret = __lcl_count_SystemInt32_0;
+return;
+}
+public void AfkPetsCount()
+{
+__0_key__param = __const_SystemString_15;
+__0_GetSafeDataList();
+__lcl_afkPets_VRCSDK3DataDataList_3 = __0___0_GetSafeDataList__ret;
+__0_AfkPetsCount__ret = __lcl_afkPets_VRCSDK3DataDataList_3.Count;
+return;
+}
+private void UNDEF_04a6d_24520()
+{
+__intnl_SystemBoolean_99 = __1__intnlparam == __const_SystemInt32_1;
+if (__intnl_SystemBoolean_99)
+{
+__0__intnlparam = __const_SystemInt32_9;
+return;
+}
+__intnl_SystemBoolean_100 = __1__intnlparam == __const_SystemInt32_2;
+if (__intnl_SystemBoolean_100)
+{
+__0__intnlparam = __const_SystemInt32_10;
+return;
+}
+__intnl_SystemBoolean_101 = __1__intnlparam == __const_SystemInt32_6;
+if (__intnl_SystemBoolean_101)
+{
+__0__intnlparam = __const_SystemInt32_11;
+return;
+for (;;)
+{
+__0__intnlparam = __const_SystemInt32_9;
+return;
+}
+}
+}
+private void UNDEF_04a6d_25676()
+{
+__intnl_SystemBoolean_102 = __3__intnlparam >= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_102)
+{
+__intnl_SystemBoolean_103 = __3__intnlparam <= __const_SystemInt32_12;
+if (__intnl_SystemBoolean_103)
+{
+__intnl_SystemUInt32_0 = __gintnl_SystemUInt32Array_0[__3__intnlparam];
+__2__intnlparam = __const_SystemInt32_13;
+return;
+__2__intnlparam = __const_SystemInt32_14;
+return;
+__2__intnlparam = __const_SystemInt32_15;
+return;
+__2__intnlparam = __const_SystemInt32_16;
+return;
+__2__intnlparam = __const_SystemInt32_17;
+return;
+__2__intnlparam = __const_SystemInt32_18;
+return;
+__2__intnlparam = __const_SystemInt32_19;
+return;
+__2__intnlparam = __const_SystemInt32_20;
+return;
+__2__intnlparam = __const_SystemInt32_21;
+return;
+__2__intnlparam = __const_SystemInt32_22;
+return;
+__2__intnlparam = __const_SystemInt32_23;
+return;
+__2__intnlparam = __const_SystemInt32_24;
+return;
+__2__intnlparam = __const_SystemInt32_25;
+return;
+__2__intnlparam = __const_SystemInt32_26;
+return;
+__2__intnlparam = __const_SystemInt32_27;
+return;
+__2__intnlparam = __const_SystemInt32_28;
+return;
+__2__intnlparam = __const_SystemInt32_29;
+return;
+__2__intnlparam = __const_SystemInt32_30;
+return;
+__2__intnlparam = __const_SystemInt32_31;
+return;
+__2__intnlparam = __const_SystemInt32_32;
+return;
+__2__intnlparam = __const_SystemInt32_33;
+return;
+__2__intnlparam = __const_SystemInt32_34;
+return;
+__2__intnlparam = __const_SystemInt32_35;
+return;
+__2__intnlparam = __const_SystemInt32_36;
+return;
+}
+}
+__2__intnlparam = __const_SystemInt32_13;
+return;
+}
+}

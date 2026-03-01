@@ -1,0 +1,196 @@
+void _start()
+48 if (__intnl_SystemBoolean_0) //64
+{
+56 JUMP 120
+}
+128 if (__intnl_SystemBoolean_0) //136
+{
+}
+__lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0 = get_LocalPlayer();// 144
+192 if (__intnl_SystemBoolean_1) //260
+{
+248 __0_playerPosition__param = __intnl_UnityEngineVector3_0
+252 JUMP 304
+}
+268 if (enableDebugLogs) //276
+{
+}
+288 return;
+void __0_ReevaluateCurrentZone()
+344 if (__intnl_SystemBoolean_2) //360
+{
+352 JUMP 416
+}
+424 if (__intnl_SystemBoolean_2) //508
+{
+456 __0_zoneID__param = __const_SystemString_0
+476 __0_zoneName__param = __const_SystemString_1
+480 JUMP 1604
+500 return;
+}
+524 __lcl_bestZone_VRCUdonUdonBehaviour_0 = __const_SystemObject_0
+544 __lcl_highestPriority_SystemInt32_0 = __const_SystemInt32_1
+564 __lcl_i_SystemInt32_0 = __const_SystemInt32_0
+632 if (__intnl_SystemBoolean_3) //1216
+{
+688 __intnl_UnityEngineObject_0 = __intnl_VRCUdonUdonBehaviour_0
+708 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+752 if (__intnl_SystemBoolean_4) //768
+{
+760 JUMP 1176
+}
+816 __intnl_UnityEngineVector3_1 = __0_playerPosition__param
+G_allZones.Get(__lcl_i_SystemInt32_0).SetProgramVariable(__0_playerPosition__param, __const_SystemString_2);// 844
+G_allZones.Get(__lcl_i_SystemInt32_0).SendCustomEvent(__const_SystemString_3);// 868
+924 __intnl_SystemBoolean_5 = __intnl_SystemObject_0
+936 if (__intnl_SystemBoolean_5) //1176
+{
+G_allZones.Get(__lcl_i_SystemInt32_0).SendCustomEvent(__const_SystemString_5);// 992
+1072 __lcl_priority_SystemInt32_0 = __intnl_SystemInt32_3
+1116 if (__intnl_SystemBoolean_6) //1176
+{
+1140 __lcl_highestPriority_SystemInt32_0 = __lcl_priority_SystemInt32_0
+__lcl_bestZone_VRCUdonUdonBehaviour_0 = G_allZones.Get(__lcl_i_SystemInt32_0);// 1168
+}
+}
+__lcl_i_SystemInt32_0 = op_Addition(__const_SystemInt32_2, __lcl_i_SystemInt32_0);// 1200
+1208 JUMP 568
+}
+1232 __intnl_UnityEngineObject_0 = __lcl_bestZone_VRCUdonUdonBehaviour_0
+1252 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+1296 if (__intnl_SystemBoolean_3) //1520
+{
+null.SendCustomEvent(__const_SystemString_7);// 1328
+1384 __intnl_SystemString_0 = __intnl_SystemObject_0
+null.SendCustomEvent(__const_SystemString_9);// 1404
+1460 __intnl_SystemString_1 = __intnl_SystemObject_1
+1480 __0_zoneID__param = __intnl_SystemString_0
+1500 __0_zoneName__param = __intnl_SystemString_1
+1504 JUMP 1604
+1512 JUMP 1576
+}
+1544 __0_zoneID__param = __const_SystemString_0
+1564 __0_zoneName__param = __const_SystemString_1
+1568 JUMP 1604
+1588 return;
+void __0_SetCurrentZone()
+1644 if (__intnl_SystemBoolean_7) //1672
+{
+1664 return;
+}
+1688 __lcl_previousZoneName_SystemString_0 = currentZoneName
+1708 currentZoneID = __0_zoneID__param
+1728 currentZoneName = __0_zoneName__param
+1740 JUMP 2740
+1764 __intnl_SystemBoolean_8 = showZoneChangePopup
+1776 if (__intnl_SystemBoolean_8) //1856
+{
+1800 __intnl_UnityEngineObject_2 = zonePopupAnimator
+1820 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+}
+1864 if (__intnl_SystemBoolean_8) //1944
+{
+G_zonePopupAnimator.SetProgramVariable(__0_zoneName__param, __const_SystemString_11);// 1896
+G_zonePopupAnimator.SendCustomEvent(__const_SystemString_12);// 1920
+1936 if (enableDebugLogs) //1944
+{
+}
+}
+1968 __0_newZoneID__param = __0_zoneID__param
+1972 JUMP 2024
+1988 if (enableDebugLogs) //1996
+{
+}
+2008 return;
+2040 __intnl_UnityEngineObject_4 = dynamicMusicSystem
+2060 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+2104 if (__intnl_SystemBoolean_9) //2132
+{
+2124 return;
+}
+2156 __1_zoneID__param = __0_newZoneID__param
+2160 JUMP 3016
+2184 __lcl_newZone_VRCUdonUdonBehaviour_0 = __0___0_GetZoneByID__ret
+2204 __intnl_UnityEngineObject_6 = __lcl_newZone_VRCUdonUdonBehaviour_0
+2224 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+2268 if (__intnl_SystemBoolean_10) //2372
+{
+GetZoneByID.SendCustomEvent(__const_SystemString_13);// 2292
+2348 __intnl_SystemBoolean_11 = __intnl_SystemObject_2
+2368 __intnl_SystemBoolean_10 = __intnl_SystemBoolean_11
+}
+2388 __lcl_shouldSilence_SystemBoolean_0 = __intnl_SystemBoolean_10
+2408 __intnl_SystemBoolean_12 = __lcl_shouldSilence_SystemBoolean_0
+2420 if (__intnl_SystemBoolean_12) //2452
+{
+}
+2460 if (__intnl_SystemBoolean_12) //2556
+{
+2484 isMusicSilencedByZone = __const_SystemBoolean_0
+2512 __intnl_VRCUdonUdonBehaviour_3 = dynamicMusicSystem
+G_dynamicMusicSystem.SendCustomEvent(__const_SystemString_15);// 2524
+2540 if (enableDebugLogs) //2548
+{
+}
+2548 JUMP 2712
+}
+2588 if (__intnl_SystemBoolean_13) //2616
+{
+2612 __intnl_SystemBoolean_13 = isMusicSilencedByZone
+}
+2624 if (__intnl_SystemBoolean_13) //2712
+{
+2648 isMusicSilencedByZone = __const_SystemBoolean_1
+2676 __intnl_VRCUdonUdonBehaviour_3 = dynamicMusicSystem
+G_dynamicMusicSystem.SendCustomEvent(__const_SystemString_16);// 2688
+2704 if (enableDebugLogs) //2712
+{
+}
+}
+2724 return;
+2756 __intnl_UnityEngineObject_8 = zoneDisplayText
+2776 __intnl_UnityEngineObject_9 = __const_SystemObject_0
+2820 if (__intnl_SystemBoolean_14) //2852
+{
+G_zoneDisplayText.set_text(currentZoneName);// 2844
+}
+2864 return;
+void GetCurrentZoneID()
+2896 __0_GetCurrentZoneID__ret = currentZoneID
+2912 return;
+2932 return;
+void GetCurrentZoneName()
+2964 __0_GetCurrentZoneName__ret = currentZoneName
+2980 return;
+3000 return;
+void __0_GetZoneByID()
+3056 if (__intnl_SystemBoolean_15) //3072
+{
+3064 JUMP 3096
+}
+3104 if (__intnl_SystemBoolean_15) //3152
+{
+3128 __0___0_GetZoneByID__ret = __const_SystemObject_0
+3144 return;
+}
+3168 __lcl_i_SystemInt32_1 = __const_SystemInt32_0
+3236 if (__intnl_SystemBoolean_16) //3612
+{
+3292 __intnl_UnityEngineObject_10 = __intnl_VRCUdonUdonBehaviour_4
+3312 __intnl_UnityEngineObject_11 = __const_SystemObject_0
+3356 if (__intnl_SystemBoolean_17) //3504
+{
+G_allZones.Get(__lcl_i_SystemInt32_1).SendCustomEvent(__const_SystemString_7);// 3412
+3468 __intnl_SystemString_2 = __intnl_SystemObject_3
+}
+3512 if (__intnl_SystemBoolean_17) //3572
+{
+__0___0_GetZoneByID__ret = G_allZones.Get(__lcl_i_SystemInt32_1);// 3544
+3564 return;
+}
+__lcl_i_SystemInt32_1 = op_Addition(__const_SystemInt32_2, __lcl_i_SystemInt32_1);// 3596
+3604 JUMP 3172
+}
+3628 __0___0_GetZoneByID__ret = __const_SystemObject_0
+3644 return;
+3664 return;
