@@ -25,8 +25,6 @@
    - 5.10 [Security & Encryption](#510-security--encryption)
    - 5.11 [Miscellaneous Systems](#511-miscellaneous-systems)
 6. [AES-256-CBC GPU Encryption — Deep Dive](#6-aes-256-cbc-gpu-encryption--deep-dive)
-7. [AES Encryption/Decryption Tool](#7-aes-encryptiondecryption-tool)
-8. [Technical Highlights](#8-technical-highlights)
 
 ---
 
@@ -425,23 +423,3 @@ This is a remarkably creative implementation within Udon's heavily constrained s
 - **GPU acceleration**: uses Shaders instead of CPU-intensive computation
 - **Frame-split processing**: avoids frame drops, maintaining smooth VR experience
 - **Full CBC mode**: CPU-side XOR chain completes industry-standard encryption
-
-## 7. AES Encryption/Decryption Tool
-
-The [index.html](../index.html) file in the repository root provides a browser-based AES-256-CBC encryption/decryption tool, fully compatible with Fish World's `CryptoAES256GPU` protocol:
-
-- **Encrypt**: Plaintext → Base64(IV + AES-256-CBC ciphertext)
-- **Decrypt**: Base64 ciphertext → Plaintext
-- **Key input**: Direct hex input or custom DeriveKey derivation
-- **IV management**: Auto-random generation or manual specification
-- All operations run locally in the browser using Web Crypto API
-
-## 8. Technical Highlights
-
-1. **Scale**: 174 independent Udon programs, ~167K lines of variable data, ~29K lines of function definitions
-2. **GPU Encryption**: An industry-rare approach of implementing AES-256 via Shaders within a VR sandbox
-3. **Complete Game Loop**: From tutorial to leaderboard, from rod purchase to AFK pet auto-fishing
-4. **Deep Network Sync**: Every critical state has Udon synced variables with serialization/deserialization logic
-5. **Persistence System**: Player data saved across sessions via VRChat's PlayerData/Persistence API
-6. **NPC System**: Full NPC AI with pathfinding, schedules, dialogue branching, and head tracking
-7. **Modular Design**: Feature modules communicate via loosely-coupled `SetProgramVariable` + `SendCustomEvent` pattern
