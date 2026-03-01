@@ -1,0 +1,152 @@
+void _start()
+localPlayer = get_LocalPlayer();// 16
+56 if (__intnl_SystemBoolean_0) //104
+{
+isVRUser = G_localPlayer.IsUserInVR();// 80
+96 if (enableDebugLogs) //104
+{
+}
+}
+116 return;
+void _onPlayerRestored()
+188 if (__intnl_SystemBoolean_1) //204
+{
+196 JUMP 252
+}
+260 if (__intnl_SystemBoolean_1) //288
+{
+280 return;
+}
+336 if (__intnl_SystemBoolean_4) //380
+{
+360 hapticsEnabled = __lcl_savedEnabled_SystemBoolean_0
+372 if (enableDebugLogs) //380
+{
+}
+}
+392 return;
+void SaveSettings()
+440 if (__intnl_SystemBoolean_5) //456
+{
+448 JUMP 476
+}
+468 return;
+SetBool(hapticsEnabled, persistenceKey);// 492
+508 if (enableDebugLogs) //516
+{
+}
+528 return;
+void __0_PlayHapticFeedback()
+576 if (__intnl_SystemBoolean_6) //592
+{
+584 JUMP 616
+}
+624 if (__intnl_SystemBoolean_6) //652
+{
+644 return;
+}
+660 JUMP 1444
+684 __lcl_localRod_VRCUdonUdonBehaviour_0 = __0__intnlparam
+720 if (__intnl_SystemBoolean_7) //736
+{
+728 JUMP 772
+}
+744 if (enableDebugLogs) //752
+{
+}
+764 return;
+804 if (__intnl_SystemBoolean_8) //924
+{
+G_localPlayer.PlayHapticEventInHand(__0_frequency__param, __0_amplitude__param, __0_duration__param, __const_VRCSDKBaseVRC_PickupPickupHand_0);// 852
+G_localPlayer.PlayHapticEventInHand(__0_frequency__param, __0_amplitude__param, __0_duration__param, __const_VRCSDKBaseVRC_PickupPickupHand_1);// 900
+916 if (enableDebugLogs) //924
+{
+}
+}
+936 return;
+void __0_PlayHapticFeedbackInHand()
+984 if (__intnl_SystemBoolean_9) //1000
+{
+992 JUMP 1024
+}
+1032 if (__intnl_SystemBoolean_9) //1060
+{
+1052 return;
+}
+1092 if (__intnl_SystemBoolean_10) //1108
+{
+1100 JUMP 1128
+}
+1120 return;
+G_localPlayer.PlayHapticEventInHand(__1_frequency__param, __1_amplitude__param, __1_duration__param, __0_hand__param);// 1168
+1184 if (enableDebugLogs) //1192
+{
+}
+1204 return;
+void __0_SetHapticsEnabled()
+1236 hapticsEnabled = __0_enabled__param
+1248 JUMP 408
+1264 if (enableDebugLogs) //1272
+{
+}
+1284 return;
+void ToggleHaptics()
+hapticsEnabled = op_UnaryNegation(hapticsEnabled);// 1316
+1332 JUMP 408
+1348 if (enableDebugLogs) //1356
+{
+}
+1368 return;
+void IsVRUser()
+1400 __0_IsVRUser__ret = isVRUser
+1416 return;
+1436 return;
+1484 __2__intnlparam = __intnl_VRCSDKBaseVRCPlayerApi_0
+1488 JUMP 1556
+1512 __0__intnlparam = __1__intnlparam
+1528 return;
+1548 return;
+__lcl_objects_UnityEngineGameObjectArray_0 = GetPlayerObjects(__2__intnlparam);// 1572
+1596 __lcl_i_SystemInt32_0 = __const_SystemInt32_0
+1664 if (__intnl_SystemBoolean_11) //1992
+{
+1736 if (__intnl_SystemBoolean_12) //1752
+{
+1744 JUMP 1760
+}
+1752 JUMP 1952
+1840 __4__intnlparam = __intnl_UnityEngineTransform_0
+1844 JUMP 2052
+1868 __lcl_foundScript_VRCUdonUdonBehaviour_0 = __3__intnlparam
+1904 if (__intnl_SystemBoolean_13) //1952
+{
+1928 __1__intnlparam = __lcl_foundScript_VRCUdonUdonBehaviour_0
+1944 return;
+}
+__lcl_i_SystemInt32_0 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_0);// 1976
+1984 JUMP 1600
+}
+2008 __1__intnlparam = __const_SystemObject_0
+2024 return;
+2044 return;
+2100 __lcl_udonBehaviours_UnityEngineComponentArray_0 = __intnl_UnityEngineComponentArray_0
+2120 __lcl_targetID_SystemInt64_0 = __const_SystemInt64_0
+2164 __intnl_SystemInt32_2 = __const_SystemInt32_0
+2208 if (__intnl_SystemBoolean_14) //2500
+{
+__lcl_behaviour_VRCUdonUdonBehaviour_0 = L_objects.Get(__lcl_i_SystemInt32_0).get_transform().GetComponentsInChildren(__const_SystemType_0).Get(__intnl_SystemInt32_2);// 2240
+__lcl_idValue_SystemObject_0 = L_behaviour.GetProgramVariable(__const_SystemString_0);// 2272
+2320 if (__intnl_SystemBoolean_15) //2384
+{
+}
+2392 if (__intnl_SystemBoolean_15) //2460
+{
+2416 __intnl_UnityEngineComponent_0 = __lcl_behaviour_VRCUdonUdonBehaviour_0
+2436 __3__intnlparam = __intnl_UnityEngineComponent_0
+2452 return;
+}
+2492 JUMP 2168
+}
+2516 __3__intnlparam = __const_SystemObject_0
+2532 return;
+2552 return;

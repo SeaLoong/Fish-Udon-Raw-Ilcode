@@ -1,0 +1,690 @@
+using System;
+using VRC.Udon;
+using UnityEngine;
+using VRC.SDK3.Data;
+using VRC.SDKBase;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Boolean __intnl_SystemBoolean_13 = false;
+private Boolean __intnl_SystemBoolean_23 = false;
+private Int32 __intnl_SystemInt32_15 = 0;
+private Int64 __const_SystemInt64_0 = 9117604706513487623;
+private Int32 __0_index__param = 0;
+private UdonBehaviour __6__intnlparam = null;
+private object __intnl_SystemObject_0 = null;
+private String __const_SystemString_0 = "InventoryData";
+private Transform __intnl_UnityEngineTransform_0 = null;
+private Boolean __intnl_SystemBoolean_16 = false;
+private Boolean __intnl_SystemBoolean_26 = false;
+private DataToken __intnl_VRCSDK3DataDataToken_2 = Null;
+private object __intnl_SystemObject_10 = null;
+private Int32 __intnl_SystemInt32_12 = 0;
+private Int32 __intnl_SystemInt32_22 = 0;
+private Component[] __lcl_availableBobbers_UnityEngineComponentArray_0 = null;
+private UInt32 __gintnl_SystemUInt32_5 = 1976;
+private UInt32 __gintnl_SystemUInt32_4 = 1488;
+private UInt32 __gintnl_SystemUInt32_7 = 6844;
+private UInt32 __gintnl_SystemUInt32_6 = 6260;
+private UInt32 __gintnl_SystemUInt32_1 = 540;
+private UInt32 __gintnl_SystemUInt32_0 = 152;
+private UInt32 __gintnl_SystemUInt32_3 = 1344;
+private UInt32 __gintnl_SystemUInt32_2 = 1116;
+private Int32 __0_GetCurrentBobberIndex__ret = 0;
+private Boolean __const_SystemBoolean_0 = true;
+private Boolean __const_SystemBoolean_1 = false;
+private UdonBehaviour __0_value__param = null;
+private Int32 __lcl_index_SystemInt32_1 = 0;
+private Int32 __lcl_index_SystemInt32_0 = 0;
+private String __const_SystemString_5 = "isUnlockedByDefault";
+private Int32 currentlySelectedBobber = 0;
+private UdonBehaviour __3__intnlparam = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private DataToken __intnl_VRCSDK3DataDataToken_1 = Null;
+private UdonBehaviour __0___0_GetBobber__ret = null;
+private String __const_SystemString_10 = "__0___0_CanUseBobber__ret";
+private String __const_SystemString_11 = "__refl_typeid";
+private VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_0 = null;
+private Int64 __refl_typeid = 3284946635999643212;
+private object __intnl_SystemObject_7 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_2 = null;
+private Component[] __0___0_GetBobbersToUnlockAtLevel__ret = null;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Component __intnl_UnityEngineComponent_0 = null;
+private Boolean __intnl_SystemBoolean_11 = false;
+private Boolean __intnl_SystemBoolean_21 = false;
+private Int32 __intnl_SystemInt32_17 = 0;
+private UdonBehaviour __0__intnlparam = null;
+private Component __7__intnlparam = null;
+private Component[] __lcl_newArray_UnityEngineComponentArray_0 = null;
+private object __intnl_SystemObject_2 = null;
+private object __intnl_SystemObject_9 = null;
+private DataDictionary __intnl_VRCSDK3DataDataDictionary_1 = null;
+private DataDictionary __intnl_VRCSDK3DataDataDictionary_0 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_1 = null;
+private String __const_SystemString_2 = "__0_playerLevel__param";
+private UdonBehaviour _old__playerInventoryData = null;
+private Double __intnl_SystemDouble_1 = 0;
+private Boolean __intnl_SystemBoolean_19 = false;
+private UdonBehaviour __lcl_foundScript_VRCUdonUdonBehaviour_0 = null;
+private DataList __lcl_unlockedBobbers_VRCSDK3DataDataList_0 = null;
+private DataList __lcl_unlockedBobbers_VRCSDK3DataDataList_1 = null;
+private GameObject __intnl_UnityEngineGameObject_1 = null;
+private GameObject __intnl_UnityEngineGameObject_0 = null;
+private Boolean __intnl_SystemBoolean_14 = false;
+private Boolean __intnl_SystemBoolean_24 = false;
+private DataToken __intnl_VRCSDK3DataDataToken_4 = Null;
+private Component[] __intnl_UnityEngineComponentArray_0 = null;
+private Int32 __intnl_SystemInt32_14 = 0;
+private Int32 __intnl_SystemInt32_24 = 0;
+private UdonBehaviour __0_GetCurrentBobber__ret = null;
+private Int32 __intnl_SystemInt32_19 = 0;
+private object __const_SystemObject_0 = null;
+public Int32 defaultBobberIndex;
+private Boolean __0___0_SelectBobberById__ret = false;
+private Component[] __lcl_unlockedBobbers_UnityEngineComponentArray_0 = null;
+private String __intnl_SystemString_0 = null;
+private Type __const_SystemType_0 = typeof(UdonBehaviour);
+private object __intnl_SystemObject_1 = null;
+private String __const_SystemString_7 = "bobberName";
+private UdonBehaviour __4__intnlparam = null;
+private Boolean __intnl_SystemBoolean_17 = false;
+private Boolean __intnl_SystemBoolean_27 = false;
+private DataToken __intnl_VRCSDK3DataDataToken_3 = Null;
+private Component[] __lcl_autoUnlockBobbers_UnityEngineComponentArray_0 = null;
+private Int32 __intnl_SystemInt32_11 = 0;
+private Int32 __intnl_SystemInt32_21 = 0;
+private Component[] __lcl_availableBobbers_UnityEngineComponentArray_1 = null;
+private UdonBehaviour _playerInventoryData = null;
+private Int64 __intnl_SystemInt64_0 = 0;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_4 = null;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private String __const_SystemString_4 = "__0___0_ShouldAutoUnlockAtLevel__ret";
+private Int32 __2_playerLevel__param = 0;
+private Boolean __0___0_SelectBobberByName__ret = false;
+private Int32 __lcl_i_SystemInt32_1 = 0;
+private Int32 __lcl_i_SystemInt32_0 = 0;
+private Int32 __lcl_i_SystemInt32_3 = 0;
+private Int32 __lcl_i_SystemInt32_2 = 0;
+private Int32 __lcl_i_SystemInt32_5 = 0;
+private Int32 __lcl_i_SystemInt32_4 = 0;
+private Int32 __lcl_i_SystemInt32_7 = 0;
+private Int32 __lcl_i_SystemInt32_6 = 0;
+private UdonBehaviour __lcl_behaviour_VRCUdonUdonBehaviour_0 = null;
+private String __0_bobberName__param = null;
+private Int32 __lcl_autoUnlockCount_SystemInt32_0 = 0;
+private Component[] __1__intnlparam = null;
+private object __intnl_SystemObject_4 = null;
+private UdonBehaviour __lcl_bobber_VRCUdonUdonBehaviour_1 = null;
+private UdonBehaviour __lcl_bobber_VRCUdonUdonBehaviour_0 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_3 = null;
+private String __const_SystemString_9 = "__0_CanUseBobber";
+private Boolean __intnl_SystemBoolean_12 = false;
+private Boolean __intnl_SystemBoolean_22 = false;
+private Int32 __intnl_SystemInt32_16 = 0;
+private String __refl_typename = "BobberDatabase";
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Int32 __intnl_SystemInt32_5 = 0;
+private Int32 __intnl_SystemInt32_4 = 0;
+private Int32 __intnl_SystemInt32_7 = 0;
+private Int32 __intnl_SystemInt32_6 = 0;
+private Int32 __intnl_SystemInt32_9 = 0;
+private Int32 __intnl_SystemInt32_8 = 0;
+private Component[] __0___0_GetLocalPlayerBobbers__ret = null;
+private Int32 __1_index__param = 0;
+private object __intnl_SystemObject_3 = null;
+private Int32 __1_bobberId__param = 0;
+private Int64 __lcl_targetID_SystemInt64_0 = 0;
+private String __const_SystemString_1 = "unlockedBobbers";
+private Double __intnl_SystemDouble_0 = 0;
+private object __lcl_idValue_SystemObject_0 = null;
+public Component[] bobberEntries;
+private VRCPlayerApi __5__intnlparam = null;
+private Boolean __intnl_SystemBoolean_15 = false;
+private Boolean __intnl_SystemBoolean_25 = false;
+private DataToken __intnl_VRCSDK3DataDataToken_5 = Null;
+private Int32 __intnl_SystemInt32_13 = 0;
+private Int32 __intnl_SystemInt32_23 = 0;
+private Int32 __intnl_SystemInt32_18 = 0;
+private Component[] __0_GetAllBobbers__ret = null;
+private UdonBehaviour __0___0_GetBobberById__ret = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_6 = null;
+private String __const_SystemString_6 = "bobberId";
+private Int32 __0_playerLevel__param = 0;
+private UdonBehaviour __0_get_playerInventoryData__ret = null;
+private DataToken __intnl_VRCSDK3DataDataToken_0 = Null;
+private Int32 __intnl_SystemInt32_10 = 0;
+private Int32 __intnl_SystemInt32_20 = 0;
+private object __intnl_SystemObject_6 = null;
+private Int32 __0_bobberId__param = 0;
+private Int32 __1_playerLevel__param = 0;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_5 = null;
+private Component[] __0_GetInventoryBobbers__ret = null;
+private Component[] __2__intnlparam = null;
+private GameObject[] __lcl_objects_UnityEngineGameObjectArray_0 = null;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Boolean __intnl_SystemBoolean_20 = false;
+private Int32 __const_SystemInt32_1 = 1;
+private Int32 __const_SystemInt32_0 = 0;
+private Component[] __lcl_udonBehaviours_UnityEngineComponentArray_0 = null;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private Component[] __0___0_GetUnlockedBobbers__ret = null;
+private Int32 __0_GetBobberCount__ret = 0;
+private Int32 __lcl_unlockedCount_SystemInt32_0 = 0;
+private object __intnl_SystemObject_5 = null;
+private Boolean __0___0_SelectBobber__ret = false;
+private object __intnl_SystemObject_8 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_0 = null;
+private String __const_SystemString_3 = "__0_ShouldAutoUnlockAtLevel";
+private String __const_SystemString_8 = "__1_playerLevel__param";
+private Boolean __intnl_SystemBoolean_18 = false;
+
+
+public void get_playerInventoryData()
+{
+__intnl_UnityEngineObject_0 = _playerInventoryData;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_0)
+{
+__0_get_playerInventoryData__ret = _playerInventoryData;
+return;
+}
+UNDEF_39150_6320();
+_playerInventoryData = __0__intnlparam;
+__0_get_playerInventoryData__ret = _playerInventoryData;
+return;
+}
+public void _onVarChange__playerInventoryData()
+{
+__0_value__param = _playerInventoryData;
+_playerInventoryData = _old__playerInventoryData;
+_playerInventoryData = __0_value__param;
+}
+public void _start()
+{
+currentlySelectedBobber = defaultBobberIndex;
+__intnl_SystemBoolean_1 = currentlySelectedBobber < __const_SystemInt32_0;
+if (__intnl_SystemBoolean_1)
+{
+}
+else
+{
+__intnl_SystemInt32_0 = bobberEntries.Length;
+__intnl_SystemBoolean_1 = currentlySelectedBobber >= __intnl_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_1)
+{
+currentlySelectedBobber = __const_SystemInt32_0;
+}
+}
+public void __0_GetLocalPlayerBobbers()
+{
+get_playerInventoryData();
+__intnl_SystemObject_0 = __0_get_playerInventoryData__ret.GetProgramVariable(__const_SystemString_0);
+__intnl_VRCSDK3DataDataDictionary_0 = (DataDictionary)__intnl_SystemObject_0;
+__intnl_VRCSDK3DataDataToken_0 = __const_SystemString_1;
+__intnl_VRCSDK3DataDataToken_1 = __intnl_VRCSDK3DataDataDictionary_0.Item;
+__lcl_unlockedBobbers_VRCSDK3DataDataList_0 = __intnl_VRCSDK3DataDataToken_1.DataList;
+__lcl_availableBobbers_UnityEngineComponentArray_0 = __const_SystemInt32_0.ctor();
+__lcl_i_SystemInt32_0 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_1 = bobberEntries.Length;
+__intnl_SystemBoolean_2 = __lcl_i_SystemInt32_0 < __intnl_SystemInt32_1;
+if (__intnl_SystemBoolean_2)
+{
+break;
+}
+__lcl_bobber_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(bobberEntries[__lcl_i_SystemInt32_0]);
+__intnl_SystemInt32_2 = __0_playerLevel__param;
+__lcl_bobber_VRCUdonUdonBehaviour_0.SetProgramVariable(__const_SystemString_2, __0_playerLevel__param);
+__lcl_bobber_VRCUdonUdonBehaviour_0.SendCustomEvent(__const_SystemString_3);
+__intnl_SystemObject_1 = __lcl_bobber_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_4);
+__intnl_SystemBoolean_4 = (Boolean)__intnl_SystemObject_1;
+__intnl_SystemBoolean_3 = __intnl_SystemBoolean_4;
+if (__intnl_SystemBoolean_3)
+{
+}
+else
+{
+__intnl_SystemObject_2 = __lcl_bobber_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_5);
+__intnl_SystemBoolean_3 = (Boolean)__intnl_SystemObject_2;
+}
+if (__intnl_SystemBoolean_3)
+{
+__2__intnlparam = __lcl_availableBobbers_UnityEngineComponentArray_0;
+__3__intnlparam = __lcl_bobber_VRCUdonUdonBehaviour_0;
+UNDEF_39150_6548();
+__lcl_availableBobbers_UnityEngineComponentArray_0 = __1__intnlparam;
+}
+__intnl_SystemObject_3 = __lcl_bobber_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_6);
+__intnl_SystemInt32_3 = Convert.ToInt32(__intnl_SystemObject_3);
+__intnl_SystemDouble_0 = Convert.ToDouble(__intnl_SystemInt32_3);
+__intnl_VRCSDK3DataDataToken_2 = __intnl_SystemDouble_0;
+__intnl_SystemBoolean_5 = __lcl_unlockedBobbers_VRCSDK3DataDataList_0.Contains(__intnl_VRCSDK3DataDataToken_2);
+if (__intnl_SystemBoolean_5)
+{
+__2__intnlparam = __lcl_availableBobbers_UnityEngineComponentArray_0;
+__3__intnlparam = __lcl_bobber_VRCUdonUdonBehaviour_0;
+UNDEF_39150_6548();
+__lcl_availableBobbers_UnityEngineComponentArray_0 = __1__intnlparam;
+}
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_1;
+}
+__0___0_GetLocalPlayerBobbers__ret = __lcl_availableBobbers_UnityEngineComponentArray_0;
+return;
+}
+public void GetInventoryBobbers()
+{
+get_playerInventoryData();
+__intnl_SystemObject_4 = __0_get_playerInventoryData__ret.GetProgramVariable(__const_SystemString_0);
+__intnl_VRCSDK3DataDataDictionary_1 = (DataDictionary)__intnl_SystemObject_4;
+__intnl_VRCSDK3DataDataToken_3 = __const_SystemString_1;
+__intnl_VRCSDK3DataDataToken_4 = __intnl_VRCSDK3DataDataDictionary_1.Item;
+__lcl_unlockedBobbers_VRCSDK3DataDataList_1 = __intnl_VRCSDK3DataDataToken_4.DataList;
+__lcl_availableBobbers_UnityEngineComponentArray_1 = __const_SystemInt32_0.ctor();
+__lcl_i_SystemInt32_1 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_4 = bobberEntries.Length;
+__intnl_SystemBoolean_6 = __lcl_i_SystemInt32_1 < __intnl_SystemInt32_4;
+if (__intnl_SystemBoolean_6)
+{
+break;
+}
+__lcl_bobber_VRCUdonUdonBehaviour_1 = (UdonBehaviour)(bobberEntries[__lcl_i_SystemInt32_1]);
+__intnl_SystemObject_5 = __lcl_bobber_VRCUdonUdonBehaviour_1.GetProgramVariable(__const_SystemString_6);
+__intnl_SystemInt32_5 = Convert.ToInt32(__intnl_SystemObject_5);
+__intnl_SystemDouble_1 = Convert.ToDouble(__intnl_SystemInt32_5);
+__intnl_VRCSDK3DataDataToken_5 = __intnl_SystemDouble_1;
+__intnl_SystemBoolean_7 = __lcl_unlockedBobbers_VRCSDK3DataDataList_1.Contains(__intnl_VRCSDK3DataDataToken_5);
+if (__intnl_SystemBoolean_7)
+{
+__2__intnlparam = __lcl_availableBobbers_UnityEngineComponentArray_1;
+__3__intnlparam = __lcl_bobber_VRCUdonUdonBehaviour_1;
+UNDEF_39150_6548();
+__lcl_availableBobbers_UnityEngineComponentArray_1 = __1__intnlparam;
+}
+__lcl_i_SystemInt32_1 = __lcl_i_SystemInt32_1 + __const_SystemInt32_1;
+}
+__0_GetInventoryBobbers__ret = __lcl_availableBobbers_UnityEngineComponentArray_1;
+return;
+}
+public void GetCurrentBobber()
+{
+__intnl_SystemBoolean_8 = bobberEntries == __const_SystemObject_0;
+if (__intnl_SystemBoolean_8)
+{
+}
+else
+{
+__intnl_SystemInt32_6 = bobberEntries.Length;
+__intnl_SystemBoolean_8 = __intnl_SystemInt32_6 == __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_8)
+{
+__0_GetCurrentBobber__ret = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+__intnl_SystemBoolean_9 = currentlySelectedBobber < __const_SystemInt32_0;
+if (__intnl_SystemBoolean_9)
+{
+}
+else
+{
+__intnl_SystemInt32_7 = bobberEntries.Length;
+__intnl_SystemBoolean_9 = currentlySelectedBobber >= __intnl_SystemInt32_7;
+}
+if (__intnl_SystemBoolean_9)
+{
+currentlySelectedBobber = __const_SystemInt32_0;
+}
+__0_GetCurrentBobber__ret = (UdonBehaviour)(bobberEntries[currentlySelectedBobber]);
+return;
+}
+public void __0_SelectBobberById()
+{
+__lcl_i_SystemInt32_2 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_8 = bobberEntries.Length;
+__intnl_SystemBoolean_10 = __lcl_i_SystemInt32_2 < __intnl_SystemInt32_8;
+if (__intnl_SystemBoolean_10)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(bobberEntries[__lcl_i_SystemInt32_2]);
+__intnl_SystemObject_6 = __intnl_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_6);
+__intnl_SystemInt32_9 = Convert.ToInt32(__intnl_SystemObject_6);
+__intnl_SystemBoolean_11 = __intnl_SystemInt32_9 == __0_bobberId__param;
+if (__intnl_SystemBoolean_11)
+{
+currentlySelectedBobber = __lcl_i_SystemInt32_2;
+__0___0_SelectBobberById__ret = __const_SystemBoolean_0;
+return;
+}
+__lcl_i_SystemInt32_2 = __lcl_i_SystemInt32_2 + __const_SystemInt32_1;
+}
+__0___0_SelectBobberById__ret = __const_SystemBoolean_1;
+return;
+}
+public void __0_SelectBobber()
+{
+__intnl_SystemBoolean_12 = __0_index__param < __const_SystemInt32_0;
+if (__intnl_SystemBoolean_12)
+{
+}
+else
+{
+__intnl_SystemInt32_10 = bobberEntries.Length;
+__intnl_SystemBoolean_12 = __0_index__param >= __intnl_SystemInt32_10;
+}
+if (__intnl_SystemBoolean_12)
+{
+__0___0_SelectBobber__ret = __const_SystemBoolean_1;
+return;
+}
+currentlySelectedBobber = __0_index__param;
+__0___0_SelectBobber__ret = __const_SystemBoolean_0;
+return;
+}
+public void __0_SelectBobberByName()
+{
+__lcl_i_SystemInt32_3 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_11 = bobberEntries.Length;
+__intnl_SystemBoolean_13 = __lcl_i_SystemInt32_3 < __intnl_SystemInt32_11;
+if (__intnl_SystemBoolean_13)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_1 = (UdonBehaviour)(bobberEntries[__lcl_i_SystemInt32_3]);
+__intnl_SystemObject_7 = __intnl_VRCUdonUdonBehaviour_1.GetProgramVariable(__const_SystemString_7);
+__intnl_SystemString_0 = (String)__intnl_SystemObject_7;
+__intnl_SystemBoolean_14 = __intnl_SystemString_0 == __0_bobberName__param;
+if (__intnl_SystemBoolean_14)
+{
+currentlySelectedBobber = __lcl_i_SystemInt32_3;
+__0___0_SelectBobberByName__ret = __const_SystemBoolean_0;
+return;
+}
+__lcl_i_SystemInt32_3 = __lcl_i_SystemInt32_3 + __const_SystemInt32_1;
+}
+__0___0_SelectBobberByName__ret = __const_SystemBoolean_1;
+return;
+}
+public void __0_GetBobberById()
+{
+__lcl_i_SystemInt32_4 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_12 = bobberEntries.Length;
+__intnl_SystemBoolean_15 = __lcl_i_SystemInt32_4 < __intnl_SystemInt32_12;
+if (__intnl_SystemBoolean_15)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_2 = (UdonBehaviour)(bobberEntries[__lcl_i_SystemInt32_4]);
+__intnl_SystemObject_8 = __intnl_VRCUdonUdonBehaviour_2.GetProgramVariable(__const_SystemString_6);
+__intnl_SystemInt32_13 = Convert.ToInt32(__intnl_SystemObject_8);
+__intnl_SystemBoolean_16 = __intnl_SystemInt32_13 == __1_bobberId__param;
+if (__intnl_SystemBoolean_16)
+{
+__0___0_GetBobberById__ret = (UdonBehaviour)(bobberEntries[__lcl_i_SystemInt32_4]);
+return;
+}
+__lcl_i_SystemInt32_4 = __lcl_i_SystemInt32_4 + __const_SystemInt32_1;
+}
+__0___0_GetBobberById__ret = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+public void __0_GetBobber()
+{
+__intnl_SystemBoolean_17 = __1_index__param < __const_SystemInt32_0;
+if (__intnl_SystemBoolean_17)
+{
+}
+else
+{
+__intnl_SystemInt32_14 = bobberEntries.Length;
+__intnl_SystemBoolean_17 = __1_index__param >= __intnl_SystemInt32_14;
+}
+if (__intnl_SystemBoolean_17)
+{
+__0___0_GetBobber__ret = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+__0___0_GetBobber__ret = (UdonBehaviour)(bobberEntries[__1_index__param]);
+return;
+}
+public void GetAllBobbers()
+{
+__0_GetAllBobbers__ret = bobberEntries;
+return;
+}
+public void __0_GetUnlockedBobbers()
+{
+__lcl_unlockedCount_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_5 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_15 = bobberEntries.Length;
+__intnl_SystemBoolean_18 = __lcl_i_SystemInt32_5 < __intnl_SystemInt32_15;
+if (__intnl_SystemBoolean_18)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_3 = (UdonBehaviour)(bobberEntries[__lcl_i_SystemInt32_5]);
+__intnl_SystemInt32_16 = __1_playerLevel__param;
+__intnl_VRCUdonUdonBehaviour_3.SetProgramVariable(__const_SystemString_8, __1_playerLevel__param);
+__intnl_VRCUdonUdonBehaviour_3.SendCustomEvent(__const_SystemString_9);
+__intnl_SystemObject_9 = __intnl_VRCUdonUdonBehaviour_3.GetProgramVariable(__const_SystemString_10);
+__intnl_SystemBoolean_19 = (Boolean)__intnl_SystemObject_9;
+if (__intnl_SystemBoolean_19)
+{
+__lcl_unlockedCount_SystemInt32_0 = __lcl_unlockedCount_SystemInt32_0 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_5 = __lcl_i_SystemInt32_5 + __const_SystemInt32_1;
+}
+__lcl_unlockedBobbers_UnityEngineComponentArray_0 = __lcl_unlockedCount_SystemInt32_0.ctor();
+__lcl_index_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_5 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_15 = bobberEntries.Length;
+__intnl_SystemBoolean_18 = __lcl_i_SystemInt32_5 < __intnl_SystemInt32_15;
+if (__intnl_SystemBoolean_18)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_3 = (UdonBehaviour)(bobberEntries[__lcl_i_SystemInt32_5]);
+__intnl_SystemInt32_16 = __1_playerLevel__param;
+__intnl_VRCUdonUdonBehaviour_3.SetProgramVariable(__const_SystemString_8, __1_playerLevel__param);
+__intnl_VRCUdonUdonBehaviour_3.SendCustomEvent(__const_SystemString_9);
+__intnl_SystemObject_9 = __intnl_VRCUdonUdonBehaviour_3.GetProgramVariable(__const_SystemString_10);
+__intnl_SystemBoolean_19 = (Boolean)__intnl_SystemObject_9;
+if (__intnl_SystemBoolean_19)
+{
+__intnl_VRCUdonUdonBehaviour_4 = (UdonBehaviour)(bobberEntries[__lcl_i_SystemInt32_5]);
+__lcl_unlockedBobbers_UnityEngineComponentArray_0.Set(__lcl_index_SystemInt32_0, __intnl_VRCUdonUdonBehaviour_4);
+__lcl_index_SystemInt32_0 = __lcl_index_SystemInt32_0 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_5 = __lcl_i_SystemInt32_5 + __const_SystemInt32_1;
+}
+__0___0_GetUnlockedBobbers__ret = __lcl_unlockedBobbers_UnityEngineComponentArray_0;
+return;
+}
+public void __0_GetBobbersToUnlockAtLevel()
+{
+__lcl_autoUnlockCount_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_6 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_17 = bobberEntries.Length;
+__intnl_SystemBoolean_20 = __lcl_i_SystemInt32_6 < __intnl_SystemInt32_17;
+if (__intnl_SystemBoolean_20)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_5 = (UdonBehaviour)(bobberEntries[__lcl_i_SystemInt32_6]);
+__intnl_SystemInt32_18 = __2_playerLevel__param;
+__intnl_VRCUdonUdonBehaviour_5.SetProgramVariable(__const_SystemString_2, __2_playerLevel__param);
+__intnl_VRCUdonUdonBehaviour_5.SendCustomEvent(__const_SystemString_3);
+__intnl_SystemObject_10 = __intnl_VRCUdonUdonBehaviour_5.GetProgramVariable(__const_SystemString_4);
+__intnl_SystemBoolean_21 = (Boolean)__intnl_SystemObject_10;
+if (__intnl_SystemBoolean_21)
+{
+__lcl_autoUnlockCount_SystemInt32_0 = __lcl_autoUnlockCount_SystemInt32_0 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_6 = __lcl_i_SystemInt32_6 + __const_SystemInt32_1;
+}
+__lcl_autoUnlockBobbers_UnityEngineComponentArray_0 = __lcl_autoUnlockCount_SystemInt32_0.ctor();
+__lcl_index_SystemInt32_1 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_6 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_17 = bobberEntries.Length;
+__intnl_SystemBoolean_20 = __lcl_i_SystemInt32_6 < __intnl_SystemInt32_17;
+if (__intnl_SystemBoolean_20)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_5 = (UdonBehaviour)(bobberEntries[__lcl_i_SystemInt32_6]);
+__intnl_SystemInt32_18 = __2_playerLevel__param;
+__intnl_VRCUdonUdonBehaviour_5.SetProgramVariable(__const_SystemString_2, __2_playerLevel__param);
+__intnl_VRCUdonUdonBehaviour_5.SendCustomEvent(__const_SystemString_3);
+__intnl_SystemObject_10 = __intnl_VRCUdonUdonBehaviour_5.GetProgramVariable(__const_SystemString_4);
+__intnl_SystemBoolean_21 = (Boolean)__intnl_SystemObject_10;
+if (__intnl_SystemBoolean_21)
+{
+__intnl_VRCUdonUdonBehaviour_6 = (UdonBehaviour)(bobberEntries[__lcl_i_SystemInt32_6]);
+__lcl_autoUnlockBobbers_UnityEngineComponentArray_0.Set(__lcl_index_SystemInt32_1, __intnl_VRCUdonUdonBehaviour_6);
+__lcl_index_SystemInt32_1 = __lcl_index_SystemInt32_1 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_6 = __lcl_i_SystemInt32_6 + __const_SystemInt32_1;
+}
+__0___0_GetBobbersToUnlockAtLevel__ret = __lcl_autoUnlockBobbers_UnityEngineComponentArray_0;
+return;
+}
+public void GetCurrentBobberIndex()
+{
+__0_GetCurrentBobberIndex__ret = currentlySelectedBobber;
+return;
+}
+public void GetBobberCount()
+{
+__intnl_SystemBoolean_22 = bobberEntries != __const_SystemObject_0;
+if (__intnl_SystemBoolean_22)
+{
+__0_GetBobberCount__ret = bobberEntries.Length;
+}
+else
+{
+__0_GetBobberCount__ret = __const_SystemInt32_0;
+}
+return;
+}
+private void UNDEF_39150_6320()
+{
+__intnl_VRCSDKBaseVRCPlayerApi_0 = Networking.LocalPlayer;
+__5__intnlparam = __intnl_VRCSDKBaseVRCPlayerApi_0;
+UNDEF_39150_7044();
+__0__intnlparam = __4__intnlparam;
+return;
+}
+private void UNDEF_39150_6548()
+{
+__intnl_SystemInt32_19 = __2__intnlparam.Length;
+__intnl_SystemInt32_20 = __intnl_SystemInt32_19 + __const_SystemInt32_1;
+__lcl_newArray_UnityEngineComponentArray_0 = __intnl_SystemInt32_20.ctor();
+__2__intnlparam.CopyTo(__lcl_newArray_UnityEngineComponentArray_0, __const_SystemInt32_0);
+__intnl_SystemInt32_21 = __2__intnlparam.Length;
+__lcl_newArray_UnityEngineComponentArray_0.Set(__intnl_SystemInt32_21, __3__intnlparam);
+__1__intnlparam = __lcl_newArray_UnityEngineComponentArray_0;
+return;
+}
+private void UNDEF_39150_7044()
+{
+__lcl_objects_UnityEngineGameObjectArray_0 = Networking.GetPlayerObjects(__5__intnlparam);
+__lcl_i_SystemInt32_7 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_22 = __lcl_objects_UnityEngineGameObjectArray_0.Length;
+__intnl_SystemBoolean_23 = __lcl_i_SystemInt32_7 < __intnl_SystemInt32_22;
+if (__intnl_SystemBoolean_23)
+{
+break;
+}
+__intnl_UnityEngineGameObject_0 = (GameObject)(__lcl_objects_UnityEngineGameObjectArray_0[__lcl_i_SystemInt32_7]);
+__intnl_SystemBoolean_24 = Utilities.IsValid(__intnl_UnityEngineGameObject_0);
+if (__intnl_SystemBoolean_24)
+{
+}
+else
+{
+}
+__intnl_UnityEngineGameObject_1 = (GameObject)(__lcl_objects_UnityEngineGameObjectArray_0[__lcl_i_SystemInt32_7]);
+__intnl_UnityEngineTransform_0 = __intnl_UnityEngineGameObject_1.transform;
+__7__intnlparam = __intnl_UnityEngineTransform_0;
+UNDEF_39150_7552();
+__lcl_foundScript_VRCUdonUdonBehaviour_0 = __6__intnlparam;
+__intnl_SystemBoolean_25 = Utilities.IsValid(__lcl_foundScript_VRCUdonUdonBehaviour_0);
+if (__intnl_SystemBoolean_25)
+{
+__4__intnlparam = __lcl_foundScript_VRCUdonUdonBehaviour_0;
+return;
+}
+__lcl_i_SystemInt32_7 = __lcl_i_SystemInt32_7 + __const_SystemInt32_1;
+}
+__4__intnlparam = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+private void UNDEF_39150_7552()
+{
+__intnl_UnityEngineComponentArray_0 = __7__intnlparam.GetComponentsInChildren(__const_SystemType_0);
+__lcl_udonBehaviours_UnityEngineComponentArray_0 = __intnl_UnityEngineComponentArray_0;
+__lcl_targetID_SystemInt64_0 = __const_SystemInt64_0;
+__intnl_SystemInt32_23 = __lcl_udonBehaviours_UnityEngineComponentArray_0.Length;
+__intnl_SystemInt32_24 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_26 = __intnl_SystemInt32_24 < __intnl_SystemInt32_23;
+if (__intnl_SystemBoolean_26)
+{
+break;
+}
+__lcl_behaviour_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(__lcl_udonBehaviours_UnityEngineComponentArray_0[__intnl_SystemInt32_24]);
+__lcl_idValue_SystemObject_0 = __lcl_behaviour_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_11);
+__intnl_SystemBoolean_27 = __lcl_idValue_SystemObject_0 != __const_SystemObject_0;
+if (__intnl_SystemBoolean_27)
+{
+__intnl_SystemInt64_0 = Convert.ToInt64(__lcl_idValue_SystemObject_0);
+__intnl_SystemBoolean_27 = __intnl_SystemInt64_0 == __lcl_targetID_SystemInt64_0;
+}
+if (__intnl_SystemBoolean_27)
+{
+__intnl_UnityEngineComponent_0 = __lcl_behaviour_VRCUdonUdonBehaviour_0;
+__6__intnlparam = (UdonBehaviour)__intnl_UnityEngineComponent_0;
+return;
+}
+__intnl_SystemInt32_24 = __intnl_SystemInt32_24 + __const_SystemInt32_1;
+}
+__6__intnlparam = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+}

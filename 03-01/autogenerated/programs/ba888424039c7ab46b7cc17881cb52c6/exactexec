@@ -1,0 +1,294 @@
+using System;
+using UnityEngine;
+using VRC.Udon;
+using VRC.SDK3.Data;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Int32 __0_index__param = 0;
+public Component[] eventPrefabs;
+private object __intnl_SystemObject_0 = null;
+private UdonBehaviour __0_returnedEvent__param = null;
+private String __const_SystemString_0 = "_OnSeaEventReturned";
+private UdonBehaviour __lcl_callback_VRCUdonUdonBehaviour_0 = null;
+private UInt32 __gintnl_SystemUInt32_1 = 2192;
+private UInt32 __gintnl_SystemUInt32_0 = 1628;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_7 = null;
+private Int32[] __3__intnlparam = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private DataToken __intnl_VRCSDK3DataDataToken_1 = Null;
+private Int32 __0_GetEventCount__ret = 0;
+private Int64 __refl_typeid = -8900794449796893240;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_2 = null;
+private Int32[] __lcl_newArray_SystemInt32Array_0 = null;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Boolean __intnl_SystemBoolean_11 = false;
+private Component[] __0__intnlparam = null;
+private Component[] __lcl_newArray_UnityEngineComponentArray_0 = null;
+private object __intnl_SystemObject_2 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_1 = null;
+private Int32[] __lcl_activePrefabIndices_SystemInt32Array_0 = null;
+private String __const_SystemString_2 = "__0_get_IsInitialized__ret";
+private Int32 __lcl_count_SystemInt32_0 = 0;
+private object __const_SystemObject_0 = null;
+private object __intnl_SystemObject_1 = null;
+private UdonBehaviour __0___0_GetEventAtIndex__ret = null;
+private Int32[] __4__intnlparam = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_4 = null;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private Component[] __lcl_activeEvents_UnityEngineComponentArray_0 = null;
+private Int32 __lcl_i_SystemInt32_1 = 0;
+private Int32 __lcl_i_SystemInt32_0 = 0;
+private Int32 __lcl_i_SystemInt32_3 = 0;
+private Int32 __lcl_i_SystemInt32_2 = 0;
+private UdonBehaviour __0_callback__param = null;
+private Component[] __1__intnlparam = null;
+public Int32 lastReturnedEventIndex;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_3 = null;
+private String __refl_typename = "SeaEventPool";
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Int32 __intnl_SystemInt32_5 = 0;
+private Int32 __intnl_SystemInt32_4 = 0;
+private Int32 __intnl_SystemInt32_7 = 0;
+private Int32 __intnl_SystemInt32_6 = 0;
+private Int32 __intnl_SystemInt32_9 = 0;
+private Int32 __intnl_SystemInt32_8 = 0;
+private object __intnl_SystemObject_3 = null;
+private String __const_SystemString_1 = "get_IsInitialized";
+private Int32 __5__intnlparam = 0;
+private Component[] __0_GetActiveEvents__ret = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_6 = null;
+public GameObject prefabParent;
+private DataList _callbacks = VRC.SDK3.Data.DataList;
+private DataToken __intnl_VRCSDK3DataDataToken_0 = Null;
+private Int32 __intnl_SystemInt32_10 = 0;
+private Int32[] __0_GetActivePrefabIndices__ret = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_5 = null;
+private UdonBehaviour __2__intnlparam = null;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Int32 __0_GetActiveEventCount__ret = 0;
+private Int32 __const_SystemInt32_1 = 0;
+private Int32 __const_SystemInt32_0 = -1;
+private Int32 __const_SystemInt32_2 = 1;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_0 = null;
+
+
+public void __0_RegisterCallback()
+{
+__intnl_VRCSDK3DataDataToken_0 = __0_callback__param;
+_callbacks.Add(__intnl_VRCSDK3DataDataToken_0);
+}
+public void __0_OnEventReturned()
+{
+lastReturnedEventIndex = __const_SystemInt32_0;
+__lcl_i_SystemInt32_0 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_0 = eventPrefabs.Length;
+__intnl_SystemBoolean_0 = __lcl_i_SystemInt32_0 < __intnl_SystemInt32_0;
+if (__intnl_SystemBoolean_0)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(eventPrefabs[__lcl_i_SystemInt32_0]);
+__intnl_UnityEngineObject_0 = __intnl_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_1 = __0_returnedEvent__param;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_0 == __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_1)
+{
+lastReturnedEventIndex = __lcl_i_SystemInt32_0;
+}
+else
+{
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_2;
+}
+}
+__lcl_i_SystemInt32_0 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_0 = _callbacks.Count;
+__intnl_SystemBoolean_0 = __lcl_i_SystemInt32_0 < __intnl_SystemInt32_0;
+if (__intnl_SystemBoolean_0)
+{
+break;
+}
+__intnl_VRCSDK3DataDataToken_1 = _callbacks.Item;
+__intnl_SystemObject_0 = __intnl_VRCSDK3DataDataToken_1.Reference;
+__lcl_callback_VRCUdonUdonBehaviour_0 = (UdonBehaviour)__intnl_SystemObject_0;
+__lcl_callback_VRCUdonUdonBehaviour_0.SendCustomEvent(__const_SystemString_0);
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_2;
+}
+}
+public void GetActiveEventCount()
+{
+__lcl_count_SystemInt32_0 = __const_SystemInt32_1;
+__lcl_i_SystemInt32_1 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_1 = eventPrefabs.Length;
+__intnl_SystemBoolean_2 = __lcl_i_SystemInt32_1 < __intnl_SystemInt32_1;
+if (__intnl_SystemBoolean_2)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_1 = (UdonBehaviour)(eventPrefabs[__lcl_i_SystemInt32_1]);
+__intnl_UnityEngineObject_2 = __intnl_VRCUdonUdonBehaviour_1;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_3 = __intnl_UnityEngineObject_2 != __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_3)
+{
+__intnl_VRCUdonUdonBehaviour_2 = (UdonBehaviour)(eventPrefabs[__lcl_i_SystemInt32_1]);
+__intnl_VRCUdonUdonBehaviour_2.SendCustomEvent(__const_SystemString_1);
+__intnl_SystemObject_1 = __intnl_VRCUdonUdonBehaviour_2.GetProgramVariable(__const_SystemString_2);
+__intnl_SystemBoolean_4 = (Boolean)__intnl_SystemObject_1;
+__intnl_SystemBoolean_3 = __intnl_SystemBoolean_4;
+}
+if (__intnl_SystemBoolean_3)
+{
+__lcl_count_SystemInt32_0 = __lcl_count_SystemInt32_0 + __const_SystemInt32_2;
+}
+__lcl_i_SystemInt32_1 = __lcl_i_SystemInt32_1 + __const_SystemInt32_2;
+}
+__0_GetActiveEventCount__ret = __lcl_count_SystemInt32_0;
+return;
+}
+public void GetActiveEvents()
+{
+__lcl_activeEvents_UnityEngineComponentArray_0 = __const_SystemInt32_1.ctor();
+__lcl_i_SystemInt32_2 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_2 = eventPrefabs.Length;
+__intnl_SystemBoolean_5 = __lcl_i_SystemInt32_2 < __intnl_SystemInt32_2;
+if (__intnl_SystemBoolean_5)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_3 = (UdonBehaviour)(eventPrefabs[__lcl_i_SystemInt32_2]);
+__intnl_UnityEngineObject_4 = __intnl_VRCUdonUdonBehaviour_3;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_6 = __intnl_UnityEngineObject_4 != __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_6)
+{
+__intnl_VRCUdonUdonBehaviour_4 = (UdonBehaviour)(eventPrefabs[__lcl_i_SystemInt32_2]);
+__intnl_VRCUdonUdonBehaviour_4.SendCustomEvent(__const_SystemString_1);
+__intnl_SystemObject_2 = __intnl_VRCUdonUdonBehaviour_4.GetProgramVariable(__const_SystemString_2);
+__intnl_SystemBoolean_7 = (Boolean)__intnl_SystemObject_2;
+__intnl_SystemBoolean_6 = __intnl_SystemBoolean_7;
+}
+if (__intnl_SystemBoolean_6)
+{
+__intnl_VRCUdonUdonBehaviour_5 = (UdonBehaviour)(eventPrefabs[__lcl_i_SystemInt32_2]);
+__1__intnlparam = __lcl_activeEvents_UnityEngineComponentArray_0;
+__2__intnlparam = __intnl_VRCUdonUdonBehaviour_5;
+UNDEF_ba888_2860();
+__lcl_activeEvents_UnityEngineComponentArray_0 = __0__intnlparam;
+}
+__lcl_i_SystemInt32_2 = __lcl_i_SystemInt32_2 + __const_SystemInt32_2;
+}
+__0_GetActiveEvents__ret = __lcl_activeEvents_UnityEngineComponentArray_0;
+return;
+}
+public void GetActivePrefabIndices()
+{
+__lcl_activePrefabIndices_SystemInt32Array_0 = __const_SystemInt32_1.ctor();
+__lcl_i_SystemInt32_3 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_3 = eventPrefabs.Length;
+__intnl_SystemBoolean_8 = __lcl_i_SystemInt32_3 < __intnl_SystemInt32_3;
+if (__intnl_SystemBoolean_8)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_6 = (UdonBehaviour)(eventPrefabs[__lcl_i_SystemInt32_3]);
+__intnl_UnityEngineObject_6 = __intnl_VRCUdonUdonBehaviour_6;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_9 = __intnl_UnityEngineObject_6 != __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_9)
+{
+__intnl_VRCUdonUdonBehaviour_7 = (UdonBehaviour)(eventPrefabs[__lcl_i_SystemInt32_3]);
+__intnl_VRCUdonUdonBehaviour_7.SendCustomEvent(__const_SystemString_1);
+__intnl_SystemObject_3 = __intnl_VRCUdonUdonBehaviour_7.GetProgramVariable(__const_SystemString_2);
+__intnl_SystemBoolean_10 = (Boolean)__intnl_SystemObject_3;
+__intnl_SystemBoolean_9 = __intnl_SystemBoolean_10;
+}
+if (__intnl_SystemBoolean_9)
+{
+__4__intnlparam = __lcl_activePrefabIndices_SystemInt32Array_0;
+__5__intnlparam = __lcl_i_SystemInt32_3;
+UNDEF_ba888_3088();
+__lcl_activePrefabIndices_SystemInt32Array_0 = __3__intnlparam;
+}
+__lcl_i_SystemInt32_3 = __lcl_i_SystemInt32_3 + __const_SystemInt32_2;
+}
+__0_GetActivePrefabIndices__ret = __lcl_activePrefabIndices_SystemInt32Array_0;
+return;
+}
+public void __0_GetEventAtIndex()
+{
+__intnl_SystemBoolean_11 = __0_index__param < __const_SystemInt32_1;
+if (__intnl_SystemBoolean_11)
+{
+}
+else
+{
+__intnl_SystemInt32_4 = eventPrefabs.Length;
+__intnl_SystemBoolean_11 = __0_index__param >= __intnl_SystemInt32_4;
+}
+if (__intnl_SystemBoolean_11)
+{
+__0___0_GetEventAtIndex__ret = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+__0___0_GetEventAtIndex__ret = (UdonBehaviour)(eventPrefabs[__0_index__param]);
+return;
+}
+public void GetEventCount()
+{
+__0_GetEventCount__ret = eventPrefabs.Length;
+return;
+}
+private void UNDEF_ba888_2860()
+{
+__intnl_SystemInt32_5 = __1__intnlparam.Length;
+__intnl_SystemInt32_6 = __intnl_SystemInt32_5 + __const_SystemInt32_2;
+__lcl_newArray_UnityEngineComponentArray_0 = __intnl_SystemInt32_6.ctor();
+__1__intnlparam.CopyTo(__lcl_newArray_UnityEngineComponentArray_0, __const_SystemInt32_1);
+__intnl_SystemInt32_7 = __1__intnlparam.Length;
+__lcl_newArray_UnityEngineComponentArray_0.Set(__intnl_SystemInt32_7, __2__intnlparam);
+__0__intnlparam = __lcl_newArray_UnityEngineComponentArray_0;
+return;
+}
+private void UNDEF_ba888_3088()
+{
+__intnl_SystemInt32_8 = __4__intnlparam.Length;
+__intnl_SystemInt32_9 = __intnl_SystemInt32_8 + __const_SystemInt32_2;
+__lcl_newArray_SystemInt32Array_0 = __intnl_SystemInt32_9.ctor();
+__4__intnlparam.CopyTo(__lcl_newArray_SystemInt32Array_0, __const_SystemInt32_1);
+__intnl_SystemInt32_10 = __4__intnlparam.Length;
+__lcl_newArray_SystemInt32Array_0.Set(__intnl_SystemInt32_10, __5__intnlparam);
+__3__intnlparam = __lcl_newArray_SystemInt32Array_0;
+return;
+}
+}

@@ -1,0 +1,139 @@
+void _start()
+localPlayer = get_LocalPlayer();// 16
+64 if (__intnl_SystemBoolean_0) //116
+{
+this.set_enabled(__const_SystemBoolean_0);// 88
+108 return;
+}
+__lcl_trackingData_VRCSDKBaseVRCPlayerApiTrackingData_0 = G_localPlayer.GetTrackingData(trackingSource);// 140
+lastPlayerPosition = L_trackingData.get_position();// 164
+188 playerVelocity = __const_UnityEngineVector3_0
+208 lastVelocityUpdateTime = __const_SystemSingle_0
+224 return;
+void _update()
+280 if (__intnl_SystemBoolean_1) //308
+{
+300 return;
+}
+316 if (useOptimizedUpdates) //456
+{
+412 if (__intnl_SystemBoolean_2) //440
+{
+432 return;
+}
+lastUpdateTime = get_time();// 448
+}
+464 JUMP 500
+484 return;
+508 if (useOptimizedUpdates) //544
+{
+532 __lcl_deltaTime_SystemSingle_0 = updateInterval
+536 JUMP 560
+}
+__lcl_deltaTime_SystemSingle_0 = get_deltaTime();// 552
+568 if (simulateChestFromHead) //752
+{
+__lcl_headData_VRCSDKBaseVRCPlayerApiTrackingData_0 = G_localPlayer.GetTrackingData(__const_VRCSDKBaseVRCPlayerApiTrackingDataType_0);// 600
+__lcl_currentPlayerPosition_UnityEngineVector3_0 = op_Addition(__intnl_UnityEngineVector3_1, __intnl_UnityEngineVector3_0);// 712
+__lcl_targetRotation_UnityEngineQuaternion_0 = L_headData.get_rotation();// 736
+744 JUMP 832
+}
+__lcl_trackingData_VRCSDKBaseVRCPlayerApiTrackingData_1 = G_localPlayer.GetTrackingData(trackingSource);// 776
+__lcl_currentPlayerPosition_UnityEngineVector3_0 = L_trackingData.get_position();// 800
+__lcl_targetRotation_UnityEngineQuaternion_0 = L_trackingData.get_rotation();// 824
+840 if (usePrediction) //1212
+{
+__lcl_actualDeltaTime_SystemSingle_0 = op_Subtraction(lastVelocityUpdateTime, __intnl_SystemSingle_2);// 888
+936 if (__intnl_SystemBoolean_3) //1008
+{
+playerVelocity = op_Division(__lcl_actualDeltaTime_SystemSingle_0, __intnl_UnityEngineVector3_0);// 1000
+}
+1024 lastPlayerPosition = __lcl_currentPlayerPosition_UnityEngineVector3_0
+lastVelocityUpdateTime = get_time();// 1036
+__lcl_predictedPosition_UnityEngineVector3_0 = op_Addition(__intnl_UnityEngineVector3_0, __lcl_currentPlayerPosition_UnityEngineVector3_0);// 1100
+1116 if (onlyPredictHorizontal) //1192
+{
+L_predictedPosition.set_y(__intnl_SystemSingle_3);// 1164
+1188 __intnl_UnityEngineVector3_1 = __lcl_predictedPosition_UnityEngineVector3_0
+}
+1208 __lcl_currentPlayerPosition_UnityEngineVector3_0 = __lcl_predictedPosition_UnityEngineVector3_0
+}
+1228 __lcl_targetPosition_UnityEngineVector3_0 = __lcl_currentPlayerPosition_UnityEngineVector3_0
+1248 __intnl_SystemBoolean_3 = useLocalOffset
+1260 if (__intnl_SystemBoolean_3) //1300
+{
+}
+1308 if (__intnl_SystemBoolean_3) //1388
+{
+__lcl_targetPosition_UnityEngineVector3_0 = op_Addition(__intnl_UnityEngineVector3_0, __lcl_targetPosition_UnityEngineVector3_0);// 1372
+1380 JUMP 1420
+}
+__lcl_targetPosition_UnityEngineVector3_0 = op_Addition(positionOffset, __lcl_targetPosition_UnityEngineVector3_0);// 1412
+1428 if (followPosition) //1620
+{
+1444 if (smoothMovement) //1596
+{
+transform.set_position(__intnl_UnityEngineVector3_1);// 1580
+1588 JUMP 1620
+}
+transform.set_position(__lcl_targetPosition_UnityEngineVector3_0);// 1612
+}
+1628 if (followRotation) //1820
+{
+1644 if (smoothMovement) //1796
+{
+transform.set_rotation(__intnl_UnityEngineQuaternion_1);// 1780
+1788 JUMP 1820
+}
+transform.set_rotation(__lcl_targetRotation_UnityEngineQuaternion_0);// 1812
+}
+1832 return;
+void __0_SetFollowPosition()
+1864 followPosition = __0_follow__param
+1880 return;
+void __0_SetFollowRotation()
+1912 followRotation = __1_follow__param
+1928 return;
+void __0_SetPositionOffset()
+1960 positionOffset = __0_offset__param
+1976 return;
+void __0_SetUpdateInterval()
+updateInterval = Clamp(__const_SystemSingle_2, __const_SystemSingle_1, __0_interval__param);// 2024
+2044 return;
+void __0_SetTrackingSource()
+2076 trackingSource = __0_newSource__param
+2092 return;
+void SnapToPlayer()
+2148 if (__intnl_SystemBoolean_4) //2176
+{
+2168 return;
+}
+2184 if (simulateChestFromHead) //2368
+{
+__lcl_headData_VRCSDKBaseVRCPlayerApiTrackingData_1 = G_localPlayer.GetTrackingData(__const_VRCSDKBaseVRCPlayerApiTrackingDataType_0);// 2216
+__lcl_targetPosition_UnityEngineVector3_1 = op_Addition(__intnl_UnityEngineVector3_3, __intnl_UnityEngineVector3_2);// 2328
+__lcl_targetRotation_UnityEngineQuaternion_1 = L_headData.get_rotation();// 2352
+2360 JUMP 2448
+}
+__lcl_trackingData_VRCSDKBaseVRCPlayerApiTrackingData_2 = G_localPlayer.GetTrackingData(trackingSource);// 2392
+__lcl_targetPosition_UnityEngineVector3_1 = L_trackingData.get_position();// 2416
+__lcl_targetRotation_UnityEngineQuaternion_1 = L_trackingData.get_rotation();// 2440
+2464 __intnl_SystemBoolean_5 = useLocalOffset
+2476 if (__intnl_SystemBoolean_5) //2516
+{
+}
+2524 if (__intnl_SystemBoolean_5) //2604
+{
+__lcl_targetPosition_UnityEngineVector3_1 = op_Addition(__intnl_UnityEngineVector3_2, __lcl_targetPosition_UnityEngineVector3_1);// 2588
+2596 JUMP 2636
+}
+__lcl_targetPosition_UnityEngineVector3_1 = op_Addition(positionOffset, __lcl_targetPosition_UnityEngineVector3_1);// 2628
+2644 if (followPosition) //2676
+{
+transform.set_position(__lcl_targetPosition_UnityEngineVector3_1);// 2668
+}
+2684 if (followRotation) //2716
+{
+transform.set_rotation(__lcl_targetRotation_UnityEngineQuaternion_1);// 2708
+}
+2728 return;

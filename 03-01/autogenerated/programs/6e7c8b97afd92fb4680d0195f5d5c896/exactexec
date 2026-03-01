@@ -1,0 +1,49 @@
+using System;
+using UnityEngine;
+using VRC.Udon.Common.Enums;
+using VRC.Udon;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private String __const_SystemString_0 = "_DelayedStart";
+private Boolean __const_SystemBoolean_0 = true;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Int64 __refl_typeid = -6510730907490933637;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private object __const_SystemObject_0 = null;
+private Type __const_SystemType_0 = typeof(Collider);
+private Collider __lcl_collider_UnityEngineCollider_0 = null;
+private EventTiming __const_VRCUdonCommonEnumsEventTiming_0 = EventTiming.Update;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private String __refl_typename = "DisableUiCollision";
+private Transform __this_UnityEngineTransform_0 = this;
+private Int32 __const_SystemInt32_0 = 2;
+private Boolean __intnl_SystemBoolean_0 = false;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_2 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_1 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_0 = this;
+
+
+public void _start()
+{
+__this_VRCUdonUdonBehaviour_0.SendCustomEventDelayedFrames(__const_SystemString_0, __const_SystemInt32_0, __const_VRCUdonCommonEnumsEventTiming_0);
+}
+public void _DelayedStart()
+{
+__lcl_collider_UnityEngineCollider_0 = (Collider)(__this_UnityEngineTransform_0.GetComponent(__const_SystemType_0));
+__intnl_UnityEngineObject_0 = __lcl_collider_UnityEngineCollider_0;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_0 == __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_0)
+{
+__intnl_UnityEngineObject_2 = __this_VRCUdonUdonBehaviour_1;
+Object.Destroy(__intnl_UnityEngineObject_2);
+return;
+}
+__lcl_collider_UnityEngineCollider_0.isTrigger = __const_SystemBoolean_0;
+__intnl_UnityEngineObject_2 = __this_VRCUdonUdonBehaviour_2;
+Object.Destroy(__intnl_UnityEngineObject_2);
+}
+}

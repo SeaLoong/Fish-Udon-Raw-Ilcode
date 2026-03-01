@@ -1,0 +1,3157 @@
+using System;
+using UnityEngine;
+using VRC.Udon;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Single __const_SystemSingle_8 = 20f;
+private Boolean __intnl_SystemBoolean_83 = false;
+private Boolean __intnl_SystemBoolean_93 = false;
+private Boolean __intnl_SystemBoolean_13 = false;
+private Boolean __intnl_SystemBoolean_23 = false;
+private Boolean __intnl_SystemBoolean_33 = false;
+private Boolean __intnl_SystemBoolean_43 = false;
+private Boolean __intnl_SystemBoolean_53 = false;
+private Boolean __intnl_SystemBoolean_63 = false;
+private Boolean __intnl_SystemBoolean_73 = false;
+private Single __lcl_accumulated_SystemSingle_1 = 0f;
+private Int32 __12_waterType__param = 0;
+private String __7_zoneID__param = null;
+private UInt32 __gintnl_SystemUInt32_46 = 33548;
+private UInt32 __gintnl_SystemUInt32_16 = 10436;
+private UInt32 __gintnl_SystemUInt32_36 = 20096;
+private UInt32 __gintnl_SystemUInt32_26 = 11916;
+private object __intnl_SystemObject_27 = null;
+private object __intnl_SystemObject_26 = null;
+private object __intnl_SystemObject_25 = null;
+private object __intnl_SystemObject_24 = null;
+private object __intnl_SystemObject_23 = null;
+private object __intnl_SystemObject_22 = null;
+private object __intnl_SystemObject_21 = null;
+private object __intnl_SystemObject_20 = null;
+private object __intnl_SystemObject_29 = null;
+private object __intnl_SystemObject_28 = null;
+private Single __intnl_SystemSingle_20 = 0f;
+private Single __intnl_SystemSingle_21 = 0f;
+private Single __intnl_SystemSingle_22 = 0f;
+private Single __intnl_SystemSingle_23 = 0f;
+private Single __intnl_SystemSingle_24 = 0f;
+private Single __intnl_SystemSingle_25 = 0f;
+private Single __intnl_SystemSingle_26 = 0f;
+private Single __intnl_SystemSingle_27 = 0f;
+private Single __intnl_SystemSingle_28 = 0f;
+private Single __intnl_SystemSingle_29 = 0f;
+private Int32 __intnl_SystemInt32_15 = 0;
+private Int32 __intnl_SystemInt32_35 = 0;
+private Int32 __intnl_SystemInt32_25 = 0;
+private Int32 __intnl_SystemInt32_55 = 0;
+private Int32 __intnl_SystemInt32_45 = 0;
+private Int32 __intnl_SystemInt32_75 = 0;
+private Int32 __intnl_SystemInt32_65 = 0;
+public Single commonPower;
+private String __0_newZoneID__param = null;
+private Int32[] __lcl_openSeaPlusUniversalIndices_SystemInt32Array_0 = null;
+private Int32 __lcl_i_SystemInt32_17 = 0;
+private Int32 __5_waterType__param = 0;
+private Int32 __lcl_fishWithAllowedZones_SystemInt32_0 = 0;
+private String __intnl_SystemString_1 = null;
+private Int32[] __0_catchableIndices__param = null;
+private Int32[] __lcl_catchableEventFish_SystemInt32Array_0 = null;
+private Object __intnl_UnityEngineObject_22 = null;
+private Object __intnl_UnityEngineObject_12 = null;
+private Int32 __0___0_GetSeaEventBoostedShaderModifier__ret = 0;
+private String __const_SystemString_46 = "__0_zoneID__param";
+private String __const_SystemString_47 = "__0_CanSpawnInZone";
+private String __const_SystemString_44 = "__0___0_CanSpawnAtCurrentConditions__ret";
+private String __const_SystemString_45 = "minWeight";
+private String __const_SystemString_42 = "__0_dayNightCycle__param";
+private String __const_SystemString_43 = "__0_CanSpawnAtCurrentConditions";
+private String __const_SystemString_40 = "__0_CanSpawnInWaterType";
+private String __const_SystemString_41 = "__0___0_CanSpawnInWaterType__ret";
+private String __const_SystemString_48 = "__0___0_CanSpawnInZone__ret";
+private String __const_SystemString_49 = "rarity";
+private Int32[] __lcl_openSeaIndices_SystemInt32Array_0 = null;
+private Single __intnl_SystemSingle_0 = 0f;
+private Int32 __0___0_GetCatchableFishCountWithMaxWeight__ret = 0;
+private Int32 __lcl_r_SystemInt32_0 = 0;
+private Single __3_luckMultiplier__param = 0f;
+private object __intnl_SystemObject_0 = null;
+private Int32 __lcl_fallbackIndex_SystemInt32_0 = 0;
+private Int32 __15_waterType__param = 0;
+private Int32 __7_waterType__param = 0;
+private String __const_SystemString_0 = "fishId";
+private Single __8_maxWeightKg__param = 0f;
+private Int32[] __lcl_combinedIndices_SystemInt32Array_0 = null;
+private Int32[] __lcl_catchableIndices_SystemInt32Array_0 = null;
+private Int32[] __lcl_catchableIndices_SystemInt32Array_1 = null;
+private Int32[] __lcl_tempIndices_SystemInt32Array_1 = null;
+private Boolean __lcl_canSpawnInConditions_SystemBoolean_0 = false;
+private Single __const_SystemSingle_0 = 100f;
+private Single __9_luckMultiplier__param = 0f;
+private UdonBehaviour __0___0_GetFishEntryById__ret = null;
+private Vector3 __intnl_UnityEngineVector3_6 = new Vector3(0f, 0f, 0f);
+private Int32 __lcl_zonePlusUniversalCount_SystemInt32_0 = 0;
+private Int32 __0___0_GetRandomFishOfRarity__ret = 0;
+private Int32[] __intnl_SystemInt32Array_0 = null;
+private Int32 __0_targetRarity__param = 0;
+private Boolean __intnl_SystemBoolean_86 = false;
+private Boolean __intnl_SystemBoolean_96 = false;
+private Boolean __intnl_SystemBoolean_16 = false;
+private Boolean __intnl_SystemBoolean_26 = false;
+private Boolean __intnl_SystemBoolean_36 = false;
+private Boolean __intnl_SystemBoolean_46 = false;
+private Boolean __intnl_SystemBoolean_56 = false;
+private Boolean __intnl_SystemBoolean_66 = false;
+private Boolean __intnl_SystemBoolean_76 = false;
+private Component[] __0_GetAvailableFish__ret = null;
+private Int32 __lcl_selectedRarity_SystemInt32_4 = 0;
+private Int32 __const_SystemInt32_11 = 6;
+private UdonBehaviour __0_seaEvent__param = null;
+private object __intnl_SystemObject_17 = null;
+private object __intnl_SystemObject_16 = null;
+private object __intnl_SystemObject_15 = null;
+private object __intnl_SystemObject_14 = null;
+private object __intnl_SystemObject_13 = null;
+private object __intnl_SystemObject_12 = null;
+private object __intnl_SystemObject_11 = null;
+private object __intnl_SystemObject_10 = null;
+private object __intnl_SystemObject_19 = null;
+private object __intnl_SystemObject_18 = null;
+private Int32 __13_waterType__param = 0;
+private Single __intnl_SystemSingle_10 = 0f;
+private Single __intnl_SystemSingle_11 = 0f;
+private Single __intnl_SystemSingle_12 = 0f;
+private Single __intnl_SystemSingle_13 = 0f;
+private Single __intnl_SystemSingle_14 = 0f;
+private Single __intnl_SystemSingle_15 = 0f;
+private Single __intnl_SystemSingle_16 = 0f;
+private Single __intnl_SystemSingle_17 = 0f;
+private Single __intnl_SystemSingle_18 = 0f;
+private Single __intnl_SystemSingle_19 = 0f;
+private Int32 __lcl_j_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_12 = 0;
+private Int32 __intnl_SystemInt32_32 = 0;
+private Int32 __intnl_SystemInt32_22 = 0;
+private Int32 __intnl_SystemInt32_52 = 0;
+private Int32 __intnl_SystemInt32_42 = 0;
+private Int32 __intnl_SystemInt32_72 = 0;
+private Int32 __intnl_SystemInt32_62 = 0;
+private Single __lcl_ratio_SystemSingle_0 = 0f;
+public UdonBehaviour dayNightCycle;
+private Int32 __lcl_invalidCount_SystemInt32_0 = 0;
+private Int32 __lcl_i_SystemInt32_14 = 0;
+private Single __lcl_total_SystemSingle_0 = 0f;
+public Single secretPower;
+public Single zoneSpecificChance;
+private Component[] __0_GetFishWithWeatherPreferences__ret = null;
+private Single __intnl_SystemSingle_8 = 0f;
+private UInt32 __gintnl_SystemUInt32_9 = 6220;
+private UInt32 __gintnl_SystemUInt32_8 = 5792;
+private UInt32 __gintnl_SystemUInt32_5 = 4156;
+private UInt32 __gintnl_SystemUInt32_4 = 88;
+private UInt32 __gintnl_SystemUInt32_7 = 5544;
+private UInt32 __gintnl_SystemUInt32_6 = 4412;
+private UInt32 __gintnl_SystemUInt32_1 = 40;
+private UInt32 __gintnl_SystemUInt32_0 = 24;
+private UInt32 __gintnl_SystemUInt32_3 = 72;
+private UInt32 __gintnl_SystemUInt32_2 = 56;
+private Int32 __8_waterType__param = 0;
+private Boolean __const_SystemBoolean_0 = false;
+private Boolean __const_SystemBoolean_1 = true;
+private Object __intnl_UnityEngineObject_21 = null;
+private Object __intnl_UnityEngineObject_11 = null;
+private Single __lcl_totalWeight_SystemSingle_0 = 0f;
+private Int32 __lcl_openSeaPlusUniversalCount_SystemInt32_0 = 0;
+private Int32[] __lcl_eligibleIndices_SystemInt32Array_1 = null;
+private Int32 __0_count__param = 0;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_29 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_28 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_21 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_20 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_23 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_22 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_25 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_24 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_27 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_26 = null;
+private Single __6_maxWeightKg__param = 0f;
+private Int32 __lcl_index_SystemInt32_5 = 0;
+private Int32 __lcl_index_SystemInt32_4 = 0;
+private Int32 __lcl_index_SystemInt32_1 = 0;
+private Int32 __lcl_index_SystemInt32_0 = 0;
+private Int32 __lcl_index_SystemInt32_3 = 0;
+private Int32 __lcl_index_SystemInt32_2 = 0;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_7 = null;
+public Single mythicPower;
+private UdonBehaviour __lcl_fish_VRCUdonUdonBehaviour_3 = null;
+private UdonBehaviour __lcl_fish_VRCUdonUdonBehaviour_2 = null;
+private UdonBehaviour __lcl_fish_VRCUdonUdonBehaviour_1 = null;
+private UdonBehaviour __lcl_fish_VRCUdonUdonBehaviour_0 = null;
+private UdonBehaviour __lcl_fish_VRCUdonUdonBehaviour_7 = null;
+private UdonBehaviour __lcl_fish_VRCUdonUdonBehaviour_6 = null;
+private UdonBehaviour __lcl_fish_VRCUdonUdonBehaviour_5 = null;
+private UdonBehaviour __lcl_fish_VRCUdonUdonBehaviour_4 = null;
+private UdonBehaviour __lcl_fish_VRCUdonUdonBehaviour_9 = null;
+private UdonBehaviour __lcl_fish_VRCUdonUdonBehaviour_8 = null;
+private UdonBehaviour __lcl_nearbyEvent_VRCUdonUdonBehaviour_4 = null;
+private Int32[] __lcl_rarityValues_SystemInt32Array_0 = null;
+private String __const_SystemString_5 = "canSpawnInSwampwater";
+private Int32 __0___0_GetRandomFishIndexWithMaxWeight__ret = 0;
+private Vector3 __4_playerPosition__param = new Vector3(0f, 0f, 0f);
+private Int32 __0_maxRarity__param = 0;
+private Single __const_SystemSingle_7 = 0.75f;
+public Single mythicChance;
+private UdonBehaviour __1_fish__param = null;
+private Int32 __0___0_GetRandomEventFishIndex__ret = 0;
+private Vector3 __intnl_UnityEngineVector3_5 = new Vector3(0f, 0f, 0f);
+private Int32 __0_fishEntryId__param = 0;
+private Boolean __0___0_IsFishIDCatchable__ret = false;
+private Int32 __1_waterType__param = 0;
+private UInt32 __gintnl_SystemUInt32_43 = 28300;
+private UInt32 __gintnl_SystemUInt32_13 = 8676;
+private UInt32 __gintnl_SystemUInt32_33 = 17324;
+private UInt32 __gintnl_SystemUInt32_23 = 11292;
+private Single __10_luckMultiplier__param = 0f;
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Int32 __lcl_selectedRarity_SystemInt32_1 = 0;
+private Single __11_maxWeightKg__param = 0f;
+private UdonBehaviour __0___0_GetRandomFishWithLuckAndWater__ret = null;
+private Int32 __lcl_fallbackValue_SystemInt32_0 = 0;
+private Int32[] __lcl_zoneSpecificIndices_SystemInt32Array_0 = null;
+private Int32 __0___0_GetFishIndexByID__ret = 0;
+public Single relicChance;
+private String __0_GetCurrentZoneID__ret = null;
+private Object __intnl_UnityEngineObject_19 = null;
+private Int32 __16_waterType__param = 0;
+private String __const_SystemString_16 = "HasLuckBoostEnabled";
+private String __const_SystemString_17 = "__0_HasLuckBoostEnabled__ret";
+private String __const_SystemString_14 = "__0_IsPlayerInRange";
+private String __const_SystemString_15 = "__0___0_IsPlayerInRange__ret";
+private String __const_SystemString_12 = "__0___0_GetNearestEvent__ret";
+private String __const_SystemString_13 = "__0_playerPosition__param";
+private String __const_SystemString_10 = "__0_maxDistance__param";
+private String __const_SystemString_11 = "__0_GetNearestEvent";
+private String __const_SystemString_18 = "GetLuckMultiplier";
+private String __const_SystemString_19 = "__0_GetLuckMultiplier__ret";
+private Int32 __3_waterType__param = 0;
+private Single __intnl_SystemSingle_7 = 0f;
+private String currentZoneID = "open_sea";
+private Object __intnl_UnityEngineObject_14 = null;
+private Int64 __refl_typeid = 7268708910983254576;
+private object __intnl_SystemObject_7 = null;
+private String __5_zoneID__param = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_19 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_18 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_11 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_10 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_13 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_12 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_15 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_14 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_17 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_16 = null;
+public Single ultimateSecretChance;
+private Vector3 __2_playerPosition__param = new Vector3(0f, 0f, 0f);
+private Int32 __lcl_fishIndex_SystemInt32_0 = 0;
+private Int32 __lcl_fishIndex_SystemInt32_1 = 0;
+private Int32 __lcl_fishIndex_SystemInt32_2 = 0;
+private Int32 __lcl_fishIndex_SystemInt32_3 = 0;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_2 = null;
+private Int32 __lcl_swampwaterCount_SystemInt32_0 = 0;
+private Int32 __0___0_GetRandomFishFromFilteredList__ret = 0;
+private Int32 __lcl_selectedFishIndex_SystemInt32_1 = 0;
+private Int32 __lcl_selectedFishIndex_SystemInt32_0 = 0;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_9 = null;
+public Single ultimateSecretPower;
+private Int32 __lcl_openSeaCount_SystemInt32_0 = 0;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Boolean __intnl_SystemBoolean_81 = false;
+private Boolean __intnl_SystemBoolean_91 = false;
+private Boolean __intnl_SystemBoolean_11 = false;
+private Boolean __intnl_SystemBoolean_21 = false;
+private Boolean __intnl_SystemBoolean_31 = false;
+private Boolean __intnl_SystemBoolean_41 = false;
+private Boolean __intnl_SystemBoolean_51 = false;
+private Boolean __intnl_SystemBoolean_61 = false;
+private Boolean __intnl_SystemBoolean_71 = false;
+private Boolean __0___0_IsFishCatchableZoneless__ret = false;
+private Single __6_luckMultiplier__param = 0f;
+private UInt32 __gintnl_SystemUInt32_44 = 30020;
+private UInt32 __gintnl_SystemUInt32_14 = 10276;
+private UInt32 __gintnl_SystemUInt32_34 = 17588;
+private UInt32 __gintnl_SystemUInt32_24 = 11368;
+public Single abundantPower;
+private object __intnl_SystemObject_47 = null;
+private object __intnl_SystemObject_46 = null;
+private object __intnl_SystemObject_45 = null;
+private object __intnl_SystemObject_44 = null;
+private object __intnl_SystemObject_43 = null;
+private object __intnl_SystemObject_42 = null;
+private object __intnl_SystemObject_41 = null;
+private object __intnl_SystemObject_40 = null;
+private object __intnl_SystemObject_49 = null;
+private object __intnl_SystemObject_48 = null;
+private Single __intnl_SystemSingle_40 = 0f;
+private Single __intnl_SystemSingle_41 = 0f;
+private Single __intnl_SystemSingle_42 = 0f;
+private Single __intnl_SystemSingle_43 = 0f;
+private Single __intnl_SystemSingle_44 = 0f;
+private Single __intnl_SystemSingle_45 = 0f;
+private Single __intnl_SystemSingle_46 = 0f;
+private Single __intnl_SystemSingle_47 = 0f;
+private Single __intnl_SystemSingle_48 = 0f;
+private Single __intnl_SystemSingle_49 = 0f;
+private Int32 __intnl_SystemInt32_17 = 0;
+private Int32 __intnl_SystemInt32_37 = 0;
+private Int32 __intnl_SystemInt32_27 = 0;
+private Int32 __intnl_SystemInt32_57 = 0;
+private Int32 __intnl_SystemInt32_47 = 0;
+private Int32 __intnl_SystemInt32_77 = 0;
+private Int32 __intnl_SystemInt32_67 = 0;
+private Int32 __lcl_availableCount_SystemInt32_1 = 0;
+private Int32 __lcl_selectedRarity_SystemInt32_2 = 0;
+private Single __9_maxWeightKg__param = 0f;
+private Int32 __lcl_catchableCount_SystemInt32_1 = 0;
+private Int32[] __lcl_universalIndices_SystemInt32Array_0 = null;
+private Int32 __lcl_freshwaterCount_SystemInt32_0 = 0;
+private Int32 __lcl_i_SystemInt32_11 = 0;
+private Int32 __lcl_i_SystemInt32_21 = 0;
+public Single abundantChance;
+private String __intnl_SystemString_3 = null;
+private Int32[] __lcl_usedIDs_SystemInt32Array_0 = null;
+private Single __lcl_e2x_SystemSingle_0 = 0f;
+private Int32 __lcl_lavaCount_SystemInt32_0 = 0;
+private Int32 __0___0_GetFallbackFishForAllConditions__ret = 0;
+private Int32 __0_GetFallbackFish__ret = 0;
+private String __const_SystemString_62 = "__0___0_CanSpawnInWaterZoneWithConditions__ret";
+private String __const_SystemString_63 = "maxWeight";
+private String __const_SystemString_60 = "__1_dayNightCycle__param";
+private String __const_SystemString_61 = "__0_CanSpawnInWaterZoneWithConditions";
+private Single __lcl_effectiveMaxWeight_SystemSingle_0 = 0f;
+private Single __intnl_SystemSingle_2 = 0f;
+private Int32 __17_waterType__param = 0;
+private Int32 __0___0_SelectWeightedFish__ret = 0;
+private object __intnl_SystemObject_2 = null;
+private String __6_zoneID__param = null;
+private Int32 __3_targetRarity__param = 0;
+public Component[] fishEntries;
+private object __intnl_SystemObject_9 = null;
+private Int32 __10_waterType__param = 0;
+private Int32 __lcl_lowestRarity_SystemInt32_0 = 0;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_1 = null;
+private UdonBehaviour __lcl_fish_VRCUdonUdonBehaviour_11 = null;
+private String __const_SystemString_2 = "maxPrice";
+private Boolean __intnl_SystemBoolean_120 = false;
+private UdonBehaviour __lcl_nearbyEvent_VRCUdonUdonBehaviour_2 = null;
+private Int32 __lcl_count_SystemInt32_2 = 0;
+private Int32 __lcl_count_SystemInt32_3 = 0;
+private Int32 __lcl_count_SystemInt32_0 = 0;
+private Int32 __lcl_count_SystemInt32_1 = 0;
+private Int32 __lcl_count_SystemInt32_4 = 0;
+private Int32 __18_waterType__param = 0;
+private Single __const_SystemSingle_2 = 25f;
+private Single __2_luckMultiplier__param = 0f;
+private UdonBehaviour __0___0_GetRandomFishWithMaxWeight__ret = null;
+private Boolean __intnl_SystemBoolean_89 = false;
+private Boolean __intnl_SystemBoolean_99 = false;
+private Boolean __intnl_SystemBoolean_19 = false;
+private Boolean __intnl_SystemBoolean_29 = false;
+private Boolean __intnl_SystemBoolean_39 = false;
+private Boolean __intnl_SystemBoolean_49 = false;
+private Boolean __intnl_SystemBoolean_59 = false;
+private Boolean __intnl_SystemBoolean_69 = false;
+private Boolean __intnl_SystemBoolean_79 = false;
+private Single __7_maxWeightKg__param = 0f;
+private Vector3 __intnl_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Int32 __lcl_totalCount_SystemInt32_0 = 0;
+private Boolean __intnl_SystemBoolean_84 = false;
+private Boolean __intnl_SystemBoolean_94 = false;
+private Boolean __intnl_SystemBoolean_14 = false;
+private Boolean __intnl_SystemBoolean_24 = false;
+private Boolean __intnl_SystemBoolean_34 = false;
+private Boolean __intnl_SystemBoolean_44 = false;
+private Boolean __intnl_SystemBoolean_54 = false;
+private Boolean __intnl_SystemBoolean_64 = false;
+private Boolean __intnl_SystemBoolean_74 = false;
+private Single __lcl_accumulated_SystemSingle_0 = 0f;
+private Int32 __const_SystemInt32_13 = 2;
+private object __intnl_SystemObject_37 = null;
+private object __intnl_SystemObject_36 = null;
+private object __intnl_SystemObject_35 = null;
+private object __intnl_SystemObject_34 = null;
+private object __intnl_SystemObject_33 = null;
+private object __intnl_SystemObject_32 = null;
+private object __intnl_SystemObject_31 = null;
+private object __intnl_SystemObject_30 = null;
+private object __intnl_SystemObject_39 = null;
+private object __intnl_SystemObject_38 = null;
+private Single __intnl_SystemSingle_30 = 0f;
+private Single __intnl_SystemSingle_31 = 0f;
+private Single __intnl_SystemSingle_32 = 0f;
+private Single __intnl_SystemSingle_33 = 0f;
+private Single __intnl_SystemSingle_34 = 0f;
+private Single __intnl_SystemSingle_35 = 0f;
+private Single __intnl_SystemSingle_36 = 0f;
+private Single __intnl_SystemSingle_37 = 0f;
+private Single __intnl_SystemSingle_38 = 0f;
+private Single __intnl_SystemSingle_39 = 0f;
+private Int32 __intnl_SystemInt32_14 = 0;
+private Int32 __intnl_SystemInt32_34 = 0;
+private Int32 __intnl_SystemInt32_24 = 0;
+private Int32 __intnl_SystemInt32_54 = 0;
+private Int32 __intnl_SystemInt32_44 = 0;
+private Int32 __intnl_SystemInt32_74 = 0;
+private Int32 __intnl_SystemInt32_64 = 0;
+private Int32 __lcl_i_SystemInt32_19 = 0;
+private Single __5_luckMultiplier__param = 0f;
+private Single __8_luckMultiplier__param = 0f;
+private Int32 __intnl_SystemInt32_19 = 0;
+private Int32 __intnl_SystemInt32_39 = 0;
+private Int32 __intnl_SystemInt32_29 = 0;
+private Int32 __intnl_SystemInt32_59 = 0;
+private Int32 __intnl_SystemInt32_49 = 0;
+private Int32 __intnl_SystemInt32_69 = 0;
+private Single __lcl_capFraction_SystemSingle_0 = 0f;
+private object __const_SystemObject_0 = null;
+private String __3_zoneID__param = null;
+private Int32 __lcl_combinedCount_SystemInt32_0 = 0;
+private Single __2_maxWeightKg__param = 0f;
+private Int32 __lcl_i_SystemInt32_16 = 0;
+public Single commonChance;
+private String __intnl_SystemString_0 = null;
+private Object __intnl_UnityEngineObject_23 = null;
+private Object __intnl_UnityEngineObject_13 = null;
+private Single __lcl_totalWeight_SystemSingle_2 = 0f;
+private Single __intnl_SystemSingle_1 = 0f;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_49 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_48 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_41 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_40 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_43 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_42 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_45 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_44 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_47 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_46 = null;
+private object __intnl_SystemObject_1 = null;
+private Int32 __lcl_fallback_SystemInt32_0 = 0;
+private Int32 __0___0_GetAvailableFishCountForCurrentZoneAndWater__ret = 0;
+private Int32 __2_targetRarity__param = 0;
+private Int32 __4_targetRarity__param = 0;
+private Int32[] __lcl_requiredFishIDs_SystemInt32Array_0 = null;
+private UdonBehaviour __lcl_fish_VRCUdonUdonBehaviour_12 = null;
+private String __const_SystemString_7 = "allowedZoneIDs";
+private Vector3 __6_playerPosition__param = new Vector3(0f, 0f, 0f);
+private Vector3 __intnl_UnityEngineVector3_8 = new Vector3(0f, 0f, 0f);
+private Int32[] __lcl_tempIndices_SystemInt32Array_0 = null;
+private Single __4_maxWeightKg__param = 0f;
+private Single __13_maxWeightKg__param = 0f;
+private Single __const_SystemSingle_1 = 0f;
+private Boolean __lcl_selectZoneSpecific_SystemBoolean_0 = false;
+private Vector3 __intnl_UnityEngineVector3_7 = new Vector3(0f, 0f, 0f);
+private UInt32 __gintnl_SystemUInt32_51 = 36528;
+private UInt32 __gintnl_SystemUInt32_41 = 21984;
+private UInt32 __gintnl_SystemUInt32_11 = 6632;
+private UInt32 __gintnl_SystemUInt32_31 = 14136;
+private UInt32 __gintnl_SystemUInt32_21 = 11020;
+private Int32 __lcl_currentIndex_SystemInt32_0 = 0;
+private Boolean __lcl_canSpawnInZone_SystemBoolean_0 = false;
+private Single __1_luckMultiplier__param = 0f;
+private Boolean __intnl_SystemBoolean_87 = false;
+private Boolean __intnl_SystemBoolean_97 = false;
+private Boolean __intnl_SystemBoolean_17 = false;
+private Boolean __intnl_SystemBoolean_27 = false;
+private Boolean __intnl_SystemBoolean_37 = false;
+private Boolean __intnl_SystemBoolean_47 = false;
+private Boolean __intnl_SystemBoolean_57 = false;
+private Boolean __intnl_SystemBoolean_67 = false;
+private Boolean __intnl_SystemBoolean_77 = false;
+private UdonBehaviour __0_fish__param = null;
+private Int32 __const_SystemInt32_10 = 5;
+private Int32 __intnl_SystemInt32_11 = 0;
+private Int32 __intnl_SystemInt32_31 = 0;
+private Int32 __intnl_SystemInt32_21 = 0;
+private Int32 __intnl_SystemInt32_51 = 0;
+private Int32 __intnl_SystemInt32_41 = 0;
+private Int32 __intnl_SystemInt32_71 = 0;
+private Int32 __intnl_SystemInt32_61 = 0;
+private Single __0_totalWeight__param = 0f;
+private Single __lcl_total_SystemSingle_1 = 0f;
+private String __const_SystemString_36 = "__6_fishIndex__param";
+private String __const_SystemString_37 = "__0_IsDiscoveredByIndex";
+private String __const_SystemString_34 = "enabled";
+private String __const_SystemString_35 = "catchOnce";
+private String __const_SystemString_32 = "GetBoostedShaderModifier";
+private String __const_SystemString_33 = "__0_GetBoostedShaderModifier__ret";
+private String __const_SystemString_30 = "GetBoostedSizeModifier";
+private String __const_SystemString_31 = "__0_GetBoostedSizeModifier__ret";
+private String __const_SystemString_38 = "__0___0_IsDiscoveredByIndex__ret";
+private String __const_SystemString_39 = "__0_waterType__param";
+private Single __intnl_SystemSingle_9 = 0f;
+private Int32 __1_fishID__param = 0;
+private Component[] __lcl_weatherFish_UnityEngineComponentArray_0 = null;
+private Object __intnl_UnityEngineObject_16 = null;
+private Single __lcl_totalWeight_SystemSingle_1 = 0f;
+public Single exoticChance;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_39 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_38 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_31 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_30 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_33 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_32 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_35 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_34 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_37 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_36 = null;
+private Boolean __lcl_isRelicSelection_SystemBoolean_1 = false;
+private Single __10_maxWeightKg__param = 0f;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_4 = null;
+private Single __11_luckMultiplier__param = 0f;
+public Single fabledChance;
+private Int32 __0___0_GetRandomFishIndexWithLuckAndWater__ret = 0;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private Boolean __lcl_canSpawn_SystemBoolean_0 = false;
+private Int32 __lcl_targetIndex_SystemInt32_0 = 0;
+private Int32 __0___0_GetRandomFishIndexWithLuckWaterAndZone__ret = 0;
+private String __const_SystemString_4 = "canSpawnInSaltwater";
+private Int32[] __0___0_GetCatchableFishIndicesZoneless__ret = null;
+private UInt32 __gintnl_SystemUInt32_49 = 34096;
+private UInt32 __gintnl_SystemUInt32_19 = 10692;
+private UInt32 __gintnl_SystemUInt32_39 = 21540;
+private UInt32 __gintnl_SystemUInt32_29 = 13780;
+private Single __const_SystemSingle_4 = 2f;
+private Int32[] __lcl_trimmedOpenSeaIndices_SystemInt32Array_0 = null;
+public Single curiousChance;
+private Single[] __lcl_matchingRarityWeights_SystemSingleArray_0 = null;
+private Int32 __9_waterType__param = 0;
+private UInt32 __gintnl_SystemUInt32_52 = 37724;
+private UInt32 __gintnl_SystemUInt32_42 = 28184;
+private UInt32 __gintnl_SystemUInt32_12 = 7080;
+private UInt32 __gintnl_SystemUInt32_32 = 14512;
+private UInt32 __gintnl_SystemUInt32_22 = 11144;
+private object __intnl_SystemObject_67 = null;
+private object __intnl_SystemObject_66 = null;
+private object __intnl_SystemObject_65 = null;
+private object __intnl_SystemObject_64 = null;
+private object __intnl_SystemObject_63 = null;
+private object __intnl_SystemObject_62 = null;
+private object __intnl_SystemObject_61 = null;
+private object __intnl_SystemObject_60 = null;
+private object __intnl_SystemObject_69 = null;
+private object __intnl_SystemObject_68 = null;
+private Int32 __14_waterType__param = 0;
+private String __4_zoneID__param = null;
+private Int32 __lcl_selectedRarity_SystemInt32_0 = 0;
+private Int32 __lcl_i_SystemInt32_9 = 0;
+private Int32 __lcl_i_SystemInt32_8 = 0;
+private Int32 __lcl_i_SystemInt32_1 = 0;
+private Int32 __lcl_i_SystemInt32_0 = 0;
+private Int32 __lcl_i_SystemInt32_3 = 0;
+private Int32 __lcl_i_SystemInt32_2 = 0;
+private Int32 __lcl_i_SystemInt32_5 = 0;
+private Int32 __lcl_i_SystemInt32_4 = 0;
+private Int32 __lcl_i_SystemInt32_7 = 0;
+private Int32 __lcl_i_SystemInt32_6 = 0;
+private Int32 __2_maxRarity__param = 0;
+private Boolean __lcl_hasZoneRestrictions_SystemBoolean_0 = false;
+private Int32 __20_waterType__param = 0;
+private Int32 __lcl_i_SystemInt32_13 = 0;
+private Int32 __lcl_i_SystemInt32_23 = 0;
+private Int32 __0___0_GetRandomFishIndexWithMaxWeightAndZone__ret = 0;
+private Single __lcl_firstWeight_SystemSingle_0 = 0f;
+private String __intnl_SystemString_5 = null;
+private Boolean __lcl_hasValidWater_SystemBoolean_0 = false;
+private Single __lcl_weight_SystemSingle_0 = 0f;
+private Single __lcl_weight_SystemSingle_1 = 0f;
+private Single __lcl_weight_SystemSingle_2 = 0f;
+private Boolean __lcl_allWeightsEqual_SystemBoolean_0 = false;
+private String[] __intnl_SystemStringArray_3 = null;
+private String[] __intnl_SystemStringArray_2 = null;
+private String[] __intnl_SystemStringArray_1 = null;
+private String[] __intnl_SystemStringArray_0 = null;
+private String[] __intnl_SystemStringArray_5 = null;
+private String[] __intnl_SystemStringArray_4 = null;
+private Boolean __0___0_IsFishCatchable__ret = false;
+private Single[] __lcl_eligibleWeights_SystemSingleArray_0 = null;
+private Single[] __lcl_eligibleWeights_SystemSingleArray_1 = null;
+private Component[] __lcl_availableFish_UnityEngineComponentArray_0 = null;
+private Single __intnl_SystemSingle_4 = 0f;
+private Int32 __1_fishIndex__param = 0;
+private Object __intnl_UnityEngineObject_15 = null;
+private object __intnl_SystemObject_4 = null;
+private Single __3_maxWeightKg__param = 0f;
+private Int32 __lcl_saltwaterCount_SystemInt32_0 = 0;
+private Boolean __lcl_isRelicSelection_SystemBoolean_2 = false;
+public UdonBehaviour seaEventSpawner;
+private Int32 __4_waterType__param = 0;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_3 = null;
+private String __1_zoneID__param = null;
+private Boolean __intnl_SystemBoolean_109 = false;
+private Boolean __intnl_SystemBoolean_108 = false;
+private Boolean __intnl_SystemBoolean_101 = false;
+private Boolean __intnl_SystemBoolean_100 = false;
+private Boolean __intnl_SystemBoolean_103 = false;
+private Boolean __intnl_SystemBoolean_102 = false;
+private Boolean __intnl_SystemBoolean_105 = false;
+private Boolean __intnl_SystemBoolean_104 = false;
+private Boolean __intnl_SystemBoolean_107 = false;
+private Boolean __intnl_SystemBoolean_106 = false;
+private UdonBehaviour __lcl_nearbyEvent_VRCUdonUdonBehaviour_0 = null;
+private UdonBehaviour __0___0_GetRandomFishWithLuck__ret = null;
+private Vector3 __1_playerPosition__param = new Vector3(0f, 0f, 0f);
+private String __const_SystemString_9 = "__0_position__param";
+private Vector3 __intnl_UnityEngineVector3_2 = new Vector3(0f, 0f, 0f);
+private Single[] __0_weights__param = null;
+private Boolean __intnl_SystemBoolean_82 = false;
+private Boolean __intnl_SystemBoolean_92 = false;
+private Boolean __intnl_SystemBoolean_12 = false;
+private Boolean __intnl_SystemBoolean_22 = false;
+private Boolean __intnl_SystemBoolean_32 = false;
+private Boolean __intnl_SystemBoolean_42 = false;
+private Boolean __intnl_SystemBoolean_52 = false;
+private Boolean __intnl_SystemBoolean_62 = false;
+private Boolean __intnl_SystemBoolean_72 = false;
+public Single secretChance;
+private UInt32 __gintnl_SystemUInt32_47 = 33704;
+private UInt32 __gintnl_SystemUInt32_17 = 10492;
+private UInt32 __gintnl_SystemUInt32_37 = 20772;
+private UInt32 __gintnl_SystemUInt32_27 = 13536;
+private object __intnl_SystemObject_57 = null;
+private object __intnl_SystemObject_56 = null;
+private object __intnl_SystemObject_55 = null;
+private object __intnl_SystemObject_54 = null;
+private object __intnl_SystemObject_53 = null;
+private object __intnl_SystemObject_52 = null;
+private object __intnl_SystemObject_51 = null;
+private object __intnl_SystemObject_50 = null;
+private object __intnl_SystemObject_59 = null;
+private object __intnl_SystemObject_58 = null;
+private Single __intnl_SystemSingle_50 = 0f;
+private Single __intnl_SystemSingle_51 = 0f;
+private Int32 __intnl_SystemInt32_16 = 0;
+private Int32 __intnl_SystemInt32_36 = 0;
+private Int32 __intnl_SystemInt32_26 = 0;
+private Int32 __intnl_SystemInt32_56 = 0;
+private Int32 __intnl_SystemInt32_46 = 0;
+private Int32 __intnl_SystemInt32_76 = 0;
+private Int32 __intnl_SystemInt32_66 = 0;
+private Int32 __6_waterType__param = 0;
+private String __refl_typename = "FishDatabase";
+private Single __5_maxWeightKg__param = 0f;
+private Int32 __lcl_catchableCount_SystemInt32_0 = 0;
+private Int32 __1_targetRarity__param = 0;
+private Single __lcl_t_SystemSingle_0 = 0f;
+private Int32 __lcl_i_SystemInt32_10 = 0;
+private Int32 __lcl_i_SystemInt32_20 = 0;
+private Single __0___0_GetSeaEventModifierBoostChance__ret = 0f;
+private Int32 __1_maxRarity__param = 0;
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Int32 __intnl_SystemInt32_5 = 0;
+private Int32 __intnl_SystemInt32_4 = 0;
+private Int32 __intnl_SystemInt32_7 = 0;
+private Int32 __intnl_SystemInt32_6 = 0;
+private Int32 __intnl_SystemInt32_9 = 0;
+private Int32 __intnl_SystemInt32_8 = 0;
+private String __intnl_SystemString_2 = null;
+private Single __lcl_relicRoll_SystemSingle_0 = 0f;
+private Int32 __lcl_zoneCount_SystemInt32_0 = 0;
+private String __const_SystemString_56 = "__0___0_HasAllowedZoneID__ret";
+private String __const_SystemString_57 = "spawnInAnySaltwater";
+private String __const_SystemString_54 = "__2_zoneID__param";
+private String __const_SystemString_55 = "__0_HasAllowedZoneID";
+private String __const_SystemString_52 = "__0_GetSpawnMultiplier";
+private String __const_SystemString_53 = "__0___0_GetSpawnMultiplier__ret";
+private String __const_SystemString_50 = "relicDropWeight";
+private String __const_SystemString_51 = "__2_dayNightCycle__param";
+private String __const_SystemString_58 = "__1_waterType__param";
+private String __const_SystemString_59 = "__3_zoneID__param";
+private Single __intnl_SystemSingle_3 = 0f;
+private Single __4_luckMultiplier__param = 0f;
+private Single __0_maxWeightKg__param = 0f;
+private object __intnl_SystemObject_3 = null;
+private UdonBehaviour __lcl_fish_VRCUdonUdonBehaviour_10 = null;
+private String __const_SystemString_1 = "minPrice";
+private String __2_zoneID__param = null;
+private UdonBehaviour __lcl_nearbyEvent_VRCUdonUdonBehaviour_3 = null;
+private Single __lcl_below_SystemSingle_0 = 0f;
+private Single __const_SystemSingle_3 = 1f;
+private UdonBehaviour __0___0_GetRandomFishWithSeaEvent__ret = null;
+private Vector3 __intnl_UnityEngineVector3_1 = new Vector3(0f, 0f, 0f);
+private Boolean __intnl_SystemBoolean_85 = false;
+private Boolean __intnl_SystemBoolean_95 = false;
+private Boolean __intnl_SystemBoolean_15 = false;
+private Boolean __intnl_SystemBoolean_25 = false;
+private Boolean __intnl_SystemBoolean_35 = false;
+private Boolean __intnl_SystemBoolean_45 = false;
+private Boolean __intnl_SystemBoolean_55 = false;
+private Boolean __intnl_SystemBoolean_65 = false;
+private Boolean __intnl_SystemBoolean_75 = false;
+private Int32 __lcl_selectedRarity_SystemInt32_5 = 0;
+private Int32 __const_SystemInt32_12 = 9;
+private Int32 __0___0_GetRandomFishOfRarityWithConditions__ret = 0;
+public Single elusiveChance;
+private Int32 __intnl_SystemInt32_13 = 0;
+private Int32 __intnl_SystemInt32_33 = 0;
+private Int32 __intnl_SystemInt32_23 = 0;
+private Int32 __intnl_SystemInt32_53 = 0;
+private Int32 __intnl_SystemInt32_43 = 0;
+private Int32 __intnl_SystemInt32_73 = 0;
+private Int32 __intnl_SystemInt32_63 = 0;
+private Int32 __0___0_GetRandomFishIndexZoneless__ret = 0;
+private Int32 __lcl_i_SystemInt32_18 = 0;
+private Int32 __intnl_SystemInt32_18 = 0;
+private Int32 __intnl_SystemInt32_38 = 0;
+private Int32 __intnl_SystemInt32_28 = 0;
+private Int32 __intnl_SystemInt32_58 = 0;
+private Int32 __intnl_SystemInt32_48 = 0;
+private Int32 __intnl_SystemInt32_78 = 0;
+private Int32 __intnl_SystemInt32_68 = 0;
+private Int32 __lcl_i_SystemInt32_15 = 0;
+private Single __12_maxWeightKg__param = 0f;
+private Single __0_luckMultiplier__param = 0f;
+private Int32 __0___0_GetRandomFishIndexWithLuck__ret = 0;
+private Int32 __0_waterType__param = 0;
+private Object __intnl_UnityEngineObject_20 = null;
+private Object __intnl_UnityEngineObject_10 = null;
+private Int32 __lcl_fishWithZoneRestrictions_SystemInt32_0 = 0;
+private Int32[] __lcl_eligibleIndices_SystemInt32Array_0 = null;
+private Int32 __lcl_matchingCount_SystemInt32_0 = 0;
+public Single exoticPower;
+private Boolean __0___0_IsModifierBoostActive__ret = false;
+private Int32 __0_fishIndex__param = 0;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_6 = null;
+private Single __0___0_GetSeaEventShaderModifierBoostChance__ret = 0f;
+private String __const_SystemString_6 = "canSpawnInLava";
+private Int32[] __0___0_GetCatchableFishIndices__ret = null;
+private Int32 __2_waterType__param = 0;
+private Single __lcl_roll_SystemSingle_0 = 0f;
+private Single __lcl_roll_SystemSingle_1 = 0f;
+private Single __lcl_roll_SystemSingle_2 = 0f;
+private Single __const_SystemSingle_6 = 0.1f;
+private Int32 __lcl_eligibleCount_SystemInt32_1 = 0;
+private Int32 __lcl_eligibleCount_SystemInt32_0 = 0;
+private Vector3 __5_playerPosition__param = new Vector3(0f, 0f, 0f);
+private Vector3 __intnl_UnityEngineVector3_4 = new Vector3(0f, 0f, 0f);
+private Int32[] __0_fishIndices__param = null;
+private UInt32 __gintnl_SystemUInt32_50 = 34312;
+private UInt32 __gintnl_SystemUInt32_40 = 21888;
+private UInt32 __gintnl_SystemUInt32_10 = 6548;
+private UInt32 __gintnl_SystemUInt32_30 = 14040;
+private UInt32 __gintnl_SystemUInt32_20 = 10836;
+private Int32 __lcl_randomIndex_SystemInt32_0 = 0;
+private Int32 __lcl_randomIndex_SystemInt32_1 = 0;
+private Int32 __lcl_fishCount_SystemInt32_0 = 0;
+private Int32[] __lcl_matchingRarityIndices_SystemInt32Array_0 = null;
+private Int32 __intnl_SystemInt32_10 = 0;
+private Int32 __intnl_SystemInt32_30 = 0;
+private Int32 __intnl_SystemInt32_20 = 0;
+private Int32 __intnl_SystemInt32_50 = 0;
+private Int32 __intnl_SystemInt32_40 = 0;
+private Int32 __intnl_SystemInt32_70 = 0;
+private Int32 __intnl_SystemInt32_60 = 0;
+private Int32 __0_fishID__param = 0;
+private Int32 __lcl_duplicateCount_SystemInt32_0 = 0;
+private Int32 __0___0_GetRandomFishOfRarityWithAllConditions__ret = 0;
+private Vector3 __3_playerPosition__param = new Vector3(0f, 0f, 0f);
+private Int32 __0___0_GetRandomFishWithZonePriority__ret = 0;
+private Int32 __11_waterType__param = 0;
+private Int32 __0_GetAvailableFishCount__ret = 0;
+private Single __lcl_sr_SystemSingle_0 = 0f;
+private Object __intnl_UnityEngineObject_18 = null;
+private Int32[] __1_catchableIndices__param = null;
+private String __const_SystemString_26 = "GetRequiredFishIDs";
+private String __const_SystemString_27 = "__0_GetRequiredFishIDs__ret";
+private String __const_SystemString_24 = "HasModifierBoostEnabled";
+private String __const_SystemString_25 = "__0_HasModifierBoostEnabled__ret";
+private String __const_SystemString_22 = "ShouldForceRareFish";
+private String __const_SystemString_23 = "__0_ShouldForceRareFish__ret";
+private String __const_SystemString_20 = "HasRareFishEnabled";
+private String __const_SystemString_21 = "__0_HasRareFishEnabled__ret";
+private String __const_SystemString_28 = "GetModifierChanceMultiplier";
+private String __const_SystemString_29 = "__0_GetModifierChanceMultiplier__ret";
+private Single __intnl_SystemSingle_6 = 0f;
+private Int32 __19_waterType__param = 0;
+public Single fabledPower;
+private Object __intnl_UnityEngineObject_17 = null;
+private object __intnl_SystemObject_6 = null;
+private Int32 __0___0_GetSeaEventBoostedSizeModifier__ret = 0;
+private Boolean __lcl_canSpawnInWater_SystemBoolean_0 = false;
+private Int32 __lcl_fishWithForbiddenZones_SystemInt32_0 = 0;
+private UdonBehaviour __0_GetRandomFish__ret = null;
+private Boolean __lcl_isRelicSelection_SystemBoolean_0 = false;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_5 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_8 = null;
+private Single[] __lcl_modifiedChances_SystemSingleArray_0 = null;
+public UdonBehaviour fishIndexManager;
+private Single __1_maxWeightKg__param = 0f;
+private UInt32 __gintnl_SystemUInt32_48 = 33880;
+private UInt32 __gintnl_SystemUInt32_18 = 10596;
+private UInt32 __gintnl_SystemUInt32_38 = 21396;
+private UInt32 __gintnl_SystemUInt32_28 = 13704;
+public Single trashPower;
+private Single __const_SystemSingle_5 = 0.001f;
+private Boolean __intnl_SystemBoolean_80 = false;
+private Boolean __intnl_SystemBoolean_90 = false;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Boolean __intnl_SystemBoolean_20 = false;
+private Boolean __intnl_SystemBoolean_30 = false;
+private Boolean __intnl_SystemBoolean_40 = false;
+private Boolean __intnl_SystemBoolean_50 = false;
+private Boolean __intnl_SystemBoolean_60 = false;
+private Boolean __intnl_SystemBoolean_70 = false;
+private Int32 __0___0_GetRandomFishIndexWithSeaEvent__ret = 0;
+public Single trashChance;
+private UInt32 __gintnl_SystemUInt32_45 = 30156;
+private UInt32 __gintnl_SystemUInt32_15 = 10332;
+private UInt32 __gintnl_SystemUInt32_35 = 20000;
+private UInt32 __gintnl_SystemUInt32_25 = 11560;
+private object __intnl_SystemObject_75 = null;
+private object __intnl_SystemObject_74 = null;
+private object __intnl_SystemObject_73 = null;
+private object __intnl_SystemObject_72 = null;
+private object __intnl_SystemObject_71 = null;
+private object __intnl_SystemObject_70 = null;
+private Int32 __lcl_availableCount_SystemInt32_0 = 0;
+private Int32 __lcl_lowestRarityIndex_SystemInt32_0 = 0;
+private Int32 __lcl_selectedRarity_SystemInt32_3 = 0;
+private Int32 __const_SystemInt32_9 = 4;
+private Int32 __const_SystemInt32_8 = 3;
+private Int32 __const_SystemInt32_1 = 1;
+private Int32 __const_SystemInt32_0 = 0;
+private Int32 __const_SystemInt32_3 = 8;
+private Int32 __const_SystemInt32_2 = -1;
+private Int32 __const_SystemInt32_5 = 8;
+private Int32 __const_SystemInt32_4 = 7;
+private Int32 __const_SystemInt32_7 = 2;
+private Int32 __const_SystemInt32_6 = 10;
+public Single elusivePower;
+public Single curiousPower;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private Int32 __lcl_i_SystemInt32_12 = 0;
+private Int32 __lcl_i_SystemInt32_22 = 0;
+private Int32 __0___0_SelectRarityTier__ret = 0;
+private String __0_zoneID__param = null;
+private String __intnl_SystemString_4 = null;
+public Single relicPower;
+private Int32 __0_GetRandomFishIndex__ret = 0;
+private Int32 __lcl_universalCount_SystemInt32_0 = 0;
+private Single __intnl_SystemSingle_5 = 0f;
+private object __intnl_SystemObject_5 = null;
+private Int32[] __lcl_catchableFishIndices_SystemInt32Array_1 = null;
+private Int32[] __lcl_catchableFishIndices_SystemInt32Array_0 = null;
+private object __intnl_SystemObject_8 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_0 = null;
+private Vector3 __0_playerPosition__param = new Vector3(0f, 0f, 0f);
+private Single __7_luckMultiplier__param = 0f;
+private String __const_SystemString_3 = "canSpawnInFreshwater";
+private Boolean __intnl_SystemBoolean_119 = false;
+private Boolean __intnl_SystemBoolean_118 = false;
+private Boolean __intnl_SystemBoolean_111 = false;
+private Boolean __intnl_SystemBoolean_110 = false;
+private Boolean __intnl_SystemBoolean_113 = false;
+private Boolean __intnl_SystemBoolean_112 = false;
+private Boolean __intnl_SystemBoolean_115 = false;
+private Boolean __intnl_SystemBoolean_114 = false;
+private Boolean __intnl_SystemBoolean_117 = false;
+private Boolean __intnl_SystemBoolean_116 = false;
+private Int32[] __lcl_zonePlusUniversalIndices_SystemInt32Array_0 = null;
+private UdonBehaviour __lcl_nearbyEvent_VRCUdonUdonBehaviour_1 = null;
+private String __const_SystemString_8 = "forbiddenZoneIDs";
+private Boolean __intnl_SystemBoolean_88 = false;
+private Boolean __intnl_SystemBoolean_98 = false;
+private Boolean __intnl_SystemBoolean_18 = false;
+private Boolean __intnl_SystemBoolean_28 = false;
+private Boolean __intnl_SystemBoolean_38 = false;
+private Boolean __intnl_SystemBoolean_48 = false;
+private Boolean __intnl_SystemBoolean_58 = false;
+private Boolean __intnl_SystemBoolean_68 = false;
+private Boolean __intnl_SystemBoolean_78 = false;
+private Single __lcl_nonRelicTotal_SystemSingle_0 = 0f;
+private Vector3 __intnl_UnityEngineVector3_3 = new Vector3(0f, 0f, 0f);
+
+
+public void _start()
+{
+UNDEF_71185_532();
+UNDEF_71185_2748();
+UNDEF_71185_3620();
+UNDEF_71185_1852();
+UNDEF_71185_1284();
+}
+private void UNDEF_71185_136()
+{
+}
+private void UNDEF_71185_532()
+{
+__intnl_SystemSingle_0 = trashChance + abundantChance;
+__intnl_SystemSingle_1 = __intnl_SystemSingle_0 + commonChance;
+__intnl_SystemSingle_2 = __intnl_SystemSingle_1 + curiousChance;
+__intnl_SystemSingle_3 = __intnl_SystemSingle_2 + elusiveChance;
+__intnl_SystemSingle_4 = __intnl_SystemSingle_3 + fabledChance;
+__intnl_SystemSingle_5 = __intnl_SystemSingle_4 + mythicChance;
+__intnl_SystemSingle_6 = __intnl_SystemSingle_5 + exoticChance;
+__intnl_SystemSingle_7 = __intnl_SystemSingle_6 + relicChance;
+__intnl_SystemSingle_8 = __intnl_SystemSingle_7 + secretChance;
+__lcl_total_SystemSingle_0 = __intnl_SystemSingle_8 + ultimateSecretChance;
+__intnl_SystemBoolean_0 = __lcl_total_SystemSingle_0 != __const_SystemSingle_0;
+if (__intnl_SystemBoolean_0)
+{
+}
+}
+private void UNDEF_71185_1284()
+{
+__intnl_SystemInt32_0 = fishEntries.Length;
+__lcl_usedIDs_SystemInt32Array_0 = __intnl_SystemInt32_0.ctor();
+__lcl_duplicateCount_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_0 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_1 = fishEntries.Length;
+__intnl_SystemBoolean_1 = __lcl_i_SystemInt32_0 < __intnl_SystemInt32_1;
+if (__intnl_SystemBoolean_1)
+{
+break;
+}
+__lcl_fish_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_0]);
+__intnl_SystemObject_0 = __lcl_fish_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_0);
+__intnl_SystemInt32_2 = Convert.ToInt32(__intnl_SystemObject_0);
+__intnl_SystemBoolean_2 = __intnl_SystemInt32_2 <= __const_SystemInt32_0;
+if (__intnl_SystemBoolean_2)
+{
+}
+__lcl_j_SystemInt32_0 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_3 = __lcl_j_SystemInt32_0 < __lcl_i_SystemInt32_0;
+if (__intnl_SystemBoolean_3)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(fishEntries[__lcl_j_SystemInt32_0]);
+__intnl_SystemObject_1 = __intnl_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_0);
+__intnl_SystemInt32_3 = Convert.ToInt32(__intnl_SystemObject_1);
+__intnl_SystemObject_2 = __lcl_fish_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_0);
+__intnl_SystemInt32_4 = Convert.ToInt32(__intnl_SystemObject_2);
+__intnl_SystemBoolean_4 = __intnl_SystemInt32_3 == __intnl_SystemInt32_4;
+if (__intnl_SystemBoolean_4)
+{
+__lcl_duplicateCount_SystemInt32_0 = __lcl_duplicateCount_SystemInt32_0 + __const_SystemInt32_1;
+}
+__lcl_j_SystemInt32_0 = __lcl_j_SystemInt32_0 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_1;
+}
+__intnl_SystemBoolean_1 = __lcl_duplicateCount_SystemInt32_0 == __const_SystemInt32_0;
+if (__intnl_SystemBoolean_1)
+{
+break;
+}
+}
+private void UNDEF_71185_1852()
+{
+__lcl_i_SystemInt32_1 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_5 = fishEntries.Length;
+__intnl_SystemBoolean_5 = __lcl_i_SystemInt32_1 < __intnl_SystemInt32_5;
+if (__intnl_SystemBoolean_5)
+{
+break;
+}
+__lcl_fish_VRCUdonUdonBehaviour_1 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_1]);
+__intnl_SystemObject_3 = __lcl_fish_VRCUdonUdonBehaviour_1.GetProgramVariable(__const_SystemString_1);
+__intnl_SystemSingle_9 = Convert.ToSingle(__intnl_SystemObject_3);
+__intnl_SystemBoolean_6 = __intnl_SystemSingle_9 <= __const_SystemSingle_1;
+if (__intnl_SystemBoolean_6)
+{
+}
+else
+{
+__intnl_SystemObject_4 = __lcl_fish_VRCUdonUdonBehaviour_1.GetProgramVariable(__const_SystemString_2);
+__intnl_SystemSingle_10 = Convert.ToSingle(__intnl_SystemObject_4);
+__intnl_SystemBoolean_6 = __intnl_SystemSingle_10 <= __const_SystemSingle_1;
+}
+if (__intnl_SystemBoolean_6)
+{
+}
+__intnl_SystemObject_5 = __lcl_fish_VRCUdonUdonBehaviour_1.GetProgramVariable(__const_SystemString_1);
+__intnl_SystemSingle_11 = Convert.ToSingle(__intnl_SystemObject_5);
+__intnl_SystemObject_6 = __lcl_fish_VRCUdonUdonBehaviour_1.GetProgramVariable(__const_SystemString_2);
+__intnl_SystemSingle_12 = Convert.ToSingle(__intnl_SystemObject_6);
+__intnl_SystemBoolean_7 = __intnl_SystemSingle_11 > __intnl_SystemSingle_12;
+if (__intnl_SystemBoolean_7)
+{
+}
+__lcl_i_SystemInt32_1 = __lcl_i_SystemInt32_1 + __const_SystemInt32_1;
+}
+}
+private void UNDEF_71185_2748()
+{
+__lcl_freshwaterCount_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_saltwaterCount_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_swampwaterCount_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_lavaCount_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_invalidCount_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_2 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_6 = fishEntries.Length;
+__intnl_SystemBoolean_8 = __lcl_i_SystemInt32_2 < __intnl_SystemInt32_6;
+if (__intnl_SystemBoolean_8)
+{
+break;
+}
+__lcl_fish_VRCUdonUdonBehaviour_2 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_2]);
+__lcl_hasValidWater_SystemBoolean_0 = __const_SystemBoolean_0;
+__intnl_SystemObject_7 = __lcl_fish_VRCUdonUdonBehaviour_2.GetProgramVariable(__const_SystemString_3);
+__intnl_SystemBoolean_9 = (Boolean)__intnl_SystemObject_7;
+if (__intnl_SystemBoolean_9)
+{
+__lcl_freshwaterCount_SystemInt32_0 = __lcl_freshwaterCount_SystemInt32_0 + __const_SystemInt32_1;
+__lcl_hasValidWater_SystemBoolean_0 = __const_SystemBoolean_1;
+}
+__intnl_SystemObject_8 = __lcl_fish_VRCUdonUdonBehaviour_2.GetProgramVariable(__const_SystemString_4);
+__intnl_SystemBoolean_10 = (Boolean)__intnl_SystemObject_8;
+if (__intnl_SystemBoolean_10)
+{
+__lcl_saltwaterCount_SystemInt32_0 = __lcl_saltwaterCount_SystemInt32_0 + __const_SystemInt32_1;
+__lcl_hasValidWater_SystemBoolean_0 = __const_SystemBoolean_1;
+}
+__intnl_SystemObject_9 = __lcl_fish_VRCUdonUdonBehaviour_2.GetProgramVariable(__const_SystemString_5);
+__intnl_SystemBoolean_11 = (Boolean)__intnl_SystemObject_9;
+if (__intnl_SystemBoolean_11)
+{
+__lcl_swampwaterCount_SystemInt32_0 = __lcl_swampwaterCount_SystemInt32_0 + __const_SystemInt32_1;
+__lcl_hasValidWater_SystemBoolean_0 = __const_SystemBoolean_1;
+}
+__intnl_SystemObject_10 = __lcl_fish_VRCUdonUdonBehaviour_2.GetProgramVariable(__const_SystemString_6);
+__intnl_SystemBoolean_12 = (Boolean)__intnl_SystemObject_10;
+if (__intnl_SystemBoolean_12)
+{
+__lcl_lavaCount_SystemInt32_0 = __lcl_lavaCount_SystemInt32_0 + __const_SystemInt32_1;
+__lcl_hasValidWater_SystemBoolean_0 = __const_SystemBoolean_1;
+}
+if (__lcl_hasValidWater_SystemBoolean_0)
+{
+}
+else
+{
+__lcl_invalidCount_SystemInt32_0 = __lcl_invalidCount_SystemInt32_0 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_2 = __lcl_i_SystemInt32_2 + __const_SystemInt32_1;
+}
+__intnl_SystemBoolean_8 = __lcl_invalidCount_SystemInt32_0 > __const_SystemInt32_0;
+if (__intnl_SystemBoolean_8)
+{
+}
+}
+private void UNDEF_71185_3620()
+{
+__lcl_fishWithZoneRestrictions_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_fishWithAllowedZones_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_fishWithForbiddenZones_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_3 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_7 = fishEntries.Length;
+__intnl_SystemBoolean_13 = __lcl_i_SystemInt32_3 < __intnl_SystemInt32_7;
+if (__intnl_SystemBoolean_13)
+{
+break;
+}
+__lcl_fish_VRCUdonUdonBehaviour_3 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_3]);
+__lcl_hasZoneRestrictions_SystemBoolean_0 = __const_SystemBoolean_0;
+__intnl_SystemObject_11 = __lcl_fish_VRCUdonUdonBehaviour_3.GetProgramVariable(__const_SystemString_7);
+__intnl_SystemStringArray_0 = (String[])__intnl_SystemObject_11;
+__intnl_SystemBoolean_14 = __intnl_SystemStringArray_0 != __const_SystemObject_0;
+if (__intnl_SystemBoolean_14)
+{
+__intnl_SystemObject_12 = __lcl_fish_VRCUdonUdonBehaviour_3.GetProgramVariable(__const_SystemString_7);
+__intnl_SystemStringArray_1 = (String[])__intnl_SystemObject_12;
+__intnl_SystemInt32_8 = __intnl_SystemStringArray_1.Length;
+__intnl_SystemBoolean_14 = __intnl_SystemInt32_8 > __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_14)
+{
+__lcl_fishWithAllowedZones_SystemInt32_0 = __lcl_fishWithAllowedZones_SystemInt32_0 + __const_SystemInt32_1;
+__lcl_hasZoneRestrictions_SystemBoolean_0 = __const_SystemBoolean_1;
+}
+__intnl_SystemObject_13 = __lcl_fish_VRCUdonUdonBehaviour_3.GetProgramVariable(__const_SystemString_8);
+__intnl_SystemStringArray_2 = (String[])__intnl_SystemObject_13;
+__intnl_SystemBoolean_15 = __intnl_SystemStringArray_2 != __const_SystemObject_0;
+if (__intnl_SystemBoolean_15)
+{
+__intnl_SystemObject_14 = __lcl_fish_VRCUdonUdonBehaviour_3.GetProgramVariable(__const_SystemString_8);
+__intnl_SystemStringArray_3 = (String[])__intnl_SystemObject_14;
+__intnl_SystemInt32_9 = __intnl_SystemStringArray_3.Length;
+__intnl_SystemBoolean_15 = __intnl_SystemInt32_9 > __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_15)
+{
+__lcl_fishWithForbiddenZones_SystemInt32_0 = __lcl_fishWithForbiddenZones_SystemInt32_0 + __const_SystemInt32_1;
+__lcl_hasZoneRestrictions_SystemBoolean_0 = __const_SystemBoolean_1;
+}
+if (__lcl_hasZoneRestrictions_SystemBoolean_0)
+{
+__lcl_fishWithZoneRestrictions_SystemInt32_0 = __lcl_fishWithZoneRestrictions_SystemInt32_0 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_3 = __lcl_i_SystemInt32_3 + __const_SystemInt32_1;
+}
+}
+public void __0_OnZoneChanged()
+{
+currentZoneID = __0_newZoneID__param;
+}
+public void GetCurrentZoneID()
+{
+__0_GetCurrentZoneID__ret = currentZoneID;
+return;
+}
+public void __0_GetFishIndexByID()
+{
+__lcl_i_SystemInt32_4 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_10 = fishEntries.Length;
+__intnl_SystemBoolean_16 = __lcl_i_SystemInt32_4 < __intnl_SystemInt32_10;
+if (__intnl_SystemBoolean_16)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_1 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_4]);
+__intnl_SystemObject_15 = __intnl_VRCUdonUdonBehaviour_1.GetProgramVariable(__const_SystemString_0);
+__intnl_SystemInt32_11 = Convert.ToInt32(__intnl_SystemObject_15);
+__intnl_SystemBoolean_17 = __intnl_SystemInt32_11 == __0_fishID__param;
+if (__intnl_SystemBoolean_17)
+{
+__0___0_GetFishIndexByID__ret = __lcl_i_SystemInt32_4;
+return;
+}
+__lcl_i_SystemInt32_4 = __lcl_i_SystemInt32_4 + __const_SystemInt32_1;
+}
+__0___0_GetFishIndexByID__ret = __const_SystemInt32_2;
+return;
+}
+public void __0_IsFishIDCatchable()
+{
+__0_fishID__param = __1_fishID__param;
+__0_GetFishIndexByID();
+__lcl_fishIndex_SystemInt32_0 = __0___0_GetFishIndexByID__ret;
+__intnl_SystemBoolean_18 = __lcl_fishIndex_SystemInt32_0 == __const_SystemInt32_2;
+if (__intnl_SystemBoolean_18)
+{
+__0___0_IsFishIDCatchable__ret = __const_SystemBoolean_0;
+return;
+}
+__intnl_VRCUdonUdonBehaviour_2 = (UdonBehaviour)(fishEntries[__lcl_fishIndex_SystemInt32_0]);
+__1_fish__param = __intnl_VRCUdonUdonBehaviour_2;
+__11_waterType__param = __0_waterType__param;
+__4_zoneID__param = __0_zoneID__param;
+__9_maxWeightKg__param = __0_maxWeightKg__param;
+__1_fishIndex__param = __const_SystemInt32_2;
+UNDEF_71185_15012();
+__0___0_IsFishIDCatchable__ret = __0___0_IsFishCatchable__ret;
+return;
+}
+public void __0_GetRandomFishIndexWithSeaEvent()
+{
+__lcl_nearbyEvent_VRCUdonUdonBehaviour_0 = (UdonBehaviour)__const_SystemObject_0;
+__intnl_UnityEngineObject_0 = seaEventSpawner;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_19 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_19)
+{
+__intnl_UnityEngineVector3_0 = __0_playerPosition__param;
+seaEventSpawner.SetProgramVariable(__const_SystemString_9, __0_playerPosition__param);
+seaEventSpawner.SetProgramVariable(__const_SystemString_10, __const_SystemSingle_2);
+seaEventSpawner.SendCustomEvent(__const_SystemString_11);
+__intnl_SystemObject_16 = seaEventSpawner.GetProgramVariable(__const_SystemString_12);
+__intnl_VRCUdonUdonBehaviour_3 = (UdonBehaviour)__intnl_SystemObject_16;
+__lcl_nearbyEvent_VRCUdonUdonBehaviour_0 = __intnl_VRCUdonUdonBehaviour_3;
+}
+__intnl_UnityEngineObject_2 = __lcl_nearbyEvent_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_20 = __intnl_UnityEngineObject_2 != __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_20)
+{
+__intnl_UnityEngineVector3_0 = __0_playerPosition__param;
+__lcl_nearbyEvent_VRCUdonUdonBehaviour_0.SetProgramVariable(__const_SystemString_13, __0_playerPosition__param);
+__lcl_nearbyEvent_VRCUdonUdonBehaviour_0.SendCustomEvent(__const_SystemString_14);
+__intnl_SystemObject_16 = __lcl_nearbyEvent_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_15);
+__intnl_SystemBoolean_21 = (Boolean)__intnl_SystemObject_16;
+__intnl_SystemBoolean_20 = __intnl_SystemBoolean_21;
+}
+if (__intnl_SystemBoolean_20)
+{
+__lcl_nearbyEvent_VRCUdonUdonBehaviour_0.SendCustomEvent(__const_SystemString_16);
+__intnl_SystemObject_17 = __lcl_nearbyEvent_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_17);
+__intnl_SystemBoolean_22 = (Boolean)__intnl_SystemObject_17;
+if (__intnl_SystemBoolean_22)
+{
+__intnl_SystemSingle_13 = __0_luckMultiplier__param;
+__lcl_nearbyEvent_VRCUdonUdonBehaviour_0.SendCustomEvent(__const_SystemString_18);
+__intnl_SystemObject_18 = __lcl_nearbyEvent_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_19);
+__intnl_SystemSingle_14 = Convert.ToSingle(__intnl_SystemObject_18);
+__0_luckMultiplier__param = __intnl_SystemSingle_13 * __intnl_SystemSingle_14;
+}
+__lcl_nearbyEvent_VRCUdonUdonBehaviour_0.SendCustomEvent(__const_SystemString_20);
+__intnl_SystemObject_18 = __lcl_nearbyEvent_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_21);
+__intnl_SystemBoolean_24 = (Boolean)__intnl_SystemObject_18;
+__intnl_SystemBoolean_23 = __intnl_SystemBoolean_24;
+if (__intnl_SystemBoolean_23)
+{
+__lcl_nearbyEvent_VRCUdonUdonBehaviour_0.SendCustomEvent(__const_SystemString_22);
+__intnl_SystemObject_19 = __lcl_nearbyEvent_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_23);
+__intnl_SystemBoolean_25 = (Boolean)__intnl_SystemObject_19;
+__intnl_SystemBoolean_23 = __intnl_SystemBoolean_25;
+}
+if (__intnl_SystemBoolean_23)
+{
+__0_seaEvent__param = __lcl_nearbyEvent_VRCUdonUdonBehaviour_0;
+__2_waterType__param = __1_waterType__param;
+__2_maxWeightKg__param = __1_maxWeightKg__param;
+__0_GetRandomEventFishIndex();
+__0___0_GetRandomFishIndexWithSeaEvent__ret = __0___0_GetRandomEventFishIndex__ret;
+return;
+}
+__lcl_nearbyEvent_VRCUdonUdonBehaviour_0.SendCustomEvent(__const_SystemString_24);
+__intnl_SystemObject_20 = __lcl_nearbyEvent_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_25);
+__intnl_SystemBoolean_26 = (Boolean)__intnl_SystemObject_20;
+if (__intnl_SystemBoolean_26)
+{
+}
+}
+__6_luckMultiplier__param = __0_luckMultiplier__param;
+__9_waterType__param = __1_waterType__param;
+__2_zoneID__param = currentZoneID;
+__7_maxWeightKg__param = __1_maxWeightKg__param;
+__2_maxRarity__param = __const_SystemInt32_2;
+__0_GetRandomFishIndexWithMaxWeightAndZone();
+__0___0_GetRandomFishIndexWithSeaEvent__ret = __0___0_GetRandomFishIndexWithMaxWeightAndZone__ret;
+return;
+}
+public void __0_GetRandomEventFishIndex()
+{
+__intnl_VRCUdonUdonBehaviour_4 = __0_seaEvent__param;
+__0_seaEvent__param.SendCustomEvent(__const_SystemString_26);
+__intnl_SystemObject_21 = __0_seaEvent__param.GetProgramVariable(__const_SystemString_27);
+__intnl_SystemInt32Array_0 = (Int32[])__intnl_SystemObject_21;
+__lcl_requiredFishIDs_SystemInt32Array_0 = __intnl_SystemInt32Array_0;
+__intnl_SystemBoolean_27 = __lcl_requiredFishIDs_SystemInt32Array_0 == __const_SystemObject_0;
+if (__intnl_SystemBoolean_27)
+{
+}
+else
+{
+__intnl_SystemInt32_12 = __lcl_requiredFishIDs_SystemInt32Array_0.Length;
+__intnl_SystemBoolean_27 = __intnl_SystemInt32_12 == __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_27)
+{
+__6_luckMultiplier__param = __const_SystemSingle_3;
+__9_waterType__param = __2_waterType__param;
+__2_zoneID__param = currentZoneID;
+__7_maxWeightKg__param = __2_maxWeightKg__param;
+__2_maxRarity__param = __const_SystemInt32_2;
+__0_GetRandomFishIndexWithMaxWeightAndZone();
+__0___0_GetRandomEventFishIndex__ret = __0___0_GetRandomFishIndexWithMaxWeightAndZone__ret;
+return;
+}
+__intnl_SystemInt32_13 = __lcl_requiredFishIDs_SystemInt32Array_0.Length;
+__lcl_catchableEventFish_SystemInt32Array_0 = __intnl_SystemInt32_13.ctor();
+__lcl_catchableCount_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_5 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_14 = __lcl_requiredFishIDs_SystemInt32Array_0.Length;
+__intnl_SystemBoolean_28 = __lcl_i_SystemInt32_5 < __intnl_SystemInt32_14;
+if (__intnl_SystemBoolean_28)
+{
+break;
+}
+__intnl_SystemInt32_15 = __lcl_requiredFishIDs_SystemInt32Array_0[__lcl_i_SystemInt32_5];
+__1_fishID__param = __intnl_SystemInt32_15;
+__0_waterType__param = __2_waterType__param;
+__0_zoneID__param = currentZoneID;
+__0_maxWeightKg__param = __2_maxWeightKg__param;
+__0_IsFishIDCatchable();
+if (__0___0_IsFishIDCatchable__ret)
+{
+__intnl_SystemInt32_16 = __lcl_requiredFishIDs_SystemInt32Array_0[__lcl_i_SystemInt32_5];
+__0_fishID__param = __intnl_SystemInt32_16;
+__0_GetFishIndexByID();
+__lcl_fishIndex_SystemInt32_1 = __0___0_GetFishIndexByID__ret;
+__intnl_SystemBoolean_29 = __lcl_fishIndex_SystemInt32_1 != __const_SystemInt32_2;
+if (__intnl_SystemBoolean_29)
+{
+__lcl_catchableEventFish_SystemInt32Array_0.Set(__lcl_catchableCount_SystemInt32_0, __lcl_fishIndex_SystemInt32_1);
+__lcl_catchableCount_SystemInt32_0 = __lcl_catchableCount_SystemInt32_0 + __const_SystemInt32_1;
+}
+}
+__lcl_i_SystemInt32_5 = __lcl_i_SystemInt32_5 + __const_SystemInt32_1;
+}
+__intnl_SystemBoolean_28 = __lcl_catchableCount_SystemInt32_0 > __const_SystemInt32_0;
+if (__intnl_SystemBoolean_28)
+{
+__lcl_randomIndex_SystemInt32_0 = Random.Range(__const_SystemInt32_0, __lcl_catchableCount_SystemInt32_0);
+__lcl_selectedFishIndex_SystemInt32_0 = __lcl_catchableEventFish_SystemInt32Array_0[__lcl_randomIndex_SystemInt32_0];
+__0___0_GetRandomEventFishIndex__ret = __lcl_selectedFishIndex_SystemInt32_0;
+return;
+}
+else
+{
+__6_luckMultiplier__param = __const_SystemSingle_4;
+__9_waterType__param = __2_waterType__param;
+__2_zoneID__param = currentZoneID;
+__7_maxWeightKg__param = __2_maxWeightKg__param;
+__2_maxRarity__param = __const_SystemInt32_2;
+__0_GetRandomFishIndexWithMaxWeightAndZone();
+__0___0_GetRandomEventFishIndex__ret = __0___0_GetRandomFishIndexWithMaxWeightAndZone__ret;
+return;
+}
+}
+public void __0_IsModifierBoostActive()
+{
+__intnl_UnityEngineObject_4 = seaEventSpawner;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_30 = __intnl_UnityEngineObject_4 == __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_30)
+{
+__0___0_IsModifierBoostActive__ret = __const_SystemBoolean_0;
+return;
+}
+__intnl_UnityEngineVector3_1 = __1_playerPosition__param;
+seaEventSpawner.SetProgramVariable(__const_SystemString_9, __1_playerPosition__param);
+seaEventSpawner.SetProgramVariable(__const_SystemString_10, __const_SystemSingle_2);
+seaEventSpawner.SendCustomEvent(__const_SystemString_11);
+__intnl_SystemObject_22 = seaEventSpawner.GetProgramVariable(__const_SystemString_12);
+__intnl_VRCUdonUdonBehaviour_5 = (UdonBehaviour)__intnl_SystemObject_22;
+__lcl_nearbyEvent_VRCUdonUdonBehaviour_1 = __intnl_VRCUdonUdonBehaviour_5;
+__intnl_UnityEngineObject_6 = __lcl_nearbyEvent_VRCUdonUdonBehaviour_1;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_31 = __intnl_UnityEngineObject_6 != __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_31)
+{
+__intnl_UnityEngineVector3_2 = __1_playerPosition__param;
+__lcl_nearbyEvent_VRCUdonUdonBehaviour_1.SetProgramVariable(__const_SystemString_13, __1_playerPosition__param);
+__lcl_nearbyEvent_VRCUdonUdonBehaviour_1.SendCustomEvent(__const_SystemString_14);
+__intnl_SystemObject_23 = __lcl_nearbyEvent_VRCUdonUdonBehaviour_1.GetProgramVariable(__const_SystemString_15);
+__intnl_SystemBoolean_32 = (Boolean)__intnl_SystemObject_23;
+__intnl_SystemBoolean_31 = __intnl_SystemBoolean_32;
+}
+if (__intnl_SystemBoolean_31)
+{
+__lcl_nearbyEvent_VRCUdonUdonBehaviour_1.SendCustomEvent(__const_SystemString_24);
+__intnl_SystemObject_24 = __lcl_nearbyEvent_VRCUdonUdonBehaviour_1.GetProgramVariable(__const_SystemString_25);
+__intnl_SystemBoolean_33 = (Boolean)__intnl_SystemObject_24;
+__0___0_IsModifierBoostActive__ret = __intnl_SystemBoolean_33;
+return;
+}
+__0___0_IsModifierBoostActive__ret = __const_SystemBoolean_0;
+return;
+}
+public void __0_GetSeaEventModifierBoostChance()
+{
+__intnl_UnityEngineObject_8 = seaEventSpawner;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_34 = __intnl_UnityEngineObject_8 == __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_34)
+{
+__0___0_GetSeaEventModifierBoostChance__ret = __const_SystemSingle_3;
+return;
+}
+__intnl_UnityEngineVector3_3 = __2_playerPosition__param;
+seaEventSpawner.SetProgramVariable(__const_SystemString_9, __2_playerPosition__param);
+seaEventSpawner.SetProgramVariable(__const_SystemString_10, __const_SystemSingle_2);
+seaEventSpawner.SendCustomEvent(__const_SystemString_11);
+__intnl_SystemObject_25 = seaEventSpawner.GetProgramVariable(__const_SystemString_12);
+__intnl_VRCUdonUdonBehaviour_6 = (UdonBehaviour)__intnl_SystemObject_25;
+__lcl_nearbyEvent_VRCUdonUdonBehaviour_2 = __intnl_VRCUdonUdonBehaviour_6;
+__intnl_UnityEngineObject_10 = __lcl_nearbyEvent_VRCUdonUdonBehaviour_2;
+__intnl_UnityEngineObject_11 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_35 = __intnl_UnityEngineObject_10 != __intnl_UnityEngineObject_11;
+if (__intnl_SystemBoolean_35)
+{
+__intnl_UnityEngineVector3_4 = __2_playerPosition__param;
+__lcl_nearbyEvent_VRCUdonUdonBehaviour_2.SetProgramVariable(__const_SystemString_13, __2_playerPosition__param);
+__lcl_nearbyEvent_VRCUdonUdonBehaviour_2.SendCustomEvent(__const_SystemString_14);
+__intnl_SystemObject_26 = __lcl_nearbyEvent_VRCUdonUdonBehaviour_2.GetProgramVariable(__const_SystemString_15);
+__intnl_SystemBoolean_36 = (Boolean)__intnl_SystemObject_26;
+__intnl_SystemBoolean_35 = __intnl_SystemBoolean_36;
+}
+if (__intnl_SystemBoolean_35)
+{
+__lcl_nearbyEvent_VRCUdonUdonBehaviour_2.SendCustomEvent(__const_SystemString_28);
+__intnl_SystemObject_27 = __lcl_nearbyEvent_VRCUdonUdonBehaviour_2.GetProgramVariable(__const_SystemString_29);
+__intnl_SystemSingle_15 = Convert.ToSingle(__intnl_SystemObject_27);
+__0___0_GetSeaEventModifierBoostChance__ret = __intnl_SystemSingle_15;
+return;
+}
+__0___0_GetSeaEventModifierBoostChance__ret = __const_SystemSingle_3;
+return;
+}
+public void __0_GetSeaEventShaderModifierBoostChance()
+{
+__2_playerPosition__param = __3_playerPosition__param;
+__0_GetSeaEventModifierBoostChance();
+__0___0_GetSeaEventShaderModifierBoostChance__ret = __0___0_GetSeaEventModifierBoostChance__ret;
+return;
+}
+public void __0_GetSeaEventBoostedSizeModifier()
+{
+__intnl_UnityEngineObject_12 = seaEventSpawner;
+__intnl_UnityEngineObject_13 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_37 = __intnl_UnityEngineObject_12 == __intnl_UnityEngineObject_13;
+if (__intnl_SystemBoolean_37)
+{
+__0___0_GetSeaEventBoostedSizeModifier__ret = __const_SystemInt32_0;
+return;
+}
+__intnl_UnityEngineVector3_5 = __4_playerPosition__param;
+seaEventSpawner.SetProgramVariable(__const_SystemString_9, __4_playerPosition__param);
+seaEventSpawner.SetProgramVariable(__const_SystemString_10, __const_SystemSingle_2);
+seaEventSpawner.SendCustomEvent(__const_SystemString_11);
+__intnl_SystemObject_28 = seaEventSpawner.GetProgramVariable(__const_SystemString_12);
+__intnl_VRCUdonUdonBehaviour_7 = (UdonBehaviour)__intnl_SystemObject_28;
+__lcl_nearbyEvent_VRCUdonUdonBehaviour_3 = __intnl_VRCUdonUdonBehaviour_7;
+__intnl_UnityEngineObject_14 = __lcl_nearbyEvent_VRCUdonUdonBehaviour_3;
+__intnl_UnityEngineObject_15 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_38 = __intnl_UnityEngineObject_14 != __intnl_UnityEngineObject_15;
+if (__intnl_SystemBoolean_38)
+{
+__intnl_UnityEngineVector3_6 = __4_playerPosition__param;
+__lcl_nearbyEvent_VRCUdonUdonBehaviour_3.SetProgramVariable(__const_SystemString_13, __4_playerPosition__param);
+__lcl_nearbyEvent_VRCUdonUdonBehaviour_3.SendCustomEvent(__const_SystemString_14);
+__intnl_SystemObject_29 = __lcl_nearbyEvent_VRCUdonUdonBehaviour_3.GetProgramVariable(__const_SystemString_15);
+__intnl_SystemBoolean_39 = (Boolean)__intnl_SystemObject_29;
+__intnl_SystemBoolean_38 = __intnl_SystemBoolean_39;
+}
+if (__intnl_SystemBoolean_38)
+{
+__lcl_nearbyEvent_VRCUdonUdonBehaviour_3.SendCustomEvent(__const_SystemString_30);
+__intnl_SystemObject_30 = __lcl_nearbyEvent_VRCUdonUdonBehaviour_3.GetProgramVariable(__const_SystemString_31);
+__intnl_SystemInt32_17 = Convert.ToInt32(__intnl_SystemObject_30);
+__0___0_GetSeaEventBoostedSizeModifier__ret = __intnl_SystemInt32_17;
+return;
+}
+__0___0_GetSeaEventBoostedSizeModifier__ret = __const_SystemInt32_0;
+return;
+}
+public void __0_GetSeaEventBoostedShaderModifier()
+{
+__intnl_UnityEngineObject_16 = seaEventSpawner;
+__intnl_UnityEngineObject_17 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_40 = __intnl_UnityEngineObject_16 == __intnl_UnityEngineObject_17;
+if (__intnl_SystemBoolean_40)
+{
+__0___0_GetSeaEventBoostedShaderModifier__ret = __const_SystemInt32_0;
+return;
+}
+__intnl_UnityEngineVector3_7 = __5_playerPosition__param;
+seaEventSpawner.SetProgramVariable(__const_SystemString_9, __5_playerPosition__param);
+seaEventSpawner.SetProgramVariable(__const_SystemString_10, __const_SystemSingle_2);
+seaEventSpawner.SendCustomEvent(__const_SystemString_11);
+__intnl_SystemObject_31 = seaEventSpawner.GetProgramVariable(__const_SystemString_12);
+__intnl_VRCUdonUdonBehaviour_8 = (UdonBehaviour)__intnl_SystemObject_31;
+__lcl_nearbyEvent_VRCUdonUdonBehaviour_4 = __intnl_VRCUdonUdonBehaviour_8;
+__intnl_UnityEngineObject_18 = __lcl_nearbyEvent_VRCUdonUdonBehaviour_4;
+__intnl_UnityEngineObject_19 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_41 = __intnl_UnityEngineObject_18 != __intnl_UnityEngineObject_19;
+if (__intnl_SystemBoolean_41)
+{
+__intnl_UnityEngineVector3_8 = __5_playerPosition__param;
+__lcl_nearbyEvent_VRCUdonUdonBehaviour_4.SetProgramVariable(__const_SystemString_13, __5_playerPosition__param);
+__lcl_nearbyEvent_VRCUdonUdonBehaviour_4.SendCustomEvent(__const_SystemString_14);
+__intnl_SystemObject_32 = __lcl_nearbyEvent_VRCUdonUdonBehaviour_4.GetProgramVariable(__const_SystemString_15);
+__intnl_SystemBoolean_42 = (Boolean)__intnl_SystemObject_32;
+__intnl_SystemBoolean_41 = __intnl_SystemBoolean_42;
+}
+if (__intnl_SystemBoolean_41)
+{
+__lcl_nearbyEvent_VRCUdonUdonBehaviour_4.SendCustomEvent(__const_SystemString_32);
+__intnl_SystemObject_33 = __lcl_nearbyEvent_VRCUdonUdonBehaviour_4.GetProgramVariable(__const_SystemString_33);
+__intnl_SystemInt32_18 = Convert.ToInt32(__intnl_SystemObject_33);
+__0___0_GetSeaEventBoostedShaderModifier__ret = __intnl_SystemInt32_18;
+return;
+}
+__0___0_GetSeaEventBoostedShaderModifier__ret = __const_SystemInt32_0;
+return;
+}
+public void GetRandomFishIndex()
+{
+__7_luckMultiplier__param = __const_SystemSingle_3;
+__0_SelectRarityTier();
+__lcl_selectedRarity_SystemInt32_0 = __0___0_SelectRarityTier__ret;
+__2_targetRarity__param = __lcl_selectedRarity_SystemInt32_0;
+__0_GetRandomFishOfRarity();
+__0_GetRandomFishIndex__ret = __0___0_GetRandomFishOfRarity__ret;
+return;
+}
+public void __0_GetRandomFishIndexWithLuck()
+{
+__7_luckMultiplier__param = __1_luckMultiplier__param;
+__0_SelectRarityTier();
+__lcl_selectedRarity_SystemInt32_1 = __0___0_SelectRarityTier__ret;
+__3_targetRarity__param = __lcl_selectedRarity_SystemInt32_1;
+__0_SelectWeightedFish();
+__0___0_GetRandomFishIndexWithLuck__ret = __0___0_GetRandomFishOfRarityWithConditions__ret;
+return;
+}
+public void __0_GetRandomFishIndexWithLuckWaterAndZone()
+{
+__7_luckMultiplier__param = __2_luckMultiplier__param;
+__0_SelectRarityTier();
+__lcl_selectedRarity_SystemInt32_2 = __0___0_SelectRarityTier__ret;
+__4_targetRarity__param = __lcl_selectedRarity_SystemInt32_2;
+__12_waterType__param = __3_waterType__param;
+__6_zoneID__param = __1_zoneID__param;
+__0_SelectWeightedFish();
+__0___0_GetRandomFishIndexWithLuckWaterAndZone__ret = __0___0_GetRandomFishOfRarityWithAllConditions__ret;
+return;
+}
+public void __0_GetRandomFishIndexWithLuckAndWater()
+{
+__2_luckMultiplier__param = __3_luckMultiplier__param;
+__3_waterType__param = __4_waterType__param;
+__1_zoneID__param = currentZoneID;
+__0_GetRandomFishIndexWithLuckWaterAndZone();
+__0___0_GetRandomFishIndexWithLuckAndWater__ret = __0___0_GetRandomFishIndexWithLuckWaterAndZone__ret;
+return;
+}
+public void __0_GetRandomFishIndexWithMaxWeight()
+{
+__6_luckMultiplier__param = __4_luckMultiplier__param;
+__9_waterType__param = __5_waterType__param;
+__2_zoneID__param = currentZoneID;
+__7_maxWeightKg__param = __3_maxWeightKg__param;
+__2_maxRarity__param = __0_maxRarity__param;
+__0_GetRandomFishIndexWithMaxWeightAndZone();
+__0___0_GetRandomFishIndexWithMaxWeight__ret = __0___0_GetRandomFishIndexWithMaxWeightAndZone__ret;
+return;
+}
+public void __0_GetRandomFishIndexZoneless()
+{
+__7_waterType__param = __6_waterType__param;
+__5_maxWeightKg__param = __4_maxWeightKg__param;
+__0_GetCatchableFishIndicesZoneless();
+__lcl_catchableFishIndices_SystemInt32Array_0 = __0___0_GetCatchableFishIndicesZoneless__ret;
+__intnl_SystemInt32_19 = __lcl_catchableFishIndices_SystemInt32Array_0.Length;
+__intnl_SystemBoolean_43 = __intnl_SystemInt32_19 == __const_SystemInt32_0;
+if (__intnl_SystemBoolean_43)
+{
+__3_luckMultiplier__param = __5_luckMultiplier__param;
+__4_waterType__param = __6_waterType__param;
+__0_GetRandomFishIndexWithLuckAndWater();
+__0___0_GetRandomFishIndexZoneless__ret = __0___0_GetRandomFishIndexWithLuckAndWater__ret;
+return;
+}
+__7_luckMultiplier__param = __5_luckMultiplier__param;
+__0_SelectRarityTier();
+__lcl_selectedRarity_SystemInt32_3 = __0___0_SelectRarityTier__ret;
+__intnl_SystemBoolean_44 = __1_maxRarity__param >= __const_SystemInt32_0;
+if (__intnl_SystemBoolean_44)
+{
+__intnl_SystemBoolean_44 = __lcl_selectedRarity_SystemInt32_3 > __1_maxRarity__param;
+}
+if (__intnl_SystemBoolean_44)
+{
+__lcl_selectedRarity_SystemInt32_3 = __1_maxRarity__param;
+}
+__0_catchableIndices__param = __lcl_catchableFishIndices_SystemInt32Array_0;
+__0_targetRarity__param = __lcl_selectedRarity_SystemInt32_3;
+__0_GetRandomFishFromFilteredList();
+__0___0_GetRandomFishIndexZoneless__ret = __0___0_GetRandomFishFromFilteredList__ret;
+return;
+}
+private void __0_GetCatchableFishIndicesZoneless()
+{
+__intnl_SystemInt32_20 = fishEntries.Length;
+__lcl_tempIndices_SystemInt32Array_0 = __intnl_SystemInt32_20.ctor();
+__lcl_count_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_6 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_21 = fishEntries.Length;
+__intnl_SystemBoolean_45 = __lcl_i_SystemInt32_6 < __intnl_SystemInt32_21;
+if (__intnl_SystemBoolean_45)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_9 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_6]);
+__0_fish__param = __intnl_VRCUdonUdonBehaviour_9;
+__8_waterType__param = __7_waterType__param;
+__6_maxWeightKg__param = __5_maxWeightKg__param;
+__0_fishIndex__param = __lcl_i_SystemInt32_6;
+UNDEF_71185_12416();
+if (__0___0_IsFishCatchableZoneless__ret)
+{
+__lcl_tempIndices_SystemInt32Array_0.Set(__lcl_count_SystemInt32_0, __lcl_i_SystemInt32_6);
+__lcl_count_SystemInt32_0 = __lcl_count_SystemInt32_0 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_6 = __lcl_i_SystemInt32_6 + __const_SystemInt32_1;
+}
+__lcl_catchableIndices_SystemInt32Array_0 = __lcl_count_SystemInt32_0.ctor();
+__lcl_i_SystemInt32_6 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_45 = __lcl_i_SystemInt32_6 < __lcl_count_SystemInt32_0;
+if (__intnl_SystemBoolean_45)
+{
+break;
+}
+__intnl_SystemInt32_21 = __lcl_tempIndices_SystemInt32Array_0[__lcl_i_SystemInt32_6];
+__lcl_catchableIndices_SystemInt32Array_0.Set(__lcl_i_SystemInt32_6, __intnl_SystemInt32_21);
+__lcl_i_SystemInt32_6 = __lcl_i_SystemInt32_6 + __const_SystemInt32_1;
+}
+__0___0_GetCatchableFishIndicesZoneless__ret = __lcl_catchableIndices_SystemInt32Array_0;
+return;
+}
+private void UNDEF_71185_12416()
+{
+__intnl_SystemObject_34 = __0_fish__param.GetProgramVariable(__const_SystemString_34);
+__intnl_SystemBoolean_46 = (Boolean)__intnl_SystemObject_34;
+if (__intnl_SystemBoolean_46)
+{
+UNDEF_71185_13056();
+}
+__0___0_IsFishCatchableZoneless__ret = __const_SystemBoolean_0;
+}
+private void UNDEF_71185_13056()
+{
+__intnl_SystemObject_35 = __0_fish__param.GetProgramVariable(__const_SystemString_35);
+__intnl_SystemBoolean_49 = (Boolean)__intnl_SystemObject_35;
+if (__intnl_SystemBoolean_49)
+{
+__intnl_SystemBoolean_49 = __0_fishIndex__param >= __const_SystemInt32_0;
+}
+__intnl_SystemBoolean_48 = __intnl_SystemBoolean_49;
+if (__intnl_SystemBoolean_48)
+{
+__intnl_UnityEngineObject_20 = fishIndexManager;
+__intnl_UnityEngineObject_21 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_48 = __intnl_UnityEngineObject_20 != __intnl_UnityEngineObject_21;
+}
+__intnl_SystemBoolean_47 = __intnl_SystemBoolean_48;
+if (__intnl_SystemBoolean_47)
+{
+__intnl_SystemInt32_22 = __0_fishIndex__param;
+fishIndexManager.SetProgramVariable(__const_SystemString_36, __0_fishIndex__param);
+fishIndexManager.SendCustomEvent(__const_SystemString_37);
+__intnl_SystemObject_36 = fishIndexManager.GetProgramVariable(__const_SystemString_38);
+__intnl_SystemBoolean_50 = (Boolean)__intnl_SystemObject_36;
+__intnl_SystemBoolean_47 = __intnl_SystemBoolean_50;
+}
+if (__intnl_SystemBoolean_47)
+{
+__0___0_IsFishCatchableZoneless__ret = __const_SystemBoolean_0;
+return;
+}
+__intnl_SystemInt32_23 = __8_waterType__param;
+__0_fish__param.SetProgramVariable(__const_SystemString_39, __8_waterType__param);
+__0_fish__param.SendCustomEvent(__const_SystemString_40);
+__intnl_SystemObject_37 = __0_fish__param.GetProgramVariable(__const_SystemString_41);
+__intnl_SystemBoolean_51 = (Boolean)__intnl_SystemObject_37;
+if (__intnl_SystemBoolean_51)
+{
+UNDEF_71185_13248();
+}
+__0___0_IsFishCatchableZoneless__ret = __const_SystemBoolean_0;
+}
+private void UNDEF_71185_13248()
+{
+__intnl_VRCUdonUdonBehaviour_10 = dayNightCycle;
+__0_fish__param.SetProgramVariable(__const_SystemString_42, dayNightCycle);
+__0_fish__param.SendCustomEvent(__const_SystemString_43);
+__intnl_SystemObject_38 = __0_fish__param.GetProgramVariable(__const_SystemString_44);
+__intnl_SystemBoolean_52 = (Boolean)__intnl_SystemObject_38;
+if (__intnl_SystemBoolean_52)
+{
+__0_IsFishCatchableZoneless();
+}
+__0___0_IsFishCatchableZoneless__ret = __const_SystemBoolean_0;
+}
+private void __0_IsFishCatchableZoneless()
+{
+__intnl_SystemObject_39 = __0_fish__param.GetProgramVariable(__const_SystemString_45);
+__intnl_SystemSingle_16 = Convert.ToSingle(__intnl_SystemObject_39);
+__intnl_SystemBoolean_53 = __intnl_SystemSingle_16 > __6_maxWeightKg__param;
+if (__intnl_SystemBoolean_53)
+{
+__0___0_IsFishCatchableZoneless__ret = __const_SystemBoolean_0;
+return;
+}
+__0___0_IsFishCatchableZoneless__ret = __const_SystemBoolean_1;
+return;
+}
+public void __0_GetRandomFishIndexWithMaxWeightAndZone()
+{
+__10_waterType__param = __9_waterType__param;
+__3_zoneID__param = __2_zoneID__param;
+__8_maxWeightKg__param = __7_maxWeightKg__param;
+__0_GetCatchableFishIndices();
+__lcl_catchableFishIndices_SystemInt32Array_1 = __0___0_GetCatchableFishIndices__ret;
+__intnl_SystemInt32_24 = __lcl_catchableFishIndices_SystemInt32Array_1.Length;
+__intnl_SystemBoolean_54 = __intnl_SystemInt32_24 == __const_SystemInt32_0;
+if (__intnl_SystemBoolean_54)
+{
+__2_luckMultiplier__param = __6_luckMultiplier__param;
+__3_waterType__param = __9_waterType__param;
+__1_zoneID__param = __2_zoneID__param;
+__0_GetRandomFishIndexWithLuckWaterAndZone();
+__0___0_GetRandomFishIndexWithMaxWeightAndZone__ret = __0___0_GetRandomFishIndexWithLuckWaterAndZone__ret;
+return;
+}
+__7_luckMultiplier__param = __6_luckMultiplier__param;
+__0_SelectRarityTier();
+__lcl_selectedRarity_SystemInt32_4 = __0___0_SelectRarityTier__ret;
+__intnl_SystemBoolean_55 = __2_maxRarity__param >= __const_SystemInt32_0;
+if (__intnl_SystemBoolean_55)
+{
+__intnl_SystemBoolean_55 = __lcl_selectedRarity_SystemInt32_4 > __2_maxRarity__param;
+}
+if (__intnl_SystemBoolean_55)
+{
+__lcl_selectedRarity_SystemInt32_4 = __2_maxRarity__param;
+}
+__intnl_SystemBoolean_56 = __9_waterType__param == __const_SystemInt32_1;
+if (__intnl_SystemBoolean_56)
+{
+__1_catchableIndices__param = __lcl_catchableFishIndices_SystemInt32Array_1;
+__1_targetRarity__param = __lcl_selectedRarity_SystemInt32_4;
+__5_zoneID__param = __2_zoneID__param;
+__0_GetRandomFishFromFilteredList();
+__0___0_GetRandomFishIndexWithMaxWeightAndZone__ret = __0___0_GetRandomFishWithZonePriority__ret;
+return;
+}
+__0_catchableIndices__param = __lcl_catchableFishIndices_SystemInt32Array_1;
+__0_targetRarity__param = __lcl_selectedRarity_SystemInt32_4;
+__0_GetRandomFishFromFilteredList();
+__0___0_GetRandomFishIndexWithMaxWeightAndZone__ret = __0___0_GetRandomFishFromFilteredList__ret;
+return;
+}
+private void __0_GetCatchableFishIndices()
+{
+__intnl_SystemInt32_25 = fishEntries.Length;
+__lcl_tempIndices_SystemInt32Array_1 = __intnl_SystemInt32_25.ctor();
+__lcl_count_SystemInt32_1 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_7 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_26 = fishEntries.Length;
+__intnl_SystemBoolean_57 = __lcl_i_SystemInt32_7 < __intnl_SystemInt32_26;
+if (__intnl_SystemBoolean_57)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_11 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_7]);
+__1_fish__param = __intnl_VRCUdonUdonBehaviour_11;
+__11_waterType__param = __10_waterType__param;
+__4_zoneID__param = __3_zoneID__param;
+__9_maxWeightKg__param = __8_maxWeightKg__param;
+__1_fishIndex__param = __lcl_i_SystemInt32_7;
+UNDEF_71185_15012();
+if (__0___0_IsFishCatchable__ret)
+{
+__lcl_tempIndices_SystemInt32Array_1.Set(__lcl_count_SystemInt32_1, __lcl_i_SystemInt32_7);
+__lcl_count_SystemInt32_1 = __lcl_count_SystemInt32_1 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_7 = __lcl_i_SystemInt32_7 + __const_SystemInt32_1;
+}
+__lcl_catchableIndices_SystemInt32Array_1 = __lcl_count_SystemInt32_1.ctor();
+__lcl_i_SystemInt32_7 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_57 = __lcl_i_SystemInt32_7 < __lcl_count_SystemInt32_1;
+if (__intnl_SystemBoolean_57)
+{
+break;
+}
+__intnl_SystemInt32_26 = __lcl_tempIndices_SystemInt32Array_1[__lcl_i_SystemInt32_7];
+__lcl_catchableIndices_SystemInt32Array_1.Set(__lcl_i_SystemInt32_7, __intnl_SystemInt32_26);
+__lcl_i_SystemInt32_7 = __lcl_i_SystemInt32_7 + __const_SystemInt32_1;
+}
+__0___0_GetCatchableFishIndices__ret = __lcl_catchableIndices_SystemInt32Array_1;
+return;
+}
+private void UNDEF_71185_15012()
+{
+__intnl_SystemObject_40 = __1_fish__param.GetProgramVariable(__const_SystemString_34);
+__intnl_SystemBoolean_58 = (Boolean)__intnl_SystemObject_40;
+if (__intnl_SystemBoolean_58)
+{
+UNDEF_71185_15652();
+}
+__0___0_IsFishCatchable__ret = __const_SystemBoolean_0;
+}
+private void UNDEF_71185_15652()
+{
+__intnl_SystemObject_41 = __1_fish__param.GetProgramVariable(__const_SystemString_35);
+__intnl_SystemBoolean_61 = (Boolean)__intnl_SystemObject_41;
+if (__intnl_SystemBoolean_61)
+{
+__intnl_SystemBoolean_61 = __1_fishIndex__param >= __const_SystemInt32_0;
+}
+__intnl_SystemBoolean_60 = __intnl_SystemBoolean_61;
+if (__intnl_SystemBoolean_60)
+{
+__intnl_UnityEngineObject_22 = fishIndexManager;
+__intnl_UnityEngineObject_23 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_60 = __intnl_UnityEngineObject_22 != __intnl_UnityEngineObject_23;
+}
+__intnl_SystemBoolean_59 = __intnl_SystemBoolean_60;
+if (__intnl_SystemBoolean_59)
+{
+__intnl_SystemInt32_27 = __1_fishIndex__param;
+fishIndexManager.SetProgramVariable(__const_SystemString_36, __1_fishIndex__param);
+fishIndexManager.SendCustomEvent(__const_SystemString_37);
+__intnl_SystemObject_42 = fishIndexManager.GetProgramVariable(__const_SystemString_38);
+__intnl_SystemBoolean_62 = (Boolean)__intnl_SystemObject_42;
+__intnl_SystemBoolean_59 = __intnl_SystemBoolean_62;
+}
+if (__intnl_SystemBoolean_59)
+{
+__0___0_IsFishCatchable__ret = __const_SystemBoolean_0;
+return;
+}
+__intnl_SystemInt32_28 = __11_waterType__param;
+__1_fish__param.SetProgramVariable(__const_SystemString_39, __11_waterType__param);
+__1_fish__param.SendCustomEvent(__const_SystemString_40);
+__intnl_SystemObject_43 = __1_fish__param.GetProgramVariable(__const_SystemString_41);
+__intnl_SystemBoolean_63 = (Boolean)__intnl_SystemObject_43;
+if (__intnl_SystemBoolean_63)
+{
+UNDEF_71185_15844();
+}
+__0___0_IsFishCatchable__ret = __const_SystemBoolean_0;
+}
+private void UNDEF_71185_15844()
+{
+__intnl_SystemString_0 = __4_zoneID__param;
+__1_fish__param.SetProgramVariable(__const_SystemString_46, __4_zoneID__param);
+__1_fish__param.SendCustomEvent(__const_SystemString_47);
+__intnl_SystemObject_44 = __1_fish__param.GetProgramVariable(__const_SystemString_48);
+__intnl_SystemBoolean_64 = (Boolean)__intnl_SystemObject_44;
+if (__intnl_SystemBoolean_64)
+{
+UNDEF_71185_16036();
+}
+__0___0_IsFishCatchable__ret = __const_SystemBoolean_0;
+}
+private void UNDEF_71185_16036()
+{
+__intnl_VRCUdonUdonBehaviour_12 = dayNightCycle;
+__1_fish__param.SetProgramVariable(__const_SystemString_42, dayNightCycle);
+__1_fish__param.SendCustomEvent(__const_SystemString_43);
+__intnl_SystemObject_45 = __1_fish__param.GetProgramVariable(__const_SystemString_44);
+__intnl_SystemBoolean_65 = (Boolean)__intnl_SystemObject_45;
+if (__intnl_SystemBoolean_65)
+{
+__0_IsFishCatchable();
+}
+__0___0_IsFishCatchable__ret = __const_SystemBoolean_0;
+}
+private void __0_IsFishCatchable()
+{
+__intnl_SystemObject_46 = __1_fish__param.GetProgramVariable(__const_SystemString_45);
+__intnl_SystemSingle_17 = Convert.ToSingle(__intnl_SystemObject_46);
+__intnl_SystemBoolean_66 = __intnl_SystemSingle_17 > __9_maxWeightKg__param;
+if (__intnl_SystemBoolean_66)
+{
+__0___0_IsFishCatchable__ret = __const_SystemBoolean_0;
+return;
+}
+__0___0_IsFishCatchable__ret = __const_SystemBoolean_1;
+return;
+}
+private void __0_GetRandomFishFromFilteredList()
+{
+for (;;)
+{
+__intnl_SystemInt32_29 = __0_catchableIndices__param.Length;
+__lcl_matchingRarityIndices_SystemInt32Array_0 = __intnl_SystemInt32_29.ctor();
+__intnl_SystemInt32_30 = __0_catchableIndices__param.Length;
+__lcl_matchingRarityWeights_SystemSingleArray_0 = __intnl_SystemInt32_30.ctor();
+__lcl_matchingCount_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_totalWeight_SystemSingle_0 = __const_SystemSingle_1;
+__lcl_isRelicSelection_SystemBoolean_0 = __0_targetRarity__param == __const_SystemInt32_3;
+__lcl_i_SystemInt32_8 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_31 = __0_catchableIndices__param.Length;
+__intnl_SystemBoolean_67 = __lcl_i_SystemInt32_8 < __intnl_SystemInt32_31;
+if (__intnl_SystemBoolean_67)
+{
+break;
+}
+__lcl_fishIndex_SystemInt32_2 = __0_catchableIndices__param[__lcl_i_SystemInt32_8];
+__lcl_fish_VRCUdonUdonBehaviour_4 = (UdonBehaviour)(fishEntries[__lcl_fishIndex_SystemInt32_2]);
+__intnl_SystemObject_47 = __lcl_fish_VRCUdonUdonBehaviour_4.GetProgramVariable(__const_SystemString_49);
+__intnl_SystemInt32_33 = Convert.ToInt32(__intnl_SystemObject_47);
+__intnl_SystemInt32_32 = __intnl_SystemInt32_33;
+__intnl_SystemBoolean_68 = __intnl_SystemInt32_32 == __0_targetRarity__param;
+if (__intnl_SystemBoolean_68)
+{
+if (__lcl_isRelicSelection_SystemBoolean_0)
+{
+__intnl_SystemObject_48 = __lcl_fish_VRCUdonUdonBehaviour_4.GetProgramVariable(__const_SystemString_50);
+__lcl_weight_SystemSingle_0 = Convert.ToSingle(__intnl_SystemObject_48);
+}
+else
+{
+__intnl_VRCUdonUdonBehaviour_13 = dayNightCycle;
+__lcl_fish_VRCUdonUdonBehaviour_4.SetProgramVariable(__const_SystemString_51, dayNightCycle);
+__lcl_fish_VRCUdonUdonBehaviour_4.SendCustomEvent(__const_SystemString_52);
+__intnl_SystemObject_49 = __lcl_fish_VRCUdonUdonBehaviour_4.GetProgramVariable(__const_SystemString_53);
+__intnl_SystemSingle_18 = Convert.ToSingle(__intnl_SystemObject_49);
+__lcl_weight_SystemSingle_0 = __intnl_SystemSingle_18;
+}
+__lcl_matchingRarityIndices_SystemInt32Array_0.Set(__lcl_matchingCount_SystemInt32_0, __lcl_fishIndex_SystemInt32_2);
+__lcl_matchingRarityWeights_SystemSingleArray_0.Set(__lcl_matchingCount_SystemInt32_0, __lcl_weight_SystemSingle_0);
+__lcl_totalWeight_SystemSingle_0 = __lcl_totalWeight_SystemSingle_0 + __lcl_weight_SystemSingle_0;
+__lcl_matchingCount_SystemInt32_0 = __lcl_matchingCount_SystemInt32_0 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_8 = __lcl_i_SystemInt32_8 + __const_SystemInt32_1;
+}
+__intnl_SystemBoolean_67 = __lcl_isRelicSelection_SystemBoolean_0;
+if (__intnl_SystemBoolean_67)
+{
+__intnl_SystemBoolean_67 = __lcl_matchingCount_SystemInt32_0 > __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_67)
+{
+}
+__intnl_SystemBoolean_68 = __lcl_matchingCount_SystemInt32_0 > __const_SystemInt32_0;
+if (__intnl_SystemBoolean_68)
+{
+__0_fishIndices__param = __lcl_matchingRarityIndices_SystemInt32Array_0;
+__0_weights__param = __lcl_matchingRarityWeights_SystemSingleArray_0;
+__0_count__param = __lcl_matchingCount_SystemInt32_0;
+__0_totalWeight__param = __lcl_totalWeight_SystemSingle_0;
+__0_SelectWeightedFish();
+__0___0_GetRandomFishFromFilteredList__ret = __0___0_SelectWeightedFish__ret;
+return;
+}
+__intnl_SystemBoolean_69 = __0_targetRarity__param > __const_SystemInt32_0;
+if (__intnl_SystemBoolean_69)
+{
+__lcl_fallbackValue_SystemInt32_0 = __0_targetRarity__param - __const_SystemInt32_1;
+__intnl_SystemBoolean_70 = __lcl_fallbackValue_SystemInt32_0 == __const_SystemInt32_3;
+if (__intnl_SystemBoolean_70)
+{
+__lcl_fallbackValue_SystemInt32_0 = __const_SystemInt32_4;
+}
+__lcl_fallback_SystemInt32_0 = __lcl_fallbackValue_SystemInt32_0;
+__0_catchableIndices__param = __0_catchableIndices__param;
+__0_targetRarity__param = __lcl_fallback_SystemInt32_0;
+}
+return;
+}
+__intnl_SystemInt32_31 = __0_catchableIndices__param.Length;
+__intnl_SystemBoolean_70 = __intnl_SystemInt32_31 > __const_SystemInt32_0;
+if (__intnl_SystemBoolean_70)
+{
+__lcl_lowestRarityIndex_SystemInt32_0 = __0_catchableIndices__param[__const_SystemInt32_0];
+__intnl_SystemInt32_32 = __0_catchableIndices__param[__const_SystemInt32_0];
+__intnl_VRCUdonUdonBehaviour_13 = (UdonBehaviour)(fishEntries[__intnl_SystemInt32_32]);
+__intnl_SystemObject_47 = __intnl_VRCUdonUdonBehaviour_13.GetProgramVariable(__const_SystemString_49);
+__intnl_SystemInt32_34 = Convert.ToInt32(__intnl_SystemObject_47);
+__intnl_SystemInt32_33 = __intnl_SystemInt32_34;
+__lcl_lowestRarity_SystemInt32_0 = __intnl_SystemInt32_33;
+__lcl_i_SystemInt32_8 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_35 = __0_catchableIndices__param.Length;
+__intnl_SystemBoolean_71 = __lcl_i_SystemInt32_8 < __intnl_SystemInt32_35;
+if (__intnl_SystemBoolean_71)
+{
+break;
+}
+__intnl_SystemInt32_36 = __0_catchableIndices__param[__lcl_i_SystemInt32_8];
+__intnl_VRCUdonUdonBehaviour_14 = (UdonBehaviour)(fishEntries[__intnl_SystemInt32_36]);
+__intnl_SystemObject_48 = __intnl_VRCUdonUdonBehaviour_14.GetProgramVariable(__const_SystemString_49);
+__intnl_SystemInt32_38 = Convert.ToInt32(__intnl_SystemObject_48);
+__intnl_SystemInt32_37 = __intnl_SystemInt32_38;
+__lcl_r_SystemInt32_0 = __intnl_SystemInt32_37;
+__intnl_SystemBoolean_72 = __lcl_r_SystemInt32_0 < __lcl_lowestRarity_SystemInt32_0;
+if (__intnl_SystemBoolean_72)
+{
+__lcl_lowestRarity_SystemInt32_0 = __lcl_r_SystemInt32_0;
+__lcl_lowestRarityIndex_SystemInt32_0 = __0_catchableIndices__param[__lcl_i_SystemInt32_8];
+}
+__lcl_i_SystemInt32_8 = __lcl_i_SystemInt32_8 + __const_SystemInt32_1;
+}
+__0___0_GetRandomFishFromFilteredList__ret = __lcl_lowestRarityIndex_SystemInt32_0;
+return;
+}
+__0___0_GetRandomFishFromFilteredList__ret = __const_SystemInt32_0;
+return;
+}
+private void __0_GetRandomFishFromFilteredList()
+{
+__intnl_SystemInt32_39 = __1_catchableIndices__param.Length;
+__lcl_zoneSpecificIndices_SystemInt32Array_0 = __intnl_SystemInt32_39.ctor();
+__intnl_SystemInt32_40 = __1_catchableIndices__param.Length;
+__lcl_universalIndices_SystemInt32Array_0 = __intnl_SystemInt32_40.ctor();
+__intnl_SystemInt32_41 = __1_catchableIndices__param.Length;
+__lcl_openSeaIndices_SystemInt32Array_0 = __intnl_SystemInt32_41.ctor();
+__lcl_zoneCount_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_universalCount_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_openSeaCount_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_9 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_42 = __1_catchableIndices__param.Length;
+__intnl_SystemBoolean_73 = __lcl_i_SystemInt32_9 < __intnl_SystemInt32_42;
+if (__intnl_SystemBoolean_73)
+{
+break;
+}
+__lcl_fishIndex_SystemInt32_3 = __1_catchableIndices__param[__lcl_i_SystemInt32_9];
+__lcl_fish_VRCUdonUdonBehaviour_5 = (UdonBehaviour)(fishEntries[__lcl_fishIndex_SystemInt32_3]);
+__intnl_SystemObject_50 = __lcl_fish_VRCUdonUdonBehaviour_5.GetProgramVariable(__const_SystemString_7);
+__intnl_SystemStringArray_4 = (String[])__intnl_SystemObject_50;
+__intnl_SystemBoolean_74 = __intnl_SystemStringArray_4 != __const_SystemObject_0;
+if (__intnl_SystemBoolean_74)
+{
+__intnl_SystemObject_51 = __lcl_fish_VRCUdonUdonBehaviour_5.GetProgramVariable(__const_SystemString_7);
+__intnl_SystemStringArray_5 = (String[])__intnl_SystemObject_51;
+__intnl_SystemInt32_43 = __intnl_SystemStringArray_5.Length;
+__intnl_SystemBoolean_74 = __intnl_SystemInt32_43 > __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_74)
+{
+__intnl_SystemString_1 = __5_zoneID__param;
+__lcl_fish_VRCUdonUdonBehaviour_5.SetProgramVariable(__const_SystemString_54, __5_zoneID__param);
+__lcl_fish_VRCUdonUdonBehaviour_5.SendCustomEvent(__const_SystemString_55);
+__intnl_SystemObject_52 = __lcl_fish_VRCUdonUdonBehaviour_5.GetProgramVariable(__const_SystemString_56);
+__intnl_SystemBoolean_75 = (Boolean)__intnl_SystemObject_52;
+if (__intnl_SystemBoolean_75)
+{
+__lcl_zoneSpecificIndices_SystemInt32Array_0.Set(__lcl_zoneCount_SystemInt32_0, __lcl_fishIndex_SystemInt32_3);
+__lcl_zoneCount_SystemInt32_0 = __lcl_zoneCount_SystemInt32_0 + __const_SystemInt32_1;
+}
+}
+else
+{
+__intnl_SystemObject_52 = __lcl_fish_VRCUdonUdonBehaviour_5.GetProgramVariable(__const_SystemString_57);
+__intnl_SystemBoolean_75 = (Boolean)__intnl_SystemObject_52;
+if (__intnl_SystemBoolean_75)
+{
+__lcl_openSeaIndices_SystemInt32Array_0.Set(__lcl_openSeaCount_SystemInt32_0, __lcl_fishIndex_SystemInt32_3);
+__lcl_openSeaCount_SystemInt32_0 = __lcl_openSeaCount_SystemInt32_0 + __const_SystemInt32_1;
+}
+else
+{
+__lcl_universalIndices_SystemInt32Array_0.Set(__lcl_universalCount_SystemInt32_0, __lcl_fishIndex_SystemInt32_3);
+__lcl_universalCount_SystemInt32_0 = __lcl_universalCount_SystemInt32_0 + __const_SystemInt32_1;
+}
+}
+__lcl_i_SystemInt32_9 = __lcl_i_SystemInt32_9 + __const_SystemInt32_1;
+}
+__intnl_SystemBoolean_73 = __lcl_zoneCount_SystemInt32_0 == __const_SystemInt32_0;
+if (__intnl_SystemBoolean_73)
+{
+__lcl_combinedCount_SystemInt32_0 = __lcl_openSeaCount_SystemInt32_0 + __lcl_universalCount_SystemInt32_0;
+__intnl_SystemBoolean_74 = __lcl_combinedCount_SystemInt32_0 > __const_SystemInt32_0;
+if (__intnl_SystemBoolean_74)
+{
+__lcl_combinedIndices_SystemInt32Array_0 = __lcl_combinedCount_SystemInt32_0.ctor();
+__lcl_i_SystemInt32_9 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_75 = __lcl_i_SystemInt32_9 < __lcl_openSeaCount_SystemInt32_0;
+if (__intnl_SystemBoolean_75)
+{
+break;
+}
+__intnl_SystemInt32_42 = __lcl_openSeaIndices_SystemInt32Array_0[__lcl_i_SystemInt32_9];
+__lcl_combinedIndices_SystemInt32Array_0.Set(__lcl_i_SystemInt32_9, __intnl_SystemInt32_42);
+__lcl_i_SystemInt32_9 = __lcl_i_SystemInt32_9 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_9 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_75 = __lcl_i_SystemInt32_9 < __lcl_universalCount_SystemInt32_0;
+if (__intnl_SystemBoolean_75)
+{
+break;
+}
+__intnl_SystemInt32_42 = __lcl_openSeaCount_SystemInt32_0 + __lcl_i_SystemInt32_9;
+__intnl_SystemInt32_43 = __lcl_universalIndices_SystemInt32Array_0[__lcl_i_SystemInt32_9];
+__lcl_combinedIndices_SystemInt32Array_0.Set(__intnl_SystemInt32_42, __intnl_SystemInt32_43);
+__lcl_i_SystemInt32_9 = __lcl_i_SystemInt32_9 + __const_SystemInt32_1;
+}
+__0_catchableIndices__param = __lcl_combinedIndices_SystemInt32Array_0;
+__0_targetRarity__param = __1_targetRarity__param;
+__0_GetRandomFishFromFilteredList();
+__0___0_GetRandomFishWithZonePriority__ret = __0___0_GetRandomFishFromFilteredList__ret;
+return;
+}
+__0_catchableIndices__param = __1_catchableIndices__param;
+__0_targetRarity__param = __1_targetRarity__param;
+__0_GetRandomFishFromFilteredList();
+__0___0_GetRandomFishWithZonePriority__ret = __0___0_GetRandomFishFromFilteredList__ret;
+return;
+}
+__lcl_zonePlusUniversalCount_SystemInt32_0 = __lcl_zoneCount_SystemInt32_0 + __lcl_universalCount_SystemInt32_0;
+__lcl_zonePlusUniversalIndices_SystemInt32Array_0 = __lcl_zonePlusUniversalCount_SystemInt32_0.ctor();
+__lcl_i_SystemInt32_9 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_74 = __lcl_i_SystemInt32_9 < __lcl_zoneCount_SystemInt32_0;
+if (__intnl_SystemBoolean_74)
+{
+break;
+}
+__intnl_SystemInt32_42 = __lcl_zoneSpecificIndices_SystemInt32Array_0[__lcl_i_SystemInt32_9];
+__lcl_zonePlusUniversalIndices_SystemInt32Array_0.Set(__lcl_i_SystemInt32_9, __intnl_SystemInt32_42);
+__lcl_i_SystemInt32_9 = __lcl_i_SystemInt32_9 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_9 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_74 = __lcl_i_SystemInt32_9 < __lcl_universalCount_SystemInt32_0;
+if (__intnl_SystemBoolean_74)
+{
+break;
+}
+__intnl_SystemInt32_42 = __lcl_zoneCount_SystemInt32_0 + __lcl_i_SystemInt32_9;
+__intnl_SystemInt32_43 = __lcl_universalIndices_SystemInt32Array_0[__lcl_i_SystemInt32_9];
+__lcl_zonePlusUniversalIndices_SystemInt32Array_0.Set(__intnl_SystemInt32_42, __intnl_SystemInt32_43);
+__lcl_i_SystemInt32_9 = __lcl_i_SystemInt32_9 + __const_SystemInt32_1;
+}
+__lcl_roll_SystemSingle_0 = Random.Range(__const_SystemSingle_1, __const_SystemSingle_0);
+__lcl_selectZoneSpecific_SystemBoolean_0 = __lcl_roll_SystemSingle_0 <= zoneSpecificChance;
+__intnl_SystemBoolean_74 = __lcl_selectZoneSpecific_SystemBoolean_0;
+if (__intnl_SystemBoolean_74)
+{
+__intnl_SystemBoolean_74 = __lcl_zonePlusUniversalCount_SystemInt32_0 > __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_74)
+{
+__0_catchableIndices__param = __lcl_zonePlusUniversalIndices_SystemInt32Array_0;
+__0_targetRarity__param = __1_targetRarity__param;
+__0_GetRandomFishFromFilteredList();
+__0___0_GetRandomFishWithZonePriority__ret = __0___0_GetRandomFishFromFilteredList__ret;
+return;
+}
+else
+{
+__intnl_SystemBoolean_75 = !__lcl_selectZoneSpecific_SystemBoolean_0;
+if (__intnl_SystemBoolean_75)
+{
+__intnl_SystemBoolean_75 = __lcl_openSeaCount_SystemInt32_0 > __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_75)
+{
+__lcl_openSeaPlusUniversalCount_SystemInt32_0 = __lcl_openSeaCount_SystemInt32_0 + __lcl_universalCount_SystemInt32_0;
+__lcl_openSeaPlusUniversalIndices_SystemInt32Array_0 = __lcl_openSeaPlusUniversalCount_SystemInt32_0.ctor();
+__lcl_i_SystemInt32_9 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_76 = __lcl_i_SystemInt32_9 < __lcl_openSeaCount_SystemInt32_0;
+if (__intnl_SystemBoolean_76)
+{
+break;
+}
+__intnl_SystemInt32_42 = __lcl_openSeaIndices_SystemInt32Array_0[__lcl_i_SystemInt32_9];
+__lcl_openSeaPlusUniversalIndices_SystemInt32Array_0.Set(__lcl_i_SystemInt32_9, __intnl_SystemInt32_42);
+__lcl_i_SystemInt32_9 = __lcl_i_SystemInt32_9 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_9 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_76 = __lcl_i_SystemInt32_9 < __lcl_universalCount_SystemInt32_0;
+if (__intnl_SystemBoolean_76)
+{
+break;
+}
+__intnl_SystemInt32_42 = __lcl_openSeaCount_SystemInt32_0 + __lcl_i_SystemInt32_9;
+__intnl_SystemInt32_43 = __lcl_universalIndices_SystemInt32Array_0[__lcl_i_SystemInt32_9];
+__lcl_openSeaPlusUniversalIndices_SystemInt32Array_0.Set(__intnl_SystemInt32_42, __intnl_SystemInt32_43);
+__lcl_i_SystemInt32_9 = __lcl_i_SystemInt32_9 + __const_SystemInt32_1;
+}
+__0_catchableIndices__param = __lcl_openSeaPlusUniversalIndices_SystemInt32Array_0;
+__0_targetRarity__param = __1_targetRarity__param;
+__0_GetRandomFishFromFilteredList();
+__0___0_GetRandomFishWithZonePriority__ret = __0___0_GetRandomFishFromFilteredList__ret;
+return;
+}
+}
+__intnl_SystemBoolean_76 = __lcl_zonePlusUniversalCount_SystemInt32_0 > __const_SystemInt32_0;
+if (__intnl_SystemBoolean_76)
+{
+__0_catchableIndices__param = __lcl_zonePlusUniversalIndices_SystemInt32Array_0;
+__0_targetRarity__param = __1_targetRarity__param;
+__0_GetRandomFishFromFilteredList();
+__0___0_GetRandomFishWithZonePriority__ret = __0___0_GetRandomFishFromFilteredList__ret;
+return;
+}
+else
+{
+__intnl_SystemBoolean_77 = __lcl_openSeaCount_SystemInt32_0 > __const_SystemInt32_0;
+if (__intnl_SystemBoolean_77)
+{
+__lcl_trimmedOpenSeaIndices_SystemInt32Array_0 = __lcl_openSeaCount_SystemInt32_0.ctor();
+__lcl_i_SystemInt32_9 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_78 = __lcl_i_SystemInt32_9 < __lcl_openSeaCount_SystemInt32_0;
+if (__intnl_SystemBoolean_78)
+{
+break;
+}
+__intnl_SystemInt32_42 = __lcl_openSeaIndices_SystemInt32Array_0[__lcl_i_SystemInt32_9];
+__lcl_trimmedOpenSeaIndices_SystemInt32Array_0.Set(__lcl_i_SystemInt32_9, __intnl_SystemInt32_42);
+__lcl_i_SystemInt32_9 = __lcl_i_SystemInt32_9 + __const_SystemInt32_1;
+}
+__0_catchableIndices__param = __lcl_trimmedOpenSeaIndices_SystemInt32Array_0;
+__0_targetRarity__param = __1_targetRarity__param;
+__0_GetRandomFishFromFilteredList();
+__0___0_GetRandomFishWithZonePriority__ret = __0___0_GetRandomFishFromFilteredList__ret;
+return;
+}
+}
+__0_catchableIndices__param = __1_catchableIndices__param;
+__0_targetRarity__param = __1_targetRarity__param;
+__0_GetRandomFishFromFilteredList();
+__0___0_GetRandomFishWithZonePriority__ret = __0___0_GetRandomFishFromFilteredList__ret;
+return;
+}
+private void __0_SelectWeightedFish()
+{
+__lcl_allWeightsEqual_SystemBoolean_0 = __const_SystemBoolean_1;
+__lcl_firstWeight_SystemSingle_0 = __0_weights__param[__const_SystemInt32_0];
+__lcl_i_SystemInt32_10 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemBoolean_79 = __lcl_i_SystemInt32_10 < __0_count__param;
+if (__intnl_SystemBoolean_79)
+{
+break;
+}
+__intnl_SystemSingle_19 = __0_weights__param[__lcl_i_SystemInt32_10];
+__intnl_SystemSingle_20 = __intnl_SystemSingle_19 - __lcl_firstWeight_SystemSingle_0;
+__intnl_SystemSingle_21 = Mathf.Abs(__intnl_SystemSingle_20);
+__intnl_SystemBoolean_80 = __intnl_SystemSingle_21 > __const_SystemSingle_5;
+if (__intnl_SystemBoolean_80)
+{
+__lcl_allWeightsEqual_SystemBoolean_0 = __const_SystemBoolean_0;
+}
+else
+{
+__lcl_i_SystemInt32_10 = __lcl_i_SystemInt32_10 + __const_SystemInt32_1;
+}
+}
+if (__lcl_allWeightsEqual_SystemBoolean_0)
+{
+__lcl_randomIndex_SystemInt32_1 = Random.Range(__const_SystemInt32_0, __0_count__param);
+__lcl_selectedFishIndex_SystemInt32_1 = __0_fishIndices__param[__lcl_randomIndex_SystemInt32_1];
+__0___0_SelectWeightedFish__ret = __lcl_selectedFishIndex_SystemInt32_1;
+return;
+}
+__lcl_roll_SystemSingle_1 = Random.Range(__const_SystemSingle_1, __0_totalWeight__param);
+__lcl_accumulated_SystemSingle_0 = __const_SystemSingle_1;
+__lcl_i_SystemInt32_10 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_79 = __lcl_i_SystemInt32_10 < __0_count__param;
+if (__intnl_SystemBoolean_79)
+{
+break;
+}
+__intnl_SystemSingle_19 = __0_weights__param[__lcl_i_SystemInt32_10];
+__lcl_accumulated_SystemSingle_0 = __lcl_accumulated_SystemSingle_0 + __intnl_SystemSingle_19;
+__intnl_SystemBoolean_80 = __lcl_roll_SystemSingle_1 < __lcl_accumulated_SystemSingle_0;
+if (__intnl_SystemBoolean_80)
+{
+__lcl_selectedFishIndex_SystemInt32_1 = __0_fishIndices__param[__lcl_i_SystemInt32_10];
+__0___0_SelectWeightedFish__ret = __lcl_selectedFishIndex_SystemInt32_1;
+return;
+}
+__lcl_i_SystemInt32_10 = __lcl_i_SystemInt32_10 + __const_SystemInt32_1;
+}
+__intnl_SystemInt32_44 = __0_count__param - __const_SystemInt32_1;
+__lcl_fallbackIndex_SystemInt32_0 = __0_fishIndices__param[__intnl_SystemInt32_44];
+__0___0_SelectWeightedFish__ret = __lcl_fallbackIndex_SystemInt32_0;
+return;
+}
+private void __0_SelectRarityTier()
+{
+__7_luckMultiplier__param = Mathf.Max(__const_SystemSingle_6, __7_luckMultiplier__param);
+__lcl_relicRoll_SystemSingle_0 = Random.Range(__const_SystemSingle_1, __const_SystemSingle_0);
+__intnl_SystemBoolean_81 = __lcl_relicRoll_SystemSingle_0 < relicChance;
+if (__intnl_SystemBoolean_81)
+{
+__0___0_SelectRarityTier__ret = __const_SystemInt32_5;
+return;
+}
+__lcl_modifiedChances_SystemSingleArray_0 = __const_SystemInt32_6.ctor();
+__intnl_SystemSingle_22 = Mathf.Pow(__7_luckMultiplier__param, trashPower);
+__intnl_SystemSingle_23 = trashChance * __intnl_SystemSingle_22;
+__lcl_modifiedChances_SystemSingleArray_0.Set(__const_SystemInt32_0, __intnl_SystemSingle_23);
+__intnl_SystemSingle_24 = Mathf.Pow(__7_luckMultiplier__param, abundantPower);
+__intnl_SystemSingle_25 = abundantChance * __intnl_SystemSingle_24;
+__lcl_modifiedChances_SystemSingleArray_0.Set(__const_SystemInt32_1, __intnl_SystemSingle_25);
+__intnl_SystemSingle_26 = Mathf.Pow(__7_luckMultiplier__param, commonPower);
+__intnl_SystemSingle_27 = commonChance * __intnl_SystemSingle_26;
+__lcl_modifiedChances_SystemSingleArray_0.Set(__const_SystemInt32_7, __intnl_SystemSingle_27);
+__intnl_SystemSingle_28 = Mathf.Pow(__7_luckMultiplier__param, curiousPower);
+__intnl_SystemSingle_29 = curiousChance * __intnl_SystemSingle_28;
+__lcl_modifiedChances_SystemSingleArray_0.Set(__const_SystemInt32_8, __intnl_SystemSingle_29);
+__intnl_SystemSingle_30 = Mathf.Pow(__7_luckMultiplier__param, elusivePower);
+__intnl_SystemSingle_31 = elusiveChance * __intnl_SystemSingle_30;
+__lcl_modifiedChances_SystemSingleArray_0.Set(__const_SystemInt32_9, __intnl_SystemSingle_31);
+__intnl_SystemSingle_32 = Mathf.Pow(__7_luckMultiplier__param, fabledPower);
+__intnl_SystemSingle_33 = fabledChance * __intnl_SystemSingle_32;
+__lcl_modifiedChances_SystemSingleArray_0.Set(__const_SystemInt32_10, __intnl_SystemSingle_33);
+__intnl_SystemSingle_34 = Mathf.Pow(__7_luckMultiplier__param, mythicPower);
+__intnl_SystemSingle_35 = mythicChance * __intnl_SystemSingle_34;
+__lcl_modifiedChances_SystemSingleArray_0.Set(__const_SystemInt32_11, __intnl_SystemSingle_35);
+__intnl_SystemSingle_36 = Mathf.Pow(__7_luckMultiplier__param, exoticPower);
+__intnl_SystemSingle_37 = exoticChance * __intnl_SystemSingle_36;
+__lcl_modifiedChances_SystemSingleArray_0.Set(__const_SystemInt32_4, __intnl_SystemSingle_37);
+__intnl_SystemSingle_38 = Mathf.Pow(__7_luckMultiplier__param, secretPower);
+__intnl_SystemSingle_39 = secretChance * __intnl_SystemSingle_38;
+__lcl_modifiedChances_SystemSingleArray_0.Set(__const_SystemInt32_3, __intnl_SystemSingle_39);
+__intnl_SystemSingle_40 = Mathf.Pow(__7_luckMultiplier__param, ultimateSecretPower);
+__intnl_SystemSingle_41 = ultimateSecretChance * __intnl_SystemSingle_40;
+__lcl_modifiedChances_SystemSingleArray_0.Set(__const_SystemInt32_12, __intnl_SystemSingle_41);
+__lcl_capFraction_SystemSingle_0 = __const_SystemSingle_7;
+__lcl_i_SystemInt32_11 = __const_SystemInt32_10;
+for (;;)
+{
+__intnl_SystemBoolean_82 = __lcl_i_SystemInt32_11 <= __const_SystemInt32_12;
+if (__intnl_SystemBoolean_82)
+{
+break;
+}
+__intnl_SystemInt32_45 = __lcl_i_SystemInt32_11 - __const_SystemInt32_1;
+__lcl_below_SystemSingle_0 = __lcl_modifiedChances_SystemSingleArray_0[__intnl_SystemInt32_45];
+__intnl_SystemBoolean_83 = __lcl_below_SystemSingle_0 > __const_SystemSingle_1;
+if (__intnl_SystemBoolean_83)
+{
+__intnl_SystemSingle_42 = __lcl_modifiedChances_SystemSingleArray_0[__lcl_i_SystemInt32_11];
+__lcl_ratio_SystemSingle_0 = __intnl_SystemSingle_42 / __lcl_below_SystemSingle_0;
+__intnl_SystemSingle_43 = __lcl_ratio_SystemSingle_0 / __lcl_capFraction_SystemSingle_0;
+__lcl_sr_SystemSingle_0 = Mathf.Min(__intnl_SystemSingle_43, __const_SystemSingle_8);
+__intnl_SystemSingle_44 = __const_SystemSingle_4 * __lcl_sr_SystemSingle_0;
+__lcl_e2x_SystemSingle_0 = Mathf.Exp(__intnl_SystemSingle_44);
+__intnl_SystemSingle_45 = __lcl_e2x_SystemSingle_0 - __const_SystemSingle_3;
+__intnl_SystemSingle_46 = __lcl_e2x_SystemSingle_0 + __const_SystemSingle_3;
+__lcl_t_SystemSingle_0 = __intnl_SystemSingle_45 / __intnl_SystemSingle_46;
+__intnl_SystemSingle_47 = __lcl_below_SystemSingle_0 * __lcl_capFraction_SystemSingle_0;
+__intnl_SystemSingle_48 = __intnl_SystemSingle_47 * __lcl_t_SystemSingle_0;
+__lcl_modifiedChances_SystemSingleArray_0.Set(__lcl_i_SystemInt32_11, __intnl_SystemSingle_48);
+}
+__lcl_i_SystemInt32_11 = __lcl_i_SystemInt32_11 + __const_SystemInt32_1;
+}
+__lcl_rarityValues_SystemInt32Array_0 = __const_SystemInt32_6.ctor();
+__lcl_rarityValues_SystemInt32Array_0.Set(__const_SystemInt32_0, __const_SystemInt32_0);
+__lcl_rarityValues_SystemInt32Array_0.Set(__const_SystemInt32_1, __const_SystemInt32_1);
+__lcl_rarityValues_SystemInt32Array_0.Set(__const_SystemInt32_7, __const_SystemInt32_7);
+__lcl_rarityValues_SystemInt32Array_0.Set(__const_SystemInt32_8, __const_SystemInt32_8);
+__lcl_rarityValues_SystemInt32Array_0.Set(__const_SystemInt32_9, __const_SystemInt32_9);
+__lcl_rarityValues_SystemInt32Array_0.Set(__const_SystemInt32_10, __const_SystemInt32_10);
+__lcl_rarityValues_SystemInt32Array_0.Set(__const_SystemInt32_11, __const_SystemInt32_11);
+__lcl_rarityValues_SystemInt32Array_0.Set(__const_SystemInt32_4, __const_SystemInt32_4);
+__lcl_rarityValues_SystemInt32Array_0.Set(__const_SystemInt32_3, __const_SystemInt32_12);
+__lcl_rarityValues_SystemInt32Array_0.Set(__const_SystemInt32_12, __const_SystemInt32_6);
+__lcl_total_SystemSingle_1 = __const_SystemSingle_1;
+__lcl_i_SystemInt32_11 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_45 = __lcl_modifiedChances_SystemSingleArray_0.Length;
+__intnl_SystemBoolean_82 = __lcl_i_SystemInt32_11 < __intnl_SystemInt32_45;
+if (__intnl_SystemBoolean_82)
+{
+break;
+}
+__intnl_SystemSingle_42 = __lcl_modifiedChances_SystemSingleArray_0[__lcl_i_SystemInt32_11];
+__lcl_total_SystemSingle_1 = __lcl_total_SystemSingle_1 + __intnl_SystemSingle_42;
+__lcl_i_SystemInt32_11 = __lcl_i_SystemInt32_11 + __const_SystemInt32_1;
+}
+__lcl_nonRelicTotal_SystemSingle_0 = __const_SystemSingle_0 - relicChance;
+__lcl_i_SystemInt32_11 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_45 = __lcl_modifiedChances_SystemSingleArray_0.Length;
+__intnl_SystemBoolean_82 = __lcl_i_SystemInt32_11 < __intnl_SystemInt32_45;
+if (__intnl_SystemBoolean_82)
+{
+break;
+}
+__intnl_SystemSingle_42 = __lcl_modifiedChances_SystemSingleArray_0[__lcl_i_SystemInt32_11];
+__intnl_SystemSingle_43 = __intnl_SystemSingle_42 / __lcl_total_SystemSingle_1;
+__intnl_SystemSingle_44 = __intnl_SystemSingle_43 * __lcl_nonRelicTotal_SystemSingle_0;
+__lcl_modifiedChances_SystemSingleArray_0.Set(__lcl_i_SystemInt32_11, __intnl_SystemSingle_44);
+__lcl_i_SystemInt32_11 = __lcl_i_SystemInt32_11 + __const_SystemInt32_1;
+}
+__lcl_roll_SystemSingle_2 = Random.Range(__const_SystemSingle_1, __lcl_nonRelicTotal_SystemSingle_0);
+__lcl_accumulated_SystemSingle_1 = __const_SystemSingle_1;
+__lcl_i_SystemInt32_11 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_45 = __lcl_modifiedChances_SystemSingleArray_0.Length;
+__intnl_SystemBoolean_82 = __lcl_i_SystemInt32_11 < __intnl_SystemInt32_45;
+if (__intnl_SystemBoolean_82)
+{
+break;
+}
+__intnl_SystemSingle_42 = __lcl_modifiedChances_SystemSingleArray_0[__lcl_i_SystemInt32_11];
+__lcl_accumulated_SystemSingle_1 = __lcl_accumulated_SystemSingle_1 + __intnl_SystemSingle_42;
+__intnl_SystemBoolean_83 = __lcl_roll_SystemSingle_2 <= __lcl_accumulated_SystemSingle_1;
+if (__intnl_SystemBoolean_83)
+{
+__intnl_SystemInt32_46 = __lcl_rarityValues_SystemInt32Array_0[__lcl_i_SystemInt32_11];
+__lcl_selectedRarity_SystemInt32_5 = __intnl_SystemInt32_46;
+__0___0_SelectRarityTier__ret = __lcl_selectedRarity_SystemInt32_5;
+return;
+}
+__lcl_i_SystemInt32_11 = __lcl_i_SystemInt32_11 + __const_SystemInt32_1;
+}
+__0___0_SelectRarityTier__ret = __const_SystemInt32_13;
+return;
+}
+private void __0_GetRandomFishOfRarity()
+{
+__lcl_fishCount_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_12 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_47 = fishEntries.Length;
+__intnl_SystemBoolean_84 = __lcl_i_SystemInt32_12 < __intnl_SystemInt32_47;
+if (__intnl_SystemBoolean_84)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_15 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_12]);
+__intnl_SystemObject_53 = __intnl_VRCUdonUdonBehaviour_15.GetProgramVariable(__const_SystemString_49);
+__intnl_SystemInt32_49 = Convert.ToInt32(__intnl_SystemObject_53);
+__intnl_SystemInt32_48 = __intnl_SystemInt32_49;
+__intnl_SystemBoolean_85 = __intnl_SystemInt32_48 == __2_targetRarity__param;
+if (__intnl_SystemBoolean_85)
+{
+__lcl_fishCount_SystemInt32_0 = __lcl_fishCount_SystemInt32_0 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_12 = __lcl_i_SystemInt32_12 + __const_SystemInt32_1;
+}
+__intnl_SystemBoolean_84 = __lcl_fishCount_SystemInt32_0 == __const_SystemInt32_0;
+if (__intnl_SystemBoolean_84)
+{
+__intnl_SystemInt32_47 = fishEntries.Length;
+__0___0_GetRandomFishOfRarity__ret = Random.Range(__const_SystemInt32_0, __intnl_SystemInt32_47);
+return;
+}
+__lcl_targetIndex_SystemInt32_0 = Random.Range(__const_SystemInt32_0, __lcl_fishCount_SystemInt32_0);
+__lcl_currentIndex_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_12 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_47 = fishEntries.Length;
+__intnl_SystemBoolean_85 = __lcl_i_SystemInt32_12 < __intnl_SystemInt32_47;
+if (__intnl_SystemBoolean_85)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_15 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_12]);
+__intnl_SystemObject_53 = __intnl_VRCUdonUdonBehaviour_15.GetProgramVariable(__const_SystemString_49);
+__intnl_SystemInt32_49 = Convert.ToInt32(__intnl_SystemObject_53);
+__intnl_SystemInt32_48 = __intnl_SystemInt32_49;
+__intnl_SystemBoolean_86 = __intnl_SystemInt32_48 == __2_targetRarity__param;
+if (__intnl_SystemBoolean_86)
+{
+__intnl_SystemBoolean_87 = __lcl_currentIndex_SystemInt32_0 == __lcl_targetIndex_SystemInt32_0;
+if (__intnl_SystemBoolean_87)
+{
+__0___0_GetRandomFishOfRarity__ret = __lcl_i_SystemInt32_12;
+return;
+}
+__lcl_currentIndex_SystemInt32_0 = __lcl_currentIndex_SystemInt32_0 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_12 = __lcl_i_SystemInt32_12 + __const_SystemInt32_1;
+}
+__0___0_GetRandomFishOfRarity__ret = __const_SystemInt32_0;
+return;
+}
+private void __0_SelectWeightedFish()
+{
+for (;;)
+{
+__intnl_SystemInt32_50 = fishEntries.Length;
+__lcl_eligibleIndices_SystemInt32Array_0 = __intnl_SystemInt32_50.ctor();
+__intnl_SystemInt32_51 = fishEntries.Length;
+__lcl_eligibleWeights_SystemSingleArray_0 = __intnl_SystemInt32_51.ctor();
+__lcl_eligibleCount_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_totalWeight_SystemSingle_1 = __const_SystemSingle_1;
+__lcl_isRelicSelection_SystemBoolean_1 = __3_targetRarity__param == __const_SystemInt32_3;
+__lcl_i_SystemInt32_13 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_52 = fishEntries.Length;
+__intnl_SystemBoolean_88 = __lcl_i_SystemInt32_13 < __intnl_SystemInt32_52;
+if (__intnl_SystemBoolean_88)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_16 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_13]);
+__intnl_SystemObject_54 = __intnl_VRCUdonUdonBehaviour_16.GetProgramVariable(__const_SystemString_49);
+__intnl_SystemInt32_54 = Convert.ToInt32(__intnl_SystemObject_54);
+__intnl_SystemInt32_53 = __intnl_SystemInt32_54;
+__intnl_SystemBoolean_89 = __intnl_SystemInt32_53 == __3_targetRarity__param;
+if (__intnl_SystemBoolean_89)
+{
+__intnl_VRCUdonUdonBehaviour_17 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_13]);
+__intnl_VRCUdonUdonBehaviour_18 = dayNightCycle;
+__intnl_VRCUdonUdonBehaviour_17.SetProgramVariable(__const_SystemString_42, dayNightCycle);
+__intnl_VRCUdonUdonBehaviour_17.SendCustomEvent(__const_SystemString_43);
+__intnl_SystemObject_55 = __intnl_VRCUdonUdonBehaviour_17.GetProgramVariable(__const_SystemString_44);
+__intnl_SystemBoolean_90 = (Boolean)__intnl_SystemObject_55;
+__lcl_canSpawn_SystemBoolean_0 = __intnl_SystemBoolean_90;
+if (__lcl_canSpawn_SystemBoolean_0)
+{
+if (__lcl_isRelicSelection_SystemBoolean_1)
+{
+__intnl_VRCUdonUdonBehaviour_19 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_13]);
+__intnl_SystemObject_56 = __intnl_VRCUdonUdonBehaviour_19.GetProgramVariable(__const_SystemString_50);
+__lcl_weight_SystemSingle_1 = Convert.ToSingle(__intnl_SystemObject_56);
+}
+else
+{
+__intnl_VRCUdonUdonBehaviour_20 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_13]);
+__intnl_VRCUdonUdonBehaviour_21 = dayNightCycle;
+__intnl_VRCUdonUdonBehaviour_20.SetProgramVariable(__const_SystemString_51, dayNightCycle);
+__intnl_VRCUdonUdonBehaviour_20.SendCustomEvent(__const_SystemString_52);
+__intnl_SystemObject_57 = __intnl_VRCUdonUdonBehaviour_20.GetProgramVariable(__const_SystemString_53);
+__intnl_SystemSingle_49 = Convert.ToSingle(__intnl_SystemObject_57);
+__lcl_weight_SystemSingle_1 = __intnl_SystemSingle_49;
+}
+__lcl_eligibleIndices_SystemInt32Array_0.Set(__lcl_eligibleCount_SystemInt32_0, __lcl_i_SystemInt32_13);
+__lcl_eligibleWeights_SystemSingleArray_0.Set(__lcl_eligibleCount_SystemInt32_0, __lcl_weight_SystemSingle_1);
+__lcl_totalWeight_SystemSingle_1 = __lcl_totalWeight_SystemSingle_1 + __lcl_weight_SystemSingle_1;
+__lcl_eligibleCount_SystemInt32_0 = __lcl_eligibleCount_SystemInt32_0 + __const_SystemInt32_1;
+}
+}
+__lcl_i_SystemInt32_13 = __lcl_i_SystemInt32_13 + __const_SystemInt32_1;
+}
+__intnl_SystemBoolean_88 = __lcl_eligibleCount_SystemInt32_0 == __const_SystemInt32_0;
+if (__intnl_SystemBoolean_88)
+{
+__3_targetRarity__param = __const_SystemInt32_13;
+}
+return;
+}
+__0_fishIndices__param = __lcl_eligibleIndices_SystemInt32Array_0;
+__0_weights__param = __lcl_eligibleWeights_SystemSingleArray_0;
+__0_count__param = __lcl_eligibleCount_SystemInt32_0;
+__0_totalWeight__param = __lcl_totalWeight_SystemSingle_1;
+__0_SelectWeightedFish();
+__0___0_GetRandomFishOfRarityWithConditions__ret = __0___0_SelectWeightedFish__ret;
+return;
+}
+private void __0_SelectWeightedFish()
+{
+__intnl_SystemInt32_55 = fishEntries.Length;
+__lcl_eligibleIndices_SystemInt32Array_1 = __intnl_SystemInt32_55.ctor();
+__intnl_SystemInt32_56 = fishEntries.Length;
+__lcl_eligibleWeights_SystemSingleArray_1 = __intnl_SystemInt32_56.ctor();
+__lcl_eligibleCount_SystemInt32_1 = __const_SystemInt32_0;
+__lcl_totalWeight_SystemSingle_2 = __const_SystemSingle_1;
+__lcl_isRelicSelection_SystemBoolean_2 = __4_targetRarity__param == __const_SystemInt32_3;
+__lcl_i_SystemInt32_14 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_57 = fishEntries.Length;
+__intnl_SystemBoolean_91 = __lcl_i_SystemInt32_14 < __intnl_SystemInt32_57;
+if (__intnl_SystemBoolean_91)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_22 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_14]);
+__intnl_SystemObject_58 = __intnl_VRCUdonUdonBehaviour_22.GetProgramVariable(__const_SystemString_49);
+__intnl_SystemInt32_59 = Convert.ToInt32(__intnl_SystemObject_58);
+__intnl_SystemInt32_58 = __intnl_SystemInt32_59;
+__intnl_SystemBoolean_92 = __intnl_SystemInt32_58 == __4_targetRarity__param;
+if (__intnl_SystemBoolean_92)
+{
+__intnl_VRCUdonUdonBehaviour_23 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_14]);
+__intnl_SystemInt32_60 = __12_waterType__param;
+__intnl_VRCUdonUdonBehaviour_23.SetProgramVariable(__const_SystemString_39, __12_waterType__param);
+__intnl_VRCUdonUdonBehaviour_23.SendCustomEvent(__const_SystemString_40);
+__intnl_SystemObject_59 = __intnl_VRCUdonUdonBehaviour_23.GetProgramVariable(__const_SystemString_41);
+__intnl_SystemBoolean_93 = (Boolean)__intnl_SystemObject_59;
+__lcl_canSpawnInWater_SystemBoolean_0 = __intnl_SystemBoolean_93;
+__intnl_VRCUdonUdonBehaviour_24 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_14]);
+__intnl_SystemString_2 = __6_zoneID__param;
+__intnl_VRCUdonUdonBehaviour_24.SetProgramVariable(__const_SystemString_46, __6_zoneID__param);
+__intnl_VRCUdonUdonBehaviour_24.SendCustomEvent(__const_SystemString_47);
+__intnl_SystemObject_60 = __intnl_VRCUdonUdonBehaviour_24.GetProgramVariable(__const_SystemString_48);
+__intnl_SystemBoolean_94 = (Boolean)__intnl_SystemObject_60;
+__lcl_canSpawnInZone_SystemBoolean_0 = __intnl_SystemBoolean_94;
+__intnl_VRCUdonUdonBehaviour_25 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_14]);
+__intnl_VRCUdonUdonBehaviour_26 = dayNightCycle;
+__intnl_VRCUdonUdonBehaviour_25.SetProgramVariable(__const_SystemString_42, dayNightCycle);
+__intnl_VRCUdonUdonBehaviour_25.SendCustomEvent(__const_SystemString_43);
+__intnl_SystemObject_61 = __intnl_VRCUdonUdonBehaviour_25.GetProgramVariable(__const_SystemString_44);
+__intnl_SystemBoolean_95 = (Boolean)__intnl_SystemObject_61;
+__lcl_canSpawnInConditions_SystemBoolean_0 = __intnl_SystemBoolean_95;
+__intnl_SystemBoolean_97 = __lcl_canSpawnInWater_SystemBoolean_0;
+if (__intnl_SystemBoolean_97)
+{
+__intnl_SystemBoolean_97 = __lcl_canSpawnInZone_SystemBoolean_0;
+}
+__intnl_SystemBoolean_96 = __intnl_SystemBoolean_97;
+if (__intnl_SystemBoolean_96)
+{
+__intnl_SystemBoolean_96 = __lcl_canSpawnInConditions_SystemBoolean_0;
+}
+if (__intnl_SystemBoolean_96)
+{
+if (__lcl_isRelicSelection_SystemBoolean_2)
+{
+__intnl_VRCUdonUdonBehaviour_27 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_14]);
+__intnl_SystemObject_62 = __intnl_VRCUdonUdonBehaviour_27.GetProgramVariable(__const_SystemString_50);
+__lcl_weight_SystemSingle_2 = Convert.ToSingle(__intnl_SystemObject_62);
+}
+else
+{
+__intnl_VRCUdonUdonBehaviour_28 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_14]);
+__intnl_VRCUdonUdonBehaviour_29 = dayNightCycle;
+__intnl_VRCUdonUdonBehaviour_28.SetProgramVariable(__const_SystemString_51, dayNightCycle);
+__intnl_VRCUdonUdonBehaviour_28.SendCustomEvent(__const_SystemString_52);
+__intnl_SystemObject_63 = __intnl_VRCUdonUdonBehaviour_28.GetProgramVariable(__const_SystemString_53);
+__intnl_SystemSingle_50 = Convert.ToSingle(__intnl_SystemObject_63);
+__lcl_weight_SystemSingle_2 = __intnl_SystemSingle_50;
+}
+__lcl_eligibleIndices_SystemInt32Array_1.Set(__lcl_eligibleCount_SystemInt32_1, __lcl_i_SystemInt32_14);
+__lcl_eligibleWeights_SystemSingleArray_1.Set(__lcl_eligibleCount_SystemInt32_1, __lcl_weight_SystemSingle_2);
+__lcl_totalWeight_SystemSingle_2 = __lcl_totalWeight_SystemSingle_2 + __lcl_weight_SystemSingle_2;
+__lcl_eligibleCount_SystemInt32_1 = __lcl_eligibleCount_SystemInt32_1 + __const_SystemInt32_1;
+}
+}
+__lcl_i_SystemInt32_14 = __lcl_i_SystemInt32_14 + __const_SystemInt32_1;
+}
+__intnl_SystemBoolean_91 = __lcl_eligibleCount_SystemInt32_1 == __const_SystemInt32_0;
+if (__intnl_SystemBoolean_91)
+{
+__13_waterType__param = __12_waterType__param;
+__7_zoneID__param = __6_zoneID__param;
+__0_GetFallbackFishForAllConditions();
+__0___0_GetRandomFishOfRarityWithAllConditions__ret = __0___0_GetFallbackFishForAllConditions__ret;
+return;
+}
+__0_fishIndices__param = __lcl_eligibleIndices_SystemInt32Array_1;
+__0_weights__param = __lcl_eligibleWeights_SystemSingleArray_1;
+__0_count__param = __lcl_eligibleCount_SystemInt32_1;
+__0_totalWeight__param = __lcl_totalWeight_SystemSingle_2;
+__0_SelectWeightedFish();
+__0___0_GetRandomFishOfRarityWithAllConditions__ret = __0___0_SelectWeightedFish__ret;
+return;
+}
+private void __0_GetFallbackFishForAllConditions()
+{
+__lcl_i_SystemInt32_15 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_61 = fishEntries.Length;
+__intnl_SystemBoolean_98 = __lcl_i_SystemInt32_15 < __intnl_SystemInt32_61;
+if (__intnl_SystemBoolean_98)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_30 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_15]);
+__intnl_SystemObject_64 = __intnl_VRCUdonUdonBehaviour_30.GetProgramVariable(__const_SystemString_49);
+__intnl_SystemInt32_63 = Convert.ToInt32(__intnl_SystemObject_64);
+__intnl_SystemInt32_62 = __intnl_SystemInt32_63;
+__intnl_SystemBoolean_101 = __intnl_SystemInt32_62 == __const_SystemInt32_7;
+if (__intnl_SystemBoolean_101)
+{
+__intnl_VRCUdonUdonBehaviour_31 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_15]);
+__intnl_SystemInt32_64 = __13_waterType__param;
+__intnl_VRCUdonUdonBehaviour_31.SetProgramVariable(__const_SystemString_39, __13_waterType__param);
+__intnl_VRCUdonUdonBehaviour_31.SendCustomEvent(__const_SystemString_40);
+__intnl_SystemObject_65 = __intnl_VRCUdonUdonBehaviour_31.GetProgramVariable(__const_SystemString_41);
+__intnl_SystemBoolean_102 = (Boolean)__intnl_SystemObject_65;
+__intnl_SystemBoolean_101 = __intnl_SystemBoolean_102;
+}
+__intnl_SystemBoolean_100 = __intnl_SystemBoolean_101;
+if (__intnl_SystemBoolean_100)
+{
+__intnl_VRCUdonUdonBehaviour_32 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_15]);
+__intnl_SystemString_3 = __7_zoneID__param;
+__intnl_VRCUdonUdonBehaviour_32.SetProgramVariable(__const_SystemString_46, __7_zoneID__param);
+__intnl_VRCUdonUdonBehaviour_32.SendCustomEvent(__const_SystemString_47);
+__intnl_SystemObject_66 = __intnl_VRCUdonUdonBehaviour_32.GetProgramVariable(__const_SystemString_48);
+__intnl_SystemBoolean_103 = (Boolean)__intnl_SystemObject_66;
+__intnl_SystemBoolean_100 = __intnl_SystemBoolean_103;
+}
+__intnl_SystemBoolean_99 = __intnl_SystemBoolean_100;
+if (__intnl_SystemBoolean_99)
+{
+__intnl_VRCUdonUdonBehaviour_33 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_15]);
+__intnl_VRCUdonUdonBehaviour_34 = dayNightCycle;
+__intnl_VRCUdonUdonBehaviour_33.SetProgramVariable(__const_SystemString_42, dayNightCycle);
+__intnl_VRCUdonUdonBehaviour_33.SendCustomEvent(__const_SystemString_43);
+__intnl_SystemObject_67 = __intnl_VRCUdonUdonBehaviour_33.GetProgramVariable(__const_SystemString_44);
+__intnl_SystemBoolean_104 = (Boolean)__intnl_SystemObject_67;
+__intnl_SystemBoolean_99 = __intnl_SystemBoolean_104;
+}
+if (__intnl_SystemBoolean_99)
+{
+__0___0_GetFallbackFishForAllConditions__ret = __lcl_i_SystemInt32_15;
+return;
+}
+__lcl_i_SystemInt32_15 = __lcl_i_SystemInt32_15 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_15 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_61 = fishEntries.Length;
+__intnl_SystemBoolean_98 = __lcl_i_SystemInt32_15 < __intnl_SystemInt32_61;
+if (__intnl_SystemBoolean_98)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_30 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_15]);
+__intnl_SystemInt32_62 = __13_waterType__param;
+__intnl_VRCUdonUdonBehaviour_30.SetProgramVariable(__const_SystemString_39, __13_waterType__param);
+__intnl_VRCUdonUdonBehaviour_30.SendCustomEvent(__const_SystemString_40);
+__intnl_SystemObject_64 = __intnl_VRCUdonUdonBehaviour_30.GetProgramVariable(__const_SystemString_41);
+__intnl_SystemBoolean_101 = (Boolean)__intnl_SystemObject_64;
+__intnl_SystemBoolean_100 = __intnl_SystemBoolean_101;
+if (__intnl_SystemBoolean_100)
+{
+__intnl_VRCUdonUdonBehaviour_31 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_15]);
+__intnl_SystemString_3 = __7_zoneID__param;
+__intnl_VRCUdonUdonBehaviour_31.SetProgramVariable(__const_SystemString_46, __7_zoneID__param);
+__intnl_VRCUdonUdonBehaviour_31.SendCustomEvent(__const_SystemString_47);
+__intnl_SystemObject_65 = __intnl_VRCUdonUdonBehaviour_31.GetProgramVariable(__const_SystemString_48);
+__intnl_SystemBoolean_102 = (Boolean)__intnl_SystemObject_65;
+__intnl_SystemBoolean_100 = __intnl_SystemBoolean_102;
+}
+__intnl_SystemBoolean_99 = __intnl_SystemBoolean_100;
+if (__intnl_SystemBoolean_99)
+{
+__intnl_VRCUdonUdonBehaviour_32 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_15]);
+__intnl_VRCUdonUdonBehaviour_33 = dayNightCycle;
+__intnl_VRCUdonUdonBehaviour_32.SetProgramVariable(__const_SystemString_42, dayNightCycle);
+__intnl_VRCUdonUdonBehaviour_32.SendCustomEvent(__const_SystemString_43);
+__intnl_SystemObject_66 = __intnl_VRCUdonUdonBehaviour_32.GetProgramVariable(__const_SystemString_44);
+__intnl_SystemBoolean_103 = (Boolean)__intnl_SystemObject_66;
+__intnl_SystemBoolean_99 = __intnl_SystemBoolean_103;
+}
+if (__intnl_SystemBoolean_99)
+{
+__0___0_GetFallbackFishForAllConditions__ret = __lcl_i_SystemInt32_15;
+return;
+}
+__lcl_i_SystemInt32_15 = __lcl_i_SystemInt32_15 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_15 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_61 = fishEntries.Length;
+__intnl_SystemBoolean_98 = __lcl_i_SystemInt32_15 < __intnl_SystemInt32_61;
+if (__intnl_SystemBoolean_98)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_30 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_15]);
+__intnl_SystemInt32_62 = __13_waterType__param;
+__intnl_VRCUdonUdonBehaviour_30.SetProgramVariable(__const_SystemString_39, __13_waterType__param);
+__intnl_VRCUdonUdonBehaviour_30.SendCustomEvent(__const_SystemString_40);
+__intnl_SystemObject_64 = __intnl_VRCUdonUdonBehaviour_30.GetProgramVariable(__const_SystemString_41);
+__intnl_SystemBoolean_100 = (Boolean)__intnl_SystemObject_64;
+__intnl_SystemBoolean_99 = __intnl_SystemBoolean_100;
+if (__intnl_SystemBoolean_99)
+{
+__intnl_VRCUdonUdonBehaviour_31 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_15]);
+__intnl_VRCUdonUdonBehaviour_32 = dayNightCycle;
+__intnl_VRCUdonUdonBehaviour_31.SetProgramVariable(__const_SystemString_42, dayNightCycle);
+__intnl_VRCUdonUdonBehaviour_31.SendCustomEvent(__const_SystemString_43);
+__intnl_SystemObject_65 = __intnl_VRCUdonUdonBehaviour_31.GetProgramVariable(__const_SystemString_44);
+__intnl_SystemBoolean_101 = (Boolean)__intnl_SystemObject_65;
+__intnl_SystemBoolean_99 = __intnl_SystemBoolean_101;
+}
+if (__intnl_SystemBoolean_99)
+{
+__0___0_GetFallbackFishForAllConditions__ret = __lcl_i_SystemInt32_15;
+return;
+}
+__lcl_i_SystemInt32_15 = __lcl_i_SystemInt32_15 + __const_SystemInt32_1;
+}
+__0___0_GetFallbackFishForAllConditions__ret = __const_SystemInt32_0;
+return;
+}
+private void GetFallbackFish()
+{
+__lcl_i_SystemInt32_16 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_65 = fishEntries.Length;
+__intnl_SystemBoolean_105 = __lcl_i_SystemInt32_16 < __intnl_SystemInt32_65;
+if (__intnl_SystemBoolean_105)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_35 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_16]);
+__intnl_SystemObject_68 = __intnl_VRCUdonUdonBehaviour_35.GetProgramVariable(__const_SystemString_49);
+__intnl_SystemInt32_67 = Convert.ToInt32(__intnl_SystemObject_68);
+__intnl_SystemInt32_66 = __intnl_SystemInt32_67;
+__intnl_SystemBoolean_106 = __intnl_SystemInt32_66 == __const_SystemInt32_7;
+if (__intnl_SystemBoolean_106)
+{
+__intnl_VRCUdonUdonBehaviour_36 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_16]);
+__intnl_VRCUdonUdonBehaviour_37 = dayNightCycle;
+__intnl_VRCUdonUdonBehaviour_36.SetProgramVariable(__const_SystemString_42, dayNightCycle);
+__intnl_VRCUdonUdonBehaviour_36.SendCustomEvent(__const_SystemString_43);
+__intnl_SystemObject_69 = __intnl_VRCUdonUdonBehaviour_36.GetProgramVariable(__const_SystemString_44);
+__intnl_SystemBoolean_107 = (Boolean)__intnl_SystemObject_69;
+__intnl_SystemBoolean_106 = __intnl_SystemBoolean_107;
+}
+if (__intnl_SystemBoolean_106)
+{
+__0_GetFallbackFish__ret = __lcl_i_SystemInt32_16;
+return;
+}
+__lcl_i_SystemInt32_16 = __lcl_i_SystemInt32_16 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_16 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_65 = fishEntries.Length;
+__intnl_SystemBoolean_105 = __lcl_i_SystemInt32_16 < __intnl_SystemInt32_65;
+if (__intnl_SystemBoolean_105)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_35 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_16]);
+__intnl_VRCUdonUdonBehaviour_36 = dayNightCycle;
+__intnl_VRCUdonUdonBehaviour_35.SetProgramVariable(__const_SystemString_42, dayNightCycle);
+__intnl_VRCUdonUdonBehaviour_35.SendCustomEvent(__const_SystemString_43);
+__intnl_SystemObject_68 = __intnl_VRCUdonUdonBehaviour_35.GetProgramVariable(__const_SystemString_44);
+__intnl_SystemBoolean_106 = (Boolean)__intnl_SystemObject_68;
+if (__intnl_SystemBoolean_106)
+{
+__0_GetFallbackFish__ret = __lcl_i_SystemInt32_16;
+return;
+}
+__lcl_i_SystemInt32_16 = __lcl_i_SystemInt32_16 + __const_SystemInt32_1;
+}
+__0_GetFallbackFish__ret = __const_SystemInt32_0;
+return;
+}
+public void GetRandomFish()
+{
+GetRandomFishIndex();
+__lcl_index_SystemInt32_0 = __0_GetRandomFishIndex__ret;
+__lcl_fish_VRCUdonUdonBehaviour_6 = (UdonBehaviour)(fishEntries[__lcl_index_SystemInt32_0]);
+__0_GetRandomFish__ret = __lcl_fish_VRCUdonUdonBehaviour_6;
+return;
+}
+public void __0_GetRandomFishWithLuck()
+{
+__1_luckMultiplier__param = __8_luckMultiplier__param;
+__0_GetRandomFishIndexWithLuck();
+__lcl_index_SystemInt32_1 = __0___0_GetRandomFishIndexWithLuck__ret;
+__lcl_fish_VRCUdonUdonBehaviour_7 = (UdonBehaviour)(fishEntries[__lcl_index_SystemInt32_1]);
+__0___0_GetRandomFishWithLuck__ret = __lcl_fish_VRCUdonUdonBehaviour_7;
+return;
+}
+public void __0_GetRandomFishWithLuckAndWater()
+{
+__3_luckMultiplier__param = __9_luckMultiplier__param;
+__4_waterType__param = __14_waterType__param;
+__0_GetRandomFishIndexWithLuckAndWater();
+__lcl_index_SystemInt32_2 = __0___0_GetRandomFishIndexWithLuckAndWater__ret;
+__lcl_fish_VRCUdonUdonBehaviour_8 = (UdonBehaviour)(fishEntries[__lcl_index_SystemInt32_2]);
+__0___0_GetRandomFishWithLuckAndWater__ret = __lcl_fish_VRCUdonUdonBehaviour_8;
+return;
+}
+public void __0_GetRandomFishWithMaxWeight()
+{
+__4_luckMultiplier__param = __10_luckMultiplier__param;
+__5_waterType__param = __15_waterType__param;
+__3_maxWeightKg__param = __10_maxWeightKg__param;
+__0_maxRarity__param = __const_SystemInt32_2;
+__0_GetRandomFishIndexWithMaxWeight();
+__lcl_index_SystemInt32_3 = __0___0_GetRandomFishIndexWithMaxWeight__ret;
+__lcl_fish_VRCUdonUdonBehaviour_9 = (UdonBehaviour)(fishEntries[__lcl_index_SystemInt32_3]);
+__0___0_GetRandomFishWithMaxWeight__ret = __lcl_fish_VRCUdonUdonBehaviour_9;
+return;
+}
+public void __0_GetRandomFishWithSeaEvent()
+{
+__0_luckMultiplier__param = __11_luckMultiplier__param;
+__1_waterType__param = __16_waterType__param;
+__0_playerPosition__param = __6_playerPosition__param;
+__1_maxWeightKg__param = __11_maxWeightKg__param;
+__0_GetRandomFishIndexWithSeaEvent();
+__lcl_index_SystemInt32_4 = __0___0_GetRandomFishIndexWithSeaEvent__ret;
+__lcl_fish_VRCUdonUdonBehaviour_10 = (UdonBehaviour)(fishEntries[__lcl_index_SystemInt32_4]);
+__0___0_GetRandomFishWithSeaEvent__ret = __lcl_fish_VRCUdonUdonBehaviour_10;
+return;
+}
+public void GetAvailableFish()
+{
+__lcl_availableCount_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_17 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_68 = fishEntries.Length;
+__intnl_SystemBoolean_108 = __lcl_i_SystemInt32_17 < __intnl_SystemInt32_68;
+if (__intnl_SystemBoolean_108)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_38 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_17]);
+__intnl_VRCUdonUdonBehaviour_39 = dayNightCycle;
+__intnl_VRCUdonUdonBehaviour_38.SetProgramVariable(__const_SystemString_42, dayNightCycle);
+__intnl_VRCUdonUdonBehaviour_38.SendCustomEvent(__const_SystemString_43);
+__intnl_SystemObject_70 = __intnl_VRCUdonUdonBehaviour_38.GetProgramVariable(__const_SystemString_44);
+__intnl_SystemBoolean_109 = (Boolean)__intnl_SystemObject_70;
+if (__intnl_SystemBoolean_109)
+{
+__lcl_availableCount_SystemInt32_0 = __lcl_availableCount_SystemInt32_0 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_17 = __lcl_i_SystemInt32_17 + __const_SystemInt32_1;
+}
+__lcl_availableFish_UnityEngineComponentArray_0 = __lcl_availableCount_SystemInt32_0.ctor();
+__lcl_index_SystemInt32_5 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_17 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_68 = fishEntries.Length;
+__intnl_SystemBoolean_108 = __lcl_i_SystemInt32_17 < __intnl_SystemInt32_68;
+if (__intnl_SystemBoolean_108)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_38 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_17]);
+__intnl_VRCUdonUdonBehaviour_39 = dayNightCycle;
+__intnl_VRCUdonUdonBehaviour_38.SetProgramVariable(__const_SystemString_42, dayNightCycle);
+__intnl_VRCUdonUdonBehaviour_38.SendCustomEvent(__const_SystemString_43);
+__intnl_SystemObject_70 = __intnl_VRCUdonUdonBehaviour_38.GetProgramVariable(__const_SystemString_44);
+__intnl_SystemBoolean_109 = (Boolean)__intnl_SystemObject_70;
+if (__intnl_SystemBoolean_109)
+{
+__intnl_VRCUdonUdonBehaviour_40 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_17]);
+__lcl_availableFish_UnityEngineComponentArray_0.Set(__lcl_index_SystemInt32_5, __intnl_VRCUdonUdonBehaviour_40);
+__lcl_index_SystemInt32_5 = __lcl_index_SystemInt32_5 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_17 = __lcl_i_SystemInt32_17 + __const_SystemInt32_1;
+}
+__0_GetAvailableFish__ret = __lcl_availableFish_UnityEngineComponentArray_0;
+return;
+}
+public void GetAvailableFishCount()
+{
+__lcl_count_SystemInt32_2 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_18 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_69 = fishEntries.Length;
+__intnl_SystemBoolean_110 = __lcl_i_SystemInt32_18 < __intnl_SystemInt32_69;
+if (__intnl_SystemBoolean_110)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_41 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_18]);
+__intnl_VRCUdonUdonBehaviour_42 = dayNightCycle;
+__intnl_VRCUdonUdonBehaviour_41.SetProgramVariable(__const_SystemString_42, dayNightCycle);
+__intnl_VRCUdonUdonBehaviour_41.SendCustomEvent(__const_SystemString_43);
+__intnl_SystemObject_71 = __intnl_VRCUdonUdonBehaviour_41.GetProgramVariable(__const_SystemString_44);
+__intnl_SystemBoolean_111 = (Boolean)__intnl_SystemObject_71;
+if (__intnl_SystemBoolean_111)
+{
+__lcl_count_SystemInt32_2 = __lcl_count_SystemInt32_2 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_18 = __lcl_i_SystemInt32_18 + __const_SystemInt32_1;
+}
+__0_GetAvailableFishCount__ret = __lcl_count_SystemInt32_2;
+return;
+}
+public void __0_GetAvailableFishCountForCurrentZoneAndWater()
+{
+__lcl_count_SystemInt32_3 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_19 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_70 = fishEntries.Length;
+__intnl_SystemBoolean_112 = __lcl_i_SystemInt32_19 < __intnl_SystemInt32_70;
+if (__intnl_SystemBoolean_112)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_43 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_19]);
+__intnl_VRCUdonUdonBehaviour_44 = dayNightCycle;
+__intnl_SystemString_4 = currentZoneID;
+__intnl_SystemInt32_71 = __17_waterType__param;
+__intnl_VRCUdonUdonBehaviour_43.SetProgramVariable(__const_SystemString_58, __17_waterType__param);
+__intnl_VRCUdonUdonBehaviour_43.SetProgramVariable(__const_SystemString_59, currentZoneID);
+__intnl_VRCUdonUdonBehaviour_43.SetProgramVariable(__const_SystemString_60, dayNightCycle);
+__intnl_VRCUdonUdonBehaviour_43.SendCustomEvent(__const_SystemString_61);
+__intnl_SystemObject_72 = __intnl_VRCUdonUdonBehaviour_43.GetProgramVariable(__const_SystemString_62);
+__intnl_SystemBoolean_113 = (Boolean)__intnl_SystemObject_72;
+if (__intnl_SystemBoolean_113)
+{
+__lcl_count_SystemInt32_3 = __lcl_count_SystemInt32_3 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_19 = __lcl_i_SystemInt32_19 + __const_SystemInt32_1;
+}
+__0___0_GetAvailableFishCountForCurrentZoneAndWater__ret = __lcl_count_SystemInt32_3;
+return;
+}
+public void __0_GetCatchableFishCountWithMaxWeight()
+{
+__lcl_count_SystemInt32_4 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_20 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_72 = fishEntries.Length;
+__intnl_SystemBoolean_114 = __lcl_i_SystemInt32_20 < __intnl_SystemInt32_72;
+if (__intnl_SystemBoolean_114)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_45 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_20]);
+__1_fish__param = __intnl_VRCUdonUdonBehaviour_45;
+__11_waterType__param = __18_waterType__param;
+__4_zoneID__param = currentZoneID;
+__9_maxWeightKg__param = __12_maxWeightKg__param;
+__1_fishIndex__param = __const_SystemInt32_2;
+UNDEF_71185_15012();
+if (__0___0_IsFishCatchable__ret)
+{
+__lcl_count_SystemInt32_4 = __lcl_count_SystemInt32_4 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_20 = __lcl_i_SystemInt32_20 + __const_SystemInt32_1;
+}
+__0___0_GetCatchableFishCountWithMaxWeight__ret = __lcl_count_SystemInt32_4;
+return;
+}
+public void GetFishWithWeatherPreferences()
+{
+__lcl_totalCount_SystemInt32_0 = fishEntries.Length;
+__lcl_weatherFish_UnityEngineComponentArray_0 = __lcl_totalCount_SystemInt32_0.ctor();
+__lcl_i_SystemInt32_21 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_115 = __lcl_i_SystemInt32_21 < __lcl_totalCount_SystemInt32_0;
+if (__intnl_SystemBoolean_115)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_46 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_21]);
+__lcl_weatherFish_UnityEngineComponentArray_0.Set(__lcl_i_SystemInt32_21, __intnl_VRCUdonUdonBehaviour_46);
+__lcl_i_SystemInt32_21 = __lcl_i_SystemInt32_21 + __const_SystemInt32_1;
+}
+__0_GetFishWithWeatherPreferences__ret = __lcl_weatherFish_UnityEngineComponentArray_0;
+return;
+}
+public void __0_DebugFishInCurrentZone()
+{
+__lcl_availableCount_SystemInt32_1 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_22 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_73 = fishEntries.Length;
+__intnl_SystemBoolean_116 = __lcl_i_SystemInt32_22 < __intnl_SystemInt32_73;
+if (__intnl_SystemBoolean_116)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_47 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_22]);
+__intnl_VRCUdonUdonBehaviour_48 = dayNightCycle;
+__intnl_SystemString_5 = currentZoneID;
+__intnl_SystemInt32_74 = __19_waterType__param;
+__intnl_VRCUdonUdonBehaviour_47.SetProgramVariable(__const_SystemString_58, __19_waterType__param);
+__intnl_VRCUdonUdonBehaviour_47.SetProgramVariable(__const_SystemString_59, currentZoneID);
+__intnl_VRCUdonUdonBehaviour_47.SetProgramVariable(__const_SystemString_60, dayNightCycle);
+__intnl_VRCUdonUdonBehaviour_47.SendCustomEvent(__const_SystemString_61);
+__intnl_SystemObject_73 = __intnl_VRCUdonUdonBehaviour_47.GetProgramVariable(__const_SystemString_62);
+__intnl_SystemBoolean_117 = (Boolean)__intnl_SystemObject_73;
+if (__intnl_SystemBoolean_117)
+{
+__lcl_availableCount_SystemInt32_1 = __lcl_availableCount_SystemInt32_1 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_22 = __lcl_i_SystemInt32_22 + __const_SystemInt32_1;
+}
+}
+public void __0_DebugCatchableFishWithMaxWeight()
+{
+__lcl_catchableCount_SystemInt32_1 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_23 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_75 = fishEntries.Length;
+__intnl_SystemBoolean_118 = __lcl_i_SystemInt32_23 < __intnl_SystemInt32_75;
+if (__intnl_SystemBoolean_118)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_49 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_23]);
+__1_fish__param = __intnl_VRCUdonUdonBehaviour_49;
+__11_waterType__param = __20_waterType__param;
+__4_zoneID__param = currentZoneID;
+__9_maxWeightKg__param = __13_maxWeightKg__param;
+__1_fishIndex__param = __const_SystemInt32_2;
+UNDEF_71185_15012();
+if (__0___0_IsFishCatchable__ret)
+{
+__lcl_fish_VRCUdonUdonBehaviour_11 = (UdonBehaviour)(fishEntries[__lcl_i_SystemInt32_23]);
+__intnl_SystemObject_74 = __lcl_fish_VRCUdonUdonBehaviour_11.GetProgramVariable(__const_SystemString_63);
+__intnl_SystemSingle_51 = Convert.ToSingle(__intnl_SystemObject_74);
+__lcl_effectiveMaxWeight_SystemSingle_0 = Mathf.Min(__intnl_SystemSingle_51, __13_maxWeightKg__param);
+__lcl_catchableCount_SystemInt32_1 = __lcl_catchableCount_SystemInt32_1 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_23 = __lcl_i_SystemInt32_23 + __const_SystemInt32_1;
+}
+}
+public void __0_GetFishEntryById()
+{
+__intnl_SystemInt32_76 = fishEntries.Length;
+__intnl_SystemInt32_77 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_119 = __intnl_SystemInt32_77 < __intnl_SystemInt32_76;
+if (__intnl_SystemBoolean_119)
+{
+break;
+}
+__lcl_fish_VRCUdonUdonBehaviour_12 = (UdonBehaviour)(fishEntries[__intnl_SystemInt32_77]);
+__intnl_SystemObject_75 = __lcl_fish_VRCUdonUdonBehaviour_12.GetProgramVariable(__const_SystemString_0);
+__intnl_SystemInt32_78 = Convert.ToInt32(__intnl_SystemObject_75);
+__intnl_SystemBoolean_120 = __intnl_SystemInt32_78 == __0_fishEntryId__param;
+if (__intnl_SystemBoolean_120)
+{
+__0___0_GetFishEntryById__ret = __lcl_fish_VRCUdonUdonBehaviour_12;
+return;
+}
+__intnl_SystemInt32_77 = __intnl_SystemInt32_77 + __const_SystemInt32_1;
+}
+__0___0_GetFishEntryById__ret = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+}

@@ -1,0 +1,2524 @@
+using System;
+using VRC.SDKBase;
+using VRC.Udon;
+using UnityEngine;
+using VRC.Economy;
+using UnityEngine.UI;
+using TMPro;
+using VRC.Udon.Common.Enums;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Boolean __intnl_SystemBoolean_83 = false;
+private Boolean __intnl_SystemBoolean_93 = false;
+private Boolean __intnl_SystemBoolean_13 = false;
+private Boolean __intnl_SystemBoolean_23 = false;
+private Boolean __intnl_SystemBoolean_33 = false;
+private Boolean __intnl_SystemBoolean_43 = false;
+private Boolean __intnl_SystemBoolean_53 = false;
+private Boolean __intnl_SystemBoolean_63 = false;
+private Boolean __intnl_SystemBoolean_73 = false;
+private TrackingData __intnl_VRCSDKBaseVRCPlayerApiTrackingData_0 = VRC.SDKBase.VRCPlayerApi+TrackingData;
+private UInt32 __gintnl_SystemUInt32_46 = 25940;
+private UInt32 __gintnl_SystemUInt32_16 = 13636;
+private UInt32 __gintnl_SystemUInt32_36 = 22648;
+private UInt32 __gintnl_SystemUInt32_26 = 17004;
+private object __intnl_SystemObject_27 = null;
+private object __intnl_SystemObject_26 = null;
+private object __intnl_SystemObject_25 = null;
+private object __intnl_SystemObject_24 = null;
+private object __intnl_SystemObject_23 = null;
+private object __intnl_SystemObject_22 = null;
+private object __intnl_SystemObject_21 = null;
+private object __intnl_SystemObject_20 = null;
+private object __intnl_SystemObject_29 = null;
+private object __intnl_SystemObject_28 = null;
+private Int32 __intnl_SystemInt32_15 = 0;
+private Int32 __intnl_SystemInt32_35 = 0;
+private Int32 __intnl_SystemInt32_25 = 0;
+private UdonBehaviour __lcl_pet_VRCUdonUdonBehaviour_0 = null;
+public UdonBehaviour afkPetDatabase;
+private String __3_trackingKey__param = null;
+private String __intnl_SystemString_1 = null;
+private Single animationTime = 0f;
+private Object __intnl_UnityEngineObject_92 = null;
+private Object __intnl_UnityEngineObject_82 = null;
+private Object __intnl_UnityEngineObject_72 = null;
+private Object __intnl_UnityEngineObject_62 = null;
+private Object __intnl_UnityEngineObject_52 = null;
+private Object __intnl_UnityEngineObject_42 = null;
+private Object __intnl_UnityEngineObject_32 = null;
+private Object __intnl_UnityEngineObject_22 = null;
+private Object __intnl_UnityEngineObject_12 = null;
+private String __const_SystemString_46 = "__0_AddXP";
+private String __const_SystemString_47 = "moneyReward";
+private String __const_SystemString_44 = "xpReward";
+private String __const_SystemString_45 = "__0_amount__param";
+private String __const_SystemString_42 = "__0___0_GetAchievement__ret";
+private String __const_SystemString_43 = "achievementName";
+private String __const_SystemString_40 = "__0_index__param";
+private String __const_SystemString_41 = "__0_GetAchievement";
+private String __const_SystemString_48 = "__2_amount__param";
+private String __const_SystemString_49 = "__0_AddMoney";
+private Single __intnl_SystemSingle_0 = 0f;
+private object __intnl_SystemObject_0 = null;
+private Int32 __2_achievementIndex__param = 0;
+private Boolean __lcl_anyNewUnlocks_SystemBoolean_1 = false;
+private Boolean __lcl_anyNewUnlocks_SystemBoolean_0 = false;
+private String __const_SystemString_0 = "GetAllAchievements";
+private Transform __intnl_UnityEngineTransform_0 = null;
+private Single __const_SystemSingle_0 = 0f;
+private Boolean __intnl_SystemBoolean_86 = false;
+private Boolean __intnl_SystemBoolean_96 = false;
+private Boolean __intnl_SystemBoolean_16 = false;
+private Boolean __intnl_SystemBoolean_26 = false;
+private Boolean __intnl_SystemBoolean_36 = false;
+private Boolean __intnl_SystemBoolean_46 = false;
+private Boolean __intnl_SystemBoolean_56 = false;
+private Boolean __intnl_SystemBoolean_66 = false;
+private Boolean __intnl_SystemBoolean_76 = false;
+private object __intnl_SystemObject_17 = null;
+private object __intnl_SystemObject_16 = null;
+private object __intnl_SystemObject_15 = null;
+private object __intnl_SystemObject_14 = null;
+private object __intnl_SystemObject_13 = null;
+private object __intnl_SystemObject_12 = null;
+private object __intnl_SystemObject_11 = null;
+private object __intnl_SystemObject_10 = null;
+private object __intnl_SystemObject_19 = null;
+private object __intnl_SystemObject_18 = null;
+private Int32 __lcl_j_SystemInt32_0 = 0;
+private Int32 __lcl_j_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_12 = 0;
+private Int32 __intnl_SystemInt32_32 = 0;
+private Int32 __intnl_SystemInt32_22 = 0;
+private String __intnl_SystemString_9 = null;
+private String __lcl_trackingPairs_SystemString_0 = null;
+public UdonBehaviour achievementDatabase;
+private UInt32 __gintnl_SystemUInt32_9 = 2120;
+private UInt32 __gintnl_SystemUInt32_8 = 1876;
+private UInt32 __gintnl_SystemUInt32_5 = 1224;
+private UInt32 __gintnl_SystemUInt32_4 = 1208;
+private UInt32 __gintnl_SystemUInt32_7 = 1700;
+private UInt32 __gintnl_SystemUInt32_6 = 1540;
+private UInt32 __gintnl_SystemUInt32_1 = 928;
+private UInt32 __gintnl_SystemUInt32_0 = 552;
+private UInt32 __gintnl_SystemUInt32_3 = 1172;
+private UInt32 __gintnl_SystemUInt32_2 = 992;
+private Boolean __const_SystemBoolean_0 = false;
+private Boolean __const_SystemBoolean_1 = true;
+private Object __intnl_UnityEngineObject_91 = null;
+private Object __intnl_UnityEngineObject_81 = null;
+private Object __intnl_UnityEngineObject_71 = null;
+private Object __intnl_UnityEngineObject_61 = null;
+private Object __intnl_UnityEngineObject_51 = null;
+private Object __intnl_UnityEngineObject_41 = null;
+private Object __intnl_UnityEngineObject_31 = null;
+private Object __intnl_UnityEngineObject_21 = null;
+private Object __intnl_UnityEngineObject_11 = null;
+public GameObject achievementParticleEffect;
+private Int32 __0_value__param = 0;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_29 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_28 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_21 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_20 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_23 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_22 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_25 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_24 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_27 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_26 = null;
+private Int32 __lcl_total_SystemInt32_0 = 0;
+public Single slideOutDuration;
+private Int32 __lcl_index_SystemInt32_0 = 0;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_7 = null;
+private String[] __lcl_pairs_SystemStringArray_0 = null;
+public GameObject popupPanel;
+private Int32[] trackingValues = null;
+private Int32 __0_GetTotalLuckBonus__ret = 0;
+private VRCPlayerApi __lcl_local_VRCSDKBaseVRCPlayerApi_0 = null;
+private String __const_SystemString_5 = "BETA_PLAYER";
+private Boolean isInitialized = false;
+private UInt32 __gintnl_SystemUInt32_43 = 25292;
+private UInt32 __gintnl_SystemUInt32_13 = 8244;
+private UInt32 __gintnl_SystemUInt32_33 = 20480;
+private UInt32 __gintnl_SystemUInt32_23 = 16128;
+private GameObject __3__intnlparam = null;
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private String __1_trackingKey__param = null;
+private VRCPlayerApi onPlayerRestoredPlayer = null;
+private String __intnl_SystemString_6 = null;
+public Single achievementCheckDelay;
+private UdonProduct __intnl_VRCEconomyUdonProduct_2 = null;
+private UdonProduct __intnl_VRCEconomyUdonProduct_3 = null;
+private UdonProduct __intnl_VRCEconomyUdonProduct_0 = null;
+private UdonProduct __intnl_VRCEconomyUdonProduct_1 = null;
+public UdonBehaviour equipmentStatsManager;
+private Object __intnl_UnityEngineObject_99 = null;
+private Object __intnl_UnityEngineObject_89 = null;
+private Object __intnl_UnityEngineObject_79 = null;
+private Object __intnl_UnityEngineObject_69 = null;
+private Object __intnl_UnityEngineObject_59 = null;
+private Object __intnl_UnityEngineObject_49 = null;
+private Object __intnl_UnityEngineObject_39 = null;
+private Object __intnl_UnityEngineObject_29 = null;
+private Object __intnl_UnityEngineObject_19 = null;
+private String __const_SystemString_16 = "__0___0_GetAchievementIndex__ret";
+private String __const_SystemString_17 = "GetAchievementCount";
+private String __const_SystemString_14 = "__0_achievement__param";
+private String __const_SystemString_15 = "__0_GetAchievementIndex";
+private String __const_SystemString_12 = ",";
+private String __const_SystemString_13 = "CheckAchievements";
+private String __const_SystemString_10 = "ACH_TRACKING";
+private String __const_SystemString_11 = ":";
+private String __const_SystemString_18 = "__0_GetAchievementCount__ret";
+private String __const_SystemString_19 = "luckBonus";
+private VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_0 = null;
+private Object __intnl_UnityEngineObject_94 = null;
+private Object __intnl_UnityEngineObject_84 = null;
+private Object __intnl_UnityEngineObject_74 = null;
+private Object __intnl_UnityEngineObject_64 = null;
+private Object __intnl_UnityEngineObject_54 = null;
+private Object __intnl_UnityEngineObject_44 = null;
+private Object __intnl_UnityEngineObject_34 = null;
+private Object __intnl_UnityEngineObject_24 = null;
+private Object __intnl_UnityEngineObject_14 = null;
+private Int64 __refl_typeid = -7742812683385275276;
+private object __intnl_SystemObject_7 = null;
+private Int32 __0_GetTotalAchievementCount__ret = 0;
+private Vector3 originalScale = new Vector3(0f, 0f, 0f);
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_19 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_18 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_11 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_10 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_13 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_12 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_15 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_14 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_17 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_16 = null;
+private Single __lcl_easeValue_SystemSingle_0 = 0f;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_2 = null;
+private Transform __intnl_UnityEngineTransform_5 = null;
+public Image vrAchievementIcon;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_9 = null;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Boolean __intnl_SystemBoolean_81 = false;
+private Boolean __intnl_SystemBoolean_91 = false;
+private Boolean __intnl_SystemBoolean_11 = false;
+private Boolean __intnl_SystemBoolean_21 = false;
+private Boolean __intnl_SystemBoolean_31 = false;
+private Boolean __intnl_SystemBoolean_41 = false;
+private Boolean __intnl_SystemBoolean_51 = false;
+private Boolean __intnl_SystemBoolean_61 = false;
+private Boolean __intnl_SystemBoolean_71 = false;
+public Boolean showDebugLogs;
+private UInt32 __gintnl_SystemUInt32_44 = 25492;
+private UInt32 __gintnl_SystemUInt32_14 = 8260;
+private UInt32 __gintnl_SystemUInt32_34 = 20496;
+private UInt32 __gintnl_SystemUInt32_24 = 16972;
+private object __intnl_SystemObject_46 = null;
+private object __intnl_SystemObject_45 = null;
+private object __intnl_SystemObject_44 = null;
+private object __intnl_SystemObject_43 = null;
+private object __intnl_SystemObject_42 = null;
+private object __intnl_SystemObject_41 = null;
+private object __intnl_SystemObject_40 = null;
+private Vector3 __const_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Int32 __intnl_SystemInt32_17 = 0;
+private Int32 __intnl_SystemInt32_37 = 0;
+private Int32 __intnl_SystemInt32_27 = 0;
+private String[] __lcl_keyValue_SystemStringArray_0 = null;
+public Boolean enableAchievements;
+public GameObject vrPopupPanel;
+private Int32 __lcl_oldValue_SystemInt32_0 = 0;
+private Int32 __lcl_i_SystemInt32_11 = 0;
+private String __intnl_SystemString_3 = null;
+private String __2_trackingKey__param = null;
+private UdonBehaviour __4_achievement__param = null;
+private GameObject __0__intnlparam = null;
+private UdonBehaviour __2_achievement__param = null;
+private String __const_SystemString_66 = "get_FishSold";
+private String __const_SystemString_67 = "__0_get_FishSold__ret";
+private String __const_SystemString_64 = "get_RareFishCaught";
+private String __const_SystemString_65 = "__0_get_RareFishCaught__ret";
+private String __const_SystemString_62 = "get_FishCaught";
+private String __const_SystemString_63 = "__0_get_FishCaught__ret";
+private String __const_SystemString_60 = "FISH_SOLD";
+private String __const_SystemString_61 = "PLAYER_LEVEL";
+private String __const_SystemString_68 = "get_Level";
+private String __const_SystemString_69 = "__0_get_Level__ret";
+private Single __intnl_SystemSingle_2 = 0f;
+private object __intnl_SystemObject_2 = null;
+public TextMeshProUGUI achievementNameText;
+private object __intnl_SystemObject_9 = null;
+private Int32 currentPhase = 3;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_1 = null;
+private String __const_SystemString_2 = "__0_behaviour__param";
+private Transform __intnl_UnityEngineTransform_2 = null;
+private Int32 __lcl_count_SystemInt32_0 = 0;
+public UdonBehaviour boatSkinDatabase;
+private Single __const_SystemSingle_2 = 3f;
+private String[] __lcl_parts_SystemStringArray_0 = null;
+private Boolean __intnl_SystemBoolean_89 = false;
+private Boolean __intnl_SystemBoolean_99 = false;
+private Boolean __intnl_SystemBoolean_19 = false;
+private Boolean __intnl_SystemBoolean_29 = false;
+private Boolean __intnl_SystemBoolean_39 = false;
+private Boolean __intnl_SystemBoolean_49 = false;
+private Boolean __intnl_SystemBoolean_59 = false;
+private Boolean __intnl_SystemBoolean_69 = false;
+private Boolean __intnl_SystemBoolean_79 = false;
+private String[] __lcl_unlockedArray_SystemStringArray_0 = null;
+private Vector3 __intnl_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Boolean __intnl_SystemBoolean_84 = false;
+private Boolean __intnl_SystemBoolean_94 = false;
+private Boolean __intnl_SystemBoolean_14 = false;
+private Boolean __intnl_SystemBoolean_24 = false;
+private Boolean __intnl_SystemBoolean_34 = false;
+private Boolean __intnl_SystemBoolean_44 = false;
+private Boolean __intnl_SystemBoolean_54 = false;
+private Boolean __intnl_SystemBoolean_64 = false;
+private Boolean __intnl_SystemBoolean_74 = false;
+private object __intnl_SystemObject_37 = null;
+private object __intnl_SystemObject_36 = null;
+private object __intnl_SystemObject_35 = null;
+private object __intnl_SystemObject_34 = null;
+private object __intnl_SystemObject_33 = null;
+private object __intnl_SystemObject_32 = null;
+private object __intnl_SystemObject_31 = null;
+private object __intnl_SystemObject_30 = null;
+private object __intnl_SystemObject_39 = null;
+private object __intnl_SystemObject_38 = null;
+private Component[] __intnl_UnityEngineComponentArray_9 = null;
+private Component[] __intnl_UnityEngineComponentArray_8 = null;
+private Component[] __intnl_UnityEngineComponentArray_1 = null;
+private Component[] __intnl_UnityEngineComponentArray_0 = null;
+private Component[] __intnl_UnityEngineComponentArray_3 = null;
+private Component[] __intnl_UnityEngineComponentArray_2 = null;
+private Component[] __intnl_UnityEngineComponentArray_5 = null;
+private Component[] __intnl_UnityEngineComponentArray_4 = null;
+private Component[] __intnl_UnityEngineComponentArray_7 = null;
+private Component[] __intnl_UnityEngineComponentArray_6 = null;
+private Int32 __intnl_SystemInt32_14 = 0;
+private Int32 __intnl_SystemInt32_34 = 0;
+private Int32 __intnl_SystemInt32_24 = 0;
+private Single __lcl_progress_SystemSingle_0 = 0f;
+private Single __lcl_progress_SystemSingle_1 = 0f;
+public Toggle achievementLuckToggle;
+private Int32 __intnl_SystemInt32_19 = 0;
+private Int32 __intnl_SystemInt32_39 = 0;
+private Int32 __intnl_SystemInt32_29 = 0;
+private object __const_SystemObject_0 = null;
+private String __intnl_SystemString_0 = null;
+private Object __intnl_UnityEngineObject_93 = null;
+private Object __intnl_UnityEngineObject_83 = null;
+private Object __intnl_UnityEngineObject_73 = null;
+private Object __intnl_UnityEngineObject_63 = null;
+private Object __intnl_UnityEngineObject_53 = null;
+private Object __intnl_UnityEngineObject_43 = null;
+private Object __intnl_UnityEngineObject_33 = null;
+private Object __intnl_UnityEngineObject_23 = null;
+private Object __intnl_UnityEngineObject_13 = null;
+private Int32 __lcl_keyIndex_SystemInt32_0 = 0;
+private Single __intnl_SystemSingle_1 = 0f;
+private String __lcl_unlockedData_SystemString_0 = null;
+private Char __const_SystemChar_1 = :;
+private object __intnl_SystemObject_1 = null;
+private Int32 __lcl_idx_SystemInt32_0 = 0;
+private String __const_SystemString_7 = "requiredProduct";
+public UdonBehaviour titleSystem;
+private Single __const_SystemSingle_1 = 1f;
+private TrackingDataType __const_VRCSDKBaseVRCPlayerApiTrackingDataType_0 = TrackingDataType.Head;
+private UInt32 __gintnl_SystemUInt32_41 = 25124;
+private UInt32 __gintnl_SystemUInt32_11 = 3404;
+private UInt32 __gintnl_SystemUInt32_31 = 20016;
+private UInt32 __gintnl_SystemUInt32_21 = 16096;
+private String __lcl_key_SystemString_0 = null;
+private Boolean __intnl_SystemBoolean_87 = false;
+private Boolean __intnl_SystemBoolean_97 = false;
+private Boolean __intnl_SystemBoolean_17 = false;
+private Boolean __intnl_SystemBoolean_27 = false;
+private Boolean __intnl_SystemBoolean_37 = false;
+private Boolean __intnl_SystemBoolean_47 = false;
+private Boolean __intnl_SystemBoolean_57 = false;
+private Boolean __intnl_SystemBoolean_67 = false;
+private Boolean __intnl_SystemBoolean_77 = false;
+private Component[] __lcl_allAchievements_UnityEngineComponentArray_1 = null;
+private Component[] __lcl_allAchievements_UnityEngineComponentArray_0 = null;
+private Component[] __lcl_allAchievements_UnityEngineComponentArray_3 = null;
+private Component[] __lcl_allAchievements_UnityEngineComponentArray_2 = null;
+private EventTiming __const_VRCUdonCommonEnumsEventTiming_0 = EventTiming.Update;
+public Single slideInDuration;
+private Int32 __lcl_betaValue_SystemInt32_1 = 0;
+private Int32 __lcl_betaValue_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_11 = 0;
+private Int32 __intnl_SystemInt32_31 = 0;
+private Int32 __intnl_SystemInt32_21 = 0;
+private Int32 __intnl_SystemInt32_41 = 0;
+private String __0_trackingKey__param = null;
+private String __intnl_SystemString_8 = null;
+private String __const_SystemString_36 = "isDiscordExclusive";
+private String __const_SystemString_37 = "__1_currentValue__param";
+private String __const_SystemString_34 = "__0_skinId__param";
+private String __const_SystemString_35 = "__0_UnlockSkin";
+private String __const_SystemString_32 = "boatSkins";
+private String __const_SystemString_33 = "skinId";
+private String __const_SystemString_30 = "__3_id__param";
+private String __const_SystemString_31 = "__0_AddAfkPet";
+private String __const_SystemString_38 = "__0_ShouldUnlock";
+private String __const_SystemString_39 = "__0___0_ShouldUnlock__ret";
+private UdonBehaviour __lcl_achievement_VRCUdonUdonBehaviour_1 = null;
+private Object __intnl_UnityEngineObject_96 = null;
+private Object __intnl_UnityEngineObject_86 = null;
+private Object __intnl_UnityEngineObject_76 = null;
+private Object __intnl_UnityEngineObject_66 = null;
+private Object __intnl_UnityEngineObject_56 = null;
+private Object __intnl_UnityEngineObject_46 = null;
+private Object __intnl_UnityEngineObject_36 = null;
+private Object __intnl_UnityEngineObject_26 = null;
+private Object __intnl_UnityEngineObject_16 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_31 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_30 = null;
+private Int32 __lcl_currentValue_SystemInt32_0 = 0;
+public AudioClip achievementUnlockedSound;
+private String[] __lcl_tempKeys_SystemStringArray_0 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_4 = null;
+private VRCPlayerApi onPurchaseConfirmedPlayer = null;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private Transform __intnl_UnityEngineTransform_7 = null;
+private UdonBehaviour __3_achievement__param = null;
+private String __const_SystemString_4 = "ACH_LUCK_ENABLED";
+private Boolean __lcl_isUnique_SystemBoolean_0 = false;
+private UInt32 __gintnl_SystemUInt32_19 = 15804;
+private UInt32 __gintnl_SystemUInt32_39 = 24888;
+private UInt32 __gintnl_SystemUInt32_29 = 18664;
+private Object __intnl_UnityEngineObject_106 = null;
+private Object __intnl_UnityEngineObject_107 = null;
+private Object __intnl_UnityEngineObject_104 = null;
+private Object __intnl_UnityEngineObject_105 = null;
+private Object __intnl_UnityEngineObject_102 = null;
+private Object __intnl_UnityEngineObject_103 = null;
+private Object __intnl_UnityEngineObject_100 = null;
+private Object __intnl_UnityEngineObject_101 = null;
+private UInt32 __gintnl_SystemUInt32_42 = 25208;
+private UInt32 __gintnl_SystemUInt32_12 = 8012;
+private UInt32 __gintnl_SystemUInt32_32 = 20032;
+private UInt32 __gintnl_SystemUInt32_22 = 16112;
+public Boolean debugShowVRPopupOnDesktop;
+public TextMeshProUGUI vrAchievementDescriptionText;
+private Int32 __lcl_i_SystemInt32_9 = 0;
+private Int32 __lcl_i_SystemInt32_8 = 0;
+private Int32 __lcl_i_SystemInt32_1 = 0;
+private Int32 __lcl_i_SystemInt32_0 = 0;
+private Int32 __lcl_i_SystemInt32_3 = 0;
+private Int32 __lcl_i_SystemInt32_2 = 0;
+private Int32 __lcl_i_SystemInt32_5 = 0;
+private Int32 __lcl_i_SystemInt32_4 = 0;
+private Int32 __lcl_i_SystemInt32_7 = 0;
+private Int32 __lcl_i_SystemInt32_6 = 0;
+private String __lcl_trackingData_SystemString_0 = null;
+private IProduct onPurchaseConfirmedResult = null;
+public AudioSource audioSource;
+private Boolean isAnimating = false;
+private Boolean __0___0_IsAchievementUnlocked__ret = false;
+private String __lcl_unlockedIndices_SystemString_0 = null;
+public Single popupDuration;
+private String __intnl_SystemString_5 = null;
+private UdonBehaviour __0_achievement__param = null;
+private Vector3 __lcl_playerPosition_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Boolean achievementLuckEnabled = true;
+private String[] __lcl_trackingArray_SystemStringArray_0 = null;
+private GameObject __1__intnlparam = null;
+private UdonBehaviour __lcl_achievement_VRCUdonUdonBehaviour_2 = null;
+private Object __intnl_UnityEngineObject_95 = null;
+private Object __intnl_UnityEngineObject_85 = null;
+private Object __intnl_UnityEngineObject_75 = null;
+private Object __intnl_UnityEngineObject_65 = null;
+private Object __intnl_UnityEngineObject_55 = null;
+private Object __intnl_UnityEngineObject_45 = null;
+private Object __intnl_UnityEngineObject_35 = null;
+private Object __intnl_UnityEngineObject_25 = null;
+private Object __intnl_UnityEngineObject_15 = null;
+private object __intnl_SystemObject_4 = null;
+private Single __lcl_easeValue_SystemSingle_1 = 0f;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_3 = null;
+public TextMeshProUGUI vrAchievementNameText;
+private Boolean __intnl_SystemBoolean_109 = false;
+private Boolean __intnl_SystemBoolean_108 = false;
+private Boolean __intnl_SystemBoolean_101 = false;
+private Boolean __intnl_SystemBoolean_100 = false;
+private Boolean __intnl_SystemBoolean_103 = false;
+private Boolean __intnl_SystemBoolean_102 = false;
+private Boolean __intnl_SystemBoolean_105 = false;
+private Boolean __intnl_SystemBoolean_104 = false;
+private Boolean __intnl_SystemBoolean_107 = false;
+private Boolean __intnl_SystemBoolean_106 = false;
+private Transform __intnl_UnityEngineTransform_4 = null;
+private String __const_SystemString_9 = "ACH_UNLOCKED";
+private Transform __intnl_UnityEngineTransform_9 = null;
+private Vector3 __intnl_UnityEngineVector3_2 = new Vector3(0f, 0f, 0f);
+private Boolean __intnl_SystemBoolean_82 = false;
+private Boolean __intnl_SystemBoolean_92 = false;
+private Boolean __intnl_SystemBoolean_12 = false;
+private Boolean __intnl_SystemBoolean_22 = false;
+private Boolean __intnl_SystemBoolean_32 = false;
+private Boolean __intnl_SystemBoolean_42 = false;
+private Boolean __intnl_SystemBoolean_52 = false;
+private Boolean __intnl_SystemBoolean_62 = false;
+private Boolean __intnl_SystemBoolean_72 = false;
+private UInt32 __gintnl_SystemUInt32_47 = 26096;
+private UInt32 __gintnl_SystemUInt32_17 = 14628;
+private UInt32 __gintnl_SystemUInt32_37 = 22720;
+private UInt32 __gintnl_SystemUInt32_27 = 17020;
+public UdonBehaviour worldSpaceHUD;
+private Vector3 __const_UnityEngineVector3_1 = new Vector3(1f, 1f, 1f);
+private Int32 __intnl_SystemInt32_16 = 0;
+private Int32 __intnl_SystemInt32_36 = 0;
+private Int32 __intnl_SystemInt32_26 = 0;
+private String __refl_typename = "AchievementManager";
+private Int32 __lcl_i_SystemInt32_10 = 0;
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Int32 __intnl_SystemInt32_5 = 0;
+private Int32 __intnl_SystemInt32_4 = 0;
+private Int32 __intnl_SystemInt32_7 = 0;
+private Int32 __intnl_SystemInt32_6 = 0;
+private Int32 __intnl_SystemInt32_9 = 0;
+private Int32 __intnl_SystemInt32_8 = 0;
+private String __intnl_SystemString_2 = null;
+private Int32 __0___0_GetStatistic__ret = 0;
+private String __const_SystemString_56 = "achievementIcon";
+private String __const_SystemString_57 = "achievementDescription";
+private String __const_SystemString_54 = "IsAvailable";
+private String __const_SystemString_55 = "__0_IsAvailable__ret";
+private String __const_SystemString_52 = "__0_message__param";
+private String __const_SystemString_53 = "__0_ShowAnnouncement";
+private String __const_SystemString_50 = "+";
+private String __const_SystemString_51 = " Permanent Luck Boost!";
+private String __const_SystemString_58 = "FISH_CAUGHT";
+private String __const_SystemString_59 = "RARE_FISH_CAUGHT";
+private Single __intnl_SystemSingle_3 = 0f;
+private object __intnl_SystemObject_3 = null;
+private IProduct __intnl_VRCEconomyIProduct_0 = null;
+private String __const_SystemString_1 = "__0_GetAllAchievements__ret";
+private Transform __intnl_UnityEngineTransform_1 = null;
+private Vector3 __intnl_UnityEngineVector3_1 = new Vector3(0f, 0f, 0f);
+private String __intnl_SystemString_16 = null;
+private String __intnl_SystemString_17 = null;
+private String __intnl_SystemString_14 = null;
+private String __intnl_SystemString_15 = null;
+private String __intnl_SystemString_12 = null;
+private String __intnl_SystemString_13 = null;
+private String __intnl_SystemString_10 = null;
+private String __intnl_SystemString_11 = null;
+private UdonBehaviour __lcl_revokedAchievement_VRCUdonUdonBehaviour_0 = null;
+private Boolean __intnl_SystemBoolean_85 = false;
+private Boolean __intnl_SystemBoolean_95 = false;
+private Boolean __intnl_SystemBoolean_15 = false;
+private Boolean __intnl_SystemBoolean_25 = false;
+private Boolean __intnl_SystemBoolean_35 = false;
+private Boolean __intnl_SystemBoolean_45 = false;
+private Boolean __intnl_SystemBoolean_55 = false;
+private Boolean __intnl_SystemBoolean_65 = false;
+private Boolean __intnl_SystemBoolean_75 = false;
+private Int32 __lcl_uniqueCount_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_13 = 0;
+private Int32 __intnl_SystemInt32_33 = 0;
+private Int32 __intnl_SystemInt32_23 = 0;
+private Int32 __intnl_SystemInt32_18 = 0;
+private Int32 __intnl_SystemInt32_38 = 0;
+private Int32 __intnl_SystemInt32_28 = 0;
+private Object __intnl_UnityEngineObject_90 = null;
+private Object __intnl_UnityEngineObject_80 = null;
+private Object __intnl_UnityEngineObject_70 = null;
+private Object __intnl_UnityEngineObject_60 = null;
+private Object __intnl_UnityEngineObject_50 = null;
+private Object __intnl_UnityEngineObject_40 = null;
+private Object __intnl_UnityEngineObject_30 = null;
+private Object __intnl_UnityEngineObject_20 = null;
+private Object __intnl_UnityEngineObject_10 = null;
+private GameObject __lcl_particles_UnityEngineGameObject_0 = null;
+private Int32 __lcl_keyIndex_SystemInt32_1 = 0;
+private Char __const_SystemChar_0 = ,;
+private Int32 __0_GetUnlockedAchievementCount__ret = 0;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_6 = null;
+private UdonBehaviour __1_achievement__param = null;
+private String __const_SystemString_6 = "RefreshTitleButtons";
+private Int32 __lcl_trackingCount_SystemInt32_0 = 0;
+private StringSplitOptions __const_SystemStringSplitOptions_0 = StringSplitOptions.None;
+private UInt32 __gintnl_SystemUInt32_40 = 25040;
+private UInt32 __gintnl_SystemUInt32_10 = 3312;
+private UInt32 __gintnl_SystemUInt32_30 = 20000;
+private UInt32 __gintnl_SystemUInt32_20 = 16004;
+private String __lcl_key_SystemString_1 = null;
+public UdonBehaviour announcementManager;
+private Boolean __lcl_savedLuckEnabled_SystemBoolean_0 = false;
+private Int32 __intnl_SystemInt32_10 = 0;
+private Int32 __intnl_SystemInt32_30 = 0;
+private Int32 __intnl_SystemInt32_20 = 0;
+private Int32 __intnl_SystemInt32_40 = 0;
+private Boolean[] unlockedAchievements = null;
+private Int32 __0_incrementAmount__param = 0;
+private String __intnl_SystemString_7 = null;
+private VRCPlayerApi localPlayer = null;
+public Image achievementIcon;
+private Int32 __0_achievementIndex__param = 0;
+private Component[] __0_achievements__param = null;
+private Object __intnl_UnityEngineObject_98 = null;
+private Object __intnl_UnityEngineObject_88 = null;
+private Object __intnl_UnityEngineObject_78 = null;
+private Object __intnl_UnityEngineObject_68 = null;
+private Object __intnl_UnityEngineObject_58 = null;
+private Object __intnl_UnityEngineObject_48 = null;
+private Object __intnl_UnityEngineObject_38 = null;
+private Object __intnl_UnityEngineObject_28 = null;
+private Object __intnl_UnityEngineObject_18 = null;
+private Int32 __1_value__param = 0;
+private String __const_SystemString_26 = "petId";
+private String __const_SystemString_27 = "__4_id__param";
+private String __const_SystemString_24 = "Ready";
+private String __const_SystemString_25 = "requiredAchievement";
+private String __const_SystemString_22 = "get_playerInventoryData";
+private String __const_SystemString_23 = "__0_get_playerInventoryData__ret";
+private String __const_SystemString_20 = "OnEquipmentChanged";
+private String __const_SystemString_21 = "petEntries";
+private String __const_SystemString_28 = "__0_HasAfkPet";
+private String __const_SystemString_29 = "__0___0_HasAfkPet__ret";
+private VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_1 = null;
+private UdonBehaviour __lcl_achievement_VRCUdonUdonBehaviour_0 = null;
+private Object __intnl_UnityEngineObject_97 = null;
+private Object __intnl_UnityEngineObject_87 = null;
+private Object __intnl_UnityEngineObject_77 = null;
+private Object __intnl_UnityEngineObject_67 = null;
+private Object __intnl_UnityEngineObject_57 = null;
+private Object __intnl_UnityEngineObject_47 = null;
+private Object __intnl_UnityEngineObject_37 = null;
+private Object __intnl_UnityEngineObject_27 = null;
+private Object __intnl_UnityEngineObject_17 = null;
+private object __intnl_SystemObject_6 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_5 = null;
+public TextMeshProUGUI achievementDescriptionText;
+private Transform __intnl_UnityEngineTransform_6 = null;
+private Int32 __lcl_value_SystemInt32_0 = 0;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_8 = null;
+public Single audioVolume;
+private Int32 __0_amount__param = 0;
+private UInt32 __gintnl_SystemUInt32_48 = 26252;
+private UInt32 __gintnl_SystemUInt32_18 = 15688;
+private UInt32 __gintnl_SystemUInt32_38 = 23764;
+private UInt32 __gintnl_SystemUInt32_28 = 17756;
+private GameObject __2__intnlparam = null;
+private Boolean __intnl_SystemBoolean_80 = false;
+private Boolean __intnl_SystemBoolean_90 = false;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Boolean __intnl_SystemBoolean_20 = false;
+private Boolean __intnl_SystemBoolean_30 = false;
+private Boolean __intnl_SystemBoolean_40 = false;
+private Boolean __intnl_SystemBoolean_50 = false;
+private Boolean __intnl_SystemBoolean_60 = false;
+private Boolean __intnl_SystemBoolean_70 = false;
+private String __lcl_name_SystemString_0 = null;
+private UInt32 __gintnl_SystemUInt32_45 = 25784;
+private UInt32 __gintnl_SystemUInt32_15 = 9568;
+private UInt32 __gintnl_SystemUInt32_35 = 22576;
+private UInt32 __gintnl_SystemUInt32_25 = 16988;
+private Int32 __1_achievementIndex__param = 0;
+private Int32 __const_SystemInt32_1 = 1;
+private Int32 __const_SystemInt32_0 = 0;
+private Int32 __const_SystemInt32_3 = -1;
+private Int32 __const_SystemInt32_2 = 2;
+private Int32 __const_SystemInt32_5 = 1;
+private Int32 __const_SystemInt32_4 = 0;
+private Int32 __const_SystemInt32_7 = 3;
+private Int32 __const_SystemInt32_6 = 2;
+private String[] trackingKeys = null;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private Int32 __lcl_oldValue_SystemInt32_1 = 0;
+public UdonBehaviour playerStats;
+private Int32 __lcl_achIndex_SystemInt32_0 = 0;
+private String __intnl_SystemString_4 = null;
+private Boolean onPurchaseConfirmedPurchasedNow = false;
+private Int32 __0_newLevel__param = 0;
+private Sprite __intnl_UnityEngineSprite_0 = null;
+private Sprite __intnl_UnityEngineSprite_1 = null;
+private Sprite __intnl_UnityEngineSprite_2 = null;
+private Sprite __intnl_UnityEngineSprite_3 = null;
+private Boolean __lcl_showVRPopup_SystemBoolean_0 = false;
+private Int32 __lcl_unlockedCount_SystemInt32_1 = 0;
+private Int32 __lcl_unlockedCount_SystemInt32_0 = 0;
+private object __intnl_SystemObject_5 = null;
+private UdonBehaviour __lcl_skin_VRCUdonUdonBehaviour_0 = null;
+private object __intnl_SystemObject_8 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_0 = null;
+private String __const_SystemString_3 = "__0_RegisterCallbacks";
+private UdonBehaviour __this_VRCUdonUdonBehaviour_3 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_2 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_1 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_0 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_6 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_5 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_4 = this;
+private Boolean __intnl_SystemBoolean_111 = false;
+private Boolean __intnl_SystemBoolean_110 = false;
+private Boolean __intnl_SystemBoolean_113 = false;
+private Boolean __intnl_SystemBoolean_112 = false;
+private Boolean __intnl_SystemBoolean_115 = false;
+private Boolean __intnl_SystemBoolean_114 = false;
+private Transform __intnl_UnityEngineTransform_3 = null;
+private UdonBehaviour __lcl_invData_VRCUdonUdonBehaviour_0 = null;
+private String __const_SystemString_8 = "trackingKey";
+private Boolean __intnl_SystemBoolean_88 = false;
+private Boolean __intnl_SystemBoolean_98 = false;
+private Boolean __intnl_SystemBoolean_18 = false;
+private Boolean __intnl_SystemBoolean_28 = false;
+private Boolean __intnl_SystemBoolean_38 = false;
+private Boolean __intnl_SystemBoolean_48 = false;
+private Boolean __intnl_SystemBoolean_58 = false;
+private Boolean __intnl_SystemBoolean_68 = false;
+private Boolean __intnl_SystemBoolean_78 = false;
+private Transform __intnl_UnityEngineTransform_8 = null;
+private Vector3 __intnl_UnityEngineVector3_3 = new Vector3(0f, 0f, 0f);
+
+
+public void _start()
+{
+localPlayer = Networking.LocalPlayer;
+__intnl_SystemBoolean_0 = localPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_0)
+{
+__this_VRCUdonUdonBehaviour_0.enabled = __const_SystemBoolean_0;
+return;
+}
+__intnl_UnityEngineObject_0 = achievementDatabase;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_0 == __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_1)
+{
+__this_VRCUdonUdonBehaviour_1.enabled = __const_SystemBoolean_0;
+return;
+}
+if (enableAchievements)
+{
+UNDEF_e8b34_512();
+}
+__this_VRCUdonUdonBehaviour_2.enabled = __const_SystemBoolean_0;
+}
+private void UNDEF_e8b34_512()
+{
+__intnl_UnityEngineObject_2 = popupPanel;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_2 = __intnl_UnityEngineObject_2 != __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_2)
+{
+__intnl_UnityEngineTransform_0 = popupPanel.transform;
+originalScale = __intnl_UnityEngineTransform_0.localScale;
+popupPanel.SetActive(__const_SystemBoolean_0);
+}
+if (showDebugLogs)
+{
+}
+}
+public void _update()
+{
+if (isAnimating)
+{
+UNDEF_e8b34_22748();
+}
+}
+private void UNDEF_e8b34_1260()
+{
+__intnl_VRCUdonUdonBehaviour_0 = achievementDatabase;
+achievementDatabase.SendCustomEvent(__const_SystemString_0);
+__intnl_SystemObject_0 = achievementDatabase.GetProgramVariable(__const_SystemString_1);
+__intnl_UnityEngineComponentArray_0 = (Component[])__intnl_SystemObject_0;
+__lcl_allAchievements_UnityEngineComponentArray_0 = __intnl_UnityEngineComponentArray_0;
+__intnl_SystemBoolean_3 = __lcl_allAchievements_UnityEngineComponentArray_0 == __const_SystemObject_0;
+if (__intnl_SystemBoolean_3)
+{
+}
+else
+{
+__intnl_SystemInt32_0 = __lcl_allAchievements_UnityEngineComponentArray_0.Length;
+__intnl_SystemBoolean_3 = __intnl_SystemInt32_0 == __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_3)
+{
+return;
+}
+__intnl_SystemInt32_1 = __lcl_allAchievements_UnityEngineComponentArray_0.Length;
+unlockedAchievements = __intnl_SystemInt32_1.ctor();
+__0_achievements__param = __lcl_allAchievements_UnityEngineComponentArray_0;
+UNDEF_e8b34_4380();
+__intnl_SystemInt32_2 = trackingKeys.Length;
+trackingValues = __intnl_SystemInt32_2.ctor();
+UNDEF_e8b34_6376();
+__intnl_UnityEngineObject_4 = playerStats;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_4 = __intnl_UnityEngineObject_4 != __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_4)
+{
+__intnl_VRCUdonUdonBehaviour_1 = __this_VRCUdonUdonBehaviour_3;
+playerStats.SetProgramVariable(__const_SystemString_2, __intnl_VRCUdonUdonBehaviour_1);
+playerStats.SendCustomEvent(__const_SystemString_3);
+UNDEF_e8b34_26288();
+}
+isInitialized = __const_SystemBoolean_1;
+UNDEF_e8b34_14816();
+UNDEF_e8b34_13844();
+if (showDebugLogs)
+{
+}
+}
+public void _onPlayerRestored()
+{
+__intnl_SystemBoolean_5 = onPlayerRestoredPlayer.isLocal;
+if (__intnl_SystemBoolean_5)
+{
+UNDEF_e8b34_1852();
+}
+}
+private void UNDEF_e8b34_1852()
+{
+__intnl_SystemBoolean_6 = PlayerData.TryGetBool(onPlayerRestoredPlayer, __const_SystemString_4, __lcl_savedLuckEnabled_SystemBoolean_0);
+if (__intnl_SystemBoolean_6)
+{
+achievementLuckEnabled = __lcl_savedLuckEnabled_SystemBoolean_0;
+}
+__intnl_UnityEngineObject_6 = achievementLuckToggle;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_7 = __intnl_UnityEngineObject_6 != __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_7)
+{
+achievementLuckToggle.isOn = achievementLuckEnabled;
+}
+UNDEF_e8b34_1260();
+__intnl_SystemBoolean_8 = PlayerData.TryGetInt(onPlayerRestoredPlayer, __const_SystemString_5, __lcl_betaValue_SystemInt32_0);
+if (__intnl_SystemBoolean_8)
+{
+__intnl_SystemBoolean_8 = __lcl_betaValue_SystemInt32_0 > __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_8)
+{
+__0_trackingKey__param = __const_SystemString_5;
+__0_value__param = __lcl_betaValue_SystemInt32_0;
+__0_TrackStatistic();
+}
+__intnl_UnityEngineObject_8 = titleSystem;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_9 = __intnl_UnityEngineObject_8 != __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_9)
+{
+__intnl_VRCUdonUdonBehaviour_2 = titleSystem;
+titleSystem.SendCustomEvent(__const_SystemString_6);
+}
+}
+public void ReloadFromPersistence()
+{
+UNDEF_e8b34_1260();
+__lcl_local_VRCSDKBaseVRCPlayerApi_0 = Networking.LocalPlayer;
+__intnl_SystemBoolean_11 = __lcl_local_VRCSDKBaseVRCPlayerApi_0 != __const_SystemObject_0;
+if (__intnl_SystemBoolean_11)
+{
+__intnl_SystemBoolean_11 = PlayerData.TryGetInt(__lcl_local_VRCSDKBaseVRCPlayerApi_0, __const_SystemString_5, __lcl_betaValue_SystemInt32_1);
+}
+__intnl_SystemBoolean_10 = __intnl_SystemBoolean_11;
+if (__intnl_SystemBoolean_10)
+{
+__intnl_SystemBoolean_10 = __lcl_betaValue_SystemInt32_1 > __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_10)
+{
+__0_trackingKey__param = __const_SystemString_5;
+__0_value__param = __lcl_betaValue_SystemInt32_1;
+__0_TrackStatistic();
+}
+__intnl_UnityEngineObject_10 = titleSystem;
+__intnl_UnityEngineObject_11 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_12 = __intnl_UnityEngineObject_10 != __intnl_UnityEngineObject_11;
+if (__intnl_SystemBoolean_12)
+{
+__intnl_VRCUdonUdonBehaviour_3 = titleSystem;
+titleSystem.SendCustomEvent(__const_SystemString_6);
+}
+}
+public void _onPurchaseConfirmed()
+{
+__intnl_SystemBoolean_13 = onPurchaseConfirmedPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_13)
+{
+}
+else
+{
+__intnl_SystemBoolean_14 = onPurchaseConfirmedPlayer.isLocal;
+__intnl_SystemBoolean_13 = !__intnl_SystemBoolean_14;
+}
+if (__intnl_SystemBoolean_13)
+{
+return;
+}
+__intnl_SystemBoolean_16 = !isInitialized;
+if (__intnl_SystemBoolean_16)
+{
+}
+else
+{
+__intnl_SystemBoolean_16 = onPurchaseConfirmedResult == __const_SystemObject_0;
+}
+__intnl_SystemBoolean_15 = __intnl_SystemBoolean_16;
+if (__intnl_SystemBoolean_15)
+{
+}
+else
+{
+__intnl_UnityEngineObject_12 = achievementDatabase;
+__intnl_UnityEngineObject_13 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_15 = __intnl_UnityEngineObject_12 == __intnl_UnityEngineObject_13;
+}
+if (__intnl_SystemBoolean_15)
+{
+return;
+}
+__intnl_VRCUdonUdonBehaviour_4 = achievementDatabase;
+achievementDatabase.SendCustomEvent(__const_SystemString_0);
+__intnl_SystemObject_1 = achievementDatabase.GetProgramVariable(__const_SystemString_1);
+__intnl_UnityEngineComponentArray_1 = (Component[])__intnl_SystemObject_1;
+__lcl_allAchievements_UnityEngineComponentArray_1 = __intnl_UnityEngineComponentArray_1;
+__lcl_anyNewUnlocks_SystemBoolean_0 = __const_SystemBoolean_0;
+__lcl_i_SystemInt32_0 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_3 = __lcl_allAchievements_UnityEngineComponentArray_1.Length;
+__intnl_SystemBoolean_17 = __lcl_i_SystemInt32_0 < __intnl_SystemInt32_3;
+if (__intnl_SystemBoolean_17)
+{
+break;
+}
+__intnl_SystemBoolean_18 = unlockedAchievements[__lcl_i_SystemInt32_0];
+if (__intnl_SystemBoolean_18)
+{
+}
+else
+{
+__lcl_achievement_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(__lcl_allAchievements_UnityEngineComponentArray_1[__lcl_i_SystemInt32_0]);
+__intnl_SystemObject_2 = __lcl_achievement_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_7);
+__intnl_VRCEconomyUdonProduct_0 = (UdonProduct)__intnl_SystemObject_2;
+__intnl_UnityEngineObject_14 = __intnl_VRCEconomyUdonProduct_0;
+__intnl_UnityEngineObject_15 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_19 = __intnl_UnityEngineObject_14 != __intnl_UnityEngineObject_15;
+if (__intnl_SystemBoolean_19)
+{
+__intnl_SystemString_0 = onPurchaseConfirmedResult.ID;
+__intnl_SystemObject_3 = __lcl_achievement_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_7);
+__intnl_VRCEconomyUdonProduct_1 = (UdonProduct)__intnl_SystemObject_3;
+__intnl_SystemString_1 = __intnl_VRCEconomyUdonProduct_1.ID;
+__intnl_SystemBoolean_19 = __intnl_SystemString_0 == __intnl_SystemString_1;
+}
+if (__intnl_SystemBoolean_19)
+{
+__2_achievementIndex__param = __lcl_i_SystemInt32_0;
+__1_achievement__param = __lcl_achievement_VRCUdonUdonBehaviour_0;
+UNDEF_e8b34_19720();
+__lcl_anyNewUnlocks_SystemBoolean_0 = __const_SystemBoolean_1;
+}
+}
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_1;
+}
+if (__lcl_anyNewUnlocks_SystemBoolean_0)
+{
+UNDEF_e8b34_7880();
+__intnl_UnityEngineObject_14 = titleSystem;
+__intnl_UnityEngineObject_15 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_17 = __intnl_UnityEngineObject_14 != __intnl_UnityEngineObject_15;
+if (__intnl_SystemBoolean_17)
+{
+__intnl_VRCUdonUdonBehaviour_5 = titleSystem;
+titleSystem.SendCustomEvent(__const_SystemString_6);
+}
+}
+}
+private void UNDEF_e8b34_4380()
+{
+__intnl_SystemInt32_4 = __0_achievements__param.Length;
+__lcl_tempKeys_SystemStringArray_0 = __intnl_SystemInt32_4.ctor();
+__lcl_uniqueCount_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_1 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_5 = __0_achievements__param.Length;
+__intnl_SystemBoolean_20 = __lcl_i_SystemInt32_1 < __intnl_SystemInt32_5;
+if (__intnl_SystemBoolean_20)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_6 = (UdonBehaviour)(__0_achievements__param[__lcl_i_SystemInt32_1]);
+__intnl_SystemObject_4 = __intnl_VRCUdonUdonBehaviour_6.GetProgramVariable(__const_SystemString_8);
+__lcl_key_SystemString_0 = (String)__intnl_SystemObject_4;
+__lcl_isUnique_SystemBoolean_0 = __const_SystemBoolean_1;
+__lcl_j_SystemInt32_0 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_21 = __lcl_j_SystemInt32_0 < __lcl_uniqueCount_SystemInt32_0;
+if (__intnl_SystemBoolean_21)
+{
+break;
+}
+__intnl_SystemString_2 = __lcl_tempKeys_SystemStringArray_0[__lcl_j_SystemInt32_0];
+__intnl_SystemBoolean_22 = __intnl_SystemString_2 == __lcl_key_SystemString_0;
+if (__intnl_SystemBoolean_22)
+{
+__lcl_isUnique_SystemBoolean_0 = __const_SystemBoolean_0;
+}
+else
+{
+__lcl_j_SystemInt32_0 = __lcl_j_SystemInt32_0 + __const_SystemInt32_1;
+}
+}
+if (__lcl_isUnique_SystemBoolean_0)
+{
+__lcl_tempKeys_SystemStringArray_0.Set(__lcl_uniqueCount_SystemInt32_0, __lcl_key_SystemString_0);
+__lcl_uniqueCount_SystemInt32_0 = __lcl_uniqueCount_SystemInt32_0 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_1 = __lcl_i_SystemInt32_1 + __const_SystemInt32_1;
+}
+trackingKeys = __lcl_uniqueCount_SystemInt32_0.ctor();
+__lcl_i_SystemInt32_1 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_20 = __lcl_i_SystemInt32_1 < __lcl_uniqueCount_SystemInt32_0;
+if (__intnl_SystemBoolean_20)
+{
+break;
+}
+__intnl_SystemString_2 = __lcl_tempKeys_SystemStringArray_0[__lcl_i_SystemInt32_1];
+trackingKeys.Set(__lcl_i_SystemInt32_1, __intnl_SystemString_2);
+__lcl_i_SystemInt32_1 = __lcl_i_SystemInt32_1 + __const_SystemInt32_1;
+}
+}
+private void UNDEF_e8b34_6376()
+{
+__intnl_SystemBoolean_23 = localPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_23)
+{
+return;
+}
+__lcl_i_SystemInt32_2 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_6 = unlockedAchievements.Length;
+__intnl_SystemBoolean_24 = __lcl_i_SystemInt32_2 < __intnl_SystemInt32_6;
+if (__intnl_SystemBoolean_24)
+{
+break;
+}
+unlockedAchievements.Set(__lcl_i_SystemInt32_2, __const_SystemBoolean_0);
+__lcl_i_SystemInt32_2 = __lcl_i_SystemInt32_2 + __const_SystemInt32_1;
+}
+__intnl_VRCSDKBaseVRCPlayerApi_0 = Networking.LocalPlayer;
+__intnl_SystemBoolean_24 = PlayerData.TryGetString(__intnl_VRCSDKBaseVRCPlayerApi_0, __const_SystemString_9, __lcl_unlockedData_SystemString_0);
+if (__intnl_SystemBoolean_24)
+{
+break;
+}
+__intnl_SystemBoolean_25 = String.IsNullOrEmpty(__lcl_unlockedData_SystemString_0);
+if (__intnl_SystemBoolean_25)
+{
+}
+else
+{
+__lcl_parts_SystemStringArray_0 = __lcl_unlockedData_SystemString_0.Split(__const_SystemChar_0, __const_SystemStringSplitOptions_0);
+__lcl_i_SystemInt32_2 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_6 = __lcl_parts_SystemStringArray_0.Length;
+__intnl_SystemBoolean_26 = __lcl_i_SystemInt32_2 < __intnl_SystemInt32_6;
+if (__intnl_SystemBoolean_26)
+{
+break;
+}
+__intnl_SystemString_3 = __lcl_parts_SystemStringArray_0[__lcl_i_SystemInt32_2];
+__intnl_SystemBoolean_27 = Int32.TryParse(__intnl_SystemString_3, __lcl_achIndex_SystemInt32_0);
+if (__intnl_SystemBoolean_27)
+{
+__intnl_SystemBoolean_28 = __lcl_achIndex_SystemInt32_0 >= __const_SystemInt32_0;
+if (__intnl_SystemBoolean_28)
+{
+__intnl_SystemInt32_7 = unlockedAchievements.Length;
+__intnl_SystemBoolean_28 = __lcl_achIndex_SystemInt32_0 < __intnl_SystemInt32_7;
+}
+if (__intnl_SystemBoolean_28)
+{
+unlockedAchievements.Set(__lcl_achIndex_SystemInt32_0, __const_SystemBoolean_1);
+}
+}
+__lcl_i_SystemInt32_2 = __lcl_i_SystemInt32_2 + __const_SystemInt32_1;
+}
+}
+__lcl_i_SystemInt32_2 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_6 = trackingValues.Length;
+__intnl_SystemBoolean_25 = __lcl_i_SystemInt32_2 < __intnl_SystemInt32_6;
+if (__intnl_SystemBoolean_25)
+{
+break;
+}
+trackingValues.Set(__lcl_i_SystemInt32_2, __const_SystemInt32_0);
+__lcl_i_SystemInt32_2 = __lcl_i_SystemInt32_2 + __const_SystemInt32_1;
+}
+__intnl_VRCSDKBaseVRCPlayerApi_1 = Networking.LocalPlayer;
+__intnl_SystemBoolean_25 = PlayerData.TryGetString(__intnl_VRCSDKBaseVRCPlayerApi_1, __const_SystemString_10, __lcl_trackingData_SystemString_0);
+if (__intnl_SystemBoolean_25)
+{
+break;
+}
+__intnl_SystemBoolean_26 = String.IsNullOrEmpty(__lcl_trackingData_SystemString_0);
+if (__intnl_SystemBoolean_26)
+{
+}
+else
+{
+__lcl_pairs_SystemStringArray_0 = __lcl_trackingData_SystemString_0.Split(__const_SystemChar_0, __const_SystemStringSplitOptions_0);
+__lcl_i_SystemInt32_2 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_6 = __lcl_pairs_SystemStringArray_0.Length;
+__intnl_SystemBoolean_27 = __lcl_i_SystemInt32_2 < __intnl_SystemInt32_6;
+if (__intnl_SystemBoolean_27)
+{
+break;
+}
+__intnl_SystemString_3 = __lcl_pairs_SystemStringArray_0[__lcl_i_SystemInt32_2];
+__lcl_keyValue_SystemStringArray_0 = __intnl_SystemString_3.Split(__const_SystemChar_1, __const_SystemStringSplitOptions_0);
+__intnl_SystemInt32_7 = __lcl_keyValue_SystemStringArray_0.Length;
+__intnl_SystemBoolean_28 = __intnl_SystemInt32_7 == __const_SystemInt32_2;
+if (__intnl_SystemBoolean_28)
+{
+break;
+}
+__lcl_key_SystemString_1 = __lcl_keyValue_SystemStringArray_0[__const_SystemInt32_0];
+__lcl_j_SystemInt32_1 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_8 = trackingKeys.Length;
+__intnl_SystemBoolean_29 = __lcl_j_SystemInt32_1 < __intnl_SystemInt32_8;
+if (__intnl_SystemBoolean_29)
+{
+break;
+}
+__intnl_SystemString_4 = trackingKeys[__lcl_j_SystemInt32_1];
+__intnl_SystemBoolean_30 = __intnl_SystemString_4 == __lcl_key_SystemString_1;
+if (__intnl_SystemBoolean_30)
+{
+__intnl_SystemString_5 = __lcl_keyValue_SystemStringArray_0[__const_SystemInt32_1];
+__intnl_SystemBoolean_31 = Int32.TryParse(__intnl_SystemString_5, __lcl_value_SystemInt32_0);
+if (__intnl_SystemBoolean_31)
+{
+trackingValues.Set(__lcl_j_SystemInt32_1, __lcl_value_SystemInt32_0);
+}
+}
+else
+{
+__lcl_j_SystemInt32_1 = __lcl_j_SystemInt32_1 + __const_SystemInt32_1;
+}
+}
+__lcl_i_SystemInt32_2 = __lcl_i_SystemInt32_2 + __const_SystemInt32_1;
+}
+}
+if (showDebugLogs)
+{
+break;
+}
+__lcl_unlockedCount_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_2 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_6 = unlockedAchievements.Length;
+__intnl_SystemBoolean_26 = __lcl_i_SystemInt32_2 < __intnl_SystemInt32_6;
+if (__intnl_SystemBoolean_26)
+{
+break;
+}
+__intnl_SystemBoolean_27 = unlockedAchievements[__lcl_i_SystemInt32_2];
+if (__intnl_SystemBoolean_27)
+{
+__lcl_unlockedCount_SystemInt32_0 = __lcl_unlockedCount_SystemInt32_0 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_2 = __lcl_i_SystemInt32_2 + __const_SystemInt32_1;
+}
+}
+private void UNDEF_e8b34_7880()
+{
+__intnl_SystemBoolean_32 = localPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_32)
+{
+return;
+}
+__lcl_unlockedCount_SystemInt32_1 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_3 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_9 = unlockedAchievements.Length;
+__intnl_SystemBoolean_33 = __lcl_i_SystemInt32_3 < __intnl_SystemInt32_9;
+if (__intnl_SystemBoolean_33)
+{
+break;
+}
+__intnl_SystemBoolean_34 = unlockedAchievements[__lcl_i_SystemInt32_3];
+if (__intnl_SystemBoolean_34)
+{
+__lcl_unlockedCount_SystemInt32_1 = __lcl_unlockedCount_SystemInt32_1 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_3 = __lcl_i_SystemInt32_3 + __const_SystemInt32_1;
+}
+__lcl_trackingCount_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_3 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_9 = trackingKeys.Length;
+__intnl_SystemBoolean_33 = __lcl_i_SystemInt32_3 < __intnl_SystemInt32_9;
+if (__intnl_SystemBoolean_33)
+{
+break;
+}
+__intnl_SystemInt32_10 = trackingValues[__lcl_i_SystemInt32_3];
+__intnl_SystemBoolean_34 = __intnl_SystemInt32_10 > __const_SystemInt32_0;
+if (__intnl_SystemBoolean_34)
+{
+__lcl_trackingCount_SystemInt32_0 = __lcl_trackingCount_SystemInt32_0 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_3 = __lcl_i_SystemInt32_3 + __const_SystemInt32_1;
+}
+__lcl_unlockedArray_SystemStringArray_0 = __lcl_unlockedCount_SystemInt32_1.ctor();
+__lcl_idx_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_3 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_9 = unlockedAchievements.Length;
+__intnl_SystemBoolean_33 = __lcl_i_SystemInt32_3 < __intnl_SystemInt32_9;
+if (__intnl_SystemBoolean_33)
+{
+break;
+}
+__intnl_SystemBoolean_34 = unlockedAchievements[__lcl_i_SystemInt32_3];
+if (__intnl_SystemBoolean_34)
+{
+__intnl_SystemString_6 = __lcl_i_SystemInt32_3.ToString();
+__lcl_unlockedArray_SystemStringArray_0.Set(__lcl_idx_SystemInt32_0, __intnl_SystemString_6);
+__lcl_idx_SystemInt32_0 = __lcl_idx_SystemInt32_0 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_3 = __lcl_i_SystemInt32_3 + __const_SystemInt32_1;
+}
+__lcl_trackingArray_SystemStringArray_0 = __lcl_trackingCount_SystemInt32_0.ctor();
+__lcl_idx_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_3 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_9 = trackingKeys.Length;
+__intnl_SystemBoolean_33 = __lcl_i_SystemInt32_3 < __intnl_SystemInt32_9;
+if (__intnl_SystemBoolean_33)
+{
+break;
+}
+__intnl_SystemInt32_10 = trackingValues[__lcl_i_SystemInt32_3];
+__intnl_SystemBoolean_34 = __intnl_SystemInt32_10 > __const_SystemInt32_0;
+if (__intnl_SystemBoolean_34)
+{
+__intnl_SystemString_6 = trackingKeys[__lcl_i_SystemInt32_3];
+__intnl_SystemString_7 = __intnl_SystemString_6 + __const_SystemString_11;
+__intnl_SystemInt32_11 = trackingValues[__lcl_i_SystemInt32_3];
+__intnl_SystemString_8 = __intnl_SystemInt32_11.ToString();
+__intnl_SystemString_9 = __intnl_SystemString_7 + __intnl_SystemString_8;
+__lcl_trackingArray_SystemStringArray_0.Set(__lcl_idx_SystemInt32_0, __intnl_SystemString_9);
+__lcl_idx_SystemInt32_0 = __lcl_idx_SystemInt32_0 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_3 = __lcl_i_SystemInt32_3 + __const_SystemInt32_1;
+}
+__lcl_unlockedIndices_SystemString_0 = String.Join(__const_SystemString_12, __lcl_unlockedArray_SystemStringArray_0);
+__lcl_trackingPairs_SystemString_0 = String.Join(__const_SystemString_12, __lcl_trackingArray_SystemStringArray_0);
+PlayerData.SetString(__const_SystemString_9, __lcl_unlockedIndices_SystemString_0);
+PlayerData.SetString(__const_SystemString_10, __lcl_trackingPairs_SystemString_0);
+if (showDebugLogs)
+{
+}
+}
+public void SaveAndCheckAchievements()
+{
+__intnl_SystemBoolean_35 = !isInitialized;
+if (__intnl_SystemBoolean_35)
+{
+}
+else
+{
+__intnl_SystemBoolean_35 = !enableAchievements;
+}
+if (__intnl_SystemBoolean_35)
+{
+return;
+}
+UNDEF_e8b34_7880();
+__this_VRCUdonUdonBehaviour_4.SendCustomEventDelayedSeconds(__const_SystemString_13, achievementCheckDelay, __const_VRCUdonCommonEnumsEventTiming_0);
+}
+public void __0_TrackStatistic()
+{
+__intnl_SystemBoolean_36 = !isInitialized;
+if (__intnl_SystemBoolean_36)
+{
+}
+else
+{
+__intnl_SystemBoolean_36 = !enableAchievements;
+}
+if (__intnl_SystemBoolean_36)
+{
+return;
+}
+__1_trackingKey__param = __0_trackingKey__param;
+__1_value__param = __0_value__param;
+__0_TrackStatisticNoSave();
+UNDEF_e8b34_7880();
+__this_VRCUdonUdonBehaviour_5.SendCustomEventDelayedSeconds(__const_SystemString_13, achievementCheckDelay, __const_VRCUdonCommonEnumsEventTiming_0);
+}
+public void __0_TrackStatisticNoSave()
+{
+__intnl_SystemBoolean_37 = !isInitialized;
+if (__intnl_SystemBoolean_37)
+{
+}
+else
+{
+__intnl_SystemBoolean_37 = !enableAchievements;
+}
+if (__intnl_SystemBoolean_37)
+{
+return;
+}
+__lcl_keyIndex_SystemInt32_0 = __const_SystemInt32_3;
+__lcl_i_SystemInt32_4 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_12 = trackingKeys.Length;
+__intnl_SystemBoolean_38 = __lcl_i_SystemInt32_4 < __intnl_SystemInt32_12;
+if (__intnl_SystemBoolean_38)
+{
+break;
+}
+__intnl_SystemString_10 = trackingKeys[__lcl_i_SystemInt32_4];
+__intnl_SystemBoolean_39 = __intnl_SystemString_10 == __1_trackingKey__param;
+if (__intnl_SystemBoolean_39)
+{
+__lcl_keyIndex_SystemInt32_0 = __lcl_i_SystemInt32_4;
+}
+else
+{
+__lcl_i_SystemInt32_4 = __lcl_i_SystemInt32_4 + __const_SystemInt32_1;
+}
+}
+__intnl_SystemBoolean_38 = __lcl_keyIndex_SystemInt32_0 == __const_SystemInt32_3;
+if (__intnl_SystemBoolean_38)
+{
+if (showDebugLogs)
+{
+}
+return;
+}
+__lcl_oldValue_SystemInt32_0 = trackingValues[__lcl_keyIndex_SystemInt32_0];
+trackingValues.Set(__lcl_keyIndex_SystemInt32_0, __1_value__param);
+__intnl_SystemBoolean_39 = showDebugLogs;
+if (__intnl_SystemBoolean_39)
+{
+__intnl_SystemBoolean_39 = __1_value__param != __lcl_oldValue_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_39)
+{
+}
+}
+public void __0_IncrementStatistic()
+{
+__intnl_SystemBoolean_40 = !isInitialized;
+if (__intnl_SystemBoolean_40)
+{
+}
+else
+{
+__intnl_SystemBoolean_40 = !enableAchievements;
+}
+if (__intnl_SystemBoolean_40)
+{
+return;
+}
+__lcl_keyIndex_SystemInt32_1 = __const_SystemInt32_3;
+__lcl_i_SystemInt32_5 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_13 = trackingKeys.Length;
+__intnl_SystemBoolean_41 = __lcl_i_SystemInt32_5 < __intnl_SystemInt32_13;
+if (__intnl_SystemBoolean_41)
+{
+break;
+}
+__intnl_SystemString_11 = trackingKeys[__lcl_i_SystemInt32_5];
+__intnl_SystemBoolean_42 = __intnl_SystemString_11 == __2_trackingKey__param;
+if (__intnl_SystemBoolean_42)
+{
+__lcl_keyIndex_SystemInt32_1 = __lcl_i_SystemInt32_5;
+}
+else
+{
+__lcl_i_SystemInt32_5 = __lcl_i_SystemInt32_5 + __const_SystemInt32_1;
+}
+}
+__intnl_SystemBoolean_41 = __lcl_keyIndex_SystemInt32_1 == __const_SystemInt32_3;
+if (__intnl_SystemBoolean_41)
+{
+if (showDebugLogs)
+{
+}
+return;
+}
+__lcl_oldValue_SystemInt32_1 = trackingValues[__lcl_keyIndex_SystemInt32_1];
+__intnl_SystemInt32_13 = trackingValues[__lcl_keyIndex_SystemInt32_1];
+__intnl_SystemInt32_14 = __intnl_SystemInt32_13 + __0_incrementAmount__param;
+trackingValues.Set(__lcl_keyIndex_SystemInt32_1, __intnl_SystemInt32_14);
+if (showDebugLogs)
+{
+}
+UNDEF_e8b34_7880();
+__this_VRCUdonUdonBehaviour_6.SendCustomEventDelayedSeconds(__const_SystemString_13, achievementCheckDelay, __const_VRCUdonCommonEnumsEventTiming_0);
+}
+public void __0_GetStatistic()
+{
+if (isInitialized)
+{
+__0_GetStatistic();
+}
+__0___0_GetStatistic__ret = __const_SystemInt32_0;
+}
+private void __0_GetStatistic()
+{
+__lcl_i_SystemInt32_6 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_15 = trackingKeys.Length;
+__intnl_SystemBoolean_43 = __lcl_i_SystemInt32_6 < __intnl_SystemInt32_15;
+if (__intnl_SystemBoolean_43)
+{
+break;
+}
+__intnl_SystemString_12 = trackingKeys[__lcl_i_SystemInt32_6];
+__intnl_SystemBoolean_44 = __intnl_SystemString_12 == __3_trackingKey__param;
+if (__intnl_SystemBoolean_44)
+{
+__0___0_GetStatistic__ret = trackingValues[__lcl_i_SystemInt32_6];
+return;
+}
+__lcl_i_SystemInt32_6 = __lcl_i_SystemInt32_6 + __const_SystemInt32_1;
+}
+__0___0_GetStatistic__ret = __const_SystemInt32_0;
+return;
+}
+public void __0_IsAchievementUnlocked()
+{
+__intnl_SystemBoolean_45 = !isInitialized;
+if (__intnl_SystemBoolean_45)
+{
+}
+else
+{
+__intnl_UnityEngineObject_16 = __0_achievement__param;
+__intnl_UnityEngineObject_17 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_45 = __intnl_UnityEngineObject_16 == __intnl_UnityEngineObject_17;
+}
+if (__intnl_SystemBoolean_45)
+{
+__0___0_IsAchievementUnlocked__ret = __const_SystemBoolean_0;
+return;
+}
+__intnl_VRCUdonUdonBehaviour_7 = __0_achievement__param;
+achievementDatabase.SetProgramVariable(__const_SystemString_14, __0_achievement__param);
+achievementDatabase.SendCustomEvent(__const_SystemString_15);
+__intnl_SystemObject_5 = achievementDatabase.GetProgramVariable(__const_SystemString_16);
+__intnl_SystemInt32_16 = Convert.ToInt32(__intnl_SystemObject_5);
+__lcl_index_SystemInt32_0 = __intnl_SystemInt32_16;
+__intnl_SystemBoolean_46 = __lcl_index_SystemInt32_0 >= __const_SystemInt32_0;
+if (__intnl_SystemBoolean_46)
+{
+__intnl_SystemInt32_17 = unlockedAchievements.Length;
+__intnl_SystemBoolean_46 = __lcl_index_SystemInt32_0 < __intnl_SystemInt32_17;
+}
+if (__intnl_SystemBoolean_46)
+{
+__0___0_IsAchievementUnlocked__ret = unlockedAchievements[__lcl_index_SystemInt32_0];
+return;
+}
+__0___0_IsAchievementUnlocked__ret = __const_SystemBoolean_0;
+return;
+}
+public void GetUnlockedAchievementCount()
+{
+if (isInitialized)
+{
+GetUnlockedAchievementCount();
+}
+__0_GetUnlockedAchievementCount__ret = __const_SystemInt32_0;
+}
+private void GetUnlockedAchievementCount()
+{
+__lcl_count_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_7 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_18 = unlockedAchievements.Length;
+__intnl_SystemBoolean_47 = __lcl_i_SystemInt32_7 < __intnl_SystemInt32_18;
+if (__intnl_SystemBoolean_47)
+{
+break;
+}
+__intnl_SystemBoolean_48 = unlockedAchievements[__lcl_i_SystemInt32_7];
+if (__intnl_SystemBoolean_48)
+{
+__lcl_count_SystemInt32_0 = __lcl_count_SystemInt32_0 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_7 = __lcl_i_SystemInt32_7 + __const_SystemInt32_1;
+}
+__0_GetUnlockedAchievementCount__ret = __lcl_count_SystemInt32_0;
+return;
+}
+public void GetTotalAchievementCount()
+{
+__intnl_UnityEngineObject_18 = achievementDatabase;
+__intnl_UnityEngineObject_19 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_49 = __intnl_UnityEngineObject_18 != __intnl_UnityEngineObject_19;
+if (__intnl_SystemBoolean_49)
+{
+__intnl_VRCUdonUdonBehaviour_8 = achievementDatabase;
+achievementDatabase.SendCustomEvent(__const_SystemString_17);
+__intnl_SystemObject_6 = achievementDatabase.GetProgramVariable(__const_SystemString_18);
+__intnl_SystemInt32_19 = Convert.ToInt32(__intnl_SystemObject_6);
+__0_GetTotalAchievementCount__ret = __intnl_SystemInt32_19;
+}
+else
+{
+__0_GetTotalAchievementCount__ret = __const_SystemInt32_0;
+}
+return;
+}
+public void GetTotalLuckBonus()
+{
+__intnl_SystemBoolean_50 = !isInitialized;
+if (__intnl_SystemBoolean_50)
+{
+}
+else
+{
+__intnl_SystemBoolean_50 = !achievementLuckEnabled;
+}
+if (__intnl_SystemBoolean_50)
+{
+__0_GetTotalLuckBonus__ret = __const_SystemInt32_0;
+return;
+}
+__lcl_total_SystemInt32_0 = __const_SystemInt32_0;
+__intnl_VRCUdonUdonBehaviour_9 = achievementDatabase;
+achievementDatabase.SendCustomEvent(__const_SystemString_0);
+__intnl_SystemObject_7 = achievementDatabase.GetProgramVariable(__const_SystemString_1);
+__intnl_UnityEngineComponentArray_2 = (Component[])__intnl_SystemObject_7;
+__lcl_allAchievements_UnityEngineComponentArray_2 = __intnl_UnityEngineComponentArray_2;
+__lcl_i_SystemInt32_8 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_20 = __lcl_allAchievements_UnityEngineComponentArray_2.Length;
+__intnl_SystemBoolean_51 = __lcl_i_SystemInt32_8 < __intnl_SystemInt32_20;
+if (__intnl_SystemBoolean_51)
+{
+break;
+}
+__intnl_SystemBoolean_52 = unlockedAchievements[__lcl_i_SystemInt32_8];
+if (__intnl_SystemBoolean_52)
+{
+__intnl_VRCUdonUdonBehaviour_10 = (UdonBehaviour)(__lcl_allAchievements_UnityEngineComponentArray_2[__lcl_i_SystemInt32_8]);
+__intnl_SystemObject_8 = __intnl_VRCUdonUdonBehaviour_10.GetProgramVariable(__const_SystemString_19);
+__intnl_SystemInt32_21 = Convert.ToInt32(__intnl_SystemObject_8);
+__intnl_SystemBoolean_52 = __intnl_SystemInt32_21 > __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_52)
+{
+__intnl_VRCUdonUdonBehaviour_11 = (UdonBehaviour)(__lcl_allAchievements_UnityEngineComponentArray_2[__lcl_i_SystemInt32_8]);
+__intnl_SystemObject_9 = __intnl_VRCUdonUdonBehaviour_11.GetProgramVariable(__const_SystemString_19);
+__intnl_SystemInt32_22 = Convert.ToInt32(__intnl_SystemObject_9);
+__lcl_total_SystemInt32_0 = __lcl_total_SystemInt32_0 + __intnl_SystemInt32_22;
+}
+__lcl_i_SystemInt32_8 = __lcl_i_SystemInt32_8 + __const_SystemInt32_1;
+}
+__0_GetTotalLuckBonus__ret = __lcl_total_SystemInt32_0;
+return;
+}
+public void OnAchievementLuckToggleChanged()
+{
+__intnl_UnityEngineObject_20 = achievementLuckToggle;
+__intnl_UnityEngineObject_21 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_53 = __intnl_UnityEngineObject_20 == __intnl_UnityEngineObject_21;
+if (__intnl_SystemBoolean_53)
+{
+return;
+}
+achievementLuckEnabled = achievementLuckToggle.isOn;
+PlayerData.SetBool(__const_SystemString_4, achievementLuckEnabled);
+__intnl_UnityEngineObject_22 = equipmentStatsManager;
+__intnl_UnityEngineObject_23 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_54 = __intnl_UnityEngineObject_22 != __intnl_UnityEngineObject_23;
+if (__intnl_SystemBoolean_54)
+{
+__intnl_VRCUdonUdonBehaviour_12 = equipmentStatsManager;
+equipmentStatsManager.SendCustomEvent(__const_SystemString_20);
+}
+}
+private void UNDEF_e8b34_13844()
+{
+__intnl_UnityEngineObject_24 = afkPetDatabase;
+__intnl_UnityEngineObject_25 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_55 = __intnl_UnityEngineObject_24 == __intnl_UnityEngineObject_25;
+if (__intnl_SystemBoolean_55)
+{
+}
+else
+{
+__intnl_SystemObject_10 = afkPetDatabase.GetProgramVariable(__const_SystemString_21);
+__intnl_UnityEngineComponentArray_3 = (Component[])__intnl_SystemObject_10;
+__intnl_SystemBoolean_55 = __intnl_UnityEngineComponentArray_3 == __const_SystemObject_0;
+}
+if (__intnl_SystemBoolean_55)
+{
+return;
+}
+__intnl_VRCUdonUdonBehaviour_13 = afkPetDatabase;
+afkPetDatabase.SendCustomEvent(__const_SystemString_22);
+__intnl_SystemObject_11 = afkPetDatabase.GetProgramVariable(__const_SystemString_23);
+__intnl_VRCUdonUdonBehaviour_14 = (UdonBehaviour)__intnl_SystemObject_11;
+__lcl_invData_VRCUdonUdonBehaviour_0 = __intnl_VRCUdonUdonBehaviour_14;
+__intnl_UnityEngineObject_26 = __lcl_invData_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_27 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_56 = __intnl_UnityEngineObject_26 == __intnl_UnityEngineObject_27;
+if (__intnl_SystemBoolean_56)
+{
+}
+else
+{
+__intnl_SystemObject_12 = __lcl_invData_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_24);
+__intnl_SystemBoolean_57 = (Boolean)__intnl_SystemObject_12;
+__intnl_SystemBoolean_56 = !__intnl_SystemBoolean_57;
+}
+if (__intnl_SystemBoolean_56)
+{
+return;
+}
+__lcl_i_SystemInt32_9 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemObject_13 = afkPetDatabase.GetProgramVariable(__const_SystemString_21);
+__intnl_UnityEngineComponentArray_4 = (Component[])__intnl_SystemObject_13;
+__intnl_SystemInt32_23 = __intnl_UnityEngineComponentArray_4.Length;
+__intnl_SystemBoolean_58 = __lcl_i_SystemInt32_9 < __intnl_SystemInt32_23;
+if (__intnl_SystemBoolean_58)
+{
+break;
+}
+__intnl_SystemObject_14 = afkPetDatabase.GetProgramVariable(__const_SystemString_21);
+__intnl_UnityEngineComponentArray_5 = (Component[])__intnl_SystemObject_14;
+__lcl_pet_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(__intnl_UnityEngineComponentArray_5[__lcl_i_SystemInt32_9]);
+__intnl_UnityEngineObject_28 = __lcl_pet_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_29 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_59 = __intnl_UnityEngineObject_28 == __intnl_UnityEngineObject_29;
+if (__intnl_SystemBoolean_59)
+{
+}
+else
+{
+__intnl_SystemObject_15 = __lcl_pet_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_25);
+__intnl_VRCUdonUdonBehaviour_15 = (UdonBehaviour)__intnl_SystemObject_15;
+__intnl_UnityEngineObject_30 = __intnl_VRCUdonUdonBehaviour_15;
+__intnl_UnityEngineObject_31 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_59 = __intnl_UnityEngineObject_30 == __intnl_UnityEngineObject_31;
+}
+if (__intnl_SystemBoolean_59)
+{
+}
+else
+{
+__intnl_SystemObject_16 = __lcl_pet_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_26);
+__intnl_SystemInt32_24 = Convert.ToInt32(__intnl_SystemObject_16);
+__lcl_invData_VRCUdonUdonBehaviour_0.SetProgramVariable(__const_SystemString_27, __intnl_SystemInt32_24);
+__lcl_invData_VRCUdonUdonBehaviour_0.SendCustomEvent(__const_SystemString_28);
+__intnl_SystemObject_17 = __lcl_invData_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_29);
+__intnl_SystemBoolean_61 = (Boolean)__intnl_SystemObject_17;
+__intnl_SystemBoolean_60 = !__intnl_SystemBoolean_61;
+if (__intnl_SystemBoolean_60)
+{
+__intnl_SystemObject_18 = __lcl_pet_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_25);
+__intnl_VRCUdonUdonBehaviour_16 = (UdonBehaviour)__intnl_SystemObject_18;
+__0_achievement__param = __intnl_VRCUdonUdonBehaviour_16;
+__0_IsAchievementUnlocked();
+__intnl_SystemBoolean_60 = __0___0_IsAchievementUnlocked__ret;
+}
+if (__intnl_SystemBoolean_60)
+{
+__intnl_SystemObject_19 = __lcl_pet_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_26);
+__intnl_SystemInt32_25 = Convert.ToInt32(__intnl_SystemObject_19);
+__lcl_invData_VRCUdonUdonBehaviour_0.SetProgramVariable(__const_SystemString_30, __intnl_SystemInt32_25);
+__lcl_invData_VRCUdonUdonBehaviour_0.SendCustomEvent(__const_SystemString_31);
+}
+}
+__lcl_i_SystemInt32_9 = __lcl_i_SystemInt32_9 + __const_SystemInt32_1;
+}
+}
+private void UNDEF_e8b34_14816()
+{
+__intnl_UnityEngineObject_32 = boatSkinDatabase;
+__intnl_UnityEngineObject_33 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_62 = __intnl_UnityEngineObject_32 == __intnl_UnityEngineObject_33;
+if (__intnl_SystemBoolean_62)
+{
+}
+else
+{
+__intnl_SystemObject_20 = boatSkinDatabase.GetProgramVariable(__const_SystemString_32);
+__intnl_UnityEngineComponentArray_6 = (Component[])__intnl_SystemObject_20;
+__intnl_SystemBoolean_62 = __intnl_UnityEngineComponentArray_6 == __const_SystemObject_0;
+}
+if (__intnl_SystemBoolean_62)
+{
+return;
+}
+__lcl_i_SystemInt32_10 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemObject_21 = boatSkinDatabase.GetProgramVariable(__const_SystemString_32);
+__intnl_UnityEngineComponentArray_7 = (Component[])__intnl_SystemObject_21;
+__intnl_SystemInt32_26 = __intnl_UnityEngineComponentArray_7.Length;
+__intnl_SystemBoolean_63 = __lcl_i_SystemInt32_10 < __intnl_SystemInt32_26;
+if (__intnl_SystemBoolean_63)
+{
+break;
+}
+__intnl_SystemObject_22 = boatSkinDatabase.GetProgramVariable(__const_SystemString_32);
+__intnl_UnityEngineComponentArray_8 = (Component[])__intnl_SystemObject_22;
+__lcl_skin_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(__intnl_UnityEngineComponentArray_8[__lcl_i_SystemInt32_10]);
+__intnl_UnityEngineObject_34 = __lcl_skin_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_35 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_64 = __intnl_UnityEngineObject_34 == __intnl_UnityEngineObject_35;
+if (__intnl_SystemBoolean_64)
+{
+}
+else
+{
+__intnl_SystemObject_23 = __lcl_skin_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_25);
+__intnl_VRCUdonUdonBehaviour_17 = (UdonBehaviour)__intnl_SystemObject_23;
+__intnl_UnityEngineObject_36 = __intnl_VRCUdonUdonBehaviour_17;
+__intnl_UnityEngineObject_37 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_64 = __intnl_UnityEngineObject_36 == __intnl_UnityEngineObject_37;
+}
+if (__intnl_SystemBoolean_64)
+{
+}
+else
+{
+__intnl_SystemObject_24 = __lcl_skin_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_25);
+__intnl_VRCUdonUdonBehaviour_18 = (UdonBehaviour)__intnl_SystemObject_24;
+__0_achievement__param = __intnl_VRCUdonUdonBehaviour_18;
+__0_IsAchievementUnlocked();
+if (__0___0_IsAchievementUnlocked__ret)
+{
+__intnl_SystemObject_25 = __lcl_skin_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_33);
+__intnl_SystemInt32_27 = Convert.ToInt32(__intnl_SystemObject_25);
+boatSkinDatabase.SetProgramVariable(__const_SystemString_34, __intnl_SystemInt32_27);
+boatSkinDatabase.SendCustomEvent(__const_SystemString_35);
+}
+}
+__lcl_i_SystemInt32_10 = __lcl_i_SystemInt32_10 + __const_SystemInt32_1;
+}
+}
+public void CheckAchievements()
+{
+__intnl_SystemBoolean_65 = !isInitialized;
+if (__intnl_SystemBoolean_65)
+{
+}
+else
+{
+__intnl_UnityEngineObject_38 = achievementDatabase;
+__intnl_UnityEngineObject_39 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_65 = __intnl_UnityEngineObject_38 == __intnl_UnityEngineObject_39;
+}
+if (__intnl_SystemBoolean_65)
+{
+return;
+}
+__intnl_VRCUdonUdonBehaviour_19 = achievementDatabase;
+achievementDatabase.SendCustomEvent(__const_SystemString_0);
+__intnl_SystemObject_26 = achievementDatabase.GetProgramVariable(__const_SystemString_1);
+__intnl_UnityEngineComponentArray_9 = (Component[])__intnl_SystemObject_26;
+__lcl_allAchievements_UnityEngineComponentArray_3 = __intnl_UnityEngineComponentArray_9;
+__lcl_anyNewUnlocks_SystemBoolean_1 = __const_SystemBoolean_0;
+__lcl_i_SystemInt32_11 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_28 = __lcl_allAchievements_UnityEngineComponentArray_3.Length;
+__intnl_SystemBoolean_66 = __lcl_i_SystemInt32_11 < __intnl_SystemInt32_28;
+if (__intnl_SystemBoolean_66)
+{
+break;
+}
+__intnl_SystemBoolean_67 = unlockedAchievements[__lcl_i_SystemInt32_11];
+if (__intnl_SystemBoolean_67)
+{
+}
+else
+{
+__lcl_achievement_VRCUdonUdonBehaviour_1 = (UdonBehaviour)(__lcl_allAchievements_UnityEngineComponentArray_3[__lcl_i_SystemInt32_11]);
+__intnl_SystemObject_27 = __lcl_achievement_VRCUdonUdonBehaviour_1.GetProgramVariable(__const_SystemString_36);
+__intnl_SystemBoolean_68 = (Boolean)__intnl_SystemObject_27;
+if (__intnl_SystemBoolean_68)
+{
+}
+else
+{
+__intnl_SystemObject_28 = __lcl_achievement_VRCUdonUdonBehaviour_1.GetProgramVariable(__const_SystemString_7);
+__intnl_VRCEconomyUdonProduct_2 = (UdonProduct)__intnl_SystemObject_28;
+__intnl_UnityEngineObject_40 = __intnl_VRCEconomyUdonProduct_2;
+__intnl_UnityEngineObject_41 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_69 = __intnl_UnityEngineObject_40 != __intnl_UnityEngineObject_41;
+if (__intnl_SystemBoolean_69)
+{
+__intnl_SystemObject_29 = __lcl_achievement_VRCUdonUdonBehaviour_1.GetProgramVariable(__const_SystemString_7);
+__intnl_VRCEconomyUdonProduct_3 = (UdonProduct)__intnl_SystemObject_29;
+__intnl_VRCEconomyIProduct_0 = __intnl_VRCEconomyUdonProduct_3;
+__intnl_SystemBoolean_70 = Store.DoesPlayerOwnProduct(localPlayer, __intnl_VRCEconomyIProduct_0);
+if (__intnl_SystemBoolean_70)
+{
+__2_achievementIndex__param = __lcl_i_SystemInt32_11;
+__1_achievement__param = __lcl_achievement_VRCUdonUdonBehaviour_1;
+UNDEF_e8b34_19720();
+__lcl_anyNewUnlocks_SystemBoolean_1 = __const_SystemBoolean_1;
+}
+}
+else
+{
+__intnl_SystemObject_29 = __lcl_achievement_VRCUdonUdonBehaviour_1.GetProgramVariable(__const_SystemString_8);
+__intnl_SystemString_13 = (String)__intnl_SystemObject_29;
+__3_trackingKey__param = __intnl_SystemString_13;
+__0_GetStatistic();
+__lcl_currentValue_SystemInt32_0 = __0___0_GetStatistic__ret;
+__lcl_achievement_VRCUdonUdonBehaviour_1.SetProgramVariable(__const_SystemString_37, __lcl_currentValue_SystemInt32_0);
+__lcl_achievement_VRCUdonUdonBehaviour_1.SendCustomEvent(__const_SystemString_38);
+__intnl_SystemObject_30 = __lcl_achievement_VRCUdonUdonBehaviour_1.GetProgramVariable(__const_SystemString_39);
+__intnl_SystemBoolean_70 = (Boolean)__intnl_SystemObject_30;
+if (__intnl_SystemBoolean_70)
+{
+__2_achievementIndex__param = __lcl_i_SystemInt32_11;
+__1_achievement__param = __lcl_achievement_VRCUdonUdonBehaviour_1;
+UNDEF_e8b34_19720();
+__lcl_anyNewUnlocks_SystemBoolean_1 = __const_SystemBoolean_1;
+}
+}
+}
+}
+__lcl_i_SystemInt32_11 = __lcl_i_SystemInt32_11 + __const_SystemInt32_1;
+}
+if (__lcl_anyNewUnlocks_SystemBoolean_1)
+{
+UNDEF_e8b34_7880();
+UNDEF_e8b34_14816();
+UNDEF_e8b34_13844();
+__intnl_UnityEngineObject_40 = titleSystem;
+__intnl_UnityEngineObject_41 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_66 = __intnl_UnityEngineObject_40 != __intnl_UnityEngineObject_41;
+if (__intnl_SystemBoolean_66)
+{
+__intnl_VRCUdonUdonBehaviour_20 = titleSystem;
+titleSystem.SendCustomEvent(__const_SystemString_6);
+}
+}
+}
+public void __0_ForceUnlockAchievement()
+{
+__intnl_SystemBoolean_71 = !isInitialized;
+if (__intnl_SystemBoolean_71)
+{
+}
+else
+{
+__intnl_UnityEngineObject_42 = achievementDatabase;
+__intnl_UnityEngineObject_43 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_71 = __intnl_UnityEngineObject_42 == __intnl_UnityEngineObject_43;
+}
+if (__intnl_SystemBoolean_71)
+{
+return;
+}
+__intnl_SystemBoolean_72 = __0_achievementIndex__param < __const_SystemInt32_0;
+if (__intnl_SystemBoolean_72)
+{
+}
+else
+{
+__intnl_SystemInt32_29 = unlockedAchievements.Length;
+__intnl_SystemBoolean_72 = __0_achievementIndex__param >= __intnl_SystemInt32_29;
+}
+if (__intnl_SystemBoolean_72)
+{
+return;
+}
+__intnl_SystemBoolean_73 = unlockedAchievements[__0_achievementIndex__param];
+if (__intnl_SystemBoolean_73)
+{
+return;
+}
+__intnl_SystemInt32_30 = __0_achievementIndex__param;
+achievementDatabase.SetProgramVariable(__const_SystemString_40, __0_achievementIndex__param);
+achievementDatabase.SendCustomEvent(__const_SystemString_41);
+__intnl_SystemObject_31 = achievementDatabase.GetProgramVariable(__const_SystemString_42);
+__intnl_VRCUdonUdonBehaviour_21 = (UdonBehaviour)__intnl_SystemObject_31;
+__lcl_achievement_VRCUdonUdonBehaviour_2 = __intnl_VRCUdonUdonBehaviour_21;
+__intnl_UnityEngineObject_44 = __lcl_achievement_VRCUdonUdonBehaviour_2;
+__intnl_UnityEngineObject_45 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_74 = __intnl_UnityEngineObject_44 == __intnl_UnityEngineObject_45;
+if (__intnl_SystemBoolean_74)
+{
+return;
+}
+__2_achievementIndex__param = __0_achievementIndex__param;
+__1_achievement__param = __lcl_achievement_VRCUdonUdonBehaviour_2;
+UNDEF_e8b34_19720();
+UNDEF_e8b34_7880();
+UNDEF_e8b34_14816();
+UNDEF_e8b34_13844();
+__intnl_UnityEngineObject_46 = titleSystem;
+__intnl_UnityEngineObject_47 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_75 = __intnl_UnityEngineObject_46 != __intnl_UnityEngineObject_47;
+if (__intnl_SystemBoolean_75)
+{
+__intnl_VRCUdonUdonBehaviour_22 = titleSystem;
+titleSystem.SendCustomEvent(__const_SystemString_6);
+}
+}
+public void __0_ForceLockAchievement()
+{
+__intnl_SystemBoolean_76 = !isInitialized;
+if (__intnl_SystemBoolean_76)
+{
+}
+else
+{
+__intnl_UnityEngineObject_48 = achievementDatabase;
+__intnl_UnityEngineObject_49 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_76 = __intnl_UnityEngineObject_48 == __intnl_UnityEngineObject_49;
+}
+if (__intnl_SystemBoolean_76)
+{
+return;
+}
+__intnl_SystemBoolean_77 = __1_achievementIndex__param < __const_SystemInt32_0;
+if (__intnl_SystemBoolean_77)
+{
+}
+else
+{
+__intnl_SystemInt32_31 = unlockedAchievements.Length;
+__intnl_SystemBoolean_77 = __1_achievementIndex__param >= __intnl_SystemInt32_31;
+}
+if (__intnl_SystemBoolean_77)
+{
+return;
+}
+__intnl_SystemBoolean_78 = unlockedAchievements[__1_achievementIndex__param];
+if (__intnl_SystemBoolean_78)
+{
+UNDEF_e8b34_18440();
+}
+}
+private void UNDEF_e8b34_18440()
+{
+__intnl_SystemInt32_32 = __1_achievementIndex__param;
+achievementDatabase.SetProgramVariable(__const_SystemString_40, __1_achievementIndex__param);
+achievementDatabase.SendCustomEvent(__const_SystemString_41);
+__intnl_SystemObject_32 = achievementDatabase.GetProgramVariable(__const_SystemString_42);
+__intnl_VRCUdonUdonBehaviour_23 = (UdonBehaviour)__intnl_SystemObject_32;
+__lcl_revokedAchievement_VRCUdonUdonBehaviour_0 = __intnl_VRCUdonUdonBehaviour_23;
+unlockedAchievements.Set(__1_achievementIndex__param, __const_SystemBoolean_0);
+UNDEF_e8b34_7880();
+__intnl_UnityEngineObject_50 = titleSystem;
+__intnl_UnityEngineObject_51 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_79 = __intnl_UnityEngineObject_50 != __intnl_UnityEngineObject_51;
+if (__intnl_SystemBoolean_79)
+{
+__intnl_VRCUdonUdonBehaviour_24 = titleSystem;
+titleSystem.SendCustomEvent(__const_SystemString_6);
+}
+__intnl_UnityEngineObject_52 = __lcl_revokedAchievement_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_53 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_81 = __intnl_UnityEngineObject_52 != __intnl_UnityEngineObject_53;
+if (__intnl_SystemBoolean_81)
+{
+__intnl_SystemObject_33 = __lcl_revokedAchievement_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_19);
+__intnl_SystemInt32_33 = Convert.ToInt32(__intnl_SystemObject_33);
+__intnl_SystemBoolean_81 = __intnl_SystemInt32_33 > __const_SystemInt32_0;
+}
+__intnl_SystemBoolean_80 = __intnl_SystemBoolean_81;
+if (__intnl_SystemBoolean_80)
+{
+__intnl_UnityEngineObject_54 = equipmentStatsManager;
+__intnl_UnityEngineObject_55 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_80 = __intnl_UnityEngineObject_54 != __intnl_UnityEngineObject_55;
+}
+if (__intnl_SystemBoolean_80)
+{
+__intnl_VRCUdonUdonBehaviour_25 = equipmentStatsManager;
+equipmentStatsManager.SendCustomEvent(__const_SystemString_20);
+}
+if (showDebugLogs)
+{
+__intnl_UnityEngineObject_56 = __lcl_revokedAchievement_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_57 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_82 = __intnl_UnityEngineObject_56 != __intnl_UnityEngineObject_57;
+if (__intnl_SystemBoolean_82)
+{
+__intnl_SystemObject_34 = __lcl_revokedAchievement_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_43);
+__lcl_name_SystemString_0 = (String)__intnl_SystemObject_34;
+}
+else
+{
+__lcl_name_SystemString_0 = __1_achievementIndex__param.ToString();
+}
+}
+}
+private void UNDEF_e8b34_19720()
+{
+__intnl_SystemBoolean_83 = __2_achievementIndex__param < __const_SystemInt32_0;
+if (__intnl_SystemBoolean_83)
+{
+}
+else
+{
+__intnl_SystemInt32_34 = unlockedAchievements.Length;
+__intnl_SystemBoolean_83 = __2_achievementIndex__param >= __intnl_SystemInt32_34;
+}
+if (__intnl_SystemBoolean_83)
+{
+return;
+}
+unlockedAchievements.Set(__2_achievementIndex__param, __const_SystemBoolean_1);
+__2_achievement__param = __1_achievement__param;
+UNDEF_e8b34_20532();
+__intnl_UnityEngineObject_58 = playerStats;
+__intnl_UnityEngineObject_59 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_84 = __intnl_UnityEngineObject_58 != __intnl_UnityEngineObject_59;
+if (__intnl_SystemBoolean_84)
+{
+__intnl_SystemObject_35 = __1_achievement__param.GetProgramVariable(__const_SystemString_44);
+__intnl_SystemInt32_35 = Convert.ToInt32(__intnl_SystemObject_35);
+__intnl_SystemBoolean_85 = __intnl_SystemInt32_35 > __const_SystemInt32_0;
+if (__intnl_SystemBoolean_85)
+{
+__intnl_SystemObject_36 = __1_achievement__param.GetProgramVariable(__const_SystemString_44);
+__intnl_SystemInt32_36 = Convert.ToInt32(__intnl_SystemObject_36);
+playerStats.SetProgramVariable(__const_SystemString_45, __intnl_SystemInt32_36);
+playerStats.SendCustomEvent(__const_SystemString_46);
+}
+__intnl_SystemObject_36 = __1_achievement__param.GetProgramVariable(__const_SystemString_47);
+__intnl_SystemInt32_36 = Convert.ToInt32(__intnl_SystemObject_36);
+__intnl_SystemBoolean_86 = __intnl_SystemInt32_36 > __const_SystemInt32_0;
+if (__intnl_SystemBoolean_86)
+{
+__intnl_SystemObject_37 = __1_achievement__param.GetProgramVariable(__const_SystemString_47);
+__intnl_SystemInt32_37 = Convert.ToInt32(__intnl_SystemObject_37);
+playerStats.SetProgramVariable(__const_SystemString_48, __intnl_SystemInt32_37);
+playerStats.SendCustomEvent(__const_SystemString_49);
+}
+}
+__intnl_SystemObject_35 = __1_achievement__param.GetProgramVariable(__const_SystemString_19);
+__intnl_SystemInt32_35 = Convert.ToInt32(__intnl_SystemObject_35);
+__intnl_SystemBoolean_85 = __intnl_SystemInt32_35 > __const_SystemInt32_0;
+if (__intnl_SystemBoolean_85)
+{
+__intnl_UnityEngineObject_60 = equipmentStatsManager;
+__intnl_UnityEngineObject_61 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_86 = __intnl_UnityEngineObject_60 != __intnl_UnityEngineObject_61;
+if (__intnl_SystemBoolean_86)
+{
+__intnl_VRCUdonUdonBehaviour_26 = equipmentStatsManager;
+equipmentStatsManager.SendCustomEvent(__const_SystemString_20);
+}
+__intnl_UnityEngineObject_62 = announcementManager;
+__intnl_UnityEngineObject_63 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_87 = __intnl_UnityEngineObject_62 != __intnl_UnityEngineObject_63;
+if (__intnl_SystemBoolean_87)
+{
+__intnl_SystemObject_36 = __1_achievement__param.GetProgramVariable(__const_SystemString_19);
+__intnl_SystemInt32_36 = Convert.ToInt32(__intnl_SystemObject_36);
+__intnl_SystemString_14 = String.Concat(__const_SystemString_50, __intnl_SystemInt32_36);
+__intnl_SystemString_15 = __intnl_SystemString_14 + __const_SystemString_51;
+announcementManager.SetProgramVariable(__const_SystemString_52, __intnl_SystemString_15);
+announcementManager.SendCustomEvent(__const_SystemString_53);
+}
+}
+if (showDebugLogs)
+{
+}
+}
+private void UNDEF_e8b34_20532()
+{
+__intnl_UnityEngineObject_64 = __2_achievement__param;
+__intnl_UnityEngineObject_65 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_88 = __intnl_UnityEngineObject_64 == __intnl_UnityEngineObject_65;
+if (__intnl_SystemBoolean_88)
+{
+}
+else
+{
+__intnl_UnityEngineObject_66 = popupPanel;
+__intnl_UnityEngineObject_67 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_88 = __intnl_UnityEngineObject_66 == __intnl_UnityEngineObject_67;
+}
+if (__intnl_SystemBoolean_88)
+{
+return;
+}
+if (isAnimating)
+{
+if (showDebugLogs)
+{
+}
+}
+__3_achievement__param = __2_achievement__param;
+UNDEF_e8b34_21264();
+UNDEF_e8b34_22456();
+UNDEF_e8b34_24976();
+__intnl_UnityEngineObject_68 = vrPopupPanel;
+__intnl_UnityEngineObject_69 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_89 = __intnl_UnityEngineObject_68 != __intnl_UnityEngineObject_69;
+if (__intnl_SystemBoolean_89)
+{
+__intnl_UnityEngineObject_70 = worldSpaceHUD;
+__intnl_UnityEngineObject_71 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_91 = __intnl_UnityEngineObject_70 != __intnl_UnityEngineObject_71;
+if (__intnl_SystemBoolean_91)
+{
+__intnl_VRCUdonUdonBehaviour_27 = worldSpaceHUD;
+worldSpaceHUD.SendCustomEvent(__const_SystemString_54);
+__intnl_SystemObject_38 = worldSpaceHUD.GetProgramVariable(__const_SystemString_55);
+__intnl_SystemBoolean_92 = (Boolean)__intnl_SystemObject_38;
+__intnl_SystemBoolean_91 = __intnl_SystemBoolean_92;
+}
+__intnl_SystemBoolean_90 = __intnl_SystemBoolean_91;
+if (__intnl_SystemBoolean_90)
+{
+}
+else
+{
+__intnl_SystemBoolean_90 = debugShowVRPopupOnDesktop;
+}
+__intnl_SystemBoolean_89 = __intnl_SystemBoolean_90;
+}
+__lcl_showVRPopup_SystemBoolean_0 = __intnl_SystemBoolean_89;
+if (__lcl_showVRPopup_SystemBoolean_0)
+{
+__4_achievement__param = __2_achievement__param;
+UNDEF_e8b34_21980();
+UNDEF_e8b34_22188();
+}
+if (showDebugLogs)
+{
+}
+}
+private void UNDEF_e8b34_21264()
+{
+__intnl_UnityEngineObject_72 = achievementIcon;
+__intnl_UnityEngineObject_73 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_93 = __intnl_UnityEngineObject_72 != __intnl_UnityEngineObject_73;
+if (__intnl_SystemBoolean_93)
+{
+__intnl_SystemObject_39 = __3_achievement__param.GetProgramVariable(__const_SystemString_56);
+__intnl_UnityEngineSprite_0 = (Sprite)__intnl_SystemObject_39;
+__intnl_UnityEngineObject_74 = __intnl_UnityEngineSprite_0;
+__intnl_UnityEngineObject_75 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_94 = __intnl_UnityEngineObject_74 != __intnl_UnityEngineObject_75;
+if (__intnl_SystemBoolean_94)
+{
+__intnl_SystemObject_40 = __3_achievement__param.GetProgramVariable(__const_SystemString_56);
+__intnl_UnityEngineSprite_1 = (Sprite)__intnl_SystemObject_40;
+achievementIcon.sprite = __intnl_UnityEngineSprite_1;
+achievementIcon.enabled = __const_SystemBoolean_1;
+}
+else
+{
+achievementIcon.enabled = __const_SystemBoolean_0;
+if (showDebugLogs)
+{
+}
+}
+}
+__intnl_UnityEngineObject_74 = achievementNameText;
+__intnl_UnityEngineObject_75 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_94 = __intnl_UnityEngineObject_74 != __intnl_UnityEngineObject_75;
+if (__intnl_SystemBoolean_94)
+{
+__intnl_SystemObject_39 = __3_achievement__param.GetProgramVariable(__const_SystemString_43);
+__intnl_SystemString_16 = (String)__intnl_SystemObject_39;
+achievementNameText.text = __intnl_SystemString_16;
+}
+__intnl_UnityEngineObject_76 = achievementDescriptionText;
+__intnl_UnityEngineObject_77 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_95 = __intnl_UnityEngineObject_76 != __intnl_UnityEngineObject_77;
+if (__intnl_SystemBoolean_95)
+{
+__intnl_SystemObject_39 = __3_achievement__param.GetProgramVariable(__const_SystemString_57);
+__intnl_SystemString_16 = (String)__intnl_SystemObject_39;
+achievementDescriptionText.text = __intnl_SystemString_16;
+}
+}
+private void UNDEF_e8b34_21980()
+{
+__intnl_UnityEngineObject_78 = vrAchievementIcon;
+__intnl_UnityEngineObject_79 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_96 = __intnl_UnityEngineObject_78 != __intnl_UnityEngineObject_79;
+if (__intnl_SystemBoolean_96)
+{
+__intnl_SystemObject_41 = __4_achievement__param.GetProgramVariable(__const_SystemString_56);
+__intnl_UnityEngineSprite_2 = (Sprite)__intnl_SystemObject_41;
+__intnl_UnityEngineObject_80 = __intnl_UnityEngineSprite_2;
+__intnl_UnityEngineObject_81 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_97 = __intnl_UnityEngineObject_80 != __intnl_UnityEngineObject_81;
+if (__intnl_SystemBoolean_97)
+{
+__intnl_SystemObject_42 = __4_achievement__param.GetProgramVariable(__const_SystemString_56);
+__intnl_UnityEngineSprite_3 = (Sprite)__intnl_SystemObject_42;
+vrAchievementIcon.sprite = __intnl_UnityEngineSprite_3;
+vrAchievementIcon.enabled = __const_SystemBoolean_1;
+}
+else
+{
+vrAchievementIcon.enabled = __const_SystemBoolean_0;
+}
+}
+__intnl_UnityEngineObject_80 = vrAchievementNameText;
+__intnl_UnityEngineObject_81 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_97 = __intnl_UnityEngineObject_80 != __intnl_UnityEngineObject_81;
+if (__intnl_SystemBoolean_97)
+{
+__intnl_SystemObject_41 = __4_achievement__param.GetProgramVariable(__const_SystemString_43);
+__intnl_SystemString_17 = (String)__intnl_SystemObject_41;
+vrAchievementNameText.text = __intnl_SystemString_17;
+}
+__intnl_UnityEngineObject_82 = vrAchievementDescriptionText;
+__intnl_UnityEngineObject_83 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_98 = __intnl_UnityEngineObject_82 != __intnl_UnityEngineObject_83;
+if (__intnl_SystemBoolean_98)
+{
+__intnl_SystemObject_41 = __4_achievement__param.GetProgramVariable(__const_SystemString_57);
+__intnl_SystemString_17 = (String)__intnl_SystemObject_41;
+vrAchievementDescriptionText.text = __intnl_SystemString_17;
+}
+}
+private void UNDEF_e8b34_22188()
+{
+__intnl_UnityEngineObject_84 = vrPopupPanel;
+__intnl_UnityEngineObject_85 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_99 = __intnl_UnityEngineObject_84 == __intnl_UnityEngineObject_85;
+if (__intnl_SystemBoolean_99)
+{
+return;
+}
+vrPopupPanel.SetActive(__const_SystemBoolean_1);
+__intnl_UnityEngineTransform_1 = vrPopupPanel.transform;
+__intnl_UnityEngineTransform_1.localScale = __const_UnityEngineVector3_0;
+}
+private void UNDEF_e8b34_22456()
+{
+__intnl_UnityEngineObject_86 = popupPanel;
+__intnl_UnityEngineObject_87 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_100 = __intnl_UnityEngineObject_86 == __intnl_UnityEngineObject_87;
+if (__intnl_SystemBoolean_100)
+{
+return;
+}
+isAnimating = __const_SystemBoolean_1;
+animationTime = __const_SystemSingle_0;
+currentPhase = __const_SystemInt32_4;
+popupPanel.SetActive(__const_SystemBoolean_1);
+__intnl_UnityEngineTransform_2 = popupPanel.transform;
+__intnl_UnityEngineTransform_2.localScale = __const_UnityEngineVector3_0;
+}
+private void UNDEF_e8b34_22748()
+{
+__intnl_SystemSingle_0 = Time.deltaTime;
+animationTime = animationTime + __intnl_SystemSingle_0;
+__intnl_SystemBoolean_101 = currentPhase == __const_SystemInt32_4;
+if (__intnl_SystemBoolean_101)
+{
+UNDEF_e8b34_23300();
+}
+else
+{
+__intnl_SystemBoolean_102 = currentPhase == __const_SystemInt32_5;
+if (__intnl_SystemBoolean_102)
+{
+UNDEF_e8b34_23640();
+}
+else
+{
+__intnl_SystemBoolean_103 = currentPhase == __const_SystemInt32_6;
+if (__intnl_SystemBoolean_103)
+{
+break;
+}
+UNDEF_e8b34_24136();
+}
+}
+}
+private void UNDEF_e8b34_23300()
+{
+__lcl_progress_SystemSingle_0 = animationTime / slideInDuration;
+__intnl_SystemBoolean_104 = __lcl_progress_SystemSingle_0 >= __const_SystemSingle_1;
+if (__intnl_SystemBoolean_104)
+{
+__lcl_progress_SystemSingle_0 = __const_SystemSingle_1;
+currentPhase = __const_SystemInt32_5;
+animationTime = __const_SystemSingle_0;
+}
+__intnl_SystemSingle_1 = __const_SystemSingle_1 - __lcl_progress_SystemSingle_0;
+__intnl_SystemSingle_2 = Mathf.Pow(__intnl_SystemSingle_1, __const_SystemSingle_2);
+__lcl_easeValue_SystemSingle_0 = __const_SystemSingle_1 - __intnl_SystemSingle_2;
+__intnl_UnityEngineTransform_3 = popupPanel.transform;
+__intnl_UnityEngineVector3_0 = originalScale * __lcl_easeValue_SystemSingle_0;
+__intnl_UnityEngineTransform_3.localScale = __intnl_UnityEngineVector3_0;
+__intnl_UnityEngineObject_88 = vrPopupPanel;
+__intnl_UnityEngineObject_89 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_105 = __intnl_UnityEngineObject_88 != __intnl_UnityEngineObject_89;
+if (__intnl_SystemBoolean_105)
+{
+__intnl_SystemBoolean_105 = vrPopupPanel.activeSelf;
+}
+if (__intnl_SystemBoolean_105)
+{
+__intnl_UnityEngineTransform_4 = vrPopupPanel.transform;
+__intnl_UnityEngineVector3_1 = __const_UnityEngineVector3_1 * __lcl_easeValue_SystemSingle_0;
+__intnl_UnityEngineTransform_4.localScale = __intnl_UnityEngineVector3_1;
+}
+}
+private void UNDEF_e8b34_23640()
+{
+__intnl_SystemBoolean_106 = animationTime >= popupDuration;
+if (__intnl_SystemBoolean_106)
+{
+currentPhase = __const_SystemInt32_6;
+animationTime = __const_SystemSingle_0;
+}
+__intnl_UnityEngineTransform_5 = popupPanel.transform;
+__intnl_UnityEngineTransform_5.localScale = originalScale;
+__intnl_UnityEngineObject_90 = vrPopupPanel;
+__intnl_UnityEngineObject_91 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_107 = __intnl_UnityEngineObject_90 != __intnl_UnityEngineObject_91;
+if (__intnl_SystemBoolean_107)
+{
+__intnl_SystemBoolean_107 = vrPopupPanel.activeSelf;
+}
+if (__intnl_SystemBoolean_107)
+{
+__intnl_UnityEngineTransform_6 = vrPopupPanel.transform;
+__intnl_UnityEngineTransform_6.localScale = __const_UnityEngineVector3_1;
+}
+}
+private void UNDEF_e8b34_24136()
+{
+__lcl_progress_SystemSingle_1 = animationTime / slideOutDuration;
+__intnl_SystemBoolean_108 = __lcl_progress_SystemSingle_1 >= __const_SystemSingle_1;
+if (__intnl_SystemBoolean_108)
+{
+__lcl_progress_SystemSingle_1 = __const_SystemSingle_1;
+UNDEF_e8b34_24428();
+}
+__intnl_SystemSingle_3 = Mathf.Pow(__lcl_progress_SystemSingle_1, __const_SystemSingle_2);
+__lcl_easeValue_SystemSingle_1 = __const_SystemSingle_1 - __intnl_SystemSingle_3;
+__intnl_UnityEngineTransform_7 = popupPanel.transform;
+__intnl_UnityEngineVector3_2 = originalScale * __lcl_easeValue_SystemSingle_1;
+__intnl_UnityEngineTransform_7.localScale = __intnl_UnityEngineVector3_2;
+__intnl_UnityEngineObject_92 = vrPopupPanel;
+__intnl_UnityEngineObject_93 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_109 = __intnl_UnityEngineObject_92 != __intnl_UnityEngineObject_93;
+if (__intnl_SystemBoolean_109)
+{
+__intnl_SystemBoolean_109 = vrPopupPanel.activeSelf;
+}
+if (__intnl_SystemBoolean_109)
+{
+__intnl_UnityEngineTransform_8 = vrPopupPanel.transform;
+__intnl_UnityEngineVector3_3 = __const_UnityEngineVector3_1 * __lcl_easeValue_SystemSingle_1;
+__intnl_UnityEngineTransform_8.localScale = __intnl_UnityEngineVector3_3;
+}
+}
+private void UNDEF_e8b34_24428()
+{
+isAnimating = __const_SystemBoolean_0;
+currentPhase = __const_SystemInt32_7;
+__intnl_UnityEngineObject_94 = popupPanel;
+__intnl_UnityEngineObject_95 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_110 = __intnl_UnityEngineObject_94 != __intnl_UnityEngineObject_95;
+if (__intnl_SystemBoolean_110)
+{
+popupPanel.SetActive(__const_SystemBoolean_0);
+}
+__intnl_UnityEngineObject_96 = vrPopupPanel;
+__intnl_UnityEngineObject_97 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_111 = __intnl_UnityEngineObject_96 != __intnl_UnityEngineObject_97;
+if (__intnl_SystemBoolean_111)
+{
+vrPopupPanel.SetActive(__const_SystemBoolean_0);
+}
+}
+private void UNDEF_e8b34_24976()
+{
+__intnl_UnityEngineObject_98 = audioSource;
+__intnl_UnityEngineObject_99 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_112 = __intnl_UnityEngineObject_98 != __intnl_UnityEngineObject_99;
+if (__intnl_SystemBoolean_112)
+{
+__intnl_UnityEngineObject_100 = achievementUnlockedSound;
+__intnl_UnityEngineObject_101 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_112 = __intnl_UnityEngineObject_100 != __intnl_UnityEngineObject_101;
+}
+if (__intnl_SystemBoolean_112)
+{
+audioSource.volume = audioVolume;
+audioSource.PlayOneShot(achievementUnlockedSound);
+}
+__intnl_UnityEngineObject_102 = achievementParticleEffect;
+__intnl_UnityEngineObject_103 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_113 = __intnl_UnityEngineObject_102 != __intnl_UnityEngineObject_103;
+if (__intnl_SystemBoolean_113)
+{
+__intnl_SystemBoolean_113 = localPlayer != __const_SystemObject_0;
+}
+if (__intnl_SystemBoolean_113)
+{
+__intnl_VRCSDKBaseVRCPlayerApiTrackingData_0 = localPlayer.GetTrackingData(__const_VRCSDKBaseVRCPlayerApiTrackingDataType_0);
+__lcl_playerPosition_UnityEngineVector3_0 = __intnl_VRCSDKBaseVRCPlayerApiTrackingData_0.position;
+__1__intnlparam = achievementParticleEffect;
+UNDEF_e8b34_26352();
+__lcl_particles_UnityEngineGameObject_0 = __0__intnlparam;
+__intnl_UnityEngineTransform_9 = __lcl_particles_UnityEngineGameObject_0.transform;
+__intnl_UnityEngineTransform_9.position = __lcl_playerPosition_UnityEngineVector3_0;
+}
+}
+public void OnFishCaught()
+{
+__2_trackingKey__param = __const_SystemString_58;
+__0_incrementAmount__param = __const_SystemInt32_1;
+__0_IncrementStatistic();
+}
+public void OnRareFishCaught()
+{
+__2_trackingKey__param = __const_SystemString_59;
+__0_incrementAmount__param = __const_SystemInt32_1;
+__0_IncrementStatistic();
+}
+public void __0_OnFishSold()
+{
+__2_trackingKey__param = __const_SystemString_60;
+__0_incrementAmount__param = __0_amount__param;
+__0_IncrementStatistic();
+}
+public void __0_OnPlayerLevelUp()
+{
+__0_trackingKey__param = __const_SystemString_61;
+__0_value__param = __0_newLevel__param;
+__0_TrackStatistic();
+}
+public void OnPlayerStatChanged()
+{
+__intnl_SystemBoolean_114 = !isInitialized;
+if (__intnl_SystemBoolean_114)
+{
+}
+else
+{
+__intnl_UnityEngineObject_104 = playerStats;
+__intnl_UnityEngineObject_105 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_114 = __intnl_UnityEngineObject_104 == __intnl_UnityEngineObject_105;
+}
+if (__intnl_SystemBoolean_114)
+{
+return;
+}
+UNDEF_e8b34_26288();
+}
+private void UNDEF_e8b34_26288()
+{
+__intnl_UnityEngineObject_106 = playerStats;
+__intnl_UnityEngineObject_107 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_115 = __intnl_UnityEngineObject_106 == __intnl_UnityEngineObject_107;
+if (__intnl_SystemBoolean_115)
+{
+return;
+}
+__intnl_VRCUdonUdonBehaviour_28 = playerStats;
+playerStats.SendCustomEvent(__const_SystemString_62);
+__intnl_SystemObject_43 = playerStats.GetProgramVariable(__const_SystemString_63);
+__intnl_SystemInt32_38 = Convert.ToInt32(__intnl_SystemObject_43);
+__0_trackingKey__param = __const_SystemString_58;
+__0_value__param = __intnl_SystemInt32_38;
+__0_TrackStatistic();
+__intnl_VRCUdonUdonBehaviour_29 = playerStats;
+playerStats.SendCustomEvent(__const_SystemString_64);
+__intnl_SystemObject_44 = playerStats.GetProgramVariable(__const_SystemString_65);
+__intnl_SystemInt32_39 = Convert.ToInt32(__intnl_SystemObject_44);
+__0_trackingKey__param = __const_SystemString_59;
+__0_value__param = __intnl_SystemInt32_39;
+__0_TrackStatistic();
+__intnl_VRCUdonUdonBehaviour_30 = playerStats;
+playerStats.SendCustomEvent(__const_SystemString_66);
+__intnl_SystemObject_45 = playerStats.GetProgramVariable(__const_SystemString_67);
+__intnl_SystemInt32_40 = Convert.ToInt32(__intnl_SystemObject_45);
+__0_trackingKey__param = __const_SystemString_60;
+__0_value__param = __intnl_SystemInt32_40;
+__0_TrackStatistic();
+__intnl_VRCUdonUdonBehaviour_31 = playerStats;
+playerStats.SendCustomEvent(__const_SystemString_68);
+__intnl_SystemObject_46 = playerStats.GetProgramVariable(__const_SystemString_69);
+__intnl_SystemInt32_41 = Convert.ToInt32(__intnl_SystemObject_46);
+__0_trackingKey__param = __const_SystemString_61;
+__0_value__param = __intnl_SystemInt32_41;
+__0_TrackStatistic();
+if (showDebugLogs)
+{
+}
+}
+private void UNDEF_e8b34_26352()
+{
+__0__intnlparam = Object.Instantiate(__1__intnlparam);
+return;
+}
+private void UNDEF_e8b34_26392()
+{
+__2__intnlparam = (GameObject)__const_SystemObject_0;
+}
+}

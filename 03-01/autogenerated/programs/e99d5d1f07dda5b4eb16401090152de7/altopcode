@@ -1,0 +1,603 @@
+void get_playerInventoryData()
+24 __intnl_UnityEngineObject_0 = _playerInventoryData
+44 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+88 if (__intnl_SystemBoolean_0) //104
+{
+96 JUMP 180
+}
+152 __intnl_SystemBoolean_1 = __intnl_SystemObject_0
+188 if (__intnl_SystemBoolean_0) //232
+{
+204 JUMP 12696
+228 _playerInventoryData = __0__intnlparam
+}
+248 __0_get_playerInventoryData__ret = _playerInventoryData
+264 return;
+284 return;
+void _onVarChange__playerInventoryData()
+308 __0_value__param = _playerInventoryData
+328 _playerInventoryData = _old__playerInventoryData
+void __0_set_playerInventoryData()
+356 _playerInventoryData = __0_value__param
+372 return;
+void _start()
+404 currentlySelectedBoat = defaultBoatIndex
+448 if (__intnl_SystemBoolean_2) //464
+{
+456 JUMP 520
+}
+528 if (__intnl_SystemBoolean_2) //556
+{
+552 currentlySelectedBoat = __const_SystemInt32_0
+}
+568 return;
+void _onPlayerRestored()
+624 if (__intnl_SystemBoolean_3) //656
+{
+}
+664 if (__intnl_SystemBoolean_3) //688
+{
+680 JUMP 716
+}
+700 return;
+724 JUMP 8
+748 __intnl_UnityEngineObject_2 = __0_get_playerInventoryData__ret
+768 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+812 if (__intnl_SystemBoolean_4) //828
+{
+820 JUMP 928
+}
+836 JUMP 8
+892 __intnl_VRCSDK3DataDataDictionary_0 = __intnl_SystemObject_1
+936 if (__intnl_SystemBoolean_4) //964
+{
+956 return;
+}
+972 JUMP 8
+1028 __intnl_VRCSDK3DataDataDictionary_1 = __intnl_SystemObject_2
+1096 if (__intnl_SystemBoolean_5) //1112
+{
+1104 JUMP 1276
+}
+1120 JUMP 8
+1176 __intnl_VRCSDK3DataDataDictionary_2 = __intnl_SystemObject_3
+__0__intnlparam.GetProgramVariable(__const_SystemString_1).set_Item(__intnl_VRCSDK3DataDataToken_2, __intnl_VRCSDK3DataDataToken_1);// 1268
+1288 return;
+1312 JUMP 8
+1336 __lcl_invData_VRCUdonUdonBehaviour_0 = __0_get_playerInventoryData__ret
+1356 __intnl_UnityEngineObject_4 = __lcl_invData_VRCUdonUdonBehaviour_0
+1376 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+1420 if (__intnl_SystemBoolean_6) //1436
+{
+1428 JUMP 1520
+}
+1484 __intnl_VRCSDK3DataDataDictionary_3 = __intnl_SystemObject_4
+1528 if (__intnl_SystemBoolean_6) //1572
+{
+__0_GetUnlockedBoatsList__ret = ctor();// 1544
+1564 return;
+}
+__0__intnlparam.SetProgramVariable(__const_SystemString_2, __const_SystemString_3);// 1596
+__0__intnlparam.SendCustomEvent(__const_SystemString_4);// 1620
+1676 __intnl_VRCSDK3DataDataList_1 = __intnl_SystemObject_5
+1696 __0_GetUnlockedBoatsList__ret = __intnl_VRCSDK3DataDataList_1
+1712 return;
+1732 return;
+void __0_GetLocalPlayerBoats()
+1756 JUMP 1304
+1780 __lcl_unlockedBoats_VRCSDK3DataDataList_0 = __0_GetUnlockedBoatsList__ret
+__lcl_availableBoats_UnityEngineComponentArray_0 = 0.ctor();// 1800
+1824 __lcl_i_SystemInt32_0 = __const_SystemInt32_0
+1892 if (__intnl_SystemBoolean_7) //3052
+{
+__lcl_boat_VRCUdonUdonBehaviour_0 = G_boatEntries.Get(__lcl_i_SystemInt32_0);// 1924
+1948 __intnl_SystemInt32_2 = __0_playerLevel__param
+L_boat.SetProgramVariable(__0_playerLevel__param, __const_SystemString_6);// 1976
+L_boat.SendCustomEvent(__const_SystemString_7);// 2000
+2056 __intnl_SystemBoolean_9 = __intnl_SystemObject_6
+2076 __intnl_SystemBoolean_8 = __intnl_SystemBoolean_9
+2088 if (__intnl_SystemBoolean_8) //2104
+{
+2096 JUMP 2156
+}
+2152 __intnl_SystemBoolean_8 = __intnl_SystemObject_7
+2164 if (__intnl_SystemBoolean_8) //2256
+{
+2196 __2__intnlparam = __lcl_availableBoats_UnityEngineComponentArray_0
+2216 __3__intnlparam = __lcl_boat_VRCUdonUdonBehaviour_0
+2220 JUMP 12808
+2244 __lcl_availableBoats_UnityEngineComponentArray_0 = __1__intnlparam
+2248 JUMP 3012
+}
+2304 __intnl_VRCUdonUdonBehaviour_0 = __intnl_SystemObject_8
+2324 __intnl_UnityEngineObject_6 = __intnl_VRCUdonUdonBehaviour_0
+2344 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+2388 if (__intnl_SystemBoolean_11) //2468
+{
+2412 __intnl_UnityEngineObject_8 = achievementManager
+2432 __intnl_UnityEngineObject_9 = __const_SystemObject_0
+}
+2484 __intnl_SystemBoolean_10 = __intnl_SystemBoolean_11
+2496 if (__intnl_SystemBoolean_10) //2684
+{
+2552 __intnl_VRCUdonUdonBehaviour_1 = __intnl_SystemObject_9
+G_achievementManager.SetProgramVariable(__intnl_VRCUdonUdonBehaviour_1, __const_SystemString_11);// 2580
+G_achievementManager.SendCustomEvent(__const_SystemString_12);// 2604
+2660 __intnl_SystemBoolean_12 = __intnl_SystemObject_10
+2680 __intnl_SystemBoolean_10 = __intnl_SystemBoolean_12
+}
+2692 if (__intnl_SystemBoolean_10) //2784
+{
+2724 __2__intnlparam = __lcl_availableBoats_UnityEngineComponentArray_0
+2744 __3__intnlparam = __lcl_boat_VRCUdonUdonBehaviour_0
+2748 JUMP 12808
+2772 __lcl_availableBoats_UnityEngineComponentArray_0 = __1__intnlparam
+2776 JUMP 3012
+}
+2928 if (__intnl_SystemBoolean_13) //3012
+{
+2960 __2__intnlparam = __lcl_availableBoats_UnityEngineComponentArray_0
+2980 __3__intnlparam = __lcl_boat_VRCUdonUdonBehaviour_0
+2984 JUMP 12808
+3008 __lcl_availableBoats_UnityEngineComponentArray_0 = __1__intnlparam
+}
+__lcl_i_SystemInt32_0 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_0);// 3036
+3044 JUMP 1828
+}
+3068 __0___0_GetLocalPlayerBoats__ret = __lcl_availableBoats_UnityEngineComponentArray_0
+3084 return;
+3104 return;
+void GetInventoryBoats()
+3128 JUMP 1304
+3152 __lcl_unlockedBoats_VRCSDK3DataDataList_1 = __0_GetUnlockedBoatsList__ret
+__lcl_availableBoats_UnityEngineComponentArray_1 = 0.ctor();// 3172
+3196 __lcl_i_SystemInt32_1 = __const_SystemInt32_0
+3264 if (__intnl_SystemBoolean_14) //3572
+{
+__lcl_boat_VRCUdonUdonBehaviour_1 = G_boatEntries.Get(__lcl_i_SystemInt32_1);// 3296
+3448 if (__intnl_SystemBoolean_15) //3532
+{
+3480 __2__intnlparam = __lcl_availableBoats_UnityEngineComponentArray_1
+3500 __3__intnlparam = __lcl_boat_VRCUdonUdonBehaviour_1
+3504 JUMP 12808
+3528 __lcl_availableBoats_UnityEngineComponentArray_1 = __1__intnlparam
+}
+__lcl_i_SystemInt32_1 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_1);// 3556
+3564 JUMP 3200
+}
+3588 __0_GetInventoryBoats__ret = __lcl_availableBoats_UnityEngineComponentArray_1
+3604 return;
+3624 return;
+void __0_UnlockBoat()
+3648 JUMP 8
+3672 __intnl_UnityEngineObject_10 = __0_get_playerInventoryData__ret
+3692 __intnl_UnityEngineObject_11 = __const_SystemObject_0
+3736 if (__intnl_SystemBoolean_16) //3764
+{
+3756 return;
+}
+3772 JUMP 1304
+3796 __lcl_unlockedBoats_VRCSDK3DataDataList_2 = __0_GetUnlockedBoatsList__ret
+3888 if (__intnl_SystemBoolean_17) //3904
+{
+3896 JUMP 4036
+}
+__0__intnlparam.GetProgramVariable(__const_SystemString_5).Add(__intnl_VRCSDK3DataDataToken_6);// 3968
+3984 JUMP 8
+4016 __intnl_VRCUdonUdonBehaviour_2 = __0_get_playerInventoryData__ret
+__0__intnlparam.SendCustomEvent(__const_SystemString_15);// 4028
+4048 return;
+void __0_IsBoatUnlocked()
+4088 __3_boatId__param = __1_boatId__param
+4092 JUMP 6512
+4116 __lcl_boat_VRCUdonUdonBehaviour_2 = __0___0_GetBoatById__ret
+4136 __intnl_UnityEngineObject_12 = __lcl_boat_VRCUdonUdonBehaviour_2
+4156 __intnl_UnityEngineObject_13 = __const_SystemObject_0
+4200 if (__intnl_SystemBoolean_18) //4260
+{
+4256 __intnl_SystemBoolean_18 = __intnl_SystemObject_13
+}
+4268 if (__intnl_SystemBoolean_18) //4316
+{
+4292 __0___0_IsBoatUnlocked__ret = __const_SystemBoolean_0
+4308 return;
+}
+4332 __intnl_UnityEngineObject_14 = __lcl_boat_VRCUdonUdonBehaviour_2
+4352 __intnl_UnityEngineObject_15 = __const_SystemObject_0
+4396 if (__intnl_SystemBoolean_21) //4528
+{
+4452 __intnl_VRCUdonUdonBehaviour_3 = __intnl_SystemObject_14
+4472 __intnl_UnityEngineObject_16 = __intnl_VRCUdonUdonBehaviour_3
+4492 __intnl_UnityEngineObject_17 = __const_SystemObject_0
+}
+4544 __intnl_SystemBoolean_20 = __intnl_SystemBoolean_21
+4556 if (__intnl_SystemBoolean_20) //4636
+{
+4580 __intnl_UnityEngineObject_18 = achievementManager
+4600 __intnl_UnityEngineObject_19 = __const_SystemObject_0
+}
+4652 __intnl_SystemBoolean_19 = __intnl_SystemBoolean_20
+4664 if (__intnl_SystemBoolean_19) //4852
+{
+4720 __intnl_VRCUdonUdonBehaviour_4 = __intnl_SystemObject_15
+G_achievementManager.SetProgramVariable(__intnl_VRCUdonUdonBehaviour_4, __const_SystemString_11);// 4748
+G_achievementManager.SendCustomEvent(__const_SystemString_12);// 4772
+4828 __intnl_SystemBoolean_22 = __intnl_SystemObject_16
+4848 __intnl_SystemBoolean_19 = __intnl_SystemBoolean_22
+}
+4860 if (__intnl_SystemBoolean_19) //4908
+{
+4884 __0___0_IsBoatUnlocked__ret = __const_SystemBoolean_0
+4900 return;
+}
+4916 JUMP 1304
+4940 __lcl_unlockedBoats_VRCSDK3DataDataList_3 = __0_GetUnlockedBoatsList__ret
+__0___0_IsBoatUnlocked__ret = __0__intnlparam.GetProgramVariable(__const_SystemString_5).Contains(__intnl_VRCSDK3DataDataToken_7);// 5016
+5036 return;
+5056 return;
+void GetCurrentBoat()
+5112 if (__intnl_SystemBoolean_23) //5128
+{
+5120 JUMP 5184
+}
+5192 if (__intnl_SystemBoolean_23) //5240
+{
+5216 __0_GetCurrentBoat__ret = __const_SystemObject_0
+5232 return;
+}
+5280 if (__intnl_SystemBoolean_24) //5296
+{
+5288 JUMP 5352
+}
+5360 if (__intnl_SystemBoolean_24) //5388
+{
+5384 currentlySelectedBoat = __const_SystemInt32_0
+}
+__0_GetCurrentBoat__ret = G_boatEntries.Get(currentlySelectedBoat);// 5412
+5432 return;
+5452 return;
+void __0_SelectBoatById()
+5484 __lcl_i_SystemInt32_2 = __const_SystemInt32_0
+5552 if (__intnl_SystemBoolean_25) //5796
+{
+5688 if (__intnl_SystemBoolean_26) //5756
+{
+5712 currentlySelectedBoat = __lcl_i_SystemInt32_2
+5732 __0___0_SelectBoatById__ret = __const_SystemBoolean_0
+5748 return;
+}
+__lcl_i_SystemInt32_2 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_2);// 5780
+5788 JUMP 5488
+}
+5812 __0___0_SelectBoatById__ret = __const_SystemBoolean_1
+5828 return;
+5848 return;
+void __0_SelectBoat()
+5904 if (__intnl_SystemBoolean_27) //5920
+{
+5912 JUMP 5976
+}
+5984 if (__intnl_SystemBoolean_27) //6032
+{
+6008 __0___0_SelectBoat__ret = __const_SystemBoolean_1
+6024 return;
+}
+6048 currentlySelectedBoat = __0_index__param
+6068 __0___0_SelectBoat__ret = __const_SystemBoolean_0
+6084 return;
+6104 return;
+void __0_SelectBoatByName()
+6136 __lcl_i_SystemInt32_3 = __const_SystemInt32_0
+6204 if (__intnl_SystemBoolean_28) //6444
+{
+6292 __intnl_SystemString_0 = __intnl_SystemObject_18
+6336 if (__intnl_SystemBoolean_29) //6404
+{
+6360 currentlySelectedBoat = __lcl_i_SystemInt32_3
+6380 __0___0_SelectBoatByName__ret = __const_SystemBoolean_0
+6396 return;
+}
+__lcl_i_SystemInt32_3 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_3);// 6428
+6436 JUMP 6140
+}
+6460 __0___0_SelectBoatByName__ret = __const_SystemBoolean_1
+6476 return;
+6496 return;
+void __0_GetBoatById()
+6528 __lcl_i_SystemInt32_4 = __const_SystemInt32_0
+6596 if (__intnl_SystemBoolean_30) //6832
+{
+6732 if (__intnl_SystemBoolean_31) //6792
+{
+__0___0_GetBoatById__ret = G_boatEntries.Get(__lcl_i_SystemInt32_4);// 6764
+6784 return;
+}
+__lcl_i_SystemInt32_4 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_4);// 6816
+6824 JUMP 6532
+}
+6848 __0___0_GetBoatById__ret = __const_SystemObject_0
+6864 return;
+6884 return;
+void __0_GetBoat()
+6940 if (__intnl_SystemBoolean_32) //6956
+{
+6948 JUMP 7012
+}
+7020 if (__intnl_SystemBoolean_32) //7068
+{
+7044 __0___0_GetBoat__ret = __const_SystemObject_0
+7060 return;
+}
+__0___0_GetBoat__ret = G_boatEntries.Get(__1_index__param);// 7092
+7112 return;
+7132 return;
+void GetAllBoats()
+7164 __0_GetAllBoats__ret = boatEntries
+7180 return;
+7200 return;
+void __0_GetUnlockedBoats()
+7232 __lcl_unlockedCount_SystemInt32_0 = __const_SystemInt32_0
+7252 __lcl_i_SystemInt32_5 = __const_SystemInt32_0
+7320 if (__intnl_SystemBoolean_33) //7764
+{
+7376 __intnl_SystemInt32_16 = __1_playerLevel__param
+G_boatEntries.Get(__lcl_i_SystemInt32_5).SetProgramVariable(__1_playerLevel__param, __const_SystemString_17);// 7404
+G_boatEntries.Get(__lcl_i_SystemInt32_5).SendCustomEvent(__const_SystemString_18);// 7428
+7484 __intnl_SystemBoolean_35 = __intnl_SystemObject_20
+7504 __intnl_SystemBoolean_34 = __intnl_SystemBoolean_35
+7516 if (__intnl_SystemBoolean_34) //7532
+{
+7524 JUMP 7676
+}
+7644 __1_boatId__param = __intnl_SystemInt32_17
+7648 JUMP 4064
+7672 __intnl_SystemBoolean_34 = __0___0_IsBoatUnlocked__ret
+7684 if (__intnl_SystemBoolean_34) //7724
+{
+__lcl_unlockedCount_SystemInt32_0 = op_Addition(__const_SystemInt32_1, __lcl_unlockedCount_SystemInt32_0);// 7716
+}
+__lcl_i_SystemInt32_5 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_5);// 7748
+7756 JUMP 7256
+}
+__lcl_unlockedBoats_UnityEngineComponentArray_0 = 0.ctor();// 7780
+7804 __lcl_index_SystemInt32_0 = __const_SystemInt32_0
+7824 __lcl_i_SystemInt32_5 = __const_SystemInt32_0
+7892 if (__intnl_SystemBoolean_33) //8400
+{
+7948 __intnl_SystemInt32_16 = __1_playerLevel__param
+G_boatEntries.Get(__lcl_i_SystemInt32_5).SetProgramVariable(__1_playerLevel__param, __const_SystemString_17);// 7976
+G_boatEntries.Get(__lcl_i_SystemInt32_5).SendCustomEvent(__const_SystemString_18);// 8000
+8056 __intnl_SystemBoolean_35 = __intnl_SystemObject_20
+8076 __intnl_SystemBoolean_34 = __intnl_SystemBoolean_35
+8088 if (__intnl_SystemBoolean_34) //8104
+{
+8096 JUMP 8248
+}
+8216 __1_boatId__param = __intnl_SystemInt32_17
+8220 JUMP 4064
+8244 __intnl_SystemBoolean_34 = __0___0_IsBoatUnlocked__ret
+8256 if (__intnl_SystemBoolean_34) //8360
+{
+L_unlockedBoats.Set(__intnl_VRCUdonUdonBehaviour_10, __lcl_index_SystemInt32_0);// 8320
+__lcl_index_SystemInt32_0 = op_Addition(__const_SystemInt32_1, __lcl_index_SystemInt32_0);// 8352
+}
+__lcl_i_SystemInt32_5 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_5);// 8384
+8392 JUMP 7828
+}
+8416 __0___0_GetUnlockedBoats__ret = __lcl_unlockedBoats_UnityEngineComponentArray_0
+8432 return;
+8452 return;
+void __0_GetBoatsToUnlockAtLevel()
+8484 __lcl_autoUnlockCount_SystemInt32_0 = __const_SystemInt32_0
+8504 __lcl_i_SystemInt32_6 = __const_SystemInt32_0
+8572 if (__intnl_SystemBoolean_36) //8828
+{
+8628 __intnl_SystemInt32_19 = __2_playerLevel__param
+G_boatEntries.Get(__lcl_i_SystemInt32_6).SetProgramVariable(__2_playerLevel__param, __const_SystemString_6);// 8656
+G_boatEntries.Get(__lcl_i_SystemInt32_6).SendCustomEvent(__const_SystemString_7);// 8680
+8736 __intnl_SystemBoolean_37 = __intnl_SystemObject_22
+8748 if (__intnl_SystemBoolean_37) //8788
+{
+__lcl_autoUnlockCount_SystemInt32_0 = op_Addition(__const_SystemInt32_1, __lcl_autoUnlockCount_SystemInt32_0);// 8780
+}
+__lcl_i_SystemInt32_6 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_6);// 8812
+8820 JUMP 8508
+}
+__lcl_autoUnlockBoats_UnityEngineComponentArray_0 = 0.ctor();// 8844
+8868 __lcl_index_SystemInt32_1 = __const_SystemInt32_0
+8888 __lcl_i_SystemInt32_6 = __const_SystemInt32_0
+8956 if (__intnl_SystemBoolean_36) //9276
+{
+9012 __intnl_SystemInt32_19 = __2_playerLevel__param
+G_boatEntries.Get(__lcl_i_SystemInt32_6).SetProgramVariable(__2_playerLevel__param, __const_SystemString_6);// 9040
+G_boatEntries.Get(__lcl_i_SystemInt32_6).SendCustomEvent(__const_SystemString_7);// 9064
+9120 __intnl_SystemBoolean_37 = __intnl_SystemObject_22
+9132 if (__intnl_SystemBoolean_37) //9236
+{
+L_autoUnlockBoats.Set(__intnl_VRCUdonUdonBehaviour_12, __lcl_index_SystemInt32_1);// 9196
+__lcl_index_SystemInt32_1 = op_Addition(__const_SystemInt32_1, __lcl_index_SystemInt32_1);// 9228
+}
+__lcl_i_SystemInt32_6 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_6);// 9260
+9268 JUMP 8892
+}
+9292 __0___0_GetBoatsToUnlockAtLevel__ret = __lcl_autoUnlockBoats_UnityEngineComponentArray_0
+9308 return;
+9328 return;
+void __0_GetBoatsInPriceRange()
+9360 __lcl_matchingCount_SystemInt32_0 = __const_SystemInt32_0
+9380 __lcl_i_SystemInt32_7 = __const_SystemInt32_0
+9448 if (__intnl_SystemBoolean_38) //9800
+{
+9584 if (__intnl_SystemBoolean_39) //9712
+{
+}
+9720 if (__intnl_SystemBoolean_39) //9760
+{
+__lcl_matchingCount_SystemInt32_0 = op_Addition(__const_SystemInt32_1, __lcl_matchingCount_SystemInt32_0);// 9752
+}
+__lcl_i_SystemInt32_7 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_7);// 9784
+9792 JUMP 9384
+}
+__lcl_matchingBoats_UnityEngineComponentArray_0 = 0.ctor();// 9816
+9840 __lcl_index_SystemInt32_2 = __const_SystemInt32_0
+9860 __lcl_i_SystemInt32_7 = __const_SystemInt32_0
+9928 if (__intnl_SystemBoolean_38) //10344
+{
+10064 if (__intnl_SystemBoolean_39) //10192
+{
+}
+10200 if (__intnl_SystemBoolean_39) //10304
+{
+L_matchingBoats.Set(__intnl_VRCUdonUdonBehaviour_15, __lcl_index_SystemInt32_2);// 10264
+__lcl_index_SystemInt32_2 = op_Addition(__const_SystemInt32_1, __lcl_index_SystemInt32_2);// 10296
+}
+__lcl_i_SystemInt32_7 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_7);// 10328
+10336 JUMP 9864
+}
+10360 __0___0_GetBoatsInPriceRange__ret = __lcl_matchingBoats_UnityEngineComponentArray_0
+10376 return;
+10396 return;
+void __0_CanAffordBoat()
+10436 __3_boatId__param = __4_boatId__param
+10440 JUMP 6512
+10464 __lcl_boat_VRCUdonUdonBehaviour_3 = __0___0_GetBoatById__ret
+10484 __intnl_UnityEngineObject_20 = __lcl_boat_VRCUdonUdonBehaviour_3
+10504 __intnl_UnityEngineObject_21 = __const_SystemObject_0
+10548 if (__intnl_SystemBoolean_40) //10596
+{
+10572 __0___0_CanAffordBoat__ret = __const_SystemBoolean_1
+10588 return;
+}
+__0___0_CanAffordBoat__ret = op_GreaterThanOrEqual(__intnl_SystemInt32_23, __0_playerMoney__param);// 10676
+10696 return;
+10716 return;
+void GetTotalBoatValue()
+10748 __lcl_totalValue_SystemInt32_0 = __const_SystemInt32_0
+10768 __lcl_i_SystemInt32_8 = __const_SystemInt32_0
+10836 if (__intnl_SystemBoolean_41) //11004
+{
+__lcl_totalValue_SystemInt32_0 = op_Addition(__intnl_SystemInt32_25, __lcl_totalValue_SystemInt32_0);// 10956
+__lcl_i_SystemInt32_8 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_8);// 10988
+10996 JUMP 10772
+}
+11020 __0_GetTotalBoatValue__ret = __lcl_totalValue_SystemInt32_0
+11036 return;
+11056 return;
+void GetAverageBoatPrice()
+11136 if (__intnl_SystemBoolean_42) //11184
+{
+11160 __0_GetAverageBoatPrice__ret = __const_SystemSingle_0
+11176 return;
+}
+11192 JUMP 10732
+__0_GetAverageBoatPrice__ret = op_Division(__intnl_SystemSingle_1, __intnl_SystemSingle_0);// 11296
+11316 return;
+11336 return;
+void GetMostExpensiveBoat()
+11416 if (__intnl_SystemBoolean_43) //11464
+{
+11440 __0_GetMostExpensiveBoat__ret = __const_SystemObject_0
+11456 return;
+}
+__lcl_mostExpensive_VRCUdonUdonBehaviour_0 = G_boatEntries.Get(__const_SystemInt32_0);// 11488
+11512 __lcl_i_SystemInt32_9 = __const_SystemInt32_1
+11580 if (__intnl_SystemBoolean_44) //11852
+{
+11772 if (__intnl_SystemBoolean_45) //11812
+{
+__lcl_mostExpensive_VRCUdonUdonBehaviour_0 = G_boatEntries.Get(__lcl_i_SystemInt32_9);// 11804
+}
+__lcl_i_SystemInt32_9 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_9);// 11836
+11844 JUMP 11516
+}
+11868 __0_GetMostExpensiveBoat__ret = __lcl_mostExpensive_VRCUdonUdonBehaviour_0
+11884 return;
+11904 return;
+void GetCheapestBoat()
+11984 if (__intnl_SystemBoolean_46) //12032
+{
+12008 __0_GetCheapestBoat__ret = __const_SystemObject_0
+12024 return;
+}
+__lcl_cheapest_VRCUdonUdonBehaviour_0 = G_boatEntries.Get(__const_SystemInt32_0);// 12056
+12080 __lcl_i_SystemInt32_10 = __const_SystemInt32_1
+12148 if (__intnl_SystemBoolean_47) //12420
+{
+12340 if (__intnl_SystemBoolean_48) //12380
+{
+__lcl_cheapest_VRCUdonUdonBehaviour_0 = G_boatEntries.Get(__lcl_i_SystemInt32_10);// 12372
+}
+__lcl_i_SystemInt32_10 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_10);// 12404
+12412 JUMP 12084
+}
+12436 __0_GetCheapestBoat__ret = __lcl_cheapest_VRCUdonUdonBehaviour_0
+12452 return;
+12472 return;
+void GetCurrentBoatIndex()
+12504 __0_GetCurrentBoatIndex__ret = currentlySelectedBoat
+12520 return;
+12540 return;
+void GetBoatCount()
+12596 if (__intnl_SystemBoolean_49) //12636
+{
+__0_GetBoatCount__ret = G_boatEntries.get_Length();// 12620
+12628 JUMP 12656
+}
+12652 __0_GetBoatCount__ret = __const_SystemInt32_0
+12668 return;
+12688 return;
+12736 __5__intnlparam = __intnl_VRCSDKBaseVRCPlayerApi_0
+12740 JUMP 13036
+12764 __0__intnlparam = __4__intnlparam
+12780 return;
+12800 return;
+__lcl_newArray_UnityEngineComponentArray_0 = op_Addition(__const_SystemInt32_1, __intnl_SystemInt32_36).ctor();// 12880
+L_availableBoats.CopyTo(__const_SystemInt32_0, __lcl_newArray_UnityEngineComponentArray_0);// 12912
+L_newArray.Set(__3__intnlparam, __intnl_SystemInt32_38);// 12968
+12992 __1__intnlparam = __lcl_newArray_UnityEngineComponentArray_0
+13008 return;
+13028 return;
+__lcl_objects_UnityEngineGameObjectArray_0 = GetPlayerObjects(__5__intnlparam);// 13052
+13076 __lcl_i_SystemInt32_11 = __const_SystemInt32_0
+13144 if (__intnl_SystemBoolean_50) //13472
+{
+13216 if (__intnl_SystemBoolean_51) //13232
+{
+13224 JUMP 13240
+}
+13232 JUMP 13432
+13320 __7__intnlparam = __intnl_UnityEngineTransform_0
+13324 JUMP 13532
+13348 __lcl_foundScript_VRCUdonUdonBehaviour_0 = __6__intnlparam
+13384 if (__intnl_SystemBoolean_52) //13432
+{
+13408 __4__intnlparam = __lcl_foundScript_VRCUdonUdonBehaviour_0
+13424 return;
+}
+__lcl_i_SystemInt32_11 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_11);// 13456
+13464 JUMP 13080
+}
+13488 __4__intnlparam = __const_SystemObject_0
+13504 return;
+13524 return;
+13580 __lcl_udonBehaviours_UnityEngineComponentArray_0 = __intnl_UnityEngineComponentArray_0
+13600 __lcl_targetID_SystemInt64_0 = __const_SystemInt64_0
+13644 __intnl_SystemInt32_41 = __const_SystemInt32_0
+13688 if (__intnl_SystemBoolean_53) //13980
+{
+__lcl_behaviour_VRCUdonUdonBehaviour_0 = L_objects.Get(__lcl_i_SystemInt32_11).get_transform().GetComponentsInChildren(__const_SystemType_0).Get(__intnl_SystemInt32_41);// 13720
+__lcl_idValue_SystemObject_0 = L_behaviour.GetProgramVariable(__const_SystemString_21);// 13752
+13800 if (__intnl_SystemBoolean_54) //13864
+{
+}
+13872 if (__intnl_SystemBoolean_54) //13940
+{
+13896 __intnl_UnityEngineComponent_0 = __lcl_behaviour_VRCUdonUdonBehaviour_0
+13916 __6__intnlparam = __intnl_UnityEngineComponent_0
+13932 return;
+}
+13972 JUMP 13648
+}
+13996 __6__intnlparam = __const_SystemObject_0
+14012 return;
+14032 return;

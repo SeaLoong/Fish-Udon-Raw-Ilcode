@@ -1,0 +1,125 @@
+using System;
+using VRC.SDKBase;
+using UnityEngine;
+using VRC.Udon;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+public Int32 syncedShaderModifier;
+public Int32 syncedLineId;
+private VRCPlayerApi __0_newOwner__param = null;
+private String __const_SystemString_0 = "ApplySyncedTrailColor";
+private Color __0_value__param = new Color(0f, 0f, 0f, 0f);
+public Single syncedFishYRotation;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_0 = null;
+private Int64 __refl_typeid = -5319160054241099425;
+public Boolean hasCaughtFish;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_1 = null;
+public Boolean syncedMinigameVFXActive;
+private object __const_SystemObject_0 = null;
+public UdonBehaviour rodController;
+private VRCPlayerApi onPlayerJoinedPlayer = null;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+public Int32 caughtFishIndex;
+private String __refl_typename = "RodSyncState";
+private Color _syncedTrailColor = new Color(0f, 0f, 0f, 1f);
+private String __const_SystemString_1 = "OnStateSyncReceived";
+public Int32 syncedBobberId;
+private Color __0_get_SyncedTrailColor__ret = new Color(0f, 0f, 0f, 0f);
+public Single caughtFishScale;
+private GameObject __this_UnityEngineGameObject_0 = this;
+private Color _old__syncedTrailColor = new Color(0f, 0f, 0f, 0f);
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+public Int32 syncedRodId;
+public Boolean isHiddenByDistance;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_0 = null;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_1 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_0 = this;
+
+
+public void get_SyncedTrailColor()
+{
+__0_get_SyncedTrailColor__ret = _syncedTrailColor;
+}
+public void _onVarChange__syncedTrailColor()
+{
+__0_value__param = _syncedTrailColor;
+_syncedTrailColor = _old__syncedTrailColor;
+_syncedTrailColor = __0_value__param;
+__intnl_UnityEngineObject_0 = rodController;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_0)
+{
+__intnl_VRCUdonUdonBehaviour_0 = rodController;
+rodController.SendCustomEvent(__const_SystemString_0);
+}
+}
+public void _onDeserialization()
+{
+__intnl_UnityEngineObject_2 = rodController;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_2 != __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_1)
+{
+__intnl_VRCUdonUdonBehaviour_1 = rodController;
+rodController.SendCustomEvent(__const_SystemString_1);
+}
+}
+public void _onPlayerJoined()
+{
+__intnl_SystemBoolean_2 = Networking.IsOwner(__this_UnityEngineGameObject_0);
+if (__intnl_SystemBoolean_2)
+{
+__this_VRCUdonUdonBehaviour_0.RequestSerialization();
+}
+}
+public void SyncNow()
+{
+__intnl_SystemBoolean_3 = Networking.IsOwner(__this_UnityEngineGameObject_0);
+if (__intnl_SystemBoolean_3)
+{
+}
+else
+{
+__intnl_VRCSDKBaseVRCPlayerApi_0 = Networking.LocalPlayer;
+Networking.SetOwner(__intnl_VRCSDKBaseVRCPlayerApi_0, __this_UnityEngineGameObject_0);
+}
+__this_VRCUdonUdonBehaviour_1.RequestSerialization();
+}
+public void __0_FollowOwnership()
+{
+__intnl_SystemBoolean_4 = __0_newOwner__param == __const_SystemObject_0;
+if (__intnl_SystemBoolean_4)
+{
+}
+else
+{
+__intnl_SystemBoolean_5 = __0_newOwner__param.IsValid();
+__intnl_SystemBoolean_4 = !__intnl_SystemBoolean_5;
+}
+if (__intnl_SystemBoolean_4)
+{
+return;
+}
+__intnl_SystemBoolean_6 = Networking.IsOwner(__0_newOwner__param, __this_UnityEngineGameObject_0);
+if (__intnl_SystemBoolean_6)
+{
+}
+else
+{
+Networking.SetOwner(__0_newOwner__param, __this_UnityEngineGameObject_0);
+}
+}
+}

@@ -1,0 +1,147 @@
+void _start()
+24 __intnl_UnityEngineObject_0 = claimVFX
+44 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+88 if (__intnl_SystemBoolean_0) //120
+{
+G_claimVFX.SetActive(__const_SystemBoolean_0);// 112
+}
+132 return;
+void RefreshUI()
+164 __intnl_UnityEngineObject_2 = rewardManager
+184 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+228 if (__intnl_SystemBoolean_1) //256
+{
+248 return;
+}
+272 isInitialized = __const_SystemBoolean_1
+284 JUMP 732
+300 JUMP 1188
+316 JUMP 1708
+336 return;
+void OnRewardClaimed()
+360 JUMP 2832
+376 JUMP 148
+this.SendCustomEventDelayedSeconds(__const_VRCUdonCommonEnumsEventTiming_0, __const_SystemSingle_0, __const_SystemString_0);// 416
+436 return;
+void ClosePanel()
+468 __intnl_UnityEngineObject_4 = panelRoot
+488 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+532 if (__intnl_SystemBoolean_2) //564
+{
+G_panelRoot.SetActive(__const_SystemBoolean_0);// 556
+}
+576 return;
+void OpenPanel()
+608 __intnl_UnityEngineObject_6 = panelRoot
+628 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+672 if (__intnl_SystemBoolean_3) //704
+{
+G_panelRoot.SetActive(__const_SystemBoolean_1);// 696
+}
+716 return;
+748 __intnl_UnityEngineObject_8 = headerText
+768 __intnl_UnityEngineObject_9 = __const_SystemObject_0
+812 if (__intnl_SystemBoolean_4) //840
+{
+832 return;
+}
+864 __intnl_VRCUdonUdonBehaviour_0 = rewardManager
+G_rewardManager.SendCustomEvent(__const_SystemString_1);// 876
+932 __intnl_SystemBoolean_5 = __intnl_SystemObject_0
+944 if (__intnl_SystemBoolean_5) //1136
+{
+976 __intnl_VRCUdonUdonBehaviour_1 = rewardManager
+996 __intnl_TMProTextMeshProUGUI_0 = headerText
+G_rewardManager.SendCustomEvent(__const_SystemString_4);// 1008
+G_headerText.set_text(__intnl_SystemString_0);// 1120
+1128 JUMP 1160
+}
+G_headerText.set_text(__const_SystemString_6);// 1152
+1172 return;
+1204 __intnl_UnityEngineObject_10 = weekInfoText
+1224 __intnl_UnityEngineObject_11 = __const_SystemObject_0
+1268 if (__intnl_SystemBoolean_6) //1296
+{
+1288 return;
+}
+1320 __intnl_VRCUdonUdonBehaviour_2 = rewardManager
+G_rewardManager.SendCustomEvent(__const_SystemString_7);// 1332
+1412 __lcl_week_SystemInt32_0 = __intnl_SystemInt32_1
+1440 __intnl_VRCUdonUdonBehaviour_3 = rewardManager
+G_rewardManager.SendCustomEvent(__const_SystemString_9);// 1452
+1508 __intnl_SystemBoolean_7 = __intnl_SystemObject_3
+1520 if (__intnl_SystemBoolean_7) //1592
+{
+G_weekInfoText.set_text(__intnl_SystemString_1);// 1576
+1584 JUMP 1680
+}
+G_weekInfoText.set_text(__intnl_SystemString_2);// 1672
+1692 return;
+1748 if (__intnl_SystemBoolean_8) //1776
+{
+1768 return;
+}
+1792 __lcl_i_SystemInt32_0 = __const_SystemInt32_0
+1860 if (__intnl_SystemBoolean_9) //1900
+{
+}
+1908 if (__intnl_SystemBoolean_9) //2804
+{
+1964 __intnl_UnityEngineObject_12 = __intnl_VRCUdonUdonBehaviour_4
+1984 __intnl_UnityEngineObject_13 = __const_SystemObject_0
+2028 if (__intnl_SystemBoolean_10) //2044
+{
+2036 JUMP 2764
+}
+__lcl_day_SystemInt32_0 = op_Addition(__const_SystemInt32_2, __lcl_i_SystemInt32_0);// 2068
+G_rewardManager.SetProgramVariable(__lcl_day_SystemInt32_0, __const_SystemString_13);// 2100
+G_rewardManager.SetProgramVariable(__lcl_rewardName_SystemString_0, __const_SystemString_14);// 2132
+G_rewardManager.SetProgramVariable(__lcl_rewardIcon_UnityEngineSprite_0, __const_SystemString_15);// 2164
+G_rewardManager.SetProgramVariable(__lcl_isClaimed_SystemBoolean_0, __const_SystemString_16);// 2196
+G_rewardManager.SetProgramVariable(__lcl_isCurrentDay_SystemBoolean_0, __const_SystemString_17);// 2228
+G_rewardManager.SendCustomEvent(__const_SystemString_18);// 2252
+2276 __intnl_SystemString_3 = __lcl_rewardName_SystemString_0
+2328 __lcl_rewardName_SystemString_0 = __intnl_SystemObject_4
+2348 __intnl_UnityEngineSprite_0 = __lcl_rewardIcon_UnityEngineSprite_0
+2400 __lcl_rewardIcon_UnityEngineSprite_0 = __intnl_SystemObject_5
+2420 __intnl_SystemBoolean_11 = __lcl_isClaimed_SystemBoolean_0
+2472 __lcl_isClaimed_SystemBoolean_0 = __intnl_SystemObject_6
+2492 __intnl_SystemBoolean_12 = __lcl_isCurrentDay_SystemBoolean_0
+2544 __lcl_isCurrentDay_SystemBoolean_0 = __intnl_SystemObject_7
+G_daySlots.Get(__lcl_i_SystemInt32_0).SetProgramVariable(__lcl_day_SystemInt32_0, __const_SystemString_19);// 2604
+G_daySlots.Get(__lcl_i_SystemInt32_0).SetProgramVariable(__lcl_rewardName_SystemString_0, __const_SystemString_14);// 2636
+G_daySlots.Get(__lcl_i_SystemInt32_0).SetProgramVariable(__lcl_rewardIcon_UnityEngineSprite_0, __const_SystemString_15);// 2668
+G_daySlots.Get(__lcl_i_SystemInt32_0).SetProgramVariable(__lcl_isClaimed_SystemBoolean_0, __const_SystemString_20);// 2700
+G_daySlots.Get(__lcl_i_SystemInt32_0).SetProgramVariable(__lcl_isCurrentDay_SystemBoolean_0, __const_SystemString_21);// 2732
+G_daySlots.Get(__lcl_i_SystemInt32_0).SendCustomEvent(__const_SystemString_22);// 2756
+__lcl_i_SystemInt32_0 = op_Addition(__const_SystemInt32_2, __lcl_i_SystemInt32_0);// 2788
+2796 JUMP 1796
+}
+2816 return;
+2848 __intnl_UnityEngineObject_14 = audioSource
+2868 __intnl_UnityEngineObject_15 = __const_SystemObject_0
+2912 if (__intnl_SystemBoolean_13) //2992
+{
+2936 __intnl_UnityEngineObject_16 = claimSound
+2956 __intnl_UnityEngineObject_17 = __const_SystemObject_0
+}
+3000 if (__intnl_SystemBoolean_13) //3032
+{
+G_audioSource.PlayOneShot(claimSound);// 3024
+}
+3048 __intnl_UnityEngineObject_18 = claimVFX
+3068 __intnl_UnityEngineObject_19 = __const_SystemObject_0
+3112 if (__intnl_SystemBoolean_14) //3184
+{
+G_claimVFX.SetActive(__const_SystemBoolean_1);// 3136
+this.SendCustomEventDelayedSeconds(__const_VRCUdonCommonEnumsEventTiming_0, __const_SystemSingle_1, __const_SystemString_23);// 3176
+}
+3196 return;
+void HideClaimVFX()
+3228 __intnl_UnityEngineObject_20 = claimVFX
+3248 __intnl_UnityEngineObject_21 = __const_SystemObject_0
+3292 if (__intnl_SystemBoolean_15) //3324
+{
+G_claimVFX.SetActive(__const_SystemBoolean_0);// 3316
+}
+3336 return;

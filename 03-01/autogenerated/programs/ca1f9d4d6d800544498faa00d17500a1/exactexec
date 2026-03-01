@@ -1,0 +1,1031 @@
+using System;
+using UnityEngine.UI;
+using UnityEngine;
+using VRC.Udon;
+using VRC.SDKBase;
+using VRC.Economy;
+using VRC.Udon.Common.Enums;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Single __const_SystemSingle_8 = 0.6666667f;
+private Boolean __intnl_SystemBoolean_13 = false;
+private Boolean __intnl_SystemBoolean_23 = false;
+private Boolean __intnl_SystemBoolean_33 = false;
+private Boolean __intnl_SystemBoolean_43 = false;
+private Boolean __intnl_SystemBoolean_53 = false;
+private UInt32 __gintnl_SystemUInt32_16 = 3860;
+private UInt32 __gintnl_SystemUInt32_26 = 6220;
+private Single __intnl_SystemSingle_20 = 0f;
+private Single __intnl_SystemSingle_21 = 0f;
+private Single __intnl_SystemSingle_22 = 0f;
+private Single __intnl_SystemSingle_23 = 0f;
+private Single __intnl_SystemSingle_24 = 0f;
+private Single __intnl_SystemSingle_25 = 0f;
+private Single __intnl_SystemSingle_26 = 0f;
+private Int64 __const_SystemInt64_0 = 101180356198669697;
+private Single currentHue = 0f;
+public Slider intensitySlider;
+private Material __intnl_UnityEngineMaterial_1 = null;
+private Material __intnl_UnityEngineMaterial_0 = null;
+private String __intnl_SystemString_1 = null;
+private Object __intnl_UnityEngineObject_62 = null;
+private Object __intnl_UnityEngineObject_52 = null;
+private Object __intnl_UnityEngineObject_42 = null;
+private Object __intnl_UnityEngineObject_32 = null;
+private Object __intnl_UnityEngineObject_22 = null;
+private Object __intnl_UnityEngineObject_12 = null;
+public Color defaultTrailColor;
+private Single __intnl_SystemSingle_0 = 0f;
+private Color __0___0_HSLToRGB__ret = new Color(0f, 0f, 0f, 0f);
+private String __const_SystemString_0 = "__0_hdrColor__param";
+private Transform __intnl_UnityEngineTransform_0 = null;
+private Single __const_SystemSingle_0 = 0f;
+private Boolean __intnl_SystemBoolean_16 = false;
+private Boolean __intnl_SystemBoolean_26 = false;
+private Boolean __intnl_SystemBoolean_36 = false;
+private Boolean __intnl_SystemBoolean_46 = false;
+private Boolean __intnl_SystemBoolean_56 = false;
+private Color __lcl_hdrColor_UnityEngineColor_0 = new Color(0f, 0f, 0f, 0f);
+private Color __lcl_hdrColor_UnityEngineColor_1 = new Color(0f, 0f, 0f, 0f);
+private Single __intnl_SystemSingle_10 = 0f;
+private Single __intnl_SystemSingle_11 = 0f;
+private Single __intnl_SystemSingle_12 = 0f;
+private Single __intnl_SystemSingle_13 = 0f;
+private Single __intnl_SystemSingle_14 = 0f;
+private Single __intnl_SystemSingle_15 = 0f;
+private Single __intnl_SystemSingle_16 = 0f;
+private Single __intnl_SystemSingle_17 = 0f;
+private Single __intnl_SystemSingle_18 = 0f;
+private Single __intnl_SystemSingle_19 = 0f;
+private Boolean isSupporter = false;
+private Single __intnl_SystemSingle_8 = 0f;
+private UInt32 __gintnl_SystemUInt32_9 = 1524;
+private UInt32 __gintnl_SystemUInt32_8 = 1508;
+private UInt32 __gintnl_SystemUInt32_5 = 564;
+private UInt32 __gintnl_SystemUInt32_4 = 288;
+private UInt32 __gintnl_SystemUInt32_7 = 1044;
+private UInt32 __gintnl_SystemUInt32_6 = 1028;
+private UInt32 __gintnl_SystemUInt32_1 = 144;
+private UInt32 __gintnl_SystemUInt32_0 = 128;
+private UInt32 __gintnl_SystemUInt32_3 = 272;
+private UInt32 __gintnl_SystemUInt32_2 = 256;
+private Boolean __const_SystemBoolean_0 = true;
+private Boolean __const_SystemBoolean_1 = false;
+private Object __intnl_UnityEngineObject_61 = null;
+private Object __intnl_UnityEngineObject_51 = null;
+private Object __intnl_UnityEngineObject_41 = null;
+private Object __intnl_UnityEngineObject_31 = null;
+private Object __intnl_UnityEngineObject_21 = null;
+private Object __intnl_UnityEngineObject_11 = null;
+private Color __lcl_trailColor_UnityEngineColor_0 = new Color(0f, 0f, 0f, 0f);
+private String __const_SystemString_5 = "SUPPORTER_TRAIL_SAT";
+private Single __const_SystemSingle_7 = 6f;
+private UInt32 __gintnl_SystemUInt32_13 = 3396;
+private UInt32 __gintnl_SystemUInt32_23 = 4604;
+private UdonBehaviour __3__intnlparam = null;
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Boolean _trailSaveScheduled = false;
+private Single currentLightness = 0.15f;
+private VRCPlayerApi onPlayerRestoredPlayer = null;
+private Object __intnl_UnityEngineObject_59 = null;
+private Object __intnl_UnityEngineObject_49 = null;
+private Object __intnl_UnityEngineObject_39 = null;
+private Object __intnl_UnityEngineObject_29 = null;
+private Object __intnl_UnityEngineObject_19 = null;
+private Single __intnl_SystemSingle_7 = 0f;
+private VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_0 = null;
+private Object __intnl_UnityEngineObject_54 = null;
+private Object __intnl_UnityEngineObject_44 = null;
+private Object __intnl_UnityEngineObject_34 = null;
+private Object __intnl_UnityEngineObject_24 = null;
+private Object __intnl_UnityEngineObject_14 = null;
+private Int64 __refl_typeid = 7981217609164212806;
+private Color __1_color__param = new Color(0f, 0f, 0f, 0f);
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Component __intnl_UnityEngineComponent_0 = null;
+private Boolean __intnl_SystemBoolean_11 = false;
+private Boolean __intnl_SystemBoolean_21 = false;
+private Boolean __intnl_SystemBoolean_31 = false;
+private Boolean __intnl_SystemBoolean_41 = false;
+private Boolean __intnl_SystemBoolean_51 = false;
+private Single __lcl_b_SystemSingle_0 = 0f;
+private UInt32 __gintnl_SystemUInt32_14 = 3620;
+private UInt32 __gintnl_SystemUInt32_24 = 5996;
+private Single __lcl_g_SystemSingle_0 = 0f;
+private Single currentIntensity = 0.15f;
+private Single __lcl_q_SystemSingle_0 = 0f;
+public GameObject trailCustomizationPanel;
+private String __intnl_SystemString_3 = null;
+private UdonBehaviour __0__intnlparam = null;
+private Single __intnl_SystemSingle_2 = 0f;
+private String __const_SystemString_2 = "_TintColor";
+private Color __lcl_previewColor_UnityEngineColor_0 = new Color(0f, 0f, 0f, 0f);
+private Color __const_UnityEngineColor_0 = new Color(0f, 0f, 0f, 0f);
+private Single __const_SystemSingle_2 = 0.1f;
+private Color __intnl_UnityEngineColor_0 = new Color(0f, 0f, 0f, 0f);
+private Boolean __intnl_SystemBoolean_19 = false;
+private Boolean __intnl_SystemBoolean_29 = false;
+private Boolean __intnl_SystemBoolean_39 = false;
+private Boolean __intnl_SystemBoolean_49 = false;
+private UdonBehaviour __lcl_foundScript_VRCUdonUdonBehaviour_0 = null;
+private GameObject __intnl_UnityEngineGameObject_1 = null;
+private GameObject __intnl_UnityEngineGameObject_0 = null;
+private Single __const_SystemSingle_9 = 3f;
+private Boolean __intnl_SystemBoolean_14 = false;
+private Boolean __intnl_SystemBoolean_24 = false;
+private Boolean __intnl_SystemBoolean_34 = false;
+private Boolean __intnl_SystemBoolean_44 = false;
+private Boolean __intnl_SystemBoolean_54 = false;
+private Component[] __intnl_UnityEngineComponentArray_0 = null;
+private object __const_SystemObject_0 = null;
+private Boolean _trailSaveDirty = false;
+private String __intnl_SystemString_0 = null;
+private Object __intnl_UnityEngineObject_63 = null;
+private Object __intnl_UnityEngineObject_53 = null;
+private Object __intnl_UnityEngineObject_43 = null;
+private Object __intnl_UnityEngineObject_33 = null;
+private Object __intnl_UnityEngineObject_23 = null;
+private Object __intnl_UnityEngineObject_13 = null;
+private Type __const_SystemType_0 = typeof(UdonBehaviour);
+private IProduct onPurchaseExpiredResult = null;
+private Single __intnl_SystemSingle_1 = 0f;
+public Boolean debugBypassOwnership;
+private String __const_SystemString_7 = "SUPPORTER_TRAIL_INTENSITY";
+private Component __4__intnlparam = null;
+private Single __const_SystemSingle_1 = 1f;
+public Slider lightnessSlider;
+private UInt32 __gintnl_SystemUInt32_11 = 3156;
+private UInt32 __gintnl_SystemUInt32_31 = 9504;
+private UInt32 __gintnl_SystemUInt32_21 = 4436;
+private Boolean __intnl_SystemBoolean_17 = false;
+private Boolean __intnl_SystemBoolean_27 = false;
+private Boolean __intnl_SystemBoolean_37 = false;
+private Boolean __intnl_SystemBoolean_47 = false;
+private EventTiming __const_VRCUdonCommonEnumsEventTiming_0 = EventTiming.Update;
+private Single __intnl_SystemSingle_9 = 0f;
+private Object __intnl_UnityEngineObject_56 = null;
+private Object __intnl_UnityEngineObject_46 = null;
+private Object __intnl_UnityEngineObject_36 = null;
+private Object __intnl_UnityEngineObject_26 = null;
+private Object __intnl_UnityEngineObject_16 = null;
+private Int64 __intnl_SystemInt64_0 = 0;
+private VRCPlayerApi onPurchaseConfirmedPlayer = null;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private Color __0_color__param = new Color(0f, 0f, 0f, 0f);
+private String __const_SystemString_4 = "SUPPORTER_TRAIL_HUE";
+private Boolean initialized = false;
+private UInt32 __gintnl_SystemUInt32_19 = 4004;
+private UInt32 __gintnl_SystemUInt32_29 = 9416;
+private Single __const_SystemSingle_4 = 0.5f;
+private UInt32 __gintnl_SystemUInt32_12 = 3380;
+private UInt32 __gintnl_SystemUInt32_32 = 9860;
+private UInt32 __gintnl_SystemUInt32_22 = 4560;
+private Int32 __lcl_i_SystemInt32_0 = 0;
+private IProduct onPurchaseConfirmedResult = null;
+public Slider hueSlider;
+private UdonBehaviour __lcl_behaviour_VRCUdonUdonBehaviour_0 = null;
+public GameObject lockedOverlay;
+private Single __0___0_HueToRGB__ret = 0f;
+private VRCPlayerApi onPurchaseExpiredPlayer = null;
+private Single __intnl_SystemSingle_4 = 0f;
+private UdonBehaviour __1__intnlparam = null;
+private Object __intnl_UnityEngineObject_55 = null;
+private Object __intnl_UnityEngineObject_45 = null;
+private Object __intnl_UnityEngineObject_35 = null;
+private Object __intnl_UnityEngineObject_25 = null;
+private Object __intnl_UnityEngineObject_15 = null;
+private Boolean trailEnabled = true;
+private UdonBehaviour __lcl_localRod_VRCUdonUdonBehaviour_0 = null;
+private TrailRenderer __1_tr__param = null;
+private Single currentSaturation = 0f;
+private TrailRenderer __0_tr__param = null;
+private String __const_SystemString_9 = "__refl_typeid";
+private Boolean __intnl_SystemBoolean_12 = false;
+private Boolean __intnl_SystemBoolean_22 = false;
+private Boolean __intnl_SystemBoolean_32 = false;
+private Boolean __intnl_SystemBoolean_42 = false;
+private Boolean __intnl_SystemBoolean_52 = false;
+private UInt32 __gintnl_SystemUInt32_17 = 3876;
+private UInt32 __gintnl_SystemUInt32_27 = 8348;
+private String __refl_typename = "SupporterTrailManager";
+public Button openPanelButton;
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private String __intnl_SystemString_2 = null;
+private Single __0_h__param = 0f;
+private Single __0_l__param = 0f;
+private Single __0_s__param = 0f;
+private Single __0_p__param = 0f;
+private Single __0_t__param = 0f;
+private Single __0_q__param = 0f;
+private Single __intnl_SystemSingle_3 = 0f;
+private IProduct __intnl_VRCEconomyIProduct_0 = null;
+private Int64 __lcl_targetID_SystemInt64_0 = 0;
+private String __const_SystemString_1 = "__0_SetTrailColor";
+private Single __const_SystemSingle_3 = 2f;
+private object __lcl_idValue_SystemObject_0 = null;
+private Boolean __intnl_SystemBoolean_15 = false;
+private Boolean __intnl_SystemBoolean_25 = false;
+private Boolean __intnl_SystemBoolean_35 = false;
+private Boolean __intnl_SystemBoolean_45 = false;
+private Boolean __intnl_SystemBoolean_55 = false;
+private Object __intnl_UnityEngineObject_60 = null;
+private Object __intnl_UnityEngineObject_50 = null;
+private Object __intnl_UnityEngineObject_40 = null;
+private Object __intnl_UnityEngineObject_30 = null;
+private Object __intnl_UnityEngineObject_20 = null;
+private Object __intnl_UnityEngineObject_10 = null;
+private String __const_SystemString_6 = "SUPPORTER_TRAIL_LIGHT";
+private Single __const_SystemSingle_6 = 0.1666667f;
+private UInt32 __gintnl_SystemUInt32_10 = 3140;
+private UInt32 __gintnl_SystemUInt32_30 = 9432;
+private UInt32 __gintnl_SystemUInt32_20 = 4180;
+public Slider saturationSlider;
+private Single __lcl_r_SystemSingle_0 = 0f;
+private VRCPlayerApi localPlayer = null;
+private Object __intnl_UnityEngineObject_58 = null;
+private Object __intnl_UnityEngineObject_48 = null;
+private Object __intnl_UnityEngineObject_38 = null;
+private Object __intnl_UnityEngineObject_28 = null;
+private Object __intnl_UnityEngineObject_18 = null;
+private Single __intnl_SystemSingle_6 = 0f;
+private Object __intnl_UnityEngineObject_57 = null;
+private Object __intnl_UnityEngineObject_47 = null;
+private Object __intnl_UnityEngineObject_37 = null;
+private Object __intnl_UnityEngineObject_27 = null;
+private Object __intnl_UnityEngineObject_17 = null;
+public UdonProduct supporterProduct;
+private UInt32 __gintnl_SystemUInt32_18 = 3988;
+private UInt32 __gintnl_SystemUInt32_28 = 8500;
+private Single __const_SystemSingle_5 = 0.3333333f;
+private VRCPlayerApi __2__intnlparam = null;
+private GameObject[] __lcl_objects_UnityEngineGameObjectArray_0 = null;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Boolean __intnl_SystemBoolean_20 = false;
+private Boolean __intnl_SystemBoolean_30 = false;
+private Boolean __intnl_SystemBoolean_40 = false;
+private Boolean __intnl_SystemBoolean_50 = false;
+private UInt32 __gintnl_SystemUInt32_15 = 3636;
+private UInt32 __gintnl_SystemUInt32_25 = 6092;
+private Int32 __const_SystemInt32_1 = 1;
+private Int32 __const_SystemInt32_0 = 0;
+private Component[] __lcl_udonBehaviours_UnityEngineComponentArray_0 = null;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private Boolean onPurchaseConfirmedPurchasedNow = false;
+public Image colorPreview;
+private Single __intnl_SystemSingle_5 = 0f;
+private Single __const_SystemSingle_10 = 0.15f;
+private Single __lcl_p_SystemSingle_0 = 0f;
+private String __const_SystemString_3 = "_FlushTrailSave";
+private UdonBehaviour __this_VRCUdonUdonBehaviour_0 = this;
+private String __const_SystemString_8 = "SUPPORTER_TRAIL_ENABLED";
+private Boolean __intnl_SystemBoolean_18 = false;
+private Boolean __intnl_SystemBoolean_28 = false;
+private Boolean __intnl_SystemBoolean_38 = false;
+private Boolean __intnl_SystemBoolean_48 = false;
+
+
+public void _start()
+{
+localPlayer = Networking.LocalPlayer;
+__intnl_UnityEngineObject_0 = supporterProduct;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_0 == __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_0)
+{
+}
+UNDEF_ca1f9_2936();
+UNDEF_ca1f9_2268();
+}
+public void _onPlayerRestored()
+{
+__intnl_SystemBoolean_1 = onPlayerRestoredPlayer.isLocal;
+if (__intnl_SystemBoolean_1)
+{
+UNDEF_ca1f9_328();
+}
+}
+private void UNDEF_ca1f9_328()
+{
+UNDEF_ca1f9_584();
+UNDEF_ca1f9_8308();
+UNDEF_ca1f9_4580();
+initialized = __const_SystemBoolean_0;
+}
+private void UNDEF_ca1f9_584()
+{
+if (debugBypassOwnership)
+{
+isSupporter = __const_SystemBoolean_0;
+}
+else
+{
+__intnl_UnityEngineObject_2 = supporterProduct;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_2 = __intnl_UnityEngineObject_2 != __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_2)
+{
+__intnl_VRCEconomyIProduct_0 = supporterProduct;
+isSupporter = Store.DoesPlayerOwnProduct(localPlayer, __intnl_VRCEconomyIProduct_0);
+}
+else
+{
+isSupporter = __const_SystemBoolean_1;
+}
+}
+UNDEF_ca1f9_2268();
+}
+public void _onPurchaseConfirmed()
+{
+__intnl_SystemBoolean_3 = onPurchaseConfirmedPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_3)
+{
+}
+else
+{
+__intnl_SystemBoolean_4 = onPurchaseConfirmedPlayer.isLocal;
+__intnl_SystemBoolean_3 = !__intnl_SystemBoolean_4;
+}
+if (__intnl_SystemBoolean_3)
+{
+return;
+}
+__intnl_UnityEngineObject_4 = supporterProduct;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_5 = __intnl_UnityEngineObject_4 == __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_5)
+{
+}
+else
+{
+__intnl_SystemBoolean_5 = onPurchaseConfirmedResult == __const_SystemObject_0;
+}
+if (__intnl_SystemBoolean_5)
+{
+return;
+}
+__intnl_SystemString_0 = onPurchaseConfirmedResult.ID;
+__intnl_SystemString_1 = supporterProduct.ID;
+__intnl_SystemBoolean_6 = __intnl_SystemString_0 == __intnl_SystemString_1;
+if (__intnl_SystemBoolean_6)
+{
+isSupporter = __const_SystemBoolean_0;
+UNDEF_ca1f9_2268();
+UNDEF_ca1f9_4580();
+}
+}
+public void _onPurchaseExpired()
+{
+__intnl_SystemBoolean_7 = onPurchaseExpiredPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_7)
+{
+}
+else
+{
+__intnl_SystemBoolean_8 = onPurchaseExpiredPlayer.isLocal;
+__intnl_SystemBoolean_7 = !__intnl_SystemBoolean_8;
+}
+if (__intnl_SystemBoolean_7)
+{
+return;
+}
+__intnl_UnityEngineObject_6 = supporterProduct;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_9 = __intnl_UnityEngineObject_6 == __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_9)
+{
+}
+else
+{
+__intnl_SystemBoolean_9 = onPurchaseExpiredResult == __const_SystemObject_0;
+}
+if (__intnl_SystemBoolean_9)
+{
+return;
+}
+__intnl_SystemString_2 = onPurchaseExpiredResult.ID;
+__intnl_SystemString_3 = supporterProduct.ID;
+__intnl_SystemBoolean_10 = __intnl_SystemString_2 == __intnl_SystemString_3;
+if (__intnl_SystemBoolean_10)
+{
+isSupporter = __const_SystemBoolean_1;
+UNDEF_ca1f9_2268();
+UNDEF_ca1f9_4580();
+}
+}
+private void UNDEF_ca1f9_2268()
+{
+__intnl_UnityEngineObject_8 = lockedOverlay;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_11 = __intnl_UnityEngineObject_8 != __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_11)
+{
+__intnl_SystemBoolean_12 = !isSupporter;
+lockedOverlay.SetActive(__intnl_SystemBoolean_12);
+}
+__intnl_UnityEngineObject_10 = openPanelButton;
+__intnl_UnityEngineObject_11 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_12 = __intnl_UnityEngineObject_10 != __intnl_UnityEngineObject_11;
+if (__intnl_SystemBoolean_12)
+{
+openPanelButton.interactable = isSupporter;
+}
+__intnl_UnityEngineObject_12 = hueSlider;
+__intnl_UnityEngineObject_13 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_13 = __intnl_UnityEngineObject_12 != __intnl_UnityEngineObject_13;
+if (__intnl_SystemBoolean_13)
+{
+hueSlider.interactable = isSupporter;
+}
+__intnl_UnityEngineObject_14 = saturationSlider;
+__intnl_UnityEngineObject_15 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_14 = __intnl_UnityEngineObject_14 != __intnl_UnityEngineObject_15;
+if (__intnl_SystemBoolean_14)
+{
+saturationSlider.interactable = isSupporter;
+}
+__intnl_UnityEngineObject_16 = lightnessSlider;
+__intnl_UnityEngineObject_17 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_15 = __intnl_UnityEngineObject_16 != __intnl_UnityEngineObject_17;
+if (__intnl_SystemBoolean_15)
+{
+lightnessSlider.interactable = isSupporter;
+}
+__intnl_UnityEngineObject_18 = intensitySlider;
+__intnl_UnityEngineObject_19 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_16 = __intnl_UnityEngineObject_18 != __intnl_UnityEngineObject_19;
+if (__intnl_SystemBoolean_16)
+{
+intensitySlider.interactable = isSupporter;
+}
+}
+private void UNDEF_ca1f9_2936()
+{
+__intnl_UnityEngineObject_20 = hueSlider;
+__intnl_UnityEngineObject_21 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_17 = __intnl_UnityEngineObject_20 != __intnl_UnityEngineObject_21;
+if (__intnl_SystemBoolean_17)
+{
+hueSlider.minValue = __const_SystemSingle_0;
+hueSlider.maxValue = __const_SystemSingle_1;
+hueSlider.value = currentHue;
+}
+__intnl_UnityEngineObject_22 = saturationSlider;
+__intnl_UnityEngineObject_23 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_18 = __intnl_UnityEngineObject_22 != __intnl_UnityEngineObject_23;
+if (__intnl_SystemBoolean_18)
+{
+saturationSlider.minValue = __const_SystemSingle_0;
+saturationSlider.maxValue = __const_SystemSingle_1;
+saturationSlider.value = currentSaturation;
+}
+__intnl_UnityEngineObject_24 = lightnessSlider;
+__intnl_UnityEngineObject_25 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_19 = __intnl_UnityEngineObject_24 != __intnl_UnityEngineObject_25;
+if (__intnl_SystemBoolean_19)
+{
+lightnessSlider.minValue = __const_SystemSingle_2;
+lightnessSlider.maxValue = __const_SystemSingle_1;
+lightnessSlider.value = currentLightness;
+}
+__intnl_UnityEngineObject_26 = intensitySlider;
+__intnl_UnityEngineObject_27 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_20 = __intnl_UnityEngineObject_26 != __intnl_UnityEngineObject_27;
+if (__intnl_SystemBoolean_20)
+{
+intensitySlider.minValue = __const_SystemSingle_0;
+intensitySlider.maxValue = __const_SystemSingle_3;
+intensitySlider.value = currentIntensity;
+}
+}
+public void OnHueChanged()
+{
+__intnl_SystemBoolean_21 = !isSupporter;
+if (__intnl_SystemBoolean_21)
+{
+}
+else
+{
+__intnl_UnityEngineObject_28 = hueSlider;
+__intnl_UnityEngineObject_29 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_21 = __intnl_UnityEngineObject_28 == __intnl_UnityEngineObject_29;
+}
+if (__intnl_SystemBoolean_21)
+{
+return;
+}
+currentHue = hueSlider.value;
+UNDEF_ca1f9_4580();
+UNDEF_ca1f9_7200();
+}
+public void OnSaturationChanged()
+{
+__intnl_SystemBoolean_22 = !isSupporter;
+if (__intnl_SystemBoolean_22)
+{
+}
+else
+{
+__intnl_UnityEngineObject_30 = saturationSlider;
+__intnl_UnityEngineObject_31 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_22 = __intnl_UnityEngineObject_30 == __intnl_UnityEngineObject_31;
+}
+if (__intnl_SystemBoolean_22)
+{
+return;
+}
+currentSaturation = saturationSlider.value;
+UNDEF_ca1f9_4580();
+UNDEF_ca1f9_7200();
+}
+public void OnLightnessChanged()
+{
+__intnl_SystemBoolean_23 = !isSupporter;
+if (__intnl_SystemBoolean_23)
+{
+}
+else
+{
+__intnl_UnityEngineObject_32 = lightnessSlider;
+__intnl_UnityEngineObject_33 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_23 = __intnl_UnityEngineObject_32 == __intnl_UnityEngineObject_33;
+}
+if (__intnl_SystemBoolean_23)
+{
+return;
+}
+currentLightness = lightnessSlider.value;
+UNDEF_ca1f9_4580();
+UNDEF_ca1f9_7200();
+}
+public void OnIntensityChanged()
+{
+__intnl_SystemBoolean_24 = !isSupporter;
+if (__intnl_SystemBoolean_24)
+{
+}
+else
+{
+__intnl_UnityEngineObject_34 = intensitySlider;
+__intnl_UnityEngineObject_35 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_24 = __intnl_UnityEngineObject_34 == __intnl_UnityEngineObject_35;
+}
+if (__intnl_SystemBoolean_24)
+{
+return;
+}
+currentIntensity = intensitySlider.value;
+UNDEF_ca1f9_4580();
+UNDEF_ca1f9_7200();
+}
+public void OnTrailToggle()
+{
+if (isSupporter)
+{
+UNDEF_ca1f9_4024();
+}
+}
+private void UNDEF_ca1f9_4024()
+{
+trailEnabled = !trailEnabled;
+UNDEF_ca1f9_4580();
+UNDEF_ca1f9_7200();
+}
+private void UNDEF_ca1f9_4580()
+{
+__intnl_SystemBoolean_25 = isSupporter;
+if (__intnl_SystemBoolean_25)
+{
+__intnl_SystemBoolean_25 = trailEnabled;
+}
+if (__intnl_SystemBoolean_25)
+{
+__0_h__param = currentHue;
+__0_s__param = currentSaturation;
+__0_l__param = currentLightness;
+__0_HSLToRGB();
+__lcl_trailColor_UnityEngineColor_0 = __0___0_HSLToRGB__ret;
+}
+else
+{
+if (isSupporter)
+{
+__lcl_trailColor_UnityEngineColor_0 = __const_UnityEngineColor_0;
+}
+else
+{
+__lcl_trailColor_UnityEngineColor_0 = defaultTrailColor;
+}
+}
+__intnl_UnityEngineObject_36 = colorPreview;
+__intnl_UnityEngineObject_37 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_26 = __intnl_UnityEngineObject_36 != __intnl_UnityEngineObject_37;
+if (__intnl_SystemBoolean_26)
+{
+__0_h__param = currentHue;
+__0_s__param = currentSaturation;
+__0_l__param = currentLightness;
+__0_HSLToRGB();
+__lcl_previewColor_UnityEngineColor_0 = __0___0_HSLToRGB__ret;
+__lcl_previewColor_UnityEngineColor_0.a = __const_SystemSingle_1;
+__intnl_UnityEngineColor_0 = __lcl_previewColor_UnityEngineColor_0;
+colorPreview.color = __lcl_previewColor_UnityEngineColor_0;
+}
+__0_color__param = __lcl_trailColor_UnityEngineColor_0;
+UNDEF_ca1f9_5028();
+}
+private void UNDEF_ca1f9_5028()
+{
+UNDEF_ca1f9_9564();
+__lcl_localRod_VRCUdonUdonBehaviour_0 = __0__intnlparam;
+__intnl_UnityEngineObject_38 = __lcl_localRod_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_39 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_27 = __intnl_UnityEngineObject_38 != __intnl_UnityEngineObject_39;
+if (__intnl_SystemBoolean_27)
+{
+__intnl_SystemSingle_0 = __0_color__param.r;
+__intnl_SystemSingle_1 = __intnl_SystemSingle_0 * currentIntensity;
+__intnl_SystemSingle_2 = __0_color__param.g;
+__intnl_SystemSingle_3 = __intnl_SystemSingle_2 * currentIntensity;
+__intnl_SystemSingle_4 = __0_color__param.b;
+__intnl_SystemSingle_5 = __intnl_SystemSingle_4 * currentIntensity;
+__intnl_SystemSingle_6 = __0_color__param.a;
+__lcl_hdrColor_UnityEngineColor_0 = Color.ctor(__intnl_SystemSingle_1, __intnl_SystemSingle_3, __intnl_SystemSingle_5, __intnl_SystemSingle_6);
+__lcl_localRod_VRCUdonUdonBehaviour_0.SetProgramVariable(__const_SystemString_0, __lcl_hdrColor_UnityEngineColor_0);
+__lcl_localRod_VRCUdonUdonBehaviour_0.SendCustomEvent(__const_SystemString_1);
+}
+}
+private void UNDEF_ca1f9_5484()
+{
+__intnl_UnityEngineMaterial_0 = __0_tr__param.material;
+__intnl_UnityEngineObject_40 = __intnl_UnityEngineMaterial_0;
+__intnl_UnityEngineObject_41 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_28 = __intnl_UnityEngineObject_40 == __intnl_UnityEngineObject_41;
+if (__intnl_SystemBoolean_28)
+{
+return;
+}
+__intnl_SystemSingle_7 = __1_color__param.r;
+__intnl_SystemSingle_8 = __intnl_SystemSingle_7 * currentIntensity;
+__intnl_SystemSingle_9 = __1_color__param.g;
+__intnl_SystemSingle_10 = __intnl_SystemSingle_9 * currentIntensity;
+__intnl_SystemSingle_11 = __1_color__param.b;
+__intnl_SystemSingle_12 = __intnl_SystemSingle_11 * currentIntensity;
+__intnl_SystemSingle_13 = __1_color__param.a;
+__lcl_hdrColor_UnityEngineColor_1 = Color.ctor(__intnl_SystemSingle_8, __intnl_SystemSingle_10, __intnl_SystemSingle_12, __intnl_SystemSingle_13);
+__intnl_UnityEngineMaterial_1 = __0_tr__param.material;
+__intnl_UnityEngineMaterial_1.SetColor(__const_SystemString_2, __lcl_hdrColor_UnityEngineColor_1);
+}
+private void __0_HSLToRGB()
+{
+__intnl_SystemBoolean_29 = __0_s__param == __const_SystemSingle_0;
+if (__intnl_SystemBoolean_29)
+{
+__lcl_b_SystemSingle_0 = __0_l__param;
+__lcl_g_SystemSingle_0 = __0_l__param;
+__lcl_r_SystemSingle_0 = __0_l__param;
+}
+else
+{
+__intnl_SystemBoolean_30 = __0_l__param < __const_SystemSingle_4;
+if (__intnl_SystemBoolean_30)
+{
+__intnl_SystemSingle_14 = __const_SystemSingle_1 + __0_s__param;
+__lcl_q_SystemSingle_0 = __0_l__param * __intnl_SystemSingle_14;
+}
+else
+{
+__intnl_SystemSingle_15 = __0_l__param + __0_s__param;
+__intnl_SystemSingle_16 = __0_l__param * __0_s__param;
+__lcl_q_SystemSingle_0 = __intnl_SystemSingle_15 - __intnl_SystemSingle_16;
+}
+__intnl_SystemSingle_17 = __const_SystemSingle_3 * __0_l__param;
+__lcl_p_SystemSingle_0 = __intnl_SystemSingle_17 - __lcl_q_SystemSingle_0;
+__intnl_SystemSingle_18 = __0_h__param + __const_SystemSingle_5;
+__0_p__param = __lcl_p_SystemSingle_0;
+__0_q__param = __lcl_q_SystemSingle_0;
+__0_t__param = __intnl_SystemSingle_18;
+__0_HueToRGB();
+__lcl_r_SystemSingle_0 = __0___0_HueToRGB__ret;
+__0_p__param = __lcl_p_SystemSingle_0;
+__0_q__param = __lcl_q_SystemSingle_0;
+__0_t__param = __0_h__param;
+__0_HueToRGB();
+__lcl_g_SystemSingle_0 = __0___0_HueToRGB__ret;
+__intnl_SystemSingle_19 = __0_h__param - __const_SystemSingle_5;
+__0_p__param = __lcl_p_SystemSingle_0;
+__0_q__param = __lcl_q_SystemSingle_0;
+__0_t__param = __intnl_SystemSingle_19;
+__0_HueToRGB();
+__lcl_b_SystemSingle_0 = __0___0_HueToRGB__ret;
+}
+__0___0_HSLToRGB__ret = Color.ctor(__lcl_r_SystemSingle_0, __lcl_g_SystemSingle_0, __lcl_b_SystemSingle_0, __const_SystemSingle_1);
+return;
+}
+private void __0_HueToRGB()
+{
+__intnl_SystemBoolean_31 = __0_t__param < __const_SystemSingle_0;
+if (__intnl_SystemBoolean_31)
+{
+__0_t__param = __0_t__param + __const_SystemSingle_1;
+}
+__intnl_SystemBoolean_32 = __0_t__param > __const_SystemSingle_1;
+if (__intnl_SystemBoolean_32)
+{
+__0_t__param = __0_t__param - __const_SystemSingle_1;
+}
+__intnl_SystemBoolean_33 = __0_t__param < __const_SystemSingle_6;
+if (__intnl_SystemBoolean_33)
+{
+__intnl_SystemSingle_20 = __0_q__param - __0_p__param;
+__intnl_SystemSingle_21 = __intnl_SystemSingle_20 * __const_SystemSingle_7;
+__intnl_SystemSingle_22 = __intnl_SystemSingle_21 * __0_t__param;
+__0___0_HueToRGB__ret = __0_p__param + __intnl_SystemSingle_22;
+return;
+}
+__intnl_SystemBoolean_34 = __0_t__param < __const_SystemSingle_4;
+if (__intnl_SystemBoolean_34)
+{
+__0___0_HueToRGB__ret = __0_q__param;
+return;
+}
+__intnl_SystemBoolean_35 = __0_t__param < __const_SystemSingle_8;
+if (__intnl_SystemBoolean_35)
+{
+__intnl_SystemSingle_23 = __0_q__param - __0_p__param;
+__intnl_SystemSingle_24 = __const_SystemSingle_8 - __0_t__param;
+__intnl_SystemSingle_25 = __intnl_SystemSingle_23 * __intnl_SystemSingle_24;
+__intnl_SystemSingle_26 = __intnl_SystemSingle_25 * __const_SystemSingle_7;
+__0___0_HueToRGB__ret = __0_p__param + __intnl_SystemSingle_26;
+return;
+}
+__0___0_HueToRGB__ret = __0_p__param;
+return;
+}
+private void UNDEF_ca1f9_7200()
+{
+_trailSaveDirty = __const_SystemBoolean_0;
+if (_trailSaveScheduled)
+{
+}
+else
+{
+_trailSaveScheduled = __const_SystemBoolean_0;
+__this_VRCUdonUdonBehaviour_0.SendCustomEventDelayedSeconds(__const_SystemString_3, __const_SystemSingle_9, __const_VRCUdonCommonEnumsEventTiming_0);
+}
+}
+public void _FlushTrailSave()
+{
+_trailSaveScheduled = __const_SystemBoolean_1;
+if (_trailSaveDirty)
+{
+UNDEF_ca1f9_7432();
+}
+}
+private void UNDEF_ca1f9_7432()
+{
+_trailSaveDirty = __const_SystemBoolean_1;
+PlayerData.SetFloat(__const_SystemString_4, currentHue);
+PlayerData.SetFloat(__const_SystemString_5, currentSaturation);
+PlayerData.SetFloat(__const_SystemString_6, currentLightness);
+PlayerData.SetFloat(__const_SystemString_7, currentIntensity);
+PlayerData.SetBool(__const_SystemString_8, trailEnabled);
+}
+private void UNDEF_ca1f9_8308()
+{
+__intnl_SystemBoolean_36 = PlayerData.HasKey(localPlayer, __const_SystemString_4);
+if (__intnl_SystemBoolean_36)
+{
+currentHue = PlayerData.GetFloat(localPlayer, __const_SystemString_4);
+}
+__intnl_SystemBoolean_37 = PlayerData.HasKey(localPlayer, __const_SystemString_5);
+if (__intnl_SystemBoolean_37)
+{
+currentSaturation = PlayerData.GetFloat(localPlayer, __const_SystemString_5);
+}
+__intnl_SystemBoolean_38 = PlayerData.HasKey(localPlayer, __const_SystemString_6);
+if (__intnl_SystemBoolean_38)
+{
+currentLightness = PlayerData.GetFloat(localPlayer, __const_SystemString_6);
+}
+__intnl_SystemBoolean_39 = PlayerData.HasKey(localPlayer, __const_SystemString_7);
+if (__intnl_SystemBoolean_39)
+{
+currentIntensity = PlayerData.GetFloat(localPlayer, __const_SystemString_7);
+}
+__intnl_SystemBoolean_40 = PlayerData.HasKey(localPlayer, __const_SystemString_8);
+if (__intnl_SystemBoolean_40)
+{
+trailEnabled = PlayerData.GetBool(localPlayer, __const_SystemString_8);
+}
+__intnl_UnityEngineObject_42 = hueSlider;
+__intnl_UnityEngineObject_43 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_41 = __intnl_UnityEngineObject_42 != __intnl_UnityEngineObject_43;
+if (__intnl_SystemBoolean_41)
+{
+hueSlider.SetValueWithoutNotify(currentHue);
+}
+__intnl_UnityEngineObject_44 = saturationSlider;
+__intnl_UnityEngineObject_45 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_42 = __intnl_UnityEngineObject_44 != __intnl_UnityEngineObject_45;
+if (__intnl_SystemBoolean_42)
+{
+saturationSlider.SetValueWithoutNotify(currentSaturation);
+}
+__intnl_UnityEngineObject_46 = lightnessSlider;
+__intnl_UnityEngineObject_47 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_43 = __intnl_UnityEngineObject_46 != __intnl_UnityEngineObject_47;
+if (__intnl_SystemBoolean_43)
+{
+lightnessSlider.SetValueWithoutNotify(currentLightness);
+}
+__intnl_UnityEngineObject_48 = intensitySlider;
+__intnl_UnityEngineObject_49 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_44 = __intnl_UnityEngineObject_48 != __intnl_UnityEngineObject_49;
+if (__intnl_SystemBoolean_44)
+{
+intensitySlider.SetValueWithoutNotify(currentIntensity);
+}
+}
+public void RefreshTrail()
+{
+if (initialized)
+{
+break;
+}
+UNDEF_ca1f9_4580();
+}
+public void __0_ApplyTrailToRenderer()
+{
+__intnl_UnityEngineObject_50 = __1_tr__param;
+__intnl_UnityEngineObject_51 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_45 = __intnl_UnityEngineObject_50 == __intnl_UnityEngineObject_51;
+if (__intnl_SystemBoolean_45)
+{
+return;
+}
+UNDEF_ca1f9_4580();
+}
+public void OpenPanel()
+{
+__intnl_UnityEngineObject_52 = trailCustomizationPanel;
+__intnl_UnityEngineObject_53 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_46 = __intnl_UnityEngineObject_52 != __intnl_UnityEngineObject_53;
+if (__intnl_SystemBoolean_46)
+{
+trailCustomizationPanel.SetActive(__const_SystemBoolean_0);
+}
+}
+public void ClosePanel()
+{
+__intnl_UnityEngineObject_54 = trailCustomizationPanel;
+__intnl_UnityEngineObject_55 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_47 = __intnl_UnityEngineObject_54 != __intnl_UnityEngineObject_55;
+if (__intnl_SystemBoolean_47)
+{
+trailCustomizationPanel.SetActive(__const_SystemBoolean_1);
+}
+}
+public void ResetToDefaults()
+{
+if (isSupporter)
+{
+UNDEF_ca1f9_9452();
+}
+}
+private void UNDEF_ca1f9_9452()
+{
+currentHue = __const_SystemSingle_0;
+currentSaturation = __const_SystemSingle_0;
+currentLightness = __const_SystemSingle_10;
+currentIntensity = __const_SystemSingle_10;
+trailEnabled = __const_SystemBoolean_0;
+__intnl_UnityEngineObject_56 = hueSlider;
+__intnl_UnityEngineObject_57 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_48 = __intnl_UnityEngineObject_56 != __intnl_UnityEngineObject_57;
+if (__intnl_SystemBoolean_48)
+{
+hueSlider.value = currentHue;
+}
+__intnl_UnityEngineObject_58 = saturationSlider;
+__intnl_UnityEngineObject_59 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_49 = __intnl_UnityEngineObject_58 != __intnl_UnityEngineObject_59;
+if (__intnl_SystemBoolean_49)
+{
+saturationSlider.value = currentSaturation;
+}
+__intnl_UnityEngineObject_60 = lightnessSlider;
+__intnl_UnityEngineObject_61 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_50 = __intnl_UnityEngineObject_60 != __intnl_UnityEngineObject_61;
+if (__intnl_SystemBoolean_50)
+{
+lightnessSlider.value = currentLightness;
+}
+__intnl_UnityEngineObject_62 = intensitySlider;
+__intnl_UnityEngineObject_63 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_51 = __intnl_UnityEngineObject_62 != __intnl_UnityEngineObject_63;
+if (__intnl_SystemBoolean_51)
+{
+intensitySlider.value = currentIntensity;
+}
+UNDEF_ca1f9_4580();
+UNDEF_ca1f9_7200();
+}
+private void UNDEF_ca1f9_9564()
+{
+__intnl_VRCSDKBaseVRCPlayerApi_0 = Networking.LocalPlayer;
+__2__intnlparam = __intnl_VRCSDKBaseVRCPlayerApi_0;
+UNDEF_ca1f9_10060();
+__0__intnlparam = __1__intnlparam;
+return;
+}
+private void UNDEF_ca1f9_10060()
+{
+__lcl_objects_UnityEngineGameObjectArray_0 = Networking.GetPlayerObjects(__2__intnlparam);
+__lcl_i_SystemInt32_0 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_0 = __lcl_objects_UnityEngineGameObjectArray_0.Length;
+__intnl_SystemBoolean_52 = __lcl_i_SystemInt32_0 < __intnl_SystemInt32_0;
+if (__intnl_SystemBoolean_52)
+{
+break;
+}
+__intnl_UnityEngineGameObject_0 = (GameObject)(__lcl_objects_UnityEngineGameObjectArray_0[__lcl_i_SystemInt32_0]);
+__intnl_SystemBoolean_53 = Utilities.IsValid(__intnl_UnityEngineGameObject_0);
+if (__intnl_SystemBoolean_53)
+{
+}
+else
+{
+}
+__intnl_UnityEngineGameObject_1 = (GameObject)(__lcl_objects_UnityEngineGameObjectArray_0[__lcl_i_SystemInt32_0]);
+__intnl_UnityEngineTransform_0 = __intnl_UnityEngineGameObject_1.transform;
+__4__intnlparam = __intnl_UnityEngineTransform_0;
+UNDEF_ca1f9_10568();
+__lcl_foundScript_VRCUdonUdonBehaviour_0 = __3__intnlparam;
+__intnl_SystemBoolean_54 = Utilities.IsValid(__lcl_foundScript_VRCUdonUdonBehaviour_0);
+if (__intnl_SystemBoolean_54)
+{
+__1__intnlparam = __lcl_foundScript_VRCUdonUdonBehaviour_0;
+return;
+}
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_1;
+}
+__1__intnlparam = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+private void UNDEF_ca1f9_10568()
+{
+__intnl_UnityEngineComponentArray_0 = __4__intnlparam.GetComponentsInChildren(__const_SystemType_0);
+__lcl_udonBehaviours_UnityEngineComponentArray_0 = __intnl_UnityEngineComponentArray_0;
+__lcl_targetID_SystemInt64_0 = __const_SystemInt64_0;
+__intnl_SystemInt32_1 = __lcl_udonBehaviours_UnityEngineComponentArray_0.Length;
+__intnl_SystemInt32_2 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_55 = __intnl_SystemInt32_2 < __intnl_SystemInt32_1;
+if (__intnl_SystemBoolean_55)
+{
+break;
+}
+__lcl_behaviour_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(__lcl_udonBehaviours_UnityEngineComponentArray_0[__intnl_SystemInt32_2]);
+__lcl_idValue_SystemObject_0 = __lcl_behaviour_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_9);
+__intnl_SystemBoolean_56 = __lcl_idValue_SystemObject_0 != __const_SystemObject_0;
+if (__intnl_SystemBoolean_56)
+{
+__intnl_SystemInt64_0 = Convert.ToInt64(__lcl_idValue_SystemObject_0);
+__intnl_SystemBoolean_56 = __intnl_SystemInt64_0 == __lcl_targetID_SystemInt64_0;
+}
+if (__intnl_SystemBoolean_56)
+{
+__intnl_UnityEngineComponent_0 = __lcl_behaviour_VRCUdonUdonBehaviour_0;
+__3__intnlparam = (UdonBehaviour)__intnl_UnityEngineComponent_0;
+return;
+}
+__intnl_SystemInt32_2 = __intnl_SystemInt32_2 + __const_SystemInt32_1;
+}
+__3__intnlparam = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+}

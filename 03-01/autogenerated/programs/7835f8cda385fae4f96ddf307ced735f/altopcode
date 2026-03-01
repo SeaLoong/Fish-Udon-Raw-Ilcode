@@ -1,0 +1,331 @@
+void get_playerInventoryData()
+24 __intnl_UnityEngineObject_0 = _playerInventoryData
+44 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+88 if (__intnl_SystemBoolean_0) //136
+{
+112 __0_get_playerInventoryData__ret = _playerInventoryData
+128 return;
+}
+144 JUMP 6208
+168 _playerInventoryData = __0__intnlparam
+188 __0_get_playerInventoryData__ret = _playerInventoryData
+204 return;
+224 return;
+void _onVarChange__playerInventoryData()
+248 __0_value__param = _playerInventoryData
+268 _playerInventoryData = _old__playerInventoryData
+void __0_set_playerInventoryData()
+296 _playerInventoryData = __0_value__param
+312 return;
+void _start()
+344 currentlySelectedLine = defaultLineIndex
+388 if (__intnl_SystemBoolean_1) //404
+{
+396 JUMP 460
+}
+468 if (__intnl_SystemBoolean_1) //496
+{
+492 currentlySelectedLine = __const_SystemInt32_0
+}
+508 return;
+void GetCurrentLine()
+564 if (__intnl_SystemBoolean_2) //580
+{
+572 JUMP 636
+}
+644 if (__intnl_SystemBoolean_2) //692
+{
+668 __0_GetCurrentLine__ret = __const_SystemObject_0
+684 return;
+}
+732 if (__intnl_SystemBoolean_3) //748
+{
+740 JUMP 804
+}
+812 if (__intnl_SystemBoolean_3) //840
+{
+836 currentlySelectedLine = __const_SystemInt32_0
+}
+__0_GetCurrentLine__ret = G_lineEntries.Get(currentlySelectedLine);// 864
+884 return;
+904 return;
+void __0_SelectLineById()
+936 __lcl_i_SystemInt32_0 = __const_SystemInt32_0
+1004 if (__intnl_SystemBoolean_4) //1248
+{
+1140 if (__intnl_SystemBoolean_5) //1208
+{
+1164 currentlySelectedLine = __lcl_i_SystemInt32_0
+1184 __0___0_SelectLineById__ret = __const_SystemBoolean_0
+1200 return;
+}
+__lcl_i_SystemInt32_0 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_0);// 1232
+1240 JUMP 940
+}
+1264 __0___0_SelectLineById__ret = __const_SystemBoolean_1
+1280 return;
+1300 return;
+void __0_SelectLine()
+1356 if (__intnl_SystemBoolean_6) //1372
+{
+1364 JUMP 1428
+}
+1436 if (__intnl_SystemBoolean_6) //1484
+{
+1460 __0___0_SelectLine__ret = __const_SystemBoolean_1
+1476 return;
+}
+1500 currentlySelectedLine = __0_index__param
+1520 __0___0_SelectLine__ret = __const_SystemBoolean_0
+1536 return;
+1556 return;
+void __0_SelectLineByName()
+1588 __lcl_i_SystemInt32_1 = __const_SystemInt32_0
+1656 if (__intnl_SystemBoolean_7) //1896
+{
+1744 __intnl_SystemString_0 = __intnl_SystemObject_1
+1788 if (__intnl_SystemBoolean_8) //1856
+{
+1812 currentlySelectedLine = __lcl_i_SystemInt32_1
+1832 __0___0_SelectLineByName__ret = __const_SystemBoolean_0
+1848 return;
+}
+__lcl_i_SystemInt32_1 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_1);// 1880
+1888 JUMP 1592
+}
+1912 __0___0_SelectLineByName__ret = __const_SystemBoolean_1
+1928 return;
+1948 return;
+void __0_GetLineById()
+1980 __lcl_i_SystemInt32_2 = __const_SystemInt32_0
+2048 if (__intnl_SystemBoolean_9) //2284
+{
+2184 if (__intnl_SystemBoolean_10) //2244
+{
+__0___0_GetLineById__ret = G_lineEntries.Get(__lcl_i_SystemInt32_2);// 2216
+2236 return;
+}
+__lcl_i_SystemInt32_2 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_2);// 2268
+2276 JUMP 1984
+}
+2300 __0___0_GetLineById__ret = __const_SystemObject_0
+2316 return;
+2336 return;
+void __0_GetLine()
+2392 if (__intnl_SystemBoolean_11) //2408
+{
+2400 JUMP 2464
+}
+2472 if (__intnl_SystemBoolean_11) //2520
+{
+2496 __0___0_GetLine__ret = __const_SystemObject_0
+2512 return;
+}
+__0___0_GetLine__ret = G_lineEntries.Get(__1_index__param);// 2544
+2564 return;
+2584 return;
+void __0_GetLocalPlayerLines()
+2608 JUMP 8
+2664 __intnl_VRCSDK3DataDataDictionary_0 = __intnl_SystemObject_3
+__lcl_unlockedLines_VRCSDK3DataDataList_0 = __0__intnlparam.GetProgramVariable(__const_SystemString_2).get_Item(__intnl_VRCSDK3DataDataToken_0).get_DataList();// 2740
+__lcl_availableLines_UnityEngineComponentArray_0 = 0.ctor();// 2764
+2788 __lcl_i_SystemInt32_3 = __const_SystemInt32_0
+2856 if (__intnl_SystemBoolean_12) //3480
+{
+__lcl_line_VRCUdonUdonBehaviour_0 = G_lineEntries.Get(__lcl_i_SystemInt32_3);// 2888
+2912 __intnl_SystemInt32_11 = __0_playerLevel__param
+L_line.SetProgramVariable(__0_playerLevel__param, __const_SystemString_4);// 2940
+L_line.SendCustomEvent(__const_SystemString_5);// 2964
+3020 __intnl_SystemBoolean_14 = __intnl_SystemObject_4
+3040 __intnl_SystemBoolean_13 = __intnl_SystemBoolean_14
+3052 if (__intnl_SystemBoolean_13) //3068
+{
+3060 JUMP 3120
+}
+3116 __intnl_SystemBoolean_13 = __intnl_SystemObject_5
+3128 if (__intnl_SystemBoolean_13) //3212
+{
+3160 __2__intnlparam = __lcl_availableLines_UnityEngineComponentArray_0
+3180 __3__intnlparam = __lcl_line_VRCUdonUdonBehaviour_0
+3184 JUMP 6320
+3208 __lcl_availableLines_UnityEngineComponentArray_0 = __1__intnlparam
+}
+3356 if (__intnl_SystemBoolean_15) //3440
+{
+3388 __2__intnlparam = __lcl_availableLines_UnityEngineComponentArray_0
+3408 __3__intnlparam = __lcl_line_VRCUdonUdonBehaviour_0
+3412 JUMP 6320
+3436 __lcl_availableLines_UnityEngineComponentArray_0 = __1__intnlparam
+}
+__lcl_i_SystemInt32_3 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_3);// 3464
+3472 JUMP 2792
+}
+3496 __0___0_GetLocalPlayerLines__ret = __lcl_availableLines_UnityEngineComponentArray_0
+3512 return;
+3532 return;
+void GetInventoryLines()
+3556 JUMP 8
+3612 __intnl_VRCSDK3DataDataDictionary_1 = __intnl_SystemObject_7
+__lcl_unlockedLines_VRCSDK3DataDataList_1 = __0__intnlparam.GetProgramVariable(__const_SystemString_2).get_Item(__intnl_VRCSDK3DataDataToken_3).get_DataList();// 3688
+__lcl_availableLines_UnityEngineComponentArray_1 = 0.ctor();// 3712
+3736 __lcl_i_SystemInt32_4 = __const_SystemInt32_0
+3804 if (__intnl_SystemBoolean_16) //4112
+{
+__lcl_line_VRCUdonUdonBehaviour_1 = G_lineEntries.Get(__lcl_i_SystemInt32_4);// 3836
+3988 if (__intnl_SystemBoolean_17) //4072
+{
+4020 __2__intnlparam = __lcl_availableLines_UnityEngineComponentArray_1
+4040 __3__intnlparam = __lcl_line_VRCUdonUdonBehaviour_1
+4044 JUMP 6320
+4068 __lcl_availableLines_UnityEngineComponentArray_1 = __1__intnlparam
+}
+__lcl_i_SystemInt32_4 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_4);// 4096
+4104 JUMP 3740
+}
+4128 __0_GetInventoryLines__ret = __lcl_availableLines_UnityEngineComponentArray_1
+4144 return;
+4164 return;
+void GetAllLines()
+4196 __0_GetAllLines__ret = lineEntries
+4212 return;
+4232 return;
+void __0_GetUnlockedLines()
+4264 __lcl_unlockedCount_SystemInt32_0 = __const_SystemInt32_0
+4284 __lcl_i_SystemInt32_5 = __const_SystemInt32_0
+4352 if (__intnl_SystemBoolean_18) //4608
+{
+4408 __intnl_SystemInt32_16 = __1_playerLevel__param
+G_lineEntries.Get(__lcl_i_SystemInt32_5).SetProgramVariable(__1_playerLevel__param, __const_SystemString_8);// 4436
+G_lineEntries.Get(__lcl_i_SystemInt32_5).SendCustomEvent(__const_SystemString_9);// 4460
+4516 __intnl_SystemBoolean_19 = __intnl_SystemObject_9
+4528 if (__intnl_SystemBoolean_19) //4568
+{
+__lcl_unlockedCount_SystemInt32_0 = op_Addition(__const_SystemInt32_1, __lcl_unlockedCount_SystemInt32_0);// 4560
+}
+__lcl_i_SystemInt32_5 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_5);// 4592
+4600 JUMP 4288
+}
+__lcl_unlockedLines_UnityEngineComponentArray_0 = 0.ctor();// 4624
+4648 __lcl_index_SystemInt32_0 = __const_SystemInt32_0
+4668 __lcl_i_SystemInt32_5 = __const_SystemInt32_0
+4736 if (__intnl_SystemBoolean_18) //5056
+{
+4792 __intnl_SystemInt32_16 = __1_playerLevel__param
+G_lineEntries.Get(__lcl_i_SystemInt32_5).SetProgramVariable(__1_playerLevel__param, __const_SystemString_8);// 4820
+G_lineEntries.Get(__lcl_i_SystemInt32_5).SendCustomEvent(__const_SystemString_9);// 4844
+4900 __intnl_SystemBoolean_19 = __intnl_SystemObject_9
+4912 if (__intnl_SystemBoolean_19) //5016
+{
+L_unlockedLines.Set(__intnl_VRCUdonUdonBehaviour_4, __lcl_index_SystemInt32_0);// 4976
+__lcl_index_SystemInt32_0 = op_Addition(__const_SystemInt32_1, __lcl_index_SystemInt32_0);// 5008
+}
+__lcl_i_SystemInt32_5 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_5);// 5040
+5048 JUMP 4672
+}
+5072 __0___0_GetUnlockedLines__ret = __lcl_unlockedLines_UnityEngineComponentArray_0
+5088 return;
+5108 return;
+void __0_GetLinesToUnlockAtLevel()
+5140 __lcl_autoUnlockCount_SystemInt32_0 = __const_SystemInt32_0
+5160 __lcl_i_SystemInt32_6 = __const_SystemInt32_0
+5228 if (__intnl_SystemBoolean_20) //5484
+{
+5284 __intnl_SystemInt32_18 = __2_playerLevel__param
+G_lineEntries.Get(__lcl_i_SystemInt32_6).SetProgramVariable(__2_playerLevel__param, __const_SystemString_4);// 5312
+G_lineEntries.Get(__lcl_i_SystemInt32_6).SendCustomEvent(__const_SystemString_5);// 5336
+5392 __intnl_SystemBoolean_21 = __intnl_SystemObject_10
+5404 if (__intnl_SystemBoolean_21) //5444
+{
+__lcl_autoUnlockCount_SystemInt32_0 = op_Addition(__const_SystemInt32_1, __lcl_autoUnlockCount_SystemInt32_0);// 5436
+}
+__lcl_i_SystemInt32_6 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_6);// 5468
+5476 JUMP 5164
+}
+__lcl_autoUnlockLines_UnityEngineComponentArray_0 = 0.ctor();// 5500
+5524 __lcl_index_SystemInt32_1 = __const_SystemInt32_0
+5544 __lcl_i_SystemInt32_6 = __const_SystemInt32_0
+5612 if (__intnl_SystemBoolean_20) //5932
+{
+5668 __intnl_SystemInt32_18 = __2_playerLevel__param
+G_lineEntries.Get(__lcl_i_SystemInt32_6).SetProgramVariable(__2_playerLevel__param, __const_SystemString_4);// 5696
+G_lineEntries.Get(__lcl_i_SystemInt32_6).SendCustomEvent(__const_SystemString_5);// 5720
+5776 __intnl_SystemBoolean_21 = __intnl_SystemObject_10
+5788 if (__intnl_SystemBoolean_21) //5892
+{
+L_autoUnlockLines.Set(__intnl_VRCUdonUdonBehaviour_6, __lcl_index_SystemInt32_1);// 5852
+__lcl_index_SystemInt32_1 = op_Addition(__const_SystemInt32_1, __lcl_index_SystemInt32_1);// 5884
+}
+__lcl_i_SystemInt32_6 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_6);// 5916
+5924 JUMP 5548
+}
+5948 __0___0_GetLinesToUnlockAtLevel__ret = __lcl_autoUnlockLines_UnityEngineComponentArray_0
+5964 return;
+5984 return;
+void GetCurrentLineIndex()
+6016 __0_GetCurrentLineIndex__ret = currentlySelectedLine
+6032 return;
+6052 return;
+void GetLineCount()
+6108 if (__intnl_SystemBoolean_22) //6148
+{
+__0_GetLineCount__ret = G_lineEntries.get_Length();// 6132
+6140 JUMP 6168
+}
+6164 __0_GetLineCount__ret = __const_SystemInt32_0
+6180 return;
+6200 return;
+6248 __5__intnlparam = __intnl_VRCSDKBaseVRCPlayerApi_0
+6252 JUMP 6548
+6276 __0__intnlparam = __4__intnlparam
+6292 return;
+6312 return;
+__lcl_newArray_UnityEngineComponentArray_0 = op_Addition(__const_SystemInt32_1, __intnl_SystemInt32_19).ctor();// 6392
+L_availableLines.CopyTo(__const_SystemInt32_0, __lcl_newArray_UnityEngineComponentArray_0);// 6424
+L_newArray.Set(__3__intnlparam, __intnl_SystemInt32_21);// 6480
+6504 __1__intnlparam = __lcl_newArray_UnityEngineComponentArray_0
+6520 return;
+6540 return;
+__lcl_objects_UnityEngineGameObjectArray_0 = GetPlayerObjects(__5__intnlparam);// 6564
+6588 __lcl_i_SystemInt32_7 = __const_SystemInt32_0
+6656 if (__intnl_SystemBoolean_23) //6984
+{
+6728 if (__intnl_SystemBoolean_24) //6744
+{
+6736 JUMP 6752
+}
+6744 JUMP 6944
+6832 __7__intnlparam = __intnl_UnityEngineTransform_0
+6836 JUMP 7044
+6860 __lcl_foundScript_VRCUdonUdonBehaviour_0 = __6__intnlparam
+6896 if (__intnl_SystemBoolean_25) //6944
+{
+6920 __4__intnlparam = __lcl_foundScript_VRCUdonUdonBehaviour_0
+6936 return;
+}
+__lcl_i_SystemInt32_7 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_7);// 6968
+6976 JUMP 6592
+}
+7000 __4__intnlparam = __const_SystemObject_0
+7016 return;
+7036 return;
+7092 __lcl_udonBehaviours_UnityEngineComponentArray_0 = __intnl_UnityEngineComponentArray_0
+7112 __lcl_targetID_SystemInt64_0 = __const_SystemInt64_0
+7156 __intnl_SystemInt32_24 = __const_SystemInt32_0
+7200 if (__intnl_SystemBoolean_26) //7492
+{
+__lcl_behaviour_VRCUdonUdonBehaviour_0 = L_objects.Get(__lcl_i_SystemInt32_7).get_transform().GetComponentsInChildren(__const_SystemType_0).Get(__intnl_SystemInt32_24);// 7232
+__lcl_idValue_SystemObject_0 = L_behaviour.GetProgramVariable(__const_SystemString_11);// 7264
+7312 if (__intnl_SystemBoolean_27) //7376
+{
+}
+7384 if (__intnl_SystemBoolean_27) //7452
+{
+7408 __intnl_UnityEngineComponent_0 = __lcl_behaviour_VRCUdonUdonBehaviour_0
+7428 __6__intnlparam = __intnl_UnityEngineComponent_0
+7444 return;
+}
+7484 JUMP 7160
+}
+7508 __6__intnlparam = __const_SystemObject_0
+7524 return;
+7544 return;

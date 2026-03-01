@@ -1,0 +1,180 @@
+using System;
+using VRC.Udon;
+using UnityEngine;
+using VRC.SDKBase;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Int64 __const_SystemInt64_0 = 630167265494520546;
+private UdonBehaviour _titleDisplayManager = null;
+private String __const_SystemString_0 = "__3_player__param";
+private Transform __intnl_UnityEngineTransform_0 = null;
+private String _syncedTitle = "";
+public UdonBehaviour RodDatabase;
+private UInt32 __gintnl_SystemUInt32_1 = 700;
+private UInt32 __gintnl_SystemUInt32_0 = 132;
+private UInt32 __gintnl_SystemUInt32_2 = 948;
+private String __0_value__param = null;
+private String __0_GetTitle__ret = null;
+private String __0_get_SyncedTitle__ret = null;
+private String _old__syncedTitle = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_0 = null;
+private Int64 __refl_typeid = -965705214270601085;
+public UdonBehaviour BobberDatabase;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Component __intnl_UnityEngineComponent_0 = null;
+public Boolean showDebugLogs;
+private UdonBehaviour __0__intnlparam = null;
+private String __const_SystemString_2 = "__0_OnPlayerTitleChanged";
+private Component[] __intnl_UnityEngineComponentArray_0 = null;
+private object __const_SystemObject_0 = null;
+private String __intnl_SystemString_0 = null;
+private Type __const_SystemType_0 = typeof(UdonBehaviour);
+private UdonBehaviour __0_GetTitleDisplayManager__ret = null;
+private Int64 __intnl_SystemInt64_0 = 0;
+private UdonBehaviour __lcl_displayManager_VRCUdonUdonBehaviour_0 = null;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private String __const_SystemString_4 = "__refl_typeid";
+private UdonBehaviour __lcl_behaviour_VRCUdonUdonBehaviour_0 = null;
+private Component __1__intnlparam = null;
+private String __refl_typename = "PlayerGlobalData";
+private GameObject __lcl_found_UnityEngineGameObject_0 = null;
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private VRCPlayerApi __lcl_owner_VRCSDKBaseVRCPlayerApi_0 = null;
+private Int64 __lcl_targetID_SystemInt64_0 = 0;
+private String __const_SystemString_1 = "__1_titleName__param";
+private object __lcl_idValue_SystemObject_0 = null;
+public UdonBehaviour TitleSystem;
+private GameObject __this_UnityEngineGameObject_0 = this;
+public UdonBehaviour LineDatabase;
+private Int32 __const_SystemInt32_1 = 1;
+private Int32 __const_SystemInt32_0 = 0;
+private Component[] __lcl_udonBehaviours_UnityEngineComponentArray_0 = null;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private String __0_titleName__param = null;
+private String __const_SystemString_3 = "PlayerTitleDisplayManager";
+private UdonBehaviour __this_VRCUdonUdonBehaviour_0 = this;
+
+
+public void get_SyncedTitle()
+{
+__0_get_SyncedTitle__ret = _syncedTitle;
+}
+public void _onVarChange__syncedTitle()
+{
+__0_value__param = _syncedTitle;
+_syncedTitle = _old__syncedTitle;
+_syncedTitle = __0_value__param;
+GetTitleDisplayManager();
+__lcl_displayManager_VRCUdonUdonBehaviour_0 = __0_GetTitleDisplayManager__ret;
+__intnl_UnityEngineObject_0 = __lcl_displayManager_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_0)
+{
+__intnl_VRCSDKBaseVRCPlayerApi_0 = Networking.GetOwner(__this_UnityEngineGameObject_0);
+__intnl_SystemString_0 = __0_value__param;
+__lcl_displayManager_VRCUdonUdonBehaviour_0.SetProgramVariable(__const_SystemString_0, __intnl_VRCSDKBaseVRCPlayerApi_0);
+__lcl_displayManager_VRCUdonUdonBehaviour_0.SetProgramVariable(__const_SystemString_1, __0_value__param);
+__lcl_displayManager_VRCUdonUdonBehaviour_0.SendCustomEvent(__const_SystemString_2);
+}
+if (showDebugLogs)
+{
+__lcl_owner_VRCSDKBaseVRCPlayerApi_0 = Networking.GetOwner(__this_UnityEngineGameObject_0);
+}
+}
+private void GetTitleDisplayManager()
+{
+__intnl_UnityEngineObject_2 = _titleDisplayManager;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_2 == __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_1)
+{
+__lcl_found_UnityEngineGameObject_0 = GameObject.Find(__const_SystemString_3);
+__intnl_UnityEngineObject_4 = __lcl_found_UnityEngineGameObject_0;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_2 = __intnl_UnityEngineObject_4 != __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_2)
+{
+__intnl_UnityEngineTransform_0 = __lcl_found_UnityEngineGameObject_0.transform;
+__1__intnlparam = __intnl_UnityEngineTransform_0;
+UNDEF_d1b37_1576();
+_titleDisplayManager = __0__intnlparam;
+}
+}
+__0_GetTitleDisplayManager__ret = _titleDisplayManager;
+return;
+}
+public void _onDeserialization()
+{
+}
+public void _onPreSerialization()
+{
+}
+public void __0_SetTitle()
+{
+__intnl_SystemBoolean_3 = Networking.IsOwner(__this_UnityEngineGameObject_0);
+if (__intnl_SystemBoolean_3)
+{
+UNDEF_d1b37_1000();
+}
+}
+private void UNDEF_d1b37_1000()
+{
+__0_value__param = __0_titleName__param;
+__this_VRCUdonUdonBehaviour_0.RequestSerialization();
+if (showDebugLogs)
+{
+}
+}
+public void GetTitle()
+{
+__0_GetTitle__ret = _syncedTitle;
+return;
+}
+private void UNDEF_d1b37_1576()
+{
+__intnl_UnityEngineComponentArray_0 = __1__intnlparam.GetComponents(__const_SystemType_0);
+__lcl_udonBehaviours_UnityEngineComponentArray_0 = __intnl_UnityEngineComponentArray_0;
+__lcl_targetID_SystemInt64_0 = __const_SystemInt64_0;
+__intnl_SystemInt32_0 = __lcl_udonBehaviours_UnityEngineComponentArray_0.Length;
+__intnl_SystemInt32_1 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_4 = __intnl_SystemInt32_1 < __intnl_SystemInt32_0;
+if (__intnl_SystemBoolean_4)
+{
+break;
+}
+__lcl_behaviour_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(__lcl_udonBehaviours_UnityEngineComponentArray_0[__intnl_SystemInt32_1]);
+__lcl_idValue_SystemObject_0 = __lcl_behaviour_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_4);
+__intnl_SystemBoolean_5 = __lcl_idValue_SystemObject_0 != __const_SystemObject_0;
+if (__intnl_SystemBoolean_5)
+{
+__intnl_SystemInt64_0 = Convert.ToInt64(__lcl_idValue_SystemObject_0);
+__intnl_SystemBoolean_5 = __intnl_SystemInt64_0 == __lcl_targetID_SystemInt64_0;
+}
+if (__intnl_SystemBoolean_5)
+{
+__intnl_UnityEngineComponent_0 = __lcl_behaviour_VRCUdonUdonBehaviour_0;
+__0__intnlparam = (UdonBehaviour)__intnl_UnityEngineComponent_0;
+return;
+}
+__intnl_SystemInt32_1 = __intnl_SystemInt32_1 + __const_SystemInt32_1;
+}
+__0__intnlparam = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+}

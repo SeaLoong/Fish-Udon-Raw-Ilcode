@@ -1,0 +1,45 @@
+void _start()
+__object_0 = get_LocalPlayer();// 8
+__result_0 = IsValid(__object_0);// 32
+48 if (__result_0) //300
+{
+64 if (disableAvatarScaling) //156
+{
+__instance_0 = get_LocalPlayer();// 80
+get_LocalPlayer().SetManualAvatarScalingAllowed(__enabled_0);// 104
+128 __message_0 = __String_0
+Log(__message_0);// 140
+148 JUMP 156
+}
+__instance_1 = get_LocalPlayer();// 164
+get_LocalPlayer().SetAvatarEyeHeightMinimumByMeters(minimumHeight);// 188
+__instance_2 = get_LocalPlayer();// 204
+get_LocalPlayer().SetAvatarEyeHeightMaximumByMeters(maximumHeight);// 228
+__message_1 = Format(maximumHeight, minimumHeight, __format_0);// 268
+Log(__message_1);// 284
+292 JUMP 300
+}
+300 JUMP 4294967292
+void _onAvatarEyeHeightChanged()
+324 __instance_3 = onAvatarEyeHeightChangedPlayer
+__Boolean_2 = G_onAvatarEyeHeightChangedPlayer.get_isLocal();// 344
+__Boolean_1 = op_LogicalAnd(alwaysEnforceHeight, __Boolean_2);// 376
+392 if (__Boolean_1) //672
+{
+__instance_4 = get_LocalPlayer();// 408
+__value_0 = get_LocalPlayer().GetAvatarEyeHeightAsMeters();// 432
+clampedHeight = Clamp(maximumHeight, minimumHeight, __value_0);// 472
+__instance_5 = get_LocalPlayer();// 488
+__Single_1 = get_LocalPlayer().GetAvatarEyeHeightAsMeters();// 512
+__Boolean_4 = op_Inequality(__Single_1, clampedHeight);// 544
+560 if (__Boolean_4) //664
+{
+__instance_6 = get_LocalPlayer();// 576
+get_LocalPlayer().SetAvatarEyeHeightByMeters(clampedHeight);// 600
+__message_2 = Format(clampedHeight, __format_1);// 632
+Log(__message_2);// 648
+656 JUMP 664
+}
+664 JUMP 672
+}
+672 JUMP 4294967292

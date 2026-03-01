@@ -1,0 +1,274 @@
+void _start
+0 PUSH UInt32 __const_SystemUInt32_0
+8 PUSH UdonBehaviour __this_VRCUdonUdonBehaviour_0
+16 PUSH String __const_SystemString_0
+24 PUSH Single __const_SystemSingle_0
+32 PUSH EventTiming __const_VRCUdonCommonEnumsEventTiming_0
+40 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEventDelayedSeconds__SystemString_SystemSingle_VRCUdonCommonEnumsEventTiming__SystemVoid
+48 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+56 COPY
+60 JUMP_INDIRECT 2
+void _onPlayerJoined
+68 PUSH UInt32 __const_SystemUInt32_0
+76 PUSH Boolean __intnl_SystemBoolean_0
+84 EXTERN VRCSDKBaseNetworking.__get_IsMaster__SystemBoolean
+92 PUSH Boolean __intnl_SystemBoolean_0
+100 JUMP_IF_FALSE 116
+108 JUMP 136
+116 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+124 COPY
+128 JUMP_INDIRECT 2
+136 PUSH UInt32 __gintnl_SystemUInt32_0
+144 JUMP 396
+152 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+160 COPY
+164 JUMP_INDIRECT 2
+void _onPlayerLeft
+172 PUSH UInt32 __const_SystemUInt32_0
+180 PUSH Boolean __intnl_SystemBoolean_1
+188 EXTERN VRCSDKBaseNetworking.__get_IsMaster__SystemBoolean
+196 PUSH Boolean __intnl_SystemBoolean_1
+204 JUMP_IF_FALSE 220
+212 JUMP 240
+220 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+228 COPY
+232 JUMP_INDIRECT 2
+240 PUSH UInt32 __gintnl_SystemUInt32_1
+248 JUMP 396
+256 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+264 COPY
+268 JUMP_INDIRECT 2
+void _onMasterTransferred
+276 PUSH UInt32 __const_SystemUInt32_0
+284 PUSH VRCPlayerApi onMasterTransferredNewMaster
+292 PUSH Boolean __intnl_SystemBoolean_2
+300 EXTERN VRCSDKBaseVRCPlayerApi.__get_isLocal__SystemBoolean
+308 PUSH Boolean __intnl_SystemBoolean_2
+316 JUMP_IF_FALSE 332
+324 JUMP 352
+332 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+340 COPY
+344 JUMP_INDIRECT 2
+352 PUSH UInt32 __gintnl_SystemUInt32_2
+360 JUMP 396
+368 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+376 COPY
+380 JUMP_INDIRECT 2
+388 PUSH UInt32 __const_SystemUInt32_0
+396 PUSH Boolean rebalancePending
+404 JUMP_IF_FALSE 432
+412 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+420 COPY
+424 JUMP_INDIRECT 2
+432 PUSH Boolean __const_SystemBoolean_0
+440 PUSH Boolean rebalancePending
+448 COPY
+452 PUSH UdonBehaviour __this_VRCUdonUdonBehaviour_1
+460 PUSH String __const_SystemString_0
+468 PUSH Single rebalanceDelay
+476 PUSH EventTiming __const_VRCUdonCommonEnumsEventTiming_0
+484 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEventDelayedSeconds__SystemString_SystemSingle_VRCUdonCommonEnumsEventTiming__SystemVoid
+492 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+500 COPY
+504 JUMP_INDIRECT 2
+void RebalanceOwnership
+512 PUSH UInt32 __const_SystemUInt32_0
+520 PUSH Boolean __const_SystemBoolean_1
+528 PUSH Boolean rebalancePending
+536 COPY
+540 PUSH Boolean __intnl_SystemBoolean_3
+548 EXTERN VRCSDKBaseNetworking.__get_IsMaster__SystemBoolean
+556 PUSH Boolean __intnl_SystemBoolean_3
+564 JUMP_IF_FALSE 580
+572 JUMP 600
+580 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+588 COPY
+592 JUMP_INDIRECT 2
+600 PUSH GameObject[] npcMovementObjects
+608 PUSH object __const_SystemObject_0
+616 PUSH Boolean __intnl_SystemBoolean_4
+624 EXTERN SystemObject.__op_Equality__SystemObject_SystemObject__SystemBoolean
+632 PUSH Boolean __intnl_SystemBoolean_4
+640 JUMP_IF_FALSE 656
+648 JUMP 712
+656 PUSH GameObject[] npcMovementObjects
+664 PUSH Int32 __intnl_SystemInt32_0
+672 EXTERN SystemArray.__get_Length__SystemInt32
+680 PUSH Int32 __intnl_SystemInt32_0
+688 PUSH Int32 __const_SystemInt32_0
+696 PUSH Boolean __intnl_SystemBoolean_4
+704 EXTERN SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean
+712 PUSH Boolean __intnl_SystemBoolean_4
+720 JUMP_IF_FALSE 748
+728 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+736 COPY
+740 JUMP_INDIRECT 2
+748 PUSH Int32 __intnl_SystemInt32_1
+756 EXTERN VRCSDKBaseVRCPlayerApi.__GetPlayerCount__SystemInt32
+764 PUSH Int32 __intnl_SystemInt32_1
+772 PUSH VRCPlayerApi[] __lcl_players_VRCSDKBaseVRCPlayerApiArray_0
+780 EXTERN VRCSDKBaseVRCPlayerApiArray.__ctor__SystemInt32__VRCSDKBaseVRCPlayerApiArray
+788 PUSH VRCPlayerApi[] __lcl_players_VRCSDKBaseVRCPlayerApiArray_0
+796 PUSH VRCPlayerApi[] __intnl_VRCSDKBaseVRCPlayerApiArray_0
+804 EXTERN VRCSDKBaseVRCPlayerApi.__GetPlayers__VRCSDKBaseVRCPlayerApiArray__VRCSDKBaseVRCPlayerApiArray
+812 PUSH Int32 __const_SystemInt32_0
+820 PUSH Int32 __lcl_validCount_SystemInt32_0
+828 COPY
+832 PUSH Int32 __const_SystemInt32_0
+840 PUSH Int32 __lcl_i_SystemInt32_0
+848 COPY
+852 PUSH VRCPlayerApi[] __lcl_players_VRCSDKBaseVRCPlayerApiArray_0
+860 PUSH Int32 __intnl_SystemInt32_2
+868 EXTERN SystemArray.__get_Length__SystemInt32
+876 PUSH Int32 __lcl_i_SystemInt32_0
+884 PUSH Int32 __intnl_SystemInt32_2
+892 PUSH Boolean __intnl_SystemBoolean_5
+900 EXTERN SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean
+908 PUSH Boolean __intnl_SystemBoolean_5
+916 JUMP_IF_FALSE 1148
+924 PUSH VRCPlayerApi[] __lcl_players_VRCSDKBaseVRCPlayerApiArray_0
+932 PUSH Int32 __lcl_i_SystemInt32_0
+940 PUSH VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_0
+948 EXTERN VRCSDKBaseVRCPlayerApiArray.__Get__SystemInt32__VRCSDKBaseVRCPlayerApi
+956 PUSH VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_0
+964 PUSH object __const_SystemObject_0
+972 PUSH Boolean __intnl_SystemBoolean_6
+980 EXTERN SystemObject.__op_Inequality__SystemObject_SystemObject__SystemBoolean
+988 PUSH Boolean __intnl_SystemBoolean_6
+996 JUMP_IF_FALSE 1060
+1004 PUSH VRCPlayerApi[] __lcl_players_VRCSDKBaseVRCPlayerApiArray_0
+1012 PUSH Int32 __lcl_i_SystemInt32_0
+1020 PUSH VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_1
+1028 EXTERN VRCSDKBaseVRCPlayerApiArray.__Get__SystemInt32__VRCSDKBaseVRCPlayerApi
+1036 PUSH VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_1
+1044 PUSH Boolean __intnl_SystemBoolean_6
+1052 EXTERN VRCSDKBaseVRCPlayerApi.__IsValid__SystemBoolean
+1060 PUSH Boolean __intnl_SystemBoolean_6
+1068 JUMP_IF_FALSE 1108
+1076 PUSH Int32 __lcl_validCount_SystemInt32_0
+1084 PUSH Int32 __const_SystemInt32_1
+1092 PUSH Int32 __lcl_validCount_SystemInt32_0
+1100 EXTERN SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32
+1108 PUSH Int32 __lcl_i_SystemInt32_0
+1116 PUSH Int32 __const_SystemInt32_1
+1124 PUSH Int32 __lcl_i_SystemInt32_0
+1132 EXTERN SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32
+1140 JUMP 852
+1148 PUSH Int32 __lcl_validCount_SystemInt32_0
+1156 PUSH Int32 __const_SystemInt32_0
+1164 PUSH Boolean __intnl_SystemBoolean_5
+1172 EXTERN SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean
+1180 PUSH Boolean __intnl_SystemBoolean_5
+1188 JUMP_IF_FALSE 1216
+1196 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1204 COPY
+1208 JUMP_INDIRECT 2
+1216 PUSH Int32 __lcl_validCount_SystemInt32_0
+1224 PUSH VRCPlayerApi[] __lcl_validPlayers_VRCSDKBaseVRCPlayerApiArray_0
+1232 EXTERN VRCSDKBaseVRCPlayerApiArray.__ctor__SystemInt32__VRCSDKBaseVRCPlayerApiArray
+1240 PUSH Int32 __const_SystemInt32_0
+1248 PUSH Int32 __lcl_idx_SystemInt32_0
+1256 COPY
+1260 PUSH Int32 __const_SystemInt32_0
+1268 PUSH Int32 __lcl_i_SystemInt32_0
+1276 COPY
+1280 PUSH VRCPlayerApi[] __lcl_players_VRCSDKBaseVRCPlayerApiArray_0
+1288 PUSH Int32 __intnl_SystemInt32_2
+1296 EXTERN SystemArray.__get_Length__SystemInt32
+1304 PUSH Int32 __lcl_i_SystemInt32_0
+1312 PUSH Int32 __intnl_SystemInt32_2
+1320 PUSH Boolean __intnl_SystemBoolean_6
+1328 EXTERN SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean
+1336 PUSH Boolean __intnl_SystemBoolean_6
+1344 JUMP_IF_FALSE 1660
+1352 PUSH VRCPlayerApi[] __lcl_players_VRCSDKBaseVRCPlayerApiArray_0
+1360 PUSH Int32 __lcl_i_SystemInt32_0
+1368 PUSH VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_0
+1376 EXTERN VRCSDKBaseVRCPlayerApiArray.__Get__SystemInt32__VRCSDKBaseVRCPlayerApi
+1384 PUSH VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_0
+1392 PUSH object __const_SystemObject_0
+1400 PUSH Boolean __intnl_SystemBoolean_7
+1408 EXTERN SystemObject.__op_Inequality__SystemObject_SystemObject__SystemBoolean
+1416 PUSH Boolean __intnl_SystemBoolean_7
+1424 JUMP_IF_FALSE 1488
+1432 PUSH VRCPlayerApi[] __lcl_players_VRCSDKBaseVRCPlayerApiArray_0
+1440 PUSH Int32 __lcl_i_SystemInt32_0
+1448 PUSH VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_1
+1456 EXTERN VRCSDKBaseVRCPlayerApiArray.__Get__SystemInt32__VRCSDKBaseVRCPlayerApi
+1464 PUSH VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_1
+1472 PUSH Boolean __intnl_SystemBoolean_7
+1480 EXTERN VRCSDKBaseVRCPlayerApi.__IsValid__SystemBoolean
+1488 PUSH Boolean __intnl_SystemBoolean_7
+1496 JUMP_IF_FALSE 1620
+1504 PUSH Int32 __lcl_idx_SystemInt32_0
+1512 PUSH Int32 __intnl_SystemInt32_3
+1520 COPY
+1524 PUSH Int32 __intnl_SystemInt32_3
+1532 PUSH Int32 __const_SystemInt32_1
+1540 PUSH Int32 __lcl_idx_SystemInt32_0
+1548 EXTERN SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32
+1556 PUSH VRCPlayerApi[] __lcl_players_VRCSDKBaseVRCPlayerApiArray_0
+1564 PUSH Int32 __lcl_i_SystemInt32_0
+1572 PUSH VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_2
+1580 EXTERN VRCSDKBaseVRCPlayerApiArray.__Get__SystemInt32__VRCSDKBaseVRCPlayerApi
+1588 PUSH VRCPlayerApi[] __lcl_validPlayers_VRCSDKBaseVRCPlayerApiArray_0
+1596 PUSH Int32 __intnl_SystemInt32_3
+1604 PUSH VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_2
+1612 EXTERN VRCSDKBaseVRCPlayerApiArray.__Set__SystemInt32_VRCSDKBaseVRCPlayerApi__SystemVoid
+1620 PUSH Int32 __lcl_i_SystemInt32_0
+1628 PUSH Int32 __const_SystemInt32_1
+1636 PUSH Int32 __lcl_i_SystemInt32_0
+1644 EXTERN SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32
+1652 JUMP 1280
+1660 PUSH Int32 __const_SystemInt32_0
+1668 PUSH Int32 __lcl_i_SystemInt32_0
+1676 COPY
+1680 PUSH GameObject[] npcMovementObjects
+1688 PUSH Int32 __intnl_SystemInt32_2
+1696 EXTERN SystemArray.__get_Length__SystemInt32
+1704 PUSH Int32 __lcl_i_SystemInt32_0
+1712 PUSH Int32 __intnl_SystemInt32_2
+1720 PUSH Boolean __intnl_SystemBoolean_6
+1728 EXTERN SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean
+1736 PUSH Boolean __intnl_SystemBoolean_6
+1744 JUMP_IF_FALSE 2040
+1752 PUSH GameObject[] npcMovementObjects
+1760 PUSH Int32 __lcl_i_SystemInt32_0
+1768 PUSH GameObject __intnl_UnityEngineGameObject_0
+1776 EXTERN SystemObjectArray.__Get__SystemInt32__SystemObject
+1784 PUSH GameObject __intnl_UnityEngineGameObject_0
+1792 PUSH Object __intnl_UnityEngineObject_0
+1800 COPY
+1804 PUSH object __const_SystemObject_0
+1812 PUSH Object __intnl_UnityEngineObject_1
+1820 COPY
+1824 PUSH Object __intnl_UnityEngineObject_0
+1832 PUSH Object __intnl_UnityEngineObject_1
+1840 PUSH Boolean __intnl_SystemBoolean_7
+1848 EXTERN UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean
+1856 PUSH Boolean __intnl_SystemBoolean_7
+1864 JUMP_IF_FALSE 1880
+1872 JUMP 2000
+1880 PUSH Int32 __lcl_i_SystemInt32_0
+1888 PUSH Int32 __lcl_validCount_SystemInt32_0
+1896 PUSH Int32 __intnl_SystemInt32_3
+1904 EXTERN SystemInt32.__op_Remainder__SystemInt32_SystemInt32__SystemInt32
+1912 PUSH VRCPlayerApi[] __lcl_validPlayers_VRCSDKBaseVRCPlayerApiArray_0
+1920 PUSH Int32 __intnl_SystemInt32_3
+1928 PUSH VRCPlayerApi __lcl_target_VRCSDKBaseVRCPlayerApi_0
+1936 EXTERN VRCSDKBaseVRCPlayerApiArray.__Get__SystemInt32__VRCSDKBaseVRCPlayerApi
+1944 PUSH GameObject[] npcMovementObjects
+1952 PUSH Int32 __lcl_i_SystemInt32_0
+1960 PUSH GameObject __intnl_UnityEngineGameObject_1
+1968 EXTERN SystemObjectArray.__Get__SystemInt32__SystemObject
+1976 PUSH VRCPlayerApi __lcl_target_VRCSDKBaseVRCPlayerApi_0
+1984 PUSH GameObject __intnl_UnityEngineGameObject_1
+1992 EXTERN VRCSDKBaseNetworking.__SetOwner__VRCSDKBaseVRCPlayerApi_UnityEngineGameObject__SystemVoid
+2000 PUSH Int32 __lcl_i_SystemInt32_0
+2008 PUSH Int32 __const_SystemInt32_1
+2016 PUSH Int32 __lcl_i_SystemInt32_0
+2024 EXTERN SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32
+2032 JUMP 1680
+2040 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2048 COPY
+2052 JUMP_INDIRECT 2

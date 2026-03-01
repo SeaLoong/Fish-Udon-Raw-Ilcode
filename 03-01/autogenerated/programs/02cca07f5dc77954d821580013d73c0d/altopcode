@@ -1,0 +1,171 @@
+void get_ShaderModifierType()
+24 __0_get_ShaderModifierType__ret = _shaderModifierType
+40 return;
+void _onVarChange__shaderModifierType()
+64 __0_value__param = _shaderModifierType
+84 _shaderModifierType = _old__shaderModifierType
+void __0_set_ShaderModifierType()
+112 _shaderModifierType = __0_value__param
+124 JUMP 2560
+144 return;
+void get_SyncedScale()
+176 __0_get_SyncedScale__ret = _syncedScale
+192 return;
+void _onVarChange__syncedScale()
+216 __1_value__param = _syncedScale
+236 _syncedScale = _old__syncedScale
+void __0_set_SyncedScale()
+264 _syncedScale = __1_value__param
+308 if (__intnl_SystemBoolean_0) //340
+{
+transform.set_localScale(_syncedScale);// 332
+}
+352 return;
+void _start()
+408 if (__intnl_SystemBoolean_1) //424
+{
+416 JUMP 456
+}
+464 if (__intnl_SystemBoolean_1) //508
+{
+496 __1_value__param = InitialScale
+500 JUMP 248
+}
+520 return;
+void _update()
+568 if (__intnl_SystemBoolean_2) //584
+{
+576 JUMP 624
+}
+632 if (__intnl_SystemBoolean_2) //660
+{
+652 return;
+}
+_idleTimer = op_Subtraction(__intnl_SystemSingle_0, _idleTimer);// 700
+748 if (__intnl_SystemBoolean_4) //792
+{
+772 _timerActive = __const_SystemBoolean_0
+784 JUMP 1916
+}
+804 return;
+void _lateUpdate()
+860 if (__intnl_SystemBoolean_5) //924
+{
+transform.set_localScale(_forcedScale);// 884
+_forceScaleFrames = op_Subtraction(__const_SystemInt32_1, _forceScaleFrames);// 916
+}
+936 return;
+void _onEnable()
+968 _idleTimer = __const_SystemSingle_1
+988 _timerActive = __const_SystemBoolean_1
+1004 return;
+void _onPlayerLeft()
+1084 if (__intnl_SystemBoolean_6) //1112
+{
+1104 return;
+}
+_leavingPlayerId = G_onPlayerLeftPlayer.get_playerId();// 1128
+1144 JUMP 1916
+1164 return;
+void _onPickup()
+1196 _idleTimer = __const_SystemSingle_1
+1216 _timerActive = __const_SystemBoolean_1
+__lcl_owner_VRCSDKBaseVRCPlayerApi_0 = GetOwner(__this_UnityEngineGameObject_0);// 1236
+1284 if (__intnl_SystemBoolean_7) //1300
+{
+1292 JUMP 1348
+}
+1356 if (__intnl_SystemBoolean_7) //1384
+{
+1376 return;
+}
+__lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0 = get_LocalPlayer();// 1392
+1440 if (__intnl_SystemBoolean_9) //1456
+{
+1448 JUMP 1504
+}
+1512 if (__intnl_SystemBoolean_9) //1540
+{
+1532 return;
+}
+__lcl_distance_SystemSingle_0 = Distance(__intnl_UnityEngineVector3_1, __intnl_UnityEngineVector3_0);// 1612
+1660 if (__intnl_SystemBoolean_11) //1720
+{
+1692 __1__intnlparam = __this_UnityEngineTransform_0
+1696 JUMP 3080
+__0__intnlparam.Drop();// 1712
+}
+1732 return;
+void __0_SetScale()
+1764 _syncedScale = __0_scale__param
+transform.set_localScale(__0_scale__param);// 1784
+1808 _forcedScale = __0_scale__param
+1828 _forceScaleFrames = __const_SystemInt32_2
+1864 if (__intnl_SystemBoolean_12) //1888
+{
+this.RequestSerialization();// 1880
+}
+1900 return;
+void _DelayedCleanupCheck()
+1948 if (__intnl_SystemBoolean_13) //1964
+{
+1956 JUMP 2004
+}
+1980 _leavingPlayerId = __const_SystemInt32_3
+1996 return;
+2044 if (__intnl_SystemBoolean_14) //2092
+{
+2068 _leavingPlayerId = __const_SystemInt32_3
+2084 return;
+}
+2148 if (__intnl_SystemBoolean_15) //2164
+{
+2156 JUMP 2284
+}
+2188 if (__intnl_SystemBoolean_16) //2244
+{
+SetOwner(__this_UnityEngineGameObject_0, __intnl_VRCSDKBaseVRCPlayerApi_1);// 2228
+2236 JUMP 2284
+}
+2260 _leavingPlayerId = __const_SystemInt32_3
+2276 return;
+transform.set_position(__const_UnityEngineVector3_0);// 2300
+2332 __0_value__param = __const_SystemInt32_4
+2336 JUMP 96
+2360 OwnerId = __const_SystemInt32_3
+2388 __1_value__param = InitialScale
+2392 JUMP 248
+2416 _leavingPlayerId = __const_SystemInt32_3
+2436 __intnl_UnityEngineObject_0 = ParentPool
+2456 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+2500 if (__intnl_SystemBoolean_16) //2532
+{
+G_ParentPool.Return(__this_UnityEngineGameObject_0);// 2524
+}
+2544 return;
+__lcl_renderers_UnityEngineRendererArray_0 = transform.GetComponentsInChildren(__const_SystemType_0);// 2584
+2632 __intnl_SystemInt32_2 = __const_SystemInt32_0
+2676 if (__intnl_SystemBoolean_17) //3060
+{
+__lcl_renderer_UnityEngineRenderer_0 = L_renderers.Get(__intnl_SystemInt32_2);// 2708
+2780 __intnl_SystemInt32_4 = __const_SystemInt32_0
+2824 if (__intnl_SystemBoolean_18) //3020
+{
+__lcl_material_UnityEngineMaterial_0 = L_renderer.get_materials().Get(__intnl_SystemInt32_4);// 2856
+2904 if (__intnl_SystemBoolean_19) //2980
+{
+2936 __3__intnlparam = _shaderModifierType
+2940 JUMP 3172
+L_material.SetInt(__2__intnlparam, __const_SystemString_0);// 2972
+}
+3012 JUMP 2784
+}
+3052 JUMP 2636
+}
+3072 return;
+3128 __0__intnlparam = __intnl_UnityEngineComponent_0
+3144 return;
+3164 return;
+3188 __2__intnlparam = __3__intnlparam
+3204 return;
+3224 return;

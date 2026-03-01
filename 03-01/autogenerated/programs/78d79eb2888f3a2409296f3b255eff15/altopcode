@@ -1,0 +1,145 @@
+void GetStatsString()
+24 __lcl_stats_SystemString_0 = __const_SystemString_0
+52 __0_statValue__param = luck
+56 JUMP 768
+__lcl_stats_SystemString_0 = op_Addition(__intnl_SystemString_1, __lcl_stats_SystemString_0);// 152
+184 __0_statValue__param = strength
+188 JUMP 768
+__lcl_stats_SystemString_0 = op_Addition(__intnl_SystemString_3, __lcl_stats_SystemString_0);// 284
+316 __0_statValue__param = expertise
+320 JUMP 768
+__lcl_stats_SystemString_0 = op_Addition(__intnl_SystemString_5, __lcl_stats_SystemString_0);// 416
+448 __0_statValue__param = attractionRate
+452 JUMP 768
+__lcl_stats_SystemString_0 = op_Addition(__intnl_SystemString_7, __lcl_stats_SystemString_0);// 548
+580 __0_statValue__param = bigCatchRate
+584 JUMP 768
+__lcl_stats_SystemString_0 = op_Addition(__intnl_SystemString_9, __lcl_stats_SystemString_0);// 680
+__0_GetStatsString__ret = "".TrimEnd(__const_SystemChar_0);// 712
+732 return;
+752 return;
+808 if (__intnl_SystemBoolean_0) //900
+{
+__0___0_GetStatDisplayString__ret = op_Addition(__intnl_SystemString_10, __const_SystemString_8);// 864
+884 return;
+892 JUMP 944
+}
+__0___0_GetStatDisplayString__ret = G_bigCatchRate.ToString();// 916
+936 return;
+956 return;
+1012 if (__intnl_SystemBoolean_1) //1060
+{
+1036 __0___0_GetColorName__ret = __const_SystemString_9
+1052 return;
+}
+1100 if (__intnl_SystemBoolean_2) //1148
+{
+1124 __0___0_GetColorName__ret = __const_SystemString_10
+1140 return;
+}
+1188 if (__intnl_SystemBoolean_3) //1236
+{
+1212 __0___0_GetColorName__ret = __const_SystemString_11
+1228 return;
+}
+1276 if (__intnl_SystemBoolean_4) //1324
+{
+1300 __0___0_GetColorName__ret = __const_SystemString_12
+1316 return;
+}
+1364 if (__intnl_SystemBoolean_5) //1412
+{
+1388 __0___0_GetColorName__ret = __const_SystemString_13
+1404 return;
+}
+1452 if (__intnl_SystemBoolean_6) //1500
+{
+1476 __0___0_GetColorName__ret = __const_SystemString_14
+1492 return;
+}
+1540 if (__intnl_SystemBoolean_7) //1588
+{
+1564 __0___0_GetColorName__ret = __const_SystemString_15
+1580 return;
+}
+1628 if (__intnl_SystemBoolean_8) //1676
+{
+1652 __0___0_GetColorName__ret = __const_SystemString_16
+1668 return;
+}
+1716 if (__intnl_SystemBoolean_9) //1732
+{
+1724 JUMP 1764
+}
+1772 if (__intnl_SystemBoolean_9) //1820
+{
+1796 __0___0_GetColorName__ret = __const_SystemString_17
+1812 return;
+}
+__0___0_GetColorName__ret = op_Addition(__const_SystemString_21, __intnl_SystemString_18);// 2268
+2288 return;
+2308 return;
+void __0_GetStatMultiplier()
+__0___0_GetStatMultiplier__ret = op_Addition(__intnl_SystemSingle_7, __const_SystemSingle_1);// 2404
+2424 return;
+2444 return;
+void GetLuckMultiplier()
+2484 __1_statValue__param = luck
+2488 JUMP 2324
+2512 __0_GetLuckMultiplier__ret = __0___0_GetStatMultiplier__ret
+2528 return;
+2548 return;
+void GetStrengthMultiplier()
+2588 __1_statValue__param = strength
+2592 JUMP 2324
+2616 __0_GetStrengthMultiplier__ret = __0___0_GetStatMultiplier__ret
+2632 return;
+2652 return;
+void GetExpertiseMultiplier()
+2692 __1_statValue__param = expertise
+2696 JUMP 2324
+2720 __0_GetExpertiseMultiplier__ret = __0___0_GetStatMultiplier__ret
+2736 return;
+2756 return;
+void GetAttractionRateMultiplier()
+2796 __1_statValue__param = attractionRate
+2800 JUMP 2324
+2824 __0_GetAttractionRateMultiplier__ret = __0___0_GetStatMultiplier__ret
+2840 return;
+2860 return;
+void GetBigCatchRateMultiplier()
+2900 __1_statValue__param = bigCatchRate
+2904 JUMP 2324
+2928 __0_GetBigCatchRateMultiplier__ret = __0___0_GetStatMultiplier__ret
+2944 return;
+2964 return;
+void GetLineColor()
+2996 __0_GetLineColor__ret = lineColor
+3012 return;
+3032 return;
+void GetEmissionStrength()
+3064 __0_GetEmissionStrength__ret = emissionStrength
+3080 return;
+3100 return;
+void __0_ShouldAutoUnlockAtLevel()
+3132 __intnl_SystemBoolean_10 = isUnlockedFromLevel
+3144 if (__intnl_SystemBoolean_10) //3184
+{
+}
+3200 __0___0_ShouldAutoUnlockAtLevel__ret = __intnl_SystemBoolean_10
+3216 return;
+3236 return;
+void __0_CanUseLine()
+3260 if (isUnlockedByDefault) //3308
+{
+3284 __0___0_CanUseLine__ret = __const_SystemBoolean_0
+3300 return;
+}
+3316 if (isUnlockedFromLevel) //3376
+{
+__0___0_CanUseLine__ret = op_GreaterThanOrEqual(unlockLevel, __1_playerLevel__param);// 3348
+3368 return;
+}
+3392 __0___0_CanUseLine__ret = __const_SystemBoolean_1
+3408 return;
+3428 return;

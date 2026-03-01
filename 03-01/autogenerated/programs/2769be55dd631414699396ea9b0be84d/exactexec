@@ -1,0 +1,353 @@
+using System;
+using VRC.Udon;
+using UnityEngine;
+using TMPro;
+using VRC.SDKBase;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Boolean __intnl_SystemBoolean_13 = false;
+private UdonBehaviour __lcl_zone_VRCUdonUdonBehaviour_0 = null;
+private String __intnl_SystemString_1 = null;
+private Single refreshInterval = 1f;
+private Single __intnl_SystemSingle_0 = 0f;
+private object __intnl_SystemObject_0 = null;
+private String __const_SystemString_0 = "Players in Server: ";
+private UInt32 __gintnl_SystemUInt32_1 = 1124;
+private UInt32 __gintnl_SystemUInt32_0 = 476;
+private Boolean __const_SystemBoolean_0 = false;
+private String __const_SystemString_5 = " (You, Master)";
+private Vector3 __0_position__param = new Vector3(0f, 0f, 0f);
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Vector3 __lcl_localPos_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private String __intnl_SystemString_6 = null;
+private String __const_SystemString_16 = "__0___0_IsPositionInZone__ret";
+private String __const_SystemString_17 = "GetPriority";
+private String __const_SystemString_14 = "__0_position__param";
+private String __const_SystemString_15 = "__0_IsPositionInZone";
+private String __const_SystemString_12 = "allZones";
+private String __const_SystemString_13 = "Unknown";
+private String __const_SystemString_10 = " (";
+private String __const_SystemString_11 = "m)";
+private String __const_SystemString_18 = "__0_GetPriority__ret";
+private String __const_SystemString_19 = "GetZoneName";
+private Int64 __refl_typeid = -3929215845705827900;
+public TextMeshProUGUI playerListText;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Boolean __intnl_SystemBoolean_11 = false;
+private String __intnl_SystemString_3 = null;
+public UdonBehaviour ambientZoneManager;
+private object __intnl_SystemObject_2 = null;
+private String __const_SystemString_2 = "\n";
+private Vector3 __intnl_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Boolean __intnl_SystemBoolean_14 = false;
+private Component[] __intnl_UnityEngineComponentArray_1 = null;
+private Component[] __intnl_UnityEngineComponentArray_0 = null;
+private Component[] __intnl_UnityEngineComponentArray_2 = null;
+private object __const_SystemObject_0 = null;
+private String __intnl_SystemString_0 = null;
+private VRCPlayerApi __lcl_player_VRCSDKBaseVRCPlayerApi_0 = null;
+private Int32 __lcl_highestPriority_SystemInt32_0 = 0;
+private String __0___0_GetZoneForPosition__ret = null;
+private Int32 maxPlayers = 80;
+private Single __intnl_SystemSingle_1 = 0f;
+private object __intnl_SystemObject_1 = null;
+private String __const_SystemString_7 = " - ";
+public GameObject menuObject;
+private String __intnl_SystemString_8 = null;
+private Single __lcl_distance_SystemSingle_0 = 0f;
+public TextMeshProUGUI playerCountText;
+private VRCPlayerApi[] __intnl_VRCSDKBaseVRCPlayerApiArray_0 = null;
+public String localPlayerColorHex;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private String __const_SystemString_4 = ">";
+private Int32 __lcl_i_SystemInt32_1 = 0;
+private Int32 __lcl_i_SystemInt32_0 = 0;
+private String __intnl_SystemString_5 = null;
+private object __intnl_SystemObject_4 = null;
+private Int32 __lcl_priority_SystemInt32_0 = 0;
+private Vector3 __lcl_playerPos_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private String __const_SystemString_9 = " (Master) - ";
+private Int32 __lcl_playerCount_SystemInt32_0 = 0;
+private Boolean __intnl_SystemBoolean_12 = false;
+private UdonBehaviour __lcl_bestZone_VRCUdonUdonBehaviour_0 = null;
+private String __refl_typename = "PlayerLocator";
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Int32 __intnl_SystemInt32_5 = 0;
+private Int32 __intnl_SystemInt32_4 = 0;
+private String __intnl_SystemString_2 = null;
+private object __intnl_SystemObject_3 = null;
+public String masterPlayerColorHex;
+private String __const_SystemString_1 = "";
+private Single lastRefreshTime = 0f;
+private VRCPlayerApi[] playerArray = null;
+private String __lcl_zoneName_SystemString_0 = null;
+private String __const_SystemString_6 = " (You)";
+private Boolean __lcl_isLocal_SystemBoolean_0 = false;
+private String __intnl_SystemString_7 = null;
+private VRCPlayerApi localPlayer = null;
+private String __const_SystemString_20 = "__0_GetZoneName__ret";
+private String __const_SystemString_21 = "Open Sea";
+private Boolean __intnl_SystemBoolean_10 = false;
+private Int32 __const_SystemInt32_1 = 1;
+private Int32 __const_SystemInt32_0 = 0;
+private Int32 __const_SystemInt32_2 = -1;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private String __lcl_listText_SystemString_0 = null;
+private String __intnl_SystemString_4 = null;
+private String __const_SystemString_3 = "<color=#";
+private UdonBehaviour __this_VRCUdonUdonBehaviour_0 = this;
+private String __const_SystemString_8 = "</color>";
+
+
+public void _start()
+{
+localPlayer = Networking.LocalPlayer;
+__intnl_SystemBoolean_0 = localPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_0)
+{
+__this_VRCUdonUdonBehaviour_0.enabled = __const_SystemBoolean_0;
+return;
+}
+playerArray = maxPlayers.ctor();
+}
+public void _update()
+{
+__intnl_UnityEngineObject_0 = menuObject;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_0 == __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_1)
+{
+}
+else
+{
+__intnl_SystemBoolean_2 = menuObject.activeSelf;
+__intnl_SystemBoolean_1 = !__intnl_SystemBoolean_2;
+}
+if (__intnl_SystemBoolean_1)
+{
+return;
+}
+__intnl_SystemSingle_0 = Time.time;
+__intnl_SystemSingle_1 = __intnl_SystemSingle_0 - lastRefreshTime;
+__intnl_SystemBoolean_3 = __intnl_SystemSingle_1 >= refreshInterval;
+if (__intnl_SystemBoolean_3)
+{
+lastRefreshTime = Time.time;
+UNDEF_2769b_2508();
+}
+}
+private void UNDEF_2769b_2508()
+{
+__lcl_playerCount_SystemInt32_0 = VRCPlayerApi.GetPlayerCount();
+__intnl_VRCSDKBaseVRCPlayerApiArray_0 = VRCPlayerApi.GetPlayers(playerArray);
+__intnl_UnityEngineObject_2 = playerCountText;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_4 = __intnl_UnityEngineObject_2 != __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_4)
+{
+__intnl_SystemString_0 = String.Concat(__const_SystemString_0, __lcl_playerCount_SystemInt32_0);
+playerCountText.text = __intnl_SystemString_0;
+}
+__lcl_listText_SystemString_0 = __const_SystemString_1;
+__lcl_localPos_UnityEngineVector3_0 = localPlayer.GetPosition();
+__lcl_i_SystemInt32_0 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_5 = __lcl_i_SystemInt32_0 < __lcl_playerCount_SystemInt32_0;
+if (__intnl_SystemBoolean_5)
+{
+break;
+}
+__lcl_player_VRCSDKBaseVRCPlayerApi_0 = playerArray[__lcl_i_SystemInt32_0];
+__intnl_SystemBoolean_6 = __lcl_player_VRCSDKBaseVRCPlayerApi_0 == __const_SystemObject_0;
+if (__intnl_SystemBoolean_6)
+{
+}
+else
+{
+__intnl_SystemBoolean_7 = __lcl_player_VRCSDKBaseVRCPlayerApi_0.IsValid();
+__intnl_SystemBoolean_6 = !__intnl_SystemBoolean_7;
+}
+if (__intnl_SystemBoolean_6)
+{
+}
+else
+{
+__intnl_SystemInt32_0 = __lcl_listText_SystemString_0.Length;
+__intnl_SystemBoolean_8 = __intnl_SystemInt32_0 > __const_SystemInt32_0;
+if (__intnl_SystemBoolean_8)
+{
+__lcl_listText_SystemString_0 = __lcl_listText_SystemString_0 + __const_SystemString_2;
+}
+__lcl_playerPos_UnityEngineVector3_0 = __lcl_player_VRCSDKBaseVRCPlayerApi_0.GetPosition();
+__0_position__param = __lcl_playerPos_UnityEngineVector3_0;
+__0_GetZoneForPosition();
+__lcl_zoneName_SystemString_0 = __0___0_GetZoneForPosition__ret;
+__intnl_SystemInt32_1 = __lcl_player_VRCSDKBaseVRCPlayerApi_0.playerId;
+__intnl_SystemInt32_2 = localPlayer.playerId;
+__lcl_isLocal_SystemBoolean_0 = __intnl_SystemInt32_1 == __intnl_SystemInt32_2;
+if (__lcl_isLocal_SystemBoolean_0)
+{
+__intnl_SystemString_0 = __const_SystemString_3 + localPlayerColorHex;
+__intnl_SystemString_1 = __intnl_SystemString_0 + __const_SystemString_4;
+__lcl_listText_SystemString_0 = __lcl_listText_SystemString_0 + __intnl_SystemString_1;
+__intnl_SystemString_2 = __lcl_player_VRCSDKBaseVRCPlayerApi_0.displayName;
+__intnl_SystemBoolean_9 = __lcl_player_VRCSDKBaseVRCPlayerApi_0.isMaster;
+if (__intnl_SystemBoolean_9)
+{
+__intnl_SystemString_3 = __const_SystemString_5;
+}
+else
+{
+__intnl_SystemString_3 = __const_SystemString_6;
+}
+__intnl_SystemString_4 = __intnl_SystemString_2 + __intnl_SystemString_3;
+__intnl_SystemString_5 = __intnl_SystemString_4 + __const_SystemString_7;
+__intnl_SystemString_6 = __intnl_SystemString_5 + __lcl_zoneName_SystemString_0;
+__lcl_listText_SystemString_0 = __lcl_listText_SystemString_0 + __intnl_SystemString_6;
+__lcl_listText_SystemString_0 = __lcl_listText_SystemString_0 + __const_SystemString_8;
+}
+else
+{
+__intnl_SystemBoolean_9 = __lcl_player_VRCSDKBaseVRCPlayerApi_0.isMaster;
+if (__intnl_SystemBoolean_9)
+{
+__lcl_distance_SystemSingle_0 = Vector3.Distance(__lcl_localPos_UnityEngineVector3_0, __lcl_playerPos_UnityEngineVector3_0);
+__intnl_SystemString_0 = __const_SystemString_3 + masterPlayerColorHex;
+__intnl_SystemString_1 = __intnl_SystemString_0 + __const_SystemString_4;
+__lcl_listText_SystemString_0 = __lcl_listText_SystemString_0 + __intnl_SystemString_1;
+__intnl_SystemString_2 = __lcl_player_VRCSDKBaseVRCPlayerApi_0.displayName;
+__intnl_SystemString_3 = __intnl_SystemString_2 + __const_SystemString_9;
+__intnl_SystemString_4 = __intnl_SystemString_3 + __lcl_zoneName_SystemString_0;
+__intnl_SystemString_5 = __intnl_SystemString_4 + __const_SystemString_10;
+__intnl_SystemInt32_3 = Mathf.RoundToInt(__lcl_distance_SystemSingle_0);
+__intnl_SystemString_6 = String.Concat(__intnl_SystemString_5, __intnl_SystemInt32_3);
+__intnl_SystemString_7 = __intnl_SystemString_6 + __const_SystemString_11;
+__lcl_listText_SystemString_0 = __lcl_listText_SystemString_0 + __intnl_SystemString_7;
+__lcl_listText_SystemString_0 = __lcl_listText_SystemString_0 + __const_SystemString_8;
+}
+else
+{
+__lcl_distance_SystemSingle_0 = Vector3.Distance(__lcl_localPos_UnityEngineVector3_0, __lcl_playerPos_UnityEngineVector3_0);
+__intnl_SystemString_0 = __lcl_player_VRCSDKBaseVRCPlayerApi_0.displayName;
+__intnl_SystemString_1 = __intnl_SystemString_0 + __const_SystemString_7;
+__intnl_SystemString_2 = __intnl_SystemString_1 + __lcl_zoneName_SystemString_0;
+__intnl_SystemString_3 = __intnl_SystemString_2 + __const_SystemString_10;
+__intnl_SystemInt32_3 = Mathf.RoundToInt(__lcl_distance_SystemSingle_0);
+__intnl_SystemString_4 = String.Concat(__intnl_SystemString_3, __intnl_SystemInt32_3);
+__intnl_SystemString_5 = __intnl_SystemString_4 + __const_SystemString_11;
+__lcl_listText_SystemString_0 = __lcl_listText_SystemString_0 + __intnl_SystemString_5;
+}
+}
+}
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_1;
+}
+__intnl_UnityEngineObject_4 = playerListText;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_5 = __intnl_UnityEngineObject_4 != __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_5)
+{
+playerListText.text = __lcl_listText_SystemString_0;
+}
+}
+private void __0_GetZoneForPosition()
+{
+__intnl_UnityEngineObject_6 = ambientZoneManager;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_10 = __intnl_UnityEngineObject_6 == __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_10)
+{
+}
+else
+{
+__intnl_SystemObject_0 = ambientZoneManager.GetProgramVariable(__const_SystemString_12);
+__intnl_UnityEngineComponentArray_0 = (Component[])__intnl_SystemObject_0;
+__intnl_SystemBoolean_10 = __intnl_UnityEngineComponentArray_0 == __const_SystemObject_0;
+}
+if (__intnl_SystemBoolean_10)
+{
+__0___0_GetZoneForPosition__ret = __const_SystemString_13;
+return;
+}
+__lcl_bestZone_VRCUdonUdonBehaviour_0 = (UdonBehaviour)__const_SystemObject_0;
+__lcl_highestPriority_SystemInt32_0 = __const_SystemInt32_2;
+__lcl_i_SystemInt32_1 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemObject_1 = ambientZoneManager.GetProgramVariable(__const_SystemString_12);
+__intnl_UnityEngineComponentArray_1 = (Component[])__intnl_SystemObject_1;
+__intnl_SystemInt32_4 = __intnl_UnityEngineComponentArray_1.Length;
+__intnl_SystemBoolean_11 = __lcl_i_SystemInt32_1 < __intnl_SystemInt32_4;
+if (__intnl_SystemBoolean_11)
+{
+break;
+}
+__intnl_SystemObject_2 = ambientZoneManager.GetProgramVariable(__const_SystemString_12);
+__intnl_UnityEngineComponentArray_2 = (Component[])__intnl_SystemObject_2;
+__lcl_zone_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(__intnl_UnityEngineComponentArray_2[__lcl_i_SystemInt32_1]);
+__intnl_UnityEngineObject_8 = __lcl_zone_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_12 = __intnl_UnityEngineObject_8 == __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_12)
+{
+}
+else
+{
+__intnl_UnityEngineVector3_0 = __0_position__param;
+__lcl_zone_VRCUdonUdonBehaviour_0.SetProgramVariable(__const_SystemString_14, __0_position__param);
+__lcl_zone_VRCUdonUdonBehaviour_0.SendCustomEvent(__const_SystemString_15);
+__intnl_SystemObject_3 = __lcl_zone_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_16);
+__intnl_SystemBoolean_13 = (Boolean)__intnl_SystemObject_3;
+if (__intnl_SystemBoolean_13)
+{
+__lcl_zone_VRCUdonUdonBehaviour_0.SendCustomEvent(__const_SystemString_17);
+__intnl_SystemObject_4 = __lcl_zone_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_18);
+__intnl_SystemInt32_5 = Convert.ToInt32(__intnl_SystemObject_4);
+__lcl_priority_SystemInt32_0 = __intnl_SystemInt32_5;
+__intnl_SystemBoolean_14 = __lcl_priority_SystemInt32_0 > __lcl_highestPriority_SystemInt32_0;
+if (__intnl_SystemBoolean_14)
+{
+__lcl_highestPriority_SystemInt32_0 = __lcl_priority_SystemInt32_0;
+__lcl_bestZone_VRCUdonUdonBehaviour_0 = __lcl_zone_VRCUdonUdonBehaviour_0;
+}
+}
+}
+__lcl_i_SystemInt32_1 = __lcl_i_SystemInt32_1 + __const_SystemInt32_1;
+}
+__intnl_UnityEngineObject_8 = __lcl_bestZone_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_11 = __intnl_UnityEngineObject_8 != __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_11)
+{
+__lcl_bestZone_VRCUdonUdonBehaviour_0.SendCustomEvent(__const_SystemString_19);
+__intnl_SystemObject_1 = __lcl_bestZone_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_20);
+__intnl_SystemString_8 = (String)__intnl_SystemObject_1;
+__0___0_GetZoneForPosition__ret = __intnl_SystemString_8;
+return;
+}
+__0___0_GetZoneForPosition__ret = __const_SystemString_21;
+return;
+}
+}

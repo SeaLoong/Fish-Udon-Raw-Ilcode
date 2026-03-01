@@ -1,0 +1,548 @@
+using System;
+using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
+using VRC.Udon;
+using UnityEngine.Rendering;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Boolean __intnl_SystemBoolean_13 = false;
+private Material __intnl_UnityEngineMaterial_8 = null;
+private Material __intnl_UnityEngineMaterial_5 = null;
+private Material __intnl_UnityEngineMaterial_4 = null;
+private Material __intnl_UnityEngineMaterial_7 = null;
+private Material __intnl_UnityEngineMaterial_6 = null;
+private Material __intnl_UnityEngineMaterial_1 = null;
+private Material __intnl_UnityEngineMaterial_0 = null;
+private Material __intnl_UnityEngineMaterial_3 = null;
+private Material __intnl_UnityEngineMaterial_2 = null;
+private Object __intnl_UnityEngineObject_22 = null;
+private Object __intnl_UnityEngineObject_12 = null;
+private Type __const_SystemType_1 = typeof(Renderer);
+private Single __intnl_SystemSingle_0 = 0f;
+private String __const_SystemString_0 = "_NextCubemap";
+private Transform __intnl_UnityEngineTransform_0 = null;
+public GameObject weatherEffectPrefab;
+private Single __const_SystemSingle_0 = 0f;
+public Boolean enableFog;
+private Boolean __intnl_SystemBoolean_16 = false;
+private UInt32 __gintnl_SystemUInt32_5 = 1036;
+private UInt32 __gintnl_SystemUInt32_4 = 1000;
+private UInt32 __gintnl_SystemUInt32_6 = 3160;
+private UInt32 __gintnl_SystemUInt32_1 = 952;
+private UInt32 __gintnl_SystemUInt32_0 = 40;
+private UInt32 __gintnl_SystemUInt32_3 = 984;
+private UInt32 __gintnl_SystemUInt32_2 = 968;
+private Boolean __lcl_shouldPreserveEffect_SystemBoolean_0 = false;
+private Boolean __const_SystemBoolean_0 = true;
+private Boolean __const_SystemBoolean_1 = false;
+private Object __intnl_UnityEngineObject_21 = null;
+private Object __intnl_UnityEngineObject_11 = null;
+private Light __0_sunLight__param = null;
+public Cubemap skyboxCubemap;
+public AudioClip weatherAudioClip;
+private GameObject __3__intnlparam = null;
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+public String configName;
+private Object __intnl_UnityEngineObject_19 = null;
+private Object __intnl_UnityEngineObject_24 = null;
+private Object __intnl_UnityEngineObject_14 = null;
+private Int64 __refl_typeid = 2974024399498906205;
+private Single baseFogDensity = 0.01f;
+public PostProcessVolume postProcessVolume;
+private Transform __intnl_UnityEngineTransform_5 = null;
+private Int32 __0_GetWeatherType__ret = 0;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Boolean __intnl_SystemBoolean_11 = false;
+private Vector3 __const_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private ParticleSystem __lcl_ps_UnityEngineParticleSystem_0 = null;
+private GameObject __0__intnlparam = null;
+private Single __intnl_SystemSingle_2 = 0f;
+private String __const_SystemString_2 = "_BlendAmount";
+private Transform __intnl_UnityEngineTransform_2 = null;
+private Texture __intnl_UnityEngineTexture_0 = null;
+private Boolean __intnl_SystemBoolean_19 = false;
+private Boolean __intnl_SystemBoolean_14 = false;
+private Boolean isActive = false;
+private object __const_SystemObject_0 = null;
+private Object __intnl_UnityEngineObject_23 = null;
+private Object __intnl_UnityEngineObject_13 = null;
+private Type __const_SystemType_0 = typeof(ParticleSystem);
+private Single __intnl_SystemSingle_1 = 0f;
+public Single skyboxFogIntensity;
+public Single fogDensityMultiplier;
+private Single __const_SystemSingle_1 = 0.01f;
+public Int32 weatherType;
+private Boolean __intnl_SystemBoolean_17 = false;
+private AudioClip __0_GetIndoorWeatherAudio__ret = null;
+private Renderer __lcl_r_UnityEngineRenderer_0 = null;
+private Boolean __0_forceUpdate__param = false;
+private Object __intnl_UnityEngineObject_26 = null;
+private Object __intnl_UnityEngineObject_16 = null;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private String __const_SystemString_4 = "_FogHeight";
+private UdonBehaviour __1_weatherTarget__param = null;
+private Renderer[] __lcl_renderers_UnityEngineRendererArray_0 = null;
+private Single __0_GetWeatherAudioVolume__ret = 0f;
+private Int32 __lcl_i_SystemInt32_0 = 0;
+private GameObject activeWeatherEffect = null;
+private AmbientMode __const_UnityEngineRenderingAmbientMode_0 = AmbientMode.Flat;
+private GameObject __1__intnlparam = null;
+private Object __intnl_UnityEngineObject_25 = null;
+private Object __intnl_UnityEngineObject_15 = null;
+private Light __1_sunLight__param = null;
+private Transform __intnl_UnityEngineTransform_4 = null;
+private Boolean __intnl_SystemBoolean_12 = false;
+private Vector3 __const_UnityEngineVector3_1 = new Vector3(1f, 1f, 1f);
+public Single sunIntensity;
+private String __refl_typename = "AtmosphericConfig";
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Int32 __intnl_SystemInt32_5 = 0;
+private Int32 __intnl_SystemInt32_4 = 0;
+private String __const_SystemString_1 = "_CurrentCubemap";
+private Transform __intnl_UnityEngineTransform_1 = null;
+private Boolean __intnl_SystemBoolean_15 = false;
+public Single weatherAudioVolume;
+public Single ambientIntensity;
+private Object __intnl_UnityEngineObject_20 = null;
+private Object __intnl_UnityEngineObject_10 = null;
+private GameObject __0_weatherEffect__param = null;
+private UdonBehaviour __0_weatherTarget__param = null;
+public Int32[] allowedTimes;
+public Color sunColor;
+public Color fogColor;
+private String __lcl_prefabName_SystemString_0 = null;
+private String __lcl_effectName_SystemString_0 = null;
+private String __0_GetDisplayName__ret = null;
+private ParticleSystem[] __lcl_particles_UnityEngineParticleSystemArray_0 = null;
+private Object __intnl_UnityEngineObject_18 = null;
+public Color environmentColor;
+public Light sunLightReference;
+private Object __intnl_UnityEngineObject_27 = null;
+private Object __intnl_UnityEngineObject_17 = null;
+private Quaternion __const_UnityEngineQuaternion_0 = new Quaternion(1f, 0f, 0f, 0f);
+public Single lightIntensityMultiplier;
+public Single postProcessWeight;
+private GameObject __2__intnlparam = null;
+public Color ambientColor;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Boolean __intnl_SystemBoolean_20 = false;
+private Int32 __const_SystemInt32_1 = 1;
+private Int32 __const_SystemInt32_0 = 0;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+public AudioClip indoorWeatherAudioClip;
+private AudioClip __0_GetWeatherAudio__ret = null;
+private GameObject __0_GetActiveWeatherEffect__ret = null;
+private Boolean __0___0_CanBeActiveAtTime__ret = false;
+private String __const_SystemString_3 = "_FogIntensity";
+private Int32 __0_currentTime__param = 0;
+private Transform __intnl_UnityEngineTransform_3 = null;
+private Texture __intnl_UnityEngineTexture_1 = null;
+public Single skyboxFogHeight;
+private Boolean __intnl_SystemBoolean_18 = false;
+
+
+public void _start()
+{
+baseFogDensity = RenderSettings.fogDensity;
+UNDEF_23d38_216();
+}
+private void UNDEF_23d38_216()
+{
+__intnl_SystemBoolean_0 = String.IsNullOrEmpty(configName);
+if (__intnl_SystemBoolean_0)
+{
+}
+__intnl_UnityEngineObject_0 = skyboxCubemap;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_0 == __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_1)
+{
+}
+}
+public void __0_CanBeActiveAtTime()
+{
+__intnl_SystemBoolean_2 = allowedTimes == __const_SystemObject_0;
+if (__intnl_SystemBoolean_2)
+{
+}
+else
+{
+__intnl_SystemInt32_0 = allowedTimes.Length;
+__intnl_SystemBoolean_2 = __intnl_SystemInt32_0 == __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_2)
+{
+__0___0_CanBeActiveAtTime__ret = __const_SystemBoolean_0;
+return;
+}
+__lcl_i_SystemInt32_0 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_1 = allowedTimes.Length;
+__intnl_SystemBoolean_3 = __lcl_i_SystemInt32_0 < __intnl_SystemInt32_1;
+if (__intnl_SystemBoolean_3)
+{
+break;
+}
+__intnl_SystemInt32_2 = allowedTimes[__lcl_i_SystemInt32_0];
+__intnl_SystemBoolean_4 = __intnl_SystemInt32_2 == __0_currentTime__param;
+if (__intnl_SystemBoolean_4)
+{
+__0___0_CanBeActiveAtTime__ret = __const_SystemBoolean_0;
+return;
+}
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_1;
+}
+__0___0_CanBeActiveAtTime__ret = __const_SystemBoolean_1;
+return;
+}
+public void __0_ApplyConfig()
+{
+__intnl_SystemBoolean_5 = isActive;
+if (__intnl_SystemBoolean_5)
+{
+__intnl_SystemBoolean_5 = !__0_forceUpdate__param;
+}
+if (__intnl_SystemBoolean_5)
+{
+return;
+}
+__intnl_SystemSingle_0 = RenderSettings.fogDensity;
+__intnl_SystemBoolean_6 = __intnl_SystemSingle_0 > __const_SystemSingle_0;
+if (__intnl_SystemBoolean_6)
+{
+baseFogDensity = RenderSettings.fogDensity;
+}
+else
+{
+baseFogDensity = __const_SystemSingle_1;
+}
+__1_sunLight__param = __0_sunLight__param;
+UNDEF_23d38_1328();
+UNDEF_23d38_1828();
+UNDEF_23d38_2328();
+UNDEF_23d38_2492();
+__1_weatherTarget__param = __0_weatherTarget__param;
+UNDEF_23d38_4524();
+isActive = __const_SystemBoolean_0;
+}
+private void UNDEF_23d38_1328()
+{
+__intnl_UnityEngineObject_2 = __1_sunLight__param;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_7 = __intnl_UnityEngineObject_2 != __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_7)
+{
+break;
+}
+__1_sunLight__param.color = sunColor;
+__intnl_SystemSingle_1 = sunIntensity * lightIntensityMultiplier;
+__1_sunLight__param.intensity = __intnl_SystemSingle_1;
+RenderSettings.ambientMode = __const_UnityEngineRenderingAmbientMode_0;
+RenderSettings.ambientLight = ambientColor;
+RenderSettings.ambientIntensity = ambientIntensity;
+}
+private void UNDEF_23d38_1828()
+{
+__intnl_UnityEngineObject_4 = skyboxCubemap;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_8 = __intnl_UnityEngineObject_4 != __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_8)
+{
+__intnl_UnityEngineMaterial_0 = RenderSettings.skybox;
+__intnl_UnityEngineObject_6 = __intnl_UnityEngineMaterial_0;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_8 = __intnl_UnityEngineObject_6 != __intnl_UnityEngineObject_7;
+}
+if (__intnl_SystemBoolean_8)
+{
+__intnl_UnityEngineMaterial_1 = RenderSettings.skybox;
+__intnl_UnityEngineTexture_0 = skyboxCubemap;
+__intnl_UnityEngineMaterial_1.SetTexture(__const_SystemString_0, __intnl_UnityEngineTexture_0);
+__intnl_UnityEngineMaterial_2 = RenderSettings.skybox;
+__intnl_UnityEngineTexture_1 = skyboxCubemap;
+__intnl_UnityEngineMaterial_2.SetTexture(__const_SystemString_1, __intnl_UnityEngineTexture_1);
+__intnl_UnityEngineMaterial_3 = RenderSettings.skybox;
+__intnl_UnityEngineMaterial_3.SetFloat(__const_SystemString_2, __const_SystemSingle_0);
+__intnl_UnityEngineMaterial_4 = RenderSettings.skybox;
+__intnl_UnityEngineMaterial_4.SetFloat(__const_SystemString_3, skyboxFogIntensity);
+__intnl_UnityEngineMaterial_5 = RenderSettings.skybox;
+__intnl_UnityEngineMaterial_5.SetFloat(__const_SystemString_4, skyboxFogHeight);
+}
+}
+private void UNDEF_23d38_2328()
+{
+if (enableFog)
+{
+RenderSettings.fog = __const_SystemBoolean_0;
+RenderSettings.fogColor = fogColor;
+__intnl_SystemSingle_2 = baseFogDensity * fogDensityMultiplier;
+RenderSettings.fogDensity = __intnl_SystemSingle_2;
+__intnl_UnityEngineMaterial_6 = RenderSettings.skybox;
+__intnl_UnityEngineObject_8 = __intnl_UnityEngineMaterial_6;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_9 = __intnl_UnityEngineObject_8 != __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_9)
+{
+__intnl_UnityEngineMaterial_7 = RenderSettings.skybox;
+__intnl_UnityEngineMaterial_7.SetFloat(__const_SystemString_3, skyboxFogIntensity);
+__intnl_UnityEngineMaterial_8 = RenderSettings.skybox;
+__intnl_UnityEngineMaterial_8.SetFloat(__const_SystemString_4, skyboxFogHeight);
+}
+}
+else
+{
+RenderSettings.fog = __const_SystemBoolean_1;
+__intnl_UnityEngineMaterial_6 = RenderSettings.skybox;
+__intnl_UnityEngineObject_8 = __intnl_UnityEngineMaterial_6;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_9 = __intnl_UnityEngineObject_8 != __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_9)
+{
+__intnl_UnityEngineMaterial_7 = RenderSettings.skybox;
+__intnl_UnityEngineMaterial_7.SetFloat(__const_SystemString_3, __const_SystemSingle_0);
+}
+}
+}
+private void UNDEF_23d38_2492()
+{
+__intnl_UnityEngineObject_10 = postProcessVolume;
+__intnl_UnityEngineObject_11 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_10 = __intnl_UnityEngineObject_10 != __intnl_UnityEngineObject_11;
+if (__intnl_SystemBoolean_10)
+{
+postProcessVolume.enabled = __const_SystemBoolean_0;
+postProcessVolume.weight = postProcessWeight;
+}
+}
+private void UNDEF_23d38_4524()
+{
+__lcl_shouldPreserveEffect_SystemBoolean_0 = __const_SystemBoolean_1;
+__intnl_UnityEngineObject_12 = activeWeatherEffect;
+__intnl_UnityEngineObject_13 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_11 = __intnl_UnityEngineObject_12 != __intnl_UnityEngineObject_13;
+if (__intnl_SystemBoolean_11)
+{
+__intnl_UnityEngineObject_14 = weatherEffectPrefab;
+__intnl_UnityEngineObject_15 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_11 = __intnl_UnityEngineObject_14 != __intnl_UnityEngineObject_15;
+}
+if (__intnl_SystemBoolean_11)
+{
+__lcl_effectName_SystemString_0 = activeWeatherEffect.name;
+__lcl_prefabName_SystemString_0 = weatherEffectPrefab.name;
+__intnl_SystemBoolean_12 = __lcl_effectName_SystemString_0.Contains(__lcl_prefabName_SystemString_0);
+if (__intnl_SystemBoolean_12)
+{
+__lcl_shouldPreserveEffect_SystemBoolean_0 = __const_SystemBoolean_0;
+}
+}
+__intnl_UnityEngineObject_16 = activeWeatherEffect;
+__intnl_UnityEngineObject_17 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_12 = __intnl_UnityEngineObject_16 != __intnl_UnityEngineObject_17;
+if (__intnl_SystemBoolean_12)
+{
+__intnl_SystemBoolean_12 = !__lcl_shouldPreserveEffect_SystemBoolean_0;
+}
+if (__intnl_SystemBoolean_12)
+{
+__intnl_UnityEngineObject_18 = activeWeatherEffect;
+Object.Destroy(__intnl_UnityEngineObject_18);
+activeWeatherEffect = (GameObject)__const_SystemObject_0;
+}
+__intnl_UnityEngineObject_18 = weatherEffectPrefab;
+__intnl_UnityEngineObject_19 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_13 = __intnl_UnityEngineObject_18 != __intnl_UnityEngineObject_19;
+if (__intnl_SystemBoolean_13)
+{
+__intnl_SystemBoolean_13 = !__lcl_shouldPreserveEffect_SystemBoolean_0;
+}
+if (__intnl_SystemBoolean_13)
+{
+break;
+}
+__1__intnlparam = weatherEffectPrefab;
+UNDEF_23d38_5416();
+activeWeatherEffect = __0__intnlparam;
+__intnl_UnityEngineObject_20 = activeWeatherEffect;
+__intnl_UnityEngineObject_21 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_14 = __intnl_UnityEngineObject_20 == __intnl_UnityEngineObject_21;
+if (__intnl_SystemBoolean_14)
+{
+return;
+}
+activeWeatherEffect.SetActive(__const_SystemBoolean_0);
+__intnl_UnityEngineObject_22 = __1_weatherTarget__param;
+__intnl_UnityEngineObject_23 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_15 = __intnl_UnityEngineObject_22 != __intnl_UnityEngineObject_23;
+if (__intnl_SystemBoolean_15)
+{
+__intnl_UnityEngineTransform_0 = activeWeatherEffect.transform;
+__intnl_UnityEngineTransform_1 = __1_weatherTarget__param.transform;
+__intnl_UnityEngineTransform_0.SetParent(__intnl_UnityEngineTransform_1, __const_SystemBoolean_1);
+__intnl_UnityEngineTransform_2 = activeWeatherEffect.transform;
+__intnl_UnityEngineTransform_2.localPosition = __const_UnityEngineVector3_0;
+__intnl_UnityEngineTransform_3 = activeWeatherEffect.transform;
+__intnl_UnityEngineTransform_3.localRotation = __const_UnityEngineQuaternion_0;
+__intnl_UnityEngineTransform_4 = activeWeatherEffect.transform;
+__intnl_UnityEngineTransform_4.localScale = __const_UnityEngineVector3_1;
+__intnl_UnityEngineTransform_5 = activeWeatherEffect.transform;
+__lcl_particles_UnityEngineParticleSystemArray_0 = (ParticleSystem[])(__intnl_UnityEngineTransform_5.GetComponentsInChildren(__const_SystemType_0));
+__intnl_SystemBoolean_16 = __lcl_particles_UnityEngineParticleSystemArray_0 != __const_SystemObject_0;
+if (__intnl_SystemBoolean_16)
+{
+__intnl_SystemInt32_3 = __lcl_particles_UnityEngineParticleSystemArray_0.Length;
+__intnl_SystemBoolean_16 = __intnl_SystemInt32_3 > __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_16)
+{
+break;
+}
+__intnl_SystemInt32_4 = __lcl_particles_UnityEngineParticleSystemArray_0.Length;
+__intnl_SystemInt32_5 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_17 = __intnl_SystemInt32_5 < __intnl_SystemInt32_4;
+if (__intnl_SystemBoolean_17)
+{
+break;
+}
+__lcl_ps_UnityEngineParticleSystem_0 = (ParticleSystem)(__lcl_particles_UnityEngineParticleSystemArray_0[__intnl_SystemInt32_5]);
+__intnl_SystemBoolean_18 = __lcl_ps_UnityEngineParticleSystem_0.isPlaying;
+if (__intnl_SystemBoolean_18)
+{
+}
+else
+{
+__lcl_ps_UnityEngineParticleSystem_0.Play();
+}
+__intnl_SystemInt32_5 = __intnl_SystemInt32_5 + __const_SystemInt32_1;
+}
+}
+else
+{
+__intnl_UnityEngineTransform_0 = activeWeatherEffect.transform;
+__intnl_UnityEngineTransform_0.position = __const_UnityEngineVector3_0;
+__intnl_UnityEngineTransform_1 = activeWeatherEffect.transform;
+__intnl_UnityEngineTransform_1.rotation = __const_UnityEngineQuaternion_0;
+}
+__intnl_UnityEngineTransform_0 = activeWeatherEffect.transform;
+__lcl_renderers_UnityEngineRendererArray_0 = (Renderer[])(__intnl_UnityEngineTransform_0.GetComponentsInChildren(__const_SystemType_1));
+__intnl_SystemBoolean_16 = __lcl_renderers_UnityEngineRendererArray_0 != __const_SystemObject_0;
+if (__intnl_SystemBoolean_16)
+{
+__intnl_SystemInt32_3 = __lcl_renderers_UnityEngineRendererArray_0.Length;
+__intnl_SystemBoolean_16 = __intnl_SystemInt32_3 > __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_16)
+{
+break;
+}
+__intnl_SystemInt32_4 = __lcl_renderers_UnityEngineRendererArray_0.Length;
+__intnl_SystemInt32_5 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_17 = __intnl_SystemInt32_5 < __intnl_SystemInt32_4;
+if (__intnl_SystemBoolean_17)
+{
+break;
+}
+__lcl_r_UnityEngineRenderer_0 = (Renderer)(__lcl_renderers_UnityEngineRendererArray_0[__intnl_SystemInt32_5]);
+__lcl_r_UnityEngineRenderer_0.enabled = __const_SystemBoolean_0;
+__intnl_SystemInt32_5 = __intnl_SystemInt32_5 + __const_SystemInt32_1;
+}
+}
+public void DeactivateConfig()
+{
+if (isActive)
+{
+UNDEF_23d38_4896();
+}
+}
+private void UNDEF_23d38_4896()
+{
+__intnl_UnityEngineObject_24 = activeWeatherEffect;
+__intnl_UnityEngineObject_25 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_19 = __intnl_UnityEngineObject_24 != __intnl_UnityEngineObject_25;
+if (__intnl_SystemBoolean_19)
+{
+__intnl_UnityEngineObject_26 = activeWeatherEffect;
+Object.Destroy(__intnl_UnityEngineObject_26);
+activeWeatherEffect = (GameObject)__const_SystemObject_0;
+}
+__intnl_UnityEngineObject_26 = postProcessVolume;
+__intnl_UnityEngineObject_27 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_20 = __intnl_UnityEngineObject_26 != __intnl_UnityEngineObject_27;
+if (__intnl_SystemBoolean_20)
+{
+postProcessVolume.enabled = __const_SystemBoolean_1;
+postProcessVolume.weight = __const_SystemSingle_0;
+}
+isActive = __const_SystemBoolean_1;
+}
+public void GetWeatherAudio()
+{
+__0_GetWeatherAudio__ret = weatherAudioClip;
+return;
+}
+public void GetIndoorWeatherAudio()
+{
+__0_GetIndoorWeatherAudio__ret = indoorWeatherAudioClip;
+return;
+}
+public void GetWeatherAudioVolume()
+{
+__0_GetWeatherAudioVolume__ret = weatherAudioVolume;
+return;
+}
+public void GetDisplayName()
+{
+__0_GetDisplayName__ret = configName;
+return;
+}
+public void GetWeatherType()
+{
+__0_GetWeatherType__ret = weatherType;
+return;
+}
+public void GetActiveWeatherEffect()
+{
+__0_GetActiveWeatherEffect__ret = activeWeatherEffect;
+return;
+}
+public void __0_SetActiveWeatherEffect()
+{
+activeWeatherEffect = __0_weatherEffect__param;
+}
+private void UNDEF_23d38_5416()
+{
+__0__intnlparam = Object.Instantiate(__1__intnlparam);
+return;
+}
+private void UNDEF_23d38_5456()
+{
+__2__intnlparam = (GameObject)__const_SystemObject_0;
+}
+}

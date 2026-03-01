@@ -1,0 +1,260 @@
+using VRC.SDKBase;
+using System;
+using UnityEngine;
+using VRC.Udon;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private VRCPlayerApi __lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0 = null;
+private object __intnl_SystemObject_0 = null;
+private String __const_SystemString_0 = "__0_boat__param";
+private Transform __intnl_UnityEngineTransform_0 = null;
+private Boolean __const_SystemBoolean_0 = true;
+private Boolean __const_SystemBoolean_1 = false;
+private Object __intnl_UnityEngineObject_11 = null;
+private String __const_SystemString_5 = "__1_boatIndex__param";
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Int64 __refl_typeid = 8818603954361886955;
+private VRCPlayerApi onPlayerTriggerEnterPlayer = null;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Boolean __intnl_SystemBoolean_11 = false;
+public Boolean enableDebugLogs;
+private Bounds __intnl_UnityEngineBounds_0 = Center: (0.00, 0.00, 0.00), Extents: (0.00, 0.00, 0.00);
+private String __const_SystemString_2 = "__0___0_GetBoatIndex__ret";
+public Transform boatTransform;
+private Int32 __0_GetBoatIndex__ret = 0;
+private object __const_SystemObject_0 = null;
+private Type __const_SystemType_0 = typeof(Collider);
+private Boolean __lcl_isInBounds_SystemBoolean_0 = false;
+public UdonBehaviour manager;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private String __const_SystemString_4 = "__0_OnLocalPlayerEnteredBoat";
+public LayerMask playerLayerMask;
+private Collider __lcl_col_UnityEngineCollider_0 = null;
+private VRCPlayerApi onPlayerTriggerExitPlayer = null;
+private Vector3 __lcl_playerPos_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Boolean isLocalPlayerInZone = false;
+private Boolean __intnl_SystemBoolean_12 = false;
+private String __refl_typename = "SimpleBoatSyncZone";
+private Int32 boatIndex = -1;
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Transform __this_UnityEngineTransform_0 = this;
+private String __const_SystemString_1 = "__0_GetBoatIndex";
+private Object __intnl_UnityEngineObject_10 = null;
+private String __const_SystemString_6 = "__0_OnLocalPlayerExitedBoat";
+private Boolean __0_IsLocalPlayerInZone__ret = false;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Int32 __const_SystemInt32_0 = 0;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private String __const_SystemString_3 = "__0_boatIndex__param";
+
+
+public void _start()
+{
+__intnl_UnityEngineObject_0 = manager;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_0)
+{
+__intnl_UnityEngineObject_2 = boatTransform;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_2 != __intnl_UnityEngineObject_3;
+}
+if (__intnl_SystemBoolean_0)
+{
+break;
+}
+__intnl_UnityEngineTransform_0 = boatTransform;
+manager.SetProgramVariable(__const_SystemString_0, boatTransform);
+manager.SendCustomEvent(__const_SystemString_1);
+__intnl_SystemObject_0 = manager.GetProgramVariable(__const_SystemString_2);
+__intnl_SystemInt32_0 = Convert.ToInt32(__intnl_SystemObject_0);
+boatIndex = __intnl_SystemInt32_0;
+if (enableDebugLogs)
+{
+}
+}
+public void _onPlayerTriggerEnter()
+{
+__intnl_SystemBoolean_1 = onPlayerTriggerEnterPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_1)
+{
+}
+else
+{
+__intnl_SystemBoolean_2 = onPlayerTriggerEnterPlayer.isLocal;
+__intnl_SystemBoolean_1 = !__intnl_SystemBoolean_2;
+}
+if (__intnl_SystemBoolean_1)
+{
+return;
+}
+__intnl_SystemBoolean_3 = boatIndex < __const_SystemInt32_0;
+if (__intnl_SystemBoolean_3)
+{
+}
+else
+{
+__intnl_UnityEngineObject_4 = manager;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_3 = __intnl_UnityEngineObject_4 == __intnl_UnityEngineObject_5;
+}
+if (__intnl_SystemBoolean_3)
+{
+return;
+}
+if (isLocalPlayerInZone)
+{
+}
+else
+{
+isLocalPlayerInZone = __const_SystemBoolean_0;
+__intnl_SystemInt32_1 = boatIndex;
+manager.SetProgramVariable(__const_SystemString_3, boatIndex);
+manager.SendCustomEvent(__const_SystemString_4);
+if (enableDebugLogs)
+{
+}
+}
+}
+public void _onPlayerTriggerExit()
+{
+__intnl_SystemBoolean_4 = onPlayerTriggerExitPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_4)
+{
+}
+else
+{
+__intnl_SystemBoolean_5 = onPlayerTriggerExitPlayer.isLocal;
+__intnl_SystemBoolean_4 = !__intnl_SystemBoolean_5;
+}
+if (__intnl_SystemBoolean_4)
+{
+return;
+}
+__intnl_SystemBoolean_6 = boatIndex < __const_SystemInt32_0;
+if (__intnl_SystemBoolean_6)
+{
+}
+else
+{
+__intnl_UnityEngineObject_6 = manager;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_6 = __intnl_UnityEngineObject_6 == __intnl_UnityEngineObject_7;
+}
+if (__intnl_SystemBoolean_6)
+{
+return;
+}
+if (isLocalPlayerInZone)
+{
+isLocalPlayerInZone = __const_SystemBoolean_1;
+__intnl_SystemInt32_2 = boatIndex;
+manager.SetProgramVariable(__const_SystemString_5, boatIndex);
+manager.SendCustomEvent(__const_SystemString_6);
+if (enableDebugLogs)
+{
+}
+}
+}
+public void RefreshPlayerInZone()
+{
+__intnl_UnityEngineObject_8 = manager;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_7 = __intnl_UnityEngineObject_8 == __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_7)
+{
+}
+else
+{
+__intnl_SystemBoolean_7 = boatIndex < __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_7)
+{
+return;
+}
+__lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0 = Networking.LocalPlayer;
+__intnl_SystemBoolean_8 = __lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0 == __const_SystemObject_0;
+if (__intnl_SystemBoolean_8)
+{
+}
+else
+{
+__intnl_SystemBoolean_9 = __lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0.IsValid();
+__intnl_SystemBoolean_8 = !__intnl_SystemBoolean_9;
+}
+if (__intnl_SystemBoolean_8)
+{
+return;
+}
+__lcl_col_UnityEngineCollider_0 = (Collider)(__this_UnityEngineTransform_0.GetComponent(__const_SystemType_0));
+__intnl_UnityEngineObject_10 = __lcl_col_UnityEngineCollider_0;
+__intnl_UnityEngineObject_11 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_10 = __intnl_UnityEngineObject_10 == __intnl_UnityEngineObject_11;
+if (__intnl_SystemBoolean_10)
+{
+return;
+}
+__lcl_playerPos_UnityEngineVector3_0 = __lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0.GetPosition();
+__intnl_UnityEngineBounds_0 = __lcl_col_UnityEngineCollider_0.bounds;
+__lcl_isInBounds_SystemBoolean_0 = __intnl_UnityEngineBounds_0.Contains(__lcl_playerPos_UnityEngineVector3_0);
+__intnl_SystemBoolean_11 = __lcl_isInBounds_SystemBoolean_0;
+if (__intnl_SystemBoolean_11)
+{
+__intnl_SystemBoolean_11 = !isLocalPlayerInZone;
+}
+if (__intnl_SystemBoolean_11)
+{
+isLocalPlayerInZone = __const_SystemBoolean_0;
+__intnl_SystemInt32_3 = boatIndex;
+manager.SetProgramVariable(__const_SystemString_3, boatIndex);
+manager.SendCustomEvent(__const_SystemString_4);
+}
+else
+{
+__intnl_SystemBoolean_12 = !__lcl_isInBounds_SystemBoolean_0;
+if (__intnl_SystemBoolean_12)
+{
+__intnl_SystemBoolean_12 = isLocalPlayerInZone;
+}
+if (__intnl_SystemBoolean_12)
+{
+isLocalPlayerInZone = __const_SystemBoolean_1;
+__intnl_SystemInt32_3 = boatIndex;
+manager.SetProgramVariable(__const_SystemString_5, boatIndex);
+manager.SendCustomEvent(__const_SystemString_6);
+}
+}
+}
+public void GetBoatIndex()
+{
+__0_GetBoatIndex__ret = boatIndex;
+return;
+}
+public void IsLocalPlayerInZone()
+{
+__0_IsLocalPlayerInZone__ret = isLocalPlayerInZone;
+return;
+}
+}

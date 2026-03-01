@@ -1,0 +1,303 @@
+void _start()
+24 currentZoneID = __const_SystemString_0
+44 currentZoneName = __const_SystemString_1
+64 __intnl_UnityEngineObject_0 = dayNightCycle
+84 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+128 if (__intnl_SystemBoolean_0) //352
+{
+152 __intnl_SystemInt32Array_0 = openOceanWeatherTypes
+G_dayNightCycle.SetProgramVariable(openOceanWeatherTypes, __const_SystemString_2);// 180
+G_dayNightCycle.SendCustomEvent(__const_SystemString_3);// 204
+236 __intnl_VRCUdonUdonBehaviour_0 = dayNightCycle
+G_dayNightCycle.SendCustomEvent(__const_SystemString_4);// 248
+328 __intnl_SystemInt32_0 = __intnl_SystemInt32_1
+348 currentWeather = __intnl_SystemInt32_0
+}
+360 if (showDebugLogs) //368
+{
+}
+380 return;
+void _update()
+412 __intnl_UnityEngineObject_2 = dayNightCycle
+432 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+476 if (__intnl_SystemBoolean_1) //744
+{
+508 __intnl_VRCUdonUdonBehaviour_1 = dayNightCycle
+G_dayNightCycle.SendCustomEvent(__const_SystemString_4);// 520
+600 __intnl_SystemInt32_2 = __intnl_SystemInt32_3
+620 __lcl_newWeather_SystemInt32_0 = __intnl_SystemInt32_2
+664 if (__intnl_SystemBoolean_2) //744
+{
+688 currentWeather = __lcl_newWeather_SystemInt32_0
+716 __1_zoneID__param = currentZoneID
+720 JUMP 2224
+736 if (showDebugLogs) //744
+{
+}
+}
+}
+756 return;
+void __0_SetCurrentZone()
+812 if (__intnl_SystemBoolean_3) //840
+{
+832 return;
+}
+856 __lcl_previousZoneName_SystemString_0 = currentZoneName
+876 currentZoneID = __0_zoneID__param
+896 currentZoneName = __0_zoneName__param
+924 __1_zoneID__param = __0_zoneID__param
+928 JUMP 2224
+960 __2_zoneID__param = __0_zoneID__param
+964 JUMP 3972
+980 if (showDebugLogs) //988
+{
+}
+1000 return;
+void __0_ReevaluateCurrentZone()
+1056 if (__intnl_SystemBoolean_4) //1072
+{
+1064 JUMP 1128
+}
+1136 if (__intnl_SystemBoolean_4) //1180
+{
+1152 if (showDebugLogs) //1160
+{
+}
+1172 return;
+}
+1196 __lcl_highestPriorityZone_VRCUdonUdonBehaviour_0 = __const_SystemObject_0
+1216 __lcl_highestPriority_SystemInt32_0 = __const_SystemInt32_1
+1236 __lcl_i_SystemInt32_0 = __const_SystemInt32_0
+1304 if (__intnl_SystemBoolean_5) //1804
+{
+__lcl_zone_VRCUdonUdonBehaviour_0 = G_allZones.Get(__lcl_i_SystemInt32_0);// 1336
+1360 __intnl_UnityEngineObject_4 = __lcl_zone_VRCUdonUdonBehaviour_0
+1380 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+1424 if (__intnl_SystemBoolean_6) //1440
+{
+1432 JUMP 1764
+}
+1456 __intnl_UnityEngineVector3_0 = __0_playerPosition__param
+L_zone.SetProgramVariable(__0_playerPosition__param, __const_SystemString_6);// 1484
+L_zone.SendCustomEvent(__const_SystemString_7);// 1508
+1564 __intnl_SystemBoolean_7 = __intnl_SystemObject_2
+1576 if (__intnl_SystemBoolean_7) //1764
+{
+1680 if (__intnl_SystemBoolean_8) //1764
+{
+__lcl_highestPriority_SystemInt32_0 = ToInt32(__intnl_SystemObject_4);// 1736
+1760 __lcl_highestPriorityZone_VRCUdonUdonBehaviour_0 = __lcl_zone_VRCUdonUdonBehaviour_0
+}
+}
+__lcl_i_SystemInt32_0 = op_Addition(__const_SystemInt32_2, __lcl_i_SystemInt32_0);// 1788
+1796 JUMP 1240
+}
+1820 __intnl_UnityEngineObject_4 = __lcl_highestPriorityZone_VRCUdonUdonBehaviour_0
+1840 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+1884 if (__intnl_SystemBoolean_5) //2124
+{
+L_zone.SendCustomEvent(__const_SystemString_10);// 1916
+1972 __intnl_SystemString_0 = __intnl_SystemObject_2
+L_zone.SendCustomEvent(__const_SystemString_12);// 1992
+2048 __intnl_SystemString_1 = __intnl_SystemObject_3
+2068 __0_zoneID__param = __intnl_SystemString_0
+2088 __0_zoneName__param = __intnl_SystemString_1
+2092 JUMP 772
+2108 if (showDebugLogs) //2116
+{
+}
+2116 JUMP 2196
+}
+2148 __0_zoneID__param = __const_SystemString_0
+2168 __0_zoneName__param = __const_SystemString_1
+2172 JUMP 772
+2188 if (showDebugLogs) //2196
+{
+}
+2208 return;
+2240 __intnl_UnityEngineObject_6 = dayNightCycle
+2260 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+2304 if (__intnl_SystemBoolean_9) //2332
+{
+2324 return;
+}
+2372 if (__intnl_SystemBoolean_10) //2456
+{
+G_dayNightCycle.SetProgramVariable(__const_SystemBoolean_0, __const_SystemString_14);// 2404
+G_dayNightCycle.SendCustomEvent(__const_SystemString_15);// 2428
+2448 return;
+}
+2496 if (__intnl_SystemBoolean_11) //3888
+{
+2520 __lcl_i_SystemInt32_1 = __const_SystemInt32_0
+2588 if (__intnl_SystemBoolean_12) //3888
+{
+__lcl_zone_VRCUdonUdonBehaviour_1 = G_allZones.Get(__lcl_i_SystemInt32_1);// 2620
+2644 __intnl_UnityEngineObject_8 = __lcl_zone_VRCUdonUdonBehaviour_1
+2664 __intnl_UnityEngineObject_9 = __const_SystemObject_0
+2708 if (__intnl_SystemBoolean_13) //2824
+{
+L_zone.SendCustomEvent(__const_SystemString_10);// 2732
+2788 __intnl_SystemString_2 = __intnl_SystemObject_5
+}
+2832 if (__intnl_SystemBoolean_13) //3848
+{
+L_zone.SendCustomEvent(__const_SystemString_16);// 2856
+2912 __intnl_SystemBoolean_14 = __intnl_SystemObject_6
+2924 if (__intnl_SystemBoolean_14) //3024
+{
+G_dayNightCycle.SetProgramVariable(__const_SystemBoolean_1, __const_SystemString_14);// 2956
+G_dayNightCycle.SendCustomEvent(__const_SystemString_15);// 2980
+2996 if (showDebugLogs) //3004
+{
+}
+3016 return;
+}
+3048 __intnl_VRCUdonUdonBehaviour_2 = dayNightCycle
+G_dayNightCycle.SendCustomEvent(__const_SystemString_4);// 3060
+3140 __intnl_SystemInt32_8 = __intnl_SystemInt32_9
+3160 __lcl_currentWeather_SystemInt32_0 = __intnl_SystemInt32_8
+L_zone.SendCustomEvent(__const_SystemString_18);// 3180
+3236 __intnl_SystemInt32Array_1 = __intnl_SystemObject_8
+3256 __lcl_allowedTypes_SystemInt32Array_0 = __intnl_SystemInt32Array_1
+3300 if (__intnl_SystemBoolean_15) //3364
+{
+}
+3372 if (__intnl_SystemBoolean_15) //3756
+{
+3396 __lcl_isWeatherAllowed_SystemBoolean_0 = __const_SystemBoolean_1
+3416 __lcl_j_SystemInt32_0 = __const_SystemInt32_0
+3484 if (__intnl_SystemBoolean_16) //3640
+{
+3564 if (__intnl_SystemBoolean_17) //3600
+{
+3588 __lcl_isWeatherAllowed_SystemBoolean_0 = __const_SystemBoolean_0
+3592 JUMP 3640
+}
+__lcl_j_SystemInt32_0 = op_Addition(__const_SystemInt32_2, __lcl_j_SystemInt32_0);// 3624
+3632 JUMP 3420
+}
+3648 if (__lcl_isWeatherAllowed_SystemBoolean_0) //3664
+{
+3656 JUMP 3756
+}
+G_dayNightCycle.SetProgramVariable(__const_SystemBoolean_1, __const_SystemString_14);// 3688
+G_dayNightCycle.SendCustomEvent(__const_SystemString_15);// 3712
+3728 if (showDebugLogs) //3736
+{
+}
+3748 return;
+}
+G_dayNightCycle.SetProgramVariable(__const_SystemBoolean_0, __const_SystemString_14);// 3780
+G_dayNightCycle.SendCustomEvent(__const_SystemString_15);// 3804
+3820 if (showDebugLogs) //3828
+{
+}
+3840 return;
+}
+__lcl_i_SystemInt32_1 = op_Addition(__const_SystemInt32_2, __lcl_i_SystemInt32_1);// 3872
+3880 JUMP 2524
+}
+}
+G_dayNightCycle.SetProgramVariable(__const_SystemBoolean_0, __const_SystemString_14);// 3912
+G_dayNightCycle.SendCustomEvent(__const_SystemString_15);// 3936
+3956 return;
+3988 __intnl_UnityEngineObject_10 = dayNightCycle
+4008 __intnl_UnityEngineObject_11 = __const_SystemObject_0
+4052 if (__intnl_SystemBoolean_18) //4080
+{
+4072 return;
+}
+4120 if (__intnl_SystemBoolean_19) //4772
+{
+4144 __intnl_SystemInt32Array_2 = openOceanWeatherTypes
+G_dayNightCycle.SetProgramVariable(openOceanWeatherTypes, __const_SystemString_2);// 4172
+G_dayNightCycle.SendCustomEvent(__const_SystemString_3);// 4196
+4212 if (showDebugLogs) //4752
+{
+4236 __lcl_typesStr_SystemString_0 = __const_SystemString_20
+4280 if (__intnl_SystemBoolean_20) //4296
+{
+4288 JUMP 4352
+}
+4360 if (__intnl_SystemBoolean_20) //4396
+{
+4384 __lcl_typesStr_SystemString_0 = __const_SystemString_21
+4388 JUMP 4752
+}
+4412 __lcl_i_SystemInt32_2 = __const_SystemInt32_0
+4480 if (__intnl_SystemBoolean_21) //4752
+{
+__lcl_typesStr_SystemString_0 = op_Addition(__intnl_SystemString_3, __lcl_typesStr_SystemString_0);// 4568
+4672 if (__intnl_SystemBoolean_22) //4712
+{
+__lcl_typesStr_SystemString_0 = op_Addition(__const_SystemString_22, __lcl_typesStr_SystemString_0);// 4704
+}
+__lcl_i_SystemInt32_2 = op_Addition(__const_SystemInt32_2, __lcl_i_SystemInt32_2);// 4736
+4744 JUMP 4416
+}
+}
+4764 return;
+}
+4812 if (__intnl_SystemBoolean_20) //5916
+{
+4836 __lcl_i_SystemInt32_2 = __const_SystemInt32_0
+4904 if (__intnl_SystemBoolean_21) //5916
+{
+__lcl_zone_VRCUdonUdonBehaviour_2 = G_allZones.Get(__lcl_i_SystemInt32_2);// 4936
+4960 __intnl_UnityEngineObject_12 = __lcl_zone_VRCUdonUdonBehaviour_2
+4980 __intnl_UnityEngineObject_13 = __const_SystemObject_0
+5024 if (__intnl_SystemBoolean_22) //5140
+{
+L_zone.SendCustomEvent(__const_SystemString_10);// 5048
+5104 __intnl_SystemString_3 = __intnl_SystemObject_9
+}
+5148 if (__intnl_SystemBoolean_22) //5876
+{
+L_zone.SendCustomEvent(__const_SystemString_18);// 5172
+5228 __intnl_SystemInt32Array_2 = __intnl_SystemObject_10
+5248 __lcl_allowedTypes_SystemInt32Array_1 = __intnl_SystemInt32Array_2
+G_dayNightCycle.SetProgramVariable(__lcl_allowedTypes_SystemInt32Array_1, __const_SystemString_2);// 5276
+G_dayNightCycle.SendCustomEvent(__const_SystemString_3);// 5300
+5316 if (showDebugLogs) //5856
+{
+5340 __lcl_typesStr_SystemString_0 = __const_SystemString_20
+5384 if (__intnl_SystemBoolean_23) //5400
+{
+5392 JUMP 5456
+}
+5464 if (__intnl_SystemBoolean_23) //5500
+{
+5488 __lcl_typesStr_SystemString_0 = __const_SystemString_21
+5492 JUMP 5856
+}
+5516 __lcl_j_SystemInt32_1 = __const_SystemInt32_0
+5584 if (__intnl_SystemBoolean_24) //5856
+{
+__lcl_typesStr_SystemString_0 = op_Addition(__intnl_SystemString_4, __lcl_typesStr_SystemString_0);// 5672
+5776 if (__intnl_SystemBoolean_25) //5816
+{
+__lcl_typesStr_SystemString_0 = op_Addition(__const_SystemString_22, __lcl_typesStr_SystemString_0);// 5808
+}
+__lcl_j_SystemInt32_1 = op_Addition(__const_SystemInt32_2, __lcl_j_SystemInt32_1);// 5840
+5848 JUMP 5520
+}
+}
+5868 return;
+}
+__lcl_i_SystemInt32_2 = op_Addition(__const_SystemInt32_2, __lcl_i_SystemInt32_2);// 5900
+5908 JUMP 4840
+}
+}
+5932 __intnl_SystemInt32Array_2 = __const_SystemObject_0
+G_dayNightCycle.SetProgramVariable(__intnl_SystemInt32Array_2, __const_SystemString_2);// 5960
+G_dayNightCycle.SendCustomEvent(__const_SystemString_3);// 5984
+6004 return;
+void GetCurrentZoneID()
+6036 __0_GetCurrentZoneID__ret = currentZoneID
+6052 return;
+6072 return;
+void GetCurrentZoneName()
+6104 __0_GetCurrentZoneName__ret = currentZoneName
+6120 return;
+6140 return;

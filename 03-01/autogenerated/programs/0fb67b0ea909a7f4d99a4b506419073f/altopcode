@@ -1,0 +1,78 @@
+void _start()
+localPlayer = get_LocalPlayer();// 16
+64 if (__intnl_SystemBoolean_0) //92
+{
+84 return;
+}
+isVRUser = G_localPlayer.IsUserInVR();// 108
+148 if (__intnl_SystemBoolean_1) //180
+{
+}
+188 if (__intnl_SystemBoolean_1) //256
+{
+204 if (showDebugLogs) //212
+{
+}
+gameObject.SetActive(__const_SystemBoolean_0);// 228
+248 return;
+}
+264 JUMP 796
+transform.set_position(targetPosition);// 288
+transform.set_rotation(targetRotation);// 312
+336 positionVelocity = __const_UnityEngineVector3_0
+356 isActive = __const_SystemBoolean_1
+368 if (showDebugLogs) //376
+{
+}
+388 return;
+void _lateUpdate()
+436 if (__intnl_SystemBoolean_2) //452
+{
+444 JUMP 484
+}
+492 if (__intnl_SystemBoolean_2) //520
+{
+512 return;
+}
+528 JUMP 796
+transform.set_position(__intnl_UnityEngineVector3_1);// 624
+transform.set_rotation(__intnl_UnityEngineQuaternion_1);// 760
+780 return;
+__lcl_headData_VRCSDKBaseVRCPlayerApiTrackingData_0 = G_localPlayer.GetTrackingData(__const_VRCSDKBaseVRCPlayerApiTrackingDataType_0);// 820
+__lcl_headPosition_UnityEngineVector3_0 = L_headData.get_position();// 844
+__lcl_headRotation_UnityEngineQuaternion_0 = L_headData.get_rotation();// 868
+__lcl_headForward_UnityEngineVector3_0 = op_Multiply(__const_UnityEngineVector3_1, __lcl_headRotation_UnityEngineQuaternion_0);// 900
+__lcl_headUp_UnityEngineVector3_0 = op_Multiply(__const_UnityEngineVector3_2, __lcl_headRotation_UnityEngineQuaternion_0);// 932
+__lcl_flatForward_UnityEngineVector3_0 = ctor(__intnl_SystemSingle_3, __const_SystemSingle_0, __intnl_SystemSingle_2);// 1020
+1092 if (__intnl_SystemBoolean_3) //1164
+{
+__lcl_flatForward_UnityEngineVector3_0 = op_Multiply(__const_UnityEngineVector3_1, __intnl_UnityEngineQuaternion_2);// 1148
+1156 JUMP 1180
+}
+L_flatForward.Normalize();// 1172
+__lcl_visorForward_UnityEngineVector3_0 = Slerp(verticalFollowAmount, __lcl_headForward_UnityEngineVector3_0, __lcl_flatForward_UnityEngineVector3_0).get_normalized();// 1236
+__lcl_visorUp_UnityEngineVector3_0 = Slerp(__intnl_SystemSingle_5, __lcl_headUp_UnityEngineVector3_0, __const_UnityEngineVector3_2).get_normalized();// 1332
+targetPosition = op_Addition(__intnl_UnityEngineVector3_6, __intnl_UnityEngineVector3_5);// 1460
+targetRotation = LookRotation(__lcl_visorUp_UnityEngineVector3_0, __lcl_visorForward_UnityEngineVector3_0);// 1492
+1512 return;
+void SnapToPlayer()
+1568 if (__intnl_SystemBoolean_4) //1596
+{
+1588 return;
+}
+1604 JUMP 796
+transform.set_position(targetPosition);// 1628
+transform.set_rotation(targetRotation);// 1652
+1676 positionVelocity = __const_UnityEngineVector3_0
+1688 if (showDebugLogs) //1696
+{
+}
+1708 return;
+void IsAvailable()
+1740 __intnl_SystemBoolean_5 = isActive
+1752 if (__intnl_SystemBoolean_5) //1784
+{
+}
+1800 __0_IsAvailable__ret = __intnl_SystemBoolean_5
+1816 return;
+1836 return;

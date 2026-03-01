@@ -1,0 +1,108 @@
+void _start()
+24 __intnl_UnityEngineObject_0 = uiPanel
+44 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+88 if (__intnl_SystemBoolean_0) //216
+{
+originalScale = G_uiPanel.get_transform().get_localScale();// 136
+G_uiPanel.get_transform().set_localScale(__const_UnityEngineVector3_0);// 184
+G_uiPanel.SetActive(__const_SystemBoolean_0);// 208
+}
+228 return;
+void _interact()
+252 JUMP 288
+272 return;
+void OpenUI()
+304 __intnl_UnityEngineObject_2 = uiPanel
+324 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+368 if (__intnl_SystemBoolean_1) //396
+{
+388 return;
+}
+412 _hasTriggered = __const_SystemBoolean_0
+G_uiPanel.SetActive(__const_SystemBoolean_1);// 432
+G_uiPanel.get_transform().set_localScale(__const_UnityEngineVector3_0);// 480
+504 isAnimating = __const_SystemBoolean_1
+524 isOpening = __const_SystemBoolean_1
+544 animationTimer = __const_SystemSingle_0
+560 return;
+void CloseUI()
+592 __intnl_UnityEngineObject_4 = uiPanel
+612 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+656 if (__intnl_SystemBoolean_2) //684
+{
+676 return;
+}
+700 isAnimating = __const_SystemBoolean_1
+720 isOpening = __const_SystemBoolean_0
+740 animationTimer = __const_SystemSingle_0
+756 return;
+void OnYesClicked()
+780 if (_hasTriggered) //808
+{
+800 return;
+}
+824 _hasTriggered = __const_SystemBoolean_1
+844 __intnl_UnityEngineObject_6 = dialogueEvent
+864 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+908 if (__intnl_SystemBoolean_3) //992
+{
+932 __intnl_VRCUdonUdonBehaviour_0 = __const_SystemObject_0
+G_dialogueEvent.SetProgramVariable(__intnl_VRCUdonUdonBehaviour_0, __const_SystemString_0);// 960
+G_dialogueEvent.SendCustomEvent(__const_SystemString_1);// 984
+}
+1000 JUMP 576
+1020 return;
+void OnNoClicked()
+1044 JUMP 576
+1064 return;
+void _update()
+1112 if (__intnl_SystemBoolean_4) //1128
+{
+1120 JUMP 1200
+}
+1144 __intnl_UnityEngineObject_8 = uiPanel
+1164 __intnl_UnityEngineObject_9 = __const_SystemObject_0
+1208 if (__intnl_SystemBoolean_4) //1236
+{
+1228 return;
+}
+animationTimer = op_Addition(__intnl_SystemSingle_0, animationTimer);// 1276
+__lcl_t_SystemSingle_0 = Clamp01(__intnl_SystemSingle_1);// 1332
+1348 if (isOpening) //1616
+{
+1380 __0_t__param = __lcl_t_SystemSingle_0
+1384 JUMP 1932
+1408 __lcl_scale_SystemSingle_0 = __0___0_EaseOutBack__ret
+G_uiPanel.get_transform().set_localScale(__intnl_UnityEngineVector3_0);// 1484
+1532 if (__intnl_SystemBoolean_5) //1608
+{
+G_uiPanel.get_transform().set_localScale(originalScale);// 1580
+1604 isAnimating = __const_SystemBoolean_0
+}
+1608 JUMP 1904
+}
+1640 __1_t__param = __lcl_t_SystemSingle_0
+1644 JUMP 2440
+__lcl_scale_SystemSingle_0 = op_Subtraction(__0___0_EaseInQuad__ret, __const_SystemSingle_1);// 1676
+G_uiPanel.get_transform().set_localScale(__intnl_UnityEngineVector3_0);// 1756
+1804 if (__intnl_SystemBoolean_5) //1904
+{
+G_uiPanel.get_transform().set_localScale(__const_UnityEngineVector3_0);// 1852
+G_uiPanel.SetActive(__const_SystemBoolean_0);// 1876
+1900 isAnimating = __const_SystemBoolean_0
+}
+1916 return;
+1972 if (__intnl_SystemBoolean_6) //2168
+{
+__lcl_p_SystemSingle_0 = op_Division(__const_SystemSingle_2, __0_t__param);// 2004
+__0___0_EaseOutBack__ret = op_Multiplication(__intnl_SystemSingle_4, __const_SystemSingle_3);// 2132
+2152 return;
+2160 JUMP 2412
+}
+__lcl_p_SystemSingle_0 = op_Division(__const_SystemSingle_5, __intnl_SystemSingle_2);// 2224
+__0___0_EaseOutBack__ret = op_Subtraction(__intnl_SystemSingle_6, __const_SystemSingle_3);// 2384
+2404 return;
+2424 return;
+__0___0_EaseInQuad__ret = op_Multiplication(__1_t__param, __1_t__param);// 2464
+2484 return;
+2504 return;

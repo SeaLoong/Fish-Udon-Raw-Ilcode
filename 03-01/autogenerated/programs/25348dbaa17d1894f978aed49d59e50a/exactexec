@@ -1,0 +1,895 @@
+using System;
+using UnityEngine;
+using VRC.SDKBase;
+using TMPro;
+using VRC.Udon;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Boolean __intnl_SystemBoolean_13 = false;
+private Boolean __intnl_SystemBoolean_23 = false;
+private Boolean __intnl_SystemBoolean_33 = false;
+private UInt32 __gintnl_SystemUInt32_16 = 6528;
+private String __intnl_SystemString_1 = null;
+private Object __intnl_UnityEngineObject_22 = null;
+private Object __intnl_UnityEngineObject_12 = null;
+private Single __intnl_SystemSingle_0 = 0f;
+private object __intnl_SystemObject_0 = null;
+private String __const_SystemString_0 = "__0_returnedEvent__param";
+private Single __const_SystemSingle_0 = 0f;
+private Boolean __0___0_IsRequiredFish__ret = false;
+private Boolean __intnl_SystemBoolean_16 = false;
+private Boolean __intnl_SystemBoolean_26 = false;
+private Int32 __const_SystemInt32_11 = 6;
+private Int32 __const_SystemInt32_21 = 16;
+private Boolean __0_HasRareFishEnabled__ret = false;
+private UInt32[] __gintnl_SystemUInt32Array_0 = System.UInt32[];
+private UInt32 __gintnl_SystemUInt32_9 = 2412;
+private UInt32 __gintnl_SystemUInt32_8 = 2204;
+private UInt32 __gintnl_SystemUInt32_5 = 2028;
+private UInt32 __gintnl_SystemUInt32_4 = 1744;
+private UInt32 __gintnl_SystemUInt32_7 = 2148;
+private UInt32 __gintnl_SystemUInt32_6 = 2092;
+private UInt32 __gintnl_SystemUInt32_1 = 964;
+private UInt32 __gintnl_SystemUInt32_0 = 680;
+private UInt32 __gintnl_SystemUInt32_3 = 1204;
+private UInt32 __gintnl_SystemUInt32_2 = 1008;
+private Boolean __const_SystemBoolean_0 = true;
+private Boolean __const_SystemBoolean_1 = false;
+private Object __intnl_UnityEngineObject_21 = null;
+private Object __intnl_UnityEngineObject_11 = null;
+private Vector3 __0_value__param = new Vector3(0f, 0f, 0f);
+public Color gizmoColor;
+private String __const_SystemString_5 = "__0_GetFishIndexByID";
+public Int32[] fishSelectionIDs;
+private Int32 __const_SystemInt32_19 = 14;
+private UInt32 __gintnl_SystemUInt32_13 = 3460;
+private Boolean _isInitialized = false;
+private Int32 __3__intnlparam = 0;
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Int32 __const_SystemInt32_16 = 11;
+private Int32 __const_SystemInt32_26 = 21;
+private Int32 __0_GetBoostedShaderModifier__ret = 0;
+private Boolean __0_ShouldForceRareFish__ret = false;
+private Object __intnl_UnityEngineObject_19 = null;
+private String __const_SystemString_16 = "Modifier ";
+private String __const_SystemString_17 = "No bonuses";
+private String __const_SystemString_14 = " & ";
+private String __const_SystemString_15 = " Boost";
+private String __const_SystemString_12 = "x";
+private String __const_SystemString_13 = " | ";
+private String __const_SystemString_10 = "s";
+private String __const_SystemString_11 = "Luck ";
+private VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_0 = null;
+private Object __intnl_UnityEngineObject_24 = null;
+private Object __intnl_UnityEngineObject_14 = null;
+private Int64 __refl_typeid = 4548950882082134872;
+private Int32 boostedShaderModifier = 0;
+private Single __0_eventLifetime__param = 0f;
+private Int32 __lcl_fishIndex_SystemInt32_0 = 0;
+public Single eventRadius;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Boolean __intnl_SystemBoolean_11 = false;
+private Boolean __intnl_SystemBoolean_21 = false;
+private Boolean __intnl_SystemBoolean_31 = false;
+private UInt32 __gintnl_SystemUInt32_14 = 3776;
+public Single rareFishChance;
+private String __intnl_SystemString_3 = null;
+private Single lifetime = 0f;
+private Int32 __0__intnlparam = 0;
+private Int32 boostedShaderModifier2 = 0;
+private Single __intnl_SystemSingle_2 = 0f;
+private String __0_GetEventDescription__ret = null;
+private TextMeshProUGUI __intnl_TMProTextMeshProUGUI_0 = null;
+private object __intnl_SystemObject_2 = null;
+private Vector3 _old_currentPosition = new Vector3(0f, 0f, 0f);
+private String __const_SystemString_2 = "";
+private Vector3 __0_get_CurrentPosition__ret = new Vector3(0f, 0f, 0f);
+private Single __const_SystemSingle_2 = 0.2f;
+private Color __intnl_UnityEngineColor_0 = new Color(0f, 0f, 0f, 0f);
+private Boolean __intnl_SystemBoolean_19 = false;
+private Boolean __intnl_SystemBoolean_29 = false;
+private Boolean __0_active__param = false;
+private Vector3 __intnl_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private GameObject __intnl_UnityEngineGameObject_0 = null;
+public AudioClip eventLoopSFX;
+private Boolean __intnl_SystemBoolean_14 = false;
+private Boolean __intnl_SystemBoolean_24 = false;
+private Boolean __intnl_SystemBoolean_34 = false;
+private Int32 __const_SystemInt32_13 = 8;
+private Int32 __const_SystemInt32_23 = 18;
+private Component[] __intnl_UnityEngineComponentArray_1 = null;
+private Component[] __intnl_UnityEngineComponentArray_0 = null;
+public Single specificModifierChance;
+private object __const_SystemObject_0 = null;
+private Vector3 HIDDEN_POSITION = new Vector3(0f, -10000f, 0f);
+private String __intnl_SystemString_0 = null;
+private Single __0_GetLuckMultiplier__ret = 0f;
+private Object __intnl_UnityEngineObject_23 = null;
+private Object __intnl_UnityEngineObject_13 = null;
+private Single __intnl_SystemSingle_1 = 0f;
+private object __intnl_SystemObject_1 = null;
+private Boolean __0___0_IsPlayerInRange__ret = false;
+private String __const_SystemString_7 = "fishEntries";
+private Single __const_SystemSingle_1 = 1f;
+private UInt32 __gintnl_SystemUInt32_11 = 3324;
+private Boolean __intnl_SystemBoolean_17 = false;
+private Boolean __intnl_SystemBoolean_27 = false;
+private Boolean __0_get_IsInitialized__ret = false;
+private Int32 __const_SystemInt32_10 = 5;
+private Int32 __const_SystemInt32_20 = 15;
+private Object __intnl_UnityEngineObject_16 = null;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private String __const_SystemString_4 = "__0_fishID__param";
+private UInt32 __gintnl_SystemUInt32_19 = 6840;
+private Int32 __const_SystemInt32_18 = 13;
+private UInt32 __gintnl_SystemUInt32_12 = 3360;
+private UInt32 __intnl_SystemUInt32_0 = 0;
+public TextMeshProUGUI rareFishText;
+private Int32 __const_SystemInt32_15 = 10;
+private Int32 __const_SystemInt32_25 = 20;
+private Int32 __0_GetBoostedSizeModifier__ret = 0;
+public UdonBehaviour seaEventPool;
+private Int32 __1__intnlparam = 0;
+private Object __intnl_UnityEngineObject_25 = null;
+private Object __intnl_UnityEngineObject_15 = null;
+public Int32 boostedShaderModifierType2;
+private Boolean _old__isInitialized = false;
+public Single spawnWeight;
+public Int32 boostedShaderModifierType;
+private Int32 __0_GetRandomRequiredFishID__ret = 0;
+private String __const_SystemString_9 = "fishName";
+private Vector3 __intnl_UnityEngineVector3_2 = new Vector3(0f, 0f, 0f);
+private Boolean __intnl_SystemBoolean_12 = false;
+private Boolean __intnl_SystemBoolean_22 = false;
+private Boolean __intnl_SystemBoolean_32 = false;
+private Color __lcl_transparentColor_UnityEngineColor_0 = new Color(0f, 0f, 0f, 0f);
+private UInt32 __gintnl_SystemUInt32_17 = 6656;
+private String __refl_typename = "SeaEvent";
+private Single __0_GetModifierChanceMultiplier__ret = 0f;
+public GameObject persistentVFX;
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Int32 __intnl_SystemInt32_5 = 0;
+private Int32 __intnl_SystemInt32_4 = 0;
+private Int32 __intnl_SystemInt32_7 = 0;
+private Int32 __intnl_SystemInt32_6 = 0;
+private String __intnl_SystemString_2 = null;
+private object __intnl_SystemObject_3 = null;
+private Transform __this_UnityEngineTransform_0 = this;
+private String __const_SystemString_1 = "__0_OnEventReturned";
+private Vector3 __intnl_UnityEngineVector3_1 = new Vector3(0f, 0f, 0f);
+public AudioSource eventAudioSource;
+private Boolean __intnl_SystemBoolean_15 = false;
+private Boolean __intnl_SystemBoolean_25 = false;
+private Int32 __const_SystemInt32_12 = 7;
+private Int32 __const_SystemInt32_22 = 17;
+public Single modifierChanceMultiplier;
+private Int32 _activeFishID = -1;
+public Boolean drawEventArea;
+private Object __intnl_UnityEngineObject_20 = null;
+private Object __intnl_UnityEngineObject_10 = null;
+private Int32 __0_sizeModifier__param = 0;
+private String __const_SystemString_6 = "__0___0_GetFishIndexByID__ret";
+public Int32 boostedSizeModifierType;
+private Int32 boostedSizeModifier = 0;
+private UInt32 __gintnl_SystemUInt32_10 = 2484;
+private Int32[] __0_GetRequiredFishIDs__ret = null;
+private Int32 __const_SystemInt32_17 = 12;
+private Int32 __const_SystemInt32_27 = 22;
+private Int32 __0_fishID__param = 0;
+private Int32 __0_shaderModifier__param = 0;
+private Vector3 currentPosition = new Vector3(0f, -10000f, 0f);
+public UdonBehaviour fishDatabase;
+private GameObject __this_UnityEngineGameObject_0 = this;
+private Object __intnl_UnityEngineObject_18 = null;
+private Boolean __1_value__param = false;
+private String __0_GetRareFishDescription__ret = null;
+private Object __intnl_UnityEngineObject_17 = null;
+private Boolean __0_HasModifierBoostEnabled__ret = false;
+private Boolean __0_HasLuckBoostEnabled__ret = false;
+private UInt32 __gintnl_SystemUInt32_18 = 6792;
+private Int32 __2__intnlparam = 0;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Boolean __intnl_SystemBoolean_20 = false;
+private Boolean __intnl_SystemBoolean_30 = false;
+private UInt32 __gintnl_SystemUInt32_15 = 4456;
+private Int32 __const_SystemInt32_9 = 4;
+private Int32 __const_SystemInt32_8 = 3;
+private Int32 __const_SystemInt32_1 = -1;
+private Int32 __const_SystemInt32_0 = 0;
+private Int32 __const_SystemInt32_3 = 0;
+private Int32 __const_SystemInt32_2 = 1;
+private Int32 __const_SystemInt32_5 = 2;
+private Int32 __const_SystemInt32_4 = 1;
+private Int32 __const_SystemInt32_7 = 23;
+private Int32 __const_SystemInt32_6 = 2;
+private Int32 __const_SystemInt32_14 = 9;
+private Int32 __const_SystemInt32_24 = 19;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private String __intnl_SystemString_4 = null;
+private Int32 __0_GetActiveFishID__ret = 0;
+private Int32 __0_GetBoostedShaderModifier2__ret = 0;
+public Single luckMultiplier;
+private String __lcl_desc_SystemString_0 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_0 = null;
+private Vector3 __0_playerPosition__param = new Vector3(0f, 0f, 0f);
+private String __const_SystemString_3 = "School of ???";
+private UdonBehaviour __this_VRCUdonUdonBehaviour_2 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_1 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_0 = this;
+private String __const_SystemString_8 = "School of ";
+private Boolean __intnl_SystemBoolean_18 = false;
+private Boolean __intnl_SystemBoolean_28 = false;
+
+
+public void get_CurrentPosition()
+{
+__0_get_CurrentPosition__ret = currentPosition;
+}
+public void _onVarChange_currentPosition()
+{
+__0_value__param = currentPosition;
+currentPosition = _old_currentPosition;
+currentPosition = __0_value__param;
+__this_UnityEngineTransform_0.position = currentPosition;
+}
+public void get_IsInitialized()
+{
+__0_get_IsInitialized__ret = _isInitialized;
+}
+public void _onVarChange__isInitialized()
+{
+__1_value__param = _isInitialized;
+_isInitialized = _old__isInitialized;
+_isInitialized = __1_value__param;
+if (__1_value__param)
+{
+__intnl_UnityEngineObject_0 = persistentVFX;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_0)
+{
+persistentVFX.SetActive(__const_SystemBoolean_0);
+}
+__intnl_UnityEngineObject_2 = eventAudioSource;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_2 != __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_1)
+{
+__intnl_UnityEngineObject_4 = eventLoopSFX;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_4 != __intnl_UnityEngineObject_5;
+}
+if (__intnl_SystemBoolean_1)
+{
+eventAudioSource.clip = eventLoopSFX;
+eventAudioSource.loop = __const_SystemBoolean_0;
+eventAudioSource.Play();
+}
+__0_active__param = __const_SystemBoolean_0;
+UNDEF_25348_2632();
+}
+else
+{
+__this_UnityEngineTransform_0.position = HIDDEN_POSITION;
+__intnl_UnityEngineObject_0 = persistentVFX;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_0)
+{
+persistentVFX.SetActive(__const_SystemBoolean_1);
+}
+__intnl_UnityEngineObject_2 = eventAudioSource;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_2 != __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_1)
+{
+eventAudioSource.Stop();
+}
+__0_active__param = __const_SystemBoolean_1;
+UNDEF_25348_2632();
+}
+}
+public void _start()
+{
+UNDEF_25348_2244();
+if (_isInitialized)
+{
+}
+else
+{
+__this_UnityEngineTransform_0.position = HIDDEN_POSITION;
+__intnl_UnityEngineObject_6 = persistentVFX;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_2 = __intnl_UnityEngineObject_6 != __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_2)
+{
+persistentVFX.SetActive(__const_SystemBoolean_1);
+}
+__0_active__param = __const_SystemBoolean_1;
+UNDEF_25348_2632();
+}
+}
+public void _onDeserialization()
+{
+if (_isInitialized)
+{
+__this_UnityEngineTransform_0.position = currentPosition;
+__intnl_UnityEngineObject_8 = persistentVFX;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_3 = __intnl_UnityEngineObject_8 != __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_3)
+{
+persistentVFX.SetActive(__const_SystemBoolean_0);
+}
+__intnl_UnityEngineObject_10 = eventAudioSource;
+__intnl_UnityEngineObject_11 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_5 = __intnl_UnityEngineObject_10 != __intnl_UnityEngineObject_11;
+if (__intnl_SystemBoolean_5)
+{
+__intnl_UnityEngineObject_12 = eventLoopSFX;
+__intnl_UnityEngineObject_13 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_5 = __intnl_UnityEngineObject_12 != __intnl_UnityEngineObject_13;
+}
+__intnl_SystemBoolean_4 = __intnl_SystemBoolean_5;
+if (__intnl_SystemBoolean_4)
+{
+__intnl_SystemBoolean_6 = eventAudioSource.isPlaying;
+__intnl_SystemBoolean_4 = !__intnl_SystemBoolean_6;
+}
+if (__intnl_SystemBoolean_4)
+{
+eventAudioSource.clip = eventLoopSFX;
+eventAudioSource.loop = __const_SystemBoolean_0;
+eventAudioSource.Play();
+}
+__0_active__param = __const_SystemBoolean_0;
+UNDEF_25348_2632();
+}
+else
+{
+__this_UnityEngineTransform_0.position = HIDDEN_POSITION;
+__intnl_UnityEngineObject_8 = persistentVFX;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_3 = __intnl_UnityEngineObject_8 != __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_3)
+{
+persistentVFX.SetActive(__const_SystemBoolean_1);
+}
+__intnl_UnityEngineObject_10 = eventAudioSource;
+__intnl_UnityEngineObject_11 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_4 = __intnl_UnityEngineObject_10 != __intnl_UnityEngineObject_11;
+if (__intnl_SystemBoolean_4)
+{
+eventAudioSource.Stop();
+}
+__0_active__param = __const_SystemBoolean_1;
+UNDEF_25348_2632();
+}
+}
+private void UNDEF_25348_2244()
+{
+__1__intnlparam = boostedSizeModifierType;
+UNDEF_25348_8556();
+boostedSizeModifier = __0__intnlparam;
+__3__intnlparam = boostedShaderModifierType;
+UNDEF_25348_9712();
+boostedShaderModifier = __2__intnlparam;
+__3__intnlparam = boostedShaderModifierType2;
+UNDEF_25348_9712();
+boostedShaderModifier2 = __2__intnlparam;
+}
+private void UNDEF_25348_2632()
+{
+__intnl_UnityEngineObject_14 = rareFishText;
+__intnl_UnityEngineObject_15 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_7 = __intnl_UnityEngineObject_14 == __intnl_UnityEngineObject_15;
+if (__intnl_SystemBoolean_7)
+{
+return;
+}
+__intnl_SystemBoolean_8 = __0_active__param;
+if (__intnl_SystemBoolean_8)
+{
+HasRareFishEnabled();
+__intnl_SystemBoolean_8 = __0_HasRareFishEnabled__ret;
+}
+if (__intnl_SystemBoolean_8)
+{
+__intnl_TMProTextMeshProUGUI_0 = rareFishText;
+GetRareFishDescription();
+__intnl_TMProTextMeshProUGUI_0.text = __0_GetRareFishDescription__ret;
+__intnl_UnityEngineGameObject_0 = rareFishText.gameObject;
+__intnl_UnityEngineGameObject_0.SetActive(__const_SystemBoolean_0);
+}
+else
+{
+__intnl_UnityEngineGameObject_0 = rareFishText.gameObject;
+__intnl_UnityEngineGameObject_0.SetActive(__const_SystemBoolean_1);
+}
+}
+public void __0_Initialize()
+{
+__intnl_VRCSDKBaseVRCPlayerApi_0 = Networking.LocalPlayer;
+Networking.SetOwner(__intnl_VRCSDKBaseVRCPlayerApi_0, __this_UnityEngineGameObject_0);
+lifetime = __0_eventLifetime__param;
+__intnl_SystemBoolean_9 = fishSelectionIDs != __const_SystemObject_0;
+if (__intnl_SystemBoolean_9)
+{
+__intnl_SystemInt32_0 = fishSelectionIDs.Length;
+__intnl_SystemBoolean_9 = __intnl_SystemInt32_0 > __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_9)
+{
+__intnl_SystemInt32_1 = fishSelectionIDs.Length;
+__intnl_SystemInt32_2 = Random.Range(__const_SystemInt32_0, __intnl_SystemInt32_1);
+_activeFishID = fishSelectionIDs[__intnl_SystemInt32_2];
+}
+else
+{
+_activeFishID = __const_SystemInt32_1;
+}
+_isInitialized = __const_SystemBoolean_0;
+__intnl_UnityEngineObject_16 = persistentVFX;
+__intnl_UnityEngineObject_17 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_10 = __intnl_UnityEngineObject_16 != __intnl_UnityEngineObject_17;
+if (__intnl_SystemBoolean_10)
+{
+persistentVFX.SetActive(__const_SystemBoolean_0);
+}
+__intnl_UnityEngineObject_18 = eventAudioSource;
+__intnl_UnityEngineObject_19 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_11 = __intnl_UnityEngineObject_18 != __intnl_UnityEngineObject_19;
+if (__intnl_SystemBoolean_11)
+{
+__intnl_UnityEngineObject_20 = eventLoopSFX;
+__intnl_UnityEngineObject_21 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_11 = __intnl_UnityEngineObject_20 != __intnl_UnityEngineObject_21;
+}
+if (__intnl_SystemBoolean_11)
+{
+eventAudioSource.clip = eventLoopSFX;
+eventAudioSource.loop = __const_SystemBoolean_0;
+eventAudioSource.Play();
+}
+UNDEF_25348_2244();
+__0_active__param = __const_SystemBoolean_0;
+UNDEF_25348_2632();
+__this_VRCUdonUdonBehaviour_0.RequestSerialization();
+}
+public void __0_SetBoostedModifiers()
+{
+boostedSizeModifierType = __0_sizeModifier__param;
+boostedShaderModifierType = __0_shaderModifier__param;
+UNDEF_25348_2244();
+if (_isInitialized)
+{
+}
+}
+public void _onEnable()
+{
+}
+public void _onDisable()
+{
+}
+public void _update()
+{
+if (_isInitialized)
+{
+UNDEF_25348_3976();
+}
+}
+private void UNDEF_25348_3976()
+{
+__intnl_SystemBoolean_12 = Networking.IsOwner(__this_UnityEngineGameObject_0);
+if (__intnl_SystemBoolean_12)
+{
+__intnl_SystemSingle_0 = Time.deltaTime;
+lifetime = lifetime - __intnl_SystemSingle_0;
+__intnl_SystemBoolean_13 = lifetime <= __const_SystemSingle_0;
+if (__intnl_SystemBoolean_13)
+{
+__1_value__param = __const_SystemBoolean_1;
+lifetime = __const_SystemSingle_0;
+__this_VRCUdonUdonBehaviour_1.RequestSerialization();
+__intnl_UnityEngineObject_22 = seaEventPool;
+__intnl_UnityEngineObject_23 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_14 = __intnl_UnityEngineObject_22 != __intnl_UnityEngineObject_23;
+if (__intnl_SystemBoolean_14)
+{
+seaEventPool.SetProgramVariable(__const_SystemString_0, __this_VRCUdonUdonBehaviour_2);
+seaEventPool.SendCustomEvent(__const_SystemString_1);
+}
+}
+}
+}
+public void __0_IsPlayerInRange()
+{
+__intnl_UnityEngineVector3_0 = __this_UnityEngineTransform_0.position;
+__intnl_SystemSingle_1 = Vector3.Distance(__intnl_UnityEngineVector3_0, __0_playerPosition__param);
+__0___0_IsPlayerInRange__ret = __intnl_SystemSingle_1 <= eventRadius;
+return;
+}
+public void GetLuckMultiplier()
+{
+__0_GetLuckMultiplier__ret = luckMultiplier;
+return;
+}
+public void HasLuckBoostEnabled()
+{
+__0_HasLuckBoostEnabled__ret = luckMultiplier > __const_SystemSingle_1;
+return;
+}
+public void HasRareFishEnabled()
+{
+__intnl_SystemBoolean_15 = fishSelectionIDs != __const_SystemObject_0;
+if (__intnl_SystemBoolean_15)
+{
+__intnl_SystemInt32_3 = fishSelectionIDs.Length;
+__intnl_SystemBoolean_15 = __intnl_SystemInt32_3 > __const_SystemInt32_0;
+}
+__0_HasRareFishEnabled__ret = __intnl_SystemBoolean_15;
+return;
+}
+public void ShouldForceRareFish()
+{
+HasRareFishEnabled();
+__intnl_SystemBoolean_16 = __0_HasRareFishEnabled__ret;
+if (__intnl_SystemBoolean_16)
+{
+__intnl_SystemSingle_2 = Random.value;
+__intnl_SystemBoolean_16 = __intnl_SystemSingle_2 < rareFishChance;
+}
+__0_ShouldForceRareFish__ret = __intnl_SystemBoolean_16;
+return;
+}
+public void GetActiveFishID()
+{
+__0_GetActiveFishID__ret = _activeFishID;
+return;
+}
+public void GetRequiredFishIDs()
+{
+__intnl_SystemBoolean_17 = _activeFishID < __const_SystemInt32_0;
+if (__intnl_SystemBoolean_17)
+{
+__0_GetRequiredFishIDs__ret = (Int32[])__const_SystemObject_0;
+return;
+}
+__0_GetRequiredFishIDs__ret = __const_SystemInt32_2.ctor();
+__0_GetRequiredFishIDs__ret.Set(__const_SystemInt32_0, _activeFishID);
+return;
+}
+public void GetRandomRequiredFishID()
+{
+__0_GetRandomRequiredFishID__ret = _activeFishID;
+return;
+}
+public void __0_IsRequiredFish()
+{
+__intnl_SystemBoolean_18 = _activeFishID >= __const_SystemInt32_0;
+if (__intnl_SystemBoolean_18)
+{
+__intnl_SystemBoolean_18 = _activeFishID == __0_fishID__param;
+}
+__0___0_IsRequiredFish__ret = __intnl_SystemBoolean_18;
+return;
+}
+public void GetRareFishDescription()
+{
+__intnl_SystemBoolean_19 = _activeFishID < __const_SystemInt32_0;
+if (__intnl_SystemBoolean_19)
+{
+__0_GetRareFishDescription__ret = __const_SystemString_2;
+return;
+}
+__intnl_UnityEngineObject_24 = fishDatabase;
+__intnl_UnityEngineObject_25 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_20 = __intnl_UnityEngineObject_24 == __intnl_UnityEngineObject_25;
+if (__intnl_SystemBoolean_20)
+{
+__0_GetRareFishDescription__ret = __const_SystemString_3;
+return;
+}
+__intnl_SystemInt32_4 = _activeFishID;
+fishDatabase.SetProgramVariable(__const_SystemString_4, _activeFishID);
+fishDatabase.SendCustomEvent(__const_SystemString_5);
+__intnl_SystemObject_0 = fishDatabase.GetProgramVariable(__const_SystemString_6);
+__intnl_SystemInt32_5 = Convert.ToInt32(__intnl_SystemObject_0);
+__lcl_fishIndex_SystemInt32_0 = __intnl_SystemInt32_5;
+__intnl_SystemBoolean_21 = __lcl_fishIndex_SystemInt32_0 >= __const_SystemInt32_0;
+if (__intnl_SystemBoolean_21)
+{
+__intnl_SystemObject_1 = fishDatabase.GetProgramVariable(__const_SystemString_7);
+__intnl_UnityEngineComponentArray_0 = (Component[])__intnl_SystemObject_1;
+__intnl_SystemInt32_6 = __intnl_UnityEngineComponentArray_0.Length;
+__intnl_SystemBoolean_21 = __lcl_fishIndex_SystemInt32_0 < __intnl_SystemInt32_6;
+}
+if (__intnl_SystemBoolean_21)
+{
+__intnl_SystemObject_2 = fishDatabase.GetProgramVariable(__const_SystemString_7);
+__intnl_UnityEngineComponentArray_1 = (Component[])__intnl_SystemObject_2;
+__intnl_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(__intnl_UnityEngineComponentArray_1[__lcl_fishIndex_SystemInt32_0]);
+__intnl_SystemObject_3 = __intnl_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_9);
+__intnl_SystemString_0 = (String)__intnl_SystemObject_3;
+__intnl_SystemString_1 = __const_SystemString_8 + __intnl_SystemString_0;
+__0_GetRareFishDescription__ret = __intnl_SystemString_1 + __const_SystemString_10;
+return;
+}
+__0_GetRareFishDescription__ret = __const_SystemString_3;
+return;
+}
+public void HasModifierBoostEnabled()
+{
+__intnl_SystemBoolean_24 = modifierChanceMultiplier > __const_SystemSingle_1;
+if (__intnl_SystemBoolean_24)
+{
+}
+else
+{
+__intnl_SystemBoolean_24 = boostedSizeModifier != __const_SystemInt32_0;
+}
+__intnl_SystemBoolean_23 = __intnl_SystemBoolean_24;
+if (__intnl_SystemBoolean_23)
+{
+}
+else
+{
+__intnl_SystemBoolean_23 = boostedShaderModifier != __const_SystemInt32_0;
+}
+__intnl_SystemBoolean_22 = __intnl_SystemBoolean_23;
+if (__intnl_SystemBoolean_22)
+{
+}
+else
+{
+__intnl_SystemBoolean_22 = boostedShaderModifier2 != __const_SystemInt32_0;
+}
+__0_HasModifierBoostEnabled__ret = __intnl_SystemBoolean_22;
+return;
+}
+public void GetModifierChanceMultiplier()
+{
+__0_GetModifierChanceMultiplier__ret = modifierChanceMultiplier;
+return;
+}
+public void GetBoostedSizeModifier()
+{
+__0_GetBoostedSizeModifier__ret = boostedSizeModifier;
+return;
+}
+public void GetBoostedShaderModifier()
+{
+__0_GetBoostedShaderModifier__ret = boostedShaderModifier;
+return;
+}
+public void GetBoostedShaderModifier2()
+{
+__0_GetBoostedShaderModifier2__ret = boostedShaderModifier2;
+return;
+}
+public void GetEventDescription()
+{
+__lcl_desc_SystemString_0 = __const_SystemString_2;
+HasLuckBoostEnabled();
+if (__0_HasLuckBoostEnabled__ret)
+{
+__intnl_SystemString_2 = String.Concat(__const_SystemString_11, luckMultiplier);
+__intnl_SystemString_3 = __intnl_SystemString_2 + __const_SystemString_12;
+__lcl_desc_SystemString_0 = __lcl_desc_SystemString_0 + __intnl_SystemString_3;
+}
+HasRareFishEnabled();
+if (__0_HasRareFishEnabled__ret)
+{
+__intnl_SystemInt32_7 = __lcl_desc_SystemString_0.Length;
+__intnl_SystemBoolean_25 = __intnl_SystemInt32_7 > __const_SystemInt32_0;
+if (__intnl_SystemBoolean_25)
+{
+__lcl_desc_SystemString_0 = __lcl_desc_SystemString_0 + __const_SystemString_13;
+}
+GetRareFishDescription();
+__lcl_desc_SystemString_0 = __lcl_desc_SystemString_0 + __0_GetRareFishDescription__ret;
+}
+HasModifierBoostEnabled();
+if (__0_HasModifierBoostEnabled__ret)
+{
+__intnl_SystemInt32_7 = __lcl_desc_SystemString_0.Length;
+__intnl_SystemBoolean_25 = __intnl_SystemInt32_7 > __const_SystemInt32_0;
+if (__intnl_SystemBoolean_25)
+{
+__lcl_desc_SystemString_0 = __lcl_desc_SystemString_0 + __const_SystemString_13;
+}
+__intnl_SystemBoolean_26 = boostedSizeModifier != __const_SystemInt32_0;
+if (__intnl_SystemBoolean_26)
+{
+__intnl_SystemBoolean_26 = boostedShaderModifier != __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_26)
+{
+__intnl_SystemString_2 = String.Concat(boostedSizeModifierType, __const_SystemString_14);
+__intnl_SystemString_3 = String.Concat(__intnl_SystemString_2, boostedShaderModifierType);
+__lcl_desc_SystemString_0 = __lcl_desc_SystemString_0 + __intnl_SystemString_3;
+__intnl_SystemBoolean_27 = boostedShaderModifier2 != __const_SystemInt32_0;
+if (__intnl_SystemBoolean_27)
+{
+__intnl_SystemString_4 = String.Concat(__const_SystemString_14, boostedShaderModifierType2);
+__lcl_desc_SystemString_0 = __lcl_desc_SystemString_0 + __intnl_SystemString_4;
+}
+}
+else
+{
+__intnl_SystemBoolean_27 = boostedSizeModifier != __const_SystemInt32_0;
+if (__intnl_SystemBoolean_27)
+{
+__intnl_SystemString_2 = String.Concat(boostedSizeModifierType, __const_SystemString_15);
+__lcl_desc_SystemString_0 = __lcl_desc_SystemString_0 + __intnl_SystemString_2;
+}
+else
+{
+__intnl_SystemBoolean_28 = boostedShaderModifier != __const_SystemInt32_0;
+if (__intnl_SystemBoolean_28)
+{
+__intnl_SystemBoolean_29 = boostedShaderModifier2 != __const_SystemInt32_0;
+if (__intnl_SystemBoolean_29)
+{
+__intnl_SystemString_2 = String.Concat(boostedShaderModifierType, __const_SystemString_14);
+__intnl_SystemString_3 = String.Concat(__intnl_SystemString_2, boostedShaderModifierType2);
+__intnl_SystemString_4 = __intnl_SystemString_3 + __const_SystemString_15;
+__lcl_desc_SystemString_0 = __lcl_desc_SystemString_0 + __intnl_SystemString_4;
+}
+else
+{
+__intnl_SystemString_2 = String.Concat(boostedShaderModifierType, __const_SystemString_15);
+__lcl_desc_SystemString_0 = __lcl_desc_SystemString_0 + __intnl_SystemString_2;
+}
+}
+else
+{
+__intnl_SystemString_2 = String.Concat(__const_SystemString_16, modifierChanceMultiplier);
+__intnl_SystemString_3 = __intnl_SystemString_2 + __const_SystemString_12;
+__lcl_desc_SystemString_0 = __lcl_desc_SystemString_0 + __intnl_SystemString_3;
+}
+}
+}
+}
+__intnl_SystemInt32_7 = __lcl_desc_SystemString_0.Length;
+__intnl_SystemBoolean_25 = __intnl_SystemInt32_7 > __const_SystemInt32_0;
+if (__intnl_SystemBoolean_25)
+{
+__0_GetEventDescription__ret = __lcl_desc_SystemString_0;
+}
+else
+{
+__0_GetEventDescription__ret = __const_SystemString_17;
+}
+return;
+}
+private void UNDEF_25348_8004()
+{
+if (drawEventArea)
+{
+UNDEF_25348_8216();
+}
+}
+private void UNDEF_25348_8216()
+{
+Gizmos.color = gizmoColor;
+__intnl_UnityEngineVector3_1 = __this_UnityEngineTransform_0.position;
+Gizmos.DrawWireSphere(__intnl_UnityEngineVector3_1, eventRadius);
+__lcl_transparentColor_UnityEngineColor_0 = gizmoColor;
+__lcl_transparentColor_UnityEngineColor_0.a = __const_SystemSingle_2;
+__intnl_UnityEngineColor_0 = __lcl_transparentColor_UnityEngineColor_0;
+Gizmos.color = __lcl_transparentColor_UnityEngineColor_0;
+__intnl_UnityEngineVector3_2 = __this_UnityEngineTransform_0.position;
+Gizmos.DrawSphere(__intnl_UnityEngineVector3_2, eventRadius);
+}
+private void UNDEF_25348_8556()
+{
+__intnl_SystemBoolean_30 = __1__intnlparam == __const_SystemInt32_3;
+if (__intnl_SystemBoolean_30)
+{
+__0__intnlparam = __const_SystemInt32_0;
+return;
+}
+__intnl_SystemBoolean_31 = __1__intnlparam == __const_SystemInt32_4;
+if (__intnl_SystemBoolean_31)
+{
+__0__intnlparam = __const_SystemInt32_2;
+return;
+}
+__intnl_SystemBoolean_32 = __1__intnlparam == __const_SystemInt32_5;
+if (__intnl_SystemBoolean_32)
+{
+__0__intnlparam = __const_SystemInt32_6;
+return;
+for (;;)
+{
+__0__intnlparam = __const_SystemInt32_0;
+return;
+}
+}
+}
+private void UNDEF_25348_9712()
+{
+__intnl_SystemBoolean_33 = __3__intnlparam >= __const_SystemInt32_0;
+if (__intnl_SystemBoolean_33)
+{
+__intnl_SystemBoolean_34 = __3__intnlparam <= __const_SystemInt32_7;
+if (__intnl_SystemBoolean_34)
+{
+__intnl_SystemUInt32_0 = __gintnl_SystemUInt32Array_0[__3__intnlparam];
+__2__intnlparam = __const_SystemInt32_0;
+return;
+__2__intnlparam = __const_SystemInt32_2;
+return;
+__2__intnlparam = __const_SystemInt32_6;
+return;
+__2__intnlparam = __const_SystemInt32_8;
+return;
+__2__intnlparam = __const_SystemInt32_9;
+return;
+__2__intnlparam = __const_SystemInt32_10;
+return;
+__2__intnlparam = __const_SystemInt32_11;
+return;
+__2__intnlparam = __const_SystemInt32_12;
+return;
+__2__intnlparam = __const_SystemInt32_13;
+return;
+__2__intnlparam = __const_SystemInt32_14;
+return;
+__2__intnlparam = __const_SystemInt32_15;
+return;
+__2__intnlparam = __const_SystemInt32_16;
+return;
+__2__intnlparam = __const_SystemInt32_17;
+return;
+__2__intnlparam = __const_SystemInt32_18;
+return;
+__2__intnlparam = __const_SystemInt32_19;
+return;
+__2__intnlparam = __const_SystemInt32_20;
+return;
+__2__intnlparam = __const_SystemInt32_21;
+return;
+__2__intnlparam = __const_SystemInt32_22;
+return;
+__2__intnlparam = __const_SystemInt32_23;
+return;
+__2__intnlparam = __const_SystemInt32_24;
+return;
+__2__intnlparam = __const_SystemInt32_25;
+return;
+__2__intnlparam = __const_SystemInt32_26;
+return;
+__2__intnlparam = __const_SystemInt32_27;
+return;
+__2__intnlparam = __const_SystemInt32_7;
+return;
+}
+}
+__2__intnlparam = __const_SystemInt32_0;
+return;
+}
+}

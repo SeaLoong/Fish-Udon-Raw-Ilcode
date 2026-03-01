@@ -1,0 +1,92 @@
+using VRC.SDKBase;
+using System;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private VRCPlayerApi __instance_2 = null;
+public Single maximumHeight;
+private Boolean __result_0 = false;
+private Single __scaleMeters_2 = 0f;
+private Single __scaleMeters_0 = 0f;
+private Single __scaleMeters_1 = 0f;
+private Single __min_0 = 0f;
+private object __arg0_1 = null;
+private object __arg1_0 = null;
+private VRCPlayerApi __instance_4 = null;
+private Boolean __enabled_0 = false;
+public Single minimumHeight;
+private object __message_0 = null;
+private object __message_1 = null;
+private object __message_2 = null;
+private String __format_1 = "[AvatarScalingSettings] Enforcing height limit. The local player's avatar eye height has been clamped to {0} meters.";
+private VRCPlayerApi __instance_1 = null;
+private Boolean __Boolean_4 = false;
+private Boolean __Boolean_0 = false;
+private Boolean __Boolean_1 = false;
+private Boolean __Boolean_2 = false;
+private Boolean __Boolean_3 = false;
+public Boolean disableAvatarScaling;
+public Boolean alwaysEnforceHeight;
+private Single __Single_1 = 0f;
+private VRCPlayerApi __instance_6 = null;
+private Single __max_0 = 0f;
+private VRCPlayerApi onAvatarEyeHeightChangedPlayer = null;
+private VRCPlayerApi __instance_3 = null;
+private VRCPlayerApi __instance_0 = null;
+private String __String_0 = "[AvatarScalingSettings] Avatar scaling has been disabled. Players will be unable to choose their own avatar scale. Udon can still use SetAvatarEyeHeight.";
+private object __object_0 = null;
+private Single __Single_0 = 0f;
+private object __arg0_0 = null;
+private VRCPlayerApi __instance_5 = null;
+private Single clampedHeight = 0f;
+private Single __value_0 = 0f;
+private String __format_0 = "[AvatarScalingSettings] Avatar eye height limits have been set to {0} to {1} meters.";
+
+
+public void _start()
+{
+__object_0 = (object)(Networking.LocalPlayer);
+__result_0 = Utilities.IsValid(__object_0);
+if (__result_0)
+{
+if (disableAvatarScaling)
+{
+break;
+}
+__instance_0 = Networking.LocalPlayer;
+__instance_0.SetManualAvatarScalingAllowed(__enabled_0);
+__message_0 = __String_0;
+Debug.Log(__message_0);
+__instance_1 = Networking.LocalPlayer;
+__instance_1.SetAvatarEyeHeightMinimumByMeters(minimumHeight);
+__instance_2 = Networking.LocalPlayer;
+__instance_2.SetAvatarEyeHeightMaximumByMeters(maximumHeight);
+__message_1 = (object)(String.Format(__format_0, minimumHeight, maximumHeight));
+Debug.Log(__message_1);
+}
+}
+return;
+public void _onAvatarEyeHeightChanged()
+{
+__instance_3 = onAvatarEyeHeightChangedPlayer;
+__Boolean_2 = __instance_3.isLocal;
+__Boolean_1 = __Boolean_2 & alwaysEnforceHeight;
+if (__Boolean_1)
+{
+__instance_4 = Networking.LocalPlayer;
+__value_0 = __instance_4.GetAvatarEyeHeightAsMeters();
+clampedHeight = Mathf.Clamp(__value_0, minimumHeight, maximumHeight);
+__instance_5 = Networking.LocalPlayer;
+__Single_1 = __instance_5.GetAvatarEyeHeightAsMeters();
+__Boolean_4 = clampedHeight != __Single_1;
+if (__Boolean_4)
+{
+break;
+}
+__instance_6 = Networking.LocalPlayer;
+__instance_6.SetAvatarEyeHeightByMeters(clampedHeight);
+__message_2 = (object)(String.Format(__format_1, clampedHeight));
+Debug.Log(__message_2);
+}
+}
+return;
+}

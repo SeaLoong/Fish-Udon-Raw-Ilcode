@@ -1,0 +1,1498 @@
+using System;
+using VRC.Udon;
+using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
+using VRC.SDKBase;
+using VRC.Udon.Common.Enums;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Boolean __intnl_SystemBoolean_13 = false;
+private Boolean __intnl_SystemBoolean_23 = false;
+private Boolean __intnl_SystemBoolean_33 = false;
+private Boolean __intnl_SystemBoolean_43 = false;
+private UInt32 __gintnl_SystemUInt32_16 = 5640;
+private UInt32 __gintnl_SystemUInt32_26 = 13728;
+private object __intnl_SystemObject_27 = null;
+private object __intnl_SystemObject_26 = null;
+private object __intnl_SystemObject_25 = null;
+private object __intnl_SystemObject_24 = null;
+private object __intnl_SystemObject_23 = null;
+private object __intnl_SystemObject_22 = null;
+private object __intnl_SystemObject_21 = null;
+private object __intnl_SystemObject_20 = null;
+private object __intnl_SystemObject_29 = null;
+private object __intnl_SystemObject_28 = null;
+private Int32 __intnl_SystemInt32_15 = 0;
+private Int32 __intnl_SystemInt32_35 = 0;
+private Int32 __intnl_SystemInt32_25 = 0;
+private Int64 __const_SystemInt64_1 = -4104813914401777402;
+private Int64 __const_SystemInt64_0 = -9008121024171671451;
+private String __intnl_SystemString_1 = null;
+private UdonBehaviour __6__intnlparam = null;
+private Object __intnl_UnityEngineObject_72 = null;
+private Object __intnl_UnityEngineObject_62 = null;
+private Object __intnl_UnityEngineObject_52 = null;
+private Object __intnl_UnityEngineObject_42 = null;
+private Object __intnl_UnityEngineObject_32 = null;
+private Object __intnl_UnityEngineObject_22 = null;
+private Object __intnl_UnityEngineObject_12 = null;
+private GameObject __8__intnlparam = null;
+private Type __const_SystemType_1 = typeof(TextMeshProUGUI);
+private String __const_SystemString_46 = "__0_CanUpgradeCatchSpeed__ret";
+private String __const_SystemString_47 = "GetCatchIntervalSeconds";
+private String __const_SystemString_44 = "\n<color=#FFD700>[MAX]</color>";
+private String __const_SystemString_45 = "CanUpgradeCatchSpeed";
+private String __const_SystemString_42 = "\n<color=#888888>Next: ";
+private String __const_SystemString_43 = "</color>";
+private String __const_SystemString_40 = "capacityPerLevel";
+private String __const_SystemString_41 = "Capacity: ";
+private String __const_SystemString_48 = "__0_GetCatchIntervalSeconds__ret";
+private String __const_SystemString_49 = "baseCatchIntervalSeconds";
+private Single __intnl_SystemSingle_0 = 0f;
+public GameObject noPetsMessage;
+private object __intnl_SystemObject_0 = null;
+public TextMeshProUGUI maxWeightInfoText;
+private Int64 __lcl_targetID_SystemInt64_1 = 0;
+public AudioClip selectSound;
+private String __const_SystemString_0 = "__0_behaviour__param";
+private Transform __intnl_UnityEngineTransform_0 = null;
+public AudioClip upgradeSound;
+private Single __const_SystemSingle_0 = 30f;
+private object __lcl_idValue_SystemObject_1 = null;
+private Boolean __intnl_SystemBoolean_16 = false;
+private Boolean __intnl_SystemBoolean_26 = false;
+private Boolean __intnl_SystemBoolean_36 = false;
+private Boolean __intnl_SystemBoolean_46 = false;
+public TextMeshProUGUI luckInfoText;
+private object __intnl_SystemObject_17 = null;
+private object __intnl_SystemObject_16 = null;
+private object __intnl_SystemObject_15 = null;
+private object __intnl_SystemObject_14 = null;
+private object __intnl_SystemObject_13 = null;
+private object __intnl_SystemObject_12 = null;
+private object __intnl_SystemObject_11 = null;
+private object __intnl_SystemObject_10 = null;
+private object __intnl_SystemObject_19 = null;
+private object __intnl_SystemObject_18 = null;
+private Int32 __intnl_SystemInt32_12 = 0;
+private Int32 __intnl_SystemInt32_32 = 0;
+private Int32 __intnl_SystemInt32_22 = 0;
+private String __intnl_SystemString_9 = null;
+private UdonBehaviour __lcl_equippedPet_VRCUdonUdonBehaviour_0 = null;
+private UInt32 __gintnl_SystemUInt32_9 = 1956;
+private UInt32 __gintnl_SystemUInt32_8 = 1940;
+private UInt32 __gintnl_SystemUInt32_5 = 1820;
+private UInt32 __gintnl_SystemUInt32_4 = 1804;
+private UInt32 __gintnl_SystemUInt32_7 = 1924;
+private UInt32 __gintnl_SystemUInt32_6 = 1908;
+private UInt32 __gintnl_SystemUInt32_1 = 628;
+private UInt32 __gintnl_SystemUInt32_0 = 148;
+private UInt32 __gintnl_SystemUInt32_3 = 732;
+private UInt32 __gintnl_SystemUInt32_2 = 716;
+private Boolean __const_SystemBoolean_0 = true;
+private Boolean __const_SystemBoolean_1 = false;
+private Object __intnl_UnityEngineObject_71 = null;
+private Object __intnl_UnityEngineObject_61 = null;
+private Object __intnl_UnityEngineObject_51 = null;
+private Object __intnl_UnityEngineObject_41 = null;
+private Object __intnl_UnityEngineObject_31 = null;
+private Object __intnl_UnityEngineObject_21 = null;
+private Object __intnl_UnityEngineObject_11 = null;
+private UdonBehaviour __0_value__param = null;
+private Type __const_SystemType_2 = typeof(UdonBehaviour);
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_29 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_28 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_21 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_20 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_23 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_22 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_25 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_24 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_27 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_26 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_7 = null;
+private Component[] __lcl_ownedPets_UnityEngineComponentArray_0 = null;
+private String __const_SystemString_5 = "get_Level";
+private UInt32 __gintnl_SystemUInt32_13 = 4300;
+private UInt32 __gintnl_SystemUInt32_33 = 14508;
+private UInt32 __gintnl_SystemUInt32_23 = 13068;
+private GameObject __3__intnlparam = null;
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Image __lcl_iconImage_UnityEngineUIImage_0 = null;
+private String __intnl_SystemString_6 = null;
+private Object __intnl_UnityEngineObject_69 = null;
+private Object __intnl_UnityEngineObject_59 = null;
+private Object __intnl_UnityEngineObject_49 = null;
+private Object __intnl_UnityEngineObject_39 = null;
+private Object __intnl_UnityEngineObject_29 = null;
+private Object __intnl_UnityEngineObject_19 = null;
+private Int32 __lcl_nextLevel_SystemInt32_0 = 0;
+private String __const_SystemString_16 = "__0_set_currentUpgradePoints";
+private String __const_SystemString_17 = "get_visualPetId";
+private String __const_SystemString_14 = "__0_get_maxWeightUpgradeLevel__ret";
+private String __const_SystemString_15 = "__0_value__param";
+private String __const_SystemString_12 = "__0_get_luckUpgradeLevel__ret";
+private String __const_SystemString_13 = "get_maxWeightUpgradeLevel";
+private String __const_SystemString_10 = "__0_get_catchSpeedUpgradeLevel__ret";
+private String __const_SystemString_11 = "get_luckUpgradeLevel";
+private String __const_SystemString_18 = "__0_get_visualPetId__ret";
+private String __const_SystemString_19 = "__0_petId__param";
+private GameObject __lcl_buttonObj_UnityEngineGameObject_0 = null;
+private VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_0 = null;
+private Object __intnl_UnityEngineObject_74 = null;
+private Object __intnl_UnityEngineObject_64 = null;
+private Object __intnl_UnityEngineObject_54 = null;
+private Object __intnl_UnityEngineObject_44 = null;
+private Object __intnl_UnityEngineObject_34 = null;
+private Object __intnl_UnityEngineObject_24 = null;
+private Object __intnl_UnityEngineObject_14 = null;
+private Int64 __refl_typeid = -8184670643218757375;
+private object __intnl_SystemObject_7 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_19 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_18 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_11 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_10 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_13 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_12 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_15 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_14 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_17 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_16 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_2 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_9 = null;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Component __intnl_UnityEngineComponent_0 = null;
+private Boolean __intnl_SystemBoolean_11 = false;
+private Boolean __intnl_SystemBoolean_21 = false;
+private Boolean __intnl_SystemBoolean_31 = false;
+private Boolean __intnl_SystemBoolean_41 = false;
+private UInt32 __gintnl_SystemUInt32_14 = 5476;
+private UInt32 __gintnl_SystemUInt32_34 = 14724;
+private UInt32 __gintnl_SystemUInt32_24 = 13084;
+private Int32 __intnl_SystemInt32_17 = 0;
+private Int32 __intnl_SystemInt32_27 = 0;
+private Int32 __0_petId__param = 0;
+private UdonBehaviour __lcl_petEntry_VRCUdonUdonBehaviour_0 = null;
+private AudioClip __0_clip__param = null;
+private String __intnl_SystemString_3 = null;
+private UdonBehaviour __0__intnlparam = null;
+public Button maxWeightUpgradeButton;
+private String __const_SystemString_66 = "maxWeightKg";
+private String __const_SystemString_67 = "maxWeightMultiplierPerLevel";
+private String __const_SystemString_64 = "GetMaxWeightKg";
+private String __const_SystemString_65 = "__0_GetMaxWeightKg__ret";
+private String __const_SystemString_62 = "CanUpgradeMaxWeight";
+private String __const_SystemString_63 = "__0_CanUpgradeMaxWeight__ret";
+private String __const_SystemString_60 = "luckPerLevel";
+private String __const_SystemString_61 = "Luck: ";
+private String __const_SystemString_68 = "Max Weight: ";
+private String __const_SystemString_69 = "F1";
+private Single __intnl_SystemSingle_2 = 0f;
+private Component __7__intnlparam = null;
+private TextMeshProUGUI __intnl_TMProTextMeshProUGUI_0 = null;
+private object __intnl_SystemObject_2 = null;
+private GameObject __9__intnlparam = null;
+private object __intnl_SystemObject_9 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_1 = null;
+private String __const_SystemString_2 = "__0_callback__param";
+private Transform __intnl_UnityEngineTransform_2 = null;
+private Boolean __intnl_SystemBoolean_19 = false;
+private Boolean __intnl_SystemBoolean_29 = false;
+private Boolean __intnl_SystemBoolean_39 = false;
+private UdonBehaviour __lcl_foundScript_VRCUdonUdonBehaviour_0 = null;
+private GameObject __intnl_UnityEngineGameObject_2 = null;
+private GameObject __intnl_UnityEngineGameObject_1 = null;
+private GameObject __intnl_UnityEngineGameObject_0 = null;
+private Single __lcl_nextInterval_SystemSingle_0 = 0f;
+private Boolean __intnl_SystemBoolean_14 = false;
+private Boolean __intnl_SystemBoolean_24 = false;
+private Boolean __intnl_SystemBoolean_34 = false;
+private Boolean __intnl_SystemBoolean_44 = false;
+public Button catchSpeedUpgradeButton;
+private object __intnl_SystemObject_30 = null;
+private Component[] __intnl_UnityEngineComponentArray_1 = null;
+private Component[] __intnl_UnityEngineComponentArray_0 = null;
+private Component[] __intnl_UnityEngineComponentArray_2 = null;
+private Int32 __intnl_SystemInt32_14 = 0;
+private Int32 __intnl_SystemInt32_34 = 0;
+private Int32 __intnl_SystemInt32_24 = 0;
+private Int32 __intnl_SystemInt32_19 = 0;
+private Int32 __intnl_SystemInt32_29 = 0;
+private object __const_SystemObject_0 = null;
+private String __intnl_SystemString_0 = null;
+public UdonBehaviour petPlacer;
+public Image equippedPetImage;
+private Object __intnl_UnityEngineObject_73 = null;
+private Object __intnl_UnityEngineObject_63 = null;
+private Object __intnl_UnityEngineObject_53 = null;
+private Object __intnl_UnityEngineObject_43 = null;
+private Object __intnl_UnityEngineObject_33 = null;
+private Object __intnl_UnityEngineObject_23 = null;
+private Object __intnl_UnityEngineObject_13 = null;
+private Type __const_SystemType_0 = typeof(Image);
+private Single __intnl_SystemSingle_1 = 0f;
+private object __intnl_SystemObject_1 = null;
+private Transform __lcl_iconTransform_UnityEngineTransform_0 = null;
+private Component[] petButtons = null;
+private String __const_SystemString_7 = "get_capacityUpgradeLevel";
+private UdonBehaviour __4__intnlparam = null;
+private UInt32 __gintnl_SystemUInt32_11 = 2240;
+private UInt32 __gintnl_SystemUInt32_31 = 14476;
+private UInt32 __gintnl_SystemUInt32_21 = 12396;
+public TextMeshProUGUI capacityInfoText;
+private Boolean __intnl_SystemBoolean_17 = false;
+private Boolean __intnl_SystemBoolean_27 = false;
+private Boolean __intnl_SystemBoolean_37 = false;
+private Boolean __intnl_SystemBoolean_47 = false;
+public UdonBehaviour petDatabase;
+private EventTiming __const_VRCUdonCommonEnumsEventTiming_0 = EventTiming.Update;
+private Int32 __intnl_SystemInt32_11 = 0;
+private Int32 __intnl_SystemInt32_31 = 0;
+private Int32 __intnl_SystemInt32_21 = 0;
+private UdonBehaviour _afkPet = null;
+private String __intnl_SystemString_8 = null;
+private String __const_SystemString_36 = "__0_CanUpgradeCapacity__ret";
+private String __const_SystemString_37 = "GetMaxCapacity";
+private String __const_SystemString_34 = "__0_get_currentUpgradePoints__ret";
+private String __const_SystemString_35 = "CanUpgradeCapacity";
+private String __const_SystemString_32 = "Upgrade Points: ";
+private String __const_SystemString_33 = "get_currentUpgradePoints";
+private String __const_SystemString_30 = "__3_value__param";
+private String __const_SystemString_31 = "__0_set_visualPetId";
+private String __const_SystemString_38 = "__0_GetMaxCapacity__ret";
+private String __const_SystemString_39 = "maxCapacity";
+private Object __intnl_UnityEngineObject_76 = null;
+private Object __intnl_UnityEngineObject_66 = null;
+private Object __intnl_UnityEngineObject_56 = null;
+private Object __intnl_UnityEngineObject_46 = null;
+private Object __intnl_UnityEngineObject_36 = null;
+private Object __intnl_UnityEngineObject_26 = null;
+private Object __intnl_UnityEngineObject_16 = null;
+private String __const_SystemString_82 = "__refl_typeid";
+private String __const_SystemString_80 = "TogglePreview";
+private String __const_SystemString_81 = "requiredLevel";
+private Int64 __intnl_SystemInt64_1 = 0;
+private Int64 __intnl_SystemInt64_0 = 0;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_4 = null;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private String __const_SystemString_4 = "RefreshUI";
+private UInt32 __gintnl_SystemUInt32_19 = 12364;
+private UInt32 __gintnl_SystemUInt32_29 = 13804;
+private UInt32 __gintnl_SystemUInt32_12 = 4164;
+private UInt32 __gintnl_SystemUInt32_32 = 14492;
+private UInt32 __gintnl_SystemUInt32_22 = 13024;
+public TextMeshProUGUI equippedPetNameText;
+private Int32 __lcl_i_SystemInt32_1 = 0;
+private Int32 __lcl_i_SystemInt32_0 = 0;
+private UdonBehaviour __lcl_behaviour_VRCUdonUdonBehaviour_0 = null;
+public AudioSource audioSource;
+private Component[] __lcl_udonBehaviours_UnityEngineComponentArray_1 = null;
+public GameObject petsUIContainer;
+private String __intnl_SystemString_5 = null;
+private Single __intnl_SystemSingle_4 = 0f;
+private VRCPlayerApi __1__intnlparam = null;
+private Object __intnl_UnityEngineObject_75 = null;
+private Object __intnl_UnityEngineObject_65 = null;
+private Object __intnl_UnityEngineObject_55 = null;
+private Object __intnl_UnityEngineObject_45 = null;
+private Object __intnl_UnityEngineObject_35 = null;
+private Object __intnl_UnityEngineObject_25 = null;
+private Object __intnl_UnityEngineObject_15 = null;
+private object __intnl_SystemObject_4 = null;
+public AudioClip errorSound;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_3 = null;
+public Transform petGridContainer;
+private Int32 __lcl_current_SystemInt32_0 = 0;
+private Boolean _ready = false;
+private Transform __intnl_UnityEngineTransform_4 = null;
+private String __const_SystemString_9 = "get_catchSpeedUpgradeLevel";
+private UdonBehaviour __lcl_petButton_VRCUdonUdonBehaviour_0 = null;
+private Int32 __lcl_earnedPoints_SystemInt32_0 = 0;
+private Boolean __intnl_SystemBoolean_12 = false;
+private Boolean __intnl_SystemBoolean_22 = false;
+private Boolean __intnl_SystemBoolean_32 = false;
+private Boolean __intnl_SystemBoolean_42 = false;
+private UInt32 __gintnl_SystemUInt32_17 = 5656;
+private UInt32 __gintnl_SystemUInt32_27 = 13772;
+private Int32 __intnl_SystemInt32_16 = 0;
+private Int32 __intnl_SystemInt32_36 = 0;
+private Int32 __intnl_SystemInt32_26 = 0;
+private String __refl_typename = "AFKPetUIManager";
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Int32 __intnl_SystemInt32_5 = 0;
+private Int32 __intnl_SystemInt32_4 = 0;
+private Int32 __intnl_SystemInt32_7 = 0;
+private Int32 __intnl_SystemInt32_6 = 0;
+private Int32 __intnl_SystemInt32_9 = 0;
+private Int32 __intnl_SystemInt32_8 = 0;
+private String __intnl_SystemString_2 = null;
+private Boolean __lcl_meetsLevelRequirement_SystemBoolean_0 = false;
+private String __const_SystemString_56 = "__0_CanUpgradeLuck__ret";
+private String __const_SystemString_57 = "GetTotalLuck";
+private String __const_SystemString_54 = "s</color>";
+private String __const_SystemString_55 = "CanUpgradeLuck";
+private String __const_SystemString_52 = "F0";
+private String __const_SystemString_53 = "s";
+private String __const_SystemString_50 = "catchSpeedReductionPerLevel";
+private String __const_SystemString_51 = "Catch Speed: ";
+private String __const_SystemString_58 = "__0_GetTotalLuck__ret";
+private String __const_SystemString_59 = "baseLuck";
+private Single __intnl_SystemSingle_3 = 0f;
+private Single __lcl_nextValue_SystemSingle_0 = 0f;
+private object __intnl_SystemObject_3 = null;
+private Single __lcl_current_SystemSingle_0 = 0f;
+private Int64 __lcl_targetID_SystemInt64_0 = 0;
+private String __const_SystemString_1 = "__0_RegisterCallbacks";
+private Transform __intnl_UnityEngineTransform_1 = null;
+private object __lcl_idValue_SystemObject_0 = null;
+private Component __5__intnlparam = null;
+public UdonBehaviour petInventory;
+private String __intnl_SystemString_10 = null;
+private Boolean __intnl_SystemBoolean_15 = false;
+private Boolean __intnl_SystemBoolean_25 = false;
+private Boolean __intnl_SystemBoolean_35 = false;
+private Boolean __intnl_SystemBoolean_45 = false;
+private Int32 __intnl_SystemInt32_13 = 0;
+private Int32 __intnl_SystemInt32_33 = 0;
+private Int32 __intnl_SystemInt32_23 = 0;
+public TextMeshProUGUI upgradePointsText;
+private Int32 __intnl_SystemInt32_18 = 0;
+private Int32 __intnl_SystemInt32_28 = 0;
+public UdonBehaviour petStats;
+public Button placeButton;
+private Object __intnl_UnityEngineObject_70 = null;
+private Object __intnl_UnityEngineObject_60 = null;
+private Object __intnl_UnityEngineObject_50 = null;
+private Object __intnl_UnityEngineObject_40 = null;
+private Object __intnl_UnityEngineObject_30 = null;
+private Object __intnl_UnityEngineObject_20 = null;
+private Object __intnl_UnityEngineObject_10 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_6 = null;
+private String __const_SystemString_6 = "__0_get_Level__ret";
+private Int32 __lcl_nextValue_SystemInt32_0 = 0;
+private UInt32 __gintnl_SystemUInt32_10 = 1972;
+private UInt32 __gintnl_SystemUInt32_30 = 14432;
+private UInt32 __gintnl_SystemUInt32_20 = 12380;
+private TextMeshProUGUI __lcl_nameText_TMProTextMeshProUGUI_0 = null;
+private Int32 __intnl_SystemInt32_10 = 0;
+private Int32 __intnl_SystemInt32_30 = 0;
+private Int32 __intnl_SystemInt32_20 = 0;
+private String __intnl_SystemString_7 = null;
+private Object __intnl_UnityEngineObject_68 = null;
+private Object __intnl_UnityEngineObject_58 = null;
+private Object __intnl_UnityEngineObject_48 = null;
+private Object __intnl_UnityEngineObject_38 = null;
+private Object __intnl_UnityEngineObject_28 = null;
+private Object __intnl_UnityEngineObject_18 = null;
+private String __const_SystemString_26 = "__0_GetAllOwnedPets__ret";
+private String __const_SystemString_27 = "petId";
+private String __const_SystemString_24 = "No Pet Equipped";
+private String __const_SystemString_25 = "GetAllOwnedPets";
+private String __const_SystemString_22 = "petIcon";
+private String __const_SystemString_23 = "petName";
+private String __const_SystemString_20 = "__0_GetPetById";
+private String __const_SystemString_21 = "__0___0_GetPetById__ret";
+private String __const_SystemString_28 = "uiManager";
+private String __const_SystemString_29 = "PetIcon";
+private Object __intnl_UnityEngineObject_77 = null;
+private Object __intnl_UnityEngineObject_67 = null;
+private Object __intnl_UnityEngineObject_57 = null;
+private Object __intnl_UnityEngineObject_47 = null;
+private Object __intnl_UnityEngineObject_37 = null;
+private Object __intnl_UnityEngineObject_27 = null;
+private Object __intnl_UnityEngineObject_17 = null;
+private object __intnl_SystemObject_6 = null;
+private Int32 __lcl_spentPoints_SystemInt32_0 = 0;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_5 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_8 = null;
+private UdonBehaviour __0_get_afkPet__ret = null;
+private UInt32 __gintnl_SystemUInt32_18 = 12320;
+private UInt32 __gintnl_SystemUInt32_28 = 13788;
+private GameObject __2__intnlparam = null;
+private Component __intnl_UnityEngineComponent_1 = null;
+public Button luckUpgradeButton;
+private GameObject[] __lcl_objects_UnityEngineGameObjectArray_0 = null;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Boolean __intnl_SystemBoolean_20 = false;
+private Boolean __intnl_SystemBoolean_30 = false;
+private Boolean __intnl_SystemBoolean_40 = false;
+public GameObject petButtonPrefab;
+private UInt32 __gintnl_SystemUInt32_15 = 5588;
+private UInt32 __gintnl_SystemUInt32_35 = 15992;
+private UInt32 __gintnl_SystemUInt32_25 = 13100;
+public Button capacityUpgradeButton;
+private Int32 __const_SystemInt32_1 = 0;
+private Int32 __const_SystemInt32_0 = 2;
+private Int32 __const_SystemInt32_2 = 1;
+private UdonBehaviour __lcl_behaviour_VRCUdonUdonBehaviour_1 = null;
+private Component[] __lcl_udonBehaviours_UnityEngineComponentArray_0 = null;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+public UdonBehaviour playerStats;
+private String __intnl_SystemString_4 = null;
+private Sprite __intnl_UnityEngineSprite_0 = null;
+private Sprite __intnl_UnityEngineSprite_1 = null;
+private Sprite __intnl_UnityEngineSprite_2 = null;
+private String __const_SystemString_76 = "UpgradeLuck";
+private String __const_SystemString_77 = "__0_UpgradeLuck__ret";
+private String __const_SystemString_74 = "UpgradeCatchSpeed";
+private String __const_SystemString_75 = "__0_UpgradeCatchSpeed__ret";
+private String __const_SystemString_72 = "UpgradeCapacity";
+private String __const_SystemString_73 = "__0_UpgradeCapacity__ret";
+private String __const_SystemString_70 = "kg";
+private String __const_SystemString_71 = "kg</color>";
+private String __const_SystemString_78 = "UpgradeMaxWeight";
+private String __const_SystemString_79 = "__0_UpgradeMaxWeight__ret";
+private object __intnl_SystemObject_5 = null;
+public TextMeshProUGUI catchSpeedInfoText;
+private Boolean __lcl_canUpgrade_SystemBoolean_0 = false;
+private object __intnl_SystemObject_8 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_0 = null;
+private String __const_SystemString_3 = "__0_RegisterCallback";
+private UdonBehaviour __this_VRCUdonUdonBehaviour_3 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_2 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_1 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_0 = this;
+private Transform __intnl_UnityEngineTransform_3 = null;
+private String __const_SystemString_8 = "__0_get_capacityUpgradeLevel__ret";
+private Boolean __intnl_SystemBoolean_18 = false;
+private Boolean __intnl_SystemBoolean_28 = false;
+private Boolean __intnl_SystemBoolean_38 = false;
+private Boolean __intnl_SystemBoolean_48 = false;
+
+
+public void get_afkPet()
+{
+__intnl_UnityEngineObject_0 = _afkPet;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_0 == __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_0)
+{
+__intnl_VRCSDKBaseVRCPlayerApi_0 = Networking.LocalPlayer;
+__1__intnlparam = __intnl_VRCSDKBaseVRCPlayerApi_0;
+UNDEF_35818_16192();
+_afkPet = __0__intnlparam;
+}
+__0_get_afkPet__ret = _afkPet;
+return;
+}
+public void __0_set_afkPet()
+{
+_afkPet = __0_value__param;
+}
+public void _start()
+{
+__intnl_UnityEngineObject_2 = playerStats;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_2 != __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_1)
+{
+__intnl_VRCUdonUdonBehaviour_0 = __this_VRCUdonUdonBehaviour_0;
+playerStats.SetProgramVariable(__const_SystemString_0, __intnl_VRCUdonUdonBehaviour_0);
+playerStats.SendCustomEvent(__const_SystemString_1);
+}
+__intnl_VRCUdonUdonBehaviour_0 = __this_VRCUdonUdonBehaviour_1;
+petStats.SetProgramVariable(__const_SystemString_2, __intnl_VRCUdonUdonBehaviour_0);
+petStats.SendCustomEvent(__const_SystemString_3);
+}
+public void _OnPetStatsRestored()
+{
+_ready = __const_SystemBoolean_0;
+__this_VRCUdonUdonBehaviour_2.SendCustomEventDelayedFrames(__const_SystemString_4, __const_SystemInt32_0, __const_VRCUdonCommonEnumsEventTiming_0);
+UNDEF_35818_804();
+}
+public void OnPlayerStatChanged()
+{
+if (_ready)
+{
+UNDEF_35818_752();
+}
+}
+private void UNDEF_35818_752()
+{
+UNDEF_35818_804();
+UNDEF_35818_14796();
+}
+private void UNDEF_35818_804()
+{
+if (_ready)
+{
+UNDEF_35818_1840();
+}
+}
+private void UNDEF_35818_1840()
+{
+__intnl_UnityEngineObject_4 = playerStats;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_2 = __intnl_UnityEngineObject_4 == __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_2)
+{
+return;
+}
+__intnl_VRCUdonUdonBehaviour_1 = playerStats;
+playerStats.SendCustomEvent(__const_SystemString_5);
+__intnl_SystemObject_0 = playerStats.GetProgramVariable(__const_SystemString_6);
+__intnl_SystemInt32_0 = Convert.ToInt32(__intnl_SystemObject_0);
+__lcl_earnedPoints_SystemInt32_0 = __intnl_SystemInt32_0 / __const_SystemInt32_0;
+__lcl_spentPoints_SystemInt32_0 = __const_SystemInt32_1;
+__intnl_UnityEngineObject_6 = petStats;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_3 = __intnl_UnityEngineObject_6 != __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_3)
+{
+__intnl_VRCUdonUdonBehaviour_2 = petStats;
+petStats.SendCustomEvent(__const_SystemString_7);
+__intnl_SystemObject_1 = petStats.GetProgramVariable(__const_SystemString_8);
+__intnl_SystemInt32_1 = Convert.ToInt32(__intnl_SystemObject_1);
+__intnl_VRCUdonUdonBehaviour_3 = petStats;
+petStats.SendCustomEvent(__const_SystemString_9);
+__intnl_SystemObject_2 = petStats.GetProgramVariable(__const_SystemString_10);
+__intnl_SystemInt32_2 = Convert.ToInt32(__intnl_SystemObject_2);
+__intnl_SystemInt32_3 = __intnl_SystemInt32_1 + __intnl_SystemInt32_2;
+__intnl_VRCUdonUdonBehaviour_4 = petStats;
+petStats.SendCustomEvent(__const_SystemString_11);
+__intnl_SystemObject_3 = petStats.GetProgramVariable(__const_SystemString_12);
+__intnl_SystemInt32_4 = Convert.ToInt32(__intnl_SystemObject_3);
+__intnl_SystemInt32_5 = __intnl_SystemInt32_3 + __intnl_SystemInt32_4;
+__intnl_VRCUdonUdonBehaviour_5 = petStats;
+petStats.SendCustomEvent(__const_SystemString_13);
+__intnl_SystemObject_4 = petStats.GetProgramVariable(__const_SystemString_14);
+__intnl_SystemInt32_6 = Convert.ToInt32(__intnl_SystemObject_4);
+__lcl_spentPoints_SystemInt32_0 = __intnl_SystemInt32_5 + __intnl_SystemInt32_6;
+}
+__intnl_SystemInt32_1 = __lcl_earnedPoints_SystemInt32_0 - __lcl_spentPoints_SystemInt32_0;
+__intnl_SystemInt32_2 = Mathf.Max(__const_SystemInt32_1, __intnl_SystemInt32_1);
+__intnl_VRCUdonUdonBehaviour_2 = petStats;
+petStats.SetProgramVariable(__const_SystemString_15, __intnl_SystemInt32_2);
+petStats.SendCustomEvent(__const_SystemString_16);
+UNDEF_35818_5728();
+UNDEF_35818_6064();
+}
+public void RefreshUI()
+{
+if (_ready)
+{
+UNDEF_35818_1992();
+}
+}
+private void UNDEF_35818_1992()
+{
+UNDEF_35818_3024();
+UNDEF_35818_5344();
+UNDEF_35818_5728();
+UNDEF_35818_6064();
+UNDEF_35818_14796();
+}
+private void UNDEF_35818_3024()
+{
+__intnl_UnityEngineObject_8 = petStats;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_4 = __intnl_UnityEngineObject_8 == __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_4)
+{
+}
+else
+{
+__intnl_UnityEngineObject_10 = petDatabase;
+__intnl_UnityEngineObject_11 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_4 = __intnl_UnityEngineObject_10 == __intnl_UnityEngineObject_11;
+}
+if (__intnl_SystemBoolean_4)
+{
+return;
+}
+__intnl_VRCUdonUdonBehaviour_6 = petDatabase;
+get_afkPet();
+__intnl_VRCUdonUdonBehaviour_7 = __0_get_afkPet__ret;
+__0_get_afkPet__ret.SendCustomEvent(__const_SystemString_17);
+__intnl_SystemObject_5 = __0_get_afkPet__ret.GetProgramVariable(__const_SystemString_18);
+__intnl_SystemInt32_7 = Convert.ToInt32(__intnl_SystemObject_5);
+__intnl_VRCUdonUdonBehaviour_6.SetProgramVariable(__const_SystemString_19, __intnl_SystemInt32_7);
+__intnl_VRCUdonUdonBehaviour_6.SendCustomEvent(__const_SystemString_20);
+__intnl_SystemObject_6 = __intnl_VRCUdonUdonBehaviour_6.GetProgramVariable(__const_SystemString_21);
+__intnl_VRCUdonUdonBehaviour_8 = (UdonBehaviour)__intnl_SystemObject_6;
+__lcl_equippedPet_VRCUdonUdonBehaviour_0 = __intnl_VRCUdonUdonBehaviour_8;
+__intnl_UnityEngineObject_12 = __lcl_equippedPet_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_13 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_5 = __intnl_UnityEngineObject_12 != __intnl_UnityEngineObject_13;
+if (__intnl_SystemBoolean_5)
+{
+__intnl_UnityEngineObject_14 = equippedPetImage;
+__intnl_UnityEngineObject_15 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_6 = __intnl_UnityEngineObject_14 != __intnl_UnityEngineObject_15;
+if (__intnl_SystemBoolean_6)
+{
+__intnl_SystemObject_7 = __lcl_equippedPet_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_22);
+__intnl_UnityEngineSprite_0 = (Sprite)__intnl_SystemObject_7;
+equippedPetImage.sprite = __intnl_UnityEngineSprite_0;
+}
+__intnl_UnityEngineObject_16 = equippedPetNameText;
+__intnl_UnityEngineObject_17 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_7 = __intnl_UnityEngineObject_16 != __intnl_UnityEngineObject_17;
+if (__intnl_SystemBoolean_7)
+{
+__intnl_SystemObject_7 = __lcl_equippedPet_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_23);
+__intnl_SystemString_0 = (String)__intnl_SystemObject_7;
+equippedPetNameText.text = __intnl_SystemString_0;
+}
+}
+else
+{
+__intnl_UnityEngineObject_14 = equippedPetNameText;
+__intnl_UnityEngineObject_15 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_6 = __intnl_UnityEngineObject_14 != __intnl_UnityEngineObject_15;
+if (__intnl_SystemBoolean_6)
+{
+equippedPetNameText.text = __const_SystemString_24;
+}
+}
+}
+private void UNDEF_35818_5344()
+{
+__intnl_UnityEngineObject_18 = petGridContainer;
+__intnl_UnityEngineObject_19 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_9 = __intnl_UnityEngineObject_18 == __intnl_UnityEngineObject_19;
+if (__intnl_SystemBoolean_9)
+{
+}
+else
+{
+__intnl_UnityEngineObject_20 = petButtonPrefab;
+__intnl_UnityEngineObject_21 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_9 = __intnl_UnityEngineObject_20 == __intnl_UnityEngineObject_21;
+}
+__intnl_SystemBoolean_8 = __intnl_SystemBoolean_9;
+if (__intnl_SystemBoolean_8)
+{
+}
+else
+{
+__intnl_UnityEngineObject_22 = petInventory;
+__intnl_UnityEngineObject_23 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_8 = __intnl_UnityEngineObject_22 == __intnl_UnityEngineObject_23;
+}
+if (__intnl_SystemBoolean_8)
+{
+return;
+}
+__intnl_SystemBoolean_10 = petButtons != __const_SystemObject_0;
+if (__intnl_SystemBoolean_10)
+{
+break;
+}
+__lcl_i_SystemInt32_0 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_8 = petButtons.Length;
+__intnl_SystemBoolean_11 = __lcl_i_SystemInt32_0 < __intnl_SystemInt32_8;
+if (__intnl_SystemBoolean_11)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_9 = (UdonBehaviour)(petButtons[__lcl_i_SystemInt32_0]);
+__intnl_UnityEngineObject_24 = __intnl_VRCUdonUdonBehaviour_9;
+__intnl_UnityEngineObject_25 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_12 = __intnl_UnityEngineObject_24 != __intnl_UnityEngineObject_25;
+if (__intnl_SystemBoolean_12)
+{
+__intnl_VRCUdonUdonBehaviour_10 = (UdonBehaviour)(petButtons[__lcl_i_SystemInt32_0]);
+__intnl_UnityEngineGameObject_0 = __intnl_VRCUdonUdonBehaviour_10.gameObject;
+__intnl_UnityEngineObject_26 = __intnl_UnityEngineGameObject_0;
+Object.Destroy(__intnl_UnityEngineObject_26);
+}
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_2;
+}
+__intnl_VRCUdonUdonBehaviour_9 = petInventory;
+petInventory.SendCustomEvent(__const_SystemString_25);
+__intnl_SystemObject_8 = petInventory.GetProgramVariable(__const_SystemString_26);
+__intnl_UnityEngineComponentArray_0 = (Component[])__intnl_SystemObject_8;
+__lcl_ownedPets_UnityEngineComponentArray_0 = __intnl_UnityEngineComponentArray_0;
+__intnl_SystemInt32_8 = __lcl_ownedPets_UnityEngineComponentArray_0.Length;
+petButtons = __intnl_SystemInt32_8.ctor();
+__lcl_i_SystemInt32_0 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_9 = __lcl_ownedPets_UnityEngineComponentArray_0.Length;
+__intnl_SystemBoolean_11 = __lcl_i_SystemInt32_0 < __intnl_SystemInt32_9;
+if (__intnl_SystemBoolean_11)
+{
+break;
+}
+__lcl_petEntry_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(__lcl_ownedPets_UnityEngineComponentArray_0[__lcl_i_SystemInt32_0]);
+__intnl_UnityEngineObject_24 = __lcl_petEntry_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_25 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_12 = __intnl_UnityEngineObject_24 == __intnl_UnityEngineObject_25;
+if (__intnl_SystemBoolean_12)
+{
+}
+else
+{
+__3__intnlparam = petButtonPrefab;
+UNDEF_35818_16256();
+__lcl_buttonObj_UnityEngineGameObject_0 = __2__intnlparam;
+__intnl_UnityEngineTransform_0 = __lcl_buttonObj_UnityEngineGameObject_0.transform;
+__intnl_UnityEngineTransform_0.SetParent(petGridContainer, __const_SystemBoolean_1);
+__intnl_UnityEngineTransform_1 = __lcl_buttonObj_UnityEngineGameObject_0.transform;
+__5__intnlparam = __intnl_UnityEngineTransform_1;
+UNDEF_35818_16764();
+__lcl_petButton_VRCUdonUdonBehaviour_0 = __4__intnlparam;
+__intnl_UnityEngineObject_26 = __lcl_petButton_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_27 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_13 = __intnl_UnityEngineObject_26 != __intnl_UnityEngineObject_27;
+if (__intnl_SystemBoolean_13)
+{
+__intnl_SystemObject_9 = __lcl_petEntry_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_27);
+__intnl_SystemInt32_10 = Convert.ToInt32(__intnl_SystemObject_9);
+__lcl_petButton_VRCUdonUdonBehaviour_0.SetProgramVariable(__const_SystemString_27, __intnl_SystemInt32_10);
+__lcl_petButton_VRCUdonUdonBehaviour_0.SetProgramVariable(__const_SystemString_28, __this_VRCUdonUdonBehaviour_3);
+petButtons.Set(__lcl_i_SystemInt32_0, __lcl_petButton_VRCUdonUdonBehaviour_0);
+}
+__intnl_UnityEngineTransform_2 = __lcl_buttonObj_UnityEngineGameObject_0.transform;
+__lcl_iconTransform_UnityEngineTransform_0 = __intnl_UnityEngineTransform_2.Find(__const_SystemString_29);
+__intnl_UnityEngineObject_28 = __lcl_iconTransform_UnityEngineTransform_0;
+__intnl_UnityEngineObject_29 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_14 = __intnl_UnityEngineObject_28 != __intnl_UnityEngineObject_29;
+if (__intnl_SystemBoolean_14)
+{
+__intnl_UnityEngineTransform_3 = __lcl_iconTransform_UnityEngineTransform_0.transform;
+__lcl_iconImage_UnityEngineUIImage_0 = (Image)(__intnl_UnityEngineTransform_3.GetComponent(__const_SystemType_0));
+__intnl_UnityEngineObject_30 = __lcl_iconImage_UnityEngineUIImage_0;
+__intnl_UnityEngineObject_31 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_15 = __intnl_UnityEngineObject_30 != __intnl_UnityEngineObject_31;
+if (__intnl_SystemBoolean_15)
+{
+__intnl_SystemObject_9 = __lcl_petEntry_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_22);
+__intnl_UnityEngineSprite_1 = (Sprite)__intnl_SystemObject_9;
+__intnl_UnityEngineObject_32 = __intnl_UnityEngineSprite_1;
+__intnl_UnityEngineObject_33 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_15 = __intnl_UnityEngineObject_32 != __intnl_UnityEngineObject_33;
+}
+if (__intnl_SystemBoolean_15)
+{
+__intnl_SystemObject_10 = __lcl_petEntry_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_22);
+__intnl_UnityEngineSprite_2 = (Sprite)__intnl_SystemObject_10;
+__lcl_iconImage_UnityEngineUIImage_0.sprite = __intnl_UnityEngineSprite_2;
+}
+}
+__intnl_UnityEngineTransform_3 = __lcl_buttonObj_UnityEngineGameObject_0.transform;
+__lcl_nameText_TMProTextMeshProUGUI_0 = (TextMeshProUGUI)(__intnl_UnityEngineTransform_3.GetComponentInChildren(__const_SystemType_1));
+__intnl_UnityEngineObject_30 = __lcl_nameText_TMProTextMeshProUGUI_0;
+__intnl_UnityEngineObject_31 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_15 = __intnl_UnityEngineObject_30 != __intnl_UnityEngineObject_31;
+if (__intnl_SystemBoolean_15)
+{
+__intnl_SystemObject_9 = __lcl_petEntry_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_23);
+__intnl_SystemString_1 = (String)__intnl_SystemObject_9;
+__lcl_nameText_TMProTextMeshProUGUI_0.text = __intnl_SystemString_1;
+}
+}
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_2;
+}
+}
+public void __0_OnPetButtonClicked()
+{
+__intnl_UnityEngineObject_34 = petStats;
+__intnl_UnityEngineObject_35 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_16 = __intnl_UnityEngineObject_34 == __intnl_UnityEngineObject_35;
+if (__intnl_SystemBoolean_16)
+{
+return;
+}
+get_afkPet();
+__intnl_VRCUdonUdonBehaviour_11 = __0_get_afkPet__ret;
+__intnl_SystemInt32_11 = __0_petId__param;
+__0_get_afkPet__ret.SetProgramVariable(__const_SystemString_30, __0_petId__param);
+__0_get_afkPet__ret.SendCustomEvent(__const_SystemString_31);
+get_afkPet();
+__0_get_afkPet__ret.RequestSerialization();
+__0_clip__param = selectSound;
+UNDEF_35818_15696();
+UNDEF_35818_3024();
+}
+private void UNDEF_35818_5728()
+{
+if (_ready)
+{
+UNDEF_35818_6012();
+}
+}
+private void UNDEF_35818_6012()
+{
+__intnl_UnityEngineObject_36 = upgradePointsText;
+__intnl_UnityEngineObject_37 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_17 = __intnl_UnityEngineObject_36 != __intnl_UnityEngineObject_37;
+if (__intnl_SystemBoolean_17)
+{
+__intnl_VRCUdonUdonBehaviour_12 = petStats;
+__intnl_TMProTextMeshProUGUI_0 = upgradePointsText;
+petStats.SendCustomEvent(__const_SystemString_33);
+__intnl_SystemObject_11 = petStats.GetProgramVariable(__const_SystemString_34);
+__intnl_SystemInt32_12 = Convert.ToInt32(__intnl_SystemObject_11);
+__intnl_SystemString_2 = String.Concat(__const_SystemString_32, __intnl_SystemInt32_12);
+__intnl_TMProTextMeshProUGUI_0.text = __intnl_SystemString_2;
+}
+}
+private void UNDEF_35818_6064()
+{
+if (_ready)
+{
+UNDEF_35818_11712();
+}
+}
+private void UNDEF_35818_11712()
+{
+__intnl_UnityEngineObject_38 = petStats;
+__intnl_UnityEngineObject_39 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_18 = __intnl_UnityEngineObject_38 == __intnl_UnityEngineObject_39;
+if (__intnl_SystemBoolean_18)
+{
+return;
+}
+__intnl_UnityEngineObject_40 = capacityUpgradeButton;
+__intnl_UnityEngineObject_41 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_19 = __intnl_UnityEngineObject_40 != __intnl_UnityEngineObject_41;
+if (__intnl_SystemBoolean_19)
+{
+__intnl_VRCUdonUdonBehaviour_13 = petStats;
+petStats.SendCustomEvent(__const_SystemString_35);
+__intnl_SystemObject_12 = petStats.GetProgramVariable(__const_SystemString_36);
+__intnl_SystemBoolean_21 = (Boolean)__intnl_SystemObject_12;
+__intnl_SystemBoolean_20 = __intnl_SystemBoolean_21;
+if (__intnl_SystemBoolean_20)
+{
+__intnl_VRCUdonUdonBehaviour_14 = petStats;
+petStats.SendCustomEvent(__const_SystemString_33);
+__intnl_SystemObject_13 = petStats.GetProgramVariable(__const_SystemString_34);
+__intnl_SystemInt32_13 = Convert.ToInt32(__intnl_SystemObject_13);
+__intnl_SystemBoolean_20 = __intnl_SystemInt32_13 > __const_SystemInt32_1;
+}
+__lcl_canUpgrade_SystemBoolean_0 = __intnl_SystemBoolean_20;
+capacityUpgradeButton.interactable = __lcl_canUpgrade_SystemBoolean_0;
+}
+__intnl_UnityEngineObject_42 = capacityInfoText;
+__intnl_UnityEngineObject_43 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_20 = __intnl_UnityEngineObject_42 != __intnl_UnityEngineObject_43;
+if (__intnl_SystemBoolean_20)
+{
+__intnl_VRCUdonUdonBehaviour_13 = petStats;
+petStats.SendCustomEvent(__const_SystemString_37);
+__intnl_SystemObject_12 = petStats.GetProgramVariable(__const_SystemString_38);
+__intnl_SystemInt32_13 = Convert.ToInt32(__intnl_SystemObject_12);
+__lcl_current_SystemInt32_0 = __intnl_SystemInt32_13;
+__intnl_VRCUdonUdonBehaviour_14 = petStats;
+petStats.SendCustomEvent(__const_SystemString_7);
+__intnl_SystemObject_13 = petStats.GetProgramVariable(__const_SystemString_8);
+__intnl_SystemInt32_14 = Convert.ToInt32(__intnl_SystemObject_13);
+__lcl_nextLevel_SystemInt32_0 = __intnl_SystemInt32_14 + __const_SystemInt32_2;
+__intnl_SystemObject_14 = petStats.GetProgramVariable(__const_SystemString_39);
+__intnl_SystemInt32_15 = Convert.ToInt32(__intnl_SystemObject_14);
+__intnl_SystemObject_15 = petStats.GetProgramVariable(__const_SystemString_40);
+__intnl_SystemInt32_16 = Convert.ToInt32(__intnl_SystemObject_15);
+__intnl_SystemInt32_17 = __lcl_nextLevel_SystemInt32_0 * __intnl_SystemInt32_16;
+__lcl_nextValue_SystemInt32_0 = __intnl_SystemInt32_15 + __intnl_SystemInt32_17;
+__intnl_SystemString_3 = String.Concat(__const_SystemString_41, __lcl_current_SystemInt32_0);
+capacityInfoText.text = __intnl_SystemString_3;
+__intnl_VRCUdonUdonBehaviour_15 = petStats;
+petStats.SendCustomEvent(__const_SystemString_35);
+__intnl_SystemObject_16 = petStats.GetProgramVariable(__const_SystemString_36);
+__intnl_SystemBoolean_21 = (Boolean)__intnl_SystemObject_16;
+if (__intnl_SystemBoolean_21)
+{
+__intnl_SystemString_4 = capacityInfoText.text;
+__intnl_SystemString_5 = String.Concat(__const_SystemString_42, __lcl_nextValue_SystemInt32_0);
+__intnl_SystemString_6 = __intnl_SystemString_5 + __const_SystemString_43;
+__intnl_SystemString_7 = __intnl_SystemString_4 + __intnl_SystemString_6;
+capacityInfoText.text = __intnl_SystemString_7;
+}
+else
+{
+__intnl_SystemString_4 = capacityInfoText.text;
+__intnl_SystemString_5 = __intnl_SystemString_4 + __const_SystemString_44;
+capacityInfoText.text = __intnl_SystemString_5;
+}
+}
+__intnl_UnityEngineObject_44 = catchSpeedUpgradeButton;
+__intnl_UnityEngineObject_45 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_21 = __intnl_UnityEngineObject_44 != __intnl_UnityEngineObject_45;
+if (__intnl_SystemBoolean_21)
+{
+__intnl_VRCUdonUdonBehaviour_13 = petStats;
+petStats.SendCustomEvent(__const_SystemString_45);
+__intnl_SystemObject_12 = petStats.GetProgramVariable(__const_SystemString_46);
+__intnl_SystemBoolean_23 = (Boolean)__intnl_SystemObject_12;
+__intnl_SystemBoolean_22 = __intnl_SystemBoolean_23;
+if (__intnl_SystemBoolean_22)
+{
+__intnl_VRCUdonUdonBehaviour_14 = petStats;
+petStats.SendCustomEvent(__const_SystemString_33);
+__intnl_SystemObject_13 = petStats.GetProgramVariable(__const_SystemString_34);
+__intnl_SystemInt32_13 = Convert.ToInt32(__intnl_SystemObject_13);
+__intnl_SystemBoolean_22 = __intnl_SystemInt32_13 > __const_SystemInt32_1;
+}
+__lcl_canUpgrade_SystemBoolean_0 = __intnl_SystemBoolean_22;
+catchSpeedUpgradeButton.interactable = __lcl_canUpgrade_SystemBoolean_0;
+}
+__intnl_UnityEngineObject_46 = catchSpeedInfoText;
+__intnl_UnityEngineObject_47 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_22 = __intnl_UnityEngineObject_46 != __intnl_UnityEngineObject_47;
+if (__intnl_SystemBoolean_22)
+{
+__intnl_VRCUdonUdonBehaviour_13 = petStats;
+petStats.SendCustomEvent(__const_SystemString_47);
+__intnl_SystemObject_12 = petStats.GetProgramVariable(__const_SystemString_48);
+__intnl_SystemSingle_0 = Convert.ToSingle(__intnl_SystemObject_12);
+__lcl_current_SystemSingle_0 = __intnl_SystemSingle_0;
+__intnl_VRCUdonUdonBehaviour_14 = petStats;
+petStats.SendCustomEvent(__const_SystemString_9);
+__intnl_SystemObject_13 = petStats.GetProgramVariable(__const_SystemString_10);
+__intnl_SystemInt32_13 = Convert.ToInt32(__intnl_SystemObject_13);
+__lcl_nextLevel_SystemInt32_0 = __intnl_SystemInt32_13 + __const_SystemInt32_2;
+__intnl_SystemObject_14 = petStats.GetProgramVariable(__const_SystemString_49);
+__intnl_SystemSingle_1 = Convert.ToSingle(__intnl_SystemObject_14);
+__intnl_SystemSingle_2 = Convert.ToSingle(__lcl_nextLevel_SystemInt32_0);
+__intnl_SystemObject_15 = petStats.GetProgramVariable(__const_SystemString_50);
+__intnl_SystemSingle_3 = Convert.ToSingle(__intnl_SystemObject_15);
+__intnl_SystemSingle_4 = __intnl_SystemSingle_2 * __intnl_SystemSingle_3;
+__lcl_nextInterval_SystemSingle_0 = __intnl_SystemSingle_1 - __intnl_SystemSingle_4;
+__lcl_nextInterval_SystemSingle_0 = Mathf.Max(__const_SystemSingle_0, __lcl_nextInterval_SystemSingle_0);
+__intnl_SystemString_3 = __lcl_current_SystemSingle_0.ToString(__const_SystemString_52);
+__intnl_SystemString_4 = __const_SystemString_51 + __intnl_SystemString_3;
+__intnl_SystemString_5 = __intnl_SystemString_4 + __const_SystemString_53;
+catchSpeedInfoText.text = __intnl_SystemString_5;
+__intnl_VRCUdonUdonBehaviour_15 = petStats;
+petStats.SendCustomEvent(__const_SystemString_45);
+__intnl_SystemObject_16 = petStats.GetProgramVariable(__const_SystemString_46);
+__intnl_SystemBoolean_23 = (Boolean)__intnl_SystemObject_16;
+if (__intnl_SystemBoolean_23)
+{
+__intnl_SystemString_6 = catchSpeedInfoText.text;
+__intnl_SystemString_7 = __lcl_nextInterval_SystemSingle_0.ToString(__const_SystemString_52);
+__intnl_SystemString_8 = __const_SystemString_42 + __intnl_SystemString_7;
+__intnl_SystemString_9 = __intnl_SystemString_8 + __const_SystemString_54;
+__intnl_SystemString_10 = __intnl_SystemString_6 + __intnl_SystemString_9;
+catchSpeedInfoText.text = __intnl_SystemString_10;
+}
+else
+{
+__intnl_SystemString_6 = catchSpeedInfoText.text;
+__intnl_SystemString_7 = __intnl_SystemString_6 + __const_SystemString_44;
+catchSpeedInfoText.text = __intnl_SystemString_7;
+}
+}
+__intnl_UnityEngineObject_48 = luckUpgradeButton;
+__intnl_UnityEngineObject_49 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_23 = __intnl_UnityEngineObject_48 != __intnl_UnityEngineObject_49;
+if (__intnl_SystemBoolean_23)
+{
+__intnl_VRCUdonUdonBehaviour_13 = petStats;
+petStats.SendCustomEvent(__const_SystemString_55);
+__intnl_SystemObject_12 = petStats.GetProgramVariable(__const_SystemString_56);
+__intnl_SystemBoolean_25 = (Boolean)__intnl_SystemObject_12;
+__intnl_SystemBoolean_24 = __intnl_SystemBoolean_25;
+if (__intnl_SystemBoolean_24)
+{
+__intnl_VRCUdonUdonBehaviour_14 = petStats;
+petStats.SendCustomEvent(__const_SystemString_33);
+__intnl_SystemObject_13 = petStats.GetProgramVariable(__const_SystemString_34);
+__intnl_SystemInt32_13 = Convert.ToInt32(__intnl_SystemObject_13);
+__intnl_SystemBoolean_24 = __intnl_SystemInt32_13 > __const_SystemInt32_1;
+}
+__lcl_canUpgrade_SystemBoolean_0 = __intnl_SystemBoolean_24;
+luckUpgradeButton.interactable = __lcl_canUpgrade_SystemBoolean_0;
+}
+__intnl_UnityEngineObject_50 = luckInfoText;
+__intnl_UnityEngineObject_51 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_24 = __intnl_UnityEngineObject_50 != __intnl_UnityEngineObject_51;
+if (__intnl_SystemBoolean_24)
+{
+__intnl_VRCUdonUdonBehaviour_13 = petStats;
+petStats.SendCustomEvent(__const_SystemString_57);
+__intnl_SystemObject_12 = petStats.GetProgramVariable(__const_SystemString_58);
+__intnl_SystemInt32_13 = Convert.ToInt32(__intnl_SystemObject_12);
+__lcl_current_SystemInt32_0 = __intnl_SystemInt32_13;
+__intnl_VRCUdonUdonBehaviour_14 = petStats;
+petStats.SendCustomEvent(__const_SystemString_11);
+__intnl_SystemObject_13 = petStats.GetProgramVariable(__const_SystemString_12);
+__intnl_SystemInt32_14 = Convert.ToInt32(__intnl_SystemObject_13);
+__lcl_nextLevel_SystemInt32_0 = __intnl_SystemInt32_14 + __const_SystemInt32_2;
+__intnl_SystemObject_14 = petStats.GetProgramVariable(__const_SystemString_59);
+__intnl_SystemInt32_15 = Convert.ToInt32(__intnl_SystemObject_14);
+__intnl_SystemObject_15 = petStats.GetProgramVariable(__const_SystemString_60);
+__intnl_SystemInt32_16 = Convert.ToInt32(__intnl_SystemObject_15);
+__intnl_SystemInt32_17 = __lcl_nextLevel_SystemInt32_0 * __intnl_SystemInt32_16;
+__lcl_nextValue_SystemInt32_0 = __intnl_SystemInt32_15 + __intnl_SystemInt32_17;
+__intnl_SystemString_3 = String.Concat(__const_SystemString_61, __lcl_current_SystemInt32_0);
+luckInfoText.text = __intnl_SystemString_3;
+__intnl_VRCUdonUdonBehaviour_15 = petStats;
+petStats.SendCustomEvent(__const_SystemString_55);
+__intnl_SystemObject_16 = petStats.GetProgramVariable(__const_SystemString_56);
+__intnl_SystemBoolean_25 = (Boolean)__intnl_SystemObject_16;
+if (__intnl_SystemBoolean_25)
+{
+__intnl_SystemString_4 = luckInfoText.text;
+__intnl_SystemString_5 = String.Concat(__const_SystemString_42, __lcl_nextValue_SystemInt32_0);
+__intnl_SystemString_6 = __intnl_SystemString_5 + __const_SystemString_43;
+__intnl_SystemString_7 = __intnl_SystemString_4 + __intnl_SystemString_6;
+luckInfoText.text = __intnl_SystemString_7;
+}
+else
+{
+__intnl_SystemString_4 = luckInfoText.text;
+__intnl_SystemString_5 = __intnl_SystemString_4 + __const_SystemString_44;
+luckInfoText.text = __intnl_SystemString_5;
+}
+}
+__intnl_UnityEngineObject_52 = maxWeightUpgradeButton;
+__intnl_UnityEngineObject_53 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_25 = __intnl_UnityEngineObject_52 != __intnl_UnityEngineObject_53;
+if (__intnl_SystemBoolean_25)
+{
+__intnl_VRCUdonUdonBehaviour_13 = petStats;
+petStats.SendCustomEvent(__const_SystemString_62);
+__intnl_SystemObject_12 = petStats.GetProgramVariable(__const_SystemString_63);
+__intnl_SystemBoolean_27 = (Boolean)__intnl_SystemObject_12;
+__intnl_SystemBoolean_26 = __intnl_SystemBoolean_27;
+if (__intnl_SystemBoolean_26)
+{
+__intnl_VRCUdonUdonBehaviour_14 = petStats;
+petStats.SendCustomEvent(__const_SystemString_33);
+__intnl_SystemObject_13 = petStats.GetProgramVariable(__const_SystemString_34);
+__intnl_SystemInt32_13 = Convert.ToInt32(__intnl_SystemObject_13);
+__intnl_SystemBoolean_26 = __intnl_SystemInt32_13 > __const_SystemInt32_1;
+}
+__lcl_canUpgrade_SystemBoolean_0 = __intnl_SystemBoolean_26;
+maxWeightUpgradeButton.interactable = __lcl_canUpgrade_SystemBoolean_0;
+}
+__intnl_UnityEngineObject_54 = maxWeightInfoText;
+__intnl_UnityEngineObject_55 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_26 = __intnl_UnityEngineObject_54 != __intnl_UnityEngineObject_55;
+if (__intnl_SystemBoolean_26)
+{
+__intnl_VRCUdonUdonBehaviour_13 = petStats;
+petStats.SendCustomEvent(__const_SystemString_64);
+__intnl_SystemObject_12 = petStats.GetProgramVariable(__const_SystemString_65);
+__intnl_SystemSingle_0 = Convert.ToSingle(__intnl_SystemObject_12);
+__lcl_current_SystemSingle_0 = __intnl_SystemSingle_0;
+__intnl_VRCUdonUdonBehaviour_14 = petStats;
+petStats.SendCustomEvent(__const_SystemString_13);
+__intnl_SystemObject_13 = petStats.GetProgramVariable(__const_SystemString_14);
+__intnl_SystemInt32_13 = Convert.ToInt32(__intnl_SystemObject_13);
+__lcl_nextLevel_SystemInt32_0 = __intnl_SystemInt32_13 + __const_SystemInt32_2;
+__intnl_SystemObject_14 = petStats.GetProgramVariable(__const_SystemString_66);
+__intnl_SystemSingle_1 = Convert.ToSingle(__intnl_SystemObject_14);
+__intnl_SystemObject_15 = petStats.GetProgramVariable(__const_SystemString_67);
+__intnl_SystemSingle_2 = Convert.ToSingle(__intnl_SystemObject_15);
+__intnl_SystemSingle_3 = Convert.ToSingle(__lcl_nextLevel_SystemInt32_0);
+__intnl_SystemSingle_4 = Mathf.Pow(__intnl_SystemSingle_2, __intnl_SystemSingle_3);
+__lcl_nextValue_SystemSingle_0 = __intnl_SystemSingle_1 * __intnl_SystemSingle_4;
+__intnl_SystemString_3 = __lcl_current_SystemSingle_0.ToString(__const_SystemString_69);
+__intnl_SystemString_4 = __const_SystemString_68 + __intnl_SystemString_3;
+__intnl_SystemString_5 = __intnl_SystemString_4 + __const_SystemString_70;
+maxWeightInfoText.text = __intnl_SystemString_5;
+__intnl_VRCUdonUdonBehaviour_15 = petStats;
+petStats.SendCustomEvent(__const_SystemString_62);
+__intnl_SystemObject_16 = petStats.GetProgramVariable(__const_SystemString_63);
+__intnl_SystemBoolean_27 = (Boolean)__intnl_SystemObject_16;
+if (__intnl_SystemBoolean_27)
+{
+__intnl_SystemString_6 = maxWeightInfoText.text;
+__intnl_SystemString_7 = __lcl_nextValue_SystemSingle_0.ToString(__const_SystemString_69);
+__intnl_SystemString_8 = __const_SystemString_42 + __intnl_SystemString_7;
+__intnl_SystemString_9 = __intnl_SystemString_8 + __const_SystemString_71;
+__intnl_SystemString_10 = __intnl_SystemString_6 + __intnl_SystemString_9;
+maxWeightInfoText.text = __intnl_SystemString_10;
+}
+else
+{
+__intnl_SystemString_6 = maxWeightInfoText.text;
+__intnl_SystemString_7 = __intnl_SystemString_6 + __const_SystemString_44;
+maxWeightInfoText.text = __intnl_SystemString_7;
+}
+}
+}
+public void OnCapacityUpgrade()
+{
+__intnl_UnityEngineObject_56 = petStats;
+__intnl_UnityEngineObject_57 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_28 = __intnl_UnityEngineObject_56 == __intnl_UnityEngineObject_57;
+if (__intnl_SystemBoolean_28)
+{
+}
+else
+{
+__intnl_VRCUdonUdonBehaviour_16 = petStats;
+petStats.SendCustomEvent(__const_SystemString_33);
+__intnl_SystemObject_17 = petStats.GetProgramVariable(__const_SystemString_34);
+__intnl_SystemInt32_18 = Convert.ToInt32(__intnl_SystemObject_17);
+__intnl_SystemBoolean_28 = __intnl_SystemInt32_18 <= __const_SystemInt32_1;
+}
+if (__intnl_SystemBoolean_28)
+{
+return;
+}
+__intnl_VRCUdonUdonBehaviour_17 = petStats;
+petStats.SendCustomEvent(__const_SystemString_72);
+__intnl_SystemObject_18 = petStats.GetProgramVariable(__const_SystemString_73);
+__intnl_SystemBoolean_29 = (Boolean)__intnl_SystemObject_18;
+if (__intnl_SystemBoolean_29)
+{
+__intnl_VRCUdonUdonBehaviour_18 = petStats;
+petStats.SendCustomEvent(__const_SystemString_33);
+__intnl_SystemObject_19 = petStats.GetProgramVariable(__const_SystemString_34);
+__intnl_SystemInt32_19 = Convert.ToInt32(__intnl_SystemObject_19);
+__intnl_SystemInt32_20 = __intnl_SystemInt32_19 - __const_SystemInt32_2;
+__intnl_VRCUdonUdonBehaviour_18.SetProgramVariable(__const_SystemString_15, __intnl_SystemInt32_20);
+__intnl_VRCUdonUdonBehaviour_18.SendCustomEvent(__const_SystemString_16);
+__0_clip__param = upgradeSound;
+UNDEF_35818_15696();
+}
+else
+{
+__0_clip__param = errorSound;
+UNDEF_35818_15696();
+}
+UNDEF_35818_5728();
+UNDEF_35818_6064();
+}
+public void OnCatchSpeedUpgrade()
+{
+__intnl_UnityEngineObject_58 = petStats;
+__intnl_UnityEngineObject_59 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_30 = __intnl_UnityEngineObject_58 == __intnl_UnityEngineObject_59;
+if (__intnl_SystemBoolean_30)
+{
+}
+else
+{
+__intnl_VRCUdonUdonBehaviour_19 = petStats;
+petStats.SendCustomEvent(__const_SystemString_33);
+__intnl_SystemObject_20 = petStats.GetProgramVariable(__const_SystemString_34);
+__intnl_SystemInt32_21 = Convert.ToInt32(__intnl_SystemObject_20);
+__intnl_SystemBoolean_30 = __intnl_SystemInt32_21 <= __const_SystemInt32_1;
+}
+if (__intnl_SystemBoolean_30)
+{
+return;
+}
+__intnl_VRCUdonUdonBehaviour_20 = petStats;
+petStats.SendCustomEvent(__const_SystemString_74);
+__intnl_SystemObject_21 = petStats.GetProgramVariable(__const_SystemString_75);
+__intnl_SystemBoolean_31 = (Boolean)__intnl_SystemObject_21;
+if (__intnl_SystemBoolean_31)
+{
+__intnl_VRCUdonUdonBehaviour_21 = petStats;
+petStats.SendCustomEvent(__const_SystemString_33);
+__intnl_SystemObject_22 = petStats.GetProgramVariable(__const_SystemString_34);
+__intnl_SystemInt32_22 = Convert.ToInt32(__intnl_SystemObject_22);
+__intnl_SystemInt32_23 = __intnl_SystemInt32_22 - __const_SystemInt32_2;
+__intnl_VRCUdonUdonBehaviour_21.SetProgramVariable(__const_SystemString_15, __intnl_SystemInt32_23);
+__intnl_VRCUdonUdonBehaviour_21.SendCustomEvent(__const_SystemString_16);
+__0_clip__param = upgradeSound;
+UNDEF_35818_15696();
+}
+else
+{
+__0_clip__param = errorSound;
+UNDEF_35818_15696();
+}
+UNDEF_35818_5728();
+UNDEF_35818_6064();
+}
+public void OnLuckUpgrade()
+{
+__intnl_UnityEngineObject_60 = petStats;
+__intnl_UnityEngineObject_61 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_32 = __intnl_UnityEngineObject_60 == __intnl_UnityEngineObject_61;
+if (__intnl_SystemBoolean_32)
+{
+}
+else
+{
+__intnl_VRCUdonUdonBehaviour_22 = petStats;
+petStats.SendCustomEvent(__const_SystemString_33);
+__intnl_SystemObject_23 = petStats.GetProgramVariable(__const_SystemString_34);
+__intnl_SystemInt32_24 = Convert.ToInt32(__intnl_SystemObject_23);
+__intnl_SystemBoolean_32 = __intnl_SystemInt32_24 <= __const_SystemInt32_1;
+}
+if (__intnl_SystemBoolean_32)
+{
+return;
+}
+__intnl_VRCUdonUdonBehaviour_23 = petStats;
+petStats.SendCustomEvent(__const_SystemString_76);
+__intnl_SystemObject_24 = petStats.GetProgramVariable(__const_SystemString_77);
+__intnl_SystemBoolean_33 = (Boolean)__intnl_SystemObject_24;
+if (__intnl_SystemBoolean_33)
+{
+__intnl_VRCUdonUdonBehaviour_24 = petStats;
+petStats.SendCustomEvent(__const_SystemString_33);
+__intnl_SystemObject_25 = petStats.GetProgramVariable(__const_SystemString_34);
+__intnl_SystemInt32_25 = Convert.ToInt32(__intnl_SystemObject_25);
+__intnl_SystemInt32_26 = __intnl_SystemInt32_25 - __const_SystemInt32_2;
+__intnl_VRCUdonUdonBehaviour_24.SetProgramVariable(__const_SystemString_15, __intnl_SystemInt32_26);
+__intnl_VRCUdonUdonBehaviour_24.SendCustomEvent(__const_SystemString_16);
+__0_clip__param = upgradeSound;
+UNDEF_35818_15696();
+}
+else
+{
+__0_clip__param = errorSound;
+UNDEF_35818_15696();
+}
+UNDEF_35818_5728();
+UNDEF_35818_6064();
+}
+public void OnMaxWeightUpgrade()
+{
+__intnl_UnityEngineObject_62 = petStats;
+__intnl_UnityEngineObject_63 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_34 = __intnl_UnityEngineObject_62 == __intnl_UnityEngineObject_63;
+if (__intnl_SystemBoolean_34)
+{
+}
+else
+{
+__intnl_VRCUdonUdonBehaviour_25 = petStats;
+petStats.SendCustomEvent(__const_SystemString_33);
+__intnl_SystemObject_26 = petStats.GetProgramVariable(__const_SystemString_34);
+__intnl_SystemInt32_27 = Convert.ToInt32(__intnl_SystemObject_26);
+__intnl_SystemBoolean_34 = __intnl_SystemInt32_27 <= __const_SystemInt32_1;
+}
+if (__intnl_SystemBoolean_34)
+{
+return;
+}
+__intnl_VRCUdonUdonBehaviour_26 = petStats;
+petStats.SendCustomEvent(__const_SystemString_78);
+__intnl_SystemObject_27 = petStats.GetProgramVariable(__const_SystemString_79);
+__intnl_SystemBoolean_35 = (Boolean)__intnl_SystemObject_27;
+if (__intnl_SystemBoolean_35)
+{
+__intnl_VRCUdonUdonBehaviour_27 = petStats;
+petStats.SendCustomEvent(__const_SystemString_33);
+__intnl_SystemObject_28 = petStats.GetProgramVariable(__const_SystemString_34);
+__intnl_SystemInt32_28 = Convert.ToInt32(__intnl_SystemObject_28);
+__intnl_SystemInt32_29 = __intnl_SystemInt32_28 - __const_SystemInt32_2;
+__intnl_VRCUdonUdonBehaviour_27.SetProgramVariable(__const_SystemString_15, __intnl_SystemInt32_29);
+__intnl_VRCUdonUdonBehaviour_27.SendCustomEvent(__const_SystemString_16);
+__0_clip__param = upgradeSound;
+UNDEF_35818_15696();
+}
+else
+{
+__0_clip__param = errorSound;
+UNDEF_35818_15696();
+}
+UNDEF_35818_5728();
+UNDEF_35818_6064();
+}
+public void OnPlaceButtonClicked()
+{
+__intnl_UnityEngineObject_64 = petPlacer;
+__intnl_UnityEngineObject_65 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_36 = __intnl_UnityEngineObject_64 == __intnl_UnityEngineObject_65;
+if (__intnl_SystemBoolean_36)
+{
+return;
+}
+__intnl_VRCUdonUdonBehaviour_28 = petPlacer;
+petPlacer.SendCustomEvent(__const_SystemString_80);
+__0_clip__param = selectSound;
+UNDEF_35818_15696();
+}
+private void UNDEF_35818_14796()
+{
+if (_ready)
+{
+UNDEF_35818_15468();
+}
+}
+private void UNDEF_35818_15468()
+{
+__intnl_UnityEngineObject_66 = playerStats;
+__intnl_UnityEngineObject_67 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_38 = __intnl_UnityEngineObject_66 != __intnl_UnityEngineObject_67;
+if (__intnl_SystemBoolean_38)
+{
+__intnl_UnityEngineObject_68 = petPlacer;
+__intnl_UnityEngineObject_69 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_38 = __intnl_UnityEngineObject_68 != __intnl_UnityEngineObject_69;
+}
+__intnl_SystemBoolean_37 = __intnl_SystemBoolean_38;
+if (__intnl_SystemBoolean_37)
+{
+__intnl_VRCUdonUdonBehaviour_29 = playerStats;
+playerStats.SendCustomEvent(__const_SystemString_5);
+__intnl_SystemObject_29 = playerStats.GetProgramVariable(__const_SystemString_6);
+__intnl_SystemInt32_30 = Convert.ToInt32(__intnl_SystemObject_29);
+__intnl_SystemObject_30 = petPlacer.GetProgramVariable(__const_SystemString_81);
+__intnl_SystemInt32_31 = Convert.ToInt32(__intnl_SystemObject_30);
+__intnl_SystemBoolean_37 = __intnl_SystemInt32_30 >= __intnl_SystemInt32_31;
+}
+__lcl_meetsLevelRequirement_SystemBoolean_0 = __intnl_SystemBoolean_37;
+__intnl_UnityEngineObject_70 = noPetsMessage;
+__intnl_UnityEngineObject_71 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_39 = __intnl_UnityEngineObject_70 != __intnl_UnityEngineObject_71;
+if (__intnl_SystemBoolean_39)
+{
+__intnl_SystemBoolean_40 = !__lcl_meetsLevelRequirement_SystemBoolean_0;
+noPetsMessage.SetActive(__intnl_SystemBoolean_40);
+}
+__intnl_UnityEngineObject_72 = petsUIContainer;
+__intnl_UnityEngineObject_73 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_40 = __intnl_UnityEngineObject_72 != __intnl_UnityEngineObject_73;
+if (__intnl_SystemBoolean_40)
+{
+petsUIContainer.SetActive(__lcl_meetsLevelRequirement_SystemBoolean_0);
+}
+}
+private void UNDEF_35818_15696()
+{
+__intnl_UnityEngineObject_74 = audioSource;
+__intnl_UnityEngineObject_75 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_41 = __intnl_UnityEngineObject_74 != __intnl_UnityEngineObject_75;
+if (__intnl_SystemBoolean_41)
+{
+__intnl_UnityEngineObject_76 = __0_clip__param;
+__intnl_UnityEngineObject_77 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_41 = __intnl_UnityEngineObject_76 != __intnl_UnityEngineObject_77;
+}
+if (__intnl_SystemBoolean_41)
+{
+audioSource.PlayOneShot(__0_clip__param);
+}
+}
+private void UNDEF_35818_16192()
+{
+__lcl_objects_UnityEngineGameObjectArray_0 = Networking.GetPlayerObjects(__1__intnlparam);
+__lcl_i_SystemInt32_1 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_32 = __lcl_objects_UnityEngineGameObjectArray_0.Length;
+__intnl_SystemBoolean_42 = __lcl_i_SystemInt32_1 < __intnl_SystemInt32_32;
+if (__intnl_SystemBoolean_42)
+{
+break;
+}
+__intnl_UnityEngineGameObject_1 = (GameObject)(__lcl_objects_UnityEngineGameObjectArray_0[__lcl_i_SystemInt32_1]);
+__intnl_SystemBoolean_43 = Utilities.IsValid(__intnl_UnityEngineGameObject_1);
+if (__intnl_SystemBoolean_43)
+{
+}
+else
+{
+}
+__intnl_UnityEngineGameObject_2 = (GameObject)(__lcl_objects_UnityEngineGameObjectArray_0[__lcl_i_SystemInt32_1]);
+__intnl_UnityEngineTransform_4 = __intnl_UnityEngineGameObject_2.transform;
+__7__intnlparam = __intnl_UnityEngineTransform_4;
+UNDEF_35818_17272();
+__lcl_foundScript_VRCUdonUdonBehaviour_0 = __6__intnlparam;
+__intnl_SystemBoolean_44 = Utilities.IsValid(__lcl_foundScript_VRCUdonUdonBehaviour_0);
+if (__intnl_SystemBoolean_44)
+{
+__0__intnlparam = __lcl_foundScript_VRCUdonUdonBehaviour_0;
+return;
+}
+__lcl_i_SystemInt32_1 = __lcl_i_SystemInt32_1 + __const_SystemInt32_2;
+}
+__0__intnlparam = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+private void UNDEF_35818_16256()
+{
+__2__intnlparam = Object.Instantiate(__3__intnlparam);
+return;
+}
+private void UNDEF_35818_16764()
+{
+__intnl_UnityEngineComponentArray_1 = __5__intnlparam.GetComponents(__const_SystemType_2);
+__lcl_udonBehaviours_UnityEngineComponentArray_0 = __intnl_UnityEngineComponentArray_1;
+__lcl_targetID_SystemInt64_0 = __const_SystemInt64_0;
+__intnl_SystemInt32_33 = __lcl_udonBehaviours_UnityEngineComponentArray_0.Length;
+__intnl_SystemInt32_34 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemBoolean_45 = __intnl_SystemInt32_34 < __intnl_SystemInt32_33;
+if (__intnl_SystemBoolean_45)
+{
+break;
+}
+__lcl_behaviour_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(__lcl_udonBehaviours_UnityEngineComponentArray_0[__intnl_SystemInt32_34]);
+__lcl_idValue_SystemObject_0 = __lcl_behaviour_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_82);
+__intnl_SystemBoolean_46 = __lcl_idValue_SystemObject_0 != __const_SystemObject_0;
+if (__intnl_SystemBoolean_46)
+{
+__intnl_SystemInt64_0 = Convert.ToInt64(__lcl_idValue_SystemObject_0);
+__intnl_SystemBoolean_46 = __intnl_SystemInt64_0 == __lcl_targetID_SystemInt64_0;
+}
+if (__intnl_SystemBoolean_46)
+{
+__intnl_UnityEngineComponent_0 = __lcl_behaviour_VRCUdonUdonBehaviour_0;
+__4__intnlparam = (UdonBehaviour)__intnl_UnityEngineComponent_0;
+return;
+}
+__intnl_SystemInt32_34 = __intnl_SystemInt32_34 + __const_SystemInt32_2;
+}
+__4__intnlparam = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+private void UNDEF_35818_17272()
+{
+__intnl_UnityEngineComponentArray_2 = __7__intnlparam.GetComponentsInChildren(__const_SystemType_2);
+__lcl_udonBehaviours_UnityEngineComponentArray_1 = __intnl_UnityEngineComponentArray_2;
+__lcl_targetID_SystemInt64_1 = __const_SystemInt64_1;
+__intnl_SystemInt32_35 = __lcl_udonBehaviours_UnityEngineComponentArray_1.Length;
+__intnl_SystemInt32_36 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemBoolean_47 = __intnl_SystemInt32_36 < __intnl_SystemInt32_35;
+if (__intnl_SystemBoolean_47)
+{
+break;
+}
+__lcl_behaviour_VRCUdonUdonBehaviour_1 = (UdonBehaviour)(__lcl_udonBehaviours_UnityEngineComponentArray_1[__intnl_SystemInt32_36]);
+__lcl_idValue_SystemObject_1 = __lcl_behaviour_VRCUdonUdonBehaviour_1.GetProgramVariable(__const_SystemString_82);
+__intnl_SystemBoolean_48 = __lcl_idValue_SystemObject_1 != __const_SystemObject_0;
+if (__intnl_SystemBoolean_48)
+{
+__intnl_SystemInt64_1 = Convert.ToInt64(__lcl_idValue_SystemObject_1);
+__intnl_SystemBoolean_48 = __intnl_SystemInt64_1 == __lcl_targetID_SystemInt64_1;
+}
+if (__intnl_SystemBoolean_48)
+{
+__intnl_UnityEngineComponent_1 = __lcl_behaviour_VRCUdonUdonBehaviour_1;
+__6__intnlparam = (UdonBehaviour)__intnl_UnityEngineComponent_1;
+return;
+}
+__intnl_SystemInt32_36 = __intnl_SystemInt32_36 + __const_SystemInt32_2;
+}
+__6__intnlparam = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+private void UNDEF_35818_17312()
+{
+__8__intnlparam = (GameObject)__const_SystemObject_0;
+}
+}

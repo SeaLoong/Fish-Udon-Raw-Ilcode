@@ -1,0 +1,831 @@
+void _start
+0 PUSH UInt32 __const_SystemUInt32_0
+8 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+16 COPY
+20 JUMP_INDIRECT 2
+void RollBothModifiers
+28 PUSH UInt32 __const_SystemUInt32_0
+36 PUSH UInt32 __gintnl_SystemUInt32_0
+44 PUSH Single __const_SystemSingle_0
+52 PUSH Single __0_chanceMultiplier__param
+60 COPY
+64 PUSH Int32 __const_SystemInt32_0
+72 PUSH Int32 __0_boostedSizeModifier__param
+80 COPY
+84 PUSH Int32 __const_SystemInt32_0
+92 PUSH Int32 __0_boostedShaderModifier__param
+100 COPY
+104 PUSH Int32 __const_SystemInt32_0
+112 PUSH Int32 __0_boostedShaderModifier2__param
+120 COPY
+124 PUSH Single __const_SystemSingle_1
+132 PUSH Single __0_boostTypeChance__param
+140 COPY
+144 JUMP 180
+152 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+160 COPY
+164 JUMP_INDIRECT 2
+void __0_RollBothModifiersWithBoost
+172 PUSH UInt32 __const_SystemUInt32_0
+180 PUSH Int32 __const_SystemInt32_1
+188 PUSH Int32 lastSizeModifier
+196 COPY
+200 PUSH Int32 __const_SystemInt32_2
+208 PUSH Int32 lastShaderModifier
+216 COPY
+220 PUSH Single doubleModifierChancePercent
+228 PUSH Single __0_chanceMultiplier__param
+236 PUSH Single __lcl_boostedDoubleChance_SystemSingle_0
+244 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+252 PUSH Single sizeModifierChancePercent
+260 PUSH Single __0_chanceMultiplier__param
+268 PUSH Single __lcl_boostedSizeChance_SystemSingle_0
+276 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+284 PUSH Single shaderModifierChancePercent
+292 PUSH Single __0_chanceMultiplier__param
+300 PUSH Single __lcl_boostedShaderChance_SystemSingle_0
+308 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+316 PUSH Single __const_SystemSingle_1
+324 PUSH Single __const_SystemSingle_2
+332 PUSH Single __lcl_doubleRoll_SystemSingle_0
+340 EXTERN UnityEngineRandom.__Range__SystemSingle_SystemSingle__SystemSingle
+348 PUSH Single __lcl_doubleRoll_SystemSingle_0
+356 PUSH Single __lcl_boostedDoubleChance_SystemSingle_0
+364 PUSH Boolean __intnl_SystemBoolean_0
+372 EXTERN SystemSingle.__op_LessThan__SystemSingle_SystemSingle__SystemBoolean
+380 PUSH Boolean __intnl_SystemBoolean_0
+388 JUMP_IF_FALSE 588
+396 PUSH UInt32 __gintnl_SystemUInt32_1
+404 PUSH Int32 __0_boostedSizeModifier__param
+412 PUSH Int32 __0_boostedType__param
+420 COPY
+424 PUSH Single __0_boostTypeChance__param
+432 PUSH Single __1_boostTypeChance__param
+440 COPY
+444 JUMP 1196
+452 PUSH Int32 __0___0_RollSizeModifierWithBoost__ret
+460 PUSH Int32 lastSizeModifier
+468 COPY
+472 PUSH UInt32 __gintnl_SystemUInt32_2
+480 PUSH Int32 __0_boostedShaderModifier__param
+488 PUSH Int32 __1_boostedType__param
+496 COPY
+500 PUSH Int32 __0_boostedShaderModifier2__param
+508 PUSH Int32 __0_boostedType2__param
+516 COPY
+520 PUSH Single __0_boostTypeChance__param
+528 PUSH Single __2_boostTypeChance__param
+536 COPY
+540 JUMP 1532
+548 PUSH Int32 __0___0_RollShaderModifierWithBoost__ret
+556 PUSH Int32 lastShaderModifier
+564 COPY
+568 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+576 COPY
+580 JUMP_INDIRECT 2
+588 PUSH Single __const_SystemSingle_1
+596 PUSH Single __const_SystemSingle_2
+604 PUSH Single __lcl_sizeRoll_SystemSingle_0
+612 EXTERN UnityEngineRandom.__Range__SystemSingle_SystemSingle__SystemSingle
+620 PUSH Single __lcl_sizeRoll_SystemSingle_0
+628 PUSH Single __lcl_boostedSizeChance_SystemSingle_0
+636 PUSH Boolean __intnl_SystemBoolean_1
+644 EXTERN SystemSingle.__op_LessThan__SystemSingle_SystemSingle__SystemBoolean
+652 PUSH Boolean __intnl_SystemBoolean_1
+660 JUMP_IF_FALSE 744
+668 PUSH UInt32 __gintnl_SystemUInt32_3
+676 PUSH Int32 __0_boostedSizeModifier__param
+684 PUSH Int32 __0_boostedType__param
+692 COPY
+696 PUSH Single __0_boostTypeChance__param
+704 PUSH Single __1_boostTypeChance__param
+712 COPY
+716 JUMP 1196
+724 PUSH Int32 __0___0_RollSizeModifierWithBoost__ret
+732 PUSH Int32 lastSizeModifier
+740 COPY
+744 PUSH Single __const_SystemSingle_1
+752 PUSH Single __const_SystemSingle_2
+760 PUSH Single __lcl_shaderRoll_SystemSingle_0
+768 EXTERN UnityEngineRandom.__Range__SystemSingle_SystemSingle__SystemSingle
+776 PUSH Single __lcl_shaderRoll_SystemSingle_0
+784 PUSH Single __lcl_boostedShaderChance_SystemSingle_0
+792 PUSH Boolean __intnl_SystemBoolean_2
+800 EXTERN SystemSingle.__op_LessThan__SystemSingle_SystemSingle__SystemBoolean
+808 PUSH Boolean __intnl_SystemBoolean_2
+816 JUMP_IF_FALSE 920
+824 PUSH UInt32 __gintnl_SystemUInt32_4
+832 PUSH Int32 __0_boostedShaderModifier__param
+840 PUSH Int32 __1_boostedType__param
+848 COPY
+852 PUSH Int32 __0_boostedShaderModifier2__param
+860 PUSH Int32 __0_boostedType2__param
+868 COPY
+872 PUSH Single __0_boostTypeChance__param
+880 PUSH Single __2_boostTypeChance__param
+888 COPY
+892 JUMP 1532
+900 PUSH Int32 __0___0_RollShaderModifierWithBoost__ret
+908 PUSH Int32 lastShaderModifier
+916 COPY
+920 PUSH Single __0_chanceMultiplier__param
+928 PUSH Single __const_SystemSingle_0
+936 PUSH Boolean __intnl_SystemBoolean_4
+944 EXTERN SystemSingle.__op_GreaterThan__SystemSingle_SystemSingle__SystemBoolean
+952 PUSH Boolean __intnl_SystemBoolean_4
+960 JUMP_IF_FALSE 976
+968 JUMP 1008
+976 PUSH Single __0_boostTypeChance__param
+984 PUSH Single __const_SystemSingle_1
+992 PUSH Boolean __intnl_SystemBoolean_4
+1000 EXTERN SystemSingle.__op_GreaterThan__SystemSingle_SystemSingle__SystemBoolean
+1008 PUSH Boolean __intnl_SystemBoolean_4
+1016 PUSH Boolean __intnl_SystemBoolean_3
+1024 COPY
+1028 PUSH Boolean __intnl_SystemBoolean_3
+1036 JUMP_IF_FALSE 1152
+1044 PUSH Int32 lastSizeModifier
+1052 PUSH Int32 __const_SystemInt32_0
+1060 PUSH Boolean __intnl_SystemBoolean_5
+1068 EXTERN SystemInt32.__op_Inequality__SystemInt32_SystemInt32__SystemBoolean
+1076 PUSH Boolean __intnl_SystemBoolean_5
+1084 JUMP_IF_FALSE 1100
+1092 JUMP 1132
+1100 PUSH Int32 lastShaderModifier
+1108 PUSH Int32 __const_SystemInt32_0
+1116 PUSH Boolean __intnl_SystemBoolean_5
+1124 EXTERN SystemInt32.__op_Inequality__SystemInt32_SystemInt32__SystemBoolean
+1132 PUSH Boolean __intnl_SystemBoolean_5
+1140 PUSH Boolean __intnl_SystemBoolean_3
+1148 COPY
+1152 PUSH Boolean __intnl_SystemBoolean_3
+1160 JUMP_IF_FALSE 1168
+1168 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1176 COPY
+1180 JUMP_INDIRECT 2
+1188 PUSH UInt32 __const_SystemUInt32_0
+1196 PUSH Int32 __0_boostedType__param
+1204 PUSH Int32 __const_SystemInt32_0
+1212 PUSH Boolean __intnl_SystemBoolean_6
+1220 EXTERN SystemInt32.__op_Inequality__SystemInt32_SystemInt32__SystemBoolean
+1228 PUSH Boolean __intnl_SystemBoolean_6
+1236 JUMP_IF_FALSE 1276
+1244 PUSH Single __1_boostTypeChance__param
+1252 PUSH Single __const_SystemSingle_1
+1260 PUSH Boolean __intnl_SystemBoolean_6
+1268 EXTERN SystemSingle.__op_GreaterThan__SystemSingle_SystemSingle__SystemBoolean
+1276 PUSH Boolean __intnl_SystemBoolean_6
+1284 JUMP_IF_FALSE 1448
+1292 PUSH Single __const_SystemSingle_1
+1300 PUSH Single __const_SystemSingle_2
+1308 PUSH Single __lcl_boostRoll_SystemSingle_0
+1316 EXTERN UnityEngineRandom.__Range__SystemSingle_SystemSingle__SystemSingle
+1324 PUSH Single __lcl_boostRoll_SystemSingle_0
+1332 PUSH Single __1_boostTypeChance__param
+1340 PUSH Boolean __intnl_SystemBoolean_7
+1348 EXTERN SystemSingle.__op_LessThan__SystemSingle_SystemSingle__SystemBoolean
+1356 PUSH Boolean __intnl_SystemBoolean_7
+1364 JUMP_IF_FALSE 1448
+1372 PUSH UInt32 __gintnl_SystemUInt32_5
+1380 PUSH Int32 __0_boostedType__param
+1388 PUSH Int32 __1__intnlparam
+1396 COPY
+1400 JUMP 4332
+1408 PUSH Int32 __0__intnlparam
+1416 PUSH Int32 __0___0_RollSizeModifierWithBoost__ret
+1424 COPY
+1428 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1436 COPY
+1440 JUMP_INDIRECT 2
+1448 PUSH UInt32 __gintnl_SystemUInt32_6
+1456 JUMP 2120
+1464 PUSH Int32 __0_RollSizeModifierInternal__ret
+1472 PUSH Int32 __0___0_RollSizeModifierWithBoost__ret
+1480 COPY
+1484 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1492 COPY
+1496 JUMP_INDIRECT 2
+1504 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1512 COPY
+1516 JUMP_INDIRECT 2
+1524 PUSH UInt32 __const_SystemUInt32_0
+1532 PUSH Int32 __1_boostedType__param
+1540 PUSH Int32 __const_SystemInt32_0
+1548 PUSH Boolean __intnl_SystemBoolean_8
+1556 EXTERN SystemInt32.__op_Inequality__SystemInt32_SystemInt32__SystemBoolean
+1564 PUSH Boolean __intnl_SystemBoolean_8
+1572 JUMP_IF_FALSE 1612
+1580 PUSH Single __2_boostTypeChance__param
+1588 PUSH Single __const_SystemSingle_1
+1596 PUSH Boolean __intnl_SystemBoolean_8
+1604 EXTERN SystemSingle.__op_GreaterThan__SystemSingle_SystemSingle__SystemBoolean
+1612 PUSH Boolean __intnl_SystemBoolean_8
+1620 JUMP_IF_FALSE 2036
+1628 PUSH Single __const_SystemSingle_1
+1636 PUSH Single __const_SystemSingle_2
+1644 PUSH Single __lcl_boostRoll_SystemSingle_1
+1652 EXTERN UnityEngineRandom.__Range__SystemSingle_SystemSingle__SystemSingle
+1660 PUSH Single __lcl_boostRoll_SystemSingle_1
+1668 PUSH Single __2_boostTypeChance__param
+1676 PUSH Boolean __intnl_SystemBoolean_9
+1684 EXTERN SystemSingle.__op_LessThan__SystemSingle_SystemSingle__SystemBoolean
+1692 PUSH Boolean __intnl_SystemBoolean_9
+1700 JUMP_IF_FALSE 2036
+1708 PUSH Int32 __0_boostedType2__param
+1716 PUSH Int32 __const_SystemInt32_0
+1724 PUSH Boolean __intnl_SystemBoolean_10
+1732 EXTERN SystemInt32.__op_Inequality__SystemInt32_SystemInt32__SystemBoolean
+1740 PUSH Boolean __intnl_SystemBoolean_10
+1748 JUMP_IF_FALSE 1960
+1756 PUSH Single __intnl_SystemSingle_0
+1764 EXTERN UnityEngineRandom.__get_value__SystemSingle
+1772 PUSH Single __intnl_SystemSingle_0
+1780 PUSH Single __const_SystemSingle_3
+1788 PUSH Boolean __intnl_SystemBoolean_11
+1796 EXTERN SystemSingle.__op_LessThan__SystemSingle_SystemSingle__SystemBoolean
+1804 PUSH Boolean __intnl_SystemBoolean_11
+1812 JUMP_IF_FALSE 1884
+1820 PUSH UInt32 __gintnl_SystemUInt32_7
+1828 PUSH Int32 __1_boostedType__param
+1836 PUSH Int32 __3__intnlparam
+1844 COPY
+1848 JUMP 4672
+1856 PUSH Int32 __2__intnlparam
+1864 PUSH Int32 __0___0_RollShaderModifierWithBoost__ret
+1872 COPY
+1876 JUMP 1940
+1884 PUSH UInt32 __gintnl_SystemUInt32_8
+1892 PUSH Int32 __0_boostedType2__param
+1900 PUSH Int32 __3__intnlparam
+1908 COPY
+1912 JUMP 4672
+1920 PUSH Int32 __2__intnlparam
+1928 PUSH Int32 __0___0_RollShaderModifierWithBoost__ret
+1936 COPY
+1940 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1948 COPY
+1952 JUMP_INDIRECT 2
+1960 PUSH UInt32 __gintnl_SystemUInt32_9
+1968 PUSH Int32 __1_boostedType__param
+1976 PUSH Int32 __3__intnlparam
+1984 COPY
+1988 JUMP 4672
+1996 PUSH Int32 __2__intnlparam
+2004 PUSH Int32 __0___0_RollShaderModifierWithBoost__ret
+2012 COPY
+2016 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2024 COPY
+2028 JUMP_INDIRECT 2
+2036 PUSH UInt32 __gintnl_SystemUInt32_10
+2044 JUMP 2316
+2052 PUSH Int32 __0_RollShaderModifierInternal__ret
+2060 PUSH Int32 __0___0_RollShaderModifierWithBoost__ret
+2068 COPY
+2072 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2080 COPY
+2084 JUMP_INDIRECT 2
+2092 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2100 COPY
+2104 JUMP_INDIRECT 2
+2112 PUSH UInt32 __const_SystemUInt32_0
+2120 PUSH Single __const_SystemSingle_1
+2128 PUSH Single __const_SystemSingle_2
+2136 PUSH Single __lcl_modifierRoll_SystemSingle_0
+2144 EXTERN UnityEngineRandom.__Range__SystemSingle_SystemSingle__SystemSingle
+2152 PUSH Single __lcl_modifierRoll_SystemSingle_0
+2160 PUSH Single hugeVsTinyRatio
+2168 PUSH Boolean __intnl_SystemBoolean_12
+2176 EXTERN SystemSingle.__op_LessThan__SystemSingle_SystemSingle__SystemBoolean
+2184 PUSH Boolean __intnl_SystemBoolean_12
+2192 JUMP_IF_FALSE 2248
+2200 PUSH Int32 __const_SystemInt32_3
+2208 PUSH Int32 __0_RollSizeModifierInternal__ret
+2216 COPY
+2220 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2228 COPY
+2232 JUMP_INDIRECT 2
+2240 JUMP 2288
+2248 PUSH Int32 __const_SystemInt32_4
+2256 PUSH Int32 __0_RollSizeModifierInternal__ret
+2264 COPY
+2268 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2276 COPY
+2280 JUMP_INDIRECT 2
+2288 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2296 COPY
+2300 JUMP_INDIRECT 2
+2308 PUSH UInt32 __const_SystemUInt32_0
+2316 PUSH Int32 __const_SystemInt32_5
+2324 PUSH Int32 __const_SystemInt32_6
+2332 PUSH Int32 __lcl_randomIndex_SystemInt32_0
+2340 EXTERN UnityEngineRandom.__Range__SystemInt32_SystemInt32__SystemInt32
+2348 PUSH Int32 __lcl_randomIndex_SystemInt32_0
+2356 PUSH Int32 __0_RollShaderModifierInternal__ret
+2364 COPY
+2368 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2376 COPY
+2380 JUMP_INDIRECT 2
+2388 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2396 COPY
+2400 JUMP_INDIRECT 2
+void GetLastSizeModifier
+2408 PUSH UInt32 __const_SystemUInt32_0
+2416 PUSH Int32 lastSizeModifier
+2424 PUSH Int32 __0_GetLastSizeModifier__ret
+2432 COPY
+2436 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2444 COPY
+2448 JUMP_INDIRECT 2
+2456 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2464 COPY
+2468 JUMP_INDIRECT 2
+void GetLastShaderModifier
+2476 PUSH UInt32 __const_SystemUInt32_0
+2484 PUSH Int32 lastShaderModifier
+2492 PUSH Int32 __0_GetLastShaderModifier__ret
+2500 COPY
+2504 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2512 COPY
+2516 JUMP_INDIRECT 2
+2524 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2532 COPY
+2536 JUMP_INDIRECT 2
+void RollModifier
+2544 PUSH UInt32 __const_SystemUInt32_0
+2552 PUSH UInt32 __gintnl_SystemUInt32_11
+2560 JUMP 36
+2568 PUSH Int32 lastSizeModifier
+2576 PUSH Int32 __0_RollModifier__ret
+2584 COPY
+2588 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2596 COPY
+2600 JUMP_INDIRECT 2
+2608 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2616 COPY
+2620 JUMP_INDIRECT 2
+void __0_GetShaderModifierValueMultiplierInstance
+2628 PUSH UInt32 __const_SystemUInt32_0
+2636 PUSH Int32 __0_modifier__param
+2644 PUSH Int32 __const_SystemInt32_0
+2652 PUSH Boolean __intnl_SystemBoolean_13
+2660 EXTERN SystemInt32.__op_GreaterThanOrEqual__SystemInt32_SystemInt32__SystemBoolean
+2668 PUSH Boolean __intnl_SystemBoolean_13
+2676 JUMP_IF_FALSE 3732
+2684 PUSH Int32 __0_modifier__param
+2692 PUSH Int32 __const_SystemInt32_7
+2700 PUSH Boolean __intnl_SystemBoolean_14
+2708 EXTERN SystemInt32.__op_LessThanOrEqual__SystemInt32_SystemInt32__SystemBoolean
+2716 PUSH Boolean __intnl_SystemBoolean_14
+2724 JUMP_IF_FALSE 3732
+2732 PUSH UInt32[] __gintnl_SystemUInt32Array_0
+2740 PUSH Int32 __0_modifier__param
+2748 PUSH UInt32 __intnl_SystemUInt32_0
+2756 EXTERN SystemUInt32Array.__Get__SystemInt32__SystemUInt32
+2764 JUMP_INDIRECT 140
+2772 PUSH Single __const_SystemSingle_0
+2780 PUSH Single __0___0_GetShaderModifierValueMultiplierInstance__ret
+2788 COPY
+2792 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2800 COPY
+2804 JUMP_INDIRECT 2
+2812 PUSH Single albinoValueMultiplier
+2820 PUSH Single __0___0_GetShaderModifierValueMultiplierInstance__ret
+2828 COPY
+2832 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2840 COPY
+2844 JUMP_INDIRECT 2
+2852 PUSH Single shinyValueMultiplier
+2860 PUSH Single __0___0_GetShaderModifierValueMultiplierInstance__ret
+2868 COPY
+2872 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2880 COPY
+2884 JUMP_INDIRECT 2
+2892 PUSH Single goldenValueMultiplier
+2900 PUSH Single __0___0_GetShaderModifierValueMultiplierInstance__ret
+2908 COPY
+2912 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2920 COPY
+2924 JUMP_INDIRECT 2
+2932 PUSH Single ghastlyValueMultiplier
+2940 PUSH Single __0___0_GetShaderModifierValueMultiplierInstance__ret
+2948 COPY
+2952 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2960 COPY
+2964 JUMP_INDIRECT 2
+2972 PUSH Single blessedValueMultiplier
+2980 PUSH Single __0___0_GetShaderModifierValueMultiplierInstance__ret
+2988 COPY
+2992 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+3000 COPY
+3004 JUMP_INDIRECT 2
+3012 PUSH Single cursedValueMultiplier
+3020 PUSH Single __0___0_GetShaderModifierValueMultiplierInstance__ret
+3028 COPY
+3032 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+3040 COPY
+3044 JUMP_INDIRECT 2
+3052 PUSH Single radioactiveValueMultiplier
+3060 PUSH Single __0___0_GetShaderModifierValueMultiplierInstance__ret
+3068 COPY
+3072 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+3080 COPY
+3084 JUMP_INDIRECT 2
+3092 PUSH Single missingShaderValueMultiplier
+3100 PUSH Single __0___0_GetShaderModifierValueMultiplierInstance__ret
+3108 COPY
+3112 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+3120 COPY
+3124 JUMP_INDIRECT 2
+3132 PUSH Single sandyValueMultiplier
+3140 PUSH Single __0___0_GetShaderModifierValueMultiplierInstance__ret
+3148 COPY
+3152 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+3160 COPY
+3164 JUMP_INDIRECT 2
+3172 PUSH Single holographicValueMultiplier
+3180 PUSH Single __0___0_GetShaderModifierValueMultiplierInstance__ret
+3188 COPY
+3192 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+3200 COPY
+3204 JUMP_INDIRECT 2
+3212 PUSH Single burningValueMultiplier
+3220 PUSH Single __0___0_GetShaderModifierValueMultiplierInstance__ret
+3228 COPY
+3232 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+3240 COPY
+3244 JUMP_INDIRECT 2
+3252 PUSH Single rainbowValueMultiplier
+3260 PUSH Single __0___0_GetShaderModifierValueMultiplierInstance__ret
+3268 COPY
+3272 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+3280 COPY
+3284 JUMP_INDIRECT 2
+3292 PUSH Single stoneValueMultiplier
+3300 PUSH Single __0___0_GetShaderModifierValueMultiplierInstance__ret
+3308 COPY
+3312 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+3320 COPY
+3324 JUMP_INDIRECT 2
+3332 PUSH Single zebraValueMultiplier
+3340 PUSH Single __0___0_GetShaderModifierValueMultiplierInstance__ret
+3348 COPY
+3352 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+3360 COPY
+3364 JUMP_INDIRECT 2
+3372 PUSH Single tigerValueMultiplier
+3380 PUSH Single __0___0_GetShaderModifierValueMultiplierInstance__ret
+3388 COPY
+3392 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+3400 COPY
+3404 JUMP_INDIRECT 2
+3412 PUSH Single camoValueMultiplier
+3420 PUSH Single __0___0_GetShaderModifierValueMultiplierInstance__ret
+3428 COPY
+3432 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+3440 COPY
+3444 JUMP_INDIRECT 2
+3452 PUSH Single electricValueMultiplier
+3460 PUSH Single __0___0_GetShaderModifierValueMultiplierInstance__ret
+3468 COPY
+3472 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+3480 COPY
+3484 JUMP_INDIRECT 2
+3492 PUSH Single staticValueMultiplier
+3500 PUSH Single __0___0_GetShaderModifierValueMultiplierInstance__ret
+3508 COPY
+3512 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+3520 COPY
+3524 JUMP_INDIRECT 2
+3532 PUSH Single voidValueMultiplier
+3540 PUSH Single __0___0_GetShaderModifierValueMultiplierInstance__ret
+3548 COPY
+3552 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+3560 COPY
+3564 JUMP_INDIRECT 2
+3572 PUSH Single frozenValueMultiplier
+3580 PUSH Single __0___0_GetShaderModifierValueMultiplierInstance__ret
+3588 COPY
+3592 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+3600 COPY
+3604 JUMP_INDIRECT 2
+3612 PUSH Single shadowValueMultiplier
+3620 PUSH Single __0___0_GetShaderModifierValueMultiplierInstance__ret
+3628 COPY
+3632 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+3640 COPY
+3644 JUMP_INDIRECT 2
+3652 PUSH Single negativeValueMultiplier
+3660 PUSH Single __0___0_GetShaderModifierValueMultiplierInstance__ret
+3668 COPY
+3672 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+3680 COPY
+3684 JUMP_INDIRECT 2
+3692 PUSH Single galaxyValueMultiplier
+3700 PUSH Single __0___0_GetShaderModifierValueMultiplierInstance__ret
+3708 COPY
+3712 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+3720 COPY
+3724 JUMP_INDIRECT 2
+3732 PUSH Single __const_SystemSingle_0
+3740 PUSH Single __0___0_GetShaderModifierValueMultiplierInstance__ret
+3748 COPY
+3752 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+3760 COPY
+3764 JUMP_INDIRECT 2
+3772 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+3780 COPY
+3784 JUMP_INDIRECT 2
+void __0_GetSizeModifierValueMultiplierInstance
+3792 PUSH UInt32 __const_SystemUInt32_0
+3800 PUSH Int32 __1_modifier__param
+3808 PUSH Int32 __const_SystemInt32_1
+3816 PUSH Boolean __intnl_SystemBoolean_15
+3824 EXTERN SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean
+3832 PUSH Boolean __intnl_SystemBoolean_15
+3840 JUMP_IF_FALSE 3888
+3848 PUSH Single __const_SystemSingle_0
+3856 PUSH Single __0___0_GetSizeModifierValueMultiplierInstance__ret
+3864 COPY
+3868 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+3876 COPY
+3880 JUMP_INDIRECT 2
+3888 PUSH Int32 __1_modifier__param
+3896 PUSH Int32 __const_SystemInt32_3
+3904 PUSH Boolean __intnl_SystemBoolean_16
+3912 EXTERN SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean
+3920 PUSH Boolean __intnl_SystemBoolean_16
+3928 JUMP_IF_FALSE 3976
+3936 PUSH Single hugeValueMultiplier
+3944 PUSH Single __0___0_GetSizeModifierValueMultiplierInstance__ret
+3952 COPY
+3956 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+3964 COPY
+3968 JUMP_INDIRECT 2
+3976 PUSH Int32 __1_modifier__param
+3984 PUSH Int32 __const_SystemInt32_4
+3992 PUSH Boolean __intnl_SystemBoolean_17
+4000 EXTERN SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean
+4008 PUSH Boolean __intnl_SystemBoolean_17
+4016 JUMP_IF_FALSE 4112
+4024 PUSH Single __const_SystemSingle_0
+4032 PUSH Single __0___0_GetSizeModifierValueMultiplierInstance__ret
+4040 COPY
+4044 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+4052 COPY
+4056 JUMP_INDIRECT 2
+4064 JUMP 4112
+4072 PUSH Single __const_SystemSingle_0
+4080 PUSH Single __0___0_GetSizeModifierValueMultiplierInstance__ret
+4088 COPY
+4092 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+4100 COPY
+4104 JUMP_INDIRECT 2
+4112 JUMP 4072
+4120 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+4128 COPY
+4132 JUMP_INDIRECT 2
+void __0_GetCombinedValueMultiplierInstance
+4140 PUSH UInt32 __const_SystemUInt32_0
+4148 PUSH UInt32 __gintnl_SystemUInt32_12
+4156 PUSH Int32 __0_sizeModifier__param
+4164 PUSH Int32 __1_modifier__param
+4172 COPY
+4176 JUMP 3800
+4184 PUSH Single __0___0_GetSizeModifierValueMultiplierInstance__ret
+4192 PUSH Single __lcl_sizeMultiplier_SystemSingle_0
+4200 COPY
+4204 PUSH UInt32 __gintnl_SystemUInt32_13
+4212 PUSH Int32 __0_shaderModifier__param
+4220 PUSH Int32 __0_modifier__param
+4228 COPY
+4232 JUMP 2636
+4240 PUSH Single __0___0_GetShaderModifierValueMultiplierInstance__ret
+4248 PUSH Single __lcl_shaderMultiplier_SystemSingle_0
+4256 COPY
+4260 PUSH Single __lcl_sizeMultiplier_SystemSingle_0
+4268 PUSH Single __lcl_shaderMultiplier_SystemSingle_0
+4276 PUSH Single __0___0_GetCombinedValueMultiplierInstance__ret
+4284 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+4292 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+4300 COPY
+4304 JUMP_INDIRECT 2
+4312 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+4320 COPY
+4324 JUMP_INDIRECT 2
+4332 PUSH Int32 __1__intnlparam
+4340 PUSH Int32 __const_SystemInt32_0
+4348 PUSH Boolean __intnl_SystemBoolean_18
+4356 EXTERN SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean
+4364 PUSH Boolean __intnl_SystemBoolean_18
+4372 JUMP_IF_FALSE 4420
+4380 PUSH Int32 __const_SystemInt32_1
+4388 PUSH Int32 __0__intnlparam
+4396 COPY
+4400 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+4408 COPY
+4412 JUMP_INDIRECT 2
+4420 PUSH Int32 __1__intnlparam
+4428 PUSH Int32 __const_SystemInt32_5
+4436 PUSH Boolean __intnl_SystemBoolean_19
+4444 EXTERN SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean
+4452 PUSH Boolean __intnl_SystemBoolean_19
+4460 JUMP_IF_FALSE 4508
+4468 PUSH Int32 __const_SystemInt32_3
+4476 PUSH Int32 __0__intnlparam
+4484 COPY
+4488 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+4496 COPY
+4500 JUMP_INDIRECT 2
+4508 PUSH Int32 __1__intnlparam
+4516 PUSH Int32 __const_SystemInt32_8
+4524 PUSH Boolean __intnl_SystemBoolean_20
+4532 EXTERN SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean
+4540 PUSH Boolean __intnl_SystemBoolean_20
+4548 JUMP_IF_FALSE 4644
+4556 PUSH Int32 __const_SystemInt32_4
+4564 PUSH Int32 __0__intnlparam
+4572 COPY
+4576 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+4584 COPY
+4588 JUMP_INDIRECT 2
+4596 JUMP 4644
+4604 PUSH Int32 __const_SystemInt32_1
+4612 PUSH Int32 __0__intnlparam
+4620 COPY
+4624 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+4632 COPY
+4636 JUMP_INDIRECT 2
+4644 JUMP 4604
+4652 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+4660 COPY
+4664 JUMP_INDIRECT 2
+4672 PUSH Int32 __3__intnlparam
+4680 PUSH Int32 __const_SystemInt32_0
+4688 PUSH Boolean __intnl_SystemBoolean_21
+4696 EXTERN SystemInt32.__op_GreaterThanOrEqual__SystemInt32_SystemInt32__SystemBoolean
+4704 PUSH Boolean __intnl_SystemBoolean_21
+4712 JUMP_IF_FALSE 5768
+4720 PUSH Int32 __3__intnlparam
+4728 PUSH Int32 __const_SystemInt32_7
+4736 PUSH Boolean __intnl_SystemBoolean_22
+4744 EXTERN SystemInt32.__op_LessThanOrEqual__SystemInt32_SystemInt32__SystemBoolean
+4752 PUSH Boolean __intnl_SystemBoolean_22
+4760 JUMP_IF_FALSE 5768
+4768 PUSH UInt32[] __gintnl_SystemUInt32Array_1
+4776 PUSH Int32 __3__intnlparam
+4784 PUSH UInt32 __intnl_SystemUInt32_1
+4792 EXTERN SystemUInt32Array.__Get__SystemInt32__SystemUInt32
+4800 JUMP_INDIRECT 151
+4808 PUSH Int32 __const_SystemInt32_2
+4816 PUSH Int32 __2__intnlparam
+4824 COPY
+4828 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+4836 COPY
+4840 JUMP_INDIRECT 2
+4848 PUSH Int32 __const_SystemInt32_9
+4856 PUSH Int32 __2__intnlparam
+4864 COPY
+4868 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+4876 COPY
+4880 JUMP_INDIRECT 2
+4888 PUSH Int32 __const_SystemInt32_10
+4896 PUSH Int32 __2__intnlparam
+4904 COPY
+4908 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+4916 COPY
+4920 JUMP_INDIRECT 2
+4928 PUSH Int32 __const_SystemInt32_11
+4936 PUSH Int32 __2__intnlparam
+4944 COPY
+4948 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+4956 COPY
+4960 JUMP_INDIRECT 2
+4968 PUSH Int32 __const_SystemInt32_12
+4976 PUSH Int32 __2__intnlparam
+4984 COPY
+4988 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+4996 COPY
+5000 JUMP_INDIRECT 2
+5008 PUSH Int32 __const_SystemInt32_13
+5016 PUSH Int32 __2__intnlparam
+5024 COPY
+5028 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+5036 COPY
+5040 JUMP_INDIRECT 2
+5048 PUSH Int32 __const_SystemInt32_14
+5056 PUSH Int32 __2__intnlparam
+5064 COPY
+5068 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+5076 COPY
+5080 JUMP_INDIRECT 2
+5088 PUSH Int32 __const_SystemInt32_15
+5096 PUSH Int32 __2__intnlparam
+5104 COPY
+5108 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+5116 COPY
+5120 JUMP_INDIRECT 2
+5128 PUSH Int32 __const_SystemInt32_16
+5136 PUSH Int32 __2__intnlparam
+5144 COPY
+5148 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+5156 COPY
+5160 JUMP_INDIRECT 2
+5168 PUSH Int32 __const_SystemInt32_17
+5176 PUSH Int32 __2__intnlparam
+5184 COPY
+5188 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+5196 COPY
+5200 JUMP_INDIRECT 2
+5208 PUSH Int32 __const_SystemInt32_18
+5216 PUSH Int32 __2__intnlparam
+5224 COPY
+5228 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+5236 COPY
+5240 JUMP_INDIRECT 2
+5248 PUSH Int32 __const_SystemInt32_19
+5256 PUSH Int32 __2__intnlparam
+5264 COPY
+5268 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+5276 COPY
+5280 JUMP_INDIRECT 2
+5288 PUSH Int32 __const_SystemInt32_20
+5296 PUSH Int32 __2__intnlparam
+5304 COPY
+5308 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+5316 COPY
+5320 JUMP_INDIRECT 2
+5328 PUSH Int32 __const_SystemInt32_21
+5336 PUSH Int32 __2__intnlparam
+5344 COPY
+5348 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+5356 COPY
+5360 JUMP_INDIRECT 2
+5368 PUSH Int32 __const_SystemInt32_22
+5376 PUSH Int32 __2__intnlparam
+5384 COPY
+5388 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+5396 COPY
+5400 JUMP_INDIRECT 2
+5408 PUSH Int32 __const_SystemInt32_23
+5416 PUSH Int32 __2__intnlparam
+5424 COPY
+5428 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+5436 COPY
+5440 JUMP_INDIRECT 2
+5448 PUSH Int32 __const_SystemInt32_24
+5456 PUSH Int32 __2__intnlparam
+5464 COPY
+5468 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+5476 COPY
+5480 JUMP_INDIRECT 2
+5488 PUSH Int32 __const_SystemInt32_25
+5496 PUSH Int32 __2__intnlparam
+5504 COPY
+5508 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+5516 COPY
+5520 JUMP_INDIRECT 2
+5528 PUSH Int32 __const_SystemInt32_26
+5536 PUSH Int32 __2__intnlparam
+5544 COPY
+5548 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+5556 COPY
+5560 JUMP_INDIRECT 2
+5568 PUSH Int32 __const_SystemInt32_27
+5576 PUSH Int32 __2__intnlparam
+5584 COPY
+5588 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+5596 COPY
+5600 JUMP_INDIRECT 2
+5608 PUSH Int32 __const_SystemInt32_28
+5616 PUSH Int32 __2__intnlparam
+5624 COPY
+5628 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+5636 COPY
+5640 JUMP_INDIRECT 2
+5648 PUSH Int32 __const_SystemInt32_29
+5656 PUSH Int32 __2__intnlparam
+5664 COPY
+5668 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+5676 COPY
+5680 JUMP_INDIRECT 2
+5688 PUSH Int32 __const_SystemInt32_30
+5696 PUSH Int32 __2__intnlparam
+5704 COPY
+5708 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+5716 COPY
+5720 JUMP_INDIRECT 2
+5728 PUSH Int32 __const_SystemInt32_31
+5736 PUSH Int32 __2__intnlparam
+5744 COPY
+5748 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+5756 COPY
+5760 JUMP_INDIRECT 2
+5768 PUSH Int32 __const_SystemInt32_2
+5776 PUSH Int32 __2__intnlparam
+5784 COPY
+5788 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+5796 COPY
+5800 JUMP_INDIRECT 2
+5808 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+5816 COPY
+5820 JUMP_INDIRECT 2

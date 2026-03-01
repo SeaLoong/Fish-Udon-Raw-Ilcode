@@ -1,0 +1,414 @@
+void _start
+0 PUSH UInt32 __const_SystemUInt32_0
+8 PUSH Boolean UseLocalTimeZone
+16 JUMP_IF_FALSE 48
+24 PUSH TimeZoneInfo timeZoneInfo
+32 EXTERN SystemTimeZoneInfo.__get_Local__SystemTimeZoneInfo
+40 JUMP 72
+48 PUSH String TimeZoneID
+56 PUSH TimeZoneInfo timeZoneInfo
+64 EXTERN SystemTimeZoneInfo.__FindSystemTimeZoneById__SystemString__SystemTimeZoneInfo
+72 PUSH UInt32 __gintnl_SystemUInt32_0
+80 JUMP 116
+88 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+96 COPY
+100 JUMP_INDIRECT 2
+void _ClockUpdate
+108 PUSH UInt32 __const_SystemUInt32_0
+116 PUSH Boolean UseAudioTick
+124 JUMP_IF_FALSE 204
+132 PUSH Single __const_SystemSingle_0
+140 PUSH Single __const_SystemSingle_1
+148 PUSH Single __intnl_SystemSingle_0
+156 EXTERN UnityEngineRandom.__Range__SystemSingle_SystemSingle__SystemSingle
+164 PUSH AudioSource AudioTick
+172 PUSH Single __intnl_SystemSingle_0
+180 EXTERN UnityEngineAudioSource.__set_pitch__SystemSingle__SystemVoid
+188 PUSH AudioSource AudioTick
+196 EXTERN UnityEngineAudioSource.__Play__SystemVoid
+204 PUSH DateTime __intnl_SystemDateTime_0
+212 EXTERN SystemDateTime.__get_UtcNow__SystemDateTime
+220 PUSH DateTime __intnl_SystemDateTime_0
+228 PUSH TimeZoneInfo timeZoneInfo
+236 PUSH DateTime __lcl_currentTime_SystemDateTime_0
+244 EXTERN SystemTimeZoneInfo.__ConvertTimeFromUtc__SystemDateTime_SystemTimeZoneInfo__SystemDateTime
+252 PUSH Transform[] Hands
+260 PUSH object __const_SystemObject_0
+268 PUSH Boolean __intnl_SystemBoolean_0
+276 EXTERN SystemObject.__op_Inequality__SystemObject_SystemObject__SystemBoolean
+284 PUSH Boolean __intnl_SystemBoolean_0
+292 JUMP_IF_FALSE 1240
+300 PUSH Int32 __const_SystemInt32_0
+308 PUSH Int32 __lcl_i_SystemInt32_0
+316 COPY
+320 PUSH Transform[] Hands
+328 PUSH Int32 __intnl_SystemInt32_0
+336 EXTERN SystemArray.__get_Length__SystemInt32
+344 PUSH Int32 __lcl_i_SystemInt32_0
+352 PUSH Int32 __intnl_SystemInt32_0
+360 PUSH Boolean __intnl_SystemBoolean_1
+368 EXTERN SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean
+376 PUSH Boolean __intnl_SystemBoolean_1
+384 JUMP_IF_FALSE 1240
+392 PUSH Transform[] Hands
+400 PUSH Int32 __lcl_i_SystemInt32_0
+408 PUSH Transform __lcl_hand_UnityEngineTransform_0
+416 EXTERN SystemObjectArray.__Get__SystemInt32__SystemObject
+424 PUSH Int32[] HandModes
+432 PUSH Int32 __lcl_i_SystemInt32_0
+440 PUSH Int32 __intnl_SystemInt32_1
+448 EXTERN SystemInt32Array.__Get__SystemInt32__SystemInt32
+456 PUSH Int32 __intnl_SystemInt32_1
+464 PUSH Int32 __const_SystemInt32_1
+472 PUSH Boolean __intnl_SystemBoolean_2
+480 EXTERN SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean
+488 PUSH Boolean __intnl_SystemBoolean_2
+496 JUMP_IF_FALSE 800
+504 PUSH DateTime __lcl_currentTime_SystemDateTime_0
+512 PUSH Int32 __intnl_SystemInt32_2
+520 EXTERN SystemDateTime.__get_Hour__SystemInt32
+528 PUSH Int32 __intnl_SystemInt32_2
+536 PUSH Int32 __const_SystemInt32_2
+544 PUSH Int32 __intnl_SystemInt32_3
+552 EXTERN SystemInt32.__op_Multiplication__SystemInt32_SystemInt32__SystemInt32
+560 PUSH Int32 __intnl_SystemInt32_3
+568 PUSH Single __intnl_SystemSingle_0
+576 EXTERN SystemConvert.__ToSingle__SystemInt32__SystemSingle
+584 PUSH DateTime __lcl_currentTime_SystemDateTime_0
+592 PUSH Int32 __intnl_SystemInt32_4
+600 EXTERN SystemDateTime.__get_Minute__SystemInt32
+608 PUSH Int32 __intnl_SystemInt32_4
+616 PUSH Single __intnl_SystemSingle_1
+624 EXTERN SystemConvert.__ToSingle__SystemInt32__SystemSingle
+632 PUSH Single __intnl_SystemSingle_1
+640 PUSH Single __const_SystemSingle_3
+648 PUSH Single __intnl_SystemSingle_2
+656 EXTERN SystemSingle.__op_Division__SystemSingle_SystemSingle__SystemSingle
+664 PUSH Single __intnl_SystemSingle_2
+672 PUSH Single __const_SystemSingle_4
+680 PUSH Single __intnl_SystemSingle_3
+688 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+696 PUSH Single __intnl_SystemSingle_0
+704 PUSH Single __intnl_SystemSingle_3
+712 PUSH Single __intnl_SystemSingle_4
+720 EXTERN SystemSingle.__op_Addition__SystemSingle_SystemSingle__SystemSingle
+728 PUSH Single __const_SystemSingle_2
+736 PUSH Single __const_SystemSingle_2
+744 PUSH Single __intnl_SystemSingle_4
+752 PUSH Quaternion __intnl_UnityEngineQuaternion_0
+760 EXTERN UnityEngineQuaternion.__Euler__SystemSingle_SystemSingle_SystemSingle__UnityEngineQuaternion
+768 PUSH Transform __lcl_hand_UnityEngineTransform_0
+776 PUSH Quaternion __intnl_UnityEngineQuaternion_0
+784 EXTERN UnityEngineTransform.__set_localRotation__UnityEngineQuaternion__SystemVoid
+792 JUMP 1200
+800 PUSH Int32 __intnl_SystemInt32_1
+808 PUSH Int32 __const_SystemInt32_3
+816 PUSH Boolean __intnl_SystemBoolean_3
+824 EXTERN SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean
+832 PUSH Boolean __intnl_SystemBoolean_3
+840 JUMP_IF_FALSE 1000
+848 PUSH DateTime __lcl_currentTime_SystemDateTime_0
+856 PUSH Int32 __intnl_SystemInt32_5
+864 EXTERN SystemDateTime.__get_Minute__SystemInt32
+872 PUSH Int32 __intnl_SystemInt32_5
+880 PUSH Int32 __const_SystemInt32_4
+888 PUSH Int32 __intnl_SystemInt32_6
+896 EXTERN SystemInt32.__op_Multiplication__SystemInt32_SystemInt32__SystemInt32
+904 PUSH Int32 __intnl_SystemInt32_6
+912 PUSH Single __intnl_SystemSingle_5
+920 EXTERN SystemConvert.__ToSingle__SystemInt32__SystemSingle
+928 PUSH Single __const_SystemSingle_2
+936 PUSH Single __const_SystemSingle_2
+944 PUSH Single __intnl_SystemSingle_5
+952 PUSH Quaternion __intnl_UnityEngineQuaternion_1
+960 EXTERN UnityEngineQuaternion.__Euler__SystemSingle_SystemSingle_SystemSingle__UnityEngineQuaternion
+968 PUSH Transform __lcl_hand_UnityEngineTransform_0
+976 PUSH Quaternion __intnl_UnityEngineQuaternion_1
+984 EXTERN UnityEngineTransform.__set_localRotation__UnityEngineQuaternion__SystemVoid
+992 JUMP 1200
+1000 PUSH Int32 __intnl_SystemInt32_1
+1008 PUSH Int32 __const_SystemInt32_5
+1016 PUSH Boolean __intnl_SystemBoolean_4
+1024 EXTERN SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean
+1032 PUSH Boolean __intnl_SystemBoolean_4
+1040 JUMP_IF_FALSE 1200
+1048 PUSH DateTime __lcl_currentTime_SystemDateTime_0
+1056 PUSH Int32 __intnl_SystemInt32_7
+1064 EXTERN SystemDateTime.__get_Second__SystemInt32
+1072 PUSH Int32 __intnl_SystemInt32_7
+1080 PUSH Int32 __const_SystemInt32_4
+1088 PUSH Int32 __intnl_SystemInt32_8
+1096 EXTERN SystemInt32.__op_Multiplication__SystemInt32_SystemInt32__SystemInt32
+1104 PUSH Int32 __intnl_SystemInt32_8
+1112 PUSH Single __intnl_SystemSingle_6
+1120 EXTERN SystemConvert.__ToSingle__SystemInt32__SystemSingle
+1128 PUSH Single __const_SystemSingle_2
+1136 PUSH Single __const_SystemSingle_2
+1144 PUSH Single __intnl_SystemSingle_6
+1152 PUSH Quaternion __intnl_UnityEngineQuaternion_2
+1160 EXTERN UnityEngineQuaternion.__Euler__SystemSingle_SystemSingle_SystemSingle__UnityEngineQuaternion
+1168 PUSH Transform __lcl_hand_UnityEngineTransform_0
+1176 PUSH Quaternion __intnl_UnityEngineQuaternion_2
+1184 EXTERN UnityEngineTransform.__set_localRotation__UnityEngineQuaternion__SystemVoid
+1192 JUMP 1200
+1200 PUSH Int32 __lcl_i_SystemInt32_0
+1208 PUSH Int32 __const_SystemInt32_6
+1216 PUSH Int32 __lcl_i_SystemInt32_0
+1224 EXTERN SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32
+1232 JUMP 320
+1240 PUSH Image[] Fills
+1248 PUSH object __const_SystemObject_0
+1256 PUSH Boolean __intnl_SystemBoolean_1
+1264 EXTERN SystemObject.__op_Inequality__SystemObject_SystemObject__SystemBoolean
+1272 PUSH Boolean __intnl_SystemBoolean_1
+1280 JUMP_IF_FALSE 1972
+1288 PUSH Int32 __const_SystemInt32_0
+1296 PUSH Int32 __lcl_i_SystemInt32_0
+1304 COPY
+1308 PUSH Image[] Fills
+1316 PUSH Int32 __intnl_SystemInt32_0
+1324 EXTERN SystemArray.__get_Length__SystemInt32
+1332 PUSH Int32 __lcl_i_SystemInt32_0
+1340 PUSH Int32 __intnl_SystemInt32_0
+1348 PUSH Boolean __intnl_SystemBoolean_2
+1356 EXTERN SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean
+1364 PUSH Boolean __intnl_SystemBoolean_2
+1372 JUMP_IF_FALSE 1972
+1380 PUSH Image[] Fills
+1388 PUSH Int32 __lcl_i_SystemInt32_0
+1396 PUSH Image __lcl_fill_UnityEngineUIImage_0
+1404 EXTERN SystemObjectArray.__Get__SystemInt32__SystemObject
+1412 PUSH Int32[] FillModes
+1420 PUSH Int32 __lcl_i_SystemInt32_0
+1428 PUSH Int32 __intnl_SystemInt32_1
+1436 EXTERN SystemInt32Array.__Get__SystemInt32__SystemInt32
+1444 PUSH Int32 __intnl_SystemInt32_1
+1452 PUSH Int32 __const_SystemInt32_1
+1460 PUSH Boolean __intnl_SystemBoolean_3
+1468 EXTERN SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean
+1476 PUSH Boolean __intnl_SystemBoolean_3
+1484 JUMP_IF_FALSE 1612
+1492 PUSH DateTime __lcl_currentTime_SystemDateTime_0
+1500 PUSH String __const_SystemString_0
+1508 PUSH String __intnl_SystemString_0
+1516 EXTERN SystemDateTime.__ToString__SystemString__SystemString
+1524 PUSH String __intnl_SystemString_0
+1532 PUSH Single __intnl_SystemSingle_0
+1540 EXTERN SystemSingle.__Parse__SystemString__SystemSingle
+1548 PUSH Single __intnl_SystemSingle_0
+1556 PUSH Single __const_SystemSingle_5
+1564 PUSH Single __intnl_SystemSingle_1
+1572 EXTERN SystemSingle.__op_Division__SystemSingle_SystemSingle__SystemSingle
+1580 PUSH Image __lcl_fill_UnityEngineUIImage_0
+1588 PUSH Single __intnl_SystemSingle_1
+1596 EXTERN UnityEngineUIImage.__set_fillAmount__SystemSingle__SystemVoid
+1604 JUMP 1932
+1612 PUSH Int32 __intnl_SystemInt32_1
+1620 PUSH Int32 __const_SystemInt32_3
+1628 PUSH Boolean __intnl_SystemBoolean_4
+1636 EXTERN SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean
+1644 PUSH Boolean __intnl_SystemBoolean_4
+1652 JUMP_IF_FALSE 1772
+1660 PUSH DateTime __lcl_currentTime_SystemDateTime_0
+1668 PUSH Int32 __intnl_SystemInt32_2
+1676 EXTERN SystemDateTime.__get_Minute__SystemInt32
+1684 PUSH Int32 __intnl_SystemInt32_2
+1692 PUSH Single __intnl_SystemSingle_2
+1700 EXTERN SystemConvert.__ToSingle__SystemInt32__SystemSingle
+1708 PUSH Single __intnl_SystemSingle_2
+1716 PUSH Single __const_SystemSingle_3
+1724 PUSH Single __intnl_SystemSingle_3
+1732 EXTERN SystemSingle.__op_Division__SystemSingle_SystemSingle__SystemSingle
+1740 PUSH Image __lcl_fill_UnityEngineUIImage_0
+1748 PUSH Single __intnl_SystemSingle_3
+1756 EXTERN UnityEngineUIImage.__set_fillAmount__SystemSingle__SystemVoid
+1764 JUMP 1932
+1772 PUSH Int32 __intnl_SystemInt32_1
+1780 PUSH Int32 __const_SystemInt32_5
+1788 PUSH Boolean __intnl_SystemBoolean_5
+1796 EXTERN SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean
+1804 PUSH Boolean __intnl_SystemBoolean_5
+1812 JUMP_IF_FALSE 1932
+1820 PUSH DateTime __lcl_currentTime_SystemDateTime_0
+1828 PUSH Int32 __intnl_SystemInt32_3
+1836 EXTERN SystemDateTime.__get_Second__SystemInt32
+1844 PUSH Int32 __intnl_SystemInt32_3
+1852 PUSH Single __intnl_SystemSingle_4
+1860 EXTERN SystemConvert.__ToSingle__SystemInt32__SystemSingle
+1868 PUSH Single __intnl_SystemSingle_4
+1876 PUSH Single __const_SystemSingle_3
+1884 PUSH Single __intnl_SystemSingle_5
+1892 EXTERN SystemSingle.__op_Division__SystemSingle_SystemSingle__SystemSingle
+1900 PUSH Image __lcl_fill_UnityEngineUIImage_0
+1908 PUSH Single __intnl_SystemSingle_5
+1916 EXTERN UnityEngineUIImage.__set_fillAmount__SystemSingle__SystemVoid
+1924 JUMP 1932
+1932 PUSH Int32 __lcl_i_SystemInt32_0
+1940 PUSH Int32 __const_SystemInt32_6
+1948 PUSH Int32 __lcl_i_SystemInt32_0
+1956 EXTERN SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32
+1964 JUMP 1308
+1972 PUSH TextMeshProUGUI[] Labels
+1980 PUSH object __const_SystemObject_0
+1988 PUSH Boolean __intnl_SystemBoolean_2
+1996 EXTERN SystemObject.__op_Inequality__SystemObject_SystemObject__SystemBoolean
+2004 PUSH Boolean __intnl_SystemBoolean_2
+2012 JUMP_IF_FALSE 3216
+2020 PUSH Int32 __const_SystemInt32_0
+2028 PUSH Int32 __lcl_i_SystemInt32_0
+2036 COPY
+2040 PUSH TextMeshProUGUI[] Labels
+2048 PUSH Int32 __intnl_SystemInt32_0
+2056 EXTERN SystemArray.__get_Length__SystemInt32
+2064 PUSH Int32 __lcl_i_SystemInt32_0
+2072 PUSH Int32 __intnl_SystemInt32_0
+2080 PUSH Boolean __intnl_SystemBoolean_3
+2088 EXTERN SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean
+2096 PUSH Boolean __intnl_SystemBoolean_3
+2104 JUMP_IF_FALSE 3216
+2112 PUSH TextMeshProUGUI[] Labels
+2120 PUSH Int32 __lcl_i_SystemInt32_0
+2128 PUSH TextMeshProUGUI __lcl_label_TMProTextMeshProUGUI_0
+2136 EXTERN SystemObjectArray.__Get__SystemInt32__SystemObject
+2144 PUSH Int32[] LabelModes
+2152 PUSH Int32 __lcl_i_SystemInt32_0
+2160 PUSH Int32 __intnl_SystemInt32_1
+2168 EXTERN SystemInt32Array.__Get__SystemInt32__SystemInt32
+2176 PUSH Int32 __intnl_SystemInt32_1
+2184 PUSH Int32 __const_SystemInt32_0
+2192 PUSH Boolean __intnl_SystemBoolean_4
+2200 EXTERN SystemInt32.__op_GreaterThanOrEqual__SystemInt32_SystemInt32__SystemBoolean
+2208 PUSH Boolean __intnl_SystemBoolean_4
+2216 JUMP_IF_FALSE 3176
+2224 PUSH Int32 __intnl_SystemInt32_1
+2232 PUSH Int32 __const_SystemInt32_7
+2240 PUSH Boolean __intnl_SystemBoolean_5
+2248 EXTERN SystemInt32.__op_LessThanOrEqual__SystemInt32_SystemInt32__SystemBoolean
+2256 PUSH Boolean __intnl_SystemBoolean_5
+2264 JUMP_IF_FALSE 3176
+2272 PUSH UInt32[] __gintnl_SystemUInt32Array_0
+2280 PUSH Int32 __intnl_SystemInt32_1
+2288 PUSH UInt32 __intnl_SystemUInt32_0
+2296 EXTERN SystemUInt32Array.__Get__SystemInt32__SystemUInt32
+2304 JUMP_INDIRECT 82
+2312 PUSH DateTime __lcl_currentTime_SystemDateTime_0
+2320 PUSH String __const_SystemString_0
+2328 PUSH String __intnl_SystemString_0
+2336 EXTERN SystemDateTime.__ToString__SystemString__SystemString
+2344 PUSH TextMeshProUGUI __lcl_label_TMProTextMeshProUGUI_0
+2352 PUSH String __intnl_SystemString_0
+2360 EXTERN TMProTextMeshProUGUI.__set_text__SystemString__SystemVoid
+2368 JUMP 3176
+2376 PUSH DateTime __lcl_currentTime_SystemDateTime_0
+2384 PUSH String __const_SystemString_1
+2392 PUSH String __intnl_SystemString_1
+2400 EXTERN SystemDateTime.__ToString__SystemString__SystemString
+2408 PUSH TextMeshProUGUI __lcl_label_TMProTextMeshProUGUI_0
+2416 PUSH String __intnl_SystemString_1
+2424 EXTERN TMProTextMeshProUGUI.__set_text__SystemString__SystemVoid
+2432 JUMP 3176
+2440 PUSH DateTime __lcl_currentTime_SystemDateTime_0
+2448 PUSH String __const_SystemString_2
+2456 PUSH String __intnl_SystemString_2
+2464 EXTERN SystemDateTime.__ToString__SystemString__SystemString
+2472 PUSH TextMeshProUGUI __lcl_label_TMProTextMeshProUGUI_0
+2480 PUSH String __intnl_SystemString_2
+2488 EXTERN TMProTextMeshProUGUI.__set_text__SystemString__SystemVoid
+2496 JUMP 3176
+2504 PUSH Boolean Use24HourTime
+2512 JUMP_IF_FALSE 2584
+2520 PUSH DateTime __lcl_currentTime_SystemDateTime_0
+2528 PUSH String __const_SystemString_3
+2536 PUSH String __intnl_SystemString_3
+2544 EXTERN SystemDateTime.__ToString__SystemString__SystemString
+2552 PUSH TextMeshProUGUI __lcl_label_TMProTextMeshProUGUI_0
+2560 PUSH String __intnl_SystemString_3
+2568 EXTERN TMProTextMeshProUGUI.__set_text__SystemString__SystemVoid
+2576 JUMP 2640
+2584 PUSH DateTime __lcl_currentTime_SystemDateTime_0
+2592 PUSH String __const_SystemString_4
+2600 PUSH String __intnl_SystemString_3
+2608 EXTERN SystemDateTime.__ToString__SystemString__SystemString
+2616 PUSH TextMeshProUGUI __lcl_label_TMProTextMeshProUGUI_0
+2624 PUSH String __intnl_SystemString_3
+2632 EXTERN TMProTextMeshProUGUI.__set_text__SystemString__SystemVoid
+2640 JUMP 3176
+2648 PUSH Boolean Use24HourTime
+2656 JUMP_IF_FALSE 2728
+2664 PUSH DateTime __lcl_currentTime_SystemDateTime_0
+2672 PUSH String __const_SystemString_5
+2680 PUSH String __intnl_SystemString_3
+2688 EXTERN SystemDateTime.__ToString__SystemString__SystemString
+2696 PUSH TextMeshProUGUI __lcl_label_TMProTextMeshProUGUI_0
+2704 PUSH String __intnl_SystemString_3
+2712 EXTERN TMProTextMeshProUGUI.__set_text__SystemString__SystemVoid
+2720 JUMP 2784
+2728 PUSH DateTime __lcl_currentTime_SystemDateTime_0
+2736 PUSH String __const_SystemString_6
+2744 PUSH String __intnl_SystemString_3
+2752 EXTERN SystemDateTime.__ToString__SystemString__SystemString
+2760 PUSH TextMeshProUGUI __lcl_label_TMProTextMeshProUGUI_0
+2768 PUSH String __intnl_SystemString_3
+2776 EXTERN TMProTextMeshProUGUI.__set_text__SystemString__SystemVoid
+2784 JUMP 3176
+2792 PUSH DateTime __lcl_currentTime_SystemDateTime_0
+2800 PUSH String __const_SystemString_7
+2808 PUSH String __intnl_SystemString_3
+2816 EXTERN SystemDateTime.__ToString__SystemString__SystemString
+2824 PUSH TextMeshProUGUI __lcl_label_TMProTextMeshProUGUI_0
+2832 PUSH String __intnl_SystemString_3
+2840 EXTERN TMProTextMeshProUGUI.__set_text__SystemString__SystemVoid
+2848 JUMP 3176
+2856 PUSH DateTime __lcl_currentTime_SystemDateTime_0
+2864 PUSH String __const_SystemString_8
+2872 PUSH String __intnl_SystemString_4
+2880 EXTERN SystemDateTime.__ToString__SystemString__SystemString
+2888 PUSH TextMeshProUGUI __lcl_label_TMProTextMeshProUGUI_0
+2896 PUSH String __intnl_SystemString_4
+2904 EXTERN TMProTextMeshProUGUI.__set_text__SystemString__SystemVoid
+2912 JUMP 3176
+2920 PUSH DateTime __lcl_currentTime_SystemDateTime_0
+2928 PUSH String __const_SystemString_9
+2936 PUSH String __intnl_SystemString_5
+2944 EXTERN SystemDateTime.__ToString__SystemString__SystemString
+2952 PUSH TextMeshProUGUI __lcl_label_TMProTextMeshProUGUI_0
+2960 PUSH String __intnl_SystemString_5
+2968 EXTERN TMProTextMeshProUGUI.__set_text__SystemString__SystemVoid
+2976 JUMP 3176
+2984 PUSH DateTime __lcl_currentTime_SystemDateTime_0
+2992 PUSH String __const_SystemString_10
+3000 PUSH String __intnl_SystemString_6
+3008 EXTERN SystemDateTime.__ToString__SystemString__SystemString
+3016 PUSH TextMeshProUGUI __lcl_label_TMProTextMeshProUGUI_0
+3024 PUSH String __intnl_SystemString_6
+3032 EXTERN TMProTextMeshProUGUI.__set_text__SystemString__SystemVoid
+3040 JUMP 3176
+3048 PUSH DateTime __lcl_currentTime_SystemDateTime_0
+3056 PUSH String __const_SystemString_11
+3064 PUSH String __intnl_SystemString_7
+3072 EXTERN SystemDateTime.__ToString__SystemString__SystemString
+3080 PUSH TextMeshProUGUI __lcl_label_TMProTextMeshProUGUI_0
+3088 PUSH String __intnl_SystemString_7
+3096 EXTERN TMProTextMeshProUGUI.__set_text__SystemString__SystemVoid
+3104 JUMP 3176
+3112 PUSH DateTime __lcl_currentTime_SystemDateTime_0
+3120 PUSH String __const_SystemString_12
+3128 PUSH String __intnl_SystemString_8
+3136 EXTERN SystemDateTime.__ToString__SystemString__SystemString
+3144 PUSH TextMeshProUGUI __lcl_label_TMProTextMeshProUGUI_0
+3152 PUSH String __intnl_SystemString_8
+3160 EXTERN TMProTextMeshProUGUI.__set_text__SystemString__SystemVoid
+3168 JUMP 3176
+3176 PUSH Int32 __lcl_i_SystemInt32_0
+3184 PUSH Int32 __const_SystemInt32_6
+3192 PUSH Int32 __lcl_i_SystemInt32_0
+3200 EXTERN SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32
+3208 JUMP 2040
+3216 PUSH UdonBehaviour __this_VRCUdonUdonBehaviour_0
+3224 PUSH String __const_SystemString_13
+3232 PUSH Single __const_SystemSingle_6
+3240 PUSH EventTiming __const_VRCUdonCommonEnumsEventTiming_0
+3248 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEventDelayedSeconds__SystemString_SystemSingle_VRCUdonCommonEnumsEventTiming__SystemVoid
+3256 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+3264 COPY
+3268 JUMP_INDIRECT 2

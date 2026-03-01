@@ -1,0 +1,281 @@
+void _start()
+16 JUMP 2592
+40 isInitialized = __const_SystemBoolean_0
+52 if (enableDebugLogs) //60
+{
+}
+72 return;
+void _onPlayerRestored()
+120 if (__intnl_SystemBoolean_0) //136
+{
+128 JUMP 156
+}
+148 return;
+172 isPlayerRestored = __const_SystemBoolean_0
+184 if (enablePersistence) //208
+{
+200 JUMP 1864
+}
+216 JUMP 2592
+232 JUMP 284
+248 if (enableDebugLogs) //256
+{
+}
+268 return;
+324 if (__intnl_SystemBoolean_1) //352
+{
+344 return;
+}
+392 __intnl_SystemInt32_1 = __const_SystemInt32_0
+436 if (__intnl_SystemBoolean_2) //628
+{
+__lcl_slider_VRCUdonUdonBehaviour_0 = G_volumeSliders.Get(__intnl_SystemInt32_1);// 468
+492 __intnl_UnityEngineObject_0 = __lcl_slider_VRCUdonUdonBehaviour_0
+512 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+556 if (__intnl_SystemBoolean_3) //588
+{
+L_slider.SendCustomEvent(__const_SystemString_0);// 580
+}
+620 JUMP 396
+}
+640 return;
+void __0_SetMusicVolume()
+musicVolume = Clamp01(__0_volume__param);// 672
+696 __intnl_UnityEngineObject_2 = dynamicMusicSystem
+716 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+760 if (__intnl_SystemBoolean_4) //844
+{
+784 __intnl_SystemSingle_0 = musicVolume
+G_dynamicMusicSystem.SetProgramVariable(musicVolume, __const_SystemString_1);// 812
+G_dynamicMusicSystem.SendCustomEvent(__const_SystemString_2);// 836
+}
+852 JUMP 3340
+868 if (enablePersistence) //892
+{
+884 JUMP 2232
+}
+900 if (enableDebugLogs) //908
+{
+}
+920 return;
+void __0_SetAmbientVolume()
+ambientVolume = Clamp01(__1_volume__param);// 952
+976 __intnl_UnityEngineObject_4 = ambientAudioManager
+996 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+1040 if (__intnl_SystemBoolean_5) //1124
+{
+1064 __intnl_SystemSingle_1 = ambientVolume
+G_ambientAudioManager.SetProgramVariable(ambientVolume, __const_SystemString_1);// 1092
+G_ambientAudioManager.SendCustomEvent(__const_SystemString_2);// 1116
+}
+1140 __intnl_UnityEngineObject_6 = biomeWeatherManager
+1160 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+1204 if (__intnl_SystemBoolean_6) //1288
+{
+1228 __intnl_SystemSingle_1 = ambientVolume
+G_biomeWeatherManager.SetProgramVariable(ambientVolume, __const_SystemString_1);// 1256
+G_biomeWeatherManager.SendCustomEvent(__const_SystemString_3);// 1280
+}
+1304 __intnl_UnityEngineObject_8 = waterAudioController
+1324 __intnl_UnityEngineObject_9 = __const_SystemObject_0
+1368 if (__intnl_SystemBoolean_7) //1452
+{
+1392 __intnl_SystemSingle_1 = ambientVolume
+G_waterAudioController.SetProgramVariable(ambientVolume, __const_SystemString_1);// 1420
+G_waterAudioController.SendCustomEvent(__const_SystemString_2);// 1444
+}
+1460 JUMP 3956
+1476 if (enablePersistence) //1500
+{
+1492 JUMP 2232
+}
+1508 if (enableDebugLogs) //1516
+{
+}
+1528 return;
+void __0_SetSFXVolume()
+sfxVolume = Clamp01(__2_volume__param);// 1560
+1576 JUMP 4572
+1592 if (enablePersistence) //1616
+{
+1608 JUMP 2232
+}
+1624 if (enableDebugLogs) //1632
+{
+}
+1644 return;
+void GetMusicVolume()
+1676 __0_GetMusicVolume__ret = musicVolume
+1692 return;
+1712 return;
+void GetAmbientVolume()
+1744 __0_GetAmbientVolume__ret = ambientVolume
+1760 return;
+1780 return;
+void GetSFXVolume()
+1812 __0_GetSFXVolume__ret = sfxVolume
+1828 return;
+1848 return;
+__lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0 = get_LocalPlayer();// 1872
+1920 if (__intnl_SystemBoolean_8) //1948
+{
+1940 return;
+}
+1996 if (__intnl_SystemBoolean_9) //2028
+{
+musicVolume = Clamp01(__lcl_savedMusic_SystemSingle_0);// 2020
+}
+2076 if (__intnl_SystemBoolean_10) //2108
+{
+ambientVolume = Clamp01(__lcl_savedAmbient_SystemSingle_0);// 2100
+}
+2156 if (__intnl_SystemBoolean_11) //2188
+{
+sfxVolume = Clamp01(__lcl_savedSFX_SystemSingle_0);// 2180
+}
+2196 if (enableDebugLogs) //2204
+{
+}
+2216 return;
+2240 if (isPlayerRestored) //2256
+{
+2248 JUMP 2276
+}
+2268 return;
+2292 _volumeSaveDirty = __const_SystemBoolean_0
+2304 if (_volumeSaveScheduled) //2320
+{
+2312 JUMP 2380
+}
+2336 _volumeSaveScheduled = __const_SystemBoolean_0
+this.SendCustomEventDelayedSeconds(__const_VRCUdonCommonEnumsEventTiming_0, __const_SystemSingle_0, __const_SystemString_7);// 2372
+2392 return;
+void _FlushVolumeSave()
+2424 _volumeSaveScheduled = __const_SystemBoolean_1
+2436 if (_volumeSaveDirty) //2452
+{
+2444 JUMP 2472
+}
+2464 return;
+2488 _volumeSaveDirty = __const_SystemBoolean_1
+SetFloat(musicVolume, __const_SystemString_4);// 2508
+SetFloat(ambientVolume, __const_SystemString_5);// 2532
+SetFloat(sfxVolume, __const_SystemString_6);// 2556
+2576 return;
+2608 __intnl_UnityEngineObject_10 = dynamicMusicSystem
+2628 __intnl_UnityEngineObject_11 = __const_SystemObject_0
+2672 if (__intnl_SystemBoolean_12) //2756
+{
+2696 __intnl_SystemSingle_2 = musicVolume
+G_dynamicMusicSystem.SetProgramVariable(musicVolume, __const_SystemString_1);// 2724
+G_dynamicMusicSystem.SendCustomEvent(__const_SystemString_2);// 2748
+}
+2772 __intnl_UnityEngineObject_12 = ambientAudioManager
+2792 __intnl_UnityEngineObject_13 = __const_SystemObject_0
+2836 if (__intnl_SystemBoolean_13) //2920
+{
+2860 __intnl_SystemSingle_2 = ambientVolume
+G_ambientAudioManager.SetProgramVariable(ambientVolume, __const_SystemString_1);// 2888
+G_ambientAudioManager.SendCustomEvent(__const_SystemString_2);// 2912
+}
+2936 __intnl_UnityEngineObject_14 = biomeWeatherManager
+2956 __intnl_UnityEngineObject_15 = __const_SystemObject_0
+3000 if (__intnl_SystemBoolean_14) //3084
+{
+3024 __intnl_SystemSingle_2 = ambientVolume
+G_biomeWeatherManager.SetProgramVariable(ambientVolume, __const_SystemString_1);// 3052
+G_biomeWeatherManager.SendCustomEvent(__const_SystemString_3);// 3076
+}
+3100 __intnl_UnityEngineObject_16 = waterAudioController
+3120 __intnl_UnityEngineObject_17 = __const_SystemObject_0
+3164 if (__intnl_SystemBoolean_15) //3248
+{
+3188 __intnl_SystemSingle_2 = ambientVolume
+G_waterAudioController.SetProgramVariable(ambientVolume, __const_SystemString_1);// 3216
+G_waterAudioController.SendCustomEvent(__const_SystemString_2);// 3240
+}
+3256 JUMP 3340
+3272 JUMP 3956
+3288 JUMP 4572
+3304 if (enableDebugLogs) //3312
+{
+}
+3324 return;
+3380 if (__intnl_SystemBoolean_16) //3408
+{
+3400 return;
+}
+3424 __lcl_i_SystemInt32_0 = __const_SystemInt32_0
+3492 if (__intnl_SystemBoolean_17) //3928
+{
+3548 __intnl_UnityEngineObject_18 = __intnl_UnityEngineAudioSource_0
+3568 __intnl_UnityEngineObject_19 = __const_SystemObject_0
+3612 if (__intnl_SystemBoolean_18) //3888
+{
+3660 if (__intnl_SystemBoolean_19) //3724
+{
+}
+3732 if (__intnl_SystemBoolean_19) //3780
+{
+__lcl_baseVol_SystemSingle_0 = G_additionalMusicBaseVolumes.Get(__lcl_i_SystemInt32_0);// 3764
+3772 JUMP 3800
+}
+3796 __lcl_baseVol_SystemSingle_0 = __const_SystemSingle_1
+G_additionalMusicSources.Get(__lcl_i_SystemInt32_0).set_volume(__intnl_SystemSingle_3);// 3880
+}
+__lcl_i_SystemInt32_0 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_0);// 3912
+3920 JUMP 3428
+}
+3940 return;
+3996 if (__intnl_SystemBoolean_20) //4024
+{
+4016 return;
+}
+4040 __lcl_i_SystemInt32_1 = __const_SystemInt32_0
+4108 if (__intnl_SystemBoolean_21) //4544
+{
+4164 __intnl_UnityEngineObject_20 = __intnl_UnityEngineAudioSource_2
+4184 __intnl_UnityEngineObject_21 = __const_SystemObject_0
+4228 if (__intnl_SystemBoolean_22) //4504
+{
+4276 if (__intnl_SystemBoolean_23) //4340
+{
+}
+4348 if (__intnl_SystemBoolean_23) //4396
+{
+__lcl_baseVol_SystemSingle_1 = G_additionalAmbientBaseVolumes.Get(__lcl_i_SystemInt32_1);// 4380
+4388 JUMP 4416
+}
+4412 __lcl_baseVol_SystemSingle_1 = __const_SystemSingle_1
+G_additionalAmbientSources.Get(__lcl_i_SystemInt32_1).set_volume(__intnl_SystemSingle_4);// 4496
+}
+__lcl_i_SystemInt32_1 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_1);// 4528
+4536 JUMP 4044
+}
+4556 return;
+4612 if (__intnl_SystemBoolean_24) //4640
+{
+4632 return;
+}
+4656 __lcl_i_SystemInt32_2 = __const_SystemInt32_0
+4724 if (__intnl_SystemBoolean_25) //5160
+{
+4780 __intnl_UnityEngineObject_22 = __intnl_UnityEngineAudioSource_4
+4800 __intnl_UnityEngineObject_23 = __const_SystemObject_0
+4844 if (__intnl_SystemBoolean_26) //5120
+{
+4892 if (__intnl_SystemBoolean_27) //4956
+{
+}
+4964 if (__intnl_SystemBoolean_27) //5012
+{
+__lcl_baseVol_SystemSingle_2 = G_additionalSFXBaseVolumes.Get(__lcl_i_SystemInt32_2);// 4996
+5004 JUMP 5032
+}
+5028 __lcl_baseVol_SystemSingle_2 = __const_SystemSingle_1
+G_additionalSFXSources.Get(__lcl_i_SystemInt32_2).set_volume(__intnl_SystemSingle_5);// 5112
+}
+__lcl_i_SystemInt32_2 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_2);// 5144
+5152 JUMP 4660
+}
+5172 return;

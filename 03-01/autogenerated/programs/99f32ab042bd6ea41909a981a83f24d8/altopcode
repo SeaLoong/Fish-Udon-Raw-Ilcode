@@ -1,0 +1,82 @@
+void _start()
+48 if (__intnl_SystemBoolean_0) //64
+{
+56 JUMP 120
+}
+128 if (__intnl_SystemBoolean_0) //312
+{
+__lcl_ps_UnityEngineParticleSystem_0 = transform.GetComponent(__const_SystemType_0);// 160
+184 __intnl_UnityEngineObject_0 = __lcl_ps_UnityEngineParticleSystem_0
+204 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+248 if (__intnl_SystemBoolean_1) //312
+{
+particleSystems = 1.ctor();// 272
+G_particleSystems.Set(__lcl_ps_UnityEngineParticleSystem_0, __const_SystemInt32_0);// 304
+}
+}
+352 if (__intnl_SystemBoolean_1) //368
+{
+360 JUMP 424
+}
+432 if (__intnl_SystemBoolean_1) //484
+{
+this.set_enabled(__const_SystemBoolean_0);// 456
+476 return;
+}
+localPlayer = get_LocalPlayer();// 492
+nextUpdateTime = get_time();// 508
+528 return;
+void _update()
+600 if (__intnl_SystemBoolean_2) //628
+{
+620 return;
+}
+nextUpdateTime = op_Addition(updateInterval, __intnl_SystemSingle_1);// 668
+716 if (__intnl_SystemBoolean_3) //808
+{
+localPlayer = get_LocalPlayer();// 732
+780 if (__intnl_SystemBoolean_4) //808
+{
+800 return;
+}
+}
+__lcl_distance_SystemSingle_0 = Distance(__intnl_UnityEngineVector3_1, __intnl_UnityEngineVector3_0);// 880
+__lcl_shouldEmit_SystemBoolean_0 = op_LessThanOrEqual(maxDistance, __lcl_distance_SystemSingle_0);// 912
+960 if (__intnl_SystemBoolean_4) //1024
+{
+984 isEmitting = __lcl_shouldEmit_SystemBoolean_0
+1012 __0_enabled__param = __lcl_shouldEmit_SystemBoolean_0
+1016 JUMP 1052
+}
+1036 return;
+1068 __lcl_i_SystemInt32_0 = __const_SystemInt32_0
+1136 if (__intnl_SystemBoolean_5) //1392
+{
+1192 __intnl_UnityEngineObject_2 = __intnl_UnityEngineParticleSystem_0
+1212 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+1256 if (__intnl_SystemBoolean_6) //1272
+{
+1264 JUMP 1352
+}
+__lcl_emission_UnityEngineParticleSystemEmissionModule_0 = G_particleSystems.Get(__lcl_i_SystemInt32_0).get_emission();// 1320
+L_emission.set_enabled(__0_enabled__param);// 1344
+__lcl_i_SystemInt32_0 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_0);// 1376
+1384 JUMP 1072
+}
+1404 return;
+1428 if (showGizmo) //1444
+{
+1436 JUMP 1464
+}
+1456 return;
+set_color(gizmoColor);// 1472
+DrawWireSphere(maxDistance, __intnl_UnityEngineVector3_2);// 1520
+1540 return;
+1564 if (showGizmo) //1580
+{
+1572 JUMP 1600
+}
+1592 return;
+set_color(__intnl_UnityEngineColor_0);// 1728
+DrawWireSphere(maxDistance, __intnl_UnityEngineVector3_3);// 1776
+1796 return;

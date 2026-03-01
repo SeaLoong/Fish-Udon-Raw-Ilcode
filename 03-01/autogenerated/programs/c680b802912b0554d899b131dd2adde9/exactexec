@@ -1,0 +1,52 @@
+using System;
+using UnityEngine;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Single __intnl_SystemSingle_0 = 0f;
+private Single __const_SystemSingle_0 = 0f;
+private Single __lcl_zRotation_SystemSingle_0 = 0f;
+private Int64 __refl_typeid = -6863756517861040172;
+private Single __lcl_rotationThisFrame_SystemSingle_0 = 0f;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Single __lcl_yRotation_SystemSingle_0 = 0f;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+public Boolean spinZ;
+public Boolean spinY;
+public Boolean spinX;
+public Single spinSpeed;
+private String __refl_typename = "SimpleSpinner";
+private Transform __this_UnityEngineTransform_0 = this;
+private Single __lcl_xRotation_SystemSingle_0 = 0f;
+
+
+public void _update()
+{
+__intnl_SystemSingle_0 = Time.deltaTime;
+__lcl_rotationThisFrame_SystemSingle_0 = spinSpeed * __intnl_SystemSingle_0;
+if (spinX)
+{
+__lcl_xRotation_SystemSingle_0 = __lcl_rotationThisFrame_SystemSingle_0;
+}
+else
+{
+__lcl_xRotation_SystemSingle_0 = __const_SystemSingle_0;
+}
+if (spinY)
+{
+__lcl_yRotation_SystemSingle_0 = __lcl_rotationThisFrame_SystemSingle_0;
+}
+else
+{
+__lcl_yRotation_SystemSingle_0 = __const_SystemSingle_0;
+}
+if (spinZ)
+{
+__lcl_zRotation_SystemSingle_0 = __lcl_rotationThisFrame_SystemSingle_0;
+}
+else
+{
+__lcl_zRotation_SystemSingle_0 = __const_SystemSingle_0;
+}
+__this_UnityEngineTransform_0.Rotate(__lcl_xRotation_SystemSingle_0, __lcl_yRotation_SystemSingle_0, __lcl_zRotation_SystemSingle_0);
+}
+}

@@ -1,0 +1,819 @@
+void _start
+0 PUSH UInt32 __const_SystemUInt32_0
+8 PUSH String __const_SystemString_0
+16 PUSH String currentZoneID
+24 COPY
+28 PUSH String __const_SystemString_1
+36 PUSH String currentZoneName
+44 COPY
+48 PUSH UdonBehaviour dayNightCycle
+56 PUSH Object __intnl_UnityEngineObject_0
+64 COPY
+68 PUSH object __const_SystemObject_0
+76 PUSH Object __intnl_UnityEngineObject_1
+84 COPY
+88 PUSH Object __intnl_UnityEngineObject_0
+96 PUSH Object __intnl_UnityEngineObject_1
+104 PUSH Boolean __intnl_SystemBoolean_0
+112 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+120 PUSH Boolean __intnl_SystemBoolean_0
+128 JUMP_IF_FALSE 352
+136 PUSH Int32[] openOceanWeatherTypes
+144 PUSH Int32[] __intnl_SystemInt32Array_0
+152 COPY
+156 PUSH UdonBehaviour dayNightCycle
+164 PUSH String __const_SystemString_2
+172 PUSH Int32[] openOceanWeatherTypes
+180 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid
+188 PUSH UdonBehaviour dayNightCycle
+196 PUSH String __const_SystemString_3
+204 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+212 PUSH UdonBehaviour dayNightCycle
+220 PUSH UdonBehaviour dayNightCycle
+228 PUSH UdonBehaviour __intnl_VRCUdonUdonBehaviour_0
+236 COPY
+240 PUSH String __const_SystemString_4
+248 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+256 PUSH UdonBehaviour dayNightCycle
+264 PUSH String __const_SystemString_5
+272 PUSH object __intnl_SystemObject_0
+280 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject
+288 PUSH object __intnl_SystemObject_0
+296 PUSH Int32 __intnl_SystemInt32_1
+304 EXTERN SystemConvert.__ToInt32__SystemObject__SystemInt32
+312 PUSH Int32 __intnl_SystemInt32_1
+320 PUSH Int32 __intnl_SystemInt32_0
+328 COPY
+332 PUSH Int32 __intnl_SystemInt32_0
+340 PUSH Int32 currentWeather
+348 COPY
+352 PUSH Boolean showDebugLogs
+360 JUMP_IF_FALSE 368
+368 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+376 COPY
+380 JUMP_INDIRECT 2
+void _update
+388 PUSH UInt32 __const_SystemUInt32_0
+396 PUSH UdonBehaviour dayNightCycle
+404 PUSH Object __intnl_UnityEngineObject_2
+412 COPY
+416 PUSH object __const_SystemObject_0
+424 PUSH Object __intnl_UnityEngineObject_3
+432 COPY
+436 PUSH Object __intnl_UnityEngineObject_2
+444 PUSH Object __intnl_UnityEngineObject_3
+452 PUSH Boolean __intnl_SystemBoolean_1
+460 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+468 PUSH Boolean __intnl_SystemBoolean_1
+476 JUMP_IF_FALSE 744
+484 PUSH UdonBehaviour dayNightCycle
+492 PUSH UdonBehaviour dayNightCycle
+500 PUSH UdonBehaviour __intnl_VRCUdonUdonBehaviour_1
+508 COPY
+512 PUSH String __const_SystemString_4
+520 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+528 PUSH UdonBehaviour dayNightCycle
+536 PUSH String __const_SystemString_5
+544 PUSH object __intnl_SystemObject_1
+552 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject
+560 PUSH object __intnl_SystemObject_1
+568 PUSH Int32 __intnl_SystemInt32_3
+576 EXTERN SystemConvert.__ToInt32__SystemObject__SystemInt32
+584 PUSH Int32 __intnl_SystemInt32_3
+592 PUSH Int32 __intnl_SystemInt32_2
+600 COPY
+604 PUSH Int32 __intnl_SystemInt32_2
+612 PUSH Int32 __lcl_newWeather_SystemInt32_0
+620 COPY
+624 PUSH Int32 __lcl_newWeather_SystemInt32_0
+632 PUSH Int32 currentWeather
+640 PUSH Boolean __intnl_SystemBoolean_2
+648 EXTERN SystemInt32.__op_Inequality__SystemInt32_SystemInt32__SystemBoolean
+656 PUSH Boolean __intnl_SystemBoolean_2
+664 JUMP_IF_FALSE 744
+672 PUSH Int32 __lcl_newWeather_SystemInt32_0
+680 PUSH Int32 currentWeather
+688 COPY
+692 PUSH UInt32 __gintnl_SystemUInt32_0
+700 PUSH String currentZoneID
+708 PUSH String __1_zoneID__param
+716 COPY
+720 JUMP 2224
+728 PUSH Boolean showDebugLogs
+736 JUMP_IF_FALSE 744
+744 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+752 COPY
+756 JUMP_INDIRECT 2
+void __0_SetCurrentZone
+764 PUSH UInt32 __const_SystemUInt32_0
+772 PUSH String __0_zoneID__param
+780 PUSH String currentZoneID
+788 PUSH Boolean __intnl_SystemBoolean_3
+796 EXTERN SystemString.__op_Equality__SystemString_SystemString__SystemBoolean
+804 PUSH Boolean __intnl_SystemBoolean_3
+812 JUMP_IF_FALSE 840
+820 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+828 COPY
+832 JUMP_INDIRECT 2
+840 PUSH String currentZoneName
+848 PUSH String __lcl_previousZoneName_SystemString_0
+856 COPY
+860 PUSH String __0_zoneID__param
+868 PUSH String currentZoneID
+876 COPY
+880 PUSH String __0_zoneName__param
+888 PUSH String currentZoneName
+896 COPY
+900 PUSH UInt32 __gintnl_SystemUInt32_1
+908 PUSH String __0_zoneID__param
+916 PUSH String __1_zoneID__param
+924 COPY
+928 JUMP 2224
+936 PUSH UInt32 __gintnl_SystemUInt32_2
+944 PUSH String __0_zoneID__param
+952 PUSH String __2_zoneID__param
+960 COPY
+964 JUMP 3972
+972 PUSH Boolean showDebugLogs
+980 JUMP_IF_FALSE 988
+988 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+996 COPY
+1000 JUMP_INDIRECT 2
+void __0_ReevaluateCurrentZone
+1008 PUSH UInt32 __const_SystemUInt32_0
+1016 PUSH Component[] allZones
+1024 PUSH object __const_SystemObject_0
+1032 PUSH Boolean __intnl_SystemBoolean_4
+1040 EXTERN SystemObject.__op_Equality__SystemObject_SystemObject__SystemBoolean
+1048 PUSH Boolean __intnl_SystemBoolean_4
+1056 JUMP_IF_FALSE 1072
+1064 JUMP 1128
+1072 PUSH Component[] allZones
+1080 PUSH Int32 __intnl_SystemInt32_4
+1088 EXTERN SystemArray.__get_Length__SystemInt32
+1096 PUSH Int32 __intnl_SystemInt32_4
+1104 PUSH Int32 __const_SystemInt32_0
+1112 PUSH Boolean __intnl_SystemBoolean_4
+1120 EXTERN SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean
+1128 PUSH Boolean __intnl_SystemBoolean_4
+1136 JUMP_IF_FALSE 1180
+1144 PUSH Boolean showDebugLogs
+1152 JUMP_IF_FALSE 1160
+1160 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1168 COPY
+1172 JUMP_INDIRECT 2
+1180 PUSH object __const_SystemObject_0
+1188 PUSH UdonBehaviour __lcl_highestPriorityZone_VRCUdonUdonBehaviour_0
+1196 COPY
+1200 PUSH Int32 __const_SystemInt32_1
+1208 PUSH Int32 __lcl_highestPriority_SystemInt32_0
+1216 COPY
+1220 PUSH Int32 __const_SystemInt32_0
+1228 PUSH Int32 __lcl_i_SystemInt32_0
+1236 COPY
+1240 PUSH Component[] allZones
+1248 PUSH Int32 __intnl_SystemInt32_5
+1256 EXTERN SystemArray.__get_Length__SystemInt32
+1264 PUSH Int32 __lcl_i_SystemInt32_0
+1272 PUSH Int32 __intnl_SystemInt32_5
+1280 PUSH Boolean __intnl_SystemBoolean_5
+1288 EXTERN SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean
+1296 PUSH Boolean __intnl_SystemBoolean_5
+1304 JUMP_IF_FALSE 1804
+1312 PUSH Component[] allZones
+1320 PUSH Int32 __lcl_i_SystemInt32_0
+1328 PUSH UdonBehaviour __lcl_zone_VRCUdonUdonBehaviour_0
+1336 EXTERN SystemObjectArray.__Get__SystemInt32__SystemObject
+1344 PUSH UdonBehaviour __lcl_zone_VRCUdonUdonBehaviour_0
+1352 PUSH Object __intnl_UnityEngineObject_4
+1360 COPY
+1364 PUSH object __const_SystemObject_0
+1372 PUSH Object __intnl_UnityEngineObject_5
+1380 COPY
+1384 PUSH Object __intnl_UnityEngineObject_4
+1392 PUSH Object __intnl_UnityEngineObject_5
+1400 PUSH Boolean __intnl_SystemBoolean_6
+1408 EXTERN UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean
+1416 PUSH Boolean __intnl_SystemBoolean_6
+1424 JUMP_IF_FALSE 1440
+1432 JUMP 1764
+1440 PUSH Vector3 __0_playerPosition__param
+1448 PUSH Vector3 __intnl_UnityEngineVector3_0
+1456 COPY
+1460 PUSH UdonBehaviour __lcl_zone_VRCUdonUdonBehaviour_0
+1468 PUSH String __const_SystemString_6
+1476 PUSH Vector3 __0_playerPosition__param
+1484 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid
+1492 PUSH UdonBehaviour __lcl_zone_VRCUdonUdonBehaviour_0
+1500 PUSH String __const_SystemString_7
+1508 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+1516 PUSH UdonBehaviour __lcl_zone_VRCUdonUdonBehaviour_0
+1524 PUSH String __const_SystemString_8
+1532 PUSH object __intnl_SystemObject_2
+1540 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject
+1548 PUSH object __intnl_SystemObject_2
+1556 PUSH Boolean __intnl_SystemBoolean_7
+1564 COPY
+1568 PUSH Boolean __intnl_SystemBoolean_7
+1576 JUMP_IF_FALSE 1764
+1584 PUSH UdonBehaviour __lcl_zone_VRCUdonUdonBehaviour_0
+1592 PUSH String __const_SystemString_9
+1600 PUSH object __intnl_SystemObject_3
+1608 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject
+1616 PUSH object __intnl_SystemObject_3
+1624 PUSH Int32 __intnl_SystemInt32_6
+1632 EXTERN SystemConvert.__ToInt32__SystemObject__SystemInt32
+1640 PUSH Int32 __intnl_SystemInt32_6
+1648 PUSH Int32 __lcl_highestPriority_SystemInt32_0
+1656 PUSH Boolean __intnl_SystemBoolean_8
+1664 EXTERN SystemInt32.__op_GreaterThan__SystemInt32_SystemInt32__SystemBoolean
+1672 PUSH Boolean __intnl_SystemBoolean_8
+1680 JUMP_IF_FALSE 1764
+1688 PUSH UdonBehaviour __lcl_zone_VRCUdonUdonBehaviour_0
+1696 PUSH String __const_SystemString_9
+1704 PUSH object __intnl_SystemObject_4
+1712 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject
+1720 PUSH object __intnl_SystemObject_4
+1728 PUSH Int32 __lcl_highestPriority_SystemInt32_0
+1736 EXTERN SystemConvert.__ToInt32__SystemObject__SystemInt32
+1744 PUSH UdonBehaviour __lcl_zone_VRCUdonUdonBehaviour_0
+1752 PUSH UdonBehaviour __lcl_highestPriorityZone_VRCUdonUdonBehaviour_0
+1760 COPY
+1764 PUSH Int32 __lcl_i_SystemInt32_0
+1772 PUSH Int32 __const_SystemInt32_2
+1780 PUSH Int32 __lcl_i_SystemInt32_0
+1788 EXTERN SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32
+1796 JUMP 1240
+1804 PUSH UdonBehaviour __lcl_highestPriorityZone_VRCUdonUdonBehaviour_0
+1812 PUSH Object __intnl_UnityEngineObject_4
+1820 COPY
+1824 PUSH object __const_SystemObject_0
+1832 PUSH Object __intnl_UnityEngineObject_5
+1840 COPY
+1844 PUSH Object __intnl_UnityEngineObject_4
+1852 PUSH Object __intnl_UnityEngineObject_5
+1860 PUSH Boolean __intnl_SystemBoolean_5
+1868 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+1876 PUSH Boolean __intnl_SystemBoolean_5
+1884 JUMP_IF_FALSE 2124
+1892 PUSH UInt32 __gintnl_SystemUInt32_3
+1900 PUSH UdonBehaviour __lcl_highestPriorityZone_VRCUdonUdonBehaviour_0
+1908 PUSH String __const_SystemString_10
+1916 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+1924 PUSH UdonBehaviour __lcl_highestPriorityZone_VRCUdonUdonBehaviour_0
+1932 PUSH String __const_SystemString_11
+1940 PUSH object __intnl_SystemObject_2
+1948 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject
+1956 PUSH object __intnl_SystemObject_2
+1964 PUSH String __intnl_SystemString_0
+1972 COPY
+1976 PUSH UdonBehaviour __lcl_highestPriorityZone_VRCUdonUdonBehaviour_0
+1984 PUSH String __const_SystemString_12
+1992 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+2000 PUSH UdonBehaviour __lcl_highestPriorityZone_VRCUdonUdonBehaviour_0
+2008 PUSH String __const_SystemString_13
+2016 PUSH object __intnl_SystemObject_3
+2024 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject
+2032 PUSH object __intnl_SystemObject_3
+2040 PUSH String __intnl_SystemString_1
+2048 COPY
+2052 PUSH String __intnl_SystemString_0
+2060 PUSH String __0_zoneID__param
+2068 COPY
+2072 PUSH String __intnl_SystemString_1
+2080 PUSH String __0_zoneName__param
+2088 COPY
+2092 JUMP 772
+2100 PUSH Boolean showDebugLogs
+2108 JUMP_IF_FALSE 2116
+2116 JUMP 2196
+2124 PUSH UInt32 __gintnl_SystemUInt32_4
+2132 PUSH String __const_SystemString_0
+2140 PUSH String __0_zoneID__param
+2148 COPY
+2152 PUSH String __const_SystemString_1
+2160 PUSH String __0_zoneName__param
+2168 COPY
+2172 JUMP 772
+2180 PUSH Boolean showDebugLogs
+2188 JUMP_IF_FALSE 2196
+2196 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2204 COPY
+2208 JUMP_INDIRECT 2
+2216 PUSH UInt32 __const_SystemUInt32_0
+2224 PUSH UdonBehaviour dayNightCycle
+2232 PUSH Object __intnl_UnityEngineObject_6
+2240 COPY
+2244 PUSH object __const_SystemObject_0
+2252 PUSH Object __intnl_UnityEngineObject_7
+2260 COPY
+2264 PUSH Object __intnl_UnityEngineObject_6
+2272 PUSH Object __intnl_UnityEngineObject_7
+2280 PUSH Boolean __intnl_SystemBoolean_9
+2288 EXTERN UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean
+2296 PUSH Boolean __intnl_SystemBoolean_9
+2304 JUMP_IF_FALSE 2332
+2312 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2320 COPY
+2324 JUMP_INDIRECT 2
+2332 PUSH String __1_zoneID__param
+2340 PUSH String __const_SystemString_0
+2348 PUSH Boolean __intnl_SystemBoolean_10
+2356 EXTERN SystemString.__op_Equality__SystemString_SystemString__SystemBoolean
+2364 PUSH Boolean __intnl_SystemBoolean_10
+2372 JUMP_IF_FALSE 2456
+2380 PUSH UdonBehaviour dayNightCycle
+2388 PUSH String __const_SystemString_14
+2396 PUSH Boolean __const_SystemBoolean_0
+2404 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid
+2412 PUSH UdonBehaviour dayNightCycle
+2420 PUSH String __const_SystemString_15
+2428 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+2436 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2444 COPY
+2448 JUMP_INDIRECT 2
+2456 PUSH Component[] allZones
+2464 PUSH object __const_SystemObject_0
+2472 PUSH Boolean __intnl_SystemBoolean_11
+2480 EXTERN SystemObject.__op_Inequality__SystemObject_SystemObject__SystemBoolean
+2488 PUSH Boolean __intnl_SystemBoolean_11
+2496 JUMP_IF_FALSE 3888
+2504 PUSH Int32 __const_SystemInt32_0
+2512 PUSH Int32 __lcl_i_SystemInt32_1
+2520 COPY
+2524 PUSH Component[] allZones
+2532 PUSH Int32 __intnl_SystemInt32_7
+2540 EXTERN SystemArray.__get_Length__SystemInt32
+2548 PUSH Int32 __lcl_i_SystemInt32_1
+2556 PUSH Int32 __intnl_SystemInt32_7
+2564 PUSH Boolean __intnl_SystemBoolean_12
+2572 EXTERN SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean
+2580 PUSH Boolean __intnl_SystemBoolean_12
+2588 JUMP_IF_FALSE 3888
+2596 PUSH Component[] allZones
+2604 PUSH Int32 __lcl_i_SystemInt32_1
+2612 PUSH UdonBehaviour __lcl_zone_VRCUdonUdonBehaviour_1
+2620 EXTERN SystemObjectArray.__Get__SystemInt32__SystemObject
+2628 PUSH UdonBehaviour __lcl_zone_VRCUdonUdonBehaviour_1
+2636 PUSH Object __intnl_UnityEngineObject_8
+2644 COPY
+2648 PUSH object __const_SystemObject_0
+2656 PUSH Object __intnl_UnityEngineObject_9
+2664 COPY
+2668 PUSH Object __intnl_UnityEngineObject_8
+2676 PUSH Object __intnl_UnityEngineObject_9
+2684 PUSH Boolean __intnl_SystemBoolean_13
+2692 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+2700 PUSH Boolean __intnl_SystemBoolean_13
+2708 JUMP_IF_FALSE 2824
+2716 PUSH UdonBehaviour __lcl_zone_VRCUdonUdonBehaviour_1
+2724 PUSH String __const_SystemString_10
+2732 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+2740 PUSH UdonBehaviour __lcl_zone_VRCUdonUdonBehaviour_1
+2748 PUSH String __const_SystemString_11
+2756 PUSH object __intnl_SystemObject_5
+2764 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject
+2772 PUSH object __intnl_SystemObject_5
+2780 PUSH String __intnl_SystemString_2
+2788 COPY
+2792 PUSH String __intnl_SystemString_2
+2800 PUSH String __1_zoneID__param
+2808 PUSH Boolean __intnl_SystemBoolean_13
+2816 EXTERN SystemString.__op_Equality__SystemString_SystemString__SystemBoolean
+2824 PUSH Boolean __intnl_SystemBoolean_13
+2832 JUMP_IF_FALSE 3848
+2840 PUSH UdonBehaviour __lcl_zone_VRCUdonUdonBehaviour_1
+2848 PUSH String __const_SystemString_16
+2856 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+2864 PUSH UdonBehaviour __lcl_zone_VRCUdonUdonBehaviour_1
+2872 PUSH String __const_SystemString_17
+2880 PUSH object __intnl_SystemObject_6
+2888 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject
+2896 PUSH object __intnl_SystemObject_6
+2904 PUSH Boolean __intnl_SystemBoolean_14
+2912 COPY
+2916 PUSH Boolean __intnl_SystemBoolean_14
+2924 JUMP_IF_FALSE 3024
+2932 PUSH UdonBehaviour dayNightCycle
+2940 PUSH String __const_SystemString_14
+2948 PUSH Boolean __const_SystemBoolean_1
+2956 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid
+2964 PUSH UdonBehaviour dayNightCycle
+2972 PUSH String __const_SystemString_15
+2980 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+2988 PUSH Boolean showDebugLogs
+2996 JUMP_IF_FALSE 3004
+3004 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+3012 COPY
+3016 JUMP_INDIRECT 2
+3024 PUSH UdonBehaviour dayNightCycle
+3032 PUSH UdonBehaviour dayNightCycle
+3040 PUSH UdonBehaviour __intnl_VRCUdonUdonBehaviour_2
+3048 COPY
+3052 PUSH String __const_SystemString_4
+3060 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+3068 PUSH UdonBehaviour dayNightCycle
+3076 PUSH String __const_SystemString_5
+3084 PUSH object __intnl_SystemObject_7
+3092 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject
+3100 PUSH object __intnl_SystemObject_7
+3108 PUSH Int32 __intnl_SystemInt32_9
+3116 EXTERN SystemConvert.__ToInt32__SystemObject__SystemInt32
+3124 PUSH Int32 __intnl_SystemInt32_9
+3132 PUSH Int32 __intnl_SystemInt32_8
+3140 COPY
+3144 PUSH Int32 __intnl_SystemInt32_8
+3152 PUSH Int32 __lcl_currentWeather_SystemInt32_0
+3160 COPY
+3164 PUSH UdonBehaviour __lcl_zone_VRCUdonUdonBehaviour_1
+3172 PUSH String __const_SystemString_18
+3180 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+3188 PUSH UdonBehaviour __lcl_zone_VRCUdonUdonBehaviour_1
+3196 PUSH String __const_SystemString_19
+3204 PUSH object __intnl_SystemObject_8
+3212 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject
+3220 PUSH object __intnl_SystemObject_8
+3228 PUSH Int32[] __intnl_SystemInt32Array_1
+3236 COPY
+3240 PUSH Int32[] __intnl_SystemInt32Array_1
+3248 PUSH Int32[] __lcl_allowedTypes_SystemInt32Array_0
+3256 COPY
+3260 PUSH Int32[] __lcl_allowedTypes_SystemInt32Array_0
+3268 PUSH object __const_SystemObject_0
+3276 PUSH Boolean __intnl_SystemBoolean_15
+3284 EXTERN SystemObject.__op_Inequality__SystemObject_SystemObject__SystemBoolean
+3292 PUSH Boolean __intnl_SystemBoolean_15
+3300 JUMP_IF_FALSE 3364
+3308 PUSH Int32[] __lcl_allowedTypes_SystemInt32Array_0
+3316 PUSH Int32 __intnl_SystemInt32_10
+3324 EXTERN SystemArray.__get_Length__SystemInt32
+3332 PUSH Int32 __intnl_SystemInt32_10
+3340 PUSH Int32 __const_SystemInt32_0
+3348 PUSH Boolean __intnl_SystemBoolean_15
+3356 EXTERN SystemInt32.__op_GreaterThan__SystemInt32_SystemInt32__SystemBoolean
+3364 PUSH Boolean __intnl_SystemBoolean_15
+3372 JUMP_IF_FALSE 3756
+3380 PUSH Boolean __const_SystemBoolean_1
+3388 PUSH Boolean __lcl_isWeatherAllowed_SystemBoolean_0
+3396 COPY
+3400 PUSH Int32 __const_SystemInt32_0
+3408 PUSH Int32 __lcl_j_SystemInt32_0
+3416 COPY
+3420 PUSH Int32[] __lcl_allowedTypes_SystemInt32Array_0
+3428 PUSH Int32 __intnl_SystemInt32_11
+3436 EXTERN SystemArray.__get_Length__SystemInt32
+3444 PUSH Int32 __lcl_j_SystemInt32_0
+3452 PUSH Int32 __intnl_SystemInt32_11
+3460 PUSH Boolean __intnl_SystemBoolean_16
+3468 EXTERN SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean
+3476 PUSH Boolean __intnl_SystemBoolean_16
+3484 JUMP_IF_FALSE 3640
+3492 PUSH Int32[] __lcl_allowedTypes_SystemInt32Array_0
+3500 PUSH Int32 __lcl_j_SystemInt32_0
+3508 PUSH Int32 __intnl_SystemInt32_12
+3516 EXTERN SystemInt32Array.__Get__SystemInt32__SystemInt32
+3524 PUSH Int32 __intnl_SystemInt32_12
+3532 PUSH Int32 __lcl_currentWeather_SystemInt32_0
+3540 PUSH Boolean __intnl_SystemBoolean_17
+3548 EXTERN SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean
+3556 PUSH Boolean __intnl_SystemBoolean_17
+3564 JUMP_IF_FALSE 3600
+3572 PUSH Boolean __const_SystemBoolean_0
+3580 PUSH Boolean __lcl_isWeatherAllowed_SystemBoolean_0
+3588 COPY
+3592 JUMP 3640
+3600 PUSH Int32 __lcl_j_SystemInt32_0
+3608 PUSH Int32 __const_SystemInt32_2
+3616 PUSH Int32 __lcl_j_SystemInt32_0
+3624 EXTERN SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32
+3632 JUMP 3420
+3640 PUSH Boolean __lcl_isWeatherAllowed_SystemBoolean_0
+3648 JUMP_IF_FALSE 3664
+3656 JUMP 3756
+3664 PUSH UdonBehaviour dayNightCycle
+3672 PUSH String __const_SystemString_14
+3680 PUSH Boolean __const_SystemBoolean_1
+3688 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid
+3696 PUSH UdonBehaviour dayNightCycle
+3704 PUSH String __const_SystemString_15
+3712 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+3720 PUSH Boolean showDebugLogs
+3728 JUMP_IF_FALSE 3736
+3736 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+3744 COPY
+3748 JUMP_INDIRECT 2
+3756 PUSH UdonBehaviour dayNightCycle
+3764 PUSH String __const_SystemString_14
+3772 PUSH Boolean __const_SystemBoolean_0
+3780 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid
+3788 PUSH UdonBehaviour dayNightCycle
+3796 PUSH String __const_SystemString_15
+3804 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+3812 PUSH Boolean showDebugLogs
+3820 JUMP_IF_FALSE 3828
+3828 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+3836 COPY
+3840 JUMP_INDIRECT 2
+3848 PUSH Int32 __lcl_i_SystemInt32_1
+3856 PUSH Int32 __const_SystemInt32_2
+3864 PUSH Int32 __lcl_i_SystemInt32_1
+3872 EXTERN SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32
+3880 JUMP 2524
+3888 PUSH UdonBehaviour dayNightCycle
+3896 PUSH String __const_SystemString_14
+3904 PUSH Boolean __const_SystemBoolean_0
+3912 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid
+3920 PUSH UdonBehaviour dayNightCycle
+3928 PUSH String __const_SystemString_15
+3936 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+3944 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+3952 COPY
+3956 JUMP_INDIRECT 2
+3964 PUSH UInt32 __const_SystemUInt32_0
+3972 PUSH UdonBehaviour dayNightCycle
+3980 PUSH Object __intnl_UnityEngineObject_10
+3988 COPY
+3992 PUSH object __const_SystemObject_0
+4000 PUSH Object __intnl_UnityEngineObject_11
+4008 COPY
+4012 PUSH Object __intnl_UnityEngineObject_10
+4020 PUSH Object __intnl_UnityEngineObject_11
+4028 PUSH Boolean __intnl_SystemBoolean_18
+4036 EXTERN UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean
+4044 PUSH Boolean __intnl_SystemBoolean_18
+4052 JUMP_IF_FALSE 4080
+4060 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+4068 COPY
+4072 JUMP_INDIRECT 2
+4080 PUSH String __2_zoneID__param
+4088 PUSH String __const_SystemString_0
+4096 PUSH Boolean __intnl_SystemBoolean_19
+4104 EXTERN SystemString.__op_Equality__SystemString_SystemString__SystemBoolean
+4112 PUSH Boolean __intnl_SystemBoolean_19
+4120 JUMP_IF_FALSE 4772
+4128 PUSH Int32[] openOceanWeatherTypes
+4136 PUSH Int32[] __intnl_SystemInt32Array_2
+4144 COPY
+4148 PUSH UdonBehaviour dayNightCycle
+4156 PUSH String __const_SystemString_2
+4164 PUSH Int32[] openOceanWeatherTypes
+4172 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid
+4180 PUSH UdonBehaviour dayNightCycle
+4188 PUSH String __const_SystemString_3
+4196 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+4204 PUSH Boolean showDebugLogs
+4212 JUMP_IF_FALSE 4752
+4220 PUSH String __const_SystemString_20
+4228 PUSH String __lcl_typesStr_SystemString_0
+4236 COPY
+4240 PUSH Int32[] openOceanWeatherTypes
+4248 PUSH object __const_SystemObject_0
+4256 PUSH Boolean __intnl_SystemBoolean_20
+4264 EXTERN SystemObject.__op_Equality__SystemObject_SystemObject__SystemBoolean
+4272 PUSH Boolean __intnl_SystemBoolean_20
+4280 JUMP_IF_FALSE 4296
+4288 JUMP 4352
+4296 PUSH Int32[] openOceanWeatherTypes
+4304 PUSH Int32 __intnl_SystemInt32_13
+4312 EXTERN SystemArray.__get_Length__SystemInt32
+4320 PUSH Int32 __intnl_SystemInt32_13
+4328 PUSH Int32 __const_SystemInt32_0
+4336 PUSH Boolean __intnl_SystemBoolean_20
+4344 EXTERN SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean
+4352 PUSH Boolean __intnl_SystemBoolean_20
+4360 JUMP_IF_FALSE 4396
+4368 PUSH String __const_SystemString_21
+4376 PUSH String __lcl_typesStr_SystemString_0
+4384 COPY
+4388 JUMP 4752
+4396 PUSH Int32 __const_SystemInt32_0
+4404 PUSH Int32 __lcl_i_SystemInt32_2
+4412 COPY
+4416 PUSH Int32[] openOceanWeatherTypes
+4424 PUSH Int32 __intnl_SystemInt32_14
+4432 EXTERN SystemArray.__get_Length__SystemInt32
+4440 PUSH Int32 __lcl_i_SystemInt32_2
+4448 PUSH Int32 __intnl_SystemInt32_14
+4456 PUSH Boolean __intnl_SystemBoolean_21
+4464 EXTERN SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean
+4472 PUSH Boolean __intnl_SystemBoolean_21
+4480 JUMP_IF_FALSE 4752
+4488 PUSH Int32[] openOceanWeatherTypes
+4496 PUSH Int32 __lcl_i_SystemInt32_2
+4504 PUSH Int32 __intnl_SystemInt32_15
+4512 EXTERN SystemInt32Array.__Get__SystemInt32__SystemInt32
+4520 PUSH Int32 __intnl_SystemInt32_15
+4528 PUSH String __intnl_SystemString_3
+4536 EXTERN SystemObject.__ToString__SystemString
+4544 PUSH String __lcl_typesStr_SystemString_0
+4552 PUSH String __intnl_SystemString_3
+4560 PUSH String __lcl_typesStr_SystemString_0
+4568 EXTERN SystemString.__op_Addition__SystemString_SystemString__SystemString
+4576 PUSH Int32[] openOceanWeatherTypes
+4584 PUSH Int32 __intnl_SystemInt32_16
+4592 EXTERN SystemArray.__get_Length__SystemInt32
+4600 PUSH Int32 __intnl_SystemInt32_16
+4608 PUSH Int32 __const_SystemInt32_2
+4616 PUSH Int32 __intnl_SystemInt32_17
+4624 EXTERN SystemInt32.__op_Subtraction__SystemInt32_SystemInt32__SystemInt32
+4632 PUSH Int32 __lcl_i_SystemInt32_2
+4640 PUSH Int32 __intnl_SystemInt32_17
+4648 PUSH Boolean __intnl_SystemBoolean_22
+4656 EXTERN SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean
+4664 PUSH Boolean __intnl_SystemBoolean_22
+4672 JUMP_IF_FALSE 4712
+4680 PUSH String __lcl_typesStr_SystemString_0
+4688 PUSH String __const_SystemString_22
+4696 PUSH String __lcl_typesStr_SystemString_0
+4704 EXTERN SystemString.__op_Addition__SystemString_SystemString__SystemString
+4712 PUSH Int32 __lcl_i_SystemInt32_2
+4720 PUSH Int32 __const_SystemInt32_2
+4728 PUSH Int32 __lcl_i_SystemInt32_2
+4736 EXTERN SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32
+4744 JUMP 4416
+4752 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+4760 COPY
+4764 JUMP_INDIRECT 2
+4772 PUSH Component[] allZones
+4780 PUSH object __const_SystemObject_0
+4788 PUSH Boolean __intnl_SystemBoolean_20
+4796 EXTERN SystemObject.__op_Inequality__SystemObject_SystemObject__SystemBoolean
+4804 PUSH Boolean __intnl_SystemBoolean_20
+4812 JUMP_IF_FALSE 5916
+4820 PUSH Int32 __const_SystemInt32_0
+4828 PUSH Int32 __lcl_i_SystemInt32_2
+4836 COPY
+4840 PUSH Component[] allZones
+4848 PUSH Int32 __intnl_SystemInt32_13
+4856 EXTERN SystemArray.__get_Length__SystemInt32
+4864 PUSH Int32 __lcl_i_SystemInt32_2
+4872 PUSH Int32 __intnl_SystemInt32_13
+4880 PUSH Boolean __intnl_SystemBoolean_21
+4888 EXTERN SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean
+4896 PUSH Boolean __intnl_SystemBoolean_21
+4904 JUMP_IF_FALSE 5916
+4912 PUSH Component[] allZones
+4920 PUSH Int32 __lcl_i_SystemInt32_2
+4928 PUSH UdonBehaviour __lcl_zone_VRCUdonUdonBehaviour_2
+4936 EXTERN SystemObjectArray.__Get__SystemInt32__SystemObject
+4944 PUSH UdonBehaviour __lcl_zone_VRCUdonUdonBehaviour_2
+4952 PUSH Object __intnl_UnityEngineObject_12
+4960 COPY
+4964 PUSH object __const_SystemObject_0
+4972 PUSH Object __intnl_UnityEngineObject_13
+4980 COPY
+4984 PUSH Object __intnl_UnityEngineObject_12
+4992 PUSH Object __intnl_UnityEngineObject_13
+5000 PUSH Boolean __intnl_SystemBoolean_22
+5008 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+5016 PUSH Boolean __intnl_SystemBoolean_22
+5024 JUMP_IF_FALSE 5140
+5032 PUSH UdonBehaviour __lcl_zone_VRCUdonUdonBehaviour_2
+5040 PUSH String __const_SystemString_10
+5048 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+5056 PUSH UdonBehaviour __lcl_zone_VRCUdonUdonBehaviour_2
+5064 PUSH String __const_SystemString_11
+5072 PUSH object __intnl_SystemObject_9
+5080 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject
+5088 PUSH object __intnl_SystemObject_9
+5096 PUSH String __intnl_SystemString_3
+5104 COPY
+5108 PUSH String __intnl_SystemString_3
+5116 PUSH String __2_zoneID__param
+5124 PUSH Boolean __intnl_SystemBoolean_22
+5132 EXTERN SystemString.__op_Equality__SystemString_SystemString__SystemBoolean
+5140 PUSH Boolean __intnl_SystemBoolean_22
+5148 JUMP_IF_FALSE 5876
+5156 PUSH UdonBehaviour __lcl_zone_VRCUdonUdonBehaviour_2
+5164 PUSH String __const_SystemString_18
+5172 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+5180 PUSH UdonBehaviour __lcl_zone_VRCUdonUdonBehaviour_2
+5188 PUSH String __const_SystemString_19
+5196 PUSH object __intnl_SystemObject_10
+5204 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject
+5212 PUSH object __intnl_SystemObject_10
+5220 PUSH Int32[] __intnl_SystemInt32Array_2
+5228 COPY
+5232 PUSH Int32[] __intnl_SystemInt32Array_2
+5240 PUSH Int32[] __lcl_allowedTypes_SystemInt32Array_1
+5248 COPY
+5252 PUSH UdonBehaviour dayNightCycle
+5260 PUSH String __const_SystemString_2
+5268 PUSH Int32[] __lcl_allowedTypes_SystemInt32Array_1
+5276 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid
+5284 PUSH UdonBehaviour dayNightCycle
+5292 PUSH String __const_SystemString_3
+5300 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+5308 PUSH Boolean showDebugLogs
+5316 JUMP_IF_FALSE 5856
+5324 PUSH String __const_SystemString_20
+5332 PUSH String __lcl_typesStr_SystemString_0
+5340 COPY
+5344 PUSH Int32[] __lcl_allowedTypes_SystemInt32Array_1
+5352 PUSH object __const_SystemObject_0
+5360 PUSH Boolean __intnl_SystemBoolean_23
+5368 EXTERN SystemObject.__op_Equality__SystemObject_SystemObject__SystemBoolean
+5376 PUSH Boolean __intnl_SystemBoolean_23
+5384 JUMP_IF_FALSE 5400
+5392 JUMP 5456
+5400 PUSH Int32[] __lcl_allowedTypes_SystemInt32Array_1
+5408 PUSH Int32 __intnl_SystemInt32_14
+5416 EXTERN SystemArray.__get_Length__SystemInt32
+5424 PUSH Int32 __intnl_SystemInt32_14
+5432 PUSH Int32 __const_SystemInt32_0
+5440 PUSH Boolean __intnl_SystemBoolean_23
+5448 EXTERN SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean
+5456 PUSH Boolean __intnl_SystemBoolean_23
+5464 JUMP_IF_FALSE 5500
+5472 PUSH String __const_SystemString_21
+5480 PUSH String __lcl_typesStr_SystemString_0
+5488 COPY
+5492 JUMP 5856
+5500 PUSH Int32 __const_SystemInt32_0
+5508 PUSH Int32 __lcl_j_SystemInt32_1
+5516 COPY
+5520 PUSH Int32[] __lcl_allowedTypes_SystemInt32Array_1
+5528 PUSH Int32 __intnl_SystemInt32_15
+5536 EXTERN SystemArray.__get_Length__SystemInt32
+5544 PUSH Int32 __lcl_j_SystemInt32_1
+5552 PUSH Int32 __intnl_SystemInt32_15
+5560 PUSH Boolean __intnl_SystemBoolean_24
+5568 EXTERN SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean
+5576 PUSH Boolean __intnl_SystemBoolean_24
+5584 JUMP_IF_FALSE 5856
+5592 PUSH Int32[] __lcl_allowedTypes_SystemInt32Array_1
+5600 PUSH Int32 __lcl_j_SystemInt32_1
+5608 PUSH Int32 __intnl_SystemInt32_16
+5616 EXTERN SystemInt32Array.__Get__SystemInt32__SystemInt32
+5624 PUSH Int32 __intnl_SystemInt32_16
+5632 PUSH String __intnl_SystemString_4
+5640 EXTERN SystemObject.__ToString__SystemString
+5648 PUSH String __lcl_typesStr_SystemString_0
+5656 PUSH String __intnl_SystemString_4
+5664 PUSH String __lcl_typesStr_SystemString_0
+5672 EXTERN SystemString.__op_Addition__SystemString_SystemString__SystemString
+5680 PUSH Int32[] __lcl_allowedTypes_SystemInt32Array_1
+5688 PUSH Int32 __intnl_SystemInt32_17
+5696 EXTERN SystemArray.__get_Length__SystemInt32
+5704 PUSH Int32 __intnl_SystemInt32_17
+5712 PUSH Int32 __const_SystemInt32_2
+5720 PUSH Int32 __intnl_SystemInt32_18
+5728 EXTERN SystemInt32.__op_Subtraction__SystemInt32_SystemInt32__SystemInt32
+5736 PUSH Int32 __lcl_j_SystemInt32_1
+5744 PUSH Int32 __intnl_SystemInt32_18
+5752 PUSH Boolean __intnl_SystemBoolean_25
+5760 EXTERN SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean
+5768 PUSH Boolean __intnl_SystemBoolean_25
+5776 JUMP_IF_FALSE 5816
+5784 PUSH String __lcl_typesStr_SystemString_0
+5792 PUSH String __const_SystemString_22
+5800 PUSH String __lcl_typesStr_SystemString_0
+5808 EXTERN SystemString.__op_Addition__SystemString_SystemString__SystemString
+5816 PUSH Int32 __lcl_j_SystemInt32_1
+5824 PUSH Int32 __const_SystemInt32_2
+5832 PUSH Int32 __lcl_j_SystemInt32_1
+5840 EXTERN SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32
+5848 JUMP 5520
+5856 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+5864 COPY
+5868 JUMP_INDIRECT 2
+5876 PUSH Int32 __lcl_i_SystemInt32_2
+5884 PUSH Int32 __const_SystemInt32_2
+5892 PUSH Int32 __lcl_i_SystemInt32_2
+5900 EXTERN SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32
+5908 JUMP 4840
+5916 PUSH object __const_SystemObject_0
+5924 PUSH Int32[] __intnl_SystemInt32Array_2
+5932 COPY
+5936 PUSH UdonBehaviour dayNightCycle
+5944 PUSH String __const_SystemString_2
+5952 PUSH Int32[] __intnl_SystemInt32Array_2
+5960 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid
+5968 PUSH UdonBehaviour dayNightCycle
+5976 PUSH String __const_SystemString_3
+5984 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+5992 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+6000 COPY
+6004 JUMP_INDIRECT 2
+void GetCurrentZoneID
+6012 PUSH UInt32 __const_SystemUInt32_0
+6020 PUSH String currentZoneID
+6028 PUSH String __0_GetCurrentZoneID__ret
+6036 COPY
+6040 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+6048 COPY
+6052 JUMP_INDIRECT 2
+6060 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+6068 COPY
+6072 JUMP_INDIRECT 2
+void GetCurrentZoneName
+6080 PUSH UInt32 __const_SystemUInt32_0
+6088 PUSH String currentZoneName
+6096 PUSH String __0_GetCurrentZoneName__ret
+6104 COPY
+6108 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+6116 COPY
+6120 JUMP_INDIRECT 2
+6128 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+6136 COPY
+6140 JUMP_INDIRECT 2

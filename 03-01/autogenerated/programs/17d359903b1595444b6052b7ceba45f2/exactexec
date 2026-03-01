@@ -1,0 +1,231 @@
+using System;
+using UnityEngine;
+using VRC.Udon;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Single __intnl_SystemSingle_0 = 0f;
+private String __const_SystemString_0 = "__0_npc__param";
+private Transform __intnl_UnityEngineTransform_0 = null;
+private Single __const_SystemSingle_0 = 0f;
+private Boolean isOpening = false;
+private UInt32 __gintnl_SystemUInt32_4 = 1652;
+private UInt32 __gintnl_SystemUInt32_1 = 1008;
+private UInt32 __gintnl_SystemUInt32_0 = 260;
+private UInt32 __gintnl_SystemUInt32_3 = 1392;
+private UInt32 __gintnl_SystemUInt32_2 = 1052;
+private Boolean __const_SystemBoolean_0 = false;
+private Boolean __const_SystemBoolean_1 = true;
+public GameObject uiPanel;
+private Single __const_SystemSingle_7 = 2f;
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Int64 __refl_typeid = 7267040204583240317;
+private Vector3 originalScale = new Vector3(1f, 1f, 1f);
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Vector3 __const_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Single __intnl_SystemSingle_2 = 0f;
+private Transform __intnl_UnityEngineTransform_2 = null;
+private Single __const_SystemSingle_2 = 0.7f;
+private Boolean _hasTriggered = false;
+public UdonBehaviour dialogueEvent;
+private Vector3 __intnl_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private object __const_SystemObject_0 = null;
+private Single __intnl_SystemSingle_1 = 0f;
+private Single __const_SystemSingle_1 = 1f;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private Single __const_SystemSingle_4 = 3f;
+private Boolean isAnimating = false;
+private Single __intnl_SystemSingle_4 = 0f;
+private Transform __intnl_UnityEngineTransform_4 = null;
+private Single animationTimer = 0f;
+private String __refl_typename = "DialogueEventUITrigger";
+private Single __lcl_t_SystemSingle_0 = 0f;
+private Single __1_t__param = 0f;
+private Single __0_t__param = 0f;
+private Single __intnl_SystemSingle_3 = 0f;
+public Single animationDuration;
+private String __const_SystemString_1 = "__0_OnDialogueEnd";
+private Transform __intnl_UnityEngineTransform_1 = null;
+private Single __const_SystemSingle_3 = 1.2f;
+private Single __lcl_scale_SystemSingle_0 = 0f;
+private Single __const_SystemSingle_6 = 0.2f;
+private Single __0___0_EaseInQuad__ret = 0f;
+private Single __intnl_SystemSingle_6 = 0f;
+private Single __const_SystemSingle_5 = 0.3f;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Single __intnl_SystemSingle_5 = 0f;
+private Single __lcl_p_SystemSingle_0 = 0f;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_0 = null;
+private Single __0___0_EaseOutBack__ret = 0f;
+private Transform __intnl_UnityEngineTransform_3 = null;
+
+
+public void _start()
+{
+__intnl_UnityEngineObject_0 = uiPanel;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_0)
+{
+__intnl_UnityEngineTransform_0 = uiPanel.transform;
+originalScale = __intnl_UnityEngineTransform_0.localScale;
+__intnl_UnityEngineTransform_1 = uiPanel.transform;
+__intnl_UnityEngineTransform_1.localScale = __const_UnityEngineVector3_0;
+uiPanel.SetActive(__const_SystemBoolean_0);
+}
+}
+public void _interact()
+{
+OpenUI();
+}
+public void OpenUI()
+{
+__intnl_UnityEngineObject_2 = uiPanel;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_2 == __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_1)
+{
+return;
+}
+_hasTriggered = __const_SystemBoolean_0;
+uiPanel.SetActive(__const_SystemBoolean_1);
+__intnl_UnityEngineTransform_2 = uiPanel.transform;
+__intnl_UnityEngineTransform_2.localScale = __const_UnityEngineVector3_0;
+isAnimating = __const_SystemBoolean_1;
+isOpening = __const_SystemBoolean_1;
+animationTimer = __const_SystemSingle_0;
+}
+public void CloseUI()
+{
+__intnl_UnityEngineObject_4 = uiPanel;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_2 = __intnl_UnityEngineObject_4 == __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_2)
+{
+return;
+}
+isAnimating = __const_SystemBoolean_1;
+isOpening = __const_SystemBoolean_0;
+animationTimer = __const_SystemSingle_0;
+}
+public void OnYesClicked()
+{
+if (_hasTriggered)
+{
+return;
+}
+_hasTriggered = __const_SystemBoolean_1;
+__intnl_UnityEngineObject_6 = dialogueEvent;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_3 = __intnl_UnityEngineObject_6 != __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_3)
+{
+__intnl_VRCUdonUdonBehaviour_0 = (UdonBehaviour)__const_SystemObject_0;
+dialogueEvent.SetProgramVariable(__const_SystemString_0, __intnl_VRCUdonUdonBehaviour_0);
+dialogueEvent.SendCustomEvent(__const_SystemString_1);
+}
+CloseUI();
+}
+public void OnNoClicked()
+{
+CloseUI();
+}
+public void _update()
+{
+__intnl_SystemBoolean_4 = !isAnimating;
+if (__intnl_SystemBoolean_4)
+{
+}
+else
+{
+__intnl_UnityEngineObject_8 = uiPanel;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_4 = __intnl_UnityEngineObject_8 == __intnl_UnityEngineObject_9;
+}
+if (__intnl_SystemBoolean_4)
+{
+return;
+}
+__intnl_SystemSingle_0 = Time.deltaTime;
+animationTimer = animationTimer + __intnl_SystemSingle_0;
+__intnl_SystemSingle_1 = animationTimer / animationDuration;
+__lcl_t_SystemSingle_0 = Mathf.Clamp01(__intnl_SystemSingle_1);
+if (isOpening)
+{
+__0_t__param = __lcl_t_SystemSingle_0;
+__0_EaseOutBack();
+__lcl_scale_SystemSingle_0 = __0___0_EaseOutBack__ret;
+__intnl_UnityEngineTransform_3 = uiPanel.transform;
+__intnl_UnityEngineVector3_0 = originalScale * __lcl_scale_SystemSingle_0;
+__intnl_UnityEngineTransform_3.localScale = __intnl_UnityEngineVector3_0;
+__intnl_SystemBoolean_5 = __lcl_t_SystemSingle_0 >= __const_SystemSingle_1;
+if (__intnl_SystemBoolean_5)
+{
+__intnl_UnityEngineTransform_4 = uiPanel.transform;
+__intnl_UnityEngineTransform_4.localScale = originalScale;
+isAnimating = __const_SystemBoolean_0;
+}
+}
+else
+{
+__1_t__param = __lcl_t_SystemSingle_0;
+__0_EaseInQuad();
+__lcl_scale_SystemSingle_0 = __const_SystemSingle_1 - __0___0_EaseInQuad__ret;
+__intnl_UnityEngineTransform_3 = uiPanel.transform;
+__intnl_UnityEngineVector3_0 = originalScale * __lcl_scale_SystemSingle_0;
+__intnl_UnityEngineTransform_3.localScale = __intnl_UnityEngineVector3_0;
+__intnl_SystemBoolean_5 = __lcl_t_SystemSingle_0 >= __const_SystemSingle_1;
+if (__intnl_SystemBoolean_5)
+{
+__intnl_UnityEngineTransform_4 = uiPanel.transform;
+__intnl_UnityEngineTransform_4.localScale = __const_UnityEngineVector3_0;
+uiPanel.SetActive(__const_SystemBoolean_0);
+isAnimating = __const_SystemBoolean_0;
+}
+}
+}
+private void __0_EaseOutBack()
+{
+__intnl_SystemBoolean_6 = __0_t__param < __const_SystemSingle_2;
+if (__intnl_SystemBoolean_6)
+{
+__lcl_p_SystemSingle_0 = __0_t__param / __const_SystemSingle_2;
+__intnl_SystemSingle_2 = __const_SystemSingle_1 - __lcl_p_SystemSingle_0;
+__intnl_SystemSingle_3 = Mathf.Pow(__intnl_SystemSingle_2, __const_SystemSingle_4);
+__intnl_SystemSingle_4 = __const_SystemSingle_1 - __intnl_SystemSingle_3;
+__0___0_EaseOutBack__ret = __const_SystemSingle_3 * __intnl_SystemSingle_4;
+return;
+}
+else
+{
+__intnl_SystemSingle_2 = __0_t__param - __const_SystemSingle_2;
+__lcl_p_SystemSingle_0 = __intnl_SystemSingle_2 / __const_SystemSingle_5;
+__intnl_SystemSingle_3 = __const_SystemSingle_1 - __lcl_p_SystemSingle_0;
+__intnl_SystemSingle_4 = Mathf.Pow(__intnl_SystemSingle_3, __const_SystemSingle_7);
+__intnl_SystemSingle_5 = __const_SystemSingle_1 - __intnl_SystemSingle_4;
+__intnl_SystemSingle_6 = __const_SystemSingle_6 * __intnl_SystemSingle_5;
+__0___0_EaseOutBack__ret = __const_SystemSingle_3 - __intnl_SystemSingle_6;
+return;
+}
+}
+private void __0_EaseInQuad()
+{
+__0___0_EaseInQuad__ret = __1_t__param * __1_t__param;
+return;
+}
+}

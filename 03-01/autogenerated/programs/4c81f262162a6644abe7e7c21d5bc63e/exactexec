@@ -1,0 +1,76 @@
+using VRC.Udon;
+using System;
+using UnityEngine;
+using VRC.SDKBase;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+public UdonBehaviour swimZone;
+private String __const_SystemString_0 = "__0_zoneCollider__param";
+private Collider __intnl_UnityEngineCollider_1 = null;
+private Collider __intnl_UnityEngineCollider_0 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Int64 __refl_typeid = -2329978529824114489;
+private VRCPlayerApi onPlayerTriggerEnterPlayer = null;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private String __const_SystemString_2 = "__1_zoneCollider__param";
+private object __const_SystemObject_0 = null;
+private Type __const_SystemType_0 = typeof(Collider);
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private VRCPlayerApi onPlayerTriggerExitPlayer = null;
+private String __refl_typename = "ExtraSwimZone";
+private Transform __this_UnityEngineTransform_0 = this;
+private String __const_SystemString_1 = "__0_OnExtraZoneEnter";
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private String __const_SystemString_3 = "__0_OnExtraZoneExit";
+
+
+public void _onPlayerTriggerEnter()
+{
+__intnl_SystemBoolean_0 = onPlayerTriggerEnterPlayer.isLocal;
+if (__intnl_SystemBoolean_0)
+{
+UNDEF_4c81f_292();
+}
+}
+private void UNDEF_4c81f_292()
+{
+__intnl_UnityEngineObject_0 = swimZone;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_0 == __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_1)
+{
+return;
+}
+__intnl_UnityEngineCollider_0 = (Collider)(__this_UnityEngineTransform_0.GetComponent(__const_SystemType_0));
+swimZone.SetProgramVariable(__const_SystemString_0, __intnl_UnityEngineCollider_0);
+swimZone.SendCustomEvent(__const_SystemString_1);
+}
+public void _onPlayerTriggerExit()
+{
+__intnl_SystemBoolean_2 = onPlayerTriggerExitPlayer.isLocal;
+if (__intnl_SystemBoolean_2)
+{
+UNDEF_4c81f_584();
+}
+}
+private void UNDEF_4c81f_584()
+{
+__intnl_UnityEngineObject_2 = swimZone;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_3 = __intnl_UnityEngineObject_2 == __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_3)
+{
+return;
+}
+__intnl_UnityEngineCollider_1 = (Collider)(__this_UnityEngineTransform_0.GetComponent(__const_SystemType_0));
+swimZone.SetProgramVariable(__const_SystemString_2, __intnl_UnityEngineCollider_1);
+swimZone.SendCustomEvent(__const_SystemString_3);
+}
+}

@@ -1,0 +1,335 @@
+using System;
+using UnityEngine;
+using TMPro;
+using VRC.Udon;
+using UnityEngine.UI;
+using VRC.Udon.Common.Enums;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Boolean __intnl_SystemBoolean_13 = false;
+private String __intnl_SystemString_1 = null;
+private Object __intnl_UnityEngineObject_12 = null;
+private object __intnl_SystemObject_0 = null;
+private String __lcl_rewardName_SystemString_0 = null;
+private String __const_SystemString_0 = "ClosePanel";
+private Boolean __lcl_isClaimed_SystemBoolean_0 = false;
+private Single __const_SystemSingle_0 = 0.5f;
+public TextMeshProUGUI weekInfoText;
+public GameObject claimVFX;
+public Component[] daySlots;
+private UInt32 __gintnl_SystemUInt32_4 = 384;
+private UInt32 __gintnl_SystemUInt32_1 = 308;
+private UInt32 __gintnl_SystemUInt32_0 = 292;
+private UInt32 __gintnl_SystemUInt32_3 = 368;
+private UInt32 __gintnl_SystemUInt32_2 = 324;
+private Boolean __const_SystemBoolean_0 = false;
+private Boolean __const_SystemBoolean_1 = true;
+private Object __intnl_UnityEngineObject_21 = null;
+private Object __intnl_UnityEngineObject_11 = null;
+public GameObject panelRoot;
+private String __const_SystemString_5 = "__0_get_CurrentDay__ret";
+private Boolean isInitialized = false;
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Int32 __lcl_week_SystemInt32_0 = 0;
+private Object __intnl_UnityEngineObject_19 = null;
+private String __const_SystemString_16 = "__0_isClaimed__param";
+private String __const_SystemString_17 = "__0_isCurrentDay__param";
+private String __const_SystemString_14 = "__0_rewardName__param";
+private String __const_SystemString_15 = "__0_rewardIcon__param";
+private String __const_SystemString_12 = " (Bonus)";
+private String __const_SystemString_13 = "__3_day__param";
+private String __const_SystemString_10 = "__0_IsCurrentWeekUnique__ret";
+private String __const_SystemString_11 = "Week ";
+private String __const_SystemString_18 = "__0_GetDayRewardInfo";
+private String __const_SystemString_19 = "__0_dayNumber__param";
+private Object __intnl_UnityEngineObject_14 = null;
+private Int64 __refl_typeid = 1540829352616815271;
+private object __intnl_SystemObject_7 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_2 = null;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Boolean __intnl_SystemBoolean_11 = false;
+private String __intnl_SystemString_3 = null;
+public Button closeButton;
+private TextMeshProUGUI __intnl_TMProTextMeshProUGUI_0 = null;
+private object __intnl_SystemObject_2 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_1 = null;
+private String __const_SystemString_2 = "__0_get_CanClaimToday__ret";
+private Boolean __intnl_SystemBoolean_14 = false;
+private object __const_SystemObject_0 = null;
+private String __intnl_SystemString_0 = null;
+private Object __intnl_UnityEngineObject_13 = null;
+private object __intnl_SystemObject_1 = null;
+private String __const_SystemString_7 = "get_CurrentWeek";
+private Single __const_SystemSingle_1 = 2f;
+private EventTiming __const_VRCUdonCommonEnumsEventTiming_0 = EventTiming.Update;
+public TextMeshProUGUI headerText;
+private Object __intnl_UnityEngineObject_16 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_4 = null;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private String __const_SystemString_4 = "get_CurrentDay";
+public UdonBehaviour rewardManager;
+private Int32 __lcl_i_SystemInt32_0 = 0;
+public AudioSource audioSource;
+private Object __intnl_UnityEngineObject_15 = null;
+private object __intnl_SystemObject_4 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_3 = null;
+private String __const_SystemString_9 = "IsCurrentWeekUnique";
+private Boolean __intnl_SystemBoolean_12 = false;
+private String __refl_typename = "DailyRewardUI";
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private String __intnl_SystemString_2 = null;
+private object __intnl_SystemObject_3 = null;
+public AudioClip claimSound;
+private String __const_SystemString_1 = "get_CanClaimToday";
+private Boolean __intnl_SystemBoolean_15 = false;
+private Object __intnl_UnityEngineObject_20 = null;
+private Object __intnl_UnityEngineObject_10 = null;
+private String __const_SystemString_6 = "Daily Login Rewards";
+private Boolean __lcl_isCurrentDay_SystemBoolean_0 = false;
+private Object __intnl_UnityEngineObject_18 = null;
+private String __const_SystemString_22 = "__0_SetupSlot";
+private String __const_SystemString_23 = "HideClaimVFX";
+private String __const_SystemString_20 = "__0_claimed__param";
+private String __const_SystemString_21 = "__0_current__param";
+private Object __intnl_UnityEngineObject_17 = null;
+private object __intnl_SystemObject_6 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_5 = null;
+private Int32 __lcl_day_SystemInt32_0 = 0;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Int32 __const_SystemInt32_1 = 7;
+private Int32 __const_SystemInt32_0 = 0;
+private Int32 __const_SystemInt32_2 = 1;
+private Sprite __lcl_rewardIcon_UnityEngineSprite_0 = null;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private Sprite __intnl_UnityEngineSprite_0 = null;
+private object __intnl_SystemObject_5 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_0 = null;
+private String __const_SystemString_3 = "Daily Login Rewards - Day ";
+private UdonBehaviour __this_VRCUdonUdonBehaviour_1 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_0 = this;
+private String __const_SystemString_8 = "__0_get_CurrentWeek__ret";
+
+
+public void _start()
+{
+__intnl_UnityEngineObject_0 = claimVFX;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_0)
+{
+claimVFX.SetActive(__const_SystemBoolean_0);
+}
+}
+public void RefreshUI()
+{
+__intnl_UnityEngineObject_2 = rewardManager;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_2 == __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_1)
+{
+return;
+}
+isInitialized = __const_SystemBoolean_1;
+UNDEF_733a8_1180();
+UNDEF_733a8_1700();
+UNDEF_733a8_2824();
+}
+public void OnRewardClaimed()
+{
+UNDEF_733a8_3204();
+RefreshUI();
+__this_VRCUdonUdonBehaviour_0.SendCustomEventDelayedSeconds(__const_SystemString_0, __const_SystemSingle_0, __const_VRCUdonCommonEnumsEventTiming_0);
+}
+public void ClosePanel()
+{
+__intnl_UnityEngineObject_4 = panelRoot;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_2 = __intnl_UnityEngineObject_4 != __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_2)
+{
+panelRoot.SetActive(__const_SystemBoolean_0);
+}
+}
+public void OpenPanel()
+{
+__intnl_UnityEngineObject_6 = panelRoot;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_3 = __intnl_UnityEngineObject_6 != __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_3)
+{
+panelRoot.SetActive(__const_SystemBoolean_1);
+}
+}
+private void UNDEF_733a8_1180()
+{
+__intnl_UnityEngineObject_8 = headerText;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_4 = __intnl_UnityEngineObject_8 == __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_4)
+{
+return;
+}
+__intnl_VRCUdonUdonBehaviour_0 = rewardManager;
+rewardManager.SendCustomEvent(__const_SystemString_1);
+__intnl_SystemObject_0 = rewardManager.GetProgramVariable(__const_SystemString_2);
+__intnl_SystemBoolean_5 = (Boolean)__intnl_SystemObject_0;
+if (__intnl_SystemBoolean_5)
+{
+__intnl_VRCUdonUdonBehaviour_1 = rewardManager;
+__intnl_TMProTextMeshProUGUI_0 = headerText;
+rewardManager.SendCustomEvent(__const_SystemString_4);
+__intnl_SystemObject_1 = rewardManager.GetProgramVariable(__const_SystemString_5);
+__intnl_SystemInt32_0 = Convert.ToInt32(__intnl_SystemObject_1);
+__intnl_SystemString_0 = String.Concat(__const_SystemString_3, __intnl_SystemInt32_0);
+__intnl_TMProTextMeshProUGUI_0.text = __intnl_SystemString_0;
+}
+else
+{
+headerText.text = __const_SystemString_6;
+}
+}
+private void UNDEF_733a8_1700()
+{
+__intnl_UnityEngineObject_10 = weekInfoText;
+__intnl_UnityEngineObject_11 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_6 = __intnl_UnityEngineObject_10 == __intnl_UnityEngineObject_11;
+if (__intnl_SystemBoolean_6)
+{
+return;
+}
+__intnl_VRCUdonUdonBehaviour_2 = rewardManager;
+rewardManager.SendCustomEvent(__const_SystemString_7);
+__intnl_SystemObject_2 = rewardManager.GetProgramVariable(__const_SystemString_8);
+__intnl_SystemInt32_1 = Convert.ToInt32(__intnl_SystemObject_2);
+__lcl_week_SystemInt32_0 = __intnl_SystemInt32_1;
+__intnl_VRCUdonUdonBehaviour_3 = rewardManager;
+rewardManager.SendCustomEvent(__const_SystemString_9);
+__intnl_SystemObject_3 = rewardManager.GetProgramVariable(__const_SystemString_10);
+__intnl_SystemBoolean_7 = (Boolean)__intnl_SystemObject_3;
+if (__intnl_SystemBoolean_7)
+{
+__intnl_SystemString_1 = String.Concat(__const_SystemString_11, __lcl_week_SystemInt32_0);
+weekInfoText.text = __intnl_SystemString_1;
+}
+else
+{
+__intnl_SystemString_1 = String.Concat(__const_SystemString_11, __lcl_week_SystemInt32_0);
+__intnl_SystemString_2 = __intnl_SystemString_1 + __const_SystemString_12;
+weekInfoText.text = __intnl_SystemString_2;
+}
+}
+private void UNDEF_733a8_2824()
+{
+__intnl_SystemBoolean_8 = daySlots == __const_SystemObject_0;
+if (__intnl_SystemBoolean_8)
+{
+return;
+}
+__lcl_i_SystemInt32_0 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_2 = daySlots.Length;
+__intnl_SystemBoolean_9 = __lcl_i_SystemInt32_0 < __intnl_SystemInt32_2;
+if (__intnl_SystemBoolean_9)
+{
+__intnl_SystemBoolean_9 = __lcl_i_SystemInt32_0 < __const_SystemInt32_1;
+}
+if (__intnl_SystemBoolean_9)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_4 = (UdonBehaviour)(daySlots[__lcl_i_SystemInt32_0]);
+__intnl_UnityEngineObject_12 = __intnl_VRCUdonUdonBehaviour_4;
+__intnl_UnityEngineObject_13 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_10 = __intnl_UnityEngineObject_12 == __intnl_UnityEngineObject_13;
+if (__intnl_SystemBoolean_10)
+{
+}
+else
+{
+__lcl_day_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_2;
+rewardManager.SetProgramVariable(__const_SystemString_13, __lcl_day_SystemInt32_0);
+rewardManager.SetProgramVariable(__const_SystemString_14, __lcl_rewardName_SystemString_0);
+rewardManager.SetProgramVariable(__const_SystemString_15, __lcl_rewardIcon_UnityEngineSprite_0);
+rewardManager.SetProgramVariable(__const_SystemString_16, __lcl_isClaimed_SystemBoolean_0);
+rewardManager.SetProgramVariable(__const_SystemString_17, __lcl_isCurrentDay_SystemBoolean_0);
+rewardManager.SendCustomEvent(__const_SystemString_18);
+__intnl_SystemString_3 = __lcl_rewardName_SystemString_0;
+__intnl_SystemObject_4 = rewardManager.GetProgramVariable(__const_SystemString_14);
+__lcl_rewardName_SystemString_0 = (String)__intnl_SystemObject_4;
+__intnl_UnityEngineSprite_0 = __lcl_rewardIcon_UnityEngineSprite_0;
+__intnl_SystemObject_5 = rewardManager.GetProgramVariable(__const_SystemString_15);
+__lcl_rewardIcon_UnityEngineSprite_0 = (Sprite)__intnl_SystemObject_5;
+__intnl_SystemBoolean_11 = __lcl_isClaimed_SystemBoolean_0;
+__intnl_SystemObject_6 = rewardManager.GetProgramVariable(__const_SystemString_16);
+__lcl_isClaimed_SystemBoolean_0 = (Boolean)__intnl_SystemObject_6;
+__intnl_SystemBoolean_12 = __lcl_isCurrentDay_SystemBoolean_0;
+__intnl_SystemObject_7 = rewardManager.GetProgramVariable(__const_SystemString_17);
+__lcl_isCurrentDay_SystemBoolean_0 = (Boolean)__intnl_SystemObject_7;
+__intnl_VRCUdonUdonBehaviour_5 = (UdonBehaviour)(daySlots[__lcl_i_SystemInt32_0]);
+__intnl_VRCUdonUdonBehaviour_5.SetProgramVariable(__const_SystemString_19, __lcl_day_SystemInt32_0);
+__intnl_VRCUdonUdonBehaviour_5.SetProgramVariable(__const_SystemString_14, __lcl_rewardName_SystemString_0);
+__intnl_VRCUdonUdonBehaviour_5.SetProgramVariable(__const_SystemString_15, __lcl_rewardIcon_UnityEngineSprite_0);
+__intnl_VRCUdonUdonBehaviour_5.SetProgramVariable(__const_SystemString_20, __lcl_isClaimed_SystemBoolean_0);
+__intnl_VRCUdonUdonBehaviour_5.SetProgramVariable(__const_SystemString_21, __lcl_isCurrentDay_SystemBoolean_0);
+__intnl_VRCUdonUdonBehaviour_5.SendCustomEvent(__const_SystemString_22);
+}
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_2;
+}
+}
+private void UNDEF_733a8_3204()
+{
+__intnl_UnityEngineObject_14 = audioSource;
+__intnl_UnityEngineObject_15 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_13 = __intnl_UnityEngineObject_14 != __intnl_UnityEngineObject_15;
+if (__intnl_SystemBoolean_13)
+{
+__intnl_UnityEngineObject_16 = claimSound;
+__intnl_UnityEngineObject_17 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_13 = __intnl_UnityEngineObject_16 != __intnl_UnityEngineObject_17;
+}
+if (__intnl_SystemBoolean_13)
+{
+audioSource.PlayOneShot(claimSound);
+}
+__intnl_UnityEngineObject_18 = claimVFX;
+__intnl_UnityEngineObject_19 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_14 = __intnl_UnityEngineObject_18 != __intnl_UnityEngineObject_19;
+if (__intnl_SystemBoolean_14)
+{
+claimVFX.SetActive(__const_SystemBoolean_1);
+__this_VRCUdonUdonBehaviour_1.SendCustomEventDelayedSeconds(__const_SystemString_23, __const_SystemSingle_1, __const_VRCUdonCommonEnumsEventTiming_0);
+}
+}
+public void HideClaimVFX()
+{
+__intnl_UnityEngineObject_20 = claimVFX;
+__intnl_UnityEngineObject_21 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_15 = __intnl_UnityEngineObject_20 != __intnl_UnityEngineObject_21;
+if (__intnl_SystemBoolean_15)
+{
+claimVFX.SetActive(__const_SystemBoolean_0);
+}
+}
+}

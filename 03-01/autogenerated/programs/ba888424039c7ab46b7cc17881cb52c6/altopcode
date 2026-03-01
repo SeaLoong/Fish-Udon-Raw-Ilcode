@@ -1,0 +1,131 @@
+void __0_RegisterCallback()
+G_callbacks.Add(__intnl_VRCSDK3DataDataToken_0);// 48
+68 return;
+void __0_OnEventReturned()
+100 lastReturnedEventIndex = __const_SystemInt32_0
+120 __lcl_i_SystemInt32_0 = __const_SystemInt32_1
+188 if (__intnl_SystemBoolean_0) //384
+{
+244 __intnl_UnityEngineObject_0 = __intnl_VRCUdonUdonBehaviour_0
+264 __intnl_UnityEngineObject_1 = __0_returnedEvent__param
+308 if (__intnl_SystemBoolean_1) //344
+{
+332 lastReturnedEventIndex = __lcl_i_SystemInt32_0
+336 JUMP 384
+}
+__lcl_i_SystemInt32_0 = op_Addition(__const_SystemInt32_2, __lcl_i_SystemInt32_0);// 368
+376 JUMP 124
+}
+400 __lcl_i_SystemInt32_0 = __const_SystemInt32_1
+468 if (__intnl_SystemBoolean_0) //616
+{
+548 __lcl_callback_VRCUdonUdonBehaviour_0 = __intnl_SystemObject_0
+G_callbacks.get_Item(__lcl_i_SystemInt32_0).get_Reference().SendCustomEvent(__const_SystemString_0);// 568
+__lcl_i_SystemInt32_0 = op_Addition(__const_SystemInt32_2, __lcl_i_SystemInt32_0);// 600
+608 JUMP 404
+}
+628 return;
+void GetActiveEventCount()
+660 __lcl_count_SystemInt32_0 = __const_SystemInt32_1
+680 __lcl_i_SystemInt32_1 = __const_SystemInt32_1
+748 if (__intnl_SystemBoolean_2) //1092
+{
+804 __intnl_UnityEngineObject_2 = __intnl_VRCUdonUdonBehaviour_1
+824 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+868 if (__intnl_SystemBoolean_3) //1004
+{
+G_eventPrefabs.Get(__lcl_i_SystemInt32_1).SendCustomEvent(__const_SystemString_1);// 924
+980 __intnl_SystemBoolean_4 = __intnl_SystemObject_1
+1000 __intnl_SystemBoolean_3 = __intnl_SystemBoolean_4
+}
+1012 if (__intnl_SystemBoolean_3) //1052
+{
+__lcl_count_SystemInt32_0 = op_Addition(__const_SystemInt32_2, __lcl_count_SystemInt32_0);// 1044
+}
+__lcl_i_SystemInt32_1 = op_Addition(__const_SystemInt32_2, __lcl_i_SystemInt32_1);// 1076
+1084 JUMP 684
+}
+1108 __0_GetActiveEventCount__ret = __lcl_count_SystemInt32_0
+1124 return;
+1144 return;
+void GetActiveEvents()
+__lcl_activeEvents_UnityEngineComponentArray_0 = 0.ctor();// 1176
+1200 __lcl_i_SystemInt32_2 = __const_SystemInt32_1
+1268 if (__intnl_SystemBoolean_5) //1688
+{
+1324 __intnl_UnityEngineObject_4 = __intnl_VRCUdonUdonBehaviour_3
+1344 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+1388 if (__intnl_SystemBoolean_6) //1524
+{
+G_eventPrefabs.Get(__lcl_i_SystemInt32_2).SendCustomEvent(__const_SystemString_1);// 1444
+1500 __intnl_SystemBoolean_7 = __intnl_SystemObject_2
+1520 __intnl_SystemBoolean_6 = __intnl_SystemBoolean_7
+}
+1532 if (__intnl_SystemBoolean_6) //1648
+{
+1596 __1__intnlparam = __lcl_activeEvents_UnityEngineComponentArray_0
+1616 __2__intnlparam = __intnl_VRCUdonUdonBehaviour_5
+1620 JUMP 2632
+1644 __lcl_activeEvents_UnityEngineComponentArray_0 = __0__intnlparam
+}
+__lcl_i_SystemInt32_2 = op_Addition(__const_SystemInt32_2, __lcl_i_SystemInt32_2);// 1672
+1680 JUMP 1204
+}
+1704 __0_GetActiveEvents__ret = __lcl_activeEvents_UnityEngineComponentArray_0
+1720 return;
+1740 return;
+void GetActivePrefabIndices()
+__lcl_activePrefabIndices_SystemInt32Array_0 = 0.ctor();// 1772
+1796 __lcl_i_SystemInt32_3 = __const_SystemInt32_1
+1864 if (__intnl_SystemBoolean_8) //2252
+{
+1920 __intnl_UnityEngineObject_6 = __intnl_VRCUdonUdonBehaviour_6
+1940 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+1984 if (__intnl_SystemBoolean_9) //2120
+{
+G_eventPrefabs.Get(__lcl_i_SystemInt32_3).SendCustomEvent(__const_SystemString_1);// 2040
+2096 __intnl_SystemBoolean_10 = __intnl_SystemObject_3
+2116 __intnl_SystemBoolean_9 = __intnl_SystemBoolean_10
+}
+2128 if (__intnl_SystemBoolean_9) //2212
+{
+2160 __4__intnlparam = __lcl_activePrefabIndices_SystemInt32Array_0
+2180 __5__intnlparam = __lcl_i_SystemInt32_3
+2184 JUMP 2860
+2208 __lcl_activePrefabIndices_SystemInt32Array_0 = __3__intnlparam
+}
+__lcl_i_SystemInt32_3 = op_Addition(__const_SystemInt32_2, __lcl_i_SystemInt32_3);// 2236
+2244 JUMP 1800
+}
+2268 __0_GetActivePrefabIndices__ret = __lcl_activePrefabIndices_SystemInt32Array_0
+2284 return;
+2304 return;
+void __0_GetEventAtIndex()
+2360 if (__intnl_SystemBoolean_11) //2376
+{
+2368 JUMP 2432
+}
+2440 if (__intnl_SystemBoolean_11) //2488
+{
+2464 __0___0_GetEventAtIndex__ret = __const_SystemObject_0
+2480 return;
+}
+__0___0_GetEventAtIndex__ret = G_eventPrefabs.Get(__0_index__param);// 2512
+2532 return;
+2552 return;
+void GetEventCount()
+__0_GetEventCount__ret = G_eventPrefabs.get_Length();// 2584
+2604 return;
+2624 return;
+__lcl_newArray_UnityEngineComponentArray_0 = op_Addition(__const_SystemInt32_2, __intnl_SystemInt32_5).ctor();// 2704
+L_activeEvents.CopyTo(__const_SystemInt32_1, __lcl_newArray_UnityEngineComponentArray_0);// 2736
+L_newArray.Set(__2__intnlparam, __intnl_SystemInt32_7);// 2792
+2816 __0__intnlparam = __lcl_newArray_UnityEngineComponentArray_0
+2832 return;
+2852 return;
+__lcl_newArray_SystemInt32Array_0 = op_Addition(__const_SystemInt32_2, __intnl_SystemInt32_8).ctor();// 2932
+L_activePrefabIndices.CopyTo(__const_SystemInt32_1, __lcl_newArray_SystemInt32Array_0);// 2964
+L_newArray.Set(__5__intnlparam, __intnl_SystemInt32_10);// 3020
+3044 __3__intnlparam = __lcl_newArray_SystemInt32Array_0
+3060 return;
+3080 return;

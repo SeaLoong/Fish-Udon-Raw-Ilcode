@@ -1,0 +1,441 @@
+using System;
+using UnityEngine;
+using VRC.SDKBase;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Boolean __intnl_SystemBoolean_13 = false;
+private Single __intnl_SystemSingle_20 = 0f;
+private Single[] __intnl_SystemSingleArray_0 = null;
+private Single __intnl_SystemSingle_0 = 0f;
+public Single overshootAmount;
+private Transform __intnl_UnityEngineTransform_0 = null;
+private Single __const_SystemSingle_0 = 0f;
+private Vector3 __intnl_UnityEngineVector3_6 = new Vector3(0f, 0f, 0f);
+private Boolean __intnl_SystemBoolean_16 = false;
+private Single __lcl_eased_SystemSingle_1 = 0f;
+private Single __intnl_SystemSingle_10 = 0f;
+private Single __intnl_SystemSingle_11 = 0f;
+private Single __intnl_SystemSingle_12 = 0f;
+private Single __intnl_SystemSingle_13 = 0f;
+private Single __intnl_SystemSingle_14 = 0f;
+private Single __intnl_SystemSingle_15 = 0f;
+private Single __intnl_SystemSingle_16 = 0f;
+private Single __intnl_SystemSingle_17 = 0f;
+private Single __intnl_SystemSingle_18 = 0f;
+private Single __intnl_SystemSingle_19 = 0f;
+private Boolean[] isAnimatingIn = null;
+private Single __intnl_SystemSingle_8 = 0f;
+private UInt32 __gintnl_SystemUInt32_4 = 2828;
+private UInt32 __gintnl_SystemUInt32_1 = 1324;
+private UInt32 __gintnl_SystemUInt32_0 = 848;
+private UInt32 __gintnl_SystemUInt32_3 = 2732;
+private UInt32 __gintnl_SystemUInt32_2 = 1348;
+private Boolean __const_SystemBoolean_0 = true;
+private Boolean __const_SystemBoolean_1 = false;
+public Color gizmoColor;
+private Single __const_SystemSingle_7 = 0.75f;
+private Vector3 __intnl_UnityEngineVector3_5 = new Vector3(0f, 0f, 0f);
+public Boolean showGizmo;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Single __intnl_SystemSingle_7 = 0f;
+private Int64 __refl_typeid = -7135227791522299964;
+private Boolean isInRange = false;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Boolean __intnl_SystemBoolean_11 = false;
+private Vector3 __const_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Single __intnl_SystemSingle_2 = 0f;
+private Transform __intnl_UnityEngineTransform_2 = null;
+private Int32 __lcl_count_SystemInt32_0 = 0;
+private Single __const_SystemSingle_2 = 0.6f;
+private Color __intnl_UnityEngineColor_0 = new Color(0f, 0f, 0f, 0f);
+private Vector3 __intnl_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private GameObject __intnl_UnityEngineGameObject_3 = null;
+private GameObject __intnl_UnityEngineGameObject_2 = null;
+private GameObject __intnl_UnityEngineGameObject_1 = null;
+private GameObject __intnl_UnityEngineGameObject_0 = null;
+private GameObject __intnl_UnityEngineGameObject_7 = null;
+private GameObject __intnl_UnityEngineGameObject_6 = null;
+private GameObject __intnl_UnityEngineGameObject_5 = null;
+private GameObject __intnl_UnityEngineGameObject_4 = null;
+private Vector3[] originalScales = null;
+private Boolean __intnl_SystemBoolean_14 = false;
+private Single[] animationTimers = null;
+private object __const_SystemObject_0 = null;
+private Single __intnl_SystemSingle_1 = 0f;
+private Single __const_SystemSingle_1 = 1f;
+private Vector3 __intnl_UnityEngineVector3_7 = new Vector3(0f, 0f, 0f);
+private Boolean __intnl_SystemBoolean_17 = false;
+private Boolean __lcl_shouldBeInRange_SystemBoolean_0 = false;
+public Single updateInterval;
+private Single __lcl_distance_SystemSingle_0 = 0f;
+private Single __intnl_SystemSingle_9 = 0f;
+private Single __0___0_EvaluatePopOut__ret = 0f;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private Single __const_SystemSingle_4 = 3f;
+private Int32 __lcl_i_SystemInt32_1 = 0;
+private Int32 __lcl_i_SystemInt32_0 = 0;
+private Int32 __lcl_i_SystemInt32_3 = 0;
+private Int32 __lcl_i_SystemInt32_2 = 0;
+private Boolean[] isAnimating = null;
+private Single[] currentScales = null;
+private Single __intnl_SystemSingle_4 = 0f;
+public GameObject[] targetObjects;
+private Vector3 __intnl_UnityEngineVector3_2 = new Vector3(0f, 0f, 0f);
+private Boolean __intnl_SystemBoolean_12 = false;
+private String __refl_typename = "ObjectDistanceCuller";
+private Single __lcl_t_SystemSingle_0 = 0f;
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Single __1_t__param = 0f;
+private Single __0_t__param = 0f;
+private Single __intnl_SystemSingle_3 = 0f;
+private Transform __this_UnityEngineTransform_0 = this;
+public Single maxDistance;
+private Single nextUpdateTime = 0f;
+public Single animationDuration;
+private Transform __intnl_UnityEngineTransform_1 = null;
+private Single __const_SystemSingle_3 = 0.4f;
+private Vector3 __intnl_UnityEngineVector3_1 = new Vector3(0f, 0f, 0f);
+private Boolean __intnl_SystemBoolean_15 = false;
+private Single __lcl_eased_SystemSingle_0 = 0f;
+private Single __lcl_localT_SystemSingle_1 = 0f;
+private Single __lcl_localT_SystemSingle_0 = 0f;
+private Single __const_SystemSingle_6 = 0.25f;
+private Vector3 __intnl_UnityEngineVector3_4 = new Vector3(0f, 0f, 0f);
+private VRCPlayerApi localPlayer = null;
+private GameObject __this_UnityEngineGameObject_0 = this;
+private Single __intnl_SystemSingle_6 = 0f;
+private Single __lcl_deltaTime_SystemSingle_0 = 0f;
+private Single __const_SystemSingle_5 = 2f;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Int32 __const_SystemInt32_1 = 1;
+private Int32 __const_SystemInt32_0 = 0;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private Single __intnl_SystemSingle_5 = 0f;
+private Single __0___0_EvaluatePopIn__ret = 0f;
+private Transform __intnl_UnityEngineTransform_3 = null;
+private Vector3 __intnl_UnityEngineVector3_3 = new Vector3(0f, 0f, 0f);
+
+
+public void _start()
+{
+__intnl_SystemBoolean_0 = targetObjects == __const_SystemObject_0;
+if (__intnl_SystemBoolean_0)
+{
+}
+else
+{
+__intnl_SystemInt32_0 = targetObjects.Length;
+__intnl_SystemBoolean_0 = __intnl_SystemInt32_0 == __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_0)
+{
+targetObjects = __const_SystemInt32_1.ctor();
+targetObjects.Set(__const_SystemInt32_0, __this_UnityEngineGameObject_0);
+}
+__lcl_count_SystemInt32_0 = targetObjects.Length;
+originalScales = __lcl_count_SystemInt32_0.ctor();
+animationTimers = __lcl_count_SystemInt32_0.ctor();
+isAnimatingIn = __lcl_count_SystemInt32_0.ctor();
+isAnimating = __lcl_count_SystemInt32_0.ctor();
+currentScales = __lcl_count_SystemInt32_0.ctor();
+__lcl_i_SystemInt32_0 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_1 = __lcl_i_SystemInt32_0 < __lcl_count_SystemInt32_0;
+if (__intnl_SystemBoolean_1)
+{
+break;
+}
+__intnl_UnityEngineGameObject_0 = (GameObject)(targetObjects[__lcl_i_SystemInt32_0]);
+__intnl_UnityEngineObject_0 = __intnl_UnityEngineGameObject_0;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_2 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_2)
+{
+__intnl_UnityEngineGameObject_1 = (GameObject)(targetObjects[__lcl_i_SystemInt32_0]);
+__intnl_UnityEngineTransform_0 = __intnl_UnityEngineGameObject_1.transform;
+__intnl_UnityEngineVector3_0 = __intnl_UnityEngineTransform_0.localScale;
+originalScales.Set(__lcl_i_SystemInt32_0, __intnl_UnityEngineVector3_0);
+__intnl_UnityEngineGameObject_2 = (GameObject)(targetObjects[__lcl_i_SystemInt32_0]);
+__intnl_UnityEngineTransform_1 = __intnl_UnityEngineGameObject_2.transform;
+__intnl_UnityEngineTransform_1.localScale = __const_UnityEngineVector3_0;
+currentScales.Set(__lcl_i_SystemInt32_0, __const_SystemSingle_0);
+}
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_1;
+}
+nextUpdateTime = Time.time;
+}
+public void _update()
+{
+UNDEF_721d6_3488();
+__intnl_SystemSingle_0 = Time.time;
+__intnl_SystemBoolean_3 = __intnl_SystemSingle_0 < nextUpdateTime;
+if (__intnl_SystemBoolean_3)
+{
+return;
+}
+__intnl_SystemSingle_1 = Time.time;
+nextUpdateTime = __intnl_SystemSingle_1 + updateInterval;
+__intnl_SystemBoolean_4 = localPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_4)
+{
+localPlayer = Networking.LocalPlayer;
+__intnl_SystemBoolean_5 = localPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_5)
+{
+return;
+}
+}
+__intnl_UnityEngineVector3_1 = __this_UnityEngineTransform_0.position;
+__intnl_UnityEngineVector3_2 = localPlayer.GetPosition();
+__lcl_distance_SystemSingle_0 = Vector3.Distance(__intnl_UnityEngineVector3_1, __intnl_UnityEngineVector3_2);
+__lcl_shouldBeInRange_SystemBoolean_0 = __lcl_distance_SystemSingle_0 <= maxDistance;
+__intnl_SystemBoolean_5 = __lcl_shouldBeInRange_SystemBoolean_0 != isInRange;
+if (__intnl_SystemBoolean_5)
+{
+isInRange = __lcl_shouldBeInRange_SystemBoolean_0;
+if (isInRange)
+{
+UNDEF_721d6_1744();
+}
+else
+{
+UNDEF_721d6_2120();
+}
+}
+}
+private void UNDEF_721d6_1744()
+{
+__lcl_i_SystemInt32_1 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_1 = targetObjects.Length;
+__intnl_SystemBoolean_6 = __lcl_i_SystemInt32_1 < __intnl_SystemInt32_1;
+if (__intnl_SystemBoolean_6)
+{
+break;
+}
+__intnl_UnityEngineGameObject_3 = (GameObject)(targetObjects[__lcl_i_SystemInt32_1]);
+__intnl_UnityEngineObject_2 = __intnl_UnityEngineGameObject_3;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_7 = __intnl_UnityEngineObject_2 != __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_7)
+{
+animationTimers.Set(__lcl_i_SystemInt32_1, __const_SystemSingle_0);
+isAnimatingIn.Set(__lcl_i_SystemInt32_1, __const_SystemBoolean_0);
+isAnimating.Set(__lcl_i_SystemInt32_1, __const_SystemBoolean_0);
+}
+__lcl_i_SystemInt32_1 = __lcl_i_SystemInt32_1 + __const_SystemInt32_1;
+}
+}
+private void UNDEF_721d6_2120()
+{
+__lcl_i_SystemInt32_2 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_2 = targetObjects.Length;
+__intnl_SystemBoolean_8 = __lcl_i_SystemInt32_2 < __intnl_SystemInt32_2;
+if (__intnl_SystemBoolean_8)
+{
+break;
+}
+__intnl_UnityEngineGameObject_4 = (GameObject)(targetObjects[__lcl_i_SystemInt32_2]);
+__intnl_UnityEngineObject_4 = __intnl_UnityEngineGameObject_4;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_9 = __intnl_UnityEngineObject_4 != __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_9)
+{
+animationTimers.Set(__lcl_i_SystemInt32_2, __const_SystemSingle_0);
+isAnimatingIn.Set(__lcl_i_SystemInt32_2, __const_SystemBoolean_1);
+isAnimating.Set(__lcl_i_SystemInt32_2, __const_SystemBoolean_0);
+}
+__lcl_i_SystemInt32_2 = __lcl_i_SystemInt32_2 + __const_SystemInt32_1;
+}
+}
+private void UNDEF_721d6_3488()
+{
+__lcl_deltaTime_SystemSingle_0 = Time.deltaTime;
+__lcl_i_SystemInt32_3 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_3 = targetObjects.Length;
+__intnl_SystemBoolean_10 = __lcl_i_SystemInt32_3 < __intnl_SystemInt32_3;
+if (__intnl_SystemBoolean_10)
+{
+break;
+}
+__intnl_SystemBoolean_12 = isAnimating[__lcl_i_SystemInt32_3];
+__intnl_SystemBoolean_11 = !__intnl_SystemBoolean_12;
+if (__intnl_SystemBoolean_11)
+{
+}
+else
+{
+__intnl_UnityEngineGameObject_5 = (GameObject)(targetObjects[__lcl_i_SystemInt32_3]);
+__intnl_UnityEngineObject_6 = __intnl_UnityEngineGameObject_5;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_11 = __intnl_UnityEngineObject_6 == __intnl_UnityEngineObject_7;
+}
+if (__intnl_SystemBoolean_11)
+{
+}
+else
+{
+__intnl_SystemSingle_2 = animationTimers[__lcl_i_SystemInt32_3];
+__intnl_SystemSingle_3 = __intnl_SystemSingle_2 + __lcl_deltaTime_SystemSingle_0;
+animationTimers.Set(__lcl_i_SystemInt32_3, __intnl_SystemSingle_3);
+__intnl_SystemSingle_4 = animationTimers[__lcl_i_SystemInt32_3];
+__intnl_SystemSingle_5 = __intnl_SystemSingle_4 / animationDuration;
+__lcl_t_SystemSingle_0 = Mathf.Clamp01(__intnl_SystemSingle_5);
+__intnl_SystemBoolean_13 = isAnimatingIn[__lcl_i_SystemInt32_3];
+if (__intnl_SystemBoolean_13)
+{
+__0_t__param = __lcl_t_SystemSingle_0;
+__intnl_SystemSingleArray_0 = currentScales;
+__0_EvaluatePopIn();
+__intnl_SystemSingleArray_0.Set(__lcl_i_SystemInt32_3, __0___0_EvaluatePopIn__ret);
+}
+else
+{
+__1_t__param = __lcl_t_SystemSingle_0;
+__intnl_SystemSingleArray_0 = currentScales;
+__0_EvaluatePopOut();
+__intnl_SystemSingleArray_0.Set(__lcl_i_SystemInt32_3, __0___0_EvaluatePopOut__ret);
+}
+__intnl_UnityEngineGameObject_6 = (GameObject)(targetObjects[__lcl_i_SystemInt32_3]);
+__intnl_UnityEngineTransform_2 = __intnl_UnityEngineGameObject_6.transform;
+__intnl_UnityEngineVector3_3 = originalScales[__lcl_i_SystemInt32_3];
+__intnl_SystemSingle_6 = currentScales[__lcl_i_SystemInt32_3];
+__intnl_UnityEngineVector3_4 = __intnl_UnityEngineVector3_3 * __intnl_SystemSingle_6;
+__intnl_UnityEngineTransform_2.localScale = __intnl_UnityEngineVector3_4;
+__intnl_SystemBoolean_14 = __lcl_t_SystemSingle_0 >= __const_SystemSingle_1;
+if (__intnl_SystemBoolean_14)
+{
+isAnimating.Set(__lcl_i_SystemInt32_3, __const_SystemBoolean_1);
+__intnl_SystemBoolean_15 = isAnimatingIn[__lcl_i_SystemInt32_3];
+if (__intnl_SystemBoolean_15)
+{
+currentScales.Set(__lcl_i_SystemInt32_3, __const_SystemSingle_1);
+__intnl_UnityEngineGameObject_7 = (GameObject)(targetObjects[__lcl_i_SystemInt32_3]);
+__intnl_UnityEngineTransform_3 = __intnl_UnityEngineGameObject_7.transform;
+__intnl_UnityEngineVector3_5 = originalScales[__lcl_i_SystemInt32_3];
+__intnl_UnityEngineTransform_3.localScale = __intnl_UnityEngineVector3_5;
+}
+else
+{
+__intnl_UnityEngineGameObject_7 = (GameObject)(targetObjects[__lcl_i_SystemInt32_3]);
+__intnl_UnityEngineTransform_3 = __intnl_UnityEngineGameObject_7.transform;
+__intnl_UnityEngineTransform_3.localScale = __const_UnityEngineVector3_0;
+currentScales.Set(__lcl_i_SystemInt32_3, __const_SystemSingle_0);
+}
+}
+}
+__lcl_i_SystemInt32_3 = __lcl_i_SystemInt32_3 + __const_SystemInt32_1;
+}
+}
+private void __0_EvaluatePopIn()
+{
+__intnl_SystemBoolean_16 = __0_t__param < __const_SystemSingle_2;
+if (__intnl_SystemBoolean_16)
+{
+__lcl_localT_SystemSingle_0 = __0_t__param / __const_SystemSingle_2;
+__intnl_SystemSingle_7 = __const_SystemSingle_1 - __lcl_localT_SystemSingle_0;
+__intnl_SystemSingle_8 = __const_SystemSingle_1 - __lcl_localT_SystemSingle_0;
+__intnl_SystemSingle_9 = __intnl_SystemSingle_7 * __intnl_SystemSingle_8;
+__intnl_SystemSingle_10 = __const_SystemSingle_1 - __lcl_localT_SystemSingle_0;
+__intnl_SystemSingle_11 = __intnl_SystemSingle_9 * __intnl_SystemSingle_10;
+__lcl_eased_SystemSingle_0 = __const_SystemSingle_1 - __intnl_SystemSingle_11;
+__0___0_EvaluatePopIn__ret = __lcl_eased_SystemSingle_0 * overshootAmount;
+return;
+}
+else
+{
+__intnl_SystemSingle_7 = __0_t__param - __const_SystemSingle_2;
+__lcl_localT_SystemSingle_0 = __intnl_SystemSingle_7 / __const_SystemSingle_3;
+__intnl_SystemSingle_8 = __lcl_localT_SystemSingle_0 * __lcl_localT_SystemSingle_0;
+__intnl_SystemSingle_9 = __const_SystemSingle_5 * __lcl_localT_SystemSingle_0;
+__intnl_SystemSingle_10 = __const_SystemSingle_4 - __intnl_SystemSingle_9;
+__lcl_eased_SystemSingle_0 = __intnl_SystemSingle_8 * __intnl_SystemSingle_10;
+__intnl_SystemSingle_11 = overshootAmount - __const_SystemSingle_1;
+__intnl_SystemSingle_12 = __lcl_eased_SystemSingle_0 * __intnl_SystemSingle_11;
+__0___0_EvaluatePopIn__ret = overshootAmount - __intnl_SystemSingle_12;
+return;
+}
+}
+private void __0_EvaluatePopOut()
+{
+__intnl_SystemBoolean_17 = __1_t__param < __const_SystemSingle_6;
+if (__intnl_SystemBoolean_17)
+{
+__lcl_localT_SystemSingle_1 = __1_t__param / __const_SystemSingle_6;
+__intnl_SystemSingle_13 = __const_SystemSingle_1 - __lcl_localT_SystemSingle_1;
+__intnl_SystemSingle_14 = __const_SystemSingle_1 - __lcl_localT_SystemSingle_1;
+__intnl_SystemSingle_15 = __intnl_SystemSingle_13 * __intnl_SystemSingle_14;
+__lcl_eased_SystemSingle_1 = __const_SystemSingle_1 - __intnl_SystemSingle_15;
+__intnl_SystemSingle_16 = overshootAmount - __const_SystemSingle_1;
+__intnl_SystemSingle_17 = __lcl_eased_SystemSingle_1 * __intnl_SystemSingle_16;
+__0___0_EvaluatePopOut__ret = __const_SystemSingle_1 + __intnl_SystemSingle_17;
+return;
+}
+else
+{
+__intnl_SystemSingle_13 = __1_t__param - __const_SystemSingle_6;
+__lcl_localT_SystemSingle_1 = __intnl_SystemSingle_13 / __const_SystemSingle_7;
+__intnl_SystemSingle_14 = __lcl_localT_SystemSingle_1 * __lcl_localT_SystemSingle_1;
+__lcl_eased_SystemSingle_1 = __intnl_SystemSingle_14 * __lcl_localT_SystemSingle_1;
+__intnl_SystemSingle_15 = __const_SystemSingle_1 - __lcl_eased_SystemSingle_1;
+__0___0_EvaluatePopOut__ret = overshootAmount * __intnl_SystemSingle_15;
+return;
+}
+}
+private void UNDEF_721d6_4780()
+{
+if (showGizmo)
+{
+UNDEF_721d6_4864();
+}
+}
+private void UNDEF_721d6_4864()
+{
+Gizmos.color = gizmoColor;
+__intnl_UnityEngineVector3_6 = __this_UnityEngineTransform_0.position;
+Gizmos.DrawWireSphere(__intnl_UnityEngineVector3_6, maxDistance);
+}
+private void UNDEF_721d6_4916()
+{
+if (showGizmo)
+{
+UNDEF_721d6_5120();
+}
+}
+private void UNDEF_721d6_5120()
+{
+__intnl_SystemSingle_18 = gizmoColor.r;
+__intnl_SystemSingle_19 = gizmoColor.g;
+__intnl_SystemSingle_20 = gizmoColor.b;
+__intnl_UnityEngineColor_0 = Color.ctor(__intnl_SystemSingle_18, __intnl_SystemSingle_19, __intnl_SystemSingle_20, __const_SystemSingle_2);
+Gizmos.color = __intnl_UnityEngineColor_0;
+__intnl_UnityEngineVector3_7 = __this_UnityEngineTransform_0.position;
+Gizmos.DrawWireSphere(__intnl_UnityEngineVector3_7, maxDistance);
+}
+}

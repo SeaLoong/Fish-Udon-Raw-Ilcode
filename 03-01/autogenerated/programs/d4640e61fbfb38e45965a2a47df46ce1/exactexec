@@ -1,0 +1,1166 @@
+using System;
+using VRC.SDK3.Data;
+using VRC.Udon;
+using UnityEngine;
+using VRC.SDKBase;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Boolean __intnl_SystemBoolean_13 = false;
+private Boolean __intnl_SystemBoolean_23 = false;
+private Boolean __intnl_SystemBoolean_33 = false;
+private Boolean __intnl_SystemBoolean_43 = false;
+private DataToken __intnl_VRCSDK3DataDataToken_7 = Null;
+private UInt32 __gintnl_SystemUInt32_16 = 2576;
+private UInt32 __gintnl_SystemUInt32_36 = 8832;
+private UInt32 __gintnl_SystemUInt32_26 = 6592;
+private Int32 __0___0_GetUnlockedSkinCount__ret = 0;
+private object __intnl_SystemObject_27 = null;
+private object __intnl_SystemObject_26 = null;
+private object __intnl_SystemObject_25 = null;
+private object __intnl_SystemObject_24 = null;
+private object __intnl_SystemObject_23 = null;
+private object __intnl_SystemObject_22 = null;
+private object __intnl_SystemObject_21 = null;
+private object __intnl_SystemObject_20 = null;
+private object __intnl_SystemObject_29 = null;
+private object __intnl_SystemObject_28 = null;
+private Int32 __intnl_SystemInt32_15 = 0;
+private Int64 __const_SystemInt64_0 = 9117604706513487623;
+private UdonBehaviour __0___0_GetDefaultSkinForBoat__ret = null;
+private UdonBehaviour __6__intnlparam = null;
+private Object __intnl_UnityEngineObject_22 = null;
+private Object __intnl_UnityEngineObject_12 = null;
+private Component[] __lcl_purchasableSkins_UnityEngineComponentArray_0 = null;
+private object __intnl_SystemObject_0 = null;
+private String __const_SystemString_0 = "InventoryData";
+private Transform __intnl_UnityEngineTransform_0 = null;
+private Double __intnl_SystemDouble_3 = 0;
+private Component[] __0___0_GetUnlockedSkinsForBoat__ret = null;
+private Boolean __intnl_SystemBoolean_16 = false;
+private Boolean __intnl_SystemBoolean_26 = false;
+private Boolean __intnl_SystemBoolean_36 = false;
+private Boolean __intnl_SystemBoolean_46 = false;
+private Int32 __4_skinId__param = 0;
+private DataToken __intnl_VRCSDK3DataDataToken_2 = Null;
+private object __intnl_SystemObject_17 = null;
+private object __intnl_SystemObject_16 = null;
+private object __intnl_SystemObject_15 = null;
+private object __intnl_SystemObject_14 = null;
+private object __intnl_SystemObject_13 = null;
+private object __intnl_SystemObject_12 = null;
+private object __intnl_SystemObject_11 = null;
+private object __intnl_SystemObject_10 = null;
+private object __intnl_SystemObject_19 = null;
+private object __intnl_SystemObject_18 = null;
+private Int32 __intnl_SystemInt32_12 = 0;
+private Int32 __intnl_SystemInt32_22 = 0;
+private Int32 __5_boatId__param = 0;
+private UInt32 __gintnl_SystemUInt32_9 = 1400;
+private UInt32 __gintnl_SystemUInt32_8 = 1288;
+private UInt32 __gintnl_SystemUInt32_5 = 932;
+private UInt32 __gintnl_SystemUInt32_4 = 768;
+private UInt32 __gintnl_SystemUInt32_7 = 1272;
+private UInt32 __gintnl_SystemUInt32_6 = 1080;
+private UInt32 __gintnl_SystemUInt32_1 = 372;
+private UInt32 __gintnl_SystemUInt32_0 = 152;
+private UInt32 __gintnl_SystemUInt32_3 = 620;
+private UInt32 __gintnl_SystemUInt32_2 = 484;
+private Boolean __const_SystemBoolean_0 = true;
+private Boolean __const_SystemBoolean_1 = false;
+private Object __intnl_UnityEngineObject_21 = null;
+private Object __intnl_UnityEngineObject_11 = null;
+private UdonBehaviour __0_value__param = null;
+private TokenType __intnl_VRCSDK3DataTokenType_2 = TokenType.Null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_7 = null;
+private String __const_SystemString_5 = "skinId";
+private DataDictionary __lcl_newDict_VRCSDK3DataDataDictionary_0 = null;
+private TokenType __const_VRCSDK3DataTokenType_0 = TokenType.DataList;
+private Component[] __lcl_availableSkins_UnityEngineComponentArray_0 = null;
+private UInt32 __gintnl_SystemUInt32_13 = 2048;
+private UInt32 __gintnl_SystemUInt32_33 = 8204;
+private UInt32 __gintnl_SystemUInt32_23 = 6112;
+private UdonBehaviour __3__intnlparam = null;
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private DataToken __intnl_VRCSDK3DataDataToken_1 = Null;
+private Int32 __2_skinId__param = 0;
+private Object __intnl_UnityEngineObject_19 = null;
+private DataList __lcl_unlockedSkins_VRCSDK3DataDataList_3 = null;
+private DataList __lcl_unlockedSkins_VRCSDK3DataDataList_2 = null;
+private DataList __lcl_unlockedSkins_VRCSDK3DataDataList_1 = null;
+private DataList __lcl_unlockedSkins_VRCSDK3DataDataList_0 = null;
+private DataList __lcl_unlockedSkins_VRCSDK3DataDataList_4 = null;
+private String __const_SystemString_16 = "__refl_typeid";
+private String __const_SystemString_14 = "ReqSerialization";
+private String __const_SystemString_15 = "skinPrice";
+private String __const_SystemString_12 = "__0_ShouldAutoUnlockAtLevel";
+private String __const_SystemString_13 = "__0___0_ShouldAutoUnlockAtLevel__ret";
+private String __const_SystemString_10 = "isDefaultSkin";
+private String __const_SystemString_11 = "__1_playerLevel__param";
+private VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_0 = null;
+private Object __intnl_UnityEngineObject_24 = null;
+private Object __intnl_UnityEngineObject_14 = null;
+private Int64 __refl_typeid = 1983852845775446821;
+private object __intnl_SystemObject_7 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_11 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_10 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_12 = null;
+private TokenType __intnl_VRCSDK3DataTokenType_1 = TokenType.Null;
+private DataToken __lcl_token_VRCSDK3DataDataToken_0 = Null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_2 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_9 = null;
+private Double __intnl_SystemDouble_4 = 0;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Component __intnl_UnityEngineComponent_0 = null;
+private Boolean __intnl_SystemBoolean_11 = false;
+private Boolean __intnl_SystemBoolean_21 = false;
+private Boolean __intnl_SystemBoolean_31 = false;
+private Boolean __intnl_SystemBoolean_41 = false;
+private DataToken __intnl_VRCSDK3DataDataToken_9 = Null;
+private DataDictionary __intnl_VRCSDK3DataDataDictionary_10 = null;
+private UInt32 __gintnl_SystemUInt32_14 = 2160;
+private UInt32 __gintnl_SystemUInt32_34 = 8556;
+private UInt32 __gintnl_SystemUInt32_24 = 6256;
+private Int32 __intnl_SystemInt32_17 = 0;
+private UdonBehaviour __0___0_GetSkinById__ret = null;
+private Boolean __lcl_isPermanentlyUnlocked_SystemBoolean_0 = false;
+private UdonBehaviour __0__intnlparam = null;
+private Int32 __3_boatId__param = 0;
+private Component __7__intnlparam = null;
+private Component[] __lcl_newArray_UnityEngineComponentArray_0 = null;
+private object __intnl_SystemObject_2 = null;
+private object __intnl_SystemObject_9 = null;
+private DataDictionary __intnl_VRCSDK3DataDataDictionary_3 = null;
+private DataDictionary __intnl_VRCSDK3DataDataDictionary_2 = null;
+private DataDictionary __intnl_VRCSDK3DataDataDictionary_1 = null;
+private DataDictionary __intnl_VRCSDK3DataDataDictionary_0 = null;
+private DataDictionary __intnl_VRCSDK3DataDataDictionary_7 = null;
+private DataDictionary __intnl_VRCSDK3DataDataDictionary_6 = null;
+private DataDictionary __intnl_VRCSDK3DataDataDictionary_5 = null;
+private DataDictionary __intnl_VRCSDK3DataDataDictionary_4 = null;
+private DataDictionary __intnl_VRCSDK3DataDataDictionary_9 = null;
+private DataDictionary __intnl_VRCSDK3DataDataDictionary_8 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_1 = null;
+private Component[] __0___0_GetSkinsForBoat__ret = null;
+private String __const_SystemString_2 = "selectedSkins";
+private Int32 __lcl_skinId_SystemInt32_0 = 0;
+private Int32 __lcl_count_SystemInt32_0 = 0;
+private UdonBehaviour _old__playerInventoryData = null;
+private UdonBehaviour __0___0_GetSelectedSkinForBoat__ret = null;
+private Double __intnl_SystemDouble_1 = 0;
+private Boolean __intnl_SystemBoolean_19 = false;
+private Boolean __intnl_SystemBoolean_29 = false;
+private Boolean __intnl_SystemBoolean_39 = false;
+private Boolean __intnl_SystemBoolean_49 = false;
+private UdonBehaviour __lcl_foundScript_VRCUdonUdonBehaviour_0 = null;
+private GameObject __intnl_UnityEngineGameObject_1 = null;
+private GameObject __intnl_UnityEngineGameObject_0 = null;
+private Boolean __intnl_SystemBoolean_14 = false;
+private Boolean __intnl_SystemBoolean_24 = false;
+private Boolean __intnl_SystemBoolean_34 = false;
+private Boolean __intnl_SystemBoolean_44 = false;
+private DataToken __intnl_VRCSDK3DataDataToken_4 = Null;
+private object __intnl_SystemObject_35 = null;
+private object __intnl_SystemObject_34 = null;
+private object __intnl_SystemObject_33 = null;
+private object __intnl_SystemObject_32 = null;
+private object __intnl_SystemObject_31 = null;
+private object __intnl_SystemObject_30 = null;
+private Component[] __intnl_UnityEngineComponentArray_0 = null;
+private Int32 __intnl_SystemInt32_14 = 0;
+private Int32 __intnl_SystemInt32_24 = 0;
+private Int32 __intnl_SystemInt32_19 = 0;
+private object __const_SystemObject_0 = null;
+private String __intnl_SystemString_0 = null;
+private Int32 __0_skinId__param = 0;
+private Object __intnl_UnityEngineObject_23 = null;
+private Object __intnl_UnityEngineObject_13 = null;
+private Type __const_SystemType_0 = typeof(UdonBehaviour);
+private object __intnl_SystemObject_1 = null;
+private Int32 __1_boatId__param = 0;
+private String __const_SystemString_7 = "__0_achievement__param";
+private UdonBehaviour __4__intnlparam = null;
+private Component[] __0_GetAllSkins__ret = null;
+private Double __intnl_SystemDouble_2 = 0;
+private TokenType __const_VRCSDK3DataTokenType_2 = TokenType.Double;
+private UInt32 __gintnl_SystemUInt32_11 = 1816;
+private UInt32 __gintnl_SystemUInt32_31 = 7952;
+private UInt32 __gintnl_SystemUInt32_21 = 5128;
+private Int32 __4_boatId__param = 0;
+private Boolean __0___0_CanAffordSkin__ret = false;
+private Boolean __intnl_SystemBoolean_17 = false;
+private Boolean __intnl_SystemBoolean_27 = false;
+private Boolean __intnl_SystemBoolean_37 = false;
+private Boolean __intnl_SystemBoolean_47 = false;
+private DataToken __intnl_VRCSDK3DataDataToken_3 = Null;
+private Int32 __intnl_SystemInt32_11 = 0;
+private Int32 __intnl_SystemInt32_21 = 0;
+private Int32 __3_skinId__param = 0;
+private UdonBehaviour _playerInventoryData = null;
+private Object __intnl_UnityEngineObject_16 = null;
+private Int64 __intnl_SystemInt64_0 = 0;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_4 = null;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private String __const_SystemString_4 = "disabled";
+private Int32 __4_playerLevel__param = 0;
+private UInt32 __gintnl_SystemUInt32_19 = 3620;
+private UInt32 __gintnl_SystemUInt32_39 = 11044;
+private UInt32 __gintnl_SystemUInt32_29 = 7664;
+private Int32 __2_playerLevel__param = 0;
+private TokenType __const_VRCSDK3DataTokenType_1 = TokenType.DataDictionary;
+private Int32 __3_playerLevel__param = 0;
+private DataDictionary __0_GetSelectedSkinsDict__ret = null;
+private UInt32 __gintnl_SystemUInt32_12 = 2032;
+private UInt32 __gintnl_SystemUInt32_32 = 8116;
+private UInt32 __gintnl_SystemUInt32_22 = 5272;
+private Int32 __lcl_i_SystemInt32_1 = 0;
+private Int32 __lcl_i_SystemInt32_0 = 0;
+private Int32 __lcl_i_SystemInt32_3 = 0;
+private Int32 __lcl_i_SystemInt32_2 = 0;
+private Int32 __lcl_i_SystemInt32_5 = 0;
+private Int32 __lcl_i_SystemInt32_4 = 0;
+private Int32 __lcl_i_SystemInt32_6 = 0;
+private UdonBehaviour __lcl_behaviour_VRCUdonUdonBehaviour_0 = null;
+private Component[] __lcl_matchingSkins_UnityEngineComponentArray_0 = null;
+private Component[] __1__intnlparam = null;
+private Object __intnl_UnityEngineObject_25 = null;
+private Object __intnl_UnityEngineObject_15 = null;
+private DataList __0_GetUnlockedSkinsList__ret = null;
+private object __intnl_SystemObject_4 = null;
+private DataToken __lcl_token_VRCSDK3DataDataToken_1 = Null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_3 = null;
+private Double __intnl_SystemDouble_7 = 0;
+private String __const_SystemString_9 = "__0___0_IsAchievementUnlocked__ret";
+private Int32 __0_playerMoney__param = 0;
+private Boolean __intnl_SystemBoolean_12 = false;
+private Boolean __intnl_SystemBoolean_22 = false;
+private Boolean __intnl_SystemBoolean_32 = false;
+private Boolean __intnl_SystemBoolean_42 = false;
+private DataToken __intnl_VRCSDK3DataDataToken_6 = Null;
+private UInt32 __gintnl_SystemUInt32_17 = 2816;
+private UInt32 __gintnl_SystemUInt32_37 = 10156;
+private UInt32 __gintnl_SystemUInt32_27 = 6700;
+private Int32 __intnl_SystemInt32_16 = 0;
+private Int32 __2_boatId__param = 0;
+private String __refl_typename = "BoatSkinDatabase";
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Int32 __intnl_SystemInt32_5 = 0;
+private Int32 __intnl_SystemInt32_4 = 0;
+private Int32 __intnl_SystemInt32_7 = 0;
+private Int32 __intnl_SystemInt32_6 = 0;
+private Int32 __intnl_SystemInt32_9 = 0;
+private Int32 __intnl_SystemInt32_8 = 0;
+private Int32 __1_skinId__param = 0;
+private Boolean __0___0_IsSkinUnlocked__ret = false;
+private object __intnl_SystemObject_3 = null;
+private Int64 __lcl_targetID_SystemInt64_0 = 0;
+private String __const_SystemString_1 = "unlockedSkins";
+private String __lcl_boatIdStr_SystemString_0 = null;
+private Double __intnl_SystemDouble_0 = 0;
+private object __lcl_idValue_SystemObject_0 = null;
+private VRCPlayerApi __5__intnlparam = null;
+private DataToken __intnl_VRCSDK3DataDataToken_18 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_19 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_14 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_15 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_16 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_17 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_10 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_11 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_12 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_13 = Null;
+private Boolean __intnl_SystemBoolean_15 = false;
+private Boolean __intnl_SystemBoolean_25 = false;
+private Boolean __intnl_SystemBoolean_35 = false;
+private Boolean __intnl_SystemBoolean_45 = false;
+private DataToken __intnl_VRCSDK3DataDataToken_5 = Null;
+private Int32 __intnl_SystemInt32_13 = 0;
+private Int32 __intnl_SystemInt32_23 = 0;
+private Int32 __intnl_SystemInt32_18 = 0;
+private Int32 __0_boatId__param = 0;
+private Object __intnl_UnityEngineObject_20 = null;
+private Object __intnl_UnityEngineObject_10 = null;
+private Int32 __0_GetSkinCount__ret = 0;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_6 = null;
+private Double __intnl_SystemDouble_8 = 0;
+private String __const_SystemString_6 = "requiredAchievement";
+private Int32 __0_playerLevel__param = 0;
+private UdonBehaviour __0_get_playerInventoryData__ret = null;
+private UInt32 __gintnl_SystemUInt32_40 = 11628;
+private UInt32 __gintnl_SystemUInt32_10 = 1552;
+private UInt32 __gintnl_SystemUInt32_30 = 7828;
+private UInt32 __gintnl_SystemUInt32_20 = 4632;
+private DataToken __intnl_VRCSDK3DataDataToken_0 = Null;
+private Int32 __intnl_SystemInt32_10 = 0;
+private Int32 __intnl_SystemInt32_20 = 0;
+public Component[] boatSkins;
+private Object __intnl_UnityEngineObject_18 = null;
+private Object __intnl_UnityEngineObject_17 = null;
+private object __intnl_SystemObject_6 = null;
+private TokenType __intnl_VRCSDK3DataTokenType_0 = TokenType.Null;
+private DataToken __lcl_skinIdToken_VRCSDK3DataDataToken_0 = Null;
+private Int32 __1_playerLevel__param = 0;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_5 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_8 = null;
+private Double __intnl_SystemDouble_5 = 0;
+public UdonBehaviour achievementManager;
+private UInt32 __gintnl_SystemUInt32_18 = 3476;
+private UInt32 __gintnl_SystemUInt32_38 = 10844;
+private UInt32 __gintnl_SystemUInt32_28 = 7608;
+private Component[] __2__intnlparam = null;
+private GameObject[] __lcl_objects_UnityEngineGameObjectArray_0 = null;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Boolean __intnl_SystemBoolean_20 = false;
+private Boolean __intnl_SystemBoolean_30 = false;
+private Boolean __intnl_SystemBoolean_40 = false;
+private Boolean __intnl_SystemBoolean_50 = false;
+private DataToken __intnl_VRCSDK3DataDataToken_8 = Null;
+private UInt32 __gintnl_SystemUInt32_15 = 2312;
+private UInt32 __gintnl_SystemUInt32_35 = 8720;
+private UInt32 __gintnl_SystemUInt32_25 = 6380;
+private Int32 __const_SystemInt32_1 = 1;
+private Int32 __const_SystemInt32_0 = 0;
+private Component[] __lcl_udonBehaviours_UnityEngineComponentArray_0 = null;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private DataList __lcl_newList_VRCSDK3DataDataList_0 = null;
+private DataDictionary __lcl_selectedSkins_VRCSDK3DataDataDictionary_0 = null;
+private DataDictionary __lcl_selectedSkins_VRCSDK3DataDataDictionary_1 = null;
+private object __intnl_SystemObject_5 = null;
+private UdonBehaviour __lcl_skin_VRCUdonUdonBehaviour_4 = null;
+private UdonBehaviour __lcl_skin_VRCUdonUdonBehaviour_5 = null;
+private UdonBehaviour __lcl_skin_VRCUdonUdonBehaviour_0 = null;
+private UdonBehaviour __lcl_skin_VRCUdonUdonBehaviour_1 = null;
+private UdonBehaviour __lcl_skin_VRCUdonUdonBehaviour_2 = null;
+private UdonBehaviour __lcl_skin_VRCUdonUdonBehaviour_3 = null;
+private object __intnl_SystemObject_8 = null;
+private Component[] __0___0_GetPurchasableSkinsForBoat__ret = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_0 = null;
+private DataList __intnl_VRCSDK3DataDataList_0 = null;
+private String __const_SystemString_3 = "compatibleBoatId";
+private Double __intnl_SystemDouble_6 = 0;
+private String __const_SystemString_8 = "__0_IsAchievementUnlocked";
+private Boolean __intnl_SystemBoolean_18 = false;
+private Boolean __intnl_SystemBoolean_28 = false;
+private Boolean __intnl_SystemBoolean_38 = false;
+private Boolean __intnl_SystemBoolean_48 = false;
+
+
+public void get_playerInventoryData()
+{
+__intnl_UnityEngineObject_0 = _playerInventoryData;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_0)
+{
+__0_get_playerInventoryData__ret = _playerInventoryData;
+return;
+}
+UNDEF_d4640_11104();
+_playerInventoryData = __0__intnlparam;
+__0_get_playerInventoryData__ret = _playerInventoryData;
+return;
+}
+public void _onVarChange__playerInventoryData()
+{
+__0_value__param = _playerInventoryData;
+_playerInventoryData = _old__playerInventoryData;
+_playerInventoryData = __0_value__param;
+}
+public void _start()
+{
+}
+private void UNDEF_d4640_1248()
+{
+get_playerInventoryData();
+__intnl_UnityEngineObject_2 = __0_get_playerInventoryData__ret;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_2 == __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_1)
+{
+}
+else
+{
+get_playerInventoryData();
+__intnl_SystemObject_0 = __0_get_playerInventoryData__ret.GetProgramVariable(__const_SystemString_0);
+__intnl_VRCSDK3DataDataDictionary_0 = (DataDictionary)__intnl_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_VRCSDK3DataDataDictionary_0 == __const_SystemObject_0;
+}
+if (__intnl_SystemBoolean_1)
+{
+return;
+}
+get_playerInventoryData();
+__intnl_SystemObject_1 = __0_get_playerInventoryData__ret.GetProgramVariable(__const_SystemString_0);
+__intnl_VRCSDK3DataDataDictionary_1 = (DataDictionary)__intnl_SystemObject_1;
+__intnl_VRCSDK3DataDataToken_0 = __const_SystemString_1;
+__intnl_SystemBoolean_2 = __intnl_VRCSDK3DataDataDictionary_1.ContainsKey(__intnl_VRCSDK3DataDataToken_0);
+if (__intnl_SystemBoolean_2)
+{
+}
+else
+{
+get_playerInventoryData();
+__intnl_SystemObject_2 = __0_get_playerInventoryData__ret.GetProgramVariable(__const_SystemString_0);
+__intnl_VRCSDK3DataDataDictionary_2 = (DataDictionary)__intnl_SystemObject_2;
+__intnl_VRCSDK3DataDataToken_1 = __const_SystemString_1;
+__intnl_VRCSDK3DataDataList_0 = DataList.ctor();
+__intnl_VRCSDK3DataDataToken_2 = DataToken.ctor(__intnl_VRCSDK3DataDataList_0);
+__intnl_VRCSDK3DataDataDictionary_2.Item = __intnl_VRCSDK3DataDataToken_2;
+}
+get_playerInventoryData();
+__intnl_SystemObject_2 = __0_get_playerInventoryData__ret.GetProgramVariable(__const_SystemString_0);
+__intnl_VRCSDK3DataDataDictionary_2 = (DataDictionary)__intnl_SystemObject_2;
+__intnl_VRCSDK3DataDataToken_1 = __const_SystemString_2;
+__intnl_SystemBoolean_3 = __intnl_VRCSDK3DataDataDictionary_2.ContainsKey(__intnl_VRCSDK3DataDataToken_1);
+if (__intnl_SystemBoolean_3)
+{
+}
+else
+{
+get_playerInventoryData();
+__intnl_SystemObject_3 = __0_get_playerInventoryData__ret.GetProgramVariable(__const_SystemString_0);
+__intnl_VRCSDK3DataDataDictionary_3 = (DataDictionary)__intnl_SystemObject_3;
+__intnl_VRCSDK3DataDataToken_2 = __const_SystemString_2;
+__intnl_VRCSDK3DataDataDictionary_4 = DataDictionary.ctor();
+__intnl_VRCSDK3DataDataToken_3 = DataToken.ctor(__intnl_VRCSDK3DataDataDictionary_4);
+__intnl_VRCSDK3DataDataDictionary_3.Item = __intnl_VRCSDK3DataDataToken_3;
+}
+}
+private void GetUnlockedSkinsList()
+{
+UNDEF_d4640_1248();
+get_playerInventoryData();
+__intnl_UnityEngineObject_4 = __0_get_playerInventoryData__ret;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_4 = __intnl_UnityEngineObject_4 == __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_4)
+{
+}
+else
+{
+get_playerInventoryData();
+__intnl_SystemObject_4 = __0_get_playerInventoryData__ret.GetProgramVariable(__const_SystemString_0);
+__intnl_VRCSDK3DataDataDictionary_5 = (DataDictionary)__intnl_SystemObject_4;
+__intnl_SystemBoolean_4 = __intnl_VRCSDK3DataDataDictionary_5 == __const_SystemObject_0;
+}
+if (__intnl_SystemBoolean_4)
+{
+__0_GetUnlockedSkinsList__ret = DataList.ctor();
+return;
+}
+get_playerInventoryData();
+__intnl_SystemObject_5 = __0_get_playerInventoryData__ret.GetProgramVariable(__const_SystemString_0);
+__intnl_VRCSDK3DataDataDictionary_6 = (DataDictionary)__intnl_SystemObject_5;
+__intnl_VRCSDK3DataDataToken_4 = __const_SystemString_1;
+__lcl_token_VRCSDK3DataDataToken_0 = __intnl_VRCSDK3DataDataDictionary_6.Item;
+__intnl_VRCSDK3DataTokenType_0 = __lcl_token_VRCSDK3DataDataToken_0.TokenType;
+__intnl_SystemBoolean_5 = __intnl_VRCSDK3DataTokenType_0.Equals(__const_VRCSDK3DataTokenType_0);
+if (__intnl_SystemBoolean_5)
+{
+__0_GetUnlockedSkinsList__ret = __lcl_token_VRCSDK3DataDataToken_0.DataList;
+return;
+}
+else
+{
+__lcl_newList_VRCSDK3DataDataList_0 = DataList.ctor();
+get_playerInventoryData();
+__intnl_SystemObject_6 = __0_get_playerInventoryData__ret.GetProgramVariable(__const_SystemString_0);
+__intnl_VRCSDK3DataDataDictionary_7 = (DataDictionary)__intnl_SystemObject_6;
+__intnl_VRCSDK3DataDataToken_5 = __const_SystemString_1;
+__intnl_VRCSDK3DataDataToken_6 = DataToken.ctor(__lcl_newList_VRCSDK3DataDataList_0);
+__intnl_VRCSDK3DataDataDictionary_7.Item = __intnl_VRCSDK3DataDataToken_6;
+__0_GetUnlockedSkinsList__ret = __lcl_newList_VRCSDK3DataDataList_0;
+return;
+}
+}
+private void GetSelectedSkinsDict()
+{
+UNDEF_d4640_1248();
+get_playerInventoryData();
+__intnl_UnityEngineObject_6 = __0_get_playerInventoryData__ret;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_6 = __intnl_UnityEngineObject_6 == __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_6)
+{
+}
+else
+{
+get_playerInventoryData();
+__intnl_SystemObject_7 = __0_get_playerInventoryData__ret.GetProgramVariable(__const_SystemString_0);
+__intnl_VRCSDK3DataDataDictionary_8 = (DataDictionary)__intnl_SystemObject_7;
+__intnl_SystemBoolean_6 = __intnl_VRCSDK3DataDataDictionary_8 == __const_SystemObject_0;
+}
+if (__intnl_SystemBoolean_6)
+{
+__0_GetSelectedSkinsDict__ret = DataDictionary.ctor();
+return;
+}
+get_playerInventoryData();
+__intnl_SystemObject_8 = __0_get_playerInventoryData__ret.GetProgramVariable(__const_SystemString_0);
+__intnl_VRCSDK3DataDataDictionary_9 = (DataDictionary)__intnl_SystemObject_8;
+__intnl_VRCSDK3DataDataToken_7 = __const_SystemString_2;
+__lcl_token_VRCSDK3DataDataToken_1 = __intnl_VRCSDK3DataDataDictionary_9.Item;
+__intnl_VRCSDK3DataTokenType_1 = __lcl_token_VRCSDK3DataDataToken_1.TokenType;
+__intnl_SystemBoolean_7 = __intnl_VRCSDK3DataTokenType_1.Equals(__const_VRCSDK3DataTokenType_1);
+if (__intnl_SystemBoolean_7)
+{
+__0_GetSelectedSkinsDict__ret = __lcl_token_VRCSDK3DataDataToken_1.DataDictionary;
+return;
+}
+else
+{
+__lcl_newDict_VRCSDK3DataDataDictionary_0 = DataDictionary.ctor();
+get_playerInventoryData();
+__intnl_SystemObject_9 = __0_get_playerInventoryData__ret.GetProgramVariable(__const_SystemString_0);
+__intnl_VRCSDK3DataDataDictionary_10 = (DataDictionary)__intnl_SystemObject_9;
+__intnl_VRCSDK3DataDataToken_8 = __const_SystemString_2;
+__intnl_VRCSDK3DataDataToken_9 = DataToken.ctor(__lcl_newDict_VRCSDK3DataDataDictionary_0);
+__intnl_VRCSDK3DataDataDictionary_10.Item = __intnl_VRCSDK3DataDataToken_9;
+__0_GetSelectedSkinsDict__ret = __lcl_newDict_VRCSDK3DataDataDictionary_0;
+return;
+}
+}
+public void __0_GetSkinsForBoat()
+{
+__lcl_matchingSkins_UnityEngineComponentArray_0 = __const_SystemInt32_0.ctor();
+GetUnlockedSkinsList();
+__lcl_unlockedSkins_VRCSDK3DataDataList_0 = __0_GetUnlockedSkinsList__ret;
+__lcl_i_SystemInt32_0 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_0 = boatSkins.Length;
+__intnl_SystemBoolean_8 = __lcl_i_SystemInt32_0 < __intnl_SystemInt32_0;
+if (__intnl_SystemBoolean_8)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(boatSkins[__lcl_i_SystemInt32_0]);
+__intnl_SystemObject_10 = __intnl_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_3);
+__intnl_SystemInt32_1 = Convert.ToInt32(__intnl_SystemObject_10);
+__intnl_SystemBoolean_9 = __intnl_SystemInt32_1 != __0_boatId__param;
+if (__intnl_SystemBoolean_9)
+{
+}
+else
+{
+__intnl_VRCUdonUdonBehaviour_1 = (UdonBehaviour)(boatSkins[__lcl_i_SystemInt32_0]);
+__intnl_SystemObject_11 = __intnl_VRCUdonUdonBehaviour_1.GetProgramVariable(__const_SystemString_4);
+__intnl_SystemBoolean_11 = (Boolean)__intnl_SystemObject_11;
+__intnl_SystemBoolean_10 = !__intnl_SystemBoolean_11;
+if (__intnl_SystemBoolean_10)
+{
+}
+else
+{
+__intnl_VRCUdonUdonBehaviour_2 = (UdonBehaviour)(boatSkins[__lcl_i_SystemInt32_0]);
+__intnl_SystemObject_12 = __intnl_VRCUdonUdonBehaviour_2.GetProgramVariable(__const_SystemString_5);
+__intnl_SystemInt32_2 = Convert.ToInt32(__intnl_SystemObject_12);
+__intnl_SystemDouble_0 = Convert.ToDouble(__intnl_SystemInt32_2);
+__intnl_VRCSDK3DataDataToken_10 = __intnl_SystemDouble_0;
+__intnl_SystemBoolean_10 = __lcl_unlockedSkins_VRCSDK3DataDataList_0.Contains(__intnl_VRCSDK3DataDataToken_10);
+}
+if (__intnl_SystemBoolean_10)
+{
+__intnl_VRCUdonUdonBehaviour_3 = (UdonBehaviour)(boatSkins[__lcl_i_SystemInt32_0]);
+__2__intnlparam = __lcl_matchingSkins_UnityEngineComponentArray_0;
+__3__intnlparam = __intnl_VRCUdonUdonBehaviour_3;
+UNDEF_d4640_11332();
+__lcl_matchingSkins_UnityEngineComponentArray_0 = __1__intnlparam;
+}
+}
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_1;
+}
+__0___0_GetSkinsForBoat__ret = __lcl_matchingSkins_UnityEngineComponentArray_0;
+return;
+}
+public void __0_GetUnlockedSkinsForBoat()
+{
+GetUnlockedSkinsList();
+__lcl_unlockedSkins_VRCSDK3DataDataList_1 = __0_GetUnlockedSkinsList__ret;
+__lcl_availableSkins_UnityEngineComponentArray_0 = __const_SystemInt32_0.ctor();
+__lcl_i_SystemInt32_1 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_3 = boatSkins.Length;
+__intnl_SystemBoolean_12 = __lcl_i_SystemInt32_1 < __intnl_SystemInt32_3;
+if (__intnl_SystemBoolean_12)
+{
+break;
+}
+__lcl_skin_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(boatSkins[__lcl_i_SystemInt32_1]);
+__intnl_SystemObject_13 = __lcl_skin_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_3);
+__intnl_SystemInt32_4 = Convert.ToInt32(__intnl_SystemObject_13);
+__intnl_SystemBoolean_13 = __intnl_SystemInt32_4 != __1_boatId__param;
+if (__intnl_SystemBoolean_13)
+{
+}
+else
+{
+__intnl_SystemObject_14 = __lcl_skin_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_5);
+__intnl_SystemInt32_5 = Convert.ToInt32(__intnl_SystemObject_14);
+__intnl_SystemDouble_1 = Convert.ToDouble(__intnl_SystemInt32_5);
+__intnl_VRCSDK3DataDataToken_11 = __intnl_SystemDouble_1;
+__lcl_isPermanentlyUnlocked_SystemBoolean_0 = __lcl_unlockedSkins_VRCSDK3DataDataList_1.Contains(__intnl_VRCSDK3DataDataToken_11);
+__intnl_SystemBoolean_16 = !__lcl_isPermanentlyUnlocked_SystemBoolean_0;
+if (__intnl_SystemBoolean_16)
+{
+__intnl_SystemObject_15 = __lcl_skin_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_6);
+__intnl_VRCUdonUdonBehaviour_4 = (UdonBehaviour)__intnl_SystemObject_15;
+__intnl_UnityEngineObject_8 = __intnl_VRCUdonUdonBehaviour_4;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_16 = __intnl_UnityEngineObject_8 != __intnl_UnityEngineObject_9;
+}
+__intnl_SystemBoolean_15 = __intnl_SystemBoolean_16;
+if (__intnl_SystemBoolean_15)
+{
+__intnl_UnityEngineObject_10 = achievementManager;
+__intnl_UnityEngineObject_11 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_15 = __intnl_UnityEngineObject_10 != __intnl_UnityEngineObject_11;
+}
+__intnl_SystemBoolean_14 = __intnl_SystemBoolean_15;
+if (__intnl_SystemBoolean_14)
+{
+__intnl_SystemObject_16 = __lcl_skin_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_6);
+__intnl_VRCUdonUdonBehaviour_5 = (UdonBehaviour)__intnl_SystemObject_16;
+achievementManager.SetProgramVariable(__const_SystemString_7, __intnl_VRCUdonUdonBehaviour_5);
+achievementManager.SendCustomEvent(__const_SystemString_8);
+__intnl_SystemObject_17 = achievementManager.GetProgramVariable(__const_SystemString_9);
+__intnl_SystemBoolean_17 = (Boolean)__intnl_SystemObject_17;
+__intnl_SystemBoolean_14 = __intnl_SystemBoolean_17;
+}
+if (__intnl_SystemBoolean_14)
+{
+__intnl_SystemObject_18 = __lcl_skin_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_5);
+__intnl_SystemInt32_6 = Convert.ToInt32(__intnl_SystemObject_18);
+__0_skinId__param = __intnl_SystemInt32_6;
+__0_UnlockSkin();
+__lcl_isPermanentlyUnlocked_SystemBoolean_0 = __const_SystemBoolean_0;
+}
+__intnl_SystemObject_18 = __lcl_skin_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_4);
+__intnl_SystemBoolean_18 = (Boolean)__intnl_SystemObject_18;
+if (__intnl_SystemBoolean_18)
+{
+__intnl_SystemBoolean_18 = !__lcl_isPermanentlyUnlocked_SystemBoolean_0;
+}
+if (__intnl_SystemBoolean_18)
+{
+}
+else
+{
+__intnl_SystemObject_19 = __lcl_skin_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_10);
+__intnl_SystemBoolean_20 = (Boolean)__intnl_SystemObject_19;
+if (__intnl_SystemBoolean_20)
+{
+}
+else
+{
+__intnl_SystemInt32_6 = __0_playerLevel__param;
+__lcl_skin_VRCUdonUdonBehaviour_0.SetProgramVariable(__const_SystemString_11, __0_playerLevel__param);
+__lcl_skin_VRCUdonUdonBehaviour_0.SendCustomEvent(__const_SystemString_12);
+__intnl_SystemObject_20 = __lcl_skin_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_13);
+__intnl_SystemBoolean_21 = (Boolean)__intnl_SystemObject_20;
+__intnl_SystemBoolean_20 = __intnl_SystemBoolean_21;
+}
+__intnl_SystemBoolean_19 = __intnl_SystemBoolean_20;
+if (__intnl_SystemBoolean_19)
+{
+}
+else
+{
+__intnl_SystemBoolean_19 = __lcl_isPermanentlyUnlocked_SystemBoolean_0;
+}
+if (__intnl_SystemBoolean_19)
+{
+__2__intnlparam = __lcl_availableSkins_UnityEngineComponentArray_0;
+__3__intnlparam = __lcl_skin_VRCUdonUdonBehaviour_0;
+UNDEF_d4640_11332();
+__lcl_availableSkins_UnityEngineComponentArray_0 = __1__intnlparam;
+}
+}
+}
+__lcl_i_SystemInt32_1 = __lcl_i_SystemInt32_1 + __const_SystemInt32_1;
+}
+__0___0_GetUnlockedSkinsForBoat__ret = __lcl_availableSkins_UnityEngineComponentArray_0;
+return;
+}
+public void __0_GetPurchasableSkinsForBoat()
+{
+GetUnlockedSkinsList();
+__lcl_unlockedSkins_VRCSDK3DataDataList_2 = __0_GetUnlockedSkinsList__ret;
+__lcl_purchasableSkins_UnityEngineComponentArray_0 = __const_SystemInt32_0.ctor();
+__lcl_i_SystemInt32_2 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_7 = boatSkins.Length;
+__intnl_SystemBoolean_22 = __lcl_i_SystemInt32_2 < __intnl_SystemInt32_7;
+if (__intnl_SystemBoolean_22)
+{
+break;
+}
+__lcl_skin_VRCUdonUdonBehaviour_1 = (UdonBehaviour)(boatSkins[__lcl_i_SystemInt32_2]);
+__intnl_SystemObject_21 = __lcl_skin_VRCUdonUdonBehaviour_1.GetProgramVariable(__const_SystemString_3);
+__intnl_SystemInt32_8 = Convert.ToInt32(__intnl_SystemObject_21);
+__intnl_SystemBoolean_23 = __intnl_SystemInt32_8 != __2_boatId__param;
+if (__intnl_SystemBoolean_23)
+{
+}
+else
+{
+__intnl_SystemObject_22 = __lcl_skin_VRCUdonUdonBehaviour_1.GetProgramVariable(__const_SystemString_4);
+__intnl_SystemBoolean_23 = (Boolean)__intnl_SystemObject_22;
+}
+if (__intnl_SystemBoolean_23)
+{
+}
+else
+{
+__intnl_SystemObject_23 = __lcl_skin_VRCUdonUdonBehaviour_1.GetProgramVariable(__const_SystemString_10);
+__intnl_SystemBoolean_25 = (Boolean)__intnl_SystemObject_23;
+if (__intnl_SystemBoolean_25)
+{
+}
+else
+{
+__intnl_SystemInt32_9 = __1_playerLevel__param;
+__lcl_skin_VRCUdonUdonBehaviour_1.SetProgramVariable(__const_SystemString_11, __1_playerLevel__param);
+__lcl_skin_VRCUdonUdonBehaviour_1.SendCustomEvent(__const_SystemString_12);
+__intnl_SystemObject_24 = __lcl_skin_VRCUdonUdonBehaviour_1.GetProgramVariable(__const_SystemString_13);
+__intnl_SystemBoolean_26 = (Boolean)__intnl_SystemObject_24;
+__intnl_SystemBoolean_25 = __intnl_SystemBoolean_26;
+}
+__intnl_SystemBoolean_24 = __intnl_SystemBoolean_25;
+if (__intnl_SystemBoolean_24)
+{
+}
+else
+{
+__intnl_SystemObject_25 = __lcl_skin_VRCUdonUdonBehaviour_1.GetProgramVariable(__const_SystemString_5);
+__intnl_SystemInt32_10 = Convert.ToInt32(__intnl_SystemObject_25);
+__intnl_SystemDouble_2 = Convert.ToDouble(__intnl_SystemInt32_10);
+__intnl_VRCSDK3DataDataToken_12 = __intnl_SystemDouble_2;
+__intnl_SystemBoolean_24 = __lcl_unlockedSkins_VRCSDK3DataDataList_2.Contains(__intnl_VRCSDK3DataDataToken_12);
+}
+if (__intnl_SystemBoolean_24)
+{
+}
+else
+{
+__2__intnlparam = __lcl_purchasableSkins_UnityEngineComponentArray_0;
+__3__intnlparam = __lcl_skin_VRCUdonUdonBehaviour_1;
+UNDEF_d4640_11332();
+__lcl_purchasableSkins_UnityEngineComponentArray_0 = __1__intnlparam;
+}
+}
+__lcl_i_SystemInt32_2 = __lcl_i_SystemInt32_2 + __const_SystemInt32_1;
+}
+__0___0_GetPurchasableSkinsForBoat__ret = __lcl_purchasableSkins_UnityEngineComponentArray_0;
+return;
+}
+public void __0_UnlockSkin()
+{
+get_playerInventoryData();
+__intnl_UnityEngineObject_12 = __0_get_playerInventoryData__ret;
+__intnl_UnityEngineObject_13 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_27 = __intnl_UnityEngineObject_12 == __intnl_UnityEngineObject_13;
+if (__intnl_SystemBoolean_27)
+{
+return;
+}
+GetUnlockedSkinsList();
+__lcl_unlockedSkins_VRCSDK3DataDataList_3 = __0_GetUnlockedSkinsList__ret;
+__intnl_SystemDouble_3 = Convert.ToDouble(__0_skinId__param);
+__intnl_VRCSDK3DataDataToken_13 = __intnl_SystemDouble_3;
+__intnl_SystemBoolean_28 = __lcl_unlockedSkins_VRCSDK3DataDataList_3.Contains(__intnl_VRCSDK3DataDataToken_13);
+if (__intnl_SystemBoolean_28)
+{
+}
+else
+{
+__intnl_SystemDouble_4 = Convert.ToDouble(__0_skinId__param);
+__intnl_VRCSDK3DataDataToken_14 = __intnl_SystemDouble_4;
+__lcl_unlockedSkins_VRCSDK3DataDataList_3.Add(__intnl_VRCSDK3DataDataToken_14);
+get_playerInventoryData();
+__intnl_VRCUdonUdonBehaviour_6 = __0_get_playerInventoryData__ret;
+__0_get_playerInventoryData__ret.SendCustomEvent(__const_SystemString_14);
+}
+}
+public void __0_IsSkinUnlocked()
+{
+__3_skinId__param = __1_skinId__param;
+__0_GetSkinById();
+__lcl_skin_VRCUdonUdonBehaviour_2 = __0___0_GetSkinById__ret;
+__intnl_UnityEngineObject_14 = __lcl_skin_VRCUdonUdonBehaviour_2;
+__intnl_UnityEngineObject_15 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_29 = __intnl_UnityEngineObject_14 == __intnl_UnityEngineObject_15;
+if (__intnl_SystemBoolean_29)
+{
+__0___0_IsSkinUnlocked__ret = __const_SystemBoolean_1;
+return;
+}
+__intnl_SystemObject_26 = __lcl_skin_VRCUdonUdonBehaviour_2.GetProgramVariable(__const_SystemString_10);
+__intnl_SystemBoolean_30 = (Boolean)__intnl_SystemObject_26;
+if (__intnl_SystemBoolean_30)
+{
+}
+else
+{
+__intnl_SystemInt32_11 = __2_playerLevel__param;
+__lcl_skin_VRCUdonUdonBehaviour_2.SetProgramVariable(__const_SystemString_11, __2_playerLevel__param);
+__lcl_skin_VRCUdonUdonBehaviour_2.SendCustomEvent(__const_SystemString_12);
+__intnl_SystemObject_27 = __lcl_skin_VRCUdonUdonBehaviour_2.GetProgramVariable(__const_SystemString_13);
+__intnl_SystemBoolean_31 = (Boolean)__intnl_SystemObject_27;
+__intnl_SystemBoolean_30 = __intnl_SystemBoolean_31;
+}
+if (__intnl_SystemBoolean_30)
+{
+__0___0_IsSkinUnlocked__ret = __const_SystemBoolean_0;
+return;
+}
+__intnl_SystemObject_28 = __lcl_skin_VRCUdonUdonBehaviour_2.GetProgramVariable(__const_SystemString_6);
+__intnl_VRCUdonUdonBehaviour_7 = (UdonBehaviour)__intnl_SystemObject_28;
+__intnl_UnityEngineObject_16 = __intnl_VRCUdonUdonBehaviour_7;
+__intnl_UnityEngineObject_17 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_33 = __intnl_UnityEngineObject_16 != __intnl_UnityEngineObject_17;
+if (__intnl_SystemBoolean_33)
+{
+__intnl_UnityEngineObject_18 = achievementManager;
+__intnl_UnityEngineObject_19 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_33 = __intnl_UnityEngineObject_18 != __intnl_UnityEngineObject_19;
+}
+__intnl_SystemBoolean_32 = __intnl_SystemBoolean_33;
+if (__intnl_SystemBoolean_32)
+{
+__intnl_SystemObject_29 = __lcl_skin_VRCUdonUdonBehaviour_2.GetProgramVariable(__const_SystemString_6);
+__intnl_VRCUdonUdonBehaviour_8 = (UdonBehaviour)__intnl_SystemObject_29;
+achievementManager.SetProgramVariable(__const_SystemString_7, __intnl_VRCUdonUdonBehaviour_8);
+achievementManager.SendCustomEvent(__const_SystemString_8);
+__intnl_SystemObject_30 = achievementManager.GetProgramVariable(__const_SystemString_9);
+__intnl_SystemBoolean_34 = (Boolean)__intnl_SystemObject_30;
+__intnl_SystemBoolean_32 = __intnl_SystemBoolean_34;
+}
+if (__intnl_SystemBoolean_32)
+{
+__0_skinId__param = __1_skinId__param;
+__0_UnlockSkin();
+__0___0_IsSkinUnlocked__ret = __const_SystemBoolean_0;
+return;
+}
+GetUnlockedSkinsList();
+__lcl_unlockedSkins_VRCSDK3DataDataList_4 = __0_GetUnlockedSkinsList__ret;
+__intnl_SystemDouble_5 = Convert.ToDouble(__1_skinId__param);
+__intnl_VRCSDK3DataDataToken_15 = __intnl_SystemDouble_5;
+__0___0_IsSkinUnlocked__ret = __lcl_unlockedSkins_VRCSDK3DataDataList_4.Contains(__intnl_VRCSDK3DataDataToken_15);
+return;
+}
+public void __0_SetSelectedSkin()
+{
+get_playerInventoryData();
+__intnl_UnityEngineObject_20 = __0_get_playerInventoryData__ret;
+__intnl_UnityEngineObject_21 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_35 = __intnl_UnityEngineObject_20 == __intnl_UnityEngineObject_21;
+if (__intnl_SystemBoolean_35)
+{
+return;
+}
+GetSelectedSkinsDict();
+__lcl_selectedSkins_VRCSDK3DataDataDictionary_0 = __0_GetSelectedSkinsDict__ret;
+__intnl_SystemString_0 = __3_boatId__param.ToString();
+__intnl_VRCSDK3DataDataToken_16 = __intnl_SystemString_0;
+__intnl_SystemDouble_6 = Convert.ToDouble(__2_skinId__param);
+__intnl_VRCSDK3DataDataToken_17 = DataToken.ctor(__intnl_SystemDouble_6);
+__lcl_selectedSkins_VRCSDK3DataDataDictionary_0.Item = __intnl_VRCSDK3DataDataToken_17;
+get_playerInventoryData();
+__intnl_VRCUdonUdonBehaviour_9 = __0_get_playerInventoryData__ret;
+__0_get_playerInventoryData__ret.SendCustomEvent(__const_SystemString_14);
+}
+public void __0_GetSelectedSkinForBoat()
+{
+GetSelectedSkinsDict();
+__lcl_selectedSkins_VRCSDK3DataDataDictionary_1 = __0_GetSelectedSkinsDict__ret;
+__lcl_boatIdStr_SystemString_0 = __4_boatId__param.ToString();
+__intnl_VRCSDK3DataDataToken_18 = __lcl_boatIdStr_SystemString_0;
+__intnl_SystemBoolean_36 = __lcl_selectedSkins_VRCSDK3DataDataDictionary_1.ContainsKey(__intnl_VRCSDK3DataDataToken_18);
+if (__intnl_SystemBoolean_36)
+{
+__intnl_VRCSDK3DataDataToken_19 = __lcl_boatIdStr_SystemString_0;
+__lcl_skinIdToken_VRCSDK3DataDataToken_0 = __lcl_selectedSkins_VRCSDK3DataDataDictionary_1.Item;
+__intnl_VRCSDK3DataTokenType_2 = __lcl_skinIdToken_VRCSDK3DataDataToken_0.TokenType;
+__intnl_SystemBoolean_37 = __intnl_VRCSDK3DataTokenType_2.Equals(__const_VRCSDK3DataTokenType_2);
+if (__intnl_SystemBoolean_37)
+{
+__intnl_SystemDouble_7 = __lcl_skinIdToken_VRCSDK3DataDataToken_0.Double;
+__intnl_SystemDouble_8 = Math.Truncate(__intnl_SystemDouble_7);
+__lcl_skinId_SystemInt32_0 = Convert.ToInt32(__intnl_SystemDouble_8);
+__3_skinId__param = __lcl_skinId_SystemInt32_0;
+__0_GetSkinById();
+__lcl_skin_VRCUdonUdonBehaviour_3 = __0___0_GetSkinById__ret;
+__intnl_UnityEngineObject_22 = __lcl_skin_VRCUdonUdonBehaviour_3;
+__intnl_UnityEngineObject_23 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_38 = __intnl_UnityEngineObject_22 != __intnl_UnityEngineObject_23;
+if (__intnl_SystemBoolean_38)
+{
+__1_skinId__param = __lcl_skinId_SystemInt32_0;
+__2_playerLevel__param = __3_playerLevel__param;
+__0_IsSkinUnlocked();
+__intnl_SystemBoolean_38 = __0___0_IsSkinUnlocked__ret;
+}
+if (__intnl_SystemBoolean_38)
+{
+__0___0_GetSelectedSkinForBoat__ret = __lcl_skin_VRCUdonUdonBehaviour_3;
+return;
+}
+}
+}
+__5_boatId__param = __4_boatId__param;
+__0_GetDefaultSkinForBoat();
+__0___0_GetSelectedSkinForBoat__ret = __0___0_GetDefaultSkinForBoat__ret;
+return;
+}
+public void __0_GetDefaultSkinForBoat()
+{
+__lcl_i_SystemInt32_3 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_12 = boatSkins.Length;
+__intnl_SystemBoolean_39 = __lcl_i_SystemInt32_3 < __intnl_SystemInt32_12;
+if (__intnl_SystemBoolean_39)
+{
+break;
+}
+__lcl_skin_VRCUdonUdonBehaviour_4 = (UdonBehaviour)(boatSkins[__lcl_i_SystemInt32_3]);
+__intnl_SystemObject_31 = __lcl_skin_VRCUdonUdonBehaviour_4.GetProgramVariable(__const_SystemString_3);
+__intnl_SystemInt32_13 = Convert.ToInt32(__intnl_SystemObject_31);
+__intnl_SystemBoolean_40 = __intnl_SystemInt32_13 == __5_boatId__param;
+if (__intnl_SystemBoolean_40)
+{
+__intnl_SystemObject_32 = __lcl_skin_VRCUdonUdonBehaviour_4.GetProgramVariable(__const_SystemString_10);
+__intnl_SystemBoolean_40 = (Boolean)__intnl_SystemObject_32;
+}
+if (__intnl_SystemBoolean_40)
+{
+__0___0_GetDefaultSkinForBoat__ret = __lcl_skin_VRCUdonUdonBehaviour_4;
+return;
+}
+__lcl_i_SystemInt32_3 = __lcl_i_SystemInt32_3 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_3 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_12 = boatSkins.Length;
+__intnl_SystemBoolean_39 = __lcl_i_SystemInt32_3 < __intnl_SystemInt32_12;
+if (__intnl_SystemBoolean_39)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_10 = (UdonBehaviour)(boatSkins[__lcl_i_SystemInt32_3]);
+__intnl_SystemObject_31 = __intnl_VRCUdonUdonBehaviour_10.GetProgramVariable(__const_SystemString_3);
+__intnl_SystemInt32_13 = Convert.ToInt32(__intnl_SystemObject_31);
+__intnl_SystemBoolean_40 = __intnl_SystemInt32_13 == __5_boatId__param;
+if (__intnl_SystemBoolean_40)
+{
+__0___0_GetDefaultSkinForBoat__ret = (UdonBehaviour)(boatSkins[__lcl_i_SystemInt32_3]);
+return;
+}
+__lcl_i_SystemInt32_3 = __lcl_i_SystemInt32_3 + __const_SystemInt32_1;
+}
+__0___0_GetDefaultSkinForBoat__ret = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+public void __0_GetSkinById()
+{
+__lcl_i_SystemInt32_4 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_14 = boatSkins.Length;
+__intnl_SystemBoolean_41 = __lcl_i_SystemInt32_4 < __intnl_SystemInt32_14;
+if (__intnl_SystemBoolean_41)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_11 = (UdonBehaviour)(boatSkins[__lcl_i_SystemInt32_4]);
+__intnl_SystemObject_33 = __intnl_VRCUdonUdonBehaviour_11.GetProgramVariable(__const_SystemString_5);
+__intnl_SystemInt32_15 = Convert.ToInt32(__intnl_SystemObject_33);
+__intnl_SystemBoolean_42 = __intnl_SystemInt32_15 == __3_skinId__param;
+if (__intnl_SystemBoolean_42)
+{
+__0___0_GetSkinById__ret = (UdonBehaviour)(boatSkins[__lcl_i_SystemInt32_4]);
+return;
+}
+__lcl_i_SystemInt32_4 = __lcl_i_SystemInt32_4 + __const_SystemInt32_1;
+}
+__0___0_GetSkinById__ret = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+public void GetAllSkins()
+{
+__0_GetAllSkins__ret = boatSkins;
+return;
+}
+public void __0_CanAffordSkin()
+{
+__3_skinId__param = __4_skinId__param;
+__0_GetSkinById();
+__lcl_skin_VRCUdonUdonBehaviour_5 = __0___0_GetSkinById__ret;
+__intnl_UnityEngineObject_24 = __lcl_skin_VRCUdonUdonBehaviour_5;
+__intnl_UnityEngineObject_25 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_43 = __intnl_UnityEngineObject_24 == __intnl_UnityEngineObject_25;
+if (__intnl_SystemBoolean_43)
+{
+__0___0_CanAffordSkin__ret = __const_SystemBoolean_1;
+return;
+}
+__intnl_SystemObject_34 = __lcl_skin_VRCUdonUdonBehaviour_5.GetProgramVariable(__const_SystemString_15);
+__intnl_SystemInt32_16 = Convert.ToInt32(__intnl_SystemObject_34);
+__0___0_CanAffordSkin__ret = __0_playerMoney__param >= __intnl_SystemInt32_16;
+return;
+}
+public void GetSkinCount()
+{
+__intnl_SystemBoolean_44 = boatSkins != __const_SystemObject_0;
+if (__intnl_SystemBoolean_44)
+{
+__0_GetSkinCount__ret = boatSkins.Length;
+}
+else
+{
+__0_GetSkinCount__ret = __const_SystemInt32_0;
+}
+return;
+}
+public void __0_GetUnlockedSkinCount()
+{
+__lcl_count_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_5 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_17 = boatSkins.Length;
+__intnl_SystemBoolean_45 = __lcl_i_SystemInt32_5 < __intnl_SystemInt32_17;
+if (__intnl_SystemBoolean_45)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_12 = (UdonBehaviour)(boatSkins[__lcl_i_SystemInt32_5]);
+__intnl_SystemObject_35 = __intnl_VRCUdonUdonBehaviour_12.GetProgramVariable(__const_SystemString_5);
+__intnl_SystemInt32_18 = Convert.ToInt32(__intnl_SystemObject_35);
+__1_skinId__param = __intnl_SystemInt32_18;
+__2_playerLevel__param = __4_playerLevel__param;
+__0_IsSkinUnlocked();
+if (__0___0_IsSkinUnlocked__ret)
+{
+__lcl_count_SystemInt32_0 = __lcl_count_SystemInt32_0 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_5 = __lcl_i_SystemInt32_5 + __const_SystemInt32_1;
+}
+__0___0_GetUnlockedSkinCount__ret = __lcl_count_SystemInt32_0;
+return;
+}
+private void UNDEF_d4640_11104()
+{
+__intnl_VRCSDKBaseVRCPlayerApi_0 = Networking.LocalPlayer;
+__5__intnlparam = __intnl_VRCSDKBaseVRCPlayerApi_0;
+UNDEF_d4640_11828();
+__0__intnlparam = __4__intnlparam;
+return;
+}
+private void UNDEF_d4640_11332()
+{
+__intnl_SystemInt32_19 = __2__intnlparam.Length;
+__intnl_SystemInt32_20 = __intnl_SystemInt32_19 + __const_SystemInt32_1;
+__lcl_newArray_UnityEngineComponentArray_0 = __intnl_SystemInt32_20.ctor();
+__2__intnlparam.CopyTo(__lcl_newArray_UnityEngineComponentArray_0, __const_SystemInt32_0);
+__intnl_SystemInt32_21 = __2__intnlparam.Length;
+__lcl_newArray_UnityEngineComponentArray_0.Set(__intnl_SystemInt32_21, __3__intnlparam);
+__1__intnlparam = __lcl_newArray_UnityEngineComponentArray_0;
+return;
+}
+private void UNDEF_d4640_11828()
+{
+__lcl_objects_UnityEngineGameObjectArray_0 = Networking.GetPlayerObjects(__5__intnlparam);
+__lcl_i_SystemInt32_6 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_22 = __lcl_objects_UnityEngineGameObjectArray_0.Length;
+__intnl_SystemBoolean_46 = __lcl_i_SystemInt32_6 < __intnl_SystemInt32_22;
+if (__intnl_SystemBoolean_46)
+{
+break;
+}
+__intnl_UnityEngineGameObject_0 = (GameObject)(__lcl_objects_UnityEngineGameObjectArray_0[__lcl_i_SystemInt32_6]);
+__intnl_SystemBoolean_47 = Utilities.IsValid(__intnl_UnityEngineGameObject_0);
+if (__intnl_SystemBoolean_47)
+{
+}
+else
+{
+}
+__intnl_UnityEngineGameObject_1 = (GameObject)(__lcl_objects_UnityEngineGameObjectArray_0[__lcl_i_SystemInt32_6]);
+__intnl_UnityEngineTransform_0 = __intnl_UnityEngineGameObject_1.transform;
+__7__intnlparam = __intnl_UnityEngineTransform_0;
+UNDEF_d4640_12336();
+__lcl_foundScript_VRCUdonUdonBehaviour_0 = __6__intnlparam;
+__intnl_SystemBoolean_48 = Utilities.IsValid(__lcl_foundScript_VRCUdonUdonBehaviour_0);
+if (__intnl_SystemBoolean_48)
+{
+__4__intnlparam = __lcl_foundScript_VRCUdonUdonBehaviour_0;
+return;
+}
+__lcl_i_SystemInt32_6 = __lcl_i_SystemInt32_6 + __const_SystemInt32_1;
+}
+__4__intnlparam = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+private void UNDEF_d4640_12336()
+{
+__intnl_UnityEngineComponentArray_0 = __7__intnlparam.GetComponentsInChildren(__const_SystemType_0);
+__lcl_udonBehaviours_UnityEngineComponentArray_0 = __intnl_UnityEngineComponentArray_0;
+__lcl_targetID_SystemInt64_0 = __const_SystemInt64_0;
+__intnl_SystemInt32_23 = __lcl_udonBehaviours_UnityEngineComponentArray_0.Length;
+__intnl_SystemInt32_24 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_49 = __intnl_SystemInt32_24 < __intnl_SystemInt32_23;
+if (__intnl_SystemBoolean_49)
+{
+break;
+}
+__lcl_behaviour_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(__lcl_udonBehaviours_UnityEngineComponentArray_0[__intnl_SystemInt32_24]);
+__lcl_idValue_SystemObject_0 = __lcl_behaviour_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_16);
+__intnl_SystemBoolean_50 = __lcl_idValue_SystemObject_0 != __const_SystemObject_0;
+if (__intnl_SystemBoolean_50)
+{
+__intnl_SystemInt64_0 = Convert.ToInt64(__lcl_idValue_SystemObject_0);
+__intnl_SystemBoolean_50 = __intnl_SystemInt64_0 == __lcl_targetID_SystemInt64_0;
+}
+if (__intnl_SystemBoolean_50)
+{
+__intnl_UnityEngineComponent_0 = __lcl_behaviour_VRCUdonUdonBehaviour_0;
+__6__intnlparam = (UdonBehaviour)__intnl_UnityEngineComponent_0;
+return;
+}
+__intnl_SystemInt32_24 = __intnl_SystemInt32_24 + __const_SystemInt32_1;
+}
+__6__intnlparam = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+}

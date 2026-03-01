@@ -1,0 +1,331 @@
+void get_playerInventoryData()
+24 __intnl_UnityEngineObject_0 = _playerInventoryData
+44 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+88 if (__intnl_SystemBoolean_0) //136
+{
+112 __0_get_playerInventoryData__ret = _playerInventoryData
+128 return;
+}
+144 JUMP 6208
+168 _playerInventoryData = __0__intnlparam
+188 __0_get_playerInventoryData__ret = _playerInventoryData
+204 return;
+224 return;
+void _onVarChange__playerInventoryData()
+248 __0_value__param = _playerInventoryData
+268 _playerInventoryData = _old__playerInventoryData
+void __0_set_playerInventoryData()
+296 _playerInventoryData = __0_value__param
+312 return;
+void _start()
+344 currentlySelectedBobber = defaultBobberIndex
+388 if (__intnl_SystemBoolean_1) //404
+{
+396 JUMP 460
+}
+468 if (__intnl_SystemBoolean_1) //496
+{
+492 currentlySelectedBobber = __const_SystemInt32_0
+}
+508 return;
+void __0_GetLocalPlayerBobbers()
+532 JUMP 8
+588 __intnl_VRCSDK3DataDataDictionary_0 = __intnl_SystemObject_0
+__lcl_unlockedBobbers_VRCSDK3DataDataList_0 = __0__intnlparam.GetProgramVariable(__const_SystemString_0).get_Item(__intnl_VRCSDK3DataDataToken_0).get_DataList();// 664
+__lcl_availableBobbers_UnityEngineComponentArray_0 = 0.ctor();// 688
+712 __lcl_i_SystemInt32_0 = __const_SystemInt32_0
+780 if (__intnl_SystemBoolean_2) //1404
+{
+__lcl_bobber_VRCUdonUdonBehaviour_0 = G_bobberEntries.Get(__lcl_i_SystemInt32_0);// 812
+836 __intnl_SystemInt32_2 = __0_playerLevel__param
+L_bobber.SetProgramVariable(__0_playerLevel__param, __const_SystemString_2);// 864
+L_bobber.SendCustomEvent(__const_SystemString_3);// 888
+944 __intnl_SystemBoolean_4 = __intnl_SystemObject_1
+964 __intnl_SystemBoolean_3 = __intnl_SystemBoolean_4
+976 if (__intnl_SystemBoolean_3) //992
+{
+984 JUMP 1044
+}
+1040 __intnl_SystemBoolean_3 = __intnl_SystemObject_2
+1052 if (__intnl_SystemBoolean_3) //1136
+{
+1084 __2__intnlparam = __lcl_availableBobbers_UnityEngineComponentArray_0
+1104 __3__intnlparam = __lcl_bobber_VRCUdonUdonBehaviour_0
+1108 JUMP 6320
+1132 __lcl_availableBobbers_UnityEngineComponentArray_0 = __1__intnlparam
+}
+1280 if (__intnl_SystemBoolean_5) //1364
+{
+1312 __2__intnlparam = __lcl_availableBobbers_UnityEngineComponentArray_0
+1332 __3__intnlparam = __lcl_bobber_VRCUdonUdonBehaviour_0
+1336 JUMP 6320
+1360 __lcl_availableBobbers_UnityEngineComponentArray_0 = __1__intnlparam
+}
+__lcl_i_SystemInt32_0 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_0);// 1388
+1396 JUMP 716
+}
+1420 __0___0_GetLocalPlayerBobbers__ret = __lcl_availableBobbers_UnityEngineComponentArray_0
+1436 return;
+1456 return;
+void GetInventoryBobbers()
+1480 JUMP 8
+1536 __intnl_VRCSDK3DataDataDictionary_1 = __intnl_SystemObject_4
+__lcl_unlockedBobbers_VRCSDK3DataDataList_1 = __0__intnlparam.GetProgramVariable(__const_SystemString_0).get_Item(__intnl_VRCSDK3DataDataToken_3).get_DataList();// 1612
+__lcl_availableBobbers_UnityEngineComponentArray_1 = 0.ctor();// 1636
+1660 __lcl_i_SystemInt32_1 = __const_SystemInt32_0
+1728 if (__intnl_SystemBoolean_6) //2036
+{
+__lcl_bobber_VRCUdonUdonBehaviour_1 = G_bobberEntries.Get(__lcl_i_SystemInt32_1);// 1760
+1912 if (__intnl_SystemBoolean_7) //1996
+{
+1944 __2__intnlparam = __lcl_availableBobbers_UnityEngineComponentArray_1
+1964 __3__intnlparam = __lcl_bobber_VRCUdonUdonBehaviour_1
+1968 JUMP 6320
+1992 __lcl_availableBobbers_UnityEngineComponentArray_1 = __1__intnlparam
+}
+__lcl_i_SystemInt32_1 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_1);// 2020
+2028 JUMP 1664
+}
+2052 __0_GetInventoryBobbers__ret = __lcl_availableBobbers_UnityEngineComponentArray_1
+2068 return;
+2088 return;
+void GetCurrentBobber()
+2144 if (__intnl_SystemBoolean_8) //2160
+{
+2152 JUMP 2216
+}
+2224 if (__intnl_SystemBoolean_8) //2272
+{
+2248 __0_GetCurrentBobber__ret = __const_SystemObject_0
+2264 return;
+}
+2312 if (__intnl_SystemBoolean_9) //2328
+{
+2320 JUMP 2384
+}
+2392 if (__intnl_SystemBoolean_9) //2420
+{
+2416 currentlySelectedBobber = __const_SystemInt32_0
+}
+__0_GetCurrentBobber__ret = G_bobberEntries.Get(currentlySelectedBobber);// 2444
+2464 return;
+2484 return;
+void __0_SelectBobberById()
+2516 __lcl_i_SystemInt32_2 = __const_SystemInt32_0
+2584 if (__intnl_SystemBoolean_10) //2828
+{
+2720 if (__intnl_SystemBoolean_11) //2788
+{
+2744 currentlySelectedBobber = __lcl_i_SystemInt32_2
+2764 __0___0_SelectBobberById__ret = __const_SystemBoolean_0
+2780 return;
+}
+__lcl_i_SystemInt32_2 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_2);// 2812
+2820 JUMP 2520
+}
+2844 __0___0_SelectBobberById__ret = __const_SystemBoolean_1
+2860 return;
+2880 return;
+void __0_SelectBobber()
+2936 if (__intnl_SystemBoolean_12) //2952
+{
+2944 JUMP 3008
+}
+3016 if (__intnl_SystemBoolean_12) //3064
+{
+3040 __0___0_SelectBobber__ret = __const_SystemBoolean_1
+3056 return;
+}
+3080 currentlySelectedBobber = __0_index__param
+3100 __0___0_SelectBobber__ret = __const_SystemBoolean_0
+3116 return;
+3136 return;
+void __0_SelectBobberByName()
+3168 __lcl_i_SystemInt32_3 = __const_SystemInt32_0
+3236 if (__intnl_SystemBoolean_13) //3476
+{
+3324 __intnl_SystemString_0 = __intnl_SystemObject_7
+3368 if (__intnl_SystemBoolean_14) //3436
+{
+3392 currentlySelectedBobber = __lcl_i_SystemInt32_3
+3412 __0___0_SelectBobberByName__ret = __const_SystemBoolean_0
+3428 return;
+}
+__lcl_i_SystemInt32_3 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_3);// 3460
+3468 JUMP 3172
+}
+3492 __0___0_SelectBobberByName__ret = __const_SystemBoolean_1
+3508 return;
+3528 return;
+void __0_GetBobberById()
+3560 __lcl_i_SystemInt32_4 = __const_SystemInt32_0
+3628 if (__intnl_SystemBoolean_15) //3864
+{
+3764 if (__intnl_SystemBoolean_16) //3824
+{
+__0___0_GetBobberById__ret = G_bobberEntries.Get(__lcl_i_SystemInt32_4);// 3796
+3816 return;
+}
+__lcl_i_SystemInt32_4 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_4);// 3848
+3856 JUMP 3564
+}
+3880 __0___0_GetBobberById__ret = __const_SystemObject_0
+3896 return;
+3916 return;
+void __0_GetBobber()
+3972 if (__intnl_SystemBoolean_17) //3988
+{
+3980 JUMP 4044
+}
+4052 if (__intnl_SystemBoolean_17) //4100
+{
+4076 __0___0_GetBobber__ret = __const_SystemObject_0
+4092 return;
+}
+__0___0_GetBobber__ret = G_bobberEntries.Get(__1_index__param);// 4124
+4144 return;
+4164 return;
+void GetAllBobbers()
+4196 __0_GetAllBobbers__ret = bobberEntries
+4212 return;
+4232 return;
+void __0_GetUnlockedBobbers()
+4264 __lcl_unlockedCount_SystemInt32_0 = __const_SystemInt32_0
+4284 __lcl_i_SystemInt32_5 = __const_SystemInt32_0
+4352 if (__intnl_SystemBoolean_18) //4608
+{
+4408 __intnl_SystemInt32_16 = __1_playerLevel__param
+G_bobberEntries.Get(__lcl_i_SystemInt32_5).SetProgramVariable(__1_playerLevel__param, __const_SystemString_8);// 4436
+G_bobberEntries.Get(__lcl_i_SystemInt32_5).SendCustomEvent(__const_SystemString_9);// 4460
+4516 __intnl_SystemBoolean_19 = __intnl_SystemObject_9
+4528 if (__intnl_SystemBoolean_19) //4568
+{
+__lcl_unlockedCount_SystemInt32_0 = op_Addition(__const_SystemInt32_1, __lcl_unlockedCount_SystemInt32_0);// 4560
+}
+__lcl_i_SystemInt32_5 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_5);// 4592
+4600 JUMP 4288
+}
+__lcl_unlockedBobbers_UnityEngineComponentArray_0 = 0.ctor();// 4624
+4648 __lcl_index_SystemInt32_0 = __const_SystemInt32_0
+4668 __lcl_i_SystemInt32_5 = __const_SystemInt32_0
+4736 if (__intnl_SystemBoolean_18) //5056
+{
+4792 __intnl_SystemInt32_16 = __1_playerLevel__param
+G_bobberEntries.Get(__lcl_i_SystemInt32_5).SetProgramVariable(__1_playerLevel__param, __const_SystemString_8);// 4820
+G_bobberEntries.Get(__lcl_i_SystemInt32_5).SendCustomEvent(__const_SystemString_9);// 4844
+4900 __intnl_SystemBoolean_19 = __intnl_SystemObject_9
+4912 if (__intnl_SystemBoolean_19) //5016
+{
+L_unlockedBobbers.Set(__intnl_VRCUdonUdonBehaviour_4, __lcl_index_SystemInt32_0);// 4976
+__lcl_index_SystemInt32_0 = op_Addition(__const_SystemInt32_1, __lcl_index_SystemInt32_0);// 5008
+}
+__lcl_i_SystemInt32_5 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_5);// 5040
+5048 JUMP 4672
+}
+5072 __0___0_GetUnlockedBobbers__ret = __lcl_unlockedBobbers_UnityEngineComponentArray_0
+5088 return;
+5108 return;
+void __0_GetBobbersToUnlockAtLevel()
+5140 __lcl_autoUnlockCount_SystemInt32_0 = __const_SystemInt32_0
+5160 __lcl_i_SystemInt32_6 = __const_SystemInt32_0
+5228 if (__intnl_SystemBoolean_20) //5484
+{
+5284 __intnl_SystemInt32_18 = __2_playerLevel__param
+G_bobberEntries.Get(__lcl_i_SystemInt32_6).SetProgramVariable(__2_playerLevel__param, __const_SystemString_2);// 5312
+G_bobberEntries.Get(__lcl_i_SystemInt32_6).SendCustomEvent(__const_SystemString_3);// 5336
+5392 __intnl_SystemBoolean_21 = __intnl_SystemObject_10
+5404 if (__intnl_SystemBoolean_21) //5444
+{
+__lcl_autoUnlockCount_SystemInt32_0 = op_Addition(__const_SystemInt32_1, __lcl_autoUnlockCount_SystemInt32_0);// 5436
+}
+__lcl_i_SystemInt32_6 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_6);// 5468
+5476 JUMP 5164
+}
+__lcl_autoUnlockBobbers_UnityEngineComponentArray_0 = 0.ctor();// 5500
+5524 __lcl_index_SystemInt32_1 = __const_SystemInt32_0
+5544 __lcl_i_SystemInt32_6 = __const_SystemInt32_0
+5612 if (__intnl_SystemBoolean_20) //5932
+{
+5668 __intnl_SystemInt32_18 = __2_playerLevel__param
+G_bobberEntries.Get(__lcl_i_SystemInt32_6).SetProgramVariable(__2_playerLevel__param, __const_SystemString_2);// 5696
+G_bobberEntries.Get(__lcl_i_SystemInt32_6).SendCustomEvent(__const_SystemString_3);// 5720
+5776 __intnl_SystemBoolean_21 = __intnl_SystemObject_10
+5788 if (__intnl_SystemBoolean_21) //5892
+{
+L_autoUnlockBobbers.Set(__intnl_VRCUdonUdonBehaviour_6, __lcl_index_SystemInt32_1);// 5852
+__lcl_index_SystemInt32_1 = op_Addition(__const_SystemInt32_1, __lcl_index_SystemInt32_1);// 5884
+}
+__lcl_i_SystemInt32_6 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_6);// 5916
+5924 JUMP 5548
+}
+5948 __0___0_GetBobbersToUnlockAtLevel__ret = __lcl_autoUnlockBobbers_UnityEngineComponentArray_0
+5964 return;
+5984 return;
+void GetCurrentBobberIndex()
+6016 __0_GetCurrentBobberIndex__ret = currentlySelectedBobber
+6032 return;
+6052 return;
+void GetBobberCount()
+6108 if (__intnl_SystemBoolean_22) //6148
+{
+__0_GetBobberCount__ret = G_bobberEntries.get_Length();// 6132
+6140 JUMP 6168
+}
+6164 __0_GetBobberCount__ret = __const_SystemInt32_0
+6180 return;
+6200 return;
+6248 __5__intnlparam = __intnl_VRCSDKBaseVRCPlayerApi_0
+6252 JUMP 6548
+6276 __0__intnlparam = __4__intnlparam
+6292 return;
+6312 return;
+__lcl_newArray_UnityEngineComponentArray_0 = op_Addition(__const_SystemInt32_1, __intnl_SystemInt32_19).ctor();// 6392
+L_availableBobbers.CopyTo(__const_SystemInt32_0, __lcl_newArray_UnityEngineComponentArray_0);// 6424
+L_newArray.Set(__3__intnlparam, __intnl_SystemInt32_21);// 6480
+6504 __1__intnlparam = __lcl_newArray_UnityEngineComponentArray_0
+6520 return;
+6540 return;
+__lcl_objects_UnityEngineGameObjectArray_0 = GetPlayerObjects(__5__intnlparam);// 6564
+6588 __lcl_i_SystemInt32_7 = __const_SystemInt32_0
+6656 if (__intnl_SystemBoolean_23) //6984
+{
+6728 if (__intnl_SystemBoolean_24) //6744
+{
+6736 JUMP 6752
+}
+6744 JUMP 6944
+6832 __7__intnlparam = __intnl_UnityEngineTransform_0
+6836 JUMP 7044
+6860 __lcl_foundScript_VRCUdonUdonBehaviour_0 = __6__intnlparam
+6896 if (__intnl_SystemBoolean_25) //6944
+{
+6920 __4__intnlparam = __lcl_foundScript_VRCUdonUdonBehaviour_0
+6936 return;
+}
+__lcl_i_SystemInt32_7 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_7);// 6968
+6976 JUMP 6592
+}
+7000 __4__intnlparam = __const_SystemObject_0
+7016 return;
+7036 return;
+7092 __lcl_udonBehaviours_UnityEngineComponentArray_0 = __intnl_UnityEngineComponentArray_0
+7112 __lcl_targetID_SystemInt64_0 = __const_SystemInt64_0
+7156 __intnl_SystemInt32_24 = __const_SystemInt32_0
+7200 if (__intnl_SystemBoolean_26) //7492
+{
+__lcl_behaviour_VRCUdonUdonBehaviour_0 = L_objects.Get(__lcl_i_SystemInt32_7).get_transform().GetComponentsInChildren(__const_SystemType_0).Get(__intnl_SystemInt32_24);// 7232
+__lcl_idValue_SystemObject_0 = L_behaviour.GetProgramVariable(__const_SystemString_11);// 7264
+7312 if (__intnl_SystemBoolean_27) //7376
+{
+}
+7384 if (__intnl_SystemBoolean_27) //7452
+{
+7408 __intnl_UnityEngineComponent_0 = __lcl_behaviour_VRCUdonUdonBehaviour_0
+7428 __6__intnlparam = __intnl_UnityEngineComponent_0
+7444 return;
+}
+7484 JUMP 7160
+}
+7508 __6__intnlparam = __const_SystemObject_0
+7524 return;
+7544 return;

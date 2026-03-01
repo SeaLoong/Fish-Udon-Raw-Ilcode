@@ -1,0 +1,112 @@
+using System;
+using UnityEngine;
+using VRC.Economy;
+using VRC.Udon;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Single __intnl_SystemSingle_0 = 0f;
+private String __const_SystemString_0 = "F1";
+private Single __const_SystemSingle_0 = 1000000f;
+private Boolean __const_SystemBoolean_0 = false;
+public Sprite skinIcon;
+private Int64 __refl_typeid = -787813258696975998;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+public String skinName;
+public UdonProduct requiredProduct;
+public Boolean isUnlockedFromLevel;
+private String __const_SystemString_2 = "F0";
+private String __0_GetFormattedPrice__ret = null;
+private String __intnl_SystemString_0 = null;
+private Single __intnl_SystemSingle_1 = 0f;
+private Single __const_SystemSingle_1 = 1000f;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+public Int32 skinId;
+public UdonBehaviour requiredAchievement;
+public Boolean isDefaultSkin;
+public Int32 skinPrice;
+private Int32 __0_playerMoney__param = 0;
+private String __refl_typename = "BoatSkin";
+private String __const_SystemString_1 = "M";
+private Int32 __0_playerLevel__param = 0;
+private Boolean __0___0_CanPurchaseSkin__ret = false;
+public Int32 unlockLevel;
+public Boolean disabled;
+public Boolean nonPurchaseable;
+private Int32 __1_playerLevel__param = 0;
+private Int32 __const_SystemInt32_1 = 10000;
+private Int32 __const_SystemInt32_0 = 1000000;
+public Material skinMaterial;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __0___0_ShouldAutoUnlockAtLevel__ret = false;
+public Int32 compatibleBoatId;
+private String __const_SystemString_3 = "K";
+
+
+public void GetFormattedPrice()
+{
+__intnl_SystemBoolean_0 = skinPrice >= __const_SystemInt32_0;
+if (__intnl_SystemBoolean_0)
+{
+__intnl_SystemSingle_0 = Convert.ToSingle(skinPrice);
+__intnl_SystemSingle_1 = __intnl_SystemSingle_0 / __const_SystemSingle_0;
+__intnl_SystemString_0 = __intnl_SystemSingle_1.ToString(__const_SystemString_0);
+__0_GetFormattedPrice__ret = __intnl_SystemString_0 + __const_SystemString_1;
+return;
+}
+else
+{
+__intnl_SystemBoolean_1 = skinPrice >= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_1)
+{
+__intnl_SystemSingle_0 = Convert.ToSingle(skinPrice);
+__intnl_SystemSingle_1 = __intnl_SystemSingle_0 / __const_SystemSingle_1;
+__intnl_SystemString_0 = __intnl_SystemSingle_1.ToString(__const_SystemString_2);
+__0_GetFormattedPrice__ret = __intnl_SystemString_0 + __const_SystemString_3;
+return;
+}
+else
+{
+__0_GetFormattedPrice__ret = skinPrice.ToString();
+return;
+}
+}
+}
+public void __0_CanPurchaseSkin()
+{
+if (isDefaultSkin)
+{
+__0___0_CanPurchaseSkin__ret = __const_SystemBoolean_0;
+return;
+}
+if (nonPurchaseable)
+{
+__0___0_CanPurchaseSkin__ret = __const_SystemBoolean_0;
+return;
+}
+__intnl_SystemBoolean_2 = isUnlockedFromLevel;
+if (__intnl_SystemBoolean_2)
+{
+__intnl_SystemBoolean_2 = __0_playerLevel__param < unlockLevel;
+}
+if (__intnl_SystemBoolean_2)
+{
+__0___0_CanPurchaseSkin__ret = __const_SystemBoolean_0;
+return;
+}
+__0___0_CanPurchaseSkin__ret = __0_playerMoney__param >= skinPrice;
+return;
+}
+public void __0_ShouldAutoUnlockAtLevel()
+{
+__intnl_SystemBoolean_3 = isUnlockedFromLevel;
+if (__intnl_SystemBoolean_3)
+{
+__intnl_SystemBoolean_3 = __1_playerLevel__param >= unlockLevel;
+}
+__0___0_ShouldAutoUnlockAtLevel__ret = __intnl_SystemBoolean_3;
+return;
+}
+}

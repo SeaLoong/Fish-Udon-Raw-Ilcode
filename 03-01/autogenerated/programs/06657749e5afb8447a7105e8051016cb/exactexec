@@ -1,0 +1,321 @@
+using System;
+using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
+using VRC.Udon;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Boolean __intnl_SystemBoolean_13 = false;
+private Boolean __0_current__param = false;
+private Object __intnl_UnityEngineObject_22 = null;
+private Object __intnl_UnityEngineObject_12 = null;
+private object __intnl_SystemObject_0 = null;
+private String __const_SystemString_0 = "Day ";
+private Single __const_SystemSingle_0 = 1.1f;
+public TextMeshProUGUI dayNumberText;
+public TextMeshProUGUI rewardNameText;
+private Boolean __intnl_SystemBoolean_16 = false;
+private UInt32 __gintnl_SystemUInt32_1 = 692;
+private UInt32 __gintnl_SystemUInt32_0 = 676;
+private UInt32 __gintnl_SystemUInt32_3 = 1452;
+private UInt32 __gintnl_SystemUInt32_2 = 1436;
+public GameObject currentDayHighlight;
+private Boolean __const_SystemBoolean_0 = true;
+private Boolean __const_SystemBoolean_1 = false;
+private Object __intnl_UnityEngineObject_21 = null;
+private Object __intnl_UnityEngineObject_11 = null;
+public String claimAvailableText;
+private String __const_SystemString_5 = "__0_ClaimDayReward";
+public Color currentColor;
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Object __intnl_UnityEngineObject_19 = null;
+public Color claimedColor;
+private Object __intnl_UnityEngineObject_24 = null;
+private Object __intnl_UnityEngineObject_14 = null;
+private Int64 __refl_typeid = 8345992370572133739;
+public Image backgroundImage;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Boolean __intnl_SystemBoolean_11 = false;
+private object __intnl_SystemObject_2 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_1 = null;
+private String __const_SystemString_2 = "__0_get_IsReady__ret";
+private Color __const_UnityEngineColor_0 = new Color(1f, 1f, 1f, 0.6f);
+private Color __intnl_UnityEngineColor_0 = new Color(0f, 0f, 0f, 0f);
+private GameObject __intnl_UnityEngineGameObject_1 = null;
+private GameObject __intnl_UnityEngineGameObject_0 = null;
+private Boolean __intnl_SystemBoolean_14 = false;
+private Sprite __0_rewardIcon__param = null;
+private object __const_SystemObject_0 = null;
+private String __intnl_SystemString_0 = null;
+private Boolean __lcl_success_SystemBoolean_0 = false;
+private Object __intnl_UnityEngineObject_23 = null;
+private Object __intnl_UnityEngineObject_13 = null;
+private object __intnl_SystemObject_1 = null;
+private String __const_SystemString_7 = "ClaimReward";
+public Color buttonClaimableColor;
+private Single __const_SystemSingle_1 = 0.9f;
+public String lockedText;
+private Object __intnl_UnityEngineObject_16 = null;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private String __const_SystemString_4 = "__2_day__param";
+public UdonBehaviour rewardManager;
+public GameObject lockedOverlay;
+private Int32 __0_dayNumber__param = 0;
+private ColorBlock __lcl_buttonColors_UnityEngineUIColorBlock_0 = UnityEngine.UI.ColorBlock;
+private Boolean canClaim = false;
+private Object __intnl_UnityEngineObject_25 = null;
+private Object __intnl_UnityEngineObject_15 = null;
+private String __0_rewardName__param = null;
+private Boolean __intnl_SystemBoolean_12 = false;
+private Boolean isClaimed = false;
+public Color lockedColor;
+public TextMeshProUGUI claimButtonText;
+private String __refl_typename = "DailyRewardDaySlot";
+private Int32 day = 1;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Boolean __0_claimed__param = false;
+private String __const_SystemString_1 = "get_IsReady";
+private Color __const_UnityEngineColor_1 = new Color(1f, 1f, 1f, 1f);
+private Color __intnl_UnityEngineColor_1 = new Color(0f, 0f, 0f, 0f);
+private Boolean __intnl_SystemBoolean_15 = false;
+private Object __intnl_UnityEngineObject_20 = null;
+private Object __intnl_UnityEngineObject_10 = null;
+private String __const_SystemString_6 = "__0___0_ClaimDayReward__ret";
+public String alreadyClaimedText;
+private Boolean isCurrentDay = false;
+private Object __intnl_UnityEngineObject_18 = null;
+private Object __intnl_UnityEngineObject_17 = null;
+private Boolean __intnl_SystemBoolean_10 = false;
+public Color buttonLockedColor;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+public Color normalColor;
+public GameObject claimedCheckmark;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_0 = null;
+public Image rewardIconImage;
+public Button claimButton;
+private String __const_SystemString_3 = "testingUnlockAllDays";
+public Color buttonClaimedColor;
+
+
+public void __0_SetupSlot()
+{
+day = __0_dayNumber__param;
+isClaimed = __0_claimed__param;
+isCurrentDay = __0_current__param;
+__intnl_SystemBoolean_0 = __0_current__param;
+if (__intnl_SystemBoolean_0)
+{
+__intnl_SystemBoolean_0 = !__0_claimed__param;
+}
+canClaim = __intnl_SystemBoolean_0;
+__intnl_UnityEngineObject_0 = dayNumberText;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_1)
+{
+__intnl_SystemString_0 = String.Concat(__const_SystemString_0, __0_dayNumber__param);
+dayNumberText.text = __intnl_SystemString_0;
+}
+__intnl_UnityEngineObject_2 = rewardNameText;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_2 = __intnl_UnityEngineObject_2 != __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_2)
+{
+rewardNameText.text = __0_rewardName__param;
+}
+__intnl_UnityEngineObject_4 = rewardIconImage;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_3 = __intnl_UnityEngineObject_4 != __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_3)
+{
+__intnl_UnityEngineObject_6 = __0_rewardIcon__param;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_4 = __intnl_UnityEngineObject_6 != __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_4)
+{
+rewardIconImage.sprite = __0_rewardIcon__param;
+rewardIconImage.enabled = __const_SystemBoolean_0;
+}
+else
+{
+rewardIconImage.enabled = __const_SystemBoolean_1;
+}
+}
+UNDEF_06657_2352();
+UNDEF_06657_2560();
+}
+public void OnClaimButtonClick()
+{
+__intnl_UnityEngineObject_8 = rewardManager;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_5 = __intnl_UnityEngineObject_8 == __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_5)
+{
+}
+else
+{
+__intnl_VRCUdonUdonBehaviour_0 = rewardManager;
+rewardManager.SendCustomEvent(__const_SystemString_1);
+__intnl_SystemObject_0 = rewardManager.GetProgramVariable(__const_SystemString_2);
+__intnl_SystemBoolean_6 = (Boolean)__intnl_SystemObject_0;
+__intnl_SystemBoolean_5 = !__intnl_SystemBoolean_6;
+}
+if (__intnl_SystemBoolean_5)
+{
+return;
+}
+if (canClaim)
+{
+UNDEF_06657_1536();
+}
+}
+private void UNDEF_06657_1536()
+{
+__intnl_UnityEngineObject_10 = claimButton;
+__intnl_UnityEngineObject_11 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_7 = __intnl_UnityEngineObject_10 != __intnl_UnityEngineObject_11;
+if (__intnl_SystemBoolean_7)
+{
+claimButton.interactable = __const_SystemBoolean_1;
+}
+__intnl_SystemObject_1 = rewardManager.GetProgramVariable(__const_SystemString_3);
+__intnl_SystemBoolean_8 = (Boolean)__intnl_SystemObject_1;
+if (__intnl_SystemBoolean_8)
+{
+__intnl_SystemInt32_0 = day;
+rewardManager.SetProgramVariable(__const_SystemString_4, day);
+rewardManager.SendCustomEvent(__const_SystemString_5);
+__intnl_SystemObject_2 = rewardManager.GetProgramVariable(__const_SystemString_6);
+__intnl_SystemBoolean_9 = (Boolean)__intnl_SystemObject_2;
+__lcl_success_SystemBoolean_0 = __intnl_SystemBoolean_9;
+if (__lcl_success_SystemBoolean_0)
+{
+isClaimed = __const_SystemBoolean_0;
+isCurrentDay = __const_SystemBoolean_1;
+canClaim = __const_SystemBoolean_1;
+UNDEF_06657_2352();
+UNDEF_06657_2560();
+}
+return;
+}
+__intnl_VRCUdonUdonBehaviour_1 = rewardManager;
+rewardManager.SendCustomEvent(__const_SystemString_7);
+}
+private void UNDEF_06657_2352()
+{
+__intnl_UnityEngineObject_12 = claimedCheckmark;
+__intnl_UnityEngineObject_13 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_10 = __intnl_UnityEngineObject_12 != __intnl_UnityEngineObject_13;
+if (__intnl_SystemBoolean_10)
+{
+claimedCheckmark.SetActive(isClaimed);
+}
+__intnl_UnityEngineObject_14 = currentDayHighlight;
+__intnl_UnityEngineObject_15 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_11 = __intnl_UnityEngineObject_14 != __intnl_UnityEngineObject_15;
+if (__intnl_SystemBoolean_11)
+{
+currentDayHighlight.SetActive(isCurrentDay);
+}
+__intnl_UnityEngineObject_16 = lockedOverlay;
+__intnl_UnityEngineObject_17 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_12 = __intnl_UnityEngineObject_16 != __intnl_UnityEngineObject_17;
+if (__intnl_SystemBoolean_12)
+{
+__intnl_UnityEngineGameObject_0 = lockedOverlay;
+__intnl_SystemBoolean_13 = !isClaimed;
+if (__intnl_SystemBoolean_13)
+{
+__intnl_SystemBoolean_13 = !isCurrentDay;
+}
+__intnl_UnityEngineGameObject_0.SetActive(__intnl_SystemBoolean_13);
+}
+__intnl_UnityEngineObject_18 = backgroundImage;
+__intnl_UnityEngineObject_19 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_13 = __intnl_UnityEngineObject_18 != __intnl_UnityEngineObject_19;
+if (__intnl_SystemBoolean_13)
+{
+if (isClaimed)
+{
+backgroundImage.color = claimedColor;
+}
+else
+{
+if (isCurrentDay)
+{
+backgroundImage.color = currentColor;
+}
+else
+{
+backgroundImage.color = lockedColor;
+}
+}
+}
+__intnl_UnityEngineObject_20 = rewardIconImage;
+__intnl_UnityEngineObject_21 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_14 = __intnl_UnityEngineObject_20 != __intnl_UnityEngineObject_21;
+if (__intnl_SystemBoolean_14)
+{
+if (isClaimed)
+{
+rewardIconImage.color = __const_UnityEngineColor_0;
+}
+else
+{
+rewardIconImage.color = __const_UnityEngineColor_1;
+}
+}
+}
+private void UNDEF_06657_2560()
+{
+__intnl_UnityEngineObject_22 = claimButton;
+__intnl_UnityEngineObject_23 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_15 = __intnl_UnityEngineObject_22 == __intnl_UnityEngineObject_23;
+if (__intnl_SystemBoolean_15)
+{
+return;
+}
+__intnl_UnityEngineGameObject_1 = claimButton.gameObject;
+__intnl_UnityEngineGameObject_1.SetActive(canClaim);
+if (canClaim)
+{
+UNDEF_06657_2876();
+}
+}
+private void UNDEF_06657_2876()
+{
+__intnl_UnityEngineObject_24 = claimButtonText;
+__intnl_UnityEngineObject_25 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_16 = __intnl_UnityEngineObject_24 != __intnl_UnityEngineObject_25;
+if (__intnl_SystemBoolean_16)
+{
+claimButtonText.text = claimAvailableText;
+}
+__lcl_buttonColors_UnityEngineUIColorBlock_0 = claimButton.colors;
+__lcl_buttonColors_UnityEngineUIColorBlock_0.normalColor = buttonClaimableColor;
+__intnl_UnityEngineColor_0 = buttonClaimableColor * __const_SystemSingle_0;
+__lcl_buttonColors_UnityEngineUIColorBlock_0.highlightedColor = __intnl_UnityEngineColor_0;
+__intnl_UnityEngineColor_1 = buttonClaimableColor * __const_SystemSingle_1;
+__lcl_buttonColors_UnityEngineUIColorBlock_0.pressedColor = __intnl_UnityEngineColor_1;
+claimButton.colors = __lcl_buttonColors_UnityEngineUIColorBlock_0;
+}
+}

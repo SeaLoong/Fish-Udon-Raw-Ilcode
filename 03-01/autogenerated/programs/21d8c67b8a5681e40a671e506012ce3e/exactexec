@@ -1,0 +1,78 @@
+using System;
+using UnityEngine;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private UInt32 __gintnl_SystemUInt32_0 = 44;
+private Boolean __const_SystemBoolean_0 = false;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Int64 __refl_typeid = 9048033226637003906;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+public GameObject[] phoneOnlyElements;
+private GameObject __intnl_UnityEngineGameObject_1 = null;
+private GameObject __intnl_UnityEngineGameObject_0 = null;
+private object __const_SystemObject_0 = null;
+public Boolean isPhone;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private Int32 __lcl_i_SystemInt32_0 = 0;
+private String __refl_typename = "PhoneUIManager";
+public GameObject[] hideOnPhoneElements;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __const_SystemInt32_1 = 1;
+private Int32 __const_SystemInt32_0 = 0;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+
+
+public void _start()
+{
+isPhone = __const_SystemBoolean_0;
+UNDEF_21d8c_732();
+}
+private void UNDEF_21d8c_732()
+{
+__lcl_i_SystemInt32_0 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_0 = phoneOnlyElements.Length;
+__intnl_SystemBoolean_0 = __lcl_i_SystemInt32_0 < __intnl_SystemInt32_0;
+if (__intnl_SystemBoolean_0)
+{
+break;
+}
+__intnl_UnityEngineGameObject_0 = (GameObject)(phoneOnlyElements[__lcl_i_SystemInt32_0]);
+__intnl_UnityEngineObject_0 = __intnl_UnityEngineGameObject_0;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_1)
+{
+__intnl_UnityEngineGameObject_1 = (GameObject)(phoneOnlyElements[__lcl_i_SystemInt32_0]);
+__intnl_UnityEngineGameObject_1.SetActive(isPhone);
+}
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_0 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_0 = hideOnPhoneElements.Length;
+__intnl_SystemBoolean_0 = __lcl_i_SystemInt32_0 < __intnl_SystemInt32_0;
+if (__intnl_SystemBoolean_0)
+{
+break;
+}
+__intnl_UnityEngineGameObject_0 = (GameObject)(hideOnPhoneElements[__lcl_i_SystemInt32_0]);
+__intnl_UnityEngineObject_0 = __intnl_UnityEngineGameObject_0;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_1)
+{
+__intnl_UnityEngineGameObject_1 = (GameObject)(hideOnPhoneElements[__lcl_i_SystemInt32_0]);
+__intnl_SystemBoolean_2 = !isPhone;
+__intnl_UnityEngineGameObject_1.SetActive(__intnl_SystemBoolean_2);
+}
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_1;
+}
+}
+}

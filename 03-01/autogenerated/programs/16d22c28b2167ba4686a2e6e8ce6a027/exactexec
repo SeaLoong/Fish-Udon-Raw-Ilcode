@@ -1,0 +1,382 @@
+using System;
+using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
+using VRC.Udon.Common.Enums;
+using VRC.Udon;
+using VRC.SDKBase;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Boolean __intnl_SystemBoolean_13 = false;
+private Int32 _currentHealth = 0;
+private UInt32 __gintnl_SystemUInt32_16 = 3064;
+private Object __intnl_UnityEngineObject_22 = null;
+private Object __intnl_UnityEngineObject_12 = null;
+private Single __intnl_SystemSingle_0 = 0f;
+private object __intnl_SystemObject_0 = null;
+private String __const_SystemString_0 = "__0_duration__param";
+private Transform __intnl_UnityEngineTransform_0 = null;
+public TextMeshProUGUI healthText;
+private Collider onTriggerEnterOther = null;
+private Single __const_SystemSingle_0 = 1f;
+private Int32 _old__currentHealth = 0;
+private Image __intnl_UnityEngineUIImage_0 = null;
+private UInt32 __gintnl_SystemUInt32_9 = 1088;
+private UInt32 __gintnl_SystemUInt32_8 = 1028;
+private UInt32 __gintnl_SystemUInt32_5 = 572;
+private UInt32 __gintnl_SystemUInt32_4 = 556;
+private UInt32 __gintnl_SystemUInt32_7 = 848;
+private UInt32 __gintnl_SystemUInt32_6 = 792;
+private UInt32 __gintnl_SystemUInt32_1 = 256;
+private UInt32 __gintnl_SystemUInt32_0 = 152;
+private UInt32 __gintnl_SystemUInt32_3 = 520;
+private UInt32 __gintnl_SystemUInt32_2 = 424;
+private Boolean __const_SystemBoolean_0 = false;
+private Boolean __const_SystemBoolean_1 = true;
+private Object __intnl_UnityEngineObject_21 = null;
+private Object __intnl_UnityEngineObject_11 = null;
+private Int32 __0_value__param = 0;
+private String __const_SystemString_5 = "__0_index__param";
+private Int32 __0_damage__param = 0;
+public Int32 maxHealth;
+private UInt32 __gintnl_SystemUInt32_13 = 1896;
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Object __intnl_UnityEngineObject_19 = null;
+private String __const_SystemString_10 = "HP: {0:F0}%";
+private Object __intnl_UnityEngineObject_14 = null;
+private Int64 __refl_typeid = 4418271991368725940;
+public AudioSource deathSoundSource;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Boolean __intnl_SystemBoolean_11 = false;
+private UInt32 __gintnl_SystemUInt32_14 = 2860;
+private Single __intnl_SystemSingle_2 = 0f;
+private String __const_SystemString_2 = "Respawn";
+private Int32 __0_healAmount__param = 0;
+private Vector3 __intnl_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+public Single deathFadeDuration;
+private object __const_SystemObject_0 = null;
+private String __intnl_SystemString_0 = null;
+private Object __intnl_UnityEngineObject_23 = null;
+private Object __intnl_UnityEngineObject_13 = null;
+private Single __intnl_SystemSingle_1 = 0f;
+private object __intnl_SystemObject_1 = null;
+private Int32 __0_newHealth__param = 0;
+private String __const_SystemString_7 = "__0___0_GetHomePointTransform__ret";
+public Image healthBarFill;
+private Single __const_SystemSingle_1 = 100f;
+private Single __lcl_healthPercent_SystemSingle_0 = 0f;
+private UInt32 __gintnl_SystemUInt32_11 = 1400;
+private UInt32 __gintnl_SystemUInt32_21 = 3676;
+private EventTiming __const_VRCUdonCommonEnumsEventTiming_0 = EventTiming.Update;
+private Object __intnl_UnityEngineObject_16 = null;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private String __const_SystemString_4 = "__0_GetCurrentHomePoint__ret";
+private UInt32 __gintnl_SystemUInt32_19 = 3588;
+private UInt32 __gintnl_SystemUInt32_12 = 1468;
+private UInt32 __gintnl_SystemUInt32_22 = 3736;
+public UdonBehaviour screenFade;
+private Boolean isRespawning = false;
+private Single __intnl_SystemSingle_4 = 0f;
+private Object __intnl_UnityEngineObject_15 = null;
+private Int32 __0_get_CurrentHealth__ret = 0;
+public AudioClip damageSound;
+private String __const_SystemString_9 = "__0_FadeFromBlack";
+private Boolean __intnl_SystemBoolean_12 = false;
+private UInt32 __gintnl_SystemUInt32_17 = 3356;
+private String __refl_typename = "HPSystem";
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Single __intnl_SystemSingle_3 = 0f;
+private String __const_SystemString_1 = "__0_FadeToBlack";
+private Boolean _old__isDead = false;
+private Object __intnl_UnityEngineObject_20 = null;
+private Object __intnl_UnityEngineObject_10 = null;
+public Int32 healthRegenPerSecond;
+private Boolean _isDead = false;
+private String __const_SystemString_6 = "__0_GetHomePointTransform";
+private UInt32 __gintnl_SystemUInt32_10 = 1156;
+private UInt32 __gintnl_SystemUInt32_20 = 3632;
+private Single lastRegenTime = 0f;
+private VRCPlayerApi localPlayer = null;
+private Object __intnl_UnityEngineObject_18 = null;
+private Boolean __1_value__param = false;
+private Single __intnl_SystemSingle_6 = 0f;
+private Object __intnl_UnityEngineObject_17 = null;
+public UdonBehaviour homePointManager;
+private Transform __lcl_spawnPoint_UnityEngineTransform_0 = null;
+private UInt32 __gintnl_SystemUInt32_18 = 3524;
+private Boolean __intnl_SystemBoolean_10 = false;
+public Single respawnDelay;
+private Quaternion __intnl_UnityEngineQuaternion_0 = new Quaternion(0f, 0f, 0f, 0f);
+private UInt32 __gintnl_SystemUInt32_15 = 2896;
+private Int32 __const_SystemInt32_1 = 25;
+private Int32 __const_SystemInt32_0 = 0;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private Boolean __0_get_IsDead__ret = false;
+private Single __intnl_SystemSingle_5 = 0f;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_0 = null;
+private String __const_SystemString_3 = "GetCurrentHomePoint";
+private UdonBehaviour __this_VRCUdonUdonBehaviour_0 = this;
+public AudioClip deathSound;
+private String __const_SystemString_8 = "__1_duration__param";
+
+
+public void get_CurrentHealth()
+{
+__0_get_CurrentHealth__ret = _currentHealth;
+}
+public void _onVarChange__currentHealth()
+{
+__0_value__param = _currentHealth;
+_currentHealth = _old__currentHealth;
+_currentHealth = Mathf.Clamp(__0_value__param, __const_SystemInt32_0, maxHealth);
+UNDEF_16d22_3480();
+__intnl_SystemBoolean_0 = _currentHealth <= __const_SystemInt32_0;
+if (__intnl_SystemBoolean_0)
+{
+__intnl_SystemBoolean_0 = !_isDead;
+}
+if (__intnl_SystemBoolean_0)
+{
+UNDEF_16d22_1916();
+}
+}
+public void get_IsDead()
+{
+__0_get_IsDead__ret = _isDead;
+}
+public void _onVarChange__isDead()
+{
+__1_value__param = _isDead;
+_isDead = _old__isDead;
+_isDead = __1_value__param;
+if (__1_value__param)
+{
+UNDEF_16d22_2040();
+}
+}
+public void _start()
+{
+localPlayer = Networking.LocalPlayer;
+lastRegenTime = Time.time;
+__0_value__param = maxHealth;
+__1_value__param = __const_SystemBoolean_0;
+UNDEF_16d22_3480();
+__intnl_UnityEngineObject_0 = homePointManager;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_0 == __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_1)
+{
+}
+__intnl_UnityEngineObject_2 = screenFade;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_2 = __intnl_UnityEngineObject_2 == __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_2)
+{
+}
+}
+public void _update()
+{
+get_IsDead();
+__intnl_SystemBoolean_3 = !__0_get_IsDead__ret;
+if (__intnl_SystemBoolean_3)
+{
+get_CurrentHealth();
+__intnl_SystemBoolean_3 = __0_get_CurrentHealth__ret < maxHealth;
+}
+if (__intnl_SystemBoolean_3)
+{
+__intnl_SystemSingle_0 = Time.time;
+__intnl_SystemSingle_1 = lastRegenTime + __const_SystemSingle_0;
+__intnl_SystemBoolean_4 = __intnl_SystemSingle_0 >= __intnl_SystemSingle_1;
+if (__intnl_SystemBoolean_4)
+{
+__0_healAmount__param = healthRegenPerSecond;
+__0_Heal();
+lastRegenTime = Time.time;
+}
+}
+}
+public void __0_TakeDamage()
+{
+get_CurrentHealth();
+__intnl_SystemInt32_0 = __0_get_CurrentHealth__ret - __0_damage__param;
+__0_value__param = __intnl_SystemInt32_0;
+__intnl_UnityEngineObject_4 = deathSoundSource;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_5 = __intnl_UnityEngineObject_4 != __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_5)
+{
+__intnl_UnityEngineObject_6 = damageSound;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_5 = __intnl_UnityEngineObject_6 != __intnl_UnityEngineObject_7;
+}
+if (__intnl_SystemBoolean_5)
+{
+deathSoundSource.PlayOneShot(damageSound);
+}
+}
+public void __0_Heal()
+{
+get_CurrentHealth();
+__intnl_SystemInt32_1 = __0_get_CurrentHealth__ret + __0_healAmount__param;
+__0_value__param = __intnl_SystemInt32_1;
+}
+private void UNDEF_16d22_1916()
+{
+__intnl_UnityEngineObject_8 = deathSoundSource;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_6 = __intnl_UnityEngineObject_8 != __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_6)
+{
+__intnl_UnityEngineObject_10 = deathSound;
+__intnl_UnityEngineObject_11 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_6 = __intnl_UnityEngineObject_10 != __intnl_UnityEngineObject_11;
+}
+if (__intnl_SystemBoolean_6)
+{
+deathSoundSource.PlayOneShot(deathSound);
+}
+__intnl_UnityEngineObject_12 = screenFade;
+__intnl_UnityEngineObject_13 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_7 = __intnl_UnityEngineObject_12 != __intnl_UnityEngineObject_13;
+if (__intnl_SystemBoolean_7)
+{
+__intnl_SystemSingle_2 = deathFadeDuration;
+screenFade.SetProgramVariable(__const_SystemString_0, deathFadeDuration);
+screenFade.SendCustomEvent(__const_SystemString_1);
+}
+__1_value__param = __const_SystemBoolean_1;
+}
+private void UNDEF_16d22_2040()
+{
+if (isRespawning)
+{
+return;
+}
+isRespawning = __const_SystemBoolean_1;
+__this_VRCUdonUdonBehaviour_0.SendCustomEventDelayedSeconds(__const_SystemString_2, respawnDelay, __const_VRCUdonCommonEnumsEventTiming_0);
+}
+public void Respawn()
+{
+__intnl_UnityEngineObject_14 = homePointManager;
+__intnl_UnityEngineObject_15 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_8 = __intnl_UnityEngineObject_14 == __intnl_UnityEngineObject_15;
+if (__intnl_SystemBoolean_8)
+{
+return;
+}
+__intnl_VRCUdonUdonBehaviour_0 = homePointManager;
+homePointManager.SendCustomEvent(__const_SystemString_3);
+__intnl_SystemObject_0 = homePointManager.GetProgramVariable(__const_SystemString_4);
+__intnl_SystemInt32_2 = Convert.ToInt32(__intnl_SystemObject_0);
+__intnl_VRCUdonUdonBehaviour_0.SetProgramVariable(__const_SystemString_5, __intnl_SystemInt32_2);
+__intnl_VRCUdonUdonBehaviour_0.SendCustomEvent(__const_SystemString_6);
+__intnl_SystemObject_1 = __intnl_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_7);
+__intnl_UnityEngineTransform_0 = (Transform)__intnl_SystemObject_1;
+__lcl_spawnPoint_UnityEngineTransform_0 = __intnl_UnityEngineTransform_0;
+__intnl_UnityEngineObject_16 = __lcl_spawnPoint_UnityEngineTransform_0;
+__intnl_UnityEngineObject_17 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_9 = __intnl_UnityEngineObject_16 == __intnl_UnityEngineObject_17;
+if (__intnl_SystemBoolean_9)
+{
+return;
+}
+__intnl_SystemBoolean_10 = localPlayer != __const_SystemObject_0;
+if (__intnl_SystemBoolean_10)
+{
+__intnl_SystemBoolean_10 = localPlayer.IsValid();
+}
+if (__intnl_SystemBoolean_10)
+{
+__intnl_UnityEngineVector3_0 = __lcl_spawnPoint_UnityEngineTransform_0.position;
+__intnl_UnityEngineQuaternion_0 = __lcl_spawnPoint_UnityEngineTransform_0.rotation;
+localPlayer.TeleportTo(__intnl_UnityEngineVector3_0, __intnl_UnityEngineQuaternion_0);
+}
+__intnl_UnityEngineObject_18 = screenFade;
+__intnl_UnityEngineObject_19 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_11 = __intnl_UnityEngineObject_18 != __intnl_UnityEngineObject_19;
+if (__intnl_SystemBoolean_11)
+{
+__intnl_SystemSingle_3 = deathFadeDuration;
+screenFade.SetProgramVariable(__const_SystemString_8, deathFadeDuration);
+screenFade.SendCustomEvent(__const_SystemString_9);
+}
+__0_value__param = maxHealth;
+__1_value__param = __const_SystemBoolean_0;
+isRespawning = __const_SystemBoolean_0;
+lastRegenTime = Time.time;
+}
+private void UNDEF_16d22_3480()
+{
+__intnl_UnityEngineObject_20 = healthText;
+__intnl_UnityEngineObject_21 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_12 = __intnl_UnityEngineObject_20 != __intnl_UnityEngineObject_21;
+if (__intnl_SystemBoolean_12)
+{
+get_CurrentHealth();
+__intnl_SystemSingle_4 = Convert.ToSingle(__0_get_CurrentHealth__ret);
+__intnl_SystemSingle_5 = Convert.ToSingle(maxHealth);
+__intnl_SystemSingle_6 = __intnl_SystemSingle_4 / __intnl_SystemSingle_5;
+__lcl_healthPercent_SystemSingle_0 = __intnl_SystemSingle_6 * __const_SystemSingle_1;
+__intnl_SystemString_0 = String.Format(__const_SystemString_10, __lcl_healthPercent_SystemSingle_0);
+healthText.text = __intnl_SystemString_0;
+}
+__intnl_UnityEngineObject_22 = healthBarFill;
+__intnl_UnityEngineObject_23 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_13 = __intnl_UnityEngineObject_22 != __intnl_UnityEngineObject_23;
+if (__intnl_SystemBoolean_13)
+{
+__intnl_UnityEngineUIImage_0 = healthBarFill;
+get_CurrentHealth();
+__intnl_SystemSingle_4 = Convert.ToSingle(__0_get_CurrentHealth__ret);
+__intnl_SystemSingle_5 = Convert.ToSingle(maxHealth);
+__intnl_SystemSingle_6 = __intnl_SystemSingle_4 / __intnl_SystemSingle_5;
+__intnl_UnityEngineUIImage_0.fillAmount = __intnl_SystemSingle_6;
+}
+}
+public void __0_SetHealth()
+{
+__0_value__param = __0_newHealth__param;
+}
+public void Kill()
+{
+__0_value__param = __const_SystemInt32_0;
+}
+public void ForceRespawn()
+{
+Respawn();
+}
+public void _onTriggerEnter()
+{
+get_IsDead();
+if (__0_get_IsDead__ret)
+{
+}
+else
+{
+__0_damage__param = __const_SystemInt32_1;
+__0_TakeDamage();
+}
+}
+}

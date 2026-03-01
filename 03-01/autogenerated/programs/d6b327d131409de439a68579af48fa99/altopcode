@@ -1,0 +1,392 @@
+void _start()
+16 JUMP 568
+32 JUMP 1224
+56 __intnl_UnityEngineObject_0 = achievementManager
+76 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+120 if (__intnl_SystemBoolean_0) //172
+{
+152 __intnl_VRCUdonUdonBehaviour_0 = achievementManager
+G_achievementManager.SendCustomEvent(__const_SystemString_0);// 164
+}
+180 if (useVisualFeedback) //204
+{
+196 JUMP 6080
+}
+216 return;
+void OnButtonClick()
+248 __intnl_UnityEngineObject_2 = fishIndexManager
+268 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+312 if (__intnl_SystemBoolean_1) //340
+{
+332 return;
+}
+372 if (__intnl_SystemBoolean_2) //432
+{
+404 __intnl_VRCUdonUdonBehaviour_1 = fishIndexManager
+G_fishIndexManager.SendCustomEvent(__const_SystemString_1);// 416
+424 JUMP 508
+}
+448 __intnl_SystemString_0 = zoneID
+G_fishIndexManager.SetProgramVariable(zoneID, __const_SystemString_2);// 476
+G_fishIndexManager.SendCustomEvent(__const_SystemString_3);// 500
+516 if (useVisualFeedback) //540
+{
+532 JUMP 6732
+}
+552 return;
+void UpdateZoneNameText()
+584 __intnl_UnityEngineObject_4 = zoneNameText
+604 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+648 if (__intnl_SystemBoolean_3) //676
+{
+668 return;
+}
+708 if (__intnl_SystemBoolean_4) //760
+{
+G_zoneNameText.set_text(zoneDisplayName);// 732
+752 return;
+}
+768 if (useDiscoverySystem) //784
+{
+776 JUMP 828
+}
+G_zoneNameText.set_text(zoneDisplayName);// 800
+820 return;
+844 __intnl_UnityEngineObject_6 = fishIndexManager
+864 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+908 if (__intnl_SystemBoolean_5) //924
+{
+916 JUMP 1048
+}
+972 __intnl_VRCUdonUdonBehaviour_2 = __intnl_SystemObject_0
+992 __intnl_UnityEngineObject_8 = __intnl_VRCUdonUdonBehaviour_2
+1012 __intnl_UnityEngineObject_9 = __const_SystemObject_0
+1056 if (__intnl_SystemBoolean_5) //1108
+{
+G_zoneNameText.set_text(undiscoveredText);// 1080
+1100 return;
+}
+1116 JUMP 3868
+1132 if (__0_IsZoneDiscovered__ret) //1172
+{
+G_zoneNameText.set_text(zoneDisplayName);// 1156
+1164 JUMP 1196
+}
+G_zoneNameText.set_text(undiscoveredText);// 1188
+1208 return;
+void UpdateZoneCompletionPercent()
+1240 __intnl_UnityEngineObject_10 = Percent
+1260 __intnl_UnityEngineObject_11 = __const_SystemObject_0
+1304 if (__intnl_SystemBoolean_6) //1332
+{
+1324 return;
+}
+1364 if (__intnl_SystemBoolean_7) //1416
+{
+G_Percent.set_text(__const_SystemString_5);// 1388
+1408 return;
+}
+1432 __intnl_UnityEngineObject_12 = fishIndexManager
+1452 __intnl_UnityEngineObject_13 = __const_SystemObject_0
+1496 if (__intnl_SystemBoolean_8) //1512
+{
+1504 JUMP 1636
+}
+1560 __intnl_VRCUdonUdonBehaviour_3 = __intnl_SystemObject_1
+1580 __intnl_UnityEngineObject_14 = __intnl_VRCUdonUdonBehaviour_3
+1600 __intnl_UnityEngineObject_15 = __const_SystemObject_0
+1644 if (__intnl_SystemBoolean_8) //1696
+{
+G_Percent.set_text(__const_SystemString_6);// 1668
+1688 return;
+}
+1712 __lcl_discoveredCount_SystemInt32_0 = __const_SystemInt32_0
+1732 __lcl_totalCount_SystemInt32_0 = __const_SystemInt32_0
+1760 __0_discoveredCount__param = __lcl_discoveredCount_SystemInt32_0
+1780 __0_totalCount__param = __lcl_totalCount_SystemInt32_0
+1784 JUMP 2372
+1808 __lcl_discoveredCount_SystemInt32_0 = __0_discoveredCount__param
+1828 __lcl_totalCount_SystemInt32_0 = __0_totalCount__param
+1848 __lcl_percentage_SystemInt32_0 = __const_SystemInt32_0
+1892 if (__intnl_SystemBoolean_9) //2036
+{
+__lcl_percentage_SystemInt32_0 = RoundToInt(__intnl_SystemSingle_3);// 2028
+}
+G_Percent.set_text(__intnl_SystemString_2);// 2108
+2132 __intnl_UnityEngineObject_16 = achievementManager
+2152 __intnl_UnityEngineObject_17 = __const_SystemObject_0
+2196 if (__intnl_SystemBoolean_10) //2344
+{
+2252 __intnl_SystemString_4 = zoneID
+G_achievementManager.SetProgramVariable(__intnl_SystemString_3, __const_SystemString_9);// 2280
+G_achievementManager.SetProgramVariable(__lcl_percentage_SystemInt32_0, __const_SystemString_10);// 2312
+G_achievementManager.SendCustomEvent(__const_SystemString_11);// 2336
+}
+2356 return;
+2388 __0_discoveredCount__param = __const_SystemInt32_0
+2408 __0_totalCount__param = __const_SystemInt32_0
+2428 __intnl_UnityEngineObject_18 = fishIndexManager
+2448 __intnl_UnityEngineObject_19 = __const_SystemObject_0
+2492 if (__intnl_SystemBoolean_11) //2508
+{
+2500 JUMP 2632
+}
+2556 __intnl_VRCUdonUdonBehaviour_4 = __intnl_SystemObject_2
+2576 __intnl_UnityEngineObject_20 = __intnl_VRCUdonUdonBehaviour_4
+2596 __intnl_UnityEngineObject_21 = __const_SystemObject_0
+2640 if (__intnl_SystemBoolean_11) //2668
+{
+2660 return;
+}
+2716 __lcl_database_VRCUdonUdonBehaviour_0 = __intnl_SystemObject_3
+2768 __intnl_UnityEngineComponentArray_0 = __intnl_SystemObject_4
+2812 if (__intnl_SystemBoolean_12) //2828
+{
+2820 JUMP 2936
+}
+2876 __intnl_UnityEngineComponentArray_1 = __intnl_SystemObject_5
+2944 if (__intnl_SystemBoolean_12) //2972
+{
+2964 return;
+}
+2988 __lcl_i_SystemInt32_0 = __const_SystemInt32_0
+3040 __intnl_UnityEngineComponentArray_2 = __intnl_SystemObject_6
+3108 if (__intnl_SystemBoolean_13) //3840
+{
+3164 __intnl_UnityEngineComponentArray_3 = __intnl_SystemObject_7
+__lcl_fish_VRCUdonUdonBehaviour_0 = G_fishIndexManager.GetProgramVariable(__const_SystemString_4).GetProgramVariable(__const_SystemString_12).Get(__lcl_i_SystemInt32_0);// 3192
+3216 __intnl_UnityEngineObject_22 = __lcl_fish_VRCUdonUdonBehaviour_0
+3236 __intnl_UnityEngineObject_23 = __const_SystemObject_0
+3280 if (__intnl_SystemBoolean_14) //3296
+{
+3288 JUMP 3800
+}
+3368 __intnl_SystemInt32_2 = __intnl_SystemInt32_3
+3412 if (__intnl_SystemBoolean_15) //3428
+{
+3420 JUMP 3536
+}
+3500 __intnl_SystemInt32_4 = __intnl_SystemInt32_5
+3544 if (__intnl_SystemBoolean_15) //3560
+{
+3552 JUMP 3800
+}
+3584 __0_fish__param = __lcl_fish_VRCUdonUdonBehaviour_0
+3588 JUMP 5116
+3604 if (__0___0_CanFishSpawnInZone__ret) //3800
+{
+__0_totalCount__param = op_Addition(__const_SystemInt32_3, __0_totalCount__param);// 3636
+G_fishIndexManager.SetProgramVariable(__lcl_i_SystemInt32_0, __const_SystemString_14);// 3668
+G_fishIndexManager.SendCustomEvent(__const_SystemString_15);// 3692
+3748 __intnl_SystemBoolean_16 = __intnl_SystemObject_10
+3760 if (__intnl_SystemBoolean_16) //3800
+{
+__0_discoveredCount__param = op_Addition(__const_SystemInt32_3, __0_discoveredCount__param);// 3792
+}
+}
+__lcl_i_SystemInt32_0 = op_Addition(__const_SystemInt32_3, __lcl_i_SystemInt32_0);// 3824
+3832 JUMP 2992
+}
+3852 return;
+3884 __intnl_UnityEngineObject_24 = fishIndexManager
+3904 __intnl_UnityEngineObject_25 = __const_SystemObject_0
+3948 if (__intnl_SystemBoolean_17) //3964
+{
+3956 JUMP 4088
+}
+4012 __intnl_VRCUdonUdonBehaviour_5 = __intnl_SystemObject_11
+4032 __intnl_UnityEngineObject_26 = __intnl_VRCUdonUdonBehaviour_5
+4052 __intnl_UnityEngineObject_27 = __const_SystemObject_0
+4096 if (__intnl_SystemBoolean_17) //4144
+{
+4120 __0_IsZoneDiscovered__ret = __const_SystemBoolean_0
+4136 return;
+}
+4192 __lcl_database_VRCUdonUdonBehaviour_1 = __intnl_SystemObject_12
+4244 __intnl_UnityEngineComponentArray_4 = __intnl_SystemObject_13
+4288 if (__intnl_SystemBoolean_18) //4304
+{
+4296 JUMP 4412
+}
+4352 __intnl_UnityEngineComponentArray_5 = __intnl_SystemObject_14
+4420 if (__intnl_SystemBoolean_18) //4468
+{
+4444 __0_IsZoneDiscovered__ret = __const_SystemBoolean_0
+4460 return;
+}
+4484 __lcl_i_SystemInt32_1 = __const_SystemInt32_0
+4536 __intnl_UnityEngineComponentArray_6 = __intnl_SystemObject_15
+4604 if (__intnl_SystemBoolean_19) //5048
+{
+4660 __intnl_UnityEngineComponentArray_7 = __intnl_SystemObject_16
+__lcl_fish_VRCUdonUdonBehaviour_1 = G_fishIndexManager.GetProgramVariable(__const_SystemString_4).GetProgramVariable(__const_SystemString_12).Get(__lcl_i_SystemInt32_1);// 4688
+4712 __intnl_UnityEngineObject_28 = __lcl_fish_VRCUdonUdonBehaviour_1
+4732 __intnl_UnityEngineObject_29 = __const_SystemObject_0
+4776 if (__intnl_SystemBoolean_20) //4792
+{
+4784 JUMP 5008
+}
+4816 __0_fish__param = __lcl_fish_VRCUdonUdonBehaviour_1
+4820 JUMP 5116
+4836 if (__0___0_CanFishSpawnInZone__ret) //5008
+{
+G_fishIndexManager.SetProgramVariable(__lcl_i_SystemInt32_1, __const_SystemString_14);// 4868
+G_fishIndexManager.SendCustomEvent(__const_SystemString_15);// 4892
+4948 __intnl_SystemBoolean_21 = __intnl_SystemObject_17
+4960 if (__intnl_SystemBoolean_21) //5008
+{
+4984 __0_IsZoneDiscovered__ret = __const_SystemBoolean_1
+5000 return;
+}
+}
+__lcl_i_SystemInt32_1 = op_Addition(__const_SystemInt32_3, __lcl_i_SystemInt32_1);// 5032
+5040 JUMP 4488
+}
+5064 __0_IsZoneDiscovered__ret = __const_SystemBoolean_0
+5080 return;
+5100 return;
+5132 __intnl_UnityEngineObject_30 = __0_fish__param
+5152 __intnl_UnityEngineObject_31 = __const_SystemObject_0
+5196 if (__intnl_SystemBoolean_22) //5244
+{
+5220 __0___0_CanFishSpawnInZone__ret = __const_SystemBoolean_0
+5236 return;
+}
+5292 __intnl_SystemBoolean_23 = __intnl_SystemObject_18
+5304 if (__intnl_SystemBoolean_23) //5364
+{
+5360 __intnl_SystemBoolean_23 = __intnl_SystemObject_19
+}
+5372 if (__intnl_SystemBoolean_23) //5432
+{
+__0___0_CanFishSpawnInZone__ret = op_Equality(__const_SystemString_19, zoneID);// 5404
+5424 return;
+}
+5480 __intnl_SystemStringArray_0 = __intnl_SystemObject_20
+5524 if (__intnl_SystemBoolean_24) //5640
+{
+5580 __intnl_SystemStringArray_1 = __intnl_SystemObject_21
+}
+5648 if (__intnl_SystemBoolean_24) //6012
+{
+5672 __lcl_i_SystemInt32_2 = __const_SystemInt32_0
+5724 __intnl_SystemStringArray_2 = __intnl_SystemObject_22
+5792 if (__intnl_SystemBoolean_25) //6012
+{
+5848 __intnl_SystemStringArray_3 = __intnl_SystemObject_23
+5924 if (__intnl_SystemBoolean_26) //5972
+{
+5948 __0___0_CanFishSpawnInZone__ret = __const_SystemBoolean_1
+5964 return;
+}
+__lcl_i_SystemInt32_2 = op_Addition(__const_SystemInt32_3, __lcl_i_SystemInt32_2);// 5996
+6004 JUMP 5676
+}
+}
+6028 __0___0_CanFishSpawnInZone__ret = __const_SystemBoolean_0
+6044 return;
+6064 return;
+void UpdateVisuals()
+6096 __intnl_UnityEngineObject_32 = fishIndexManager
+6116 __intnl_UnityEngineObject_33 = __const_SystemObject_0
+6160 if (__intnl_SystemBoolean_27) //6176
+{
+6168 JUMP 6248
+}
+6192 __intnl_UnityEngineObject_34 = buttonBackground
+6212 __intnl_UnityEngineObject_35 = __const_SystemObject_0
+6256 if (__intnl_SystemBoolean_27) //6284
+{
+6276 return;
+}
+6308 __intnl_VRCUdonUdonBehaviour_6 = fishIndexManager
+G_fishIndexManager.SendCustomEvent(__const_SystemString_21);// 6320
+6376 __intnl_SystemString_6 = __intnl_SystemObject_24
+6396 __lcl_currentFilter_SystemString_0 = __intnl_SystemString_6
+6416 __lcl_isActive_SystemBoolean_0 = __const_SystemBoolean_0
+6452 if (__intnl_SystemBoolean_28) //6484
+{
+}
+6492 if (__intnl_SystemBoolean_28) //6528
+{
+6516 __lcl_isActive_SystemBoolean_0 = __const_SystemBoolean_1
+6520 JUMP 6596
+}
+6568 if (__intnl_SystemBoolean_29) //6596
+{
+6592 __lcl_isActive_SystemBoolean_0 = __const_SystemBoolean_1
+}
+6612 __intnl_UnityEngineUIImage_0 = buttonBackground
+6624 if (__lcl_isActive_SystemBoolean_0) //6660
+{
+6648 __intnl_UnityEngineColor_0 = activeColor
+6652 JUMP 6680
+}
+6676 __intnl_UnityEngineColor_0 = inactiveColor
+G_buttonBackground.set_color(__intnl_UnityEngineColor_0);// 6696
+6716 return;
+6740 JUMP 6080
+6788 if (__intnl_SystemBoolean_30) //7204
+{
+6812 __lcl_i_SystemInt32_3 = __const_SystemInt32_0
+6880 if (__intnl_SystemBoolean_31) //7204
+{
+6936 __intnl_UnityEngineObject_36 = __intnl_VRCUdonUdonBehaviour_7
+6956 __intnl_UnityEngineObject_37 = __const_SystemObject_0
+7000 if (__intnl_SystemBoolean_32) //7092
+{
+7088 __intnl_SystemBoolean_32 = __intnl_SystemObject_25
+}
+7100 if (__intnl_SystemBoolean_32) //7164
+{
+G_otherTabButtons.Get(__lcl_i_SystemInt32_3).SendCustomEvent(__const_SystemString_24);// 7156
+}
+__lcl_i_SystemInt32_3 = op_Addition(__const_SystemInt32_3, __lcl_i_SystemInt32_3);// 7188
+7196 JUMP 6816
+}
+}
+7216 return;
+void RefreshZoneName()
+7240 JUMP 568
+7256 JUMP 1224
+7276 return;
+void __0_ApplyZoneStats()
+7308 __intnl_UnityEngineObject_38 = zoneNameText
+7328 __intnl_UnityEngineObject_39 = __const_SystemObject_0
+7372 if (__intnl_SystemBoolean_33) //7588
+{
+7412 if (__intnl_SystemBoolean_35) //7428
+{
+7420 JUMP 7452
+}
+7468 __intnl_SystemBoolean_34 = __intnl_SystemBoolean_35
+7480 if (__intnl_SystemBoolean_34) //7496
+{
+7488 JUMP 7516
+}
+7512 __intnl_SystemBoolean_34 = __0_isDiscovered__param
+7524 if (__intnl_SystemBoolean_34) //7564
+{
+G_zoneNameText.set_text(zoneDisplayName);// 7548
+7556 JUMP 7588
+}
+G_zoneNameText.set_text(undiscoveredText);// 7580
+}
+7604 __intnl_UnityEngineObject_40 = Percent
+7624 __intnl_UnityEngineObject_41 = __const_SystemObject_0
+7668 if (__intnl_SystemBoolean_34) //8044
+{
+7708 if (__intnl_SystemBoolean_35) //7748
+{
+G_Percent.set_text(__const_SystemString_5);// 7732
+7740 JUMP 8044
+}
+7788 if (__intnl_SystemBoolean_36) //8020
+{
+__lcl_percentage_SystemInt32_1 = RoundToInt(__intnl_SystemSingle_7);// 7924
+G_Percent.set_text(__intnl_SystemString_8);// 8004
+8012 JUMP 8044
+}
+G_Percent.set_text(__const_SystemString_25);// 8036
+}
+8056 return;

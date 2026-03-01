@@ -1,0 +1,269 @@
+void _start()
+localPlayer = get_LocalPlayer();// 16
+64 if (__intnl_SystemBoolean_0) //92
+{
+84 return;
+}
+100 JUMP 516
+116 JUMP 944
+132 if (enableDebugLogs) //140
+{
+}
+152 return;
+void _update()
+200 if (__intnl_SystemBoolean_1) //216
+{
+208 JUMP 248
+}
+256 if (__intnl_SystemBoolean_1) //284
+{
+276 return;
+}
+__lcl_playerY_SystemSingle_0 = G_localPlayer.GetPosition().get_y();// 324
+356 __0_playerY__param = __lcl_playerY_SystemSingle_0
+360 JUMP 1520
+384 __lcl_newState_SystemInt32_0 = __0___0_DetermineWaterState__ret
+428 if (__intnl_SystemBoolean_2) //472
+{
+460 __0_newState__param = __lcl_newState_SystemInt32_0
+464 JUMP 1780
+}
+480 JUMP 2864
+500 return;
+532 __intnl_UnityEngineObject_0 = oceanAudioSource
+552 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+596 if (__intnl_SystemBoolean_3) //604
+{
+}
+620 __intnl_UnityEngineObject_2 = underwaterAudioSource
+640 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+684 if (__intnl_SystemBoolean_4) //692
+{
+}
+708 __intnl_UnityEngineObject_4 = oceanAmbienceClip
+728 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+772 if (__intnl_SystemBoolean_5) //780
+{
+}
+796 __intnl_UnityEngineObject_6 = underwaterAmbienceClip
+816 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+860 if (__intnl_SystemBoolean_6) //868
+{
+}
+908 if (__intnl_SystemBoolean_7) //916
+{
+}
+928 return;
+960 __intnl_UnityEngineObject_8 = oceanAudioSource
+980 __intnl_UnityEngineObject_9 = __const_SystemObject_0
+1024 if (__intnl_SystemBoolean_8) //1104
+{
+1048 __intnl_UnityEngineObject_10 = oceanAmbienceClip
+1068 __intnl_UnityEngineObject_11 = __const_SystemObject_0
+}
+1112 if (__intnl_SystemBoolean_8) //1208
+{
+G_oceanAudioSource.set_clip(oceanAmbienceClip);// 1136
+G_oceanAudioSource.set_loop(__const_SystemBoolean_0);// 1160
+G_oceanAudioSource.set_volume(oceanVolume);// 1184
+G_oceanAudioSource.Play();// 1200
+}
+1224 __intnl_UnityEngineObject_12 = underwaterAudioSource
+1244 __intnl_UnityEngineObject_13 = __const_SystemObject_0
+1288 if (__intnl_SystemBoolean_9) //1368
+{
+1312 __intnl_UnityEngineObject_14 = underwaterAmbienceClip
+1332 __intnl_UnityEngineObject_15 = __const_SystemObject_0
+}
+1376 if (__intnl_SystemBoolean_9) //1472
+{
+G_underwaterAudioSource.set_clip(underwaterAmbienceClip);// 1400
+G_underwaterAudioSource.set_loop(__const_SystemBoolean_0);// 1424
+G_underwaterAudioSource.set_volume(__const_SystemSingle_0);// 1448
+G_underwaterAudioSource.Play();// 1464
+}
+1488 currentState = __const_SystemInt32_0
+1504 return;
+1560 if (__intnl_SystemBoolean_10) //1616
+{
+1584 __0___0_DetermineWaterState__ret = __const_SystemInt32_1
+1600 return;
+1608 JUMP 1752
+}
+1656 if (__intnl_SystemBoolean_11) //1712
+{
+1680 __0___0_DetermineWaterState__ret = __const_SystemInt32_2
+1696 return;
+1704 JUMP 1752
+}
+1728 __0___0_DetermineWaterState__ret = __const_SystemInt32_0
+1744 return;
+1764 return;
+1788 if (enableDebugLogs) //1796
+{
+}
+1812 currentState = __0_newState__param
+1832 targetState = __0_newState__param
+1876 if (__intnl_SystemBoolean_12) //1988
+{
+1908 __0_from__param = underwaterAudioSource
+1928 __0_to__param = oceanAudioSource
+1948 __0_targetFromVolume__param = __const_SystemSingle_0
+1968 __0_targetToVolume__param = oceanVolume
+1972 JUMP 2320
+1980 JUMP 2292
+}
+2028 if (__intnl_SystemBoolean_13) //2140
+{
+2060 __0_from__param = oceanAudioSource
+2080 __0_to__param = underwaterAudioSource
+2100 __0_targetFromVolume__param = __const_SystemSingle_0
+2120 __0_targetToVolume__param = underwaterVolume
+2124 JUMP 2320
+2132 JUMP 2292
+}
+2180 if (__intnl_SystemBoolean_14) //2292
+{
+2212 __0_from__param = oceanAudioSource
+2232 __0_to__param = underwaterAudioSource
+2252 __0_targetFromVolume__param = __const_SystemSingle_0
+2272 __0_targetToVolume__param = __const_SystemSingle_0
+2276 JUMP 2320
+2284 JUMP 2292
+}
+2304 return;
+2328 if (isTransitioning) //2352
+{
+2344 JUMP 3408
+}
+2368 fromSource = __0_from__param
+2388 toSource = __0_to__param
+2408 __intnl_UnityEngineObject_16 = __0_from__param
+2428 __intnl_UnityEngineObject_17 = __const_SystemObject_0
+2472 if (__intnl_SystemBoolean_15) //2512
+{
+fromVolume = G_oceanAudioSource.get_volume();// 2496
+2504 JUMP 2532
+}
+2528 fromVolume = __const_SystemSingle_0
+toVolume = op_Multiplication(masterVolume, __0_targetToVolume__param);// 2556
+transitionStartTime = get_time();// 2572
+2596 isTransitioning = __const_SystemBoolean_0
+2616 __intnl_UnityEngineObject_18 = toSource
+2636 __intnl_UnityEngineObject_19 = __const_SystemObject_0
+2680 if (__intnl_SystemBoolean_17) //2720
+{
+}
+2736 __intnl_SystemBoolean_16 = __intnl_SystemBoolean_17
+2748 if (__intnl_SystemBoolean_16) //2804
+{
+}
+2812 if (__intnl_SystemBoolean_16) //2836
+{
+G_underwaterAudioSource.Play();// 2828
+}
+2848 return;
+2872 if (isTransitioning) //2888
+{
+2880 JUMP 2908
+}
+2900 return;
+__lcl_elapsed_SystemSingle_0 = op_Subtraction(transitionStartTime, __intnl_SystemSingle_0);// 2948
+__lcl_t_SystemSingle_0 = Clamp01(__intnl_SystemSingle_1);// 3004
+3028 __intnl_UnityEngineObject_20 = fromSource
+3048 __intnl_UnityEngineObject_21 = __const_SystemObject_0
+3092 if (__intnl_SystemBoolean_19) //3164
+{
+G_oceanAudioSource.set_volume(__intnl_SystemSingle_2);// 3156
+}
+3180 __intnl_UnityEngineObject_22 = toSource
+3200 __intnl_UnityEngineObject_23 = __const_SystemObject_0
+3244 if (__intnl_SystemBoolean_20) //3316
+{
+G_underwaterAudioSource.set_volume(__intnl_SystemSingle_2);// 3308
+}
+3356 if (__intnl_SystemBoolean_21) //3380
+{
+3372 JUMP 3408
+}
+3392 return;
+3424 __intnl_UnityEngineObject_24 = fromSource
+3444 __intnl_UnityEngineObject_25 = __const_SystemObject_0
+3488 if (__intnl_SystemBoolean_22) //3552
+{
+}
+3560 if (__intnl_SystemBoolean_22) //3584
+{
+G_oceanAudioSource.Stop();// 3576
+}
+3600 __intnl_UnityEngineObject_26 = toSource
+3620 __intnl_UnityEngineObject_27 = __const_SystemObject_0
+3664 if (__intnl_SystemBoolean_23) //3696
+{
+G_underwaterAudioSource.set_volume(toVolume);// 3688
+}
+3712 isTransitioning = __const_SystemBoolean_1
+3728 return;
+void __0_SetEnabled()
+3760 isEnabled = __0_enabled__param
+3772 if (__0_enabled__param) //3956
+{
+3820 if (__intnl_SystemBoolean_24) //3948
+{
+__lcl_playerY_SystemSingle_1 = G_localPlayer.GetPosition().get_y();// 3868
+3908 __0_playerY__param = __lcl_playerY_SystemSingle_1
+3912 JUMP 1520
+3936 __0_newState__param = __0___0_DetermineWaterState__ret
+3940 JUMP 1780
+}
+3948 JUMP 4180
+}
+3972 __intnl_UnityEngineObject_28 = oceanAudioSource
+3992 __intnl_UnityEngineObject_29 = __const_SystemObject_0
+4036 if (__intnl_SystemBoolean_24) //4068
+{
+G_oceanAudioSource.set_volume(__const_SystemSingle_0);// 4060
+}
+4084 __intnl_UnityEngineObject_30 = underwaterAudioSource
+4104 __intnl_UnityEngineObject_31 = __const_SystemObject_0
+4148 if (__intnl_SystemBoolean_25) //4180
+{
+G_underwaterAudioSource.set_volume(__const_SystemSingle_0);// 4172
+}
+4192 return;
+void GetCurrentState()
+4224 __0_GetCurrentState__ret = currentState
+4240 return;
+4260 return;
+void IsInWaterAudioZone()
+__0_IsInWaterAudioZone__ret = op_Inequality(__const_SystemInt32_3, currentState);// 4300
+4320 return;
+4340 return;
+void __0_SetMasterVolume()
+masterVolume = Clamp01(__0_volume__param);// 4372
+4396 __intnl_UnityEngineObject_32 = oceanAudioSource
+4416 __intnl_UnityEngineObject_33 = __const_SystemObject_0
+4460 if (__intnl_SystemBoolean_26) //4500
+{
+}
+4508 if (__intnl_SystemBoolean_26) //4572
+{
+G_oceanAudioSource.set_volume(__intnl_SystemSingle_4);// 4564
+}
+4588 __intnl_UnityEngineObject_34 = underwaterAudioSource
+4608 __intnl_UnityEngineObject_35 = __const_SystemObject_0
+4652 if (__intnl_SystemBoolean_27) //4692
+{
+}
+4700 if (__intnl_SystemBoolean_27) //4764
+{
+G_underwaterAudioSource.set_volume(__intnl_SystemSingle_4);// 4756
+}
+4772 if (enableDebugLogs) //4780
+{
+}
+4792 return;
+void GetMasterVolume()
+4824 __0_GetMasterVolume__ret = masterVolume
+4840 return;
+4860 return;

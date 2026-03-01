@@ -1,0 +1,376 @@
+void _start
+0 PUSH UInt32 __const_SystemUInt32_0
+8 PUSH VRCPlayerApi localPlayer
+16 EXTERN VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi
+24 PUSH Transform[] homePoints
+32 PUSH object __const_SystemObject_0
+40 PUSH Boolean __intnl_SystemBoolean_0
+48 EXTERN SystemObject.__op_Equality__SystemObject_SystemObject__SystemBoolean
+56 PUSH Boolean __intnl_SystemBoolean_0
+64 JUMP_IF_FALSE 80
+72 JUMP 136
+80 PUSH Transform[] homePoints
+88 PUSH Int32 __intnl_SystemInt32_0
+96 EXTERN SystemArray.__get_Length__SystemInt32
+104 PUSH Int32 __intnl_SystemInt32_0
+112 PUSH Int32 __const_SystemInt32_0
+120 PUSH Boolean __intnl_SystemBoolean_0
+128 EXTERN SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean
+136 PUSH Boolean __intnl_SystemBoolean_0
+144 JUMP_IF_FALSE 172
+152 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+160 COPY
+164 JUMP_INDIRECT 2
+172 PUSH UInt32 __gintnl_SystemUInt32_0
+180 JUMP 300
+188 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+196 COPY
+200 JUMP_INDIRECT 2
+void _onPlayerDataUpdated
+208 PUSH UInt32 __const_SystemUInt32_0
+216 PUSH VRCPlayerApi onPlayerDataUpdatedPlayer
+224 PUSH Boolean __intnl_SystemBoolean_1
+232 EXTERN VRCSDKBaseVRCPlayerApi.__get_isLocal__SystemBoolean
+240 PUSH Boolean __intnl_SystemBoolean_1
+248 JUMP_IF_FALSE 272
+256 PUSH UInt32 __gintnl_SystemUInt32_1
+264 JUMP 300
+272 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+280 COPY
+284 JUMP_INDIRECT 2
+292 PUSH UInt32 __const_SystemUInt32_0
+300 PUSH VRCPlayerApi localPlayer
+308 PUSH object __const_SystemObject_0
+316 PUSH Boolean __intnl_SystemBoolean_2
+324 EXTERN SystemObject.__op_Equality__SystemObject_SystemObject__SystemBoolean
+332 PUSH Boolean __intnl_SystemBoolean_2
+340 JUMP_IF_FALSE 368
+348 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+356 COPY
+360 JUMP_INDIRECT 2
+368 PUSH VRCPlayerApi localPlayer
+376 PUSH String __const_SystemString_0
+384 PUSH Int32 __lcl_savedHome_SystemInt32_0
+392 PUSH Boolean __intnl_SystemBoolean_3
+400 EXTERN VRCSDK3PersistencePlayerData.__TryGetInt__VRCSDKBaseVRCPlayerApi_SystemString_SystemInt32Ref__SystemBoolean
+408 PUSH Boolean __intnl_SystemBoolean_3
+416 JUMP_IF_FALSE 600
+424 PUSH Int32 __lcl_savedHome_SystemInt32_0
+432 PUSH Int32 __const_SystemInt32_0
+440 PUSH Boolean __intnl_SystemBoolean_4
+448 EXTERN SystemInt32.__op_GreaterThanOrEqual__SystemInt32_SystemInt32__SystemBoolean
+456 PUSH Boolean __intnl_SystemBoolean_4
+464 JUMP_IF_FALSE 528
+472 PUSH Transform[] homePoints
+480 PUSH Int32 __intnl_SystemInt32_1
+488 EXTERN SystemArray.__get_Length__SystemInt32
+496 PUSH Int32 __lcl_savedHome_SystemInt32_0
+504 PUSH Int32 __intnl_SystemInt32_1
+512 PUSH Boolean __intnl_SystemBoolean_4
+520 EXTERN SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean
+528 PUSH Boolean __intnl_SystemBoolean_4
+536 JUMP_IF_FALSE 572
+544 PUSH Int32 __lcl_savedHome_SystemInt32_0
+552 PUSH Int32 currentHomePoint
+560 COPY
+564 JUMP 592
+572 PUSH Int32 defaultHomePoint
+580 PUSH Int32 currentHomePoint
+588 COPY
+592 JUMP 620
+600 PUSH Int32 defaultHomePoint
+608 PUSH Int32 currentHomePoint
+616 COPY
+620 PUSH VRCPlayerApi localPlayer
+628 PUSH String __const_SystemString_1
+636 PUSH Boolean __lcl_started_SystemBoolean_0
+644 PUSH Boolean __intnl_SystemBoolean_4
+652 EXTERN VRCSDK3PersistencePlayerData.__TryGetBool__VRCSDKBaseVRCPlayerApi_SystemString_SystemBooleanRef__SystemBoolean
+660 PUSH Boolean __intnl_SystemBoolean_4
+668 JUMP_IF_FALSE 696
+676 PUSH Boolean __lcl_started_SystemBoolean_0
+684 PUSH Boolean hasStartedGame
+692 COPY
+696 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+704 COPY
+708 JUMP_INDIRECT 2
+void StartGame
+716 PUSH UInt32 __const_SystemUInt32_0
+724 PUSH VRCPlayerApi localPlayer
+732 PUSH object __const_SystemObject_0
+740 PUSH Boolean __intnl_SystemBoolean_5
+748 EXTERN SystemObject.__op_Equality__SystemObject_SystemObject__SystemBoolean
+756 PUSH Boolean __intnl_SystemBoolean_5
+764 JUMP_IF_FALSE 792
+772 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+780 COPY
+784 JUMP_INDIRECT 2
+792 PUSH Boolean __const_SystemBoolean_0
+800 PUSH Boolean hasStartedGame
+808 COPY
+812 PUSH String __const_SystemString_1
+820 PUSH Boolean __const_SystemBoolean_0
+828 EXTERN VRCSDK3PersistencePlayerData.__SetBool__SystemString_SystemBoolean__SystemVoid
+836 PUSH UdonBehaviour playerStats
+844 PUSH Object __intnl_UnityEngineObject_0
+852 COPY
+856 PUSH object __const_SystemObject_0
+864 PUSH Object __intnl_UnityEngineObject_1
+872 COPY
+876 PUSH Object __intnl_UnityEngineObject_0
+884 PUSH Object __intnl_UnityEngineObject_1
+892 PUSH Boolean __intnl_SystemBoolean_6
+900 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+908 PUSH Boolean __intnl_SystemBoolean_6
+916 JUMP_IF_FALSE 1040
+924 PUSH UdonBehaviour playerStats
+932 PUSH UdonBehaviour playerStats
+940 PUSH UdonBehaviour __intnl_VRCUdonUdonBehaviour_0
+948 COPY
+952 PUSH String __const_SystemString_2
+960 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+968 PUSH UdonBehaviour playerStats
+976 PUSH String __const_SystemString_3
+984 PUSH object __intnl_SystemObject_0
+992 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject
+1000 PUSH object __intnl_SystemObject_0
+1008 PUSH Boolean __intnl_SystemBoolean_7
+1016 COPY
+1020 PUSH Boolean __intnl_SystemBoolean_7
+1028 PUSH Boolean __intnl_SystemBoolean_6
+1036 COPY
+1040 PUSH Boolean __intnl_SystemBoolean_6
+1048 PUSH Boolean __lcl_tutorialCompleted_SystemBoolean_0
+1056 COPY
+1060 PUSH Boolean __lcl_tutorialCompleted_SystemBoolean_0
+1068 PUSH Boolean __intnl_SystemBoolean_8
+1076 EXTERN SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean
+1084 PUSH Boolean __intnl_SystemBoolean_8
+1092 JUMP_IF_FALSE 1172
+1100 PUSH UdonBehaviour tutorialManager
+1108 PUSH Object __intnl_UnityEngineObject_2
+1116 COPY
+1120 PUSH object __const_SystemObject_0
+1128 PUSH Object __intnl_UnityEngineObject_3
+1136 COPY
+1140 PUSH Object __intnl_UnityEngineObject_2
+1148 PUSH Object __intnl_UnityEngineObject_3
+1156 PUSH Boolean __intnl_SystemBoolean_8
+1164 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+1172 PUSH Boolean __intnl_SystemBoolean_8
+1180 JUMP_IF_FALSE 1240
+1188 PUSH UdonBehaviour tutorialManager
+1196 PUSH UdonBehaviour tutorialManager
+1204 PUSH UdonBehaviour __intnl_VRCUdonUdonBehaviour_1
+1212 COPY
+1216 PUSH String __const_SystemString_4
+1224 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+1232 JUMP 1256
+1240 PUSH UInt32 __gintnl_SystemUInt32_2
+1248 JUMP 1284
+1256 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1264 COPY
+1268 JUMP_INDIRECT 2
+void TeleportToHome
+1276 PUSH UInt32 __const_SystemUInt32_0
+1284 PUSH VRCPlayerApi localPlayer
+1292 PUSH object __const_SystemObject_0
+1300 PUSH Boolean __intnl_SystemBoolean_9
+1308 EXTERN SystemObject.__op_Equality__SystemObject_SystemObject__SystemBoolean
+1316 PUSH Boolean __intnl_SystemBoolean_9
+1324 JUMP_IF_FALSE 1352
+1332 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1340 COPY
+1344 JUMP_INDIRECT 2
+1352 PUSH UInt32 __gintnl_SystemUInt32_3
+1360 PUSH Int32 currentHomePoint
+1368 PUSH Int32 __0_index__param
+1376 COPY
+1380 JUMP 2260
+1388 PUSH Transform __0___0_GetHomePointTransform__ret
+1396 PUSH Transform __lcl_home_UnityEngineTransform_0
+1404 COPY
+1408 PUSH Transform __lcl_home_UnityEngineTransform_0
+1416 PUSH Object __intnl_UnityEngineObject_4
+1424 COPY
+1428 PUSH object __const_SystemObject_0
+1436 PUSH Object __intnl_UnityEngineObject_5
+1444 COPY
+1448 PUSH Object __intnl_UnityEngineObject_4
+1456 PUSH Object __intnl_UnityEngineObject_5
+1464 PUSH Boolean __intnl_SystemBoolean_10
+1472 EXTERN UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean
+1480 PUSH Boolean __intnl_SystemBoolean_10
+1488 JUMP_IF_FALSE 1660
+1496 PUSH UInt32 __gintnl_SystemUInt32_4
+1504 PUSH Int32 defaultHomePoint
+1512 PUSH Int32 __0_index__param
+1520 COPY
+1524 JUMP 2260
+1532 PUSH Transform __0___0_GetHomePointTransform__ret
+1540 PUSH Transform __lcl_home_UnityEngineTransform_0
+1548 COPY
+1552 PUSH Transform __lcl_home_UnityEngineTransform_0
+1560 PUSH Object __intnl_UnityEngineObject_6
+1568 COPY
+1572 PUSH object __const_SystemObject_0
+1580 PUSH Object __intnl_UnityEngineObject_7
+1588 COPY
+1592 PUSH Object __intnl_UnityEngineObject_6
+1600 PUSH Object __intnl_UnityEngineObject_7
+1608 PUSH Boolean __intnl_SystemBoolean_11
+1616 EXTERN UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean
+1624 PUSH Boolean __intnl_SystemBoolean_11
+1632 JUMP_IF_FALSE 1660
+1640 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1648 COPY
+1652 JUMP_INDIRECT 2
+1660 PUSH UdonBehaviour spawnRoomManager
+1668 PUSH Object __intnl_UnityEngineObject_6
+1676 COPY
+1680 PUSH object __const_SystemObject_0
+1688 PUSH Object __intnl_UnityEngineObject_7
+1696 COPY
+1700 PUSH Object __intnl_UnityEngineObject_6
+1708 PUSH Object __intnl_UnityEngineObject_7
+1716 PUSH Boolean __intnl_SystemBoolean_11
+1724 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+1732 PUSH Boolean __intnl_SystemBoolean_11
+1740 JUMP_IF_FALSE 1792
+1748 PUSH UdonBehaviour spawnRoomManager
+1756 PUSH UdonBehaviour spawnRoomManager
+1764 PUSH UdonBehaviour __intnl_VRCUdonUdonBehaviour_2
+1772 COPY
+1776 PUSH String __const_SystemString_5
+1784 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+1792 PUSH Transform __lcl_home_UnityEngineTransform_0
+1800 PUSH Vector3 __intnl_UnityEngineVector3_0
+1808 EXTERN UnityEngineTransform.__get_position__UnityEngineVector3
+1816 PUSH Transform __lcl_home_UnityEngineTransform_0
+1824 PUSH Quaternion __intnl_UnityEngineQuaternion_0
+1832 EXTERN UnityEngineTransform.__get_rotation__UnityEngineQuaternion
+1840 PUSH VRCPlayerApi localPlayer
+1848 PUSH Vector3 __intnl_UnityEngineVector3_0
+1856 PUSH Quaternion __intnl_UnityEngineQuaternion_0
+1864 EXTERN VRCSDKBaseVRCPlayerApi.__TeleportTo__UnityEngineVector3_UnityEngineQuaternion__SystemVoid
+1872 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1880 COPY
+1884 JUMP_INDIRECT 2
+void __0_SetHomePoint
+1892 PUSH UInt32 __const_SystemUInt32_0
+1900 PUSH Int32 __0_homePointIndex__param
+1908 PUSH Int32 __const_SystemInt32_0
+1916 PUSH Boolean __intnl_SystemBoolean_12
+1924 EXTERN SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean
+1932 PUSH Boolean __intnl_SystemBoolean_12
+1940 JUMP_IF_FALSE 1956
+1948 JUMP 2012
+1956 PUSH Transform[] homePoints
+1964 PUSH Int32 __intnl_SystemInt32_2
+1972 EXTERN SystemArray.__get_Length__SystemInt32
+1980 PUSH Int32 __0_homePointIndex__param
+1988 PUSH Int32 __intnl_SystemInt32_2
+1996 PUSH Boolean __intnl_SystemBoolean_12
+2004 EXTERN SystemInt32.__op_GreaterThanOrEqual__SystemInt32_SystemInt32__SystemBoolean
+2012 PUSH Boolean __intnl_SystemBoolean_12
+2020 JUMP_IF_FALSE 2048
+2028 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2036 COPY
+2040 JUMP_INDIRECT 2
+2048 PUSH Transform[] homePoints
+2056 PUSH Int32 __0_homePointIndex__param
+2064 PUSH Transform __intnl_UnityEngineTransform_0
+2072 EXTERN SystemObjectArray.__Get__SystemInt32__SystemObject
+2080 PUSH Transform __intnl_UnityEngineTransform_0
+2088 PUSH Object __intnl_UnityEngineObject_8
+2096 COPY
+2100 PUSH object __const_SystemObject_0
+2108 PUSH Object __intnl_UnityEngineObject_9
+2116 COPY
+2120 PUSH Object __intnl_UnityEngineObject_8
+2128 PUSH Object __intnl_UnityEngineObject_9
+2136 PUSH Boolean __intnl_SystemBoolean_13
+2144 EXTERN UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean
+2152 PUSH Boolean __intnl_SystemBoolean_13
+2160 JUMP_IF_FALSE 2188
+2168 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2176 COPY
+2180 JUMP_INDIRECT 2
+2188 PUSH Int32 __0_homePointIndex__param
+2196 PUSH Int32 currentHomePoint
+2204 COPY
+2208 PUSH String __const_SystemString_0
+2216 PUSH Int32 __0_homePointIndex__param
+2224 EXTERN VRCSDK3PersistencePlayerData.__SetInt__SystemString_SystemInt32__SystemVoid
+2232 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2240 COPY
+2244 JUMP_INDIRECT 2
+void __0_GetHomePointTransform
+2252 PUSH UInt32 __const_SystemUInt32_0
+2260 PUSH Transform[] homePoints
+2268 PUSH object __const_SystemObject_0
+2276 PUSH Boolean __intnl_SystemBoolean_15
+2284 EXTERN SystemObject.__op_Equality__SystemObject_SystemObject__SystemBoolean
+2292 PUSH Boolean __intnl_SystemBoolean_15
+2300 JUMP_IF_FALSE 2316
+2308 JUMP 2348
+2316 PUSH Int32 __0_index__param
+2324 PUSH Int32 __const_SystemInt32_0
+2332 PUSH Boolean __intnl_SystemBoolean_15
+2340 EXTERN SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean
+2348 PUSH Boolean __intnl_SystemBoolean_15
+2356 PUSH Boolean __intnl_SystemBoolean_14
+2364 COPY
+2368 PUSH Boolean __intnl_SystemBoolean_14
+2376 JUMP_IF_FALSE 2392
+2384 JUMP 2448
+2392 PUSH Transform[] homePoints
+2400 PUSH Int32 __intnl_SystemInt32_3
+2408 EXTERN SystemArray.__get_Length__SystemInt32
+2416 PUSH Int32 __0_index__param
+2424 PUSH Int32 __intnl_SystemInt32_3
+2432 PUSH Boolean __intnl_SystemBoolean_14
+2440 EXTERN SystemInt32.__op_GreaterThanOrEqual__SystemInt32_SystemInt32__SystemBoolean
+2448 PUSH Boolean __intnl_SystemBoolean_14
+2456 JUMP_IF_FALSE 2504
+2464 PUSH object __const_SystemObject_0
+2472 PUSH Transform __0___0_GetHomePointTransform__ret
+2480 COPY
+2484 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2492 COPY
+2496 JUMP_INDIRECT 2
+2504 PUSH Transform[] homePoints
+2512 PUSH Int32 __0_index__param
+2520 PUSH Transform __0___0_GetHomePointTransform__ret
+2528 EXTERN SystemObjectArray.__Get__SystemInt32__SystemObject
+2536 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2544 COPY
+2548 JUMP_INDIRECT 2
+2556 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2564 COPY
+2568 JUMP_INDIRECT 2
+void GetCurrentHomePoint
+2576 PUSH UInt32 __const_SystemUInt32_0
+2584 PUSH Int32 currentHomePoint
+2592 PUSH Int32 __0_GetCurrentHomePoint__ret
+2600 COPY
+2604 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2612 COPY
+2616 JUMP_INDIRECT 2
+2624 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2632 COPY
+2636 JUMP_INDIRECT 2
+void _onPlayerRespawn
+2644 PUSH UInt32 __const_SystemUInt32_0
+2652 PUSH VRCPlayerApi onPlayerRespawnPlayer
+2660 PUSH Boolean __intnl_SystemBoolean_16
+2668 EXTERN VRCSDKBaseVRCPlayerApi.__get_isLocal__SystemBoolean
+2676 PUSH Boolean __intnl_SystemBoolean_16
+2684 JUMP_IF_FALSE 2700
+2692 JUMP 2720
+2700 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2708 COPY
+2712 JUMP_INDIRECT 2
+2720 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2728 COPY
+2732 JUMP_INDIRECT 2

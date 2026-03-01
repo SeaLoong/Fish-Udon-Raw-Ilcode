@@ -1,0 +1,492 @@
+using System;
+using UnityEngine;
+using VRC.Udon;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Boolean __intnl_SystemBoolean_13 = false;
+private String __0_GetBoatClassText__ret = null;
+public Boolean enableBoost;
+public Single boatSize;
+private Single __0_GetTopSpeedSecondaryFill__ret = 0f;
+private String __intnl_SystemString_1 = null;
+public GameObject boatPrefab;
+private Int32 __1_statValue__param = 0;
+public Int32 price;
+private Single __intnl_SystemSingle_0 = 0f;
+private object __intnl_SystemObject_0 = null;
+private String __lcl_details_SystemString_0 = null;
+public Int32 boatId;
+private String __const_SystemString_0 = "Boat Statistics:\n\n";
+private Single __0_GetAccelerationSecondaryFill__ret = 0f;
+private Single __const_SystemSingle_0 = 5f;
+private Single __0___0_GetSecondaryStarFill__ret = 0f;
+private Single __intnl_SystemSingle_10 = 0f;
+private Single __intnl_SystemSingle_11 = 0f;
+private String __intnl_SystemString_9 = null;
+private UInt32[] __gintnl_SystemUInt32Array_0 = System.UInt32[];
+private Single __intnl_SystemSingle_8 = 0f;
+private UInt32 __gintnl_SystemUInt32_4 = 4880;
+private UInt32 __gintnl_SystemUInt32_1 = 2480;
+private UInt32 __gintnl_SystemUInt32_0 = 2376;
+private UInt32 __gintnl_SystemUInt32_3 = 2688;
+private UInt32 __gintnl_SystemUInt32_2 = 2584;
+private Boolean __const_SystemBoolean_0 = true;
+private Boolean __const_SystemBoolean_1 = false;
+public Single driftTiltAmount;
+public Single driftTransitionSpeed;
+private String __const_SystemString_5 = "Acceleration: ";
+public Single waterAmbientPitchOffset;
+private Single __0_GetValueRating__ret = 0f;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private String __intnl_SystemString_6 = null;
+private String __const_SystemString_16 = "SSS Class";
+private String __const_SystemString_17 = "Already Owned";
+private String __const_SystemString_14 = "S1 Class";
+private String __const_SystemString_15 = "S2 Class";
+private String __const_SystemString_12 = "B Class";
+private String __const_SystemString_13 = "A Class";
+private String __const_SystemString_10 = "D Class";
+private String __const_SystemString_11 = "C Class";
+private String __const_SystemString_18 = "";
+private String __const_SystemString_19 = "Requires Level ";
+private Single __intnl_SystemSingle_7 = 0f;
+private Int64 __refl_typeid = 3147008448896500443;
+public Single driftMomentumBlend;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Boolean __intnl_SystemBoolean_11 = false;
+public String boatName;
+public Boolean isUnlockedFromLevel;
+private String __intnl_SystemString_3 = null;
+private Single __intnl_SystemSingle_2 = 0f;
+private String __const_SystemString_2 = "F1";
+private Single __const_SystemSingle_2 = 1f;
+private String __0_GetFormattedPrice__ret = null;
+public String description;
+private Single __0_GetSturdinessSecondaryFill__ret = 0f;
+private String __intnl_SystemString_20 = null;
+private Boolean __intnl_SystemBoolean_14 = false;
+public Int32 boatClass;
+public Boolean isUnlockedByDefault;
+private Int32 __0___0_ComparePriceTo__ret = 0;
+private object __const_SystemObject_0 = null;
+public Single driftSpeedReduction;
+private String __intnl_SystemString_0 = null;
+private Int32 __0_statValue__param = 0;
+private Single __intnl_SystemSingle_1 = 0f;
+private object __intnl_SystemObject_1 = null;
+private String __const_SystemString_7 = "/20\n";
+private Single __const_SystemSingle_1 = 10f;
+public Single maxSpeed;
+private Single __0_GetBoostSecondaryFill__ret = 0f;
+private String __intnl_SystemString_8 = null;
+private String __const_SystemString_30 = " coins";
+private Single __intnl_SystemSingle_9 = 0f;
+public Int32 boost;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private String __const_SystemString_4 = ")\n";
+private Int32 __2_playerLevel__param = 0;
+private Single __const_SystemSingle_4 = 25f;
+public Mesh previewMesh;
+private Int32 __3_playerLevel__param = 0;
+private UInt32 __intnl_SystemUInt32_0 = 0;
+public UdonBehaviour requiredAchievement;
+private String __intnl_SystemString_5 = null;
+private String __0___0_GetPurchaseRequirementsText__ret = null;
+private Single __intnl_SystemSingle_4 = 0f;
+private String __const_SystemString_9 = "/20";
+private Int32 __0_playerMoney__param = 0;
+private Single __0_GetAccelerationPrimaryFill__ret = 0f;
+private Boolean __intnl_SystemBoolean_12 = false;
+private String __refl_typename = "BoatEntry";
+public Single boostMultiplier;
+private String __0_GetDetailedDescription__ret = null;
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private String __intnl_SystemString_2 = null;
+public Single boostTiltAmount;
+private String __0_GetDisplayStats__ret = null;
+private Single __intnl_SystemSingle_3 = 0f;
+private String __lcl_stats_SystemString_0 = null;
+private String __lcl_requirements_SystemString_0 = null;
+private Boolean __0___0_CanPurchaseBoat__ret = false;
+private String __const_SystemString_1 = "Top Speed: ";
+private Single __const_SystemSingle_3 = 0f;
+public Sprite boatIcon;
+private Int32 __1_playerMoney__param = 0;
+private String __intnl_SystemString_18 = null;
+private String __intnl_SystemString_19 = null;
+private String __intnl_SystemString_16 = null;
+private String __intnl_SystemString_17 = null;
+private String __intnl_SystemString_14 = null;
+private String __intnl_SystemString_15 = null;
+private String __intnl_SystemString_12 = null;
+private String __intnl_SystemString_13 = null;
+private String __intnl_SystemString_10 = null;
+private String __intnl_SystemString_11 = null;
+private Boolean __intnl_SystemBoolean_15 = false;
+public Single driftTurnMultiplier;
+private Single __0_GetTopSpeedPrimaryFill__ret = 0f;
+public Single turnTiltAmount;
+private String __const_SystemString_6 = "Sturdiness: ";
+private Int32 __0_playerLevel__param = 0;
+private Single __const_SystemSingle_6 = 1000f;
+public Single accelerationRate;
+public Int32 unlockLevel;
+public Single decelerationRate;
+private String __intnl_SystemString_7 = null;
+public Single boostCooldown;
+private String __const_SystemString_26 = "F0";
+private String __const_SystemString_27 = "K";
+private String __const_SystemString_24 = "price";
+private String __const_SystemString_25 = "M";
+private String __const_SystemString_22 = " coins ";
+private String __const_SystemString_23 = "Ready to Purchase";
+private String __const_SystemString_20 = " ";
+private String __const_SystemString_21 = "Costs ";
+private String __const_SystemString_28 = "\n\n";
+private String __const_SystemString_29 = "Price: ";
+private Single __intnl_SystemSingle_6 = 0f;
+private Single __0___0_GetPrimaryStarFill__ret = 0f;
+private Int32 __1_playerLevel__param = 0;
+public Single turnSpeed;
+public Single boostDuration;
+private Boolean __0___0_CanUseBoat__ret = false;
+private Single __const_SystemSingle_5 = 1000000f;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Single __0_GetSturdinessPrimaryFill__ret = 0f;
+private UdonBehaviour __0_other__param = null;
+private Int32 __const_SystemInt32_1 = 6;
+private Int32 __const_SystemInt32_0 = 0;
+private Int32 __const_SystemInt32_3 = 1;
+private Int32 __const_SystemInt32_2 = 10;
+private Int32 __const_SystemInt32_5 = 1000000;
+private Int32 __const_SystemInt32_4 = -1;
+private Int32 __const_SystemInt32_6 = 10000;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private Boolean __0___0_ShouldAutoUnlockAtLevel__ret = false;
+private String __intnl_SystemString_4 = null;
+private Single __intnl_SystemSingle_5 = 0f;
+private String __const_SystemString_3 = " (stars: ";
+private Single __0_GetBoostPrimaryFill__ret = 0f;
+private String __const_SystemString_8 = "Boost: ";
+public Int32 sturdiness;
+
+
+public void GetDisplayStats()
+{
+__lcl_stats_SystemString_0 = __const_SystemString_0;
+__intnl_SystemString_0 = maxSpeed.ToString(__const_SystemString_2);
+__intnl_SystemString_1 = __const_SystemString_1 + __intnl_SystemString_0;
+__intnl_SystemString_2 = __intnl_SystemString_1 + __const_SystemString_3;
+__intnl_SystemSingle_0 = maxSpeed / __const_SystemSingle_0;
+__intnl_SystemString_3 = __intnl_SystemSingle_0.ToString(__const_SystemString_2);
+__intnl_SystemString_4 = __intnl_SystemString_2 + __intnl_SystemString_3;
+__intnl_SystemString_5 = __intnl_SystemString_4 + __const_SystemString_4;
+__lcl_stats_SystemString_0 = __lcl_stats_SystemString_0 + __intnl_SystemString_5;
+__intnl_SystemString_6 = accelerationRate.ToString(__const_SystemString_2);
+__intnl_SystemString_7 = __const_SystemString_5 + __intnl_SystemString_6;
+__intnl_SystemString_8 = __intnl_SystemString_7 + __const_SystemString_3;
+__intnl_SystemString_9 = accelerationRate.ToString(__const_SystemString_2);
+__intnl_SystemString_10 = __intnl_SystemString_8 + __intnl_SystemString_9;
+__intnl_SystemString_11 = __intnl_SystemString_10 + __const_SystemString_4;
+__lcl_stats_SystemString_0 = __lcl_stats_SystemString_0 + __intnl_SystemString_11;
+__intnl_SystemString_12 = String.Concat(__const_SystemString_6, sturdiness);
+__intnl_SystemString_13 = __intnl_SystemString_12 + __const_SystemString_7;
+__lcl_stats_SystemString_0 = __lcl_stats_SystemString_0 + __intnl_SystemString_13;
+__intnl_SystemString_14 = String.Concat(__const_SystemString_8, boost);
+__intnl_SystemString_15 = __intnl_SystemString_14 + __const_SystemString_9;
+__lcl_stats_SystemString_0 = __lcl_stats_SystemString_0 + __intnl_SystemString_15;
+__0_GetDisplayStats__ret = __lcl_stats_SystemString_0;
+return;
+}
+public void GetBoatClassText()
+{
+__intnl_SystemBoolean_0 = boatClass >= __const_SystemInt32_0;
+if (__intnl_SystemBoolean_0)
+{
+__intnl_SystemBoolean_1 = boatClass <= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_1)
+{
+__intnl_SystemUInt32_0 = __gintnl_SystemUInt32Array_0[boatClass];
+__0_GetBoatClassText__ret = __const_SystemString_10;
+return;
+__0_GetBoatClassText__ret = __const_SystemString_11;
+return;
+__0_GetBoatClassText__ret = __const_SystemString_12;
+return;
+__0_GetBoatClassText__ret = __const_SystemString_13;
+return;
+__0_GetBoatClassText__ret = __const_SystemString_14;
+return;
+__0_GetBoatClassText__ret = __const_SystemString_15;
+return;
+__0_GetBoatClassText__ret = __const_SystemString_16;
+return;
+}
+}
+__0_GetBoatClassText__ret = __const_SystemString_12;
+return;
+}
+public void __0_GetPrimaryStarFill()
+{
+__intnl_SystemBoolean_2 = __0_statValue__param <= __const_SystemInt32_2;
+if (__intnl_SystemBoolean_2)
+{
+__intnl_SystemSingle_1 = Convert.ToSingle(__0_statValue__param);
+__0___0_GetPrimaryStarFill__ret = __intnl_SystemSingle_1 / __const_SystemSingle_1;
+return;
+}
+else
+{
+__0___0_GetPrimaryStarFill__ret = __const_SystemSingle_2;
+return;
+}
+}
+public void __0_GetSecondaryStarFill()
+{
+__intnl_SystemBoolean_3 = __1_statValue__param <= __const_SystemInt32_2;
+if (__intnl_SystemBoolean_3)
+{
+__0___0_GetSecondaryStarFill__ret = __const_SystemSingle_3;
+return;
+}
+else
+{
+__intnl_SystemInt32_0 = __1_statValue__param - __const_SystemInt32_2;
+__intnl_SystemSingle_2 = Convert.ToSingle(__intnl_SystemInt32_0);
+__0___0_GetSecondaryStarFill__ret = __intnl_SystemSingle_2 / __const_SystemSingle_1;
+return;
+}
+}
+public void GetTopSpeedPrimaryFill()
+{
+__intnl_SystemSingle_3 = maxSpeed / __const_SystemSingle_4;
+__0_GetTopSpeedPrimaryFill__ret = Mathf.Clamp01(__intnl_SystemSingle_3);
+return;
+}
+public void GetTopSpeedSecondaryFill()
+{
+__intnl_SystemBoolean_4 = maxSpeed <= __const_SystemSingle_4;
+if (__intnl_SystemBoolean_4)
+{
+__0_GetTopSpeedSecondaryFill__ret = __const_SystemSingle_3;
+return;
+}
+__intnl_SystemSingle_4 = maxSpeed - __const_SystemSingle_4;
+__intnl_SystemSingle_5 = __intnl_SystemSingle_4 / __const_SystemSingle_4;
+__0_GetTopSpeedSecondaryFill__ret = Mathf.Clamp01(__intnl_SystemSingle_5);
+return;
+}
+public void GetAccelerationPrimaryFill()
+{
+__intnl_SystemSingle_6 = accelerationRate / __const_SystemSingle_0;
+__0_GetAccelerationPrimaryFill__ret = Mathf.Clamp01(__intnl_SystemSingle_6);
+return;
+}
+public void GetAccelerationSecondaryFill()
+{
+__intnl_SystemBoolean_5 = accelerationRate <= __const_SystemSingle_0;
+if (__intnl_SystemBoolean_5)
+{
+__0_GetAccelerationSecondaryFill__ret = __const_SystemSingle_3;
+return;
+}
+__intnl_SystemSingle_7 = accelerationRate - __const_SystemSingle_0;
+__intnl_SystemSingle_8 = __intnl_SystemSingle_7 / __const_SystemSingle_0;
+__0_GetAccelerationSecondaryFill__ret = Mathf.Clamp01(__intnl_SystemSingle_8);
+return;
+}
+public void GetSturdinessPrimaryFill()
+{
+__0_statValue__param = sturdiness;
+__0_GetPrimaryStarFill();
+__0_GetSturdinessPrimaryFill__ret = __0___0_GetPrimaryStarFill__ret;
+return;
+}
+public void GetSturdinessSecondaryFill()
+{
+__1_statValue__param = sturdiness;
+__0_GetSecondaryStarFill();
+__0_GetSturdinessSecondaryFill__ret = __0___0_GetSecondaryStarFill__ret;
+return;
+}
+public void GetBoostPrimaryFill()
+{
+__0_statValue__param = boost;
+__0_GetPrimaryStarFill();
+__0_GetBoostPrimaryFill__ret = __0___0_GetPrimaryStarFill__ret;
+return;
+}
+public void GetBoostSecondaryFill()
+{
+__1_statValue__param = boost;
+__0_GetSecondaryStarFill();
+__0_GetBoostSecondaryFill__ret = __0___0_GetSecondaryStarFill__ret;
+return;
+}
+public void __0_ShouldAutoUnlockAtLevel()
+{
+__intnl_SystemBoolean_6 = isUnlockedFromLevel;
+if (__intnl_SystemBoolean_6)
+{
+__intnl_SystemBoolean_6 = __0_playerLevel__param >= unlockLevel;
+}
+__0___0_ShouldAutoUnlockAtLevel__ret = __intnl_SystemBoolean_6;
+return;
+}
+public void __0_CanUseBoat()
+{
+if (isUnlockedByDefault)
+{
+__0___0_CanUseBoat__ret = __const_SystemBoolean_0;
+return;
+}
+if (isUnlockedFromLevel)
+{
+__0___0_CanUseBoat__ret = __1_playerLevel__param >= unlockLevel;
+return;
+}
+__0___0_CanUseBoat__ret = __const_SystemBoolean_1;
+return;
+}
+public void __0_CanPurchaseBoat()
+{
+__intnl_SystemBoolean_7 = isUnlockedFromLevel;
+if (__intnl_SystemBoolean_7)
+{
+__intnl_SystemBoolean_7 = __2_playerLevel__param < unlockLevel;
+}
+if (__intnl_SystemBoolean_7)
+{
+__0___0_CanPurchaseBoat__ret = __const_SystemBoolean_1;
+return;
+}
+if (isUnlockedByDefault)
+{
+__0___0_CanPurchaseBoat__ret = __const_SystemBoolean_1;
+return;
+}
+__0___0_CanPurchaseBoat__ret = __0_playerMoney__param >= price;
+return;
+}
+public void __0_GetPurchaseRequirementsText()
+{
+if (isUnlockedByDefault)
+{
+__0___0_GetPurchaseRequirementsText__ret = __const_SystemString_17;
+return;
+}
+__lcl_requirements_SystemString_0 = __const_SystemString_18;
+__intnl_SystemBoolean_8 = isUnlockedFromLevel;
+if (__intnl_SystemBoolean_8)
+{
+__intnl_SystemBoolean_8 = __3_playerLevel__param < unlockLevel;
+}
+if (__intnl_SystemBoolean_8)
+{
+__intnl_SystemString_16 = String.Concat(__const_SystemString_19, unlockLevel);
+__intnl_SystemString_17 = __intnl_SystemString_16 + __const_SystemString_20;
+__lcl_requirements_SystemString_0 = __lcl_requirements_SystemString_0 + __intnl_SystemString_17;
+}
+__intnl_SystemBoolean_9 = __1_playerMoney__param < price;
+if (__intnl_SystemBoolean_9)
+{
+__intnl_SystemString_16 = String.Concat(__const_SystemString_21, price);
+__intnl_SystemString_17 = __intnl_SystemString_16 + __const_SystemString_22;
+__lcl_requirements_SystemString_0 = __lcl_requirements_SystemString_0 + __intnl_SystemString_17;
+}
+__intnl_SystemBoolean_10 = __lcl_requirements_SystemString_0 == __const_SystemString_18;
+if (__intnl_SystemBoolean_10)
+{
+__lcl_requirements_SystemString_0 = __const_SystemString_23;
+}
+__0___0_GetPurchaseRequirementsText__ret = __lcl_requirements_SystemString_0.Trim();
+return;
+}
+public void __0_ComparePriceTo()
+{
+__intnl_UnityEngineObject_0 = __0_other__param;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_11 = __intnl_UnityEngineObject_0 == __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_11)
+{
+__0___0_ComparePriceTo__ret = __const_SystemInt32_3;
+return;
+}
+__intnl_SystemObject_0 = __0_other__param.GetProgramVariable(__const_SystemString_24);
+__intnl_SystemInt32_1 = Convert.ToInt32(__intnl_SystemObject_0);
+__intnl_SystemBoolean_12 = price < __intnl_SystemInt32_1;
+if (__intnl_SystemBoolean_12)
+{
+__0___0_ComparePriceTo__ret = __const_SystemInt32_4;
+return;
+}
+__intnl_SystemObject_1 = __0_other__param.GetProgramVariable(__const_SystemString_24);
+__intnl_SystemInt32_2 = Convert.ToInt32(__intnl_SystemObject_1);
+__intnl_SystemBoolean_13 = price > __intnl_SystemInt32_2;
+if (__intnl_SystemBoolean_13)
+{
+__0___0_ComparePriceTo__ret = __const_SystemInt32_3;
+return;
+}
+__0___0_ComparePriceTo__ret = __const_SystemInt32_0;
+return;
+}
+public void GetFormattedPrice()
+{
+__intnl_SystemBoolean_14 = price >= __const_SystemInt32_5;
+if (__intnl_SystemBoolean_14)
+{
+__intnl_SystemSingle_9 = Convert.ToSingle(price);
+__intnl_SystemSingle_10 = __intnl_SystemSingle_9 / __const_SystemSingle_5;
+__intnl_SystemString_18 = __intnl_SystemSingle_10.ToString(__const_SystemString_2);
+__0_GetFormattedPrice__ret = __intnl_SystemString_18 + __const_SystemString_25;
+return;
+}
+else
+{
+__intnl_SystemBoolean_15 = price >= __const_SystemInt32_6;
+if (__intnl_SystemBoolean_15)
+{
+__intnl_SystemSingle_9 = Convert.ToSingle(price);
+__intnl_SystemSingle_10 = __intnl_SystemSingle_9 / __const_SystemSingle_6;
+__intnl_SystemString_18 = __intnl_SystemSingle_10.ToString(__const_SystemString_26);
+__0_GetFormattedPrice__ret = __intnl_SystemString_18 + __const_SystemString_27;
+return;
+}
+else
+{
+__0_GetFormattedPrice__ret = price.ToString();
+return;
+}
+}
+}
+public void GetDetailedDescription()
+{
+__lcl_details_SystemString_0 = description + __const_SystemString_28;
+GetFormattedPrice();
+__intnl_SystemString_19 = __const_SystemString_29 + __0_GetFormattedPrice__ret;
+__intnl_SystemString_20 = __intnl_SystemString_19 + __const_SystemString_30;
+__lcl_details_SystemString_0 = __lcl_details_SystemString_0 + __intnl_SystemString_20;
+__0_GetDetailedDescription__ret = __lcl_details_SystemString_0;
+return;
+}
+public void GetValueRating()
+{
+__intnl_SystemSingle_11 = Convert.ToSingle(price);
+__0_GetValueRating__ret = __intnl_SystemSingle_11 / __const_SystemSingle_6;
+return;
+}
+}

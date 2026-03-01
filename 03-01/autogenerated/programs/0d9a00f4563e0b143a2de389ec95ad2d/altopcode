@@ -1,0 +1,162 @@
+void _start()
+__lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0 = get_LocalPlayer();// 16
+64 if (__intnl_SystemBoolean_0) //96
+{
+isVR = L_localPlayer.IsUserInVR();// 88
+}
+104 if (isVR) //384
+{
+128 activeFadeImage = vrFadeImage
+148 __intnl_UnityEngineObject_0 = desktopFadeImage
+168 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+212 if (__intnl_SystemBoolean_1) //268
+{
+G_desktopFadeImage.get_gameObject().SetActive(__const_SystemBoolean_0);// 260
+}
+284 __intnl_UnityEngineObject_2 = vrFadeImage
+304 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+348 if (__intnl_SystemBoolean_2) //376
+{
+368 return;
+}
+376 JUMP 648
+}
+400 activeFadeImage = desktopFadeImage
+420 __intnl_UnityEngineObject_0 = vrFadeImage
+440 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+484 if (__intnl_SystemBoolean_1) //540
+{
+G_vrFadeImage.get_gameObject().SetActive(__const_SystemBoolean_0);// 532
+}
+556 __intnl_UnityEngineObject_2 = desktopFadeImage
+576 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+620 if (__intnl_SystemBoolean_2) //648
+{
+640 return;
+}
+656 if (startTransparent) //756
+{
+688 __0_alpha__param = __const_SystemSingle_0
+692 JUMP 2224
+G_desktopFadeImage.get_gameObject().SetActive(__const_SystemBoolean_0);// 740
+748 JUMP 840
+}
+G_desktopFadeImage.get_gameObject().SetActive(__const_SystemBoolean_1);// 796
+828 __0_alpha__param = __const_SystemSingle_1
+832 JUMP 2224
+856 isInitialized = __const_SystemBoolean_1
+872 return;
+void _lateUpdate()
+920 if (__intnl_SystemBoolean_3) //936
+{
+928 JUMP 960
+}
+968 if (__intnl_SystemBoolean_3) //996
+{
+988 return;
+}
+fadeTimer = op_Addition(__intnl_SystemSingle_0, fadeTimer);// 1036
+__lcl_progress_SystemSingle_0 = Clamp01(__intnl_SystemSingle_1);// 1092
+__lcl_smoothProgress_SystemSingle_0 = op_Multiplication(__intnl_SystemSingle_4, __intnl_SystemSingle_2);// 1220
+__lcl_currentAlpha_SystemSingle_0 = Lerp(__lcl_smoothProgress_SystemSingle_0, targetAlpha, startAlpha);// 1260
+1292 __0_alpha__param = __lcl_currentAlpha_SystemSingle_0
+1296 JUMP 2224
+1344 if (__intnl_SystemBoolean_4) //1504
+{
+1368 isFading = __const_SystemBoolean_0
+1396 __0_alpha__param = targetAlpha
+1400 JUMP 2224
+1448 if (__intnl_SystemBoolean_5) //1504
+{
+G_desktopFadeImage.get_gameObject().SetActive(__const_SystemBoolean_0);// 1496
+}
+}
+1516 return;
+void __0_FadeToBlack()
+1548 JUMP 2532
+1572 __0_from__param = __0_GetCurrentAlpha__ret
+1592 __0_to__param = __const_SystemSingle_1
+1612 __3_duration__param = __0_duration__param
+1616 JUMP 1892
+1636 return;
+void __0_FadeFromBlack()
+1668 JUMP 2532
+1692 __0_from__param = __0_GetCurrentAlpha__ret
+1712 __0_to__param = __const_SystemSingle_0
+1732 __3_duration__param = __1_duration__param
+1736 JUMP 1892
+1756 return;
+void __0_FadeTo()
+1788 JUMP 2532
+1812 __0_from__param = __0_GetCurrentAlpha__ret
+1832 __0_to__param = __0_targetAlphaValue__param
+1852 __3_duration__param = __2_duration__param
+1856 JUMP 1892
+1876 return;
+1908 __intnl_UnityEngineObject_4 = activeFadeImage
+1928 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+1972 if (__intnl_SystemBoolean_6) //2000
+{
+1992 return;
+}
+G_desktopFadeImage.get_gameObject().SetActive(__const_SystemBoolean_1);// 2040
+2064 startAlpha = __0_from__param
+2084 targetAlpha = __0_to__param
+fadeDuration = Max(__3_duration__param, __const_SystemSingle_4);// 2112
+2136 fadeTimer = __const_SystemSingle_0
+2156 isFading = __const_SystemBoolean_1
+2184 __0_alpha__param = startAlpha
+2188 JUMP 2224
+2208 return;
+2240 __intnl_UnityEngineObject_6 = activeFadeImage
+2260 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+2304 if (__intnl_SystemBoolean_7) //2332
+{
+2324 return;
+}
+__lcl_color_UnityEngineColor_0 = G_desktopFadeImage.get_color();// 2348
+L_color.set_a(__intnl_SystemSingle_5);// 2396
+2420 __intnl_UnityEngineColor_0 = __lcl_color_UnityEngineColor_0
+G_desktopFadeImage.set_color(__lcl_color_UnityEngineColor_0);// 2440
+G_desktopFadeImage.set_raycastTarget(__intnl_SystemBoolean_8);// 2496
+2516 return;
+2548 __intnl_UnityEngineObject_8 = activeFadeImage
+2568 __intnl_UnityEngineObject_9 = __const_SystemObject_0
+2612 if (__intnl_SystemBoolean_9) //2660
+{
+2636 __0_GetCurrentAlpha__ret = __const_SystemSingle_0
+2652 return;
+}
+__0_GetCurrentAlpha__ret = G_desktopFadeImage.get_color().get_a();// 2700
+2720 return;
+2740 return;
+void SetInstantBlack()
+2772 isFading = __const_SystemBoolean_0
+2792 __intnl_UnityEngineObject_10 = activeFadeImage
+2812 __intnl_UnityEngineObject_11 = __const_SystemObject_0
+2856 if (__intnl_SystemBoolean_10) //2912
+{
+G_desktopFadeImage.get_gameObject().SetActive(__const_SystemBoolean_1);// 2904
+}
+2936 __0_alpha__param = __const_SystemSingle_1
+2940 JUMP 2224
+2960 return;
+void SetInstantClear()
+2992 isFading = __const_SystemBoolean_0
+3020 __0_alpha__param = __const_SystemSingle_0
+3024 JUMP 2224
+3048 __intnl_UnityEngineObject_12 = activeFadeImage
+3068 __intnl_UnityEngineObject_13 = __const_SystemObject_0
+3112 if (__intnl_SystemBoolean_11) //3168
+{
+G_desktopFadeImage.get_gameObject().SetActive(__const_SystemBoolean_0);// 3160
+}
+3180 return;
+void IsFading()
+3212 __0_IsFading__ret = isFading
+3228 return;
+3248 return;
+void IsVRMode()
+3280 __0_IsVRMode__ret = isVR
+3296 return;
+3316 return;

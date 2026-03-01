@@ -1,0 +1,40 @@
+using VRC.SDKBase;
+using System;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private VRCPlayerApi __instance_2 = null;
+private object __arg0_1 = null;
+private object __message_0 = null;
+private object __message_1 = null;
+private String __format_1 = "{0} Exited";
+private VRCPlayerApi __instance_1 = null;
+private VRCPlayerApi onStationEnteredPlayer = null;
+private VRCPlayerApi onStationExitedPlayer = null;
+private VRCPlayerApi __instance_0 = null;
+private object __arg0_0 = null;
+private String __format_0 = "{0} Entered";
+
+
+public void _interact()
+{
+__instance_0 = Networking.LocalPlayer;
+__instance_0.UseAttachedStation();
+}
+return;
+public void _onStationEntered()
+{
+__instance_1 = onStationEnteredPlayer;
+__arg0_0 = (object)(__instance_1.displayName);
+__message_0 = (object)(String.Format(__format_0, __arg0_0));
+Debug.Log(__message_0);
+}
+return;
+public void _onStationExited()
+{
+__instance_2 = onStationExitedPlayer;
+__arg0_1 = (object)(__instance_2.displayName);
+__message_1 = (object)(String.Format(__format_1, __arg0_1));
+Debug.Log(__message_1);
+}
+return;
+}

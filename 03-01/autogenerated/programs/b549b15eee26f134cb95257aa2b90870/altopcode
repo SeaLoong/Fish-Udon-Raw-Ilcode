@@ -1,0 +1,53 @@
+void _start()
+24 __intnl_UnityEngineObject_0 = audioSource
+44 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+88 if (__intnl_SystemBoolean_0) //116
+{
+108 return;
+}
+G_audioSource.set_volume(__const_SystemSingle_0);// 132
+172 if (__intnl_SystemBoolean_1) //188
+{
+180 JUMP 204
+}
+G_audioSource.Play();// 196
+this.SendCustomEventDelayedSeconds(__const_VRCUdonCommonEnumsEventTiming_0, startDelay, __const_SystemString_0);// 236
+256 return;
+void StartFade()
+288 isFading = __const_SystemBoolean_0
+308 fadeProgress = __const_SystemSingle_0
+324 return;
+void _update()
+356 __intnl_UnityEngineObject_2 = audioSource
+376 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+420 if (__intnl_SystemBoolean_2) //448
+{
+440 return;
+}
+464 __lcl_targetVolume_SystemSingle_0 = __const_SystemSingle_1
+484 __intnl_UnityEngineObject_4 = audioSettingsManager
+504 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+548 if (__intnl_SystemBoolean_3) //676
+{
+580 __intnl_VRCUdonUdonBehaviour_0 = audioSettingsManager
+G_audioSettingsManager.SendCustomEvent(__const_SystemString_1);// 592
+672 __lcl_targetVolume_SystemSingle_0 = __intnl_SystemSingle_0
+}
+684 if (isFading) //1072
+{
+fadeProgress = op_Addition(__intnl_SystemSingle_1, fadeProgress);// 764
+812 if (__intnl_SystemBoolean_4) //880
+{
+836 fadeProgress = __const_SystemSingle_1
+856 isFading = __const_SystemBoolean_1
+876 fadeComplete = __const_SystemBoolean_0
+}
+__lcl_smoothProgress_SystemSingle_0 = op_Multiplication(__intnl_SystemSingle_4, __intnl_SystemSingle_2);// 1000
+G_audioSource.set_volume(__intnl_SystemSingle_5);// 1056
+1064 JUMP 1112
+}
+1080 if (fadeComplete) //1112
+{
+G_audioSource.set_volume(__lcl_targetVolume_SystemSingle_0);// 1104
+}
+1124 return;

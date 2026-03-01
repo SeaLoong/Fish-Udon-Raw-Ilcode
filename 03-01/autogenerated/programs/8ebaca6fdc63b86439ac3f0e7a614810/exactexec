@@ -1,0 +1,362 @@
+using System;
+using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Boolean __intnl_SystemBoolean_13 = false;
+private String __intnl_SystemString_1 = null;
+private Single animationTime = 0f;
+private Object __intnl_UnityEngineObject_12 = null;
+private Single __intnl_SystemSingle_0 = 0f;
+private String __const_SystemString_0 = "s";
+public Single slideDuration;
+private Single __const_SystemSingle_0 = 0f;
+private Single __intnl_SystemSingle_10 = 0f;
+private Single __intnl_SystemSingle_11 = 0f;
+private Single __intnl_SystemSingle_12 = 0f;
+private Single __intnl_SystemSingle_13 = 0f;
+public Vector2 slideOffset;
+private Vector2 targetOffset = (0.00, 0.00);
+private Single __intnl_SystemSingle_8 = 0f;
+private UInt32 __gintnl_SystemUInt32_5 = 3948;
+private UInt32 __gintnl_SystemUInt32_4 = 3912;
+private UInt32 __gintnl_SystemUInt32_1 = 1976;
+private UInt32 __gintnl_SystemUInt32_0 = 84;
+private UInt32 __gintnl_SystemUInt32_3 = 2584;
+private UInt32 __gintnl_SystemUInt32_2 = 1992;
+private Boolean __const_SystemBoolean_0 = false;
+private Boolean __const_SystemBoolean_1 = true;
+private Object __intnl_UnityEngineObject_11 = null;
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Object __intnl_UnityEngineObject_19 = null;
+private Single __intnl_SystemSingle_7 = 0f;
+private Object __intnl_UnityEngineObject_14 = null;
+private Int64 __refl_typeid = 1630038010106254846;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+public GameObject previousButton;
+private Boolean __intnl_SystemBoolean_11 = false;
+private Vector2 startOffset = (0.00, 0.00);
+private String __intnl_SystemString_3 = null;
+private Single __intnl_SystemSingle_2 = 0f;
+private TextMeshProUGUI __intnl_TMProTextMeshProUGUI_0 = null;
+private Vector2 __lcl_offset_UnityEngineVector2_0 = (0.00, 0.00);
+private String __const_SystemString_2 = "NEXT";
+private Single __const_SystemSingle_2 = 16f;
+private Boolean __intnl_SystemBoolean_14 = false;
+public Button nextButton;
+private object __const_SystemObject_0 = null;
+private String __intnl_SystemString_0 = null;
+private Object __intnl_UnityEngineObject_13 = null;
+public TextMeshProUGUI nextButtonText;
+private Single __intnl_SystemSingle_1 = 0f;
+public Int32 countdownSeconds;
+public TextMeshProUGUI slideCounterText;
+private Int32 lastDisplayedSecond = -1;
+private Single __const_SystemSingle_1 = 0.5f;
+private Single __intnl_SystemSingle_9 = 0f;
+private Object __intnl_UnityEngineObject_16 = null;
+public Material slideMaterial;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private Single __const_SystemSingle_4 = 2f;
+private Boolean isAnimating = false;
+private Single countdownTimer = 0f;
+private Single __intnl_SystemSingle_4 = 0f;
+private Object __intnl_UnityEngineObject_15 = null;
+private Boolean __intnl_SystemBoolean_12 = false;
+private String __refl_typename = "TutorialWindow";
+private Single __lcl_t_SystemSingle_0 = 0f;
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private String __intnl_SystemString_2 = null;
+private Single __intnl_SystemSingle_3 = 0f;
+private String __const_SystemString_1 = "DONE";
+private Single __const_SystemSingle_3 = -2f;
+public Int32 totalSlides;
+private Boolean __intnl_SystemBoolean_15 = false;
+private Int32 currentSlide = 0;
+private Object __intnl_UnityEngineObject_10 = null;
+public GameObject tutorialWindow;
+private Int32 __lcl_displaySecond_SystemInt32_0 = 0;
+private Object __intnl_UnityEngineObject_18 = null;
+private Boolean isCountingDown = false;
+private Single __intnl_SystemSingle_6 = 0f;
+private Object __intnl_UnityEngineObject_17 = null;
+private Single __const_SystemSingle_5 = 1f;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Int32 __const_SystemInt32_1 = -1;
+private Int32 __const_SystemInt32_0 = 0;
+private Int32 __const_SystemInt32_2 = 1;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private Single __intnl_SystemSingle_5 = 0f;
+private TextMeshProUGUI __intnl_TMProTextMeshProUGUI_1 = null;
+private Single __lcl_p_SystemSingle_0 = 0f;
+private Vector2 __const_UnityEngineVector2_0 = (0.00, 0.00);
+private String __const_SystemString_3 = "/";
+
+
+public void _start()
+{
+currentSlide = __const_SystemInt32_0;
+startOffset = __const_UnityEngineVector2_0;
+targetOffset = __const_UnityEngineVector2_0;
+UNDEF_8ebac_3616();
+}
+public void _update()
+{
+if (isCountingDown)
+{
+__intnl_SystemSingle_0 = Time.deltaTime;
+countdownTimer = countdownTimer - __intnl_SystemSingle_0;
+__lcl_displaySecond_SystemInt32_0 = Mathf.CeilToInt(countdownTimer);
+__intnl_SystemBoolean_0 = __lcl_displaySecond_SystemInt32_0 != lastDisplayedSecond;
+if (__intnl_SystemBoolean_0)
+{
+__intnl_SystemBoolean_0 = __lcl_displaySecond_SystemInt32_0 > __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_0)
+{
+lastDisplayedSecond = __lcl_displaySecond_SystemInt32_0;
+__intnl_UnityEngineObject_0 = nextButtonText;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_1)
+{
+__intnl_SystemString_0 = String.Concat(__lcl_displaySecond_SystemInt32_0, __const_SystemString_0);
+nextButtonText.text = __intnl_SystemString_0;
+}
+}
+__intnl_SystemBoolean_1 = countdownTimer <= __const_SystemSingle_0;
+if (__intnl_SystemBoolean_1)
+{
+isCountingDown = __const_SystemBoolean_0;
+lastDisplayedSecond = __const_SystemInt32_1;
+__intnl_UnityEngineObject_0 = nextButton;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_2 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_2)
+{
+nextButton.interactable = __const_SystemBoolean_1;
+}
+__intnl_UnityEngineObject_2 = nextButtonText;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_3 = __intnl_UnityEngineObject_2 != __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_3)
+{
+__intnl_SystemInt32_0 = totalSlides - __const_SystemInt32_2;
+__intnl_SystemBoolean_4 = currentSlide == __intnl_SystemInt32_0;
+__intnl_TMProTextMeshProUGUI_0 = nextButtonText;
+if (__intnl_SystemBoolean_4)
+{
+__intnl_SystemString_0 = __const_SystemString_1;
+}
+else
+{
+__intnl_SystemString_0 = __const_SystemString_2;
+}
+__intnl_TMProTextMeshProUGUI_0.text = __intnl_SystemString_0;
+}
+}
+}
+__intnl_SystemBoolean_0 = !isAnimating;
+if (__intnl_SystemBoolean_0)
+{
+}
+else
+{
+__intnl_UnityEngineObject_0 = slideMaterial;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_0 == __intnl_UnityEngineObject_1;
+}
+if (__intnl_SystemBoolean_0)
+{
+return;
+}
+__intnl_SystemSingle_0 = Time.deltaTime;
+animationTime = animationTime + __intnl_SystemSingle_0;
+__intnl_SystemSingle_1 = animationTime / slideDuration;
+__lcl_t_SystemSingle_0 = Mathf.Clamp01(__intnl_SystemSingle_1);
+__intnl_SystemBoolean_1 = __lcl_t_SystemSingle_0 < __const_SystemSingle_1;
+if (__intnl_SystemBoolean_1)
+{
+__intnl_SystemSingle_2 = __const_SystemSingle_2 * __lcl_t_SystemSingle_0;
+__intnl_SystemSingle_3 = __intnl_SystemSingle_2 * __lcl_t_SystemSingle_0;
+__intnl_SystemSingle_4 = __intnl_SystemSingle_3 * __lcl_t_SystemSingle_0;
+__intnl_SystemSingle_5 = __intnl_SystemSingle_4 * __lcl_t_SystemSingle_0;
+__lcl_t_SystemSingle_0 = __intnl_SystemSingle_5 * __lcl_t_SystemSingle_0;
+}
+else
+{
+__intnl_SystemSingle_2 = __const_SystemSingle_3 * __lcl_t_SystemSingle_0;
+__lcl_p_SystemSingle_0 = __intnl_SystemSingle_2 + __const_SystemSingle_4;
+__intnl_SystemSingle_3 = __lcl_p_SystemSingle_0 * __lcl_p_SystemSingle_0;
+__intnl_SystemSingle_4 = __intnl_SystemSingle_3 * __lcl_p_SystemSingle_0;
+__intnl_SystemSingle_5 = __intnl_SystemSingle_4 * __lcl_p_SystemSingle_0;
+__intnl_SystemSingle_6 = __intnl_SystemSingle_5 * __lcl_p_SystemSingle_0;
+__intnl_SystemSingle_7 = __intnl_SystemSingle_6 / __const_SystemSingle_4;
+__lcl_t_SystemSingle_0 = __const_SystemSingle_5 - __intnl_SystemSingle_7;
+}
+__lcl_offset_UnityEngineVector2_0 = Vector2.Lerp(startOffset, targetOffset, __lcl_t_SystemSingle_0);
+slideMaterial.mainTextureOffset = __lcl_offset_UnityEngineVector2_0;
+__intnl_SystemBoolean_2 = __lcl_t_SystemSingle_0 >= __const_SystemSingle_5;
+if (__intnl_SystemBoolean_2)
+{
+isAnimating = __const_SystemBoolean_0;
+}
+}
+public void NextSlide()
+{
+if (isCountingDown)
+{
+return;
+}
+__intnl_SystemInt32_1 = totalSlides - __const_SystemInt32_2;
+__intnl_SystemBoolean_5 = currentSlide < __intnl_SystemInt32_1;
+if (__intnl_SystemBoolean_5)
+{
+currentSlide = currentSlide + __const_SystemInt32_2;
+UNDEF_8ebac_3616();
+UNDEF_8ebac_2480();
+}
+else
+{
+__intnl_UnityEngineObject_4 = tutorialWindow;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_6 = __intnl_UnityEngineObject_4 != __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_6)
+{
+tutorialWindow.SetActive(__const_SystemBoolean_0);
+}
+}
+}
+private void UNDEF_8ebac_2480()
+{
+isCountingDown = __const_SystemBoolean_1;
+countdownTimer = Convert.ToSingle(countdownSeconds);
+lastDisplayedSecond = countdownSeconds;
+__intnl_UnityEngineObject_6 = nextButton;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_7 = __intnl_UnityEngineObject_6 != __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_7)
+{
+nextButton.interactable = __const_SystemBoolean_0;
+}
+__intnl_UnityEngineObject_8 = nextButtonText;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_8 = __intnl_UnityEngineObject_8 != __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_8)
+{
+__intnl_SystemString_1 = String.Concat(countdownSeconds, __const_SystemString_0);
+nextButtonText.text = __intnl_SystemString_1;
+}
+}
+public void PreviousSlide()
+{
+__intnl_SystemBoolean_9 = currentSlide > __const_SystemInt32_0;
+if (__intnl_SystemBoolean_9)
+{
+currentSlide = currentSlide - __const_SystemInt32_2;
+UNDEF_8ebac_3616();
+}
+}
+private void UNDEF_8ebac_3616()
+{
+__intnl_UnityEngineObject_10 = slideMaterial;
+__intnl_UnityEngineObject_11 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_10 = __intnl_UnityEngineObject_10 != __intnl_UnityEngineObject_11;
+if (__intnl_SystemBoolean_10)
+{
+startOffset = slideMaterial.mainTextureOffset;
+}
+else
+{
+startOffset = __const_UnityEngineVector2_0;
+}
+__intnl_SystemSingle_8 = slideOffset.x;
+__intnl_SystemSingle_9 = Convert.ToSingle(currentSlide);
+__intnl_SystemSingle_10 = __intnl_SystemSingle_8 * __intnl_SystemSingle_9;
+__intnl_SystemSingle_11 = slideOffset.y;
+__intnl_SystemSingle_12 = Convert.ToSingle(currentSlide);
+__intnl_SystemSingle_13 = __intnl_SystemSingle_11 * __intnl_SystemSingle_12;
+targetOffset = Vector2.ctor(__intnl_SystemSingle_10, __intnl_SystemSingle_13);
+animationTime = __const_SystemSingle_0;
+isAnimating = __const_SystemBoolean_1;
+__intnl_UnityEngineObject_12 = slideCounterText;
+__intnl_UnityEngineObject_13 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_11 = __intnl_UnityEngineObject_12 != __intnl_UnityEngineObject_13;
+if (__intnl_SystemBoolean_11)
+{
+__intnl_SystemInt32_2 = currentSlide + __const_SystemInt32_2;
+__intnl_SystemString_2 = String.Concat(__intnl_SystemInt32_2, __const_SystemString_3);
+__intnl_SystemString_3 = String.Concat(__intnl_SystemString_2, totalSlides);
+slideCounterText.text = __intnl_SystemString_3;
+}
+__intnl_UnityEngineObject_14 = previousButton;
+__intnl_UnityEngineObject_15 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_12 = __intnl_UnityEngineObject_14 != __intnl_UnityEngineObject_15;
+if (__intnl_SystemBoolean_12)
+{
+__intnl_SystemBoolean_13 = currentSlide > __const_SystemInt32_0;
+previousButton.SetActive(__intnl_SystemBoolean_13);
+}
+__intnl_UnityEngineObject_16 = nextButtonText;
+__intnl_UnityEngineObject_17 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_13 = __intnl_UnityEngineObject_16 != __intnl_UnityEngineObject_17;
+if (__intnl_SystemBoolean_13)
+{
+__intnl_SystemInt32_2 = totalSlides - __const_SystemInt32_2;
+__intnl_SystemBoolean_14 = currentSlide == __intnl_SystemInt32_2;
+__intnl_TMProTextMeshProUGUI_1 = nextButtonText;
+if (__intnl_SystemBoolean_14)
+{
+__intnl_SystemString_2 = __const_SystemString_1;
+}
+else
+{
+__intnl_SystemString_2 = __const_SystemString_2;
+}
+__intnl_TMProTextMeshProUGUI_1.text = __intnl_SystemString_2;
+}
+}
+public void _onEnable()
+{
+currentSlide = __const_SystemInt32_0;
+startOffset = __const_UnityEngineVector2_0;
+targetOffset = __const_UnityEngineVector2_0;
+animationTime = __const_SystemSingle_0;
+isAnimating = __const_SystemBoolean_0;
+isCountingDown = __const_SystemBoolean_0;
+countdownTimer = __const_SystemSingle_0;
+lastDisplayedSecond = __const_SystemInt32_1;
+__intnl_UnityEngineObject_18 = slideMaterial;
+__intnl_UnityEngineObject_19 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_15 = __intnl_UnityEngineObject_18 != __intnl_UnityEngineObject_19;
+if (__intnl_SystemBoolean_15)
+{
+slideMaterial.mainTextureOffset = __const_UnityEngineVector2_0;
+}
+UNDEF_8ebac_3616();
+isAnimating = __const_SystemBoolean_0;
+UNDEF_8ebac_2480();
+}
+}

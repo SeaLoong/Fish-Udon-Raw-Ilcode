@@ -1,0 +1,431 @@
+using System;
+using VRC.Udon;
+using UnityEngine;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Boolean __intnl_SystemBoolean_13 = false;
+private Int32 __0_index__param = 0;
+private String __intnl_SystemString_1 = null;
+private object __intnl_SystemObject_0 = null;
+private UdonBehaviour __0___0_GetAchievementByName__ret = null;
+private String __const_SystemString_0 = "trackingKey";
+private Boolean __intnl_SystemBoolean_16 = false;
+private Int32 __lcl_j_SystemInt32_0 = 0;
+private UInt32 __gintnl_SystemUInt32_0 = 24;
+private Int32 __lcl_index_SystemInt32_1 = 0;
+private Int32 __lcl_index_SystemInt32_0 = 0;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_7 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Int64 __refl_typeid = -9036344005638804888;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_2 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_9 = null;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Boolean __intnl_SystemBoolean_11 = false;
+public Boolean showDebugLogs;
+private Component[] __0___0_GetAchievementsByTrackingKey__ret = null;
+private Int32 __0_GetAchievementCount__ret = 0;
+private String __intnl_SystemString_3 = null;
+private object __intnl_SystemObject_2 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_1 = null;
+private String __const_SystemString_2 = "achievementName";
+private Int32 __lcl_count_SystemInt32_0 = 0;
+private Int32 __lcl_count_SystemInt32_1 = 0;
+private Boolean __intnl_SystemBoolean_19 = false;
+private Boolean __intnl_SystemBoolean_14 = false;
+private Component[] __0___0_GetVisibleAchievements__ret = null;
+private object __const_SystemObject_0 = null;
+private String __intnl_SystemString_0 = null;
+private object __intnl_SystemObject_1 = null;
+private Boolean __intnl_SystemBoolean_17 = false;
+private String __0_trackingKey__param = null;
+private Component[] __0_GetAllAchievements__ret = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_4 = null;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private Int32 __lcl_i_SystemInt32_1 = 0;
+private Int32 __lcl_i_SystemInt32_0 = 0;
+private Int32 __lcl_i_SystemInt32_3 = 0;
+private Int32 __lcl_i_SystemInt32_2 = 0;
+private Int32 __lcl_i_SystemInt32_4 = 0;
+private UdonBehaviour __0_achievement__param = null;
+private object __intnl_SystemObject_4 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_3 = null;
+private Boolean __intnl_SystemBoolean_12 = false;
+private String __refl_typename = "AchievementDatabase";
+private Component[] __lcl_matchingAchievements_UnityEngineComponentArray_0 = null;
+private Component[] __lcl_visibleAchievements_UnityEngineComponentArray_0 = null;
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Int32 __intnl_SystemInt32_5 = 0;
+private Int32 __intnl_SystemInt32_4 = 0;
+private Int32 __intnl_SystemInt32_7 = 0;
+private Int32 __intnl_SystemInt32_6 = 0;
+private Int32 __intnl_SystemInt32_9 = 0;
+private Int32 __intnl_SystemInt32_8 = 0;
+private String __intnl_SystemString_2 = null;
+private object __intnl_SystemObject_3 = null;
+private String __const_SystemString_1 = "requiredValue";
+private Boolean[] __0_unlockedStatus__param = null;
+private Boolean __intnl_SystemBoolean_15 = false;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_6 = null;
+public Component[] achievementEntries;
+private Int32 __intnl_SystemInt32_10 = 0;
+private UdonBehaviour __lcl_achievement_VRCUdonUdonBehaviour_0 = null;
+private object __intnl_SystemObject_6 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_5 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_8 = null;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Int32 __const_SystemInt32_1 = 1;
+private Int32 __const_SystemInt32_0 = 0;
+private Int32 __const_SystemInt32_2 = -1;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private Boolean __lcl_isUnlocked_SystemBoolean_0 = false;
+private Int32 __0___0_GetAchievementIndex__ret = 0;
+private object __intnl_SystemObject_5 = null;
+private UdonBehaviour __0___0_GetAchievement__ret = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_0 = null;
+private String __const_SystemString_3 = "isHidden";
+private Boolean __intnl_SystemBoolean_18 = false;
+private String __0_achievementName__param = null;
+
+
+public void _start()
+{
+UNDEF_5ba4f_1132();
+if (showDebugLogs)
+{
+}
+}
+private void UNDEF_5ba4f_1132()
+{
+__intnl_SystemBoolean_0 = achievementEntries == __const_SystemObject_0;
+if (__intnl_SystemBoolean_0)
+{
+}
+else
+{
+__intnl_SystemInt32_0 = achievementEntries.Length;
+__intnl_SystemBoolean_0 = __intnl_SystemInt32_0 == __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_0)
+{
+return;
+}
+__lcl_i_SystemInt32_0 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_1 = achievementEntries.Length;
+__intnl_SystemBoolean_1 = __lcl_i_SystemInt32_0 < __intnl_SystemInt32_1;
+if (__intnl_SystemBoolean_1)
+{
+break;
+}
+__lcl_j_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_2 = achievementEntries.Length;
+__intnl_SystemBoolean_2 = __lcl_j_SystemInt32_0 < __intnl_SystemInt32_2;
+if (__intnl_SystemBoolean_2)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(achievementEntries[__lcl_i_SystemInt32_0]);
+__intnl_SystemObject_0 = __intnl_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_0);
+__intnl_SystemString_0 = (String)__intnl_SystemObject_0;
+__intnl_VRCUdonUdonBehaviour_1 = (UdonBehaviour)(achievementEntries[__lcl_j_SystemInt32_0]);
+__intnl_SystemObject_1 = __intnl_VRCUdonUdonBehaviour_1.GetProgramVariable(__const_SystemString_0);
+__intnl_SystemString_1 = (String)__intnl_SystemObject_1;
+__intnl_SystemBoolean_3 = __intnl_SystemString_0 == __intnl_SystemString_1;
+if (__intnl_SystemBoolean_3)
+{
+__intnl_VRCUdonUdonBehaviour_2 = (UdonBehaviour)(achievementEntries[__lcl_i_SystemInt32_0]);
+__intnl_SystemObject_2 = __intnl_VRCUdonUdonBehaviour_2.GetProgramVariable(__const_SystemString_1);
+__intnl_SystemInt32_3 = Convert.ToInt32(__intnl_SystemObject_2);
+__intnl_VRCUdonUdonBehaviour_3 = (UdonBehaviour)(achievementEntries[__lcl_j_SystemInt32_0]);
+__intnl_SystemObject_3 = __intnl_VRCUdonUdonBehaviour_3.GetProgramVariable(__const_SystemString_1);
+__intnl_SystemInt32_4 = Convert.ToInt32(__intnl_SystemObject_3);
+__intnl_SystemBoolean_3 = __intnl_SystemInt32_3 == __intnl_SystemInt32_4;
+}
+if (__intnl_SystemBoolean_3)
+{
+}
+__lcl_j_SystemInt32_0 = __lcl_j_SystemInt32_0 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_1;
+}
+if (showDebugLogs)
+{
+break;
+}
+__intnl_SystemInt32_1 = achievementEntries.Length;
+__intnl_SystemInt32_2 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_1 = __intnl_SystemInt32_2 < __intnl_SystemInt32_1;
+if (__intnl_SystemBoolean_1)
+{
+break;
+}
+__lcl_achievement_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(achievementEntries[__intnl_SystemInt32_2]);
+__intnl_SystemInt32_2 = __intnl_SystemInt32_2 + __const_SystemInt32_1;
+}
+}
+public void GetAllAchievements()
+{
+__0_GetAllAchievements__ret = achievementEntries;
+return;
+}
+public void __0_GetAchievement()
+{
+__intnl_SystemBoolean_4 = __0_index__param < __const_SystemInt32_0;
+if (__intnl_SystemBoolean_4)
+{
+}
+else
+{
+__intnl_SystemInt32_5 = achievementEntries.Length;
+__intnl_SystemBoolean_4 = __0_index__param >= __intnl_SystemInt32_5;
+}
+if (__intnl_SystemBoolean_4)
+{
+__0___0_GetAchievement__ret = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+__0___0_GetAchievement__ret = (UdonBehaviour)(achievementEntries[__0_index__param]);
+return;
+}
+public void __0_GetAchievementByName()
+{
+__lcl_i_SystemInt32_1 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_6 = achievementEntries.Length;
+__intnl_SystemBoolean_5 = __lcl_i_SystemInt32_1 < __intnl_SystemInt32_6;
+if (__intnl_SystemBoolean_5)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_4 = (UdonBehaviour)(achievementEntries[__lcl_i_SystemInt32_1]);
+__intnl_SystemObject_4 = __intnl_VRCUdonUdonBehaviour_4.GetProgramVariable(__const_SystemString_2);
+__intnl_SystemString_2 = (String)__intnl_SystemObject_4;
+__intnl_SystemBoolean_6 = __intnl_SystemString_2 == __0_achievementName__param;
+if (__intnl_SystemBoolean_6)
+{
+__0___0_GetAchievementByName__ret = (UdonBehaviour)(achievementEntries[__lcl_i_SystemInt32_1]);
+return;
+}
+__lcl_i_SystemInt32_1 = __lcl_i_SystemInt32_1 + __const_SystemInt32_1;
+}
+if (showDebugLogs)
+{
+}
+__0___0_GetAchievementByName__ret = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+public void __0_GetAchievementsByTrackingKey()
+{
+__lcl_count_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_2 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_7 = achievementEntries.Length;
+__intnl_SystemBoolean_7 = __lcl_i_SystemInt32_2 < __intnl_SystemInt32_7;
+if (__intnl_SystemBoolean_7)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_5 = (UdonBehaviour)(achievementEntries[__lcl_i_SystemInt32_2]);
+__intnl_SystemObject_5 = __intnl_VRCUdonUdonBehaviour_5.GetProgramVariable(__const_SystemString_0);
+__intnl_SystemString_3 = (String)__intnl_SystemObject_5;
+__intnl_SystemBoolean_8 = __intnl_SystemString_3 == __0_trackingKey__param;
+if (__intnl_SystemBoolean_8)
+{
+__lcl_count_SystemInt32_0 = __lcl_count_SystemInt32_0 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_2 = __lcl_i_SystemInt32_2 + __const_SystemInt32_1;
+}
+__intnl_SystemBoolean_7 = __lcl_count_SystemInt32_0 == __const_SystemInt32_0;
+if (__intnl_SystemBoolean_7)
+{
+__0___0_GetAchievementsByTrackingKey__ret = __const_SystemInt32_0.ctor();
+return;
+}
+__lcl_matchingAchievements_UnityEngineComponentArray_0 = __lcl_count_SystemInt32_0.ctor();
+__lcl_index_SystemInt32_0 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_2 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_7 = achievementEntries.Length;
+__intnl_SystemBoolean_8 = __lcl_i_SystemInt32_2 < __intnl_SystemInt32_7;
+if (__intnl_SystemBoolean_8)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_5 = (UdonBehaviour)(achievementEntries[__lcl_i_SystemInt32_2]);
+__intnl_SystemObject_5 = __intnl_VRCUdonUdonBehaviour_5.GetProgramVariable(__const_SystemString_0);
+__intnl_SystemString_3 = (String)__intnl_SystemObject_5;
+__intnl_SystemBoolean_9 = __intnl_SystemString_3 == __0_trackingKey__param;
+if (__intnl_SystemBoolean_9)
+{
+__intnl_VRCUdonUdonBehaviour_6 = (UdonBehaviour)(achievementEntries[__lcl_i_SystemInt32_2]);
+__lcl_matchingAchievements_UnityEngineComponentArray_0.Set(__lcl_index_SystemInt32_0, __intnl_VRCUdonUdonBehaviour_6);
+__lcl_index_SystemInt32_0 = __lcl_index_SystemInt32_0 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_2 = __lcl_i_SystemInt32_2 + __const_SystemInt32_1;
+}
+__0___0_GetAchievementsByTrackingKey__ret = __lcl_matchingAchievements_UnityEngineComponentArray_0;
+return;
+}
+public void __0_GetVisibleAchievements()
+{
+__lcl_count_SystemInt32_1 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_3 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_8 = achievementEntries.Length;
+__intnl_SystemBoolean_10 = __lcl_i_SystemInt32_3 < __intnl_SystemInt32_8;
+if (__intnl_SystemBoolean_10)
+{
+break;
+}
+__intnl_SystemBoolean_12 = __0_unlockedStatus__param != __const_SystemObject_0;
+if (__intnl_SystemBoolean_12)
+{
+__intnl_SystemInt32_9 = __0_unlockedStatus__param.Length;
+__intnl_SystemBoolean_12 = __lcl_i_SystemInt32_3 < __intnl_SystemInt32_9;
+}
+__intnl_SystemBoolean_11 = __intnl_SystemBoolean_12;
+if (__intnl_SystemBoolean_11)
+{
+__intnl_SystemBoolean_11 = __0_unlockedStatus__param[__lcl_i_SystemInt32_3];
+}
+__lcl_isUnlocked_SystemBoolean_0 = __intnl_SystemBoolean_11;
+__intnl_VRCUdonUdonBehaviour_7 = (UdonBehaviour)(achievementEntries[__lcl_i_SystemInt32_3]);
+__intnl_SystemObject_6 = __intnl_VRCUdonUdonBehaviour_7.GetProgramVariable(__const_SystemString_3);
+__intnl_SystemBoolean_14 = (Boolean)__intnl_SystemObject_6;
+__intnl_SystemBoolean_13 = !__intnl_SystemBoolean_14;
+if (__intnl_SystemBoolean_13)
+{
+}
+else
+{
+__intnl_SystemBoolean_13 = __lcl_isUnlocked_SystemBoolean_0;
+}
+if (__intnl_SystemBoolean_13)
+{
+__lcl_count_SystemInt32_1 = __lcl_count_SystemInt32_1 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_3 = __lcl_i_SystemInt32_3 + __const_SystemInt32_1;
+}
+__intnl_SystemBoolean_10 = __lcl_count_SystemInt32_1 == __const_SystemInt32_0;
+if (__intnl_SystemBoolean_10)
+{
+__0___0_GetVisibleAchievements__ret = __const_SystemInt32_0.ctor();
+return;
+}
+__lcl_visibleAchievements_UnityEngineComponentArray_0 = __lcl_count_SystemInt32_1.ctor();
+__lcl_index_SystemInt32_1 = __const_SystemInt32_0;
+__lcl_i_SystemInt32_3 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_8 = achievementEntries.Length;
+__intnl_SystemBoolean_11 = __lcl_i_SystemInt32_3 < __intnl_SystemInt32_8;
+if (__intnl_SystemBoolean_11)
+{
+break;
+}
+__intnl_SystemBoolean_13 = __0_unlockedStatus__param != __const_SystemObject_0;
+if (__intnl_SystemBoolean_13)
+{
+__intnl_SystemInt32_9 = __0_unlockedStatus__param.Length;
+__intnl_SystemBoolean_13 = __lcl_i_SystemInt32_3 < __intnl_SystemInt32_9;
+}
+__intnl_SystemBoolean_12 = __intnl_SystemBoolean_13;
+if (__intnl_SystemBoolean_12)
+{
+__intnl_SystemBoolean_12 = __0_unlockedStatus__param[__lcl_i_SystemInt32_3];
+}
+__lcl_isUnlocked_SystemBoolean_0 = __intnl_SystemBoolean_12;
+__intnl_VRCUdonUdonBehaviour_7 = (UdonBehaviour)(achievementEntries[__lcl_i_SystemInt32_3]);
+__intnl_SystemObject_6 = __intnl_VRCUdonUdonBehaviour_7.GetProgramVariable(__const_SystemString_3);
+__intnl_SystemBoolean_15 = (Boolean)__intnl_SystemObject_6;
+__intnl_SystemBoolean_14 = !__intnl_SystemBoolean_15;
+if (__intnl_SystemBoolean_14)
+{
+}
+else
+{
+__intnl_SystemBoolean_14 = __lcl_isUnlocked_SystemBoolean_0;
+}
+if (__intnl_SystemBoolean_14)
+{
+__intnl_VRCUdonUdonBehaviour_8 = (UdonBehaviour)(achievementEntries[__lcl_i_SystemInt32_3]);
+__lcl_visibleAchievements_UnityEngineComponentArray_0.Set(__lcl_index_SystemInt32_1, __intnl_VRCUdonUdonBehaviour_8);
+__lcl_index_SystemInt32_1 = __lcl_index_SystemInt32_1 + __const_SystemInt32_1;
+}
+__lcl_i_SystemInt32_3 = __lcl_i_SystemInt32_3 + __const_SystemInt32_1;
+}
+__0___0_GetVisibleAchievements__ret = __lcl_visibleAchievements_UnityEngineComponentArray_0;
+return;
+}
+public void GetAchievementCount()
+{
+__intnl_SystemBoolean_16 = achievementEntries != __const_SystemObject_0;
+if (__intnl_SystemBoolean_16)
+{
+__0_GetAchievementCount__ret = achievementEntries.Length;
+}
+else
+{
+__0_GetAchievementCount__ret = __const_SystemInt32_0;
+}
+return;
+}
+public void __0_GetAchievementIndex()
+{
+__intnl_UnityEngineObject_0 = __0_achievement__param;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_17 = __intnl_UnityEngineObject_0 == __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_17)
+{
+__0___0_GetAchievementIndex__ret = __const_SystemInt32_2;
+return;
+}
+__lcl_i_SystemInt32_4 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_10 = achievementEntries.Length;
+__intnl_SystemBoolean_18 = __lcl_i_SystemInt32_4 < __intnl_SystemInt32_10;
+if (__intnl_SystemBoolean_18)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_9 = (UdonBehaviour)(achievementEntries[__lcl_i_SystemInt32_4]);
+__intnl_UnityEngineObject_2 = __intnl_VRCUdonUdonBehaviour_9;
+__intnl_UnityEngineObject_3 = __0_achievement__param;
+__intnl_SystemBoolean_19 = __intnl_UnityEngineObject_2 == __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_19)
+{
+__0___0_GetAchievementIndex__ret = __lcl_i_SystemInt32_4;
+return;
+}
+__lcl_i_SystemInt32_4 = __lcl_i_SystemInt32_4 + __const_SystemInt32_1;
+}
+__0___0_GetAchievementIndex__ret = __const_SystemInt32_2;
+return;
+}
+}

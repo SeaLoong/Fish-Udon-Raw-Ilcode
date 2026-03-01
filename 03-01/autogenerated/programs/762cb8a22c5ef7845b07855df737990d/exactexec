@@ -1,0 +1,3582 @@
+using System;
+using VRC.SDK3.Data;
+using UnityEngine;
+using VRC.Udon;
+using VRC.SDKBase;
+using UnityEngine.UI;
+using TMPro;
+using VRC.Udon.Common.Enums;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Boolean __intnl_SystemBoolean_83 = false;
+private Boolean __intnl_SystemBoolean_93 = false;
+private Boolean __intnl_SystemBoolean_13 = false;
+private Boolean __intnl_SystemBoolean_23 = false;
+private Boolean __intnl_SystemBoolean_33 = false;
+private Boolean __intnl_SystemBoolean_43 = false;
+private Boolean __intnl_SystemBoolean_53 = false;
+private Boolean __intnl_SystemBoolean_63 = false;
+private Boolean __intnl_SystemBoolean_73 = false;
+private Int32 __lcl_availableIndex_SystemInt32_0 = 0;
+private DataToken __intnl_VRCSDK3DataDataToken_7 = Null;
+private Int32 __13__intnlparam = 0;
+private UInt32 __gintnl_SystemUInt32_56 = 27892;
+private UInt32 __gintnl_SystemUInt32_46 = 17536;
+private UInt32 __gintnl_SystemUInt32_66 = 37608;
+private UInt32 __gintnl_SystemUInt32_16 = 6220;
+private UInt32 __gintnl_SystemUInt32_36 = 15052;
+private UInt32 __gintnl_SystemUInt32_26 = 9576;
+private object __intnl_SystemObject_21 = null;
+private object __intnl_SystemObject_20 = null;
+private Int32 __intnl_SystemInt32_15 = 0;
+private Int32 __intnl_SystemInt32_35 = 0;
+private Int32 __intnl_SystemInt32_25 = 0;
+private Int32 __intnl_SystemInt32_55 = 0;
+private Int32 __intnl_SystemInt32_45 = 0;
+private UInt32 __intnl_SystemUInt32_4 = 0;
+private Int64 __const_SystemInt64_5 = -8137439302310185947;
+private Int64 __const_SystemInt64_4 = -5375101765331837771;
+private Int64 __const_SystemInt64_3 = 7268708910983254576;
+private Int64 __const_SystemInt64_2 = 3545308679580816163;
+private Int64 __const_SystemInt64_1 = -5035012021200647931;
+private Int64 __const_SystemInt64_0 = -4140435904136666454;
+public Transform[] shopScreenLocations;
+private UdonBehaviour __lcl_behaviour_VRCUdonUdonBehaviour_4 = null;
+private Int32 __0_index__param = 0;
+private Int32[] sellQueueFishValues = null;
+private String __intnl_SystemString_1 = null;
+private UdonBehaviour __6__intnlparam = null;
+private Double __intnl_SystemDouble_18 = 0;
+private Double __intnl_SystemDouble_19 = 0;
+private Double __intnl_SystemDouble_14 = 0;
+private Double __intnl_SystemDouble_15 = 0;
+private Double __intnl_SystemDouble_16 = 0;
+private Double __intnl_SystemDouble_17 = 0;
+private Double __intnl_SystemDouble_10 = 0;
+private Double __intnl_SystemDouble_11 = 0;
+private Double __intnl_SystemDouble_12 = 0;
+private Double __intnl_SystemDouble_13 = 0;
+private Object __intnl_UnityEngineObject_92 = null;
+private Object __intnl_UnityEngineObject_82 = null;
+private Object __intnl_UnityEngineObject_72 = null;
+private Object __intnl_UnityEngineObject_62 = null;
+private Object __intnl_UnityEngineObject_52 = null;
+private Object __intnl_UnityEngineObject_42 = null;
+private Object __intnl_UnityEngineObject_32 = null;
+private Object __intnl_UnityEngineObject_22 = null;
+private Object __intnl_UnityEngineObject_12 = null;
+private UdonBehaviour __8__intnlparam = null;
+private Type __const_SystemType_1 = typeof(TextMeshProUGUI);
+private String __const_SystemString_46 = "</color> <color=#FFFFFF>";
+private String __const_SystemString_47 = "</color> ";
+private String __const_SystemString_44 = "<color=";
+private String __const_SystemString_45 = ">";
+private String __const_SystemString_42 = "F1";
+private String __const_SystemString_43 = "kg)";
+private String __const_SystemString_40 = "__refl_typeid";
+private String __const_SystemString_41 = " (";
+private String __const_SystemString_48 = "<color=#FFFFFF>";
+private String __const_SystemString_49 = "<color=#";
+private Single __intnl_SystemSingle_0 = 0f;
+private Single __1_weight__param = 0f;
+private VRCPlayerApi __lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0 = null;
+private String __lcl_shaderColor_SystemString_0 = null;
+private Int32 __lcl_r_SystemInt32_0 = 0;
+private Int32 availableFishCount = 0;
+private object __intnl_SystemObject_0 = null;
+private DataToken __lcl_fishSlotsToken_VRCSDK3DataDataToken_2 = Null;
+private DataToken __lcl_fishSlotsToken_VRCSDK3DataDataToken_3 = Null;
+private DataToken __lcl_fishSlotsToken_VRCSDK3DataDataToken_0 = Null;
+private DataToken __lcl_fishSlotsToken_VRCSDK3DataDataToken_1 = Null;
+private Int64 __lcl_targetID_SystemInt64_1 = 0;
+private DataList __lcl_fishSlots_VRCSDK3DataDataList_3 = null;
+private DataList __lcl_fishSlots_VRCSDK3DataDataList_2 = null;
+private DataList __lcl_fishSlots_VRCSDK3DataDataList_1 = null;
+private DataList __lcl_fishSlots_VRCSDK3DataDataList_0 = null;
+public GameObject uiToTurnOn;
+private GameObject __32__intnlparam = null;
+private DataList __lcl_fishSlot_VRCSDK3DataDataList_0 = null;
+public UdonBehaviour dialogueManager;
+private String __const_SystemString_0 = "DialogueManager";
+private Int32 __27__intnlparam = 0;
+private Boolean __intnl_SystemBoolean_149 = false;
+private Boolean __intnl_SystemBoolean_148 = false;
+private Boolean __intnl_SystemBoolean_141 = false;
+private Boolean __intnl_SystemBoolean_140 = false;
+private Boolean __intnl_SystemBoolean_143 = false;
+private Boolean __intnl_SystemBoolean_142 = false;
+private Boolean __intnl_SystemBoolean_145 = false;
+private Boolean __intnl_SystemBoolean_144 = false;
+private Boolean __intnl_SystemBoolean_147 = false;
+private Boolean __intnl_SystemBoolean_146 = false;
+private Transform __intnl_UnityEngineTransform_0 = null;
+private GameObject __lcl_statsObj_UnityEngineGameObject_0 = null;
+public AudioClip sellSFXClip;
+private Color __const_UnityEngineColor_6 = new Color(0.5f, 0.5f, 0.5f, 1f);
+private Single __const_SystemSingle_0 = 0f;
+private Double __intnl_SystemDouble_3 = 0;
+private object __lcl_idValue_SystemObject_1 = null;
+private Vector3 __intnl_UnityEngineVector3_6 = new Vector3(0f, 0f, 0f);
+private Single shopAnimationTimer = 0f;
+private UdonBehaviour __0_GetCurrentShopNPC__ret = null;
+private Vector3 originalShopScale = new Vector3(0f, 0f, 0f);
+private Boolean __intnl_SystemBoolean_86 = false;
+private Boolean __intnl_SystemBoolean_96 = false;
+private Boolean __intnl_SystemBoolean_16 = false;
+private Boolean __intnl_SystemBoolean_26 = false;
+private Boolean __intnl_SystemBoolean_36 = false;
+private Boolean __intnl_SystemBoolean_46 = false;
+private Boolean __intnl_SystemBoolean_56 = false;
+private Boolean __intnl_SystemBoolean_66 = false;
+private Boolean __intnl_SystemBoolean_76 = false;
+private DataToken __intnl_VRCSDK3DataDataToken_2 = Null;
+private Int32 __const_SystemInt32_11 = 1;
+private Int32 __const_SystemInt32_31 = 17;
+private Int32 __const_SystemInt32_21 = 7;
+private object __intnl_SystemObject_17 = null;
+private object __intnl_SystemObject_16 = null;
+private object __intnl_SystemObject_15 = null;
+private object __intnl_SystemObject_14 = null;
+private object __intnl_SystemObject_13 = null;
+private object __intnl_SystemObject_12 = null;
+private object __intnl_SystemObject_11 = null;
+private object __intnl_SystemObject_10 = null;
+private object __intnl_SystemObject_19 = null;
+private object __intnl_SystemObject_18 = null;
+private Single __intnl_SystemSingle_10 = 0f;
+private Single __intnl_SystemSingle_11 = 0f;
+private Single __intnl_SystemSingle_12 = 0f;
+private Single __intnl_SystemSingle_13 = 0f;
+private Single __intnl_SystemSingle_14 = 0f;
+private Single __intnl_SystemSingle_15 = 0f;
+private Single __intnl_SystemSingle_16 = 0f;
+private Int32 __lcl_j_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_12 = 0;
+private Int32 __intnl_SystemInt32_32 = 0;
+private Int32 __intnl_SystemInt32_22 = 0;
+private Int32 __intnl_SystemInt32_52 = 0;
+private Int32 __intnl_SystemInt32_42 = 0;
+private Component[] __lcl_udonBehaviours_UnityEngineComponentArray_5 = null;
+private Int32 __10__intnlparam = 0;
+private Button __lcl_slotButton_UnityEngineUIButton_0 = null;
+private String __intnl_SystemString_9 = null;
+private UdonBehaviour __lcl_fishEntry_VRCUdonUdonBehaviour_2 = null;
+private Int32 __3_shaderModifier__param = 0;
+private UInt32[] __gintnl_SystemUInt32Array_0 = System.UInt32[];
+private String[] sellQueueFishIds = null;
+private GameObject __lcl_dialogueObj_UnityEngineGameObject_0 = null;
+private DataList __lcl_slot_VRCSDK3DataDataList_1 = null;
+private Int32 __0_sellQueueIndex__param = 0;
+private Single __intnl_SystemSingle_8 = 0f;
+private UInt32 __gintnl_SystemUInt32_9 = 2452;
+private UInt32 __gintnl_SystemUInt32_8 = 2068;
+private UInt32 __gintnl_SystemUInt32_5 = 1992;
+private UInt32 __gintnl_SystemUInt32_4 = 1404;
+private UInt32 __gintnl_SystemUInt32_7 = 2052;
+private UInt32 __gintnl_SystemUInt32_6 = 2036;
+private UInt32 __gintnl_SystemUInt32_1 = 564;
+private UInt32 __gintnl_SystemUInt32_0 = 284;
+private UInt32 __gintnl_SystemUInt32_3 = 1124;
+private UInt32 __gintnl_SystemUInt32_2 = 844;
+private Double __intnl_SystemDouble_24 = 0;
+private Double __intnl_SystemDouble_20 = 0;
+private Double __intnl_SystemDouble_21 = 0;
+private Double __intnl_SystemDouble_22 = 0;
+private Double __intnl_SystemDouble_23 = 0;
+private Boolean __const_SystemBoolean_0 = false;
+private Boolean __const_SystemBoolean_1 = true;
+private Object __intnl_UnityEngineObject_91 = null;
+private Object __intnl_UnityEngineObject_81 = null;
+private Object __intnl_UnityEngineObject_71 = null;
+private Object __intnl_UnityEngineObject_61 = null;
+private Object __intnl_UnityEngineObject_51 = null;
+private Object __intnl_UnityEngineObject_41 = null;
+private Object __intnl_UnityEngineObject_31 = null;
+private Object __intnl_UnityEngineObject_21 = null;
+private Object __intnl_UnityEngineObject_11 = null;
+private Type __const_SystemType_2 = typeof(Image);
+private String __const_SystemString_96 = "#1A1A1A";
+private String __const_SystemString_97 = "#9966FF";
+private String __const_SystemString_94 = "#4B0082";
+private String __const_SystemString_95 = "#87CEEB";
+private String __const_SystemString_92 = "#FFFF00";
+private String __const_SystemString_93 = "#CCCCCC";
+private String __const_SystemString_90 = "#FF8C00";
+private String __const_SystemString_91 = "#556B2F";
+private String __const_SystemString_98 = "X2";
+private Int32 __lcl_inventoryFishId_SystemInt32_0 = 0;
+private TokenType __intnl_VRCSDK3DataTokenType_2 = TokenType.Null;
+private Image[] __lcl_allImages_UnityEngineUIImageArray_0 = null;
+private GameObject __5_fishSlot__param = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_7 = null;
+public AnimationCurve shopPopOutCurve;
+private Int32 __19__intnlparam = 0;
+private GameObject __intnl_UnityEngineGameObject_11 = null;
+public TextMeshProUGUI sellAllValueText;
+private Int32 __lcl_sellAllTotal_SystemInt32_0 = 0;
+private String __const_SystemString_5 = "get_playerInventoryData";
+public Transform sellQueueContainer;
+private Color __const_UnityEngineColor_5 = new Color(0.8f, 0.1f, 0.1f, 1f);
+private String __24__intnlparam = null;
+private Color __0___0_GetRarityDisplayColor__ret = new Color(0f, 0f, 0f, 0f);
+private object __lcl_idValue_SystemObject_4 = null;
+private Component __intnl_UnityEngineComponent_3 = null;
+private TokenType __const_VRCSDK3DataTokenType_0 = TokenType.DataList;
+private Vector3 __intnl_UnityEngineVector3_5 = new Vector3(0f, 0f, 0f);
+private Int32 __const_SystemInt32_19 = 5;
+private Int32 __const_SystemInt32_29 = 15;
+private UInt32 __gintnl_SystemUInt32_53 = 24860;
+private UInt32 __gintnl_SystemUInt32_43 = 16916;
+private UInt32 __gintnl_SystemUInt32_63 = 36676;
+private UInt32 __gintnl_SystemUInt32_13 = 5320;
+private UInt32 __gintnl_SystemUInt32_33 = 13648;
+private UInt32 __gintnl_SystemUInt32_23 = 7280;
+public GameObject shopFishSlotPrefab;
+private UInt32 __intnl_SystemUInt32_3 = 0;
+private Component __3__intnlparam = null;
+public Single shopPopOutDuration;
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private DataToken __intnl_VRCSDK3DataDataToken_1 = Null;
+private Int32 __const_SystemInt32_16 = 2;
+private Int32 __const_SystemInt32_36 = 22;
+private Int32 __const_SystemInt32_26 = 12;
+private Vector3 __lcl_headForward_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private UdonBehaviour __lcl_behaviour_VRCUdonUdonBehaviour_3 = null;
+private String __intnl_SystemString_6 = null;
+private UdonBehaviour __16__intnlparam = null;
+private UInt32[] __gintnl_SystemUInt32Array_3 = System.UInt32[];
+private Object __intnl_UnityEngineObject_99 = null;
+private Object __intnl_UnityEngineObject_89 = null;
+private Object __intnl_UnityEngineObject_79 = null;
+private Object __intnl_UnityEngineObject_69 = null;
+private Object __intnl_UnityEngineObject_59 = null;
+private Object __intnl_UnityEngineObject_49 = null;
+private Object __intnl_UnityEngineObject_39 = null;
+private Object __intnl_UnityEngineObject_29 = null;
+private Object __intnl_UnityEngineObject_19 = null;
+private String __const_SystemString_16 = "__0_weight__param";
+private String __const_SystemString_17 = "__0_sizeModifier__param";
+private String __const_SystemString_14 = "__0_slot__param";
+private String __const_SystemString_15 = "__0_SetShopManager";
+private String __const_SystemString_12 = "";
+private String __const_SystemString_13 = "__0_manager__param";
+private String __const_SystemString_10 = "__0_GetFishEntryById";
+private String __const_SystemString_11 = "__0___0_GetFishEntryById__ret";
+private String __const_SystemString_18 = "__0_shaderModifier__param";
+private String __const_SystemString_19 = "__0_fishModifierComponent__param";
+private Single __intnl_SystemSingle_7 = 0f;
+private Object __intnl_UnityEngineObject_94 = null;
+private Object __intnl_UnityEngineObject_84 = null;
+private Object __intnl_UnityEngineObject_74 = null;
+private Object __intnl_UnityEngineObject_64 = null;
+private Object __intnl_UnityEngineObject_54 = null;
+private Object __intnl_UnityEngineObject_44 = null;
+private Object __intnl_UnityEngineObject_34 = null;
+private Object __intnl_UnityEngineObject_24 = null;
+private Object __intnl_UnityEngineObject_14 = null;
+private Int64 __refl_typeid = -2720356320031367052;
+private object __intnl_SystemObject_7 = null;
+private Int32 __lcl_finalSellValue_SystemInt32_0 = 0;
+private Single __lcl_curveValue_SystemSingle_0 = 0f;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_11 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_10 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_13 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_12 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_15 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_14 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_16 = null;
+private TokenType __intnl_VRCSDK3DataTokenType_1 = TokenType.Null;
+private Int32 __lcl_sizeModifier_SystemInt32_0 = 0;
+private Int64 __lcl_targetID_SystemInt64_4 = 0;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_2 = null;
+private GameObject __intnl_UnityEngineGameObject_14 = null;
+private Transform __intnl_UnityEngineTransform_5 = null;
+private Color __31__intnlparam = new Color(0f, 0f, 0f, 0f);
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_9 = null;
+private Double __intnl_SystemDouble_4 = 0;
+private Int32 __lcl_skippedCount_SystemInt32_0 = 0;
+private UdonBehaviour __lcl_playerInventoryData_VRCUdonUdonBehaviour_2 = null;
+private Int32 __lcl_fishEntryId_SystemInt32_1 = 0;
+private Int32 __lcl_fishEntryId_SystemInt32_0 = 0;
+private Int32 __lcl_fishEntryId_SystemInt32_2 = 0;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Vector3 __lcl_shopPosition_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Color __const_UnityEngineColor_8 = new Color(0f, 0.5f, 1f, 1f);
+public UdonBehaviour fishModifier;
+private Component __intnl_UnityEngineComponent_0 = null;
+private Boolean __intnl_SystemBoolean_81 = false;
+private Boolean __intnl_SystemBoolean_91 = false;
+private Boolean __intnl_SystemBoolean_11 = false;
+private Boolean __intnl_SystemBoolean_21 = false;
+private Boolean __intnl_SystemBoolean_31 = false;
+private Boolean __intnl_SystemBoolean_41 = false;
+private Boolean __intnl_SystemBoolean_51 = false;
+private Boolean __intnl_SystemBoolean_61 = false;
+private Boolean __intnl_SystemBoolean_71 = false;
+private Transform __intnl_UnityEngineTransform_13 = null;
+private Transform __intnl_UnityEngineTransform_12 = null;
+private Transform __intnl_UnityEngineTransform_11 = null;
+private Transform __intnl_UnityEngineTransform_10 = null;
+private Transform __intnl_UnityEngineTransform_17 = null;
+private Transform __intnl_UnityEngineTransform_16 = null;
+private Transform __intnl_UnityEngineTransform_15 = null;
+private Transform __intnl_UnityEngineTransform_14 = null;
+private DataToken __intnl_VRCSDK3DataDataToken_9 = Null;
+public Single shopPopInDuration;
+private UInt32 __gintnl_SystemUInt32_54 = 24948;
+private UInt32 __gintnl_SystemUInt32_44 = 17208;
+private UInt32 __gintnl_SystemUInt32_64 = 36732;
+private UInt32 __gintnl_SystemUInt32_14 = 5336;
+private UInt32 __gintnl_SystemUInt32_34 = 14536;
+private UInt32 __gintnl_SystemUInt32_24 = 9076;
+private Vector3 __const_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Int32 __intnl_SystemInt32_17 = 0;
+private Int32 __intnl_SystemInt32_37 = 0;
+private Int32 __intnl_SystemInt32_27 = 0;
+private Int32 __intnl_SystemInt32_57 = 0;
+private Int32 __intnl_SystemInt32_47 = 0;
+private GameObject __3_fishSlot__param = null;
+private Int32 __lcl_baseValue_SystemInt32_2 = 0;
+private Int32 __lcl_baseValue_SystemInt32_0 = 0;
+private Int32 __lcl_baseValue_SystemInt32_1 = 0;
+private Component[] __lcl_udonBehaviours_UnityEngineComponentArray_3 = null;
+private Int32 __lcl_i_SystemInt32_11 = 0;
+private Vector3 __lcl_shrinkScale_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private String __intnl_SystemString_3 = null;
+private UdonBehaviour __0__intnlparam = null;
+private TextMeshProUGUI[] __lcl_texts_TMProTextMeshProUGUIArray_0 = null;
+public Canvas shopCanvas;
+private Int32 __0_sellValue__param = 0;
+private String __const_SystemString_66 = "Zebra";
+private String __const_SystemString_67 = "Tiger";
+private String __const_SystemString_64 = "Rainbow";
+private String __const_SystemString_65 = "Stone";
+private String __const_SystemString_62 = "Holographic";
+private String __const_SystemString_63 = "Burning";
+private String __const_SystemString_60 = "Glitched";
+private String __const_SystemString_61 = "Sandy";
+private String __const_SystemString_68 = "Camo";
+private String __const_SystemString_69 = "Electric";
+private Single __intnl_SystemSingle_2 = 0f;
+private Component __7__intnlparam = null;
+private Int32 sellQueueCount = 0;
+private Image __lcl_img_UnityEngineUIImage_0 = null;
+private object __intnl_SystemObject_2 = null;
+private Component __9__intnlparam = null;
+private GameObject __lcl_invObj_UnityEngineGameObject_0 = null;
+private Color __23__intnlparam = new Color(0f, 0f, 0f, 0f);
+private TokenType __intnl_VRCSDK3DataTokenType_4 = TokenType.Null;
+private Int32 __lcl_unlocked_SystemInt32_0 = 0;
+private object __intnl_SystemObject_9 = null;
+private DataDictionary __intnl_VRCSDK3DataDataDictionary_3 = null;
+private DataDictionary __intnl_VRCSDK3DataDataDictionary_2 = null;
+private DataDictionary __intnl_VRCSDK3DataDataDictionary_1 = null;
+private DataDictionary __intnl_VRCSDK3DataDataDictionary_0 = null;
+private DataDictionary __intnl_VRCSDK3DataDataDictionary_7 = null;
+private DataDictionary __intnl_VRCSDK3DataDataDictionary_6 = null;
+private DataDictionary __intnl_VRCSDK3DataDataDictionary_5 = null;
+private DataDictionary __intnl_VRCSDK3DataDataDictionary_4 = null;
+private DataDictionary __intnl_VRCSDK3DataDataDictionary_9 = null;
+private DataDictionary __intnl_VRCSDK3DataDataDictionary_8 = null;
+private Boolean isShopActive = false;
+private Int32 __lcl_shaderModifier_SystemInt32_1 = 0;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_1 = null;
+private GameObject __4_fishSlot__param = null;
+private String __const_SystemString_2 = "PlayerStats";
+private Boolean __intnl_SystemBoolean_129 = false;
+private Boolean __intnl_SystemBoolean_128 = false;
+private Boolean __intnl_SystemBoolean_121 = false;
+private Boolean __intnl_SystemBoolean_120 = false;
+private Boolean __intnl_SystemBoolean_123 = false;
+private Boolean __intnl_SystemBoolean_122 = false;
+private Boolean __intnl_SystemBoolean_125 = false;
+private Boolean __intnl_SystemBoolean_124 = false;
+private Boolean __intnl_SystemBoolean_127 = false;
+private Boolean __intnl_SystemBoolean_126 = false;
+private GameObject __intnl_UnityEngineGameObject_17 = null;
+public GameObject uiToTurnOff;
+private Transform __intnl_UnityEngineTransform_2 = null;
+public Single autoCloseDistance;
+private Transform __lcl_closestScreen_UnityEngineTransform_1 = null;
+private Color __const_UnityEngineColor_0 = new Color(1f, 1f, 1f, 1f);
+private Single __const_SystemSingle_2 = 0.5f;
+private Double __intnl_SystemDouble_1 = 0;
+private Boolean __2_isAvailable__param = false;
+private object __lcl_idValue_SystemObject_3 = null;
+private Boolean __intnl_SystemBoolean_89 = false;
+private Boolean __intnl_SystemBoolean_99 = false;
+private Boolean __intnl_SystemBoolean_19 = false;
+private Boolean __intnl_SystemBoolean_29 = false;
+private Boolean __intnl_SystemBoolean_39 = false;
+private Boolean __intnl_SystemBoolean_49 = false;
+private Boolean __intnl_SystemBoolean_59 = false;
+private Boolean __intnl_SystemBoolean_69 = false;
+private Boolean __intnl_SystemBoolean_79 = false;
+private Transform __0_FindClosestShopScreen__ret = null;
+private Vector3 __intnl_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private String __intnl_SystemString_20 = null;
+private String __intnl_SystemString_21 = null;
+private GameObject __intnl_UnityEngineGameObject_9 = null;
+private GameObject __intnl_UnityEngineGameObject_8 = null;
+private GameObject __intnl_UnityEngineGameObject_3 = null;
+private GameObject __intnl_UnityEngineGameObject_2 = null;
+private GameObject __intnl_UnityEngineGameObject_1 = null;
+private GameObject __intnl_UnityEngineGameObject_0 = null;
+private GameObject __intnl_UnityEngineGameObject_7 = null;
+private GameObject __intnl_UnityEngineGameObject_6 = null;
+private GameObject __intnl_UnityEngineGameObject_5 = null;
+private GameObject __intnl_UnityEngineGameObject_4 = null;
+private Component __intnl_UnityEngineComponent_5 = null;
+private Boolean __intnl_SystemBoolean_84 = false;
+private Boolean __intnl_SystemBoolean_94 = false;
+private Boolean __intnl_SystemBoolean_14 = false;
+private Boolean __intnl_SystemBoolean_24 = false;
+private Boolean __intnl_SystemBoolean_34 = false;
+private Boolean __intnl_SystemBoolean_44 = false;
+private Boolean __intnl_SystemBoolean_54 = false;
+private Boolean __intnl_SystemBoolean_64 = false;
+private Boolean __intnl_SystemBoolean_74 = false;
+private DataToken __intnl_VRCSDK3DataDataToken_4 = Null;
+private Int32 __const_SystemInt32_13 = 23;
+private Int32 __const_SystemInt32_33 = 19;
+private Int32 __const_SystemInt32_23 = 9;
+private Component[] __intnl_UnityEngineComponentArray_1 = null;
+private Component[] __intnl_UnityEngineComponentArray_0 = null;
+private Component[] __intnl_UnityEngineComponentArray_3 = null;
+private Component[] __intnl_UnityEngineComponentArray_2 = null;
+private Component[] __intnl_UnityEngineComponentArray_5 = null;
+private Component[] __intnl_UnityEngineComponentArray_4 = null;
+private Int32 __intnl_SystemInt32_14 = 0;
+private Int32 __intnl_SystemInt32_34 = 0;
+private Int32 __intnl_SystemInt32_24 = 0;
+private Int32 __intnl_SystemInt32_54 = 0;
+private Int32 __intnl_SystemInt32_44 = 0;
+private Single __lcl_progress_SystemSingle_0 = 0f;
+private UdonBehaviour __lcl_behaviour_VRCUdonUdonBehaviour_5 = null;
+private Int32 __intnl_SystemInt32_19 = 0;
+private Int32 __intnl_SystemInt32_39 = 0;
+private Int32 __intnl_SystemInt32_29 = 0;
+private Int32 __intnl_SystemInt32_59 = 0;
+private Int32 __intnl_SystemInt32_49 = 0;
+private object __const_SystemObject_0 = null;
+private Single __lcl_closestDistance_SystemSingle_0 = 0f;
+private UdonBehaviour __1_npc__param = null;
+private GameObject __15__intnlparam = null;
+private String __intnl_SystemString_0 = null;
+private UdonBehaviour __0_npc__param = null;
+private Object __intnl_UnityEngineObject_93 = null;
+private Object __intnl_UnityEngineObject_83 = null;
+private Object __intnl_UnityEngineObject_73 = null;
+private Object __intnl_UnityEngineObject_63 = null;
+private Object __intnl_UnityEngineObject_53 = null;
+private Object __intnl_UnityEngineObject_43 = null;
+private Object __intnl_UnityEngineObject_33 = null;
+private Object __intnl_UnityEngineObject_23 = null;
+private Object __intnl_UnityEngineObject_13 = null;
+private UdonBehaviour __lcl_clickHandler_VRCUdonUdonBehaviour_0 = null;
+private Type __const_SystemType_0 = typeof(Button);
+private Single __intnl_SystemSingle_1 = 0f;
+public AnimationCurve shopPopInCurve;
+private object __intnl_SystemObject_1 = null;
+private String __0_caughtFishId__param = null;
+private Int32 __20__intnlparam = 0;
+private Int64 __lcl_targetID_SystemInt64_2 = 0;
+private Int32 __lcl_initialCount_SystemInt32_0 = 0;
+private String __lcl_sizeText_SystemString_0 = null;
+private DataList __lcl_fishSlot_VRCSDK3DataDataList_1 = null;
+private String __lcl_shaderText_SystemString_0 = null;
+private Double __intnl_SystemDouble_9 = 0;
+private String __const_SystemString_7 = "InventoryData";
+private UdonBehaviour __4__intnlparam = null;
+private Color __const_UnityEngineColor_7 = new Color(0f, 1f, 0f, 1f);
+private Single __const_SystemSingle_1 = 1f;
+private Double __intnl_SystemDouble_2 = 0;
+private TrackingDataType __const_VRCSDKBaseVRCPlayerApiTrackingDataType_0 = TrackingDataType.Head;
+private UInt32 __gintnl_SystemUInt32_51 = 20896;
+private UInt32 __gintnl_SystemUInt32_41 = 16588;
+private UInt32 __gintnl_SystemUInt32_61 = 29932;
+private UInt32 __gintnl_SystemUInt32_11 = 4804;
+private UInt32 __gintnl_SystemUInt32_31 = 12628;
+private UInt32 __gintnl_SystemUInt32_21 = 6656;
+private Boolean __intnl_SystemBoolean_87 = false;
+private Boolean __intnl_SystemBoolean_97 = false;
+private Boolean __intnl_SystemBoolean_17 = false;
+private Boolean __intnl_SystemBoolean_27 = false;
+private Boolean __intnl_SystemBoolean_37 = false;
+private Boolean __intnl_SystemBoolean_47 = false;
+private Boolean __intnl_SystemBoolean_57 = false;
+private Boolean __intnl_SystemBoolean_67 = false;
+private Boolean __intnl_SystemBoolean_77 = false;
+private DataToken __intnl_VRCSDK3DataDataToken_3 = Null;
+private Boolean isAnimatingShopIn = false;
+private Int32 __const_SystemInt32_10 = 0;
+private Int32 __const_SystemInt32_30 = 16;
+private Int32 __const_SystemInt32_20 = 6;
+private EventTiming __const_VRCUdonCommonEnumsEventTiming_0 = EventTiming.Update;
+private Int32 __12__intnlparam = 0;
+private Vector3 shopOpenedPosition = new Vector3(0f, 0f, 0f);
+private Int32 __intnl_SystemInt32_11 = 0;
+private Int32 __intnl_SystemInt32_31 = 0;
+private Int32 __intnl_SystemInt32_21 = 0;
+private Int32 __intnl_SystemInt32_51 = 0;
+private Int32 __intnl_SystemInt32_41 = 0;
+private Component[] __lcl_udonBehaviours_UnityEngineComponentArray_4 = null;
+private String __lcl_caughtFishId_SystemString_0 = null;
+private TrackingData __lcl_headData_VRCSDKBaseVRCPlayerApiTrackingData_0 = VRC.SDKBase.VRCPlayerApi+TrackingData;
+private Int32 __29__intnlparam = 0;
+private String __intnl_SystemString_8 = null;
+private GameObject __2_fishSlot__param = null;
+private Int32 __1_sizeModifier__param = 0;
+private Int32 __lcl_b_SystemInt32_0 = 0;
+private UdonBehaviour __lcl_fishEntry_VRCUdonUdonBehaviour_1 = null;
+private UInt32[] __gintnl_SystemUInt32Array_1 = System.UInt32[];
+private Int32 __2_shaderModifier__param = 0;
+private DataList __lcl_slot_VRCSDK3DataDataList_0 = null;
+private Single __lcl_distance_SystemSingle_1 = 0f;
+private Single __lcl_distance_SystemSingle_0 = 0f;
+private String __const_SystemString_36 = "0 coins (0 fish)";
+private String __const_SystemString_37 = "N0";
+private String __const_SystemString_34 = "__0_AddFishSold";
+private String __const_SystemString_35 = "ForceSerializeAndSync";
+private String __const_SystemString_32 = "__0_AddMoney";
+private String __const_SystemString_33 = "__7_amount__param";
+private String __const_SystemString_30 = "RefreshInventoryUI";
+private String __const_SystemString_31 = "__2_amount__param";
+private String __const_SystemString_38 = "$";
+private String __const_SystemString_39 = "DelayedOpenShop";
+private Single __intnl_SystemSingle_9 = 0f;
+private Int32 __lcl_g_SystemInt32_0 = 0;
+private Object __intnl_UnityEngineObject_96 = null;
+private Object __intnl_UnityEngineObject_86 = null;
+private Object __intnl_UnityEngineObject_76 = null;
+private Object __intnl_UnityEngineObject_66 = null;
+private Object __intnl_UnityEngineObject_56 = null;
+private Object __intnl_UnityEngineObject_46 = null;
+private Object __intnl_UnityEngineObject_36 = null;
+private Object __intnl_UnityEngineObject_26 = null;
+private Object __intnl_UnityEngineObject_16 = null;
+private Boolean isAnimatingShopOut = false;
+private String __const_SystemString_86 = "#FF6600";
+private String __const_SystemString_87 = "#FF6B6B";
+private String __const_SystemString_84 = "#C2B280";
+private String __const_SystemString_85 = "#88FFFF";
+private String __const_SystemString_82 = "#39FF14";
+private String __const_SystemString_83 = "#FF00FF";
+private String __const_SystemString_80 = "#FFFFFF";
+private String __const_SystemString_81 = "#FF0000";
+private String __const_SystemString_88 = "#808080";
+private String __const_SystemString_89 = "#000000";
+private TokenType __intnl_VRCSDK3DataTokenType_3 = TokenType.Null;
+private Int64 __intnl_SystemInt64_5 = 0;
+private Int64 __intnl_SystemInt64_4 = 0;
+private Int64 __intnl_SystemInt64_3 = 0;
+private Int64 __intnl_SystemInt64_2 = 0;
+private Int64 __intnl_SystemInt64_1 = 0;
+private Int64 __intnl_SystemInt64_0 = 0;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_4 = null;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private GameObject __intnl_UnityEngineGameObject_12 = null;
+private Transform __intnl_UnityEngineTransform_7 = null;
+private String __const_SystemString_4 = "FishModifier";
+private Transform __lcl_fishIconTransform_UnityEngineTransform_0 = null;
+private UdonBehaviour __lcl_playerInventoryData_VRCUdonUdonBehaviour_0 = null;
+private String __26__intnlparam = null;
+private UdonBehaviour __2_fishEntry__param = null;
+private UInt32 __gintnl_SystemUInt32_59 = 29480;
+private UInt32 __gintnl_SystemUInt32_49 = 19928;
+private UInt32 __gintnl_SystemUInt32_19 = 6492;
+private UInt32 __gintnl_SystemUInt32_39 = 15432;
+private UInt32 __gintnl_SystemUInt32_29 = 11152;
+private Single __const_SystemSingle_4 = 255f;
+private Int32 __lcl_fishSoldCount_SystemInt32_0 = 0;
+private Object __intnl_UnityEngineObject_108 = null;
+private Object __intnl_UnityEngineObject_109 = null;
+private Object __intnl_UnityEngineObject_106 = null;
+private Object __intnl_UnityEngineObject_107 = null;
+private Object __intnl_UnityEngineObject_104 = null;
+private Object __intnl_UnityEngineObject_105 = null;
+private Object __intnl_UnityEngineObject_102 = null;
+private Object __intnl_UnityEngineObject_103 = null;
+private Object __intnl_UnityEngineObject_100 = null;
+private Object __intnl_UnityEngineObject_101 = null;
+private object __lcl_idValue_SystemObject_5 = null;
+private Component __intnl_UnityEngineComponent_2 = null;
+private Int32 __const_SystemInt32_18 = 4;
+private Int32 __const_SystemInt32_28 = 14;
+private DataList __lcl_lockedFish_VRCSDK3DataDataList_0 = null;
+private UInt32 __gintnl_SystemUInt32_52 = 20912;
+private UInt32 __gintnl_SystemUInt32_42 = 16900;
+private UInt32 __gintnl_SystemUInt32_62 = 30128;
+private UInt32 __gintnl_SystemUInt32_12 = 5080;
+private UInt32 __gintnl_SystemUInt32_32 = 12816;
+private UInt32 __gintnl_SystemUInt32_22 = 6896;
+private Vector3 __const_UnityEngineVector3_2 = new Vector3(0f, 1f, 0f);
+private UInt32 __intnl_SystemUInt32_0 = 0;
+private Int32 __lcl_i_SystemInt32_9 = 0;
+private Int32 __lcl_i_SystemInt32_8 = 0;
+private Int32 __lcl_i_SystemInt32_1 = 0;
+private Int32 __lcl_i_SystemInt32_0 = 0;
+private Int32 __lcl_i_SystemInt32_3 = 0;
+private Int32 __lcl_i_SystemInt32_2 = 0;
+private Int32 __lcl_i_SystemInt32_5 = 0;
+private Int32 __lcl_i_SystemInt32_4 = 0;
+private Int32 __lcl_i_SystemInt32_7 = 0;
+private Int32 __lcl_i_SystemInt32_6 = 0;
+private Int32 __const_SystemInt32_15 = 1;
+private Int32 __const_SystemInt32_35 = 21;
+private Int32 __const_SystemInt32_25 = 11;
+private UdonBehaviour __lcl_behaviour_VRCUdonUdonBehaviour_0 = null;
+private Component[] __lcl_udonBehaviours_UnityEngineComponentArray_1 = null;
+private Int32 __lcl_i_SystemInt32_13 = 0;
+private Int32 __1_shaderModifier__param = 0;
+private String __lcl_weightText_SystemString_0 = null;
+private Quaternion __lcl_shopRotation_UnityEngineQuaternion_0 = new Quaternion(0f, 0f, 0f, 0f);
+private String __intnl_SystemString_5 = null;
+private Single __lcl_weight_SystemSingle_0 = 0f;
+private Single __lcl_weight_SystemSingle_1 = 0f;
+private Single __2_weight__param = 0f;
+private Vector3 __lcl_playerPosition_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private UdonBehaviour currentShopNPC = null;
+private Int32 __lcl_sellQueueIndex_SystemInt32_0 = 0;
+private Single __intnl_SystemSingle_4 = 0f;
+private Component __1__intnlparam = null;
+private Object __intnl_UnityEngineObject_95 = null;
+private Object __intnl_UnityEngineObject_85 = null;
+private Object __intnl_UnityEngineObject_75 = null;
+private Object __intnl_UnityEngineObject_65 = null;
+private Object __intnl_UnityEngineObject_55 = null;
+private Object __intnl_UnityEngineObject_45 = null;
+private Object __intnl_UnityEngineObject_35 = null;
+private Object __intnl_UnityEngineObject_25 = null;
+private Object __intnl_UnityEngineObject_15 = null;
+private object __intnl_SystemObject_4 = null;
+private Boolean __lcl_isLocked_SystemBoolean_0 = false;
+private TokenType __intnl_VRCSDK3DataTokenType_6 = TokenType.Null;
+private Image __lcl_fishIcon_UnityEngineUIImage_0 = null;
+private Int64 __lcl_targetID_SystemInt64_5 = 0;
+private GameObject __33__intnlparam = null;
+private Int32 __0_rarity__param = 0;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_3 = null;
+private Boolean __intnl_SystemBoolean_109 = false;
+private Boolean __intnl_SystemBoolean_108 = false;
+private Boolean __intnl_SystemBoolean_101 = false;
+private Boolean __intnl_SystemBoolean_100 = false;
+private Boolean __intnl_SystemBoolean_103 = false;
+private Boolean __intnl_SystemBoolean_102 = false;
+private Boolean __intnl_SystemBoolean_105 = false;
+private Boolean __intnl_SystemBoolean_104 = false;
+private Boolean __intnl_SystemBoolean_107 = false;
+private Boolean __intnl_SystemBoolean_106 = false;
+private GameObject __intnl_UnityEngineGameObject_15 = null;
+private Transform __intnl_UnityEngineTransform_4 = null;
+private String __18__intnlparam = null;
+private Color __const_UnityEngineColor_2 = new Color(1f, 0.9f, 0.4f, 1f);
+private Double __intnl_SystemDouble_7 = 0;
+private String __const_SystemString_9 = "__0_fishEntryId__param";
+public TextMeshProUGUI totalValueText;
+private UdonBehaviour __lcl_playerInventoryData_VRCUdonUdonBehaviour_3 = null;
+private Transform __intnl_UnityEngineTransform_9 = null;
+private Vector3 __intnl_UnityEngineVector3_2 = new Vector3(0f, 0f, 0f);
+private DataToken __intnl_VRCSDK3DataDataToken_28 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_29 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_24 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_25 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_26 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_27 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_20 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_21 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_22 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_23 = Null;
+public Button sellAllButton;
+private Color __const_UnityEngineColor_9 = new Color(0.8f, 0f, 1f, 1f);
+private Boolean __intnl_SystemBoolean_82 = false;
+private Boolean __intnl_SystemBoolean_92 = false;
+private Boolean __intnl_SystemBoolean_12 = false;
+private Boolean __intnl_SystemBoolean_22 = false;
+private Boolean __intnl_SystemBoolean_32 = false;
+private Boolean __intnl_SystemBoolean_42 = false;
+private Boolean __intnl_SystemBoolean_52 = false;
+private Boolean __intnl_SystemBoolean_62 = false;
+private Boolean __intnl_SystemBoolean_72 = false;
+private DataToken __intnl_VRCSDK3DataDataToken_6 = Null;
+private Single __lcl_fishWeight_SystemSingle_0 = 0f;
+private UInt32 __gintnl_SystemUInt32_57 = 29448;
+private UInt32 __gintnl_SystemUInt32_47 = 17852;
+private UInt32 __gintnl_SystemUInt32_17 = 6460;
+private UInt32 __gintnl_SystemUInt32_37 = 15264;
+private UInt32 __gintnl_SystemUInt32_27 = 10140;
+private Vector3 __const_UnityEngineVector3_1 = new Vector3(0f, 0f, 1f);
+private Int32 __intnl_SystemInt32_16 = 0;
+private Int32 __intnl_SystemInt32_36 = 0;
+private Int32 __intnl_SystemInt32_26 = 0;
+private Int32 __intnl_SystemInt32_56 = 0;
+private Int32 __intnl_SystemInt32_46 = 0;
+private Int32 __11__intnlparam = 0;
+private String __refl_typename = "ShopManager";
+private Int32 __lcl_moneyEarned_SystemInt32_0 = 0;
+private Component[] __lcl_udonBehaviours_UnityEngineComponentArray_2 = null;
+private Int32 __lcl_i_SystemInt32_10 = 0;
+private GameObject clickedFishSlot = null;
+private UInt32[] __gintnl_SystemUInt32Array_4 = System.UInt32[];
+private Boolean __0_isAvailable__param = false;
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Int32 __intnl_SystemInt32_5 = 0;
+private Int32 __intnl_SystemInt32_4 = 0;
+private Int32 __intnl_SystemInt32_7 = 0;
+private Int32 __intnl_SystemInt32_6 = 0;
+private Int32 __intnl_SystemInt32_9 = 0;
+private Int32 __intnl_SystemInt32_8 = 0;
+private String __intnl_SystemString_2 = null;
+private String __lcl_fishId_SystemString_1 = null;
+private String __lcl_fishId_SystemString_0 = null;
+private String __const_SystemString_56 = "Ghastly";
+private String __const_SystemString_57 = "Blessed";
+private String __const_SystemString_54 = "Shiny";
+private String __const_SystemString_55 = "Golden";
+private String __const_SystemString_52 = "Tiny";
+private String __const_SystemString_53 = "Albino";
+private String __const_SystemString_50 = "</color>";
+private String __const_SystemString_51 = "Huge";
+private String __const_SystemString_58 = "Cursed";
+private String __const_SystemString_59 = "Radioactive";
+private Int32 totalSellValue = 0;
+private Single __intnl_SystemSingle_3 = 0f;
+private VRCPlayerApi __lcl_localPlayer_VRCSDKBaseVRCPlayerApi_1 = null;
+private Int32 __1_index__param = 0;
+private object __intnl_SystemObject_3 = null;
+private String __lcl_inventoryFishIdStr_SystemString_0 = null;
+private Color __const_UnityEngineColor_13 = new Color(0.8f, 0.5f, 0.2f, 1f);
+private Color __const_UnityEngineColor_12 = new Color(1f, 0.1f, 0.55f, 1f);
+private Color __const_UnityEngineColor_11 = new Color(1f, 0f, 0f, 1f);
+private Color __const_UnityEngineColor_10 = new Color(1f, 0.8f, 0f, 1f);
+private Color __const_UnityEngineColor_15 = new Color(0.05f, 0.25f, 0.35f, 1f);
+private Color __const_UnityEngineColor_14 = new Color(0.1f, 0.1f, 0.1f, 1f);
+private TokenType __intnl_VRCSDK3DataTokenType_5 = TokenType.Null;
+private Int64 __lcl_targetID_SystemInt64_0 = 0;
+private Int32 __lcl_shaderModifier_SystemInt32_0 = 0;
+private String __const_SystemString_1 = "InventoryManager";
+private Boolean __intnl_SystemBoolean_139 = false;
+private Boolean __intnl_SystemBoolean_138 = false;
+private Boolean __intnl_SystemBoolean_131 = false;
+private Boolean __intnl_SystemBoolean_130 = false;
+private Boolean __intnl_SystemBoolean_133 = false;
+private Boolean __intnl_SystemBoolean_132 = false;
+private Boolean __intnl_SystemBoolean_135 = false;
+private Boolean __intnl_SystemBoolean_134 = false;
+private Boolean __intnl_SystemBoolean_137 = false;
+private Boolean __intnl_SystemBoolean_136 = false;
+private String[] availableFishIds = null;
+private GameObject __1_fishSlot__param = null;
+private Transform __intnl_UnityEngineTransform_1 = null;
+private String __30__intnlparam = null;
+private Int32 __25__intnlparam = 0;
+private Transform __lcl_closestScreen_UnityEngineTransform_0 = null;
+private Color __const_UnityEngineColor_1 = new Color(0.8f, 1f, 1f, 1f);
+private Single __const_SystemSingle_3 = 3.402823E+38f;
+private Double __intnl_SystemDouble_0 = 0;
+private object __lcl_idValue_SystemObject_0 = null;
+private Component __5__intnlparam = null;
+private Vector3 __intnl_UnityEngineVector3_1 = new Vector3(0f, 0f, 0f);
+private String __intnl_SystemString_18 = null;
+private String __intnl_SystemString_19 = null;
+private String __intnl_SystemString_16 = null;
+private String __intnl_SystemString_17 = null;
+private String __intnl_SystemString_14 = null;
+private String __intnl_SystemString_15 = null;
+private String __intnl_SystemString_12 = null;
+private String __intnl_SystemString_13 = null;
+private String __intnl_SystemString_10 = null;
+private String __intnl_SystemString_11 = null;
+private DataToken __intnl_VRCSDK3DataDataToken_18 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_19 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_14 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_15 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_16 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_17 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_10 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_11 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_12 = Null;
+private DataToken __intnl_VRCSDK3DataDataToken_13 = Null;
+public Button clearQueueButton;
+private Vector3 __lcl_headPos_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Component __intnl_UnityEngineComponent_4 = null;
+private Boolean __intnl_SystemBoolean_85 = false;
+private Boolean __intnl_SystemBoolean_95 = false;
+private Boolean __intnl_SystemBoolean_15 = false;
+private Boolean __intnl_SystemBoolean_25 = false;
+private Boolean __intnl_SystemBoolean_35 = false;
+private Boolean __intnl_SystemBoolean_45 = false;
+private Boolean __intnl_SystemBoolean_55 = false;
+private Boolean __intnl_SystemBoolean_65 = false;
+private Boolean __intnl_SystemBoolean_75 = false;
+private DataToken __intnl_VRCSDK3DataDataToken_5 = Null;
+private Int32 __const_SystemInt32_12 = 2;
+private Int32 __const_SystemInt32_32 = 18;
+private Int32 __const_SystemInt32_22 = 8;
+private Int32 __intnl_SystemInt32_13 = 0;
+private Int32 __intnl_SystemInt32_33 = 0;
+private Int32 __intnl_SystemInt32_23 = 0;
+private Int32 __intnl_SystemInt32_53 = 0;
+private Int32 __intnl_SystemInt32_43 = 0;
+private Int32 __intnl_SystemInt32_18 = 0;
+private Int32 __intnl_SystemInt32_38 = 0;
+private Int32 __intnl_SystemInt32_28 = 0;
+private Int32 __intnl_SystemInt32_58 = 0;
+private Int32 __intnl_SystemInt32_48 = 0;
+private Int32 __2_sizeModifier__param = 0;
+private Component __17__intnlparam = null;
+private Single __0_weight__param = 0f;
+private Object __intnl_UnityEngineObject_90 = null;
+private Object __intnl_UnityEngineObject_80 = null;
+private Object __intnl_UnityEngineObject_70 = null;
+private Object __intnl_UnityEngineObject_60 = null;
+private Object __intnl_UnityEngineObject_50 = null;
+private Object __intnl_UnityEngineObject_40 = null;
+private Object __intnl_UnityEngineObject_30 = null;
+private Object __intnl_UnityEngineObject_20 = null;
+private Object __intnl_UnityEngineObject_10 = null;
+private Type __const_SystemType_3 = typeof(UdonBehaviour);
+public Button addAllButton;
+private GameObject[] sellQueueSlots = null;
+public Single portableShopDistance;
+private Int32 __0_sizeModifier__param = 0;
+private Single __22__intnlparam = 0f;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_6 = null;
+private GameObject __intnl_UnityEngineGameObject_10 = null;
+private Int64 __lcl_targetID_SystemInt64_3 = 0;
+private Int32 __lcl_sellValue_SystemInt32_0 = 0;
+private Int32 __lcl_maxSlots_SystemInt32_0 = 0;
+private Double __intnl_SystemDouble_8 = 0;
+private String __const_SystemString_6 = "__0_get_playerInventoryData__ret";
+private UdonBehaviour __1_fishEntry__param = null;
+private Color __const_UnityEngineColor_4 = new Color(1f, 1f, 0.8f, 1f);
+private Object __intnl_UnityEngineObject_128 = null;
+private Object __intnl_UnityEngineObject_129 = null;
+private Object __intnl_UnityEngineObject_126 = null;
+private Object __intnl_UnityEngineObject_127 = null;
+private Object __intnl_UnityEngineObject_124 = null;
+private Object __intnl_UnityEngineObject_125 = null;
+private Object __intnl_UnityEngineObject_122 = null;
+private Object __intnl_UnityEngineObject_123 = null;
+private Object __intnl_UnityEngineObject_120 = null;
+private Object __intnl_UnityEngineObject_121 = null;
+private Vector3 __intnl_UnityEngineVector3_4 = new Vector3(0f, 0f, 0f);
+private Single transactionUITimer = 0f;
+private UInt32 __gintnl_SystemUInt32_50 = 20340;
+private UInt32 __gintnl_SystemUInt32_40 = 15556;
+private UInt32 __gintnl_SystemUInt32_60 = 29496;
+private UInt32 __gintnl_SystemUInt32_10 = 2760;
+private UInt32 __gintnl_SystemUInt32_30 = 11212;
+private UInt32 __gintnl_SystemUInt32_20 = 6640;
+private Int32 __0___0_CalculateFishSellValue__ret = 0;
+public UdonBehaviour inventoryManager;
+private UInt32 __intnl_SystemUInt32_2 = 0;
+private Boolean _isSelling = false;
+private DataToken __intnl_VRCSDK3DataDataToken_0 = Null;
+private Int32 __const_SystemInt32_17 = 3;
+private Int32 __const_SystemInt32_37 = 23;
+private Int32 __const_SystemInt32_27 = 13;
+private UdonBehaviour __lcl_behaviour_VRCUdonUdonBehaviour_2 = null;
+private Int32 __intnl_SystemInt32_10 = 0;
+private Int32 __intnl_SystemInt32_30 = 0;
+private Int32 __intnl_SystemInt32_20 = 0;
+private Int32 __intnl_SystemInt32_50 = 0;
+private Int32 __intnl_SystemInt32_40 = 0;
+private TextMeshProUGUI __lcl_text_TMProTextMeshProUGUI_0 = null;
+private Int32 __0_shaderModifier__param = 0;
+private String __intnl_SystemString_7 = null;
+private Int32 __lcl_removedCount_SystemInt32_0 = 0;
+public UdonBehaviour fishDatabase;
+private VRCPlayerApi localPlayer = null;
+private UdonBehaviour __lcl_fishEntry_VRCUdonUdonBehaviour_0 = null;
+private UInt32[] __gintnl_SystemUInt32Array_2 = System.UInt32[];
+private Object __intnl_UnityEngineObject_98 = null;
+private Object __intnl_UnityEngineObject_88 = null;
+private Object __intnl_UnityEngineObject_78 = null;
+private Object __intnl_UnityEngineObject_68 = null;
+private Object __intnl_UnityEngineObject_58 = null;
+private Object __intnl_UnityEngineObject_48 = null;
+private Object __intnl_UnityEngineObject_38 = null;
+private Object __intnl_UnityEngineObject_28 = null;
+private Object __intnl_UnityEngineObject_18 = null;
+private GameObject __14__intnlparam = null;
+private String __const_SystemString_26 = " coins";
+private String __const_SystemString_27 = "FishIcon";
+private String __const_SystemString_24 = "fishName";
+private String __const_SystemString_25 = "SellValue";
+private String __const_SystemString_22 = "FishName";
+private String __const_SystemString_23 = "rarity";
+private String __const_SystemString_20 = "__0_CalculateFishValue";
+private String __const_SystemString_21 = "__0___0_CalculateFishValue__ret";
+private String __const_SystemString_28 = "fishIcon";
+private String __const_SystemString_29 = "Total: ";
+public Button sellButton;
+private Single __intnl_SystemSingle_6 = 0f;
+private Color __lcl_rarityColor_UnityEngineColor_0 = new Color(0f, 0f, 0f, 0f);
+private Object __intnl_UnityEngineObject_97 = null;
+private Object __intnl_UnityEngineObject_87 = null;
+private Object __intnl_UnityEngineObject_77 = null;
+private Object __intnl_UnityEngineObject_67 = null;
+private Object __intnl_UnityEngineObject_57 = null;
+private Object __intnl_UnityEngineObject_47 = null;
+private Object __intnl_UnityEngineObject_37 = null;
+private Object __intnl_UnityEngineObject_27 = null;
+private Object __intnl_UnityEngineObject_17 = null;
+private Int32 __lcl_soldCount_SystemInt32_0 = 0;
+private object __intnl_SystemObject_6 = null;
+private Int32 __lcl_totalMoney_SystemInt32_0 = 0;
+private Boolean __lcl_isLocked_SystemBoolean_2 = false;
+public Single sellValueMultiplier;
+private TokenType __intnl_VRCSDK3DataTokenType_0 = TokenType.Null;
+private Boolean isShowingTransactionUI = false;
+private Int32 __lcl_sizeModifier_SystemInt32_1 = 0;
+private Int32 __0___0_FindFishInSellQueue__ret = 0;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_5 = null;
+private GameObject __intnl_UnityEngineGameObject_13 = null;
+private Transform __intnl_UnityEngineTransform_6 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_8 = null;
+private Double __intnl_SystemDouble_5 = 0;
+private UdonBehaviour __lcl_playerInventoryData_VRCUdonUdonBehaviour_1 = null;
+private GameObject __0_fishSlot__param = null;
+private UInt32 __gintnl_SystemUInt32_58 = 29464;
+private UInt32 __gintnl_SystemUInt32_48 = 19692;
+private UInt32 __gintnl_SystemUInt32_18 = 6476;
+private UInt32 __gintnl_SystemUInt32_38 = 15388;
+private UInt32 __gintnl_SystemUInt32_28 = 10424;
+public Button closeShopButton;
+private Object __intnl_UnityEngineObject_118 = null;
+private Object __intnl_UnityEngineObject_119 = null;
+private Object __intnl_UnityEngineObject_116 = null;
+private Object __intnl_UnityEngineObject_117 = null;
+private Object __intnl_UnityEngineObject_114 = null;
+private Object __intnl_UnityEngineObject_115 = null;
+private Object __intnl_UnityEngineObject_112 = null;
+private Object __intnl_UnityEngineObject_113 = null;
+private Object __intnl_UnityEngineObject_110 = null;
+private Object __intnl_UnityEngineObject_111 = null;
+private UdonBehaviour __2__intnlparam = null;
+private Component __intnl_UnityEngineComponent_1 = null;
+private Boolean __intnl_SystemBoolean_80 = false;
+private Boolean __intnl_SystemBoolean_90 = false;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Boolean __intnl_SystemBoolean_20 = false;
+private Boolean __intnl_SystemBoolean_30 = false;
+private Boolean __intnl_SystemBoolean_40 = false;
+private Boolean __intnl_SystemBoolean_50 = false;
+private Boolean __intnl_SystemBoolean_60 = false;
+private Boolean __intnl_SystemBoolean_70 = false;
+private GameObject __lcl_newSlot_UnityEngineGameObject_0 = null;
+private Quaternion __intnl_UnityEngineQuaternion_0 = new Quaternion(0f, 0f, 0f, 0f);
+private Quaternion __intnl_UnityEngineQuaternion_1 = new Quaternion(0f, 0f, 0f, 0f);
+private DataToken __intnl_VRCSDK3DataDataToken_8 = Null;
+private Int32[] availableFishValues = null;
+private UInt32 __gintnl_SystemUInt32_55 = 27804;
+private UInt32 __gintnl_SystemUInt32_45 = 17520;
+private UInt32 __gintnl_SystemUInt32_65 = 36904;
+private UInt32 __gintnl_SystemUInt32_15 = 5352;
+private UInt32 __gintnl_SystemUInt32_35 = 14640;
+private UInt32 __gintnl_SystemUInt32_25 = 9164;
+private Boolean __0_IsShopActive__ret = false;
+private Vector3 __const_UnityEngineVector3_3 = new Vector3(1f, 1f, 1f);
+private UInt32 __intnl_SystemUInt32_1 = 0;
+private Transform __lcl_targetContainer_UnityEngineTransform_0 = null;
+private Int32 __const_SystemInt32_9 = 10;
+private Int32 __const_SystemInt32_8 = 6;
+private Int32 __const_SystemInt32_1 = 0;
+private Int32 __const_SystemInt32_0 = 100;
+private Int32 __const_SystemInt32_3 = 5;
+private Int32 __const_SystemInt32_2 = 1;
+private Int32 __const_SystemInt32_5 = 2;
+private Int32 __const_SystemInt32_4 = 4;
+private Int32 __const_SystemInt32_7 = -1;
+private Int32 __const_SystemInt32_6 = 3;
+private Int32 __const_SystemInt32_14 = 0;
+private Int32 __const_SystemInt32_34 = 20;
+private Int32 __const_SystemInt32_24 = 10;
+private UdonBehaviour __lcl_behaviour_VRCUdonUdonBehaviour_1 = null;
+public Transform availableFishContainer;
+private Component[] __lcl_udonBehaviours_UnityEngineComponentArray_0 = null;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private Int32 __lcl_i_SystemInt32_12 = 0;
+public UdonBehaviour playerStats;
+private String __28__intnlparam = null;
+private String __intnl_SystemString_4 = null;
+private GameObject __0_slot__param = null;
+private GameObject __lcl_fishSlot_UnityEngineGameObject_0 = null;
+private GameObject __lcl_fishModObj_UnityEngineGameObject_0 = null;
+private Int32 __0_availableIndex__param = 0;
+private Sprite __intnl_UnityEngineSprite_0 = null;
+private Sprite __intnl_UnityEngineSprite_1 = null;
+private Image __0_fishIcon__param = null;
+public AudioSource sellSFXSource;
+private String __const_SystemString_76 = "#F5F5F5";
+private String __const_SystemString_77 = "#00FFFF";
+private String __const_SystemString_74 = "Negative";
+private String __const_SystemString_75 = "Galaxy";
+private String __const_SystemString_72 = "Frozen";
+private String __const_SystemString_73 = "Shadow";
+private String __const_SystemString_70 = "Static";
+private String __const_SystemString_71 = "Void";
+private String __const_SystemString_78 = "#FFD700";
+private String __const_SystemString_79 = "#6B8E8E";
+private Single __intnl_SystemSingle_5 = 0f;
+private object __intnl_SystemObject_5 = null;
+private Int32 __lcl_fishValue_SystemInt32_0 = 0;
+private Int32 __lcl_fishValue_SystemInt32_1 = 0;
+public GameObject shopPanel;
+private Boolean __lcl_isLocked_SystemBoolean_1 = false;
+private Int32 __0___0_FindFishInAvailable__ret = 0;
+private String __lcl_modifierPrefix_SystemString_0 = null;
+private TokenType __intnl_VRCSDK3DataTokenType_7 = TokenType.Null;
+private String __21__intnlparam = null;
+private Int32 __lcl_sizeModifier_SystemInt32_2 = 0;
+private object __intnl_SystemObject_8 = null;
+private Int32 __lcl_shaderModifier_SystemInt32_2 = 0;
+private GameObject[] availableFishSlots = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_0 = null;
+private Boolean __1_isAvailable__param = false;
+private String __const_SystemString_3 = "FishDatabase";
+private UdonBehaviour __this_VRCUdonUdonBehaviour_1 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_0 = this;
+private Boolean __intnl_SystemBoolean_119 = false;
+private Boolean __intnl_SystemBoolean_118 = false;
+private Boolean __intnl_SystemBoolean_111 = false;
+private Boolean __intnl_SystemBoolean_110 = false;
+private Boolean __intnl_SystemBoolean_113 = false;
+private Boolean __intnl_SystemBoolean_112 = false;
+private Boolean __intnl_SystemBoolean_115 = false;
+private Boolean __intnl_SystemBoolean_114 = false;
+private Boolean __intnl_SystemBoolean_117 = false;
+private Boolean __intnl_SystemBoolean_116 = false;
+private GameObject __intnl_UnityEngineGameObject_16 = null;
+private Transform __intnl_UnityEngineTransform_3 = null;
+private Color __const_UnityEngineColor_3 = new Color(0.6f, 0.6f, 0.8f, 1f);
+private Double __intnl_SystemDouble_6 = 0;
+private object __lcl_idValue_SystemObject_2 = null;
+private GameObject __lcl_fishDbObj_UnityEngineGameObject_0 = null;
+private String __const_SystemString_8 = "fishSlots";
+private Boolean __intnl_SystemBoolean_88 = false;
+private Boolean __intnl_SystemBoolean_98 = false;
+private Boolean __intnl_SystemBoolean_18 = false;
+private Boolean __intnl_SystemBoolean_28 = false;
+private Boolean __intnl_SystemBoolean_38 = false;
+private Boolean __intnl_SystemBoolean_48 = false;
+private Boolean __intnl_SystemBoolean_58 = false;
+private Boolean __intnl_SystemBoolean_68 = false;
+private Boolean __intnl_SystemBoolean_78 = false;
+public Single portableShopHeightOffset;
+private Transform __intnl_UnityEngineTransform_8 = null;
+public Single transactionUIDisplayTime;
+private Vector3 __intnl_UnityEngineVector3_3 = new Vector3(0f, 0f, 0f);
+private Int32 __lcl_combinedModifiers_SystemInt32_2 = 0;
+private Int32 __lcl_combinedModifiers_SystemInt32_1 = 0;
+private Int32 __lcl_combinedModifiers_SystemInt32_0 = 0;
+private DataToken __intnl_VRCSDK3DataDataToken_30 = Null;
+private UdonBehaviour __0_fishEntry__param = null;
+
+
+public void _start()
+{
+localPlayer = Networking.LocalPlayer;
+__intnl_UnityEngineObject_0 = dialogueManager;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_0 == __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_0)
+{
+__lcl_dialogueObj_UnityEngineGameObject_0 = GameObject.Find(__const_SystemString_0);
+__intnl_UnityEngineObject_2 = __lcl_dialogueObj_UnityEngineGameObject_0;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_2 != __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_1)
+{
+__intnl_UnityEngineTransform_0 = __lcl_dialogueObj_UnityEngineGameObject_0.transform;
+__1__intnlparam = __intnl_UnityEngineTransform_0;
+UNDEF_762cb_32540();
+dialogueManager = __0__intnlparam;
+}
+}
+__intnl_UnityEngineObject_2 = inventoryManager;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_2 == __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_1)
+{
+__lcl_invObj_UnityEngineGameObject_0 = GameObject.Find(__const_SystemString_1);
+__intnl_UnityEngineObject_4 = __lcl_invObj_UnityEngineGameObject_0;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_2 = __intnl_UnityEngineObject_4 != __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_2)
+{
+__intnl_UnityEngineTransform_0 = __lcl_invObj_UnityEngineGameObject_0.transform;
+__3__intnlparam = __intnl_UnityEngineTransform_0;
+UNDEF_762cb_33048();
+inventoryManager = __2__intnlparam;
+}
+}
+__intnl_UnityEngineObject_4 = playerStats;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_2 = __intnl_UnityEngineObject_4 == __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_2)
+{
+__lcl_statsObj_UnityEngineGameObject_0 = GameObject.Find(__const_SystemString_2);
+__intnl_UnityEngineObject_6 = __lcl_statsObj_UnityEngineGameObject_0;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_3 = __intnl_UnityEngineObject_6 != __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_3)
+{
+__intnl_UnityEngineTransform_0 = __lcl_statsObj_UnityEngineGameObject_0.transform;
+__5__intnlparam = __intnl_UnityEngineTransform_0;
+UNDEF_762cb_33556();
+playerStats = __4__intnlparam;
+}
+}
+__intnl_UnityEngineObject_6 = fishDatabase;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_3 = __intnl_UnityEngineObject_6 == __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_3)
+{
+__lcl_fishDbObj_UnityEngineGameObject_0 = GameObject.Find(__const_SystemString_3);
+__intnl_UnityEngineObject_8 = __lcl_fishDbObj_UnityEngineGameObject_0;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_4 = __intnl_UnityEngineObject_8 != __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_4)
+{
+__intnl_UnityEngineTransform_0 = __lcl_fishDbObj_UnityEngineGameObject_0.transform;
+__7__intnlparam = __intnl_UnityEngineTransform_0;
+UNDEF_762cb_34064();
+fishDatabase = __6__intnlparam;
+}
+}
+__intnl_UnityEngineObject_8 = fishModifier;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_4 = __intnl_UnityEngineObject_8 == __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_4)
+{
+__lcl_fishModObj_UnityEngineGameObject_0 = GameObject.Find(__const_SystemString_4);
+__intnl_UnityEngineObject_10 = __lcl_fishModObj_UnityEngineGameObject_0;
+__intnl_UnityEngineObject_11 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_5 = __intnl_UnityEngineObject_10 != __intnl_UnityEngineObject_11;
+if (__intnl_SystemBoolean_5)
+{
+__intnl_UnityEngineTransform_0 = __lcl_fishModObj_UnityEngineGameObject_0.transform;
+__9__intnlparam = __intnl_UnityEngineTransform_0;
+UNDEF_762cb_34572();
+fishModifier = __8__intnlparam;
+}
+}
+availableFishSlots = __const_SystemInt32_0.ctor();
+sellQueueSlots = __const_SystemInt32_0.ctor();
+availableFishIds = __const_SystemInt32_0.ctor();
+availableFishValues = __const_SystemInt32_0.ctor();
+sellQueueFishIds = __const_SystemInt32_0.ctor();
+sellQueueFishValues = __const_SystemInt32_0.ctor();
+__intnl_UnityEngineObject_10 = shopCanvas;
+__intnl_UnityEngineObject_11 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_5 = __intnl_UnityEngineObject_10 != __intnl_UnityEngineObject_11;
+if (__intnl_SystemBoolean_5)
+{
+__intnl_UnityEngineGameObject_0 = shopCanvas.gameObject;
+__intnl_UnityEngineGameObject_0.SetActive(__const_SystemBoolean_0);
+__intnl_UnityEngineTransform_0 = shopCanvas.transform;
+originalShopScale = __intnl_UnityEngineTransform_0.localScale;
+}
+__intnl_UnityEngineObject_12 = uiToTurnOff;
+__intnl_UnityEngineObject_13 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_6 = __intnl_UnityEngineObject_12 != __intnl_UnityEngineObject_13;
+if (__intnl_SystemBoolean_6)
+{
+uiToTurnOff.SetActive(__const_SystemBoolean_0);
+}
+__intnl_UnityEngineObject_14 = uiToTurnOn;
+__intnl_UnityEngineObject_15 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_7 = __intnl_UnityEngineObject_14 != __intnl_UnityEngineObject_15;
+if (__intnl_SystemBoolean_7)
+{
+uiToTurnOn.SetActive(__const_SystemBoolean_0);
+}
+UNDEF_762cb_20152();
+}
+public void _update()
+{
+UNDEF_762cb_3688();
+UNDEF_762cb_2780();
+UNDEF_762cb_2472();
+}
+private void UNDEF_762cb_2472()
+{
+__intnl_SystemBoolean_9 = !isShopActive;
+if (__intnl_SystemBoolean_9)
+{
+}
+else
+{
+__intnl_SystemBoolean_9 = isAnimatingShopOut;
+}
+__intnl_SystemBoolean_8 = __intnl_SystemBoolean_9;
+if (__intnl_SystemBoolean_8)
+{
+}
+else
+{
+__intnl_SystemBoolean_8 = isShowingTransactionUI;
+}
+if (__intnl_SystemBoolean_8)
+{
+return;
+}
+__intnl_SystemBoolean_10 = localPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_10)
+{
+return;
+}
+__intnl_UnityEngineVector3_0 = localPlayer.GetPosition();
+__lcl_distance_SystemSingle_0 = Vector3.Distance(__intnl_UnityEngineVector3_0, shopOpenedPosition);
+__intnl_SystemBoolean_11 = __lcl_distance_SystemSingle_0 > autoCloseDistance;
+if (__intnl_SystemBoolean_11)
+{
+CloseShop();
+}
+}
+private void UNDEF_762cb_2780()
+{
+if (isShowingTransactionUI)
+{
+__intnl_SystemSingle_0 = Time.deltaTime;
+transactionUITimer = transactionUITimer + __intnl_SystemSingle_0;
+__intnl_SystemBoolean_12 = transactionUITimer >= transactionUIDisplayTime;
+if (__intnl_SystemBoolean_12)
+{
+isShowingTransactionUI = __const_SystemBoolean_0;
+transactionUITimer = __const_SystemSingle_0;
+__intnl_UnityEngineObject_16 = uiToTurnOn;
+__intnl_UnityEngineObject_17 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_13 = __intnl_UnityEngineObject_16 != __intnl_UnityEngineObject_17;
+if (__intnl_SystemBoolean_13)
+{
+uiToTurnOn.SetActive(__const_SystemBoolean_0);
+}
+CloseShop();
+}
+}
+}
+private void UNDEF_762cb_3688()
+{
+__intnl_UnityEngineObject_18 = shopCanvas;
+__intnl_UnityEngineObject_19 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_14 = __intnl_UnityEngineObject_18 == __intnl_UnityEngineObject_19;
+if (__intnl_SystemBoolean_14)
+{
+return;
+}
+if (isAnimatingShopIn)
+{
+__intnl_SystemSingle_1 = Time.deltaTime;
+shopAnimationTimer = shopAnimationTimer + __intnl_SystemSingle_1;
+__lcl_progress_SystemSingle_0 = shopAnimationTimer / shopPopInDuration;
+__intnl_SystemBoolean_15 = __lcl_progress_SystemSingle_0 >= __const_SystemSingle_1;
+if (__intnl_SystemBoolean_15)
+{
+__lcl_progress_SystemSingle_0 = __const_SystemSingle_1;
+isAnimatingShopIn = __const_SystemBoolean_0;
+__intnl_UnityEngineTransform_1 = shopCanvas.transform;
+__intnl_UnityEngineTransform_1.localScale = originalShopScale;
+}
+else
+{
+__lcl_curveValue_SystemSingle_0 = shopPopInCurve.Evaluate(__lcl_progress_SystemSingle_0);
+__intnl_UnityEngineTransform_1 = shopCanvas.transform;
+__intnl_UnityEngineVector3_1 = originalShopScale * __lcl_curveValue_SystemSingle_0;
+__intnl_UnityEngineTransform_1.localScale = __intnl_UnityEngineVector3_1;
+}
+}
+if (isAnimatingShopOut)
+{
+__intnl_SystemSingle_1 = Time.deltaTime;
+shopAnimationTimer = shopAnimationTimer + __intnl_SystemSingle_1;
+__lcl_progress_SystemSingle_0 = shopAnimationTimer / shopPopOutDuration;
+__intnl_SystemBoolean_15 = __lcl_progress_SystemSingle_0 >= __const_SystemSingle_1;
+if (__intnl_SystemBoolean_15)
+{
+__lcl_progress_SystemSingle_0 = __const_SystemSingle_1;
+isAnimatingShopOut = __const_SystemBoolean_0;
+__intnl_UnityEngineGameObject_1 = shopCanvas.gameObject;
+__intnl_UnityEngineGameObject_1.SetActive(__const_SystemBoolean_0);
+__intnl_UnityEngineTransform_1 = shopCanvas.transform;
+__intnl_UnityEngineTransform_1.localScale = originalShopScale;
+isShopActive = __const_SystemBoolean_0;
+}
+else
+{
+__lcl_curveValue_SystemSingle_0 = shopPopOutCurve.Evaluate(__lcl_progress_SystemSingle_0);
+__lcl_shrinkScale_UnityEngineVector3_0 = originalShopScale * __lcl_curveValue_SystemSingle_0;
+__intnl_UnityEngineTransform_1 = shopCanvas.transform;
+__intnl_UnityEngineTransform_1.localScale = __lcl_shrinkScale_UnityEngineVector3_0;
+}
+}
+}
+private void UNDEF_762cb_3932()
+{
+__intnl_UnityEngineObject_20 = shopCanvas;
+__intnl_UnityEngineObject_21 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_16 = __intnl_UnityEngineObject_20 == __intnl_UnityEngineObject_21;
+if (__intnl_SystemBoolean_16)
+{
+return;
+}
+__intnl_UnityEngineTransform_2 = shopCanvas.transform;
+__intnl_UnityEngineTransform_2.localScale = __const_UnityEngineVector3_0;
+isAnimatingShopIn = __const_SystemBoolean_1;
+isAnimatingShopOut = __const_SystemBoolean_0;
+shopAnimationTimer = __const_SystemSingle_0;
+}
+private void UNDEF_762cb_4128()
+{
+__intnl_UnityEngineObject_22 = shopCanvas;
+__intnl_UnityEngineObject_23 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_17 = __intnl_UnityEngineObject_22 == __intnl_UnityEngineObject_23;
+if (__intnl_SystemBoolean_17)
+{
+return;
+}
+isAnimatingShopIn = __const_SystemBoolean_0;
+isAnimatingShopOut = __const_SystemBoolean_1;
+shopAnimationTimer = __const_SystemSingle_0;
+}
+private void UNDEF_762cb_4456()
+{
+__intnl_UnityEngineObject_24 = inventoryManager;
+__intnl_UnityEngineObject_25 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_18 = __intnl_UnityEngineObject_24 == __intnl_UnityEngineObject_25;
+if (__intnl_SystemBoolean_18)
+{
+}
+else
+{
+__intnl_VRCUdonUdonBehaviour_0 = inventoryManager;
+inventoryManager.SendCustomEvent(__const_SystemString_5);
+__intnl_SystemObject_0 = inventoryManager.GetProgramVariable(__const_SystemString_6);
+__intnl_VRCUdonUdonBehaviour_1 = (UdonBehaviour)__intnl_SystemObject_0;
+__intnl_UnityEngineObject_26 = __intnl_VRCUdonUdonBehaviour_1;
+__intnl_UnityEngineObject_27 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_18 = __intnl_UnityEngineObject_26 == __intnl_UnityEngineObject_27;
+}
+if (__intnl_SystemBoolean_18)
+{
+return;
+}
+}
+public void __0_OpenShop()
+{
+if (isShopActive)
+{
+return;
+}
+currentShopNPC = __0_npc__param;
+isShopActive = __const_SystemBoolean_1;
+__intnl_SystemBoolean_19 = localPlayer != __const_SystemObject_0;
+if (__intnl_SystemBoolean_19)
+{
+shopOpenedPosition = localPlayer.GetPosition();
+}
+isShowingTransactionUI = __const_SystemBoolean_0;
+transactionUITimer = __const_SystemSingle_0;
+__intnl_UnityEngineObject_28 = shopCanvas;
+__intnl_UnityEngineObject_29 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_20 = __intnl_UnityEngineObject_28 != __intnl_UnityEngineObject_29;
+if (__intnl_SystemBoolean_20)
+{
+break;
+}
+__intnl_UnityEngineGameObject_2 = shopCanvas.gameObject;
+__intnl_UnityEngineGameObject_2.SetActive(__const_SystemBoolean_1);
+FindClosestShopScreen();
+__lcl_closestScreen_UnityEngineTransform_0 = __0_FindClosestShopScreen__ret;
+__intnl_UnityEngineObject_30 = __lcl_closestScreen_UnityEngineTransform_0;
+__intnl_UnityEngineObject_31 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_21 = __intnl_UnityEngineObject_30 != __intnl_UnityEngineObject_31;
+if (__intnl_SystemBoolean_21)
+{
+break;
+}
+__intnl_UnityEngineTransform_3 = shopCanvas.transform;
+__intnl_UnityEngineVector3_2 = __lcl_closestScreen_UnityEngineTransform_0.position;
+__intnl_UnityEngineTransform_3.position = __intnl_UnityEngineVector3_2;
+__intnl_UnityEngineTransform_4 = shopCanvas.transform;
+__intnl_UnityEngineQuaternion_0 = __lcl_closestScreen_UnityEngineTransform_0.rotation;
+__intnl_UnityEngineTransform_4.rotation = __intnl_UnityEngineQuaternion_0;
+UNDEF_762cb_3932();
+__intnl_UnityEngineObject_30 = uiToTurnOff;
+__intnl_UnityEngineObject_31 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_21 = __intnl_UnityEngineObject_30 != __intnl_UnityEngineObject_31;
+if (__intnl_SystemBoolean_21)
+{
+uiToTurnOff.SetActive(__const_SystemBoolean_1);
+}
+__intnl_UnityEngineObject_32 = uiToTurnOn;
+__intnl_UnityEngineObject_33 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_22 = __intnl_UnityEngineObject_32 != __intnl_UnityEngineObject_33;
+if (__intnl_SystemBoolean_22)
+{
+uiToTurnOn.SetActive(__const_SystemBoolean_0);
+}
+UNDEF_762cb_4456();
+UNDEF_762cb_7656();
+UNDEF_762cb_25852();
+}
+public void OpenShopInFrontOfPlayer()
+{
+if (isShopActive)
+{
+return;
+}
+__lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0 = Networking.LocalPlayer;
+__intnl_SystemBoolean_23 = __lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0 == __const_SystemObject_0;
+if (__intnl_SystemBoolean_23)
+{
+return;
+}
+currentShopNPC = (UdonBehaviour)__const_SystemObject_0;
+isShopActive = __const_SystemBoolean_1;
+shopOpenedPosition = __lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0.GetPosition();
+isShowingTransactionUI = __const_SystemBoolean_0;
+transactionUITimer = __const_SystemSingle_0;
+__intnl_UnityEngineObject_34 = shopCanvas;
+__intnl_UnityEngineObject_35 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_24 = __intnl_UnityEngineObject_34 != __intnl_UnityEngineObject_35;
+if (__intnl_SystemBoolean_24)
+{
+break;
+}
+__intnl_UnityEngineGameObject_3 = shopCanvas.gameObject;
+__intnl_UnityEngineGameObject_3.SetActive(__const_SystemBoolean_1);
+__lcl_headData_VRCSDKBaseVRCPlayerApiTrackingData_0 = __lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0.GetTrackingData(__const_VRCSDKBaseVRCPlayerApiTrackingDataType_0);
+__lcl_headPos_UnityEngineVector3_0 = __lcl_headData_VRCSDKBaseVRCPlayerApiTrackingData_0.position;
+__intnl_UnityEngineQuaternion_1 = __lcl_headData_VRCSDKBaseVRCPlayerApiTrackingData_0.rotation;
+__lcl_headForward_UnityEngineVector3_0 = __intnl_UnityEngineQuaternion_1 * __const_UnityEngineVector3_1;
+__lcl_headForward_UnityEngineVector3_0.y = __const_SystemSingle_0;
+__intnl_UnityEngineVector3_3 = __lcl_headForward_UnityEngineVector3_0;
+__lcl_headForward_UnityEngineVector3_0.Normalize();
+__intnl_UnityEngineVector3_4 = __lcl_headForward_UnityEngineVector3_0 * portableShopDistance;
+__lcl_shopPosition_UnityEngineVector3_0 = __lcl_headPos_UnityEngineVector3_0 + __intnl_UnityEngineVector3_4;
+__intnl_SystemSingle_2 = __lcl_headPos_UnityEngineVector3_0.y;
+__intnl_SystemSingle_3 = __intnl_SystemSingle_2 + portableShopHeightOffset;
+__lcl_shopPosition_UnityEngineVector3_0.y = __intnl_SystemSingle_3;
+__intnl_UnityEngineVector3_5 = __lcl_shopPosition_UnityEngineVector3_0;
+__lcl_shopRotation_UnityEngineQuaternion_0 = Quaternion.LookRotation(__lcl_headForward_UnityEngineVector3_0, __const_UnityEngineVector3_2);
+__intnl_UnityEngineTransform_5 = shopCanvas.transform;
+__intnl_UnityEngineTransform_5.position = __lcl_shopPosition_UnityEngineVector3_0;
+__intnl_UnityEngineTransform_6 = shopCanvas.transform;
+__intnl_UnityEngineTransform_6.rotation = __lcl_shopRotation_UnityEngineQuaternion_0;
+UNDEF_762cb_3932();
+__intnl_UnityEngineObject_36 = uiToTurnOff;
+__intnl_UnityEngineObject_37 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_25 = __intnl_UnityEngineObject_36 != __intnl_UnityEngineObject_37;
+if (__intnl_SystemBoolean_25)
+{
+uiToTurnOff.SetActive(__const_SystemBoolean_1);
+}
+__intnl_UnityEngineObject_38 = uiToTurnOn;
+__intnl_UnityEngineObject_39 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_26 = __intnl_UnityEngineObject_38 != __intnl_UnityEngineObject_39;
+if (__intnl_SystemBoolean_26)
+{
+uiToTurnOn.SetActive(__const_SystemBoolean_0);
+}
+UNDEF_762cb_4456();
+UNDEF_762cb_7656();
+UNDEF_762cb_25852();
+}
+public void CloseShop()
+{
+if (isShopActive)
+{
+UNDEF_762cb_6936();
+}
+}
+private void UNDEF_762cb_6936()
+{
+isShowingTransactionUI = __const_SystemBoolean_0;
+transactionUITimer = __const_SystemSingle_0;
+_isSelling = __const_SystemBoolean_0;
+UNDEF_762cb_10096();
+ClearSellQueue();
+__intnl_UnityEngineObject_40 = uiToTurnOff;
+__intnl_UnityEngineObject_41 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_27 = __intnl_UnityEngineObject_40 != __intnl_UnityEngineObject_41;
+if (__intnl_SystemBoolean_27)
+{
+uiToTurnOff.SetActive(__const_SystemBoolean_0);
+}
+__intnl_UnityEngineObject_42 = uiToTurnOn;
+__intnl_UnityEngineObject_43 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_28 = __intnl_UnityEngineObject_42 != __intnl_UnityEngineObject_43;
+if (__intnl_SystemBoolean_28)
+{
+uiToTurnOn.SetActive(__const_SystemBoolean_0);
+}
+UNDEF_762cb_4128();
+currentShopNPC = (UdonBehaviour)__const_SystemObject_0;
+}
+private void UNDEF_762cb_7656()
+{
+__intnl_UnityEngineObject_44 = inventoryManager;
+__intnl_UnityEngineObject_45 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_30 = __intnl_UnityEngineObject_44 == __intnl_UnityEngineObject_45;
+if (__intnl_SystemBoolean_30)
+{
+}
+else
+{
+__intnl_UnityEngineObject_46 = availableFishContainer;
+__intnl_UnityEngineObject_47 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_30 = __intnl_UnityEngineObject_46 == __intnl_UnityEngineObject_47;
+}
+__intnl_SystemBoolean_29 = __intnl_SystemBoolean_30;
+if (__intnl_SystemBoolean_29)
+{
+}
+else
+{
+__intnl_UnityEngineObject_48 = shopFishSlotPrefab;
+__intnl_UnityEngineObject_49 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_29 = __intnl_UnityEngineObject_48 == __intnl_UnityEngineObject_49;
+}
+if (__intnl_SystemBoolean_29)
+{
+return;
+}
+UNDEF_762cb_10096();
+__intnl_VRCUdonUdonBehaviour_2 = inventoryManager;
+inventoryManager.SendCustomEvent(__const_SystemString_5);
+__intnl_SystemObject_1 = inventoryManager.GetProgramVariable(__const_SystemString_6);
+__intnl_VRCUdonUdonBehaviour_3 = (UdonBehaviour)__intnl_SystemObject_1;
+__lcl_playerInventoryData_VRCUdonUdonBehaviour_0 = __intnl_VRCUdonUdonBehaviour_3;
+__intnl_UnityEngineObject_50 = __lcl_playerInventoryData_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_51 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_31 = __intnl_UnityEngineObject_50 == __intnl_UnityEngineObject_51;
+if (__intnl_SystemBoolean_31)
+{
+return;
+}
+__intnl_SystemObject_2 = __lcl_playerInventoryData_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_7);
+__intnl_VRCSDK3DataDataDictionary_0 = (DataDictionary)__intnl_SystemObject_2;
+__intnl_VRCSDK3DataDataToken_0 = __const_SystemString_8;
+__intnl_SystemBoolean_32 = __intnl_VRCSDK3DataDataDictionary_0.ContainsKey(__intnl_VRCSDK3DataDataToken_0);
+if (__intnl_SystemBoolean_32)
+{
+UNDEF_762cb_9636();
+}
+}
+private void UNDEF_762cb_9636()
+{
+__intnl_SystemObject_3 = __lcl_playerInventoryData_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_7);
+__intnl_VRCSDK3DataDataDictionary_1 = (DataDictionary)__intnl_SystemObject_3;
+__intnl_VRCSDK3DataDataToken_1 = __const_SystemString_8;
+__lcl_fishSlotsToken_VRCSDK3DataDataToken_0 = __intnl_VRCSDK3DataDataDictionary_1.Item;
+__intnl_VRCSDK3DataTokenType_0 = __lcl_fishSlotsToken_VRCSDK3DataDataToken_0.TokenType;
+__intnl_SystemBoolean_33 = __intnl_VRCSDK3DataTokenType_0.Equals(__const_VRCSDK3DataTokenType_0);
+__intnl_SystemBoolean_34 = !__intnl_SystemBoolean_33;
+if (__intnl_SystemBoolean_34)
+{
+return;
+}
+__lcl_fishSlots_VRCSDK3DataDataList_0 = __lcl_fishSlotsToken_VRCSDK3DataDataToken_0.DataList;
+__lcl_maxSlots_SystemInt32_0 = availableFishSlots.Length;
+__lcl_skippedCount_SystemInt32_0 = __const_SystemInt32_1;
+__lcl_i_SystemInt32_0 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_0 = __lcl_fishSlots_VRCSDK3DataDataList_0.Count;
+__intnl_SystemBoolean_35 = __lcl_i_SystemInt32_0 < __intnl_SystemInt32_0;
+if (__intnl_SystemBoolean_35)
+{
+break;
+}
+__intnl_SystemBoolean_36 = availableFishCount >= __lcl_maxSlots_SystemInt32_0;
+if (__intnl_SystemBoolean_36)
+{
+}
+else
+{
+__intnl_VRCSDK3DataDataToken_2 = __lcl_fishSlots_VRCSDK3DataDataList_0.Item;
+__intnl_VRCSDK3DataTokenType_1 = __intnl_VRCSDK3DataDataToken_2.TokenType;
+__intnl_SystemBoolean_37 = __intnl_VRCSDK3DataTokenType_1.Equals(__const_VRCSDK3DataTokenType_0);
+__intnl_SystemBoolean_38 = !__intnl_SystemBoolean_37;
+if (__intnl_SystemBoolean_38)
+{
+__lcl_skippedCount_SystemInt32_0 = __lcl_skippedCount_SystemInt32_0 + __const_SystemInt32_2;
+}
+else
+{
+__intnl_VRCSDK3DataDataToken_3 = __lcl_fishSlots_VRCSDK3DataDataList_0.Item;
+__lcl_fishSlot_VRCSDK3DataDataList_0 = __intnl_VRCSDK3DataDataToken_3.DataList;
+__intnl_SystemInt32_1 = __lcl_fishSlot_VRCSDK3DataDataList_0.Count;
+__intnl_SystemBoolean_39 = __intnl_SystemInt32_1 < __const_SystemInt32_3;
+if (__intnl_SystemBoolean_39)
+{
+__lcl_skippedCount_SystemInt32_0 = __lcl_skippedCount_SystemInt32_0 + __const_SystemInt32_2;
+}
+else
+{
+__intnl_VRCSDK3DataDataToken_4 = __lcl_fishSlot_VRCSDK3DataDataList_0.Item;
+__intnl_SystemDouble_0 = __intnl_VRCSDK3DataDataToken_4.Double;
+__intnl_SystemDouble_1 = Math.Truncate(__intnl_SystemDouble_0);
+__intnl_SystemInt32_2 = Convert.ToInt32(__intnl_SystemDouble_1);
+__lcl_isLocked_SystemBoolean_0 = __intnl_SystemInt32_2 == __const_SystemInt32_2;
+if (__lcl_isLocked_SystemBoolean_0)
+{
+}
+else
+{
+__intnl_VRCSDK3DataDataToken_5 = __lcl_fishSlot_VRCSDK3DataDataList_0.Item;
+__intnl_SystemDouble_2 = __intnl_VRCSDK3DataDataToken_5.Double;
+__intnl_SystemDouble_3 = Math.Truncate(__intnl_SystemDouble_2);
+__intnl_SystemInt32_3 = Convert.ToInt32(__intnl_SystemDouble_3);
+__lcl_caughtFishId_SystemString_0 = __intnl_SystemInt32_3.ToString();
+__intnl_VRCSDK3DataDataToken_6 = __lcl_fishSlot_VRCSDK3DataDataList_0.Item;
+__intnl_SystemDouble_4 = __intnl_VRCSDK3DataDataToken_6.Double;
+__intnl_SystemDouble_5 = Math.Truncate(__intnl_SystemDouble_4);
+__lcl_fishEntryId_SystemInt32_0 = Convert.ToInt32(__intnl_SystemDouble_5);
+__intnl_VRCSDK3DataDataToken_7 = __lcl_fishSlot_VRCSDK3DataDataList_0.Item;
+__intnl_SystemDouble_6 = __intnl_VRCSDK3DataDataToken_7.Double;
+__lcl_fishWeight_SystemSingle_0 = Convert.ToSingle(__intnl_SystemDouble_6);
+__intnl_VRCSDK3DataDataToken_8 = __lcl_fishSlot_VRCSDK3DataDataList_0.Item;
+__intnl_SystemDouble_7 = __intnl_VRCSDK3DataDataToken_8.Double;
+__intnl_SystemDouble_8 = Math.Truncate(__intnl_SystemDouble_7);
+__lcl_combinedModifiers_SystemInt32_0 = Convert.ToInt32(__intnl_SystemDouble_8);
+__intnl_SystemInt32_4 = __lcl_combinedModifiers_SystemInt32_0 / __const_SystemInt32_0;
+__11__intnlparam = __intnl_SystemInt32_4;
+UNDEF_762cb_34912();
+__lcl_sizeModifier_SystemInt32_0 = __10__intnlparam;
+__intnl_SystemInt32_5 = __lcl_combinedModifiers_SystemInt32_0 / __const_SystemInt32_0;
+__13__intnlparam = __intnl_SystemInt32_5;
+UNDEF_762cb_36068();
+__lcl_shaderModifier_SystemInt32_0 = __12__intnlparam;
+fishDatabase.SetProgramVariable(__const_SystemString_9, __lcl_fishEntryId_SystemInt32_0);
+fishDatabase.SendCustomEvent(__const_SystemString_10);
+__intnl_SystemObject_4 = fishDatabase.GetProgramVariable(__const_SystemString_11);
+__intnl_VRCUdonUdonBehaviour_4 = (UdonBehaviour)__intnl_SystemObject_4;
+__lcl_fishEntry_VRCUdonUdonBehaviour_0 = __intnl_VRCUdonUdonBehaviour_4;
+__intnl_UnityEngineObject_52 = __lcl_fishEntry_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_53 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_40 = __intnl_UnityEngineObject_52 == __intnl_UnityEngineObject_53;
+if (__intnl_SystemBoolean_40)
+{
+__lcl_skippedCount_SystemInt32_0 = __lcl_skippedCount_SystemInt32_0 + __const_SystemInt32_2;
+}
+else
+{
+__0_fishEntry__param = __lcl_fishEntry_VRCUdonUdonBehaviour_0;
+__0_weight__param = __lcl_fishWeight_SystemSingle_0;
+__0_sizeModifier__param = __lcl_sizeModifier_SystemInt32_0;
+__0_shaderModifier__param = __lcl_shaderModifier_SystemInt32_0;
+__0_caughtFishId__param = __lcl_caughtFishId_SystemString_0;
+__0_isAvailable__param = __const_SystemBoolean_1;
+UNDEF_762cb_10996();
+}
+}
+}
+}
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_2;
+}
+}
+}
+private void UNDEF_762cb_10096()
+{
+__lcl_i_SystemInt32_1 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemBoolean_41 = __lcl_i_SystemInt32_1 < availableFishCount;
+if (__intnl_SystemBoolean_41)
+{
+break;
+}
+__intnl_UnityEngineGameObject_4 = (GameObject)(availableFishSlots[__lcl_i_SystemInt32_1]);
+__intnl_UnityEngineObject_54 = __intnl_UnityEngineGameObject_4;
+__intnl_UnityEngineObject_55 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_42 = __intnl_UnityEngineObject_54 != __intnl_UnityEngineObject_55;
+if (__intnl_SystemBoolean_42)
+{
+__intnl_UnityEngineGameObject_5 = (GameObject)(availableFishSlots[__lcl_i_SystemInt32_1]);
+__intnl_UnityEngineObject_56 = __intnl_UnityEngineGameObject_5;
+Object.Destroy(__intnl_UnityEngineObject_56);
+__intnl_UnityEngineGameObject_6 = (GameObject)__const_SystemObject_0;
+availableFishSlots.Set(__lcl_i_SystemInt32_1, __intnl_UnityEngineGameObject_6);
+availableFishIds.Set(__lcl_i_SystemInt32_1, __const_SystemString_12);
+availableFishValues.Set(__lcl_i_SystemInt32_1, __const_SystemInt32_1);
+}
+__lcl_i_SystemInt32_1 = __lcl_i_SystemInt32_1 + __const_SystemInt32_2;
+}
+availableFishCount = __const_SystemInt32_1;
+}
+private void UNDEF_762cb_10996()
+{
+__15__intnlparam = shopFishSlotPrefab;
+UNDEF_762cb_36132();
+__lcl_newSlot_UnityEngineGameObject_0 = __14__intnlparam;
+if (__0_isAvailable__param)
+{
+__lcl_targetContainer_UnityEngineTransform_0 = availableFishContainer;
+}
+else
+{
+__lcl_targetContainer_UnityEngineTransform_0 = sellQueueContainer;
+}
+__intnl_UnityEngineTransform_7 = __lcl_newSlot_UnityEngineGameObject_0.transform;
+__intnl_UnityEngineTransform_7.SetParent(__lcl_targetContainer_UnityEngineTransform_0, __const_SystemBoolean_0);
+__intnl_UnityEngineTransform_8 = __lcl_newSlot_UnityEngineGameObject_0.transform;
+__intnl_UnityEngineTransform_8.localScale = __const_UnityEngineVector3_3;
+__1_fishEntry__param = __0_fishEntry__param;
+__1_weight__param = __0_weight__param;
+__1_sizeModifier__param = __0_sizeModifier__param;
+__1_shaderModifier__param = __0_shaderModifier__param;
+__0_CalculateFishSellValue();
+__lcl_sellValue_SystemInt32_0 = __0___0_CalculateFishSellValue__ret;
+if (__0_isAvailable__param)
+{
+__intnl_SystemInt32_6 = availableFishSlots.Length;
+__intnl_SystemBoolean_43 = availableFishCount < __intnl_SystemInt32_6;
+if (__intnl_SystemBoolean_43)
+{
+availableFishSlots.Set(availableFishCount, __lcl_newSlot_UnityEngineGameObject_0);
+availableFishIds.Set(availableFishCount, __0_caughtFishId__param);
+availableFishValues.Set(availableFishCount, __lcl_sellValue_SystemInt32_0);
+availableFishCount = availableFishCount + __const_SystemInt32_2;
+}
+else
+{
+__intnl_UnityEngineObject_57 = __lcl_newSlot_UnityEngineGameObject_0;
+Object.Destroy(__intnl_UnityEngineObject_57);
+return;
+}
+UNDEF_762cb_11580();
+}
+__intnl_SystemInt32_6 = sellQueueSlots.Length;
+__intnl_SystemBoolean_43 = sellQueueCount < __intnl_SystemInt32_6;
+if (__intnl_SystemBoolean_43)
+{
+sellQueueSlots.Set(sellQueueCount, __lcl_newSlot_UnityEngineGameObject_0);
+sellQueueFishIds.Set(sellQueueCount, __0_caughtFishId__param);
+sellQueueFishValues.Set(sellQueueCount, __lcl_sellValue_SystemInt32_0);
+sellQueueCount = sellQueueCount + __const_SystemInt32_2;
+UNDEF_762cb_11580();
+}
+__intnl_UnityEngineObject_57 = __lcl_newSlot_UnityEngineGameObject_0;
+Object.Destroy(__intnl_UnityEngineObject_57);
+}
+private void UNDEF_762cb_11580()
+{
+__0_slot__param = __lcl_newSlot_UnityEngineGameObject_0;
+__2_fishEntry__param = __0_fishEntry__param;
+__2_weight__param = __0_weight__param;
+__2_sizeModifier__param = __0_sizeModifier__param;
+__2_shaderModifier__param = __0_shaderModifier__param;
+__0_sellValue__param = __lcl_sellValue_SystemInt32_0;
+__1_isAvailable__param = __0_isAvailable__param;
+UNDEF_762cb_14660();
+__intnl_UnityEngineTransform_9 = __lcl_newSlot_UnityEngineGameObject_0.transform;
+__17__intnlparam = __intnl_UnityEngineTransform_9;
+UNDEF_762cb_36640();
+__lcl_clickHandler_VRCUdonUdonBehaviour_0 = __16__intnlparam;
+__intnl_UnityEngineObject_57 = __lcl_clickHandler_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_58 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_43 = __intnl_UnityEngineObject_57 != __intnl_UnityEngineObject_58;
+if (__intnl_SystemBoolean_43)
+{
+break;
+}
+__lcl_clickHandler_VRCUdonUdonBehaviour_0.SetProgramVariable(__const_SystemString_13, __this_VRCUdonUdonBehaviour_0);
+__lcl_clickHandler_VRCUdonUdonBehaviour_0.SetProgramVariable(__const_SystemString_14, __lcl_newSlot_UnityEngineGameObject_0);
+__lcl_clickHandler_VRCUdonUdonBehaviour_0.SendCustomEvent(__const_SystemString_15);
+__intnl_UnityEngineTransform_10 = __lcl_newSlot_UnityEngineGameObject_0.transform;
+__lcl_slotButton_UnityEngineUIButton_0 = (Button)(__intnl_UnityEngineTransform_10.GetComponent(__const_SystemType_0));
+__intnl_UnityEngineObject_59 = __lcl_slotButton_UnityEngineUIButton_0;
+__intnl_UnityEngineObject_60 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_44 = __intnl_UnityEngineObject_59 == __intnl_UnityEngineObject_60;
+if (__intnl_SystemBoolean_44)
+{
+}
+}
+private void __0_CalculateFishSellValue()
+{
+__intnl_UnityEngineObject_61 = __1_fishEntry__param;
+__intnl_UnityEngineObject_62 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_45 = __intnl_UnityEngineObject_61 == __intnl_UnityEngineObject_62;
+if (__intnl_SystemBoolean_45)
+{
+__0___0_CalculateFishSellValue__ret = __const_SystemInt32_2;
+return;
+}
+__intnl_VRCUdonUdonBehaviour_5 = fishModifier;
+__intnl_SystemSingle_4 = __1_weight__param;
+__intnl_SystemInt32_7 = __1_sizeModifier__param;
+__intnl_SystemInt32_8 = __1_shaderModifier__param;
+__1_fishEntry__param.SetProgramVariable(__const_SystemString_16, __1_weight__param);
+__1_fishEntry__param.SetProgramVariable(__const_SystemString_17, __1_sizeModifier__param);
+__1_fishEntry__param.SetProgramVariable(__const_SystemString_18, __1_shaderModifier__param);
+__1_fishEntry__param.SetProgramVariable(__const_SystemString_19, fishModifier);
+__1_fishEntry__param.SendCustomEvent(__const_SystemString_20);
+__intnl_SystemObject_5 = __1_fishEntry__param.GetProgramVariable(__const_SystemString_21);
+__intnl_SystemInt32_9 = Convert.ToInt32(__intnl_SystemObject_5);
+__lcl_baseValue_SystemInt32_0 = __intnl_SystemInt32_9;
+__intnl_SystemSingle_5 = Convert.ToSingle(__lcl_baseValue_SystemInt32_0);
+__intnl_SystemSingle_6 = __intnl_SystemSingle_5 * sellValueMultiplier;
+__lcl_finalSellValue_SystemInt32_0 = Mathf.RoundToInt(__intnl_SystemSingle_6);
+__0___0_CalculateFishSellValue__ret = Mathf.Max(__const_SystemInt32_2, __lcl_finalSellValue_SystemInt32_0);
+return;
+}
+private void UNDEF_762cb_14660()
+{
+__intnl_UnityEngineTransform_11 = __0_slot__param.transform;
+__lcl_texts_TMProTextMeshProUGUIArray_0 = (TextMeshProUGUI[])(__intnl_UnityEngineTransform_11.GetComponentsInChildren(__const_SystemType_1));
+__intnl_SystemInt32_10 = __lcl_texts_TMProTextMeshProUGUIArray_0.Length;
+__intnl_SystemInt32_11 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemBoolean_46 = __intnl_SystemInt32_11 < __intnl_SystemInt32_10;
+if (__intnl_SystemBoolean_46)
+{
+break;
+}
+__lcl_text_TMProTextMeshProUGUI_0 = (TextMeshProUGUI)(__lcl_texts_TMProTextMeshProUGUIArray_0[__intnl_SystemInt32_11]);
+__intnl_SystemString_0 = __lcl_text_TMProTextMeshProUGUI_0.name;
+__intnl_SystemBoolean_47 = __intnl_SystemString_0.Contains(__const_SystemString_22);
+if (__intnl_SystemBoolean_47)
+{
+}
+else
+{
+__intnl_SystemInt32_12 = __lcl_texts_TMProTextMeshProUGUIArray_0.Length;
+__intnl_SystemBoolean_47 = __intnl_SystemInt32_12 == __const_SystemInt32_2;
+}
+if (__intnl_SystemBoolean_47)
+{
+__intnl_SystemObject_6 = __2_fishEntry__param.GetProgramVariable(__const_SystemString_23);
+__intnl_SystemInt32_14 = Convert.ToInt32(__intnl_SystemObject_6);
+__intnl_SystemInt32_13 = __intnl_SystemInt32_14;
+__0_rarity__param = __intnl_SystemInt32_13;
+__0_GetRarityDisplayColor();
+__lcl_rarityColor_UnityEngineColor_0 = __0___0_GetRarityDisplayColor__ret;
+__intnl_SystemObject_7 = __2_fishEntry__param.GetProgramVariable(__const_SystemString_24);
+__intnl_SystemString_1 = (String)__intnl_SystemObject_7;
+__19__intnlparam = __2_sizeModifier__param;
+__20__intnlparam = __2_shaderModifier__param;
+__21__intnlparam = __intnl_SystemString_1;
+__22__intnlparam = __2_weight__param;
+__23__intnlparam = __lcl_rarityColor_UnityEngineColor_0;
+UNDEF_762cb_37808();
+__lcl_text_TMProTextMeshProUGUI_0.text = __18__intnlparam;
+}
+else
+{
+__intnl_SystemString_1 = __lcl_text_TMProTextMeshProUGUI_0.name;
+__intnl_SystemBoolean_48 = __intnl_SystemString_1.Contains(__const_SystemString_25);
+if (__intnl_SystemBoolean_48)
+{
+__intnl_SystemString_2 = String.Concat(__0_sellValue__param, __const_SystemString_26);
+__lcl_text_TMProTextMeshProUGUI_0.text = __intnl_SystemString_2;
+}
+}
+__intnl_SystemInt32_11 = __intnl_SystemInt32_11 + __const_SystemInt32_2;
+}
+__intnl_UnityEngineTransform_12 = __0_slot__param.transform;
+__lcl_fishIconTransform_UnityEngineTransform_0 = __intnl_UnityEngineTransform_12.Find(__const_SystemString_27);
+__intnl_UnityEngineObject_63 = __lcl_fishIconTransform_UnityEngineTransform_0;
+__intnl_UnityEngineObject_64 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_46 = __intnl_UnityEngineObject_63 != __intnl_UnityEngineObject_64;
+if (__intnl_SystemBoolean_46)
+{
+__intnl_UnityEngineTransform_13 = __lcl_fishIconTransform_UnityEngineTransform_0.transform;
+__lcl_fishIcon_UnityEngineUIImage_0 = (Image)(__intnl_UnityEngineTransform_13.GetComponent(__const_SystemType_2));
+__intnl_UnityEngineObject_65 = __lcl_fishIcon_UnityEngineUIImage_0;
+__intnl_UnityEngineObject_66 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_47 = __intnl_UnityEngineObject_65 != __intnl_UnityEngineObject_66;
+if (__intnl_SystemBoolean_47)
+{
+__intnl_SystemObject_6 = __2_fishEntry__param.GetProgramVariable(__const_SystemString_28);
+__intnl_UnityEngineSprite_0 = (Sprite)__intnl_SystemObject_6;
+__intnl_UnityEngineObject_67 = __intnl_UnityEngineSprite_0;
+__intnl_UnityEngineObject_68 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_47 = __intnl_UnityEngineObject_67 != __intnl_UnityEngineObject_68;
+}
+if (__intnl_SystemBoolean_47)
+{
+__intnl_SystemObject_7 = __2_fishEntry__param.GetProgramVariable(__const_SystemString_28);
+__intnl_UnityEngineSprite_1 = (Sprite)__intnl_SystemObject_7;
+__lcl_fishIcon_UnityEngineUIImage_0.sprite = __intnl_UnityEngineSprite_1;
+__lcl_fishIcon_UnityEngineUIImage_0.enabled = __const_SystemBoolean_1;
+__intnl_SystemBoolean_48 = __2_shaderModifier__param != __const_SystemInt32_1;
+if (__intnl_SystemBoolean_48)
+{
+__0_fishIcon__param = __lcl_fishIcon_UnityEngineUIImage_0;
+__3_shaderModifier__param = __2_shaderModifier__param;
+UNDEF_762cb_31388();
+}
+}
+else
+{
+__intnl_UnityEngineObject_69 = __lcl_fishIcon_UnityEngineUIImage_0;
+__intnl_UnityEngineObject_70 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_48 = __intnl_UnityEngineObject_69 == __intnl_UnityEngineObject_70;
+if (__intnl_SystemBoolean_48)
+{
+}
+else
+{
+__intnl_SystemObject_7 = __2_fishEntry__param.GetProgramVariable(__const_SystemString_28);
+__intnl_UnityEngineSprite_1 = (Sprite)__intnl_SystemObject_7;
+__intnl_UnityEngineObject_71 = __intnl_UnityEngineSprite_1;
+__intnl_UnityEngineObject_72 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_49 = __intnl_UnityEngineObject_71 == __intnl_UnityEngineObject_72;
+if (__intnl_SystemBoolean_49)
+{
+}
+}
+}
+}
+else
+{
+__intnl_UnityEngineTransform_13 = __0_slot__param.transform;
+__lcl_allImages_UnityEngineUIImageArray_0 = (Image[])(__intnl_UnityEngineTransform_13.GetComponentsInChildren(__const_SystemType_2));
+__intnl_SystemInt32_10 = __lcl_allImages_UnityEngineUIImageArray_0.Length;
+__intnl_SystemInt32_11 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemBoolean_47 = __intnl_SystemInt32_11 < __intnl_SystemInt32_10;
+if (__intnl_SystemBoolean_47)
+{
+break;
+}
+__lcl_img_UnityEngineUIImage_0 = (Image)(__lcl_allImages_UnityEngineUIImageArray_0[__intnl_SystemInt32_11]);
+__intnl_UnityEngineGameObject_7 = __lcl_img_UnityEngineUIImage_0.gameObject;
+__intnl_UnityEngineObject_65 = __intnl_UnityEngineGameObject_7;
+__intnl_UnityEngineObject_66 = __0_slot__param;
+__intnl_SystemBoolean_48 = __intnl_UnityEngineObject_65 != __intnl_UnityEngineObject_66;
+if (__intnl_SystemBoolean_48)
+{
+__intnl_SystemObject_6 = __2_fishEntry__param.GetProgramVariable(__const_SystemString_28);
+__intnl_UnityEngineSprite_0 = (Sprite)__intnl_SystemObject_6;
+__intnl_UnityEngineObject_67 = __intnl_UnityEngineSprite_0;
+__intnl_UnityEngineObject_68 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_49 = __intnl_UnityEngineObject_67 != __intnl_UnityEngineObject_68;
+if (__intnl_SystemBoolean_49)
+{
+__intnl_SystemObject_7 = __2_fishEntry__param.GetProgramVariable(__const_SystemString_28);
+__intnl_UnityEngineSprite_1 = (Sprite)__intnl_SystemObject_7;
+__lcl_img_UnityEngineUIImage_0.sprite = __intnl_UnityEngineSprite_1;
+__lcl_img_UnityEngineUIImage_0.enabled = __const_SystemBoolean_1;
+__intnl_SystemBoolean_50 = __2_shaderModifier__param != __const_SystemInt32_1;
+if (__intnl_SystemBoolean_50)
+{
+__0_fishIcon__param = __lcl_img_UnityEngineUIImage_0;
+__3_shaderModifier__param = __2_shaderModifier__param;
+UNDEF_762cb_31388();
+}
+}
+}
+else
+{
+__intnl_SystemInt32_11 = __intnl_SystemInt32_11 + __const_SystemInt32_2;
+}
+}
+}
+__0_fishSlot__param = __0_slot__param;
+__2_isAvailable__param = __1_isAvailable__param;
+UNDEF_762cb_14688();
+}
+private void UNDEF_762cb_14688()
+{
+}
+public void AddAllToSellQueue()
+{
+__intnl_SystemBoolean_51 = availableFishCount == __const_SystemInt32_1;
+if (__intnl_SystemBoolean_51)
+{
+return;
+}
+__lcl_i_SystemInt32_2 = availableFishCount - __const_SystemInt32_2;
+for (;;)
+{
+__intnl_SystemBoolean_52 = __lcl_i_SystemInt32_2 >= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_52)
+{
+break;
+}
+__intnl_UnityEngineGameObject_8 = (GameObject)(availableFishSlots[__lcl_i_SystemInt32_2]);
+__intnl_UnityEngineObject_73 = __intnl_UnityEngineGameObject_8;
+__intnl_UnityEngineObject_74 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_53 = __intnl_UnityEngineObject_73 != __intnl_UnityEngineObject_74;
+if (__intnl_SystemBoolean_53)
+{
+__lcl_fishSlot_UnityEngineGameObject_0 = (GameObject)(availableFishSlots[__lcl_i_SystemInt32_2]);
+__4_fishSlot__param = __lcl_fishSlot_UnityEngineGameObject_0;
+__0_availableIndex__param = __lcl_i_SystemInt32_2;
+__0_MoveFishToSellQueue();
+}
+__lcl_i_SystemInt32_2 = __lcl_i_SystemInt32_2 - __const_SystemInt32_2;
+}
+}
+public void OnFishSlotClicked()
+{
+__intnl_UnityEngineObject_75 = clickedFishSlot;
+__intnl_UnityEngineObject_76 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_54 = __intnl_UnityEngineObject_75 == __intnl_UnityEngineObject_76;
+if (__intnl_SystemBoolean_54)
+{
+return;
+}
+__2_fishSlot__param = clickedFishSlot;
+__0_FindFishInAvailable();
+__lcl_availableIndex_SystemInt32_0 = __0___0_FindFishInAvailable__ret;
+__intnl_SystemBoolean_55 = __lcl_availableIndex_SystemInt32_0 >= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_55)
+{
+__4_fishSlot__param = clickedFishSlot;
+__0_availableIndex__param = __lcl_availableIndex_SystemInt32_0;
+__0_MoveFishToSellQueue();
+}
+else
+{
+__3_fishSlot__param = clickedFishSlot;
+__0_FindFishInSellQueue();
+__lcl_sellQueueIndex_SystemInt32_0 = __0___0_FindFishInSellQueue__ret;
+__intnl_SystemBoolean_56 = __lcl_sellQueueIndex_SystemInt32_0 >= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_56)
+{
+__5_fishSlot__param = clickedFishSlot;
+__0_sellQueueIndex__param = __lcl_sellQueueIndex_SystemInt32_0;
+__0_MoveFishBackToAvailable();
+}
+}
+clickedFishSlot = (GameObject)__const_SystemObject_0;
+}
+public void __0_SetClickedFishSlot()
+{
+clickedFishSlot = __1_fishSlot__param;
+}
+private void __0_FindFishInAvailable()
+{
+__lcl_i_SystemInt32_3 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemBoolean_57 = __lcl_i_SystemInt32_3 < availableFishCount;
+if (__intnl_SystemBoolean_57)
+{
+break;
+}
+__intnl_UnityEngineGameObject_9 = (GameObject)(availableFishSlots[__lcl_i_SystemInt32_3]);
+__intnl_UnityEngineObject_77 = __intnl_UnityEngineGameObject_9;
+__intnl_UnityEngineObject_78 = __2_fishSlot__param;
+__intnl_SystemBoolean_58 = __intnl_UnityEngineObject_77 == __intnl_UnityEngineObject_78;
+if (__intnl_SystemBoolean_58)
+{
+__0___0_FindFishInAvailable__ret = __lcl_i_SystemInt32_3;
+return;
+}
+__lcl_i_SystemInt32_3 = __lcl_i_SystemInt32_3 + __const_SystemInt32_2;
+}
+__0___0_FindFishInAvailable__ret = __const_SystemInt32_7;
+return;
+}
+private void __0_FindFishInSellQueue()
+{
+__lcl_i_SystemInt32_4 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemBoolean_59 = __lcl_i_SystemInt32_4 < sellQueueCount;
+if (__intnl_SystemBoolean_59)
+{
+break;
+}
+__intnl_UnityEngineGameObject_10 = (GameObject)(sellQueueSlots[__lcl_i_SystemInt32_4]);
+__intnl_UnityEngineObject_79 = __intnl_UnityEngineGameObject_10;
+__intnl_UnityEngineObject_80 = __3_fishSlot__param;
+__intnl_SystemBoolean_60 = __intnl_UnityEngineObject_79 == __intnl_UnityEngineObject_80;
+if (__intnl_SystemBoolean_60)
+{
+__0___0_FindFishInSellQueue__ret = __lcl_i_SystemInt32_4;
+return;
+}
+__lcl_i_SystemInt32_4 = __lcl_i_SystemInt32_4 + __const_SystemInt32_2;
+}
+__0___0_FindFishInSellQueue__ret = __const_SystemInt32_7;
+return;
+}
+public void __0_MoveFishToSellQueue()
+{
+__intnl_UnityEngineObject_81 = __4_fishSlot__param;
+__intnl_UnityEngineObject_82 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_61 = __intnl_UnityEngineObject_81 == __intnl_UnityEngineObject_82;
+if (__intnl_SystemBoolean_61)
+{
+}
+else
+{
+__intnl_SystemBoolean_61 = __0_availableIndex__param < __const_SystemInt32_1;
+}
+if (__intnl_SystemBoolean_61)
+{
+return;
+}
+__lcl_fishId_SystemString_0 = availableFishIds[__0_availableIndex__param];
+__lcl_fishValue_SystemInt32_0 = availableFishValues[__0_availableIndex__param];
+__0_index__param = __0_availableIndex__param;
+UNDEF_762cb_18564();
+__intnl_UnityEngineTransform_14 = __4_fishSlot__param.transform;
+__intnl_UnityEngineTransform_14.SetParent(sellQueueContainer, __const_SystemBoolean_0);
+__intnl_SystemInt32_15 = sellQueueSlots.Length;
+__intnl_SystemBoolean_62 = sellQueueCount < __intnl_SystemInt32_15;
+if (__intnl_SystemBoolean_62)
+{
+sellQueueSlots.Set(sellQueueCount, __4_fishSlot__param);
+sellQueueFishIds.Set(sellQueueCount, __lcl_fishId_SystemString_0);
+sellQueueFishValues.Set(sellQueueCount, __lcl_fishValue_SystemInt32_0);
+sellQueueCount = sellQueueCount + __const_SystemInt32_2;
+}
+__0_fishSlot__param = __4_fishSlot__param;
+__2_isAvailable__param = __const_SystemBoolean_0;
+UNDEF_762cb_14688();
+UNDEF_762cb_19948();
+}
+public void __0_MoveFishBackToAvailable()
+{
+__intnl_UnityEngineObject_83 = __5_fishSlot__param;
+__intnl_UnityEngineObject_84 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_63 = __intnl_UnityEngineObject_83 == __intnl_UnityEngineObject_84;
+if (__intnl_SystemBoolean_63)
+{
+}
+else
+{
+__intnl_SystemBoolean_63 = __0_sellQueueIndex__param < __const_SystemInt32_1;
+}
+if (__intnl_SystemBoolean_63)
+{
+return;
+}
+__lcl_fishId_SystemString_1 = sellQueueFishIds[__0_sellQueueIndex__param];
+__lcl_fishValue_SystemInt32_1 = sellQueueFishValues[__0_sellQueueIndex__param];
+__1_index__param = __0_sellQueueIndex__param;
+UNDEF_762cb_19216();
+__intnl_UnityEngineTransform_15 = __5_fishSlot__param.transform;
+__intnl_UnityEngineTransform_15.SetParent(availableFishContainer, __const_SystemBoolean_0);
+__intnl_SystemInt32_16 = availableFishSlots.Length;
+__intnl_SystemBoolean_64 = availableFishCount < __intnl_SystemInt32_16;
+if (__intnl_SystemBoolean_64)
+{
+availableFishSlots.Set(availableFishCount, __5_fishSlot__param);
+availableFishIds.Set(availableFishCount, __lcl_fishId_SystemString_1);
+availableFishValues.Set(availableFishCount, __lcl_fishValue_SystemInt32_1);
+availableFishCount = availableFishCount + __const_SystemInt32_2;
+}
+__0_fishSlot__param = __5_fishSlot__param;
+__2_isAvailable__param = __const_SystemBoolean_1;
+UNDEF_762cb_14688();
+UNDEF_762cb_19948();
+}
+public void ClearSellQueue()
+{
+__lcl_i_SystemInt32_5 = sellQueueCount - __const_SystemInt32_2;
+for (;;)
+{
+__intnl_SystemBoolean_65 = __lcl_i_SystemInt32_5 >= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_65)
+{
+break;
+}
+__intnl_UnityEngineGameObject_11 = (GameObject)(sellQueueSlots[__lcl_i_SystemInt32_5]);
+__intnl_UnityEngineObject_85 = __intnl_UnityEngineGameObject_11;
+__intnl_UnityEngineObject_86 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_66 = __intnl_UnityEngineObject_85 != __intnl_UnityEngineObject_86;
+if (__intnl_SystemBoolean_66)
+{
+break;
+}
+__intnl_UnityEngineGameObject_12 = (GameObject)(sellQueueSlots[__lcl_i_SystemInt32_5]);
+__5_fishSlot__param = __intnl_UnityEngineGameObject_12;
+__0_sellQueueIndex__param = __lcl_i_SystemInt32_5;
+__0_MoveFishBackToAvailable();
+__lcl_i_SystemInt32_5 = __lcl_i_SystemInt32_5 - __const_SystemInt32_2;
+}
+}
+private void UNDEF_762cb_18564()
+{
+__lcl_i_SystemInt32_6 = __0_index__param;
+for (;;)
+{
+__intnl_SystemInt32_17 = availableFishCount - __const_SystemInt32_2;
+__intnl_SystemBoolean_67 = __lcl_i_SystemInt32_6 < __intnl_SystemInt32_17;
+if (__intnl_SystemBoolean_67)
+{
+break;
+}
+__intnl_SystemInt32_18 = __lcl_i_SystemInt32_6 + __const_SystemInt32_2;
+__intnl_UnityEngineGameObject_13 = (GameObject)(availableFishSlots[__intnl_SystemInt32_18]);
+availableFishSlots.Set(__lcl_i_SystemInt32_6, __intnl_UnityEngineGameObject_13);
+__intnl_SystemInt32_19 = __lcl_i_SystemInt32_6 + __const_SystemInt32_2;
+__intnl_SystemString_3 = availableFishIds[__intnl_SystemInt32_19];
+availableFishIds.Set(__lcl_i_SystemInt32_6, __intnl_SystemString_3);
+__intnl_SystemInt32_20 = __lcl_i_SystemInt32_6 + __const_SystemInt32_2;
+__intnl_SystemInt32_21 = availableFishValues[__intnl_SystemInt32_20];
+availableFishValues.Set(__lcl_i_SystemInt32_6, __intnl_SystemInt32_21);
+__lcl_i_SystemInt32_6 = __lcl_i_SystemInt32_6 + __const_SystemInt32_2;
+}
+availableFishCount = availableFishCount - __const_SystemInt32_2;
+__intnl_SystemBoolean_67 = availableFishCount >= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_67)
+{
+__intnl_UnityEngineGameObject_13 = (GameObject)__const_SystemObject_0;
+availableFishSlots.Set(availableFishCount, __intnl_UnityEngineGameObject_13);
+availableFishIds.Set(availableFishCount, __const_SystemString_12);
+availableFishValues.Set(availableFishCount, __const_SystemInt32_1);
+}
+}
+private void UNDEF_762cb_19216()
+{
+__lcl_i_SystemInt32_7 = __1_index__param;
+for (;;)
+{
+__intnl_SystemInt32_22 = sellQueueCount - __const_SystemInt32_2;
+__intnl_SystemBoolean_68 = __lcl_i_SystemInt32_7 < __intnl_SystemInt32_22;
+if (__intnl_SystemBoolean_68)
+{
+break;
+}
+__intnl_SystemInt32_23 = __lcl_i_SystemInt32_7 + __const_SystemInt32_2;
+__intnl_UnityEngineGameObject_14 = (GameObject)(sellQueueSlots[__intnl_SystemInt32_23]);
+sellQueueSlots.Set(__lcl_i_SystemInt32_7, __intnl_UnityEngineGameObject_14);
+__intnl_SystemInt32_24 = __lcl_i_SystemInt32_7 + __const_SystemInt32_2;
+__intnl_SystemString_4 = sellQueueFishIds[__intnl_SystemInt32_24];
+sellQueueFishIds.Set(__lcl_i_SystemInt32_7, __intnl_SystemString_4);
+__intnl_SystemInt32_25 = __lcl_i_SystemInt32_7 + __const_SystemInt32_2;
+__intnl_SystemInt32_26 = sellQueueFishValues[__intnl_SystemInt32_25];
+sellQueueFishValues.Set(__lcl_i_SystemInt32_7, __intnl_SystemInt32_26);
+__lcl_i_SystemInt32_7 = __lcl_i_SystemInt32_7 + __const_SystemInt32_2;
+}
+sellQueueCount = sellQueueCount - __const_SystemInt32_2;
+__intnl_SystemBoolean_68 = sellQueueCount >= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_68)
+{
+__intnl_UnityEngineGameObject_14 = (GameObject)__const_SystemObject_0;
+sellQueueSlots.Set(sellQueueCount, __intnl_UnityEngineGameObject_14);
+sellQueueFishIds.Set(sellQueueCount, __const_SystemString_12);
+sellQueueFishValues.Set(sellQueueCount, __const_SystemInt32_1);
+}
+}
+private void UNDEF_762cb_19712()
+{
+__lcl_i_SystemInt32_8 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemBoolean_69 = __lcl_i_SystemInt32_8 < sellQueueCount;
+if (__intnl_SystemBoolean_69)
+{
+break;
+}
+__intnl_UnityEngineGameObject_15 = (GameObject)(sellQueueSlots[__lcl_i_SystemInt32_8]);
+__intnl_UnityEngineObject_87 = __intnl_UnityEngineGameObject_15;
+__intnl_UnityEngineObject_88 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_70 = __intnl_UnityEngineObject_87 != __intnl_UnityEngineObject_88;
+if (__intnl_SystemBoolean_70)
+{
+__intnl_UnityEngineGameObject_16 = (GameObject)(sellQueueSlots[__lcl_i_SystemInt32_8]);
+__intnl_UnityEngineObject_89 = __intnl_UnityEngineGameObject_16;
+Object.Destroy(__intnl_UnityEngineObject_89);
+__intnl_UnityEngineGameObject_17 = (GameObject)__const_SystemObject_0;
+sellQueueSlots.Set(__lcl_i_SystemInt32_8, __intnl_UnityEngineGameObject_17);
+}
+sellQueueFishIds.Set(__lcl_i_SystemInt32_8, __const_SystemString_12);
+sellQueueFishValues.Set(__lcl_i_SystemInt32_8, __const_SystemInt32_1);
+__lcl_i_SystemInt32_8 = __lcl_i_SystemInt32_8 + __const_SystemInt32_2;
+}
+sellQueueCount = __const_SystemInt32_1;
+totalSellValue = __const_SystemInt32_1;
+UNDEF_762cb_20152();
+}
+private void UNDEF_762cb_19948()
+{
+totalSellValue = __const_SystemInt32_1;
+__lcl_i_SystemInt32_9 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemBoolean_71 = __lcl_i_SystemInt32_9 < sellQueueCount;
+if (__intnl_SystemBoolean_71)
+{
+break;
+}
+__intnl_SystemInt32_27 = sellQueueFishValues[__lcl_i_SystemInt32_9];
+totalSellValue = totalSellValue + __intnl_SystemInt32_27;
+__lcl_i_SystemInt32_9 = __lcl_i_SystemInt32_9 + __const_SystemInt32_2;
+}
+UNDEF_762cb_20152();
+}
+private void UNDEF_762cb_20152()
+{
+__intnl_UnityEngineObject_90 = totalValueText;
+__intnl_UnityEngineObject_91 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_72 = __intnl_UnityEngineObject_90 != __intnl_UnityEngineObject_91;
+if (__intnl_SystemBoolean_72)
+{
+__intnl_SystemString_5 = String.Concat(__const_SystemString_29, totalSellValue);
+__intnl_SystemString_6 = __intnl_SystemString_5 + __const_SystemString_26;
+totalValueText.text = __intnl_SystemString_6;
+}
+}
+public void SellQueuedFish()
+{
+__intnl_SystemBoolean_73 = sellQueueCount == __const_SystemInt32_1;
+if (__intnl_SystemBoolean_73)
+{
+return;
+}
+if (_isSelling)
+{
+return;
+}
+_isSelling = __const_SystemBoolean_1;
+__lcl_fishSoldCount_SystemInt32_0 = sellQueueCount;
+__lcl_moneyEarned_SystemInt32_0 = totalSellValue;
+UNDEF_762cb_21720();
+__intnl_UnityEngineObject_92 = inventoryManager;
+__intnl_UnityEngineObject_93 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_74 = __intnl_UnityEngineObject_92 != __intnl_UnityEngineObject_93;
+if (__intnl_SystemBoolean_74)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_6 = inventoryManager;
+inventoryManager.SendCustomEvent(__const_SystemString_30);
+__intnl_UnityEngineObject_94 = playerStats;
+__intnl_UnityEngineObject_95 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_75 = __intnl_UnityEngineObject_94 != __intnl_UnityEngineObject_95;
+if (__intnl_SystemBoolean_75)
+{
+playerStats.SetProgramVariable(__const_SystemString_31, __lcl_moneyEarned_SystemInt32_0);
+playerStats.SendCustomEvent(__const_SystemString_32);
+playerStats.SetProgramVariable(__const_SystemString_33, __lcl_fishSoldCount_SystemInt32_0);
+playerStats.SendCustomEvent(__const_SystemString_34);
+}
+__intnl_UnityEngineObject_96 = sellSFXSource;
+__intnl_UnityEngineObject_97 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_76 = __intnl_UnityEngineObject_96 != __intnl_UnityEngineObject_97;
+if (__intnl_SystemBoolean_76)
+{
+__intnl_UnityEngineObject_98 = sellSFXClip;
+__intnl_UnityEngineObject_99 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_76 = __intnl_UnityEngineObject_98 != __intnl_UnityEngineObject_99;
+}
+if (__intnl_SystemBoolean_76)
+{
+sellSFXSource.PlayOneShot(sellSFXClip);
+}
+UNDEF_762cb_19712();
+UNDEF_762cb_7656();
+__intnl_UnityEngineObject_100 = uiToTurnOff;
+__intnl_UnityEngineObject_101 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_77 = __intnl_UnityEngineObject_100 != __intnl_UnityEngineObject_101;
+if (__intnl_SystemBoolean_77)
+{
+uiToTurnOff.SetActive(__const_SystemBoolean_0);
+}
+__intnl_UnityEngineObject_102 = uiToTurnOn;
+__intnl_UnityEngineObject_103 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_78 = __intnl_UnityEngineObject_102 != __intnl_UnityEngineObject_103;
+if (__intnl_SystemBoolean_78)
+{
+uiToTurnOn.SetActive(__const_SystemBoolean_1);
+}
+isShowingTransactionUI = __const_SystemBoolean_1;
+transactionUITimer = __const_SystemSingle_0;
+_isSelling = __const_SystemBoolean_0;
+}
+private void UNDEF_762cb_21720()
+{
+__intnl_VRCUdonUdonBehaviour_7 = inventoryManager;
+inventoryManager.SendCustomEvent(__const_SystemString_5);
+__intnl_SystemObject_8 = inventoryManager.GetProgramVariable(__const_SystemString_6);
+__intnl_VRCUdonUdonBehaviour_8 = (UdonBehaviour)__intnl_SystemObject_8;
+__lcl_playerInventoryData_VRCUdonUdonBehaviour_1 = __intnl_VRCUdonUdonBehaviour_8;
+__intnl_UnityEngineObject_104 = __lcl_playerInventoryData_VRCUdonUdonBehaviour_1;
+__intnl_UnityEngineObject_105 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_79 = __intnl_UnityEngineObject_104 == __intnl_UnityEngineObject_105;
+if (__intnl_SystemBoolean_79)
+{
+return;
+}
+__intnl_SystemObject_9 = __lcl_playerInventoryData_VRCUdonUdonBehaviour_1.GetProgramVariable(__const_SystemString_7);
+__intnl_VRCSDK3DataDataDictionary_2 = (DataDictionary)__intnl_SystemObject_9;
+__intnl_SystemBoolean_80 = __intnl_VRCSDK3DataDataDictionary_2 == __const_SystemObject_0;
+if (__intnl_SystemBoolean_80)
+{
+return;
+}
+__intnl_SystemObject_10 = __lcl_playerInventoryData_VRCUdonUdonBehaviour_1.GetProgramVariable(__const_SystemString_7);
+__intnl_VRCSDK3DataDataDictionary_3 = (DataDictionary)__intnl_SystemObject_10;
+__intnl_VRCSDK3DataDataToken_9 = __const_SystemString_8;
+__intnl_SystemBoolean_81 = __intnl_VRCSDK3DataDataDictionary_3.ContainsKey(__intnl_VRCSDK3DataDataToken_9);
+if (__intnl_SystemBoolean_81)
+{
+UNDEF_762cb_22964();
+}
+}
+private void UNDEF_762cb_22964()
+{
+__intnl_SystemObject_11 = __lcl_playerInventoryData_VRCUdonUdonBehaviour_1.GetProgramVariable(__const_SystemString_7);
+__intnl_VRCSDK3DataDataDictionary_4 = (DataDictionary)__intnl_SystemObject_11;
+__intnl_VRCSDK3DataDataToken_10 = __const_SystemString_8;
+__lcl_fishSlotsToken_VRCSDK3DataDataToken_1 = __intnl_VRCSDK3DataDataDictionary_4.Item;
+__intnl_VRCSDK3DataTokenType_2 = __lcl_fishSlotsToken_VRCSDK3DataDataToken_1.TokenType;
+__intnl_SystemBoolean_82 = __intnl_VRCSDK3DataTokenType_2.Equals(__const_VRCSDK3DataTokenType_0);
+__intnl_SystemBoolean_83 = !__intnl_SystemBoolean_82;
+if (__intnl_SystemBoolean_83)
+{
+return;
+}
+__lcl_fishSlots_VRCSDK3DataDataList_1 = __lcl_fishSlotsToken_VRCSDK3DataDataToken_1.DataList;
+__lcl_initialCount_SystemInt32_0 = __lcl_fishSlots_VRCSDK3DataDataList_1.Count;
+__lcl_removedCount_SystemInt32_0 = __const_SystemInt32_1;
+__intnl_SystemInt32_28 = __lcl_fishSlots_VRCSDK3DataDataList_1.Count;
+__lcl_j_SystemInt32_0 = __intnl_SystemInt32_28 - __const_SystemInt32_2;
+for (;;)
+{
+__intnl_SystemBoolean_84 = __lcl_j_SystemInt32_0 >= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_84)
+{
+break;
+}
+__intnl_VRCSDK3DataDataToken_11 = __lcl_fishSlots_VRCSDK3DataDataList_1.Item;
+__intnl_VRCSDK3DataTokenType_3 = __intnl_VRCSDK3DataDataToken_11.TokenType;
+__intnl_SystemBoolean_85 = __intnl_VRCSDK3DataTokenType_3.Equals(__const_VRCSDK3DataTokenType_0);
+__intnl_SystemBoolean_86 = !__intnl_SystemBoolean_85;
+if (__intnl_SystemBoolean_86)
+{
+}
+else
+{
+__intnl_VRCSDK3DataDataToken_12 = __lcl_fishSlots_VRCSDK3DataDataList_1.Item;
+__lcl_fishSlot_VRCSDK3DataDataList_1 = __intnl_VRCSDK3DataDataToken_12.DataList;
+__intnl_SystemInt32_29 = __lcl_fishSlot_VRCSDK3DataDataList_1.Count;
+__intnl_SystemBoolean_87 = __intnl_SystemInt32_29 < __const_SystemInt32_2;
+if (__intnl_SystemBoolean_87)
+{
+}
+else
+{
+__intnl_VRCSDK3DataDataToken_13 = __lcl_fishSlot_VRCSDK3DataDataList_1.Item;
+__intnl_SystemDouble_9 = __intnl_VRCSDK3DataDataToken_13.Double;
+__intnl_SystemDouble_10 = Math.Truncate(__intnl_SystemDouble_9);
+__lcl_inventoryFishId_SystemInt32_0 = Convert.ToInt32(__intnl_SystemDouble_10);
+__lcl_inventoryFishIdStr_SystemString_0 = __lcl_inventoryFishId_SystemInt32_0.ToString();
+__lcl_i_SystemInt32_10 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemBoolean_88 = __lcl_i_SystemInt32_10 < sellQueueCount;
+if (__intnl_SystemBoolean_88)
+{
+break;
+}
+__intnl_SystemString_7 = sellQueueFishIds[__lcl_i_SystemInt32_10];
+__intnl_SystemBoolean_89 = String.IsNullOrEmpty(__intnl_SystemString_7);
+if (__intnl_SystemBoolean_89)
+{
+}
+else
+{
+__intnl_SystemString_8 = sellQueueFishIds[__lcl_i_SystemInt32_10];
+__intnl_SystemBoolean_90 = __intnl_SystemString_8 == __lcl_inventoryFishIdStr_SystemString_0;
+if (__intnl_SystemBoolean_90)
+{
+__lcl_fishSlots_VRCSDK3DataDataList_1.RemoveAt(__lcl_j_SystemInt32_0);
+__lcl_removedCount_SystemInt32_0 = __lcl_removedCount_SystemInt32_0 + __const_SystemInt32_2;
+sellQueueFishIds.Set(__lcl_i_SystemInt32_10, __const_SystemString_12);
+}
+}
+else
+{
+__lcl_i_SystemInt32_10 = __lcl_i_SystemInt32_10 + __const_SystemInt32_2;
+}
+}
+}
+}
+__lcl_j_SystemInt32_0 = __lcl_j_SystemInt32_0 - __const_SystemInt32_2;
+}
+__lcl_playerInventoryData_VRCUdonUdonBehaviour_1.SendCustomEvent(__const_SystemString_35);
+}
+private void UNDEF_762cb_25852()
+{
+__lcl_sellAllTotal_SystemInt32_0 = __const_SystemInt32_1;
+__lcl_unlocked_SystemInt32_0 = __const_SystemInt32_1;
+__intnl_UnityEngineObject_106 = inventoryManager;
+__intnl_UnityEngineObject_107 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_91 = __intnl_UnityEngineObject_106 != __intnl_UnityEngineObject_107;
+if (__intnl_SystemBoolean_91)
+{
+__intnl_VRCUdonUdonBehaviour_9 = inventoryManager;
+inventoryManager.SendCustomEvent(__const_SystemString_5);
+__intnl_SystemObject_12 = inventoryManager.GetProgramVariable(__const_SystemString_6);
+__intnl_VRCUdonUdonBehaviour_10 = (UdonBehaviour)__intnl_SystemObject_12;
+__lcl_playerInventoryData_VRCUdonUdonBehaviour_2 = __intnl_VRCUdonUdonBehaviour_10;
+}
+else
+{
+__lcl_playerInventoryData_VRCUdonUdonBehaviour_2 = (UdonBehaviour)__const_SystemObject_0;
+}
+__intnl_UnityEngineObject_108 = __lcl_playerInventoryData_VRCUdonUdonBehaviour_2;
+__intnl_UnityEngineObject_109 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_92 = __intnl_UnityEngineObject_108 == __intnl_UnityEngineObject_109;
+if (__intnl_SystemBoolean_92)
+{
+}
+else
+{
+__intnl_SystemObject_13 = __lcl_playerInventoryData_VRCUdonUdonBehaviour_2.GetProgramVariable(__const_SystemString_7);
+__intnl_VRCSDK3DataDataDictionary_5 = (DataDictionary)__intnl_SystemObject_13;
+__intnl_VRCSDK3DataDataToken_14 = __const_SystemString_8;
+__intnl_SystemBoolean_93 = __intnl_VRCSDK3DataDataDictionary_5.ContainsKey(__intnl_VRCSDK3DataDataToken_14);
+__intnl_SystemBoolean_92 = !__intnl_SystemBoolean_93;
+}
+if (__intnl_SystemBoolean_92)
+{
+__intnl_UnityEngineObject_110 = sellAllValueText;
+__intnl_UnityEngineObject_111 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_94 = __intnl_UnityEngineObject_110 != __intnl_UnityEngineObject_111;
+if (__intnl_SystemBoolean_94)
+{
+sellAllValueText.text = __const_SystemString_36;
+}
+return;
+}
+__intnl_SystemObject_14 = __lcl_playerInventoryData_VRCUdonUdonBehaviour_2.GetProgramVariable(__const_SystemString_7);
+__intnl_VRCSDK3DataDataDictionary_6 = (DataDictionary)__intnl_SystemObject_14;
+__intnl_VRCSDK3DataDataToken_15 = __const_SystemString_8;
+__lcl_fishSlotsToken_VRCSDK3DataDataToken_2 = __intnl_VRCSDK3DataDataDictionary_6.Item;
+__intnl_VRCSDK3DataTokenType_4 = __lcl_fishSlotsToken_VRCSDK3DataDataToken_2.TokenType;
+__intnl_SystemBoolean_94 = __intnl_VRCSDK3DataTokenType_4.Equals(__const_VRCSDK3DataTokenType_0);
+__intnl_SystemBoolean_95 = !__intnl_SystemBoolean_94;
+if (__intnl_SystemBoolean_95)
+{
+__intnl_UnityEngineObject_110 = sellAllValueText;
+__intnl_UnityEngineObject_111 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_96 = __intnl_UnityEngineObject_110 != __intnl_UnityEngineObject_111;
+if (__intnl_SystemBoolean_96)
+{
+sellAllValueText.text = __const_SystemString_36;
+}
+return;
+}
+__lcl_fishSlots_VRCSDK3DataDataList_2 = __lcl_fishSlotsToken_VRCSDK3DataDataToken_2.DataList;
+__lcl_i_SystemInt32_11 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_30 = __lcl_fishSlots_VRCSDK3DataDataList_2.Count;
+__intnl_SystemBoolean_96 = __lcl_i_SystemInt32_11 < __intnl_SystemInt32_30;
+if (__intnl_SystemBoolean_96)
+{
+break;
+}
+__intnl_VRCSDK3DataDataToken_16 = __lcl_fishSlots_VRCSDK3DataDataList_2.Item;
+__intnl_VRCSDK3DataTokenType_5 = __intnl_VRCSDK3DataDataToken_16.TokenType;
+__intnl_SystemBoolean_97 = __intnl_VRCSDK3DataTokenType_5.Equals(__const_VRCSDK3DataTokenType_0);
+__intnl_SystemBoolean_98 = !__intnl_SystemBoolean_97;
+if (__intnl_SystemBoolean_98)
+{
+}
+else
+{
+__intnl_VRCSDK3DataDataToken_17 = __lcl_fishSlots_VRCSDK3DataDataList_2.Item;
+__lcl_slot_VRCSDK3DataDataList_0 = __intnl_VRCSDK3DataDataToken_17.DataList;
+__intnl_SystemInt32_31 = __lcl_slot_VRCSDK3DataDataList_0.Count;
+__intnl_SystemBoolean_99 = __intnl_SystemInt32_31 < __const_SystemInt32_3;
+if (__intnl_SystemBoolean_99)
+{
+}
+else
+{
+__intnl_VRCSDK3DataDataToken_18 = __lcl_slot_VRCSDK3DataDataList_0.Item;
+__intnl_SystemDouble_11 = __intnl_VRCSDK3DataDataToken_18.Double;
+__intnl_SystemDouble_12 = Math.Truncate(__intnl_SystemDouble_11);
+__intnl_SystemInt32_32 = Convert.ToInt32(__intnl_SystemDouble_12);
+__lcl_isLocked_SystemBoolean_1 = __intnl_SystemInt32_32 == __const_SystemInt32_2;
+if (__lcl_isLocked_SystemBoolean_1)
+{
+}
+else
+{
+__intnl_VRCSDK3DataDataToken_19 = __lcl_slot_VRCSDK3DataDataList_0.Item;
+__intnl_SystemDouble_13 = __intnl_VRCSDK3DataDataToken_19.Double;
+__intnl_SystemDouble_14 = Math.Truncate(__intnl_SystemDouble_13);
+__lcl_fishEntryId_SystemInt32_1 = Convert.ToInt32(__intnl_SystemDouble_14);
+__intnl_VRCSDK3DataDataToken_20 = __lcl_slot_VRCSDK3DataDataList_0.Item;
+__intnl_SystemDouble_15 = __intnl_VRCSDK3DataDataToken_20.Double;
+__lcl_weight_SystemSingle_0 = Convert.ToSingle(__intnl_SystemDouble_15);
+__intnl_VRCSDK3DataDataToken_21 = __lcl_slot_VRCSDK3DataDataList_0.Item;
+__intnl_SystemDouble_16 = __intnl_VRCSDK3DataDataToken_21.Double;
+__intnl_SystemDouble_17 = Math.Truncate(__intnl_SystemDouble_16);
+__lcl_combinedModifiers_SystemInt32_1 = Convert.ToInt32(__intnl_SystemDouble_17);
+__intnl_SystemInt32_33 = __lcl_combinedModifiers_SystemInt32_1 / __const_SystemInt32_0;
+__11__intnlparam = __intnl_SystemInt32_33;
+UNDEF_762cb_34912();
+__lcl_sizeModifier_SystemInt32_1 = __10__intnlparam;
+__intnl_SystemInt32_34 = __lcl_combinedModifiers_SystemInt32_1 / __const_SystemInt32_0;
+__13__intnlparam = __intnl_SystemInt32_34;
+UNDEF_762cb_36068();
+__lcl_shaderModifier_SystemInt32_1 = __12__intnlparam;
+fishDatabase.SetProgramVariable(__const_SystemString_9, __lcl_fishEntryId_SystemInt32_1);
+fishDatabase.SendCustomEvent(__const_SystemString_10);
+__intnl_SystemObject_15 = fishDatabase.GetProgramVariable(__const_SystemString_11);
+__intnl_VRCUdonUdonBehaviour_11 = (UdonBehaviour)__intnl_SystemObject_15;
+__lcl_fishEntry_VRCUdonUdonBehaviour_1 = __intnl_VRCUdonUdonBehaviour_11;
+__intnl_UnityEngineObject_110 = __lcl_fishEntry_VRCUdonUdonBehaviour_1;
+__intnl_UnityEngineObject_111 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_100 = __intnl_UnityEngineObject_110 == __intnl_UnityEngineObject_111;
+if (__intnl_SystemBoolean_100)
+{
+}
+else
+{
+__intnl_VRCUdonUdonBehaviour_12 = fishModifier;
+__lcl_fishEntry_VRCUdonUdonBehaviour_1.SetProgramVariable(__const_SystemString_16, __lcl_weight_SystemSingle_0);
+__lcl_fishEntry_VRCUdonUdonBehaviour_1.SetProgramVariable(__const_SystemString_17, __lcl_sizeModifier_SystemInt32_1);
+__lcl_fishEntry_VRCUdonUdonBehaviour_1.SetProgramVariable(__const_SystemString_18, __lcl_shaderModifier_SystemInt32_1);
+__lcl_fishEntry_VRCUdonUdonBehaviour_1.SetProgramVariable(__const_SystemString_19, fishModifier);
+__lcl_fishEntry_VRCUdonUdonBehaviour_1.SendCustomEvent(__const_SystemString_20);
+__intnl_SystemObject_16 = __lcl_fishEntry_VRCUdonUdonBehaviour_1.GetProgramVariable(__const_SystemString_21);
+__intnl_SystemInt32_35 = Convert.ToInt32(__intnl_SystemObject_16);
+__lcl_baseValue_SystemInt32_1 = __intnl_SystemInt32_35;
+__intnl_SystemSingle_7 = Convert.ToSingle(__lcl_baseValue_SystemInt32_1);
+__intnl_SystemSingle_8 = __intnl_SystemSingle_7 * sellValueMultiplier;
+__intnl_SystemInt32_36 = Mathf.RoundToInt(__intnl_SystemSingle_8);
+__intnl_SystemInt32_37 = Mathf.Max(__const_SystemInt32_2, __intnl_SystemInt32_36);
+__lcl_sellAllTotal_SystemInt32_0 = __lcl_sellAllTotal_SystemInt32_0 + __intnl_SystemInt32_37;
+__lcl_unlocked_SystemInt32_0 = __lcl_unlocked_SystemInt32_0 + __const_SystemInt32_2;
+}
+}
+}
+}
+__lcl_i_SystemInt32_11 = __lcl_i_SystemInt32_11 + __const_SystemInt32_2;
+}
+__intnl_UnityEngineObject_110 = sellAllValueText;
+__intnl_UnityEngineObject_111 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_96 = __intnl_UnityEngineObject_110 != __intnl_UnityEngineObject_111;
+if (__intnl_SystemBoolean_96)
+{
+__intnl_SystemString_9 = __lcl_sellAllTotal_SystemInt32_0.ToString(__const_SystemString_37);
+__intnl_SystemString_10 = __intnl_SystemString_9 + __const_SystemString_38;
+sellAllValueText.text = __intnl_SystemString_10;
+}
+}
+public void SellAllUnlockedFish()
+{
+if (_isSelling)
+{
+return;
+}
+_isSelling = __const_SystemBoolean_1;
+__intnl_UnityEngineObject_112 = inventoryManager;
+__intnl_UnityEngineObject_113 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_101 = __intnl_UnityEngineObject_112 != __intnl_UnityEngineObject_113;
+if (__intnl_SystemBoolean_101)
+{
+__intnl_VRCUdonUdonBehaviour_13 = inventoryManager;
+inventoryManager.SendCustomEvent(__const_SystemString_5);
+__intnl_SystemObject_17 = inventoryManager.GetProgramVariable(__const_SystemString_6);
+__intnl_VRCUdonUdonBehaviour_14 = (UdonBehaviour)__intnl_SystemObject_17;
+__lcl_playerInventoryData_VRCUdonUdonBehaviour_3 = __intnl_VRCUdonUdonBehaviour_14;
+}
+else
+{
+__lcl_playerInventoryData_VRCUdonUdonBehaviour_3 = (UdonBehaviour)__const_SystemObject_0;
+}
+__intnl_UnityEngineObject_114 = __lcl_playerInventoryData_VRCUdonUdonBehaviour_3;
+__intnl_UnityEngineObject_115 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_102 = __intnl_UnityEngineObject_114 == __intnl_UnityEngineObject_115;
+if (__intnl_SystemBoolean_102)
+{
+}
+else
+{
+__intnl_SystemObject_18 = __lcl_playerInventoryData_VRCUdonUdonBehaviour_3.GetProgramVariable(__const_SystemString_7);
+__intnl_VRCSDK3DataDataDictionary_7 = (DataDictionary)__intnl_SystemObject_18;
+__intnl_VRCSDK3DataDataToken_22 = __const_SystemString_8;
+__intnl_SystemBoolean_103 = __intnl_VRCSDK3DataDataDictionary_7.ContainsKey(__intnl_VRCSDK3DataDataToken_22);
+__intnl_SystemBoolean_102 = !__intnl_SystemBoolean_103;
+}
+if (__intnl_SystemBoolean_102)
+{
+_isSelling = __const_SystemBoolean_0;
+return;
+}
+__intnl_SystemObject_19 = __lcl_playerInventoryData_VRCUdonUdonBehaviour_3.GetProgramVariable(__const_SystemString_7);
+__intnl_VRCSDK3DataDataDictionary_8 = (DataDictionary)__intnl_SystemObject_19;
+__intnl_VRCSDK3DataDataToken_23 = __const_SystemString_8;
+__lcl_fishSlotsToken_VRCSDK3DataDataToken_3 = __intnl_VRCSDK3DataDataDictionary_8.Item;
+__intnl_VRCSDK3DataTokenType_6 = __lcl_fishSlotsToken_VRCSDK3DataDataToken_3.TokenType;
+__intnl_SystemBoolean_104 = __intnl_VRCSDK3DataTokenType_6.Equals(__const_VRCSDK3DataTokenType_0);
+__intnl_SystemBoolean_105 = !__intnl_SystemBoolean_104;
+if (__intnl_SystemBoolean_105)
+{
+_isSelling = __const_SystemBoolean_0;
+return;
+}
+__lcl_fishSlots_VRCSDK3DataDataList_3 = __lcl_fishSlotsToken_VRCSDK3DataDataToken_3.DataList;
+__lcl_totalMoney_SystemInt32_0 = __const_SystemInt32_1;
+__lcl_soldCount_SystemInt32_0 = __const_SystemInt32_1;
+__lcl_lockedFish_VRCSDK3DataDataList_0 = DataList.ctor();
+__lcl_i_SystemInt32_12 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_38 = __lcl_fishSlots_VRCSDK3DataDataList_3.Count;
+__intnl_SystemBoolean_106 = __lcl_i_SystemInt32_12 < __intnl_SystemInt32_38;
+if (__intnl_SystemBoolean_106)
+{
+break;
+}
+__intnl_VRCSDK3DataDataToken_24 = __lcl_fishSlots_VRCSDK3DataDataList_3.Item;
+__intnl_VRCSDK3DataTokenType_7 = __intnl_VRCSDK3DataDataToken_24.TokenType;
+__intnl_SystemBoolean_107 = __intnl_VRCSDK3DataTokenType_7.Equals(__const_VRCSDK3DataTokenType_0);
+__intnl_SystemBoolean_108 = !__intnl_SystemBoolean_107;
+if (__intnl_SystemBoolean_108)
+{
+__intnl_VRCSDK3DataDataToken_25 = __lcl_fishSlots_VRCSDK3DataDataList_3.Item;
+__lcl_lockedFish_VRCSDK3DataDataList_0.Add(__intnl_VRCSDK3DataDataToken_25);
+}
+else
+{
+__intnl_VRCSDK3DataDataToken_25 = __lcl_fishSlots_VRCSDK3DataDataList_3.Item;
+__lcl_slot_VRCSDK3DataDataList_1 = __intnl_VRCSDK3DataDataToken_25.DataList;
+__intnl_SystemInt32_39 = __lcl_slot_VRCSDK3DataDataList_1.Count;
+__intnl_SystemBoolean_109 = __intnl_SystemInt32_39 < __const_SystemInt32_3;
+if (__intnl_SystemBoolean_109)
+{
+__intnl_VRCSDK3DataDataToken_26 = __lcl_fishSlots_VRCSDK3DataDataList_3.Item;
+__lcl_lockedFish_VRCSDK3DataDataList_0.Add(__intnl_VRCSDK3DataDataToken_26);
+}
+else
+{
+__intnl_VRCSDK3DataDataToken_26 = __lcl_slot_VRCSDK3DataDataList_1.Item;
+__intnl_SystemDouble_18 = __intnl_VRCSDK3DataDataToken_26.Double;
+__intnl_SystemDouble_19 = Math.Truncate(__intnl_SystemDouble_18);
+__intnl_SystemInt32_40 = Convert.ToInt32(__intnl_SystemDouble_19);
+__lcl_isLocked_SystemBoolean_2 = __intnl_SystemInt32_40 == __const_SystemInt32_2;
+if (__lcl_isLocked_SystemBoolean_2)
+{
+__intnl_VRCSDK3DataDataToken_27 = __lcl_fishSlots_VRCSDK3DataDataList_3.Item;
+__lcl_lockedFish_VRCSDK3DataDataList_0.Add(__intnl_VRCSDK3DataDataToken_27);
+}
+else
+{
+__intnl_VRCSDK3DataDataToken_27 = __lcl_slot_VRCSDK3DataDataList_1.Item;
+__intnl_SystemDouble_20 = __intnl_VRCSDK3DataDataToken_27.Double;
+__intnl_SystemDouble_21 = Math.Truncate(__intnl_SystemDouble_20);
+__lcl_fishEntryId_SystemInt32_2 = Convert.ToInt32(__intnl_SystemDouble_21);
+__intnl_VRCSDK3DataDataToken_28 = __lcl_slot_VRCSDK3DataDataList_1.Item;
+__intnl_SystemDouble_22 = __intnl_VRCSDK3DataDataToken_28.Double;
+__lcl_weight_SystemSingle_1 = Convert.ToSingle(__intnl_SystemDouble_22);
+__intnl_VRCSDK3DataDataToken_29 = __lcl_slot_VRCSDK3DataDataList_1.Item;
+__intnl_SystemDouble_23 = __intnl_VRCSDK3DataDataToken_29.Double;
+__intnl_SystemDouble_24 = Math.Truncate(__intnl_SystemDouble_23);
+__lcl_combinedModifiers_SystemInt32_2 = Convert.ToInt32(__intnl_SystemDouble_24);
+__intnl_SystemInt32_41 = __lcl_combinedModifiers_SystemInt32_2 / __const_SystemInt32_0;
+__11__intnlparam = __intnl_SystemInt32_41;
+UNDEF_762cb_34912();
+__lcl_sizeModifier_SystemInt32_2 = __10__intnlparam;
+__intnl_SystemInt32_42 = __lcl_combinedModifiers_SystemInt32_2 / __const_SystemInt32_0;
+__13__intnlparam = __intnl_SystemInt32_42;
+UNDEF_762cb_36068();
+__lcl_shaderModifier_SystemInt32_2 = __12__intnlparam;
+fishDatabase.SetProgramVariable(__const_SystemString_9, __lcl_fishEntryId_SystemInt32_2);
+fishDatabase.SendCustomEvent(__const_SystemString_10);
+__intnl_SystemObject_20 = fishDatabase.GetProgramVariable(__const_SystemString_11);
+__intnl_VRCUdonUdonBehaviour_15 = (UdonBehaviour)__intnl_SystemObject_20;
+__lcl_fishEntry_VRCUdonUdonBehaviour_2 = __intnl_VRCUdonUdonBehaviour_15;
+__intnl_UnityEngineObject_116 = __lcl_fishEntry_VRCUdonUdonBehaviour_2;
+__intnl_UnityEngineObject_117 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_110 = __intnl_UnityEngineObject_116 == __intnl_UnityEngineObject_117;
+if (__intnl_SystemBoolean_110)
+{
+__intnl_VRCSDK3DataDataToken_30 = __lcl_fishSlots_VRCSDK3DataDataList_3.Item;
+__lcl_lockedFish_VRCSDK3DataDataList_0.Add(__intnl_VRCSDK3DataDataToken_30);
+}
+else
+{
+__intnl_VRCUdonUdonBehaviour_16 = fishModifier;
+__lcl_fishEntry_VRCUdonUdonBehaviour_2.SetProgramVariable(__const_SystemString_16, __lcl_weight_SystemSingle_1);
+__lcl_fishEntry_VRCUdonUdonBehaviour_2.SetProgramVariable(__const_SystemString_17, __lcl_sizeModifier_SystemInt32_2);
+__lcl_fishEntry_VRCUdonUdonBehaviour_2.SetProgramVariable(__const_SystemString_18, __lcl_shaderModifier_SystemInt32_2);
+__lcl_fishEntry_VRCUdonUdonBehaviour_2.SetProgramVariable(__const_SystemString_19, fishModifier);
+__lcl_fishEntry_VRCUdonUdonBehaviour_2.SendCustomEvent(__const_SystemString_20);
+__intnl_SystemObject_21 = __lcl_fishEntry_VRCUdonUdonBehaviour_2.GetProgramVariable(__const_SystemString_21);
+__intnl_SystemInt32_43 = Convert.ToInt32(__intnl_SystemObject_21);
+__lcl_baseValue_SystemInt32_2 = __intnl_SystemInt32_43;
+__intnl_SystemSingle_9 = Convert.ToSingle(__lcl_baseValue_SystemInt32_2);
+__intnl_SystemSingle_10 = __intnl_SystemSingle_9 * sellValueMultiplier;
+__intnl_SystemInt32_44 = Mathf.RoundToInt(__intnl_SystemSingle_10);
+__intnl_SystemInt32_45 = Mathf.Max(__const_SystemInt32_2, __intnl_SystemInt32_44);
+__lcl_totalMoney_SystemInt32_0 = __lcl_totalMoney_SystemInt32_0 + __intnl_SystemInt32_45;
+__lcl_soldCount_SystemInt32_0 = __lcl_soldCount_SystemInt32_0 + __const_SystemInt32_2;
+}
+}
+}
+}
+__lcl_i_SystemInt32_12 = __lcl_i_SystemInt32_12 + __const_SystemInt32_2;
+}
+__intnl_SystemBoolean_106 = __lcl_soldCount_SystemInt32_0 == __const_SystemInt32_1;
+if (__intnl_SystemBoolean_106)
+{
+_isSelling = __const_SystemBoolean_0;
+return;
+}
+__intnl_SystemObject_20 = __lcl_playerInventoryData_VRCUdonUdonBehaviour_3.GetProgramVariable(__const_SystemString_7);
+__intnl_VRCSDK3DataDataDictionary_9 = (DataDictionary)__intnl_SystemObject_20;
+__intnl_VRCSDK3DataDataToken_24 = __const_SystemString_8;
+__intnl_VRCSDK3DataDataToken_25 = __lcl_lockedFish_VRCSDK3DataDataList_0;
+__intnl_VRCSDK3DataDataDictionary_9.Item = __intnl_VRCSDK3DataDataToken_25;
+__lcl_playerInventoryData_VRCUdonUdonBehaviour_3.SendCustomEvent(__const_SystemString_35);
+__intnl_UnityEngineObject_116 = inventoryManager;
+__intnl_UnityEngineObject_117 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_107 = __intnl_UnityEngineObject_116 != __intnl_UnityEngineObject_117;
+if (__intnl_SystemBoolean_107)
+{
+__intnl_VRCUdonUdonBehaviour_15 = inventoryManager;
+inventoryManager.SendCustomEvent(__const_SystemString_30);
+}
+__intnl_UnityEngineObject_118 = playerStats;
+__intnl_UnityEngineObject_119 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_108 = __intnl_UnityEngineObject_118 != __intnl_UnityEngineObject_119;
+if (__intnl_SystemBoolean_108)
+{
+playerStats.SetProgramVariable(__const_SystemString_31, __lcl_totalMoney_SystemInt32_0);
+playerStats.SendCustomEvent(__const_SystemString_32);
+playerStats.SetProgramVariable(__const_SystemString_33, __lcl_soldCount_SystemInt32_0);
+playerStats.SendCustomEvent(__const_SystemString_34);
+}
+__intnl_UnityEngineObject_120 = sellSFXSource;
+__intnl_UnityEngineObject_121 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_109 = __intnl_UnityEngineObject_120 != __intnl_UnityEngineObject_121;
+if (__intnl_SystemBoolean_109)
+{
+__intnl_UnityEngineObject_122 = sellSFXClip;
+__intnl_UnityEngineObject_123 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_109 = __intnl_UnityEngineObject_122 != __intnl_UnityEngineObject_123;
+}
+if (__intnl_SystemBoolean_109)
+{
+sellSFXSource.PlayOneShot(sellSFXClip);
+}
+UNDEF_762cb_10096();
+UNDEF_762cb_19712();
+UNDEF_762cb_7656();
+UNDEF_762cb_25852();
+__intnl_UnityEngineObject_124 = uiToTurnOff;
+__intnl_UnityEngineObject_125 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_110 = __intnl_UnityEngineObject_124 != __intnl_UnityEngineObject_125;
+if (__intnl_SystemBoolean_110)
+{
+uiToTurnOff.SetActive(__const_SystemBoolean_0);
+}
+__intnl_UnityEngineObject_126 = uiToTurnOn;
+__intnl_UnityEngineObject_127 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_111 = __intnl_UnityEngineObject_126 != __intnl_UnityEngineObject_127;
+if (__intnl_SystemBoolean_111)
+{
+uiToTurnOn.SetActive(__const_SystemBoolean_1);
+}
+isShowingTransactionUI = __const_SystemBoolean_1;
+transactionUITimer = __const_SystemSingle_0;
+_isSelling = __const_SystemBoolean_0;
+}
+public void __0_OnShopDialogueEnded()
+{
+currentShopNPC = __1_npc__param;
+__this_VRCUdonUdonBehaviour_1.SendCustomEventDelayedSeconds(__const_SystemString_39, __const_SystemSingle_2, __const_VRCUdonCommonEnumsEventTiming_0);
+}
+public void DelayedOpenShop()
+{
+__0_npc__param = currentShopNPC;
+__0_OpenShop();
+}
+public void IsShopActive()
+{
+__0_IsShopActive__ret = isShopActive;
+return;
+}
+public void GetCurrentShopNPC()
+{
+__0_GetCurrentShopNPC__ret = currentShopNPC;
+return;
+}
+public void ForceCloseShop()
+{
+if (isShopActive)
+{
+break;
+}
+CloseShop();
+}
+private void FindClosestShopScreen()
+{
+__intnl_SystemBoolean_112 = shopScreenLocations == __const_SystemObject_0;
+if (__intnl_SystemBoolean_112)
+{
+}
+else
+{
+__intnl_SystemInt32_46 = shopScreenLocations.Length;
+__intnl_SystemBoolean_112 = __intnl_SystemInt32_46 == __const_SystemInt32_1;
+}
+if (__intnl_SystemBoolean_112)
+{
+__0_FindClosestShopScreen__ret = (Transform)__const_SystemObject_0;
+return;
+}
+__lcl_localPlayer_VRCSDKBaseVRCPlayerApi_1 = Networking.LocalPlayer;
+__intnl_SystemBoolean_113 = __lcl_localPlayer_VRCSDKBaseVRCPlayerApi_1 == __const_SystemObject_0;
+if (__intnl_SystemBoolean_113)
+{
+__0_FindClosestShopScreen__ret = (Transform)__const_SystemObject_0;
+return;
+}
+__lcl_playerPosition_UnityEngineVector3_0 = __lcl_localPlayer_VRCSDKBaseVRCPlayerApi_1.GetPosition();
+__lcl_closestScreen_UnityEngineTransform_1 = (Transform)__const_SystemObject_0;
+__lcl_closestDistance_SystemSingle_0 = __const_SystemSingle_3;
+__lcl_i_SystemInt32_13 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_47 = shopScreenLocations.Length;
+__intnl_SystemBoolean_114 = __lcl_i_SystemInt32_13 < __intnl_SystemInt32_47;
+if (__intnl_SystemBoolean_114)
+{
+break;
+}
+__intnl_UnityEngineTransform_16 = (Transform)(shopScreenLocations[__lcl_i_SystemInt32_13]);
+__intnl_UnityEngineObject_128 = __intnl_UnityEngineTransform_16;
+__intnl_UnityEngineObject_129 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_115 = __intnl_UnityEngineObject_128 == __intnl_UnityEngineObject_129;
+if (__intnl_SystemBoolean_115)
+{
+}
+else
+{
+__intnl_UnityEngineTransform_17 = (Transform)(shopScreenLocations[__lcl_i_SystemInt32_13]);
+__intnl_UnityEngineVector3_6 = __intnl_UnityEngineTransform_17.position;
+__lcl_distance_SystemSingle_1 = Vector3.Distance(__lcl_playerPosition_UnityEngineVector3_0, __intnl_UnityEngineVector3_6);
+__intnl_SystemBoolean_116 = __lcl_distance_SystemSingle_1 < __lcl_closestDistance_SystemSingle_0;
+if (__intnl_SystemBoolean_116)
+{
+__lcl_closestDistance_SystemSingle_0 = __lcl_distance_SystemSingle_1;
+__lcl_closestScreen_UnityEngineTransform_1 = (Transform)(shopScreenLocations[__lcl_i_SystemInt32_13]);
+}
+}
+__lcl_i_SystemInt32_13 = __lcl_i_SystemInt32_13 + __const_SystemInt32_2;
+}
+__0_FindClosestShopScreen__ret = __lcl_closestScreen_UnityEngineTransform_1;
+return;
+}
+private void UNDEF_762cb_31388()
+{
+__intnl_SystemBoolean_117 = __3_shaderModifier__param >= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_117)
+{
+__intnl_SystemBoolean_118 = __3_shaderModifier__param <= __const_SystemInt32_8;
+if (__intnl_SystemBoolean_118)
+{
+__intnl_SystemUInt32_0 = __gintnl_SystemUInt32Array_0[__3_shaderModifier__param];
+__0_fishIcon__param.color = __const_UnityEngineColor_0;
+__0_fishIcon__param.color = __const_UnityEngineColor_1;
+__0_fishIcon__param.color = __const_UnityEngineColor_2;
+__0_fishIcon__param.color = __const_UnityEngineColor_3;
+__0_fishIcon__param.color = __const_UnityEngineColor_4;
+__0_fishIcon__param.color = __const_UnityEngineColor_5;
+}
+else
+{
+}
+else
+{
+__0_fishIcon__param.color = __const_UnityEngineColor_0;
+}
+}
+}
+private void __0_GetRarityDisplayColor()
+{
+__intnl_SystemBoolean_119 = __0_rarity__param >= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_119)
+{
+__intnl_SystemBoolean_120 = __0_rarity__param <= __const_SystemInt32_9;
+if (__intnl_SystemBoolean_120)
+{
+__intnl_SystemUInt32_1 = __gintnl_SystemUInt32Array_1[__0_rarity__param];
+__0___0_GetRarityDisplayColor__ret = __const_UnityEngineColor_6;
+return;
+__0___0_GetRarityDisplayColor__ret = __const_UnityEngineColor_0;
+return;
+__0___0_GetRarityDisplayColor__ret = __const_UnityEngineColor_7;
+return;
+__0___0_GetRarityDisplayColor__ret = __const_UnityEngineColor_8;
+return;
+__0___0_GetRarityDisplayColor__ret = __const_UnityEngineColor_9;
+return;
+__0___0_GetRarityDisplayColor__ret = __const_UnityEngineColor_10;
+return;
+__0___0_GetRarityDisplayColor__ret = __const_UnityEngineColor_11;
+return;
+__0___0_GetRarityDisplayColor__ret = __const_UnityEngineColor_12;
+return;
+__0___0_GetRarityDisplayColor__ret = __const_UnityEngineColor_13;
+return;
+__0___0_GetRarityDisplayColor__ret = __const_UnityEngineColor_14;
+return;
+__0___0_GetRarityDisplayColor__ret = __const_UnityEngineColor_15;
+return;
+}
+}
+__0___0_GetRarityDisplayColor__ret = __const_UnityEngineColor_0;
+return;
+}
+private void UNDEF_762cb_32540()
+{
+__intnl_UnityEngineComponentArray_0 = __1__intnlparam.GetComponents(__const_SystemType_3);
+__lcl_udonBehaviours_UnityEngineComponentArray_0 = __intnl_UnityEngineComponentArray_0;
+__lcl_targetID_SystemInt64_0 = __const_SystemInt64_0;
+__intnl_SystemInt32_48 = __lcl_udonBehaviours_UnityEngineComponentArray_0.Length;
+__intnl_SystemInt32_49 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemBoolean_121 = __intnl_SystemInt32_49 < __intnl_SystemInt32_48;
+if (__intnl_SystemBoolean_121)
+{
+break;
+}
+__lcl_behaviour_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(__lcl_udonBehaviours_UnityEngineComponentArray_0[__intnl_SystemInt32_49]);
+__lcl_idValue_SystemObject_0 = __lcl_behaviour_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_40);
+__intnl_SystemBoolean_122 = __lcl_idValue_SystemObject_0 != __const_SystemObject_0;
+if (__intnl_SystemBoolean_122)
+{
+__intnl_SystemInt64_0 = Convert.ToInt64(__lcl_idValue_SystemObject_0);
+__intnl_SystemBoolean_122 = __intnl_SystemInt64_0 == __lcl_targetID_SystemInt64_0;
+}
+if (__intnl_SystemBoolean_122)
+{
+__intnl_UnityEngineComponent_0 = __lcl_behaviour_VRCUdonUdonBehaviour_0;
+__0__intnlparam = (UdonBehaviour)__intnl_UnityEngineComponent_0;
+return;
+}
+__intnl_SystemInt32_49 = __intnl_SystemInt32_49 + __const_SystemInt32_2;
+}
+__0__intnlparam = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+private void UNDEF_762cb_33048()
+{
+__intnl_UnityEngineComponentArray_1 = __3__intnlparam.GetComponents(__const_SystemType_3);
+__lcl_udonBehaviours_UnityEngineComponentArray_1 = __intnl_UnityEngineComponentArray_1;
+__lcl_targetID_SystemInt64_1 = __const_SystemInt64_1;
+__intnl_SystemInt32_50 = __lcl_udonBehaviours_UnityEngineComponentArray_1.Length;
+__intnl_SystemInt32_51 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemBoolean_123 = __intnl_SystemInt32_51 < __intnl_SystemInt32_50;
+if (__intnl_SystemBoolean_123)
+{
+break;
+}
+__lcl_behaviour_VRCUdonUdonBehaviour_1 = (UdonBehaviour)(__lcl_udonBehaviours_UnityEngineComponentArray_1[__intnl_SystemInt32_51]);
+__lcl_idValue_SystemObject_1 = __lcl_behaviour_VRCUdonUdonBehaviour_1.GetProgramVariable(__const_SystemString_40);
+__intnl_SystemBoolean_124 = __lcl_idValue_SystemObject_1 != __const_SystemObject_0;
+if (__intnl_SystemBoolean_124)
+{
+__intnl_SystemInt64_1 = Convert.ToInt64(__lcl_idValue_SystemObject_1);
+__intnl_SystemBoolean_124 = __intnl_SystemInt64_1 == __lcl_targetID_SystemInt64_1;
+}
+if (__intnl_SystemBoolean_124)
+{
+__intnl_UnityEngineComponent_1 = __lcl_behaviour_VRCUdonUdonBehaviour_1;
+__2__intnlparam = (UdonBehaviour)__intnl_UnityEngineComponent_1;
+return;
+}
+__intnl_SystemInt32_51 = __intnl_SystemInt32_51 + __const_SystemInt32_2;
+}
+__2__intnlparam = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+private void UNDEF_762cb_33556()
+{
+__intnl_UnityEngineComponentArray_2 = __5__intnlparam.GetComponents(__const_SystemType_3);
+__lcl_udonBehaviours_UnityEngineComponentArray_2 = __intnl_UnityEngineComponentArray_2;
+__lcl_targetID_SystemInt64_2 = __const_SystemInt64_2;
+__intnl_SystemInt32_52 = __lcl_udonBehaviours_UnityEngineComponentArray_2.Length;
+__intnl_SystemInt32_53 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemBoolean_125 = __intnl_SystemInt32_53 < __intnl_SystemInt32_52;
+if (__intnl_SystemBoolean_125)
+{
+break;
+}
+__lcl_behaviour_VRCUdonUdonBehaviour_2 = (UdonBehaviour)(__lcl_udonBehaviours_UnityEngineComponentArray_2[__intnl_SystemInt32_53]);
+__lcl_idValue_SystemObject_2 = __lcl_behaviour_VRCUdonUdonBehaviour_2.GetProgramVariable(__const_SystemString_40);
+__intnl_SystemBoolean_126 = __lcl_idValue_SystemObject_2 != __const_SystemObject_0;
+if (__intnl_SystemBoolean_126)
+{
+__intnl_SystemInt64_2 = Convert.ToInt64(__lcl_idValue_SystemObject_2);
+__intnl_SystemBoolean_126 = __intnl_SystemInt64_2 == __lcl_targetID_SystemInt64_2;
+}
+if (__intnl_SystemBoolean_126)
+{
+__intnl_UnityEngineComponent_2 = __lcl_behaviour_VRCUdonUdonBehaviour_2;
+__4__intnlparam = (UdonBehaviour)__intnl_UnityEngineComponent_2;
+return;
+}
+__intnl_SystemInt32_53 = __intnl_SystemInt32_53 + __const_SystemInt32_2;
+}
+__4__intnlparam = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+private void UNDEF_762cb_34064()
+{
+__intnl_UnityEngineComponentArray_3 = __7__intnlparam.GetComponents(__const_SystemType_3);
+__lcl_udonBehaviours_UnityEngineComponentArray_3 = __intnl_UnityEngineComponentArray_3;
+__lcl_targetID_SystemInt64_3 = __const_SystemInt64_3;
+__intnl_SystemInt32_54 = __lcl_udonBehaviours_UnityEngineComponentArray_3.Length;
+__intnl_SystemInt32_55 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemBoolean_127 = __intnl_SystemInt32_55 < __intnl_SystemInt32_54;
+if (__intnl_SystemBoolean_127)
+{
+break;
+}
+__lcl_behaviour_VRCUdonUdonBehaviour_3 = (UdonBehaviour)(__lcl_udonBehaviours_UnityEngineComponentArray_3[__intnl_SystemInt32_55]);
+__lcl_idValue_SystemObject_3 = __lcl_behaviour_VRCUdonUdonBehaviour_3.GetProgramVariable(__const_SystemString_40);
+__intnl_SystemBoolean_128 = __lcl_idValue_SystemObject_3 != __const_SystemObject_0;
+if (__intnl_SystemBoolean_128)
+{
+__intnl_SystemInt64_3 = Convert.ToInt64(__lcl_idValue_SystemObject_3);
+__intnl_SystemBoolean_128 = __intnl_SystemInt64_3 == __lcl_targetID_SystemInt64_3;
+}
+if (__intnl_SystemBoolean_128)
+{
+__intnl_UnityEngineComponent_3 = __lcl_behaviour_VRCUdonUdonBehaviour_3;
+__6__intnlparam = (UdonBehaviour)__intnl_UnityEngineComponent_3;
+return;
+}
+__intnl_SystemInt32_55 = __intnl_SystemInt32_55 + __const_SystemInt32_2;
+}
+__6__intnlparam = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+private void UNDEF_762cb_34572()
+{
+__intnl_UnityEngineComponentArray_4 = __9__intnlparam.GetComponents(__const_SystemType_3);
+__lcl_udonBehaviours_UnityEngineComponentArray_4 = __intnl_UnityEngineComponentArray_4;
+__lcl_targetID_SystemInt64_4 = __const_SystemInt64_4;
+__intnl_SystemInt32_56 = __lcl_udonBehaviours_UnityEngineComponentArray_4.Length;
+__intnl_SystemInt32_57 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemBoolean_129 = __intnl_SystemInt32_57 < __intnl_SystemInt32_56;
+if (__intnl_SystemBoolean_129)
+{
+break;
+}
+__lcl_behaviour_VRCUdonUdonBehaviour_4 = (UdonBehaviour)(__lcl_udonBehaviours_UnityEngineComponentArray_4[__intnl_SystemInt32_57]);
+__lcl_idValue_SystemObject_4 = __lcl_behaviour_VRCUdonUdonBehaviour_4.GetProgramVariable(__const_SystemString_40);
+__intnl_SystemBoolean_130 = __lcl_idValue_SystemObject_4 != __const_SystemObject_0;
+if (__intnl_SystemBoolean_130)
+{
+__intnl_SystemInt64_4 = Convert.ToInt64(__lcl_idValue_SystemObject_4);
+__intnl_SystemBoolean_130 = __intnl_SystemInt64_4 == __lcl_targetID_SystemInt64_4;
+}
+if (__intnl_SystemBoolean_130)
+{
+__intnl_UnityEngineComponent_4 = __lcl_behaviour_VRCUdonUdonBehaviour_4;
+__8__intnlparam = (UdonBehaviour)__intnl_UnityEngineComponent_4;
+return;
+}
+__intnl_SystemInt32_57 = __intnl_SystemInt32_57 + __const_SystemInt32_2;
+}
+__8__intnlparam = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+private void UNDEF_762cb_34912()
+{
+__intnl_SystemBoolean_131 = __11__intnlparam == __const_SystemInt32_1;
+if (__intnl_SystemBoolean_131)
+{
+__10__intnlparam = __const_SystemInt32_10;
+return;
+}
+__intnl_SystemBoolean_132 = __11__intnlparam == __const_SystemInt32_2;
+if (__intnl_SystemBoolean_132)
+{
+__10__intnlparam = __const_SystemInt32_11;
+return;
+}
+__intnl_SystemBoolean_133 = __11__intnlparam == __const_SystemInt32_5;
+if (__intnl_SystemBoolean_133)
+{
+__10__intnlparam = __const_SystemInt32_12;
+return;
+for (;;)
+{
+__10__intnlparam = __const_SystemInt32_10;
+return;
+}
+}
+}
+private void UNDEF_762cb_36068()
+{
+__intnl_SystemBoolean_134 = __13__intnlparam >= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_134)
+{
+__intnl_SystemBoolean_135 = __13__intnlparam <= __const_SystemInt32_13;
+if (__intnl_SystemBoolean_135)
+{
+__intnl_SystemUInt32_2 = __gintnl_SystemUInt32Array_2[__13__intnlparam];
+__12__intnlparam = __const_SystemInt32_14;
+return;
+__12__intnlparam = __const_SystemInt32_15;
+return;
+__12__intnlparam = __const_SystemInt32_16;
+return;
+__12__intnlparam = __const_SystemInt32_17;
+return;
+__12__intnlparam = __const_SystemInt32_18;
+return;
+__12__intnlparam = __const_SystemInt32_19;
+return;
+__12__intnlparam = __const_SystemInt32_20;
+return;
+__12__intnlparam = __const_SystemInt32_21;
+return;
+__12__intnlparam = __const_SystemInt32_22;
+return;
+__12__intnlparam = __const_SystemInt32_23;
+return;
+__12__intnlparam = __const_SystemInt32_24;
+return;
+__12__intnlparam = __const_SystemInt32_25;
+return;
+__12__intnlparam = __const_SystemInt32_26;
+return;
+__12__intnlparam = __const_SystemInt32_27;
+return;
+__12__intnlparam = __const_SystemInt32_28;
+return;
+__12__intnlparam = __const_SystemInt32_29;
+return;
+__12__intnlparam = __const_SystemInt32_30;
+return;
+__12__intnlparam = __const_SystemInt32_31;
+return;
+__12__intnlparam = __const_SystemInt32_32;
+return;
+__12__intnlparam = __const_SystemInt32_33;
+return;
+__12__intnlparam = __const_SystemInt32_34;
+return;
+__12__intnlparam = __const_SystemInt32_35;
+return;
+__12__intnlparam = __const_SystemInt32_36;
+return;
+__12__intnlparam = __const_SystemInt32_37;
+return;
+}
+}
+__12__intnlparam = __const_SystemInt32_14;
+return;
+}
+private void UNDEF_762cb_36132()
+{
+__14__intnlparam = Object.Instantiate(__15__intnlparam);
+return;
+}
+private void UNDEF_762cb_36640()
+{
+__intnl_UnityEngineComponentArray_5 = __17__intnlparam.GetComponents(__const_SystemType_3);
+__lcl_udonBehaviours_UnityEngineComponentArray_5 = __intnl_UnityEngineComponentArray_5;
+__lcl_targetID_SystemInt64_5 = __const_SystemInt64_5;
+__intnl_SystemInt32_58 = __lcl_udonBehaviours_UnityEngineComponentArray_5.Length;
+__intnl_SystemInt32_59 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemBoolean_136 = __intnl_SystemInt32_59 < __intnl_SystemInt32_58;
+if (__intnl_SystemBoolean_136)
+{
+break;
+}
+__lcl_behaviour_VRCUdonUdonBehaviour_5 = (UdonBehaviour)(__lcl_udonBehaviours_UnityEngineComponentArray_5[__intnl_SystemInt32_59]);
+__lcl_idValue_SystemObject_5 = __lcl_behaviour_VRCUdonUdonBehaviour_5.GetProgramVariable(__const_SystemString_40);
+__intnl_SystemBoolean_137 = __lcl_idValue_SystemObject_5 != __const_SystemObject_0;
+if (__intnl_SystemBoolean_137)
+{
+__intnl_SystemInt64_5 = Convert.ToInt64(__lcl_idValue_SystemObject_5);
+__intnl_SystemBoolean_137 = __intnl_SystemInt64_5 == __lcl_targetID_SystemInt64_5;
+}
+if (__intnl_SystemBoolean_137)
+{
+__intnl_UnityEngineComponent_5 = __lcl_behaviour_VRCUdonUdonBehaviour_5;
+__16__intnlparam = (UdonBehaviour)__intnl_UnityEngineComponent_5;
+return;
+}
+__intnl_SystemInt32_59 = __intnl_SystemInt32_59 + __const_SystemInt32_2;
+}
+__16__intnlparam = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+private void UNDEF_762cb_37808()
+{
+__25__intnlparam = __19__intnlparam;
+UNDEF_762cb_38188();
+__lcl_sizeText_SystemString_0 = __24__intnlparam;
+__27__intnlparam = __20__intnlparam;
+UNDEF_762cb_39344();
+__lcl_shaderText_SystemString_0 = __26__intnlparam;
+__intnl_SystemString_11 = __22__intnlparam.ToString(__const_SystemString_42);
+__intnl_SystemString_12 = __const_SystemString_41 + __intnl_SystemString_11;
+__lcl_weightText_SystemString_0 = __intnl_SystemString_12 + __const_SystemString_43;
+__lcl_modifierPrefix_SystemString_0 = __const_SystemString_12;
+__29__intnlparam = __20__intnlparam;
+UNDEF_762cb_40460();
+__lcl_shaderColor_SystemString_0 = __28__intnlparam;
+__intnl_SystemBoolean_139 = String.IsNullOrEmpty(__lcl_shaderText_SystemString_0);
+__intnl_SystemBoolean_138 = !__intnl_SystemBoolean_139;
+if (__intnl_SystemBoolean_138)
+{
+__intnl_SystemBoolean_140 = String.IsNullOrEmpty(__lcl_sizeText_SystemString_0);
+__intnl_SystemBoolean_138 = !__intnl_SystemBoolean_140;
+}
+if (__intnl_SystemBoolean_138)
+{
+__intnl_SystemString_13 = __const_SystemString_44 + __lcl_shaderColor_SystemString_0;
+__intnl_SystemString_14 = __intnl_SystemString_13 + __const_SystemString_45;
+__intnl_SystemString_15 = __intnl_SystemString_14 + __lcl_shaderText_SystemString_0;
+__intnl_SystemString_16 = __intnl_SystemString_15 + __const_SystemString_46;
+__intnl_SystemString_17 = __intnl_SystemString_16 + __lcl_sizeText_SystemString_0;
+__lcl_modifierPrefix_SystemString_0 = __intnl_SystemString_17 + __const_SystemString_47;
+}
+else
+{
+__intnl_SystemBoolean_141 = String.IsNullOrEmpty(__lcl_shaderText_SystemString_0);
+if (__intnl_SystemBoolean_141)
+{
+__intnl_SystemBoolean_142 = String.IsNullOrEmpty(__lcl_sizeText_SystemString_0);
+if (__intnl_SystemBoolean_142)
+{
+}
+else
+{
+__intnl_SystemString_13 = __const_SystemString_48 + __lcl_sizeText_SystemString_0;
+__lcl_modifierPrefix_SystemString_0 = __intnl_SystemString_13 + __const_SystemString_47;
+}
+}
+else
+{
+__intnl_SystemString_13 = __const_SystemString_44 + __lcl_shaderColor_SystemString_0;
+__intnl_SystemString_14 = __intnl_SystemString_13 + __const_SystemString_45;
+__intnl_SystemString_15 = __intnl_SystemString_14 + __lcl_shaderText_SystemString_0;
+__lcl_modifierPrefix_SystemString_0 = __intnl_SystemString_15 + __const_SystemString_47;
+}
+}
+__intnl_SystemString_13 = __lcl_modifierPrefix_SystemString_0 + __const_SystemString_49;
+__31__intnlparam = __23__intnlparam;
+UNDEF_762cb_40900();
+__intnl_SystemString_14 = __intnl_SystemString_13 + __30__intnlparam;
+__intnl_SystemString_15 = __intnl_SystemString_14 + __const_SystemString_45;
+__intnl_SystemString_16 = __intnl_SystemString_15 + __21__intnlparam;
+__intnl_SystemString_17 = __intnl_SystemString_16 + __lcl_weightText_SystemString_0;
+__18__intnlparam = __intnl_SystemString_17 + __const_SystemString_50;
+return;
+}
+private void UNDEF_762cb_37848()
+{
+__32__intnlparam = (GameObject)__const_SystemObject_0;
+}
+private void UNDEF_762cb_38188()
+{
+__intnl_SystemBoolean_143 = __25__intnlparam == __const_SystemInt32_10;
+if (__intnl_SystemBoolean_143)
+{
+__24__intnlparam = __const_SystemString_12;
+return;
+}
+__intnl_SystemBoolean_144 = __25__intnlparam == __const_SystemInt32_11;
+if (__intnl_SystemBoolean_144)
+{
+__24__intnlparam = __const_SystemString_51;
+return;
+}
+__intnl_SystemBoolean_145 = __25__intnlparam == __const_SystemInt32_12;
+if (__intnl_SystemBoolean_145)
+{
+__24__intnlparam = __const_SystemString_52;
+return;
+for (;;)
+{
+__24__intnlparam = __const_SystemString_12;
+return;
+}
+}
+}
+private void UNDEF_762cb_39344()
+{
+__intnl_SystemBoolean_146 = __27__intnlparam >= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_146)
+{
+__intnl_SystemBoolean_147 = __27__intnlparam <= __const_SystemInt32_13;
+if (__intnl_SystemBoolean_147)
+{
+__intnl_SystemUInt32_3 = __gintnl_SystemUInt32Array_3[__27__intnlparam];
+__26__intnlparam = __const_SystemString_12;
+return;
+__26__intnlparam = __const_SystemString_53;
+return;
+__26__intnlparam = __const_SystemString_54;
+return;
+__26__intnlparam = __const_SystemString_55;
+return;
+__26__intnlparam = __const_SystemString_56;
+return;
+__26__intnlparam = __const_SystemString_57;
+return;
+__26__intnlparam = __const_SystemString_58;
+return;
+__26__intnlparam = __const_SystemString_59;
+return;
+__26__intnlparam = __const_SystemString_60;
+return;
+__26__intnlparam = __const_SystemString_61;
+return;
+__26__intnlparam = __const_SystemString_62;
+return;
+__26__intnlparam = __const_SystemString_63;
+return;
+__26__intnlparam = __const_SystemString_64;
+return;
+__26__intnlparam = __const_SystemString_65;
+return;
+__26__intnlparam = __const_SystemString_66;
+return;
+__26__intnlparam = __const_SystemString_67;
+return;
+__26__intnlparam = __const_SystemString_68;
+return;
+__26__intnlparam = __const_SystemString_69;
+return;
+__26__intnlparam = __const_SystemString_70;
+return;
+__26__intnlparam = __const_SystemString_71;
+return;
+__26__intnlparam = __const_SystemString_72;
+return;
+__26__intnlparam = __const_SystemString_73;
+return;
+__26__intnlparam = __const_SystemString_74;
+return;
+__26__intnlparam = __const_SystemString_75;
+return;
+}
+}
+__26__intnlparam = __const_SystemString_12;
+return;
+}
+private void UNDEF_762cb_40460()
+{
+__intnl_SystemBoolean_148 = __29__intnlparam >= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_148)
+{
+__intnl_SystemBoolean_149 = __29__intnlparam <= __const_SystemInt32_13;
+if (__intnl_SystemBoolean_149)
+{
+__intnl_SystemUInt32_4 = __gintnl_SystemUInt32Array_4[__29__intnlparam];
+__28__intnlparam = __const_SystemString_76;
+return;
+__28__intnlparam = __const_SystemString_77;
+return;
+__28__intnlparam = __const_SystemString_78;
+return;
+__28__intnlparam = __const_SystemString_79;
+return;
+__28__intnlparam = __const_SystemString_80;
+return;
+__28__intnlparam = __const_SystemString_81;
+return;
+__28__intnlparam = __const_SystemString_82;
+return;
+__28__intnlparam = __const_SystemString_83;
+return;
+__28__intnlparam = __const_SystemString_84;
+return;
+__28__intnlparam = __const_SystemString_85;
+return;
+__28__intnlparam = __const_SystemString_86;
+return;
+__28__intnlparam = __const_SystemString_87;
+return;
+__28__intnlparam = __const_SystemString_88;
+return;
+__28__intnlparam = __const_SystemString_89;
+return;
+__28__intnlparam = __const_SystemString_90;
+return;
+__28__intnlparam = __const_SystemString_91;
+return;
+__28__intnlparam = __const_SystemString_92;
+return;
+__28__intnlparam = __const_SystemString_93;
+return;
+__28__intnlparam = __const_SystemString_94;
+return;
+__28__intnlparam = __const_SystemString_95;
+return;
+__28__intnlparam = __const_SystemString_96;
+return;
+__28__intnlparam = __const_SystemString_92;
+return;
+__28__intnlparam = __const_SystemString_97;
+return;
+}
+}
+__28__intnlparam = __const_SystemString_77;
+return;
+}
+private void UNDEF_762cb_40900()
+{
+__intnl_SystemSingle_11 = __31__intnlparam.r;
+__intnl_SystemSingle_12 = __intnl_SystemSingle_11 * __const_SystemSingle_4;
+__lcl_r_SystemInt32_0 = Mathf.RoundToInt(__intnl_SystemSingle_12);
+__intnl_SystemSingle_13 = __31__intnlparam.g;
+__intnl_SystemSingle_14 = __intnl_SystemSingle_13 * __const_SystemSingle_4;
+__lcl_g_SystemInt32_0 = Mathf.RoundToInt(__intnl_SystemSingle_14);
+__intnl_SystemSingle_15 = __31__intnlparam.b;
+__intnl_SystemSingle_16 = __intnl_SystemSingle_15 * __const_SystemSingle_4;
+__lcl_b_SystemInt32_0 = Mathf.RoundToInt(__intnl_SystemSingle_16);
+__intnl_SystemString_18 = __lcl_r_SystemInt32_0.ToString(__const_SystemString_98);
+__intnl_SystemString_19 = __lcl_g_SystemInt32_0.ToString(__const_SystemString_98);
+__intnl_SystemString_20 = __intnl_SystemString_18 + __intnl_SystemString_19;
+__intnl_SystemString_21 = __lcl_b_SystemInt32_0.ToString(__const_SystemString_98);
+__30__intnlparam = __intnl_SystemString_20 + __intnl_SystemString_21;
+return;
+}
+}

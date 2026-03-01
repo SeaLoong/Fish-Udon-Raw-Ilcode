@@ -1,0 +1,314 @@
+using System;
+using UnityEngine.UI;
+using UnityEngine;
+using VRC.SDKBase;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Single __0_duration__param = 0f;
+private Single __0_to__param = 0f;
+private Image activeFadeImage = null;
+private Object __intnl_UnityEngineObject_12 = null;
+private Single __intnl_SystemSingle_0 = 0f;
+private Single fadeTimer = 0f;
+private VRCPlayerApi __lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0 = null;
+private Single __3_duration__param = 0f;
+private Single __const_SystemSingle_0 = 0f;
+private Single __0_GetCurrentAlpha__ret = 0f;
+private Single __lcl_smoothProgress_SystemSingle_0 = 0f;
+private UInt32 __gintnl_SystemUInt32_9 = 1796;
+private UInt32 __gintnl_SystemUInt32_8 = 1864;
+private UInt32 __gintnl_SystemUInt32_5 = 1556;
+private UInt32 __gintnl_SystemUInt32_4 = 1624;
+private UInt32 __gintnl_SystemUInt32_7 = 1676;
+private UInt32 __gintnl_SystemUInt32_6 = 1744;
+private UInt32 __gintnl_SystemUInt32_1 = 840;
+private UInt32 __gintnl_SystemUInt32_0 = 700;
+private UInt32 __gintnl_SystemUInt32_3 = 1408;
+private UInt32 __gintnl_SystemUInt32_2 = 1304;
+private Boolean __const_SystemBoolean_0 = false;
+private Boolean __const_SystemBoolean_1 = true;
+private Object __intnl_UnityEngineObject_11 = null;
+private Boolean isVR = false;
+private Boolean isInitialized = false;
+private Single targetAlpha = 1f;
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Int64 __refl_typeid = 9017333105755871977;
+private Single startAlpha = 0f;
+private Single __2_duration__param = 0f;
+private Single fadeDuration = 1f;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Boolean __intnl_SystemBoolean_11 = false;
+private Single __lcl_currentAlpha_SystemSingle_0 = 0f;
+private Single __intnl_SystemSingle_2 = 0f;
+private Single __0_alpha__param = 0f;
+private Single __const_SystemSingle_2 = 3f;
+private Color __intnl_UnityEngineColor_0 = new Color(0f, 0f, 0f, 0f);
+private GameObject __intnl_UnityEngineGameObject_3 = null;
+private GameObject __intnl_UnityEngineGameObject_2 = null;
+private GameObject __intnl_UnityEngineGameObject_1 = null;
+private GameObject __intnl_UnityEngineGameObject_0 = null;
+private GameObject __intnl_UnityEngineGameObject_4 = null;
+private Single __lcl_progress_SystemSingle_0 = 0f;
+private object __const_SystemObject_0 = null;
+private Object __intnl_UnityEngineObject_13 = null;
+private Single __0_from__param = 0f;
+private Single __intnl_SystemSingle_1 = 0f;
+public Image desktopFadeImage;
+private Single __const_SystemSingle_1 = 1f;
+private UInt32 __gintnl_SystemUInt32_11 = 2948;
+private Boolean __0_IsFading__ret = false;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private Single __const_SystemSingle_4 = 0.01f;
+private UInt32 __gintnl_SystemUInt32_12 = 3032;
+private Single __intnl_SystemSingle_4 = 0f;
+private Boolean isFading = false;
+private String __refl_typename = "ScreenFade";
+private Single __intnl_SystemSingle_3 = 0f;
+private Single __const_SystemSingle_3 = 2f;
+private Color __intnl_UnityEngineColor_1 = new Color(0f, 0f, 0f, 0f);
+public Boolean startTransparent;
+private Single __0_targetAlphaValue__param = 0f;
+private Object __intnl_UnityEngineObject_10 = null;
+private Single __1_duration__param = 0f;
+private UInt32 __gintnl_SystemUInt32_10 = 2196;
+private Boolean __0_IsVRMode__ret = false;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private Single __intnl_SystemSingle_5 = 0f;
+private Color __lcl_color_UnityEngineColor_0 = new Color(0f, 0f, 0f, 0f);
+public Image vrFadeImage;
+
+
+public void _start()
+{
+__lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0 = Networking.LocalPlayer;
+__intnl_SystemBoolean_0 = __lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0 != __const_SystemObject_0;
+if (__intnl_SystemBoolean_0)
+{
+isVR = __lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0.IsUserInVR();
+}
+if (isVR)
+{
+activeFadeImage = vrFadeImage;
+__intnl_UnityEngineObject_0 = desktopFadeImage;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_1)
+{
+__intnl_UnityEngineGameObject_0 = desktopFadeImage.gameObject;
+__intnl_UnityEngineGameObject_0.SetActive(__const_SystemBoolean_0);
+}
+__intnl_UnityEngineObject_2 = vrFadeImage;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_2 = __intnl_UnityEngineObject_2 == __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_2)
+{
+return;
+}
+}
+else
+{
+activeFadeImage = desktopFadeImage;
+__intnl_UnityEngineObject_0 = vrFadeImage;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_1)
+{
+__intnl_UnityEngineGameObject_0 = vrFadeImage.gameObject;
+__intnl_UnityEngineGameObject_0.SetActive(__const_SystemBoolean_0);
+}
+__intnl_UnityEngineObject_2 = desktopFadeImage;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_2 = __intnl_UnityEngineObject_2 == __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_2)
+{
+return;
+}
+}
+if (startTransparent)
+{
+__0_alpha__param = __const_SystemSingle_0;
+UNDEF_0d9a0_2524();
+__intnl_UnityEngineGameObject_0 = activeFadeImage.gameObject;
+__intnl_UnityEngineGameObject_0.SetActive(__const_SystemBoolean_0);
+}
+else
+{
+__intnl_UnityEngineGameObject_0 = activeFadeImage.gameObject;
+__intnl_UnityEngineGameObject_0.SetActive(__const_SystemBoolean_1);
+__0_alpha__param = __const_SystemSingle_1;
+UNDEF_0d9a0_2524();
+}
+isInitialized = __const_SystemBoolean_1;
+}
+public void _lateUpdate()
+{
+__intnl_SystemBoolean_3 = !isInitialized;
+if (__intnl_SystemBoolean_3)
+{
+}
+else
+{
+__intnl_SystemBoolean_3 = !isFading;
+}
+if (__intnl_SystemBoolean_3)
+{
+return;
+}
+__intnl_SystemSingle_0 = Time.deltaTime;
+fadeTimer = fadeTimer + __intnl_SystemSingle_0;
+__intnl_SystemSingle_1 = fadeTimer / fadeDuration;
+__lcl_progress_SystemSingle_0 = Mathf.Clamp01(__intnl_SystemSingle_1);
+__intnl_SystemSingle_2 = __lcl_progress_SystemSingle_0 * __lcl_progress_SystemSingle_0;
+__intnl_SystemSingle_3 = __const_SystemSingle_3 * __lcl_progress_SystemSingle_0;
+__intnl_SystemSingle_4 = __const_SystemSingle_2 - __intnl_SystemSingle_3;
+__lcl_smoothProgress_SystemSingle_0 = __intnl_SystemSingle_2 * __intnl_SystemSingle_4;
+__lcl_currentAlpha_SystemSingle_0 = Mathf.Lerp(startAlpha, targetAlpha, __lcl_smoothProgress_SystemSingle_0);
+__0_alpha__param = __lcl_currentAlpha_SystemSingle_0;
+UNDEF_0d9a0_2524();
+__intnl_SystemBoolean_4 = __lcl_progress_SystemSingle_0 >= __const_SystemSingle_1;
+if (__intnl_SystemBoolean_4)
+{
+isFading = __const_SystemBoolean_0;
+__0_alpha__param = targetAlpha;
+UNDEF_0d9a0_2524();
+__intnl_SystemBoolean_5 = targetAlpha <= __const_SystemSingle_0;
+if (__intnl_SystemBoolean_5)
+{
+__intnl_UnityEngineGameObject_1 = activeFadeImage.gameObject;
+__intnl_UnityEngineGameObject_1.SetActive(__const_SystemBoolean_0);
+}
+}
+}
+public void __0_FadeToBlack()
+{
+GetCurrentAlpha();
+__0_from__param = __0_GetCurrentAlpha__ret;
+__0_to__param = __const_SystemSingle_1;
+__3_duration__param = __0_duration__param;
+UNDEF_0d9a0_2216();
+}
+public void __0_FadeFromBlack()
+{
+GetCurrentAlpha();
+__0_from__param = __0_GetCurrentAlpha__ret;
+__0_to__param = __const_SystemSingle_0;
+__3_duration__param = __1_duration__param;
+UNDEF_0d9a0_2216();
+}
+public void __0_FadeTo()
+{
+GetCurrentAlpha();
+__0_from__param = __0_GetCurrentAlpha__ret;
+__0_to__param = __0_targetAlphaValue__param;
+__3_duration__param = __2_duration__param;
+UNDEF_0d9a0_2216();
+}
+private void UNDEF_0d9a0_2216()
+{
+__intnl_UnityEngineObject_4 = activeFadeImage;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_6 = __intnl_UnityEngineObject_4 == __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_6)
+{
+return;
+}
+__intnl_UnityEngineGameObject_2 = activeFadeImage.gameObject;
+__intnl_UnityEngineGameObject_2.SetActive(__const_SystemBoolean_1);
+startAlpha = __0_from__param;
+targetAlpha = __0_to__param;
+fadeDuration = Mathf.Max(__const_SystemSingle_4, __3_duration__param);
+fadeTimer = __const_SystemSingle_0;
+isFading = __const_SystemBoolean_1;
+__0_alpha__param = startAlpha;
+UNDEF_0d9a0_2524();
+}
+private void UNDEF_0d9a0_2524()
+{
+__intnl_UnityEngineObject_6 = activeFadeImage;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_7 = __intnl_UnityEngineObject_6 == __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_7)
+{
+return;
+}
+__lcl_color_UnityEngineColor_0 = activeFadeImage.color;
+__intnl_SystemSingle_5 = Mathf.Clamp01(__0_alpha__param);
+__lcl_color_UnityEngineColor_0.a = __intnl_SystemSingle_5;
+__intnl_UnityEngineColor_0 = __lcl_color_UnityEngineColor_0;
+activeFadeImage.color = __lcl_color_UnityEngineColor_0;
+__intnl_SystemBoolean_8 = __0_alpha__param > __const_SystemSingle_4;
+activeFadeImage.raycastTarget = __intnl_SystemBoolean_8;
+}
+private void GetCurrentAlpha()
+{
+__intnl_UnityEngineObject_8 = activeFadeImage;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_9 = __intnl_UnityEngineObject_8 == __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_9)
+{
+__0_GetCurrentAlpha__ret = __const_SystemSingle_0;
+return;
+}
+__intnl_UnityEngineColor_1 = activeFadeImage.color;
+__0_GetCurrentAlpha__ret = __intnl_UnityEngineColor_1.a;
+return;
+}
+public void SetInstantBlack()
+{
+isFading = __const_SystemBoolean_0;
+__intnl_UnityEngineObject_10 = activeFadeImage;
+__intnl_UnityEngineObject_11 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_10 = __intnl_UnityEngineObject_10 != __intnl_UnityEngineObject_11;
+if (__intnl_SystemBoolean_10)
+{
+__intnl_UnityEngineGameObject_3 = activeFadeImage.gameObject;
+__intnl_UnityEngineGameObject_3.SetActive(__const_SystemBoolean_1);
+}
+__0_alpha__param = __const_SystemSingle_1;
+UNDEF_0d9a0_2524();
+}
+public void SetInstantClear()
+{
+isFading = __const_SystemBoolean_0;
+__0_alpha__param = __const_SystemSingle_0;
+UNDEF_0d9a0_2524();
+__intnl_UnityEngineObject_12 = activeFadeImage;
+__intnl_UnityEngineObject_13 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_11 = __intnl_UnityEngineObject_12 != __intnl_UnityEngineObject_13;
+if (__intnl_SystemBoolean_11)
+{
+__intnl_UnityEngineGameObject_4 = activeFadeImage.gameObject;
+__intnl_UnityEngineGameObject_4.SetActive(__const_SystemBoolean_0);
+}
+}
+public void IsFading()
+{
+__0_IsFading__ret = isFading;
+return;
+}
+public void IsVRMode()
+{
+__0_IsVRMode__ret = isVR;
+return;
+}
+}

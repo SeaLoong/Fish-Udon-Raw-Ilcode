@@ -1,0 +1,159 @@
+void _start()
+localPlayer = get_LocalPlayer();// 16
+40 __intnl_UnityEngineObject_0 = deathSound
+60 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+104 if (__intnl_SystemBoolean_0) //176
+{
+G_deathSound.Stop();// 120
+G_deathSound.set_playOnAwake(__const_SystemBoolean_0);// 144
+G_deathSound.set_spatialBlend(__const_SystemSingle_0);// 168
+}
+192 __intnl_UnityEngineObject_2 = remoteDeathSound
+212 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+256 if (__intnl_SystemBoolean_1) //328
+{
+G_remoteDeathSound.Stop();// 272
+G_remoteDeathSound.set_playOnAwake(__const_SystemBoolean_0);// 296
+G_remoteDeathSound.set_spatialBlend(__const_SystemSingle_1);// 320
+}
+this.SendCustomEventDelayedSeconds(__const_VRCUdonCommonEnumsEventTiming_0, __const_SystemSingle_2, __const_SystemString_0);// 360
+380 return;
+void Initialize()
+412 initialized = __const_SystemBoolean_1
+428 return;
+void _onPlayerTriggerEnter()
+476 if (__intnl_SystemBoolean_2) //492
+{
+484 JUMP 512
+}
+504 return;
+520 if (initialized) //536
+{
+528 JUMP 556
+}
+548 return;
+644 if (__intnl_SystemBoolean_3) //672
+{
+664 return;
+}
+680 JUMP 988
+700 return;
+void _onPlayerTriggerStay()
+748 if (__intnl_SystemBoolean_4) //764
+{
+756 JUMP 784
+}
+776 return;
+792 if (initialized) //808
+{
+800 JUMP 828
+}
+820 return;
+916 if (__intnl_SystemBoolean_5) //944
+{
+936 return;
+}
+952 JUMP 988
+972 return;
+1028 if (__intnl_SystemBoolean_6) //1044
+{
+1036 JUMP 1092
+}
+1100 if (__intnl_SystemBoolean_6) //1128
+{
+1120 return;
+}
+lastDeathTime = get_time();// 1136
+1160 __intnl_UnityEngineObject_4 = deathSound
+1180 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+1224 if (__intnl_SystemBoolean_8) //1328
+{
+1272 __intnl_UnityEngineObject_6 = __intnl_UnityEngineAudioClip_0
+1292 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+}
+1336 if (__intnl_SystemBoolean_8) //1360
+{
+G_deathSound.Play();// 1352
+}
+1376 __intnl_UnityEngineObject_8 = deathParticles
+1396 __intnl_UnityEngineObject_9 = __const_SystemObject_0
+1440 if (__intnl_SystemBoolean_9) //1536
+{
+G_deathParticles.get_transform().set_position(__intnl_UnityEngineVector3_0);// 1512
+G_deathParticles.Play();// 1528
+}
+1552 __intnl_UnityEngineObject_10 = remoteDeathSound
+1572 __intnl_UnityEngineObject_11 = __const_SystemObject_0
+1616 if (__intnl_SystemBoolean_10) //1720
+{
+1664 __intnl_UnityEngineObject_12 = __intnl_UnityEngineAudioClip_1
+1684 __intnl_UnityEngineObject_13 = __const_SystemObject_0
+}
+1728 if (__intnl_SystemBoolean_10) //1852
+{
+SetOwner(__this_UnityEngineGameObject_0, localPlayer);// 1752
+syncedDeathPosition = G_localPlayer.GetPosition();// 1776
+syncedDeathTick = op_Addition(__const_SystemInt32_0, syncedDeathTick);// 1808
+1832 lastProcessedTick = syncedDeathTick
+this.RequestSerialization();// 1844
+}
+1860 JUMP 2276
+1880 return;
+void _onDeserialization()
+1936 if (__intnl_SystemBoolean_11) //1964
+{
+1956 return;
+}
+1980 lastProcessedTick = syncedDeathTick
+2000 __intnl_UnityEngineObject_14 = remoteDeathSound
+2020 __intnl_UnityEngineObject_15 = __const_SystemObject_0
+2064 if (__intnl_SystemBoolean_12) //2168
+{
+2112 __intnl_UnityEngineObject_16 = __intnl_UnityEngineAudioClip_2
+2132 __intnl_UnityEngineObject_17 = __const_SystemObject_0
+}
+2176 if (__intnl_SystemBoolean_12) //2248
+{
+G_remoteDeathSound.get_transform().set_position(syncedDeathPosition);// 2224
+G_remoteDeathSound.Play();// 2240
+}
+2260 return;
+void RespawnPlayer()
+2316 if (__intnl_SystemBoolean_13) //2332
+{
+2324 JUMP 2380
+}
+2388 if (__intnl_SystemBoolean_13) //2416
+{
+2408 return;
+}
+2432 __intnl_UnityEngineObject_18 = dynamicMusicSystem
+2452 __intnl_UnityEngineObject_19 = __const_SystemObject_0
+2496 if (__intnl_SystemBoolean_15) //2548
+{
+2528 __intnl_VRCUdonUdonBehaviour_0 = dynamicMusicSystem
+G_dynamicMusicSystem.SendCustomEvent(__const_SystemString_1);// 2540
+}
+2564 __intnl_UnityEngineObject_20 = respawnPoint
+2584 __intnl_UnityEngineObject_21 = __const_SystemObject_0
+2628 if (__intnl_SystemBoolean_16) //2724
+{
+G_localPlayer.TeleportTo(__intnl_UnityEngineQuaternion_0, __intnl_UnityEngineVector3_1);// 2708
+2716 JUMP 2740
+}
+G_localPlayer.Respawn();// 2732
+2752 return;
+void _onPlayerRespawn()
+2800 if (__intnl_SystemBoolean_17) //2816
+{
+2808 JUMP 2836
+}
+2828 return;
+2852 __intnl_UnityEngineObject_22 = dynamicMusicSystem
+2872 __intnl_UnityEngineObject_23 = __const_SystemObject_0
+2916 if (__intnl_SystemBoolean_18) //2968
+{
+2948 __intnl_VRCUdonUdonBehaviour_1 = dynamicMusicSystem
+G_dynamicMusicSystem.SendCustomEvent(__const_SystemString_1);// 2960
+}
+2980 return;

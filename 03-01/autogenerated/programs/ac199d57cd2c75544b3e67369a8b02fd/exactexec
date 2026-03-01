@@ -1,0 +1,100 @@
+using UnityEngine;
+using System;
+using UnityEngine.UI;
+using UnityEngine.Rendering;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private LightShadows __const_UnityEngineLightShadows_1 = LightShadows.Soft;
+private LightShadows __const_UnityEngineLightShadows_0 = LightShadows.None;
+public Light directionalLight;
+private Single __intnl_SystemSingle_0 = 0f;
+private UInt32[] __gintnl_SystemUInt32Array_0 = System.UInt32[];
+private UInt32 __gintnl_SystemUInt32_1 = 496;
+private UInt32 __gintnl_SystemUInt32_0 = 180;
+public Slider slider;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Int64 __refl_typeid = 8950312874115499211;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private LightShadowResolution __const_UnityEngineRenderingLightShadowResolution_1 = LightShadowResolution.Medium;
+private LightShadowResolution __const_UnityEngineRenderingLightShadowResolution_0 = LightShadowResolution.Low;
+private LightShadowResolution __const_UnityEngineRenderingLightShadowResolution_2 = LightShadowResolution.High;
+private object __const_SystemObject_0 = null;
+private Single __intnl_SystemSingle_1 = 0f;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private UInt32 __intnl_SystemUInt32_0 = 0;
+private Int32 __0_level__param = 0;
+private String __refl_typename = "ShadowQualitySlider";
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __const_SystemInt32_1 = 3;
+private Int32 __const_SystemInt32_0 = 0;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+
+
+public void _start()
+{
+__intnl_UnityEngineObject_0 = slider;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_0)
+{
+__intnl_SystemSingle_0 = slider.value;
+__intnl_SystemInt32_0 = Mathf.RoundToInt(__intnl_SystemSingle_0);
+__0_level__param = __intnl_SystemInt32_0;
+UNDEF_ac199_880();
+}
+}
+public void OnSliderValueChanged()
+{
+__intnl_UnityEngineObject_2 = slider;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_2 == __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_1)
+{
+}
+else
+{
+__intnl_UnityEngineObject_4 = directionalLight;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_4 == __intnl_UnityEngineObject_5;
+}
+if (__intnl_SystemBoolean_1)
+{
+return;
+}
+__intnl_SystemSingle_1 = slider.value;
+__intnl_SystemInt32_1 = Mathf.RoundToInt(__intnl_SystemSingle_1);
+__0_level__param = __intnl_SystemInt32_1;
+UNDEF_ac199_880();
+}
+private void UNDEF_ac199_880()
+{
+__intnl_SystemBoolean_2 = __0_level__param >= __const_SystemInt32_0;
+if (__intnl_SystemBoolean_2)
+{
+break;
+}
+__intnl_SystemBoolean_3 = __0_level__param <= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_3)
+{
+break;
+}
+__intnl_SystemUInt32_0 = __gintnl_SystemUInt32Array_0[__0_level__param];
+directionalLight.shadows = __const_UnityEngineLightShadows_0;
+directionalLight.shadows = __const_UnityEngineLightShadows_1;
+directionalLight.shadowResolution = __const_UnityEngineRenderingLightShadowResolution_0;
+directionalLight.shadows = __const_UnityEngineLightShadows_1;
+directionalLight.shadowResolution = __const_UnityEngineRenderingLightShadowResolution_1;
+directionalLight.shadows = __const_UnityEngineLightShadows_1;
+directionalLight.shadowResolution = __const_UnityEngineRenderingLightShadowResolution_2;
+}
+}

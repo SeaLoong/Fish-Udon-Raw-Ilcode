@@ -1,0 +1,814 @@
+using System;
+using UnityEngine;
+using VRC.Udon;
+using VRC.SDKBase;
+using TMPro;
+using VRC.Udon.Common.Enums;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Single __const_SystemSingle_8 = 360f;
+private Boolean __intnl_SystemBoolean_13 = false;
+private Boolean __intnl_SystemBoolean_23 = false;
+private Int32 __0_current__param = 0;
+private UInt32 __gintnl_SystemUInt32_16 = 6636;
+private Int64 __const_SystemInt64_0 = 0;
+private Single lastSyncTime = 0f;
+private Double __intnl_SystemDouble_18 = 0;
+private Double __intnl_SystemDouble_14 = 0;
+private Double __intnl_SystemDouble_15 = 0;
+private Double __intnl_SystemDouble_16 = 0;
+private Double __intnl_SystemDouble_17 = 0;
+private Double __intnl_SystemDouble_10 = 0;
+private Double __intnl_SystemDouble_11 = 0;
+private Double __intnl_SystemDouble_12 = 0;
+private Double __intnl_SystemDouble_13 = 0;
+private Single __intnl_SystemSingle_0 = 0f;
+private Double __const_SystemDouble_1 = 1;
+private Boolean __0_IsDay__ret = false;
+private String __const_SystemString_0 = "_DelayedInitialSync";
+private Double __lcl_elapsedSeconds_SystemDouble_0 = 0;
+private Double __lcl_elapsedSeconds_SystemDouble_1 = 0;
+private Single __const_SystemSingle_0 = 0f;
+private Double __intnl_SystemDouble_3 = 0;
+private Boolean __lcl_wasOwner_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_16 = false;
+private Boolean __intnl_SystemBoolean_26 = false;
+private Single __intnl_SystemSingle_10 = 0f;
+private Single __intnl_SystemSingle_11 = 0f;
+private Single __intnl_SystemSingle_12 = 0f;
+private Single __intnl_SystemSingle_13 = 0f;
+private Single __intnl_SystemSingle_14 = 0f;
+private Single __intnl_SystemSingle_15 = 0f;
+private Single __intnl_SystemSingle_16 = 0f;
+private Single __intnl_SystemSingle_17 = 0f;
+private Boolean isDaytime = true;
+private DateTime __lcl_networkTime_SystemDateTime_1 = 01/01/0001 00:00:00;
+private Single __lcl_total_SystemSingle_0 = 0f;
+private UInt32[] __gintnl_SystemUInt32Array_0 = System.UInt32[];
+private Single __lcl_rotationAngle_SystemSingle_0 = 0f;
+private Single __intnl_SystemSingle_8 = 0f;
+private UInt32 __gintnl_SystemUInt32_9 = 3416;
+private UInt32 __gintnl_SystemUInt32_8 = 3264;
+private UInt32 __gintnl_SystemUInt32_5 = 1712;
+private UInt32 __gintnl_SystemUInt32_4 = 1396;
+private UInt32 __gintnl_SystemUInt32_7 = 2236;
+private UInt32 __gintnl_SystemUInt32_6 = 2132;
+private UInt32 __gintnl_SystemUInt32_1 = 40;
+private UInt32 __gintnl_SystemUInt32_0 = 24;
+private UInt32 __gintnl_SystemUInt32_3 = 1108;
+private UInt32 __gintnl_SystemUInt32_2 = 512;
+private Boolean __const_SystemBoolean_0 = true;
+private Boolean __const_SystemBoolean_1 = false;
+private DateTime __lcl_currentNetworkTime_SystemDateTime_0 = 01/01/0001 00:00:00;
+public Single eveningDuration;
+private Single __0_normalizedTime__param = 0f;
+private Single __0___0_GetNormalizedTimeForTimeOfDay__ret = 0f;
+private String __const_SystemString_5 = "Unknown";
+private Int32 __0___0_GetTimeOfDayFromNormalized__ret = 0;
+public Single morningDuration;
+private Single __const_SystemSingle_7 = 10f;
+private UInt32 __gintnl_SystemUInt32_13 = 4700;
+private UInt32 __intnl_SystemUInt32_3 = 0;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private UInt32[] __gintnl_SystemUInt32Array_3 = System.UInt32[];
+public UdonBehaviour equipmentStatsManager;
+public Single midnightAngle;
+private Single __0_GetNormalizedTime__ret = 0f;
+private Single __intnl_SystemSingle_7 = 0f;
+private VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_0 = null;
+private Int64 __refl_typeid = -597884653412610288;
+private Single baseFogDensity = 0.01f;
+private Single timeScale = 1f;
+public Single cycleDurationSeconds;
+private Double __intnl_SystemDouble_4 = 0;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Boolean __intnl_SystemBoolean_11 = false;
+private Boolean __intnl_SystemBoolean_21 = false;
+private Boolean __intnl_SystemBoolean_31 = false;
+public Boolean enableDebugLogs;
+private UInt32 __gintnl_SystemUInt32_14 = 5048;
+private DateTime __lcl_worldStart_SystemDateTime_0 = 01/01/0001 00:00:00;
+private DateTime __lcl_worldStart_SystemDateTime_1 = 01/01/0001 00:00:00;
+private Int32 __0_GetCurrentTimeOfDay__ret = 0;
+private Single syncedTimeNormalized = 0.25f;
+public TextMeshProUGUI timeDisplayText;
+private Int32 __lcl_nextTime_SystemInt32_0 = 0;
+private Single __intnl_SystemSingle_2 = 0f;
+private Double __lcl_targetElapsedSeconds_SystemDouble_0 = 0;
+private TextMeshProUGUI __intnl_TMProTextMeshProUGUI_0 = null;
+private Int64 worldStartTimeTicks = 0;
+private VRCPlayerApi __lcl_currentOwner_VRCSDKBaseVRCPlayerApi_0 = null;
+private Int32 __lcl_newTimeOfDay_SystemInt32_0 = 0;
+private String __const_SystemString_2 = "Day";
+private Single __const_SystemSingle_2 = 1f;
+private Double __intnl_SystemDouble_1 = 0;
+private Boolean __intnl_SystemBoolean_19 = false;
+private Boolean __intnl_SystemBoolean_29 = false;
+public RectTransform clockHandImage;
+public AnimationCurve lightIntensityCurve;
+private GameObject __intnl_UnityEngineGameObject_0 = null;
+private Single __const_SystemSingle_9 = 0.25f;
+private Boolean __intnl_SystemBoolean_14 = false;
+private Boolean __intnl_SystemBoolean_24 = false;
+private object __const_SystemObject_0 = null;
+private Int32[] __0_allowedTypes__param = null;
+private Single __intnl_SystemSingle_1 = 0f;
+private Double __const_SystemDouble_0 = 10000000;
+private Double __lcl_initialOffsetSeconds_SystemDouble_0 = 0;
+private Double __intnl_SystemDouble_9 = 0;
+private Boolean isNighttime = false;
+private Single __const_SystemSingle_1 = 0.01f;
+private Double __intnl_SystemDouble_2 = 0;
+private UInt32 __gintnl_SystemUInt32_11 = 4176;
+private Boolean __intnl_SystemBoolean_17 = false;
+private Boolean __intnl_SystemBoolean_27 = false;
+private EventTiming __const_VRCUdonCommonEnumsEventTiming_0 = EventTiming.Update;
+private VRCPlayerApi onOwnershipTransferredPlayer = null;
+private Double cachedNetworkTime = 0;
+private UInt32[] __gintnl_SystemUInt32Array_1 = System.UInt32[];
+private Single __intnl_SystemSingle_9 = 0f;
+private Boolean __0___0_CanFishSpawnAtCurrentTime__ret = false;
+private Int64 __intnl_SystemInt64_5 = 0;
+private Int64 __intnl_SystemInt64_4 = 0;
+private Int64 __intnl_SystemInt64_3 = 0;
+private Int64 __intnl_SystemInt64_2 = 0;
+private Int64 __intnl_SystemInt64_1 = 0;
+private Int64 __intnl_SystemInt64_0 = 0;
+private Boolean __0_requiresNight__param = false;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private String __const_SystemString_4 = "Night";
+public Single nightDuration;
+private UInt32 __gintnl_SystemUInt32_19 = 7040;
+private Single __const_SystemSingle_4 = 0.2f;
+private Boolean __0_requiresDay__param = false;
+private Single __1_normalizedTime__param = 0f;
+private UInt32 __gintnl_SystemUInt32_12 = 4596;
+private UInt32 __intnl_SystemUInt32_0 = 0;
+private Single __intnl_SystemSingle_4 = 0f;
+private Boolean __0_IsNight__ret = false;
+public Single startTimeNormalized;
+private Int32 __lcl_newTimeOfDay_SystemInt32_2 = 0;
+private Double __intnl_SystemDouble_7 = 0;
+private Int32 currentTimeOfDay = 1;
+private Boolean __intnl_SystemBoolean_12 = false;
+private Boolean __intnl_SystemBoolean_22 = false;
+private Boolean __intnl_SystemBoolean_32 = false;
+private UInt32 __gintnl_SystemUInt32_17 = 6928;
+private String __refl_typename = "DayNightCycle";
+private Boolean __0_visible__param = false;
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Int32 __intnl_SystemInt32_5 = 0;
+private Int32 __intnl_SystemInt32_4 = 0;
+private Int32 __intnl_SystemInt32_7 = 0;
+private Int32 __intnl_SystemInt32_6 = 0;
+private Boolean isMasterClient = false;
+private Single __intnl_SystemSingle_3 = 0f;
+private VRCPlayerApi onPlayerLeftPlayer = null;
+private Int32 __0_weather__param = 0;
+private Int32 __lcl_newTimeOfDay_SystemInt32_1 = 0;
+private String __const_SystemString_1 = "Morning";
+private Single __const_SystemSingle_3 = 0.1f;
+private Double __intnl_SystemDouble_0 = 0;
+private Int32 __0___0_GetNextTimeOfDay__ret = 0;
+private Boolean __intnl_SystemBoolean_15 = false;
+private Boolean __intnl_SystemBoolean_25 = false;
+public Single dayDuration;
+private Int32 __0_timeOfDay__param = 0;
+private Single lastNetworkTimeCacheUpdate = 0f;
+private DateTime __lcl_networkTime_SystemDateTime_0 = 01/01/0001 00:00:00;
+private Double __intnl_SystemDouble_8 = 0;
+private String __const_SystemString_6 = "OnTimeOrWeatherChanged";
+private Single __const_SystemSingle_6 = 0.8f;
+private UInt32 __gintnl_SystemUInt32_10 = 3456;
+private UInt32 __gintnl_SystemUInt32_20 = 8048;
+private UInt32 __intnl_SystemUInt32_2 = 0;
+private Single __0_GetBaseFogDensity__ret = 0f;
+private String __0_GetTimeOfDayString__ret = null;
+public UdonBehaviour fishDatabase;
+private UInt32[] __gintnl_SystemUInt32Array_2 = System.UInt32[];
+private GameObject __this_UnityEngineGameObject_0 = this;
+private Single __0_speed__param = 0f;
+private Single __intnl_SystemSingle_6 = 0f;
+private VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_1 = null;
+private Boolean hasReceivedInitialSync = false;
+private Boolean __0_indoor__param = false;
+private Int32 __0_GetCurrentWeather__ret = 0;
+private Int32 frameCounter = 0;
+private Double __intnl_SystemDouble_5 = 0;
+private UInt32 __gintnl_SystemUInt32_18 = 6984;
+private Single __const_SystemSingle_5 = 0.5f;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Boolean __intnl_SystemBoolean_20 = false;
+private Boolean __intnl_SystemBoolean_30 = false;
+private Quaternion __intnl_UnityEngineQuaternion_0 = new Quaternion(0f, 0f, 0f, 0f);
+private UInt32 __gintnl_SystemUInt32_15 = 6532;
+private UInt32 __intnl_SystemUInt32_1 = 0;
+private Int32 __const_SystemInt32_1 = 0;
+private Int32 __const_SystemInt32_0 = 1;
+private Int32 __const_SystemInt32_3 = 120000;
+private Int32 __const_SystemInt32_2 = 3;
+private Int32 __const_SystemInt32_5 = 1;
+private Int32 __const_SystemInt32_4 = 0;
+private Int32 __const_SystemInt32_7 = 3;
+private Int32 __const_SystemInt32_6 = 2;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private Int32 currentWeather = 0;
+private Single __intnl_SystemSingle_5 = 0f;
+public Light sunLight;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_0 = null;
+private String __const_SystemString_3 = "Evening";
+private UdonBehaviour __this_VRCUdonUdonBehaviour_3 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_2 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_1 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_0 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_5 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_4 = this;
+private Single __lcl_targetTime_SystemSingle_0 = 0f;
+private Double __intnl_SystemDouble_6 = 0;
+private Boolean __intnl_SystemBoolean_18 = false;
+private Boolean __intnl_SystemBoolean_28 = false;
+private Keyframe[] __intnl_UnityEngineKeyframeArray_0 = null;
+
+
+public void _start()
+{
+UNDEF_2aa0a_1084();
+UNDEF_2aa0a_856();
+__intnl_SystemSingle_0 = RenderSettings.fogDensity;
+__intnl_SystemBoolean_0 = __intnl_SystemSingle_0 > __const_SystemSingle_0;
+if (__intnl_SystemBoolean_0)
+{
+baseFogDensity = RenderSettings.fogDensity;
+}
+else
+{
+baseFogDensity = __const_SystemSingle_1;
+}
+isMasterClient = Networking.IsOwner(__this_UnityEngineGameObject_0);
+if (isMasterClient)
+{
+__lcl_networkTime_SystemDateTime_0 = Networking.GetNetworkDateTime();
+worldStartTimeTicks = __lcl_networkTime_SystemDateTime_0.Ticks;
+timeScale = __const_SystemSingle_2;
+__intnl_SystemSingle_1 = startTimeNormalized * cycleDurationSeconds;
+__lcl_initialOffsetSeconds_SystemDouble_0 = Convert.ToDouble(__intnl_SystemSingle_1);
+__intnl_SystemDouble_0 = __lcl_initialOffsetSeconds_SystemDouble_0 * __const_SystemDouble_0;
+__intnl_SystemDouble_1 = Math.Truncate(__intnl_SystemDouble_0);
+__intnl_SystemInt64_0 = Convert.ToInt64(__intnl_SystemDouble_1);
+worldStartTimeTicks = worldStartTimeTicks - __intnl_SystemInt64_0;
+syncedTimeNormalized = startTimeNormalized;
+hasReceivedInitialSync = __const_SystemBoolean_0;
+__this_VRCUdonUdonBehaviour_0.SendCustomEventDelayedFrames(__const_SystemString_0, __const_SystemInt32_0, __const_VRCUdonCommonEnumsEventTiming_0);
+UNDEF_2aa0a_4736();
+}
+else
+{
+if (enableDebugLogs)
+{
+}
+}
+}
+private void UNDEF_2aa0a_856()
+{
+__intnl_UnityEngineKeyframeArray_0 = lightIntensityCurve.keys;
+__intnl_SystemInt32_0 = __intnl_UnityEngineKeyframeArray_0.Length;
+__intnl_SystemBoolean_1 = __intnl_SystemInt32_0 == __const_SystemInt32_1;
+if (__intnl_SystemBoolean_1)
+{
+lightIntensityCurve = AnimationCurve.ctor();
+__intnl_SystemInt32_1 = lightIntensityCurve.AddKey(__const_SystemSingle_0, __const_SystemSingle_0);
+__intnl_SystemInt32_2 = lightIntensityCurve.AddKey(__const_SystemSingle_3, __const_SystemSingle_4);
+__intnl_SystemInt32_3 = lightIntensityCurve.AddKey(__const_SystemSingle_5, __const_SystemSingle_6);
+__intnl_SystemInt32_4 = lightIntensityCurve.AddKey(__const_SystemSingle_2, __const_SystemSingle_2);
+}
+}
+private void UNDEF_2aa0a_1084()
+{
+__intnl_SystemSingle_2 = morningDuration + dayDuration;
+__intnl_SystemSingle_3 = __intnl_SystemSingle_2 + eveningDuration;
+__lcl_total_SystemSingle_0 = __intnl_SystemSingle_3 + nightDuration;
+__intnl_SystemSingle_4 = __lcl_total_SystemSingle_0 - __const_SystemSingle_2;
+__intnl_SystemSingle_5 = Mathf.Abs(__intnl_SystemSingle_4);
+__intnl_SystemBoolean_2 = __intnl_SystemSingle_5 > __const_SystemSingle_1;
+if (__intnl_SystemBoolean_2)
+{
+}
+}
+public void _update()
+{
+UNDEF_2aa0a_2272();
+if (isMasterClient)
+{
+__intnl_SystemSingle_6 = Time.time;
+__intnl_SystemSingle_7 = __intnl_SystemSingle_6 - lastSyncTime;
+__intnl_SystemBoolean_3 = __intnl_SystemSingle_7 >= __const_SystemSingle_7;
+if (__intnl_SystemBoolean_3)
+{
+__this_VRCUdonUdonBehaviour_1.RequestSerialization();
+lastSyncTime = Time.time;
+}
+}
+if (hasReceivedInitialSync)
+{
+frameCounter = frameCounter + __const_SystemInt32_0;
+__intnl_SystemInt32_5 = frameCounter / __const_SystemInt32_2;
+__intnl_SystemBoolean_3 = __intnl_SystemInt32_5 == __const_SystemInt32_1;
+if (__intnl_SystemBoolean_3)
+{
+UNDEF_2aa0a_3476();
+}
+__intnl_UnityEngineObject_0 = sunLight;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_4 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_4)
+{
+__intnl_UnityEngineGameObject_0 = sunLight.gameObject;
+__intnl_UnityEngineGameObject_0.SetActive(__const_SystemBoolean_0);
+}
+__intnl_SystemBoolean_5 = frameCounter >= __const_SystemInt32_3;
+if (__intnl_SystemBoolean_5)
+{
+frameCounter = __const_SystemInt32_1;
+}
+}
+}
+private void UNDEF_2aa0a_2272()
+{
+__intnl_SystemBoolean_6 = worldStartTimeTicks == __const_SystemInt64_0;
+if (__intnl_SystemBoolean_6)
+{
+return;
+}
+UNDEF_2aa0a_2508();
+__lcl_worldStart_SystemDateTime_0 = DateTime.ctor(worldStartTimeTicks);
+__intnl_SystemInt64_1 = __lcl_worldStart_SystemDateTime_0.Ticks;
+__intnl_SystemDouble_2 = Convert.ToDouble(__intnl_SystemInt64_1);
+__intnl_SystemDouble_3 = __intnl_SystemDouble_2 / __const_SystemDouble_0;
+__lcl_elapsedSeconds_SystemDouble_0 = cachedNetworkTime - __intnl_SystemDouble_3;
+__intnl_SystemDouble_4 = Convert.ToDouble(timeScale);
+__intnl_SystemDouble_5 = __lcl_elapsedSeconds_SystemDouble_0 * __intnl_SystemDouble_4;
+__intnl_SystemDouble_6 = Convert.ToDouble(cycleDurationSeconds);
+__intnl_SystemDouble_7 = __intnl_SystemDouble_5 / __intnl_SystemDouble_6;
+__intnl_SystemDouble_8 = __intnl_SystemDouble_7 / __const_SystemDouble_1;
+syncedTimeNormalized = Convert.ToSingle(__intnl_SystemDouble_8);
+__intnl_SystemBoolean_7 = syncedTimeNormalized < __const_SystemSingle_0;
+if (__intnl_SystemBoolean_7)
+{
+syncedTimeNormalized = syncedTimeNormalized + __const_SystemSingle_2;
+}
+__0_normalizedTime__param = syncedTimeNormalized;
+__0_GetTimeOfDayFromNormalized();
+__lcl_newTimeOfDay_SystemInt32_0 = __0___0_GetTimeOfDayFromNormalized__ret;
+__intnl_SystemBoolean_8 = __lcl_newTimeOfDay_SystemInt32_0 != currentTimeOfDay;
+if (__intnl_SystemBoolean_8)
+{
+currentTimeOfDay = __lcl_newTimeOfDay_SystemInt32_0;
+UNDEF_2aa0a_3284();
+if (enableDebugLogs)
+{
+}
+}
+}
+private void UNDEF_2aa0a_2508()
+{
+__intnl_SystemSingle_8 = Time.time;
+__intnl_SystemSingle_9 = __intnl_SystemSingle_8 - lastNetworkTimeCacheUpdate;
+__intnl_SystemBoolean_9 = __intnl_SystemSingle_9 >= __const_SystemSingle_3;
+if (__intnl_SystemBoolean_9)
+{
+__lcl_networkTime_SystemDateTime_1 = Networking.GetNetworkDateTime();
+__intnl_SystemInt64_2 = __lcl_networkTime_SystemDateTime_1.Ticks;
+__intnl_SystemDouble_9 = Convert.ToDouble(__intnl_SystemInt64_2);
+cachedNetworkTime = __intnl_SystemDouble_9 / __const_SystemDouble_0;
+lastNetworkTimeCacheUpdate = Time.time;
+}
+}
+private void __0_GetTimeOfDayFromNormalized()
+{
+__intnl_SystemBoolean_10 = __0_normalizedTime__param < morningDuration;
+if (__intnl_SystemBoolean_10)
+{
+__0___0_GetTimeOfDayFromNormalized__ret = __const_SystemInt32_4;
+return;
+}
+else
+{
+__intnl_SystemSingle_10 = morningDuration + dayDuration;
+__intnl_SystemBoolean_11 = __0_normalizedTime__param < __intnl_SystemSingle_10;
+if (__intnl_SystemBoolean_11)
+{
+__0___0_GetTimeOfDayFromNormalized__ret = __const_SystemInt32_5;
+return;
+}
+else
+{
+__intnl_SystemSingle_11 = morningDuration + dayDuration;
+__intnl_SystemSingle_12 = __intnl_SystemSingle_11 + eveningDuration;
+__intnl_SystemBoolean_12 = __0_normalizedTime__param < __intnl_SystemSingle_12;
+if (__intnl_SystemBoolean_12)
+{
+__0___0_GetTimeOfDayFromNormalized__ret = __const_SystemInt32_6;
+return;
+}
+else
+{
+__0___0_GetTimeOfDayFromNormalized__ret = __const_SystemInt32_7;
+return;
+}
+}
+}
+}
+private void UNDEF_2aa0a_3284()
+{
+__intnl_SystemBoolean_13 = currentTimeOfDay >= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_13)
+{
+break;
+}
+__intnl_SystemBoolean_14 = currentTimeOfDay <= __const_SystemInt32_2;
+if (__intnl_SystemBoolean_14)
+{
+break;
+}
+__intnl_SystemUInt32_0 = __gintnl_SystemUInt32Array_0[currentTimeOfDay];
+isDaytime = __const_SystemBoolean_0;
+isNighttime = __const_SystemBoolean_1;
+isDaytime = __const_SystemBoolean_0;
+isNighttime = __const_SystemBoolean_0;
+isDaytime = __const_SystemBoolean_1;
+isNighttime = __const_SystemBoolean_0;
+UNDEF_2aa0a_4896();
+}
+private void UNDEF_2aa0a_3476()
+{
+__intnl_UnityEngineObject_2 = timeDisplayText;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_15 = __intnl_UnityEngineObject_2 != __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_15)
+{
+__intnl_TMProTextMeshProUGUI_0 = timeDisplayText;
+GetTimeOfDayString();
+__intnl_TMProTextMeshProUGUI_0.text = __0_GetTimeOfDayString__ret;
+}
+UNDEF_2aa0a_3740();
+}
+private void UNDEF_2aa0a_3740()
+{
+__intnl_UnityEngineObject_4 = clockHandImage;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_16 = __intnl_UnityEngineObject_4 == __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_16)
+{
+return;
+}
+__intnl_SystemSingle_13 = syncedTimeNormalized * __const_SystemSingle_8;
+__lcl_rotationAngle_SystemSingle_0 = midnightAngle - __intnl_SystemSingle_13;
+__intnl_UnityEngineQuaternion_0 = Quaternion.Euler(__const_SystemSingle_0, __const_SystemSingle_0, __lcl_rotationAngle_SystemSingle_0);
+clockHandImage.rotation = __intnl_UnityEngineQuaternion_0;
+}
+private void GetTimeOfDayString()
+{
+__intnl_SystemBoolean_17 = currentTimeOfDay >= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_17)
+{
+__intnl_SystemBoolean_18 = currentTimeOfDay <= __const_SystemInt32_2;
+if (__intnl_SystemBoolean_18)
+{
+__intnl_SystemUInt32_1 = __gintnl_SystemUInt32Array_1[currentTimeOfDay];
+__0_GetTimeOfDayString__ret = __const_SystemString_1;
+return;
+__0_GetTimeOfDayString__ret = __const_SystemString_2;
+return;
+__0_GetTimeOfDayString__ret = __const_SystemString_3;
+return;
+__0_GetTimeOfDayString__ret = __const_SystemString_4;
+return;
+}
+}
+__0_GetTimeOfDayString__ret = __const_SystemString_5;
+return;
+}
+private void UNDEF_2aa0a_4736()
+{
+__intnl_SystemBoolean_19 = worldStartTimeTicks > __const_SystemInt64_0;
+if (__intnl_SystemBoolean_19)
+{
+UNDEF_2aa0a_2508();
+__lcl_worldStart_SystemDateTime_1 = DateTime.ctor(worldStartTimeTicks);
+__intnl_SystemInt64_3 = __lcl_worldStart_SystemDateTime_1.Ticks;
+__intnl_SystemDouble_10 = Convert.ToDouble(__intnl_SystemInt64_3);
+__intnl_SystemDouble_11 = __intnl_SystemDouble_10 / __const_SystemDouble_0;
+__lcl_elapsedSeconds_SystemDouble_1 = cachedNetworkTime - __intnl_SystemDouble_11;
+__intnl_SystemDouble_12 = Convert.ToDouble(timeScale);
+__intnl_SystemDouble_13 = __lcl_elapsedSeconds_SystemDouble_1 * __intnl_SystemDouble_12;
+__intnl_SystemDouble_14 = Convert.ToDouble(cycleDurationSeconds);
+__intnl_SystemDouble_15 = __intnl_SystemDouble_13 / __intnl_SystemDouble_14;
+__intnl_SystemDouble_16 = __intnl_SystemDouble_15 / __const_SystemDouble_1;
+syncedTimeNormalized = Convert.ToSingle(__intnl_SystemDouble_16);
+__intnl_SystemBoolean_20 = syncedTimeNormalized < __const_SystemSingle_0;
+if (__intnl_SystemBoolean_20)
+{
+syncedTimeNormalized = syncedTimeNormalized + __const_SystemSingle_2;
+}
+}
+__0_normalizedTime__param = syncedTimeNormalized;
+__0_GetTimeOfDayFromNormalized();
+__lcl_newTimeOfDay_SystemInt32_1 = __0___0_GetTimeOfDayFromNormalized__ret;
+__intnl_SystemBoolean_20 = __lcl_newTimeOfDay_SystemInt32_1 != currentTimeOfDay;
+if (__intnl_SystemBoolean_20)
+{
+break;
+}
+currentTimeOfDay = __lcl_newTimeOfDay_SystemInt32_1;
+UNDEF_2aa0a_3284();
+if (enableDebugLogs)
+{
+}
+}
+private void UNDEF_2aa0a_4896()
+{
+__intnl_UnityEngineObject_6 = equipmentStatsManager;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_21 = __intnl_UnityEngineObject_6 != __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_21)
+{
+__intnl_VRCUdonUdonBehaviour_0 = equipmentStatsManager;
+equipmentStatsManager.SendCustomEvent(__const_SystemString_6);
+}
+}
+public void _onDeserialization()
+{
+__intnl_SystemBoolean_22 = worldStartTimeTicks <= __const_SystemInt64_0;
+if (__intnl_SystemBoolean_22)
+{
+return;
+}
+if (hasReceivedInitialSync)
+{
+}
+else
+{
+hasReceivedInitialSync = __const_SystemBoolean_0;
+if (enableDebugLogs)
+{
+}
+}
+UNDEF_2aa0a_4736();
+}
+public void _onOwnershipTransferred()
+{
+__lcl_wasOwner_SystemBoolean_0 = isMasterClient;
+isMasterClient = Networking.IsOwner(__this_UnityEngineGameObject_0);
+__intnl_SystemBoolean_23 = isMasterClient;
+if (__intnl_SystemBoolean_23)
+{
+__intnl_SystemBoolean_23 = !__lcl_wasOwner_SystemBoolean_0;
+}
+if (__intnl_SystemBoolean_23)
+{
+__this_VRCUdonUdonBehaviour_2.RequestSerialization();
+}
+}
+public void _onPlayerLeft()
+{
+__lcl_currentOwner_VRCSDKBaseVRCPlayerApi_0 = Networking.GetOwner(__this_UnityEngineGameObject_0);
+__intnl_SystemBoolean_24 = __lcl_currentOwner_VRCSDKBaseVRCPlayerApi_0 == __const_SystemObject_0;
+if (__intnl_SystemBoolean_24)
+{
+}
+else
+{
+__intnl_SystemInt32_6 = __lcl_currentOwner_VRCSDKBaseVRCPlayerApi_0.playerId;
+__intnl_SystemInt32_7 = onPlayerLeftPlayer.playerId;
+__intnl_SystemBoolean_24 = __intnl_SystemInt32_6 != __intnl_SystemInt32_7;
+}
+if (__intnl_SystemBoolean_24)
+{
+return;
+}
+__intnl_VRCSDKBaseVRCPlayerApi_0 = Networking.LocalPlayer;
+__intnl_SystemBoolean_25 = __intnl_VRCSDKBaseVRCPlayerApi_0.isMaster;
+if (__intnl_SystemBoolean_25)
+{
+__intnl_VRCSDKBaseVRCPlayerApi_1 = Networking.LocalPlayer;
+Networking.SetOwner(__intnl_VRCSDKBaseVRCPlayerApi_1, __this_UnityEngineGameObject_0);
+if (enableDebugLogs)
+{
+}
+}
+}
+public void _DelayedInitialSync()
+{
+if (isMasterClient)
+{
+__this_VRCUdonUdonBehaviour_3.RequestSerialization();
+if (enableDebugLogs)
+{
+}
+}
+}
+public void GetCurrentTimeOfDay()
+{
+__0_GetCurrentTimeOfDay__ret = currentTimeOfDay;
+return;
+}
+public void GetNormalizedTime()
+{
+__0_GetNormalizedTime__ret = syncedTimeNormalized;
+return;
+}
+public void IsDay()
+{
+__0_IsDay__ret = isDaytime;
+return;
+}
+public void IsNight()
+{
+__0_IsNight__ret = isNighttime;
+return;
+}
+public void __0_CanFishSpawnAtCurrentTime()
+{
+__intnl_SystemBoolean_26 = __0_requiresDay__param;
+if (__intnl_SystemBoolean_26)
+{
+__intnl_SystemBoolean_26 = !isDaytime;
+}
+if (__intnl_SystemBoolean_26)
+{
+__0___0_CanFishSpawnAtCurrentTime__ret = __const_SystemBoolean_1;
+return;
+}
+__intnl_SystemBoolean_27 = __0_requiresNight__param;
+if (__intnl_SystemBoolean_27)
+{
+__intnl_SystemBoolean_27 = !isNighttime;
+}
+if (__intnl_SystemBoolean_27)
+{
+__0___0_CanFishSpawnAtCurrentTime__ret = __const_SystemBoolean_1;
+return;
+}
+__0___0_CanFishSpawnAtCurrentTime__ret = __const_SystemBoolean_0;
+return;
+}
+public void __0_SetTime()
+{
+if (isMasterClient)
+{
+UNDEF_2aa0a_6688();
+}
+}
+private void UNDEF_2aa0a_6688()
+{
+__lcl_currentNetworkTime_SystemDateTime_0 = Networking.GetNetworkDateTime();
+__intnl_SystemSingle_14 = __1_normalizedTime__param * cycleDurationSeconds;
+__lcl_targetElapsedSeconds_SystemDouble_0 = Convert.ToDouble(__intnl_SystemSingle_14);
+__intnl_SystemInt64_4 = __lcl_currentNetworkTime_SystemDateTime_0.Ticks;
+__intnl_SystemDouble_17 = __lcl_targetElapsedSeconds_SystemDouble_0 * __const_SystemDouble_0;
+__intnl_SystemDouble_18 = Math.Truncate(__intnl_SystemDouble_17);
+__intnl_SystemInt64_5 = Convert.ToInt64(__intnl_SystemDouble_18);
+worldStartTimeTicks = __intnl_SystemInt64_4 - __intnl_SystemInt64_5;
+syncedTimeNormalized = __1_normalizedTime__param;
+__0_normalizedTime__param = syncedTimeNormalized;
+__0_GetTimeOfDayFromNormalized();
+__lcl_newTimeOfDay_SystemInt32_2 = __0___0_GetTimeOfDayFromNormalized__ret;
+__intnl_SystemBoolean_28 = __lcl_newTimeOfDay_SystemInt32_2 != currentTimeOfDay;
+if (__intnl_SystemBoolean_28)
+{
+break;
+}
+currentTimeOfDay = __lcl_newTimeOfDay_SystemInt32_2;
+UNDEF_2aa0a_3284();
+__this_VRCUdonUdonBehaviour_4.RequestSerialization();
+lastSyncTime = Time.time;
+}
+public void __0_SetTimeSpeed()
+{
+if (isMasterClient)
+{
+UNDEF_2aa0a_6840();
+}
+}
+private void UNDEF_2aa0a_6840()
+{
+timeScale = Mathf.Max(__const_SystemSingle_0, __0_speed__param);
+if (enableDebugLogs)
+{
+}
+__this_VRCUdonUdonBehaviour_5.RequestSerialization();
+lastSyncTime = Time.time;
+}
+public void SkipToNextTimePeriod()
+{
+if (isMasterClient)
+{
+UNDEF_2aa0a_7076();
+}
+}
+private void UNDEF_2aa0a_7076()
+{
+__0_current__param = currentTimeOfDay;
+__0_GetNextTimeOfDay();
+__lcl_nextTime_SystemInt32_0 = __0___0_GetNextTimeOfDay__ret;
+__0_timeOfDay__param = __lcl_nextTime_SystemInt32_0;
+__0_GetNormalizedTimeForTimeOfDay();
+__lcl_targetTime_SystemSingle_0 = __0___0_GetNormalizedTimeForTimeOfDay__ret;
+__1_normalizedTime__param = __lcl_targetTime_SystemSingle_0;
+__0_SetTime();
+if (enableDebugLogs)
+{
+}
+}
+private void __0_GetNextTimeOfDay()
+{
+__intnl_SystemBoolean_29 = __0_current__param >= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_29)
+{
+__intnl_SystemBoolean_30 = __0_current__param <= __const_SystemInt32_2;
+if (__intnl_SystemBoolean_30)
+{
+__intnl_SystemUInt32_2 = __gintnl_SystemUInt32Array_2[__0_current__param];
+__0___0_GetNextTimeOfDay__ret = __const_SystemInt32_5;
+return;
+__0___0_GetNextTimeOfDay__ret = __const_SystemInt32_6;
+return;
+__0___0_GetNextTimeOfDay__ret = __const_SystemInt32_7;
+return;
+__0___0_GetNextTimeOfDay__ret = __const_SystemInt32_4;
+return;
+}
+}
+__0___0_GetNextTimeOfDay__ret = __const_SystemInt32_5;
+return;
+}
+private void __0_GetNormalizedTimeForTimeOfDay()
+{
+__intnl_SystemBoolean_31 = __0_timeOfDay__param >= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_31)
+{
+__intnl_SystemBoolean_32 = __0_timeOfDay__param <= __const_SystemInt32_2;
+if (__intnl_SystemBoolean_32)
+{
+__intnl_SystemUInt32_3 = __gintnl_SystemUInt32Array_3[__0_timeOfDay__param];
+__0___0_GetNormalizedTimeForTimeOfDay__ret = __const_SystemSingle_1;
+return;
+__0___0_GetNormalizedTimeForTimeOfDay__ret = morningDuration + __const_SystemSingle_1;
+return;
+__intnl_SystemSingle_15 = morningDuration + dayDuration;
+__0___0_GetNormalizedTimeForTimeOfDay__ret = __intnl_SystemSingle_15 + __const_SystemSingle_1;
+return;
+__intnl_SystemSingle_16 = morningDuration + dayDuration;
+__intnl_SystemSingle_17 = __intnl_SystemSingle_16 + eveningDuration;
+__0___0_GetNormalizedTimeForTimeOfDay__ret = __intnl_SystemSingle_17 + __const_SystemSingle_1;
+return;
+}
+}
+__0___0_GetNormalizedTimeForTimeOfDay__ret = __const_SystemSingle_9;
+return;
+}
+public void GetCurrentWeather()
+{
+__0_GetCurrentWeather__ret = currentWeather;
+return;
+}
+public void __0_SetCurrentWeather()
+{
+currentWeather = __0_weather__param;
+UNDEF_2aa0a_4896();
+}
+public void GetBaseFogDensity()
+{
+__0_GetBaseFogDensity__ret = baseFogDensity;
+return;
+}
+public void __0_SetWeatherEffectsVisible()
+{
+}
+public void __0_SetAllowedWeatherTypes()
+{
+}
+public void __0_SetIndoorMode()
+{
+}
+}

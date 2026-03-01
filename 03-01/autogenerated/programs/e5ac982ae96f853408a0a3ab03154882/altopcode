@@ -1,0 +1,755 @@
+void __0_CalculateFishValue()
+__lcl_weightT_SystemSingle_0 = InverseLerp(__0_weight__param, maxWeight, minWeight);// 40
+__lcl_basePrice_SystemSingle_0 = Lerp(__lcl_weightT_SystemSingle_0, maxPrice, minPrice);// 80
+128 if (__intnl_SystemBoolean_0) //556
+{
+152 __lcl_tinyShaderMult_SystemSingle_0 = __const_SystemSingle_0
+172 __intnl_UnityEngineObject_0 = __0_fishModifierComponent__param
+192 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+236 if (__intnl_SystemBoolean_1) //404
+{
+260 __intnl_SystemInt32_0 = __0_shaderModifier__param
+__0_fishModifierComponent__param.SetProgramVariable(__0_shaderModifier__param, __const_SystemString_0);// 288
+__0_fishModifierComponent__param.SendCustomEvent(__const_SystemString_1);// 312
+392 __lcl_tinyShaderMult_SystemSingle_0 = __intnl_SystemSingle_0
+396 JUMP 460
+}
+428 __1__intnlparam = __0_shaderModifier__param
+432 JUMP 11376
+456 __lcl_tinyShaderMult_SystemSingle_0 = __0__intnlparam
+__lcl_tinyResult_SystemInt32_0 = CeilToInt(__intnl_SystemSingle_1);// 508
+532 __0___0_CalculateFishValue__ret = __lcl_tinyResult_SystemInt32_0
+548 return;
+}
+__lcl_roundedBasePrice_SystemInt32_0 = CeilToInt(__lcl_basePrice_SystemSingle_0);// 572
+596 __lcl_sizeMultiplier_SystemSingle_0 = __const_SystemSingle_0
+616 __lcl_shaderMultiplier_SystemSingle_0 = __const_SystemSingle_0
+636 __intnl_UnityEngineObject_0 = __0_fishModifierComponent__param
+656 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+700 if (__intnl_SystemBoolean_1) //1020
+{
+724 __intnl_SystemInt32_0 = __0_sizeModifier__param
+__0_fishModifierComponent__param.SetProgramVariable(__0_sizeModifier__param, __const_SystemString_3);// 752
+__0_fishModifierComponent__param.SendCustomEvent(__const_SystemString_4);// 776
+856 __lcl_sizeMultiplier_SystemSingle_0 = __intnl_SystemSingle_0
+876 __intnl_SystemInt32_1 = __0_shaderModifier__param
+__0_fishModifierComponent__param.SetProgramVariable(__0_shaderModifier__param, __const_SystemString_0);// 904
+__0_fishModifierComponent__param.SendCustomEvent(__const_SystemString_1);// 928
+1008 __lcl_shaderMultiplier_SystemSingle_0 = __intnl_SystemSingle_1
+1012 JUMP 1132
+}
+1044 __3__intnlparam = __0_sizeModifier__param
+1048 JUMP 12532
+1072 __lcl_sizeMultiplier_SystemSingle_0 = __2__intnlparam
+1100 __1__intnlparam = __0_shaderModifier__param
+1104 JUMP 11376
+1128 __lcl_shaderMultiplier_SystemSingle_0 = __0__intnlparam
+__lcl_finalValue_SystemSingle_0 = op_Multiplication(__lcl_shaderMultiplier_SystemSingle_0, __intnl_SystemSingle_1);// 1212
+__lcl_result_SystemInt32_0 = CeilToInt(__lcl_finalValue_SystemSingle_0);// 1236
+1260 __lcl_modifierText_SystemString_0 = __const_SystemString_6
+1304 if (__intnl_SystemBoolean_2) //1412
+{
+1336 __5__intnlparam = __0_sizeModifier__param
+1340 JUMP 12872
+__lcl_modifierText_SystemString_0 = op_Addition(__intnl_SystemString_0, __lcl_modifierText_SystemString_0);// 1404
+}
+1452 if (__intnl_SystemBoolean_3) //1560
+{
+1484 __7__intnlparam = __0_shaderModifier__param
+1488 JUMP 13212
+__lcl_modifierText_SystemString_0 = op_Addition(__intnl_SystemString_1, __lcl_modifierText_SystemString_0);// 1552
+}
+1576 __0___0_CalculateFishValue__ret = __lcl_result_SystemInt32_0
+1592 return;
+1612 return;
+void __0_CalculateBasePrice()
+__lcl_weightT_SystemSingle_1 = InverseLerp(__1_weight__param, maxWeight, minWeight);// 1660
+__lcl_basePrice_SystemSingle_1 = Lerp(__lcl_weightT_SystemSingle_1, maxPrice, minPrice);// 1700
+__0___0_CalculateBasePrice__ret = CeilToInt(__lcl_basePrice_SystemSingle_1);// 1724
+1744 return;
+1764 return;
+void GetAveragePrice()
+__0_GetAveragePrice__ret = op_Division(__const_SystemSingle_1, __intnl_SystemSingle_2);// 1836
+1856 return;
+1876 return;
+void GetLegacyBaseValue()
+1900 JUMP 1780
+__0_GetLegacyBaseValue__ret = RoundToInt(__0_GetAveragePrice__ret);// 1924
+1944 return;
+1964 return;
+void __0_CanSpawnInWaterType()
+2020 if (__intnl_SystemBoolean_4) //2276
+{
+2068 if (__intnl_SystemBoolean_5) //2276
+{
+2108 return;
+2132 __0___0_CanSpawnInWaterType__ret = canSpawnInFreshwater
+2148 return;
+2172 __0___0_CanSpawnInWaterType__ret = canSpawnInSaltwater
+2188 return;
+2212 __0___0_CanSpawnInWaterType__ret = canSpawnInSwampwater
+2228 return;
+2252 __0___0_CanSpawnInWaterType__ret = canSpawnInLava
+2268 return;
+}
+}
+2292 __0___0_CanSpawnInWaterType__ret = __const_SystemBoolean_0
+2308 return;
+2328 return;
+void __0_CanSpawnInZone()
+2360 __intnl_SystemBoolean_6 = spawnInAnySaltwater
+2372 if (__intnl_SystemBoolean_6) //2400
+{
+2396 __intnl_SystemBoolean_6 = canSpawnInSaltwater
+}
+2408 if (__intnl_SystemBoolean_6) //2548
+{
+2440 __1_zoneID__param = __0_zoneID__param
+2444 JUMP 2904
+2460 if (__0___0_HasForbiddenZoneID__ret) //2508
+{
+2484 __0___0_CanSpawnInZone__ret = __const_SystemBoolean_0
+2500 return;
+}
+2524 __0___0_CanSpawnInZone__ret = __const_SystemBoolean_1
+2540 return;
+}
+2572 __1_zoneID__param = __0_zoneID__param
+2576 JUMP 2904
+2592 if (__0___0_HasForbiddenZoneID__ret) //2640
+{
+2616 __0___0_CanSpawnInZone__ret = __const_SystemBoolean_0
+2632 return;
+}
+2680 if (__intnl_SystemBoolean_7) //2744
+{
+}
+2752 if (__intnl_SystemBoolean_7) //2836
+{
+2784 __2_zoneID__param = __0_zoneID__param
+2788 JUMP 3392
+2812 __0___0_CanSpawnInZone__ret = __0___0_HasAllowedZoneID__ret
+2828 return;
+}
+2852 __0___0_CanSpawnInZone__ret = __const_SystemBoolean_1
+2868 return;
+2888 return;
+2944 if (__intnl_SystemBoolean_8) //2960
+{
+2952 JUMP 3016
+}
+3024 if (__intnl_SystemBoolean_8) //3072
+{
+3048 __0___0_HasForbiddenZoneID__ret = __const_SystemBoolean_0
+3064 return;
+}
+3088 __lcl_i_SystemInt32_0 = __const_SystemInt32_1
+3156 if (__intnl_SystemBoolean_9) //3324
+{
+3236 if (__intnl_SystemBoolean_10) //3284
+{
+3260 __0___0_HasForbiddenZoneID__ret = __const_SystemBoolean_1
+3276 return;
+}
+__lcl_i_SystemInt32_0 = op_Addition(__const_SystemInt32_3, __lcl_i_SystemInt32_0);// 3308
+3316 JUMP 3092
+}
+3340 __0___0_HasForbiddenZoneID__ret = __const_SystemBoolean_0
+3356 return;
+3376 return;
+void __0_HasAllowedZoneID()
+3432 if (__intnl_SystemBoolean_11) //3448
+{
+3440 JUMP 3504
+}
+3512 if (__intnl_SystemBoolean_11) //3560
+{
+3536 __0___0_HasAllowedZoneID__ret = __const_SystemBoolean_1
+3552 return;
+}
+3576 __lcl_i_SystemInt32_1 = __const_SystemInt32_1
+3644 if (__intnl_SystemBoolean_12) //3812
+{
+3724 if (__intnl_SystemBoolean_13) //3772
+{
+3748 __0___0_HasAllowedZoneID__ret = __const_SystemBoolean_1
+3764 return;
+}
+__lcl_i_SystemInt32_1 = op_Addition(__const_SystemInt32_3, __lcl_i_SystemInt32_1);// 3796
+3804 JUMP 3580
+}
+3828 __0___0_HasAllowedZoneID__ret = __const_SystemBoolean_0
+3844 return;
+3864 return;
+void __0_CanSpawnAtCurrentConditions()
+3896 __intnl_UnityEngineObject_2 = __0_dayNightCycle__param
+3916 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+3960 if (__intnl_SystemBoolean_14) //4008
+{
+3984 __0___0_CanSpawnAtCurrentConditions__ret = __const_SystemBoolean_1
+4000 return;
+}
+4024 __lcl_timeAllowed_SystemBoolean_0 = __const_SystemBoolean_0
+4044 __intnl_SystemBoolean_15 = canSpawnInDay
+4056 if (__intnl_SystemBoolean_15) //4180
+{
+4088 __intnl_VRCUdonUdonBehaviour_0 = __0_dayNightCycle__param
+__0_dayNightCycle__param.SendCustomEvent(__const_SystemString_8);// 4100
+4156 __intnl_SystemBoolean_16 = __intnl_SystemObject_2
+4176 __intnl_SystemBoolean_15 = __intnl_SystemBoolean_16
+}
+4188 if (__intnl_SystemBoolean_15) //4216
+{
+4212 __lcl_timeAllowed_SystemBoolean_0 = __const_SystemBoolean_1
+}
+4232 __intnl_SystemBoolean_17 = canSpawnInNight
+4244 if (__intnl_SystemBoolean_17) //4368
+{
+4276 __intnl_VRCUdonUdonBehaviour_1 = __0_dayNightCycle__param
+__0_dayNightCycle__param.SendCustomEvent(__const_SystemString_10);// 4288
+4344 __intnl_SystemBoolean_18 = __intnl_SystemObject_3
+4364 __intnl_SystemBoolean_17 = __intnl_SystemBoolean_18
+}
+4376 if (__intnl_SystemBoolean_17) //4404
+{
+4400 __lcl_timeAllowed_SystemBoolean_0 = __const_SystemBoolean_1
+}
+4420 __0___0_CanSpawnAtCurrentConditions__ret = __lcl_timeAllowed_SystemBoolean_0
+4436 return;
+4456 return;
+void __0_CanSpawnInWaterZoneWithConditions()
+4496 __0_waterType__param = __1_waterType__param
+4500 JUMP 1980
+4516 if (__0___0_CanSpawnInWaterType__ret) //4532
+{
+4524 JUMP 4572
+}
+4548 __0___0_CanSpawnInWaterZoneWithConditions__ret = __const_SystemBoolean_0
+4564 return;
+4596 __0_zoneID__param = __3_zoneID__param
+4600 JUMP 2344
+4616 if (__0___0_CanSpawnInZone__ret) //4632
+{
+4624 JUMP 4672
+}
+4648 __0___0_CanSpawnInWaterZoneWithConditions__ret = __const_SystemBoolean_0
+4664 return;
+4688 __intnl_UnityEngineObject_4 = __1_dayNightCycle__param
+4708 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+4752 if (__intnl_SystemBoolean_19) //4860
+{
+4784 __0_dayNightCycle__param = __1_dayNightCycle__param
+4788 JUMP 3880
+4804 if (__0___0_CanSpawnAtCurrentConditions__ret) //4820
+{
+4812 JUMP 4860
+}
+4836 __0___0_CanSpawnInWaterZoneWithConditions__ret = __const_SystemBoolean_0
+4852 return;
+}
+4876 __0___0_CanSpawnInWaterZoneWithConditions__ret = __const_SystemBoolean_1
+4892 return;
+4912 return;
+void __0_GetSpawnMultiplier()
+4944 __intnl_UnityEngineObject_6 = __2_dayNightCycle__param
+4964 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+5008 if (__intnl_SystemBoolean_20) //5056
+{
+5032 __0___0_GetSpawnMultiplier__ret = __const_SystemSingle_0
+5048 return;
+}
+5072 __lcl_multiplier_SystemSingle_0 = __const_SystemSingle_0
+5100 __intnl_VRCUdonUdonBehaviour_2 = __2_dayNightCycle__param
+__2_dayNightCycle__param.SendCustomEvent(__const_SystemString_12);// 5112
+5192 __intnl_SystemInt32_7 = __intnl_SystemInt32_8
+5212 __lcl_currentTime_SystemInt32_0 = __intnl_SystemInt32_7
+5256 if (__intnl_SystemBoolean_21) //5576
+{
+5304 if (__intnl_SystemBoolean_22) //5576
+{
+5344 return;
+5360 if (prefersMorning) //5400
+{
+__lcl_multiplier_SystemSingle_0 = op_Multiplication(__const_SystemSingle_2, __lcl_multiplier_SystemSingle_0);// 5392
+}
+5400 JUMP 5576
+5416 if (prefersDay) //5456
+{
+__lcl_multiplier_SystemSingle_0 = op_Multiplication(__const_SystemSingle_2, __lcl_multiplier_SystemSingle_0);// 5448
+}
+5456 JUMP 5576
+5472 if (prefersEvening) //5512
+{
+__lcl_multiplier_SystemSingle_0 = op_Multiplication(__const_SystemSingle_2, __lcl_multiplier_SystemSingle_0);// 5504
+}
+5512 JUMP 5576
+5528 if (prefersNight) //5568
+{
+__lcl_multiplier_SystemSingle_0 = op_Multiplication(__const_SystemSingle_2, __lcl_multiplier_SystemSingle_0);// 5560
+}
+5568 JUMP 5576
+}
+}
+5600 __intnl_VRCUdonUdonBehaviour_3 = __2_dayNightCycle__param
+__2_dayNightCycle__param.SendCustomEvent(__const_SystemString_14);// 5612
+5692 __intnl_SystemInt32_9 = __intnl_SystemInt32_10
+5712 __lcl_currentWeather_SystemInt32_0 = __intnl_SystemInt32_9
+5756 if (__intnl_SystemBoolean_23) //6244
+{
+5804 if (__intnl_SystemBoolean_24) //6244
+{
+5844 return;
+5860 if (prefersClear) //5900
+{
+__lcl_multiplier_SystemSingle_0 = op_Multiplication(__const_SystemSingle_2, __lcl_multiplier_SystemSingle_0);// 5892
+}
+5900 JUMP 6244
+5916 if (prefersRainy) //5956
+{
+__lcl_multiplier_SystemSingle_0 = op_Multiplication(__const_SystemSingle_2, __lcl_multiplier_SystemSingle_0);// 5948
+}
+5956 JUMP 6244
+5972 if (prefersStormy) //6012
+{
+__lcl_multiplier_SystemSingle_0 = op_Multiplication(__const_SystemSingle_2, __lcl_multiplier_SystemSingle_0);// 6004
+}
+6012 JUMP 6244
+6028 if (prefersFoggy) //6068
+{
+__lcl_multiplier_SystemSingle_0 = op_Multiplication(__const_SystemSingle_2, __lcl_multiplier_SystemSingle_0);// 6060
+}
+6068 JUMP 6244
+6084 if (prefersMoonrain) //6124
+{
+__lcl_multiplier_SystemSingle_0 = op_Multiplication(__const_SystemSingle_2, __lcl_multiplier_SystemSingle_0);// 6116
+}
+6124 JUMP 6244
+6140 if (prefersStarfog) //6180
+{
+__lcl_multiplier_SystemSingle_0 = op_Multiplication(__const_SystemSingle_2, __lcl_multiplier_SystemSingle_0);// 6172
+}
+6180 JUMP 6244
+6196 if (prefersSkybloom) //6236
+{
+__lcl_multiplier_SystemSingle_0 = op_Multiplication(__const_SystemSingle_2, __lcl_multiplier_SystemSingle_0);// 6228
+}
+6236 JUMP 6244
+}
+}
+6260 __0___0_GetSpawnMultiplier__ret = __lcl_multiplier_SystemSingle_0
+6276 return;
+6296 return;
+void GetZoneRequirementsText()
+6328 __lcl_zoneText_SystemString_0 = __const_SystemString_6
+6340 if (spawnInAnySaltwater) //6388
+{
+6364 __0_GetZoneRequirementsText__ret = __const_SystemString_16
+6380 return;
+}
+6428 if (__intnl_SystemBoolean_25) //6492
+{
+}
+6500 if (__intnl_SystemBoolean_25) //7416
+{
+6524 __lcl_zoneText_SystemString_0 = __const_SystemString_17
+6544 __lcl_i_SystemInt32_2 = __const_SystemInt32_1
+6612 if (__intnl_SystemBoolean_26) //6860
+{
+__lcl_zoneText_SystemString_0 = op_Addition(__intnl_SystemString_4, __lcl_zoneText_SystemString_0);// 6676
+6780 if (__intnl_SystemBoolean_27) //6820
+{
+__lcl_zoneText_SystemString_0 = op_Addition(__const_SystemString_18, __lcl_zoneText_SystemString_0);// 6812
+}
+__lcl_i_SystemInt32_2 = op_Addition(__const_SystemInt32_3, __lcl_i_SystemInt32_2);// 6844
+6852 JUMP 6548
+}
+6900 if (__intnl_SystemBoolean_26) //6964
+{
+}
+6972 if (__intnl_SystemBoolean_26) //7376
+{
+__lcl_zoneText_SystemString_0 = op_Addition(__const_SystemString_19, __lcl_zoneText_SystemString_0);// 7004
+7028 __lcl_i_SystemInt32_2 = __const_SystemInt32_1
+7096 if (__intnl_SystemBoolean_27) //7344
+{
+__lcl_zoneText_SystemString_0 = op_Addition(__intnl_SystemString_4, __lcl_zoneText_SystemString_0);// 7160
+7264 if (__intnl_SystemBoolean_28) //7304
+{
+__lcl_zoneText_SystemString_0 = op_Addition(__const_SystemString_18, __lcl_zoneText_SystemString_0);// 7296
+}
+__lcl_i_SystemInt32_2 = op_Addition(__const_SystemInt32_3, __lcl_i_SystemInt32_2);// 7328
+7336 JUMP 7032
+}
+__lcl_zoneText_SystemString_0 = op_Addition(__const_SystemString_20, __lcl_zoneText_SystemString_0);// 7368
+}
+7392 __0_GetZoneRequirementsText__ret = __lcl_zoneText_SystemString_0
+7408 return;
+}
+7432 __lcl_zoneText_SystemString_0 = __const_SystemString_21
+7476 if (__intnl_SystemBoolean_26) //7540
+{
+}
+7548 if (__intnl_SystemBoolean_26) //7952
+{
+__lcl_zoneText_SystemString_0 = op_Addition(__const_SystemString_19, __lcl_zoneText_SystemString_0);// 7580
+7604 __lcl_i_SystemInt32_2 = __const_SystemInt32_1
+7672 if (__intnl_SystemBoolean_27) //7920
+{
+__lcl_zoneText_SystemString_0 = op_Addition(__intnl_SystemString_4, __lcl_zoneText_SystemString_0);// 7736
+7840 if (__intnl_SystemBoolean_28) //7880
+{
+__lcl_zoneText_SystemString_0 = op_Addition(__const_SystemString_18, __lcl_zoneText_SystemString_0);// 7872
+}
+__lcl_i_SystemInt32_2 = op_Addition(__const_SystemInt32_3, __lcl_i_SystemInt32_2);// 7904
+7912 JUMP 7608
+}
+__lcl_zoneText_SystemString_0 = op_Addition(__const_SystemString_20, __lcl_zoneText_SystemString_0);// 7944
+}
+7968 __0_GetZoneRequirementsText__ret = __lcl_zoneText_SystemString_0
+7984 return;
+8004 return;
+void GetWaterRequirementsText()
+8036 __lcl_waterText_SystemString_0 = __const_SystemString_6
+8048 if (canSpawnInFreshwater) //8088
+{
+__lcl_waterText_SystemString_0 = op_Addition(__const_SystemString_22, __lcl_waterText_SystemString_0);// 8080
+}
+8096 if (canSpawnInSaltwater) //8136
+{
+__lcl_waterText_SystemString_0 = op_Addition(__const_SystemString_23, __lcl_waterText_SystemString_0);// 8128
+}
+8144 if (canSpawnInSwampwater) //8184
+{
+__lcl_waterText_SystemString_0 = op_Addition(__const_SystemString_24, __lcl_waterText_SystemString_0);// 8176
+}
+8192 if (canSpawnInLava) //8232
+{
+__lcl_waterText_SystemString_0 = op_Addition(__const_SystemString_25, __lcl_waterText_SystemString_0);// 8224
+}
+8296 if (__intnl_SystemBoolean_29) //8408
+{
+__gintnl_SystemCharArray_0.Set(__const_SystemChar_0, __const_SystemInt32_1);// 8328
+__gintnl_SystemCharArray_0.Set(__const_SystemChar_1, __const_SystemInt32_3);// 8360
+__lcl_waterText_SystemString_0 = "".TrimEnd(__gintnl_SystemCharArray_0);// 8392
+8400 JUMP 8428
+}
+8424 __lcl_waterText_SystemString_0 = __const_SystemString_26
+8444 __0_GetWaterRequirementsText__ret = __lcl_waterText_SystemString_0
+8460 return;
+8480 return;
+void GetRarityName()
+8536 if (__intnl_SystemBoolean_30) //9072
+{
+8584 if (__intnl_SystemBoolean_31) //9072
+{
+8624 return;
+8648 __0_GetRarityName__ret = __const_SystemString_27
+8664 return;
+8688 __0_GetRarityName__ret = __const_SystemString_28
+8704 return;
+8728 __0_GetRarityName__ret = __const_SystemString_29
+8744 return;
+8768 __0_GetRarityName__ret = __const_SystemString_30
+8784 return;
+8808 __0_GetRarityName__ret = __const_SystemString_31
+8824 return;
+8848 __0_GetRarityName__ret = __const_SystemString_32
+8864 return;
+8888 __0_GetRarityName__ret = __const_SystemString_33
+8904 return;
+8928 __0_GetRarityName__ret = __const_SystemString_34
+8944 return;
+8968 __0_GetRarityName__ret = __const_SystemString_35
+8984 return;
+9008 __0_GetRarityName__ret = __const_SystemString_36
+9024 return;
+9048 __0_GetRarityName__ret = __const_SystemString_37
+9064 return;
+}
+}
+9088 __0_GetRarityName__ret = __const_SystemString_38
+9104 return;
+9124 return;
+void GetRarityColor()
+9180 if (__intnl_SystemBoolean_32) //9716
+{
+9228 if (__intnl_SystemBoolean_33) //9716
+{
+9268 return;
+9292 __0_GetRarityColor__ret = __const_UnityEngineColor_0
+9308 return;
+9332 __0_GetRarityColor__ret = __const_UnityEngineColor_1
+9348 return;
+9372 __0_GetRarityColor__ret = __const_UnityEngineColor_2
+9388 return;
+9412 __0_GetRarityColor__ret = __const_UnityEngineColor_3
+9428 return;
+9452 __0_GetRarityColor__ret = __const_UnityEngineColor_4
+9468 return;
+9492 __0_GetRarityColor__ret = __const_UnityEngineColor_5
+9508 return;
+9532 __0_GetRarityColor__ret = __const_UnityEngineColor_6
+9548 return;
+9572 __0_GetRarityColor__ret = __const_UnityEngineColor_7
+9588 return;
+9612 __0_GetRarityColor__ret = __const_UnityEngineColor_8
+9628 return;
+9652 __0_GetRarityColor__ret = __const_UnityEngineColor_9
+9668 return;
+9692 __0_GetRarityColor__ret = __const_UnityEngineColor_10
+9708 return;
+}
+}
+9732 __0_GetRarityColor__ret = __const_UnityEngineColor_1
+9748 return;
+9768 return;
+void __0_GetTimePreferenceMultiplier()
+9808 __2_dayNightCycle__param = __3_dayNightCycle__param
+9812 JUMP 4928
+9836 __0___0_GetTimePreferenceMultiplier__ret = __0___0_GetSpawnMultiplier__ret
+9852 return;
+9872 return;
+void GetSpawnRequirementsString()
+9904 __lcl_requirements_SystemString_0 = __const_SystemString_6
+9916 JUMP 8020
+__lcl_requirements_SystemString_0 = op_Addition(__intnl_SystemString_5, __lcl_requirements_SystemString_0);// 9980
+9996 JUMP 6312
+__lcl_requirements_SystemString_0 = op_Addition(__intnl_SystemString_6, __lcl_requirements_SystemString_0);// 10060
+10084 __intnl_SystemBoolean_34 = canSpawnInDay
+10096 if (__intnl_SystemBoolean_34) //10124
+{
+10120 __intnl_SystemBoolean_34 = canSpawnInNight
+}
+10132 if (__intnl_SystemBoolean_34) //10180
+{
+__lcl_requirements_SystemString_0 = op_Addition(__const_SystemString_41, __lcl_requirements_SystemString_0);// 10164
+10172 JUMP 10284
+}
+10188 if (canSpawnInDay) //10236
+{
+__lcl_requirements_SystemString_0 = op_Addition(__const_SystemString_42, __lcl_requirements_SystemString_0);// 10220
+10228 JUMP 10284
+}
+10244 if (canSpawnInNight) //10284
+{
+__lcl_requirements_SystemString_0 = op_Addition(__const_SystemString_43, __lcl_requirements_SystemString_0);// 10276
+}
+10300 __lcl_timePrefs_SystemString_0 = __const_SystemString_6
+10312 if (prefersMorning) //10352
+{
+__lcl_timePrefs_SystemString_0 = op_Addition(__const_SystemString_44, __lcl_timePrefs_SystemString_0);// 10344
+}
+10360 if (prefersDay) //10400
+{
+__lcl_timePrefs_SystemString_0 = op_Addition(__const_SystemString_45, __lcl_timePrefs_SystemString_0);// 10392
+}
+10408 if (prefersEvening) //10448
+{
+__lcl_timePrefs_SystemString_0 = op_Addition(__const_SystemString_46, __lcl_timePrefs_SystemString_0);// 10440
+}
+10456 if (prefersNight) //10496
+{
+__lcl_timePrefs_SystemString_0 = op_Addition(__const_SystemString_47, __lcl_timePrefs_SystemString_0);// 10488
+}
+10560 if (__intnl_SystemBoolean_35) //10728
+{
+__gintnl_SystemCharArray_1.Set(__const_SystemChar_0, __const_SystemInt32_1);// 10592
+__gintnl_SystemCharArray_1.Set(__const_SystemChar_1, __const_SystemInt32_3);// 10624
+__lcl_timePrefs_SystemString_0 = "".TrimEnd(__gintnl_SystemCharArray_1);// 10656
+__lcl_requirements_SystemString_0 = op_Addition(__intnl_SystemString_7, __lcl_requirements_SystemString_0);// 10720
+}
+10744 __lcl_weatherPrefs_SystemString_0 = __const_SystemString_6
+10756 if (prefersClear) //10796
+{
+__lcl_weatherPrefs_SystemString_0 = op_Addition(__const_SystemString_49, __lcl_weatherPrefs_SystemString_0);// 10788
+}
+10804 if (prefersRainy) //10844
+{
+__lcl_weatherPrefs_SystemString_0 = op_Addition(__const_SystemString_50, __lcl_weatherPrefs_SystemString_0);// 10836
+}
+10852 if (prefersStormy) //10892
+{
+__lcl_weatherPrefs_SystemString_0 = op_Addition(__const_SystemString_51, __lcl_weatherPrefs_SystemString_0);// 10884
+}
+10900 if (prefersFoggy) //10940
+{
+__lcl_weatherPrefs_SystemString_0 = op_Addition(__const_SystemString_52, __lcl_weatherPrefs_SystemString_0);// 10932
+}
+10948 if (prefersMoonrain) //10988
+{
+__lcl_weatherPrefs_SystemString_0 = op_Addition(__const_SystemString_53, __lcl_weatherPrefs_SystemString_0);// 10980
+}
+10996 if (prefersStarfog) //11036
+{
+__lcl_weatherPrefs_SystemString_0 = op_Addition(__const_SystemString_54, __lcl_weatherPrefs_SystemString_0);// 11028
+}
+11044 if (prefersSkybloom) //11084
+{
+__lcl_weatherPrefs_SystemString_0 = op_Addition(__const_SystemString_55, __lcl_weatherPrefs_SystemString_0);// 11076
+}
+11148 if (__intnl_SystemBoolean_36) //11316
+{
+__gintnl_SystemCharArray_2.Set(__const_SystemChar_0, __const_SystemInt32_1);// 11180
+__gintnl_SystemCharArray_2.Set(__const_SystemChar_1, __const_SystemInt32_3);// 11212
+__lcl_weatherPrefs_SystemString_0 = "".TrimEnd(__gintnl_SystemCharArray_2);// 11244
+__lcl_requirements_SystemString_0 = op_Addition(__intnl_SystemString_7, __lcl_requirements_SystemString_0);// 11308
+}
+11332 __0_GetSpawnRequirementsString__ret = __lcl_requirements_SystemString_0
+11348 return;
+11368 return;
+11416 if (__intnl_SystemBoolean_37) //12472
+{
+11464 if (__intnl_SystemBoolean_38) //12472
+{
+11504 return;
+11528 __0__intnlparam = __const_SystemSingle_0
+11544 return;
+11568 __0__intnlparam = __const_SystemSingle_1
+11584 return;
+11608 __0__intnlparam = __const_SystemSingle_3
+11624 return;
+11648 __0__intnlparam = __const_SystemSingle_4
+11664 return;
+11688 __0__intnlparam = __const_SystemSingle_5
+11704 return;
+11728 __0__intnlparam = __const_SystemSingle_6
+11744 return;
+11768 __0__intnlparam = __const_SystemSingle_7
+11784 return;
+11808 __0__intnlparam = __const_SystemSingle_8
+11824 return;
+11848 __0__intnlparam = __const_SystemSingle_9
+11864 return;
+11888 __0__intnlparam = __const_SystemSingle_3
+11904 return;
+11928 __0__intnlparam = __const_SystemSingle_10
+11944 return;
+11968 __0__intnlparam = __const_SystemSingle_11
+11984 return;
+12008 __0__intnlparam = __const_SystemSingle_12
+12024 return;
+12048 __0__intnlparam = __const_SystemSingle_5
+12064 return;
+12088 __0__intnlparam = __const_SystemSingle_4
+12104 return;
+12128 __0__intnlparam = __const_SystemSingle_4
+12144 return;
+12168 __0__intnlparam = __const_SystemSingle_5
+12184 return;
+12208 __0__intnlparam = __const_SystemSingle_6
+12224 return;
+12248 __0__intnlparam = __const_SystemSingle_8
+12264 return;
+12288 __0__intnlparam = __const_SystemSingle_9
+12304 return;
+12328 __0__intnlparam = __const_SystemSingle_8
+12344 return;
+12368 __0__intnlparam = __const_SystemSingle_13
+12384 return;
+12408 __0__intnlparam = __const_SystemSingle_4
+12424 return;
+12448 __0__intnlparam = __const_SystemSingle_7
+12464 return;
+}
+}
+12488 __0__intnlparam = __const_SystemSingle_0
+12504 return;
+12524 return;
+12572 if (__intnl_SystemBoolean_39) //12620
+{
+12596 __2__intnlparam = __const_SystemSingle_0
+12612 return;
+}
+12660 if (__intnl_SystemBoolean_40) //12708
+{
+12684 __2__intnlparam = __const_SystemSingle_10
+12700 return;
+}
+12748 if (__intnl_SystemBoolean_41) //12844
+{
+12772 __2__intnlparam = __const_SystemSingle_1
+12788 return;
+12796 JUMP 12844
+12820 __2__intnlparam = __const_SystemSingle_0
+12836 return;
+}
+12844 JUMP 12804
+12864 return;
+12912 if (__intnl_SystemBoolean_42) //12960
+{
+12936 __4__intnlparam = __const_SystemString_6
+12952 return;
+}
+13000 if (__intnl_SystemBoolean_43) //13048
+{
+13024 __4__intnlparam = __const_SystemString_57
+13040 return;
+}
+13088 if (__intnl_SystemBoolean_44) //13184
+{
+13112 __4__intnlparam = __const_SystemString_58
+13128 return;
+13136 JUMP 13184
+13160 __4__intnlparam = __const_SystemString_6
+13176 return;
+}
+13184 JUMP 13144
+13204 return;
+13252 if (__intnl_SystemBoolean_45) //14308
+{
+13300 if (__intnl_SystemBoolean_46) //14308
+{
+13340 return;
+13364 __6__intnlparam = __const_SystemString_6
+13380 return;
+13404 __6__intnlparam = __const_SystemString_59
+13420 return;
+13444 __6__intnlparam = __const_SystemString_60
+13460 return;
+13484 __6__intnlparam = __const_SystemString_61
+13500 return;
+13524 __6__intnlparam = __const_SystemString_62
+13540 return;
+13564 __6__intnlparam = __const_SystemString_63
+13580 return;
+13604 __6__intnlparam = __const_SystemString_64
+13620 return;
+13644 __6__intnlparam = __const_SystemString_65
+13660 return;
+13684 __6__intnlparam = __const_SystemString_66
+13700 return;
+13724 __6__intnlparam = __const_SystemString_67
+13740 return;
+13764 __6__intnlparam = __const_SystemString_68
+13780 return;
+13804 __6__intnlparam = __const_SystemString_69
+13820 return;
+13844 __6__intnlparam = __const_SystemString_70
+13860 return;
+13884 __6__intnlparam = __const_SystemString_71
+13900 return;
+13924 __6__intnlparam = __const_SystemString_72
+13940 return;
+13964 __6__intnlparam = __const_SystemString_73
+13980 return;
+14004 __6__intnlparam = __const_SystemString_74
+14020 return;
+14044 __6__intnlparam = __const_SystemString_75
+14060 return;
+14084 __6__intnlparam = __const_SystemString_76
+14100 return;
+14124 __6__intnlparam = __const_SystemString_77
+14140 return;
+14164 __6__intnlparam = __const_SystemString_78
+14180 return;
+14204 __6__intnlparam = __const_SystemString_79
+14220 return;
+14244 __6__intnlparam = __const_SystemString_80
+14260 return;
+14284 __6__intnlparam = __const_SystemString_81
+14300 return;
+}
+}
+14324 __6__intnlparam = __const_SystemString_6
+14340 return;
+14360 return;

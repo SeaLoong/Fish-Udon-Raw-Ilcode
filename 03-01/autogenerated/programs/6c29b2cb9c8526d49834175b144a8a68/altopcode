@@ -1,0 +1,80 @@
+void _start()
+localPlayer = get_LocalPlayer();// 16
+64 if (__intnl_SystemBoolean_0) //88
+{
+80 JUMP 1000
+}
+100 return;
+void _update()
+156 if (__intnl_SystemBoolean_1) //184
+{
+176 return;
+}
+272 if (__intnl_SystemBoolean_2) //312
+{
+288 JUMP 356
+lastUpdateTime = get_time();// 304
+}
+320 JUMP 712
+340 return;
+364 JUMP 1108
+388 __lcl_playerPosition_UnityEngineVector3_0 = __0_GetPlayerHeadPosition__ret
+__lcl_lookDirection_UnityEngineVector3_0 = op_Subtraction(__intnl_UnityEngineVector3_0, __lcl_playerPosition_UnityEngineVector3_0);// 440
+456 if (horizontalOnly) //508
+{
+L_lookDirection.set_y(__const_SystemSingle_0);// 480
+504 __intnl_UnityEngineVector3_1 = __lcl_lookDirection_UnityEngineVector3_0
+}
+516 if (invertDirection) //548
+{
+__lcl_lookDirection_UnityEngineVector3_0 = op_UnaryNegation(__lcl_lookDirection_UnityEngineVector3_0);// 540
+}
+612 if (__intnl_SystemBoolean_3) //640
+{
+632 return;
+}
+targetRotation = LookRotation(__lcl_lookDirection_UnityEngineVector3_0);// 656
+680 hasTargetRotation = __const_SystemBoolean_0
+696 return;
+720 if (hasTargetRotation) //736
+{
+728 JUMP 756
+}
+748 return;
+796 if (__intnl_SystemBoolean_4) //948
+{
+transform.set_rotation(__intnl_UnityEngineQuaternion_1);// 932
+940 JUMP 972
+}
+transform.set_rotation(targetRotation);// 964
+984 return;
+1008 JUMP 356
+1056 if (__intnl_SystemBoolean_5) //1080
+{
+1072 JUMP 712
+}
+1092 return;
+__lcl_headData_VRCSDKBaseVRCPlayerApiTrackingData_0 = G_localPlayer.GetTrackingData(__const_VRCSDKBaseVRCPlayerApiTrackingDataType_0);// 1132
+1204 if (__intnl_SystemBoolean_6) //1256
+{
+__0_GetPlayerHeadPosition__ret = L_headData.get_position();// 1228
+1248 return;
+}
+__lcl_playerPos_UnityEngineVector3_0 = G_localPlayer.GetPosition();// 1272
+L_playerPos.set_y(__intnl_SystemSingle_6);// 1352
+1376 __intnl_UnityEngineVector3_3 = __lcl_playerPos_UnityEngineVector3_0
+1396 __0_GetPlayerHeadPosition__ret = __lcl_playerPos_UnityEngineVector3_0
+1412 return;
+1432 return;
+void __0_SetHorizontalOnly()
+1464 horizontalOnly = __0_horizontal__param
+1480 return;
+void __0_SetInvertDirection()
+1512 invertDirection = __0_invert__param
+1528 return;
+void __0_SetRotationSpeed()
+rotationSpeed = Max(__0_speed__param, __const_SystemSingle_0);// 1568
+1588 return;
+void __0_SetUpdateInterval()
+updateInterval = Clamp(__const_SystemSingle_4, __const_SystemSingle_3, __0_interval__param);// 1636
+1656 return;

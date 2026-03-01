@@ -1,0 +1,429 @@
+using System;
+using VRC.Udon;
+using VRC.SDK3.Data;
+using VRC.SDKBase;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Boolean __0_CanUpgradeMaxWeight__ret = false;
+private UInt32 __gintnl_SystemUInt32_16 = 3784;
+private String __intnl_SystemString_1 = null;
+private String __0_GetLuckLevelText__ret = null;
+private Single __intnl_SystemSingle_0 = 0f;
+private object __intnl_SystemObject_0 = null;
+private String __const_SystemString_0 = "petStats_{0}";
+public Int32 baseLuck;
+private UdonBehaviour __lcl_callback_VRCUdonUdonBehaviour_0 = null;
+private Single __const_SystemSingle_0 = 30f;
+public Int32 capacityPerLevel;
+private Boolean __0_UpgradeLuck__ret = false;
+private DataToken __intnl_VRCSDK3DataDataToken_2 = Null;
+private Int32 _old__catchSpeedUpgradeLevel = 0;
+private String __intnl_SystemString_9 = null;
+public Boolean canCatchModifiedFish;
+private Single __intnl_SystemSingle_8 = 0f;
+private UInt32 __gintnl_SystemUInt32_9 = 3236;
+private UInt32 __gintnl_SystemUInt32_8 = 3140;
+private UInt32 __gintnl_SystemUInt32_5 = 2852;
+private UInt32 __gintnl_SystemUInt32_4 = 2700;
+private UInt32 __gintnl_SystemUInt32_7 = 3044;
+private UInt32 __gintnl_SystemUInt32_6 = 2948;
+private UInt32 __gintnl_SystemUInt32_1 = 2176;
+private UInt32 __gintnl_SystemUInt32_0 = 2028;
+private UInt32 __gintnl_SystemUInt32_3 = 2548;
+private UInt32 __gintnl_SystemUInt32_2 = 2324;
+private Boolean __const_SystemBoolean_0 = true;
+private Boolean __const_SystemBoolean_1 = false;
+private Int32 __0_value__param = 0;
+private Int32 _old__currentUpgradePoints = 0;
+public Int32 maxCapacityLevel;
+private Boolean __0_UpgradeCatchSpeed__ret = false;
+private Single __0_GetMaxWeightKg__ret = 0f;
+private String __const_SystemString_5 = "maxWeightUpgradeLevel";
+private UInt32 __gintnl_SystemUInt32_13 = 3560;
+private UInt32 __gintnl_SystemUInt32_23 = 4388;
+private DataToken __intnl_VRCSDK3DataDataToken_1 = Null;
+private VRCPlayerApi onPlayerRestoredPlayer = null;
+private String __intnl_SystemString_6 = null;
+private Int32 __0_GetTotalLuck__ret = 0;
+private Single __intnl_SystemSingle_7 = 0f;
+private VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_0 = null;
+private Int64 __refl_typeid = 1328315828950442984;
+private String __0_GetMaxWeightLevelText__ret = null;
+private Int32 __0_get_maxWeightUpgradeLevel__ret = 0;
+private Boolean __0_UpgradeCapacity__ret = false;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Int32 __4_value__param = 0;
+private UInt32 __gintnl_SystemUInt32_14 = 3500;
+private UInt32 __gintnl_SystemUInt32_24 = 4516;
+private Int32 _old__capacityUpgradeLevel = 0;
+private String __intnl_SystemString_3 = null;
+private Single __intnl_SystemSingle_2 = 0f;
+private Boolean __0_CanUpgradeCatchSpeed__ret = false;
+private String __const_SystemString_2 = "capacityUpgradeLevel";
+private Single __lcl_interval_SystemSingle_0 = 0f;
+private Single __const_SystemSingle_2 = 50f;
+private Int32 _old__luckUpgradeLevel = 0;
+private String __intnl_SystemString_0 = null;
+private Single __0_GetLuckMultiplier__ret = 0f;
+public Int32 maxCatchSpeedLevel;
+private Single __intnl_SystemSingle_1 = 0f;
+private String __const_SystemString_7 = "/";
+private Single __const_SystemSingle_1 = 1f;
+private UInt32 __gintnl_SystemUInt32_11 = 3276;
+private UInt32 __gintnl_SystemUInt32_21 = 4132;
+private Int32 __3_value__param = 0;
+private Boolean __0_UpgradeMaxWeight__ret = false;
+private String __intnl_SystemString_8 = null;
+private Int32 __0_get_catchSpeedUpgradeLevel__ret = 0;
+public Single baseCatchIntervalSeconds;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private String __const_SystemString_4 = "luckUpgradeLevel";
+private UInt32 __gintnl_SystemUInt32_19 = 4008;
+private UInt32 __gintnl_SystemUInt32_12 = 3460;
+private UInt32 __gintnl_SystemUInt32_22 = 4260;
+private Int32 __lcl_i_SystemInt32_0 = 0;
+private Int32 __0_GetMaxCapacity__ret = 0;
+private UdonBehaviour __0_callback__param = null;
+private String __intnl_SystemString_5 = null;
+private Int32 __0_get_currentUpgradePoints__ret = 0;
+private String __0_GetCatchSpeedLevelText__ret = null;
+private Single __intnl_SystemSingle_4 = 0f;
+private VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_3 = null;
+private Boolean __0_CanUpgradeCapacity__ret = false;
+public Int32 maxWeightLevel;
+private UInt32 __gintnl_SystemUInt32_17 = 3724;
+public Int32 maxCapacity;
+private String __refl_typename = "AFKPetStats";
+private Single __0_GetCatchIntervalSeconds__ret = 0f;
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Int32 __intnl_SystemInt32_5 = 0;
+private Int32 __intnl_SystemInt32_4 = 0;
+private Int32 __intnl_SystemInt32_7 = 0;
+private Int32 __intnl_SystemInt32_6 = 0;
+private Int32 __intnl_SystemInt32_8 = 0;
+private String __intnl_SystemString_2 = null;
+private Single __intnl_SystemSingle_3 = 0f;
+private String __const_SystemString_1 = "currentUpgradePoints";
+private Int32 __0_get_luckUpgradeLevel__ret = 0;
+private Int32 _catchSpeedUpgradeLevel = 0;
+private String __intnl_SystemString_12 = null;
+private String __intnl_SystemString_13 = null;
+private String __intnl_SystemString_10 = null;
+private String __intnl_SystemString_11 = null;
+private Int32 _luckUpgradeLevel = 0;
+private Int32 __2_value__param = 0;
+public Int32 maxLuckLevel;
+private VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_4 = null;
+private Int32 _maxWeightUpgradeLevel = 0;
+private String __const_SystemString_6 = "_OnPetStatsRestored";
+private Int32 _currentUpgradePoints = 0;
+private Int32 _old__maxWeightUpgradeLevel = 0;
+private DataList _callbacks = VRC.SDK3.Data.DataList;
+private Int32 __0_get_capacityUpgradeLevel__ret = 0;
+private UInt32 __gintnl_SystemUInt32_10 = 3336;
+private UInt32 __gintnl_SystemUInt32_20 = 3948;
+private DataToken __intnl_VRCSDK3DataDataToken_0 = Null;
+private Boolean __0_CanUpgradeLuck__ret = false;
+public Single maxWeightKg;
+private String __intnl_SystemString_7 = null;
+private Int32 __1_value__param = 0;
+private Int32 _capacityUpgradeLevel = 0;
+private Single __intnl_SystemSingle_6 = 0f;
+private VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_1 = null;
+public Single catchSpeedReductionPerLevel;
+public Int32 luckPerLevel;
+private String __0_GetCapacityLevelText__ret = null;
+private UInt32 __gintnl_SystemUInt32_18 = 3908;
+private UInt32 __gintnl_SystemUInt32_15 = 3684;
+private Int32 __const_SystemInt32_1 = 1;
+private Int32 __const_SystemInt32_0 = 0;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private String __intnl_SystemString_4 = null;
+private Single __intnl_SystemSingle_5 = 0f;
+private VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_2 = null;
+private String __const_SystemString_3 = "catchSpeedUpgradeLevel";
+public Single maxWeightMultiplierPerLevel;
+
+
+public void get_currentUpgradePoints()
+{
+__0_get_currentUpgradePoints__ret = _currentUpgradePoints;
+return;
+}
+public void _onVarChange__currentUpgradePoints()
+{
+__0_value__param = _currentUpgradePoints;
+_currentUpgradePoints = _old__currentUpgradePoints;
+_currentUpgradePoints = __0_value__param;
+__intnl_SystemString_0 = String.Format(__const_SystemString_0, __const_SystemString_1);
+PlayerData.SetInt(__intnl_SystemString_0, __0_value__param);
+}
+public void __0_RegisterCallback()
+{
+__intnl_VRCSDK3DataDataToken_0 = __0_callback__param;
+__intnl_SystemBoolean_0 = _callbacks.Contains(__intnl_VRCSDK3DataDataToken_0);
+if (__intnl_SystemBoolean_0)
+{
+}
+else
+{
+__intnl_VRCSDK3DataDataToken_1 = __0_callback__param;
+_callbacks.Add(__intnl_VRCSDK3DataDataToken_1);
+}
+}
+public void get_capacityUpgradeLevel()
+{
+__0_get_capacityUpgradeLevel__ret = _capacityUpgradeLevel;
+return;
+}
+public void _onVarChange__capacityUpgradeLevel()
+{
+__1_value__param = _capacityUpgradeLevel;
+_capacityUpgradeLevel = _old__capacityUpgradeLevel;
+_capacityUpgradeLevel = __1_value__param;
+__intnl_SystemString_1 = String.Format(__const_SystemString_0, __const_SystemString_2);
+PlayerData.SetInt(__intnl_SystemString_1, __1_value__param);
+}
+public void get_catchSpeedUpgradeLevel()
+{
+__0_get_catchSpeedUpgradeLevel__ret = _catchSpeedUpgradeLevel;
+return;
+}
+public void _onVarChange__catchSpeedUpgradeLevel()
+{
+__2_value__param = _catchSpeedUpgradeLevel;
+_catchSpeedUpgradeLevel = _old__catchSpeedUpgradeLevel;
+_catchSpeedUpgradeLevel = __2_value__param;
+__intnl_SystemString_2 = String.Format(__const_SystemString_0, __const_SystemString_3);
+PlayerData.SetInt(__intnl_SystemString_2, __2_value__param);
+}
+public void get_luckUpgradeLevel()
+{
+__0_get_luckUpgradeLevel__ret = _luckUpgradeLevel;
+return;
+}
+public void _onVarChange__luckUpgradeLevel()
+{
+__3_value__param = _luckUpgradeLevel;
+_luckUpgradeLevel = _old__luckUpgradeLevel;
+_luckUpgradeLevel = __3_value__param;
+__intnl_SystemString_3 = String.Format(__const_SystemString_0, __const_SystemString_4);
+PlayerData.SetInt(__intnl_SystemString_3, __3_value__param);
+}
+public void get_maxWeightUpgradeLevel()
+{
+__0_get_maxWeightUpgradeLevel__ret = _maxWeightUpgradeLevel;
+return;
+}
+public void _onVarChange__maxWeightUpgradeLevel()
+{
+__4_value__param = _maxWeightUpgradeLevel;
+_maxWeightUpgradeLevel = _old__maxWeightUpgradeLevel;
+_maxWeightUpgradeLevel = __4_value__param;
+__intnl_SystemString_4 = String.Format(__const_SystemString_0, __const_SystemString_5);
+PlayerData.SetInt(__intnl_SystemString_4, __4_value__param);
+}
+public void _onPlayerRestored()
+{
+__intnl_SystemBoolean_1 = onPlayerRestoredPlayer.isLocal;
+if (__intnl_SystemBoolean_1)
+{
+UNDEF_0dbc5_1984();
+}
+}
+private void UNDEF_0dbc5_1984()
+{
+__intnl_VRCSDKBaseVRCPlayerApi_0 = Networking.LocalPlayer;
+__intnl_SystemString_5 = String.Format(__const_SystemString_0, __const_SystemString_2);
+__intnl_SystemBoolean_2 = PlayerData.TryGetInt(__intnl_VRCSDKBaseVRCPlayerApi_0, __intnl_SystemString_5, _capacityUpgradeLevel);
+__intnl_VRCSDKBaseVRCPlayerApi_1 = Networking.LocalPlayer;
+__intnl_SystemString_6 = String.Format(__const_SystemString_0, __const_SystemString_3);
+__intnl_SystemBoolean_3 = PlayerData.TryGetInt(__intnl_VRCSDKBaseVRCPlayerApi_1, __intnl_SystemString_6, _catchSpeedUpgradeLevel);
+__intnl_VRCSDKBaseVRCPlayerApi_2 = Networking.LocalPlayer;
+__intnl_SystemString_7 = String.Format(__const_SystemString_0, __const_SystemString_4);
+__intnl_SystemBoolean_4 = PlayerData.TryGetInt(__intnl_VRCSDKBaseVRCPlayerApi_2, __intnl_SystemString_7, _luckUpgradeLevel);
+__intnl_VRCSDKBaseVRCPlayerApi_3 = Networking.LocalPlayer;
+__intnl_SystemString_8 = String.Format(__const_SystemString_0, __const_SystemString_5);
+__intnl_SystemBoolean_5 = PlayerData.TryGetInt(__intnl_VRCSDKBaseVRCPlayerApi_3, __intnl_SystemString_8, _maxWeightUpgradeLevel);
+__intnl_VRCSDKBaseVRCPlayerApi_4 = Networking.LocalPlayer;
+__intnl_SystemString_9 = String.Format(__const_SystemString_0, __const_SystemString_1);
+__intnl_SystemBoolean_6 = PlayerData.TryGetInt(__intnl_VRCSDKBaseVRCPlayerApi_4, __intnl_SystemString_9, _currentUpgradePoints);
+__lcl_i_SystemInt32_0 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemInt32_0 = _callbacks.Count;
+__intnl_SystemBoolean_7 = __lcl_i_SystemInt32_0 < __intnl_SystemInt32_0;
+if (__intnl_SystemBoolean_7)
+{
+break;
+}
+__intnl_VRCSDK3DataDataToken_2 = _callbacks.Item;
+__intnl_SystemObject_0 = __intnl_VRCSDK3DataDataToken_2.Reference;
+__lcl_callback_VRCUdonUdonBehaviour_0 = (UdonBehaviour)__intnl_SystemObject_0;
+__lcl_callback_VRCUdonUdonBehaviour_0.SendCustomEvent(__const_SystemString_6);
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_1;
+}
+}
+public void GetTotalLuck()
+{
+__intnl_SystemInt32_1 = baseLuck;
+get_luckUpgradeLevel();
+__intnl_SystemInt32_2 = __0_get_luckUpgradeLevel__ret * luckPerLevel;
+__0_GetTotalLuck__ret = __intnl_SystemInt32_1 + __intnl_SystemInt32_2;
+return;
+}
+public void GetMaxCapacity()
+{
+__intnl_SystemInt32_3 = maxCapacity;
+get_capacityUpgradeLevel();
+__intnl_SystemInt32_4 = __0_get_capacityUpgradeLevel__ret * capacityPerLevel;
+__0_GetMaxCapacity__ret = __intnl_SystemInt32_3 + __intnl_SystemInt32_4;
+return;
+}
+public void GetCatchIntervalSeconds()
+{
+__intnl_SystemSingle_0 = baseCatchIntervalSeconds;
+get_catchSpeedUpgradeLevel();
+__intnl_SystemSingle_1 = Convert.ToSingle(__0_get_catchSpeedUpgradeLevel__ret);
+__intnl_SystemSingle_2 = __intnl_SystemSingle_1 * catchSpeedReductionPerLevel;
+__lcl_interval_SystemSingle_0 = __intnl_SystemSingle_0 - __intnl_SystemSingle_2;
+__0_GetCatchIntervalSeconds__ret = Mathf.Max(__const_SystemSingle_0, __lcl_interval_SystemSingle_0);
+return;
+}
+public void GetMaxWeightKg()
+{
+__intnl_SystemSingle_3 = maxWeightKg;
+__intnl_SystemSingle_4 = maxWeightMultiplierPerLevel;
+get_maxWeightUpgradeLevel();
+__intnl_SystemSingle_5 = Convert.ToSingle(__0_get_maxWeightUpgradeLevel__ret);
+__intnl_SystemSingle_6 = Mathf.Pow(__intnl_SystemSingle_4, __intnl_SystemSingle_5);
+__0_GetMaxWeightKg__ret = __intnl_SystemSingle_3 * __intnl_SystemSingle_6;
+return;
+}
+public void GetLuckMultiplier()
+{
+GetTotalLuck();
+__intnl_SystemSingle_7 = Convert.ToSingle(__0_GetTotalLuck__ret);
+__intnl_SystemSingle_8 = __intnl_SystemSingle_7 / __const_SystemSingle_2;
+__0_GetLuckMultiplier__ret = __const_SystemSingle_1 + __intnl_SystemSingle_8;
+return;
+}
+public void CanUpgradeCapacity()
+{
+get_capacityUpgradeLevel();
+__0_CanUpgradeCapacity__ret = __0_get_capacityUpgradeLevel__ret < maxCapacityLevel;
+return;
+}
+public void CanUpgradeCatchSpeed()
+{
+get_catchSpeedUpgradeLevel();
+__0_CanUpgradeCatchSpeed__ret = __0_get_catchSpeedUpgradeLevel__ret < maxCatchSpeedLevel;
+return;
+}
+public void CanUpgradeLuck()
+{
+get_luckUpgradeLevel();
+__0_CanUpgradeLuck__ret = __0_get_luckUpgradeLevel__ret < maxLuckLevel;
+return;
+}
+public void CanUpgradeMaxWeight()
+{
+get_maxWeightUpgradeLevel();
+__0_CanUpgradeMaxWeight__ret = __0_get_maxWeightUpgradeLevel__ret < maxWeightLevel;
+return;
+}
+public void UpgradeCapacity()
+{
+CanUpgradeCapacity();
+if (__0_CanUpgradeCapacity__ret)
+{
+get_capacityUpgradeLevel();
+__intnl_SystemInt32_5 = __0_get_capacityUpgradeLevel__ret + __const_SystemInt32_1;
+__1_value__param = __intnl_SystemInt32_5;
+__0_UpgradeCapacity__ret = __const_SystemBoolean_0;
+return;
+}
+__0_UpgradeCapacity__ret = __const_SystemBoolean_1;
+return;
+}
+public void UpgradeCatchSpeed()
+{
+CanUpgradeCatchSpeed();
+if (__0_CanUpgradeCatchSpeed__ret)
+{
+get_catchSpeedUpgradeLevel();
+__intnl_SystemInt32_6 = __0_get_catchSpeedUpgradeLevel__ret + __const_SystemInt32_1;
+__2_value__param = __intnl_SystemInt32_6;
+__0_UpgradeCatchSpeed__ret = __const_SystemBoolean_0;
+return;
+}
+__0_UpgradeCatchSpeed__ret = __const_SystemBoolean_1;
+return;
+}
+public void UpgradeLuck()
+{
+CanUpgradeLuck();
+if (__0_CanUpgradeLuck__ret)
+{
+get_luckUpgradeLevel();
+__intnl_SystemInt32_7 = __0_get_luckUpgradeLevel__ret + __const_SystemInt32_1;
+__3_value__param = __intnl_SystemInt32_7;
+__0_UpgradeLuck__ret = __const_SystemBoolean_0;
+return;
+}
+__0_UpgradeLuck__ret = __const_SystemBoolean_1;
+return;
+}
+public void UpgradeMaxWeight()
+{
+CanUpgradeMaxWeight();
+if (__0_CanUpgradeMaxWeight__ret)
+{
+get_maxWeightUpgradeLevel();
+__intnl_SystemInt32_8 = __0_get_maxWeightUpgradeLevel__ret + __const_SystemInt32_1;
+__4_value__param = __intnl_SystemInt32_8;
+__0_UpgradeMaxWeight__ret = __const_SystemBoolean_0;
+return;
+}
+__0_UpgradeMaxWeight__ret = __const_SystemBoolean_1;
+return;
+}
+public void GetCapacityLevelText()
+{
+get_capacityUpgradeLevel();
+__intnl_SystemString_10 = String.Concat(__0_get_capacityUpgradeLevel__ret, __const_SystemString_7);
+__0_GetCapacityLevelText__ret = String.Concat(__intnl_SystemString_10, maxCapacityLevel);
+return;
+}
+public void GetCatchSpeedLevelText()
+{
+get_catchSpeedUpgradeLevel();
+__intnl_SystemString_11 = String.Concat(__0_get_catchSpeedUpgradeLevel__ret, __const_SystemString_7);
+__0_GetCatchSpeedLevelText__ret = String.Concat(__intnl_SystemString_11, maxCatchSpeedLevel);
+return;
+}
+public void GetLuckLevelText()
+{
+get_luckUpgradeLevel();
+__intnl_SystemString_12 = String.Concat(__0_get_luckUpgradeLevel__ret, __const_SystemString_7);
+__0_GetLuckLevelText__ret = String.Concat(__intnl_SystemString_12, maxLuckLevel);
+return;
+}
+public void GetMaxWeightLevelText()
+{
+get_maxWeightUpgradeLevel();
+__intnl_SystemString_13 = String.Concat(__0_get_maxWeightUpgradeLevel__ret, __const_SystemString_7);
+__0_GetMaxWeightLevelText__ret = String.Concat(__intnl_SystemString_13, maxWeightLevel);
+return;
+}
+}

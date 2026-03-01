@@ -1,0 +1,334 @@
+using System;
+using UnityEngine;
+using UnityEngine.UI;
+using VRC.Udon;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Boolean __intnl_SystemBoolean_13 = false;
+private Int64 __const_SystemInt64_0 = 6546663643641381252;
+private Object __intnl_UnityEngineObject_12 = null;
+private Type __const_SystemType_1 = typeof(UdonBehaviour);
+private Single __intnl_SystemSingle_0 = 0f;
+private object __intnl_SystemObject_0 = null;
+private String __const_SystemString_0 = "AudioSettingsManager";
+private Transform __intnl_UnityEngineTransform_0 = null;
+private Single __const_SystemSingle_0 = 1f;
+private Boolean __intnl_SystemBoolean_16 = false;
+private UInt32 __gintnl_SystemUInt32_1 = 588;
+private UInt32 __gintnl_SystemUInt32_0 = 444;
+private UInt32 __gintnl_SystemUInt32_3 = 1760;
+private UInt32 __gintnl_SystemUInt32_2 = 792;
+private Boolean __const_SystemBoolean_0 = true;
+private Object __intnl_UnityEngineObject_11 = null;
+private String __const_SystemString_5 = "GetSFXVolume";
+private Slider slider = null;
+private Boolean isInitialized = false;
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Single __lcl_newValue_SystemSingle_0 = 0f;
+private Object __intnl_UnityEngineObject_19 = null;
+private String __const_SystemString_12 = "__0_SetSFXVolume";
+private String __const_SystemString_13 = "__refl_typeid";
+private String __const_SystemString_10 = "__0_SetAmbientVolume";
+private String __const_SystemString_11 = "__2_volume__param";
+private Object __intnl_UnityEngineObject_14 = null;
+private Int64 __refl_typeid = 3401705783131827807;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_2 = null;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Component __intnl_UnityEngineComponent_0 = null;
+private Boolean __intnl_SystemBoolean_11 = false;
+public Boolean enableDebugLogs;
+private UdonBehaviour __0__intnlparam = null;
+private Single __intnl_SystemSingle_2 = 0f;
+private object __intnl_SystemObject_2 = null;
+private GameObject __lcl_managerObj_UnityEngineGameObject_0 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_1 = null;
+private String __const_SystemString_2 = "__0_GetMusicVolume__ret";
+private Boolean __intnl_SystemBoolean_14 = false;
+private Component[] __intnl_UnityEngineComponentArray_0 = null;
+private object __const_SystemObject_0 = null;
+private Object __intnl_UnityEngineObject_13 = null;
+private Type __const_SystemType_0 = typeof(Slider);
+private Single __intnl_SystemSingle_1 = 0f;
+private object __intnl_SystemObject_1 = null;
+private String __const_SystemString_7 = "__0_volume__param";
+public UdonBehaviour audioSettingsManager;
+public Int32 category;
+private Object __intnl_UnityEngineObject_16 = null;
+private Int64 __intnl_SystemInt64_0 = 0;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private String __const_SystemString_4 = "__0_GetAmbientVolume__ret";
+private UdonBehaviour __lcl_behaviour_VRCUdonUdonBehaviour_0 = null;
+private Component __1__intnlparam = null;
+private Object __intnl_UnityEngineObject_15 = null;
+private String __const_SystemString_9 = "__1_volume__param";
+private Boolean __intnl_SystemBoolean_12 = false;
+private String __refl_typename = "VolumeSliderUdon";
+public Boolean autoFindManager;
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Transform __this_UnityEngineTransform_0 = this;
+private Int64 __lcl_targetID_SystemInt64_0 = 0;
+private String __const_SystemString_1 = "GetMusicVolume";
+private object __lcl_idValue_SystemObject_0 = null;
+private Boolean __intnl_SystemBoolean_15 = false;
+private Object __intnl_UnityEngineObject_10 = null;
+private String __const_SystemString_6 = "__0_GetSFXVolume__ret";
+private Object __intnl_UnityEngineObject_18 = null;
+private Object __intnl_UnityEngineObject_17 = null;
+private Single __lcl_currentVolume_SystemSingle_0 = 0f;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Int32 __const_SystemInt32_1 = 1;
+private Int32 __const_SystemInt32_0 = 0;
+private Int32 __const_SystemInt32_3 = 0;
+private Int32 __const_SystemInt32_2 = 2;
+private Int32 __const_SystemInt32_4 = 1;
+private Component[] __lcl_udonBehaviours_UnityEngineComponentArray_0 = null;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_0 = null;
+private String __const_SystemString_3 = "GetAmbientVolume";
+private String __const_SystemString_8 = "__0_SetMusicVolume";
+
+
+public void _start()
+{
+slider = (Slider)(__this_UnityEngineTransform_0.GetComponent(__const_SystemType_0));
+__intnl_UnityEngineObject_0 = slider;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_0 == __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_0)
+{
+return;
+}
+__intnl_UnityEngineObject_2 = audioSettingsManager;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_2 == __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_1)
+{
+__intnl_SystemBoolean_1 = autoFindManager;
+}
+if (__intnl_SystemBoolean_1)
+{
+__lcl_managerObj_UnityEngineGameObject_0 = GameObject.Find(__const_SystemString_0);
+__intnl_UnityEngineObject_4 = __lcl_managerObj_UnityEngineGameObject_0;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_2 = __intnl_UnityEngineObject_4 != __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_2)
+{
+__intnl_UnityEngineTransform_0 = __lcl_managerObj_UnityEngineGameObject_0.transform;
+__1__intnlparam = __intnl_UnityEngineTransform_0;
+UNDEF_96228_3088();
+audioSettingsManager = __0__intnlparam;
+}
+}
+__intnl_UnityEngineObject_4 = audioSettingsManager;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_2 = __intnl_UnityEngineObject_4 == __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_2)
+{
+return;
+}
+UNDEF_96228_1616();
+isInitialized = __const_SystemBoolean_0;
+if (enableDebugLogs)
+{
+}
+}
+public void _onEnable()
+{
+__intnl_SystemBoolean_3 = isInitialized;
+if (__intnl_SystemBoolean_3)
+{
+__intnl_UnityEngineObject_6 = audioSettingsManager;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_3 = __intnl_UnityEngineObject_6 != __intnl_UnityEngineObject_7;
+}
+if (__intnl_SystemBoolean_3)
+{
+UNDEF_96228_1616();
+}
+}
+private void UNDEF_96228_1616()
+{
+__intnl_UnityEngineObject_8 = slider;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_4 = __intnl_UnityEngineObject_8 == __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_4)
+{
+}
+else
+{
+__intnl_UnityEngineObject_10 = audioSettingsManager;
+__intnl_UnityEngineObject_11 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_4 = __intnl_UnityEngineObject_10 == __intnl_UnityEngineObject_11;
+}
+if (__intnl_SystemBoolean_4)
+{
+return;
+}
+__lcl_currentVolume_SystemSingle_0 = __const_SystemSingle_0;
+__intnl_SystemBoolean_5 = category == __const_SystemInt32_0;
+if (__intnl_SystemBoolean_5)
+{
+__intnl_VRCUdonUdonBehaviour_0 = audioSettingsManager;
+audioSettingsManager.SendCustomEvent(__const_SystemString_1);
+__intnl_SystemObject_0 = audioSettingsManager.GetProgramVariable(__const_SystemString_2);
+__intnl_SystemSingle_0 = Convert.ToSingle(__intnl_SystemObject_0);
+__lcl_currentVolume_SystemSingle_0 = __intnl_SystemSingle_0;
+}
+else
+{
+__intnl_SystemBoolean_6 = category == __const_SystemInt32_1;
+if (__intnl_SystemBoolean_6)
+{
+__intnl_VRCUdonUdonBehaviour_1 = audioSettingsManager;
+audioSettingsManager.SendCustomEvent(__const_SystemString_3);
+__intnl_SystemObject_1 = audioSettingsManager.GetProgramVariable(__const_SystemString_4);
+__intnl_SystemSingle_1 = Convert.ToSingle(__intnl_SystemObject_1);
+__lcl_currentVolume_SystemSingle_0 = __intnl_SystemSingle_1;
+}
+else
+{
+__intnl_SystemBoolean_7 = category == __const_SystemInt32_2;
+if (__intnl_SystemBoolean_7)
+{
+break;
+}
+__intnl_VRCUdonUdonBehaviour_2 = audioSettingsManager;
+audioSettingsManager.SendCustomEvent(__const_SystemString_5);
+__intnl_SystemObject_2 = audioSettingsManager.GetProgramVariable(__const_SystemString_6);
+__intnl_SystemSingle_2 = Convert.ToSingle(__intnl_SystemObject_2);
+__lcl_currentVolume_SystemSingle_0 = __intnl_SystemSingle_2;
+}
+}
+slider.SetValueWithoutNotify(__lcl_currentVolume_SystemSingle_0);
+}
+public void RefreshSliderValue()
+{
+__intnl_UnityEngineObject_12 = slider;
+__intnl_UnityEngineObject_13 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_8 = __intnl_UnityEngineObject_12 == __intnl_UnityEngineObject_13;
+if (__intnl_SystemBoolean_8)
+{
+slider = (Slider)(__this_UnityEngineTransform_0.GetComponent(__const_SystemType_0));
+}
+UNDEF_96228_1616();
+__intnl_SystemBoolean_9 = enableDebugLogs;
+if (__intnl_SystemBoolean_9)
+{
+__intnl_UnityEngineObject_14 = slider;
+__intnl_UnityEngineObject_15 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_9 = __intnl_UnityEngineObject_14 != __intnl_UnityEngineObject_15;
+}
+if (__intnl_SystemBoolean_9)
+{
+}
+}
+public void OnSliderValueChanged()
+{
+__intnl_SystemBoolean_11 = !isInitialized;
+if (__intnl_SystemBoolean_11)
+{
+}
+else
+{
+__intnl_UnityEngineObject_16 = slider;
+__intnl_UnityEngineObject_17 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_11 = __intnl_UnityEngineObject_16 == __intnl_UnityEngineObject_17;
+}
+__intnl_SystemBoolean_10 = __intnl_SystemBoolean_11;
+if (__intnl_SystemBoolean_10)
+{
+}
+else
+{
+__intnl_UnityEngineObject_18 = audioSettingsManager;
+__intnl_UnityEngineObject_19 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_10 = __intnl_UnityEngineObject_18 == __intnl_UnityEngineObject_19;
+}
+if (__intnl_SystemBoolean_10)
+{
+return;
+}
+__lcl_newValue_SystemSingle_0 = slider.value;
+__intnl_SystemBoolean_12 = category == __const_SystemInt32_0;
+if (__intnl_SystemBoolean_12)
+{
+audioSettingsManager.SetProgramVariable(__const_SystemString_7, __lcl_newValue_SystemSingle_0);
+audioSettingsManager.SendCustomEvent(__const_SystemString_8);
+}
+else
+{
+__intnl_SystemBoolean_13 = category == __const_SystemInt32_1;
+if (__intnl_SystemBoolean_13)
+{
+audioSettingsManager.SetProgramVariable(__const_SystemString_9, __lcl_newValue_SystemSingle_0);
+audioSettingsManager.SendCustomEvent(__const_SystemString_10);
+}
+else
+{
+__intnl_SystemBoolean_14 = category == __const_SystemInt32_2;
+if (__intnl_SystemBoolean_14)
+{
+break;
+}
+audioSettingsManager.SetProgramVariable(__const_SystemString_11, __lcl_newValue_SystemSingle_0);
+audioSettingsManager.SendCustomEvent(__const_SystemString_12);
+}
+}
+if (enableDebugLogs)
+{
+}
+}
+private void UNDEF_96228_3088()
+{
+__intnl_UnityEngineComponentArray_0 = __1__intnlparam.GetComponents(__const_SystemType_1);
+__lcl_udonBehaviours_UnityEngineComponentArray_0 = __intnl_UnityEngineComponentArray_0;
+__lcl_targetID_SystemInt64_0 = __const_SystemInt64_0;
+__intnl_SystemInt32_0 = __lcl_udonBehaviours_UnityEngineComponentArray_0.Length;
+__intnl_SystemInt32_1 = __const_SystemInt32_3;
+for (;;)
+{
+__intnl_SystemBoolean_15 = __intnl_SystemInt32_1 < __intnl_SystemInt32_0;
+if (__intnl_SystemBoolean_15)
+{
+break;
+}
+__lcl_behaviour_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(__lcl_udonBehaviours_UnityEngineComponentArray_0[__intnl_SystemInt32_1]);
+__lcl_idValue_SystemObject_0 = __lcl_behaviour_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_13);
+__intnl_SystemBoolean_16 = __lcl_idValue_SystemObject_0 != __const_SystemObject_0;
+if (__intnl_SystemBoolean_16)
+{
+__intnl_SystemInt64_0 = Convert.ToInt64(__lcl_idValue_SystemObject_0);
+__intnl_SystemBoolean_16 = __intnl_SystemInt64_0 == __lcl_targetID_SystemInt64_0;
+}
+if (__intnl_SystemBoolean_16)
+{
+__intnl_UnityEngineComponent_0 = __lcl_behaviour_VRCUdonUdonBehaviour_0;
+__0__intnlparam = (UdonBehaviour)__intnl_UnityEngineComponent_0;
+return;
+}
+__intnl_SystemInt32_1 = __intnl_SystemInt32_1 + __const_SystemInt32_4;
+}
+__0__intnlparam = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+}

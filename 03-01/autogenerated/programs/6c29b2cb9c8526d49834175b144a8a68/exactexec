@@ -1,0 +1,182 @@
+using System;
+using UnityEngine;
+using VRC.SDKBase;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Single __intnl_SystemSingle_0 = 0f;
+private Single __const_SystemSingle_0 = 0f;
+private UInt32 __gintnl_SystemUInt32_5 = 1080;
+private UInt32 __gintnl_SystemUInt32_4 = 1016;
+private UInt32 __gintnl_SystemUInt32_1 = 296;
+private UInt32 __gintnl_SystemUInt32_0 = 88;
+private UInt32 __gintnl_SystemUInt32_3 = 372;
+private UInt32 __gintnl_SystemUInt32_2 = 328;
+private Boolean __const_SystemBoolean_0 = true;
+public Single rotationSpeed;
+private Int64 __refl_typeid = -5202812223523804990;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Vector3 __const_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Quaternion targetRotation = new Quaternion(0f, 0f, 0f, 0f);
+private Single __intnl_SystemSingle_2 = 0f;
+private Boolean __0_invert__param = false;
+private Single __const_SystemSingle_2 = 1.6f;
+private Vector3 __intnl_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private object __const_SystemObject_0 = null;
+private Single __intnl_SystemSingle_1 = 0f;
+private Single __0_interval__param = 0f;
+public Boolean invertDirection;
+private Single __const_SystemSingle_1 = 0.01f;
+private TrackingDataType __const_VRCSDKBaseVRCPlayerApiTrackingDataType_0 = TrackingDataType.Head;
+private TrackingData __lcl_headData_VRCSDKBaseVRCPlayerApiTrackingData_0 = VRC.SDKBase.VRCPlayerApi+TrackingData;
+public Single updateInterval;
+private Boolean hasTargetRotation = false;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private Single __const_SystemSingle_4 = 0.5f;
+private Vector3 __lcl_playerPosition_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Single __intnl_SystemSingle_4 = 0f;
+private Vector3 __lcl_playerPos_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Vector3 __intnl_UnityEngineVector3_2 = new Vector3(0f, 0f, 0f);
+private String __refl_typename = "BillboardUI";
+private Single __intnl_SystemSingle_3 = 0f;
+private Transform __this_UnityEngineTransform_0 = this;
+private Single __const_SystemSingle_3 = 0.05f;
+private Vector3 __intnl_UnityEngineVector3_1 = new Vector3(0f, 0f, 0f);
+private Boolean __0_horizontal__param = false;
+private Single lastUpdateTime = 0f;
+private Vector3 __lcl_lookDirection_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private VRCPlayerApi localPlayer = null;
+private Single __0_speed__param = 0f;
+private Single __intnl_SystemSingle_6 = 0f;
+private Quaternion __intnl_UnityEngineQuaternion_0 = new Quaternion(0f, 0f, 0f, 0f);
+private Quaternion __intnl_UnityEngineQuaternion_1 = new Quaternion(0f, 0f, 0f, 0f);
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Vector3 __0_GetPlayerHeadPosition__ret = new Vector3(0f, 0f, 0f);
+private Single __intnl_SystemSingle_5 = 0f;
+public Boolean horizontalOnly;
+private Vector3 __intnl_UnityEngineVector3_3 = new Vector3(0f, 0f, 0f);
+
+
+public void _start()
+{
+localPlayer = Networking.LocalPlayer;
+__intnl_SystemBoolean_0 = localPlayer != __const_SystemObject_0;
+if (__intnl_SystemBoolean_0)
+{
+UNDEF_6c29b_1100();
+}
+}
+public void _update()
+{
+__intnl_SystemBoolean_1 = localPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_1)
+{
+return;
+}
+__intnl_SystemSingle_0 = Time.time;
+__intnl_SystemSingle_1 = __intnl_SystemSingle_0 - lastUpdateTime;
+__intnl_SystemBoolean_2 = __intnl_SystemSingle_1 >= updateInterval;
+if (__intnl_SystemBoolean_2)
+{
+UNDEF_6c29b_704();
+lastUpdateTime = Time.time;
+}
+UNDEF_6c29b_756();
+}
+private void UNDEF_6c29b_704()
+{
+GetPlayerHeadPosition();
+__lcl_playerPosition_UnityEngineVector3_0 = __0_GetPlayerHeadPosition__ret;
+__intnl_UnityEngineVector3_0 = __this_UnityEngineTransform_0.position;
+__lcl_lookDirection_UnityEngineVector3_0 = __lcl_playerPosition_UnityEngineVector3_0 - __intnl_UnityEngineVector3_0;
+if (horizontalOnly)
+{
+__lcl_lookDirection_UnityEngineVector3_0.y = __const_SystemSingle_0;
+__intnl_UnityEngineVector3_1 = __lcl_lookDirection_UnityEngineVector3_0;
+}
+if (invertDirection)
+{
+__lcl_lookDirection_UnityEngineVector3_0 = !__lcl_lookDirection_UnityEngineVector3_0;
+}
+__intnl_SystemSingle_2 = __lcl_lookDirection_UnityEngineVector3_0.magnitude;
+__intnl_SystemBoolean_3 = __intnl_SystemSingle_2 < __const_SystemSingle_1;
+if (__intnl_SystemBoolean_3)
+{
+return;
+}
+targetRotation = Quaternion.LookRotation(__lcl_lookDirection_UnityEngineVector3_0);
+hasTargetRotation = __const_SystemBoolean_0;
+}
+private void UNDEF_6c29b_756()
+{
+if (hasTargetRotation)
+{
+UNDEF_6c29b_992();
+}
+}
+private void UNDEF_6c29b_992()
+{
+__intnl_SystemBoolean_4 = rotationSpeed > __const_SystemSingle_0;
+if (__intnl_SystemBoolean_4)
+{
+__intnl_UnityEngineQuaternion_0 = __this_UnityEngineTransform_0.rotation;
+__intnl_SystemSingle_3 = Time.deltaTime;
+__intnl_SystemSingle_4 = rotationSpeed * __intnl_SystemSingle_3;
+__intnl_UnityEngineQuaternion_1 = Quaternion.Slerp(__intnl_UnityEngineQuaternion_0, targetRotation, __intnl_SystemSingle_4);
+__this_UnityEngineTransform_0.rotation = __intnl_UnityEngineQuaternion_1;
+}
+else
+{
+__this_UnityEngineTransform_0.rotation = targetRotation;
+}
+}
+private void UNDEF_6c29b_1100()
+{
+UNDEF_6c29b_704();
+__intnl_SystemBoolean_5 = rotationSpeed <= __const_SystemSingle_0;
+if (__intnl_SystemBoolean_5)
+{
+break;
+}
+UNDEF_6c29b_756();
+}
+private void GetPlayerHeadPosition()
+{
+__lcl_headData_VRCSDKBaseVRCPlayerApiTrackingData_0 = localPlayer.GetTrackingData(__const_VRCSDKBaseVRCPlayerApiTrackingDataType_0);
+__intnl_UnityEngineVector3_2 = __lcl_headData_VRCSDKBaseVRCPlayerApiTrackingData_0.position;
+__intnl_SystemBoolean_6 = __intnl_UnityEngineVector3_2 != __const_UnityEngineVector3_0;
+if (__intnl_SystemBoolean_6)
+{
+__0_GetPlayerHeadPosition__ret = __lcl_headData_VRCSDKBaseVRCPlayerApiTrackingData_0.position;
+return;
+}
+__lcl_playerPos_UnityEngineVector3_0 = localPlayer.GetPosition();
+__intnl_SystemSingle_5 = __lcl_playerPos_UnityEngineVector3_0.y;
+__intnl_SystemSingle_6 = __intnl_SystemSingle_5 + __const_SystemSingle_2;
+__lcl_playerPos_UnityEngineVector3_0.y = __intnl_SystemSingle_6;
+__intnl_UnityEngineVector3_3 = __lcl_playerPos_UnityEngineVector3_0;
+__0_GetPlayerHeadPosition__ret = __lcl_playerPos_UnityEngineVector3_0;
+return;
+}
+public void __0_SetHorizontalOnly()
+{
+horizontalOnly = __0_horizontal__param;
+}
+public void __0_SetInvertDirection()
+{
+invertDirection = __0_invert__param;
+}
+public void __0_SetRotationSpeed()
+{
+rotationSpeed = Mathf.Max(__const_SystemSingle_0, __0_speed__param);
+}
+public void __0_SetUpdateInterval()
+{
+updateInterval = Mathf.Clamp(__0_interval__param, __const_SystemSingle_3, __const_SystemSingle_4);
+}
+}

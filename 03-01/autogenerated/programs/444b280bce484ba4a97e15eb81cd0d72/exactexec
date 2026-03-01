@@ -1,0 +1,116 @@
+using System;
+using UnityEngine;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Single __intnl_SystemSingle_0 = 0f;
+private Single __const_SystemSingle_0 = 1f;
+private UInt32[] __gintnl_SystemUInt32Array_0 = System.UInt32[];
+public Color gizmoColor;
+public String areaName;
+private Vector3 __0_position__param = new Vector3(0f, 0f, 0f);
+public Boolean drawGizmos;
+private Int64 __refl_typeid = -7887414459520330242;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Int32 __0_GetWaterType__ret = 0;
+private Single __intnl_SystemSingle_2 = 0f;
+private Color __const_UnityEngineColor_0 = new Color(0f, 1f, 1f, 0.3f);
+private Color __intnl_UnityEngineColor_0 = new Color(0f, 0f, 0f, 0f);
+private Vector3 __intnl_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+public Single areaRadius;
+private Single __intnl_SystemSingle_1 = 0f;
+private Single __lcl_distance_SystemSingle_0 = 0f;
+private Boolean __0___0_IsPositionInArea__ret = false;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private Vector3 __1_position__param = new Vector3(0f, 0f, 0f);
+private UInt32 __intnl_SystemUInt32_0 = 0;
+private Single __0___0_GetDistanceFromArea__ret = 0f;
+private Color __const_UnityEngineColor_2 = new Color(0f, 0.4f, 0.8f, 0.3f);
+private Vector3 __intnl_UnityEngineVector3_2 = new Vector3(0f, 0f, 0f);
+private String __refl_typename = "WaterTypeArea";
+private Color __lcl_displayColor_UnityEngineColor_0 = new Color(0f, 0f, 0f, 0f);
+private Transform __this_UnityEngineTransform_0 = this;
+private Color __const_UnityEngineColor_1 = new Color(0.3f, 0.7f, 1f, 0.3f);
+private Vector3 __intnl_UnityEngineVector3_1 = new Vector3(0f, 0f, 0f);
+public Int32 waterType;
+private String __0_GetAreaName__ret = null;
+private Color __const_UnityEngineColor_4 = new Color(1f, 0.3f, 0f, 0.3f);
+private Single __0_GetRadius__ret = 0f;
+private Int32 __const_SystemInt32_1 = 3;
+private Int32 __const_SystemInt32_0 = 0;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Color __const_UnityEngineColor_3 = new Color(0.4f, 0.6f, 0.3f, 0.3f);
+private Vector3 __intnl_UnityEngineVector3_3 = new Vector3(0f, 0f, 0f);
+
+
+public void __0_IsPositionInArea()
+{
+__intnl_UnityEngineVector3_0 = __this_UnityEngineTransform_0.position;
+__lcl_distance_SystemSingle_0 = Vector3.Distance(__intnl_UnityEngineVector3_0, __0_position__param);
+__0___0_IsPositionInArea__ret = __lcl_distance_SystemSingle_0 <= areaRadius;
+return;
+}
+public void __0_GetDistanceFromArea()
+{
+__intnl_UnityEngineVector3_1 = __this_UnityEngineTransform_0.position;
+__0___0_GetDistanceFromArea__ret = Vector3.Distance(__intnl_UnityEngineVector3_1, __1_position__param);
+return;
+}
+public void GetWaterType()
+{
+__0_GetWaterType__ret = waterType;
+return;
+}
+public void GetRadius()
+{
+__0_GetRadius__ret = areaRadius;
+return;
+}
+public void GetAreaName()
+{
+__0_GetAreaName__ret = areaName;
+return;
+}
+private void UNDEF_444b2_496()
+{
+if (drawGizmos)
+{
+UNDEF_444b2_1080();
+}
+}
+private void UNDEF_444b2_1080()
+{
+__lcl_displayColor_UnityEngineColor_0 = gizmoColor;
+__intnl_SystemBoolean_0 = gizmoColor.Equals(__const_UnityEngineColor_0);
+if (__intnl_SystemBoolean_0)
+{
+break;
+}
+__intnl_SystemBoolean_1 = waterType >= __const_SystemInt32_0;
+if (__intnl_SystemBoolean_1)
+{
+break;
+}
+__intnl_SystemBoolean_2 = waterType <= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_2)
+{
+break;
+}
+__intnl_SystemUInt32_0 = __gintnl_SystemUInt32Array_0[waterType];
+__lcl_displayColor_UnityEngineColor_0 = __const_UnityEngineColor_1;
+__lcl_displayColor_UnityEngineColor_0 = __const_UnityEngineColor_2;
+__lcl_displayColor_UnityEngineColor_0 = __const_UnityEngineColor_3;
+__lcl_displayColor_UnityEngineColor_0 = __const_UnityEngineColor_4;
+Gizmos.color = __lcl_displayColor_UnityEngineColor_0;
+__intnl_UnityEngineVector3_2 = __this_UnityEngineTransform_0.position;
+Gizmos.DrawSphere(__intnl_UnityEngineVector3_2, areaRadius);
+__intnl_SystemSingle_0 = __lcl_displayColor_UnityEngineColor_0.r;
+__intnl_SystemSingle_1 = __lcl_displayColor_UnityEngineColor_0.g;
+__intnl_SystemSingle_2 = __lcl_displayColor_UnityEngineColor_0.b;
+__intnl_UnityEngineColor_0 = Color.ctor(__intnl_SystemSingle_0, __intnl_SystemSingle_1, __intnl_SystemSingle_2, __const_SystemSingle_0);
+Gizmos.color = __intnl_UnityEngineColor_0;
+__intnl_UnityEngineVector3_3 = __this_UnityEngineTransform_0.position;
+Gizmos.DrawWireSphere(__intnl_UnityEngineVector3_3, areaRadius);
+}
+}

@@ -1,0 +1,166 @@
+void _start()
+slider = transform.GetComponent(__const_SystemType_0);// 32
+56 __intnl_UnityEngineObject_0 = slider
+76 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+120 if (__intnl_SystemBoolean_0) //148
+{
+140 return;
+}
+164 __intnl_UnityEngineObject_2 = audioSettingsManager
+184 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+228 if (__intnl_SystemBoolean_1) //256
+{
+252 __intnl_SystemBoolean_1 = autoFindManager
+}
+264 if (__intnl_SystemBoolean_1) //464
+{
+__lcl_managerObj_UnityEngineGameObject_0 = Find(__const_SystemString_0);// 288
+312 __intnl_UnityEngineObject_4 = __lcl_managerObj_UnityEngineGameObject_0
+332 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+376 if (__intnl_SystemBoolean_2) //464
+{
+432 __1__intnlparam = __intnl_UnityEngineTransform_0
+436 JUMP 2580
+460 audioSettingsManager = __0__intnlparam
+}
+}
+480 __intnl_UnityEngineObject_4 = audioSettingsManager
+500 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+544 if (__intnl_SystemBoolean_2) //572
+{
+564 return;
+}
+580 JUMP 820
+604 isInitialized = __const_SystemBoolean_0
+616 if (enableDebugLogs) //624
+{
+}
+636 return;
+void _onEnable()
+668 __intnl_SystemBoolean_3 = isInitialized
+680 if (__intnl_SystemBoolean_3) //760
+{
+704 __intnl_UnityEngineObject_6 = audioSettingsManager
+724 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+}
+768 if (__intnl_SystemBoolean_3) //792
+{
+784 JUMP 820
+}
+804 return;
+836 __intnl_UnityEngineObject_8 = slider
+856 __intnl_UnityEngineObject_9 = __const_SystemObject_0
+900 if (__intnl_SystemBoolean_4) //916
+{
+908 JUMP 988
+}
+932 __intnl_UnityEngineObject_10 = audioSettingsManager
+952 __intnl_UnityEngineObject_11 = __const_SystemObject_0
+996 if (__intnl_SystemBoolean_4) //1024
+{
+1016 return;
+}
+1040 __lcl_currentVolume_SystemSingle_0 = __const_SystemSingle_0
+1084 if (__intnl_SystemBoolean_5) //1220
+{
+1116 __intnl_VRCUdonUdonBehaviour_0 = audioSettingsManager
+__0__intnlparam.SendCustomEvent(__const_SystemString_1);// 1128
+1208 __lcl_currentVolume_SystemSingle_0 = __intnl_SystemSingle_0
+1212 JUMP 1572
+}
+1260 if (__intnl_SystemBoolean_6) //1396
+{
+1292 __intnl_VRCUdonUdonBehaviour_1 = audioSettingsManager
+__0__intnlparam.SendCustomEvent(__const_SystemString_3);// 1304
+1384 __lcl_currentVolume_SystemSingle_0 = __intnl_SystemSingle_1
+1388 JUMP 1572
+}
+1436 if (__intnl_SystemBoolean_7) //1572
+{
+1468 __intnl_VRCUdonUdonBehaviour_2 = audioSettingsManager
+__0__intnlparam.SendCustomEvent(__const_SystemString_5);// 1480
+1560 __lcl_currentVolume_SystemSingle_0 = __intnl_SystemSingle_2
+1564 JUMP 1572
+}
+G_slider.SetValueWithoutNotify(__lcl_currentVolume_SystemSingle_0);// 1588
+1608 return;
+void RefreshSliderValue()
+1640 __intnl_UnityEngineObject_12 = slider
+1660 __intnl_UnityEngineObject_13 = __const_SystemObject_0
+1704 if (__intnl_SystemBoolean_8) //1744
+{
+slider = transform.GetComponent(__const_SystemType_0);// 1736
+}
+1752 JUMP 820
+1776 __intnl_SystemBoolean_9 = enableDebugLogs
+1788 if (__intnl_SystemBoolean_9) //1868
+{
+1812 __intnl_UnityEngineObject_14 = slider
+1832 __intnl_UnityEngineObject_15 = __const_SystemObject_0
+}
+1876 if (__intnl_SystemBoolean_9) //1884
+{
+}
+1896 return;
+void OnSliderValueChanged()
+1944 if (__intnl_SystemBoolean_11) //1960
+{
+1952 JUMP 2032
+}
+1976 __intnl_UnityEngineObject_16 = slider
+1996 __intnl_UnityEngineObject_17 = __const_SystemObject_0
+2048 __intnl_SystemBoolean_10 = __intnl_SystemBoolean_11
+2060 if (__intnl_SystemBoolean_10) //2076
+{
+2068 JUMP 2148
+}
+2092 __intnl_UnityEngineObject_18 = audioSettingsManager
+2112 __intnl_UnityEngineObject_19 = __const_SystemObject_0
+2156 if (__intnl_SystemBoolean_10) //2184
+{
+2176 return;
+}
+__lcl_newValue_SystemSingle_0 = G_slider.get_value();// 2200
+2248 if (__intnl_SystemBoolean_12) //2320
+{
+__0__intnlparam.SetProgramVariable(__lcl_newValue_SystemSingle_0, __const_SystemString_7);// 2280
+__0__intnlparam.SendCustomEvent(__const_SystemString_8);// 2304
+2312 JUMP 2544
+}
+2360 if (__intnl_SystemBoolean_13) //2432
+{
+__0__intnlparam.SetProgramVariable(__lcl_newValue_SystemSingle_0, __const_SystemString_9);// 2392
+__0__intnlparam.SendCustomEvent(__const_SystemString_10);// 2416
+2424 JUMP 2544
+}
+2472 if (__intnl_SystemBoolean_14) //2544
+{
+__0__intnlparam.SetProgramVariable(__lcl_newValue_SystemSingle_0, __const_SystemString_11);// 2504
+__0__intnlparam.SendCustomEvent(__const_SystemString_12);// 2528
+2536 JUMP 2544
+}
+2552 if (enableDebugLogs) //2560
+{
+}
+2572 return;
+2628 __lcl_udonBehaviours_UnityEngineComponentArray_0 = __intnl_UnityEngineComponentArray_0
+2648 __lcl_targetID_SystemInt64_0 = __const_SystemInt64_0
+2692 __intnl_SystemInt32_1 = __const_SystemInt32_3
+2736 if (__intnl_SystemBoolean_15) //3028
+{
+__lcl_behaviour_VRCUdonUdonBehaviour_0 = L_managerObj.get_transform().GetComponents(__const_SystemType_1).Get(__intnl_SystemInt32_1);// 2768
+__lcl_idValue_SystemObject_0 = L_behaviour.GetProgramVariable(__const_SystemString_13);// 2800
+2848 if (__intnl_SystemBoolean_16) //2912
+{
+}
+2920 if (__intnl_SystemBoolean_16) //2988
+{
+2944 __intnl_UnityEngineComponent_0 = __lcl_behaviour_VRCUdonUdonBehaviour_0
+2964 __0__intnlparam = __intnl_UnityEngineComponent_0
+2980 return;
+}
+3020 JUMP 2696
+}
+3044 __0__intnlparam = __const_SystemObject_0
+3060 return;
+3080 return;

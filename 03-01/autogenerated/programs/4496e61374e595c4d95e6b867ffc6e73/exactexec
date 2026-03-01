@@ -1,0 +1,188 @@
+using System;
+using UnityEngine;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private String __0_GetRelicRarityName__ret = null;
+public String[] relatedQuestIDs;
+public Boolean canBeDialogueRequirement;
+private String __const_SystemString_0 = "Key Item";
+private Color __const_UnityEngineColor_6 = new Color(0.2f, 0.8f, 0.2f, 1f);
+private UInt32[] __gintnl_SystemUInt32Array_0 = System.UInt32[];
+private UInt32 __gintnl_SystemUInt32_0 = 804;
+private String __const_SystemString_5 = "Relic";
+private Color __const_UnityEngineColor_5 = new Color(1f, 1f, 1f, 1f);
+public Int32 consumableEffect;
+private UInt32 __intnl_SystemUInt32_3 = 0;
+private UInt32[] __gintnl_SystemUInt32Array_3 = System.UInt32[];
+private String __const_SystemString_10 = "Epic";
+private String __const_SystemString_11 = "Legendary";
+private Int64 __refl_typeid = -8467741181280992455;
+public String itemDescription;
+public Int32 maxStackSize;
+public String itemName;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Color __const_UnityEngineColor_8 = new Color(0.7f, 0.2f, 0.9f, 1f);
+public GameObject itemPrefab;
+private String __const_SystemString_2 = "Material";
+private Color __const_UnityEngineColor_0 = new Color(1f, 0.84f, 0f, 1f);
+public Sprite itemIcon;
+public Int32 itemId;
+private String __0_GetItemTypeString__ret = null;
+private String __const_SystemString_7 = "";
+public Single consumableEffectDuration;
+public Boolean isRelic;
+private Color __const_UnityEngineColor_7 = new Color(0.2f, 0.5f, 1f, 1f);
+private Color __0_GetItemTypeColor__ret = new Color(0f, 0f, 0f, 0f);
+public Boolean isUsable;
+public Int32 itemType;
+private UInt32[] __gintnl_SystemUInt32Array_1 = System.UInt32[];
+private Color __0_GetRelicRarityColor__ret = new Color(0f, 0f, 0f, 0f);
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private String __const_SystemString_4 = "Tool";
+private UInt32 __intnl_SystemUInt32_0 = 0;
+private Color __const_UnityEngineColor_2 = new Color(0.7f, 0.7f, 0.7f, 1f);
+private String __const_SystemString_9 = "Rare";
+private Color __const_UnityEngineColor_9 = new Color(1f, 0.6f, 0f, 1f);
+private String __refl_typename = "QuestItem";
+private String __const_SystemString_1 = "Consumable";
+private Color __const_UnityEngineColor_1 = new Color(0.4f, 0.8f, 0.4f, 1f);
+private String __const_SystemString_6 = "Unknown";
+private Color __const_UnityEngineColor_4 = new Color(0.6f, 0.8f, 1f, 1f);
+private UInt32 __intnl_SystemUInt32_2 = 0;
+public Boolean isStackable;
+private UInt32[] __gintnl_SystemUInt32Array_2 = System.UInt32[];
+private UInt32 __intnl_SystemUInt32_1 = 0;
+private Int32 __const_SystemInt32_1 = 5;
+private Int32 __const_SystemInt32_0 = 0;
+private Int32 __const_SystemInt32_2 = 4;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+public Boolean isConsumable;
+public Int32 relicRarity;
+private String __const_SystemString_3 = "Document";
+private Color __const_UnityEngineColor_3 = new Color(0.9f, 0.9f, 0.7f, 1f);
+private String __const_SystemString_8 = "Common";
+
+
+public void GetItemTypeString()
+{
+__intnl_SystemBoolean_0 = itemType >= __const_SystemInt32_0;
+if (__intnl_SystemBoolean_0)
+{
+__intnl_SystemBoolean_1 = itemType <= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_1)
+{
+__intnl_SystemUInt32_0 = __gintnl_SystemUInt32Array_0[itemType];
+__0_GetItemTypeString__ret = __const_SystemString_0;
+return;
+__0_GetItemTypeString__ret = __const_SystemString_1;
+return;
+__0_GetItemTypeString__ret = __const_SystemString_2;
+return;
+__0_GetItemTypeString__ret = __const_SystemString_3;
+return;
+__0_GetItemTypeString__ret = __const_SystemString_4;
+return;
+__0_GetItemTypeString__ret = __const_SystemString_5;
+return;
+}
+}
+__0_GetItemTypeString__ret = __const_SystemString_6;
+return;
+}
+public void GetItemTypeColor()
+{
+__intnl_SystemBoolean_2 = itemType >= __const_SystemInt32_0;
+if (__intnl_SystemBoolean_2)
+{
+__intnl_SystemBoolean_3 = itemType <= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_3)
+{
+__intnl_SystemUInt32_1 = __gintnl_SystemUInt32Array_1[itemType];
+__0_GetItemTypeColor__ret = __const_UnityEngineColor_0;
+return;
+__0_GetItemTypeColor__ret = __const_UnityEngineColor_1;
+return;
+__0_GetItemTypeColor__ret = __const_UnityEngineColor_2;
+return;
+__0_GetItemTypeColor__ret = __const_UnityEngineColor_3;
+return;
+__0_GetItemTypeColor__ret = __const_UnityEngineColor_4;
+return;
+GetRelicRarityColor();
+__0_GetItemTypeColor__ret = __0_GetRelicRarityColor__ret;
+return;
+}
+}
+__0_GetItemTypeColor__ret = __const_UnityEngineColor_5;
+return;
+}
+public void GetRelicRarityColor()
+{
+if (isRelic)
+{
+GetRelicRarityColor();
+}
+__0_GetRelicRarityColor__ret = __const_UnityEngineColor_5;
+}
+private void GetRelicRarityColor()
+{
+__intnl_SystemBoolean_4 = relicRarity >= __const_SystemInt32_0;
+if (__intnl_SystemBoolean_4)
+{
+__intnl_SystemBoolean_5 = relicRarity <= __const_SystemInt32_2;
+if (__intnl_SystemBoolean_5)
+{
+__intnl_SystemUInt32_2 = __gintnl_SystemUInt32Array_2[relicRarity];
+__0_GetRelicRarityColor__ret = __const_UnityEngineColor_2;
+return;
+__0_GetRelicRarityColor__ret = __const_UnityEngineColor_6;
+return;
+__0_GetRelicRarityColor__ret = __const_UnityEngineColor_7;
+return;
+__0_GetRelicRarityColor__ret = __const_UnityEngineColor_8;
+return;
+__0_GetRelicRarityColor__ret = __const_UnityEngineColor_9;
+return;
+}
+}
+__0_GetRelicRarityColor__ret = __const_UnityEngineColor_5;
+return;
+}
+public void GetRelicRarityName()
+{
+if (isRelic)
+{
+GetRelicRarityName();
+}
+__0_GetRelicRarityName__ret = __const_SystemString_7;
+}
+private void GetRelicRarityName()
+{
+__intnl_SystemBoolean_6 = relicRarity >= __const_SystemInt32_0;
+if (__intnl_SystemBoolean_6)
+{
+__intnl_SystemBoolean_7 = relicRarity <= __const_SystemInt32_2;
+if (__intnl_SystemBoolean_7)
+{
+__intnl_SystemUInt32_3 = __gintnl_SystemUInt32Array_3[relicRarity];
+__0_GetRelicRarityName__ret = __const_SystemString_8;
+return;
+__0_GetRelicRarityName__ret = __const_SystemString_9;
+return;
+__0_GetRelicRarityName__ret = __const_SystemString_10;
+return;
+__0_GetRelicRarityName__ret = __const_SystemString_11;
+return;
+}
+}
+__0_GetRelicRarityName__ret = __const_SystemString_6;
+return;
+}
+}

@@ -1,0 +1,188 @@
+void _start()
+gemsPlaced = 3.ctor();// 24
+44 return;
+void _update()
+100 if (__intnl_SystemBoolean_0) //128
+{
+120 return;
+}
+animTimer = op_Addition(__intnl_SystemSingle_0, animTimer);// 168
+__lcl_t_SystemSingle_0 = Clamp01(__intnl_SystemSingle_1);// 224
+248 __intnl_UnityEngineObject_0 = shrineRenderer
+268 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+312 if (__intnl_SystemBoolean_1) //416
+{
+G_shrineRenderer.SetBlendShapeWeight(__intnl_SystemSingle_2, __intnl_SystemInt32_0);// 408
+}
+456 if (__intnl_SystemBoolean_2) //536
+{
+480 animatingIndex = __const_SystemInt32_2
+492 if (pendingCompletion) //536
+{
+516 pendingCompletion = __const_SystemBoolean_0
+528 JUMP 3032
+}
+}
+548 return;
+void _onPlayerRestored()
+604 if (__intnl_SystemBoolean_3) //620
+{
+612 JUMP 668
+}
+676 if (__intnl_SystemBoolean_3) //704
+{
+696 return;
+}
+712 JUMP 2420
+732 return;
+void _interact()
+756 if (allPlaced) //784
+{
+776 return;
+}
+800 __intnl_UnityEngineObject_2 = inventoryManager
+820 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+864 if (__intnl_SystemBoolean_5) //880
+{
+872 JUMP 952
+}
+896 __intnl_UnityEngineObject_4 = itemDatabase
+916 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+960 if (__intnl_SystemBoolean_5) //988
+{
+980 return;
+}
+1028 if (__intnl_SystemBoolean_6) //1056
+{
+1048 return;
+}
+1072 __lcl_foundGem_SystemBoolean_0 = __const_SystemBoolean_0
+1092 __lcl_i_SystemInt32_0 = __const_SystemInt32_1
+1160 if (__intnl_SystemBoolean_7) //2204
+{
+1208 if (__intnl_SystemBoolean_8) //1224
+{
+1216 JUMP 2164
+}
+1272 __intnl_SystemInt32Array_0 = gemItemIds
+G_inventoryManager.SetProgramVariable(__intnl_SystemInt32_2, __const_SystemString_0);// 1300
+G_inventoryManager.SendCustomEvent(__const_SystemString_1);// 1324
+1380 __intnl_SystemBoolean_9 = __intnl_SystemObject_0
+1392 if (__intnl_SystemBoolean_9) //2164
+{
+1416 __lcl_foundGem_SystemBoolean_0 = __const_SystemBoolean_1
+1468 __intnl_SystemInt32Array_1 = gemItemIds
+G_inventoryManager.SetProgramVariable(__intnl_SystemInt32_3, __const_SystemString_3);// 1496
+G_inventoryManager.SetProgramVariable(__const_SystemInt32_3, __const_SystemString_4);// 1528
+G_inventoryManager.SendCustomEvent(__const_SystemString_5);// 1552
+G_gemsPlaced.Set(__const_SystemBoolean_1, __lcl_i_SystemInt32_0);// 1584
+SetBool(__const_SystemBoolean_1, __intnl_SystemString_0);// 1640
+1664 animatingIndex = __lcl_i_SystemInt32_0
+1684 animTimer = __const_SystemSingle_2
+1704 __intnl_UnityEngineObject_6 = audioSource
+1724 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+1768 if (__intnl_SystemBoolean_10) //1848
+{
+1792 __intnl_UnityEngineObject_8 = gemPlaceSound
+1812 __intnl_UnityEngineObject_9 = __const_SystemObject_0
+}
+1856 if (__intnl_SystemBoolean_10) //1888
+{
+G_audioSource.PlayOneShot(gemPlaceSound);// 1880
+}
+1904 __lcl_allDone_SystemBoolean_0 = __const_SystemBoolean_1
+1924 __lcl_j_SystemInt32_0 = __const_SystemInt32_1
+1968 if (__intnl_SystemBoolean_11) //2100
+{
+2016 if (__intnl_SystemBoolean_12) //2032
+{
+2024 JUMP 2060
+}
+2048 __lcl_allDone_SystemBoolean_0 = __const_SystemBoolean_0
+2052 JUMP 2100
+__lcl_j_SystemInt32_0 = op_Addition(__const_SystemInt32_3, __lcl_j_SystemInt32_0);// 2084
+2092 JUMP 1928
+}
+2108 if (__lcl_allDone_SystemBoolean_0) //2156
+{
+2132 allPlaced = __const_SystemBoolean_1
+2152 pendingCompletion = __const_SystemBoolean_1
+}
+2156 JUMP 2204
+}
+__lcl_i_SystemInt32_0 = op_Addition(__const_SystemInt32_3, __lcl_i_SystemInt32_0);// 2188
+2196 JUMP 1096
+}
+2212 if (__lcl_foundGem_SystemBoolean_0) //2228
+{
+2220 JUMP 2392
+}
+2244 __intnl_UnityEngineObject_6 = announcementManager
+2264 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+2308 if (__intnl_SystemBoolean_7) //2392
+{
+2332 __intnl_SystemString_0 = noGemMessage
+G_announcementManager.SetProgramVariable(noGemMessage, __const_SystemString_7);// 2360
+G_announcementManager.SendCustomEvent(__const_SystemString_8);// 2384
+}
+2404 return;
+__lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0 = get_LocalPlayer();// 2428
+2476 if (__intnl_SystemBoolean_13) //2504
+{
+2496 return;
+}
+2520 allPlaced = __const_SystemBoolean_1
+2540 __lcl_i_SystemInt32_1 = __const_SystemInt32_1
+2584 if (__intnl_SystemBoolean_14) //3004
+{
+G_gemsPlaced.Set(__intnl_SystemBoolean_15, __lcl_i_SystemInt32_1);// 2680
+2728 if (__intnl_SystemBoolean_16) //2808
+{
+2752 __intnl_UnityEngineObject_10 = shrineRenderer
+2772 __intnl_UnityEngineObject_11 = __const_SystemObject_0
+}
+2816 if (__intnl_SystemBoolean_16) //2888
+{
+G_shrineRenderer.SetBlendShapeWeight(__const_SystemSingle_0, __intnl_SystemInt32_4);// 2880
+}
+2928 if (__intnl_SystemBoolean_17) //2944
+{
+2936 JUMP 2964
+}
+2960 allPlaced = __const_SystemBoolean_0
+__lcl_i_SystemInt32_1 = op_Addition(__const_SystemInt32_3, __lcl_i_SystemInt32_1);// 2988
+2996 JUMP 2544
+}
+3016 return;
+3048 __intnl_UnityEngineObject_12 = inventoryManager
+3068 __intnl_UnityEngineObject_13 = __const_SystemObject_0
+3112 if (__intnl_SystemBoolean_18) //3152
+{
+}
+3160 if (__intnl_SystemBoolean_18) //3276
+{
+3184 __intnl_SystemInt32_5 = rewardItemId
+G_inventoryManager.SetProgramVariable(rewardItemId, __const_SystemString_9);// 3212
+G_inventoryManager.SetProgramVariable(__const_SystemInt32_3, __const_SystemString_10);// 3244
+G_inventoryManager.SendCustomEvent(__const_SystemString_11);// 3268
+}
+3292 __intnl_UnityEngineObject_14 = audioSource
+3312 __intnl_UnityEngineObject_15 = __const_SystemObject_0
+3356 if (__intnl_SystemBoolean_19) //3436
+{
+3380 __intnl_UnityEngineObject_16 = shrineCompleteSound
+3400 __intnl_UnityEngineObject_17 = __const_SystemObject_0
+}
+3444 if (__intnl_SystemBoolean_19) //3476
+{
+G_audioSource.PlayOneShot(shrineCompleteSound);// 3468
+}
+3492 __intnl_UnityEngineObject_18 = announcementManager
+3512 __intnl_UnityEngineObject_19 = __const_SystemObject_0
+3556 if (__intnl_SystemBoolean_20) //3640
+{
+3580 __intnl_SystemString_2 = completionMessage
+G_announcementManager.SetProgramVariable(completionMessage, __const_SystemString_7);// 3608
+G_announcementManager.SendCustomEvent(__const_SystemString_8);// 3632
+}
+3652 return;

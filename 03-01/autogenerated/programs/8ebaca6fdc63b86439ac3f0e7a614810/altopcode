@@ -1,0 +1,173 @@
+void _start()
+24 currentSlide = __const_SystemInt32_0
+44 startOffset = __const_UnityEngineVector2_0
+64 targetOffset = __const_UnityEngineVector2_0
+76 JUMP 2612
+96 return;
+void _update()
+120 if (isCountingDown) //920
+{
+countdownTimer = op_Subtraction(__intnl_SystemSingle_0, countdownTimer);// 168
+__lcl_displaySecond_SystemInt32_0 = CeilToInt(countdownTimer);// 192
+240 if (__intnl_SystemBoolean_0) //280
+{
+}
+288 if (__intnl_SystemBoolean_0) //460
+{
+312 lastDisplayedSecond = __lcl_displaySecond_SystemInt32_0
+332 __intnl_UnityEngineObject_0 = nextButtonText
+352 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+396 if (__intnl_SystemBoolean_1) //460
+{
+G_nextButtonText.set_text(__intnl_SystemString_0);// 452
+}
+}
+500 if (__intnl_SystemBoolean_1) //920
+{
+524 isCountingDown = __const_SystemBoolean_0
+544 lastDisplayedSecond = __const_SystemInt32_1
+564 __intnl_UnityEngineObject_0 = nextButton
+584 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+628 if (__intnl_SystemBoolean_2) //660
+{
+G_nextButton.set_interactable(__const_SystemBoolean_1);// 652
+}
+676 __intnl_UnityEngineObject_2 = nextButtonText
+696 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+740 if (__intnl_SystemBoolean_3) //920
+{
+828 __intnl_TMProTextMeshProUGUI_0 = nextButtonText
+840 if (__intnl_SystemBoolean_4) //876
+{
+864 __intnl_SystemString_0 = __const_SystemString_1
+868 JUMP 896
+}
+892 __intnl_SystemString_0 = __const_SystemString_2
+G_nextButtonText.set_text(__intnl_SystemString_0);// 912
+}
+}
+}
+952 if (__intnl_SystemBoolean_0) //968
+{
+960 JUMP 1040
+}
+984 __intnl_UnityEngineObject_0 = slideMaterial
+1004 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+1048 if (__intnl_SystemBoolean_0) //1076
+{
+1068 return;
+}
+animationTime = op_Addition(__intnl_SystemSingle_0, animationTime);// 1116
+__lcl_t_SystemSingle_0 = Clamp01(__intnl_SystemSingle_1);// 1172
+1220 if (__intnl_SystemBoolean_1) //1396
+{
+__lcl_t_SystemSingle_0 = op_Multiplication(__lcl_t_SystemSingle_0, __intnl_SystemSingle_5);// 1380
+1388 JUMP 1652
+}
+__lcl_p_SystemSingle_0 = op_Addition(__const_SystemSingle_4, __intnl_SystemSingle_2);// 1452
+__lcl_t_SystemSingle_0 = op_Subtraction(__intnl_SystemSingle_7, __const_SystemSingle_5);// 1644
+__lcl_offset_UnityEngineVector2_0 = Lerp(__lcl_t_SystemSingle_0, targetOffset, startOffset);// 1684
+G_slideMaterial.set_mainTextureOffset(__lcl_offset_UnityEngineVector2_0);// 1708
+1756 if (__intnl_SystemBoolean_2) //1784
+{
+1780 isAnimating = __const_SystemBoolean_0
+}
+1796 return;
+void NextSlide()
+1820 if (isCountingDown) //1848
+{
+1840 return;
+}
+1920 if (__intnl_SystemBoolean_5) //2000
+{
+currentSlide = op_Addition(__const_SystemInt32_2, currentSlide);// 1952
+1968 JUMP 2612
+1984 JUMP 2140
+1992 JUMP 2112
+}
+2016 __intnl_UnityEngineObject_4 = tutorialWindow
+2036 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+2080 if (__intnl_SystemBoolean_6) //2112
+{
+G_tutorialWindow.SetActive(__const_SystemBoolean_0);// 2104
+}
+2124 return;
+2156 isCountingDown = __const_SystemBoolean_1
+countdownTimer = ToSingle(countdownSeconds);// 2176
+2200 lastDisplayedSecond = countdownSeconds
+2220 __intnl_UnityEngineObject_6 = nextButton
+2240 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+2284 if (__intnl_SystemBoolean_7) //2316
+{
+G_nextButton.set_interactable(__const_SystemBoolean_0);// 2308
+}
+2332 __intnl_UnityEngineObject_8 = nextButtonText
+2352 __intnl_UnityEngineObject_9 = __const_SystemObject_0
+2396 if (__intnl_SystemBoolean_8) //2460
+{
+G_nextButtonText.set_text(__intnl_SystemString_1);// 2452
+}
+2472 return;
+void PreviousSlide()
+2528 if (__intnl_SystemBoolean_9) //2584
+{
+currentSlide = op_Subtraction(__const_SystemInt32_2, currentSlide);// 2560
+2576 JUMP 2612
+}
+2596 return;
+2628 __intnl_UnityEngineObject_10 = slideMaterial
+2648 __intnl_UnityEngineObject_11 = __const_SystemObject_0
+2692 if (__intnl_SystemBoolean_10) //2732
+{
+startOffset = G_slideMaterial.get_mainTextureOffset();// 2716
+2724 JUMP 2752
+}
+2748 startOffset = __const_UnityEngineVector2_0
+targetOffset = ctor(__intnl_SystemSingle_13, __intnl_SystemSingle_10);// 2936
+2960 animationTime = __const_SystemSingle_0
+2980 isAnimating = __const_SystemBoolean_1
+3000 __intnl_UnityEngineObject_12 = slideCounterText
+3020 __intnl_UnityEngineObject_13 = __const_SystemObject_0
+3064 if (__intnl_SystemBoolean_11) //3192
+{
+G_slideCounterText.set_text(__intnl_SystemString_3);// 3184
+}
+3208 __intnl_UnityEngineObject_14 = previousButton
+3228 __intnl_UnityEngineObject_15 = __const_SystemObject_0
+3272 if (__intnl_SystemBoolean_12) //3336
+{
+G_previousButton.SetActive(__intnl_SystemBoolean_13);// 3328
+}
+3352 __intnl_UnityEngineObject_16 = nextButtonText
+3372 __intnl_UnityEngineObject_17 = __const_SystemObject_0
+3416 if (__intnl_SystemBoolean_13) //3596
+{
+3504 __intnl_TMProTextMeshProUGUI_1 = nextButtonText
+3516 if (__intnl_SystemBoolean_14) //3552
+{
+3540 __intnl_SystemString_2 = __const_SystemString_1
+3544 JUMP 3572
+}
+3568 __intnl_SystemString_2 = __const_SystemString_2
+G_nextButtonText.set_text(__intnl_SystemString_2);// 3588
+}
+3608 return;
+void _onEnable()
+3640 currentSlide = __const_SystemInt32_0
+3660 startOffset = __const_UnityEngineVector2_0
+3680 targetOffset = __const_UnityEngineVector2_0
+3700 animationTime = __const_SystemSingle_0
+3720 isAnimating = __const_SystemBoolean_0
+3740 isCountingDown = __const_SystemBoolean_0
+3760 countdownTimer = __const_SystemSingle_0
+3780 lastDisplayedSecond = __const_SystemInt32_1
+3800 __intnl_UnityEngineObject_18 = slideMaterial
+3820 __intnl_UnityEngineObject_19 = __const_SystemObject_0
+3864 if (__intnl_SystemBoolean_15) //3896
+{
+G_slideMaterial.set_mainTextureOffset(__const_UnityEngineVector2_0);// 3888
+}
+3904 JUMP 2612
+3928 isAnimating = __const_SystemBoolean_0
+3940 JUMP 2140
+3960 return;

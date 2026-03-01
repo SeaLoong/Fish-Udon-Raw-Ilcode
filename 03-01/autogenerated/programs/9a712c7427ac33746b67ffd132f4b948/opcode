@@ -1,0 +1,127 @@
+void get_SyncedTrailColor
+0 PUSH UInt32 __const_SystemUInt32_0
+8 PUSH Color _syncedTrailColor
+16 PUSH Color __0_get_SyncedTrailColor__ret
+24 COPY
+28 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+36 COPY
+40 JUMP_INDIRECT 2
+void _onVarChange__syncedTrailColor
+48 PUSH Color _syncedTrailColor
+56 PUSH Color __0_value__param
+64 COPY
+68 PUSH Color _old__syncedTrailColor
+76 PUSH Color _syncedTrailColor
+84 COPY
+void __0_set_SyncedTrailColor
+88 PUSH UInt32 __const_SystemUInt32_0
+96 PUSH Color __0_value__param
+104 PUSH Color _syncedTrailColor
+112 COPY
+116 PUSH UdonBehaviour rodController
+124 PUSH Object __intnl_UnityEngineObject_0
+132 COPY
+136 PUSH object __const_SystemObject_0
+144 PUSH Object __intnl_UnityEngineObject_1
+152 COPY
+156 PUSH Object __intnl_UnityEngineObject_0
+164 PUSH Object __intnl_UnityEngineObject_1
+172 PUSH Boolean __intnl_SystemBoolean_0
+180 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+188 PUSH Boolean __intnl_SystemBoolean_0
+196 JUMP_IF_FALSE 248
+204 PUSH UdonBehaviour rodController
+212 PUSH UdonBehaviour rodController
+220 PUSH UdonBehaviour __intnl_VRCUdonUdonBehaviour_0
+228 COPY
+232 PUSH String __const_SystemString_0
+240 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+248 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+256 COPY
+260 JUMP_INDIRECT 2
+void _onDeserialization
+268 PUSH UInt32 __const_SystemUInt32_0
+276 PUSH UdonBehaviour rodController
+284 PUSH Object __intnl_UnityEngineObject_2
+292 COPY
+296 PUSH object __const_SystemObject_0
+304 PUSH Object __intnl_UnityEngineObject_3
+312 COPY
+316 PUSH Object __intnl_UnityEngineObject_2
+324 PUSH Object __intnl_UnityEngineObject_3
+332 PUSH Boolean __intnl_SystemBoolean_1
+340 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+348 PUSH Boolean __intnl_SystemBoolean_1
+356 JUMP_IF_FALSE 408
+364 PUSH UdonBehaviour rodController
+372 PUSH UdonBehaviour rodController
+380 PUSH UdonBehaviour __intnl_VRCUdonUdonBehaviour_1
+388 COPY
+392 PUSH String __const_SystemString_1
+400 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+408 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+416 COPY
+420 JUMP_INDIRECT 2
+void _onPlayerJoined
+428 PUSH UInt32 __const_SystemUInt32_0
+436 PUSH GameObject __this_UnityEngineGameObject_0
+444 PUSH Boolean __intnl_SystemBoolean_2
+452 EXTERN VRCSDKBaseNetworking.__IsOwner__UnityEngineGameObject__SystemBoolean
+460 PUSH Boolean __intnl_SystemBoolean_2
+468 JUMP_IF_FALSE 492
+476 PUSH UdonBehaviour __this_VRCUdonUdonBehaviour_0
+484 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__RequestSerialization__SystemVoid
+492 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+500 COPY
+504 JUMP_INDIRECT 2
+void SyncNow
+512 PUSH UInt32 __const_SystemUInt32_0
+520 PUSH GameObject __this_UnityEngineGameObject_0
+528 PUSH Boolean __intnl_SystemBoolean_3
+536 EXTERN VRCSDKBaseNetworking.__IsOwner__UnityEngineGameObject__SystemBoolean
+544 PUSH Boolean __intnl_SystemBoolean_3
+552 JUMP_IF_FALSE 568
+560 JUMP 608
+568 PUSH VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_0
+576 EXTERN VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi
+584 PUSH VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_0
+592 PUSH GameObject __this_UnityEngineGameObject_0
+600 EXTERN VRCSDKBaseNetworking.__SetOwner__VRCSDKBaseVRCPlayerApi_UnityEngineGameObject__SystemVoid
+608 PUSH UdonBehaviour __this_VRCUdonUdonBehaviour_1
+616 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__RequestSerialization__SystemVoid
+624 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+632 COPY
+636 JUMP_INDIRECT 2
+void __0_FollowOwnership
+644 PUSH UInt32 __const_SystemUInt32_0
+652 PUSH VRCPlayerApi __0_newOwner__param
+660 PUSH object __const_SystemObject_0
+668 PUSH Boolean __intnl_SystemBoolean_4
+676 EXTERN SystemObject.__op_Equality__SystemObject_SystemObject__SystemBoolean
+684 PUSH Boolean __intnl_SystemBoolean_4
+692 JUMP_IF_FALSE 708
+700 JUMP 756
+708 PUSH VRCPlayerApi __0_newOwner__param
+716 PUSH Boolean __intnl_SystemBoolean_5
+724 EXTERN VRCSDKBaseVRCPlayerApi.__IsValid__SystemBoolean
+732 PUSH Boolean __intnl_SystemBoolean_5
+740 PUSH Boolean __intnl_SystemBoolean_4
+748 EXTERN SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean
+756 PUSH Boolean __intnl_SystemBoolean_4
+764 JUMP_IF_FALSE 792
+772 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+780 COPY
+784 JUMP_INDIRECT 2
+792 PUSH VRCPlayerApi __0_newOwner__param
+800 PUSH GameObject __this_UnityEngineGameObject_0
+808 PUSH Boolean __intnl_SystemBoolean_6
+816 EXTERN VRCSDKBaseNetworking.__IsOwner__VRCSDKBaseVRCPlayerApi_UnityEngineGameObject__SystemBoolean
+824 PUSH Boolean __intnl_SystemBoolean_6
+832 JUMP_IF_FALSE 848
+840 JUMP 872
+848 PUSH VRCPlayerApi __0_newOwner__param
+856 PUSH GameObject __this_UnityEngineGameObject_0
+864 EXTERN VRCSDKBaseNetworking.__SetOwner__VRCSDKBaseVRCPlayerApi_UnityEngineGameObject__SystemVoid
+872 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+880 COPY
+884 JUMP_INDIRECT 2

@@ -1,0 +1,235 @@
+using System;
+using UnityEngine;
+using VRC.Udon;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Single __const_SystemSingle_8 = 30f;
+private Object __intnl_UnityEngineObject_12 = null;
+private object __intnl_SystemObject_0 = null;
+private AudioSource __intnl_UnityEngineAudioSource_1 = null;
+private String __const_SystemString_0 = "minimumSilenceDuration";
+private Single __const_SystemSingle_0 = 5f;
+private UInt32 __gintnl_SystemUInt32_1 = 180;
+private UInt32 __gintnl_SystemUInt32_0 = 148;
+private Boolean __const_SystemBoolean_0 = true;
+private Boolean __const_SystemBoolean_1 = false;
+private Object __intnl_UnityEngineObject_11 = null;
+private AudioSource __intnl_UnityEngineAudioSource_2 = null;
+private String __const_SystemString_5 = "enableDebugLogs";
+private Single __const_SystemSingle_7 = 0.5f;
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Object __intnl_UnityEngineObject_19 = null;
+private String __const_SystemString_10 = "musicSourceB";
+private Object __intnl_UnityEngineObject_14 = null;
+private Int64 __refl_typeid = -256623104951367504;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private object __intnl_SystemObject_2 = null;
+private String __const_SystemString_2 = "musicCheckInterval";
+private Single __const_SystemSingle_2 = 10f;
+private Single __const_SystemSingle_9 = 90f;
+public Boolean applyDebugLogsOnStart;
+private object __const_SystemObject_0 = null;
+private Object __intnl_UnityEngineObject_13 = null;
+private object __intnl_SystemObject_1 = null;
+private AudioSource __intnl_UnityEngineAudioSource_0 = null;
+private String __const_SystemString_7 = "introsBypassDowntime";
+private Single __const_SystemSingle_1 = 15f;
+private Object __intnl_UnityEngineObject_16 = null;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private String __const_SystemString_4 = "chanceIncrease";
+private Single __const_SystemSingle_4 = 0.3f;
+private Object __intnl_UnityEngineObject_15 = null;
+private object __intnl_SystemObject_4 = null;
+public Boolean applyTestingSettingsOnStart;
+private String __const_SystemString_9 = "musicSourceA";
+private String __refl_typename = "MusicSystemQuickSettings";
+private Int32 __lcl_fixedCount_SystemInt32_0 = 0;
+private object __intnl_SystemObject_3 = null;
+private String __const_SystemString_1 = "maximumSilenceDuration";
+private Single __const_SystemSingle_3 = 1f;
+private Object __intnl_UnityEngineObject_10 = null;
+private AudioSource __intnl_UnityEngineAudioSource_3 = null;
+private String __const_SystemString_6 = "enableIntroSongs";
+private Single __const_SystemSingle_6 = 180f;
+private Object __intnl_UnityEngineObject_18 = null;
+private Object __intnl_UnityEngineObject_17 = null;
+private AudioSource __intnl_UnityEngineAudioSource_4 = null;
+private Single __const_SystemSingle_5 = 60f;
+private Int32 __const_SystemInt32_1 = 1;
+private Int32 __const_SystemInt32_0 = 0;
+public UdonBehaviour musicSystem;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private Single __const_SystemSingle_10 = 0.7f;
+private Single __const_SystemSingle_11 = 0f;
+private String __const_SystemString_3 = "basePlayChance";
+private String __const_SystemString_8 = "introVolumeMultiplier";
+
+
+public void _start()
+{
+__intnl_UnityEngineObject_0 = musicSystem;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_0 == __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_0)
+{
+return;
+}
+if (applyTestingSettingsOnStart)
+{
+ApplyTestingSettings();
+}
+if (applyDebugLogsOnStart)
+{
+EnableDebugLogs();
+}
+}
+public void ApplyTestingSettings()
+{
+__intnl_UnityEngineObject_2 = musicSystem;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_2 == __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_1)
+{
+return;
+}
+musicSystem.SetProgramVariable(__const_SystemString_0, __const_SystemSingle_0);
+musicSystem.SetProgramVariable(__const_SystemString_1, __const_SystemSingle_1);
+musicSystem.SetProgramVariable(__const_SystemString_2, __const_SystemSingle_2);
+musicSystem.SetProgramVariable(__const_SystemString_3, __const_SystemSingle_3);
+musicSystem.SetProgramVariable(__const_SystemString_4, __const_SystemSingle_4);
+musicSystem.SetProgramVariable(__const_SystemString_5, __const_SystemBoolean_0);
+}
+public void ApplyProductionSettings()
+{
+__intnl_UnityEngineObject_4 = musicSystem;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_2 = __intnl_UnityEngineObject_4 == __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_2)
+{
+return;
+}
+musicSystem.SetProgramVariable(__const_SystemString_0, __const_SystemSingle_5);
+musicSystem.SetProgramVariable(__const_SystemString_1, __const_SystemSingle_6);
+musicSystem.SetProgramVariable(__const_SystemString_2, __const_SystemSingle_5);
+musicSystem.SetProgramVariable(__const_SystemString_3, __const_SystemSingle_7);
+musicSystem.SetProgramVariable(__const_SystemString_4, __const_SystemSingle_4);
+musicSystem.SetProgramVariable(__const_SystemString_5, __const_SystemBoolean_1);
+}
+public void ApplyBalancedSettings()
+{
+__intnl_UnityEngineObject_6 = musicSystem;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_3 = __intnl_UnityEngineObject_6 == __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_3)
+{
+return;
+}
+musicSystem.SetProgramVariable(__const_SystemString_0, __const_SystemSingle_8);
+musicSystem.SetProgramVariable(__const_SystemString_1, __const_SystemSingle_9);
+musicSystem.SetProgramVariable(__const_SystemString_2, __const_SystemSingle_8);
+musicSystem.SetProgramVariable(__const_SystemString_3, __const_SystemSingle_10);
+musicSystem.SetProgramVariable(__const_SystemString_4, __const_SystemSingle_4);
+musicSystem.SetProgramVariable(__const_SystemString_5, __const_SystemBoolean_1);
+}
+public void EnableDebugLogs()
+{
+__intnl_UnityEngineObject_8 = musicSystem;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_4 = __intnl_UnityEngineObject_8 == __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_4)
+{
+return;
+}
+musicSystem.SetProgramVariable(__const_SystemString_5, __const_SystemBoolean_0);
+}
+public void DisableDebugLogs()
+{
+__intnl_UnityEngineObject_10 = musicSystem;
+__intnl_UnityEngineObject_11 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_5 = __intnl_UnityEngineObject_10 == __intnl_UnityEngineObject_11;
+if (__intnl_SystemBoolean_5)
+{
+return;
+}
+musicSystem.SetProgramVariable(__const_SystemString_5, __const_SystemBoolean_1);
+}
+public void EnableIntroTracks()
+{
+__intnl_UnityEngineObject_12 = musicSystem;
+__intnl_UnityEngineObject_13 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_6 = __intnl_UnityEngineObject_12 == __intnl_UnityEngineObject_13;
+if (__intnl_SystemBoolean_6)
+{
+return;
+}
+musicSystem.SetProgramVariable(__const_SystemString_6, __const_SystemBoolean_0);
+musicSystem.SetProgramVariable(__const_SystemString_7, __const_SystemBoolean_0);
+musicSystem.SetProgramVariable(__const_SystemString_8, __const_SystemSingle_3);
+}
+public void FixAudioSources()
+{
+__intnl_UnityEngineObject_14 = musicSystem;
+__intnl_UnityEngineObject_15 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_7 = __intnl_UnityEngineObject_14 == __intnl_UnityEngineObject_15;
+if (__intnl_SystemBoolean_7)
+{
+return;
+}
+__lcl_fixedCount_SystemInt32_0 = __const_SystemInt32_0;
+__intnl_SystemObject_0 = musicSystem.GetProgramVariable(__const_SystemString_9);
+__intnl_UnityEngineAudioSource_0 = (AudioSource)__intnl_SystemObject_0;
+__intnl_UnityEngineObject_16 = __intnl_UnityEngineAudioSource_0;
+__intnl_UnityEngineObject_17 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_8 = __intnl_UnityEngineObject_16 != __intnl_UnityEngineObject_17;
+if (__intnl_SystemBoolean_8)
+{
+__intnl_SystemObject_1 = musicSystem.GetProgramVariable(__const_SystemString_9);
+__intnl_UnityEngineAudioSource_1 = (AudioSource)__intnl_SystemObject_1;
+__intnl_UnityEngineAudioSource_1.playOnAwake = __const_SystemBoolean_1;
+__intnl_SystemObject_2 = musicSystem.GetProgramVariable(__const_SystemString_9);
+__intnl_UnityEngineAudioSource_2 = (AudioSource)__intnl_SystemObject_2;
+__intnl_UnityEngineAudioSource_2.loop = __const_SystemBoolean_1;
+__intnl_SystemObject_3 = musicSystem.GetProgramVariable(__const_SystemString_9);
+__intnl_UnityEngineAudioSource_3 = (AudioSource)__intnl_SystemObject_3;
+__intnl_UnityEngineAudioSource_3.spatialBlend = __const_SystemSingle_11;
+__lcl_fixedCount_SystemInt32_0 = __lcl_fixedCount_SystemInt32_0 + __const_SystemInt32_1;
+}
+__intnl_SystemObject_1 = musicSystem.GetProgramVariable(__const_SystemString_10);
+__intnl_UnityEngineAudioSource_1 = (AudioSource)__intnl_SystemObject_1;
+__intnl_UnityEngineObject_18 = __intnl_UnityEngineAudioSource_1;
+__intnl_UnityEngineObject_19 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_9 = __intnl_UnityEngineObject_18 != __intnl_UnityEngineObject_19;
+if (__intnl_SystemBoolean_9)
+{
+__intnl_SystemObject_2 = musicSystem.GetProgramVariable(__const_SystemString_10);
+__intnl_UnityEngineAudioSource_2 = (AudioSource)__intnl_SystemObject_2;
+__intnl_UnityEngineAudioSource_2.playOnAwake = __const_SystemBoolean_1;
+__intnl_SystemObject_3 = musicSystem.GetProgramVariable(__const_SystemString_10);
+__intnl_UnityEngineAudioSource_3 = (AudioSource)__intnl_SystemObject_3;
+__intnl_UnityEngineAudioSource_3.loop = __const_SystemBoolean_1;
+__intnl_SystemObject_4 = musicSystem.GetProgramVariable(__const_SystemString_10);
+__intnl_UnityEngineAudioSource_4 = (AudioSource)__intnl_SystemObject_4;
+__intnl_UnityEngineAudioSource_4.spatialBlend = __const_SystemSingle_11;
+__lcl_fixedCount_SystemInt32_0 = __lcl_fixedCount_SystemInt32_0 + __const_SystemInt32_1;
+}
+}
+}

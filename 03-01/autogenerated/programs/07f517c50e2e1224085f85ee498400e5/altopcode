@@ -1,0 +1,126 @@
+void _start()
+24 __intnl_UnityEngineObject_0 = zoneText
+44 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+88 if (__intnl_SystemBoolean_0) //184
+{
+originalTextColor = G_zoneText.get_color();// 112
+136 targetColor = originalTextColor
+164 __0_alpha__param = __const_SystemSingle_0
+168 JUMP 1616
+176 JUMP 184
+}
+196 return;
+void _update()
+220 if (isAnimating) //244
+{
+236 JUMP 696
+}
+256 return;
+void TriggerZoneAnimation()
+304 if (__intnl_SystemBoolean_1) //332
+{
+324 return;
+}
+356 __0_zoneName__param = currentZoneName
+360 JUMP 396
+380 return;
+void __0_ShowZoneChange()
+412 __intnl_UnityEngineObject_2 = zoneText
+432 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+476 if (__intnl_SystemBoolean_2) //504
+{
+496 return;
+}
+G_zoneText.set_text(__0_zoneName__param);// 520
+536 JUMP 572
+556 return;
+588 isAnimating = __const_SystemBoolean_0
+608 currentPhase = __const_SystemInt32_0
+628 animationTimer = __const_SystemSingle_0
+656 __0_alpha__param = __const_SystemSingle_0
+660 JUMP 1616
+680 return;
+animationTimer = op_Addition(__intnl_SystemSingle_0, animationTimer);// 736
+784 if (__intnl_SystemBoolean_3) //816
+{
+800 JUMP 988
+808 JUMP 960
+}
+856 if (__intnl_SystemBoolean_4) //888
+{
+872 JUMP 1256
+880 JUMP 960
+}
+928 if (__intnl_SystemBoolean_5) //960
+{
+944 JUMP 1372
+952 JUMP 960
+}
+972 return;
+__lcl_progress_SystemSingle_0 = op_Division(fadeInTime, animationTimer);// 1012
+1060 if (__intnl_SystemBoolean_6) //1128
+{
+1084 __lcl_progress_SystemSingle_0 = __const_SystemSingle_1
+1104 currentPhase = __const_SystemInt32_1
+1124 animationTimer = __const_SystemSingle_0
+}
+__lcl_alpha_SystemSingle_0 = Lerp(__lcl_progress_SystemSingle_0, __intnl_SystemSingle_1, __const_SystemSingle_0);// 1184
+1216 __0_alpha__param = __lcl_alpha_SystemSingle_0
+1220 JUMP 1616
+1240 return;
+1296 if (__intnl_SystemBoolean_7) //1344
+{
+1320 currentPhase = __const_SystemInt32_2
+1340 animationTimer = __const_SystemSingle_0
+}
+1356 return;
+__lcl_progress_SystemSingle_1 = op_Division(fadeOutTime, animationTimer);// 1396
+1444 if (__intnl_SystemBoolean_8) //1488
+{
+1468 __lcl_progress_SystemSingle_1 = __const_SystemSingle_1
+1480 JUMP 1840
+}
+__lcl_alpha_SystemSingle_1 = Lerp(__lcl_progress_SystemSingle_1, __const_SystemSingle_0, __intnl_SystemSingle_2);// 1544
+1576 __0_alpha__param = __lcl_alpha_SystemSingle_1
+1580 JUMP 1616
+1600 return;
+1632 __intnl_UnityEngineObject_4 = zoneText
+1652 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+1696 if (__intnl_SystemBoolean_9) //1724
+{
+1716 return;
+}
+1740 __lcl_color_UnityEngineColor_0 = targetColor
+G_originalTextColor.set_a(__0_alpha__param);// 1760
+1784 __intnl_UnityEngineColor_0 = __lcl_color_UnityEngineColor_0
+G_zoneText.set_color(__lcl_color_UnityEngineColor_0);// 1804
+1824 return;
+1856 isAnimating = __const_SystemBoolean_1
+1876 currentPhase = __const_SystemInt32_3
+1904 __0_alpha__param = __const_SystemSingle_0
+1908 JUMP 1616
+1928 return;
+void StopAnimation()
+1952 if (isAnimating) //1976
+{
+1968 JUMP 1840
+}
+1988 return;
+void IsAnimating()
+2020 __0_IsAnimating__ret = isAnimating
+2036 return;
+2056 return;
+void __0_SetVisible()
+2088 __intnl_UnityEngineObject_6 = zoneText
+2108 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+2152 if (__intnl_SystemBoolean_10) //2264
+{
+2176 if (__0_visible__param) //2216
+{
+2208 JUMP 2236
+}
+2232 __intnl_SystemSingle_3 = __const_SystemSingle_0
+2252 __0_alpha__param = __intnl_SystemSingle_3
+2256 JUMP 1616
+}
+2276 return;

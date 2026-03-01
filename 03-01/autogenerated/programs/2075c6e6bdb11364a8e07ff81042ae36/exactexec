@@ -1,0 +1,208 @@
+using System;
+using VRC.Udon;
+using UnityEngine;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Single __intnl_SystemSingle_0 = 0f;
+private object __intnl_SystemObject_0 = null;
+private String __const_SystemString_0 = "GetCurrentTimeOfDay";
+private Single __const_SystemSingle_0 = 0.01f;
+public Single daytimeEmissionStrength;
+public UdonBehaviour dayNightCycle;
+private UInt32[] __gintnl_SystemUInt32Array_0 = System.UInt32[];
+private UInt32 __gintnl_SystemUInt32_1 = 516;
+private UInt32 __gintnl_SystemUInt32_0 = 440;
+private UInt32 __gintnl_SystemUInt32_3 = 1420;
+private UInt32 __gintnl_SystemUInt32_2 = 1172;
+private Material __lcl_mat_UnityEngineMaterial_0 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Int64 __refl_typeid = -6008915106280562199;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+public Single transitionSpeed;
+private Single __intnl_SystemSingle_2 = 0f;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_1 = null;
+private String __const_SystemString_2 = "_EmissionStrength";
+private object __const_SystemObject_0 = null;
+private Single __intnl_SystemSingle_1 = 0f;
+private object __intnl_SystemObject_1 = null;
+private Int32 __lcl_currentTime_SystemInt32_0 = 0;
+public Int32 updateInterval;
+private Single __0_strength__param = 0f;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private UInt32 __intnl_SystemUInt32_0 = 0;
+public Single nighttimeEmissionStrength;
+private Single targetEmissionStrength = 0f;
+private String __refl_typename = "BuildingEmissionController";
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Int32 __intnl_SystemInt32_5 = 0;
+private Int32 __intnl_SystemInt32_4 = 0;
+private Int32 __intnl_SystemInt32_7 = 0;
+private Int32 __intnl_SystemInt32_6 = 0;
+private Single __intnl_SystemSingle_3 = 0f;
+private Int32 __0_time__param = 0;
+private String __const_SystemString_1 = "__0_GetCurrentTimeOfDay__ret";
+public Material[] buildingMaterials;
+private Int32 frameCounter = 0;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Int32 __const_SystemInt32_1 = 1;
+private Int32 __const_SystemInt32_0 = 0;
+private Int32 __const_SystemInt32_2 = 3;
+private Single currentEmissionStrength = 0f;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private Int32 lastTimeOfDay = 0;
+private Single __0___0_GetTargetEmissionForTime__ret = 0f;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_0 = null;
+
+
+public void _start()
+{
+__intnl_UnityEngineObject_0 = dayNightCycle;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_0 == __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_0)
+{
+return;
+}
+__intnl_SystemBoolean_1 = buildingMaterials == __const_SystemObject_0;
+if (__intnl_SystemBoolean_1)
+{
+}
+else
+{
+__intnl_SystemInt32_0 = buildingMaterials.Length;
+__intnl_SystemBoolean_1 = __intnl_SystemInt32_0 == __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_1)
+{
+return;
+}
+__intnl_VRCUdonUdonBehaviour_0 = dayNightCycle;
+dayNightCycle.SendCustomEvent(__const_SystemString_0);
+__intnl_SystemObject_0 = dayNightCycle.GetProgramVariable(__const_SystemString_1);
+__intnl_SystemInt32_2 = Convert.ToInt32(__intnl_SystemObject_0);
+__intnl_SystemInt32_1 = __intnl_SystemInt32_2;
+lastTimeOfDay = __intnl_SystemInt32_1;
+__0_time__param = lastTimeOfDay;
+__0_GetTargetEmissionForTime();
+targetEmissionStrength = __0___0_GetTargetEmissionForTime__ret;
+currentEmissionStrength = targetEmissionStrength;
+__0_strength__param = currentEmissionStrength;
+UNDEF_2075c_2036();
+}
+public void _update()
+{
+__intnl_UnityEngineObject_2 = dayNightCycle;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_3 = __intnl_UnityEngineObject_2 == __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_3)
+{
+}
+else
+{
+__intnl_SystemBoolean_3 = buildingMaterials == __const_SystemObject_0;
+}
+__intnl_SystemBoolean_2 = __intnl_SystemBoolean_3;
+if (__intnl_SystemBoolean_2)
+{
+}
+else
+{
+__intnl_SystemInt32_3 = buildingMaterials.Length;
+__intnl_SystemBoolean_2 = __intnl_SystemInt32_3 == __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_2)
+{
+return;
+}
+frameCounter = frameCounter + __const_SystemInt32_1;
+__intnl_SystemBoolean_4 = frameCounter < updateInterval;
+if (__intnl_SystemBoolean_4)
+{
+return;
+}
+frameCounter = __const_SystemInt32_0;
+__intnl_VRCUdonUdonBehaviour_1 = dayNightCycle;
+dayNightCycle.SendCustomEvent(__const_SystemString_0);
+__intnl_SystemObject_1 = dayNightCycle.GetProgramVariable(__const_SystemString_1);
+__intnl_SystemInt32_5 = Convert.ToInt32(__intnl_SystemObject_1);
+__intnl_SystemInt32_4 = __intnl_SystemInt32_5;
+__lcl_currentTime_SystemInt32_0 = __intnl_SystemInt32_4;
+__intnl_SystemBoolean_5 = __lcl_currentTime_SystemInt32_0 != lastTimeOfDay;
+if (__intnl_SystemBoolean_5)
+{
+lastTimeOfDay = __lcl_currentTime_SystemInt32_0;
+__0_time__param = __lcl_currentTime_SystemInt32_0;
+__0_GetTargetEmissionForTime();
+targetEmissionStrength = __0___0_GetTargetEmissionForTime__ret;
+}
+__intnl_SystemSingle_0 = currentEmissionStrength - targetEmissionStrength;
+__intnl_SystemSingle_1 = Mathf.Abs(__intnl_SystemSingle_0);
+__intnl_SystemBoolean_6 = __intnl_SystemSingle_1 > __const_SystemSingle_0;
+if (__intnl_SystemBoolean_6)
+{
+__intnl_SystemSingle_2 = Time.deltaTime;
+__intnl_SystemSingle_3 = __intnl_SystemSingle_2 / transitionSpeed;
+currentEmissionStrength = Mathf.Lerp(currentEmissionStrength, targetEmissionStrength, __intnl_SystemSingle_3);
+__0_strength__param = currentEmissionStrength;
+UNDEF_2075c_2036();
+}
+}
+private void __0_GetTargetEmissionForTime()
+{
+__intnl_SystemBoolean_7 = __0_time__param >= __const_SystemInt32_0;
+if (__intnl_SystemBoolean_7)
+{
+__intnl_SystemBoolean_8 = __0_time__param <= __const_SystemInt32_2;
+if (__intnl_SystemBoolean_8)
+{
+__intnl_SystemUInt32_0 = __gintnl_SystemUInt32Array_0[__0_time__param];
+__0___0_GetTargetEmissionForTime__ret = daytimeEmissionStrength;
+return;
+__0___0_GetTargetEmissionForTime__ret = nighttimeEmissionStrength;
+return;
+}
+}
+__0___0_GetTargetEmissionForTime__ret = daytimeEmissionStrength;
+return;
+}
+private void UNDEF_2075c_2036()
+{
+__intnl_SystemInt32_6 = buildingMaterials.Length;
+__intnl_SystemInt32_7 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_9 = __intnl_SystemInt32_7 < __intnl_SystemInt32_6;
+if (__intnl_SystemBoolean_9)
+{
+break;
+}
+__lcl_mat_UnityEngineMaterial_0 = (Material)(buildingMaterials[__intnl_SystemInt32_7]);
+__intnl_UnityEngineObject_4 = __lcl_mat_UnityEngineMaterial_0;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_10 = __intnl_UnityEngineObject_4 != __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_10)
+{
+__lcl_mat_UnityEngineMaterial_0.SetFloat(__const_SystemString_2, __0_strength__param);
+}
+__intnl_SystemInt32_7 = __intnl_SystemInt32_7 + __const_SystemInt32_1;
+}
+}
+}

@@ -1,0 +1,435 @@
+void _start()
+24 currentRetryDelay = initialRetryDelay
+52 __intnl_VRCUdonUdonBehaviour_0 = cryptoAes256Gpu
+56 JUMP 6432
+104 __intnl_SystemString_0 = __0__intnlparam
+108 JUMP 7932
+164 __intnl_SystemString_1 = __1__intnlparam
+G_cryptoAes256Gpu.SetProgramVariable(__intnl_SystemString_0, __const_SystemString_0);// 192
+G_cryptoAes256Gpu.SetProgramVariable(__intnl_SystemByteArray_0, __const_SystemString_1);// 224
+G_cryptoAes256Gpu.SendCustomEvent(__const_SystemString_2);// 248
+304 __intnl_SystemByteArray_1 = __intnl_SystemObject_0
+324 _cachedKey = __intnl_SystemByteArray_1
+this.SendCustomEventDelayedSeconds(__const_VRCUdonCommonEnumsEventTiming_0, __const_SystemSingle_0, __const_SystemString_4);// 360
+380 return;
+void __0_IsLocalStaff()
+436 if (__intnl_SystemBoolean_0) //452
+{
+444 JUMP 476
+}
+484 if (__intnl_SystemBoolean_0) //532
+{
+508 __0___0_IsLocalStaff__ret = __const_SystemBoolean_0
+524 return;
+}
+__lcl_target_SystemString_0 = __0_displayName__param.Trim().ToLower();// 572
+596 __lcl_i_SystemInt32_0 = __const_SystemInt32_0
+664 if (__intnl_SystemBoolean_1) //928
+{
+__lcl_n_SystemString_0 = G_LOCAL_STAFF_DISPLAY_NAMES.Get(__lcl_i_SystemInt32_0);// 696
+736 if (__intnl_SystemBoolean_2) //752
+{
+744 JUMP 888
+}
+840 if (__intnl_SystemBoolean_3) //888
+{
+864 __0___0_IsLocalStaff__ret = __const_SystemBoolean_1
+880 return;
+}
+__lcl_i_SystemInt32_0 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_0);// 912
+920 JUMP 600
+}
+944 __0___0_IsLocalStaff__ret = __const_SystemBoolean_0
+960 return;
+980 return;
+void __0_HasRole()
+1028 if (__intnl_SystemBoolean_4) //1076
+{
+1052 __0___0_HasRole__ret = __const_SystemBoolean_0
+1068 return;
+}
+1116 if (__intnl_SystemBoolean_5) //1180
+{
+1148 __0_displayName__param = __1_displayName__param
+1152 JUMP 396
+1176 __intnl_SystemBoolean_5 = __0___0_IsLocalStaff__ret
+}
+1188 if (__intnl_SystemBoolean_5) //1236
+{
+1212 __0___0_HasRole__ret = __const_SystemBoolean_1
+1228 return;
+}
+1244 if (isLoaded) //1260
+{
+1252 JUMP 1300
+}
+1276 __0___0_HasRole__ret = __const_SystemBoolean_0
+1292 return;
+__lcl_nameToken_VRCSDK3DataDataToken_0 = ctor(__1_displayName__param);// 1316
+1372 if (__intnl_SystemBoolean_6) //1388
+{
+1380 JUMP 1428
+}
+1404 __0___0_HasRole__ret = __const_SystemBoolean_0
+1420 return;
+__lcl_roles_SystemString_0 = L_rolesToken.get_String();// 1444
+1484 if (__intnl_SystemBoolean_7) //1532
+{
+1508 __0___0_HasRole__ret = __const_SystemBoolean_0
+1524 return;
+}
+__lcl_parts_SystemStringArray_0 = L_roles.Split(__const_SystemStringSplitOptions_0, __const_SystemChar_0);// 1564
+1588 __lcl_i_SystemInt32_1 = __const_SystemInt32_0
+1656 if (__intnl_SystemBoolean_8) //1824
+{
+1736 if (__intnl_SystemBoolean_9) //1784
+{
+1760 __0___0_HasRole__ret = __const_SystemBoolean_1
+1776 return;
+}
+__lcl_i_SystemInt32_1 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_1);// 1808
+1816 JUMP 1592
+}
+1840 __0___0_HasRole__ret = __const_SystemBoolean_0
+1856 return;
+1876 return;
+void __0_HasAnyRole()
+1924 if (__intnl_SystemBoolean_10) //1972
+{
+1948 __0___0_HasAnyRole__ret = __const_SystemBoolean_0
+1964 return;
+}
+1996 __0_displayName__param = __2_displayName__param
+2000 JUMP 396
+2016 if (__0___0_IsLocalStaff__ret) //2064
+{
+2040 __0___0_HasAnyRole__ret = __const_SystemBoolean_1
+2056 return;
+}
+2072 if (isLoaded) //2088
+{
+2080 JUMP 2128
+}
+2104 __0___0_HasAnyRole__ret = __const_SystemBoolean_0
+2120 return;
+__lcl_nameToken_VRCSDK3DataDataToken_1 = ctor(__2_displayName__param);// 2144
+2200 if (__intnl_SystemBoolean_11) //2216
+{
+2208 JUMP 2256
+}
+2232 __0___0_HasAnyRole__ret = __const_SystemBoolean_0
+2248 return;
+__0___0_HasAnyRole__ret = op_UnaryNegation(__intnl_SystemBoolean_12);// 2320
+2340 return;
+2360 return;
+void __0_IsLinked()
+2408 if (__intnl_SystemBoolean_13) //2456
+{
+2432 __0___0_IsLinked__ret = __const_SystemBoolean_0
+2448 return;
+}
+2480 __0_displayName__param = __3_displayName__param
+2484 JUMP 396
+2500 if (__0___0_IsLocalStaff__ret) //2548
+{
+2524 __0___0_IsLinked__ret = __const_SystemBoolean_1
+2540 return;
+}
+2556 if (isLoaded) //2572
+{
+2564 JUMP 2612
+}
+2588 __0___0_IsLinked__ret = __const_SystemBoolean_0
+2604 return;
+__0___0_IsLinked__ret = G_roleData.ContainsKey(__intnl_VRCSDK3DataDataToken_0);// 2660
+2680 return;
+2700 return;
+void __0_GetRoles()
+2748 if (__intnl_SystemBoolean_14) //2796
+{
+2772 __0___0_GetRoles__ret = __const_SystemString_6
+2788 return;
+}
+2820 __0_displayName__param = __4_displayName__param
+2824 JUMP 396
+2848 __lcl_isLocal_SystemBoolean_0 = __0___0_IsLocalStaff__ret
+2860 if (isLoaded) //2876
+{
+2868 JUMP 2960
+}
+2884 if (__lcl_isLocal_SystemBoolean_0) //2920
+{
+2908 __0___0_GetRoles__ret = __const_SystemString_5
+2912 JUMP 2940
+}
+2936 __0___0_GetRoles__ret = __const_SystemString_6
+2952 return;
+__lcl_nameToken_VRCSDK3DataDataToken_2 = ctor(__4_displayName__param);// 2976
+3032 if (__intnl_SystemBoolean_15) //3048
+{
+3040 JUMP 3132
+}
+3056 if (__lcl_isLocal_SystemBoolean_0) //3092
+{
+3080 __0___0_GetRoles__ret = __const_SystemString_5
+3084 JUMP 3112
+}
+3108 __0___0_GetRoles__ret = __const_SystemString_6
+3124 return;
+__lcl_roles_SystemString_1 = L_rolesToken.get_String();// 3148
+3172 __intnl_SystemBoolean_16 = __lcl_isLocal_SystemBoolean_0
+3184 if (__intnl_SystemBoolean_16) //3248
+{
+}
+3256 if (__intnl_SystemBoolean_16) //3396
+{
+3296 if (__intnl_SystemBoolean_18) //3344
+{
+3320 __0___0_GetRoles__ret = __const_SystemString_5
+3336 return;
+}
+__0___0_GetRoles__ret = op_Addition(__const_SystemString_7, __lcl_roles_SystemString_1);// 3368
+3388 return;
+}
+3412 __0___0_GetRoles__ret = __lcl_roles_SystemString_1
+3428 return;
+3448 return;
+void IsReady()
+3480 __0_IsReady__ret = isLoaded
+3496 return;
+3516 return;
+void __0_RegisterCallback()
+3548 __intnl_UnityEngineObject_0 = __0_target__param
+3568 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+3612 if (__intnl_SystemBoolean_19) //3640
+{
+3632 return;
+}
+G_callbacks.Add(__intnl_VRCSDK3DataDataToken_1);// 3680
+3700 return;
+void ForceRefresh()
+3724 JUMP 3760
+3744 return;
+void _FetchRoleData()
+3768 if (isLoading) //3796
+{
+3788 return;
+}
+3836 if (__intnl_SystemBoolean_20) //3864
+{
+3856 return;
+}
+3880 isLoading = __const_SystemBoolean_1
+loadAttempts = op_Addition(__const_SystemInt32_1, loadAttempts);// 3908
+Log(__intnl_SystemString_8);// 3988
+4004 if (_usingTrustedUrl) //4064
+{
+4028 __intnl_VRCUdonCommonInterfacesIUdonEventReceiver_0 = __this_VRCUdonUdonBehaviour_1
+LoadUrl(__intnl_VRCUdonCommonInterfacesIUdonEventReceiver_0, trustedroleDataUrl);// 4048
+4056 JUMP 4108
+}
+4080 __intnl_VRCUdonCommonInterfacesIUdonEventReceiver_0 = __this_VRCUdonUdonBehaviour_2
+LoadUrl(__intnl_VRCUdonCommonInterfacesIUdonEventReceiver_0, untrustedroleDataUrl);// 4100
+4120 return;
+void _onStringLoadSuccess()
+4152 isLoading = __const_SystemBoolean_0
+_pendingRaw = G_onStringLoadSuccessIVRCStringDownload.get_Result();// 4172
+4212 if (__intnl_SystemBoolean_21) //4256
+{
+4228 JUMP 5896
+4248 return;
+}
+4264 if (useEncryption) //4320
+{
+this.SendCustomEventDelayedFrames(__const_VRCUdonCommonEnumsEventTiming_0, __const_SystemInt32_2, __const_SystemString_10);// 4304
+4312 JUMP 4400
+}
+4336 _pendingJson = _pendingRaw
+4356 _pendingRaw = __const_SystemString_6
+this.SendCustomEventDelayedFrames(__const_VRCUdonCommonEnumsEventTiming_0, __const_SystemInt32_2, __const_SystemString_11);// 4392
+4412 return;
+void _DecryptFetchedData()
+4460 if (__intnl_SystemBoolean_22) //4520
+{
+LogWarning(__const_SystemString_12);// 4476
+4492 JUMP 5896
+4512 return;
+}
+Log(__const_SystemString_13);// 4528
+4552 __intnl_VRCUdonUdonBehaviour_1 = __this_VRCUdonUdonBehaviour_5
+4572 __intnl_SystemByteArray_2 = _cachedKey
+4592 __intnl_SystemString_9 = _pendingRaw
+G_cryptoAes256Gpu.SetProgramVariable(_pendingRaw, __const_SystemString_14);// 4620
+G_cryptoAes256Gpu.SetProgramVariable(_cachedKey, __const_SystemString_15);// 4652
+G_cryptoAes256Gpu.SetProgramVariable(__intnl_VRCUdonUdonBehaviour_1, __const_SystemString_16);// 4684
+G_cryptoAes256Gpu.SendCustomEvent(__const_SystemString_17);// 4708
+4728 return;
+void _OnGPUDecryptionComplete()
+4784 if (__intnl_SystemBoolean_23) //4848
+{
+4808 __intnl_UnityEngineObject_2 = __this_VRCUdonUdonBehaviour_6
+Destroy(__intnl_UnityEngineObject_2);// 4820
+4840 return;
+}
+4880 if (__intnl_SystemBoolean_24) //4940
+{
+LogWarning(__const_SystemString_19);// 4896
+4912 JUMP 5896
+4932 return;
+}
+Log(__const_SystemString_20);// 4948
+4972 _pendingJson = gpuDecryptedResult
+this.SendCustomEventDelayedFrames(__const_VRCUdonCommonEnumsEventTiming_0, __const_SystemInt32_1, __const_SystemString_11);// 5008
+5032 guessIt = __const_SystemString_6
+5052 gpuDecryptedResult = __const_SystemString_6
+5068 return;
+void _OnGPUDecryptionFailed()
+LogWarning(__const_SystemString_21);// 5092
+5108 JUMP 5896
+5128 return;
+void _ProcessParse()
+5184 if (__intnl_SystemBoolean_25) //5200
+{
+5192 JUMP 5256
+}
+5216 _pendingJson = __const_SystemString_6
+5228 JUMP 5896
+5248 return;
+5272 _pendingJson = __const_SystemString_6
+5364 if (__intnl_SystemBoolean_27) //5408
+{
+5380 JUMP 5896
+5400 return;
+}
+__lcl_root_VRCSDK3DataDataDictionary_0 = L_rootToken.get_DataDictionary();// 5424
+5448 __lcl_playersKey_VRCSDK3DataDataToken_0 = __const_VRCSDK3DataDataToken_0
+5500 if (__intnl_SystemBoolean_28) //5516
+{
+5508 JUMP 5552
+}
+5524 JUMP 5896
+5544 return;
+5640 if (__intnl_SystemBoolean_30) //5684
+{
+5656 JUMP 5896
+5676 return;
+}
+roleData = L_playersToken.get_DataDictionary();// 5700
+5724 isLoaded = __const_SystemBoolean_1
+5744 loadAttempts = __const_SystemInt32_0
+5764 currentRetryDelay = initialRetryDelay
+5792 __0_eventName__param = __const_SystemString_22
+5796 JUMP 6072
+5816 return;
+void _onStringLoadError()
+5848 isLoading = __const_SystemBoolean_0
+5860 JUMP 5896
+5880 return;
+_usingTrustedUrl = op_UnaryNegation(_usingTrustedUrl);// 5912
+5936 __lcl_delay_SystemSingle_0 = currentRetryDelay
+this.SendCustomEventDelayedSeconds(__const_VRCUdonCommonEnumsEventTiming_0, __lcl_delay_SystemSingle_0, __const_SystemString_4);// 5972
+currentRetryDelay = Min(maxRetryDelay, __intnl_SystemSingle_0);// 6036
+6056 return;
+6088 __lcl_i_SystemInt32_2 = __const_SystemInt32_0
+6156 if (__intnl_SystemBoolean_31) //6412
+{
+6236 __lcl_target_VRCUdonUdonBehaviour_0 = __intnl_SystemObject_1
+6256 __intnl_UnityEngineObject_3 = __lcl_target_VRCUdonUdonBehaviour_0
+6276 __intnl_UnityEngineObject_4 = __const_SystemObject_0
+6320 if (__intnl_SystemBoolean_32) //6372
+{
+6352 __intnl_SystemString_10 = __0_eventName__param
+G_callbacks.get_Item(__lcl_i_SystemInt32_2).get_Reference().SendCustomEvent(__0_eventName__param);// 6364
+}
+__lcl_i_SystemInt32_2 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_2);// 6396
+6404 JUMP 6092
+}
+6424 return;
+__lcl_a_SystemByteArray_0 = 32.ctor();// 6448
+L_a.Set(__const_SystemByte_0, __const_SystemInt32_0);// 6480
+L_a.Set(__const_SystemByte_1, __const_SystemInt32_1);// 6512
+L_a.Set(__const_SystemByte_2, __const_SystemInt32_2);// 6544
+L_a.Set(__const_SystemByte_3, __const_SystemInt32_4);// 6576
+L_a.Set(__const_SystemByte_4, __const_SystemInt32_5);// 6608
+L_a.Set(__const_SystemByte_5, __const_SystemInt32_6);// 6640
+L_a.Set(__const_SystemByte_6, __const_SystemInt32_7);// 6672
+L_a.Set(__const_SystemByte_7, __const_SystemInt32_8);// 6704
+L_a.Set(__const_SystemByte_8, __const_SystemInt32_9);// 6736
+L_a.Set(__const_SystemByte_9, __const_SystemInt32_10);// 6768
+L_a.Set(__const_SystemByte_10, __const_SystemInt32_11);// 6800
+L_a.Set(__const_SystemByte_11, __const_SystemInt32_12);// 6832
+L_a.Set(__const_SystemByte_8, __const_SystemInt32_13);// 6864
+L_a.Set(__const_SystemByte_12, __const_SystemInt32_14);// 6896
+L_a.Set(__const_SystemByte_13, __const_SystemInt32_15);// 6928
+L_a.Set(__const_SystemByte_5, __const_SystemInt32_16);// 6960
+L_a.Set(__const_SystemByte_14, __const_SystemInt32_17);// 6992
+L_a.Set(__const_SystemByte_15, __const_SystemInt32_18);// 7024
+L_a.Set(__const_SystemByte_16, __const_SystemInt32_19);// 7056
+L_a.Set(__const_SystemByte_17, __const_SystemInt32_20);// 7088
+L_a.Set(__const_SystemByte_18, __const_SystemInt32_21);// 7120
+L_a.Set(__const_SystemByte_1, __const_SystemInt32_22);// 7152
+L_a.Set(__const_SystemByte_19, __const_SystemInt32_23);// 7184
+L_a.Set(__const_SystemByte_20, __const_SystemInt32_24);// 7216
+L_a.Set(__const_SystemByte_21, __const_SystemInt32_25);// 7248
+L_a.Set(__const_SystemByte_22, __const_SystemInt32_26);// 7280
+L_a.Set(__const_SystemByte_10, __const_SystemInt32_27);// 7312
+L_a.Set(__const_SystemByte_23, __const_SystemInt32_28);// 7344
+L_a.Set(__const_SystemByte_24, __const_SystemInt32_29);// 7376
+L_a.Set(__const_SystemByte_25, __const_SystemInt32_30);// 7408
+L_a.Set(__const_SystemByte_2, __const_SystemInt32_31);// 7440
+L_a.Set(__const_SystemByte_26, __const_SystemInt32_32);// 7472
+__lcl_c_SystemCharArray_0 = L_a.get_Length().ctor();// 7520
+7544 __lcl_i_SystemInt32_3 = __const_SystemInt32_0
+7612 if (__intnl_SystemBoolean_33) //7868
+{
+L_c.Set(__intnl_SystemChar_0, __lcl_i_SystemInt32_3);// 7820
+__lcl_i_SystemInt32_3 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_3);// 7852
+7860 JUMP 7548
+}
+__0__intnlparam = ctor(__lcl_c_SystemCharArray_0);// 7884
+7904 return;
+7924 return;
+__lcl__a_SystemByteArray_0 = 32.ctor();// 7948
+L_.Set(__const_SystemByte_27, __const_SystemInt32_0);// 7980
+L_.Set(__const_SystemByte_2, __const_SystemInt32_1);// 8012
+L_.Set(__const_SystemByte_28, __const_SystemInt32_2);// 8044
+L_.Set(__const_SystemByte_29, __const_SystemInt32_4);// 8076
+L_.Set(__const_SystemByte_15, __const_SystemInt32_5);// 8108
+L_.Set(__const_SystemByte_30, __const_SystemInt32_6);// 8140
+L_.Set(__const_SystemByte_6, __const_SystemInt32_7);// 8172
+L_.Set(__const_SystemByte_31, __const_SystemInt32_8);// 8204
+L_.Set(__const_SystemByte_32, __const_SystemInt32_9);// 8236
+L_.Set(__const_SystemByte_33, __const_SystemInt32_10);// 8268
+L_.Set(__const_SystemByte_34, __const_SystemInt32_11);// 8300
+L_.Set(__const_SystemByte_35, __const_SystemInt32_12);// 8332
+L_.Set(__const_SystemByte_36, __const_SystemInt32_13);// 8364
+L_.Set(__const_SystemByte_20, __const_SystemInt32_14);// 8396
+L_.Set(__const_SystemByte_37, __const_SystemInt32_15);// 8428
+L_.Set(__const_SystemByte_14, __const_SystemInt32_16);// 8460
+L_.Set(__const_SystemByte_31, __const_SystemInt32_17);// 8492
+L_.Set(__const_SystemByte_38, __const_SystemInt32_18);// 8524
+L_.Set(__const_SystemByte_29, __const_SystemInt32_19);// 8556
+L_.Set(__const_SystemByte_30, __const_SystemInt32_20);// 8588
+L_.Set(__const_SystemByte_39, __const_SystemInt32_21);// 8620
+L_.Set(__const_SystemByte_40, __const_SystemInt32_22);// 8652
+L_.Set(__const_SystemByte_7, __const_SystemInt32_23);// 8684
+L_.Set(__const_SystemByte_41, __const_SystemInt32_24);// 8716
+L_.Set(__const_SystemByte_42, __const_SystemInt32_25);// 8748
+L_.Set(__const_SystemByte_43, __const_SystemInt32_26);// 8780
+L_.Set(__const_SystemByte_15, __const_SystemInt32_27);// 8812
+L_.Set(__const_SystemByte_44, __const_SystemInt32_28);// 8844
+L_.Set(__const_SystemByte_45, __const_SystemInt32_29);// 8876
+L_.Set(__const_SystemByte_28, __const_SystemInt32_30);// 8908
+L_.Set(__const_SystemByte_34, __const_SystemInt32_31);// 8940
+L_.Set(__const_SystemByte_12, __const_SystemInt32_32);// 8972
+__lcl_c_SystemCharArray_1 = L_.get_Length().ctor();// 9020
+9044 __lcl_i_SystemInt32_4 = __const_SystemInt32_0
+9112 if (__intnl_SystemBoolean_34) //9368
+{
+L_c.Set(__intnl_SystemChar_1, __lcl_i_SystemInt32_4);// 9320
+__lcl_i_SystemInt32_4 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_4);// 9352
+9360 JUMP 9048
+}
+__1__intnlparam = ctor(__lcl_c_SystemCharArray_1);// 9384
+9404 return;
+9424 return;
