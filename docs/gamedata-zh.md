@@ -1,5 +1,7 @@
 # Fish World 游戏数据手册
 
+[English](gamedata-en.md) | 简体中文
+
 > 所有数值均来自 Udon IL 字节码反编译，为游戏内实际使用的常量与公式。
 
 ---
@@ -425,7 +427,7 @@ flowchart LR
 
 ### 8.3 总幸运公式
 
-```
+```text
 总幸运倍数 = 药水(2) + 世界等级(2/4/8) + 天气(2)
 理论最高 = 2 + 8 + 2 = 12× 幸运
 ```
@@ -551,7 +553,7 @@ flowchart LR
 
 使用**二分搜索**在累计经验阈值数组中查找当前等级。
 
-```
+```text
 当前等级起始经验 = GetTotalXPForLevel(当前等级)
 所需经验 = GetXPRequiredForLevel(当前等级)
 等级内经验 = 总经验 − 起始经验
@@ -607,7 +609,7 @@ flowchart LR
 
 ### 14.1 鱼价公式
 
-```
+```text
 重量系数 = InverseLerp(重量, 最大重量, 最小重量)
 基础价格 = Lerp(重量系数, 最高价, 最低价)
 最终价值 = 基础价格 × 体型倍数 × 着色器倍数
@@ -666,23 +668,23 @@ flowchart TD
 
 ## 附录：关键常量速查表
 
-| 系统       | 常量                  | 值       | 用途             |
-| ---------- | --------------------- | -------- | ---------------- |
-| 鱼类数据库 | zoneSpecificChance    | 80       | 区域鱼优先概率 % |
-| 钓鱼小游戏 | gravity               | 1.25     | 进度条物理       |
-| 钓鱼小游戏 | playerSpeed           | 3.75     | 玩家条移速       |
-| 昼夜循环   | cycleDuration         | 1200 s   | 完整日夜周期     |
-| 天气       | weatherChangeInterval | 120 s    | 天气轮换频率     |
-| 天气       | moonrainChance        | 0.15     | 夜间月雨概率     |
-| 海域事件   | maxActiveEvents       | 2        | 同时最多事件     |
-| 海域事件   | eventLifetime         | 600 s    | 事件持续时间     |
-| 增益       | luckPotionMultiplier  | 2.0×     | 个人幸运药水     |
-| 增益       | worldLuckTier3        | 8.0×     | 最高世界幸运     |
-| 增益       | weatherLuckMultiplier | 2.0×     | 天气幸运         |
-| 变异       | sizeModifierChance    | 10%      | 每次钓鱼概率     |
-| 变异       | shaderModifierChance  | 7.5%     | 每次钓鱼概率     |
-| 变异       | doubleModifierChance  | 5%       | 双重变异概率     |
-| 宠物       | baseCatchInterval     | 600 s    | 基础自动钓鱼间隔 |
-| 宠物       | maxCapacity           | 5 (基础) | 基础鱼存储       |
-| 玩家       | maxLevel              | 1000     | 等级上限         基础鱼存储 |
-| 玩家 | maxLevel | 1000 | 等级上限 |
+| 系统       | 常量                  | 值       | 用途                |
+| ---------- | --------------------- | -------- | ------------------- |
+| 鱼类数据库 | zoneSpecificChance    | 80       | 区域鱼优先概率 %    |
+| 钓鱼小游戏 | gravity               | 1.25     | 进度条物理          |
+| 钓鱼小游戏 | playerSpeed           | 3.75     | 玩家条移速          |
+| 昼夜循环   | cycleDuration         | 1200 s   | 完整日夜周期        |
+| 天气       | weatherChangeInterval | 120 s    | 天气轮换频率        |
+| 天气       | moonrainChance        | 0.15     | 夜间月雨概率        |
+| 海域事件   | maxActiveEvents       | 2        | 同时最多事件        |
+| 海域事件   | eventLifetime         | 600 s    | 事件持续时间        |
+| 增益       | luckPotionMultiplier  | 2.0×     | 个人幸运药水        |
+| 增益       | worldLuckTier3        | 8.0×     | 最高世界幸运        |
+| 增益       | weatherLuckMultiplier | 2.0×     | 天气幸运            |
+| 变异       | sizeModifierChance    | 10%      | 每次钓鱼概率        |
+| 变异       | shaderModifierChance  | 7.5%     | 每次钓鱼概率        |
+| 变异       | doubleModifierChance  | 5%       | 双重变异概率        |
+| 宠物       | baseCatchInterval     | 600 s    | 基础自动钓鱼间隔    |
+| 宠物       | maxCapacity           | 5 (基础) | 基础鱼存储          |
+| 玩家       | maxLevel              | 1000     | 等级上限 基础鱼存储 |
+| 玩家       | maxLevel              | 1000     | 等级上限            |

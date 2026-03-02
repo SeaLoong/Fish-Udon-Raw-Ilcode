@@ -1,14 +1,15 @@
 # AES-256 Encryption Implementation — Complete IL-Level Analysis
 
+English | [简体中文](aes256-il-analysis-zh.md)
+
 ## Table of Contents
 
 1. [Programs & Functions](#1-programs--functions)
 2. [DeriveKey Algorithm (from IL)](#2-derivekey-algorithm-from-il)
-3. [IL vs JavaScript — Critical Differences](#3-il-vs-javascript--critical-differences)
-4. [Key Derivation — Not Hardcoded](#4-key-derivation--not-hardcoded)
-5. [Passphrase & Salt Values](#5-passphrase--salt-values)
-6. [ExpandKey / KeyExpansion](#6-expandkey--keyexpansion)
-7. [Complete Decryption Flow](#7-complete-decryption-flow)
+3. [Key Derivation — Not Hardcoded](#3-key-derivation--not-hardcoded)
+4. [Passphrase & Salt Values](#4-passphrase--salt-values)
+5. [ExpandKey / KeyExpansion](#5-expandkey--keyexpansion)
+6. [Complete Decryption Flow](#6-complete-decryption-flow)
 
 ---
 
@@ -45,7 +46,7 @@
 
 Reconstructed from raw Udon bytecode at instructions 22580–24572 in CryptoAES256GPU:
 
-```
+```text
 function DeriveKey(passphrase: string, salt: byte[]) → byte[32]:
     // Step 1: Convert passphrase to bytes
     passphraseBytes = UTF8.GetBytes(passphrase)
@@ -100,7 +101,7 @@ function DeriveKey(passphrase: string, salt: byte[]) → byte[32]:
 
 From raw opcode (instructions 23916–24260):
 
-```
+```text
 23916  ToInt32(prev)            → int_32
 23940  ToInt32(curr)            → int_33
 23988  int_32 XOR int_33        → int_34        // prev ^ curr
@@ -117,79 +118,42 @@ From raw opcode (instructions 23916–24260):
 
 ---
 
-## 3. IL vs JavaScript — Critical Differences
-
-The JavaScript implementation provided **WILL NOT** produce the same derived key. There are **5 algorithmic differences**:
-
-### Difference 1: S-box Application Position
-
-|             | IL (Actual)                                                      | JavaScript (Reference)                                            |
-| ----------- | ---------------------------------------------------------------- | ----------------------------------------------------------------- |
-| **Where**   | AFTER all mixing                                                 | BEFORE mixing (applied to `curr`)                                 |
-| **Formula** | `temp[j] = sBox[(prev ^ curr ^ next ^ salt ^ round_xor) & 0xFF]` | `mixed = prev ^ SBOX[curr] ^ next ^ salt; temp[j] = mixed & 0xFF` |
-
-This is the most impactful difference. The IL applies the nonlinear S-box transformation to the fully mixed value, while the JS only transforms `curr` before linear XOR mixing.
-
-### Difference 2: Extra Round-Dependent XOR
-
-|          | IL (Actual)              | JavaScript (Reference) |
-| -------- | ------------------------ | ---------------------- |
-| **Term** | `mixed ^= (round % 256)` | _(absent)_             |
-
-The IL injects the current round number (mod 256) as an additional XOR term. This makes each round's mixing unique even when the byte neighborhood is identical.
-
-### Difference 3: Salt Byte Indexing
-
-|           | IL (Actual)                       | JavaScript (Reference)  |
-| --------- | --------------------------------- | ----------------------- |
-| **Index** | `salt[(round + j) % salt.length]` | `salt[j % salt.length]` |
-
-The IL includes the round number in the salt index, causing a different salt byte to be used at the same position `j` across different rounds. The JS always uses the same salt byte for position `j`.
-
-### Difference 4: Default Salt Byte (No-Salt Fallback)
-
-|           | IL (Actual) | JavaScript (Reference) |
-| --------- | ----------- | ---------------------- |
-| **Value** | `0x00` (0)  | `0x52` (82)            |
-
-Verified from CryptoAES256GPU heap: `__const_SystemByte_82` at address 206 = value **0**.
-
-### Difference 5: Salt Fallback Condition
-
-|               | IL (Actual)                                  | JavaScript (Reference)              |
-| ------------- | -------------------------------------------- | ----------------------------------- |
-| **Condition** | `salt != null && salt.length > 0`            | `saltBytes && j < saltBytes.length` |
-| **Effect**    | Uses salt for ALL j positions if salt exists | Only uses salt when j < salt.length |
-
-In the IL, if salt exists and is non-empty, it's used for every byte position (with wrapping). In JS, positions beyond salt length fall back to 0x52.
-
----
-
-## 4. Key Derivation — Not Hardcoded
+## 3. Key Derivation — Not Hardcoded
 
 The AES-256 key is **derived at runtime**, not hardcoded or stored:
 
 1. **DiscordRoleManager.\_start()** constructs a 32-byte passphrase and 32-byte salt from obfuscated byte constants
-2. Both byte arrays are cast element-by-element to `char[]`, then constructed into `String` objects
-3. The passphrase string is passed directly to CryptoAES256GPU
-4. The salt string is first UTF-8 encoded (`Encoding.UTF8.GetBytes()`) to produce a `byte[]` before passing
-5. `DeriveKey` is called, producing a 32-byte key
-6. The result is cached as `_cachedKey` for subsequent decryption calls
+2. Each byte is **XOR-deobfuscated**: `decoded[i] = (raw[i] ^ 163) ^ (i & 15)`
+3. Decoded bytes are cast to `char[]`, then constructed into `String` objects
+4. The passphrase string is passed directly to CryptoAES256GPU
+5. The salt string is first UTF-8 encoded (`Encoding.UTF8.GetBytes()`) to produce a `byte[]` before passing
+6. `DeriveKey` is called, producing a 32-byte key
+7. The result is cached as `_cachedKey` for subsequent decryption calls
 
-The 32-byte hardcoded constants form the **input passphrase and salt**, not the key itself. The key is produced by 1000 rounds of iterative mixing with S-box substitution.
+The 32-byte hardcoded byte constants form the **obfuscated input**. After XOR deobfuscation, they become ASCII passphrase and salt strings. The final 32-byte AES key is produced by 1000 rounds of iterative mixing with S-box substitution.
 
 ### UTF-8 Encoding Impact
 
-Since all passphrase/salt byte values are > 127 (range 144–253), each value when cast to a C# `char` (UTF-16 code unit) produces a character in the U+0080–U+00FF range. When UTF-8 encoded, each such character becomes **2 bytes**:
+After XOR deobfuscation, all decoded values fall in the ASCII range (32–122). Each character encodes as a **single UTF-8 byte**:
 
-- Original passphrase: 32 bytes → 32 chars → string → `UTF8.GetBytes()` → **64 bytes** used by DeriveKey
-- Original salt: 32 bytes → 32 chars → string → `UTF8.GetBytes()` → **64 bytes** passed as salt parameter
-- Combined array: **128 bytes** (passphrase bytes ∥ salt bytes)
-- Initial derived key: `derived[i] = combined[i % 128]` for i ∈ [0, 31]
+- Original passphrase: 32 obfuscated bytes → XOR decode → 32 ASCII chars → `UTF8.GetBytes()` → **32 bytes**
+- Original salt: 32 obfuscated bytes → XOR decode → 32 ASCII chars → `UTF8.GetBytes()` → **32 bytes**
+- Combined array: **64 bytes** (passphrase bytes ∥ salt bytes)
+- Initial derived key: `derived[i] = combined[i % 64]` for i ∈ [0, 31]
+
+### Correct Derived Key
+
+```text
+Passphrase: "m4EdEzCJVqIyRc6pfQL3k0SH6RIYdtIY"
+Salt:       "QFFtTqCrP0fAzB1iu2uw02KAmtZu0Iba"
+Key (hex):  f2ebf5452421480686863c3e7c6664ae1e6d416c2b66abbcbc8175f3ce0e827a
+```
+
+Verified by successfully decrypting live data from `https://gamerexde.github.io/trickforge-public/roles.txt`.
 
 ---
 
-## 5. Passphrase & Salt Values
+## 4. Passphrase & Salt Values
 
 ### Raw Passphrase Bytes (32 bytes)
 
@@ -216,7 +180,7 @@ Constructed in DiscordRoleManager.\_start() at instructions 6448–7904:
 
 **Passphrase array:**
 
-```
+```text
 [206, 150, 228, 196, 226, 220, 230, 238, 253, 219, 224, 209, 253, 205, 155, 220,
  197, 243, 237, 147, 204, 150, 246, 236, 157, 248, 224, 241, 203, 218, 228, 245]
 ```
@@ -248,20 +212,46 @@ Constructed at instructions 7948–9424:
 
 **Salt array:**
 
-```
+```text
 [242, 228, 231, 212, 243, 215, 230, 214, 251, 154, 207, 233, 213, 236, 156, 197,
  214, 144, 212, 215, 151, 148, 238, 229, 198, 222, 243, 221, 159, 231, 207, 205]
 ```
 
 Hex: `F2 E4 E7 D4 F3 D7 E6 D6 FB 9A CF E9 D5 EC 9C C5 D6 90 D4 D7 97 94 EE E5 C6 DE F3 DD 9F E7 CF CD`
 
-### Obfuscation Note
+### XOR Deobfuscation
 
-Both arrays reuse byte constants across positions (e.g., `byte_8` appears at passphrase indices 8 and 12; `byte_15` appears at salt indices 4 and 26). This is likely compiler deduplication of identical literal values, not intentional obfuscation.
+The raw byte arrays shown above are **obfuscated**. At runtime, each byte is decoded before use:
+
+```text
+decoded[i] = (raw[i] ^ 163) ^ (i & 15)
+```
+
+This is implemented in DiscordRoleManager.\_start() via the IL instructions at addresses 7500–7920 (passphrase) and 9000–9430 (salt). The constants `163` and `15` come from `__const_SystemInt32_33` and `__const_SystemInt32_16` respectively.
+
+**Decoded passphrase** (32 ASCII characters):
+
+```text
+Raw:     [206, 150, 228, 196, 226, 220, 230, 238, 253, 219, 224, 209, 253, 205, 155, 220,
+          197, 243, 237, 147, 204, 150, 246, 236, 157, 248, 224, 241, 203, 218, 228, 245]
+Decoded: m  4  E  d  E  z  C  J  V  q  I  y  R  c  6  p  f  Q  L  3  k  0  S  H  6  R  I  Y  d  t  I  Y
+String:  "m4EdEzCJVqIyRc6pfQL3k0SH6RIYdtIY"
+```
+
+**Decoded salt** (32 ASCII characters):
+
+```text
+Raw:     [242, 228, 231, 212, 243, 215, 230, 214, 251, 154, 207, 233, 213, 236, 156, 197,
+          214, 144, 212, 215, 151, 148, 238, 229, 198, 222, 243, 221, 159, 231, 207, 205]
+Decoded: Q  F  F  t  T  q  C  r  P  0  f  A  z  B  1  i  u  2  u  w  0  2  K  A  m  t  Z  u  0  I  b  a
+String:  "QFFtTqCrP0fAzB1iu2uw02KAmtZu0Iba"
+```
+
+> Note: Both arrays reuse byte constants across positions (e.g., `byte_8` at passphrase indices 8 and 12; `byte_15` at salt indices 4 and 26). This is compiler deduplication of identical literal values.
 
 ---
 
-## 6. ExpandKey / KeyExpansion
+## 5. ExpandKey / KeyExpansion
 
 **ExpandKey is NOT bypassed.** It is called normally by `DecryptStringGPU` after `DeriveKey` completes.
 
@@ -278,7 +268,7 @@ Both arrays reuse byte constants across positions (e.g., `byte_8` appears at pas
 
 Standard AES-256 key schedule:
 
-```
+```text
 KeyExpansion(key: byte[32]) → byte[240]:
     expandedKey = new byte[240]
 
@@ -319,26 +309,28 @@ The rcon table is standard: `[0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80, 0x
 
 ---
 
-## 7. Complete Decryption Flow
+## 6. Complete Decryption Flow
 
 ### Phase 1: Initialization (DiscordRoleManager.\_start)
 
-```
+```text
 1. Construct passphrase byte[32] from obfuscated heap constants
-2. Cast each byte → char, build char[] → String (passphrase)
-3. Construct salt byte[32] from obfuscated heap constants
-4. Cast each byte → char, build char[] → String (saltString)
-5. saltBytes = Encoding.UTF8.GetBytes(saltString)           → 64 bytes
-6. Set CryptoAES256GPU.passphrase = passphrase (string)
-7. Set CryptoAES256GPU.salt = saltBytes (byte[])
-8. Call CryptoAES256GPU.DeriveKey()
-9. _cachedKey = DeriveKey result (byte[32])
-10. Schedule data fetch
+2. XOR-deobfuscate each byte: decoded[i] = (raw[i] ^ 163) ^ (i & 15)
+3. Cast decoded bytes → char[], build String (passphrase = "m4EdEzCJVqIyRc6pfQL3k0SH6RIYdtIY")
+4. Construct salt byte[32] from obfuscated heap constants
+5. XOR-deobfuscate each byte (same formula)
+6. Cast decoded bytes → char[], build String (saltString = "QFFtTqCrP0fAzB1iu2uw02KAmtZu0Iba")
+7. saltBytes = Encoding.UTF8.GetBytes(saltString)           → 32 bytes (ASCII)
+8. Set CryptoAES256GPU.passphrase = passphrase (string)
+9. Set CryptoAES256GPU.salt = saltBytes (byte[])
+10. Call CryptoAES256GPU.DeriveKey()
+11. _cachedKey = GetProgramVariable("__0___0_DeriveKey__ret")
+12. Schedule data fetch
 ```
 
 ### Phase 2: Data Fetch
 
-```
+```text
 1. Download from trustedRoleDataUrl:
    "https://gamerexde.github.io/trickforge-public/roles.txt"
    (fallback: "https://api.trickforgestudios.com/api/v1/roles/vrc/all")
@@ -348,7 +340,7 @@ The rcon table is standard: `[0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80, 0x
 
 ### Phase 3: Decryption (CryptoAES256GPU.DecryptStringGPU)
 
-```
+```text
 1. base64Data = received encrypted string
 2. rawBytes = Convert.FromBase64String(base64Data)
 3. iv = rawBytes[0..15]                            → 16 bytes (IV)
@@ -361,7 +353,7 @@ The rcon table is standard: `[0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80, 0x
 
 ### Phase 4: CBC & Finalization (\_ContinueCBC)
 
-```
+```text
 1. For each 16-byte block i (starting from last):
      plainBlock[i] = ecbDecrypted[i] XOR ciphertext[i-1]
    First block:
@@ -377,20 +369,20 @@ The rcon table is standard: `[0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80, 0x
 
 ### Architecture Diagram
 
-```
+```text
 DiscordRoleManager                    CryptoAES256GPU
 ─────────────────                    ────────────────
 _start()
   │
-  ├─ Build passphrase (32 bytes)
-  ├─ Build salt (32 bytes)
-  ├─ UTF8.GetBytes(salt) → 64 bytes
+  ├─ Build passphrase (32 obfuscated bytes → XOR decode → 32 ASCII chars)
+  ├─ Build salt (32 obfuscated bytes → XOR decode → 32 ASCII chars)
+  ├─ UTF8.GetBytes(salt) → 32 bytes (ASCII)
   ├─ SetProgramVariable("passphrase", string)
   ├─ SetProgramVariable("salt", byte[])
   ├─ SendCustomEvent("DeriveKey") ──→ __0_DeriveKey()
-  │                                    ├─ UTF8.GetBytes(passphrase) → 64 bytes
-  │                                    ├─ combined = passphrase ∥ salt (128 bytes)
-  │                                    ├─ derived[i] = combined[i % 128]
+  │                                    ├─ UTF8.GetBytes(passphrase) → 32 bytes (ASCII)
+  │                                    ├─ combined = passphrase ∥ salt (64 bytes)
+  │                                    ├─ derived[i] = combined[i % 64]
   │                                    ├─ 1000 rounds of mixing
   │                                    └─ return derived (32 bytes)
   ├─ _cachedKey = GetProgramVariable("__0___0_DeriveKey__ret")

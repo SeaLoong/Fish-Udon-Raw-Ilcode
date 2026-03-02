@@ -1,5 +1,7 @@
 # Fish World Game Data Handbook
 
+English | [简体中文](gamedata-zh.md)
+
 > All values are extracted from decompiled Udon IL bytecode — these are the actual constants and formulas used in-game.
 
 ---
@@ -415,7 +417,7 @@ flowchart LR
 
 ### 8.3 Combined Luck Formula
 
-```
+```text
 total_luck = potion(2) + world_tier(2/4/8) + weather(2)
 Theoretical max = 2 + 8 + 2 = 12× luck multiplier
 ```
@@ -541,7 +543,7 @@ flowchart LR
 
 Uses **binary search** on cumulative XP threshold array.
 
-```
+```text
 currentLevelStartXP = GetTotalXPForLevel(currentLevel)
 xpNeeded = GetXPRequiredForLevel(currentLevel)
 xpInLevel = totalXP − currentLevelStartXP
@@ -597,7 +599,7 @@ Fallback XP values: 650 / 1,000 / 2,000 / 4,000
 
 ### 14.1 Fish Price Formula
 
-```
+```text
 weightT = InverseLerp(weight, maxWeight, minWeight)
 basePrice = Lerp(weightT, maxPrice, minPrice)
 finalValue = basePrice × sizeMultiplier × shaderMultiplier

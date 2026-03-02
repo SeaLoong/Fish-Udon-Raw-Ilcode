@@ -1,69 +1,122 @@
-# Fish World Udon IL Code
+# Fish World Udon IL 代码
 
-**VRChat "Fish World" — Decompiled Udon IL Bytecode & Reverse Engineering Analysis**
+> VRChat「Fish World」— 反编译 Udon IL 字节码 & 逆向工程分析
+>
+> 🐟 完整反编译 VRChat 多人钓鱼模拟世界「Fish World」的全部 IL 字节码
 
-> 🐟 VRChat 大型多人钓鱼模拟世界「Fish World」的全部 Udon 程序反编译 IL 字节码与逆向分析  
-> 🐟 Complete decompiled IL bytecode from VRChat's multiplayer fishing simulation world "Fish World"
-
----
-
-## About / 关于
-
-This repository contains the **decompiled IL bytecode of all 174 Udon programs** extracted from the VRChat world **Fish World** — a large-scale multiplayer fishing simulation game built with Udon/UdonSharp.
-
-本仓库包含 VRChat 世界 **Fish World** 中**全部 174 个 Udon 程序**的反编译 IL 字节码。Fish World 是一个基于 Udon/UdonSharp 构建的大型多人在线钓鱼模拟游戏世界。
-
-### Key Features Identified / 已识别的核心功能
-
-| Category            | Features                                                                                |
-| ------------------- | --------------------------------------------------------------------------------------- |
-| **Fishing**         | Rod physics, casting, bite detection, timing minigame, fish spawner with ecology system |
-| **RPG Progression** | Levels, XP, currency, achievements, titles, daily login rewards                         |
-| **Equipment**       | Rods, lines, bobbers with stat multipliers + enchantment system                         |
-| **Boats**           | Physics-based driving, drifting, boost, skins, network sync                             |
-| **Pets**            | AFK auto-fishing pets with upgradeable stats                                            |
-| **World**           | Dynamic weather, day/night cycle, zone-based music, sea events                          |
-| **Economy**         | Fish shop, equipment shop, buff shop, bounties, redeem codes                            |
-| **Social**          | NPC dialogue with branching, leaderboard, fish codex, tutorial                          |
-| **Security**        | AES-256-CBC GPU-accelerated encryption for Discord role verification                    |
+[English](README.en.md) | 简体中文
 
 ---
 
-## Documentation / 文档
+## 概述
 
-Detailed analysis reports are available in both languages:
+本仓库包含从 VRChat 世界 **Fish World** 中提取的**全部 174 个 Udon 程序的反编译 IL 字节码** —— 这是一款基于 Udon/UdonSharp 构建的大型多人钓鱼模拟游戏。
 
-| Document                                   | Description                                                                                                     |
-| ------------------------------------------ | --------------------------------------------------------------------------------------------------------------- |
-| [docs/analysis-zh.md](docs/analysis-zh.md) | 📖 **中文完整分析报告** — 全部 174 个脚本的功能说明、模块架构、AES-256 GPU 加密实现深度剖析                     |
-| [docs/analysis-en.md](docs/analysis-en.md) | 📖 **English Full Analysis** — All 174 scripts explained, module architecture, AES-256 GPU encryption deep dive |
+### 已识别的核心功能
+
+| 分类         | 功能                                                         |
+| ------------ | ------------------------------------------------------------ |
+| **钓鱼系统** | 鱼竿物理、抛竿、咬钩检测、计时小游戏、带生态系统的鱼群生成器 |
+| **RPG 成长** | 等级、经验值、货币、成就、称号、每日登录奖励                 |
+| **装备系统** | 鱼竿、鱼线、浮标，带属性加成 + 附魔系统                      |
+| **船只系统** | 基于物理的驾驶、漂移、加速、船只皮肤、网络同步               |
+| **宠物系统** | AFK 自动钓鱼宠物，可升级属性                                 |
+| **世界环境** | 动态天气、昼夜循环、区域音乐、海上事件                       |
+| **经济系统** | 鱼店、装备店、增益商店、悬赏任务、兑换码                     |
+| **社交系统** | NPC 分支对话、排行榜、鱼类图鉴、新手教程                     |
+| **安全系统** | AES-256-CBC GPU 加速加密，用于 Discord 角色验证              |
 
 ---
 
-## Repository Structure / 仓库结构
+## 文档
 
+| 文档                                                                                                         | 描述                           |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------ |
+| [分析 (EN)](docs/analysis-en.md) / [中文](docs/analysis-zh.md)                                               | 全部 174 个脚本分析，模块架构  |
+| [AES-256 IL 分析 (EN)](docs/aes256-il-analysis-en.md) / [中文](docs/aes256-il-analysis-zh.md)                | AES-256 加密 IL 级别追踪       |
+| [游戏数据 (EN)](docs/gamedata-en.md) / [中文](docs/gamedata-zh.md)                                           | 装备、附魔、鱼类、船只数据手册 |
+| [完整数据分析 (EN)](docs/complete-game-data-analysis-en.md) / [中文](docs/complete-game-data-analysis-zh.md) | 完整游戏机制与公式分析         |
+| [更新日志](docs/changelog.md) / [Changelog](docs/changelog-en.md)                                            | IL 代码变更记录                |
+
+---
+
+## 工具
+
+| 脚本         | 用途                                                               |
+| ------------ | ------------------------------------------------------------------ |
+| `decrypt.js` | AES-256-CBC 解密 — 使用 IL 提取的 KDF 解密加密角色数据             |
+| `extract.js` | 游戏数据提取 — 从 variablesjs 文件提取 17 种数据类型（397 条记录） |
+| `index.html` | 基于网页的 AES-256-CBC 加解密工具（兼容 Fish World 协议）          |
+
+### 快速开始
+
+```bash
+# 解密加密角色数据 → decrypted/
+node decrypt.js
+
+# 提取全部游戏数据 → extracted/
+node extract.js
 ```
+
+### 提取数据概览
+
+| 数据类型    |    数量 | 来源哈希   |
+| ----------- | ------: | ---------- |
+| 鱼类        |     134 | `e5ac9...` |
+| 附魔        |      42 | `2d630...` |
+| 称号 / 成就 |      34 | `882c4...` |
+| 船只皮肤    |      33 | `e7ac2...` |
+| 音乐曲目    |      24 | `5738a...` |
+| 商店物品    |      23 | `32f0b...` |
+| 背包物品    |      19 | `4496e...` |
+| 鱼竿        |      17 | `0a7fe...` |
+| 浮标        |      14 | `64ca1...` |
+| 天气状态    |      13 | `23d38...` |
+| 钓鱼区域    |      11 | `59971...` |
+| 海上事件    |      10 | `25348...` |
+| 鱼线        |       9 | `78d79...` |
+| 船只        |       7 | `5e300...` |
+| 宠物伙伴    |       6 | `e9bbc...` |
+| 宠物属性    |       1 | `0dbc5...` |
+| **合计**    | **397** |            |
+
+---
+
+## 加密数据来源
+
+| 文件                  | 来源 URL                                                  | IL 变量名              |
+| --------------------- | --------------------------------------------------------- | ---------------------- |
+| `encrypted/roles.txt` | `https://gamerexde.github.io/trickforge-public/roles.txt` | `trustedroleDataUrl`   |
+| `encrypted/all.txt`   | `https://api.trickforgestudios.com/api/v1/roles/vrc/all`  | `untrustedroleDataUrl` |
+
+两个文件均为 AES-256-CBC 加密的玩家角色数据。游戏优先使用可信 URL，API 端点作为备用。解密输出：`decrypted/roles.json`（4,711 名玩家）、`decrypted/all.json`（4,714 名玩家）。
+
+---
+
+## 仓库结构
+
+```text
 Fish-Udon-Raw-Ilcode/
-├── README.md                    ← You are here
-├── index.html                   # AES-256-CBC encrypt/decrypt web tool (兼容 Fish World 协议)
-├── docs/
-│   ├── analysis-zh.md           # Chinese analysis report (中文分析报告)
-│   └── analysis-en.md           # English analysis report
-└── autogenerated/               # Auto-generated decompiled data
-    ├── programnames             # GameObject → program hash mapping (5,766 lines)
-    ├── functiondb               # Function signatures database (~29K lines, JSON)
-    ├── dirlist                  # Function directory index (1,717 lines)
-    ├── varlist                  # Variable list with cross-refs (~167K lines)
-    ├── declibrary               # Udon VM API declarations (~591K lines, JSON)
-    ├── stats                    # Analysis timing statistics
-    ├── baseobject               # Binary: base object data
-    ├── bytescheck               # Binary: byte verification data
-    └── programs/                # 174 decompiled programs
-        └── <md5-hash>/
-            ├── altopcode        # High-level pseudocode (best readability)
-            ├── exactexec        # Exact execution sequence
-            ├── opcode           # Raw Udon VM opcodes
-            ├── program64        # Base64 raw program data
-            ├── variables64_*    # Base64 variable data
-            └── variablesjs_*    # JSON variable data
+├── README.md / README.en.md     # 双语 README
+├── decrypt.js                   # AES-256-CBC 解密脚本
+├── extract.js                   # 游戏数据提取脚本
+├── index.html                   # 网页加解密工具
+├── encrypted/                   # 加密源数据
+│   ├── all.txt                  #   ← API 端点数据
+│   └── roles.txt                #   ← GitHub Pages 数据
+├── decrypted/                   # 解密后 JSON 输出
+│   ├── all.json                 #   4,714 名玩家
+│   └── roles.json               #   4,711 名玩家
+├── extracted/                   # 提取的游戏数据（17 种类型）
+│   ├── fish.json                #   134 个鱼种
+│   ├── rods.json                #   17 根鱼竿
+│   ├── enchantments.json        #   42 个附魔
+│   └── ...                      #   + 14 个其他数据文件
+├── docs/                        # 分析文档（EN / 中文）
+├── 02-28/                       # 2 月 28 日反编译快照
+│   └── autogenerated/           #   174 个反编译程序
+└── 03-01/                       # 3 月 1 日反编译快照
+    └── autogenerated/           #   174 个反编译程序（IL 内容完全一致）
 ```
+
+> **注意**：两个快照在 174 个程序中的 IL 内容完全一致，仅时间统计信息有差异。

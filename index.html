@@ -1,0 +1,942 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fish World AES-256-CBC</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        background: #0f1117;
+        color: #e1e4e8;
+        min-height: 100vh;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 30px 20px;
+      }
+      .container {
+        width: 100%;
+        max-width: 800px;
+        background: #161b22;
+        border: 1px solid #30363d;
+        border-radius: 12px;
+        padding: 32px 28px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        position: relative;
+      }
+      .lang-toggle {
+        position: absolute;
+        top: 16px;
+        right: 20px;
+        display: flex;
+        gap: 4px;
+        z-index: 10;
+      }
+      .lang-toggle button {
+        background: #21262d;
+        border: 1px solid #30363d;
+        color: #8b949e;
+        padding: 3px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 0.75rem;
+        font-weight: 600;
+        transition: all 0.2s;
+      }
+      .lang-toggle button.active {
+        background: #30363d;
+        color: #58a6ff;
+        border-color: #58a6ff;
+      }
+      .lang-toggle button:hover:not(.active) {
+        color: #c9d1d9;
+      }
+      h1 {
+        text-align: center;
+        font-size: 1.45rem;
+        margin-bottom: 4px;
+        color: #58a6ff;
+        padding-right: 80px;
+      }
+      .subtitle {
+        text-align: center;
+        font-size: 0.82rem;
+        color: #8b949e;
+        margin-bottom: 24px;
+      }
+      label {
+        display: block;
+        font-size: 0.82rem;
+        color: #8b949e;
+        margin-bottom: 5px;
+        font-weight: 600;
+      }
+      .label-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 5px;
+      }
+      .label-row label {
+        margin-bottom: 0;
+      }
+      .hint {
+        font-size: 0.72rem;
+        color: #484f58;
+      }
+      .field {
+        margin-bottom: 14px;
+        position: relative;
+      }
+      textarea,
+      input[type='text'] {
+        width: 100%;
+        background: #0d1117;
+        border: 1px solid #30363d;
+        border-radius: 8px;
+        color: #c9d1d9;
+        padding: 9px 12px;
+        font-size: 0.9rem;
+        font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+        outline: none;
+        transition: border-color 0.2s;
+      }
+      textarea {
+        resize: vertical;
+        min-height: 220px;
+        line-height: 1.5;
+      }
+      textarea:focus,
+      input:focus {
+        border-color: #58a6ff;
+      }
+      .section-title {
+        font-size: 0.78rem;
+        color: #58a6ff;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin: 20px 0 10px;
+        padding-bottom: 4px;
+        border-bottom: 1px solid #21262d;
+      }
+      .info-box {
+        background: #0d1117;
+        border: 1px solid #21262d;
+        border-radius: 8px;
+        padding: 12px 14px;
+        margin-bottom: 14px;
+        font-size: 0.78rem;
+        color: #8b949e;
+        line-height: 1.6;
+      }
+      .info-box code {
+        background: #21262d;
+        border-radius: 4px;
+        padding: 1px 5px;
+        font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+        font-size: 0.76rem;
+        color: #79c0ff;
+      }
+      .info-box strong {
+        color: #c9d1d9;
+      }
+      .key-display {
+        margin-top: 8px;
+        padding: 10px 14px;
+        background: #0d1117;
+        border: 1px dashed #238636;
+        border-radius: 6px;
+        font-family: 'Cascadia Code', monospace;
+        font-size: 0.78rem;
+        color: #7ee787;
+        word-break: break-all;
+      }
+      .key-display .kd-label {
+        color: #8b949e;
+        font-size: 0.72rem;
+        display: block;
+        margin-bottom: 3px;
+      }
+      .iv-info {
+        margin-top: 6px;
+        padding: 6px 10px;
+        background: #0d1117;
+        border: 1px dashed #30363d;
+        border-radius: 6px;
+        font-family: 'Cascadia Code', monospace;
+        font-size: 0.78rem;
+        color: #ffa657;
+        word-break: break-all;
+        display: none;
+      }
+      .iv-info.visible {
+        display: block;
+      }
+      .toggle-group {
+        display: flex;
+        gap: 6px;
+        margin-bottom: 14px;
+        flex-wrap: wrap;
+      }
+      .toggle-group button {
+        background: #21262d;
+        border: 1px solid #30363d;
+        color: #8b949e;
+        padding: 5px 14px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 0.8rem;
+        font-weight: 600;
+        transition: all 0.2s;
+      }
+      .toggle-group button.active {
+        background: #30363d;
+        color: #58a6ff;
+        border-color: #58a6ff;
+      }
+      .toggle-group button:hover:not(.active) {
+        color: #c9d1d9;
+      }
+      .btn-row {
+        display: flex;
+        gap: 10px;
+        margin: 18px 0 14px;
+      }
+      button.action {
+        flex: 1;
+        padding: 10px 0;
+        border: none;
+        border-radius: 8px;
+        font-size: 0.92rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition:
+          background 0.2s,
+          transform 0.1s;
+      }
+      button.action:active {
+        transform: scale(0.97);
+      }
+      .btn-encrypt {
+        background: #238636;
+        color: #fff;
+      }
+      .btn-encrypt:hover {
+        background: #2ea043;
+      }
+      .btn-decrypt {
+        background: #1f6feb;
+        color: #fff;
+      }
+      .btn-decrypt:hover {
+        background: #388bfd;
+      }
+      .btn-copy {
+        background: none;
+        border: 1px solid #30363d;
+        border-radius: 6px;
+        color: #8b949e;
+        font-size: 0.75rem;
+        padding: 2px 9px;
+        cursor: pointer;
+        transition:
+          color 0.2s,
+          border-color 0.2s;
+      }
+      .btn-copy:hover {
+        color: #58a6ff;
+        border-color: #58a6ff;
+      }
+      .btn-sm {
+        background: #21262d;
+        border: 1px solid #30363d;
+        border-radius: 6px;
+        color: #8b949e;
+        font-size: 0.75rem;
+        padding: 0 10px;
+        cursor: pointer;
+        white-space: nowrap;
+        transition:
+          color 0.2s,
+          border-color 0.2s;
+      }
+      .btn-sm:hover {
+        color: #58a6ff;
+        border-color: #58a6ff;
+      }
+      .key-area {
+        display: none;
+      }
+      .key-area.visible {
+        display: block;
+      }
+      .toast {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%) translateY(-18px);
+        padding: 9px 20px;
+        border-radius: 8px;
+        font-size: 0.88rem;
+        font-weight: 500;
+        opacity: 0;
+        pointer-events: none;
+        transition:
+          opacity 0.3s,
+          transform 0.3s;
+        z-index: 1000;
+        max-width: 92vw;
+        text-align: center;
+        word-break: break-all;
+      }
+      .toast.visible {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+      .toast.error {
+        background: #da3633;
+        color: #fff;
+      }
+      .toast.success {
+        background: #238636;
+        color: #fff;
+      }
+      .toast.info {
+        background: #1f6feb;
+        color: #fff;
+      }
+      footer {
+        text-align: center;
+        margin-top: 18px;
+        font-size: 0.72rem;
+        color: #484f58;
+      }
+      .inline-row {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .inline-row .field {
+        flex: 1;
+        min-width: 0;
+      }
+      @media (max-width: 520px) {
+        .inline-row {
+          flex-direction: column;
+        }
+        .container {
+          padding: 20px 14px;
+        }
+        h1 {
+          padding-right: 0;
+          margin-top: 28px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="lang-toggle" id="langToggle">
+        <button class="active" data-lang="zh">中文</button>
+        <button data-lang="en">EN</button>
+      </div>
+
+      <h1 data-i18n="title">🐟 Fish World AES-256-CBC 加解密</h1>
+      <p class="subtitle" data-i18n="subtitle">兼容 VRChat CryptoAES256GPU · Base64(IV+Ciphertext) · PKCS7</p>
+
+      <!-- Protocol -->
+      <div class="section-title" data-i18n="protocolTitle">协议说明</div>
+      <div class="info-box" data-i18n-html="protocolInfo"></div>
+
+      <!-- Key -->
+      <div class="section-title" data-i18n="keyTitle">密钥</div>
+      <div class="field">
+        <label data-i18n="keyModeLabel">密钥模式</label>
+        <div class="toggle-group" id="keyModeGroup">
+          <button class="active" data-mode="builtin" data-i18n="keyBuiltin">Fish World 内置密钥</button>
+          <button data-mode="custom" data-i18n="keyCustom">自定义 Hex</button>
+        </div>
+      </div>
+
+      <!-- Built-in Key Info -->
+      <div class="key-area visible" id="builtinArea">
+        <div class="info-box" data-i18n-html="builtinInfo"></div>
+        <div class="key-display" id="derivedKeyBox">
+          <span class="kd-label" data-i18n="derivedLabel">派生结果 (Hex, 32 bytes)</span>
+          <span id="derivedKeyHex"></span>
+        </div>
+      </div>
+
+      <!-- Custom Hex Key -->
+      <div class="key-area" id="customArea">
+        <div class="field">
+          <div class="label-row">
+            <label for="rawKey" data-i18n="rawKeyLabel">AES-256 Key（64 Hex = 32 字节）</label>
+            <button class="btn-sm" id="btnGenKey" data-i18n="genKeyBtn">随机生成</button>
+          </div>
+          <input type="text" id="rawKey" maxlength="64" />
+        </div>
+      </div>
+
+      <!-- IV -->
+      <div class="section-title" data-i18n="ivTitle">IV（可选覆盖）</div>
+      <div class="field">
+        <div class="label-row">
+          <label for="iv" data-i18n="ivLabel">自定义 IV（32 Hex = 16 字节）</label>
+          <span class="hint" data-i18n="ivHint">留空则加密时自动生成</span>
+        </div>
+        <input type="text" id="iv" maxlength="32" data-i18n-ph="ivPh" placeholder="留空 = 自动生成随机 IV（推荐）" />
+        <div class="iv-info" id="ivInfo"></div>
+      </div>
+
+      <!-- Data -->
+      <div class="section-title" data-i18n="dataTitle">数据</div>
+      <div class="field">
+        <label for="inputText" data-i18n="inputLabel">输入内容</label>
+        <textarea id="inputText" data-i18n-ph="inputPh" placeholder="加密时输入明文（UTF-8）；解密时输入 Base64 密文"></textarea>
+      </div>
+      <div class="btn-row">
+        <button class="action btn-encrypt" id="btnEncrypt" data-i18n="encryptBtn">加密</button>
+        <button class="action btn-decrypt" id="btnDecrypt" data-i18n="decryptBtn">解密</button>
+      </div>
+      <div class="field">
+        <div class="label-row">
+          <label for="outputText" data-i18n="outputLabel">输出结果</label>
+          <button class="btn-copy" id="btnCopy" data-i18n="copyBtn">复制</button>
+        </div>
+        <textarea id="outputText" readonly data-i18n-ph="outputPh" placeholder="加密输出 Base64(IV+CT) / 解密输出 UTF-8 明文"></textarea>
+      </div>
+
+      <footer data-i18n="footer">所有操作均在浏览器本地完成 · 兼容 VRChat Fish World CryptoAES256GPU 协议</footer>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script>
+      (function () {
+        'use strict';
+
+        /* ================================================================
+         *  i18n
+         * ================================================================ */
+        var I18N = {
+          zh: {
+            title: '🐟 Fish World AES-256-CBC 加解密',
+            subtitle: '兼容 VRChat CryptoAES256GPU · Base64(IV+Ciphertext) · PKCS7',
+            protocolTitle: '协议说明',
+            protocolInfo:
+              '<strong>数据格式：</strong><code>Base64( IV<sub>16B</sub> ‖ Ciphertext<sub>PKCS7</sub> )</code><br/>' +
+              '<strong>算法：</strong>AES-256-CBC，PKCS7 填充<br/>' +
+              '<strong>加密：</strong>随机 16 字节 IV 拼在密文前面，整体 Base64<br/>' +
+              '<strong>解密：</strong>Base64 解码 → 前 16 字节 = IV，其余 = 密文',
+            keyTitle: '密钥',
+            keyModeLabel: '密钥模式',
+            keyBuiltin: 'Fish World 内置密钥',
+            keyCustom: '自定义 Hex',
+            builtinInfo:
+              '使用从 IL 字节码中提取的 Fish World 原始加密参数：<br/>' +
+              '32 字节混淆口令 + 32 字节混淆盐值（经 XOR 去混淆后为 ASCII 字符串）→ 经 1000 轮 DeriveKey 迭代 → 32 字节 AES 密钥<br/>' +
+              '<strong>算法：</strong>逐字节邻域 XOR + 盐值 XOR + 轮次 XOR + AES S-Box 替换',
+            derivedLabel: '派生结果 (Hex, 32 bytes)',
+            rawKeyLabel: 'AES-256 Key（64 Hex = 32 字节）',
+            genKeyBtn: '随机生成',
+            ivTitle: 'IV（可选覆盖）',
+            ivLabel: '自定义 IV（32 Hex = 16 字节）',
+            ivHint: '留空则加密时自动生成',
+            ivPh: '留空 = 自动生成随机 IV（推荐）',
+            dataTitle: '数据',
+            inputLabel: '输入内容',
+            inputPh: '加密时输入明文（UTF-8）；解密时输入 Base64 密文',
+            encryptBtn: '加密',
+            decryptBtn: '解密',
+            outputLabel: '输出结果',
+            outputPh: '加密输出 Base64(IV+CT) / 解密输出 UTF-8 明文',
+            copyBtn: '复制',
+            footer: '所有操作均在浏览器本地完成 · 兼容 VRChat Fish World CryptoAES256GPU 协议',
+            encryptSuccess: '加密成功',
+            encryptFail: '加密失败：',
+            decryptSuccess: '解密成功',
+            decryptFail: '解密失败：',
+            decryptKeyError: '密钥错误或密文损坏（PKCS7 填充校验失败）',
+            copied: '已复制到剪贴板',
+            copyFail: '复制失败',
+            nothingToCopy: '没有可复制的内容',
+            noCryptoApi: '浏览器不支持 Web Crypto API',
+            inputEmpty: '请输入明文',
+            cipherEmpty: '请输入 Base64 密文',
+            keyRequired: '请设置密钥',
+            keyLenError: 'Key 必须为 32 字节（64 Hex）',
+            base64Error: 'Base64 解码失败',
+            cipherShort: '密文太短（至少 32 字节）',
+            ivLenError: 'IV 必须为 16 字节（32 Hex）',
+            hexLenError: 'Hex 长度必须为偶数',
+            hexCharError: 'Hex 包含非法字符',
+            ivUsed: 'IV (Hex): ',
+            ivExtracted: '从密文提取的 IV: ',
+            ivCustom: '使用自定义 IV: ',
+            encrypting: '加密中…',
+            decrypting: '解密中…',
+            keyReady: '内置密钥已就绪',
+          },
+          en: {
+            title: '🐟 Fish World AES-256-CBC Encrypt/Decrypt',
+            subtitle: 'Compatible with VRChat CryptoAES256GPU · Base64(IV+Ciphertext) · PKCS7',
+            protocolTitle: 'Protocol',
+            protocolInfo:
+              '<strong>Format:</strong> <code>Base64( IV<sub>16B</sub> ‖ Ciphertext<sub>PKCS7</sub> )</code><br/>' +
+              '<strong>Algorithm:</strong> AES-256-CBC, PKCS7 padding<br/>' +
+              '<strong>Encrypt:</strong> Random 16-byte IV prepended to ciphertext, then Base64<br/>' +
+              '<strong>Decrypt:</strong> Base64 decode → first 16 bytes = IV, rest = ciphertext',
+            keyTitle: 'Key',
+            keyModeLabel: 'Key Mode',
+            keyBuiltin: 'Fish World Built-in Key',
+            keyCustom: 'Custom Hex',
+            builtinInfo:
+              'Uses original Fish World encryption parameters extracted from IL bytecode:<br/>' +
+              '32-byte XOR-obfuscated passphrase + 32-byte XOR-obfuscated salt (decoded to ASCII strings) → 1000 rounds DeriveKey → 32-byte AES key<br/>' +
+              '<strong>Algorithm:</strong> neighbor XOR + salt XOR + round XOR + AES S-Box substitution',
+            derivedLabel: 'Derived Key (Hex, 32 bytes)',
+            rawKeyLabel: 'AES-256 Key (64 Hex = 32 bytes)',
+            genKeyBtn: 'Random',
+            ivTitle: 'IV (Optional Override)',
+            ivLabel: 'Custom IV (32 Hex = 16 bytes)',
+            ivHint: 'Leave empty for auto-generated IV',
+            ivPh: 'Empty = auto-generate random IV (recommended)',
+            dataTitle: 'Data',
+            inputLabel: 'Input',
+            inputPh: 'Plaintext (UTF-8) for encrypt; Base64 ciphertext for decrypt',
+            encryptBtn: 'Encrypt',
+            decryptBtn: 'Decrypt',
+            outputLabel: 'Output',
+            outputPh: 'Encrypted: Base64(IV+CT) / Decrypted: UTF-8 plaintext',
+            copyBtn: 'Copy',
+            footer: 'All operations run locally in browser · Compatible with VRChat Fish World CryptoAES256GPU',
+            encryptSuccess: 'Encrypted successfully',
+            encryptFail: 'Encryption failed: ',
+            decryptSuccess: 'Decrypted successfully',
+            decryptFail: 'Decryption failed: ',
+            decryptKeyError: 'Wrong key or corrupted ciphertext (PKCS7 padding check failed)',
+            copied: 'Copied to clipboard',
+            copyFail: 'Copy failed',
+            nothingToCopy: 'Nothing to copy',
+            noCryptoApi: 'Web Crypto API not supported',
+            inputEmpty: 'Please enter plaintext',
+            cipherEmpty: 'Please enter Base64 ciphertext',
+            keyRequired: 'Please set a key',
+            keyLenError: 'Key must be 32 bytes (64 hex chars)',
+            base64Error: 'Base64 decode failed',
+            cipherShort: 'Ciphertext too short (min 32 bytes)',
+            ivLenError: 'IV must be 16 bytes (32 hex chars)',
+            hexLenError: 'Hex length must be even',
+            hexCharError: 'Hex contains invalid characters',
+            ivUsed: 'IV (Hex): ',
+            ivExtracted: 'IV extracted: ',
+            ivCustom: 'Using custom IV: ',
+            encrypting: 'Encrypting…',
+            decrypting: 'Decrypting…',
+            keyReady: 'Built-in key ready',
+          },
+        };
+
+        var currentLang = localStorage.getItem('fishAesLang') || 'zh';
+
+        function t(key) {
+          return (I18N[currentLang] && I18N[currentLang][key]) || (I18N['zh'] && I18N['zh'][key]) || key;
+        }
+
+        function applyLang() {
+          document.documentElement.lang = currentLang === 'zh' ? 'zh-CN' : 'en';
+          document.title = currentLang === 'zh' ? 'Fish World AES-256-CBC 加解密工具' : 'Fish World AES-256-CBC Tool';
+          document.querySelectorAll('[data-i18n]').forEach(function (el) {
+            el.textContent = t(el.getAttribute('data-i18n'));
+          });
+          document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
+            el.innerHTML = t(el.getAttribute('data-i18n-html'));
+          });
+          document.querySelectorAll('[data-i18n-ph]').forEach(function (el) {
+            el.placeholder = t(el.getAttribute('data-i18n-ph'));
+          });
+          document.querySelectorAll('#langToggle button').forEach(function (b) {
+            b.classList.toggle('active', b.getAttribute('data-lang') === currentLang);
+          });
+        }
+
+        /* ================================================================
+         *  DOM
+         * ================================================================ */
+        var $ = function (id) {
+          return document.getElementById(id);
+        };
+        var inputEl = $('inputText');
+        var outputEl = $('outputText');
+        var rawKeyEl = $('rawKey');
+        var ivEl = $('iv');
+        var ivInfoEl = $('ivInfo');
+        var btnEnc = $('btnEncrypt');
+        var btnDec = $('btnDecrypt');
+        var btnCopy = $('btnCopy');
+        var btnGenKey = $('btnGenKey');
+        var toastEl = $('toast');
+        var builtinArea = $('builtinArea');
+        var customArea = $('customArea');
+        var derivedKeyHexEl = $('derivedKeyHex');
+        var toastTimer = null;
+
+        var keyMode = 'builtin';
+        var builtinKeyHex = '';
+
+        /* ================================================================
+         *  Toast
+         * ================================================================ */
+        function showToast(msg, type) {
+          if (toastTimer) clearTimeout(toastTimer);
+          toastEl.textContent = msg;
+          toastEl.className = 'toast ' + type + ' visible';
+          toastTimer = setTimeout(function () {
+            toastEl.classList.remove('visible');
+          }, 4000);
+        }
+
+        /* ================================================================
+         *  Encoding Helpers
+         * ================================================================ */
+        function utf8Encode(s) {
+          return new TextEncoder().encode(s);
+        }
+        function utf8Decode(b) {
+          return new TextDecoder().decode(b);
+        }
+        function hexToBytes(hex) {
+          hex = hex.replace(/\s+/g, '');
+          if (hex.length % 2 !== 0) throw new Error(t('hexLenError'));
+          if (!/^[0-9a-fA-F]*$/.test(hex)) throw new Error(t('hexCharError'));
+          var bytes = new Uint8Array(hex.length / 2);
+          for (var i = 0; i < hex.length; i += 2) bytes[i / 2] = parseInt(hex.substr(i, 2), 16);
+          return bytes;
+        }
+        function bytesToHex(buf) {
+          var a = new Uint8Array(buf);
+          var s = '';
+          for (var i = 0; i < a.length; i++) s += ('0' + a[i].toString(16)).slice(-2);
+          return s;
+        }
+        function bufToBase64(buf) {
+          var bytes = new Uint8Array(buf);
+          var bin = '';
+          for (var i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+          return btoa(bin);
+        }
+        function base64ToBuf(b64) {
+          var bin = atob(b64);
+          var bytes = new Uint8Array(bin.length);
+          for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+          return bytes;
+        }
+        function randomBytes(len) {
+          return crypto.getRandomValues(new Uint8Array(len));
+        }
+        function randomHex(byteLen) {
+          return bytesToHex(randomBytes(byteLen));
+        }
+
+        /* ================================================================
+         *  AES S-Box (standard)
+         * ================================================================ */
+        var AES_SBOX = [
+          0x63, 0x7c, 0x77, 0x7b, 0xf2, 0x6b, 0x6f, 0xc5, 0x30, 0x01, 0x67, 0x2b, 0xfe, 0xd7, 0xab, 0x76, 0xca, 0x82, 0xc9, 0x7d, 0xfa, 0x59, 0x47, 0xf0, 0xad, 0xd4, 0xa2, 0xaf, 0x9c, 0xa4, 0x72,
+          0xc0, 0xb7, 0xfd, 0x93, 0x26, 0x36, 0x3f, 0xf7, 0xcc, 0x34, 0xa5, 0xe5, 0xf1, 0x71, 0xd8, 0x31, 0x15, 0x04, 0xc7, 0x23, 0xc3, 0x18, 0x96, 0x05, 0x9a, 0x07, 0x12, 0x80, 0xe2, 0xeb, 0x27,
+          0xb2, 0x75, 0x09, 0x83, 0x2c, 0x1a, 0x1b, 0x6e, 0x5a, 0xa0, 0x52, 0x3b, 0xd6, 0xb3, 0x29, 0xe3, 0x2f, 0x84, 0x53, 0xd1, 0x00, 0xed, 0x20, 0xfc, 0xb1, 0x5b, 0x6a, 0xcb, 0xbe, 0x39, 0x4a,
+          0x4c, 0x58, 0xcf, 0xd0, 0xef, 0xaa, 0xfb, 0x43, 0x4d, 0x33, 0x85, 0x45, 0xf9, 0x02, 0x7f, 0x50, 0x3c, 0x9f, 0xa8, 0x51, 0xa3, 0x40, 0x8f, 0x92, 0x9d, 0x38, 0xf5, 0xbc, 0xb6, 0xda, 0x21,
+          0x10, 0xff, 0xf3, 0xd2, 0xcd, 0x0c, 0x13, 0xec, 0x5f, 0x97, 0x44, 0x17, 0xc4, 0xa7, 0x7e, 0x3d, 0x64, 0x5d, 0x19, 0x73, 0x60, 0x81, 0x4f, 0xdc, 0x22, 0x2a, 0x90, 0x88, 0x46, 0xee, 0xb8,
+          0x14, 0xde, 0x5e, 0x0b, 0xdb, 0xe0, 0x32, 0x3a, 0x0a, 0x49, 0x06, 0x24, 0x5c, 0xc2, 0xd3, 0xac, 0x62, 0x91, 0x95, 0xe4, 0x79, 0xe7, 0xc8, 0x37, 0x6d, 0x8d, 0xd5, 0x4e, 0xa9, 0x6c, 0x56,
+          0xf4, 0xea, 0x65, 0x7a, 0xae, 0x08, 0xba, 0x78, 0x25, 0x2e, 0x1c, 0xa6, 0xb4, 0xc6, 0xe8, 0xdd, 0x74, 0x1f, 0x4b, 0xbd, 0x8b, 0x8a, 0x70, 0x3e, 0xb5, 0x66, 0x48, 0x03, 0xf6, 0x0e, 0x61,
+          0x35, 0x57, 0xb9, 0x86, 0xc1, 0x1d, 0x9e, 0xe1, 0xf8, 0x98, 0x11, 0x69, 0xd9, 0x8e, 0x94, 0x9b, 0x1e, 0x87, 0xe9, 0xce, 0x55, 0x28, 0xdf, 0x8c, 0xa1, 0x89, 0x0d, 0xbf, 0xe6, 0x42, 0x68,
+          0x41, 0x99, 0x2d, 0x0f, 0xb0, 0x54, 0xbb, 0x16,
+        ];
+
+        /* ================================================================
+         *  Fish World DeriveKey — exact replica from IL bytecode
+         *
+         *  Algorithm (1000 rounds):
+         *    combined = UTF8(passphrase) ∥ salt
+         *    derived[i] = combined[i % combined.length]
+         *    for round 0..999:
+         *      for j 0..31:
+         *        prev = derived[(j+31)%32]
+         *        curr = derived[j]
+         *        next = derived[(j+1)%32]
+         *        saltByte = salt[(round+j) % salt.length]
+         *        mixed = prev ^ curr ^ next ^ saltByte ^ (round % 256)
+         *        temp[j] = SBOX[mixed & 0xFF]
+         *      derived = temp
+         * ================================================================ */
+        function fishDeriveKey(passphraseBytes, saltBytes) {
+          // Step 1: combined = passphraseBytes ∥ saltBytes
+          var combined = new Uint8Array(passphraseBytes.length + saltBytes.length);
+          combined.set(passphraseBytes, 0);
+          combined.set(saltBytes, passphraseBytes.length);
+
+          // Step 2: init derived[32] wrapping fill
+          var derived = new Uint8Array(32);
+          for (var i = 0; i < 32; i++) {
+            derived[i] = combined[i % combined.length];
+          }
+
+          // Step 3: 1000 rounds of mixing
+          var ROUNDS = 1000;
+          for (var round = 0; round < ROUNDS; round++) {
+            var temp = new Uint8Array(32);
+            var roundXor = round % 256;
+            for (var j = 0; j < 32; j++) {
+              var prev = derived[(j + 31) % 32];
+              var curr = derived[j];
+              var next = derived[(j + 1) % 32];
+              var saltByte = saltBytes[(round + j) % saltBytes.length];
+              var mixed = (prev ^ curr ^ next ^ saltByte ^ roundXor) & 0xff;
+              temp[j] = AES_SBOX[mixed];
+            }
+            derived = temp;
+          }
+          return derived;
+        }
+
+        /* ================================================================
+         *  Fish World Hardcoded Parameters (extracted from IL)
+         *
+         *  DiscordRoleManager._start() constructs these from obfuscated
+         *  byte constants. Each byte is XOR-decoded at runtime:
+         *    decoded[i] = (raw[i] ^ 163) ^ (i & 15)
+         *  This yields ASCII strings (all values < 128), each 32 bytes.
+         *
+         *  Passphrase: "m4EdEzCJVqIyRc6pfQL3k0SH6RIYdtIY"
+         *  Salt:       "QFFtTqCrP0fAzB1iu2uw02KAmtZu0Iba"
+         * ================================================================ */
+        // XOR-obfuscated passphrase bytes (decoded → 32 ASCII chars → 32 UTF-8 bytes)
+        var PP_RAW = [206, 150, 228, 196, 226, 220, 230, 238, 253, 219, 224, 209, 253, 205, 155, 220, 197, 243, 237, 147, 204, 150, 246, 236, 157, 248, 224, 241, 203, 218, 228, 245];
+
+        // XOR-obfuscated salt bytes (decoded → 32 ASCII chars → 32 UTF-8 bytes)
+        var SALT_RAW = [242, 228, 231, 212, 243, 215, 230, 214, 251, 154, 207, 233, 213, 236, 156, 197, 214, 144, 212, 215, 151, 148, 238, 229, 198, 222, 243, 221, 159, 231, 207, 205];
+
+        function buildFishKey() {
+          // Replicate C#: XOR-decode raw bytes, cast to char, build String,
+          // then UTF8.GetBytes(). Decoded values are all ASCII so UTF-8
+          // encoding yields the same 32 bytes.
+          var ppStr = '';
+          for (var i = 0; i < PP_RAW.length; i++) ppStr += String.fromCharCode(PP_RAW[i] ^ 163 ^ (i & 15));
+          var saltStr = '';
+          for (var i = 0; i < SALT_RAW.length; i++) saltStr += String.fromCharCode(SALT_RAW[i] ^ 163 ^ (i & 15));
+
+          var ppBytes = utf8Encode(ppStr); // 32 bytes (ASCII)
+          var saltBytes = utf8Encode(saltStr); // 32 bytes (ASCII)
+
+          return fishDeriveKey(ppBytes, saltBytes);
+        }
+
+        /* ================================================================
+         *  Key Resolution
+         * ================================================================ */
+        function resolveKeyBytes() {
+          var hex;
+          if (keyMode === 'builtin') {
+            hex = builtinKeyHex;
+          } else {
+            hex = rawKeyEl.value.trim();
+          }
+          if (!hex) throw new Error(t('keyRequired'));
+          var kb = hexToBytes(hex);
+          if (kb.length !== 32) throw new Error(t('keyLenError'));
+          return kb;
+        }
+
+        /* ================================================================
+         *  Web Crypto
+         * ================================================================ */
+        function importRawKey(keyBytes) {
+          return crypto.subtle.importKey('raw', keyBytes, { name: 'AES-CBC' }, false, ['encrypt', 'decrypt']);
+        }
+
+        async function doEncrypt() {
+          var plain = inputEl.value;
+          if (!plain) throw new Error(t('inputEmpty'));
+          var keyBytes = resolveKeyBytes();
+          var cryptoKey = await importRawKey(keyBytes);
+
+          var iv;
+          var ivHex = ivEl.value.trim();
+          if (ivHex) {
+            iv = hexToBytes(ivHex);
+            if (iv.length !== 16) throw new Error(t('ivLenError'));
+          } else {
+            iv = randomBytes(16);
+          }
+
+          var cipherBuf = await crypto.subtle.encrypt({ name: 'AES-CBC', iv: iv }, cryptoKey, utf8Encode(plain));
+          var cipherArr = new Uint8Array(cipherBuf);
+          var combined = new Uint8Array(16 + cipherArr.length);
+          combined.set(iv, 0);
+          combined.set(cipherArr, 16);
+
+          ivInfoEl.textContent = t('ivUsed') + bytesToHex(iv);
+          ivInfoEl.classList.add('visible');
+          return bufToBase64(combined);
+        }
+
+        async function doDecrypt() {
+          var raw = inputEl.value.trim();
+          if (!raw) throw new Error(t('cipherEmpty'));
+
+          var combined;
+          try {
+            combined = base64ToBuf(raw);
+          } catch (e) {
+            throw new Error(t('base64Error'));
+          }
+          if (combined.length < 32) throw new Error(t('cipherShort'));
+
+          var iv = combined.slice(0, 16);
+          var ciphertext = combined.slice(16);
+
+          var ivHex = ivEl.value.trim();
+          if (ivHex) {
+            var customIV = hexToBytes(ivHex);
+            if (customIV.length !== 16) throw new Error(t('ivLenError'));
+            iv = customIV;
+            ivInfoEl.textContent = t('ivCustom') + bytesToHex(iv);
+          } else {
+            ivInfoEl.textContent = t('ivExtracted') + bytesToHex(iv);
+          }
+          ivInfoEl.classList.add('visible');
+
+          var keyBytes = resolveKeyBytes();
+          var cryptoKey = await importRawKey(keyBytes);
+          var plainBuf = await crypto.subtle.decrypt({ name: 'AES-CBC', iv: iv }, cryptoKey, ciphertext);
+          return utf8Decode(plainBuf);
+        }
+
+        /* ================================================================
+         *  Events
+         * ================================================================ */
+        // Language toggle
+        document.querySelectorAll('#langToggle button').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            currentLang = btn.getAttribute('data-lang');
+            localStorage.setItem('fishAesLang', currentLang);
+            applyLang();
+          });
+        });
+
+        // Key mode toggle
+        document.querySelectorAll('#keyModeGroup button').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            document.querySelectorAll('#keyModeGroup button').forEach(function (b) {
+              b.classList.remove('active');
+            });
+            btn.classList.add('active');
+            keyMode = btn.getAttribute('data-mode');
+            builtinArea.classList.toggle('visible', keyMode === 'builtin');
+            customArea.classList.toggle('visible', keyMode === 'custom');
+          });
+        });
+
+        // Random key generator
+        btnGenKey.addEventListener('click', function () {
+          rawKeyEl.value = randomHex(32);
+        });
+
+        // Encrypt
+        btnEnc.addEventListener('click', async function () {
+          try {
+            btnEnc.disabled = true;
+            btnEnc.textContent = t('encrypting');
+            outputEl.value = await doEncrypt();
+            showToast(t('encryptSuccess'), 'success');
+          } catch (e) {
+            outputEl.value = '';
+            showToast(t('encryptFail') + e.message, 'error');
+          } finally {
+            btnEnc.disabled = false;
+            btnEnc.textContent = t('encryptBtn');
+          }
+        });
+
+        // Decrypt
+        btnDec.addEventListener('click', async function () {
+          try {
+            btnDec.disabled = true;
+            btnDec.textContent = t('decrypting');
+            outputEl.value = await doDecrypt();
+            showToast(t('decryptSuccess'), 'success');
+          } catch (e) {
+            outputEl.value = '';
+            var msg = t('decryptFail');
+            msg += e instanceof DOMException ? t('decryptKeyError') : e.message;
+            showToast(msg, 'error');
+          } finally {
+            btnDec.disabled = false;
+            btnDec.textContent = t('decryptBtn');
+          }
+        });
+
+        // Copy
+        btnCopy.addEventListener('click', function () {
+          if (!outputEl.value) {
+            showToast(t('nothingToCopy'), 'info');
+            return;
+          }
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(outputEl.value).then(
+              function () {
+                showToast(t('copied'), 'success');
+              },
+              function () {
+                fallbackCopy();
+              },
+            );
+          } else {
+            fallbackCopy();
+          }
+        });
+
+        function fallbackCopy() {
+          outputEl.select();
+          try {
+            document.execCommand('copy');
+            showToast(t('copied'), 'success');
+          } catch (_) {
+            showToast(t('copyFail'), 'error');
+          }
+        }
+
+        /* ================================================================
+         *  Initialization
+         * ================================================================ */
+        applyLang();
+
+        // Derive built-in key on page load
+        try {
+          var fishKey = buildFishKey();
+          builtinKeyHex = bytesToHex(fishKey);
+          derivedKeyHexEl.textContent = builtinKeyHex;
+          showToast(t('keyReady'), 'info');
+        } catch (e) {
+          showToast('Key derivation error: ' + e.message, 'error');
+        }
+
+        // Browser check
+        if (!window.crypto || !window.crypto.subtle) {
+          showToast(t('noCryptoApi'), 'error');
+          btnEnc.disabled = true;
+          btnDec.disabled = true;
+        }
+      })();
+    </script>
+  </body>
+</html>

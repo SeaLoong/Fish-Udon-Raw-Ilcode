@@ -1,5 +1,7 @@
 # Fish World VRChat — Complete Game Data Analysis
 
+English | [简体中文](complete-game-data-analysis-zh.md)
+
 > Extracted from decompiled Udon IL bytecode (174 programs). All numerical values are verbatim from the source.
 
 ---
@@ -436,7 +438,7 @@ All enchantments are `equipmentType=0` (rod enchantments).
 | 24  | Luck of the Chosen       | Epic      | 100 | —   | —   | —   | 10  | —         | SE val=20             |
 | 34  | Speed Demon              | Epic      | —   | —   | —   | 60  | —   | —         | SE type=10            |
 
-_L=Luck, S=Strength, E=Expertise, A=AttractionRate, BC=BigCatchRate, MW=MaxWeightBonus, SE=Special Effect_
+L=Luck, S=Strength, E=Expertise, A=AttractionRate, BC=BigCatchRate, MW=MaxWeightBonus, SE=Special Effect
 
 ### 9.3 Special Effect Types
 
@@ -561,7 +563,7 @@ The EquipmentStatsManager exposes these enchantment-derived values:
 
 ### 12.3 Combined Luck Buff Formula (`GetLuckBuffMultiplier`)
 
-```
+```text
 combined = 0
 if luckPotionActive:    combined += 2.0  (luckPotionMultiplier)
 if worldLuckBuffActive: combined += GetWorldLuckMultiplierForTier(tier)  [2/4/8]
@@ -740,7 +742,7 @@ Fallback constants for edge-case levels:
 
 ### 16.5 Level Progress
 
-```
+```text
 currentLevelStartXP = GetTotalXPForLevel(currentLevel)
 xpNeeded = GetXPRequiredForLevel(currentLevel)
 xpInLevel = totalXP - currentLevelStartXP
@@ -803,7 +805,7 @@ Rotating weekly unique rewards:
 
 ### 18.1 Fish Price Formula
 
-```
+```text
 weightT = InverseLerp(weight, maxWeight, minWeight)   // 0 at min, 1 at max
 basePrice = Lerp(weightT, maxPrice, minPrice)          // interpolate price range
 finalValue = basePrice × sizeMultiplier × shaderMultiplier
@@ -829,7 +831,7 @@ finalValue = basePrice × sizeMultiplier × shaderMultiplier
 
 ## Appendix A: System Architecture Overview
 
-```
+```text
 FishDatabase ──► SelectRarityTier() ──► SelectFish() ──► FishEntry
      │                    ▲                                  │
      │               luck multiplier                    CalculateFishValue()
