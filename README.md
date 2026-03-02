@@ -30,13 +30,12 @@
 
 ## 文档
 
-| 文档                                                                                                         | 描述                           |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------ |
-| [分析 (EN)](docs/analysis-en.md) / [中文](docs/analysis-zh.md)                                               | 全部 174 个脚本分析，模块架构  |
-| [AES-256 IL 分析 (EN)](docs/aes256-il-analysis-en.md) / [中文](docs/aes256-il-analysis-zh.md)                | AES-256 加密 IL 级别追踪       |
-| [游戏数据 (EN)](docs/gamedata-en.md) / [中文](docs/gamedata-zh.md)                                           | 装备、附魔、鱼类、船只数据手册 |
-| [完整数据分析 (EN)](docs/complete-game-data-analysis-en.md) / [中文](docs/complete-game-data-analysis-zh.md) | 完整游戏机制与公式分析         |
-| [更新日志](docs/changelog.md) / [Changelog](docs/changelog-en.md)                                            | IL 代码变更记录                |
+| 文档                                             | 描述                           |
+| ------------------------------------------------ | ------------------------------ |
+| [项目分析](docs/analysis-zh.md)                  | 全部 174 个脚本分析，模块架构  |
+| [AES-256 IL 分析](docs/aes256-il-analysis-zh.md) | AES-256 加密 IL 级别追踪       |
+| [游戏数据](docs/gamedata-zh.md)                  | 装备、附魔、鱼类、船只数据手册 |
+| [更新日志](docs/changelog.md)                    | IL 代码变更记录                |
 
 ---
 

@@ -390,11 +390,11 @@ pie title Day/Night Cycle (20-min period)
 
 ```mermaid
 flowchart LR
-    A["Luck Potion ×2"] --> D["Additive Stacking"]
-    B["Weather Luck ×2"] --> D
-    C["World Luck (up to ×8)"] --> D
+    A["Luck Potion x2"] --> D["Additive Stacking"]
+    B["Weather Luck x2"] --> D
+    C["World Luck (up to x8)"] --> D
     D --> E["total = max(sum, 1.0)"]
-    E --> F["Max ×12 Luck Multiplier"]
+    E --> F["Max x12 Luck Multiplier"]
 ```
 
 | Buff                   | Multiplier             | Duration             | Stacking        |
@@ -443,18 +443,18 @@ Theoretical max = 2 + 8 + 2 = 12× luck multiplier
 ```mermaid
 flowchart TD
     subgraph Common["Common Events (weight 100)"]
-        E1["Cursed Vortex — Cursed shader"]
-        E2["Frozen Vortex — Frozen shader, luck ×1.5"]
-        E3["Stone Vortex — Stone/Zebra shader"]
-        E4["Albino Vortex — Albino shader"]
-        E5["Missing Vortex — MissingShader"]
-        E6["Standard Vortex — No special shader"]
+        E1["Cursed Vortex - Cursed shader"]
+        E2["Frozen Vortex - Frozen shader, luck x1.5"]
+        E3["Stone Vortex - Stone/Zebra shader"]
+        E4["Albino Vortex - Albino shader"]
+        E5["Missing Vortex - MissingShader"]
+        E6["Standard Vortex - No special shader"]
     end
     subgraph Rare["Rare Events (weight 1)"]
-        E7["Negative Vortex — 5% rare fish"]
-        E8["Blessed Vortex — 50% rare fish"]
-        E9["Shiny Vortex — 80% rare fish"]
-        E10["Ultimate Vortex — 80% rare fish, luck ×2"]
+        E7["Negative Vortex - 5% rare fish"]
+        E8["Blessed Vortex - 50% rare fish"]
+        E9["Shiny Vortex - 80% rare fish"]
+        E10["Ultimate Vortex - 80% rare fish, luck x2"]
     end
 ```
 
@@ -499,10 +499,10 @@ flowchart TD
 ```mermaid
 flowchart LR
     subgraph Upgrades
-        A["Capacity (14 levels)\n+5/level → max 75 fish"]
-        B["Luck (150 levels)\n+1/level → +150 luck"]
-        C["Speed (20 levels)\n-20s/level → min 200s"]
-        D["Weight (15 levels)\n×2/level → 300 kg"]
+        A["Capacity (14 levels)\n+5/level, max 75 fish"]
+        B["Luck (150 levels)\n+1/level, +150 luck"]
+        C["Speed (20 levels)\n-20s/level, min 200s"]
+        D["Weight (15 levels)\nx2/level, 300 kg"]
     end
 ```
 
@@ -609,9 +609,9 @@ finalValue = basePrice × sizeMultiplier × shaderMultiplier
 
 ```mermaid
 flowchart LR
-    A["Base Price\n(weight interpolation)"] --> B["× Size Modifier\n(Huge 1.5×)"]
-    B --> C["× Shader Modifier\n(up to 5.0×)"]
-    C --> D["× Time/Weather Pref\n(2.0×)"]
+    A["Base Price\n(weight interpolation)"] --> B["x Size Modifier\n(Huge 1.5x)"]
+    B --> C["x Shader Modifier\n(up to 5.0x)"]
+    C --> D["x Time/Weather Pref\n(2.0x)"]
     D --> E["+ Pocket Watcher\n(+20%)"]
     E --> F["Double Up Enchant\n(25% double)"]
     F --> G["Final Sell Price"]
@@ -637,7 +637,7 @@ flowchart TD
     Equip["EquipmentStatsManager\nRod+Line+Bobber+Enchant"] --> |luck multiplier| Select
     Buff["BuffManager\nPotion+World+Weather"] --> |buff multiplier| Select
 
-    Mod["FishModifierManager"] --> |size × shader| Value
+    Mod["FishModifierManager"] --> |size x shader| Value
 
     DNC["DayNightCycle\n20-min cycle"] --> |time period| FishDB
     Weather["BiomeWeatherManager\n3 biomes"] --> |weather| FishDB

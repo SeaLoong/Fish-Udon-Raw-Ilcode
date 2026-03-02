@@ -30,13 +30,12 @@ This repository contains the **decompiled IL bytecode of all 174 Udon programs**
 
 ## Documentation
 
-| Document                                                                                                               | Description                                           |
-| ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
-| [Analysis (EN)](docs/analysis-en.md) / [中文](docs/analysis-zh.md)                                                     | Full analysis of all 174 scripts, module architecture |
-| [AES-256 IL Analysis (EN)](docs/aes256-il-analysis-en.md) / [中文](docs/aes256-il-analysis-zh.md)                      | AES-256 encryption IL-level trace                     |
-| [Game Data (EN)](docs/gamedata-en.md) / [中文](docs/gamedata-zh.md)                                                    | Equipment, enchantment, fish, boat data handbook      |
-| [Complete Data Analysis (EN)](docs/complete-game-data-analysis-en.md) / [中文](docs/complete-game-data-analysis-zh.md) | Full game mechanics & formula analysis                |
-| [Changelog](docs/changelog-en.md) / [更新日志](docs/changelog.md)                                                      | IL code change history                                |
+| Document                                             | Description                                           |
+| ---------------------------------------------------- | ----------------------------------------------------- |
+| [Analysis](docs/analysis-en.md)                      | Full analysis of all 174 scripts, module architecture |
+| [AES-256 IL Analysis](docs/aes256-il-analysis-en.md) | AES-256 encryption IL-level trace                     |
+| [Game Data](docs/gamedata-en.md)                     | Equipment, enchantment, fish, boat data handbook      |
+| [Changelog](docs/changelog-en.md)                    | IL code change history                                |
 
 ---
 
