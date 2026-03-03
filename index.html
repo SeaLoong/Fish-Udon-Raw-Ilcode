@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fish World AES-256-CBC</title>
     <style>
+      :root {
+        --bg: #0d1117;
+        --surface: #161b22;
+        --border: #30363d;
+        --text: #e6edf3;
+        --text2: #8b949e;
+        --accent: #58a6ff;
+        --accent-hover: #79c0ff;
+        --green: #238636;
+        --radius: 8px;
+        --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      }
       *,
       *::before,
       *::after {
@@ -13,69 +25,96 @@
         padding: 0;
       }
       body {
-        font-family: -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-        background: #0f1117;
-        color: #e1e4e8;
+        font-family: var(--font);
+        background: var(--bg);
+        color: var(--text);
         min-height: 100vh;
         display: flex;
-        align-items: flex-start;
-        justify-content: center;
-        padding: 30px 20px;
+        flex-direction: column;
+        line-height: 1.6;
       }
-      .container {
-        width: 100%;
-        max-width: 800px;
-        background: #161b22;
-        border: 1px solid #30363d;
-        border-radius: 12px;
-        padding: 32px 28px;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-        position: relative;
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+        color: var(--accent-hover);
+      }
+      /* Header */
+      .header {
+        background: var(--surface);
+        border-bottom: 1px solid var(--border);
+        padding: 16px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .header h1 {
+        font-size: 20px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--text);
+      }
+      .header h1 span.emoji {
+        font-size: 24px;
+      }
+      .header-right {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      .header-right a {
+        font-size: 13px;
+        font-weight: 500;
       }
       .lang-toggle {
-        position: absolute;
-        top: 16px;
-        right: 20px;
         display: flex;
         gap: 4px;
-        z-index: 10;
+        background: var(--bg);
+        border-radius: var(--radius);
+        padding: 2px;
       }
       .lang-toggle button {
-        background: #21262d;
-        border: 1px solid #30363d;
-        color: #8b949e;
-        padding: 3px 10px;
-        border-radius: 5px;
+        background: none;
+        border: none;
+        color: var(--text2);
+        padding: 4px 12px;
+        border-radius: 6px;
         cursor: pointer;
-        font-size: 0.75rem;
-        font-weight: 600;
-        transition: all 0.2s;
+        font-size: 13px;
+        font-family: var(--font);
+        transition: all 0.15s;
       }
       .lang-toggle button.active {
-        background: #30363d;
-        color: #58a6ff;
-        border-color: #58a6ff;
+        background: var(--accent);
+        color: #fff;
       }
       .lang-toggle button:hover:not(.active) {
-        color: #c9d1d9;
+        color: var(--text);
       }
-      h1 {
-        text-align: center;
-        font-size: 1.45rem;
-        margin-bottom: 4px;
-        color: #58a6ff;
-        padding-right: 80px;
+      /* Main */
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 32px 24px;
+        flex: 1;
       }
       .subtitle {
         text-align: center;
         font-size: 0.82rem;
-        color: #8b949e;
+        color: var(--text2);
         margin-bottom: 24px;
       }
       label {
         display: block;
         font-size: 0.82rem;
-        color: #8b949e;
+        color: var(--text2);
         margin-bottom: 5px;
         font-weight: 600;
       }
@@ -90,7 +129,7 @@
       }
       .hint {
         font-size: 0.72rem;
-        color: #484f58;
+        color: var(--text2);
       }
       .field {
         margin-bottom: 14px;
@@ -99,15 +138,15 @@
       textarea,
       input[type='text'] {
         width: 100%;
-        background: #0d1117;
-        border: 1px solid #30363d;
-        border-radius: 8px;
-        color: #c9d1d9;
+        background: var(--bg);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        color: var(--text);
         padding: 9px 12px;
         font-size: 0.9rem;
         font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
         outline: none;
-        transition: border-color 0.2s;
+        transition: border-color 0.15s;
       }
       textarea {
         resize: vertical;
@@ -116,25 +155,25 @@
       }
       textarea:focus,
       input:focus {
-        border-color: #58a6ff;
+        border-color: var(--accent);
       }
       .section-title {
         font-size: 0.78rem;
-        color: #58a6ff;
+        color: var(--accent);
         text-transform: uppercase;
         letter-spacing: 0.08em;
         margin: 20px 0 10px;
         padding-bottom: 4px;
-        border-bottom: 1px solid #21262d;
+        border-bottom: 1px solid var(--border);
       }
       .info-box {
-        background: #0d1117;
-        border: 1px solid #21262d;
-        border-radius: 8px;
+        background: var(--bg);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
         padding: 12px 14px;
         margin-bottom: 14px;
         font-size: 0.78rem;
-        color: #8b949e;
+        color: var(--text2);
         line-height: 1.6;
       }
       .info-box code {
@@ -143,16 +182,16 @@
         padding: 1px 5px;
         font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
         font-size: 0.76rem;
-        color: #79c0ff;
+        color: var(--accent-hover);
       }
       .info-box strong {
-        color: #c9d1d9;
+        color: var(--text);
       }
       .key-display {
         margin-top: 8px;
         padding: 10px 14px;
-        background: #0d1117;
-        border: 1px dashed #238636;
+        background: var(--bg);
+        border: 1px dashed var(--green);
         border-radius: 6px;
         font-family: 'Cascadia Code', monospace;
         font-size: 0.78rem;
@@ -160,7 +199,7 @@
         word-break: break-all;
       }
       .key-display .kd-label {
-        color: #8b949e;
+        color: var(--text2);
         font-size: 0.72rem;
         display: block;
         margin-bottom: 3px;
@@ -168,8 +207,8 @@
       .iv-info {
         margin-top: 6px;
         padding: 6px 10px;
-        background: #0d1117;
-        border: 1px dashed #30363d;
+        background: var(--bg);
+        border: 1px dashed var(--border);
         border-radius: 6px;
         font-family: 'Cascadia Code', monospace;
         font-size: 0.78rem;
@@ -188,8 +227,8 @@
       }
       .toggle-group button {
         background: #21262d;
-        border: 1px solid #30363d;
-        color: #8b949e;
+        border: 1px solid var(--border);
+        color: var(--text2);
         padding: 5px 14px;
         border-radius: 6px;
         cursor: pointer;
@@ -199,11 +238,11 @@
       }
       .toggle-group button.active {
         background: #30363d;
-        color: #58a6ff;
-        border-color: #58a6ff;
+        color: var(--accent);
+        border-color: var(--accent);
       }
       .toggle-group button:hover:not(.active) {
-        color: #c9d1d9;
+        color: var(--text);
       }
       .btn-row {
         display: flex;
@@ -226,7 +265,7 @@
         transform: scale(0.97);
       }
       .btn-encrypt {
-        background: #238636;
+        background: var(--green);
         color: #fff;
       }
       .btn-encrypt:hover {
@@ -241,25 +280,25 @@
       }
       .btn-copy {
         background: none;
-        border: 1px solid #30363d;
+        border: 1px solid var(--border);
         border-radius: 6px;
-        color: #8b949e;
+        color: var(--text2);
         font-size: 0.75rem;
         padding: 2px 9px;
         cursor: pointer;
         transition:
-          color 0.2s,
-          border-color 0.2s;
+          color 0.15s,
+          border-color 0.15s;
       }
       .btn-copy:hover {
-        color: #58a6ff;
-        border-color: #58a6ff;
+        color: var(--accent);
+        border-color: var(--accent);
       }
       .btn-sm {
         background: #21262d;
-        border: 1px solid #30363d;
+        border: 1px solid var(--border);
         border-radius: 6px;
-        color: #8b949e;
+        color: var(--text2);
         font-size: 0.75rem;
         padding: 0 10px;
         cursor: pointer;
@@ -269,8 +308,8 @@
           border-color 0.2s;
       }
       .btn-sm:hover {
-        color: #58a6ff;
-        border-color: #58a6ff;
+        color: var(--accent);
+        border-color: var(--accent);
       }
       .key-area {
         display: none;
@@ -313,11 +352,15 @@
         background: #1f6feb;
         color: #fff;
       }
-      footer {
+      .footer {
         text-align: center;
-        margin-top: 18px;
-        font-size: 0.72rem;
-        color: #484f58;
+        padding: 24px;
+        color: var(--text2);
+        font-size: 13px;
+        border-top: 1px solid var(--border);
+      }
+      .footer a {
+        color: var(--accent);
       }
       .inline-row {
         display: flex;
@@ -333,24 +376,29 @@
           flex-direction: column;
         }
         .container {
-          padding: 20px 14px;
-        }
-        h1 {
-          padding-right: 0;
-          margin-top: 28px;
+          padding: 16px;
         }
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <div class="lang-toggle" id="langToggle">
-        <button class="active" data-lang="zh">中文</button>
-        <button data-lang="en">EN</button>
+    <div class="header">
+      <h1><span class="emoji">🐟</span> <span data-i18n="title">Fish World AES-256-CBC 加解密</span></h1>
+      <div class="header-right">
+        <div class="lang-toggle">
+          <button id="btn-zh" onclick="setLang('zh', true)">中文</button>
+          <button id="btn-en" onclick="setLang('en', true)">EN</button>
+        </div>
       </div>
+    </div>
 
-      <h1 data-i18n="title">🐟 Fish World AES-256-CBC 加解密</h1>
-      <p class="subtitle" data-i18n="subtitle">兼容 VRChat CryptoAES256GPU · Base64(IV+Ciphertext) · PKCS7</p>
+    <div class="container">
+      <p class="subtitle" data-i18n="subtitle">VRChat CryptoAES256GPU · Base64(IV+Ciphertext) · PKCS7</p>
+
+      <div class="info-box" style="text-align: center; margin-bottom: 20px">
+        🛡️ <span data-i18n="fishPassHint">想要解锁 Fish World 全部特权？</span>
+        <a href="https://fish-pass.vercel.app/" target="_blank" style="font-weight: 600" data-i18n="fishPassAction">FISH!Pass ↗</a>
+      </div>
 
       <!-- Protocol -->
       <div class="section-title" data-i18n="protocolTitle">协议说明</div>
@@ -414,8 +462,14 @@
         </div>
         <textarea id="outputText" readonly data-i18n-ph="outputPh" placeholder="加密输出 Base64(IV+CT) / 解密输出 UTF-8 明文"></textarea>
       </div>
+    </div>
 
-      <footer data-i18n="footer">所有操作均在浏览器本地完成 · 兼容 VRChat Fish World CryptoAES256GPU 协议</footer>
+    <div class="footer">
+      <span data-i18n="footer">所有操作均在浏览器本地完成 · VRChat Fish World CryptoAES256GPU 协议</span><br />
+      <span style="margin-top: 4px; display: inline-block">
+        <a href="https://github.com/SeaLoong/FISH-Pass" target="_blank">FISH!Pass</a> ·
+        <a href="https://github.com/SeaLoong/Fish-Udon-Raw-Ilcode" target="_blank">Fish-Udon-Raw-Ilcode</a>
+      </span>
     </div>
 
     <div class="toast" id="toast"></div>
@@ -429,8 +483,10 @@
          * ================================================================ */
         var I18N = {
           zh: {
-            title: '🐟 Fish World AES-256-CBC 加解密',
-            subtitle: '兼容 VRChat CryptoAES256GPU · Base64(IV+Ciphertext) · PKCS7',
+            title: 'Fish World AES-256-CBC 加解密',
+            fishPassHint: '想要解锁 Fish World 全部特权？',
+            fishPassAction: 'FISH!Pass ↗',
+            subtitle: 'VRChat CryptoAES256GPU · Base64(IV+Ciphertext) · PKCS7',
             protocolTitle: '协议说明',
             protocolInfo:
               '<strong>数据格式：</strong><code>Base64( IV<sub>16B</sub> ‖ Ciphertext<sub>PKCS7</sub> )</code><br/>' +
@@ -460,7 +516,7 @@
             outputLabel: '输出结果',
             outputPh: '加密输出 Base64(IV+CT) / 解密输出 UTF-8 明文',
             copyBtn: '复制',
-            footer: '所有操作均在浏览器本地完成 · 兼容 VRChat Fish World CryptoAES256GPU 协议',
+            footer: '所有操作均在浏览器本地完成 · VRChat Fish World CryptoAES256GPU 协议',
             encryptSuccess: '加密成功',
             encryptFail: '加密失败：',
             decryptSuccess: '解密成功',
@@ -487,8 +543,10 @@
             keyReady: '内置密钥已就绪',
           },
           en: {
-            title: '🐟 Fish World AES-256-CBC Encrypt/Decrypt',
-            subtitle: 'Compatible with VRChat CryptoAES256GPU · Base64(IV+Ciphertext) · PKCS7',
+            title: 'Fish World AES-256-CBC Encrypt/Decrypt',
+            fishPassHint: 'Want to unlock all Fish World privileges?',
+            fishPassAction: 'FISH!Pass ↗',
+            subtitle: 'VRChat CryptoAES256GPU · Base64(IV+Ciphertext) · PKCS7',
             protocolTitle: 'Protocol',
             protocolInfo:
               '<strong>Format:</strong> <code>Base64( IV<sub>16B</sub> ‖ Ciphertext<sub>PKCS7</sub> )</code><br/>' +
@@ -518,7 +576,7 @@
             outputLabel: 'Output',
             outputPh: 'Encrypted: Base64(IV+CT) / Decrypted: UTF-8 plaintext',
             copyBtn: 'Copy',
-            footer: 'All operations run locally in browser · Compatible with VRChat Fish World CryptoAES256GPU',
+            footer: 'All operations run locally in browser · VRChat Fish World CryptoAES256GPU',
             encryptSuccess: 'Encrypted successfully',
             encryptFail: 'Encryption failed: ',
             decryptSuccess: 'Decrypted successfully',
@@ -546,15 +604,19 @@
           },
         };
 
-        var currentLang = localStorage.getItem('fishAesLang') || 'zh';
+        var currentLang = sessionStorage.getItem('lang') || ((navigator.language || 'zh').startsWith('zh') ? 'zh' : 'en');
 
         function t(key) {
           return (I18N[currentLang] && I18N[currentLang][key]) || (I18N['zh'] && I18N['zh'][key]) || key;
         }
 
-        function applyLang() {
-          document.documentElement.lang = currentLang === 'zh' ? 'zh-CN' : 'en';
-          document.title = currentLang === 'zh' ? 'Fish World AES-256-CBC 加解密工具' : 'Fish World AES-256-CBC Tool';
+        window.setLang = function (lang, manual) {
+          currentLang = lang;
+          if (manual) sessionStorage.setItem('lang', lang);
+          document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+          document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+          document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+          document.title = lang === 'zh' ? 'Fish World AES-256-CBC 加解密工具' : 'Fish World AES-256-CBC Tool';
           document.querySelectorAll('[data-i18n]').forEach(function (el) {
             el.textContent = t(el.getAttribute('data-i18n'));
           });
@@ -564,10 +626,7 @@
           document.querySelectorAll('[data-i18n-ph]').forEach(function (el) {
             el.placeholder = t(el.getAttribute('data-i18n-ph'));
           });
-          document.querySelectorAll('#langToggle button').forEach(function (b) {
-            b.classList.toggle('active', b.getAttribute('data-lang') === currentLang);
-          });
-        }
+        };
 
         /* ================================================================
          *  DOM
@@ -824,15 +883,6 @@
         /* ================================================================
          *  Events
          * ================================================================ */
-        // Language toggle
-        document.querySelectorAll('#langToggle button').forEach(function (btn) {
-          btn.addEventListener('click', function () {
-            currentLang = btn.getAttribute('data-lang');
-            localStorage.setItem('fishAesLang', currentLang);
-            applyLang();
-          });
-        });
-
         // Key mode toggle
         document.querySelectorAll('#keyModeGroup button').forEach(function (btn) {
           btn.addEventListener('click', function () {
@@ -918,14 +968,13 @@
         /* ================================================================
          *  Initialization
          * ================================================================ */
-        applyLang();
+        setLang(currentLang);
 
         // Derive built-in key on page load
         try {
           var fishKey = buildFishKey();
           builtinKeyHex = bytesToHex(fishKey);
           derivedKeyHexEl.textContent = builtinKeyHex;
-          showToast(t('keyReady'), 'info');
         } catch (e) {
           showToast('Key derivation error: ' + e.message, 'error');
         }

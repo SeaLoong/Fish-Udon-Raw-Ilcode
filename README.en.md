@@ -41,11 +41,11 @@ This repository contains the **decompiled IL bytecode of all 174 Udon programs**
 
 ## Tools
 
-| Script       | Purpose                                                                            |
-| ------------ | ---------------------------------------------------------------------------------- |
-| `decrypt.js` | AES-256-CBC decryption — decrypts encrypted role data using IL-extracted KDF       |
-| `extract.js` | Game data extraction — extracts 17 data types (397 entries) from variablesjs files |
-| `index.html` | Web-based AES-256-CBC encrypt/decrypt tool (Fish World protocol compatible)        |
+| Script       | Purpose                                                                                         |
+| ------------ | ----------------------------------------------------------------------------------------------- |
+| `decrypt.js` | AES-256-CBC decryption — decrypts encrypted role data using IL-extracted KDF                    |
+| `extract.js` | Game data extraction — extracts 17 data types (397 entries) from variablesjs files              |
+| `index.html` | Web-based AES-256-CBC encrypt/decrypt tool [↗ Online](https://fish-udon-raw-ilcode.vercel.app/) |
 
 ### Quick Start
 
