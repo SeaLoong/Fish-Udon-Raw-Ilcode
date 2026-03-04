@@ -175,6 +175,10 @@ pie title Base Rarity Probability Distribution
 
 **Luck Power**: Positive = more likely with higher luck; Negative = less likely with higher luck. Uses **pure linear scaling** (no sigmoid).
 
+> 📈 **Rarity Probability vs Luck Multiplier Curve** (X: luck multiplier 0~10×, Y: normalized probability)
+>
+> ![Rarity Probability vs Luck Multiplier](charts/rarity-vs-luck.svg)
+
 #### Rarity Selection Flow
 
 ```mermaid
@@ -274,48 +278,48 @@ flowchart LR
 
 | Fish Name           | ID  | Diff | Price Range       | Max Weight | Water |
 | ------------------- | --- | ---- | ----------------- | ---------- | ----- |
-| **Catfish Emperor** | 125 | 5    | $35,000 ~ $45,000 | 750 kg     | All   |
-| **Crab of Duality** | 134 | 5    | $35,000 ~ $45,000 | 350 kg     | All   |
+| **Catfish Emperor** | 125 | 5    | $38,500 ~ $49,500 | 750 kg     | All   |
+| **Crab of Duality** | 134 | 5    | $31,500 ~ $40,500 | 350 kg     | All   |
 
 #### Secret Fish (Rarity 9)
 
 | Fish Name             | ID  | Price Range       | Max Weight | Water | Special      |
 | --------------------- | --- | ----------------- | ---------- | ----- | ------------ |
-| **Wabubu Fish**       | 74  | $17,100 ~ $21,850 | 2 kg       | All   | —            |
-| **Steve**             | 116 | $17,100 ~ $21,850 | 3.5 kg     | All   | —            |
-| **Ragtime Frog**      | 117 | $17,100 ~ $21,850 | 3.5 kg     | Swamp | Prefers rain |
-| **Decimated Fih**     | 121 | $17,100 ~ $21,850 | 4 kg       | All   | —            |
-| **Luxian Camelshark** | 128 | $18,900 ~ $24,150 | 9,000 kg   | Salt  | —            |
+| **Wabubu Fish**       | 74  | $13,995 ~ $17,460 | 2 kg       | All   | —            |
+| **Steve**             | 116 | $13,995 ~ $17,460 | 3.5 kg     | All   | —            |
+| **Ragtime Frog**      | 117 | $13,995 ~ $17,460 | 3.5 kg     | Swamp | Prefers rain |
+| **Decimated Fih**     | 121 | $13,995 ~ $17,460 | 4 kg       | All   | —            |
+| **Luxian Camelshark** | 128 | $17,105 ~ $21,340 | 9,000 kg   | Salt  | —            |
 
 #### Exotic Fish (Rarity 7)
 
 | Fish Name               | ID  | Price Range       | Max Weight | Water      | Special                  |
 | ----------------------- | --- | ----------------- | ---------- | ---------- | ------------------------ |
-| **Hellmaw Grouper**     | 68  | $11,416 ~ $15,222 | 2,000 kg   | **Lava**   | Most valuable lava fish  |
-| **Abyssal Serpentfish** | 85  | $11,425 ~ $15,233 | 3,100 kg   | Salt+Swamp | **Night only**           |
-| **Baby Megalodon**      | 86  | $12,600 ~ $16,800 | 120,000 kg | Salt       | Heaviest fish            |
-| **Celestial Whitefin**  | 87  | $11,412 ~ $15,216 | 1,500 kg   | Salt       | —                        |
-| **Shellonodon**         | 88  | $11,832 ~ $15,776 | 40,000 kg  | Salt       | —                        |
-| **Spineback Ray**       | 89  | $11,448 ~ $15,264 | 6,000 kg   | Salt       | —                        |
-| **Dreadshell Colossus** | 100 | $11,880 ~ $15,840 | 50,000 kg  | **Swamp**  | Most valuable swamp fish |
-| **Dragonfly Fish**      | 126 | $11,400 ~ $15,201 | 70 kg      | Fresh      | —                        |
-| **Royal Bananafish**    | 132 | $11,400 ~ $15,200 | 9 kg       | Fresh      | —                        |
-| **Three-Headed Salmon** | 123 | $11,400 ~ $15,200 | 20 kg      | Salt       | —                        |
+| **Hellmaw Grouper**     | 68  | $7,868 ~ $11,735  | 2,000 kg   | **Lava**   | Most valuable lava fish  |
+| **Abyssal Serpentfish** | 85  | $7,880 ~ $11,753  | 3,100 kg   | Salt+Swamp | **Night only**           |
+| **Baby Megalodon**      | 86  | $9,587 ~ $14,300  | 120,000 kg | Salt       | Heaviest fish            |
+| **Celestial Whitefin**  | 87  | $7,862 ~ $11,726  | 1,500 kg   | Salt       | —                        |
+| **Shellonodon**         | 88  | $8,472 ~ $12,636  | 40,000 kg  | Salt       | —                        |
+| **Spineback Ray**       | 89  | $7,914 ~ $11,804  | 6,000 kg   | Salt       | —                        |
+| **Dreadshell Colossus** | 100 | $8,542 ~ $12,740  | 50,000 kg  | **Swamp**  | Most valuable swamp fish |
+| **Dragonfly Fish**      | 126 | $7,845 ~ $11,701  | 70 kg      | Fresh      | —                        |
+| **Royal Bananafish**    | 132 | $7,844 ~ $11,700  | 9 kg       | Fresh      | —                        |
+| **Three-Headed Salmon** | 123 | $7,844 ~ $11,700  | 20 kg      | Salt       | —                        |
 
 #### Fabled Fish (Rarity 6)
 
 | Fish Name           | ID  | Price Range      | Max Weight | Water    | Special        |
 | ------------------- | --- | ---------------- | ---------- | -------- | -------------- |
-| Giant Squid         | 33  | $4,898 ~ $9,797  | 512 kg     | Salt     | —              |
-| Great White Shark   | 40  | $5,236 ~ $10,473 | 1,457 kg   | Salt     | —              |
-| Ancient Warriorfish | 119 | $4,750 ~ $9,500  | 10 kg      | Fresh    | —              |
-| Venomous Watcher    | 120 | $4,750 ~ $9,500  | 10 kg      | Swamp    | **Night only** |
-| Blind Bladefish     | 122 | $4,750 ~ $9,500  | 10 kg      | Fresh    | **Night only** |
-| Armored Brutefish   | 124 | $4,767 ~ $9,535  | 60 kg      | Salt     | —              |
-| Igneous Stingray    | 129 | $5,250 ~ $10,500 | 1,500 kg   | **Lava** | —              |
-| Red Demonfish       | 130 | $4,854 ~ $9,708  | 400 kg     | **Lava** | —              |
-| Red Dartfin         | 131 | $4,755 ~ $9,510  | 25 kg      | Salt     | —              |
-| Humpback Gar        | 133 | $4,787 ~ $9,575  | 110 kg     | Salt     | —              |
+| Giant Squid         | 33  | $3,837 ~ $8,634  | 512 kg     | Salt     | —              |
+| Great White Shark   | 40  | $4,378 ~ $9,851  | 1,457 kg   | Salt     | —              |
+| Ancient Warriorfish | 119 | $3,600 ~ $8,100  | 10 kg      | Fresh    | —              |
+| Venomous Watcher    | 120 | $3,600 ~ $8,100  | 10 kg      | Swamp    | **Night only** |
+| Blind Bladefish     | 122 | $3,600 ~ $8,100  | 10 kg      | Fresh    | **Night only** |
+| Armored Brutefish   | 124 | $3,628 ~ $8,162  | 60 kg      | Salt     | —              |
+| Igneous Stingray    | 129 | $4,400 ~ $9,900  | 1,500 kg   | **Lava** | —              |
+| Red Demonfish       | 130 | $3,767 ~ $8,475  | 400 kg     | **Lava** | —              |
+| Red Dartfin         | 131 | $3,608 ~ $8,117  | 25 kg      | Salt     | —              |
+| Humpback Gar        | 133 | $3,660 ~ $8,235  | 110 kg     | Salt     | —              |
 
 #### Lava-Exclusive Fish (13 species)
 
@@ -323,19 +327,19 @@ Only catchable in the lava at **Crescent Volcano**:
 
 | Fish Name           | ID  | Rarity | Max Price   | Max Weight |
 | ------------------- | --- | ------ | ----------- | ---------- |
-| Flame Guppy         | 67  | 1      | $24         | 0.3 kg     |
-| Magma Carp          | 70  | 1      | $24         | 3 kg       |
-| Ashscale Trout      | 63  | 2      | $34         | 6 kg       |
-| Basalt Eel          | 64  | 2      | $33         | 3 kg       |
-| Cinderfin           | 65  | 3      | $71         | 2 kg       |
-| Obsidian Fish       | 72  | 3      | $72         | 2.5 kg     |
-| Crystal Pike        | 66  | 4      | $190        | 10 kg      |
-| Molten Angler       | 71  | 4      | $191        | 15 kg      |
-| Ifrit Barracuda     | 69  | 5      | $1,914      | 25 kg      |
-| Pyrite Snapper      | 73  | 5      | $1,922      | 20 kg      |
-| Igneous Stingray    | 129 | 6      | $10,500     | 1,500 kg   |
-| Red Demonfish       | 130 | 6      | $9,708      | 400 kg     |
-| **Hellmaw Grouper** | 68  | **7**  | **$15,222** | 2,000 kg   |
+| Flame Guppy         | 67  | 1      | $21         | 0.3 kg     |
+| Magma Carp          | 70  | 1      | $21         | 3 kg       |
+| Ashscale Trout      | 63  | 2      | $32         | 6 kg       |
+| Basalt Eel          | 64  | 2      | $30         | 3 kg       |
+| Cinderfin           | 65  | 3      | $63         | 2 kg       |
+| Obsidian Fish       | 72  | 3      | $65         | 2.5 kg     |
+| Crystal Pike        | 66  | 4      | $166        | 10 kg      |
+| Molten Angler       | 71  | 4      | $168        | 15 kg      |
+| Ifrit Barracuda     | 69  | 5      | $1,776      | 25 kg      |
+| Pyrite Snapper      | 73  | 5      | $1,792      | 20 kg      |
+| Igneous Stingray    | 129 | 6      | $9,900      | 1,500 kg   |
+| Red Demonfish       | 130 | 6      | $8,475      | 400 kg     |
+| **Hellmaw Grouper** | 68  | **7**  | **$11,735** | 2,000 kg   |
 
 #### Swamp-Exclusive Fish (12 species)
 
@@ -343,18 +347,18 @@ Only catchable in the **Tanglewood** region:
 
 | Fish Name                 | ID  | Rarity | Max Price   | Max Weight | Special        |
 | ------------------------- | --- | ------ | ----------- | ---------- | -------------- |
-| Bluegill Sunfish          | 96  | 1      | $24         | 2 kg       | —              |
+| Bluegill Sunfish          | 96  | 1      | $21         | 2 kg       | —              |
 | Mudskipper                | 103 | 1      | $150        | 1 kg       | —              |
-| Bowfin                    | 97  | 2      | $34         | 3 kg       | —              |
-| Channel Catfish           | 98  | 2      | $35         | 10 kg      | —              |
-| Cottonmouth Snake         | 99  | 3      | $72         | 3 kg       | —              |
-| Frog                      | 101 | 3      | $71         | 1 kg       | —              |
-| Alligator Snapping Turtle | 94  | 4      | $192        | 100 kg     | —              |
+| Bowfin                    | 97  | 2      | $32         | 3 kg       | —              |
+| Channel Catfish           | 98  | 2      | $34         | 10 kg      | —              |
+| Cottonmouth Snake         | 99  | 3      | $64         | 3 kg       | —              |
+| Frog                      | 101 | 3      | $63         | 1 kg       | —              |
+| Alligator Snapping Turtle | 94  | 4      | $170        | 100 kg     | —              |
 | Soft Shelled Turtle       | 104 | 4      | $150        | 15 kg      | —              |
-| American Alligator        | 95  | 5      | $1,952      | 450 kg     | —              |
-| Giant Gharial             | 102 | 5      | $1,999      | 100 kg     | —              |
-| Venomous Watcher          | 120 | 6      | $9,500      | 10 kg      | **Night only** |
-| **Dreadshell Colossus**   | 100 | **7**  | **$15,840** | 50,000 kg  | —              |
+| American Alligator        | 95  | 5      | $1,849      | 450 kg     | —              |
+| Giant Gharial             | 102 | 5      | $1,942      | 100 kg     | —              |
+| Venomous Watcher          | 120 | 6      | $8,100      | 10 kg      | **Night only** |
+| **Dreadshell Colossus**   | 100 | **7**  | **$12,740** | 50,000 kg  | —              |
 
 #### One-Time Catch & Quest Fish
 
@@ -374,16 +378,16 @@ Theoretical max = `max price × Giant(1.5×) × Holographic/Static(5.0×) × Wea
 
 | Rank | Fish Name           | Base Max Price | Theoretical Max | Rarity |
 | ---- | ------------------- | -------------- | --------------- | ------ |
-| 1    | Catfish Emperor     | $45,000        | **$675,000**    | 10     |
-| 2    | Crab of Duality     | $45,000        | **$675,000**    | 10     |
-| 3    | Luxian Camelshark   | $24,150        | **$362,250**    | 9      |
-| 4    | Wabubu Fish         | $21,850        | **$327,750**    | 9      |
-| 5    | Steve               | $21,850        | **$327,750**    | 9      |
-| 6    | Ragtime Frog        | $21,850        | **$327,750**    | 9      |
-| 7    | Decimated Fih       | $21,850        | **$327,750**    | 9      |
-| 8    | Baby Megalodon      | $16,800        | **$252,000**    | 7      |
-| 9    | Dreadshell Colossus | $15,840        | **$237,600**    | 7      |
-| 10   | Shellonodon         | $15,776        | **$236,640**    | 7      |
+| 1    | Catfish Emperor     | $49,500        | **$742,500**    | 10     |
+| 2    | Crab of Duality     | $40,500        | **$607,500**    | 10     |
+| 3    | Luxian Camelshark   | $21,340        | **$320,100**    | 9      |
+| 4    | Wabubu Fish         | $17,460        | **$261,900**    | 9      |
+| 5    | Steve               | $17,460        | **$261,900**    | 9      |
+| 6    | Ragtime Frog        | $17,460        | **$261,900**    | 9      |
+| 7    | Decimated Fih       | $17,460        | **$261,900**    | 9      |
+| 8    | Baby Megalodon      | $14,300        | **$214,500**    | 7      |
+| 9    | Dreadshell Colossus | $12,740        | **$191,100**    | 7      |
+| 10   | Shellonodon         | $12,636        | **$189,540**    | 7      |
 
 ---
 
@@ -404,9 +408,13 @@ Actual wait = (1.0 - attraction %) × base wait
 | 0          | 0%       | 13 ~ 17 s         | 15 s     |
 | 50         | 50%      | 6.5 ~ 8.5 s       | 7.5 s    |
 | 100        | 100%     | 0 ~ 0 s (instant) | 0 s      |
-| 225        | 100% cap | 0 s (hard cap)    | 0 s      |
+| 220        | 100% cap | 0 s (hard cap)    | 0 s      |
 
 > **Attraction buff (potion) effect**: Multiplies raw attraction by ×2 before dividing by 100, hard cap 100%. Effective cap is 50 raw attraction (×2 = 100%).
+
+> 📈 **Bite Wait Time vs Attraction Value** (blue band: max/min wait range, red line marks 100% cap)
+>
+> ![Bite Wait Time vs Attraction](charts/bite-wait-vs-attraction.svg)
 
 #### Detailed Attraction Rate Formula
 
@@ -440,6 +448,10 @@ fishWeight = Lerp(curveValue, effectiveMaxWeight, minWeight)
 
 > Higher big-catch rate shifts the weight distribution toward max weight. At max big-catch rate, the sine curve dramatically increases large fish probability.
 
+> 📈 **Fish Weight Distribution Curve** (X: random roll 0~100%, Y: fraction of max weight. Different big-catch rates shown)
+>
+> ![Fish Weight Distribution](charts/weight-distribution.svg)
+
 ### 3.3 Minigame Difficulty Interpolation
 
 **Source:** `FishingMinigameScript`
@@ -456,6 +468,10 @@ All parameters linearly interpolate between "easy (difficulty=0)" and "hard (dif
 | Max lose multiplier | 1×    | 3×     | Accelerates on prolonged miss |
 
 - **Lose acceleration rate** = 0.1 (loss increases over time)
+
+> 📈 **Minigame Difficulty Interpolation Curve** (X: fish difficulty 0=easy 1=hard, Y: parameter values)
+>
+> ![Minigame Difficulty Interpolation](charts/minigame-difficulty.svg)
 
 ### 3.4 Physics & Controls
 
@@ -535,7 +551,7 @@ multiplier = (rawTotal / 100.0) + 1.0
 
 | Stat       | Raw Value Sources                           | Multiplier Range |
 | ---------- | ------------------------------------------- | ---------------- |
-| Luck       | Rod + Line + Bobber + Enchant + Achievement | 0.5× ~ 8.45×     |
+| Luck       | Rod + Line + Bobber + Enchant + Achievement | 0.5× ~ 8.67×      |
 | Strength   | Rod + Line + Bobber + Enchant               | 1.0× ~ 2.75×     |
 | Expertise  | Rod + Line + Bobber + Enchant               | 1.0× ~ 2.65×     |
 | Attraction | Rod + Line + Bobber + Enchant + Achievement | 0.0% ~ 100% cap  |
@@ -552,12 +568,12 @@ multiplier = (rawTotal / 100.0) + 1.0
 | 4   | **Rune Steel Rod** | **90**  | 25  | 20  | 30     | 40   | **100,000 kg** | —                |
 | 5   | DEBUG Rod          | 0       | 0   | 0   | 0      | 0    | 1 kg           | Hidden           |
 | 6   | Sunleaf Rod        | 10      | 5   | 10  | 20     | 15   | 250 kg         | —                |
-| 7   | Speedy Rod         | 20      | 5   | 15  | **65** | 0    | 1,500 kg       | 55,000           |
-| 8   | Lucky Rod          | **100** | 10  | 5   | 10     | 77   | 1,500 kg       | 75,000           |
+| 7   | Speedy Rod         | 1       | 5   | 5   | **60** | 0    | 1,500 kg       | 55,000           |
+| 8   | Lucky Rod          | **100** | 10  | 5   | 10     | 65   | 1,500 kg       | 75,000           |
 | 9   | Toy Rod            | 0       | 0   | 0   | 0      | 0    | 15 kg          | 750              |
-| 10  | Alien Rod          | 50      | 10  | 5   | 40     | 30   | 32,000 kg      | —                |
+| 10  | Alien Rod          | 55      | 10  | 10  | 45     | 30   | 32,000 kg      | —                |
 | 11  | Rod of Perpetuity  | 150     | 30  | 30  | 50     | 10   | 500,000 kg     | Level 500 unlock |
-| 12  | Rod of the Pharaoh | **200** | 20  | 40  | −10    | 30   | 100,000 kg     | **750,000**      |
+| 12  | Rod of the Pharaoh | **222** | 20  | 40  | −10    | 35   | 100,000 kg     | **750,000**      |
 | 13  | Slender Rod        | 20      | 10  | 10  | 25     | 20   | 500 kg         | 10,000           |
 | 14  | Polished Wood Rod  | 40      | 10  | 10  | 10     | 45   | 500 kg         | 15,000           |
 | 15  | Rusty Fang Rod     | 70      | 20  | 20  | 25     | 35   | 35,000 kg      | 250,000          |
@@ -632,7 +648,7 @@ multiplier = (rawTotal / 100.0) + 1.0
 | 17  | **Double Up!!**    | 20      | —   | —   | —      | —      | —          | **25% double catch**   |
 | 24  | Luck of the Chosen | **100** | —   | —   | —      | 10     | —          | —                      |
 | 34  | **Speed Demon**    | —       | —   | —   | **60** | —      | —          | Speed demon bonus      |
-| 39  | Son of Kriptan     | 50      | 50  | 50  | 50     | 50     | +50,000    | Daytime only           |
+| 39  | Son of Kriptan     | 50      | 10  | 10  | 50     | 50     | +50,000    | Daytime only           |
 
 #### Rare Enchantments (Rarity 2)
 
@@ -647,7 +663,7 @@ multiplier = (rawTotal / 100.0) + 1.0
 | 25  | Patient               | **100** | —   | —   | **−40** | —   | —          | Trade attraction for luck |
 | 37  | Notoriously Big       | —       | —   | —   | —       | 10  | +50,000    | —                         |
 | 41  | Luck Sacrifice        | **−60** | —   | —   | **60**  | —   | —          | Trade luck for attraction |
-| 42  | **The Night Watcher** | 30      | 30  | 30  | 30      | 30  | +25,000    | Night only                |
+| 42  | **The Night Watcher** | 30      | 10  | 10  | 30      | 30  | +25,000    | Night only                |
 
 #### Common Enchantments (Rarity 1)
 
@@ -779,24 +795,24 @@ Theoretical max = 2 + 8 + 2 = 12× luck
 
 ```mermaid
 flowchart TD
-    subgraph CommonEvents["Common Events (weight 100)"]
+    subgraph LowWeight["Low-Weight Events (weight 1)"]
+        E0["Negative Vortex - 5% rare fish"]
         E1["Cursed Vortex - Cursed shader"]
         E2["Frozen Vortex - Frozen shader, Luck x1.5"]
-        E3["Stone Vortex - Stone/Zebra shader"]
-        E4["Albino Vortex - Albino shader"]
-        E5["Missing Vortex - MissingShader"]
-        E6["Normal Vortex - No special shader"]
+        E3["Stone Vortex - Stone/Zebra shader, Luck x1.5"]
+        E4["Blessed Vortex - 80% rare fish"]
+        E5["Shiny Vortex - 80% rare fish"]
+        E6["Albino Vortex - Albino shader"]
+        E7["Missing Vortex - MissingShader, Luck x1.5"]
+        E8["Ultimate Vortex - 80% rare fish, Luck x2"]
     end
-    subgraph RareEvents["Rare Events (weight 1)"]
-        E7["Negative Vortex - 5% rare fish"]
-        E8["Blessed Vortex - 50% rare fish"]
-        E9["Shiny Vortex - 80% rare fish"]
-        E10["Ultimate Vortex - 80% rare fish, Luck x2"]
+    subgraph HighWeight["High-Weight Event (weight 100)"]
+        E9["Normal Vortex - 20% rare fish"]
     end
 ```
 
-**Common events**: Each specific shader gives 2× modifier probability, 85% chance to get the designated shader.
-**Rare events**: Very low weight (1 vs 100), but provide 5%–80% rare fish probability.
+**Low-weight events (9 types)**: Weight 1 each, specific shader gives 2× modifier probability, 85% chance to get the designated shader. 3 of them provide 80% rare fish probability.
+**High-weight event (1 type)**: Weight 100, no special shader bonus, 20% rare fish probability. This event triggers in the vast majority of cases.
 
 ---
 
@@ -944,6 +960,10 @@ flowchart LR
 
 > **Max-level pet theoretical output**: 75 fish × (3600/200) = **up to 1,350 fish per hour** (if capacity allows and continuous AFK)
 
+> 📈 **Pet Upgrade Effect Curve** (each stat's upgrade progress vs effect percentage; note different max levels)
+>
+> ![Pet Upgrade Effect Curve](charts/pet-upgrades.svg)
+
 ### 9.4 AFK Pet Behavior
 
 | Parameter              | Value |
@@ -1010,6 +1030,10 @@ Progress = Clamp01(XP in level / required XP)
 | 1000  | **1,677,720** | 4,000            |
 
 > **Max level (Lv1000) requires 1,677,720 total XP**. At ~40 XP per Ultimate Secret fish, that's roughly 41,943 Ultimate Secret fish.
+
+> 📈 **XP Threshold Curve** (X: level 0~1000, Y: cumulative XP. Red dashed lines mark stage boundaries)
+>
+> ![XP Threshold Curve](charts/xp-curve.svg)
 
 ### 10.3 XP Rewards by Rarity
 
@@ -1545,31 +1569,31 @@ sequenceDiagram
 
 | Slot        | Equipment             | Luck Value |
 | ----------- | --------------------- | ---------- |
-| Rod         | Rod of the Pharaoh    | +200       |
+| Rod         | Rod of the Pharaoh    | +222       |
 | Line        | Lucky Line            | +30        |
 | Bobber      | Lucky Bobber          | +40        |
 | Enchantment | God's Own Luck        | +250       |
 | Zone Codex  | All 5 zones completed | +75        |
 | Pet Luck    | Max level 150         | +150       |
-| **Total**   |                       | **+745**   |
+| **Total**   |                       | **+767**   |
 
 **Theoretical maximum luck multiplier with buffs**:
 
 ```text
-Base luck mult = (745/100) + 1.0 = 8.45×
+Base luck mult = (767/100) + 1.0 = 8.67×
 × Luck Potion(2.0) + World Luck T3(8.0) + Weather Luck(2.0) = +12.0
-Total luck mult = 8.45 × 12.0 = extreme linear luck bonus
+Total luck mult = 8.67 × 12.0 = extreme linear luck bonus
 ```
 
 ### 16.2 Maximum Attraction Speed Build
 
 | Slot        | Equipment                | Attraction |
 | ----------- | ------------------------ | ---------- |
-| Rod         | Speedy Rod               | +65        |
+| Rod         | Speedy Rod               | +60        |
 | Line        | Hair of a Fell God       | +50        |
 | Bobber      | Ornamental Bobber        | +10        |
 | Enchantment | Messenger of the Heavens | +100       |
-| **Total**   |                          | **+225**   |
+| **Total**   |                          | **+220**   |
 
 ### 16.3 Maximum Sell Value Build
 
@@ -1583,7 +1607,7 @@ Total luck mult = 8.45 × 12.0 = extreme linear luck bonus
 | Double Up!! enchantment         | 25% chance to double                |
 | **Theoretical max single fish** | **Base price × 15 × 1.25 = 18.75×** |
 
-For the most expensive Catfish Emperor: $45,000 × 15 × 1.25 = **$843,750** (excluding Double Up!! doubling)
+For the most expensive Catfish Emperor: $49,500 × 15 × 1.25 = **$928,125** (excluding Double Up!! doubling)
 
 ### 16.4 Maximum Strength/Expertise Build (Easiest Minigame)
 
