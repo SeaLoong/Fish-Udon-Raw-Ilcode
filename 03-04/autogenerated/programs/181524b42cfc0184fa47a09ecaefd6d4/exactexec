@@ -1,0 +1,430 @@
+using System;
+using UnityEngine;
+using VRC.Udon;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+public Int32 scrapIndex;
+private Boolean __intnl_SystemBoolean_13 = false;
+private Boolean __intnl_SystemBoolean_23 = false;
+private Int64 __const_SystemInt64_0 = 8145960554482169115;
+private Object __intnl_UnityEngineObject_12 = null;
+private Single __intnl_SystemSingle_0 = 0f;
+private object __intnl_SystemObject_0 = null;
+private String __const_SystemString_0 = "ScrapMetalManager";
+private Transform __intnl_UnityEngineTransform_0 = null;
+private Single __const_SystemSingle_0 = 1f;
+private Boolean __intnl_SystemBoolean_16 = false;
+private UInt32 __gintnl_SystemUInt32_4 = 3776;
+private UInt32 __gintnl_SystemUInt32_1 = 2148;
+private UInt32 __gintnl_SystemUInt32_0 = 512;
+private UInt32 __gintnl_SystemUInt32_3 = 2316;
+private UInt32 __gintnl_SystemUInt32_2 = 2164;
+private Boolean __const_SystemBoolean_0 = false;
+private Boolean __const_SystemBoolean_1 = true;
+private Object __intnl_UnityEngineObject_21 = null;
+private Object __intnl_UnityEngineObject_11 = null;
+private String __const_SystemString_5 = "__0___0_IsScrapActive__ret";
+private GameObject __3__intnlparam = null;
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Object __intnl_UnityEngineObject_19 = null;
+private String __const_SystemString_12 = "__refl_typeid";
+private String __const_SystemString_10 = "__0_PickUp";
+private String __const_SystemString_11 = "__0___0_PickUp__ret";
+private Object __intnl_UnityEngineObject_14 = null;
+private Int64 __refl_typeid = -9189365886770351247;
+private Vector3 originalScale = new Vector3(0f, 0f, 0f);
+public GameObject pickupEffectPrefab;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Component __intnl_UnityEngineComponent_0 = null;
+private Boolean __intnl_SystemBoolean_11 = false;
+private Boolean __intnl_SystemBoolean_21 = false;
+private UdonBehaviour __0__intnlparam = null;
+private object __intnl_SystemObject_2 = null;
+private GameObject __lcl_managerObj_UnityEngineGameObject_0 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_1 = null;
+private String __const_SystemString_2 = "__0_get_IsReady__ret";
+private Transform __intnl_UnityEngineTransform_2 = null;
+private Single __const_SystemSingle_2 = 5f;
+private Boolean __intnl_SystemBoolean_19 = false;
+private Vector3 __intnl_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Boolean __intnl_SystemBoolean_14 = false;
+private Boolean __intnl_SystemBoolean_24 = false;
+private Component[] __intnl_UnityEngineComponentArray_0 = null;
+private object __const_SystemObject_0 = null;
+private Boolean __lcl_success_SystemBoolean_0 = false;
+private Object __intnl_UnityEngineObject_13 = null;
+private Type __const_SystemType_0 = typeof(UdonBehaviour);
+private Single __intnl_SystemSingle_1 = 0f;
+private object __intnl_SystemObject_1 = null;
+private Int32 animationPhase = 0;
+private String __const_SystemString_7 = "__0_IsPickedUp";
+private GameObject __4__intnlparam = null;
+private Single __const_SystemSingle_1 = 0f;
+private Boolean __lcl_shouldBeVisible_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_17 = false;
+public UdonBehaviour manager;
+private Object __intnl_UnityEngineObject_16 = null;
+private Int64 __intnl_SystemInt64_0 = 0;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private String __const_SystemString_4 = "__0_IsScrapActive";
+private UdonBehaviour __lcl_behaviour_VRCUdonUdonBehaviour_0 = null;
+public AudioSource audioSource;
+private Boolean isAnimating = false;
+public AudioClip pickupSound;
+public Single scaleUpDuration;
+private Component __1__intnlparam = null;
+private Object __intnl_UnityEngineObject_15 = null;
+private object __intnl_SystemObject_4 = null;
+private Transform __intnl_UnityEngineTransform_4 = null;
+private Single animationTimer = 0f;
+private String __const_SystemString_9 = "__2_scrapIndex__param";
+private Boolean __intnl_SystemBoolean_12 = false;
+private Boolean __intnl_SystemBoolean_22 = false;
+private String __refl_typename = "ScrapMetalPickup";
+private Single __lcl_t_SystemSingle_0 = 0f;
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Int32 __intnl_SystemInt32_5 = 0;
+private Int32 __intnl_SystemInt32_4 = 0;
+private Int32 __intnl_SystemInt32_6 = 0;
+private object __intnl_SystemObject_3 = null;
+private Transform __this_UnityEngineTransform_0 = this;
+public Boolean debugMode;
+private Int64 __lcl_targetID_SystemInt64_0 = 0;
+private String __const_SystemString_1 = "get_IsReady";
+private Transform __intnl_UnityEngineTransform_1 = null;
+private object __lcl_idValue_SystemObject_0 = null;
+private GameObject __5__intnlparam = null;
+private Vector3 __intnl_UnityEngineVector3_1 = new Vector3(0f, 0f, 0f);
+private Boolean __intnl_SystemBoolean_15 = false;
+private Single __lcl_scale_SystemSingle_0 = 0f;
+private Object __intnl_UnityEngineObject_20 = null;
+private Object __intnl_UnityEngineObject_10 = null;
+private GameObject __lcl_effect_UnityEngineGameObject_0 = null;
+private String __const_SystemString_6 = "__1_scrapIndex__param";
+private Single __lcl_volume_SystemSingle_0 = 0f;
+public GameObject visualObject;
+private GameObject __this_UnityEngineGameObject_0 = this;
+private Object __intnl_UnityEngineObject_18 = null;
+private Object __intnl_UnityEngineObject_17 = null;
+private object __intnl_SystemObject_6 = null;
+private GameObject __2__intnlparam = null;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Boolean __intnl_SystemBoolean_20 = false;
+private Int32 __const_SystemInt32_1 = 2;
+private Int32 __const_SystemInt32_0 = 1;
+private Int32 __const_SystemInt32_2 = 0;
+private Component[] __lcl_udonBehaviours_UnityEngineComponentArray_0 = null;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private object __intnl_SystemObject_5 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_0 = null;
+private String __const_SystemString_3 = "__0_scrapIndex__param";
+private Transform __intnl_UnityEngineTransform_3 = null;
+public Single scaleDownDuration;
+private String __const_SystemString_8 = "__0___0_IsPickedUp__ret";
+private Boolean __intnl_SystemBoolean_18 = false;
+public Single peakScale;
+
+
+public void _start()
+{
+__intnl_UnityEngineObject_0 = visualObject;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_0 == __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_0)
+{
+visualObject = __this_UnityEngineGameObject_0;
+}
+__intnl_UnityEngineObject_2 = visualObject;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_2 != __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_1)
+{
+__intnl_UnityEngineTransform_0 = visualObject.transform;
+originalScale = __intnl_UnityEngineTransform_0.localScale;
+}
+__intnl_UnityEngineObject_4 = manager;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_2 = __intnl_UnityEngineObject_4 == __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_2)
+{
+__lcl_managerObj_UnityEngineGameObject_0 = GameObject.Find(__const_SystemString_0);
+__intnl_UnityEngineObject_6 = __lcl_managerObj_UnityEngineGameObject_0;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_3 = __intnl_UnityEngineObject_6 != __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_3)
+{
+__intnl_UnityEngineTransform_0 = __lcl_managerObj_UnityEngineGameObject_0.transform;
+__1__intnlparam = __intnl_UnityEngineTransform_0;
+UNDEF_18152_4304();
+manager = __0__intnlparam;
+}
+}
+}
+public void _update()
+{
+if (isAnimating)
+{
+UNDEF_18152_1376();
+}
+}
+private void UNDEF_18152_1376()
+{
+__intnl_SystemSingle_0 = Time.deltaTime;
+animationTimer = animationTimer + __intnl_SystemSingle_0;
+__intnl_SystemBoolean_4 = animationPhase == __const_SystemInt32_0;
+if (__intnl_SystemBoolean_4)
+{
+__intnl_SystemSingle_1 = animationTimer / scaleUpDuration;
+__lcl_t_SystemSingle_0 = Mathf.Clamp01(__intnl_SystemSingle_1);
+__lcl_scale_SystemSingle_0 = Mathf.Lerp(__const_SystemSingle_0, peakScale, __lcl_t_SystemSingle_0);
+__intnl_UnityEngineTransform_1 = visualObject.transform;
+__intnl_UnityEngineVector3_0 = originalScale * __lcl_scale_SystemSingle_0;
+__intnl_UnityEngineTransform_1.localScale = __intnl_UnityEngineVector3_0;
+__intnl_SystemBoolean_5 = __lcl_t_SystemSingle_0 >= __const_SystemSingle_0;
+if (__intnl_SystemBoolean_5)
+{
+animationPhase = __const_SystemInt32_1;
+animationTimer = __const_SystemSingle_1;
+}
+}
+else
+{
+__intnl_SystemBoolean_5 = animationPhase == __const_SystemInt32_1;
+if (__intnl_SystemBoolean_5)
+{
+__intnl_SystemSingle_1 = animationTimer / scaleDownDuration;
+__lcl_t_SystemSingle_0 = Mathf.Clamp01(__intnl_SystemSingle_1);
+__lcl_scale_SystemSingle_0 = Mathf.Lerp(peakScale, __const_SystemSingle_1, __lcl_t_SystemSingle_0);
+__intnl_UnityEngineTransform_1 = visualObject.transform;
+__intnl_UnityEngineVector3_0 = originalScale * __lcl_scale_SystemSingle_0;
+__intnl_UnityEngineTransform_1.localScale = __intnl_UnityEngineVector3_0;
+__intnl_SystemBoolean_6 = __lcl_t_SystemSingle_0 >= __const_SystemSingle_0;
+if (__intnl_SystemBoolean_6)
+{
+isAnimating = __const_SystemBoolean_0;
+animationPhase = __const_SystemInt32_2;
+visualObject.SetActive(__const_SystemBoolean_0);
+__intnl_UnityEngineTransform_2 = visualObject.transform;
+__intnl_UnityEngineTransform_2.localScale = originalScale;
+}
+}
+}
+}
+public void _interact()
+{
+__intnl_UnityEngineObject_8 = manager;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_7 = __intnl_UnityEngineObject_8 == __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_7)
+{
+return;
+}
+__intnl_VRCUdonUdonBehaviour_0 = manager;
+manager.SendCustomEvent(__const_SystemString_1);
+__intnl_SystemObject_0 = manager.GetProgramVariable(__const_SystemString_2);
+__intnl_SystemBoolean_8 = (Boolean)__intnl_SystemObject_0;
+if (__intnl_SystemBoolean_8)
+{
+UNDEF_18152_1804();
+}
+}
+private void UNDEF_18152_1804()
+{
+__intnl_SystemInt32_0 = scrapIndex;
+manager.SetProgramVariable(__const_SystemString_3, scrapIndex);
+manager.SendCustomEvent(__const_SystemString_4);
+__intnl_SystemObject_1 = manager.GetProgramVariable(__const_SystemString_5);
+__intnl_SystemBoolean_9 = (Boolean)__intnl_SystemObject_1;
+if (__intnl_SystemBoolean_9)
+{
+UNDEF_18152_2184();
+}
+}
+private void UNDEF_18152_2184()
+{
+__intnl_SystemInt32_1 = scrapIndex;
+manager.SetProgramVariable(__const_SystemString_6, scrapIndex);
+manager.SendCustomEvent(__const_SystemString_7);
+__intnl_SystemObject_2 = manager.GetProgramVariable(__const_SystemString_8);
+__intnl_SystemBoolean_10 = (Boolean)__intnl_SystemObject_2;
+if (__intnl_SystemBoolean_10)
+{
+return;
+}
+__intnl_SystemInt32_2 = scrapIndex;
+manager.SetProgramVariable(__const_SystemString_9, scrapIndex);
+manager.SendCustomEvent(__const_SystemString_10);
+__intnl_SystemObject_3 = manager.GetProgramVariable(__const_SystemString_11);
+__intnl_SystemBoolean_11 = (Boolean)__intnl_SystemObject_3;
+__lcl_success_SystemBoolean_0 = __intnl_SystemBoolean_11;
+if (__lcl_success_SystemBoolean_0)
+{
+UNDEF_18152_2756();
+UNDEF_18152_2952();
+}
+}
+private void UNDEF_18152_2756()
+{
+__intnl_UnityEngineObject_10 = pickupEffectPrefab;
+__intnl_UnityEngineObject_11 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_12 = __intnl_UnityEngineObject_10 != __intnl_UnityEngineObject_11;
+if (__intnl_SystemBoolean_12)
+{
+__3__intnlparam = pickupEffectPrefab;
+UNDEF_18152_4368();
+__lcl_effect_UnityEngineGameObject_0 = __2__intnlparam;
+__intnl_UnityEngineTransform_3 = __lcl_effect_UnityEngineGameObject_0.transform;
+__intnl_UnityEngineVector3_1 = __this_UnityEngineTransform_0.position;
+__intnl_UnityEngineTransform_3.position = __intnl_UnityEngineVector3_1;
+__intnl_UnityEngineObject_12 = __lcl_effect_UnityEngineGameObject_0;
+Object.Destroy(__intnl_UnityEngineObject_12, __const_SystemSingle_2);
+}
+__intnl_UnityEngineObject_12 = pickupSound;
+__intnl_UnityEngineObject_13 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_13 = __intnl_UnityEngineObject_12 != __intnl_UnityEngineObject_13;
+if (__intnl_SystemBoolean_13)
+{
+__intnl_UnityEngineObject_14 = audioSource;
+__intnl_UnityEngineObject_15 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_14 = __intnl_UnityEngineObject_14 != __intnl_UnityEngineObject_15;
+if (__intnl_SystemBoolean_14)
+{
+__lcl_volume_SystemSingle_0 = audioSource.volume;
+}
+else
+{
+__lcl_volume_SystemSingle_0 = __const_SystemSingle_0;
+}
+__intnl_UnityEngineVector3_1 = __this_UnityEngineTransform_0.position;
+AudioSource.PlayClipAtPoint(pickupSound, __intnl_UnityEngineVector3_1, __lcl_volume_SystemSingle_0);
+}
+}
+private void UNDEF_18152_2952()
+{
+__intnl_UnityEngineObject_16 = visualObject;
+__intnl_UnityEngineObject_17 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_15 = __intnl_UnityEngineObject_16 == __intnl_UnityEngineObject_17;
+if (__intnl_SystemBoolean_15)
+{
+return;
+}
+isAnimating = __const_SystemBoolean_1;
+animationPhase = __const_SystemInt32_0;
+animationTimer = __const_SystemSingle_1;
+}
+private void UNDEF_18152_3752()
+{
+__intnl_UnityEngineObject_18 = visualObject;
+__intnl_UnityEngineObject_19 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_16 = __intnl_UnityEngineObject_18 != __intnl_UnityEngineObject_19;
+if (__intnl_SystemBoolean_16)
+{
+__intnl_UnityEngineObject_20 = manager;
+__intnl_UnityEngineObject_21 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_19 = __intnl_UnityEngineObject_20 != __intnl_UnityEngineObject_21;
+if (__intnl_SystemBoolean_19)
+{
+__intnl_VRCUdonUdonBehaviour_1 = manager;
+manager.SendCustomEvent(__const_SystemString_1);
+__intnl_SystemObject_4 = manager.GetProgramVariable(__const_SystemString_2);
+__intnl_SystemBoolean_20 = (Boolean)__intnl_SystemObject_4;
+__intnl_SystemBoolean_19 = __intnl_SystemBoolean_20;
+}
+__intnl_SystemBoolean_18 = __intnl_SystemBoolean_19;
+if (__intnl_SystemBoolean_18)
+{
+__intnl_SystemInt32_3 = scrapIndex;
+manager.SetProgramVariable(__const_SystemString_3, scrapIndex);
+manager.SendCustomEvent(__const_SystemString_4);
+__intnl_SystemObject_5 = manager.GetProgramVariable(__const_SystemString_5);
+__intnl_SystemBoolean_21 = (Boolean)__intnl_SystemObject_5;
+__intnl_SystemBoolean_18 = __intnl_SystemBoolean_21;
+}
+__intnl_SystemBoolean_17 = __intnl_SystemBoolean_18;
+if (__intnl_SystemBoolean_17)
+{
+__intnl_SystemInt32_4 = scrapIndex;
+manager.SetProgramVariable(__const_SystemString_6, scrapIndex);
+manager.SendCustomEvent(__const_SystemString_7);
+__intnl_SystemObject_6 = manager.GetProgramVariable(__const_SystemString_8);
+__intnl_SystemBoolean_22 = (Boolean)__intnl_SystemObject_6;
+__intnl_SystemBoolean_17 = !__intnl_SystemBoolean_22;
+}
+__lcl_shouldBeVisible_SystemBoolean_0 = __intnl_SystemBoolean_17;
+visualObject.SetActive(__lcl_shouldBeVisible_SystemBoolean_0);
+if (__lcl_shouldBeVisible_SystemBoolean_0)
+{
+__intnl_UnityEngineTransform_4 = visualObject.transform;
+__intnl_UnityEngineTransform_4.localScale = originalScale;
+}
+}
+}
+public void RefreshVisual()
+{
+UNDEF_18152_3752();
+}
+private void UNDEF_18152_4304()
+{
+__intnl_UnityEngineComponentArray_0 = __1__intnlparam.GetComponents(__const_SystemType_0);
+__lcl_udonBehaviours_UnityEngineComponentArray_0 = __intnl_UnityEngineComponentArray_0;
+__lcl_targetID_SystemInt64_0 = __const_SystemInt64_0;
+__intnl_SystemInt32_5 = __lcl_udonBehaviours_UnityEngineComponentArray_0.Length;
+__intnl_SystemInt32_6 = __const_SystemInt32_2;
+for (;;)
+{
+__intnl_SystemBoolean_23 = __intnl_SystemInt32_6 < __intnl_SystemInt32_5;
+if (__intnl_SystemBoolean_23)
+{
+break;
+}
+__lcl_behaviour_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(__lcl_udonBehaviours_UnityEngineComponentArray_0[__intnl_SystemInt32_6]);
+__lcl_idValue_SystemObject_0 = __lcl_behaviour_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_12);
+__intnl_SystemBoolean_24 = __lcl_idValue_SystemObject_0 != __const_SystemObject_0;
+if (__intnl_SystemBoolean_24)
+{
+__intnl_SystemInt64_0 = Convert.ToInt64(__lcl_idValue_SystemObject_0);
+__intnl_SystemBoolean_24 = __intnl_SystemInt64_0 == __lcl_targetID_SystemInt64_0;
+}
+if (__intnl_SystemBoolean_24)
+{
+__intnl_UnityEngineComponent_0 = __lcl_behaviour_VRCUdonUdonBehaviour_0;
+__0__intnlparam = (UdonBehaviour)__intnl_UnityEngineComponent_0;
+return;
+}
+__intnl_SystemInt32_6 = __intnl_SystemInt32_6 + __const_SystemInt32_0;
+}
+__0__intnlparam = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+private void UNDEF_18152_4368()
+{
+__2__intnlparam = Object.Instantiate(__3__intnlparam);
+return;
+}
+private void UNDEF_18152_4408()
+{
+__4__intnlparam = (GameObject)__const_SystemObject_0;
+}
+}

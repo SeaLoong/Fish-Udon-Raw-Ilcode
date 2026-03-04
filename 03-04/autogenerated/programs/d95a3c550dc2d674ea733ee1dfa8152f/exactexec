@@ -1,0 +1,360 @@
+using System;
+using UnityEngine;
+using VRC.SDKBase;
+using VRC.Udon;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Boolean __intnl_SystemBoolean_13 = false;
+private String __intnl_SystemString_1 = null;
+private Object __intnl_UnityEngineObject_12 = null;
+private VRCPlayerApi __lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0 = null;
+private object __intnl_SystemObject_0 = null;
+private String __const_SystemString_0 = "__1_boatIndex__param";
+private Transform __intnl_UnityEngineTransform_0 = null;
+private Boolean __intnl_SystemBoolean_16 = false;
+private UInt32 __gintnl_SystemUInt32_1 = 152;
+private UInt32 __gintnl_SystemUInt32_0 = 24;
+private Boolean __const_SystemBoolean_0 = false;
+private Boolean __const_SystemBoolean_1 = true;
+private Object __intnl_UnityEngineObject_11 = null;
+private String __const_SystemString_5 = "__0_GetBoatIndex";
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private String __const_SystemString_12 = "__0_OnLocalPlayerEnteredBoat";
+private String __const_SystemString_10 = "[SimpleBoatSyncZone] Registered '{0}' at index {1} (dynamic={2})";
+private String __const_SystemString_11 = "__0_boatIndex__param";
+private Object __intnl_UnityEngineObject_14 = null;
+private Int64 __refl_typeid = 8818603954361886955;
+private VRCPlayerApi onPlayerTriggerEnterPlayer = null;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Boolean __intnl_SystemBoolean_11 = false;
+public Boolean enableDebugLogs;
+private Bounds __intnl_UnityEngineBounds_0 = Center: (0.00, 0.00, 0.00), Extents: (0.00, 0.00, 0.00);
+private String __const_SystemString_2 = "__0_index__param";
+private Boolean __intnl_SystemBoolean_14 = false;
+public Transform boatTransform;
+private Int32 __0_GetBoatIndex__ret = 0;
+private object __const_SystemObject_0 = null;
+private String __intnl_SystemString_0 = null;
+private Object __intnl_UnityEngineObject_13 = null;
+private Type __const_SystemType_0 = typeof(Collider);
+private object __intnl_SystemObject_1 = null;
+private Boolean __lcl_isInBounds_SystemBoolean_0 = false;
+private String __const_SystemString_7 = "__0_boatTransform__param";
+private Boolean __intnl_SystemBoolean_17 = false;
+public UdonBehaviour manager;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private String __const_SystemString_4 = "__0_boat__param";
+public LayerMask playerLayerMask;
+private Object __intnl_UnityEngineObject_15 = null;
+private Collider __lcl_col_UnityEngineCollider_0 = null;
+private VRCPlayerApi onPlayerTriggerExitPlayer = null;
+private Vector3 __lcl_playerPos_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private String __const_SystemString_9 = "__0___0_RegisterBoat__ret";
+private Boolean isLocalPlayerInZone = false;
+private Boolean __intnl_SystemBoolean_12 = false;
+private String __refl_typename = "SimpleBoatSyncZone";
+private Int32 boatIndex = -1;
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Int32 __intnl_SystemInt32_5 = 0;
+private Int32 __intnl_SystemInt32_4 = 0;
+private Transform __this_UnityEngineTransform_0 = this;
+private String __const_SystemString_1 = "__0_OnLocalPlayerExitedBoat";
+private Transform __intnl_UnityEngineTransform_1 = null;
+private Boolean __intnl_SystemBoolean_15 = false;
+private Boolean _dynamicallyRegistered = false;
+private Object __intnl_UnityEngineObject_10 = null;
+private String __const_SystemString_6 = "__0___0_GetBoatIndex__ret";
+private Boolean __0_IsLocalPlayerInZone__ret = false;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Int32 __const_SystemInt32_1 = -1;
+private Int32 __const_SystemInt32_0 = 0;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private String __const_SystemString_3 = "__0_UnregisterBoat";
+private String __const_SystemString_8 = "__0_RegisterBoat";
+private Boolean __intnl_SystemBoolean_18 = false;
+
+
+public void _start()
+{
+UNDEF_d95a3_1496();
+}
+public void _onEnable()
+{
+__intnl_SystemBoolean_0 = _dynamicallyRegistered;
+if (__intnl_SystemBoolean_0)
+{
+__intnl_SystemBoolean_0 = boatIndex < __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_0)
+{
+UNDEF_d95a3_1496();
+}
+}
+public void _onDisable()
+{
+__intnl_SystemBoolean_2 = isLocalPlayerInZone;
+if (__intnl_SystemBoolean_2)
+{
+__intnl_UnityEngineObject_0 = manager;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_2 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+}
+__intnl_SystemBoolean_1 = __intnl_SystemBoolean_2;
+if (__intnl_SystemBoolean_1)
+{
+__intnl_SystemBoolean_1 = boatIndex >= __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_1)
+{
+isLocalPlayerInZone = __const_SystemBoolean_0;
+__intnl_SystemInt32_0 = boatIndex;
+manager.SetProgramVariable(__const_SystemString_0, boatIndex);
+manager.SendCustomEvent(__const_SystemString_1);
+}
+__intnl_SystemBoolean_4 = _dynamicallyRegistered;
+if (__intnl_SystemBoolean_4)
+{
+__intnl_UnityEngineObject_2 = manager;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_4 = __intnl_UnityEngineObject_2 != __intnl_UnityEngineObject_3;
+}
+__intnl_SystemBoolean_3 = __intnl_SystemBoolean_4;
+if (__intnl_SystemBoolean_3)
+{
+__intnl_SystemBoolean_3 = boatIndex >= __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_3)
+{
+__intnl_SystemInt32_0 = boatIndex;
+manager.SetProgramVariable(__const_SystemString_2, boatIndex);
+manager.SendCustomEvent(__const_SystemString_3);
+boatIndex = __const_SystemInt32_1;
+}
+}
+private void UNDEF_d95a3_1496()
+{
+__intnl_UnityEngineObject_4 = manager;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_5 = __intnl_UnityEngineObject_4 == __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_5)
+{
+}
+else
+{
+__intnl_UnityEngineObject_6 = boatTransform;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_5 = __intnl_UnityEngineObject_6 == __intnl_UnityEngineObject_7;
+}
+if (__intnl_SystemBoolean_5)
+{
+return;
+}
+__intnl_UnityEngineTransform_0 = boatTransform;
+manager.SetProgramVariable(__const_SystemString_4, boatTransform);
+manager.SendCustomEvent(__const_SystemString_5);
+__intnl_SystemObject_0 = manager.GetProgramVariable(__const_SystemString_6);
+__intnl_SystemInt32_1 = Convert.ToInt32(__intnl_SystemObject_0);
+boatIndex = __intnl_SystemInt32_1;
+__intnl_SystemBoolean_6 = boatIndex < __const_SystemInt32_0;
+if (__intnl_SystemBoolean_6)
+{
+__intnl_UnityEngineTransform_1 = boatTransform;
+manager.SetProgramVariable(__const_SystemString_7, boatTransform);
+manager.SendCustomEvent(__const_SystemString_8);
+__intnl_SystemObject_1 = manager.GetProgramVariable(__const_SystemString_9);
+__intnl_SystemInt32_2 = Convert.ToInt32(__intnl_SystemObject_1);
+boatIndex = __intnl_SystemInt32_2;
+_dynamicallyRegistered = boatIndex >= __const_SystemInt32_0;
+}
+if (enableDebugLogs)
+{
+__intnl_SystemString_0 = boatTransform.name;
+__intnl_SystemString_1 = String.Format(__const_SystemString_10, __intnl_SystemString_0, boatIndex, _dynamicallyRegistered);
+Debug.Log(__intnl_SystemString_1);
+}
+}
+public void _onPlayerTriggerEnter()
+{
+__intnl_SystemBoolean_7 = onPlayerTriggerEnterPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_7)
+{
+}
+else
+{
+__intnl_SystemBoolean_8 = onPlayerTriggerEnterPlayer.isLocal;
+__intnl_SystemBoolean_7 = !__intnl_SystemBoolean_8;
+}
+if (__intnl_SystemBoolean_7)
+{
+return;
+}
+__intnl_SystemBoolean_9 = boatIndex < __const_SystemInt32_0;
+if (__intnl_SystemBoolean_9)
+{
+}
+else
+{
+__intnl_UnityEngineObject_8 = manager;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_9 = __intnl_UnityEngineObject_8 == __intnl_UnityEngineObject_9;
+}
+if (__intnl_SystemBoolean_9)
+{
+return;
+}
+if (isLocalPlayerInZone)
+{
+}
+else
+{
+isLocalPlayerInZone = __const_SystemBoolean_1;
+__intnl_SystemInt32_3 = boatIndex;
+manager.SetProgramVariable(__const_SystemString_11, boatIndex);
+manager.SendCustomEvent(__const_SystemString_12);
+if (enableDebugLogs)
+{
+}
+}
+}
+public void _onPlayerTriggerExit()
+{
+__intnl_SystemBoolean_10 = onPlayerTriggerExitPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_10)
+{
+}
+else
+{
+__intnl_SystemBoolean_11 = onPlayerTriggerExitPlayer.isLocal;
+__intnl_SystemBoolean_10 = !__intnl_SystemBoolean_11;
+}
+if (__intnl_SystemBoolean_10)
+{
+return;
+}
+__intnl_SystemBoolean_12 = boatIndex < __const_SystemInt32_0;
+if (__intnl_SystemBoolean_12)
+{
+}
+else
+{
+__intnl_UnityEngineObject_10 = manager;
+__intnl_UnityEngineObject_11 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_12 = __intnl_UnityEngineObject_10 == __intnl_UnityEngineObject_11;
+}
+if (__intnl_SystemBoolean_12)
+{
+return;
+}
+if (isLocalPlayerInZone)
+{
+isLocalPlayerInZone = __const_SystemBoolean_0;
+__intnl_SystemInt32_4 = boatIndex;
+manager.SetProgramVariable(__const_SystemString_0, boatIndex);
+manager.SendCustomEvent(__const_SystemString_1);
+if (enableDebugLogs)
+{
+}
+}
+}
+public void RefreshPlayerInZone()
+{
+__intnl_UnityEngineObject_12 = manager;
+__intnl_UnityEngineObject_13 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_13 = __intnl_UnityEngineObject_12 == __intnl_UnityEngineObject_13;
+if (__intnl_SystemBoolean_13)
+{
+}
+else
+{
+__intnl_SystemBoolean_13 = boatIndex < __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_13)
+{
+return;
+}
+__lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0 = Networking.LocalPlayer;
+__intnl_SystemBoolean_14 = __lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0 == __const_SystemObject_0;
+if (__intnl_SystemBoolean_14)
+{
+}
+else
+{
+__intnl_SystemBoolean_15 = __lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0.IsValid();
+__intnl_SystemBoolean_14 = !__intnl_SystemBoolean_15;
+}
+if (__intnl_SystemBoolean_14)
+{
+return;
+}
+__lcl_col_UnityEngineCollider_0 = (Collider)(__this_UnityEngineTransform_0.GetComponent(__const_SystemType_0));
+__intnl_UnityEngineObject_14 = __lcl_col_UnityEngineCollider_0;
+__intnl_UnityEngineObject_15 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_16 = __intnl_UnityEngineObject_14 == __intnl_UnityEngineObject_15;
+if (__intnl_SystemBoolean_16)
+{
+return;
+}
+__lcl_playerPos_UnityEngineVector3_0 = __lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0.GetPosition();
+__intnl_UnityEngineBounds_0 = __lcl_col_UnityEngineCollider_0.bounds;
+__lcl_isInBounds_SystemBoolean_0 = __intnl_UnityEngineBounds_0.Contains(__lcl_playerPos_UnityEngineVector3_0);
+__intnl_SystemBoolean_17 = __lcl_isInBounds_SystemBoolean_0;
+if (__intnl_SystemBoolean_17)
+{
+__intnl_SystemBoolean_17 = !isLocalPlayerInZone;
+}
+if (__intnl_SystemBoolean_17)
+{
+isLocalPlayerInZone = __const_SystemBoolean_1;
+__intnl_SystemInt32_5 = boatIndex;
+manager.SetProgramVariable(__const_SystemString_11, boatIndex);
+manager.SendCustomEvent(__const_SystemString_12);
+}
+else
+{
+__intnl_SystemBoolean_18 = !__lcl_isInBounds_SystemBoolean_0;
+if (__intnl_SystemBoolean_18)
+{
+__intnl_SystemBoolean_18 = isLocalPlayerInZone;
+}
+if (__intnl_SystemBoolean_18)
+{
+isLocalPlayerInZone = __const_SystemBoolean_0;
+__intnl_SystemInt32_5 = boatIndex;
+manager.SetProgramVariable(__const_SystemString_0, boatIndex);
+manager.SendCustomEvent(__const_SystemString_1);
+}
+}
+}
+public void GetBoatIndex()
+{
+__0_GetBoatIndex__ret = boatIndex;
+return;
+}
+public void IsLocalPlayerInZone()
+{
+__0_IsLocalPlayerInZone__ret = isLocalPlayerInZone;
+return;
+}
+}

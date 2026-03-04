@@ -1,0 +1,377 @@
+void _start()
+16 JUMP 840
+32 JUMP 540
+96 if (__intnl_SystemBoolean_0) //128
+{
+baseFogDensity = get_fogDensity();// 112
+120 JUMP 148
+}
+144 baseFogDensity = __const_SystemSingle_1
+isMasterClient = IsOwner(__this_UnityEngineGameObject_0);// 164
+180 if (isMasterClient) //512
+{
+__lcl_networkTime_SystemDateTime_0 = GetNetworkDateTime();// 196
+worldStartTimeTicks = L_networkTime.get_Ticks();// 220
+244 timeScale = __const_SystemSingle_2
+__lcl_initialOffsetSeconds_SystemDouble_0 = ToDouble(__intnl_SystemSingle_1);// 296
+worldStartTimeTicks = op_Subtraction(__intnl_SystemInt64_0, worldStartTimeTicks);// 408
+432 syncedTimeNormalized = startTimeNormalized
+452 hasReceivedInitialSync = __const_SystemBoolean_0
+this.SendCustomEventDelayedFrames(__const_VRCUdonCommonEnumsEventTiming_0, __const_SystemInt32_0, __const_SystemString_0);// 488
+504 JUMP 4072
+}
+524 return;
+628 if (__intnl_SystemBoolean_1) //812
+{
+lightIntensityCurve = ctor();// 644
+}
+824 return;
+__lcl_total_SystemSingle_0 = op_Addition(nightDuration, __intnl_SystemSingle_3);// 928
+1032 if (__intnl_SystemBoolean_2) //1040
+{
+}
+1052 return;
+void _update()
+1076 JUMP 1604
+1092 if (isMasterClient) //1228
+{
+1188 if (__intnl_SystemBoolean_3) //1228
+{
+this.RequestSerialization();// 1204
+lastSyncTime = get_time();// 1220
+}
+}
+1236 if (hasReceivedInitialSync) //1576
+{
+frameCounter = op_Addition(__const_SystemInt32_0, frameCounter);// 1268
+1348 if (__intnl_SystemBoolean_3) //1372
+{
+1364 JUMP 3252
+}
+1388 __intnl_UnityEngineObject_0 = sunLight
+1408 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+1452 if (__intnl_SystemBoolean_4) //1508
+{
+G_sunLight.get_gameObject().SetActive(__const_SystemBoolean_0);// 1500
+}
+1548 if (__intnl_SystemBoolean_5) //1576
+{
+1572 frameCounter = __const_SystemInt32_1
+}
+}
+1588 return;
+1644 if (__intnl_SystemBoolean_6) //1672
+{
+1664 return;
+}
+1680 JUMP 2240
+__lcl_worldStart_SystemDateTime_0 = ctor(worldStartTimeTicks);// 1704
+__lcl_elapsedSeconds_SystemDouble_0 = op_Subtraction(__intnl_SystemDouble_3, cachedNetworkTime);// 1816
+syncedTimeNormalized = ToSingle(__intnl_SystemDouble_8);// 1984
+2032 if (__intnl_SystemBoolean_7) //2072
+{
+syncedTimeNormalized = op_Addition(__const_SystemSingle_2, syncedTimeNormalized);// 2064
+}
+2096 __0_normalizedTime__param = syncedTimeNormalized
+2100 JUMP 2476
+2124 __lcl_newTimeOfDay_SystemInt32_0 = __0___0_GetTimeOfDayFromNormalized__ret
+2168 if (__intnl_SystemBoolean_8) //2212
+{
+2192 currentTimeOfDay = __lcl_newTimeOfDay_SystemInt32_0
+2204 JUMP 2928
+}
+2224 return;
+2328 if (__intnl_SystemBoolean_9) //2448
+{
+__lcl_networkTime_SystemDateTime_1 = GetNetworkDateTime();// 2344
+cachedNetworkTime = op_Division(__const_SystemDouble_0, __intnl_SystemDouble_9);// 2424
+lastNetworkTimeCacheUpdate = get_time();// 2440
+}
+2460 return;
+2516 if (__intnl_SystemBoolean_10) //2572
+{
+2540 __0___0_GetTimeOfDayFromNormalized__ret = __const_SystemInt32_4
+2556 return;
+2564 JUMP 2900
+}
+2644 if (__intnl_SystemBoolean_11) //2700
+{
+2668 __0___0_GetTimeOfDayFromNormalized__ret = __const_SystemInt32_5
+2684 return;
+2692 JUMP 2900
+}
+2804 if (__intnl_SystemBoolean_12) //2860
+{
+2828 __0___0_GetTimeOfDayFromNormalized__ret = __const_SystemInt32_6
+2844 return;
+2852 JUMP 2900
+}
+2876 __0___0_GetTimeOfDayFromNormalized__ret = __const_SystemInt32_7
+2892 return;
+2912 return;
+2968 if (__intnl_SystemBoolean_13) //3208
+{
+3016 if (__intnl_SystemBoolean_14) //3208
+{
+3056 return;
+3080 isDaytime = __const_SystemBoolean_0
+3100 isNighttime = __const_SystemBoolean_1
+3104 JUMP 3208
+3128 isDaytime = __const_SystemBoolean_1
+3148 isNighttime = __const_SystemBoolean_0
+3152 JUMP 3208
+3176 isDaytime = __const_SystemBoolean_1
+3196 isNighttime = __const_SystemBoolean_0
+3200 JUMP 3208
+}
+}
+3216 JUMP 4688
+3236 return;
+3268 __intnl_UnityEngineObject_2 = timeDisplayText
+3288 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+3332 if (__intnl_SystemBoolean_15) //3400
+{
+3364 __intnl_TMProTextMeshProUGUI_0 = timeDisplayText
+3368 JUMP 3708
+G_timeDisplayText.set_text(__0_GetTimeOfDayString__ret);// 3392
+}
+3408 JUMP 3444
+3428 return;
+3460 __intnl_UnityEngineObject_4 = clockHandImage
+3480 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+3524 if (__intnl_SystemBoolean_16) //3552
+{
+3544 return;
+}
+__lcl_rotationAngle_SystemSingle_0 = op_Subtraction(__intnl_SystemSingle_13, midnightAngle);// 3608
+G_clockHandImage.set_rotation(__intnl_UnityEngineQuaternion_0);// 3672
+3692 return;
+3748 if (__intnl_SystemBoolean_17) //4004
+{
+3796 if (__intnl_SystemBoolean_18) //4004
+{
+3836 return;
+3860 __0_GetTimeOfDayString__ret = __const_SystemString_1
+3876 return;
+3900 __0_GetTimeOfDayString__ret = __const_SystemString_2
+3916 return;
+3940 __0_GetTimeOfDayString__ret = __const_SystemString_3
+3956 return;
+3980 __0_GetTimeOfDayString__ret = __const_SystemString_4
+3996 return;
+}
+}
+4020 __0_GetTimeOfDayString__ret = __const_SystemString_5
+4036 return;
+4056 return;
+4112 if (__intnl_SystemBoolean_19) //4520
+{
+4128 JUMP 2240
+__lcl_worldStart_SystemDateTime_1 = ctor(worldStartTimeTicks);// 4152
+__lcl_elapsedSeconds_SystemDouble_1 = op_Subtraction(__intnl_SystemDouble_11, cachedNetworkTime);// 4264
+syncedTimeNormalized = ToSingle(__intnl_SystemDouble_16);// 4432
+4480 if (__intnl_SystemBoolean_20) //4520
+{
+syncedTimeNormalized = op_Addition(__const_SystemSingle_2, syncedTimeNormalized);// 4512
+}
+}
+4544 __0_normalizedTime__param = syncedTimeNormalized
+4548 JUMP 2476
+4572 __lcl_newTimeOfDay_SystemInt32_1 = __0___0_GetTimeOfDayFromNormalized__ret
+4616 if (__intnl_SystemBoolean_20) //4660
+{
+4640 currentTimeOfDay = __lcl_newTimeOfDay_SystemInt32_1
+4652 JUMP 2928
+}
+4672 return;
+4704 __intnl_UnityEngineObject_6 = equipmentStatsManager
+4724 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+4768 if (__intnl_SystemBoolean_21) //4820
+{
+4800 __intnl_VRCUdonUdonBehaviour_0 = equipmentStatsManager
+G_equipmentStatsManager.SendCustomEvent(__const_SystemString_6);// 4812
+}
+4832 return;
+void _onDeserialization()
+4888 if (__intnl_SystemBoolean_22) //4916
+{
+4908 return;
+}
+4924 if (hasReceivedInitialSync) //4940
+{
+4932 JUMP 4960
+}
+4956 hasReceivedInitialSync = __const_SystemBoolean_0
+4968 JUMP 4072
+4988 return;
+void _onOwnershipTransferred()
+5020 __lcl_wasOwner_SystemBoolean_0 = isMasterClient
+isMasterClient = IsOwner(__this_UnityEngineGameObject_0);// 5040
+5064 __intnl_SystemBoolean_23 = isMasterClient
+5076 if (__intnl_SystemBoolean_23) //5108
+{
+}
+5116 if (__intnl_SystemBoolean_23) //5140
+{
+this.RequestSerialization();// 5132
+}
+5152 return;
+void _onPlayerLeft()
+__lcl_currentOwner_VRCSDKBaseVRCPlayerApi_0 = GetOwner(__this_UnityEngineGameObject_0);// 5184
+5232 if (__intnl_SystemBoolean_24) //5248
+{
+5240 JUMP 5328
+}
+5336 if (__intnl_SystemBoolean_24) //5364
+{
+5356 return;
+}
+5412 if (__intnl_SystemBoolean_25) //5460
+{
+SetOwner(__this_UnityEngineGameObject_0, __intnl_VRCSDKBaseVRCPlayerApi_1);// 5452
+}
+5472 return;
+void _DelayedInitialSync()
+5496 if (isMasterClient) //5520
+{
+this.RequestSerialization();// 5512
+}
+5532 return;
+void GetCurrentTimeOfDay()
+5564 __0_GetCurrentTimeOfDay__ret = currentTimeOfDay
+5580 return;
+5600 return;
+void GetNormalizedTime()
+5632 __0_GetNormalizedTime__ret = syncedTimeNormalized
+5648 return;
+5668 return;
+void IsDay()
+5700 __0_IsDay__ret = isDaytime
+5716 return;
+5736 return;
+void IsNight()
+5768 __0_IsNight__ret = isNighttime
+5784 return;
+5804 return;
+void __0_CanFishSpawnAtCurrentTime()
+5836 __intnl_SystemBoolean_26 = __0_requiresDay__param
+5848 if (__intnl_SystemBoolean_26) //5880
+{
+}
+5888 if (__intnl_SystemBoolean_26) //5936
+{
+5912 __0___0_CanFishSpawnAtCurrentTime__ret = __const_SystemBoolean_1
+5928 return;
+}
+5952 __intnl_SystemBoolean_27 = __0_requiresNight__param
+5964 if (__intnl_SystemBoolean_27) //5996
+{
+}
+6004 if (__intnl_SystemBoolean_27) //6052
+{
+6028 __0___0_CanFishSpawnAtCurrentTime__ret = __const_SystemBoolean_1
+6044 return;
+}
+6068 __0___0_CanFishSpawnAtCurrentTime__ret = __const_SystemBoolean_0
+6084 return;
+6104 return;
+void __0_SetTime()
+6128 if (isMasterClient) //6144
+{
+6136 JUMP 6164
+}
+6156 return;
+__lcl_currentNetworkTime_SystemDateTime_0 = GetNetworkDateTime();// 6172
+__lcl_targetElapsedSeconds_SystemDouble_0 = ToDouble(__intnl_SystemSingle_14);// 6228
+worldStartTimeTicks = op_Subtraction(__intnl_SystemInt64_5, __intnl_SystemInt64_4);// 6364
+6388 syncedTimeNormalized = __1_normalizedTime__param
+6416 __0_normalizedTime__param = syncedTimeNormalized
+6420 JUMP 2476
+6444 __lcl_newTimeOfDay_SystemInt32_2 = __0___0_GetTimeOfDayFromNormalized__ret
+6488 if (__intnl_SystemBoolean_28) //6532
+{
+6512 currentTimeOfDay = __lcl_newTimeOfDay_SystemInt32_2
+6524 JUMP 2928
+}
+this.RequestSerialization();// 6540
+lastSyncTime = get_time();// 6556
+6576 return;
+void __0_SetTimeSpeed()
+6600 if (isMasterClient) //6616
+{
+6608 JUMP 6636
+}
+6628 return;
+timeScale = Max(__0_speed__param, __const_SystemSingle_0);// 6660
+this.RequestSerialization();// 6676
+lastSyncTime = get_time();// 6692
+6712 return;
+void SkipToNextTimePeriod()
+6736 if (isMasterClient) //6752
+{
+6744 JUMP 6772
+}
+6764 return;
+6796 __0_current__param = currentTimeOfDay
+6800 JUMP 6948
+6824 __lcl_nextTime_SystemInt32_0 = __0___0_GetNextTimeOfDay__ret
+6852 __0_timeOfDay__param = __lcl_nextTime_SystemInt32_0
+6856 JUMP 7312
+6880 __lcl_targetTime_SystemSingle_0 = __0___0_GetNormalizedTimeForTimeOfDay__ret
+6908 __1_normalizedTime__param = __lcl_targetTime_SystemSingle_0
+6912 JUMP 6120
+6932 return;
+6988 if (__intnl_SystemBoolean_29) //7244
+{
+7036 if (__intnl_SystemBoolean_30) //7244
+{
+7076 return;
+7100 __0___0_GetNextTimeOfDay__ret = __const_SystemInt32_5
+7116 return;
+7140 __0___0_GetNextTimeOfDay__ret = __const_SystemInt32_6
+7156 return;
+7180 __0___0_GetNextTimeOfDay__ret = __const_SystemInt32_7
+7196 return;
+7220 __0___0_GetNextTimeOfDay__ret = __const_SystemInt32_4
+7236 return;
+}
+}
+7260 __0___0_GetNextTimeOfDay__ret = __const_SystemInt32_5
+7276 return;
+7296 return;
+7352 if (__intnl_SystemBoolean_31) //7740
+{
+7400 if (__intnl_SystemBoolean_32) //7740
+{
+7440 return;
+7464 __0___0_GetNormalizedTimeForTimeOfDay__ret = __const_SystemSingle_1
+7480 return;
+__0___0_GetNormalizedTimeForTimeOfDay__ret = op_Addition(__const_SystemSingle_1, morningDuration);// 7512
+7532 return;
+__0___0_GetNormalizedTimeForTimeOfDay__ret = op_Addition(__const_SystemSingle_1, __intnl_SystemSingle_15);// 7596
+7616 return;
+__0___0_GetNormalizedTimeForTimeOfDay__ret = op_Addition(__const_SystemSingle_1, __intnl_SystemSingle_17);// 7712
+7732 return;
+}
+}
+7756 __0___0_GetNormalizedTimeForTimeOfDay__ret = __const_SystemSingle_9
+7772 return;
+7792 return;
+void GetCurrentWeather()
+7824 __0_GetCurrentWeather__ret = currentWeather
+7840 return;
+7860 return;
+void __0_SetCurrentWeather()
+7892 currentWeather = __0_weather__param
+7904 JUMP 4688
+7924 return;
+void GetBaseFogDensity()
+7956 __0_GetBaseFogDensity__ret = baseFogDensity
+7972 return;
+7992 return;
+void __0_SetWeatherEffectsVisible()
+8020 return;
+void __0_SetAllowedWeatherTypes()
+8048 return;
+void __0_SetIndoorMode()
+8076 return;

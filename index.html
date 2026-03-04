@@ -417,6 +417,7 @@
       <!-- Built-in Key Info -->
       <div class="key-area visible" id="builtinArea">
         <div class="info-box" data-i18n-html="builtinInfo"></div>
+        <div id="versionInfo" style="margin-bottom:8px;font-size:0.85em;color:#999;line-height:1.5"></div>
         <div class="key-display" id="derivedKeyBox">
           <span class="kd-label" data-i18n="derivedLabel">派生结果 (Hex, 32 bytes)</span>
           <span id="derivedKeyHex"></span>
@@ -499,7 +500,7 @@
             keyCustom: '自定义 Hex',
             builtinInfo:
               '使用从 IL 字节码中提取的 Fish World 原始加密参数：<br/>' +
-              '32 字节混淆口令 + 32 字节混淆盐值（经 XOR 去混淆后为 ASCII 字符串）→ 经 1000 轮 DeriveKey 迭代 → 32 字节 AES 密钥<br/>' +
+              '32 字节混淆口令（7 字节密钥因子 + 多项式掩码去混淆）+ 32 字节混淆盐值（独立 XOR 去混淆）→ 经 1000 轮 DeriveKey 迭代 → 32 字节 AES 密钥<br/>' +
               '<strong>算法：</strong>逐字节邻域 XOR + 盐值 XOR + 轮次 XOR + AES S-Box 替换',
             derivedLabel: '派生结果 (Hex, 32 bytes)',
             rawKeyLabel: 'AES-256 Key（64 Hex = 32 字节）',
@@ -559,7 +560,7 @@
             keyCustom: 'Custom Hex',
             builtinInfo:
               'Uses original Fish World encryption parameters extracted from IL bytecode:<br/>' +
-              '32-byte XOR-obfuscated passphrase + 32-byte XOR-obfuscated salt (decoded to ASCII strings) → 1000 rounds DeriveKey → 32-byte AES key<br/>' +
+              '32-byte obfuscated passphrase (7-byte key factor + polynomial mask deobfuscation) + 32-byte obfuscated salt (independent XOR deobfuscation) → 1000 rounds DeriveKey → 32-byte AES key<br/>' +
               '<strong>Algorithm:</strong> neighbor XOR + salt XOR + round XOR + AES S-Box substitution',
             derivedLabel: 'Derived Key (Hex, 32 bytes)',
             rawKeyLabel: 'AES-256 Key (64 Hex = 32 bytes)',
@@ -768,37 +769,36 @@
         }
 
         /* ================================================================
-         *  Fish World Hardcoded Parameters (extracted from IL)
+         *  Fish World Encryption Parameters — from DiscordRoleManager IL
          *
-         *  DiscordRoleManager._start() constructs these from obfuscated
-         *  byte constants. Each byte is XOR-decoded at runtime:
-         *    decoded[i] = (raw[i] ^ 163) ^ (i & 15)
-         *  This yields ASCII strings (all values < 128), each 32 bytes.
-         *
-         *  Passphrase: "m4EdEzCJVqIyRc6pfQL3k0SH6RIYdtIY"
-         *  Salt:       "QFFtTqCrP0fAzB1iu2uw02KAmtZu0Iba"
+         *  混淆方案（口令）: decoded[i] = (raw[i] ^ k[i % k.length]) ^ ((i * 15 + 69) & 255)
+         *    其中 k 为 7 字节密钥因子: [91, 13, 177, 166, 164, 151, 73]
+         *  混淆方案（盐值）: decoded[i] = (raw[i] ^ 96) ^ (i & 31)
+         *  口令: "iCdX1ONKFplcYOZ41GJvLr9rYUsEkzXe"
+         *  盐值: "eumW2MJmU0FSVVnEa9hcNLs0Cw9ggIjQ"
+         *  密钥: da42028b0b24a0a98e18b95e9b7d19d9dfd5ce3cc20316c530714ad3c7e712e1
          * ================================================================ */
-        // XOR-obfuscated passphrase bytes (decoded → 32 ASCII chars → 32 UTF-8 bytes)
-        var PP_RAW = [206, 150, 228, 196, 226, 220, 230, 238, 253, 219, 224, 209, 253, 205, 155, 220, 197, 243, 237, 147, 204, 150, 246, 236, 157, 248, 224, 241, 203, 218, 228, 245];
-
-        // XOR-obfuscated salt bytes (decoded → 32 ASCII chars → 32 UTF-8 bytes)
-        var SALT_RAW = [242, 228, 231, 212, 243, 215, 230, 214, 251, 154, 207, 233, 213, 236, 156, 197, 214, 144, 212, 215, 151, 148, 238, 229, 198, 222, 243, 221, 159, 231, 207, 205];
+        var FISH_KEY_PARAMS = {
+          ppRaw: [119, 26, 182, 140, 20, 72, 152, 190, 246, 13, 17, 45, 55, 14, 22, 31, 181, 165, 189, 131, 116, 169, 187, 93, 82, 77, 47, 214, 217, 143, 238, 213],
+          saltRaw: [5, 20, 15, 52, 86, 40, 44, 10, 61, 89, 44, 56, 58, 59, 0, 42, 17, 72, 26, 16, 58, 57, 5, 71, 59, 14, 67, 28, 27, 52, 20, 46],
+          kRaw: [91, 13, 177, 166, 164, 151, 73],
+          decodePP: function(raw) {
+            var k = this.kRaw;
+            var s = ''; for (var i = 0; i < raw.length; i++) s += String.fromCharCode((raw[i] ^ k[i % k.length]) ^ ((i * 15 + 69) & 255)); return s;
+          },
+          decodeSalt: function(raw) {
+            var s = ''; for (var i = 0; i < raw.length; i++) s += String.fromCharCode((raw[i] ^ 96) ^ (i & 31)); return s;
+          }
+        };
 
         function buildFishKey() {
-          // Replicate C#: XOR-decode raw bytes, cast to char, build String,
-          // then UTF8.GetBytes(). Decoded values are all ASCII so UTF-8
-          // encoding yields the same 32 bytes.
-          var ppStr = '';
-          for (var i = 0; i < PP_RAW.length; i++) ppStr += String.fromCharCode(PP_RAW[i] ^ 163 ^ (i & 15));
-          var saltStr = '';
-          for (var i = 0; i < SALT_RAW.length; i++) saltStr += String.fromCharCode(SALT_RAW[i] ^ 163 ^ (i & 15));
-
-          var ppBytes = utf8Encode(ppStr); // 32 bytes (ASCII)
-          var saltBytes = utf8Encode(saltStr); // 32 bytes (ASCII)
-
-          return fishDeriveKey(ppBytes, saltBytes);
+          var v = FISH_KEY_PARAMS;
+          var ppStr = v.decodePP(v.ppRaw);
+          var saltStr = v.decodeSalt(v.saltRaw);
+          var ppBytes = utf8Encode(ppStr);
+          var saltBytes = utf8Encode(saltStr);
+          return { key: fishDeriveKey(ppBytes, saltBytes), ppStr: ppStr, saltStr: saltStr };
         }
-
         /* ================================================================
          *  Key Resolution
          * ================================================================ */
@@ -896,6 +896,20 @@
           });
         });
 
+        // 初始化内置密钥
+        function initBuiltinKey() {
+          try {
+            var result = buildFishKey();
+            builtinKeyHex = bytesToHex(result.key);
+            derivedKeyHexEl.textContent = builtinKeyHex;
+            $('versionInfo').innerHTML =
+              '口令/PP: <code>' + result.ppStr + '</code><br/>' +
+              '盐值/Salt: <code>' + result.saltStr + '</code>';
+          } catch (e) {
+            showToast('Key error: ' + e.message, 'error');
+          }
+        }
+
         // Random key generator
         btnGenKey.addEventListener('click', function () {
           rawKeyEl.value = randomHex(32);
@@ -972,9 +986,7 @@
 
         // Derive built-in key on page load
         try {
-          var fishKey = buildFishKey();
-          builtinKeyHex = bytesToHex(fishKey);
-          derivedKeyHexEl.textContent = builtinKeyHex;
+          initBuiltinKey();
         } catch (e) {
           showToast('Key derivation error: ' + e.message, 'error');
         }

@@ -1,0 +1,276 @@
+void _start()
+localPlayer = get_LocalPlayer();// 16
+40 __intnl_UnityEngineObject_0 = teleportDestination
+60 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+104 if (__intnl_SystemBoolean_0) //112
+{
+}
+128 __intnl_UnityEngineObject_2 = screenFade
+148 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+192 if (__intnl_SystemBoolean_1) //200
+{
+}
+240 if (__intnl_SystemBoolean_2) //304
+{
+}
+312 if (__intnl_SystemBoolean_2) //408
+{
+336 __intnl_UnityEngineObject_4 = questInventoryManager
+356 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+400 if (__intnl_SystemBoolean_3) //408
+{
+}
+}
+424 __intnl_UnityEngineObject_4 = requiredAchievement
+444 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+488 if (__intnl_SystemBoolean_3) //568
+{
+512 __intnl_UnityEngineObject_6 = achievementManager
+532 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+}
+576 if (__intnl_SystemBoolean_3) //584
+{
+}
+596 return;
+void _interact()
+620 if (isTeleporting) //648
+{
+640 return;
+}
+656 JUMP 4040
+696 if (__intnl_SystemBoolean_4) //712
+{
+704 JUMP 752
+}
+720 JUMP 3492
+760 if (__intnl_SystemBoolean_4) //1152
+{
+784 __intnl_UnityEngineObject_8 = audioSource
+804 __intnl_UnityEngineObject_9 = __const_SystemObject_0
+848 if (__intnl_SystemBoolean_5) //928
+{
+872 __intnl_UnityEngineObject_10 = deniedSound
+892 __intnl_UnityEngineObject_11 = __const_SystemObject_0
+}
+936 if (__intnl_SystemBoolean_5) //968
+{
+G_audioSource.PlayOneShot(deniedSound);// 960
+}
+984 __intnl_UnityEngineObject_12 = announcementManager
+1004 __intnl_UnityEngineObject_13 = __const_SystemObject_0
+1048 if (__intnl_SystemBoolean_6) //1132
+{
+1072 __intnl_SystemString_0 = lockedMessage
+G_announcementManager.SetProgramVariable(lockedMessage, __const_SystemString_0);// 1100
+G_announcementManager.SendCustomEvent(__const_SystemString_1);// 1124
+}
+1144 return;
+}
+1160 JUMP 1196
+1180 return;
+1212 __intnl_UnityEngineObject_14 = screenFade
+1232 __intnl_UnityEngineObject_15 = __const_SystemObject_0
+1276 if (__intnl_SystemBoolean_7) //1324
+{
+1300 isTeleporting = __const_SystemBoolean_0
+1316 return;
+}
+1340 __intnl_UnityEngineObject_16 = teleportDestination
+1360 __intnl_UnityEngineObject_17 = __const_SystemObject_0
+1404 if (__intnl_SystemBoolean_8) //1452
+{
+1428 isTeleporting = __const_SystemBoolean_0
+1444 return;
+}
+1468 isTeleporting = __const_SystemBoolean_1
+1488 hasPlayedSound = __const_SystemBoolean_0
+1508 __intnl_UnityEngineObject_18 = audioSource
+1528 __intnl_UnityEngineObject_19 = __const_SystemObject_0
+1572 if (__intnl_SystemBoolean_10) //1652
+{
+1596 __intnl_UnityEngineObject_20 = teleportSound
+1616 __intnl_UnityEngineObject_21 = __const_SystemObject_0
+}
+1668 __intnl_SystemBoolean_9 = __intnl_SystemBoolean_10
+1680 if (__intnl_SystemBoolean_9) //1712
+{
+}
+1720 if (__intnl_SystemBoolean_9) //1772
+{
+G_audioSource.PlayOneShot(teleportSound);// 1744
+1768 hasPlayedSound = __const_SystemBoolean_1
+}
+1788 __intnl_SystemSingle_0 = fadeOutDuration
+G_screenFade.SetProgramVariable(fadeOutDuration, __const_SystemString_2);// 1816
+G_screenFade.SendCustomEvent(__const_SystemString_3);// 1840
+this.SendCustomEventDelayedSeconds(__const_VRCUdonCommonEnumsEventTiming_0, __intnl_SystemSingle_2, __const_SystemString_4);// 1944
+this.SendCustomEventDelayedSeconds(__const_VRCUdonCommonEnumsEventTiming_0, __intnl_SystemSingle_3, __const_SystemString_5);// 2016
+2036 return;
+void ExecuteTeleport()
+2092 if (__intnl_SystemBoolean_11) //2140
+{
+2116 isTeleporting = __const_SystemBoolean_0
+2132 return;
+}
+2148 JUMP 2752
+G_localPlayer.TeleportTo(__intnl_UnityEngineQuaternion_0, __intnl_UnityEngineVector3_0);// 2228
+2252 __intnl_UnityEngineObject_22 = zoneManager
+2272 __intnl_UnityEngineObject_23 = __const_SystemObject_0
+2316 if (__intnl_SystemBoolean_12) //2424
+{
+2364 __intnl_UnityEngineTransform_0 = teleportDestination
+G_zoneManager.SetProgramVariable(__intnl_UnityEngineVector3_1, __const_SystemString_6);// 2392
+G_zoneManager.SendCustomEvent(__const_SystemString_7);// 2416
+}
+2436 return;
+void FadeBackIn()
+2468 __intnl_UnityEngineObject_24 = screenFade
+2488 __intnl_UnityEngineObject_25 = __const_SystemObject_0
+2532 if (__intnl_SystemBoolean_13) //2616
+{
+2556 __intnl_SystemSingle_4 = fadeInDuration
+G_screenFade.SetProgramVariable(fadeInDuration, __const_SystemString_8);// 2584
+G_screenFade.SendCustomEvent(__const_SystemString_9);// 2608
+}
+this.SendCustomEventDelayedSeconds(__const_VRCUdonCommonEnumsEventTiming_0, fadeInDuration, __const_SystemString_10);// 2648
+2668 return;
+void ResetTeleportFlag()
+2700 isTeleporting = __const_SystemBoolean_0
+2720 hasPlayedSound = __const_SystemBoolean_0
+2736 return;
+2792 if (__intnl_SystemBoolean_14) //3108
+{
+2816 __lcl_i_SystemInt32_0 = __const_SystemInt32_0
+2884 if (__intnl_SystemBoolean_15) //3108
+{
+2940 __intnl_UnityEngineObject_26 = __intnl_UnityEngineGameObject_0
+2960 __intnl_UnityEngineObject_27 = __const_SystemObject_0
+3004 if (__intnl_SystemBoolean_16) //3068
+{
+G_objectsToEnable.Get(__lcl_i_SystemInt32_0).SetActive(__const_SystemBoolean_1);// 3060
+}
+__lcl_i_SystemInt32_0 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_0);// 3092
+3100 JUMP 2820
+}
+}
+3148 if (__intnl_SystemBoolean_15) //3464
+{
+3172 __lcl_i_SystemInt32_0 = __const_SystemInt32_0
+3240 if (__intnl_SystemBoolean_16) //3464
+{
+3296 __intnl_UnityEngineObject_26 = __intnl_UnityEngineGameObject_0
+3316 __intnl_UnityEngineObject_27 = __const_SystemObject_0
+3360 if (__intnl_SystemBoolean_17) //3424
+{
+G_objectsToDisable.Get(__lcl_i_SystemInt32_0).SetActive(__const_SystemBoolean_0);// 3416
+}
+__lcl_i_SystemInt32_0 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_0);// 3448
+3456 JUMP 3176
+}
+}
+3476 return;
+3508 __intnl_UnityEngineObject_28 = requiredAchievement
+3528 __intnl_UnityEngineObject_29 = __const_SystemObject_0
+3572 if (__intnl_SystemBoolean_18) //3620
+{
+3596 __0_HasRequiredAchievement__ret = __const_SystemBoolean_1
+3612 return;
+}
+3636 __intnl_UnityEngineObject_30 = achievementManager
+3656 __intnl_UnityEngineObject_31 = __const_SystemObject_0
+3700 if (__intnl_SystemBoolean_19) //3748
+{
+3724 __0_HasRequiredAchievement__ret = __const_SystemBoolean_0
+3740 return;
+}
+3764 __intnl_VRCUdonUdonBehaviour_0 = requiredAchievement
+G_achievementManager.SetProgramVariable(requiredAchievement, __const_SystemString_11);// 3792
+G_achievementManager.SendCustomEvent(__const_SystemString_12);// 3816
+3872 __intnl_SystemBoolean_20 = __intnl_SystemObject_0
+3892 __lcl_unlocked_SystemBoolean_0 = __intnl_SystemBoolean_20
+3928 if (__intnl_SystemBoolean_21) //3956
+{
+3952 __intnl_SystemBoolean_21 = enableDebugLogs
+}
+3964 if (__intnl_SystemBoolean_21) //3972
+{
+}
+3988 __0_HasRequiredAchievement__ret = __lcl_unlocked_SystemBoolean_0
+4004 return;
+4024 return;
+4080 if (__intnl_SystemBoolean_22) //4096
+{
+4088 JUMP 4152
+}
+4160 if (__intnl_SystemBoolean_22) //4208
+{
+4184 __0_HasRequiredItems__ret = __const_SystemBoolean_1
+4200 return;
+}
+4224 __intnl_UnityEngineObject_32 = questInventoryManager
+4244 __intnl_UnityEngineObject_33 = __const_SystemObject_0
+4288 if (__intnl_SystemBoolean_23) //4336
+{
+4312 __0_HasRequiredItems__ret = __const_SystemBoolean_0
+4328 return;
+}
+4352 __intnl_SystemInt32Array_0 = requiredItemIds
+G_questInventoryManager.SetProgramVariable(requiredItemIds, __const_SystemString_14);// 4380
+G_questInventoryManager.SendCustomEvent(__const_SystemString_15);// 4404
+4460 __intnl_SystemBoolean_24 = __intnl_SystemObject_1
+4480 __lcl_hasAll_SystemBoolean_0 = __intnl_SystemBoolean_24
+4516 if (__intnl_SystemBoolean_25) //4544
+{
+4540 __intnl_SystemBoolean_25 = enableDebugLogs
+}
+4552 if (__intnl_SystemBoolean_25) //4576
+{
+4568 JUMP 4644
+}
+4592 __0_HasRequiredItems__ret = __lcl_hasAll_SystemBoolean_0
+4608 return;
+4628 return;
+4660 __intnl_UnityEngineObject_34 = questInventoryManager
+4680 __intnl_UnityEngineObject_35 = __const_SystemObject_0
+4724 if (__intnl_SystemBoolean_26) //4740
+{
+4732 JUMP 4772
+}
+4780 if (__intnl_SystemBoolean_26) //4808
+{
+4800 return;
+}
+4824 __lcl_i_SystemInt32_1 = __const_SystemInt32_0
+4892 if (__intnl_SystemBoolean_27) //5120
+{
+4948 __intnl_SystemInt32Array_1 = requiredItemIds
+G_questInventoryManager.SetProgramVariable(__intnl_SystemInt32_4, __const_SystemString_17);// 4976
+G_questInventoryManager.SendCustomEvent(__const_SystemString_18);// 5000
+5056 __intnl_SystemBoolean_28 = __intnl_SystemObject_2
+5076 __lcl_hasItem_SystemBoolean_0 = __intnl_SystemBoolean_28
+__lcl_i_SystemInt32_1 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_1);// 5104
+5112 JUMP 4828
+}
+5132 return;
+void DebugCheckRequirements()
+5188 if (__intnl_SystemBoolean_29) //5252
+{
+}
+5260 if (__intnl_SystemBoolean_29) //5668
+{
+5284 __lcl_itemIdsStr_SystemString_0 = __const_SystemString_20
+5304 __lcl_i_SystemInt32_2 = __const_SystemInt32_0
+5372 if (__intnl_SystemBoolean_30) //5644
+{
+__lcl_itemIdsStr_SystemString_0 = op_Addition(__intnl_SystemString_1, __lcl_itemIdsStr_SystemString_0);// 5460
+5564 if (__intnl_SystemBoolean_31) //5604
+{
+__lcl_itemIdsStr_SystemString_0 = op_Addition(__const_SystemString_21, __lcl_itemIdsStr_SystemString_0);// 5596
+}
+__lcl_i_SystemInt32_2 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_2);// 5628
+5636 JUMP 5308
+}
+5652 JUMP 4644
+5660 JUMP 5668
+}
+5680 return;

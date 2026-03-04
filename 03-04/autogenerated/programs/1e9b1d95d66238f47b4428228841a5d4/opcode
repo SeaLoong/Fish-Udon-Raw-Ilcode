@@ -1,0 +1,941 @@
+void _start
+0 PUSH UInt32 __const_SystemUInt32_0
+8 PUSH VRCPlayerApi localPlayer
+16 EXTERN VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi
+24 PUSH Single __const_SystemSingle_0
+32 PUSH Single syncRate
+40 PUSH Single syncInterval
+48 EXTERN SystemSingle.__op_Division__SystemSingle_SystemSingle__SystemSingle
+56 PUSH Int32 maxPlayers
+64 PUSH VRCPlayerApi[] allPlayers
+72 EXTERN VRCSDKBaseVRCPlayerApiArray.__ctor__SystemInt32__VRCSDKBaseVRCPlayerApiArray
+80 PUSH Transform[] boats
+88 PUSH object __const_SystemObject_0
+96 PUSH Boolean __intnl_SystemBoolean_0
+104 EXTERN SystemObject.__op_Inequality__SystemObject_SystemObject__SystemBoolean
+112 PUSH Boolean __intnl_SystemBoolean_0
+120 JUMP_IF_FALSE 160
+128 PUSH Transform[] boats
+136 PUSH Int32 staticBoatCount
+144 EXTERN SystemArray.__get_Length__SystemInt32
+152 JUMP 180
+160 PUSH Int32 __const_SystemInt32_0
+168 PUSH Int32 staticBoatCount
+176 COPY
+180 PUSH Int32 staticBoatCount
+188 PUSH Int32 dynamicSlotCount
+196 PUSH Int32 __lcl_totalSlots_SystemInt32_0
+204 EXTERN SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32
+212 PUSH Int32 __lcl_totalSlots_SystemInt32_0
+220 PUSH Transform[] __lcl_expanded_UnityEngineTransformArray_0
+228 EXTERN UnityEngineTransformArray.__ctor__SystemInt32__UnityEngineTransformArray
+236 PUSH Int32 __const_SystemInt32_0
+244 PUSH Int32 __lcl_i_SystemInt32_0
+252 COPY
+256 PUSH Int32 __lcl_i_SystemInt32_0
+264 PUSH Int32 staticBoatCount
+272 PUSH Boolean __intnl_SystemBoolean_1
+280 EXTERN SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean
+288 PUSH Boolean __intnl_SystemBoolean_1
+296 JUMP_IF_FALSE 408
+304 PUSH Transform[] boats
+312 PUSH Int32 __lcl_i_SystemInt32_0
+320 PUSH Transform __intnl_UnityEngineTransform_0
+328 EXTERN SystemObjectArray.__Get__SystemInt32__SystemObject
+336 PUSH Transform[] __lcl_expanded_UnityEngineTransformArray_0
+344 PUSH Int32 __lcl_i_SystemInt32_0
+352 PUSH Transform __intnl_UnityEngineTransform_0
+360 EXTERN SystemObjectArray.__Set__SystemInt32_SystemObject__SystemVoid
+368 PUSH Int32 __lcl_i_SystemInt32_0
+376 PUSH Int32 __const_SystemInt32_1
+384 PUSH Int32 __lcl_i_SystemInt32_0
+392 EXTERN SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32
+400 JUMP 256
+408 PUSH Transform[] __lcl_expanded_UnityEngineTransformArray_0
+416 PUSH Transform[] boats
+424 COPY
+428 PUSH UdonBehaviour __this_VRCUdonUdonBehaviour_0
+436 PUSH String __const_SystemString_0
+444 PUSH Single __const_SystemSingle_0
+452 PUSH EventTiming __const_VRCUdonCommonEnumsEventTiming_0
+460 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEventDelayedSeconds__SystemString_SystemSingle_VRCUdonCommonEnumsEventTiming__SystemVoid
+468 PUSH Boolean enableDebugLogs
+476 JUMP_IF_FALSE 484
+484 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+492 COPY
+496 JUMP_INDIRECT 2
+void ClaimSyncObject
+504 PUSH UInt32 __const_SystemUInt32_0
+512 PUSH VRCPlayerApi localPlayer
+520 PUSH object __const_SystemObject_0
+528 PUSH Boolean __intnl_SystemBoolean_2
+536 EXTERN SystemObject.__op_Equality__SystemObject_SystemObject__SystemBoolean
+544 PUSH Boolean __intnl_SystemBoolean_2
+552 JUMP_IF_FALSE 568
+560 JUMP 616
+568 PUSH VRCPlayerApi localPlayer
+576 PUSH Boolean __intnl_SystemBoolean_3
+584 EXTERN VRCSDKBaseVRCPlayerApi.__IsValid__SystemBoolean
+592 PUSH Boolean __intnl_SystemBoolean_3
+600 PUSH Boolean __intnl_SystemBoolean_2
+608 EXTERN SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean
+616 PUSH Boolean __intnl_SystemBoolean_2
+624 JUMP_IF_FALSE 692
+632 PUSH UdonBehaviour __this_VRCUdonUdonBehaviour_1
+640 PUSH String __const_SystemString_0
+648 PUSH Single __const_SystemSingle_0
+656 PUSH EventTiming __const_VRCUdonCommonEnumsEventTiming_0
+664 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEventDelayedSeconds__SystemString_SystemSingle_VRCUdonCommonEnumsEventTiming__SystemVoid
+672 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+680 COPY
+684 JUMP_INDIRECT 2
+692 PUSH VRCPlayerApi localPlayer
+700 PUSH Int32 __lcl_localPlayerId_SystemInt32_0
+708 EXTERN VRCSDKBaseVRCPlayerApi.__get_playerId__SystemInt32
+716 PUSH Int32 __const_SystemInt32_0
+724 PUSH Int32 __lcl_i_SystemInt32_1
+732 COPY
+736 PUSH Component[] playerSyncPool
+744 PUSH Int32 __intnl_SystemInt32_0
+752 EXTERN SystemArray.__get_Length__SystemInt32
+760 PUSH Int32 __lcl_i_SystemInt32_1
+768 PUSH Int32 __intnl_SystemInt32_0
+776 PUSH Boolean __intnl_SystemBoolean_4
+784 EXTERN SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean
+792 PUSH Boolean __intnl_SystemBoolean_4
+800 JUMP_IF_FALSE 1264
+808 PUSH Component[] playerSyncPool
+816 PUSH Int32 __lcl_i_SystemInt32_1
+824 PUSH UdonBehaviour __intnl_VRCUdonUdonBehaviour_0
+832 EXTERN SystemObjectArray.__Get__SystemInt32__SystemObject
+840 PUSH UdonBehaviour __intnl_VRCUdonUdonBehaviour_0
+848 PUSH Object __intnl_UnityEngineObject_0
+856 COPY
+860 PUSH object __const_SystemObject_0
+868 PUSH Object __intnl_UnityEngineObject_1
+876 COPY
+880 PUSH Object __intnl_UnityEngineObject_0
+888 PUSH Object __intnl_UnityEngineObject_1
+896 PUSH Boolean __intnl_SystemBoolean_5
+904 EXTERN UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean
+912 PUSH Boolean __intnl_SystemBoolean_5
+920 JUMP_IF_FALSE 936
+928 JUMP 1224
+936 PUSH Component[] playerSyncPool
+944 PUSH Int32 __lcl_i_SystemInt32_1
+952 PUSH UdonBehaviour __intnl_VRCUdonUdonBehaviour_1
+960 EXTERN SystemObjectArray.__Get__SystemInt32__SystemObject
+968 PUSH UdonBehaviour __intnl_VRCUdonUdonBehaviour_1
+976 PUSH String __const_SystemString_1
+984 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+992 PUSH UdonBehaviour __intnl_VRCUdonUdonBehaviour_1
+1000 PUSH String __const_SystemString_2
+1008 PUSH object __intnl_SystemObject_0
+1016 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject
+1024 PUSH object __intnl_SystemObject_0
+1032 PUSH Int32 __intnl_SystemInt32_1
+1040 EXTERN SystemConvert.__ToInt32__SystemObject__SystemInt32
+1048 PUSH Int32 __intnl_SystemInt32_1
+1056 PUSH Int32 __lcl_ownerId_SystemInt32_0
+1064 COPY
+1068 PUSH Int32 __lcl_ownerId_SystemInt32_0
+1076 PUSH Int32 __lcl_localPlayerId_SystemInt32_0
+1084 PUSH Boolean __intnl_SystemBoolean_6
+1092 EXTERN SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean
+1100 PUSH Boolean __intnl_SystemBoolean_6
+1108 JUMP_IF_FALSE 1224
+1116 PUSH Component[] playerSyncPool
+1124 PUSH Int32 __lcl_i_SystemInt32_1
+1132 PUSH UdonBehaviour localPlayerSync
+1140 EXTERN SystemObjectArray.__Get__SystemInt32__SystemObject
+1148 PUSH UdonBehaviour localPlayerSync
+1156 PUSH String __const_SystemString_3
+1164 PUSH UdonBehaviour __this_VRCUdonUdonBehaviour_2
+1172 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid
+1180 PUSH UdonBehaviour localPlayerSync
+1188 PUSH String __const_SystemString_4
+1196 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+1204 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1212 COPY
+1216 JUMP_INDIRECT 2
+1224 PUSH Int32 __lcl_i_SystemInt32_1
+1232 PUSH Int32 __const_SystemInt32_1
+1240 PUSH Int32 __lcl_i_SystemInt32_1
+1248 EXTERN SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32
+1256 JUMP 736
+1264 PUSH Int32 __const_SystemInt32_0
+1272 PUSH Int32 __lcl_i_SystemInt32_1
+1280 COPY
+1284 PUSH Component[] playerSyncPool
+1292 PUSH Int32 __intnl_SystemInt32_0
+1300 EXTERN SystemArray.__get_Length__SystemInt32
+1308 PUSH Int32 __lcl_i_SystemInt32_1
+1316 PUSH Int32 __intnl_SystemInt32_0
+1324 PUSH Boolean __intnl_SystemBoolean_4
+1332 EXTERN SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean
+1340 PUSH Boolean __intnl_SystemBoolean_4
+1348 JUMP_IF_FALSE 2108
+1356 PUSH Component[] playerSyncPool
+1364 PUSH Int32 __lcl_i_SystemInt32_1
+1372 PUSH UdonBehaviour __intnl_VRCUdonUdonBehaviour_0
+1380 EXTERN SystemObjectArray.__Get__SystemInt32__SystemObject
+1388 PUSH UdonBehaviour __intnl_VRCUdonUdonBehaviour_0
+1396 PUSH Object __intnl_UnityEngineObject_0
+1404 COPY
+1408 PUSH object __const_SystemObject_0
+1416 PUSH Object __intnl_UnityEngineObject_1
+1424 COPY
+1428 PUSH Object __intnl_UnityEngineObject_0
+1436 PUSH Object __intnl_UnityEngineObject_1
+1444 PUSH Boolean __intnl_SystemBoolean_5
+1452 EXTERN UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean
+1460 PUSH Boolean __intnl_SystemBoolean_5
+1468 JUMP_IF_FALSE 1484
+1476 JUMP 2068
+1484 PUSH Component[] playerSyncPool
+1492 PUSH Int32 __lcl_i_SystemInt32_1
+1500 PUSH UdonBehaviour __intnl_VRCUdonUdonBehaviour_1
+1508 EXTERN SystemObjectArray.__Get__SystemInt32__SystemObject
+1516 PUSH UdonBehaviour __intnl_VRCUdonUdonBehaviour_1
+1524 PUSH String __const_SystemString_1
+1532 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+1540 PUSH UdonBehaviour __intnl_VRCUdonUdonBehaviour_1
+1548 PUSH String __const_SystemString_2
+1556 PUSH object __intnl_SystemObject_0
+1564 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject
+1572 PUSH object __intnl_SystemObject_0
+1580 PUSH Int32 __intnl_SystemInt32_1
+1588 EXTERN SystemConvert.__ToInt32__SystemObject__SystemInt32
+1596 PUSH Int32 __intnl_SystemInt32_1
+1604 PUSH Int32 __lcl_ownerId_SystemInt32_0
+1612 COPY
+1616 PUSH Int32 __lcl_ownerId_SystemInt32_0
+1624 PUSH VRCPlayerApi __lcl_owner_VRCSDKBaseVRCPlayerApi_0
+1632 EXTERN VRCSDKBaseVRCPlayerApi.__GetPlayerById__SystemInt32__VRCSDKBaseVRCPlayerApi
+1640 PUSH Int32 __lcl_ownerId_SystemInt32_0
+1648 PUSH Int32 __const_SystemInt32_0
+1656 PUSH Boolean __intnl_SystemBoolean_7
+1664 EXTERN SystemInt32.__op_LessThanOrEqual__SystemInt32_SystemInt32__SystemBoolean
+1672 PUSH Boolean __intnl_SystemBoolean_7
+1680 JUMP_IF_FALSE 1696
+1688 JUMP 1728
+1696 PUSH VRCPlayerApi __lcl_owner_VRCSDKBaseVRCPlayerApi_0
+1704 PUSH object __const_SystemObject_0
+1712 PUSH Boolean __intnl_SystemBoolean_7
+1720 EXTERN SystemObject.__op_Equality__SystemObject_SystemObject__SystemBoolean
+1728 PUSH Boolean __intnl_SystemBoolean_7
+1736 PUSH Boolean __intnl_SystemBoolean_6
+1744 COPY
+1748 PUSH Boolean __intnl_SystemBoolean_6
+1756 JUMP_IF_FALSE 1772
+1764 JUMP 1820
+1772 PUSH VRCPlayerApi __lcl_owner_VRCSDKBaseVRCPlayerApi_0
+1780 PUSH Boolean __intnl_SystemBoolean_8
+1788 EXTERN VRCSDKBaseVRCPlayerApi.__IsValid__SystemBoolean
+1796 PUSH Boolean __intnl_SystemBoolean_8
+1804 PUSH Boolean __intnl_SystemBoolean_6
+1812 EXTERN SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean
+1820 PUSH Boolean __intnl_SystemBoolean_6
+1828 JUMP_IF_FALSE 2068
+1836 PUSH Component[] playerSyncPool
+1844 PUSH Int32 __lcl_i_SystemInt32_1
+1852 PUSH UdonBehaviour __intnl_VRCUdonUdonBehaviour_2
+1860 EXTERN SystemObjectArray.__Get__SystemInt32__SystemObject
+1868 PUSH UdonBehaviour __intnl_VRCUdonUdonBehaviour_2
+1876 PUSH GameObject __intnl_UnityEngineGameObject_0
+1884 EXTERN UnityEngineComponent.__get_gameObject__UnityEngineGameObject
+1892 PUSH VRCPlayerApi localPlayer
+1900 PUSH GameObject __intnl_UnityEngineGameObject_0
+1908 EXTERN VRCSDKBaseNetworking.__SetOwner__VRCSDKBaseVRCPlayerApi_UnityEngineGameObject__SystemVoid
+1916 PUSH Component[] playerSyncPool
+1924 PUSH Int32 __lcl_i_SystemInt32_1
+1932 PUSH UdonBehaviour localPlayerSync
+1940 EXTERN SystemObjectArray.__Get__SystemInt32__SystemObject
+1948 PUSH UdonBehaviour localPlayerSync
+1956 PUSH String __const_SystemString_3
+1964 PUSH UdonBehaviour __this_VRCUdonUdonBehaviour_3
+1972 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid
+1980 PUSH UdonBehaviour localPlayerSync
+1988 PUSH String __const_SystemString_4
+1996 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+2004 PUSH UdonBehaviour localPlayerSync
+2012 PUSH UdonBehaviour localPlayerSync
+2020 PUSH UdonBehaviour __intnl_VRCUdonUdonBehaviour_3
+2028 COPY
+2032 PUSH String __const_SystemString_5
+2040 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+2048 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2056 COPY
+2060 JUMP_INDIRECT 2
+2068 PUSH Int32 __lcl_i_SystemInt32_1
+2076 PUSH Int32 __const_SystemInt32_1
+2084 PUSH Int32 __lcl_i_SystemInt32_1
+2092 EXTERN SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32
+2100 JUMP 1284
+2108 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2116 COPY
+2120 JUMP_INDIRECT 2
+void _update
+2128 PUSH UInt32 __const_SystemUInt32_0
+2136 PUSH UInt32 __gintnl_SystemUInt32_0
+2144 JUMP 2196
+2152 PUSH UInt32 __gintnl_SystemUInt32_1
+2160 JUMP 2968
+2168 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2176 COPY
+2180 JUMP_INDIRECT 2
+2188 PUSH UInt32 __const_SystemUInt32_0
+2196 PUSH UdonBehaviour localPlayerSync
+2204 PUSH Object __intnl_UnityEngineObject_2
+2212 COPY
+2216 PUSH object __const_SystemObject_0
+2224 PUSH Object __intnl_UnityEngineObject_3
+2232 COPY
+2236 PUSH Object __intnl_UnityEngineObject_2
+2244 PUSH Object __intnl_UnityEngineObject_3
+2252 PUSH Boolean __intnl_SystemBoolean_9
+2260 EXTERN UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean
+2268 PUSH Boolean __intnl_SystemBoolean_9
+2276 JUMP_IF_FALSE 2292
+2284 JUMP 2324
+2292 PUSH VRCPlayerApi localPlayer
+2300 PUSH object __const_SystemObject_0
+2308 PUSH Boolean __intnl_SystemBoolean_9
+2316 EXTERN SystemObject.__op_Equality__SystemObject_SystemObject__SystemBoolean
+2324 PUSH Boolean __intnl_SystemBoolean_9
+2332 JUMP_IF_FALSE 2360
+2340 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2348 COPY
+2352 JUMP_INDIRECT 2
+2360 PUSH Int32 localBoatIndex
+2368 PUSH Int32 __const_SystemInt32_0
+2376 PUSH Boolean __intnl_SystemBoolean_10
+2384 EXTERN SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean
+2392 PUSH Boolean __intnl_SystemBoolean_10
+2400 JUMP_IF_FALSE 2428
+2408 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2416 COPY
+2420 JUMP_INDIRECT 2
+2428 PUSH Single __intnl_SystemSingle_0
+2436 EXTERN UnityEngineTime.__get_time__SystemSingle
+2444 PUSH Single __intnl_SystemSingle_0
+2452 PUSH Single lastSyncTime
+2460 PUSH Single __intnl_SystemSingle_1
+2468 EXTERN SystemSingle.__op_Subtraction__SystemSingle_SystemSingle__SystemSingle
+2476 PUSH Single __intnl_SystemSingle_1
+2484 PUSH Single syncInterval
+2492 PUSH Boolean __intnl_SystemBoolean_11
+2500 EXTERN SystemSingle.__op_LessThan__SystemSingle_SystemSingle__SystemBoolean
+2508 PUSH Boolean __intnl_SystemBoolean_11
+2516 JUMP_IF_FALSE 2544
+2524 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2532 COPY
+2536 JUMP_INDIRECT 2
+2544 PUSH Single lastSyncTime
+2552 EXTERN UnityEngineTime.__get_time__SystemSingle
+2560 PUSH Transform[] boats
+2568 PUSH Int32 localBoatIndex
+2576 PUSH Transform __lcl_boat_UnityEngineTransform_0
+2584 EXTERN SystemObjectArray.__Get__SystemInt32__SystemObject
+2592 PUSH VRCPlayerApi localPlayer
+2600 PUSH Vector3 __lcl_worldPos_UnityEngineVector3_0
+2608 EXTERN VRCSDKBaseVRCPlayerApi.__GetPosition__UnityEngineVector3
+2616 PUSH Transform __lcl_boat_UnityEngineTransform_0
+2624 PUSH Vector3 __lcl_worldPos_UnityEngineVector3_0
+2632 PUSH Vector3 __lcl_localPos_UnityEngineVector3_0
+2640 EXTERN UnityEngineTransform.__InverseTransformPoint__UnityEngineVector3__UnityEngineVector3
+2648 PUSH VRCPlayerApi localPlayer
+2656 PUSH Quaternion __intnl_UnityEngineQuaternion_0
+2664 EXTERN VRCSDKBaseVRCPlayerApi.__GetRotation__UnityEngineQuaternion
+2672 PUSH Quaternion __intnl_UnityEngineQuaternion_0
+2680 PUSH Vector3 __intnl_UnityEngineVector3_0
+2688 EXTERN UnityEngineQuaternion.__get_eulerAngles__UnityEngineVector3
+2696 PUSH Vector3 __intnl_UnityEngineVector3_0
+2704 PUSH Single __lcl_playerWorldY_SystemSingle_0
+2712 EXTERN UnityEngineVector3.__get_y__SystemSingle
+2720 PUSH Transform __lcl_boat_UnityEngineTransform_0
+2728 PUSH Vector3 __intnl_UnityEngineVector3_1
+2736 EXTERN UnityEngineTransform.__get_eulerAngles__UnityEngineVector3
+2744 PUSH Vector3 __intnl_UnityEngineVector3_1
+2752 PUSH Single __lcl_boatWorldY_SystemSingle_0
+2760 EXTERN UnityEngineVector3.__get_y__SystemSingle
+2768 PUSH Single __lcl_boatWorldY_SystemSingle_0
+2776 PUSH Single __lcl_playerWorldY_SystemSingle_0
+2784 PUSH Single __lcl_localRotY_SystemSingle_0
+2792 EXTERN UnityEngineMathf.__DeltaAngle__SystemSingle_SystemSingle__SystemSingle
+2800 PUSH Int32 localBoatIndex
+2808 PUSH Int32 __intnl_SystemInt32_2
+2816 COPY
+2820 PUSH UdonBehaviour localPlayerSync
+2828 PUSH String __const_SystemString_6
+2836 PUSH Int32 localBoatIndex
+2844 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid
+2852 PUSH UdonBehaviour localPlayerSync
+2860 PUSH String __const_SystemString_7
+2868 PUSH Vector3 __lcl_localPos_UnityEngineVector3_0
+2876 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid
+2884 PUSH UdonBehaviour localPlayerSync
+2892 PUSH String __const_SystemString_8
+2900 PUSH Single __lcl_localRotY_SystemSingle_0
+2908 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid
+2916 PUSH UdonBehaviour localPlayerSync
+2924 PUSH String __const_SystemString_9
+2932 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+2940 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2948 COPY
+2952 JUMP_INDIRECT 2
+2960 PUSH UInt32 __const_SystemUInt32_0
+2968 PUSH Int32 __const_SystemInt32_0
+2976 PUSH Int32 __lcl_i_SystemInt32_2
+2984 COPY
+2988 PUSH Component[] playerSyncPool
+2996 PUSH Int32 __intnl_SystemInt32_3
+3004 EXTERN SystemArray.__get_Length__SystemInt32
+3012 PUSH Int32 __lcl_i_SystemInt32_2
+3020 PUSH Int32 __intnl_SystemInt32_3
+3028 PUSH Boolean __intnl_SystemBoolean_12
+3036 EXTERN SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean
+3044 PUSH Boolean __intnl_SystemBoolean_12
+3052 JUMP_IF_FALSE 4568
+3060 PUSH Component[] playerSyncPool
+3068 PUSH Int32 __lcl_i_SystemInt32_2
+3076 PUSH UdonBehaviour __lcl_syncObj_VRCUdonUdonBehaviour_0
+3084 EXTERN SystemObjectArray.__Get__SystemInt32__SystemObject
+3092 PUSH UdonBehaviour __lcl_syncObj_VRCUdonUdonBehaviour_0
+3100 PUSH Object __intnl_UnityEngineObject_4
+3108 COPY
+3112 PUSH object __const_SystemObject_0
+3120 PUSH Object __intnl_UnityEngineObject_5
+3128 COPY
+3132 PUSH Object __intnl_UnityEngineObject_4
+3140 PUSH Object __intnl_UnityEngineObject_5
+3148 PUSH Boolean __intnl_SystemBoolean_13
+3156 EXTERN UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean
+3164 PUSH Boolean __intnl_SystemBoolean_13
+3172 JUMP_IF_FALSE 3188
+3180 JUMP 4528
+3188 PUSH UdonBehaviour __lcl_syncObj_VRCUdonUdonBehaviour_0
+3196 PUSH String __const_SystemString_1
+3204 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+3212 PUSH UdonBehaviour __lcl_syncObj_VRCUdonUdonBehaviour_0
+3220 PUSH String __const_SystemString_2
+3228 PUSH object __intnl_SystemObject_1
+3236 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject
+3244 PUSH object __intnl_SystemObject_1
+3252 PUSH Int32 __intnl_SystemInt32_4
+3260 EXTERN SystemConvert.__ToInt32__SystemObject__SystemInt32
+3268 PUSH Int32 __intnl_SystemInt32_4
+3276 PUSH Int32 __lcl_ownerId_SystemInt32_1
+3284 COPY
+3288 PUSH Int32 __lcl_ownerId_SystemInt32_1
+3296 PUSH Int32 __const_SystemInt32_0
+3304 PUSH Boolean __intnl_SystemBoolean_14
+3312 EXTERN SystemInt32.__op_LessThanOrEqual__SystemInt32_SystemInt32__SystemBoolean
+3320 PUSH Boolean __intnl_SystemBoolean_14
+3328 JUMP_IF_FALSE 3344
+3336 JUMP 4528
+3344 PUSH VRCPlayerApi localPlayer
+3352 PUSH object __const_SystemObject_0
+3360 PUSH Boolean __intnl_SystemBoolean_15
+3368 EXTERN SystemObject.__op_Inequality__SystemObject_SystemObject__SystemBoolean
+3376 PUSH Boolean __intnl_SystemBoolean_15
+3384 JUMP_IF_FALSE 3448
+3392 PUSH VRCPlayerApi localPlayer
+3400 PUSH Int32 __intnl_SystemInt32_5
+3408 EXTERN VRCSDKBaseVRCPlayerApi.__get_playerId__SystemInt32
+3416 PUSH Int32 __lcl_ownerId_SystemInt32_1
+3424 PUSH Int32 __intnl_SystemInt32_5
+3432 PUSH Boolean __intnl_SystemBoolean_15
+3440 EXTERN SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean
+3448 PUSH Boolean __intnl_SystemBoolean_15
+3456 JUMP_IF_FALSE 3472
+3464 JUMP 4528
+3472 PUSH Int32 __lcl_ownerId_SystemInt32_1
+3480 PUSH VRCPlayerApi __lcl_remotePlayer_VRCSDKBaseVRCPlayerApi_0
+3488 EXTERN VRCSDKBaseVRCPlayerApi.__GetPlayerById__SystemInt32__VRCSDKBaseVRCPlayerApi
+3496 PUSH VRCPlayerApi __lcl_remotePlayer_VRCSDKBaseVRCPlayerApi_0
+3504 PUSH object __const_SystemObject_0
+3512 PUSH Boolean __intnl_SystemBoolean_16
+3520 EXTERN SystemObject.__op_Equality__SystemObject_SystemObject__SystemBoolean
+3528 PUSH Boolean __intnl_SystemBoolean_16
+3536 JUMP_IF_FALSE 3552
+3544 JUMP 3600
+3552 PUSH VRCPlayerApi __lcl_remotePlayer_VRCSDKBaseVRCPlayerApi_0
+3560 PUSH Boolean __intnl_SystemBoolean_17
+3568 EXTERN VRCSDKBaseVRCPlayerApi.__IsValid__SystemBoolean
+3576 PUSH Boolean __intnl_SystemBoolean_17
+3584 PUSH Boolean __intnl_SystemBoolean_16
+3592 EXTERN SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean
+3600 PUSH Boolean __intnl_SystemBoolean_16
+3608 JUMP_IF_FALSE 3624
+3616 JUMP 4528
+3624 PUSH UdonBehaviour __lcl_syncObj_VRCUdonUdonBehaviour_0
+3632 PUSH String __const_SystemString_10
+3640 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+3648 PUSH UdonBehaviour __lcl_syncObj_VRCUdonUdonBehaviour_0
+3656 PUSH String __const_SystemString_11
+3664 PUSH object __intnl_SystemObject_2
+3672 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject
+3680 PUSH object __intnl_SystemObject_2
+3688 PUSH Int32 __intnl_SystemInt32_6
+3696 EXTERN SystemConvert.__ToInt32__SystemObject__SystemInt32
+3704 PUSH Int32 __intnl_SystemInt32_6
+3712 PUSH Int32 __lcl_boatIdx_SystemInt32_0
+3720 COPY
+3724 PUSH Int32 __lcl_boatIdx_SystemInt32_0
+3732 PUSH Int32 __const_SystemInt32_0
+3740 PUSH Boolean __intnl_SystemBoolean_18
+3748 EXTERN SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean
+3756 PUSH Boolean __intnl_SystemBoolean_18
+3764 JUMP_IF_FALSE 3780
+3772 JUMP 3836
+3780 PUSH Transform[] boats
+3788 PUSH Int32 __intnl_SystemInt32_7
+3796 EXTERN SystemArray.__get_Length__SystemInt32
+3804 PUSH Int32 __lcl_boatIdx_SystemInt32_0
+3812 PUSH Int32 __intnl_SystemInt32_7
+3820 PUSH Boolean __intnl_SystemBoolean_18
+3828 EXTERN SystemInt32.__op_GreaterThanOrEqual__SystemInt32_SystemInt32__SystemBoolean
+3836 PUSH Boolean __intnl_SystemBoolean_18
+3844 JUMP_IF_FALSE 3860
+3852 JUMP 4528
+3860 PUSH Transform[] boats
+3868 PUSH Int32 __lcl_boatIdx_SystemInt32_0
+3876 PUSH Transform __lcl_boat_UnityEngineTransform_1
+3884 EXTERN SystemObjectArray.__Get__SystemInt32__SystemObject
+3892 PUSH UdonBehaviour __lcl_syncObj_VRCUdonUdonBehaviour_0
+3900 PUSH String __const_SystemString_12
+3908 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+3916 PUSH UdonBehaviour __lcl_syncObj_VRCUdonUdonBehaviour_0
+3924 PUSH String __const_SystemString_13
+3932 PUSH object __intnl_SystemObject_3
+3940 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject
+3948 PUSH object __intnl_SystemObject_3
+3956 PUSH Vector3 __intnl_UnityEngineVector3_2
+3964 COPY
+3968 PUSH Vector3 __intnl_UnityEngineVector3_2
+3976 PUSH Vector3 __lcl_localPos_UnityEngineVector3_1
+3984 COPY
+3988 PUSH Transform __lcl_boat_UnityEngineTransform_1
+3996 PUSH Vector3 __lcl_localPos_UnityEngineVector3_1
+4004 PUSH Vector3 __lcl_targetWorldPos_UnityEngineVector3_0
+4012 EXTERN UnityEngineTransform.__TransformPoint__UnityEngineVector3__UnityEngineVector3
+4020 PUSH UdonBehaviour __lcl_syncObj_VRCUdonUdonBehaviour_0
+4028 PUSH String __const_SystemString_14
+4036 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+4044 PUSH UdonBehaviour __lcl_syncObj_VRCUdonUdonBehaviour_0
+4052 PUSH String __const_SystemString_15
+4060 PUSH object __intnl_SystemObject_4
+4068 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject
+4076 PUSH object __intnl_SystemObject_4
+4084 PUSH Single __intnl_SystemSingle_2
+4092 EXTERN SystemConvert.__ToSingle__SystemObject__SystemSingle
+4100 PUSH Single __intnl_SystemSingle_2
+4108 PUSH Single __lcl_localRotY_SystemSingle_1
+4116 COPY
+4120 PUSH Transform __lcl_boat_UnityEngineTransform_1
+4128 PUSH Vector3 __intnl_UnityEngineVector3_3
+4136 EXTERN UnityEngineTransform.__get_eulerAngles__UnityEngineVector3
+4144 PUSH Vector3 __intnl_UnityEngineVector3_3
+4152 PUSH Single __intnl_SystemSingle_3
+4160 EXTERN UnityEngineVector3.__get_y__SystemSingle
+4168 PUSH Single __intnl_SystemSingle_3
+4176 PUSH Single __lcl_localRotY_SystemSingle_1
+4184 PUSH Single __lcl_targetWorldRotY_SystemSingle_0
+4192 EXTERN SystemSingle.__op_Addition__SystemSingle_SystemSingle__SystemSingle
+4200 PUSH VRCPlayerApi __lcl_remotePlayer_VRCSDKBaseVRCPlayerApi_0
+4208 PUSH Vector3 __lcl_currentPos_UnityEngineVector3_0
+4216 EXTERN VRCSDKBaseVRCPlayerApi.__GetPosition__UnityEngineVector3
+4224 PUSH Single __intnl_SystemSingle_4
+4232 EXTERN UnityEngineTime.__get_deltaTime__SystemSingle
+4240 PUSH Single __intnl_SystemSingle_4
+4248 PUSH Single interpolationSpeed
+4256 PUSH Single __intnl_SystemSingle_5
+4264 EXTERN SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+4272 PUSH Vector3 __lcl_currentPos_UnityEngineVector3_0
+4280 PUSH Vector3 __lcl_targetWorldPos_UnityEngineVector3_0
+4288 PUSH Single __intnl_SystemSingle_5
+4296 PUSH Vector3 __lcl_smoothedPos_UnityEngineVector3_0
+4304 EXTERN UnityEngineVector3.__Lerp__UnityEngineVector3_UnityEngineVector3_SystemSingle__UnityEngineVector3
+4312 PUSH Vector3 __lcl_currentPos_UnityEngineVector3_0
+4320 PUSH Vector3 __lcl_targetWorldPos_UnityEngineVector3_0
+4328 PUSH Single __lcl_posDiff_SystemSingle_0
+4336 EXTERN UnityEngineVector3.__Distance__UnityEngineVector3_UnityEngineVector3__SystemSingle
+4344 PUSH Single __lcl_posDiff_SystemSingle_0
+4352 PUSH Single __const_SystemSingle_1
+4360 PUSH Boolean __intnl_SystemBoolean_19
+4368 EXTERN SystemSingle.__op_GreaterThan__SystemSingle_SystemSingle__SystemBoolean
+4376 PUSH Boolean __intnl_SystemBoolean_19
+4384 JUMP_IF_FALSE 4424
+4392 PUSH Single __lcl_posDiff_SystemSingle_0
+4400 PUSH Single __const_SystemSingle_2
+4408 PUSH Boolean __intnl_SystemBoolean_19
+4416 EXTERN SystemSingle.__op_LessThan__SystemSingle_SystemSingle__SystemBoolean
+4424 PUSH Boolean __intnl_SystemBoolean_19
+4432 JUMP_IF_FALSE 4528
+4440 PUSH Single __const_SystemSingle_3
+4448 PUSH Single __lcl_targetWorldRotY_SystemSingle_0
+4456 PUSH Single __const_SystemSingle_3
+4464 PUSH Quaternion __intnl_UnityEngineQuaternion_1
+4472 EXTERN UnityEngineQuaternion.__Euler__SystemSingle_SystemSingle_SystemSingle__UnityEngineQuaternion
+4480 PUSH VRCPlayerApi __lcl_remotePlayer_VRCSDKBaseVRCPlayerApi_0
+4488 PUSH Vector3 __lcl_smoothedPos_UnityEngineVector3_0
+4496 PUSH Quaternion __intnl_UnityEngineQuaternion_1
+4504 PUSH SpawnOrientation __const_VRCSDKBaseVRC_SceneDescriptorSpawnOrientation_0
+4512 PUSH Boolean __const_SystemBoolean_0
+4520 EXTERN VRCSDKBaseVRCPlayerApi.__TeleportTo__UnityEngineVector3_UnityEngineQuaternion_VRCSDKBaseVRC_SceneDescriptorSpawnOrientation_SystemBoolean__SystemVoid
+4528 PUSH Int32 __lcl_i_SystemInt32_2
+4536 PUSH Int32 __const_SystemInt32_1
+4544 PUSH Int32 __lcl_i_SystemInt32_2
+4552 EXTERN SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32
+4560 JUMP 2988
+4568 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+4576 COPY
+4580 JUMP_INDIRECT 2
+void __0_OnLocalPlayerEnteredBoat
+4588 PUSH UInt32 __const_SystemUInt32_0
+4596 PUSH Int32 __0_boatIndex__param
+4604 PUSH Int32 __const_SystemInt32_0
+4612 PUSH Boolean __intnl_SystemBoolean_20
+4620 EXTERN SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean
+4628 PUSH Boolean __intnl_SystemBoolean_20
+4636 JUMP_IF_FALSE 4652
+4644 JUMP 4708
+4652 PUSH Transform[] boats
+4660 PUSH Int32 __intnl_SystemInt32_8
+4668 EXTERN SystemArray.__get_Length__SystemInt32
+4676 PUSH Int32 __0_boatIndex__param
+4684 PUSH Int32 __intnl_SystemInt32_8
+4692 PUSH Boolean __intnl_SystemBoolean_20
+4700 EXTERN SystemInt32.__op_GreaterThanOrEqual__SystemInt32_SystemInt32__SystemBoolean
+4708 PUSH Boolean __intnl_SystemBoolean_20
+4716 JUMP_IF_FALSE 4744
+4724 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+4732 COPY
+4736 JUMP_INDIRECT 2
+4744 PUSH Int32 __0_boatIndex__param
+4752 PUSH Int32 localBoatIndex
+4760 COPY
+4764 PUSH UdonBehaviour localPlayerSync
+4772 PUSH Object __intnl_UnityEngineObject_6
+4780 COPY
+4784 PUSH object __const_SystemObject_0
+4792 PUSH Object __intnl_UnityEngineObject_7
+4800 COPY
+4804 PUSH Object __intnl_UnityEngineObject_6
+4812 PUSH Object __intnl_UnityEngineObject_7
+4820 PUSH Boolean __intnl_SystemBoolean_21
+4828 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+4836 PUSH Boolean __intnl_SystemBoolean_21
+4844 JUMP_IF_FALSE 4888
+4852 PUSH Single __const_SystemSingle_3
+4860 PUSH Single lastSyncTime
+4868 COPY
+4872 PUSH UInt32 __gintnl_SystemUInt32_2
+4880 JUMP 2196
+4888 PUSH Boolean enableDebugLogs
+4896 JUMP_IF_FALSE 4904
+4904 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+4912 COPY
+4916 JUMP_INDIRECT 2
+void __0_OnLocalPlayerExitedBoat
+4924 PUSH UInt32 __const_SystemUInt32_0
+4932 PUSH Int32 localBoatIndex
+4940 PUSH Int32 __1_boatIndex__param
+4948 PUSH Boolean __intnl_SystemBoolean_22
+4956 EXTERN SystemInt32.__op_Inequality__SystemInt32_SystemInt32__SystemBoolean
+4964 PUSH Boolean __intnl_SystemBoolean_22
+4972 JUMP_IF_FALSE 5000
+4980 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+4988 COPY
+4992 JUMP_INDIRECT 2
+5000 PUSH Int32 __const_SystemInt32_2
+5008 PUSH Int32 localBoatIndex
+5016 COPY
+5020 PUSH UdonBehaviour localPlayerSync
+5028 PUSH Object __intnl_UnityEngineObject_8
+5036 COPY
+5040 PUSH object __const_SystemObject_0
+5048 PUSH Object __intnl_UnityEngineObject_9
+5056 COPY
+5060 PUSH Object __intnl_UnityEngineObject_8
+5068 PUSH Object __intnl_UnityEngineObject_9
+5076 PUSH Boolean __intnl_SystemBoolean_23
+5084 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+5092 PUSH Boolean __intnl_SystemBoolean_23
+5100 JUMP_IF_FALSE 5152
+5108 PUSH UdonBehaviour localPlayerSync
+5116 PUSH UdonBehaviour localPlayerSync
+5124 PUSH UdonBehaviour __intnl_VRCUdonUdonBehaviour_4
+5132 COPY
+5136 PUSH String __const_SystemString_16
+5144 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+5152 PUSH Boolean enableDebugLogs
+5160 JUMP_IF_FALSE 5168
+5168 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+5176 COPY
+5180 JUMP_INDIRECT 2
+void __0_GetBoatIndex
+5188 PUSH UInt32 __const_SystemUInt32_0
+5196 PUSH Int32 __const_SystemInt32_0
+5204 PUSH Int32 __lcl_i_SystemInt32_3
+5212 COPY
+5216 PUSH Transform[] boats
+5224 PUSH Int32 __intnl_SystemInt32_9
+5232 EXTERN SystemArray.__get_Length__SystemInt32
+5240 PUSH Int32 __lcl_i_SystemInt32_3
+5248 PUSH Int32 __intnl_SystemInt32_9
+5256 PUSH Boolean __intnl_SystemBoolean_24
+5264 EXTERN SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean
+5272 PUSH Boolean __intnl_SystemBoolean_24
+5280 JUMP_IF_FALSE 5488
+5288 PUSH Transform[] boats
+5296 PUSH Int32 __lcl_i_SystemInt32_3
+5304 PUSH Transform __intnl_UnityEngineTransform_1
+5312 EXTERN SystemObjectArray.__Get__SystemInt32__SystemObject
+5320 PUSH Transform __intnl_UnityEngineTransform_1
+5328 PUSH Object __intnl_UnityEngineObject_10
+5336 COPY
+5340 PUSH Transform __0_boat__param
+5348 PUSH Object __intnl_UnityEngineObject_11
+5356 COPY
+5360 PUSH Object __intnl_UnityEngineObject_10
+5368 PUSH Object __intnl_UnityEngineObject_11
+5376 PUSH Boolean __intnl_SystemBoolean_25
+5384 EXTERN UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean
+5392 PUSH Boolean __intnl_SystemBoolean_25
+5400 JUMP_IF_FALSE 5448
+5408 PUSH Int32 __lcl_i_SystemInt32_3
+5416 PUSH Int32 __0___0_GetBoatIndex__ret
+5424 COPY
+5428 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+5436 COPY
+5440 JUMP_INDIRECT 2
+5448 PUSH Int32 __lcl_i_SystemInt32_3
+5456 PUSH Int32 __const_SystemInt32_1
+5464 PUSH Int32 __lcl_i_SystemInt32_3
+5472 EXTERN SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32
+5480 JUMP 5216
+5488 PUSH Int32 __const_SystemInt32_2
+5496 PUSH Int32 __0___0_GetBoatIndex__ret
+5504 COPY
+5508 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+5516 COPY
+5520 JUMP_INDIRECT 2
+5528 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+5536 COPY
+5540 JUMP_INDIRECT 2
+void IsLocalPlayerOnBoat
+5548 PUSH UInt32 __const_SystemUInt32_0
+5556 PUSH Int32 localBoatIndex
+5564 PUSH Int32 __const_SystemInt32_0
+5572 PUSH Boolean __0_IsLocalPlayerOnBoat__ret
+5580 EXTERN SystemInt32.__op_GreaterThanOrEqual__SystemInt32_SystemInt32__SystemBoolean
+5588 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+5596 COPY
+5600 JUMP_INDIRECT 2
+5608 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+5616 COPY
+5620 JUMP_INDIRECT 2
+void GetLocalBoatIndex
+5628 PUSH UInt32 __const_SystemUInt32_0
+5636 PUSH Int32 localBoatIndex
+5644 PUSH Int32 __0_GetLocalBoatIndex__ret
+5652 COPY
+5656 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+5664 COPY
+5668 JUMP_INDIRECT 2
+5676 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+5684 COPY
+5688 JUMP_INDIRECT 2
+void __0_RegisterBoat
+5696 PUSH UInt32 __const_SystemUInt32_0
+5704 PUSH Transform __0_boatTransform__param
+5712 PUSH Object __intnl_UnityEngineObject_12
+5720 COPY
+5724 PUSH object __const_SystemObject_0
+5732 PUSH Object __intnl_UnityEngineObject_13
+5740 COPY
+5744 PUSH Object __intnl_UnityEngineObject_12
+5752 PUSH Object __intnl_UnityEngineObject_13
+5760 PUSH Boolean __intnl_SystemBoolean_26
+5768 EXTERN UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean
+5776 PUSH Boolean __intnl_SystemBoolean_26
+5784 JUMP_IF_FALSE 5832
+5792 PUSH Int32 __const_SystemInt32_2
+5800 PUSH Int32 __0___0_RegisterBoat__ret
+5808 COPY
+5812 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+5820 COPY
+5824 JUMP_INDIRECT 2
+5832 PUSH Int32 __const_SystemInt32_0
+5840 PUSH Int32 __lcl_i_SystemInt32_4
+5848 COPY
+5852 PUSH Transform[] boats
+5860 PUSH Int32 __intnl_SystemInt32_10
+5868 EXTERN SystemArray.__get_Length__SystemInt32
+5876 PUSH Int32 __lcl_i_SystemInt32_4
+5884 PUSH Int32 __intnl_SystemInt32_10
+5892 PUSH Boolean __intnl_SystemBoolean_27
+5900 EXTERN SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean
+5908 PUSH Boolean __intnl_SystemBoolean_27
+5916 JUMP_IF_FALSE 6124
+5924 PUSH Transform[] boats
+5932 PUSH Int32 __lcl_i_SystemInt32_4
+5940 PUSH Transform __intnl_UnityEngineTransform_2
+5948 EXTERN SystemObjectArray.__Get__SystemInt32__SystemObject
+5956 PUSH Transform __intnl_UnityEngineTransform_2
+5964 PUSH Object __intnl_UnityEngineObject_14
+5972 COPY
+5976 PUSH Transform __0_boatTransform__param
+5984 PUSH Object __intnl_UnityEngineObject_15
+5992 COPY
+5996 PUSH Object __intnl_UnityEngineObject_14
+6004 PUSH Object __intnl_UnityEngineObject_15
+6012 PUSH Boolean __intnl_SystemBoolean_28
+6020 EXTERN UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean
+6028 PUSH Boolean __intnl_SystemBoolean_28
+6036 JUMP_IF_FALSE 6084
+6044 PUSH Int32 __lcl_i_SystemInt32_4
+6052 PUSH Int32 __0___0_RegisterBoat__ret
+6060 COPY
+6064 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+6072 COPY
+6076 JUMP_INDIRECT 2
+6084 PUSH Int32 __lcl_i_SystemInt32_4
+6092 PUSH Int32 __const_SystemInt32_1
+6100 PUSH Int32 __lcl_i_SystemInt32_4
+6108 EXTERN SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32
+6116 JUMP 5852
+6124 PUSH Int32 __const_SystemInt32_0
+6132 PUSH Int32 __lcl_i_SystemInt32_4
+6140 COPY
+6144 PUSH Transform[] boats
+6152 PUSH Int32 __intnl_SystemInt32_10
+6160 EXTERN SystemArray.__get_Length__SystemInt32
+6168 PUSH Int32 __lcl_i_SystemInt32_4
+6176 PUSH Int32 __intnl_SystemInt32_10
+6184 PUSH Boolean __intnl_SystemBoolean_27
+6192 EXTERN SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean
+6200 PUSH Boolean __intnl_SystemBoolean_27
+6208 JUMP_IF_FALSE 6544
+6216 PUSH Transform[] boats
+6224 PUSH Int32 __lcl_i_SystemInt32_4
+6232 PUSH Transform __intnl_UnityEngineTransform_2
+6240 EXTERN SystemObjectArray.__Get__SystemInt32__SystemObject
+6248 PUSH Transform __intnl_UnityEngineTransform_2
+6256 PUSH Object __intnl_UnityEngineObject_14
+6264 COPY
+6268 PUSH object __const_SystemObject_0
+6276 PUSH Object __intnl_UnityEngineObject_15
+6284 COPY
+6288 PUSH Object __intnl_UnityEngineObject_14
+6296 PUSH Object __intnl_UnityEngineObject_15
+6304 PUSH Boolean __intnl_SystemBoolean_28
+6312 EXTERN UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean
+6320 PUSH Boolean __intnl_SystemBoolean_28
+6328 JUMP_IF_FALSE 6504
+6336 PUSH Transform[] boats
+6344 PUSH Int32 __lcl_i_SystemInt32_4
+6352 PUSH Transform __0_boatTransform__param
+6360 EXTERN SystemObjectArray.__Set__SystemInt32_SystemObject__SystemVoid
+6368 PUSH Boolean enableDebugLogs
+6376 JUMP_IF_FALSE 6464
+6384 PUSH Transform __0_boatTransform__param
+6392 PUSH String __intnl_SystemString_0
+6400 EXTERN UnityEngineObject.__get_name__SystemString
+6408 PUSH String __const_SystemString_17
+6416 PUSH String __intnl_SystemString_0
+6424 PUSH Int32 __lcl_i_SystemInt32_4
+6432 PUSH String __intnl_SystemString_1
+6440 EXTERN SystemString.__Format__SystemString_SystemObject_SystemObject__SystemString
+6448 PUSH String __intnl_SystemString_1
+6456 EXTERN UnityEngineDebug.__Log__SystemObject__SystemVoid
+6464 PUSH Int32 __lcl_i_SystemInt32_4
+6472 PUSH Int32 __0___0_RegisterBoat__ret
+6480 COPY
+6484 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+6492 COPY
+6496 JUMP_INDIRECT 2
+6504 PUSH Int32 __lcl_i_SystemInt32_4
+6512 PUSH Int32 __const_SystemInt32_1
+6520 PUSH Int32 __lcl_i_SystemInt32_4
+6528 EXTERN SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32
+6536 JUMP 6144
+6544 PUSH String __const_SystemString_18
+6552 EXTERN UnityEngineDebug.__LogWarning__SystemObject__SystemVoid
+6560 PUSH Int32 __const_SystemInt32_2
+6568 PUSH Int32 __0___0_RegisterBoat__ret
+6576 COPY
+6580 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+6588 COPY
+6592 JUMP_INDIRECT 2
+6600 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+6608 COPY
+6612 JUMP_INDIRECT 2
+void __0_UnregisterBoat
+6620 PUSH UInt32 __const_SystemUInt32_0
+6628 PUSH Int32 __0_index__param
+6636 PUSH Int32 __const_SystemInt32_0
+6644 PUSH Boolean __intnl_SystemBoolean_29
+6652 EXTERN SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean
+6660 PUSH Boolean __intnl_SystemBoolean_29
+6668 JUMP_IF_FALSE 6684
+6676 JUMP 6740
+6684 PUSH Transform[] boats
+6692 PUSH Int32 __intnl_SystemInt32_11
+6700 EXTERN SystemArray.__get_Length__SystemInt32
+6708 PUSH Int32 __0_index__param
+6716 PUSH Int32 __intnl_SystemInt32_11
+6724 PUSH Boolean __intnl_SystemBoolean_29
+6732 EXTERN SystemInt32.__op_GreaterThanOrEqual__SystemInt32_SystemInt32__SystemBoolean
+6740 PUSH Boolean __intnl_SystemBoolean_29
+6748 JUMP_IF_FALSE 6776
+6756 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+6764 COPY
+6768 JUMP_INDIRECT 2
+6776 PUSH Boolean enableDebugLogs
+6784 PUSH Boolean __intnl_SystemBoolean_30
+6792 COPY
+6796 PUSH Boolean __intnl_SystemBoolean_30
+6804 JUMP_IF_FALSE 6916
+6812 PUSH Transform[] boats
+6820 PUSH Int32 __0_index__param
+6828 PUSH Transform __intnl_UnityEngineTransform_3
+6836 EXTERN SystemObjectArray.__Get__SystemInt32__SystemObject
+6844 PUSH Transform __intnl_UnityEngineTransform_3
+6852 PUSH Object __intnl_UnityEngineObject_16
+6860 COPY
+6864 PUSH object __const_SystemObject_0
+6872 PUSH Object __intnl_UnityEngineObject_17
+6880 COPY
+6884 PUSH Object __intnl_UnityEngineObject_16
+6892 PUSH Object __intnl_UnityEngineObject_17
+6900 PUSH Boolean __intnl_SystemBoolean_30
+6908 EXTERN UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean
+6916 PUSH Boolean __intnl_SystemBoolean_30
+6924 JUMP_IF_FALSE 7044
+6932 PUSH Transform[] boats
+6940 PUSH Int32 __0_index__param
+6948 PUSH Transform __intnl_UnityEngineTransform_4
+6956 EXTERN SystemObjectArray.__Get__SystemInt32__SystemObject
+6964 PUSH Transform __intnl_UnityEngineTransform_4
+6972 PUSH String __intnl_SystemString_2
+6980 EXTERN UnityEngineObject.__get_name__SystemString
+6988 PUSH String __const_SystemString_19
+6996 PUSH Int32 __0_index__param
+7004 PUSH String __intnl_SystemString_2
+7012 PUSH String __intnl_SystemString_3
+7020 EXTERN SystemString.__Format__SystemString_SystemObject_SystemObject__SystemString
+7028 PUSH String __intnl_SystemString_3
+7036 EXTERN UnityEngineDebug.__Log__SystemObject__SystemVoid
+7044 PUSH object __const_SystemObject_0
+7052 PUSH Transform __intnl_UnityEngineTransform_5
+7060 COPY
+7064 PUSH Transform[] boats
+7072 PUSH Int32 __0_index__param
+7080 PUSH Transform __intnl_UnityEngineTransform_5
+7088 EXTERN SystemObjectArray.__Set__SystemInt32_SystemObject__SystemVoid
+7096 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+7104 COPY
+7108 JUMP_INDIRECT 2

@@ -1,0 +1,344 @@
+void _start
+0 PUSH UInt32 __const_SystemUInt32_0
+8 PUSH VRCPlayerApi localPlayer
+16 EXTERN VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi
+24 PUSH VRCPlayerApi localPlayer
+32 PUSH Boolean __intnl_SystemBoolean_0
+40 EXTERN VRCSDKBaseUtilities.__IsValid__SystemObject__SystemBoolean
+48 PUSH Boolean __intnl_SystemBoolean_0
+56 JUMP_IF_FALSE 104
+64 PUSH VRCPlayerApi localPlayer
+72 PUSH Boolean isVRUser
+80 EXTERN VRCSDKBaseVRCPlayerApi.__IsUserInVR__SystemBoolean
+88 PUSH Boolean enableDebugLogs
+96 JUMP_IF_FALSE 104
+104 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+112 COPY
+116 JUMP_INDIRECT 2
+void _onPlayerRestored
+124 PUSH UInt32 __const_SystemUInt32_0
+132 PUSH VRCPlayerApi onPlayerRestoredPlayer
+140 PUSH Boolean __intnl_SystemBoolean_2
+148 EXTERN VRCSDKBaseUtilities.__IsValid__SystemObject__SystemBoolean
+156 PUSH Boolean __intnl_SystemBoolean_2
+164 PUSH Boolean __intnl_SystemBoolean_1
+172 EXTERN SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean
+180 PUSH Boolean __intnl_SystemBoolean_1
+188 JUMP_IF_FALSE 204
+196 JUMP 252
+204 PUSH VRCPlayerApi onPlayerRestoredPlayer
+212 PUSH Boolean __intnl_SystemBoolean_3
+220 EXTERN VRCSDKBaseVRCPlayerApi.__get_isLocal__SystemBoolean
+228 PUSH Boolean __intnl_SystemBoolean_3
+236 PUSH Boolean __intnl_SystemBoolean_1
+244 EXTERN SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean
+252 PUSH Boolean __intnl_SystemBoolean_1
+260 JUMP_IF_FALSE 288
+268 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+276 COPY
+280 JUMP_INDIRECT 2
+288 PUSH VRCPlayerApi onPlayerRestoredPlayer
+296 PUSH String persistenceKey
+304 PUSH Boolean __lcl_savedEnabled_SystemBoolean_0
+312 PUSH Boolean __intnl_SystemBoolean_4
+320 EXTERN VRCSDK3PersistencePlayerData.__TryGetBool__VRCSDKBaseVRCPlayerApi_SystemString_SystemBooleanRef__SystemBoolean
+328 PUSH Boolean __intnl_SystemBoolean_4
+336 JUMP_IF_FALSE 364
+344 PUSH Boolean __lcl_savedEnabled_SystemBoolean_0
+352 PUSH Boolean hapticsEnabled
+360 COPY
+364 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+372 COPY
+376 JUMP_INDIRECT 2
+void _SaveSettings
+384 PUSH UInt32 __const_SystemUInt32_0
+392 PUSH VRCPlayerApi localPlayer
+400 PUSH Boolean __intnl_SystemBoolean_5
+408 EXTERN VRCSDKBaseUtilities.__IsValid__SystemObject__SystemBoolean
+416 PUSH Boolean __intnl_SystemBoolean_5
+424 JUMP_IF_FALSE 440
+432 JUMP 460
+440 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+448 COPY
+452 JUMP_INDIRECT 2
+460 PUSH String persistenceKey
+468 PUSH Boolean hapticsEnabled
+476 EXTERN VRCSDK3PersistencePlayerData.__SetBool__SystemString_SystemBoolean__SystemVoid
+484 PUSH Boolean enableDebugLogs
+492 JUMP_IF_FALSE 500
+500 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+508 COPY
+512 JUMP_INDIRECT 2
+void __0_PlayHapticFeedback
+520 PUSH UInt32 __const_SystemUInt32_0
+528 PUSH Boolean hapticsEnabled
+536 PUSH Boolean __intnl_SystemBoolean_6
+544 EXTERN SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean
+552 PUSH Boolean __intnl_SystemBoolean_6
+560 JUMP_IF_FALSE 576
+568 JUMP 600
+576 PUSH Boolean isVRUser
+584 PUSH Boolean __intnl_SystemBoolean_6
+592 EXTERN SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean
+600 PUSH Boolean __intnl_SystemBoolean_6
+608 JUMP_IF_FALSE 636
+616 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+624 COPY
+628 JUMP_INDIRECT 2
+636 PUSH UInt32 __gintnl_SystemUInt32_0
+644 JUMP 1412
+652 PUSH UdonBehaviour __0__intnlparam
+660 PUSH UdonBehaviour __lcl_localRod_VRCUdonUdonBehaviour_0
+668 COPY
+672 PUSH UdonBehaviour __lcl_localRod_VRCUdonUdonBehaviour_0
+680 PUSH Boolean __intnl_SystemBoolean_7
+688 EXTERN VRCSDKBaseUtilities.__IsValid__SystemObject__SystemBoolean
+696 PUSH Boolean __intnl_SystemBoolean_7
+704 JUMP_IF_FALSE 720
+712 JUMP 740
+720 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+728 COPY
+732 JUMP_INDIRECT 2
+740 PUSH VRCPlayerApi localPlayer
+748 PUSH Boolean __intnl_SystemBoolean_8
+756 EXTERN VRCSDKBaseUtilities.__IsValid__SystemObject__SystemBoolean
+764 PUSH Boolean __intnl_SystemBoolean_8
+772 JUMP_IF_FALSE 892
+780 PUSH VRCPlayerApi localPlayer
+788 PUSH PickupHand __const_VRCSDKBaseVRC_PickupPickupHand_0
+796 PUSH Single __0_duration__param
+804 PUSH Single __0_amplitude__param
+812 PUSH Single __0_frequency__param
+820 EXTERN VRCSDKBaseVRCPlayerApi.__PlayHapticEventInHand__VRCSDKBaseVRC_PickupPickupHand_SystemSingle_SystemSingle_SystemSingle__SystemVoid
+828 PUSH VRCPlayerApi localPlayer
+836 PUSH PickupHand __const_VRCSDKBaseVRC_PickupPickupHand_1
+844 PUSH Single __0_duration__param
+852 PUSH Single __0_amplitude__param
+860 PUSH Single __0_frequency__param
+868 EXTERN VRCSDKBaseVRCPlayerApi.__PlayHapticEventInHand__VRCSDKBaseVRC_PickupPickupHand_SystemSingle_SystemSingle_SystemSingle__SystemVoid
+876 PUSH Boolean enableDebugLogs
+884 JUMP_IF_FALSE 892
+892 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+900 COPY
+904 JUMP_INDIRECT 2
+void __0_PlayHapticFeedbackInHand
+912 PUSH UInt32 __const_SystemUInt32_0
+920 PUSH Boolean hapticsEnabled
+928 PUSH Boolean __intnl_SystemBoolean_9
+936 EXTERN SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean
+944 PUSH Boolean __intnl_SystemBoolean_9
+952 JUMP_IF_FALSE 968
+960 JUMP 992
+968 PUSH Boolean isVRUser
+976 PUSH Boolean __intnl_SystemBoolean_9
+984 EXTERN SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean
+992 PUSH Boolean __intnl_SystemBoolean_9
+1000 JUMP_IF_FALSE 1028
+1008 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1016 COPY
+1020 JUMP_INDIRECT 2
+1028 PUSH VRCPlayerApi localPlayer
+1036 PUSH Boolean __intnl_SystemBoolean_10
+1044 EXTERN VRCSDKBaseUtilities.__IsValid__SystemObject__SystemBoolean
+1052 PUSH Boolean __intnl_SystemBoolean_10
+1060 JUMP_IF_FALSE 1076
+1068 JUMP 1096
+1076 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1084 COPY
+1088 JUMP_INDIRECT 2
+1096 PUSH VRCPlayerApi localPlayer
+1104 PUSH PickupHand __0_hand__param
+1112 PUSH Single __1_duration__param
+1120 PUSH Single __1_amplitude__param
+1128 PUSH Single __1_frequency__param
+1136 EXTERN VRCSDKBaseVRCPlayerApi.__PlayHapticEventInHand__VRCSDKBaseVRC_PickupPickupHand_SystemSingle_SystemSingle_SystemSingle__SystemVoid
+1144 PUSH Boolean enableDebugLogs
+1152 JUMP_IF_FALSE 1160
+1160 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1168 COPY
+1172 JUMP_INDIRECT 2
+void __0_SetHapticsEnabled
+1180 PUSH UInt32 __const_SystemUInt32_0
+1188 PUSH Boolean __0_enabled__param
+1196 PUSH Boolean hapticsEnabled
+1204 COPY
+1208 PUSH UInt32 __gintnl_SystemUInt32_1
+1216 JUMP 392
+1224 PUSH Boolean enableDebugLogs
+1232 JUMP_IF_FALSE 1240
+1240 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1248 COPY
+1252 JUMP_INDIRECT 2
+void _ToggleHaptics
+1260 PUSH UInt32 __const_SystemUInt32_0
+1268 PUSH Boolean hapticsEnabled
+1276 PUSH Boolean hapticsEnabled
+1284 EXTERN SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean
+1292 PUSH UInt32 __gintnl_SystemUInt32_2
+1300 JUMP 392
+1308 PUSH Boolean enableDebugLogs
+1316 JUMP_IF_FALSE 1324
+1324 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1332 COPY
+1336 JUMP_INDIRECT 2
+void IsVRUser
+1344 PUSH UInt32 __const_SystemUInt32_0
+1352 PUSH Boolean isVRUser
+1360 PUSH Boolean __0_IsVRUser__ret
+1368 COPY
+1372 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1380 COPY
+1384 JUMP_INDIRECT 2
+1392 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1400 COPY
+1404 JUMP_INDIRECT 2
+1412 PUSH UInt32 __gintnl_SystemUInt32_3
+1420 PUSH VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_0
+1428 EXTERN VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi
+1436 PUSH VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_0
+1444 PUSH VRCPlayerApi __2__intnlparam
+1452 COPY
+1456 JUMP 1524
+1464 PUSH UdonBehaviour __1__intnlparam
+1472 PUSH UdonBehaviour __0__intnlparam
+1480 COPY
+1484 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1492 COPY
+1496 JUMP_INDIRECT 2
+1504 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1512 COPY
+1516 JUMP_INDIRECT 2
+1524 PUSH VRCPlayerApi __2__intnlparam
+1532 PUSH GameObject[] __lcl_objects_UnityEngineGameObjectArray_0
+1540 EXTERN VRCSDKBaseNetworking.__GetPlayerObjects__VRCSDKBaseVRCPlayerApi__UnityEngineGameObjectArray
+1548 PUSH Int32 __const_SystemInt32_0
+1556 PUSH Int32 __lcl_i_SystemInt32_0
+1564 COPY
+1568 PUSH GameObject[] __lcl_objects_UnityEngineGameObjectArray_0
+1576 PUSH Int32 __intnl_SystemInt32_0
+1584 EXTERN SystemArray.__get_Length__SystemInt32
+1592 PUSH Int32 __lcl_i_SystemInt32_0
+1600 PUSH Int32 __intnl_SystemInt32_0
+1608 PUSH Boolean __intnl_SystemBoolean_11
+1616 EXTERN SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean
+1624 PUSH Boolean __intnl_SystemBoolean_11
+1632 JUMP_IF_FALSE 1960
+1640 PUSH GameObject[] __lcl_objects_UnityEngineGameObjectArray_0
+1648 PUSH Int32 __lcl_i_SystemInt32_0
+1656 PUSH GameObject __intnl_UnityEngineGameObject_0
+1664 EXTERN SystemObjectArray.__Get__SystemInt32__SystemObject
+1672 PUSH GameObject __intnl_UnityEngineGameObject_0
+1680 PUSH Boolean __intnl_SystemBoolean_12
+1688 EXTERN VRCSDKBaseUtilities.__IsValid__SystemObject__SystemBoolean
+1696 PUSH Boolean __intnl_SystemBoolean_12
+1704 JUMP_IF_FALSE 1720
+1712 JUMP 1728
+1720 JUMP 1920
+1728 PUSH UInt32 __gintnl_SystemUInt32_4
+1736 PUSH GameObject[] __lcl_objects_UnityEngineGameObjectArray_0
+1744 PUSH Int32 __lcl_i_SystemInt32_0
+1752 PUSH GameObject __intnl_UnityEngineGameObject_1
+1760 EXTERN SystemObjectArray.__Get__SystemInt32__SystemObject
+1768 PUSH GameObject __intnl_UnityEngineGameObject_1
+1776 PUSH Transform __intnl_UnityEngineTransform_0
+1784 EXTERN UnityEngineGameObject.__get_transform__UnityEngineTransform
+1792 PUSH Transform __intnl_UnityEngineTransform_0
+1800 PUSH Component __4__intnlparam
+1808 COPY
+1812 JUMP 2020
+1820 PUSH UdonBehaviour __3__intnlparam
+1828 PUSH UdonBehaviour __lcl_foundScript_VRCUdonUdonBehaviour_0
+1836 COPY
+1840 PUSH UdonBehaviour __lcl_foundScript_VRCUdonUdonBehaviour_0
+1848 PUSH Boolean __intnl_SystemBoolean_13
+1856 EXTERN VRCSDKBaseUtilities.__IsValid__SystemObject__SystemBoolean
+1864 PUSH Boolean __intnl_SystemBoolean_13
+1872 JUMP_IF_FALSE 1920
+1880 PUSH UdonBehaviour __lcl_foundScript_VRCUdonUdonBehaviour_0
+1888 PUSH UdonBehaviour __1__intnlparam
+1896 COPY
+1900 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1908 COPY
+1912 JUMP_INDIRECT 2
+1920 PUSH Int32 __lcl_i_SystemInt32_0
+1928 PUSH Int32 __const_SystemInt32_1
+1936 PUSH Int32 __lcl_i_SystemInt32_0
+1944 EXTERN SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32
+1952 JUMP 1568
+1960 PUSH object __const_SystemObject_0
+1968 PUSH UdonBehaviour __1__intnlparam
+1976 COPY
+1980 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+1988 COPY
+1992 JUMP_INDIRECT 2
+2000 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2008 COPY
+2012 JUMP_INDIRECT 2
+2020 PUSH Component __4__intnlparam
+2028 PUSH Type __const_SystemType_0
+2036 PUSH Component[] __intnl_UnityEngineComponentArray_0
+2044 EXTERN UnityEngineComponent.__GetComponentsInChildren__SystemType__UnityEngineComponentArray
+2052 PUSH Component[] __intnl_UnityEngineComponentArray_0
+2060 PUSH Component[] __lcl_udonBehaviours_UnityEngineComponentArray_0
+2068 COPY
+2072 PUSH Int64 __const_SystemInt64_0
+2080 PUSH Int64 __lcl_targetID_SystemInt64_0
+2088 COPY
+2092 PUSH Component[] __lcl_udonBehaviours_UnityEngineComponentArray_0
+2100 PUSH Int32 __intnl_SystemInt32_1
+2108 EXTERN SystemArray.__get_Length__SystemInt32
+2116 PUSH Int32 __const_SystemInt32_0
+2124 PUSH Int32 __intnl_SystemInt32_2
+2132 COPY
+2136 PUSH Int32 __intnl_SystemInt32_2
+2144 PUSH Int32 __intnl_SystemInt32_1
+2152 PUSH Boolean __intnl_SystemBoolean_14
+2160 EXTERN SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean
+2168 PUSH Boolean __intnl_SystemBoolean_14
+2176 JUMP_IF_FALSE 2468
+2184 PUSH Component[] __lcl_udonBehaviours_UnityEngineComponentArray_0
+2192 PUSH Int32 __intnl_SystemInt32_2
+2200 PUSH UdonBehaviour __lcl_behaviour_VRCUdonUdonBehaviour_0
+2208 EXTERN SystemObjectArray.__Get__SystemInt32__SystemObject
+2216 PUSH UdonBehaviour __lcl_behaviour_VRCUdonUdonBehaviour_0
+2224 PUSH String __const_SystemString_0
+2232 PUSH object __lcl_idValue_SystemObject_0
+2240 EXTERN VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject
+2248 PUSH object __lcl_idValue_SystemObject_0
+2256 PUSH object __const_SystemObject_0
+2264 PUSH Boolean __intnl_SystemBoolean_15
+2272 EXTERN SystemObject.__op_Inequality__SystemObject_SystemObject__SystemBoolean
+2280 PUSH Boolean __intnl_SystemBoolean_15
+2288 JUMP_IF_FALSE 2352
+2296 PUSH object __lcl_idValue_SystemObject_0
+2304 PUSH Int64 __intnl_SystemInt64_0
+2312 EXTERN SystemConvert.__ToInt64__SystemObject__SystemInt64
+2320 PUSH Int64 __intnl_SystemInt64_0
+2328 PUSH Int64 __lcl_targetID_SystemInt64_0
+2336 PUSH Boolean __intnl_SystemBoolean_15
+2344 EXTERN SystemInt64.__op_Equality__SystemInt64_SystemInt64__SystemBoolean
+2352 PUSH Boolean __intnl_SystemBoolean_15
+2360 JUMP_IF_FALSE 2428
+2368 PUSH UdonBehaviour __lcl_behaviour_VRCUdonUdonBehaviour_0
+2376 PUSH Component __intnl_UnityEngineComponent_0
+2384 COPY
+2388 PUSH Component __intnl_UnityEngineComponent_0
+2396 PUSH UdonBehaviour __3__intnlparam
+2404 COPY
+2408 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2416 COPY
+2420 JUMP_INDIRECT 2
+2428 PUSH Int32 __intnl_SystemInt32_2
+2436 PUSH Int32 __const_SystemInt32_1
+2444 PUSH Int32 __intnl_SystemInt32_2
+2452 EXTERN SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32
+2460 JUMP 2136
+2468 PUSH object __const_SystemObject_0
+2476 PUSH UdonBehaviour __3__intnlparam
+2484 COPY
+2488 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2496 COPY
+2500 JUMP_INDIRECT 2
+2508 PUSH UInt32 __intnl_returnJump_SystemUInt32_0
+2516 COPY
+2520 JUMP_INDIRECT 2

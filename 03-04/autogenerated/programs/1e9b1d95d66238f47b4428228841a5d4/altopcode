@@ -1,0 +1,319 @@
+void _start()
+localPlayer = get_LocalPlayer();// 16
+syncInterval = op_Division(syncRate, __const_SystemSingle_0);// 48
+allPlayers = G_maxPlayers.ctor();// 72
+120 if (__intnl_SystemBoolean_0) //160
+{
+staticBoatCount = G_boats.get_Length();// 144
+152 JUMP 180
+}
+176 staticBoatCount = __const_SystemInt32_0
+__lcl_totalSlots_SystemInt32_0 = op_Addition(dynamicSlotCount, staticBoatCount);// 204
+__lcl_expanded_UnityEngineTransformArray_0 = L_totalSlots.ctor();// 228
+252 __lcl_i_SystemInt32_0 = __const_SystemInt32_0
+296 if (__intnl_SystemBoolean_1) //408
+{
+L_expanded.Set(__intnl_UnityEngineTransform_0, __lcl_i_SystemInt32_0);// 360
+__lcl_i_SystemInt32_0 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_0);// 392
+400 JUMP 256
+}
+424 boats = __lcl_expanded_UnityEngineTransformArray_0
+this.SendCustomEventDelayedSeconds(__const_VRCUdonCommonEnumsEventTiming_0, __const_SystemSingle_0, __const_SystemString_0);// 460
+476 if (enableDebugLogs) //484
+{
+}
+496 return;
+void ClaimSyncObject()
+552 if (__intnl_SystemBoolean_2) //568
+{
+560 JUMP 616
+}
+624 if (__intnl_SystemBoolean_2) //692
+{
+this.SendCustomEventDelayedSeconds(__const_VRCUdonCommonEnumsEventTiming_0, __const_SystemSingle_0, __const_SystemString_0);// 664
+684 return;
+}
+__lcl_localPlayerId_SystemInt32_0 = G_localPlayer.get_playerId();// 708
+732 __lcl_i_SystemInt32_1 = __const_SystemInt32_0
+800 if (__intnl_SystemBoolean_4) //1264
+{
+856 __intnl_UnityEngineObject_0 = __intnl_VRCUdonUdonBehaviour_0
+876 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+920 if (__intnl_SystemBoolean_5) //936
+{
+928 JUMP 1224
+}
+G_playerSyncPool.Get(__lcl_i_SystemInt32_1).SendCustomEvent(__const_SystemString_1);// 984
+1064 __lcl_ownerId_SystemInt32_0 = __intnl_SystemInt32_1
+1108 if (__intnl_SystemBoolean_6) //1224
+{
+localPlayerSync = G_playerSyncPool.Get(__lcl_i_SystemInt32_1);// 1140
+G_localPlayerSync.SetProgramVariable(__this_VRCUdonUdonBehaviour_2, __const_SystemString_3);// 1172
+G_localPlayerSync.SendCustomEvent(__const_SystemString_4);// 1196
+1216 return;
+}
+__lcl_i_SystemInt32_1 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_1);// 1248
+1256 JUMP 736
+}
+1280 __lcl_i_SystemInt32_1 = __const_SystemInt32_0
+1348 if (__intnl_SystemBoolean_4) //2108
+{
+1404 __intnl_UnityEngineObject_0 = __intnl_VRCUdonUdonBehaviour_0
+1424 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+1468 if (__intnl_SystemBoolean_5) //1484
+{
+1476 JUMP 2068
+}
+G_playerSyncPool.Get(__lcl_i_SystemInt32_1).SendCustomEvent(__const_SystemString_1);// 1532
+1612 __lcl_ownerId_SystemInt32_0 = __intnl_SystemInt32_1
+__lcl_owner_VRCSDKBaseVRCPlayerApi_0 = GetPlayerById(__lcl_ownerId_SystemInt32_0);// 1632
+1680 if (__intnl_SystemBoolean_7) //1696
+{
+1688 JUMP 1728
+}
+1744 __intnl_SystemBoolean_6 = __intnl_SystemBoolean_7
+1756 if (__intnl_SystemBoolean_6) //1772
+{
+1764 JUMP 1820
+}
+1828 if (__intnl_SystemBoolean_6) //2068
+{
+SetOwner(__intnl_UnityEngineGameObject_0, localPlayer);// 1908
+localPlayerSync = G_playerSyncPool.Get(__lcl_i_SystemInt32_1);// 1940
+G_localPlayerSync.SetProgramVariable(__this_VRCUdonUdonBehaviour_3, __const_SystemString_3);// 1972
+G_localPlayerSync.SendCustomEvent(__const_SystemString_4);// 1996
+2028 __intnl_VRCUdonUdonBehaviour_3 = localPlayerSync
+G_localPlayerSync.SendCustomEvent(__const_SystemString_5);// 2040
+2060 return;
+}
+__lcl_i_SystemInt32_1 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_1);// 2092
+2100 JUMP 1284
+}
+2120 return;
+void _update()
+2144 JUMP 2196
+2160 JUMP 2968
+2180 return;
+2212 __intnl_UnityEngineObject_2 = localPlayerSync
+2232 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+2276 if (__intnl_SystemBoolean_9) //2292
+{
+2284 JUMP 2324
+}
+2332 if (__intnl_SystemBoolean_9) //2360
+{
+2352 return;
+}
+2400 if (__intnl_SystemBoolean_10) //2428
+{
+2420 return;
+}
+2516 if (__intnl_SystemBoolean_11) //2544
+{
+2536 return;
+}
+lastSyncTime = get_time();// 2552
+__lcl_boat_UnityEngineTransform_0 = L_expanded.Get(localBoatIndex);// 2584
+__lcl_worldPos_UnityEngineVector3_0 = G_localPlayer.GetPosition();// 2608
+__lcl_localPos_UnityEngineVector3_0 = L_boat.InverseTransformPoint(__lcl_worldPos_UnityEngineVector3_0);// 2640
+__lcl_playerWorldY_SystemSingle_0 = G_localPlayer.GetRotation().get_eulerAngles().get_y();// 2712
+__lcl_boatWorldY_SystemSingle_0 = L_boat.get_eulerAngles().get_y();// 2760
+__lcl_localRotY_SystemSingle_0 = DeltaAngle(__lcl_playerWorldY_SystemSingle_0, __lcl_boatWorldY_SystemSingle_0);// 2792
+2816 __intnl_SystemInt32_2 = localBoatIndex
+G_localPlayerSync.SetProgramVariable(localBoatIndex, __const_SystemString_6);// 2844
+G_localPlayerSync.SetProgramVariable(__lcl_localPos_UnityEngineVector3_0, __const_SystemString_7);// 2876
+G_localPlayerSync.SetProgramVariable(__lcl_localRotY_SystemSingle_0, __const_SystemString_8);// 2908
+G_localPlayerSync.SendCustomEvent(__const_SystemString_9);// 2932
+2952 return;
+2984 __lcl_i_SystemInt32_2 = __const_SystemInt32_0
+3052 if (__intnl_SystemBoolean_12) //4568
+{
+__lcl_syncObj_VRCUdonUdonBehaviour_0 = G_playerSyncPool.Get(__lcl_i_SystemInt32_2);// 3084
+3108 __intnl_UnityEngineObject_4 = __lcl_syncObj_VRCUdonUdonBehaviour_0
+3128 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+3172 if (__intnl_SystemBoolean_13) //3188
+{
+3180 JUMP 4528
+}
+L_syncObj.SendCustomEvent(__const_SystemString_1);// 3204
+3284 __lcl_ownerId_SystemInt32_1 = __intnl_SystemInt32_4
+3328 if (__intnl_SystemBoolean_14) //3344
+{
+3336 JUMP 4528
+}
+3384 if (__intnl_SystemBoolean_15) //3448
+{
+}
+3456 if (__intnl_SystemBoolean_15) //3472
+{
+3464 JUMP 4528
+}
+__lcl_remotePlayer_VRCSDKBaseVRCPlayerApi_0 = GetPlayerById(__lcl_ownerId_SystemInt32_1);// 3488
+3536 if (__intnl_SystemBoolean_16) //3552
+{
+3544 JUMP 3600
+}
+3608 if (__intnl_SystemBoolean_16) //3624
+{
+3616 JUMP 4528
+}
+L_syncObj.SendCustomEvent(__const_SystemString_10);// 3640
+3720 __lcl_boatIdx_SystemInt32_0 = __intnl_SystemInt32_6
+3764 if (__intnl_SystemBoolean_18) //3780
+{
+3772 JUMP 3836
+}
+3844 if (__intnl_SystemBoolean_18) //3860
+{
+3852 JUMP 4528
+}
+__lcl_boat_UnityEngineTransform_1 = L_expanded.Get(__lcl_boatIdx_SystemInt32_0);// 3884
+L_syncObj.SendCustomEvent(__const_SystemString_12);// 3908
+3964 __intnl_UnityEngineVector3_2 = __intnl_SystemObject_3
+3984 __lcl_localPos_UnityEngineVector3_1 = __intnl_UnityEngineVector3_2
+__lcl_targetWorldPos_UnityEngineVector3_0 = L_boat.TransformPoint(__lcl_localPos_UnityEngineVector3_1);// 4012
+L_syncObj.SendCustomEvent(__const_SystemString_14);// 4036
+4116 __lcl_localRotY_SystemSingle_1 = __intnl_SystemSingle_2
+__lcl_targetWorldRotY_SystemSingle_0 = op_Addition(__lcl_localRotY_SystemSingle_1, __intnl_SystemSingle_3);// 4192
+__lcl_currentPos_UnityEngineVector3_0 = L_remotePlayer.GetPosition();// 4216
+__lcl_smoothedPos_UnityEngineVector3_0 = Lerp(__intnl_SystemSingle_5, __lcl_targetWorldPos_UnityEngineVector3_0, __lcl_currentPos_UnityEngineVector3_0);// 4304
+__lcl_posDiff_SystemSingle_0 = Distance(__lcl_targetWorldPos_UnityEngineVector3_0, __lcl_currentPos_UnityEngineVector3_0);// 4336
+4384 if (__intnl_SystemBoolean_19) //4424
+{
+}
+4432 if (__intnl_SystemBoolean_19) //4528
+{
+L_remotePlayer.TeleportTo(__const_SystemBoolean_0, __const_VRCSDKBaseVRC_SceneDescriptorSpawnOrientation_0, __intnl_UnityEngineQuaternion_1, __lcl_smoothedPos_UnityEngineVector3_0);// 4520
+}
+__lcl_i_SystemInt32_2 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_2);// 4552
+4560 JUMP 2988
+}
+4580 return;
+void __0_OnLocalPlayerEnteredBoat()
+4636 if (__intnl_SystemBoolean_20) //4652
+{
+4644 JUMP 4708
+}
+4716 if (__intnl_SystemBoolean_20) //4744
+{
+4736 return;
+}
+4760 localBoatIndex = __0_boatIndex__param
+4780 __intnl_UnityEngineObject_6 = localPlayerSync
+4800 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+4844 if (__intnl_SystemBoolean_21) //4888
+{
+4868 lastSyncTime = __const_SystemSingle_3
+4880 JUMP 2196
+}
+4896 if (enableDebugLogs) //4904
+{
+}
+4916 return;
+void __0_OnLocalPlayerExitedBoat()
+4972 if (__intnl_SystemBoolean_22) //5000
+{
+4992 return;
+}
+5016 localBoatIndex = __const_SystemInt32_2
+5036 __intnl_UnityEngineObject_8 = localPlayerSync
+5056 __intnl_UnityEngineObject_9 = __const_SystemObject_0
+5100 if (__intnl_SystemBoolean_23) //5152
+{
+5132 __intnl_VRCUdonUdonBehaviour_4 = localPlayerSync
+G_localPlayerSync.SendCustomEvent(__const_SystemString_16);// 5144
+}
+5160 if (enableDebugLogs) //5168
+{
+}
+5180 return;
+void __0_GetBoatIndex()
+5212 __lcl_i_SystemInt32_3 = __const_SystemInt32_0
+5280 if (__intnl_SystemBoolean_24) //5488
+{
+5336 __intnl_UnityEngineObject_10 = __intnl_UnityEngineTransform_1
+5356 __intnl_UnityEngineObject_11 = __0_boat__param
+5400 if (__intnl_SystemBoolean_25) //5448
+{
+5424 __0___0_GetBoatIndex__ret = __lcl_i_SystemInt32_3
+5440 return;
+}
+__lcl_i_SystemInt32_3 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_3);// 5472
+5480 JUMP 5216
+}
+5504 __0___0_GetBoatIndex__ret = __const_SystemInt32_2
+5520 return;
+5540 return;
+void IsLocalPlayerOnBoat()
+__0_IsLocalPlayerOnBoat__ret = op_GreaterThanOrEqual(__const_SystemInt32_0, localBoatIndex);// 5580
+5600 return;
+5620 return;
+void GetLocalBoatIndex()
+5652 __0_GetLocalBoatIndex__ret = localBoatIndex
+5668 return;
+5688 return;
+void __0_RegisterBoat()
+5720 __intnl_UnityEngineObject_12 = __0_boatTransform__param
+5740 __intnl_UnityEngineObject_13 = __const_SystemObject_0
+5784 if (__intnl_SystemBoolean_26) //5832
+{
+5808 __0___0_RegisterBoat__ret = __const_SystemInt32_2
+5824 return;
+}
+5848 __lcl_i_SystemInt32_4 = __const_SystemInt32_0
+5916 if (__intnl_SystemBoolean_27) //6124
+{
+5972 __intnl_UnityEngineObject_14 = __intnl_UnityEngineTransform_2
+5992 __intnl_UnityEngineObject_15 = __0_boatTransform__param
+6036 if (__intnl_SystemBoolean_28) //6084
+{
+6060 __0___0_RegisterBoat__ret = __lcl_i_SystemInt32_4
+6076 return;
+}
+__lcl_i_SystemInt32_4 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_4);// 6108
+6116 JUMP 5852
+}
+6140 __lcl_i_SystemInt32_4 = __const_SystemInt32_0
+6208 if (__intnl_SystemBoolean_27) //6544
+{
+6264 __intnl_UnityEngineObject_14 = __intnl_UnityEngineTransform_2
+6284 __intnl_UnityEngineObject_15 = __const_SystemObject_0
+6328 if (__intnl_SystemBoolean_28) //6504
+{
+L_expanded.Set(__0_boatTransform__param, __lcl_i_SystemInt32_4);// 6360
+6376 if (enableDebugLogs) //6464
+{
+Log(__intnl_SystemString_1);// 6456
+}
+6480 __0___0_RegisterBoat__ret = __lcl_i_SystemInt32_4
+6496 return;
+}
+__lcl_i_SystemInt32_4 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_4);// 6528
+6536 JUMP 6144
+}
+LogWarning(__const_SystemString_18);// 6552
+6576 __0___0_RegisterBoat__ret = __const_SystemInt32_2
+6592 return;
+6612 return;
+void __0_UnregisterBoat()
+6668 if (__intnl_SystemBoolean_29) //6684
+{
+6676 JUMP 6740
+}
+6748 if (__intnl_SystemBoolean_29) //6776
+{
+6768 return;
+}
+6792 __intnl_SystemBoolean_30 = enableDebugLogs
+6804 if (__intnl_SystemBoolean_30) //6916
+{
+6860 __intnl_UnityEngineObject_16 = __intnl_UnityEngineTransform_3
+6880 __intnl_UnityEngineObject_17 = __const_SystemObject_0
+}
+6924 if (__intnl_SystemBoolean_30) //7044
+{
+Log(__intnl_SystemString_3);// 7036
+}
+7060 __intnl_UnityEngineTransform_5 = __const_SystemObject_0
+L_expanded.Set(__intnl_UnityEngineTransform_5, __0_index__param);// 7088
+7108 return;

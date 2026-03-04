@@ -1,0 +1,142 @@
+using UnityEngine;
+using System;
+using VRC.SDKBase;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Renderer __lcl_renderer_UnityEngineRenderer_0 = null;
+private UInt32 __gintnl_SystemUInt32_1 = 156;
+private UInt32 __gintnl_SystemUInt32_0 = 44;
+private UInt32 __gintnl_SystemUInt32_2 = 288;
+private Boolean __const_SystemBoolean_0 = true;
+private Boolean __const_SystemBoolean_1 = false;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Int64 __refl_typeid = 3094934464512252207;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private GameObject __lcl_obj_UnityEngineGameObject_0 = null;
+private Boolean __0_active__param = false;
+private Light __lcl_light_UnityEngineLight_0 = null;
+private object __const_SystemObject_0 = null;
+public Light[] spawnRoomLights;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private Boolean hasStartedGame = false;
+private String __refl_typename = "SpawnRoomManager";
+public GameObject[] spawnRoomObjects;
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+public Renderer[] spawnRoomRenderers;
+private VRCPlayerApi onPlayerRespawnPlayer = null;
+private Int32 __const_SystemInt32_1 = 1;
+private Int32 __const_SystemInt32_0 = 0;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+
+
+public void _start()
+{
+__0_active__param = __const_SystemBoolean_0;
+UNDEF_14c0b_1308();
+}
+public void _StartGame()
+{
+hasStartedGame = __const_SystemBoolean_0;
+}
+public void DisableSpawnRoom()
+{
+__0_active__param = __const_SystemBoolean_1;
+UNDEF_14c0b_1308();
+}
+public void _onPlayerRespawn()
+{
+__intnl_SystemBoolean_0 = onPlayerRespawnPlayer.isLocal;
+if (__intnl_SystemBoolean_0)
+{
+UNDEF_14c0b_308();
+}
+}
+private void UNDEF_14c0b_308()
+{
+__0_active__param = __const_SystemBoolean_0;
+UNDEF_14c0b_1308();
+}
+private void UNDEF_14c0b_1308()
+{
+__intnl_SystemBoolean_1 = spawnRoomObjects != __const_SystemObject_0;
+if (__intnl_SystemBoolean_1)
+{
+break;
+}
+__intnl_SystemInt32_0 = spawnRoomObjects.Length;
+__intnl_SystemInt32_1 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_2 = __intnl_SystemInt32_1 < __intnl_SystemInt32_0;
+if (__intnl_SystemBoolean_2)
+{
+break;
+}
+__lcl_obj_UnityEngineGameObject_0 = (GameObject)(spawnRoomObjects[__intnl_SystemInt32_1]);
+__intnl_UnityEngineObject_0 = __lcl_obj_UnityEngineGameObject_0;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_3 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_3)
+{
+__lcl_obj_UnityEngineGameObject_0.SetActive(__0_active__param);
+}
+__intnl_SystemInt32_1 = __intnl_SystemInt32_1 + __const_SystemInt32_1;
+}
+__intnl_SystemBoolean_2 = spawnRoomRenderers != __const_SystemObject_0;
+if (__intnl_SystemBoolean_2)
+{
+break;
+}
+__intnl_SystemInt32_0 = spawnRoomRenderers.Length;
+__intnl_SystemInt32_1 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_3 = __intnl_SystemInt32_1 < __intnl_SystemInt32_0;
+if (__intnl_SystemBoolean_3)
+{
+break;
+}
+__lcl_renderer_UnityEngineRenderer_0 = (Renderer)(spawnRoomRenderers[__intnl_SystemInt32_1]);
+__intnl_UnityEngineObject_0 = __lcl_renderer_UnityEngineRenderer_0;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_4 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_4)
+{
+__lcl_renderer_UnityEngineRenderer_0.enabled = __0_active__param;
+}
+__intnl_SystemInt32_1 = __intnl_SystemInt32_1 + __const_SystemInt32_1;
+}
+__intnl_SystemBoolean_3 = spawnRoomLights != __const_SystemObject_0;
+if (__intnl_SystemBoolean_3)
+{
+break;
+}
+__intnl_SystemInt32_0 = spawnRoomLights.Length;
+__intnl_SystemInt32_1 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_4 = __intnl_SystemInt32_1 < __intnl_SystemInt32_0;
+if (__intnl_SystemBoolean_4)
+{
+break;
+}
+__lcl_light_UnityEngineLight_0 = (Light)(spawnRoomLights[__intnl_SystemInt32_1]);
+__intnl_UnityEngineObject_0 = __lcl_light_UnityEngineLight_0;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_5 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_5)
+{
+__lcl_light_UnityEngineLight_0.enabled = __0_active__param;
+}
+__intnl_SystemInt32_1 = __intnl_SystemInt32_1 + __const_SystemInt32_1;
+}
+}
+}

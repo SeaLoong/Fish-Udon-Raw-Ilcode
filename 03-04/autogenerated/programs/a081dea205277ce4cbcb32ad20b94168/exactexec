@@ -1,0 +1,238 @@
+using System;
+using VRC.SDKBase;
+using UnityEngine;
+using VRC.Udon;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Boolean __lcl_posChanged_SystemBoolean_0 = false;
+private Single __lcl_t_SystemSingle_1 = 0f;
+private Single __intnl_SystemSingle_0 = 0f;
+private Single __const_SystemSingle_0 = 0.02f;
+private Single __intnl_SystemSingle_8 = 0f;
+private UInt32 __gintnl_SystemUInt32_1 = 548;
+private UInt32 __gintnl_SystemUInt32_0 = 24;
+private UInt32 __gintnl_SystemUInt32_2 = 1656;
+private VRCPlayerApi owner = null;
+private Single __0_localRotY__param = 0f;
+private Int32 __0_boatIndex__param = 0;
+private Single __intnl_SystemSingle_7 = 0f;
+private VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_0 = null;
+private Int64 __refl_typeid = 5000127876723863949;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Vector3 __const_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Single syncedLocalRotationY = 0f;
+private Single __intnl_SystemSingle_2 = 0f;
+private Boolean __lcl_rotChanged_SystemBoolean_0 = false;
+private Single __const_SystemSingle_2 = 0f;
+private Int32 __0_GetBoatIndex__ret = 0;
+private Int32 __0_GetOwnerId__ret = 0;
+private object __const_SystemObject_0 = null;
+private Single __intnl_SystemSingle_1 = 0f;
+private Single __0_GetLocalRotationY__ret = 0f;
+private Boolean __lcl_boatChanged_SystemBoolean_0 = false;
+private Single __const_SystemSingle_1 = 1f;
+private UdonBehaviour manager = null;
+private VRCPlayerApi onOwnershipTransferredPlayer = null;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private Single lastReceiveTime = 0f;
+private Vector3 targetLocalPos = new Vector3(0f, 0f, 0f);
+private Int32 cachedOwnerId = -1;
+private Single targetRotY = 0f;
+private Single __intnl_SystemSingle_4 = 0f;
+private Vector3 __0_localPos__param = new Vector3(0f, 0f, 0f);
+private String __refl_typename = "SimpleBoatSyncPlayer";
+private Single __lcl_t_SystemSingle_0 = 0f;
+private Single __intnl_SystemSingle_3 = 0f;
+private Single __const_SystemSingle_3 = 5f;
+private UdonBehaviour __0_mgr__param = null;
+private Int32 syncedBoatIndex = -1;
+private GameObject __this_UnityEngineGameObject_0 = this;
+private Single __intnl_SystemSingle_6 = 0f;
+private VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_1 = null;
+private Vector3 syncedLocalPosition = new Vector3(0f, 0f, 0f);
+private Single previousRotY = 0f;
+private Int32 __const_SystemInt32_1 = 0;
+private Int32 __const_SystemInt32_0 = -1;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private Single __intnl_SystemSingle_5 = 0f;
+private Vector3 previousLocalPos = new Vector3(0f, 0f, 0f);
+private Vector3 __0_GetLocalPosition__ret = new Vector3(0f, 0f, 0f);
+private UdonBehaviour __this_VRCUdonUdonBehaviour_2 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_1 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_0 = this;
+
+
+public void _start()
+{
+UNDEF_a081d_236();
+}
+private void UNDEF_a081d_236()
+{
+owner = Networking.GetOwner(__this_UnityEngineGameObject_0);
+__intnl_SystemBoolean_0 = owner != __const_SystemObject_0;
+if (__intnl_SystemBoolean_0)
+{
+__intnl_SystemBoolean_0 = owner.IsValid();
+}
+if (__intnl_SystemBoolean_0)
+{
+cachedOwnerId = owner.playerId;
+}
+else
+{
+cachedOwnerId = __const_SystemInt32_0;
+}
+}
+public void _onOwnershipTransferred()
+{
+owner = onOwnershipTransferredPlayer;
+__intnl_SystemBoolean_1 = onOwnershipTransferredPlayer != __const_SystemObject_0;
+if (__intnl_SystemBoolean_1)
+{
+__intnl_SystemBoolean_1 = onOwnershipTransferredPlayer.IsValid();
+}
+if (__intnl_SystemBoolean_1)
+{
+cachedOwnerId = onOwnershipTransferredPlayer.playerId;
+}
+else
+{
+cachedOwnerId = __const_SystemInt32_0;
+}
+__intnl_VRCSDKBaseVRCPlayerApi_0 = Networking.LocalPlayer;
+__intnl_SystemBoolean_2 = __intnl_VRCSDKBaseVRCPlayerApi_0 != __const_SystemObject_0;
+if (__intnl_SystemBoolean_2)
+{
+__intnl_VRCSDKBaseVRCPlayerApi_1 = Networking.LocalPlayer;
+__intnl_SystemBoolean_2 = __intnl_VRCSDKBaseVRCPlayerApi_1 == onOwnershipTransferredPlayer;
+}
+if (__intnl_SystemBoolean_2)
+{
+_ResetSync();
+}
+}
+public void __0_SetManager()
+{
+manager = __0_mgr__param;
+}
+public void __0_UpdatePosition()
+{
+__intnl_SystemBoolean_3 = Networking.IsOwner(__this_UnityEngineGameObject_0);
+if (__intnl_SystemBoolean_3)
+{
+UNDEF_a081d_1116();
+}
+}
+private void UNDEF_a081d_1116()
+{
+__intnl_SystemSingle_0 = Vector3.Distance(syncedLocalPosition, __0_localPos__param);
+__lcl_posChanged_SystemBoolean_0 = __intnl_SystemSingle_0 > __const_SystemSingle_0;
+__intnl_SystemSingle_1 = Mathf.DeltaAngle(syncedLocalRotationY, __0_localRotY__param);
+__intnl_SystemSingle_2 = Mathf.Abs(__intnl_SystemSingle_1);
+__lcl_rotChanged_SystemBoolean_0 = __intnl_SystemSingle_2 > __const_SystemSingle_1;
+__lcl_boatChanged_SystemBoolean_0 = syncedBoatIndex != __0_boatIndex__param;
+__intnl_SystemBoolean_5 = __lcl_posChanged_SystemBoolean_0;
+if (__intnl_SystemBoolean_5)
+{
+}
+else
+{
+__intnl_SystemBoolean_5 = __lcl_rotChanged_SystemBoolean_0;
+}
+__intnl_SystemBoolean_4 = __intnl_SystemBoolean_5;
+if (__intnl_SystemBoolean_4)
+{
+}
+else
+{
+__intnl_SystemBoolean_4 = __lcl_boatChanged_SystemBoolean_0;
+}
+if (__intnl_SystemBoolean_4)
+{
+syncedBoatIndex = __0_boatIndex__param;
+syncedLocalPosition = __0_localPos__param;
+syncedLocalRotationY = __0_localRotY__param;
+__this_VRCUdonUdonBehaviour_0.RequestSerialization();
+}
+}
+public void _ClearBoat()
+{
+__intnl_SystemBoolean_6 = Networking.IsOwner(__this_UnityEngineGameObject_0);
+if (__intnl_SystemBoolean_6)
+{
+UNDEF_a081d_1288();
+}
+}
+private void UNDEF_a081d_1288()
+{
+syncedBoatIndex = __const_SystemInt32_0;
+syncedLocalPosition = __const_UnityEngineVector3_0;
+syncedLocalRotationY = __const_SystemSingle_2;
+__this_VRCUdonUdonBehaviour_1.RequestSerialization();
+}
+public void _ResetSync()
+{
+__intnl_SystemBoolean_7 = Networking.IsOwner(__this_UnityEngineGameObject_0);
+if (__intnl_SystemBoolean_7)
+{
+UNDEF_a081d_1460();
+}
+}
+private void UNDEF_a081d_1460()
+{
+syncedBoatIndex = __const_SystemInt32_0;
+syncedLocalPosition = __const_UnityEngineVector3_0;
+syncedLocalRotationY = __const_SystemSingle_2;
+__this_VRCUdonUdonBehaviour_2.RequestSerialization();
+}
+public void _onDeserialization()
+{
+previousLocalPos = targetLocalPos;
+previousRotY = targetRotY;
+targetLocalPos = syncedLocalPosition;
+targetRotY = syncedLocalRotationY;
+lastReceiveTime = Time.time;
+}
+public void GetOwnerId()
+{
+__intnl_SystemBoolean_8 = cachedOwnerId <= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_8)
+{
+break;
+}
+UNDEF_a081d_236();
+__0_GetOwnerId__ret = cachedOwnerId;
+return;
+}
+public void GetBoatIndex()
+{
+__0_GetBoatIndex__ret = syncedBoatIndex;
+return;
+}
+public void GetLocalPosition()
+{
+__intnl_SystemSingle_3 = Time.time;
+__intnl_SystemSingle_4 = __intnl_SystemSingle_3 - lastReceiveTime;
+__intnl_SystemSingle_5 = __intnl_SystemSingle_4 * __const_SystemSingle_3;
+__lcl_t_SystemSingle_0 = Mathf.Clamp01(__intnl_SystemSingle_5);
+__0_GetLocalPosition__ret = Vector3.Lerp(previousLocalPos, targetLocalPos, __lcl_t_SystemSingle_0);
+return;
+}
+public void GetLocalRotationY()
+{
+__intnl_SystemSingle_6 = Time.time;
+__intnl_SystemSingle_7 = __intnl_SystemSingle_6 - lastReceiveTime;
+__intnl_SystemSingle_8 = __intnl_SystemSingle_7 * __const_SystemSingle_3;
+__lcl_t_SystemSingle_1 = Mathf.Clamp01(__intnl_SystemSingle_8);
+__0_GetLocalRotationY__ret = Mathf.LerpAngle(previousRotY, targetRotY, __lcl_t_SystemSingle_1);
+return;
+}
+}

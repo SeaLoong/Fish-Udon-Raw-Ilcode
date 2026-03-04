@@ -1,0 +1,675 @@
+using System;
+using UnityEngine;
+using VRC.SDKBase;
+using VRC.Udon;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Boolean __intnl_SystemBoolean_13 = false;
+private Boolean __intnl_SystemBoolean_23 = false;
+private UInt32 __gintnl_SystemUInt32_16 = 2248;
+private UInt32 __gintnl_SystemUInt32_26 = 5292;
+private Int64 __const_SystemInt64_1 = 1409816203479184024;
+private Int64 __const_SystemInt64_0 = -4484942539136040770;
+private String __intnl_SystemString_1 = null;
+private GameObject __6__intnlparam = null;
+private Object __intnl_UnityEngineObject_22 = null;
+private Object __intnl_UnityEngineObject_12 = null;
+private Single __intnl_SystemSingle_0 = 0f;
+private VRCPlayerApi __lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0 = null;
+private object __intnl_SystemObject_0 = null;
+private Int64 __lcl_targetID_SystemInt64_1 = 0;
+private String __const_SystemString_0 = "__0_itemId__param";
+private Transform __intnl_UnityEngineTransform_0 = null;
+private Single __const_SystemSingle_0 = 0f;
+private object __lcl_idValue_SystemObject_1 = null;
+private Boolean __intnl_SystemBoolean_16 = false;
+public Int32 quantity;
+private Single respawnTimer = 0f;
+private String __intnl_SystemString_9 = null;
+public Int32 questItemId;
+private UInt32 __gintnl_SystemUInt32_9 = 1132;
+private UInt32 __gintnl_SystemUInt32_8 = 1108;
+private UInt32 __gintnl_SystemUInt32_5 = 344;
+private UInt32 __gintnl_SystemUInt32_4 = 228;
+private UInt32 __gintnl_SystemUInt32_7 = 1076;
+private UInt32 __gintnl_SystemUInt32_6 = 464;
+private UInt32 __gintnl_SystemUInt32_1 = 40;
+private UInt32 __gintnl_SystemUInt32_0 = 24;
+private UInt32 __gintnl_SystemUInt32_3 = 72;
+private UInt32 __gintnl_SystemUInt32_2 = 56;
+private Boolean __const_SystemBoolean_0 = true;
+private Boolean __const_SystemBoolean_1 = false;
+private Object __intnl_UnityEngineObject_21 = null;
+private Object __intnl_UnityEngineObject_11 = null;
+private Boolean needsRecoveryCheck = false;
+private Boolean __lcl_wasRespawning_SystemBoolean_0 = false;
+public Boolean canRespawn;
+private String __const_SystemString_5 = "QuestInventoryManager";
+private UInt32 __gintnl_SystemUInt32_13 = 1900;
+private UInt32 __gintnl_SystemUInt32_23 = 4812;
+private Component __3__intnlparam = null;
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private VRCPlayerApi onPlayerRestoredPlayer = null;
+private String __intnl_SystemString_6 = null;
+private Object __intnl_UnityEngineObject_19 = null;
+private String __const_SystemString_16 = "__0_GetQuestItemQuantity";
+private String __const_SystemString_17 = "__0___0_GetQuestItemQuantity__ret";
+private String __const_SystemString_14 = ". Hiding pickup as fallback.";
+private String __const_SystemString_15 = "__4_itemId__param";
+private String __const_SystemString_12 = ": inventoryManager not ready, retrying...";
+private String __const_SystemString_13 = "[QuestItemPickup] Recovery check failed: inventoryManager never became available for item ";
+private String __const_SystemString_10 = "[QuestItemPickup] Recovery check ";
+private String __const_SystemString_11 = "/";
+private String __const_SystemString_18 = "[QuestItemPickup] Recovery check passed: item ";
+private String __const_SystemString_19 = " found in inventory (qty: ";
+private Object __intnl_UnityEngineObject_14 = null;
+private Int64 __refl_typeid = -364659975158197781;
+private Single recoveryCheckTime = 0f;
+public GameObject pickupEffectPrefab;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Component __intnl_UnityEngineComponent_0 = null;
+private Boolean __intnl_SystemBoolean_11 = false;
+private Boolean __intnl_SystemBoolean_21 = false;
+private UInt32 __gintnl_SystemUInt32_14 = 2148;
+private UInt32 __gintnl_SystemUInt32_24 = 4828;
+private String __intnl_SystemString_3 = null;
+private UdonBehaviour __0__intnlparam = null;
+private Single __intnl_SystemSingle_2 = 0f;
+private GameObject __7__intnlparam = null;
+private GameObject __lcl_managerObj_UnityEngineGameObject_0 = null;
+private String __const_SystemString_2 = "__0___0_GetItemById__ret";
+private Single __const_SystemSingle_2 = 5f;
+private Boolean __intnl_SystemBoolean_19 = false;
+private Vector3 __intnl_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Boolean __intnl_SystemBoolean_14 = false;
+private Boolean __intnl_SystemBoolean_24 = false;
+private Component[] __intnl_UnityEngineComponentArray_1 = null;
+private Component[] __intnl_UnityEngineComponentArray_0 = null;
+private object __const_SystemObject_0 = null;
+private String __intnl_SystemString_0 = null;
+private Object __intnl_UnityEngineObject_23 = null;
+private Object __intnl_UnityEngineObject_13 = null;
+private Type __const_SystemType_0 = typeof(UdonBehaviour);
+private Single __intnl_SystemSingle_1 = 0f;
+private object __intnl_SystemObject_1 = null;
+private String __const_SystemString_7 = "[QuestItemPickup] Recovery check scheduled for item ";
+private GameObject __4__intnlparam = null;
+private Boolean isPickedUp = false;
+private Single __const_SystemSingle_1 = 3f;
+private UInt32 __gintnl_SystemUInt32_11 = 1332;
+private UInt32 __gintnl_SystemUInt32_21 = 3980;
+private Boolean __lcl_shouldBeVisible_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_17 = false;
+private String __intnl_SystemString_8 = null;
+private Object __intnl_UnityEngineObject_16 = null;
+private Int64 __intnl_SystemInt64_1 = 0;
+private Int64 __intnl_SystemInt64_0 = 0;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+public AudioSource pickupAudioSource;
+private String __const_SystemString_4 = "__0_AddQuestItem";
+private UInt32 __gintnl_SystemUInt32_19 = 2396;
+private UInt32 __gintnl_SystemUInt32_12 = 1620;
+private UInt32 __gintnl_SystemUInt32_22 = 4236;
+private UdonBehaviour __lcl_behaviour_VRCUdonUdonBehaviour_0 = null;
+private Component[] __lcl_udonBehaviours_UnityEngineComponentArray_1 = null;
+private String __intnl_SystemString_5 = null;
+private Boolean isRespawning = false;
+public AudioClip pickupSound;
+private Component __1__intnlparam = null;
+private Object __intnl_UnityEngineObject_15 = null;
+private String __const_SystemString_9 = "s";
+private Boolean __intnl_SystemBoolean_12 = false;
+private Boolean __intnl_SystemBoolean_22 = false;
+private UInt32 __gintnl_SystemUInt32_17 = 2280;
+private Int32 recoveryCheckAttempts = 0;
+private String __refl_typename = "QuestItemPickup";
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Int32 __intnl_SystemInt32_5 = 0;
+private Int32 __intnl_SystemInt32_4 = 0;
+private Int32 __intnl_SystemInt32_7 = 0;
+private Int32 __intnl_SystemInt32_6 = 0;
+private Int32 __intnl_SystemInt32_8 = 0;
+private String __intnl_SystemString_2 = null;
+private VRCPlayerApi __lcl_localPlayer_VRCSDKBaseVRCPlayerApi_1 = null;
+private Transform __this_UnityEngineTransform_0 = this;
+public Boolean debugMode;
+private Int64 __lcl_targetID_SystemInt64_0 = 0;
+private String __const_SystemString_1 = "__0_GetItemById";
+private Transform __intnl_UnityEngineTransform_1 = null;
+private object __lcl_idValue_SystemObject_0 = null;
+private GameObject __5__intnlparam = null;
+private String __intnl_SystemString_14 = null;
+private String __intnl_SystemString_12 = null;
+private String __intnl_SystemString_13 = null;
+private String __intnl_SystemString_10 = null;
+private String __intnl_SystemString_11 = null;
+private Boolean __intnl_SystemBoolean_15 = false;
+private Object __intnl_UnityEngineObject_20 = null;
+private Object __intnl_UnityEngineObject_10 = null;
+private String __const_SystemString_6 = "QuestItemDatabase";
+private UInt32 __gintnl_SystemUInt32_10 = 1316;
+private UInt32 __gintnl_SystemUInt32_20 = 2772;
+public UdonBehaviour inventoryManager;
+private Int32 __lcl_currentQuantity_SystemInt32_0 = 0;
+private String __intnl_SystemString_7 = null;
+public GameObject visualObject;
+private GameObject __this_UnityEngineGameObject_0 = this;
+private Object __intnl_UnityEngineObject_18 = null;
+private String __const_SystemString_26 = "QIP_PickedUp_";
+private String __const_SystemString_27 = "QIP_Respawning_";
+private String __const_SystemString_24 = " not found in inventory after ";
+private String __const_SystemString_25 = " checks. Respawning pickup.";
+private String __const_SystemString_22 = " not in inventory yet, retrying...";
+private String __const_SystemString_23 = "[QuestItemPickup] Recovery: item ";
+private String __const_SystemString_20 = "). Hiding pickup.";
+private String __const_SystemString_21 = ": item ";
+private String __const_SystemString_28 = "__refl_typeid";
+private Object __intnl_UnityEngineObject_17 = null;
+private UInt32 __gintnl_SystemUInt32_18 = 2364;
+private UdonBehaviour __2__intnlparam = null;
+private Component __intnl_UnityEngineComponent_1 = null;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Boolean __intnl_SystemBoolean_20 = false;
+private UInt32 __gintnl_SystemUInt32_15 = 2164;
+private UInt32 __gintnl_SystemUInt32_25 = 5180;
+private Int32 __const_SystemInt32_1 = 1;
+private Int32 __const_SystemInt32_0 = 0;
+private Int32 __const_SystemInt32_2 = 3;
+private UdonBehaviour __lcl_behaviour_VRCUdonUdonBehaviour_1 = null;
+private Component[] __lcl_udonBehaviours_UnityEngineComponentArray_0 = null;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private String __intnl_SystemString_4 = null;
+private UdonBehaviour __lcl_item_VRCUdonUdonBehaviour_0 = null;
+public UdonBehaviour itemDatabase;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_0 = null;
+public Single respawnTime;
+private String __const_SystemString_3 = "__0_quantity__param";
+private String __const_SystemString_8 = " in ";
+private Boolean __intnl_SystemBoolean_18 = false;
+private GameObject __lcl_databaseObj_UnityEngineGameObject_0 = null;
+
+
+public void _start()
+{
+UNDEF_d45fd_1940();
+UNDEF_d45fd_1968();
+UNDEF_d45fd_2104();
+UNDEF_d45fd_2640();
+}
+public void _update()
+{
+if (isRespawning)
+{
+__intnl_SystemSingle_0 = Time.deltaTime;
+respawnTimer = respawnTimer - __intnl_SystemSingle_0;
+__intnl_SystemBoolean_0 = respawnTimer <= __const_SystemSingle_0;
+if (__intnl_SystemBoolean_0)
+{
+UNDEF_d45fd_2416();
+}
+}
+__intnl_SystemBoolean_0 = needsRecoveryCheck;
+if (__intnl_SystemBoolean_0)
+{
+__intnl_SystemSingle_0 = Time.time;
+__intnl_SystemBoolean_0 = __intnl_SystemSingle_0 >= recoveryCheckTime;
+}
+if (__intnl_SystemBoolean_0)
+{
+UNDEF_d45fd_4992();
+}
+}
+public void _interact()
+{
+__intnl_SystemBoolean_1 = isPickedUp;
+if (__intnl_SystemBoolean_1)
+{
+__intnl_SystemBoolean_1 = !canRespawn;
+}
+if (__intnl_SystemBoolean_1)
+{
+UNDEF_d45fd_2640();
+return;
+}
+if (isRespawning)
+{
+return;
+}
+__intnl_UnityEngineObject_0 = inventoryManager;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_2 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_2)
+{
+__intnl_UnityEngineObject_2 = itemDatabase;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_2 = __intnl_UnityEngineObject_2 != __intnl_UnityEngineObject_3;
+}
+if (__intnl_SystemBoolean_2)
+{
+__intnl_SystemInt32_0 = questItemId;
+itemDatabase.SetProgramVariable(__const_SystemString_0, questItemId);
+itemDatabase.SendCustomEvent(__const_SystemString_1);
+__intnl_SystemObject_0 = itemDatabase.GetProgramVariable(__const_SystemString_2);
+__intnl_VRCUdonUdonBehaviour_0 = (UdonBehaviour)__intnl_SystemObject_0;
+__lcl_item_VRCUdonUdonBehaviour_0 = __intnl_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_4 = __lcl_item_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_3 = __intnl_UnityEngineObject_4 != __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_3)
+{
+__intnl_SystemInt32_1 = questItemId;
+__intnl_SystemInt32_2 = quantity;
+inventoryManager.SetProgramVariable(__const_SystemString_0, questItemId);
+inventoryManager.SetProgramVariable(__const_SystemString_3, quantity);
+inventoryManager.SendCustomEvent(__const_SystemString_4);
+UNDEF_d45fd_3064();
+if (canRespawn)
+{
+UNDEF_d45fd_2300();
+}
+else
+{
+UNDEF_d45fd_2184();
+}
+}
+}
+}
+public void _onPlayerRestored()
+{
+__intnl_SystemBoolean_4 = onPlayerRestoredPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_4)
+{
+}
+else
+{
+__intnl_SystemBoolean_5 = onPlayerRestoredPlayer.isLocal;
+__intnl_SystemBoolean_4 = !__intnl_SystemBoolean_5;
+}
+if (__intnl_SystemBoolean_4)
+{
+return;
+}
+UNDEF_d45fd_5312();
+UNDEF_d45fd_3444();
+}
+private void UNDEF_d45fd_1940()
+{
+__intnl_UnityEngineObject_6 = inventoryManager;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_6 = __intnl_UnityEngineObject_6 == __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_6)
+{
+__lcl_managerObj_UnityEngineGameObject_0 = GameObject.Find(__const_SystemString_5);
+__intnl_UnityEngineObject_8 = __lcl_managerObj_UnityEngineGameObject_0;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_7 = __intnl_UnityEngineObject_8 != __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_7)
+{
+__intnl_UnityEngineTransform_0 = __lcl_managerObj_UnityEngineGameObject_0.transform;
+__1__intnlparam = __intnl_UnityEngineTransform_0;
+UNDEF_d45fd_6304();
+inventoryManager = __0__intnlparam;
+}
+}
+__intnl_UnityEngineObject_8 = itemDatabase;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_7 = __intnl_UnityEngineObject_8 == __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_7)
+{
+__lcl_databaseObj_UnityEngineGameObject_0 = GameObject.Find(__const_SystemString_6);
+__intnl_UnityEngineObject_10 = __lcl_databaseObj_UnityEngineGameObject_0;
+__intnl_UnityEngineObject_11 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_8 = __intnl_UnityEngineObject_10 != __intnl_UnityEngineObject_11;
+if (__intnl_SystemBoolean_8)
+{
+__intnl_UnityEngineTransform_0 = __lcl_databaseObj_UnityEngineGameObject_0.transform;
+__3__intnlparam = __intnl_UnityEngineTransform_0;
+UNDEF_d45fd_6812();
+itemDatabase = __2__intnlparam;
+}
+}
+}
+private void UNDEF_d45fd_1968()
+{
+}
+private void UNDEF_d45fd_2104()
+{
+__intnl_UnityEngineObject_12 = visualObject;
+__intnl_UnityEngineObject_13 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_9 = __intnl_UnityEngineObject_12 == __intnl_UnityEngineObject_13;
+if (__intnl_SystemBoolean_9)
+{
+visualObject = __this_UnityEngineGameObject_0;
+}
+}
+private void UNDEF_d45fd_2184()
+{
+isPickedUp = __const_SystemBoolean_0;
+UNDEF_d45fd_2640();
+UNDEF_d45fd_5396();
+}
+private void UNDEF_d45fd_2300()
+{
+isRespawning = __const_SystemBoolean_0;
+respawnTimer = respawnTime;
+UNDEF_d45fd_2640();
+if (canRespawn)
+{
+UNDEF_d45fd_5712();
+}
+}
+private void UNDEF_d45fd_2416()
+{
+isRespawning = __const_SystemBoolean_1;
+isPickedUp = __const_SystemBoolean_1;
+UNDEF_d45fd_2640();
+if (canRespawn)
+{
+UNDEF_d45fd_5796();
+}
+}
+private void UNDEF_d45fd_2640()
+{
+__intnl_SystemBoolean_10 = !isPickedUp;
+if (__intnl_SystemBoolean_10)
+{
+__intnl_SystemBoolean_10 = !isRespawning;
+}
+__lcl_shouldBeVisible_SystemBoolean_0 = __intnl_SystemBoolean_10;
+__intnl_UnityEngineObject_14 = visualObject;
+__intnl_UnityEngineObject_15 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_11 = __intnl_UnityEngineObject_14 != __intnl_UnityEngineObject_15;
+if (__intnl_SystemBoolean_11)
+{
+visualObject.SetActive(__lcl_shouldBeVisible_SystemBoolean_0);
+}
+}
+private void UNDEF_d45fd_3064()
+{
+__intnl_UnityEngineObject_16 = pickupEffectPrefab;
+__intnl_UnityEngineObject_17 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_12 = __intnl_UnityEngineObject_16 != __intnl_UnityEngineObject_17;
+if (__intnl_SystemBoolean_12)
+{
+__5__intnlparam = pickupEffectPrefab;
+UNDEF_d45fd_6876();
+__intnl_UnityEngineTransform_1 = __4__intnlparam.transform;
+__intnl_UnityEngineVector3_0 = __this_UnityEngineTransform_0.position;
+__intnl_UnityEngineTransform_1.position = __intnl_UnityEngineVector3_0;
+}
+__intnl_UnityEngineObject_18 = pickupAudioSource;
+__intnl_UnityEngineObject_19 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_13 = __intnl_UnityEngineObject_18 != __intnl_UnityEngineObject_19;
+if (__intnl_SystemBoolean_13)
+{
+__intnl_UnityEngineObject_20 = pickupSound;
+__intnl_UnityEngineObject_21 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_13 = __intnl_UnityEngineObject_20 != __intnl_UnityEngineObject_21;
+}
+if (__intnl_SystemBoolean_13)
+{
+pickupAudioSource.PlayOneShot(pickupSound);
+}
+}
+private void UNDEF_d45fd_3444()
+{
+__intnl_SystemBoolean_14 = !isPickedUp;
+if (__intnl_SystemBoolean_14)
+{
+}
+else
+{
+__intnl_SystemBoolean_14 = canRespawn;
+}
+if (__intnl_SystemBoolean_14)
+{
+return;
+}
+needsRecoveryCheck = __const_SystemBoolean_0;
+recoveryCheckAttempts = __const_SystemInt32_0;
+__intnl_SystemSingle_1 = Time.time;
+recoveryCheckTime = __intnl_SystemSingle_1 + __const_SystemSingle_1;
+if (debugMode)
+{
+__intnl_SystemString_0 = String.Concat(__const_SystemString_7, questItemId);
+__intnl_SystemString_1 = __intnl_SystemString_0 + __const_SystemString_8;
+__intnl_SystemString_2 = String.Concat(__intnl_SystemString_1, __const_SystemSingle_1);
+__intnl_SystemString_3 = __intnl_SystemString_2 + __const_SystemString_9;
+Debug.Log(__intnl_SystemString_3);
+}
+}
+private void UNDEF_d45fd_4992()
+{
+recoveryCheckAttempts = recoveryCheckAttempts + __const_SystemInt32_1;
+__intnl_UnityEngineObject_22 = inventoryManager;
+__intnl_UnityEngineObject_23 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_15 = __intnl_UnityEngineObject_22 == __intnl_UnityEngineObject_23;
+if (__intnl_SystemBoolean_15)
+{
+__intnl_SystemBoolean_16 = recoveryCheckAttempts < __const_SystemInt32_2;
+if (__intnl_SystemBoolean_16)
+{
+__intnl_SystemSingle_2 = Time.time;
+recoveryCheckTime = __intnl_SystemSingle_2 + __const_SystemSingle_2;
+if (debugMode)
+{
+__intnl_SystemString_4 = String.Concat(__const_SystemString_10, recoveryCheckAttempts);
+__intnl_SystemString_5 = __intnl_SystemString_4 + __const_SystemString_11;
+__intnl_SystemString_6 = String.Concat(__intnl_SystemString_5, __const_SystemInt32_2);
+__intnl_SystemString_7 = __intnl_SystemString_6 + __const_SystemString_12;
+Debug.Log(__intnl_SystemString_7);
+}
+return;
+}
+if (debugMode)
+{
+__intnl_SystemString_4 = String.Concat(__const_SystemString_13, questItemId);
+__intnl_SystemString_5 = __intnl_SystemString_4 + __const_SystemString_14;
+Debug.LogWarning(__intnl_SystemString_5);
+}
+needsRecoveryCheck = __const_SystemBoolean_1;
+UNDEF_d45fd_2640();
+return;
+}
+__intnl_SystemInt32_3 = questItemId;
+inventoryManager.SetProgramVariable(__const_SystemString_15, questItemId);
+inventoryManager.SendCustomEvent(__const_SystemString_16);
+__intnl_SystemObject_1 = inventoryManager.GetProgramVariable(__const_SystemString_17);
+__intnl_SystemInt32_4 = Convert.ToInt32(__intnl_SystemObject_1);
+__lcl_currentQuantity_SystemInt32_0 = __intnl_SystemInt32_4;
+__intnl_SystemBoolean_16 = __lcl_currentQuantity_SystemInt32_0 >= quantity;
+if (__intnl_SystemBoolean_16)
+{
+needsRecoveryCheck = __const_SystemBoolean_1;
+UNDEF_d45fd_2640();
+if (debugMode)
+{
+__intnl_SystemString_4 = String.Concat(__const_SystemString_18, questItemId);
+__intnl_SystemString_5 = __intnl_SystemString_4 + __const_SystemString_19;
+__intnl_SystemString_6 = String.Concat(__intnl_SystemString_5, __lcl_currentQuantity_SystemInt32_0);
+__intnl_SystemString_7 = __intnl_SystemString_6 + __const_SystemString_20;
+Debug.Log(__intnl_SystemString_7);
+}
+return;
+}
+__intnl_SystemBoolean_17 = recoveryCheckAttempts < __const_SystemInt32_2;
+if (__intnl_SystemBoolean_17)
+{
+__intnl_SystemSingle_2 = Time.time;
+recoveryCheckTime = __intnl_SystemSingle_2 + __const_SystemSingle_2;
+if (debugMode)
+{
+__intnl_SystemString_4 = String.Concat(__const_SystemString_10, recoveryCheckAttempts);
+__intnl_SystemString_5 = __intnl_SystemString_4 + __const_SystemString_11;
+__intnl_SystemString_6 = String.Concat(__intnl_SystemString_5, __const_SystemInt32_2);
+__intnl_SystemString_7 = __intnl_SystemString_6 + __const_SystemString_21;
+__intnl_SystemString_8 = String.Concat(__intnl_SystemString_7, questItemId);
+__intnl_SystemString_9 = __intnl_SystemString_8 + __const_SystemString_22;
+Debug.Log(__intnl_SystemString_9);
+}
+return;
+}
+needsRecoveryCheck = __const_SystemBoolean_1;
+isPickedUp = __const_SystemBoolean_1;
+UNDEF_d45fd_5396();
+UNDEF_d45fd_2640();
+__intnl_SystemString_4 = String.Concat(__const_SystemString_23, questItemId);
+__intnl_SystemString_5 = __intnl_SystemString_4 + __const_SystemString_24;
+__intnl_SystemString_6 = String.Concat(__intnl_SystemString_5, __const_SystemInt32_2);
+__intnl_SystemString_7 = __intnl_SystemString_6 + __const_SystemString_25;
+Debug.Log(__intnl_SystemString_7);
+}
+private void UNDEF_d45fd_5312()
+{
+__lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0 = Networking.LocalPlayer;
+__intnl_SystemBoolean_18 = __lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0 == __const_SystemObject_0;
+if (__intnl_SystemBoolean_18)
+{
+return;
+}
+__intnl_SystemString_10 = String.Concat(__const_SystemString_26, questItemId);
+isPickedUp = PlayerData.GetBool(__lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0, __intnl_SystemString_10);
+if (canRespawn)
+{
+UNDEF_d45fd_5628();
+}
+__intnl_SystemBoolean_19 = isPickedUp;
+if (__intnl_SystemBoolean_19)
+{
+__intnl_SystemBoolean_19 = !canRespawn;
+}
+if (__intnl_SystemBoolean_19)
+{
+return;
+}
+UNDEF_d45fd_2640();
+}
+private void UNDEF_d45fd_5396()
+{
+__intnl_SystemString_11 = String.Concat(__const_SystemString_26, questItemId);
+PlayerData.SetBool(__intnl_SystemString_11, isPickedUp);
+}
+private void UNDEF_d45fd_5628()
+{
+__lcl_localPlayer_VRCSDKBaseVRCPlayerApi_1 = Networking.LocalPlayer;
+__intnl_SystemBoolean_20 = __lcl_localPlayer_VRCSDKBaseVRCPlayerApi_1 == __const_SystemObject_0;
+if (__intnl_SystemBoolean_20)
+{
+return;
+}
+__intnl_SystemString_12 = String.Concat(__const_SystemString_27, questItemId);
+__lcl_wasRespawning_SystemBoolean_0 = PlayerData.GetBool(__lcl_localPlayer_VRCSDKBaseVRCPlayerApi_1, __intnl_SystemString_12);
+if (__lcl_wasRespawning_SystemBoolean_0)
+{
+isRespawning = __const_SystemBoolean_0;
+respawnTimer = respawnTime;
+}
+}
+private void UNDEF_d45fd_5712()
+{
+__intnl_SystemString_13 = String.Concat(__const_SystemString_27, questItemId);
+PlayerData.SetBool(__intnl_SystemString_13, __const_SystemBoolean_0);
+}
+private void UNDEF_d45fd_5796()
+{
+__intnl_SystemString_14 = String.Concat(__const_SystemString_27, questItemId);
+PlayerData.SetBool(__intnl_SystemString_14, __const_SystemBoolean_1);
+}
+private void UNDEF_d45fd_6304()
+{
+__intnl_UnityEngineComponentArray_0 = __1__intnlparam.GetComponents(__const_SystemType_0);
+__lcl_udonBehaviours_UnityEngineComponentArray_0 = __intnl_UnityEngineComponentArray_0;
+__lcl_targetID_SystemInt64_0 = __const_SystemInt64_0;
+__intnl_SystemInt32_5 = __lcl_udonBehaviours_UnityEngineComponentArray_0.Length;
+__intnl_SystemInt32_6 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_21 = __intnl_SystemInt32_6 < __intnl_SystemInt32_5;
+if (__intnl_SystemBoolean_21)
+{
+break;
+}
+__lcl_behaviour_VRCUdonUdonBehaviour_0 = (UdonBehaviour)(__lcl_udonBehaviours_UnityEngineComponentArray_0[__intnl_SystemInt32_6]);
+__lcl_idValue_SystemObject_0 = __lcl_behaviour_VRCUdonUdonBehaviour_0.GetProgramVariable(__const_SystemString_28);
+__intnl_SystemBoolean_22 = __lcl_idValue_SystemObject_0 != __const_SystemObject_0;
+if (__intnl_SystemBoolean_22)
+{
+__intnl_SystemInt64_0 = Convert.ToInt64(__lcl_idValue_SystemObject_0);
+__intnl_SystemBoolean_22 = __intnl_SystemInt64_0 == __lcl_targetID_SystemInt64_0;
+}
+if (__intnl_SystemBoolean_22)
+{
+__intnl_UnityEngineComponent_0 = __lcl_behaviour_VRCUdonUdonBehaviour_0;
+__0__intnlparam = (UdonBehaviour)__intnl_UnityEngineComponent_0;
+return;
+}
+__intnl_SystemInt32_6 = __intnl_SystemInt32_6 + __const_SystemInt32_1;
+}
+__0__intnlparam = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+private void UNDEF_d45fd_6812()
+{
+__intnl_UnityEngineComponentArray_1 = __3__intnlparam.GetComponents(__const_SystemType_0);
+__lcl_udonBehaviours_UnityEngineComponentArray_1 = __intnl_UnityEngineComponentArray_1;
+__lcl_targetID_SystemInt64_1 = __const_SystemInt64_1;
+__intnl_SystemInt32_7 = __lcl_udonBehaviours_UnityEngineComponentArray_1.Length;
+__intnl_SystemInt32_8 = __const_SystemInt32_0;
+for (;;)
+{
+__intnl_SystemBoolean_23 = __intnl_SystemInt32_8 < __intnl_SystemInt32_7;
+if (__intnl_SystemBoolean_23)
+{
+break;
+}
+__lcl_behaviour_VRCUdonUdonBehaviour_1 = (UdonBehaviour)(__lcl_udonBehaviours_UnityEngineComponentArray_1[__intnl_SystemInt32_8]);
+__lcl_idValue_SystemObject_1 = __lcl_behaviour_VRCUdonUdonBehaviour_1.GetProgramVariable(__const_SystemString_28);
+__intnl_SystemBoolean_24 = __lcl_idValue_SystemObject_1 != __const_SystemObject_0;
+if (__intnl_SystemBoolean_24)
+{
+__intnl_SystemInt64_1 = Convert.ToInt64(__lcl_idValue_SystemObject_1);
+__intnl_SystemBoolean_24 = __intnl_SystemInt64_1 == __lcl_targetID_SystemInt64_1;
+}
+if (__intnl_SystemBoolean_24)
+{
+__intnl_UnityEngineComponent_1 = __lcl_behaviour_VRCUdonUdonBehaviour_1;
+__2__intnlparam = (UdonBehaviour)__intnl_UnityEngineComponent_1;
+return;
+}
+__intnl_SystemInt32_8 = __intnl_SystemInt32_8 + __const_SystemInt32_1;
+}
+__2__intnlparam = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+private void UNDEF_d45fd_6876()
+{
+__4__intnlparam = Object.Instantiate(__5__intnlparam);
+return;
+}
+private void UNDEF_d45fd_6916()
+{
+__6__intnlparam = (GameObject)__const_SystemObject_0;
+}
+}

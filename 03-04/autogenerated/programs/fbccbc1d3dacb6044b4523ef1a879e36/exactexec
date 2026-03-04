@@ -1,0 +1,1247 @@
+using UnityEngine;
+using System;
+using TMPro;
+using UnityEngine.UI;
+using VRC.Udon.Common.Interfaces;
+using VRC.SDKBase;
+using VRC.Economy;
+using VRC.Udon;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+public AudioSource worldLuckBuffSFXSource;
+public Single worldLuckMultiplierTier2;
+private Boolean __intnl_SystemBoolean_13 = false;
+private Boolean __intnl_SystemBoolean_23 = false;
+private Boolean __intnl_SystemBoolean_33 = false;
+private Boolean __intnl_SystemBoolean_43 = false;
+private Boolean __intnl_SystemBoolean_53 = false;
+private Boolean __intnl_SystemBoolean_63 = false;
+public GameObject luckBuffUI;
+public TextMeshProUGUI worldLuckBuffTimerTextVR;
+private UInt32 __gintnl_SystemUInt32_16 = 5124;
+private UInt32 __gintnl_SystemUInt32_36 = 10440;
+private UInt32 __gintnl_SystemUInt32_26 = 9168;
+private Single __0_seconds__param = 0f;
+private String __intnl_SystemString_1 = null;
+private Boolean __2_active__param = false;
+private Object __intnl_UnityEngineObject_52 = null;
+private Object __intnl_UnityEngineObject_42 = null;
+private Object __intnl_UnityEngineObject_32 = null;
+private Object __intnl_UnityEngineObject_22 = null;
+private Object __intnl_UnityEngineObject_12 = null;
+private Single __intnl_SystemSingle_0 = 0f;
+private Boolean __0_IsWorldLuckBuffActive__ret = false;
+public Image worldLuckBuffMultiplierImage;
+public Sprite worldLuckSpriteTier2;
+private Int32 __lcl_purchasedTier_SystemInt32_0 = 0;
+private String __const_SystemString_0 = "__0_playerName__param";
+private Boolean __0_IsLuckPotionActive__ret = false;
+public TextMeshProUGUI luckBuffTimerTextVR;
+private Single __const_SystemSingle_0 = 0f;
+private Single __lcl_newTierDuration_SystemSingle_0 = 0f;
+private Single __0_GetWeatherLuckBuffTimeRemaining__ret = 0f;
+private Boolean __intnl_SystemBoolean_16 = false;
+private Boolean __intnl_SystemBoolean_26 = false;
+private Boolean __intnl_SystemBoolean_36 = false;
+private Boolean __intnl_SystemBoolean_46 = false;
+private Boolean __intnl_SystemBoolean_56 = false;
+public GameObject worldLuckBuffUI;
+private String __intnl_SystemString_9 = null;
+private Single __0_GetAttractionBuffMultiplier__ret = 0f;
+public TextMeshProUGUI attractionBuffTimerText;
+private UInt32 __gintnl_SystemUInt32_9 = 4016;
+private UInt32 __gintnl_SystemUInt32_8 = 3252;
+private UInt32 __gintnl_SystemUInt32_5 = 1564;
+private UInt32 __gintnl_SystemUInt32_4 = 1440;
+private UInt32 __gintnl_SystemUInt32_7 = 2944;
+private UInt32 __gintnl_SystemUInt32_6 = 2636;
+private UInt32 __gintnl_SystemUInt32_1 = 1136;
+private UInt32 __gintnl_SystemUInt32_0 = 1012;
+private UInt32 __gintnl_SystemUInt32_3 = 1360;
+private UInt32 __gintnl_SystemUInt32_2 = 1216;
+private Boolean __const_SystemBoolean_0 = false;
+private Boolean __const_SystemBoolean_1 = true;
+private Object __intnl_UnityEngineObject_61 = null;
+private Object __intnl_UnityEngineObject_51 = null;
+private Object __intnl_UnityEngineObject_41 = null;
+private Object __intnl_UnityEngineObject_31 = null;
+private Object __intnl_UnityEngineObject_21 = null;
+private Object __intnl_UnityEngineObject_11 = null;
+private Sprite __0___0_GetSpriteForTier__ret = null;
+private Boolean weatherLuckBuffActive = false;
+private String __const_SystemString_5 = "OnWorldLuckBuffTier3Purchased";
+public Single luckPotionMultiplier;
+public GameObject luckBuffUIVR;
+private UInt32 __gintnl_SystemUInt32_13 = 4672;
+private UInt32 __gintnl_SystemUInt32_33 = 10288;
+private UInt32 __gintnl_SystemUInt32_23 = 6576;
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private NetworkEventTarget __const_VRCUdonCommonInterfacesNetworkEventTarget_0 = NetworkEventTarget.All;
+public Single attractionBuffMultiplier;
+private String __intnl_SystemString_6 = null;
+private Object __intnl_UnityEngineObject_59 = null;
+private Object __intnl_UnityEngineObject_49 = null;
+private Object __intnl_UnityEngineObject_39 = null;
+private Object __intnl_UnityEngineObject_29 = null;
+private Object __intnl_UnityEngineObject_19 = null;
+private Single __0_GetLuckBuffMultiplier__ret = 0f;
+private String __const_SystemString_10 = ":";
+private VRCPlayerApi __intnl_VRCSDKBaseVRCPlayerApi_0 = null;
+private Object __intnl_UnityEngineObject_54 = null;
+private Object __intnl_UnityEngineObject_44 = null;
+private Object __intnl_UnityEngineObject_34 = null;
+private Object __intnl_UnityEngineObject_24 = null;
+private Object __intnl_UnityEngineObject_14 = null;
+private Int64 __refl_typeid = 3440852426162148350;
+private Boolean luckBuffActive = false;
+private Boolean __1_active__param = false;
+private Single __lcl_multiplier_SystemSingle_0 = 0f;
+public TextMeshProUGUI attractionBuffTimerTextVR;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+public Single worldLuckDurationTier3;
+private Boolean __intnl_SystemBoolean_11 = false;
+private Boolean __intnl_SystemBoolean_21 = false;
+private Boolean __intnl_SystemBoolean_31 = false;
+private Boolean __intnl_SystemBoolean_41 = false;
+private Boolean __intnl_SystemBoolean_51 = false;
+private Boolean __intnl_SystemBoolean_61 = false;
+public Boolean enableDebugLogs;
+private Int32 __0_tier__param = 0;
+private UInt32 __gintnl_SystemUInt32_14 = 4900;
+private UInt32 __gintnl_SystemUInt32_34 = 10304;
+private UInt32 __gintnl_SystemUInt32_24 = 6700;
+private Single luckBuffTimeRemaining = 0f;
+private String __intnl_SystemString_3 = null;
+private Single __lcl_timePenalty_SystemSingle_0 = 0f;
+private Single __intnl_SystemSingle_2 = 0f;
+private String __const_SystemString_2 = "__0_ShowWorldLuckAnnouncement";
+private Single __const_SystemSingle_2 = 1f;
+private Boolean __intnl_SystemBoolean_19 = false;
+private Boolean __intnl_SystemBoolean_29 = false;
+private Boolean __intnl_SystemBoolean_39 = false;
+private Boolean __intnl_SystemBoolean_49 = false;
+private Boolean __intnl_SystemBoolean_59 = false;
+private Boolean __0_active__param = false;
+private Boolean __intnl_SystemBoolean_14 = false;
+private Boolean __intnl_SystemBoolean_24 = false;
+private Boolean __intnl_SystemBoolean_34 = false;
+private Boolean __intnl_SystemBoolean_44 = false;
+private Boolean __intnl_SystemBoolean_54 = false;
+private object __const_SystemObject_0 = null;
+private String __intnl_SystemString_0 = null;
+private Single __0_GetCurrentWorldLuckMultiplier__ret = 0f;
+private Object __intnl_UnityEngineObject_53 = null;
+private Object __intnl_UnityEngineObject_43 = null;
+private Object __intnl_UnityEngineObject_33 = null;
+private Object __intnl_UnityEngineObject_23 = null;
+private Object __intnl_UnityEngineObject_13 = null;
+private Int32 __4_tier__param = 0;
+private Single __intnl_SystemSingle_1 = 0f;
+private Single __1_durationSeconds__param = 0f;
+private Double __const_SystemDouble_0 = 0;
+private Int32 __lcl_minutes_SystemInt32_0 = 0;
+private String __const_SystemString_7 = "[BuffManager] Blocked unvalidated OnWorldLuckBuffTier2Purchased.";
+private Single __const_SystemSingle_1 = 0.5f;
+public GameObject attractionBuffUIVR;
+private UInt32 __gintnl_SystemUInt32_41 = 12368;
+private UInt32 __gintnl_SystemUInt32_11 = 4392;
+private UInt32 __gintnl_SystemUInt32_31 = 9656;
+private UInt32 __gintnl_SystemUInt32_21 = 6312;
+private Boolean __intnl_SystemBoolean_17 = false;
+private Boolean __intnl_SystemBoolean_27 = false;
+private Boolean __intnl_SystemBoolean_37 = false;
+private Boolean __intnl_SystemBoolean_47 = false;
+private Boolean __intnl_SystemBoolean_57 = false;
+private String __intnl_SystemString_8 = null;
+private Double worldLuckBuffEndServerTime = 0;
+private Boolean worldLuckBuffActive = false;
+private Int32 __lcl_secs_SystemInt32_0 = 0;
+private Boolean __0___0_CanPurchaseTier__ret = false;
+private Object __intnl_UnityEngineObject_56 = null;
+private Object __intnl_UnityEngineObject_46 = null;
+private Object __intnl_UnityEngineObject_36 = null;
+private Object __intnl_UnityEngineObject_26 = null;
+private Object __intnl_UnityEngineObject_16 = null;
+private Double __lcl_now_SystemDouble_0 = 0;
+public GameObject attractionBuffUI;
+private VRCPlayerApi onPurchaseConfirmedPlayer = null;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+public Image worldLuckBuffMultiplierImageVR;
+public GameObject weatherLuckBuffUIVR;
+private String __const_SystemString_4 = "OnWorldLuckBuffTier2Purchased";
+public GameObject worldLuckBuffUIVR;
+public Single worldLuckDurationTier1;
+private UInt32 __gintnl_SystemUInt32_19 = 6036;
+private UInt32 __gintnl_SystemUInt32_39 = 12296;
+private UInt32 __gintnl_SystemUInt32_29 = 9420;
+private UInt32 __gintnl_SystemUInt32_42 = 12404;
+private UInt32 __gintnl_SystemUInt32_12 = 4616;
+private UInt32 __gintnl_SystemUInt32_32 = 9928;
+private UInt32 __gintnl_SystemUInt32_22 = 6328;
+private IProduct __0_product__param = null;
+private Int32 __3_tier__param = 0;
+private IProduct onPurchaseConfirmedResult = null;
+private Int32 localWorldLuckBuffTier = 0;
+private Single __lcl_combined_SystemSingle_0 = 0f;
+private Single __lcl_previousDuration_SystemSingle_0 = 0f;
+private String __intnl_SystemString_5 = null;
+private Double __lcl_remaining_SystemDouble_0 = 0;
+private Object __intnl_UnityEngineObject_55 = null;
+private Object __intnl_UnityEngineObject_45 = null;
+private Object __intnl_UnityEngineObject_35 = null;
+private Object __intnl_UnityEngineObject_25 = null;
+private Object __intnl_UnityEngineObject_15 = null;
+private String __const_SystemString_9 = "D2";
+public Single worldLuckDurationTier2;
+public Single worldLuckMultiplierTier3;
+private Boolean __intnl_SystemBoolean_12 = false;
+private Boolean __intnl_SystemBoolean_22 = false;
+private Boolean __intnl_SystemBoolean_32 = false;
+private Boolean __intnl_SystemBoolean_42 = false;
+private Boolean __intnl_SystemBoolean_52 = false;
+private Boolean __intnl_SystemBoolean_62 = false;
+private Int32 worldLuckBuffTier = 0;
+private Boolean __0_IsAttractionBuffActive__ret = false;
+private UInt32 __gintnl_SystemUInt32_17 = 5140;
+private UInt32 __gintnl_SystemUInt32_37 = 10588;
+private UInt32 __gintnl_SystemUInt32_27 = 9184;
+private String __refl_typename = "BuffManager";
+private String __intnl_SystemString_2 = null;
+private Int32 __0_GetWorldLuckBuffTier__ret = 0;
+private Single __0___0_GetWorldLuckDurationForTier__ret = 0f;
+public UdonProduct worldLuckProductTier2;
+public UdonProduct worldLuckProductTier3;
+public UdonProduct worldLuckProductTier1;
+public Sprite worldLuckSpriteTier3;
+private String __const_SystemString_1 = "__0_tier__param";
+public GameObject weatherLuckBuffUI;
+private Single __0_GetLuckPotionTimeRemaining__ret = 0f;
+private Single __const_SystemSingle_3 = 60f;
+private Double __intnl_SystemDouble_0 = 0;
+private Boolean __0_IsWeatherLuckBuffActive__ret = false;
+private Boolean __intnl_SystemBoolean_15 = false;
+private Boolean __intnl_SystemBoolean_25 = false;
+private Boolean __intnl_SystemBoolean_35 = false;
+private Boolean __intnl_SystemBoolean_45 = false;
+private Boolean __intnl_SystemBoolean_55 = false;
+private Sprite __lcl_tierSprite_UnityEngineSprite_0 = null;
+private Object __intnl_UnityEngineObject_60 = null;
+private Object __intnl_UnityEngineObject_50 = null;
+private Object __intnl_UnityEngineObject_40 = null;
+private Object __intnl_UnityEngineObject_30 = null;
+private Object __intnl_UnityEngineObject_20 = null;
+private Object __intnl_UnityEngineObject_10 = null;
+private Single __0___0_GetWorldLuckMultiplierForTier__ret = 0f;
+private Single __lcl_duration_SystemSingle_0 = 0f;
+private Single __0_GetWorldLuckBuffTimeRemaining__ret = 0f;
+private String __const_SystemString_6 = "[BuffManager] Blocked unvalidated OnWorldLuckBuffTier1Purchased.";
+private Boolean __0_IsAnyLuckBuffActive__ret = false;
+private UInt32 __gintnl_SystemUInt32_40 = 12332;
+private UInt32 __gintnl_SystemUInt32_10 = 4376;
+private UInt32 __gintnl_SystemUInt32_30 = 9640;
+private UInt32 __gintnl_SystemUInt32_20 = 6180;
+public UdonBehaviour announcementManager;
+private Int32 __2_tier__param = 0;
+private String __intnl_SystemString_7 = null;
+private String __0___0_FormatTime__ret = null;
+private GameObject __this_UnityEngineGameObject_0 = this;
+private Boolean attractionBuffActive = false;
+private Object __intnl_UnityEngineObject_58 = null;
+private Object __intnl_UnityEngineObject_48 = null;
+private Object __intnl_UnityEngineObject_38 = null;
+private Object __intnl_UnityEngineObject_28 = null;
+private Object __intnl_UnityEngineObject_18 = null;
+private Object __intnl_UnityEngineObject_57 = null;
+private Object __intnl_UnityEngineObject_47 = null;
+private Object __intnl_UnityEngineObject_37 = null;
+private Object __intnl_UnityEngineObject_27 = null;
+private Object __intnl_UnityEngineObject_17 = null;
+public Single weatherLuckMultiplier;
+public TextMeshProUGUI luckBuffTimerText;
+private Double __lcl_now_SystemDouble_1 = 0;
+private Single attractionBuffTimeRemaining = 0f;
+private UInt32 __gintnl_SystemUInt32_18 = 5220;
+private UInt32 __gintnl_SystemUInt32_38 = 10864;
+private UInt32 __gintnl_SystemUInt32_28 = 9404;
+public Single worldLuckMultiplierTier1;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Boolean __intnl_SystemBoolean_20 = false;
+private Boolean __intnl_SystemBoolean_30 = false;
+private Boolean __intnl_SystemBoolean_40 = false;
+private Boolean __intnl_SystemBoolean_50 = false;
+private Boolean __intnl_SystemBoolean_60 = false;
+private UInt32 __gintnl_SystemUInt32_15 = 5108;
+private UInt32 __gintnl_SystemUInt32_35 = 10320;
+private UInt32 __gintnl_SystemUInt32_25 = 7140;
+public TextMeshProUGUI worldLuckBuffTimerText;
+private Int32 __const_SystemInt32_1 = 1;
+private Int32 __const_SystemInt32_0 = 0;
+private Int32 __const_SystemInt32_3 = 3;
+private Int32 __const_SystemInt32_2 = 2;
+private Single __0_durationSeconds__param = 0f;
+private Boolean __3_active__param = false;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private Int32 __0___0_GetTierForProduct__ret = 0;
+private String __intnl_SystemString_4 = null;
+private Boolean onPurchaseConfirmedPurchasedNow = false;
+private String __lcl_time_SystemString_2 = null;
+private String __lcl_time_SystemString_0 = null;
+private String __lcl_time_SystemString_1 = null;
+public AudioClip worldLuckBuffSFXClip;
+private Single __0_GetAttractionBuffTimeRemaining__ret = 0f;
+public Sprite worldLuckSpriteTier1;
+private Single __2_durationSeconds__param = 0f;
+private String __const_SystemString_3 = "OnWorldLuckBuffTier1Purchased";
+private UdonBehaviour __this_VRCUdonUdonBehaviour_3 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_2 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_1 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_0 = this;
+private Single __lcl_timeElapsed_SystemSingle_0 = 0f;
+private String __const_SystemString_8 = "[BuffManager] Blocked unvalidated OnWorldLuckBuffTier3Purchased.";
+private Single worldLuckBuffTimeRemaining = 0f;
+private Boolean __intnl_SystemBoolean_18 = false;
+private Boolean __intnl_SystemBoolean_28 = false;
+private Boolean __intnl_SystemBoolean_38 = false;
+private Boolean __intnl_SystemBoolean_48 = false;
+private Boolean __intnl_SystemBoolean_58 = false;
+private Int32 __1_tier__param = 0;
+
+
+public void _start()
+{
+__intnl_UnityEngineObject_0 = luckBuffUI;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_0)
+{
+luckBuffUI.SetActive(__const_SystemBoolean_0);
+}
+__intnl_UnityEngineObject_2 = luckBuffUIVR;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_1 = __intnl_UnityEngineObject_2 != __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_1)
+{
+luckBuffUIVR.SetActive(__const_SystemBoolean_0);
+}
+__intnl_UnityEngineObject_4 = worldLuckBuffUI;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_2 = __intnl_UnityEngineObject_4 != __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_2)
+{
+worldLuckBuffUI.SetActive(__const_SystemBoolean_0);
+}
+__intnl_UnityEngineObject_6 = worldLuckBuffUIVR;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_3 = __intnl_UnityEngineObject_6 != __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_3)
+{
+worldLuckBuffUIVR.SetActive(__const_SystemBoolean_0);
+}
+__intnl_UnityEngineObject_8 = weatherLuckBuffUI;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_4 = __intnl_UnityEngineObject_8 != __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_4)
+{
+weatherLuckBuffUI.SetActive(__const_SystemBoolean_0);
+}
+__intnl_UnityEngineObject_10 = weatherLuckBuffUIVR;
+__intnl_UnityEngineObject_11 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_5 = __intnl_UnityEngineObject_10 != __intnl_UnityEngineObject_11;
+if (__intnl_SystemBoolean_5)
+{
+weatherLuckBuffUIVR.SetActive(__const_SystemBoolean_0);
+}
+__intnl_UnityEngineObject_12 = attractionBuffUI;
+__intnl_UnityEngineObject_13 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_6 = __intnl_UnityEngineObject_12 != __intnl_UnityEngineObject_13;
+if (__intnl_SystemBoolean_6)
+{
+attractionBuffUI.SetActive(__const_SystemBoolean_0);
+}
+__intnl_UnityEngineObject_14 = attractionBuffUIVR;
+__intnl_UnityEngineObject_15 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_7 = __intnl_UnityEngineObject_14 != __intnl_UnityEngineObject_15;
+if (__intnl_SystemBoolean_7)
+{
+attractionBuffUIVR.SetActive(__const_SystemBoolean_0);
+}
+}
+public void _update()
+{
+if (luckBuffActive)
+{
+__intnl_SystemSingle_0 = Time.deltaTime;
+luckBuffTimeRemaining = luckBuffTimeRemaining - __intnl_SystemSingle_0;
+UNDEF_fbccb_2900();
+__intnl_SystemBoolean_8 = luckBuffTimeRemaining <= __const_SystemSingle_0;
+if (__intnl_SystemBoolean_8)
+{
+luckBuffActive = __const_SystemBoolean_0;
+luckBuffTimeRemaining = __const_SystemSingle_0;
+__0_active__param = __const_SystemBoolean_0;
+UNDEF_fbccb_1836();
+}
+}
+if (worldLuckBuffActive)
+{
+__intnl_SystemSingle_0 = Time.deltaTime;
+worldLuckBuffTimeRemaining = worldLuckBuffTimeRemaining - __intnl_SystemSingle_0;
+UNDEF_fbccb_3208();
+__intnl_SystemBoolean_8 = worldLuckBuffTimeRemaining <= __const_SystemSingle_0;
+if (__intnl_SystemBoolean_8)
+{
+worldLuckBuffActive = __const_SystemBoolean_0;
+worldLuckBuffTimeRemaining = __const_SystemSingle_0;
+localWorldLuckBuffTier = __const_SystemInt32_0;
+__1_active__param = __const_SystemBoolean_0;
+UNDEF_fbccb_2088();
+}
+}
+if (attractionBuffActive)
+{
+__intnl_SystemSingle_0 = Time.deltaTime;
+attractionBuffTimeRemaining = attractionBuffTimeRemaining - __intnl_SystemSingle_0;
+UNDEF_fbccb_4280();
+__intnl_SystemBoolean_8 = attractionBuffTimeRemaining <= __const_SystemSingle_0;
+if (__intnl_SystemBoolean_8)
+{
+attractionBuffActive = __const_SystemBoolean_0;
+attractionBuffTimeRemaining = __const_SystemSingle_0;
+__3_active__param = __const_SystemBoolean_0;
+UNDEF_fbccb_2592();
+}
+}
+}
+private void UNDEF_fbccb_1836()
+{
+__intnl_UnityEngineObject_16 = luckBuffUI;
+__intnl_UnityEngineObject_17 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_9 = __intnl_UnityEngineObject_16 != __intnl_UnityEngineObject_17;
+if (__intnl_SystemBoolean_9)
+{
+luckBuffUI.SetActive(__0_active__param);
+}
+__intnl_UnityEngineObject_18 = luckBuffUIVR;
+__intnl_UnityEngineObject_19 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_10 = __intnl_UnityEngineObject_18 != __intnl_UnityEngineObject_19;
+if (__intnl_SystemBoolean_10)
+{
+luckBuffUIVR.SetActive(__0_active__param);
+}
+}
+private void UNDEF_fbccb_2088()
+{
+__intnl_UnityEngineObject_20 = worldLuckBuffUI;
+__intnl_UnityEngineObject_21 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_11 = __intnl_UnityEngineObject_20 != __intnl_UnityEngineObject_21;
+if (__intnl_SystemBoolean_11)
+{
+worldLuckBuffUI.SetActive(__1_active__param);
+}
+__intnl_UnityEngineObject_22 = worldLuckBuffUIVR;
+__intnl_UnityEngineObject_23 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_12 = __intnl_UnityEngineObject_22 != __intnl_UnityEngineObject_23;
+if (__intnl_SystemBoolean_12)
+{
+worldLuckBuffUIVR.SetActive(__1_active__param);
+}
+}
+private void UNDEF_fbccb_2340()
+{
+__intnl_UnityEngineObject_24 = weatherLuckBuffUI;
+__intnl_UnityEngineObject_25 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_13 = __intnl_UnityEngineObject_24 != __intnl_UnityEngineObject_25;
+if (__intnl_SystemBoolean_13)
+{
+weatherLuckBuffUI.SetActive(__2_active__param);
+}
+__intnl_UnityEngineObject_26 = weatherLuckBuffUIVR;
+__intnl_UnityEngineObject_27 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_14 = __intnl_UnityEngineObject_26 != __intnl_UnityEngineObject_27;
+if (__intnl_SystemBoolean_14)
+{
+weatherLuckBuffUIVR.SetActive(__2_active__param);
+}
+}
+private void UNDEF_fbccb_2592()
+{
+__intnl_UnityEngineObject_28 = attractionBuffUI;
+__intnl_UnityEngineObject_29 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_15 = __intnl_UnityEngineObject_28 != __intnl_UnityEngineObject_29;
+if (__intnl_SystemBoolean_15)
+{
+attractionBuffUI.SetActive(__3_active__param);
+}
+__intnl_UnityEngineObject_30 = attractionBuffUIVR;
+__intnl_UnityEngineObject_31 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_16 = __intnl_UnityEngineObject_30 != __intnl_UnityEngineObject_31;
+if (__intnl_SystemBoolean_16)
+{
+attractionBuffUIVR.SetActive(__3_active__param);
+}
+}
+private void UNDEF_fbccb_2900()
+{
+__0_seconds__param = luckBuffTimeRemaining;
+__0_FormatTime();
+__lcl_time_SystemString_0 = __0___0_FormatTime__ret;
+__intnl_UnityEngineObject_32 = luckBuffTimerText;
+__intnl_UnityEngineObject_33 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_17 = __intnl_UnityEngineObject_32 != __intnl_UnityEngineObject_33;
+if (__intnl_SystemBoolean_17)
+{
+luckBuffTimerText.text = __lcl_time_SystemString_0;
+}
+__intnl_UnityEngineObject_34 = luckBuffTimerTextVR;
+__intnl_UnityEngineObject_35 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_18 = __intnl_UnityEngineObject_34 != __intnl_UnityEngineObject_35;
+if (__intnl_SystemBoolean_18)
+{
+luckBuffTimerTextVR.text = __lcl_time_SystemString_0;
+}
+}
+private void UNDEF_fbccb_3208()
+{
+__0_seconds__param = worldLuckBuffTimeRemaining;
+__0_FormatTime();
+__lcl_time_SystemString_1 = __0___0_FormatTime__ret;
+__intnl_UnityEngineObject_36 = worldLuckBuffTimerText;
+__intnl_UnityEngineObject_37 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_19 = __intnl_UnityEngineObject_36 != __intnl_UnityEngineObject_37;
+if (__intnl_SystemBoolean_19)
+{
+worldLuckBuffTimerText.text = __lcl_time_SystemString_1;
+}
+__intnl_UnityEngineObject_38 = worldLuckBuffTimerTextVR;
+__intnl_UnityEngineObject_39 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_20 = __intnl_UnityEngineObject_38 != __intnl_UnityEngineObject_39;
+if (__intnl_SystemBoolean_20)
+{
+worldLuckBuffTimerTextVR.text = __lcl_time_SystemString_1;
+}
+}
+private void UNDEF_fbccb_3624()
+{
+__0_tier__param = localWorldLuckBuffTier;
+UNDEF_fbccb_3972();
+__lcl_tierSprite_UnityEngineSprite_0 = __0___0_GetSpriteForTier__ret;
+__intnl_UnityEngineObject_40 = __lcl_tierSprite_UnityEngineSprite_0;
+__intnl_UnityEngineObject_41 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_21 = __intnl_UnityEngineObject_40 == __intnl_UnityEngineObject_41;
+if (__intnl_SystemBoolean_21)
+{
+return;
+}
+__intnl_UnityEngineObject_42 = worldLuckBuffMultiplierImage;
+__intnl_UnityEngineObject_43 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_22 = __intnl_UnityEngineObject_42 != __intnl_UnityEngineObject_43;
+if (__intnl_SystemBoolean_22)
+{
+worldLuckBuffMultiplierImage.sprite = __lcl_tierSprite_UnityEngineSprite_0;
+}
+__intnl_UnityEngineObject_44 = worldLuckBuffMultiplierImageVR;
+__intnl_UnityEngineObject_45 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_23 = __intnl_UnityEngineObject_44 != __intnl_UnityEngineObject_45;
+if (__intnl_SystemBoolean_23)
+{
+worldLuckBuffMultiplierImageVR.sprite = __lcl_tierSprite_UnityEngineSprite_0;
+}
+}
+private void UNDEF_fbccb_3972()
+{
+__intnl_SystemBoolean_24 = __0_tier__param == __const_SystemInt32_1;
+if (__intnl_SystemBoolean_24)
+{
+__0___0_GetSpriteForTier__ret = worldLuckSpriteTier1;
+return;
+}
+__intnl_SystemBoolean_25 = __0_tier__param == __const_SystemInt32_2;
+if (__intnl_SystemBoolean_25)
+{
+__0___0_GetSpriteForTier__ret = worldLuckSpriteTier2;
+return;
+}
+__intnl_SystemBoolean_26 = __0_tier__param == __const_SystemInt32_3;
+if (__intnl_SystemBoolean_26)
+{
+__0___0_GetSpriteForTier__ret = worldLuckSpriteTier3;
+return;
+for (;;)
+{
+__0___0_GetSpriteForTier__ret = worldLuckSpriteTier1;
+return;
+}
+}
+}
+private void UNDEF_fbccb_4280()
+{
+__0_seconds__param = attractionBuffTimeRemaining;
+__0_FormatTime();
+__lcl_time_SystemString_2 = __0___0_FormatTime__ret;
+__intnl_UnityEngineObject_46 = attractionBuffTimerText;
+__intnl_UnityEngineObject_47 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_27 = __intnl_UnityEngineObject_46 != __intnl_UnityEngineObject_47;
+if (__intnl_SystemBoolean_27)
+{
+attractionBuffTimerText.text = __lcl_time_SystemString_2;
+}
+__intnl_UnityEngineObject_48 = attractionBuffTimerTextVR;
+__intnl_UnityEngineObject_49 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_28 = __intnl_UnityEngineObject_48 != __intnl_UnityEngineObject_49;
+if (__intnl_SystemBoolean_28)
+{
+attractionBuffTimerTextVR.text = __lcl_time_SystemString_2;
+}
+}
+public void __0_ActivateLuckBuff()
+{
+luckBuffActive = __const_SystemBoolean_1;
+luckBuffTimeRemaining = luckBuffTimeRemaining + __0_durationSeconds__param;
+__0_active__param = __const_SystemBoolean_1;
+UNDEF_fbccb_1836();
+UNDEF_fbccb_2900();
+if (enableDebugLogs)
+{
+}
+}
+public void __0_ActivateWorldLuckBuffAtTier()
+{
+}
+private void UNDEF_fbccb_5176()
+{
+__intnl_SystemBoolean_29 = __1_tier__param < __const_SystemInt32_1;
+if (__intnl_SystemBoolean_29)
+{
+}
+else
+{
+__intnl_SystemBoolean_29 = __1_tier__param > __const_SystemInt32_3;
+}
+if (__intnl_SystemBoolean_29)
+{
+return;
+}
+__2_tier__param = __1_tier__param;
+UNDEF_fbccb_5588();
+__lcl_newTierDuration_SystemSingle_0 = __0___0_GetWorldLuckDurationForTier__ret;
+__3_tier__param = __1_tier__param;
+UNDEF_fbccb_5936();
+__lcl_multiplier_SystemSingle_0 = __0___0_GetWorldLuckMultiplierForTier__ret;
+__lcl_timePenalty_SystemSingle_0 = __const_SystemSingle_0;
+__intnl_SystemBoolean_31 = worldLuckBuffActive;
+if (__intnl_SystemBoolean_31)
+{
+__intnl_SystemBoolean_31 = localWorldLuckBuffTier > __const_SystemInt32_0;
+}
+__intnl_SystemBoolean_30 = __intnl_SystemBoolean_31;
+if (__intnl_SystemBoolean_30)
+{
+__intnl_SystemBoolean_30 = __1_tier__param > localWorldLuckBuffTier;
+}
+if (__intnl_SystemBoolean_30)
+{
+__2_tier__param = localWorldLuckBuffTier;
+UNDEF_fbccb_5588();
+__lcl_previousDuration_SystemSingle_0 = __0___0_GetWorldLuckDurationForTier__ret;
+__lcl_timeElapsed_SystemSingle_0 = __lcl_previousDuration_SystemSingle_0 - worldLuckBuffTimeRemaining;
+__lcl_timePenalty_SystemSingle_0 = __lcl_timeElapsed_SystemSingle_0 * __const_SystemSingle_1;
+if (enableDebugLogs)
+{
+}
+}
+worldLuckBuffActive = __const_SystemBoolean_1;
+localWorldLuckBuffTier = __1_tier__param;
+worldLuckBuffTimeRemaining = __lcl_newTierDuration_SystemSingle_0 - __lcl_timePenalty_SystemSingle_0;
+__1_active__param = __const_SystemBoolean_1;
+UNDEF_fbccb_2088();
+UNDEF_fbccb_3208();
+UNDEF_fbccb_3624();
+if (enableDebugLogs)
+{
+}
+}
+public void __0_ActivateWorldLuckBuff()
+{
+__1_tier__param = __const_SystemInt32_1;
+__0_ActivateWorldLuckBuffAtTier();
+}
+private void UNDEF_fbccb_5588()
+{
+__intnl_SystemBoolean_32 = __2_tier__param == __const_SystemInt32_1;
+if (__intnl_SystemBoolean_32)
+{
+__0___0_GetWorldLuckDurationForTier__ret = worldLuckDurationTier1;
+return;
+}
+__intnl_SystemBoolean_33 = __2_tier__param == __const_SystemInt32_2;
+if (__intnl_SystemBoolean_33)
+{
+__0___0_GetWorldLuckDurationForTier__ret = worldLuckDurationTier2;
+return;
+}
+__intnl_SystemBoolean_34 = __2_tier__param == __const_SystemInt32_3;
+if (__intnl_SystemBoolean_34)
+{
+__0___0_GetWorldLuckDurationForTier__ret = worldLuckDurationTier3;
+return;
+for (;;)
+{
+__0___0_GetWorldLuckDurationForTier__ret = worldLuckDurationTier1;
+return;
+}
+}
+}
+private void UNDEF_fbccb_5936()
+{
+__intnl_SystemBoolean_35 = __3_tier__param == __const_SystemInt32_1;
+if (__intnl_SystemBoolean_35)
+{
+__0___0_GetWorldLuckMultiplierForTier__ret = worldLuckMultiplierTier1;
+return;
+}
+__intnl_SystemBoolean_36 = __3_tier__param == __const_SystemInt32_2;
+if (__intnl_SystemBoolean_36)
+{
+__0___0_GetWorldLuckMultiplierForTier__ret = worldLuckMultiplierTier2;
+return;
+}
+__intnl_SystemBoolean_37 = __3_tier__param == __const_SystemInt32_3;
+if (__intnl_SystemBoolean_37)
+{
+__0___0_GetWorldLuckMultiplierForTier__ret = worldLuckMultiplierTier3;
+return;
+for (;;)
+{
+__0___0_GetWorldLuckMultiplierForTier__ret = __const_SystemSingle_2;
+return;
+}
+}
+}
+public void ActivateWeatherLuckBuff()
+{
+if (weatherLuckBuffActive)
+{
+return;
+}
+weatherLuckBuffActive = __const_SystemBoolean_1;
+__2_active__param = __const_SystemBoolean_1;
+UNDEF_fbccb_2340();
+if (enableDebugLogs)
+{
+}
+}
+public void DeactivateWeatherLuckBuff()
+{
+if (weatherLuckBuffActive)
+{
+UNDEF_fbccb_6216();
+}
+}
+private void UNDEF_fbccb_6216()
+{
+weatherLuckBuffActive = __const_SystemBoolean_0;
+__2_active__param = __const_SystemBoolean_0;
+UNDEF_fbccb_2340();
+if (enableDebugLogs)
+{
+}
+}
+public void __0_ActivateAttractionBuff()
+{
+attractionBuffActive = __const_SystemBoolean_1;
+attractionBuffTimeRemaining = attractionBuffTimeRemaining + __2_durationSeconds__param;
+__3_active__param = __const_SystemBoolean_1;
+UNDEF_fbccb_2592();
+UNDEF_fbccb_4280();
+if (enableDebugLogs)
+{
+}
+}
+public void _onPurchaseConfirmed()
+{
+__intnl_SystemBoolean_38 = onPurchaseConfirmedPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_38)
+{
+}
+else
+{
+__intnl_SystemBoolean_38 = onPurchaseConfirmedResult == __const_SystemObject_0;
+}
+if (__intnl_SystemBoolean_38)
+{
+return;
+}
+if (onPurchaseConfirmedPurchasedNow)
+{
+UNDEF_fbccb_6760();
+}
+}
+private void UNDEF_fbccb_6760()
+{
+__0_product__param = onPurchaseConfirmedResult;
+__0_GetTierForProduct();
+__lcl_purchasedTier_SystemInt32_0 = __0___0_GetTierForProduct__ret;
+__intnl_SystemBoolean_39 = __lcl_purchasedTier_SystemInt32_0 == __const_SystemInt32_0;
+if (__intnl_SystemBoolean_39)
+{
+return;
+}
+__4_tier__param = __lcl_purchasedTier_SystemInt32_0;
+__0_CanPurchaseTier();
+if (__0___0_CanPurchaseTier__ret)
+{
+UNDEF_fbccb_7048();
+}
+if (enableDebugLogs)
+{
+}
+}
+private void UNDEF_fbccb_7048()
+{
+__intnl_UnityEngineObject_50 = announcementManager;
+__intnl_UnityEngineObject_51 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_40 = __intnl_UnityEngineObject_50 != __intnl_UnityEngineObject_51;
+if (__intnl_SystemBoolean_40)
+{
+__intnl_SystemString_0 = onPurchaseConfirmedPlayer.displayName;
+__intnl_VRCSDKBaseVRCPlayerApi_0 = onPurchaseConfirmedPlayer;
+announcementManager.SetProgramVariable(__const_SystemString_0, __intnl_SystemString_0);
+announcementManager.SetProgramVariable(__const_SystemString_1, __lcl_purchasedTier_SystemInt32_0);
+announcementManager.SendCustomEvent(__const_SystemString_2);
+}
+__intnl_SystemBoolean_41 = onPurchaseConfirmedPlayer.isLocal;
+if (__intnl_SystemBoolean_41)
+{
+UNDEF_fbccb_7552();
+}
+}
+private void UNDEF_fbccb_7552()
+{
+__intnl_VRCSDKBaseVRCPlayerApi_0 = Networking.LocalPlayer;
+Networking.SetOwner(__intnl_VRCSDKBaseVRCPlayerApi_0, __this_UnityEngineGameObject_0);
+__lcl_now_SystemDouble_0 = Networking.GetServerTimeInSeconds();
+__2_tier__param = __lcl_purchasedTier_SystemInt32_0;
+UNDEF_fbccb_5588();
+__lcl_duration_SystemSingle_0 = __0___0_GetWorldLuckDurationForTier__ret;
+__intnl_SystemDouble_0 = Convert.ToDouble(__lcl_duration_SystemSingle_0);
+worldLuckBuffEndServerTime = __lcl_now_SystemDouble_0 + __intnl_SystemDouble_0;
+worldLuckBuffTier = __lcl_purchasedTier_SystemInt32_0;
+__this_VRCUdonUdonBehaviour_0.RequestSerialization();
+if (enableDebugLogs)
+{
+}
+__intnl_SystemBoolean_42 = __lcl_purchasedTier_SystemInt32_0 == __const_SystemInt32_1;
+if (__intnl_SystemBoolean_42)
+{
+__this_VRCUdonUdonBehaviour_1.SendCustomNetworkEvent(__const_VRCUdonCommonInterfacesNetworkEventTarget_0, __const_SystemString_3);
+}
+else
+{
+__intnl_SystemBoolean_43 = __lcl_purchasedTier_SystemInt32_0 == __const_SystemInt32_2;
+if (__intnl_SystemBoolean_43)
+{
+__this_VRCUdonUdonBehaviour_2.SendCustomNetworkEvent(__const_VRCUdonCommonInterfacesNetworkEventTarget_0, __const_SystemString_4);
+}
+else
+{
+__intnl_SystemBoolean_44 = __lcl_purchasedTier_SystemInt32_0 == __const_SystemInt32_3;
+if (__intnl_SystemBoolean_44)
+{
+break;
+}
+__this_VRCUdonUdonBehaviour_3.SendCustomNetworkEvent(__const_VRCUdonCommonInterfacesNetworkEventTarget_0, __const_SystemString_5);
+}
+}
+}
+private void __0_GetTierForProduct()
+{
+__intnl_UnityEngineObject_52 = worldLuckProductTier1;
+__intnl_UnityEngineObject_53 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_45 = __intnl_UnityEngineObject_52 != __intnl_UnityEngineObject_53;
+if (__intnl_SystemBoolean_45)
+{
+__intnl_SystemString_1 = __0_product__param.ID;
+__intnl_SystemString_2 = worldLuckProductTier1.ID;
+__intnl_SystemBoolean_45 = __intnl_SystemString_1 == __intnl_SystemString_2;
+}
+if (__intnl_SystemBoolean_45)
+{
+__0___0_GetTierForProduct__ret = __const_SystemInt32_1;
+return;
+}
+__intnl_UnityEngineObject_54 = worldLuckProductTier2;
+__intnl_UnityEngineObject_55 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_46 = __intnl_UnityEngineObject_54 != __intnl_UnityEngineObject_55;
+if (__intnl_SystemBoolean_46)
+{
+__intnl_SystemString_3 = __0_product__param.ID;
+__intnl_SystemString_4 = worldLuckProductTier2.ID;
+__intnl_SystemBoolean_46 = __intnl_SystemString_3 == __intnl_SystemString_4;
+}
+if (__intnl_SystemBoolean_46)
+{
+__0___0_GetTierForProduct__ret = __const_SystemInt32_2;
+return;
+}
+__intnl_UnityEngineObject_56 = worldLuckProductTier3;
+__intnl_UnityEngineObject_57 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_47 = __intnl_UnityEngineObject_56 != __intnl_UnityEngineObject_57;
+if (__intnl_SystemBoolean_47)
+{
+__intnl_SystemString_5 = __0_product__param.ID;
+__intnl_SystemString_6 = worldLuckProductTier3.ID;
+__intnl_SystemBoolean_47 = __intnl_SystemString_5 == __intnl_SystemString_6;
+}
+if (__intnl_SystemBoolean_47)
+{
+__0___0_GetTierForProduct__ret = __const_SystemInt32_3;
+return;
+}
+__0___0_GetTierForProduct__ret = __const_SystemInt32_0;
+return;
+}
+public void __0_CanPurchaseTier()
+{
+__intnl_SystemBoolean_48 = __4_tier__param == __const_SystemInt32_1;
+if (__intnl_SystemBoolean_48)
+{
+__intnl_SystemBoolean_49 = !worldLuckBuffActive;
+if (__intnl_SystemBoolean_49)
+{
+}
+else
+{
+__intnl_SystemBoolean_49 = localWorldLuckBuffTier == __const_SystemInt32_0;
+}
+__0___0_CanPurchaseTier__ret = __intnl_SystemBoolean_49;
+return;
+}
+__intnl_SystemBoolean_50 = __4_tier__param == __const_SystemInt32_2;
+if (__intnl_SystemBoolean_50)
+{
+__intnl_SystemBoolean_51 = worldLuckBuffActive;
+if (__intnl_SystemBoolean_51)
+{
+__intnl_SystemBoolean_51 = localWorldLuckBuffTier == __const_SystemInt32_1;
+}
+__0___0_CanPurchaseTier__ret = __intnl_SystemBoolean_51;
+return;
+}
+__intnl_SystemBoolean_52 = __4_tier__param == __const_SystemInt32_3;
+if (__intnl_SystemBoolean_52)
+{
+__intnl_SystemBoolean_53 = worldLuckBuffActive;
+if (__intnl_SystemBoolean_53)
+{
+__intnl_SystemBoolean_53 = localWorldLuckBuffTier == __const_SystemInt32_2;
+}
+__0___0_CanPurchaseTier__ret = __intnl_SystemBoolean_53;
+return;
+for (;;)
+{
+__0___0_CanPurchaseTier__ret = __const_SystemBoolean_0;
+return;
+}
+}
+}
+public void GetWorldLuckBuffTier()
+{
+if (worldLuckBuffActive)
+{
+__0_GetWorldLuckBuffTier__ret = localWorldLuckBuffTier;
+}
+else
+{
+__0_GetWorldLuckBuffTier__ret = __const_SystemInt32_0;
+}
+return;
+}
+public void OnWorldLuckBuffTier1Purchased()
+{
+__intnl_SystemBoolean_54 = worldLuckBuffTier != __const_SystemInt32_1;
+if (__intnl_SystemBoolean_54)
+{
+}
+else
+{
+__intnl_SystemBoolean_54 = worldLuckBuffEndServerTime <= __const_SystemDouble_0;
+}
+if (__intnl_SystemBoolean_54)
+{
+if (enableDebugLogs)
+{
+Debug.LogWarning(__const_SystemString_6);
+}
+return;
+}
+__1_tier__param = __const_SystemInt32_1;
+__0_ActivateWorldLuckBuffAtTier();
+UNDEF_fbccb_9904();
+}
+public void OnWorldLuckBuffTier2Purchased()
+{
+__intnl_SystemBoolean_55 = worldLuckBuffTier != __const_SystemInt32_2;
+if (__intnl_SystemBoolean_55)
+{
+}
+else
+{
+__intnl_SystemBoolean_55 = worldLuckBuffEndServerTime <= __const_SystemDouble_0;
+}
+if (__intnl_SystemBoolean_55)
+{
+if (enableDebugLogs)
+{
+Debug.LogWarning(__const_SystemString_7);
+}
+return;
+}
+__1_tier__param = __const_SystemInt32_2;
+__0_ActivateWorldLuckBuffAtTier();
+UNDEF_fbccb_9904();
+}
+public void OnWorldLuckBuffTier3Purchased()
+{
+__intnl_SystemBoolean_56 = worldLuckBuffTier != __const_SystemInt32_3;
+if (__intnl_SystemBoolean_56)
+{
+}
+else
+{
+__intnl_SystemBoolean_56 = worldLuckBuffEndServerTime <= __const_SystemDouble_0;
+}
+if (__intnl_SystemBoolean_56)
+{
+if (enableDebugLogs)
+{
+Debug.LogWarning(__const_SystemString_8);
+}
+return;
+}
+__1_tier__param = __const_SystemInt32_3;
+__0_ActivateWorldLuckBuffAtTier();
+UNDEF_fbccb_9904();
+}
+private void UNDEF_fbccb_9904()
+{
+__intnl_UnityEngineObject_58 = worldLuckBuffSFXSource;
+__intnl_UnityEngineObject_59 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_57 = __intnl_UnityEngineObject_58 != __intnl_UnityEngineObject_59;
+if (__intnl_SystemBoolean_57)
+{
+__intnl_UnityEngineObject_60 = worldLuckBuffSFXClip;
+__intnl_UnityEngineObject_61 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_57 = __intnl_UnityEngineObject_60 != __intnl_UnityEngineObject_61;
+}
+if (__intnl_SystemBoolean_57)
+{
+worldLuckBuffSFXSource.PlayOneShot(worldLuckBuffSFXClip);
+}
+}
+public void OnWorldLuckBuffPurchased()
+{
+OnWorldLuckBuffTier1Purchased();
+}
+public void _onDeserialization()
+{
+__intnl_SystemBoolean_58 = worldLuckBuffEndServerTime <= __const_SystemDouble_0;
+if (__intnl_SystemBoolean_58)
+{
+return;
+}
+__intnl_SystemBoolean_59 = worldLuckBuffTier <= __const_SystemInt32_0;
+if (__intnl_SystemBoolean_59)
+{
+return;
+}
+__lcl_now_SystemDouble_1 = Networking.GetServerTimeInSeconds();
+__lcl_remaining_SystemDouble_0 = worldLuckBuffEndServerTime - __lcl_now_SystemDouble_1;
+__intnl_SystemBoolean_60 = __lcl_remaining_SystemDouble_0 > __const_SystemDouble_0;
+if (__intnl_SystemBoolean_60)
+{
+worldLuckBuffActive = __const_SystemBoolean_1;
+localWorldLuckBuffTier = worldLuckBuffTier;
+worldLuckBuffTimeRemaining = Convert.ToSingle(__lcl_remaining_SystemDouble_0);
+__1_active__param = __const_SystemBoolean_1;
+UNDEF_fbccb_2088();
+UNDEF_fbccb_3208();
+UNDEF_fbccb_3624();
+if (enableDebugLogs)
+{
+}
+}
+else
+{
+worldLuckBuffActive = __const_SystemBoolean_0;
+localWorldLuckBuffTier = __const_SystemInt32_0;
+worldLuckBuffTimeRemaining = __const_SystemSingle_0;
+__1_active__param = __const_SystemBoolean_0;
+UNDEF_fbccb_2088();
+}
+}
+public void GetLuckBuffMultiplier()
+{
+__lcl_combined_SystemSingle_0 = __const_SystemSingle_0;
+if (luckBuffActive)
+{
+__lcl_combined_SystemSingle_0 = __lcl_combined_SystemSingle_0 + luckPotionMultiplier;
+}
+if (worldLuckBuffActive)
+{
+__3_tier__param = localWorldLuckBuffTier;
+UNDEF_fbccb_5936();
+__lcl_combined_SystemSingle_0 = __lcl_combined_SystemSingle_0 + __0___0_GetWorldLuckMultiplierForTier__ret;
+}
+if (weatherLuckBuffActive)
+{
+__lcl_combined_SystemSingle_0 = __lcl_combined_SystemSingle_0 + weatherLuckMultiplier;
+}
+__intnl_SystemBoolean_61 = __lcl_combined_SystemSingle_0 > __const_SystemSingle_0;
+if (__intnl_SystemBoolean_61)
+{
+__0_GetLuckBuffMultiplier__ret = __lcl_combined_SystemSingle_0;
+}
+else
+{
+__0_GetLuckBuffMultiplier__ret = __const_SystemSingle_2;
+}
+return;
+}
+public void GetCurrentWorldLuckMultiplier()
+{
+if (worldLuckBuffActive)
+{
+__3_tier__param = localWorldLuckBuffTier;
+UNDEF_fbccb_5936();
+__0_GetCurrentWorldLuckMultiplier__ret = __0___0_GetWorldLuckMultiplierForTier__ret;
+}
+else
+{
+__0_GetCurrentWorldLuckMultiplier__ret = __const_SystemSingle_0;
+}
+return;
+}
+public void GetAttractionBuffMultiplier()
+{
+if (attractionBuffActive)
+{
+__0_GetAttractionBuffMultiplier__ret = attractionBuffMultiplier;
+}
+else
+{
+__0_GetAttractionBuffMultiplier__ret = __const_SystemSingle_2;
+}
+return;
+}
+public void IsLuckPotionActive()
+{
+__0_IsLuckPotionActive__ret = luckBuffActive;
+return;
+}
+public void IsWorldLuckBuffActive()
+{
+__0_IsWorldLuckBuffActive__ret = worldLuckBuffActive;
+return;
+}
+public void IsWeatherLuckBuffActive()
+{
+__0_IsWeatherLuckBuffActive__ret = weatherLuckBuffActive;
+return;
+}
+public void IsAnyLuckBuffActive()
+{
+__intnl_SystemBoolean_63 = luckBuffActive;
+if (__intnl_SystemBoolean_63)
+{
+}
+else
+{
+__intnl_SystemBoolean_63 = worldLuckBuffActive;
+}
+__intnl_SystemBoolean_62 = __intnl_SystemBoolean_63;
+if (__intnl_SystemBoolean_62)
+{
+}
+else
+{
+__intnl_SystemBoolean_62 = weatherLuckBuffActive;
+}
+__0_IsAnyLuckBuffActive__ret = __intnl_SystemBoolean_62;
+return;
+}
+public void IsAttractionBuffActive()
+{
+__0_IsAttractionBuffActive__ret = attractionBuffActive;
+return;
+}
+public void GetLuckPotionTimeRemaining()
+{
+__0_GetLuckPotionTimeRemaining__ret = luckBuffTimeRemaining;
+return;
+}
+public void GetWorldLuckBuffTimeRemaining()
+{
+__0_GetWorldLuckBuffTimeRemaining__ret = worldLuckBuffTimeRemaining;
+return;
+}
+public void GetWeatherLuckBuffTimeRemaining()
+{
+__0_GetWeatherLuckBuffTimeRemaining__ret = __const_SystemSingle_0;
+return;
+}
+public void GetAttractionBuffTimeRemaining()
+{
+__0_GetAttractionBuffTimeRemaining__ret = attractionBuffTimeRemaining;
+return;
+}
+private void __0_FormatTime()
+{
+__intnl_SystemSingle_1 = __0_seconds__param / __const_SystemSingle_3;
+__lcl_minutes_SystemInt32_0 = Mathf.FloorToInt(__intnl_SystemSingle_1);
+__intnl_SystemSingle_2 = __0_seconds__param / __const_SystemSingle_3;
+__lcl_secs_SystemInt32_0 = Mathf.FloorToInt(__intnl_SystemSingle_2);
+__intnl_SystemString_7 = __lcl_minutes_SystemInt32_0.ToString(__const_SystemString_9);
+__intnl_SystemString_8 = __intnl_SystemString_7 + __const_SystemString_10;
+__intnl_SystemString_9 = __lcl_secs_SystemInt32_0.ToString(__const_SystemString_9);
+__0___0_FormatTime__ret = __intnl_SystemString_8 + __intnl_SystemString_9;
+return;
+}
+public void _ClearAllBuffs()
+{
+luckBuffActive = __const_SystemBoolean_0;
+luckBuffTimeRemaining = __const_SystemSingle_0;
+worldLuckBuffActive = __const_SystemBoolean_0;
+worldLuckBuffTimeRemaining = __const_SystemSingle_0;
+localWorldLuckBuffTier = __const_SystemInt32_0;
+weatherLuckBuffActive = __const_SystemBoolean_0;
+attractionBuffActive = __const_SystemBoolean_0;
+attractionBuffTimeRemaining = __const_SystemSingle_0;
+__0_active__param = __const_SystemBoolean_0;
+UNDEF_fbccb_1836();
+__1_active__param = __const_SystemBoolean_0;
+UNDEF_fbccb_2088();
+__2_active__param = __const_SystemBoolean_0;
+UNDEF_fbccb_2340();
+__3_active__param = __const_SystemBoolean_0;
+UNDEF_fbccb_2592();
+}
+}

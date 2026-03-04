@@ -1,0 +1,574 @@
+void _start()
+localPlayer = get_LocalPlayer();// 16
+40 __intnl_UnityEngineObject_0 = tutorialRoom
+60 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+104 if (__intnl_SystemBoolean_0) //136
+{
+G_tutorialRoom.SetActive(__const_SystemBoolean_0);// 128
+}
+144 JUMP 340
+164 return;
+void OnTutorialButtonPressed()
+188 if (isTutorialActive) //216
+{
+208 return;
+}
+224 JUMP 1996
+244 return;
+void StartTutorialFromLobby()
+268 if (isTutorialActive) //296
+{
+288 return;
+}
+304 JUMP 1996
+324 return;
+356 __intnl_UnityEngineObject_2 = slideSummonRod
+376 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+420 if (__intnl_SystemBoolean_1) //452
+{
+G_slideSummonRod.SetActive(__const_SystemBoolean_0);// 444
+}
+468 __intnl_UnityEngineObject_4 = slideCastLine
+488 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+532 if (__intnl_SystemBoolean_2) //564
+{
+G_slideCastLine.SetActive(__const_SystemBoolean_0);// 556
+}
+580 __intnl_UnityEngineObject_6 = slideWaitBite
+600 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+644 if (__intnl_SystemBoolean_3) //676
+{
+G_slideWaitBite.SetActive(__const_SystemBoolean_0);// 668
+}
+692 __intnl_UnityEngineObject_8 = slideCatch
+712 __intnl_UnityEngineObject_9 = __const_SystemObject_0
+756 if (__intnl_SystemBoolean_4) //788
+{
+}
+796 if (__intnl_SystemBoolean_4) //828
+{
+G_slideCatch.SetActive(__const_SystemBoolean_0);// 820
+}
+844 __intnl_UnityEngineObject_10 = slidePocket
+864 __intnl_UnityEngineObject_11 = __const_SystemObject_0
+908 if (__intnl_SystemBoolean_5) //940
+{
+G_slidePocket.SetActive(__const_SystemBoolean_0);// 932
+}
+956 __intnl_UnityEngineObject_12 = slideComplete
+976 __intnl_UnityEngineObject_13 = __const_SystemObject_0
+1020 if (__intnl_SystemBoolean_6) //1052
+{
+G_slideComplete.SetActive(__const_SystemBoolean_0);// 1044
+}
+1064 return;
+1120 if (__intnl_SystemBoolean_7) //1456
+{
+1168 if (__intnl_SystemBoolean_8) //1456
+{
+1208 return;
+1232 __0___0_GetSlideForStep__ret = slideSummonRod
+1248 return;
+1272 __0___0_GetSlideForStep__ret = slideCastLine
+1288 return;
+1312 __0___0_GetSlideForStep__ret = slideWaitBite
+1328 return;
+1352 __0___0_GetSlideForStep__ret = slideCatch
+1368 return;
+1392 __0___0_GetSlideForStep__ret = slidePocket
+1408 return;
+1432 __0___0_GetSlideForStep__ret = slideComplete
+1448 return;
+}
+}
+1472 __0___0_GetSlideForStep__ret = __const_SystemObject_0
+1488 return;
+1508 return;
+void CheckAndStartTutorial()
+1532 if (forceStartTutorial) //1576
+{
+1548 JUMP 1996
+1568 return;
+}
+1592 __intnl_UnityEngineObject_14 = playerStats
+1612 __intnl_UnityEngineObject_15 = __const_SystemObject_0
+1656 if (__intnl_SystemBoolean_9) //1684
+{
+1676 return;
+}
+1732 __intnl_SystemBoolean_10 = __intnl_SystemObject_0
+1744 if (__intnl_SystemBoolean_10) //1760
+{
+1752 JUMP 1820
+}
+this.SendCustomEventDelayedSeconds(__const_VRCUdonCommonEnumsEventTiming_0, __const_SystemSingle_0, __const_SystemString_1);// 1792
+1812 return;
+1844 __intnl_VRCUdonUdonBehaviour_0 = playerStats
+G_playerStats.SendCustomEvent(__const_SystemString_2);// 1856
+1912 __intnl_SystemBoolean_11 = __intnl_SystemObject_1
+1924 if (__intnl_SystemBoolean_11) //1952
+{
+1944 return;
+}
+1960 JUMP 1996
+1980 return;
+2004 if (isTutorialActive) //2032
+{
+2024 return;
+}
+2048 isTutorialActive = __const_SystemBoolean_1
+2068 currentStep = __const_SystemInt32_0
+2088 __intnl_UnityEngineObject_16 = tutorialRoom
+2108 __intnl_UnityEngineObject_17 = __const_SystemObject_0
+2152 if (__intnl_SystemBoolean_12) //2184
+{
+G_tutorialRoom.SetActive(__const_SystemBoolean_1);// 2176
+}
+2192 JUMP 2268
+this.SendCustomEventDelayedSeconds(__const_VRCUdonCommonEnumsEventTiming_0, __const_SystemSingle_0, __const_SystemString_4);// 2232
+2252 return;
+2276 if (hasRegisteredCallbacks) //2304
+{
+2296 return;
+}
+2320 __intnl_UnityEngineObject_18 = rodTeleportSystem
+2340 __intnl_UnityEngineObject_19 = __const_SystemObject_0
+2384 if (__intnl_SystemBoolean_13) //2468
+{
+2408 __intnl_VRCUdonUdonBehaviour_1 = __this_VRCUdonUdonBehaviour_2
+G_rodTeleportSystem.SetProgramVariable(__intnl_VRCUdonUdonBehaviour_1, __const_SystemString_5);// 2436
+G_rodTeleportSystem.SendCustomEvent(__const_SystemString_6);// 2460
+}
+2476 JUMP 9396
+2500 __lcl_rodHolder_VRCUdonUdonBehaviour_0 = __0__intnlparam
+2520 __intnl_UnityEngineObject_20 = __lcl_rodHolder_VRCUdonUdonBehaviour_0
+2540 __intnl_UnityEngineObject_21 = __const_SystemObject_0
+2584 if (__intnl_SystemBoolean_14) //2716
+{
+2640 __intnl_VRCUdonUdonBehaviour_1 = __intnl_SystemObject_2
+2660 __intnl_UnityEngineObject_22 = __intnl_VRCUdonUdonBehaviour_1
+2680 __intnl_UnityEngineObject_23 = __const_SystemObject_0
+}
+2724 if (__intnl_SystemBoolean_14) //3028
+{
+2788 __intnl_VRCUdonUdonBehaviour_2 = __intnl_SystemObject_3
+2832 __2__intnlparam = __intnl_UnityEngineTransform_0
+2836 JUMP 9508
+2860 localFishingRod = __1__intnlparam
+2880 __intnl_UnityEngineObject_24 = localFishingRod
+2900 __intnl_UnityEngineObject_25 = __const_SystemObject_0
+2944 if (__intnl_SystemBoolean_15) //3028
+{
+2968 __intnl_VRCUdonUdonBehaviour_3 = __this_VRCUdonUdonBehaviour_3
+__1__intnlparam.SetProgramVariable(__intnl_VRCUdonUdonBehaviour_3, __const_SystemString_5);// 2996
+__1__intnlparam.SendCustomEvent(__const_SystemString_8);// 3020
+}
+}
+3044 hasRegisteredCallbacks = __const_SystemBoolean_1
+3060 return;
+void TeleportToTutorialRoom()
+3092 __intnl_UnityEngineObject_26 = tutorialSpawnPoint
+3112 __intnl_UnityEngineObject_27 = __const_SystemObject_0
+3156 if (__intnl_SystemBoolean_16) //3200
+{
+3172 JUMP 4468
+3192 return;
+}
+3216 __intnl_UnityEngineObject_28 = screenFade
+3236 __intnl_UnityEngineObject_29 = __const_SystemObject_0
+3280 if (__intnl_SystemBoolean_17) //3584
+{
+3304 __intnl_UnityEngineObject_30 = spawnRoomManager
+3324 __intnl_UnityEngineObject_31 = __const_SystemObject_0
+3368 if (__intnl_SystemBoolean_18) //3420
+{
+3400 __intnl_VRCUdonUdonBehaviour_4 = spawnRoomManager
+G_spawnRoomManager.SendCustomEvent(__const_SystemString_9);// 3412
+}
+3460 if (__intnl_SystemBoolean_19) //3548
+{
+G_localPlayer.TeleportTo(__intnl_UnityEngineQuaternion_0, __intnl_UnityEngineVector3_0);// 3540
+}
+3556 JUMP 4468
+3576 return;
+}
+3600 isTeleporting = __const_SystemBoolean_1
+3620 __intnl_SystemSingle_0 = fadeOutDuration
+G_screenFade.SetProgramVariable(fadeOutDuration, __const_SystemString_10);// 3648
+G_screenFade.SendCustomEvent(__const_SystemString_11);// 3672
+this.SendCustomEventDelayedSeconds(__const_VRCUdonCommonEnumsEventTiming_0, __intnl_SystemSingle_2, __const_SystemString_12);// 3776
+3796 return;
+void ExecuteTeleportToTutorial()
+3828 __intnl_UnityEngineObject_32 = spawnRoomManager
+3848 __intnl_UnityEngineObject_33 = __const_SystemObject_0
+3892 if (__intnl_SystemBoolean_20) //3944
+{
+3924 __intnl_VRCUdonUdonBehaviour_5 = spawnRoomManager
+G_spawnRoomManager.SendCustomEvent(__const_SystemString_9);// 3936
+}
+3984 if (__intnl_SystemBoolean_21) //4072
+{
+G_localPlayer.TeleportTo(__intnl_UnityEngineQuaternion_1, __intnl_UnityEngineVector3_1);// 4064
+}
+this.SendCustomEventDelayedSeconds(__const_VRCUdonCommonEnumsEventTiming_0, __intnl_SystemSingle_3, __const_SystemString_13);// 4136
+4156 return;
+void FadeInAfterTeleport()
+4188 __intnl_UnityEngineObject_34 = screenFade
+4208 __intnl_UnityEngineObject_35 = __const_SystemObject_0
+4252 if (__intnl_SystemBoolean_22) //4336
+{
+4276 __intnl_SystemSingle_4 = fadeInDuration
+G_screenFade.SetProgramVariable(fadeInDuration, __const_SystemString_14);// 4304
+G_screenFade.SendCustomEvent(__const_SystemString_15);// 4328
+}
+this.SendCustomEventDelayedSeconds(__const_VRCUdonCommonEnumsEventTiming_0, fadeInDuration, __const_SystemString_16);// 4368
+4388 return;
+void OnTeleportComplete()
+4420 isTeleporting = __const_SystemBoolean_0
+4432 JUMP 4468
+4452 return;
+4476 JUMP 340
+4508 __0_step__param = currentStep
+4512 JUMP 1080
+4536 __lcl_currentSlide_UnityEngineGameObject_0 = __0___0_GetSlideForStep__ret
+4556 __intnl_UnityEngineObject_36 = __lcl_currentSlide_UnityEngineGameObject_0
+4576 __intnl_UnityEngineObject_37 = __const_SystemObject_0
+4620 if (__intnl_SystemBoolean_23) //4652
+{
+null.SetActive(__const_SystemBoolean_1);// 4644
+}
+4692 if (__intnl_SystemBoolean_24) //4748
+{
+this.SendCustomEventDelayedSeconds(__const_VRCUdonCommonEnumsEventTiming_0, autoAdvanceDelay, __const_SystemString_17);// 4732
+4740 JUMP 4768
+}
+4764 isWaitingForAction = __const_SystemBoolean_1
+4780 return;
+void AutoAdvanceStep()
+4804 if (isTutorialActive) //4820
+{
+4812 JUMP 4840
+}
+4832 return;
+4848 JUMP 4884
+4868 return;
+4900 isWaitingForAction = __const_SystemBoolean_0
+4920 __intnl_UnityEngineObject_38 = audioSource
+4940 __intnl_UnityEngineObject_39 = __const_SystemObject_0
+4984 if (__intnl_SystemBoolean_26) //5064
+{
+5008 __intnl_UnityEngineObject_40 = stepCompleteSound
+5028 __intnl_UnityEngineObject_41 = __const_SystemObject_0
+}
+5080 __intnl_SystemBoolean_25 = __intnl_SystemBoolean_26
+5092 if (__intnl_SystemBoolean_25) //5132
+{
+}
+5140 if (__intnl_SystemBoolean_25) //5172
+{
+G_audioSource.PlayOneShot(stepCompleteSound);// 5164
+}
+currentStep = op_Addition(__const_SystemInt32_2, currentStep);// 5196
+5244 if (__intnl_SystemBoolean_27) //5288
+{
+5260 JUMP 5332
+5280 return;
+}
+5296 JUMP 4468
+5316 return;
+void _CompleteTutorial()
+5340 if (isTutorialActive) //5356
+{
+5348 JUMP 5376
+}
+5368 return;
+5392 isTutorialActive = __const_SystemBoolean_0
+5412 isWaitingForAction = __const_SystemBoolean_0
+5432 __intnl_UnityEngineObject_42 = audioSource
+5452 __intnl_UnityEngineObject_43 = __const_SystemObject_0
+5496 if (__intnl_SystemBoolean_28) //5576
+{
+5520 __intnl_UnityEngineObject_44 = tutorialCompleteSound
+5540 __intnl_UnityEngineObject_45 = __const_SystemObject_0
+}
+5584 if (__intnl_SystemBoolean_28) //5616
+{
+G_audioSource.PlayOneShot(tutorialCompleteSound);// 5608
+}
+5632 __intnl_UnityEngineObject_46 = playerStats
+5652 __intnl_UnityEngineObject_47 = __const_SystemObject_0
+5696 if (__intnl_SystemBoolean_29) //5748
+{
+5728 __intnl_VRCUdonUdonBehaviour_6 = playerStats
+G_playerStats.SendCustomEvent(__const_SystemString_18);// 5740
+}
+5756 JUMP 5792
+5776 return;
+5800 JUMP 6544
+5824 __lcl_destination_UnityEngineTransform_0 = __0_GetPostTutorialDestination__ret
+5844 __intnl_UnityEngineObject_48 = __lcl_destination_UnityEngineTransform_0
+5864 __intnl_UnityEngineObject_49 = __const_SystemObject_0
+5908 if (__intnl_SystemBoolean_30) //5952
+{
+5924 JUMP 340
+5944 return;
+}
+5968 __intnl_UnityEngineObject_50 = screenFade
+5988 __intnl_UnityEngineObject_51 = __const_SystemObject_0
+6032 if (__intnl_SystemBoolean_31) //6316
+{
+6080 if (__intnl_SystemBoolean_32) //6168
+{
+G_localPlayer.TeleportTo(__intnl_UnityEngineQuaternion_2, __intnl_UnityEngineVector3_2);// 6160
+}
+6176 JUMP 340
+6200 __intnl_UnityEngineObject_52 = tutorialRoom
+6220 __intnl_UnityEngineObject_53 = __const_SystemObject_0
+6264 if (__intnl_SystemBoolean_33) //6296
+{
+G_tutorialRoom.SetActive(__const_SystemBoolean_0);// 6288
+}
+6308 return;
+}
+6332 isTeleporting = __const_SystemBoolean_1
+6352 __intnl_SystemSingle_5 = fadeOutDuration
+G_screenFade.SetProgramVariable(fadeOutDuration, __const_SystemString_10);// 6380
+G_screenFade.SendCustomEvent(__const_SystemString_11);// 6404
+this.SendCustomEventDelayedSeconds(__const_VRCUdonCommonEnumsEventTiming_0, __intnl_SystemSingle_7, __const_SystemString_19);// 6508
+6528 return;
+6560 __intnl_UnityEngineObject_54 = homePointManager
+6580 __intnl_UnityEngineObject_55 = __const_SystemObject_0
+6624 if (__intnl_SystemBoolean_34) //6988
+{
+6656 __intnl_VRCUdonUdonBehaviour_7 = homePointManager
+G_homePointManager.SendCustomEvent(__const_SystemString_20);// 6668
+G_homePointManager.SetProgramVariable(__intnl_SystemInt32_0, __const_SystemString_22);// 6756
+G_homePointManager.SendCustomEvent(__const_SystemString_23);// 6780
+6836 __intnl_UnityEngineTransform_1 = __intnl_SystemObject_5
+6856 __lcl_home_UnityEngineTransform_0 = __intnl_UnityEngineTransform_1
+6876 __intnl_UnityEngineObject_56 = __lcl_home_UnityEngineTransform_0
+6896 __intnl_UnityEngineObject_57 = __const_SystemObject_0
+6940 if (__intnl_SystemBoolean_35) //6988
+{
+6964 __0_GetPostTutorialDestination__ret = __lcl_home_UnityEngineTransform_0
+6980 return;
+}
+}
+7004 __0_GetPostTutorialDestination__ret = mainSpawnPoint
+7020 return;
+7040 return;
+void ExecuteTeleportToMain()
+7064 JUMP 340
+7080 JUMP 6544
+7104 __lcl_destination_UnityEngineTransform_1 = __0_GetPostTutorialDestination__ret
+7124 __intnl_UnityEngineObject_58 = __lcl_destination_UnityEngineTransform_1
+7144 __intnl_UnityEngineObject_59 = __const_SystemObject_0
+7188 if (__intnl_SystemBoolean_36) //7228
+{
+}
+7236 if (__intnl_SystemBoolean_36) //7324
+{
+G_localPlayer.TeleportTo(__intnl_UnityEngineQuaternion_3, __intnl_UnityEngineVector3_3);// 7316
+}
+this.SendCustomEventDelayedSeconds(__const_VRCUdonCommonEnumsEventTiming_0, __intnl_SystemSingle_8, __const_SystemString_25);// 7388
+7408 return;
+void FadeInAfterMainTeleport()
+7440 __intnl_UnityEngineObject_60 = screenFade
+7460 __intnl_UnityEngineObject_61 = __const_SystemObject_0
+7504 if (__intnl_SystemBoolean_37) //7588
+{
+7528 __intnl_SystemSingle_9 = fadeInDuration
+G_screenFade.SetProgramVariable(fadeInDuration, __const_SystemString_14);// 7556
+G_screenFade.SendCustomEvent(__const_SystemString_15);// 7580
+}
+7604 isTeleporting = __const_SystemBoolean_0
+7624 __intnl_UnityEngineObject_62 = tutorialRoom
+7644 __intnl_UnityEngineObject_63 = __const_SystemObject_0
+7688 if (__intnl_SystemBoolean_38) //7720
+{
+G_tutorialRoom.SetActive(__const_SystemBoolean_0);// 7712
+}
+7732 return;
+void OnTutorialRodSummoned()
+7780 if (__intnl_SystemBoolean_39) //7796
+{
+7788 JUMP 7820
+}
+7828 if (__intnl_SystemBoolean_39) //7856
+{
+7848 return;
+}
+7896 if (__intnl_SystemBoolean_40) //7920
+{
+7912 JUMP 4884
+}
+7932 return;
+void OnTutorialHookInWater()
+7980 if (__intnl_SystemBoolean_41) //7996
+{
+7988 JUMP 8020
+}
+8028 if (__intnl_SystemBoolean_41) //8056
+{
+8048 return;
+}
+8096 if (__intnl_SystemBoolean_42) //8120
+{
+8112 JUMP 4884
+}
+8132 return;
+void OnTutorialMinigameStarted()
+8180 if (__intnl_SystemBoolean_43) //8196
+{
+8188 JUMP 8220
+}
+8228 if (__intnl_SystemBoolean_43) //8256
+{
+8248 return;
+}
+8296 if (__intnl_SystemBoolean_44) //8320
+{
+8312 JUMP 4884
+}
+8332 return;
+void OnTutorialFishCaught()
+8380 if (__intnl_SystemBoolean_45) //8396
+{
+8388 JUMP 8420
+}
+8428 if (__intnl_SystemBoolean_45) //8456
+{
+8448 return;
+}
+8496 if (__intnl_SystemBoolean_46) //8540
+{
+8520 keepCatchSlideVisible = __const_SystemBoolean_0
+8532 JUMP 4884
+}
+8552 return;
+void OnTutorialMinigameFailed()
+8576 if (isTutorialActive) //8592
+{
+8584 JUMP 8612
+}
+8604 return;
+8652 if (__intnl_SystemBoolean_47) //8716
+{
+8676 keepCatchSlideVisible = __const_SystemBoolean_1
+8696 currentStep = __const_SystemInt32_2
+8708 JUMP 4468
+}
+8728 return;
+void OnTutorialFishPocketed()
+8776 if (__intnl_SystemBoolean_48) //8792
+{
+8784 JUMP 8816
+}
+8824 if (__intnl_SystemBoolean_48) //8852
+{
+8844 return;
+}
+8892 if (__intnl_SystemBoolean_49) //8916
+{
+8908 JUMP 4884
+}
+8928 return;
+void IsTutorialActive()
+8960 __0_IsTutorialActive__ret = isTutorialActive
+8976 return;
+8996 return;
+void GetCurrentStep()
+9028 __0_GetCurrentStep__ret = currentStep
+9044 return;
+9064 return;
+void _SkipTutorial()
+9088 if (isTutorialActive) //9104
+{
+9096 JUMP 9124
+}
+9116 return;
+9132 JUMP 5332
+9152 return;
+void _RestartTutorial()
+9184 isTutorialActive = __const_SystemBoolean_0
+9204 isWaitingForAction = __const_SystemBoolean_0
+9224 currentStep = __const_SystemInt32_0
+9244 __intnl_UnityEngineObject_64 = playerStats
+9264 __intnl_UnityEngineObject_65 = __const_SystemObject_0
+9308 if (__intnl_SystemBoolean_50) //9360
+{
+9340 __intnl_VRCUdonUdonBehaviour_8 = playerStats
+G_playerStats.SendCustomEvent(__const_SystemString_26);// 9352
+}
+9368 JUMP 1996
+9388 return;
+9436 __4__intnlparam = __intnl_VRCSDKBaseVRCPlayerApi_0
+9440 JUMP 10016
+9464 __0__intnlparam = __3__intnlparam
+9480 return;
+9500 return;
+9556 __lcl_udonBehaviours_UnityEngineComponentArray_0 = __intnl_UnityEngineComponentArray_0
+9576 __lcl_targetID_SystemInt64_0 = __const_SystemInt64_0
+9620 __intnl_SystemInt32_2 = __const_SystemInt32_0
+9664 if (__intnl_SystemBoolean_51) //9956
+{
+__lcl_behaviour_VRCUdonUdonBehaviour_0 = __0__intnlparam.GetProgramVariable(__const_SystemString_7).get_transform().GetComponents(__const_SystemType_0).Get(__intnl_SystemInt32_2);// 9696
+__lcl_idValue_SystemObject_0 = L_behaviour.GetProgramVariable(__const_SystemString_27);// 9728
+9776 if (__intnl_SystemBoolean_52) //9840
+{
+}
+9848 if (__intnl_SystemBoolean_52) //9916
+{
+9872 __intnl_UnityEngineComponent_0 = __lcl_behaviour_VRCUdonUdonBehaviour_0
+9892 __1__intnlparam = __intnl_UnityEngineComponent_0
+9908 return;
+}
+9948 JUMP 9624
+}
+9972 __1__intnlparam = __const_SystemObject_0
+9988 return;
+10008 return;
+__lcl_objects_UnityEngineGameObjectArray_0 = GetPlayerObjects(__4__intnlparam);// 10032
+10056 __lcl_i_SystemInt32_0 = __const_SystemInt32_0
+10124 if (__intnl_SystemBoolean_53) //10452
+{
+10196 if (__intnl_SystemBoolean_54) //10212
+{
+10204 JUMP 10220
+}
+10212 JUMP 10412
+10300 __6__intnlparam = __intnl_UnityEngineTransform_2
+10304 JUMP 10512
+10328 __lcl_foundScript_VRCUdonUdonBehaviour_0 = __5__intnlparam
+10364 if (__intnl_SystemBoolean_55) //10412
+{
+10388 __3__intnlparam = __lcl_foundScript_VRCUdonUdonBehaviour_0
+10404 return;
+}
+__lcl_i_SystemInt32_0 = op_Addition(__const_SystemInt32_2, __lcl_i_SystemInt32_0);// 10436
+10444 JUMP 10060
+}
+10468 __3__intnlparam = __const_SystemObject_0
+10484 return;
+10504 return;
+10560 __lcl_udonBehaviours_UnityEngineComponentArray_1 = __intnl_UnityEngineComponentArray_1
+10580 __lcl_targetID_SystemInt64_1 = __const_SystemInt64_1
+10624 __intnl_SystemInt32_5 = __const_SystemInt32_0
+10668 if (__intnl_SystemBoolean_56) //10960
+{
+__lcl_behaviour_VRCUdonUdonBehaviour_1 = L_objects.Get(__lcl_i_SystemInt32_0).get_transform().GetComponentsInChildren(__const_SystemType_0).Get(__intnl_SystemInt32_5);// 10700
+__lcl_idValue_SystemObject_1 = L_behaviour.GetProgramVariable(__const_SystemString_27);// 10732
+10780 if (__intnl_SystemBoolean_57) //10844
+{
+}
+10852 if (__intnl_SystemBoolean_57) //10920
+{
+10876 __intnl_UnityEngineComponent_1 = __lcl_behaviour_VRCUdonUdonBehaviour_1
+10896 __5__intnlparam = __intnl_UnityEngineComponent_1
+10912 return;
+}
+10952 JUMP 10628
+}
+10976 __5__intnlparam = __const_SystemObject_0
+10992 return;
+11012 return;

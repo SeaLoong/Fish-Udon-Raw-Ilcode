@@ -1,0 +1,172 @@
+void _start()
+32 __0_scale__param = __const_SystemSingle_0
+36 JUMP 2100
+68 __0_active__param = __const_SystemBoolean_0
+72 JUMP 2432
+92 return;
+void _update()
+148 if (__intnl_SystemBoolean_0) //176
+{
+168 return;
+}
+animTimer = op_Addition(__intnl_SystemSingle_0, animTimer);// 216
+264 if (__intnl_SystemBoolean_1) //548
+{
+__lcl_t_SystemSingle_0 = Clamp01(__intnl_SystemSingle_1);// 320
+360 __0_t__param = __lcl_t_SystemSingle_0
+364 JUMP 3676
+388 __0_scale__param = __0___0_EaseOutBack__ret
+392 JUMP 2100
+408 JUMP 2732
+456 if (__intnl_SystemBoolean_2) //540
+{
+488 __0_scale__param = __const_SystemSingle_1
+492 JUMP 2100
+516 animState = __const_SystemInt32_2
+536 animTimer = __const_SystemSingle_0
+}
+540 JUMP 1088
+}
+588 if (__intnl_SystemBoolean_2) //708
+{
+604 JUMP 2732
+652 if (__intnl_SystemBoolean_3) //700
+{
+676 animState = __const_SystemInt32_3
+696 animTimer = __const_SystemSingle_0
+}
+700 JUMP 1088
+}
+748 if (__intnl_SystemBoolean_3) //1088
+{
+__lcl_t_SystemSingle_0 = Clamp01(__intnl_SystemSingle_1);// 804
+900 __0_scale__param = __intnl_SystemSingle_3
+904 JUMP 2100
+952 if (__intnl_SystemBoolean_4) //1088
+{
+984 __0_scale__param = __const_SystemSingle_0
+988 JUMP 2100
+1020 __0_active__param = __const_SystemBoolean_0
+1024 JUMP 2432
+1040 JUMP 3376
+1064 animState = __const_SystemInt32_0
+1084 animTimer = __const_SystemSingle_0
+}
+}
+1100 return;
+void __0_ShowAnnouncement()
+1132 __intnl_UnityEngineObject_0 = announcementText
+1152 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+1196 if (__intnl_SystemBoolean_5) //1228
+{
+G_announcementText.set_text(__0_message__param);// 1220
+}
+1244 __intnl_UnityEngineObject_2 = announcementTextVR
+1264 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+1308 if (__intnl_SystemBoolean_6) //1340
+{
+G_announcementTextVR.set_text(__0_message__param);// 1332
+}
+1364 __0_active__param = __const_SystemBoolean_1
+1368 JUMP 2432
+1400 __0_scale__param = __const_SystemSingle_0
+1404 JUMP 2100
+1420 JUMP 3376
+1444 animState = __const_SystemInt32_1
+1464 animTimer = __const_SystemSingle_0
+1480 return;
+void __0_ShowWorldLuckAnnouncement()
+1536 if (__intnl_SystemBoolean_7) //1572
+{
+1560 __lcl_text_SystemString_0 = worldLuckTextTier2
+1564 JUMP 1692
+}
+1612 if (__intnl_SystemBoolean_8) //1684
+{
+1636 __lcl_text_SystemString_0 = worldLuckTextTier3
+1640 JUMP 1692
+1648 JUMP 1684
+1672 __lcl_text_SystemString_0 = worldLuckTextTier1
+1676 JUMP 1692
+}
+1684 JUMP 1656
+1756 __0_message__param = __intnl_SystemString_0
+1760 JUMP 1116
+1780 return;
+void __1_ShowWorldLuckAnnouncement()
+1820 __0_playerName__param = __1_playerName__param
+1840 __0_tier__param = __const_SystemInt32_1
+1844 JUMP 1496
+1864 return;
+void ShowWeatherLuckAnnouncement()
+1904 __0_message__param = weatherLuckText
+1908 JUMP 1116
+1928 return;
+void HideAnnouncement()
+1968 __0_scale__param = __const_SystemSingle_0
+1972 JUMP 2100
+2004 __0_active__param = __const_SystemBoolean_0
+2008 JUMP 2432
+2024 JUMP 3376
+2048 animState = __const_SystemInt32_0
+2068 animTimer = __const_SystemSingle_0
+2084 return;
+__lcl_s_UnityEngineVector3_0 = op_Multiply(__0_scale__param, __const_UnityEngineVector3_0);// 2124
+2148 __intnl_UnityEngineObject_4 = announcementText
+2168 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+2212 if (__intnl_SystemBoolean_9) //2268
+{
+G_announcementText.get_transform().set_localScale(__lcl_s_UnityEngineVector3_0);// 2260
+}
+2284 __intnl_UnityEngineObject_6 = announcementTextVR
+2304 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+2348 if (__intnl_SystemBoolean_10) //2404
+{
+G_announcementTextVR.get_transform().set_localScale(__lcl_s_UnityEngineVector3_0);// 2396
+}
+2416 return;
+2448 __intnl_UnityEngineObject_8 = announcementText
+2468 __intnl_UnityEngineObject_9 = __const_SystemObject_0
+2512 if (__intnl_SystemBoolean_11) //2568
+{
+G_announcementText.get_gameObject().SetActive(__0_active__param);// 2560
+}
+2584 __intnl_UnityEngineObject_10 = announcementTextVR
+2604 __intnl_UnityEngineObject_11 = __const_SystemObject_0
+2648 if (__intnl_SystemBoolean_12) //2704
+{
+G_announcementTextVR.get_gameObject().SetActive(__0_active__param);// 2696
+}
+2716 return;
+__lcl_wobble_SystemSingle_0 = op_Addition(__intnl_SystemSingle_13, __intnl_SystemSingle_7);// 3028
+__lcl_rot_UnityEngineQuaternion_0 = Euler(__lcl_wobble_SystemSingle_0, __const_SystemSingle_0, __const_SystemSingle_0);// 3068
+3092 __intnl_UnityEngineObject_12 = announcementText
+3112 __intnl_UnityEngineObject_13 = __const_SystemObject_0
+3156 if (__intnl_SystemBoolean_13) //3212
+{
+G_announcementText.get_transform().set_localRotation(__lcl_rot_UnityEngineQuaternion_0);// 3204
+}
+3228 __intnl_UnityEngineObject_14 = announcementTextVR
+3248 __intnl_UnityEngineObject_15 = __const_SystemObject_0
+3292 if (__intnl_SystemBoolean_14) //3348
+{
+G_announcementTextVR.get_transform().set_localRotation(__lcl_rot_UnityEngineQuaternion_0);// 3340
+}
+3360 return;
+3392 __intnl_UnityEngineObject_16 = announcementText
+3412 __intnl_UnityEngineObject_17 = __const_SystemObject_0
+3456 if (__intnl_SystemBoolean_15) //3512
+{
+G_announcementText.get_transform().set_localRotation(__const_UnityEngineQuaternion_0);// 3504
+}
+3528 __intnl_UnityEngineObject_18 = announcementTextVR
+3548 __intnl_UnityEngineObject_19 = __const_SystemObject_0
+3592 if (__intnl_SystemBoolean_16) //3648
+{
+G_announcementTextVR.get_transform().set_localRotation(__const_UnityEngineQuaternion_0);// 3640
+}
+3660 return;
+__lcl_tm1_SystemSingle_0 = op_Subtraction(__const_SystemSingle_1, __0_t__param);// 3700
+__0___0_EaseOutBack__ret = op_Addition(__intnl_SystemSingle_19, __intnl_SystemSingle_17);// 3924
+3944 return;
+3964 return;

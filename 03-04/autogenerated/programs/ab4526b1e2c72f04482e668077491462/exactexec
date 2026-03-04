@@ -1,0 +1,3116 @@
+using System;
+using UnityEngine;
+using VRC.Udon;
+using TMPro;
+using UnityEngine.Rendering.PostProcessing;
+using VRC.Udon.Common.Enums;
+using VRC.SDKBase;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+private Single __lcl_baseVolume_SystemSingle_0 = 0f;
+private Single __const_SystemSingle_8 = 100f;
+private Object __intnl_UnityEngineObject_144 = null;
+private Object __intnl_UnityEngineObject_142 = null;
+private Object __intnl_UnityEngineObject_143 = null;
+private Object __intnl_UnityEngineObject_140 = null;
+private Object __intnl_UnityEngineObject_141 = null;
+private Boolean __intnl_SystemBoolean_83 = false;
+private Boolean __intnl_SystemBoolean_93 = false;
+private Boolean __intnl_SystemBoolean_13 = false;
+private Boolean __intnl_SystemBoolean_23 = false;
+private Boolean __intnl_SystemBoolean_33 = false;
+private Boolean __intnl_SystemBoolean_43 = false;
+private Boolean __intnl_SystemBoolean_53 = false;
+private Boolean __intnl_SystemBoolean_63 = false;
+private Boolean __intnl_SystemBoolean_73 = false;
+private Single __lcl_accumulated_SystemSingle_1 = 0f;
+private UInt32 __gintnl_SystemUInt32_46 = 30084;
+private UInt32 __gintnl_SystemUInt32_16 = 4144;
+private UInt32 __gintnl_SystemUInt32_36 = 17100;
+private UInt32 __gintnl_SystemUInt32_26 = 10340;
+private object __intnl_SystemObject_24 = null;
+private object __intnl_SystemObject_23 = null;
+private object __intnl_SystemObject_22 = null;
+private object __intnl_SystemObject_21 = null;
+private object __intnl_SystemObject_20 = null;
+private Single __intnl_SystemSingle_20 = 0f;
+private Single __intnl_SystemSingle_21 = 0f;
+private Single __intnl_SystemSingle_22 = 0f;
+private Single __intnl_SystemSingle_23 = 0f;
+private Single __intnl_SystemSingle_24 = 0f;
+private Single __intnl_SystemSingle_25 = 0f;
+private Single __intnl_SystemSingle_26 = 0f;
+private Single __intnl_SystemSingle_27 = 0f;
+private Int32 __intnl_SystemInt32_15 = 0;
+private Int32 __intnl_SystemInt32_35 = 0;
+private Int32 __intnl_SystemInt32_25 = 0;
+private Int32 __intnl_SystemInt32_45 = 0;
+private String __0___0_WeatherTypeToString__ret = null;
+public String[] biomeNames;
+private UdonBehaviour toConfig = null;
+private Single __lcl_t_SystemSingle_1 = 0f;
+private Single __0_volume__param = 0f;
+private AudioClip __lcl_newAudio_UnityEngineAudioClip_0 = null;
+public Int32 belowThresholdWeather;
+private Material __intnl_UnityEngineMaterial_5 = null;
+private Material __intnl_UnityEngineMaterial_4 = null;
+private Material __intnl_UnityEngineMaterial_7 = null;
+private Material __intnl_UnityEngineMaterial_6 = null;
+private Material __intnl_UnityEngineMaterial_1 = null;
+private Material __intnl_UnityEngineMaterial_0 = null;
+private Material __intnl_UnityEngineMaterial_3 = null;
+private Material __intnl_UnityEngineMaterial_2 = null;
+private String __lcl_toName_SystemString_0 = null;
+private String __intnl_SystemString_1 = null;
+private Object __intnl_UnityEngineObject_92 = null;
+private Object __intnl_UnityEngineObject_82 = null;
+private Object __intnl_UnityEngineObject_72 = null;
+private Object __intnl_UnityEngineObject_62 = null;
+private Object __intnl_UnityEngineObject_52 = null;
+private Object __intnl_UnityEngineObject_42 = null;
+private Object __intnl_UnityEngineObject_32 = null;
+private Object __intnl_UnityEngineObject_22 = null;
+private Object __intnl_UnityEngineObject_12 = null;
+private String __const_SystemString_46 = "__0_weatherTarget__param";
+private String __const_SystemString_47 = "__0_forceUpdate__param";
+private String __const_SystemString_44 = "_BlendAmount";
+private String __const_SystemString_45 = "__0_sunLight__param";
+private String __const_SystemString_42 = "_CurrentCubemap";
+private String __const_SystemString_43 = "_NextCubemap";
+private String __const_SystemString_40 = "skyboxFogHeight";
+private String __const_SystemString_41 = "skyboxCubemap";
+private String __const_SystemString_48 = "__0_ApplyConfig";
+private String __const_SystemString_49 = "__0_currentTime__param";
+private Single __intnl_SystemSingle_0 = 0f;
+private Int32 currentBiomeIndex = -1;
+private object __intnl_SystemObject_0 = null;
+private Int32 __lcl_unchangedWeather_SystemInt32_0 = 0;
+private Single __0_targetVolume__param = 0f;
+private Single[] biomeWeatherTimers = null;
+private Single masterWeatherVolume = 1f;
+private String __0_GetCurrentBiomeName__ret = null;
+private String __const_SystemString_0 = "_DelayedInitialization";
+private Transform __intnl_UnityEngineTransform_0 = null;
+private Single __lcl_toSunIntensity_SystemSingle_0 = 0f;
+private Single __const_SystemSingle_0 = 0.1f;
+private Vector3 __intnl_UnityEngineVector3_6 = new Vector3(0f, 0f, 0f);
+private Boolean __lcl_wasOwner_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_86 = false;
+private Boolean __intnl_SystemBoolean_96 = false;
+private Boolean __intnl_SystemBoolean_16 = false;
+private Boolean __intnl_SystemBoolean_26 = false;
+private Boolean __intnl_SystemBoolean_36 = false;
+private Boolean __intnl_SystemBoolean_46 = false;
+private Boolean __intnl_SystemBoolean_56 = false;
+private Boolean __intnl_SystemBoolean_66 = false;
+private Boolean __intnl_SystemBoolean_76 = false;
+public Single atmosphericTransitionDuration;
+private Cubemap __intnl_UnityEngineCubemap_3 = null;
+public TextMeshProUGUI weatherDisplayTextVR;
+private object __intnl_SystemObject_17 = null;
+private object __intnl_SystemObject_16 = null;
+private object __intnl_SystemObject_15 = null;
+private object __intnl_SystemObject_14 = null;
+private object __intnl_SystemObject_13 = null;
+private object __intnl_SystemObject_12 = null;
+private object __intnl_SystemObject_11 = null;
+private object __intnl_SystemObject_10 = null;
+private object __intnl_SystemObject_19 = null;
+private object __intnl_SystemObject_18 = null;
+private PostProcessVolume __intnl_UnityEngineRenderingPostProcessingPostProcessVolume_10 = null;
+private Single __intnl_SystemSingle_10 = 0f;
+private Single __intnl_SystemSingle_11 = 0f;
+private Single __intnl_SystemSingle_12 = 0f;
+private Single __intnl_SystemSingle_13 = 0f;
+private Single __intnl_SystemSingle_14 = 0f;
+private Single __intnl_SystemSingle_15 = 0f;
+private Single __intnl_SystemSingle_16 = 0f;
+private Single __intnl_SystemSingle_17 = 0f;
+private Single __intnl_SystemSingle_18 = 0f;
+private Single __intnl_SystemSingle_19 = 0f;
+private Int32 __intnl_SystemInt32_12 = 0;
+private Int32 __intnl_SystemInt32_32 = 0;
+private Int32 __intnl_SystemInt32_22 = 0;
+private Int32 __intnl_SystemInt32_42 = 0;
+public UdonBehaviour dayNightCycle;
+private Int32 __0___0_FindBiomeAtPosition__ret = 0;
+private Int32 __lcl_currentWeather_SystemInt32_0 = 0;
+private Int32 __lcl_biomeCount_SystemInt32_1 = 0;
+private UInt32[] __gintnl_SystemUInt32Array_0 = System.UInt32[];
+private Single __intnl_SystemSingle_8 = 0f;
+private UInt32 __gintnl_SystemUInt32_9 = 3536;
+private UInt32 __gintnl_SystemUInt32_8 = 3180;
+private UInt32 __gintnl_SystemUInt32_5 = 744;
+private UInt32 __gintnl_SystemUInt32_4 = 684;
+private UInt32 __gintnl_SystemUInt32_7 = 3148;
+private UInt32 __gintnl_SystemUInt32_6 = 3092;
+private UInt32 __gintnl_SystemUInt32_1 = 80;
+private UInt32 __gintnl_SystemUInt32_0 = 64;
+private UInt32 __gintnl_SystemUInt32_3 = 112;
+private UInt32 __gintnl_SystemUInt32_2 = 96;
+private Boolean __const_SystemBoolean_0 = true;
+private Boolean __const_SystemBoolean_1 = false;
+private AudioClip __intnl_UnityEngineAudioClip_1 = null;
+private Object __intnl_UnityEngineObject_91 = null;
+private Object __intnl_UnityEngineObject_81 = null;
+private Object __intnl_UnityEngineObject_71 = null;
+private Object __intnl_UnityEngineObject_61 = null;
+private Object __intnl_UnityEngineObject_51 = null;
+private Object __intnl_UnityEngineObject_41 = null;
+private Object __intnl_UnityEngineObject_31 = null;
+private Object __intnl_UnityEngineObject_21 = null;
+private Object __intnl_UnityEngineObject_11 = null;
+private Single __lcl_totalWeight_SystemSingle_0 = 0f;
+private AudioClip __lcl_indoorClip_UnityEngineAudioClip_0 = null;
+private GameObject __lcl_oldWeatherEffect_UnityEngineGameObject_0 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_7 = null;
+private String __const_SystemString_5 = "GetCurrentTimeOfDay";
+private Single fromSkyboxFogHeight = 0f;
+private Vector3 __0_position__param = new Vector3(0f, 0f, 0f);
+private Boolean isUsingSourceA = true;
+private Single __const_SystemSingle_7 = 0.0001f;
+public Int32[] defaultAllowedWeatherTypes;
+private Object __intnl_UnityEngineObject_138 = null;
+private Object __intnl_UnityEngineObject_139 = null;
+private Object __intnl_UnityEngineObject_136 = null;
+private Object __intnl_UnityEngineObject_137 = null;
+private Object __intnl_UnityEngineObject_134 = null;
+private Object __intnl_UnityEngineObject_135 = null;
+private Object __intnl_UnityEngineObject_132 = null;
+private Object __intnl_UnityEngineObject_133 = null;
+private Object __intnl_UnityEngineObject_130 = null;
+private Object __intnl_UnityEngineObject_131 = null;
+private Int32 __lcl_weatherIndex_SystemInt32_0 = 0;
+private Vector3 __intnl_UnityEngineVector3_5 = new Vector3(0f, 0f, 0f);
+private UInt32 __gintnl_SystemUInt32_43 = 28688;
+private UInt32 __gintnl_SystemUInt32_13 = 3776;
+private UInt32 __gintnl_SystemUInt32_33 = 16464;
+private UInt32 __gintnl_SystemUInt32_23 = 8448;
+private Boolean __lcl_anyWeatherChanged_SystemBoolean_0 = false;
+private Object __intnl_UnityEngineObject_9 = null;
+private Object __intnl_UnityEngineObject_8 = null;
+private Object __intnl_UnityEngineObject_7 = null;
+private Object __intnl_UnityEngineObject_6 = null;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Cubemap __intnl_UnityEngineCubemap_0 = null;
+private UdonBehaviour __0___0_FindAtmosphericConfig__ret = null;
+private Boolean __0_IsMoonrainActive__ret = false;
+private Single __lcl_elapsed_SystemSingle_0 = 0f;
+private Int32 __lcl_offset_SystemInt32_0 = 0;
+private Single __lcl_toFogDensity_SystemSingle_1 = 0f;
+private Single __lcl_toFogDensity_SystemSingle_0 = 0f;
+private Single __lcl_sqrDistance_SystemSingle_0 = 0f;
+private Object __intnl_UnityEngineObject_99 = null;
+private Object __intnl_UnityEngineObject_89 = null;
+private Object __intnl_UnityEngineObject_79 = null;
+private Object __intnl_UnityEngineObject_69 = null;
+private Object __intnl_UnityEngineObject_59 = null;
+private Object __intnl_UnityEngineObject_49 = null;
+private Object __intnl_UnityEngineObject_39 = null;
+private Object __intnl_UnityEngineObject_29 = null;
+private Object __intnl_UnityEngineObject_19 = null;
+private String __const_SystemString_16 = "__0_GetDisplayName__ret";
+private String __const_SystemString_17 = "None";
+private String __const_SystemString_14 = "DeactivateWeatherLuckBuff";
+private String __const_SystemString_15 = "GetDisplayName";
+private String __const_SystemString_12 = "ActivateWeatherLuckBuff";
+private String __const_SystemString_13 = "ShowWeatherLuckAnnouncement";
+private String __const_SystemString_10 = "IsWeatherLuckBuffActive";
+private String __const_SystemString_11 = "__0_IsWeatherLuckBuffActive__ret";
+private String __const_SystemString_18 = "Unknown";
+private String __const_SystemString_19 = "postProcessVolume";
+private Single __lcl_playerY_SystemSingle_1 = 0f;
+private Single __intnl_SystemSingle_7 = 0f;
+private Object __intnl_UnityEngineObject_94 = null;
+private Object __intnl_UnityEngineObject_84 = null;
+private Object __intnl_UnityEngineObject_74 = null;
+private Object __intnl_UnityEngineObject_64 = null;
+private Object __intnl_UnityEngineObject_54 = null;
+private Object __intnl_UnityEngineObject_44 = null;
+private Object __intnl_UnityEngineObject_34 = null;
+private Object __intnl_UnityEngineObject_24 = null;
+private Object __intnl_UnityEngineObject_14 = null;
+private Int64 __refl_typeid = -1093344938559814122;
+private Single baseFogDensity = 0.01f;
+private object __intnl_SystemObject_7 = null;
+private Single fromFogDensity = 0f;
+private Int32 __lcl_previousDefaultWeather_SystemInt32_0 = 0;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_11 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_10 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_12 = null;
+private Single __lcl_toFogIntensity_SystemSingle_0 = 0f;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_2 = null;
+private Color __lcl_lerpedFogColor_UnityEngineColor_0 = new Color(0f, 0f, 0f, 0f);
+private Transform __intnl_UnityEngineTransform_5 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_9 = null;
+private AudioSource fromSource = null;
+private Boolean moonrainCheckedThisNight = false;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Boolean __intnl_SystemBoolean_81 = false;
+private Boolean __intnl_SystemBoolean_91 = false;
+private Boolean __intnl_SystemBoolean_11 = false;
+private Boolean __intnl_SystemBoolean_21 = false;
+private Boolean __intnl_SystemBoolean_31 = false;
+private Boolean __intnl_SystemBoolean_41 = false;
+private Boolean __intnl_SystemBoolean_51 = false;
+private Boolean __intnl_SystemBoolean_61 = false;
+private Boolean __intnl_SystemBoolean_71 = false;
+public Boolean enableDebugLogs;
+private UInt32 __gintnl_SystemUInt32_44 = 29732;
+private UInt32 __gintnl_SystemUInt32_14 = 3872;
+private UInt32 __gintnl_SystemUInt32_34 = 16728;
+private UInt32 __gintnl_SystemUInt32_24 = 8464;
+private Int32 __intnl_SystemInt32_17 = 0;
+private Int32 __intnl_SystemInt32_37 = 0;
+private Int32 __intnl_SystemInt32_27 = 0;
+private UdonBehaviour __0_GetCurrentConfig__ret = null;
+public TextMeshProUGUI weatherDisplayText;
+private Color __lcl_toSunColor_UnityEngineColor_0 = new Color(0f, 0f, 0f, 0f);
+public AudioSource weatherAudioSourceB;
+private ParticleSystem __lcl_ps_UnityEngineParticleSystem_0 = null;
+private AudioClip __0_clip__param = null;
+private String __intnl_SystemString_3 = null;
+private Single fromSunIntensity = 0f;
+public Int32[] biomePriorities;
+private String __const_SystemString_62 = "GetWeatherAudio";
+private String __const_SystemString_63 = "__0_GetWeatherAudio__ret";
+private String __const_SystemString_60 = "GetIndoorWeatherAudio";
+private String __const_SystemString_61 = "__0_GetIndoorWeatherAudio__ret";
+private Single __lcl_playerY_SystemSingle_2 = 0f;
+private Single __intnl_SystemSingle_2 = 0f;
+private object __intnl_SystemObject_2 = null;
+private Single fromAmbientIntensity = 0f;
+public Single[] biomeWeatherWeights;
+private Int32[] syncedBiomeWeatherIndices = null;
+private object __intnl_SystemObject_9 = null;
+private Single fromVolume = 0f;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_1 = null;
+private String __const_SystemString_2 = "__0_GetBaseFogDensity__ret";
+private Boolean __intnl_SystemBoolean_129 = false;
+private Boolean __intnl_SystemBoolean_128 = false;
+private Boolean __intnl_SystemBoolean_121 = false;
+private Boolean __intnl_SystemBoolean_120 = false;
+private Boolean __intnl_SystemBoolean_123 = false;
+private Boolean __intnl_SystemBoolean_122 = false;
+private Boolean __intnl_SystemBoolean_125 = false;
+private Boolean __intnl_SystemBoolean_124 = false;
+private Boolean __intnl_SystemBoolean_127 = false;
+private Boolean __intnl_SystemBoolean_126 = false;
+private Boolean __lcl_shouldHaveFog_SystemBoolean_0 = false;
+private Transform __intnl_UnityEngineTransform_2 = null;
+private Texture __intnl_UnityEngineTexture_0 = null;
+private UdonBehaviour __0_newConfig__param = null;
+private Color __const_UnityEngineColor_0 = new Color(1f, 1f, 1f, 1f);
+private Single __const_SystemSingle_2 = 0f;
+private Color __intnl_UnityEngineColor_0 = new Color(0f, 0f, 0f, 0f);
+private Boolean __intnl_SystemBoolean_89 = false;
+private Boolean __intnl_SystemBoolean_99 = false;
+private Boolean __intnl_SystemBoolean_19 = false;
+private Boolean __intnl_SystemBoolean_29 = false;
+private Boolean __intnl_SystemBoolean_39 = false;
+private Boolean __intnl_SystemBoolean_49 = false;
+private Boolean __intnl_SystemBoolean_59 = false;
+private Boolean __intnl_SystemBoolean_69 = false;
+private Boolean __intnl_SystemBoolean_79 = false;
+private Color fromAmbientColor = new Color(0f, 0f, 0f, 0f);
+private GameObject dyingWeatherEffect = null;
+private Vector3 __intnl_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private GameObject __intnl_UnityEngineGameObject_3 = null;
+private GameObject __intnl_UnityEngineGameObject_2 = null;
+private GameObject __intnl_UnityEngineGameObject_1 = null;
+private GameObject __intnl_UnityEngineGameObject_0 = null;
+private Single __const_SystemSingle_9 = 0.2f;
+private Boolean __intnl_SystemBoolean_84 = false;
+private Boolean __intnl_SystemBoolean_94 = false;
+private Boolean __intnl_SystemBoolean_14 = false;
+private Boolean __intnl_SystemBoolean_24 = false;
+private Boolean __intnl_SystemBoolean_34 = false;
+private Boolean __intnl_SystemBoolean_44 = false;
+private Boolean __intnl_SystemBoolean_54 = false;
+private Boolean __intnl_SystemBoolean_64 = false;
+private Boolean __intnl_SystemBoolean_74 = false;
+private Single __lcl_accumulated_SystemSingle_0 = 0f;
+private AudioSource currentAudioSource = null;
+private Int32 __intnl_SystemInt32_14 = 0;
+private Int32 __intnl_SystemInt32_34 = 0;
+private Int32 __intnl_SystemInt32_24 = 0;
+private Int32 __intnl_SystemInt32_44 = 0;
+public AudioSource weatherAudioSource;
+public UdonBehaviour buffManager;
+private Single __lcl_progress_SystemSingle_0 = 0f;
+private Int32 __intnl_SystemInt32_19 = 0;
+private Int32 __intnl_SystemInt32_39 = 0;
+private Int32 __intnl_SystemInt32_29 = 0;
+private object __const_SystemObject_0 = null;
+private Single __lcl_sqrRadius_SystemSingle_0 = 0f;
+private String __intnl_SystemString_0 = null;
+private Single __lcl_carryOverProgress_SystemSingle_0 = 0f;
+private Int32 __lcl_highestPriority_SystemInt32_0 = 0;
+private Object __intnl_UnityEngineObject_93 = null;
+private Object __intnl_UnityEngineObject_83 = null;
+private Object __intnl_UnityEngineObject_73 = null;
+private Object __intnl_UnityEngineObject_63 = null;
+private Object __intnl_UnityEngineObject_53 = null;
+private Object __intnl_UnityEngineObject_43 = null;
+private Object __intnl_UnityEngineObject_33 = null;
+private Object __intnl_UnityEngineObject_23 = null;
+private Object __intnl_UnityEngineObject_13 = null;
+private Type __const_SystemType_0 = typeof(ParticleSystem);
+private Single __intnl_SystemSingle_1 = 0f;
+private AudioClip __0___0_GetCurrentWeatherAudioClip__ret = null;
+private object __intnl_SystemObject_1 = null;
+private String __const_SystemString_7 = "Open Ocean";
+private UdonBehaviour currentConfig = null;
+private Int32 __0_GetCurrentWeatherType__ret = 0;
+private Single __0_GetWeatherVolume__ret = 0f;
+private Single __const_SystemSingle_1 = 0.01f;
+private UInt32 __gintnl_SystemUInt32_41 = 25312;
+private UInt32 __gintnl_SystemUInt32_11 = 3584;
+private UInt32 __gintnl_SystemUInt32_31 = 10628;
+private UInt32 __gintnl_SystemUInt32_21 = 7820;
+private Int32[] biomeWeatherOffsets = null;
+private Boolean __intnl_SystemBoolean_87 = false;
+private Boolean __intnl_SystemBoolean_97 = false;
+private Boolean __intnl_SystemBoolean_17 = false;
+private Boolean __intnl_SystemBoolean_27 = false;
+private Boolean __intnl_SystemBoolean_37 = false;
+private Boolean __intnl_SystemBoolean_47 = false;
+private Boolean __intnl_SystemBoolean_57 = false;
+private Boolean __intnl_SystemBoolean_67 = false;
+private Boolean __intnl_SystemBoolean_77 = false;
+private Cubemap __intnl_UnityEngineCubemap_2 = null;
+private Int32 __const_SystemInt32_10 = 6;
+private EventTiming __const_VRCUdonCommonEnumsEventTiming_0 = EventTiming.Update;
+private Int32 __intnl_SystemInt32_11 = 0;
+private Int32 __intnl_SystemInt32_31 = 0;
+private Int32 __intnl_SystemInt32_21 = 0;
+private Int32 __intnl_SystemInt32_41 = 0;
+private Single __lcl_elapsed_SystemSingle_2 = 0f;
+private Int32 __lcl_previousWeather_SystemInt32_1 = 0;
+private Int32 __lcl_previousWeather_SystemInt32_0 = 0;
+private String __lcl_weatherText_SystemString_0 = null;
+private Single atmosphericTransitionStartTime = 0f;
+private VRCPlayerApi onOwnershipTransferredPlayer = null;
+private String __lcl_biomeName_SystemString_0 = null;
+private AudioSource toSource = null;
+private String __const_SystemString_36 = "ambientColor";
+private String __const_SystemString_37 = "ambientIntensity";
+private String __const_SystemString_34 = "sunIntensity";
+private String __const_SystemString_35 = "lightIntensityMultiplier";
+private String __const_SystemString_32 = "fogDensityMultiplier";
+private String __const_SystemString_33 = "sunColor";
+private String __const_SystemString_30 = "__0_GetWeatherAudioVolume__ret";
+private String __const_SystemString_31 = "enableFog";
+private String __const_SystemString_38 = "fogColor";
+private String __const_SystemString_39 = "skyboxFogIntensity";
+private Single __intnl_SystemSingle_9 = 0f;
+private Boolean syncedMoonrainActive = false;
+private AudioClip __intnl_UnityEngineAudioClip_0 = null;
+private Object __intnl_UnityEngineObject_96 = null;
+private Object __intnl_UnityEngineObject_86 = null;
+private Object __intnl_UnityEngineObject_76 = null;
+private Object __intnl_UnityEngineObject_66 = null;
+private Object __intnl_UnityEngineObject_56 = null;
+private Object __intnl_UnityEngineObject_46 = null;
+private Object __intnl_UnityEngineObject_36 = null;
+private Object __intnl_UnityEngineObject_26 = null;
+private Object __intnl_UnityEngineObject_16 = null;
+private UdonBehaviour __lcl_config_VRCUdonUdonBehaviour_0 = null;
+private UdonBehaviour __lcl_config_VRCUdonUdonBehaviour_1 = null;
+private Single __lcl_totalWeight_SystemSingle_1 = 0f;
+private GameObject __lcl_existingWeatherEffect_UnityEngineGameObject_0 = null;
+public Single moonrainChance;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_4 = null;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+private String __const_SystemString_4 = "returned to surface";
+private UInt32 __gintnl_SystemUInt32_19 = 5180;
+private UInt32 __gintnl_SystemUInt32_39 = 24020;
+private UInt32 __gintnl_SystemUInt32_29 = 10492;
+public Int32[] biomeAllowedWeatherTypes;
+private Single __const_SystemSingle_4 = 0.3f;
+public Transform[] biomeCenters;
+private Object __intnl_UnityEngineObject_108 = null;
+private Object __intnl_UnityEngineObject_109 = null;
+private Object __intnl_UnityEngineObject_106 = null;
+private Object __intnl_UnityEngineObject_107 = null;
+private Object __intnl_UnityEngineObject_104 = null;
+private Object __intnl_UnityEngineObject_105 = null;
+private Object __intnl_UnityEngineObject_102 = null;
+private Object __intnl_UnityEngineObject_103 = null;
+private Object __intnl_UnityEngineObject_100 = null;
+private Object __intnl_UnityEngineObject_101 = null;
+private UInt32 __gintnl_SystemUInt32_42 = 28632;
+private UInt32 __gintnl_SystemUInt32_12 = 3680;
+private UInt32 __gintnl_SystemUInt32_32 = 12132;
+private UInt32 __gintnl_SystemUInt32_22 = 8128;
+private Single __lcl_toFogHeight_SystemSingle_0 = 0f;
+private Boolean weatherEffectSpawned = false;
+private UInt32 __intnl_SystemUInt32_0 = 0;
+public Component[] allAtmosphericConfigs;
+private Int32 __lcl_i_SystemInt32_8 = 0;
+private Int32 __lcl_i_SystemInt32_1 = 0;
+private Int32 __lcl_i_SystemInt32_0 = 0;
+private Int32 __lcl_i_SystemInt32_3 = 0;
+private Int32 __lcl_i_SystemInt32_2 = 0;
+private Int32 __lcl_i_SystemInt32_5 = 0;
+private Int32 __lcl_i_SystemInt32_4 = 0;
+private Int32 __lcl_i_SystemInt32_7 = 0;
+private Int32 __lcl_i_SystemInt32_6 = 0;
+private Single toVolume = 0f;
+private Boolean isIndoorMode = false;
+public Single audioTransitionDuration;
+private Single __lcl_playerY_SystemSingle_0 = 0f;
+private Single __intnl_SystemSingle_4 = 0f;
+private Object __intnl_UnityEngineObject_95 = null;
+private Object __intnl_UnityEngineObject_85 = null;
+private Object __intnl_UnityEngineObject_75 = null;
+private Object __intnl_UnityEngineObject_65 = null;
+private Object __intnl_UnityEngineObject_55 = null;
+private Object __intnl_UnityEngineObject_45 = null;
+private Object __intnl_UnityEngineObject_35 = null;
+private Object __intnl_UnityEngineObject_25 = null;
+private Object __intnl_UnityEngineObject_15 = null;
+private object __intnl_SystemObject_4 = null;
+private Int32 __lcl_priority_SystemInt32_0 = 0;
+private Vector3 __lcl_playerPos_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Color __lcl_gizmoColor_UnityEngineColor_0 = new Color(0f, 0f, 0f, 0f);
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_3 = null;
+private Boolean __intnl_SystemBoolean_109 = false;
+private Boolean __intnl_SystemBoolean_108 = false;
+private Boolean __intnl_SystemBoolean_101 = false;
+private Boolean __intnl_SystemBoolean_100 = false;
+private Boolean __intnl_SystemBoolean_103 = false;
+private Boolean __intnl_SystemBoolean_102 = false;
+private Boolean __intnl_SystemBoolean_105 = false;
+private Boolean __intnl_SystemBoolean_104 = false;
+private Boolean __intnl_SystemBoolean_107 = false;
+private Boolean __intnl_SystemBoolean_106 = false;
+private Transform __intnl_UnityEngineTransform_4 = null;
+private Color __intnl_UnityEngineColor_2 = new Color(0f, 0f, 0f, 0f);
+private String __const_SystemString_9 = "__0_SetCurrentWeather";
+private Vector3 __intnl_UnityEngineVector3_2 = new Vector3(0f, 0f, 0f);
+private Int32 currentTimeOfDay = 1;
+private Single dyingWeatherEffectTimer = 0f;
+private Boolean __intnl_SystemBoolean_82 = false;
+private Boolean __intnl_SystemBoolean_92 = false;
+private Boolean __intnl_SystemBoolean_12 = false;
+private Boolean __intnl_SystemBoolean_22 = false;
+private Boolean __intnl_SystemBoolean_32 = false;
+private Boolean __intnl_SystemBoolean_42 = false;
+private Boolean __intnl_SystemBoolean_52 = false;
+private Boolean __intnl_SystemBoolean_62 = false;
+private Boolean __intnl_SystemBoolean_72 = false;
+private UInt32 __gintnl_SystemUInt32_47 = 31068;
+private UInt32 __gintnl_SystemUInt32_17 = 4772;
+private UInt32 __gintnl_SystemUInt32_37 = 21620;
+private UInt32 __gintnl_SystemUInt32_27 = 10356;
+private Int32 __intnl_SystemInt32_16 = 0;
+private Int32 __intnl_SystemInt32_36 = 0;
+private Int32 __intnl_SystemInt32_26 = 0;
+private String __refl_typename = "BiomeWeatherManager";
+private Single __lcl_t_SystemSingle_0 = 0f;
+private Single audioTransitionStartTime = 0f;
+public Single[] biomeRadii;
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Int32 __intnl_SystemInt32_5 = 0;
+private Int32 __intnl_SystemInt32_4 = 0;
+private Int32 __intnl_SystemInt32_7 = 0;
+private Int32 __intnl_SystemInt32_6 = 0;
+private Int32 __intnl_SystemInt32_9 = 0;
+private Int32 __intnl_SystemInt32_8 = 0;
+private String __intnl_SystemString_2 = null;
+public Boolean useHeightFiltering;
+private Light __intnl_UnityEngineLight_0 = null;
+private Boolean isMasterClient = false;
+private AudioClip __lcl_outdoorClip_UnityEngineAudioClip_0 = null;
+private String __const_SystemString_56 = "Foggy";
+private String __const_SystemString_57 = "Moonrain";
+private String __const_SystemString_54 = "Rainy";
+private String __const_SystemString_55 = "Stormy";
+private String __const_SystemString_52 = "";
+private String __const_SystemString_53 = "Clear";
+private String __const_SystemString_50 = "__0_CanBeActiveAtTime";
+private String __const_SystemString_51 = "__0___0_CanBeActiveAtTime__ret";
+private String __const_SystemString_58 = "Starfog";
+private String __const_SystemString_59 = "Skybloom";
+private Single __intnl_SystemSingle_3 = 0f;
+private object __intnl_SystemObject_3 = null;
+private Int32 __0_time__param = 0;
+private Boolean isTransitioning = false;
+private Single fromPostProcessWeight = 0f;
+private Int32 __0_weather__param = 0;
+private String __const_SystemString_1 = "GetBaseFogDensity";
+private Boolean __intnl_SystemBoolean_131 = false;
+private Boolean __intnl_SystemBoolean_130 = false;
+private Boolean __intnl_SystemBoolean_133 = false;
+private Boolean __intnl_SystemBoolean_132 = false;
+private Transform __intnl_UnityEngineTransform_1 = null;
+private Int32 __lcl_highestPriorityBiome_SystemInt32_0 = 0;
+private Color __const_UnityEngineColor_1 = new Color(1f, 0.9215686f, 0.01568628f, 1f);
+private Single __const_SystemSingle_3 = 1f;
+private Color __intnl_UnityEngineColor_1 = new Color(0f, 0f, 0f, 0f);
+private Int32 __lcl_newTime_SystemInt32_0 = 0;
+private Vector3 __intnl_UnityEngineVector3_1 = new Vector3(0f, 0f, 0f);
+public Single[] defaultWeatherWeights;
+private Boolean __intnl_SystemBoolean_85 = false;
+private Boolean __intnl_SystemBoolean_95 = false;
+private Boolean __intnl_SystemBoolean_15 = false;
+private Boolean __intnl_SystemBoolean_25 = false;
+private Boolean __intnl_SystemBoolean_35 = false;
+private Boolean __intnl_SystemBoolean_45 = false;
+private Boolean __intnl_SystemBoolean_55 = false;
+private Boolean __intnl_SystemBoolean_65 = false;
+private Boolean __intnl_SystemBoolean_75 = false;
+private Single __lcl_lerpedFogDensity_SystemSingle_0 = 0f;
+private Int32 __intnl_SystemInt32_13 = 0;
+private Int32 __intnl_SystemInt32_33 = 0;
+private Int32 __intnl_SystemInt32_23 = 0;
+private Int32 __intnl_SystemInt32_43 = 0;
+private AudioSource __lcl_newSource_UnityEngineAudioSource_0 = null;
+private Color fromFogColor = new Color(0f, 0f, 0f, 0f);
+private Int32 __lcl_currentWeather_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_18 = 0;
+private Int32 __intnl_SystemInt32_38 = 0;
+private Int32 __intnl_SystemInt32_28 = 0;
+private Int32 __lcl_biomeCount_SystemInt32_0 = 0;
+private Color fromSunColor = new Color(0f, 0f, 0f, 0f);
+private Int32 __lcl_weatherCount_SystemInt32_0 = 0;
+private ParticleSystemStopBehavior __const_UnityEngineParticleSystemStopBehavior_0 = ParticleSystemStopBehavior.StopEmitting;
+public Single weatherChangeInterval;
+private Object __intnl_UnityEngineObject_90 = null;
+private Object __intnl_UnityEngineObject_80 = null;
+private Object __intnl_UnityEngineObject_70 = null;
+private Object __intnl_UnityEngineObject_60 = null;
+private Object __intnl_UnityEngineObject_50 = null;
+private Object __intnl_UnityEngineObject_40 = null;
+private Object __intnl_UnityEngineObject_30 = null;
+private Object __intnl_UnityEngineObject_20 = null;
+private Object __intnl_UnityEngineObject_10 = null;
+private Boolean __lcl_isBelowThreshold_SystemBoolean_0 = false;
+private String __lcl_currentName_SystemString_0 = null;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_6 = null;
+private String __lcl_fromName_SystemString_1 = null;
+private String __lcl_fromName_SystemString_0 = null;
+private Single defaultWeatherTimer = 0f;
+private String __const_SystemString_6 = "__0_GetCurrentTimeOfDay__ret";
+private Single __lcl_roll_SystemSingle_0 = 0f;
+private Single __lcl_roll_SystemSingle_1 = 0f;
+private Single __lcl_roll_SystemSingle_2 = 0f;
+private Single __const_SystemSingle_6 = 0.5f;
+private Object __intnl_UnityEngineObject_128 = null;
+private Object __intnl_UnityEngineObject_129 = null;
+private Object __intnl_UnityEngineObject_126 = null;
+private Object __intnl_UnityEngineObject_127 = null;
+private Object __intnl_UnityEngineObject_124 = null;
+private Object __intnl_UnityEngineObject_125 = null;
+private Object __intnl_UnityEngineObject_122 = null;
+private Object __intnl_UnityEngineObject_123 = null;
+private Object __intnl_UnityEngineObject_120 = null;
+private Object __intnl_UnityEngineObject_121 = null;
+private Boolean __lcl_sameWeatherType_SystemBoolean_1 = false;
+private Boolean __lcl_sameWeatherType_SystemBoolean_0 = false;
+private Vector3 __intnl_UnityEngineVector3_4 = new Vector3(0f, 0f, 0f);
+private UInt32 __gintnl_SystemUInt32_40 = 24632;
+private UInt32 __gintnl_SystemUInt32_10 = 3552;
+private UInt32 __gintnl_SystemUInt32_30 = 10536;
+private UInt32 __gintnl_SystemUInt32_20 = 7716;
+public UdonBehaviour announcementManager;
+private Cubemap __intnl_UnityEngineCubemap_1 = null;
+private Int32 __intnl_SystemInt32_10 = 0;
+private Int32 __intnl_SystemInt32_30 = 0;
+private Int32 __intnl_SystemInt32_20 = 0;
+private Int32 __intnl_SystemInt32_40 = 0;
+private Single __lcl_volume_SystemSingle_0 = 0f;
+private Single __lcl_elapsed_SystemSingle_1 = 0f;
+private UdonBehaviour fromConfig = null;
+public UdonBehaviour weatherSpawnTarget;
+private Int32 __lcl_offset_SystemInt32_1 = 0;
+private Color __lcl_toFogColor_UnityEngineColor_0 = new Color(0f, 0f, 0f, 0f);
+private VRCPlayerApi localPlayer = null;
+public Int32[] biomeWeatherCounts;
+private ParticleSystem[] __lcl_particles_UnityEngineParticleSystemArray_0 = null;
+private GameObject __this_UnityEngineGameObject_0 = this;
+private Single fromSkyboxFogIntensity = 0f;
+private Int32 syncedDefaultWeatherIndex = 0;
+private Object __intnl_UnityEngineObject_98 = null;
+private Object __intnl_UnityEngineObject_88 = null;
+private Object __intnl_UnityEngineObject_78 = null;
+private Object __intnl_UnityEngineObject_68 = null;
+private Object __intnl_UnityEngineObject_58 = null;
+private Object __intnl_UnityEngineObject_48 = null;
+private Object __intnl_UnityEngineObject_38 = null;
+private Object __intnl_UnityEngineObject_28 = null;
+private Object __intnl_UnityEngineObject_18 = null;
+private String __lcl_biomeName_SystemString_1 = null;
+private String __const_SystemString_26 = "__0_GetActiveWeatherEffect__ret";
+private String __const_SystemString_27 = "__0_weatherEffect__param";
+private String __const_SystemString_24 = "__0_GetWeatherType__ret";
+private String __const_SystemString_25 = "GetActiveWeatherEffect";
+private String __const_SystemString_22 = "postProcessWeight";
+private String __const_SystemString_23 = "GetWeatherType";
+private String __const_SystemString_20 = "_FogIntensity";
+private String __const_SystemString_21 = "_FogHeight";
+private String __const_SystemString_28 = "__0_SetActiveWeatherEffect";
+private String __const_SystemString_29 = "GetWeatherAudioVolume";
+private Single __intnl_SystemSingle_6 = 0f;
+private Object __intnl_UnityEngineObject_97 = null;
+private Object __intnl_UnityEngineObject_87 = null;
+private Object __intnl_UnityEngineObject_77 = null;
+private Object __intnl_UnityEngineObject_67 = null;
+private Object __intnl_UnityEngineObject_57 = null;
+private Object __intnl_UnityEngineObject_47 = null;
+private Object __intnl_UnityEngineObject_37 = null;
+private Object __intnl_UnityEngineObject_27 = null;
+private Object __intnl_UnityEngineObject_17 = null;
+private object __intnl_SystemObject_6 = null;
+private Single __lcl_weatherVolume_SystemSingle_0 = 0f;
+private String __lcl_direction_SystemString_0 = null;
+private Boolean wasBelowThreshold = false;
+private Boolean hasReceivedInitialSync = false;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_5 = null;
+private Single __lcl_radius_SystemSingle_0 = 0f;
+private Int32 __lcl_selectedWeather_SystemInt32_0 = 0;
+private Boolean __0_indoor__param = false;
+private Boolean __lcl_shouldTransitionAudio_SystemBoolean_0 = false;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_8 = null;
+private AudioClip __lcl_currentAudio_UnityEngineAudioClip_1 = null;
+private AudioClip __lcl_currentAudio_UnityEngineAudioClip_0 = null;
+private Int32 frameCounter = 0;
+private UInt32 __gintnl_SystemUInt32_48 = 31580;
+private UInt32 __gintnl_SystemUInt32_18 = 5064;
+private UInt32 __gintnl_SystemUInt32_38 = 23556;
+private UInt32 __gintnl_SystemUInt32_28 = 10476;
+private Single __const_SystemSingle_5 = 30f;
+private Int32 __lcl_newBiomeIndex_SystemInt32_0 = 0;
+private Object __intnl_UnityEngineObject_118 = null;
+private Object __intnl_UnityEngineObject_119 = null;
+private Object __intnl_UnityEngineObject_116 = null;
+private Object __intnl_UnityEngineObject_117 = null;
+private Object __intnl_UnityEngineObject_114 = null;
+private Object __intnl_UnityEngineObject_115 = null;
+private Object __intnl_UnityEngineObject_112 = null;
+private Object __intnl_UnityEngineObject_113 = null;
+private Object __intnl_UnityEngineObject_110 = null;
+private Object __intnl_UnityEngineObject_111 = null;
+private Boolean __intnl_SystemBoolean_80 = false;
+private Boolean __intnl_SystemBoolean_90 = false;
+private Boolean __intnl_SystemBoolean_10 = false;
+private Boolean __intnl_SystemBoolean_20 = false;
+private Boolean __intnl_SystemBoolean_30 = false;
+private Boolean __intnl_SystemBoolean_40 = false;
+private Boolean __intnl_SystemBoolean_50 = false;
+private Boolean __intnl_SystemBoolean_60 = false;
+private Boolean __intnl_SystemBoolean_70 = false;
+private PostProcessVolume __intnl_UnityEngineRenderingPostProcessingPostProcessVolume_0 = null;
+private PostProcessVolume __intnl_UnityEngineRenderingPostProcessingPostProcessVolume_1 = null;
+private PostProcessVolume __intnl_UnityEngineRenderingPostProcessingPostProcessVolume_2 = null;
+private PostProcessVolume __intnl_UnityEngineRenderingPostProcessingPostProcessVolume_3 = null;
+private PostProcessVolume __intnl_UnityEngineRenderingPostProcessingPostProcessVolume_4 = null;
+private PostProcessVolume __intnl_UnityEngineRenderingPostProcessingPostProcessVolume_5 = null;
+private PostProcessVolume __intnl_UnityEngineRenderingPostProcessingPostProcessVolume_6 = null;
+private PostProcessVolume __intnl_UnityEngineRenderingPostProcessingPostProcessVolume_7 = null;
+private PostProcessVolume __intnl_UnityEngineRenderingPostProcessingPostProcessVolume_8 = null;
+private PostProcessVolume __intnl_UnityEngineRenderingPostProcessingPostProcessVolume_9 = null;
+private UInt32 __gintnl_SystemUInt32_45 = 29748;
+private UInt32 __gintnl_SystemUInt32_15 = 4128;
+private UInt32 __gintnl_SystemUInt32_35 = 17076;
+private UInt32 __gintnl_SystemUInt32_25 = 9200;
+private Single toPostProcessWeight = 0f;
+private Int32 __const_SystemInt32_9 = 4;
+private Int32 __const_SystemInt32_8 = 4;
+private Int32 __const_SystemInt32_1 = 0;
+private Int32 __const_SystemInt32_0 = 1;
+private Int32 __const_SystemInt32_3 = 5;
+private Int32 __const_SystemInt32_2 = 3;
+private Int32 __const_SystemInt32_5 = 60000;
+private Int32 __const_SystemInt32_4 = 10;
+private Int32 __const_SystemInt32_7 = -1;
+private Int32 __const_SystemInt32_6 = 0;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private Int32 __lcl_offset_SystemInt32_2 = 0;
+private Single __intnl_SystemSingle_5 = 0f;
+private Int32 __lcl_prevWeather_SystemInt32_0 = 0;
+private object __intnl_SystemObject_5 = null;
+public Light sunLight;
+private object __intnl_SystemObject_8 = null;
+public Color[] biomeGizmoColors;
+private UdonBehaviour __intnl_VRCUdonUdonBehaviour_0 = null;
+private UdonBehaviour __0_config__param = null;
+private String __const_SystemString_3 = "entered underground";
+private UdonBehaviour __this_VRCUdonUdonBehaviour_3 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_2 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_1 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_0 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_6 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_5 = this;
+private UdonBehaviour __this_VRCUdonUdonBehaviour_4 = this;
+private Boolean __intnl_SystemBoolean_119 = false;
+private Boolean __intnl_SystemBoolean_118 = false;
+private Boolean __intnl_SystemBoolean_111 = false;
+private Boolean __intnl_SystemBoolean_110 = false;
+private Boolean __intnl_SystemBoolean_113 = false;
+private Boolean __intnl_SystemBoolean_112 = false;
+private Boolean __intnl_SystemBoolean_115 = false;
+private Boolean __intnl_SystemBoolean_114 = false;
+private Boolean __intnl_SystemBoolean_117 = false;
+private Boolean __intnl_SystemBoolean_116 = false;
+private Transform __intnl_UnityEngineTransform_3 = null;
+private Texture __intnl_UnityEngineTexture_1 = null;
+public Single indoorHeightThreshold;
+private Int32 __1_weather__param = 0;
+private AudioClip __lcl_weatherAudio_UnityEngineAudioClip_0 = null;
+private Int32 __0_biomeIndex__param = 0;
+private String __const_SystemString_8 = "__0_weather__param";
+private Boolean isAudioTransitioning = false;
+private Boolean __intnl_SystemBoolean_88 = false;
+private Boolean __intnl_SystemBoolean_98 = false;
+private Boolean __intnl_SystemBoolean_18 = false;
+private Boolean __intnl_SystemBoolean_28 = false;
+private Boolean __intnl_SystemBoolean_38 = false;
+private Boolean __intnl_SystemBoolean_48 = false;
+private Boolean __intnl_SystemBoolean_58 = false;
+private Boolean __intnl_SystemBoolean_68 = false;
+private Boolean __intnl_SystemBoolean_78 = false;
+private Vector3 __intnl_UnityEngineVector3_3 = new Vector3(0f, 0f, 0f);
+
+
+public void _start()
+{
+localPlayer = Networking.LocalPlayer;
+isMasterClient = Networking.IsOwner(__this_UnityEngineGameObject_0);
+UNDEF_ab452_1612();
+UNDEF_ab452_2000();
+UNDEF_ab452_2392();
+UNDEF_ab452_2864();
+__this_VRCUdonUdonBehaviour_0.SendCustomEventDelayedFrames(__const_SystemString_0, __const_SystemInt32_0, __const_VRCUdonCommonEnumsEventTiming_0);
+}
+public void _DelayedInitialization()
+{
+__intnl_UnityEngineObject_0 = dayNightCycle;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_0)
+{
+__intnl_VRCUdonUdonBehaviour_0 = dayNightCycle;
+dayNightCycle.SendCustomEvent(__const_SystemString_1);
+__intnl_SystemObject_0 = dayNightCycle.GetProgramVariable(__const_SystemString_2);
+__intnl_SystemSingle_0 = Convert.ToSingle(__intnl_SystemObject_0);
+baseFogDensity = __intnl_SystemSingle_0;
+__intnl_SystemBoolean_1 = baseFogDensity > __const_SystemSingle_0;
+if (__intnl_SystemBoolean_1)
+{
+baseFogDensity = __const_SystemSingle_1;
+}
+if (enableDebugLogs)
+{
+}
+}
+__intnl_SystemBoolean_1 = useHeightFiltering;
+if (__intnl_SystemBoolean_1)
+{
+__intnl_SystemBoolean_1 = localPlayer != __const_SystemObject_0;
+}
+if (__intnl_SystemBoolean_1)
+{
+__intnl_UnityEngineVector3_0 = localPlayer.GetPosition();
+__lcl_playerY_SystemSingle_0 = __intnl_UnityEngineVector3_0.y;
+wasBelowThreshold = __lcl_playerY_SystemSingle_0 < indoorHeightThreshold;
+if (enableDebugLogs)
+{
+}
+}
+if (isMasterClient)
+{
+UNDEF_ab452_2916();
+hasReceivedInitialSync = __const_SystemBoolean_0;
+}
+else
+{
+if (enableDebugLogs)
+{
+}
+}
+UNDEF_ab452_28968();
+if (enableDebugLogs)
+{
+__intnl_SystemBoolean_2 = biomeNames != __const_SystemObject_0;
+if (__intnl_SystemBoolean_2)
+{
+__lcl_biomeCount_SystemInt32_0 = biomeNames.Length;
+}
+else
+{
+__lcl_biomeCount_SystemInt32_0 = __const_SystemInt32_1;
+}
+}
+}
+private void UNDEF_ab452_1612()
+{
+__intnl_UnityEngineObject_2 = dayNightCycle;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_3 = __intnl_UnityEngineObject_2 == __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_3)
+{
+}
+__intnl_UnityEngineObject_4 = sunLight;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_4 = __intnl_UnityEngineObject_4 == __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_4)
+{
+}
+__intnl_UnityEngineObject_6 = weatherSpawnTarget;
+__intnl_UnityEngineObject_7 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_5 = __intnl_UnityEngineObject_6 == __intnl_UnityEngineObject_7;
+if (__intnl_SystemBoolean_5)
+{
+}
+__intnl_UnityEngineObject_8 = weatherAudioSource;
+__intnl_UnityEngineObject_9 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_6 = __intnl_UnityEngineObject_8 == __intnl_UnityEngineObject_9;
+if (__intnl_SystemBoolean_6)
+{
+}
+else
+{
+__intnl_UnityEngineObject_10 = weatherAudioSourceB;
+__intnl_UnityEngineObject_11 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_6 = __intnl_UnityEngineObject_10 == __intnl_UnityEngineObject_11;
+}
+if (__intnl_SystemBoolean_6)
+{
+}
+__intnl_SystemBoolean_7 = allAtmosphericConfigs == __const_SystemObject_0;
+if (__intnl_SystemBoolean_7)
+{
+}
+else
+{
+__intnl_SystemInt32_0 = allAtmosphericConfigs.Length;
+__intnl_SystemBoolean_7 = __intnl_SystemInt32_0 == __const_SystemInt32_1;
+}
+if (__intnl_SystemBoolean_7)
+{
+}
+__intnl_SystemBoolean_8 = biomeNames == __const_SystemObject_0;
+if (__intnl_SystemBoolean_8)
+{
+}
+else
+{
+__intnl_SystemInt32_1 = biomeNames.Length;
+__intnl_SystemBoolean_8 = __intnl_SystemInt32_1 == __const_SystemInt32_1;
+}
+if (__intnl_SystemBoolean_8)
+{
+}
+}
+private void UNDEF_ab452_2000()
+{
+__intnl_UnityEngineObject_12 = weatherAudioSource;
+__intnl_UnityEngineObject_13 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_9 = __intnl_UnityEngineObject_12 != __intnl_UnityEngineObject_13;
+if (__intnl_SystemBoolean_9)
+{
+weatherAudioSource.loop = __const_SystemBoolean_0;
+weatherAudioSource.volume = __const_SystemSingle_2;
+weatherAudioSource.playOnAwake = __const_SystemBoolean_1;
+}
+__intnl_UnityEngineObject_14 = weatherAudioSourceB;
+__intnl_UnityEngineObject_15 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_10 = __intnl_UnityEngineObject_14 != __intnl_UnityEngineObject_15;
+if (__intnl_SystemBoolean_10)
+{
+weatherAudioSourceB.loop = __const_SystemBoolean_0;
+weatherAudioSourceB.volume = __const_SystemSingle_2;
+weatherAudioSourceB.playOnAwake = __const_SystemBoolean_1;
+}
+currentAudioSource = weatherAudioSource;
+isUsingSourceA = __const_SystemBoolean_0;
+}
+private void UNDEF_ab452_2392()
+{
+__intnl_SystemBoolean_11 = biomeNames != __const_SystemObject_0;
+if (__intnl_SystemBoolean_11)
+{
+__intnl_SystemInt32_2 = biomeNames.Length;
+__intnl_SystemBoolean_11 = __intnl_SystemInt32_2 > __const_SystemInt32_1;
+}
+if (__intnl_SystemBoolean_11)
+{
+break;
+}
+__lcl_biomeCount_SystemInt32_1 = biomeNames.Length;
+syncedBiomeWeatherIndices = __lcl_biomeCount_SystemInt32_1.ctor();
+biomeWeatherTimers = __lcl_biomeCount_SystemInt32_1.ctor();
+__lcl_i_SystemInt32_0 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemBoolean_12 = __lcl_i_SystemInt32_0 < __lcl_biomeCount_SystemInt32_1;
+if (__intnl_SystemBoolean_12)
+{
+break;
+}
+syncedBiomeWeatherIndices.Set(__lcl_i_SystemInt32_0, __const_SystemInt32_1);
+biomeWeatherTimers.Set(__lcl_i_SystemInt32_0, __const_SystemSingle_2);
+__lcl_i_SystemInt32_0 = __lcl_i_SystemInt32_0 + __const_SystemInt32_0;
+}
+}
+private void UNDEF_ab452_2864()
+{
+__intnl_SystemBoolean_13 = biomeWeatherCounts == __const_SystemObject_0;
+if (__intnl_SystemBoolean_13)
+{
+}
+else
+{
+__intnl_SystemInt32_3 = biomeWeatherCounts.Length;
+__intnl_SystemBoolean_13 = __intnl_SystemInt32_3 == __const_SystemInt32_1;
+}
+if (__intnl_SystemBoolean_13)
+{
+return;
+}
+__intnl_SystemInt32_4 = biomeWeatherCounts.Length;
+biomeWeatherOffsets = __intnl_SystemInt32_4.ctor();
+__lcl_offset_SystemInt32_0 = __const_SystemInt32_1;
+__lcl_i_SystemInt32_1 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_5 = biomeWeatherCounts.Length;
+__intnl_SystemBoolean_14 = __lcl_i_SystemInt32_1 < __intnl_SystemInt32_5;
+if (__intnl_SystemBoolean_14)
+{
+break;
+}
+biomeWeatherOffsets.Set(__lcl_i_SystemInt32_1, __lcl_offset_SystemInt32_0);
+__intnl_SystemInt32_6 = biomeWeatherCounts[__lcl_i_SystemInt32_1];
+__lcl_offset_SystemInt32_0 = __lcl_offset_SystemInt32_0 + __intnl_SystemInt32_6;
+__lcl_i_SystemInt32_1 = __lcl_i_SystemInt32_1 + __const_SystemInt32_0;
+}
+}
+private void UNDEF_ab452_2916()
+{
+if (isMasterClient)
+{
+UNDEF_ab452_3216();
+}
+}
+private void UNDEF_ab452_3216()
+{
+__intnl_SystemBoolean_15 = biomeNames != __const_SystemObject_0;
+if (__intnl_SystemBoolean_15)
+{
+break;
+}
+__lcl_i_SystemInt32_2 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_7 = biomeNames.Length;
+__intnl_SystemBoolean_16 = __lcl_i_SystemInt32_2 < __intnl_SystemInt32_7;
+if (__intnl_SystemBoolean_16)
+{
+break;
+}
+__0_biomeIndex__param = __lcl_i_SystemInt32_2;
+UNDEF_ab452_5268();
+__lcl_i_SystemInt32_2 = __lcl_i_SystemInt32_2 + __const_SystemInt32_0;
+}
+UNDEF_ab452_6788();
+__this_VRCUdonUdonBehaviour_1.RequestSerialization();
+UNDEF_ab452_12176();
+if (enableDebugLogs)
+{
+}
+}
+public void _update()
+{
+__intnl_SystemBoolean_17 = localPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_17)
+{
+return;
+}
+frameCounter = frameCounter + __const_SystemInt32_0;
+__intnl_SystemBoolean_19 = isMasterClient;
+if (__intnl_SystemBoolean_19)
+{
+__intnl_SystemBoolean_19 = syncedMoonrainActive;
+}
+__intnl_SystemBoolean_18 = __intnl_SystemBoolean_19;
+if (__intnl_SystemBoolean_18)
+{
+__intnl_SystemBoolean_18 = currentTimeOfDay != __const_SystemInt32_2;
+}
+if (__intnl_SystemBoolean_18)
+{
+syncedMoonrainActive = __const_SystemBoolean_1;
+moonrainCheckedThisNight = __const_SystemBoolean_1;
+__this_VRCUdonUdonBehaviour_2.RequestSerialization();
+UNDEF_ab452_12176();
+UNDEF_ab452_28968();
+}
+if (isMasterClient)
+{
+UNDEF_ab452_4284();
+}
+__intnl_SystemInt32_8 = frameCounter / __const_SystemInt32_3;
+__intnl_SystemBoolean_20 = __intnl_SystemInt32_8 == __const_SystemInt32_1;
+if (__intnl_SystemBoolean_20)
+{
+UNDEF_ab452_7840();
+}
+__intnl_SystemInt32_9 = frameCounter / __const_SystemInt32_3;
+__intnl_SystemBoolean_21 = __intnl_SystemInt32_9 == __const_SystemInt32_1;
+if (__intnl_SystemBoolean_21)
+{
+UNDEF_ab452_8148();
+}
+__intnl_SystemInt32_10 = frameCounter / __const_SystemInt32_4;
+__intnl_SystemBoolean_22 = __intnl_SystemInt32_10 == __const_SystemInt32_1;
+if (__intnl_SystemBoolean_22)
+{
+UNDEF_ab452_9220();
+}
+__intnl_UnityEngineObject_16 = dyingWeatherEffect;
+__intnl_UnityEngineObject_17 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_23 = __intnl_UnityEngineObject_16 != __intnl_UnityEngineObject_17;
+if (__intnl_SystemBoolean_23)
+{
+__intnl_SystemSingle_1 = Time.deltaTime;
+dyingWeatherEffectTimer = dyingWeatherEffectTimer - __intnl_SystemSingle_1;
+__intnl_SystemBoolean_24 = dyingWeatherEffectTimer <= __const_SystemSingle_2;
+if (__intnl_SystemBoolean_24)
+{
+__intnl_UnityEngineObject_18 = dyingWeatherEffect;
+Object.Destroy(__intnl_UnityEngineObject_18);
+dyingWeatherEffect = (GameObject)__const_SystemObject_0;
+}
+}
+UNDEF_ab452_17484();
+UNDEF_ab452_24840();
+__intnl_SystemBoolean_24 = frameCounter >= __const_SystemInt32_5;
+if (__intnl_SystemBoolean_24)
+{
+frameCounter = __const_SystemInt32_1;
+}
+}
+private void UNDEF_ab452_4284()
+{
+if (isMasterClient)
+{
+UNDEF_ab452_5216();
+}
+}
+private void UNDEF_ab452_5216()
+{
+if (syncedMoonrainActive)
+{
+return;
+}
+__lcl_anyWeatherChanged_SystemBoolean_0 = __const_SystemBoolean_1;
+__intnl_SystemBoolean_25 = biomeNames != __const_SystemObject_0;
+if (__intnl_SystemBoolean_25)
+{
+break;
+}
+__lcl_i_SystemInt32_3 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_11 = biomeNames.Length;
+__intnl_SystemBoolean_26 = __lcl_i_SystemInt32_3 < __intnl_SystemInt32_11;
+if (__intnl_SystemBoolean_26)
+{
+break;
+}
+__intnl_SystemSingle_2 = biomeWeatherTimers[__lcl_i_SystemInt32_3];
+__intnl_SystemSingle_3 = Time.deltaTime;
+__intnl_SystemSingle_4 = __intnl_SystemSingle_2 + __intnl_SystemSingle_3;
+biomeWeatherTimers.Set(__lcl_i_SystemInt32_3, __intnl_SystemSingle_4);
+__intnl_SystemSingle_5 = biomeWeatherTimers[__lcl_i_SystemInt32_3];
+__intnl_SystemBoolean_27 = __intnl_SystemSingle_5 >= weatherChangeInterval;
+if (__intnl_SystemBoolean_27)
+{
+biomeWeatherTimers.Set(__lcl_i_SystemInt32_3, __const_SystemSingle_2);
+__lcl_previousWeather_SystemInt32_0 = syncedBiomeWeatherIndices[__lcl_i_SystemInt32_3];
+__0_biomeIndex__param = __lcl_i_SystemInt32_3;
+UNDEF_ab452_5268();
+__intnl_SystemInt32_12 = syncedBiomeWeatherIndices[__lcl_i_SystemInt32_3];
+__intnl_SystemBoolean_28 = __intnl_SystemInt32_12 != __lcl_previousWeather_SystemInt32_0;
+if (__intnl_SystemBoolean_28)
+{
+__lcl_anyWeatherChanged_SystemBoolean_0 = __const_SystemBoolean_0;
+}
+}
+__lcl_i_SystemInt32_3 = __lcl_i_SystemInt32_3 + __const_SystemInt32_0;
+}
+__intnl_SystemSingle_2 = Time.deltaTime;
+defaultWeatherTimer = defaultWeatherTimer + __intnl_SystemSingle_2;
+__intnl_SystemBoolean_26 = defaultWeatherTimer >= weatherChangeInterval;
+if (__intnl_SystemBoolean_26)
+{
+defaultWeatherTimer = __const_SystemSingle_2;
+__lcl_previousDefaultWeather_SystemInt32_0 = syncedDefaultWeatherIndex;
+UNDEF_ab452_6788();
+__intnl_SystemBoolean_27 = syncedDefaultWeatherIndex != __lcl_previousDefaultWeather_SystemInt32_0;
+if (__intnl_SystemBoolean_27)
+{
+__lcl_anyWeatherChanged_SystemBoolean_0 = __const_SystemBoolean_0;
+}
+}
+if (__lcl_anyWeatherChanged_SystemBoolean_0)
+{
+__this_VRCUdonUdonBehaviour_3.RequestSerialization();
+UNDEF_ab452_12176();
+if (enableDebugLogs)
+{
+}
+}
+}
+private void UNDEF_ab452_5268()
+{
+if (isMasterClient)
+{
+UNDEF_ab452_6736();
+}
+}
+private void UNDEF_ab452_6736()
+{
+__intnl_SystemBoolean_30 = biomeWeatherCounts == __const_SystemObject_0;
+if (__intnl_SystemBoolean_30)
+{
+}
+else
+{
+__intnl_SystemBoolean_30 = __0_biomeIndex__param < __const_SystemInt32_1;
+}
+__intnl_SystemBoolean_29 = __intnl_SystemBoolean_30;
+if (__intnl_SystemBoolean_29)
+{
+}
+else
+{
+__intnl_SystemInt32_13 = biomeWeatherCounts.Length;
+__intnl_SystemBoolean_29 = __0_biomeIndex__param >= __intnl_SystemInt32_13;
+}
+if (__intnl_SystemBoolean_29)
+{
+return;
+}
+__lcl_weatherCount_SystemInt32_0 = biomeWeatherCounts[__0_biomeIndex__param];
+__intnl_SystemBoolean_31 = __lcl_weatherCount_SystemInt32_0 == __const_SystemInt32_1;
+if (__intnl_SystemBoolean_31)
+{
+return;
+}
+__lcl_offset_SystemInt32_1 = biomeWeatherOffsets[__0_biomeIndex__param];
+__lcl_totalWeight_SystemSingle_0 = __const_SystemSingle_2;
+__lcl_i_SystemInt32_4 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemBoolean_32 = __lcl_i_SystemInt32_4 < __lcl_weatherCount_SystemInt32_0;
+if (__intnl_SystemBoolean_32)
+{
+break;
+}
+__intnl_SystemInt32_14 = __lcl_offset_SystemInt32_1 + __lcl_i_SystemInt32_4;
+__intnl_SystemSingle_6 = biomeWeatherWeights[__intnl_SystemInt32_14];
+__lcl_totalWeight_SystemSingle_0 = __lcl_totalWeight_SystemSingle_0 + __intnl_SystemSingle_6;
+__lcl_i_SystemInt32_4 = __lcl_i_SystemInt32_4 + __const_SystemInt32_0;
+}
+__intnl_SystemBoolean_32 = __lcl_totalWeight_SystemSingle_0 <= __const_SystemSingle_2;
+if (__intnl_SystemBoolean_32)
+{
+return;
+}
+__lcl_roll_SystemSingle_0 = Random.Range(__const_SystemSingle_2, __lcl_totalWeight_SystemSingle_0);
+__lcl_accumulated_SystemSingle_0 = __const_SystemSingle_2;
+__lcl_i_SystemInt32_4 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemBoolean_33 = __lcl_i_SystemInt32_4 < __lcl_weatherCount_SystemInt32_0;
+if (__intnl_SystemBoolean_33)
+{
+break;
+}
+__intnl_SystemInt32_14 = __lcl_offset_SystemInt32_1 + __lcl_i_SystemInt32_4;
+__intnl_SystemSingle_6 = biomeWeatherWeights[__intnl_SystemInt32_14];
+__lcl_accumulated_SystemSingle_0 = __lcl_accumulated_SystemSingle_0 + __intnl_SystemSingle_6;
+__intnl_SystemBoolean_34 = __lcl_roll_SystemSingle_0 <= __lcl_accumulated_SystemSingle_0;
+if (__intnl_SystemBoolean_34)
+{
+__lcl_previousWeather_SystemInt32_1 = syncedBiomeWeatherIndices[__0_biomeIndex__param];
+__intnl_SystemBoolean_35 = __lcl_previousWeather_SystemInt32_1 != __lcl_i_SystemInt32_4;
+if (__intnl_SystemBoolean_35)
+{
+syncedBiomeWeatherIndices.Set(__0_biomeIndex__param, __lcl_i_SystemInt32_4);
+if (enableDebugLogs)
+{
+__intnl_SystemInt32_15 = __lcl_offset_SystemInt32_1 + __lcl_i_SystemInt32_4;
+__lcl_selectedWeather_SystemInt32_0 = biomeAllowedWeatherTypes[__intnl_SystemInt32_15];
+__intnl_SystemBoolean_36 = __lcl_previousWeather_SystemInt32_1 >= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_36)
+{
+__intnl_SystemBoolean_36 = __lcl_previousWeather_SystemInt32_1 < __lcl_weatherCount_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_36)
+{
+__intnl_SystemInt32_16 = __lcl_offset_SystemInt32_1 + __lcl_previousWeather_SystemInt32_1;
+__lcl_prevWeather_SystemInt32_0 = biomeAllowedWeatherTypes[__intnl_SystemInt32_16];
+}
+else
+{
+__lcl_prevWeather_SystemInt32_0 = __const_SystemInt32_6;
+}
+}
+return;
+}
+else
+{
+if (enableDebugLogs)
+{
+__intnl_SystemInt32_15 = __lcl_offset_SystemInt32_1 + __lcl_i_SystemInt32_4;
+__lcl_unchangedWeather_SystemInt32_0 = biomeAllowedWeatherTypes[__intnl_SystemInt32_15];
+}
+}
+}
+else
+{
+__lcl_i_SystemInt32_4 = __lcl_i_SystemInt32_4 + __const_SystemInt32_0;
+}
+}
+}
+private void UNDEF_ab452_6788()
+{
+if (isMasterClient)
+{
+UNDEF_ab452_7580();
+}
+}
+private void UNDEF_ab452_7580()
+{
+__intnl_SystemBoolean_37 = defaultAllowedWeatherTypes == __const_SystemObject_0;
+if (__intnl_SystemBoolean_37)
+{
+}
+else
+{
+__intnl_SystemInt32_17 = defaultAllowedWeatherTypes.Length;
+__intnl_SystemBoolean_37 = __intnl_SystemInt32_17 == __const_SystemInt32_1;
+}
+if (__intnl_SystemBoolean_37)
+{
+return;
+}
+__lcl_totalWeight_SystemSingle_1 = __const_SystemSingle_2;
+__lcl_i_SystemInt32_5 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_18 = defaultWeatherWeights.Length;
+__intnl_SystemBoolean_38 = __lcl_i_SystemInt32_5 < __intnl_SystemInt32_18;
+if (__intnl_SystemBoolean_38)
+{
+break;
+}
+__intnl_SystemSingle_7 = defaultWeatherWeights[__lcl_i_SystemInt32_5];
+__lcl_totalWeight_SystemSingle_1 = __lcl_totalWeight_SystemSingle_1 + __intnl_SystemSingle_7;
+__lcl_i_SystemInt32_5 = __lcl_i_SystemInt32_5 + __const_SystemInt32_0;
+}
+__intnl_SystemBoolean_38 = __lcl_totalWeight_SystemSingle_1 <= __const_SystemSingle_2;
+if (__intnl_SystemBoolean_38)
+{
+return;
+}
+__lcl_roll_SystemSingle_1 = Random.Range(__const_SystemSingle_2, __lcl_totalWeight_SystemSingle_1);
+__lcl_accumulated_SystemSingle_1 = __const_SystemSingle_2;
+__lcl_i_SystemInt32_5 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_18 = defaultAllowedWeatherTypes.Length;
+__intnl_SystemBoolean_39 = __lcl_i_SystemInt32_5 < __intnl_SystemInt32_18;
+if (__intnl_SystemBoolean_39)
+{
+break;
+}
+__intnl_SystemSingle_7 = defaultWeatherWeights[__lcl_i_SystemInt32_5];
+__lcl_accumulated_SystemSingle_1 = __lcl_accumulated_SystemSingle_1 + __intnl_SystemSingle_7;
+__intnl_SystemBoolean_40 = __lcl_roll_SystemSingle_1 <= __lcl_accumulated_SystemSingle_1;
+if (__intnl_SystemBoolean_40)
+{
+syncedDefaultWeatherIndex = __lcl_i_SystemInt32_5;
+if (enableDebugLogs)
+{
+}
+}
+else
+{
+__lcl_i_SystemInt32_5 = __lcl_i_SystemInt32_5 + __const_SystemInt32_0;
+}
+}
+}
+private void UNDEF_ab452_7840()
+{
+__intnl_SystemBoolean_41 = localPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_41)
+{
+return;
+}
+__lcl_playerPos_UnityEngineVector3_0 = localPlayer.GetPosition();
+__0_position__param = __lcl_playerPos_UnityEngineVector3_0;
+__0_FindBiomeAtPosition();
+__lcl_newBiomeIndex_SystemInt32_0 = __0___0_FindBiomeAtPosition__ret;
+__intnl_SystemBoolean_42 = __lcl_newBiomeIndex_SystemInt32_0 != currentBiomeIndex;
+if (__intnl_SystemBoolean_42)
+{
+currentBiomeIndex = __lcl_newBiomeIndex_SystemInt32_0;
+UNDEF_ab452_10324();
+}
+}
+private void UNDEF_ab452_8148()
+{
+__intnl_SystemBoolean_43 = !useHeightFiltering;
+if (__intnl_SystemBoolean_43)
+{
+}
+else
+{
+__intnl_SystemBoolean_43 = localPlayer == __const_SystemObject_0;
+}
+if (__intnl_SystemBoolean_43)
+{
+return;
+}
+__intnl_UnityEngineVector3_1 = localPlayer.GetPosition();
+__lcl_playerY_SystemSingle_1 = __intnl_UnityEngineVector3_1.y;
+__lcl_isBelowThreshold_SystemBoolean_0 = __lcl_playerY_SystemSingle_1 < indoorHeightThreshold;
+__intnl_SystemBoolean_44 = __lcl_isBelowThreshold_SystemBoolean_0 != wasBelowThreshold;
+if (__intnl_SystemBoolean_44)
+{
+wasBelowThreshold = __lcl_isBelowThreshold_SystemBoolean_0;
+UNDEF_ab452_8432();
+}
+}
+private void UNDEF_ab452_8432()
+{
+if (enableDebugLogs)
+{
+if (wasBelowThreshold)
+{
+__lcl_direction_SystemString_0 = __const_SystemString_3;
+}
+else
+{
+__lcl_direction_SystemString_0 = __const_SystemString_4;
+}
+}
+__intnl_UnityEngineObject_19 = dyingWeatherEffect;
+__intnl_UnityEngineObject_20 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_45 = __intnl_UnityEngineObject_19 != __intnl_UnityEngineObject_20;
+if (__intnl_SystemBoolean_45)
+{
+__intnl_SystemBoolean_46 = !wasBelowThreshold;
+dyingWeatherEffect.SetActive(__intnl_SystemBoolean_46);
+}
+if (hasReceivedInitialSync)
+{
+UNDEF_ab452_8484();
+}
+if (enableDebugLogs)
+{
+}
+}
+private void UNDEF_ab452_8484()
+{
+UNDEF_ab452_12176();
+UNDEF_ab452_28968();
+}
+private void UNDEF_ab452_9220()
+{
+__intnl_UnityEngineObject_21 = dayNightCycle;
+__intnl_UnityEngineObject_22 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_47 = __intnl_UnityEngineObject_21 == __intnl_UnityEngineObject_22;
+if (__intnl_SystemBoolean_47)
+{
+return;
+}
+__intnl_VRCUdonUdonBehaviour_1 = dayNightCycle;
+dayNightCycle.SendCustomEvent(__const_SystemString_5);
+__intnl_SystemObject_1 = dayNightCycle.GetProgramVariable(__const_SystemString_6);
+__intnl_SystemInt32_20 = Convert.ToInt32(__intnl_SystemObject_1);
+__intnl_SystemInt32_19 = __intnl_SystemInt32_20;
+__lcl_newTime_SystemInt32_0 = __intnl_SystemInt32_19;
+__intnl_SystemBoolean_48 = __lcl_newTime_SystemInt32_0 != currentTimeOfDay;
+if (__intnl_SystemBoolean_48)
+{
+currentTimeOfDay = __lcl_newTime_SystemInt32_0;
+if (isMasterClient)
+{
+__intnl_SystemBoolean_49 = __lcl_newTime_SystemInt32_0 == __const_SystemInt32_2;
+if (__intnl_SystemBoolean_49)
+{
+__intnl_SystemBoolean_49 = !moonrainCheckedThisNight;
+}
+if (__intnl_SystemBoolean_49)
+{
+moonrainCheckedThisNight = __const_SystemBoolean_0;
+__lcl_roll_SystemSingle_2 = Random.Range(__const_SystemSingle_2, __const_SystemSingle_3);
+__intnl_SystemBoolean_50 = __lcl_roll_SystemSingle_2 < moonrainChance;
+if (__intnl_SystemBoolean_50)
+{
+break;
+}
+syncedMoonrainActive = __const_SystemBoolean_0;
+__this_VRCUdonUdonBehaviour_4.RequestSerialization();
+}
+else
+{
+__intnl_SystemBoolean_50 = __lcl_newTime_SystemInt32_0 != __const_SystemInt32_2;
+if (__intnl_SystemBoolean_50)
+{
+if (syncedMoonrainActive)
+{
+syncedMoonrainActive = __const_SystemBoolean_1;
+__this_VRCUdonUdonBehaviour_5.RequestSerialization();
+}
+moonrainCheckedThisNight = __const_SystemBoolean_1;
+}
+}
+}
+UNDEF_ab452_10460();
+}
+}
+private void __0_FindBiomeAtPosition()
+{
+__intnl_SystemBoolean_51 = biomeCenters == __const_SystemObject_0;
+if (__intnl_SystemBoolean_51)
+{
+}
+else
+{
+__intnl_SystemInt32_21 = biomeCenters.Length;
+__intnl_SystemBoolean_51 = __intnl_SystemInt32_21 == __const_SystemInt32_1;
+}
+if (__intnl_SystemBoolean_51)
+{
+__0___0_FindBiomeAtPosition__ret = __const_SystemInt32_7;
+return;
+}
+__lcl_highestPriorityBiome_SystemInt32_0 = __const_SystemInt32_7;
+__lcl_highestPriority_SystemInt32_0 = __const_SystemInt32_7;
+__lcl_i_SystemInt32_6 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_22 = biomeCenters.Length;
+__intnl_SystemBoolean_52 = __lcl_i_SystemInt32_6 < __intnl_SystemInt32_22;
+if (__intnl_SystemBoolean_52)
+{
+break;
+}
+__intnl_UnityEngineTransform_0 = (Transform)(biomeCenters[__lcl_i_SystemInt32_6]);
+__intnl_UnityEngineObject_23 = __intnl_UnityEngineTransform_0;
+__intnl_UnityEngineObject_24 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_53 = __intnl_UnityEngineObject_23 == __intnl_UnityEngineObject_24;
+if (__intnl_SystemBoolean_53)
+{
+}
+else
+{
+__intnl_UnityEngineTransform_1 = (Transform)(biomeCenters[__lcl_i_SystemInt32_6]);
+__intnl_UnityEngineVector3_2 = __intnl_UnityEngineTransform_1.position;
+__intnl_UnityEngineVector3_3 = __0_position__param - __intnl_UnityEngineVector3_2;
+__lcl_sqrDistance_SystemSingle_0 = __intnl_UnityEngineVector3_3.sqrMagnitude;
+__intnl_SystemSingle_8 = biomeRadii[__lcl_i_SystemInt32_6];
+__intnl_SystemSingle_9 = biomeRadii[__lcl_i_SystemInt32_6];
+__lcl_sqrRadius_SystemSingle_0 = __intnl_SystemSingle_8 * __intnl_SystemSingle_9;
+__intnl_SystemBoolean_54 = __lcl_sqrDistance_SystemSingle_0 <= __lcl_sqrRadius_SystemSingle_0;
+if (__intnl_SystemBoolean_54)
+{
+__lcl_priority_SystemInt32_0 = biomePriorities[__lcl_i_SystemInt32_6];
+__intnl_SystemBoolean_55 = __lcl_priority_SystemInt32_0 > __lcl_highestPriority_SystemInt32_0;
+if (__intnl_SystemBoolean_55)
+{
+__lcl_highestPriority_SystemInt32_0 = __lcl_priority_SystemInt32_0;
+__lcl_highestPriorityBiome_SystemInt32_0 = __lcl_i_SystemInt32_6;
+}
+}
+}
+__lcl_i_SystemInt32_6 = __lcl_i_SystemInt32_6 + __const_SystemInt32_0;
+}
+__0___0_FindBiomeAtPosition__ret = __lcl_highestPriorityBiome_SystemInt32_0;
+return;
+}
+private void UNDEF_ab452_10324()
+{
+if (enableDebugLogs)
+{
+__intnl_SystemBoolean_56 = currentBiomeIndex >= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_56)
+{
+__lcl_biomeName_SystemString_0 = biomeNames[currentBiomeIndex];
+}
+else
+{
+__lcl_biomeName_SystemString_0 = __const_SystemString_7;
+}
+}
+if (hasReceivedInitialSync)
+{
+UNDEF_ab452_10376();
+}
+if (enableDebugLogs)
+{
+}
+}
+private void UNDEF_ab452_10376()
+{
+UNDEF_ab452_12176();
+UNDEF_ab452_28968();
+}
+private void UNDEF_ab452_10460()
+{
+if (enableDebugLogs)
+{
+}
+if (hasReceivedInitialSync)
+{
+UNDEF_ab452_10512();
+}
+if (enableDebugLogs)
+{
+}
+}
+private void UNDEF_ab452_10512()
+{
+UNDEF_ab452_12176();
+UNDEF_ab452_28968();
+}
+private void UNDEF_ab452_12176()
+{
+GetCurrentWeatherType();
+__lcl_currentWeather_SystemInt32_0 = __0_GetCurrentWeatherType__ret;
+if (enableDebugLogs)
+{
+}
+__0_time__param = currentTimeOfDay;
+__0_weather__param = __lcl_currentWeather_SystemInt32_0;
+__0_FindAtmosphericConfig();
+__lcl_config_VRCUdonUdonBehaviour_0 = __0___0_FindAtmosphericConfig__ret;
+__intnl_UnityEngineObject_25 = __lcl_config_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_26 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_57 = __intnl_UnityEngineObject_25 == __intnl_UnityEngineObject_26;
+if (__intnl_SystemBoolean_57)
+{
+if (enableDebugLogs)
+{
+}
+return;
+}
+__intnl_UnityEngineObject_27 = dayNightCycle;
+__intnl_UnityEngineObject_28 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_58 = __intnl_UnityEngineObject_27 != __intnl_UnityEngineObject_28;
+if (__intnl_SystemBoolean_58)
+{
+dayNightCycle.SetProgramVariable(__const_SystemString_8, __lcl_currentWeather_SystemInt32_0);
+dayNightCycle.SendCustomEvent(__const_SystemString_9);
+}
+__intnl_UnityEngineObject_29 = buffManager;
+__intnl_UnityEngineObject_30 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_59 = __intnl_UnityEngineObject_29 != __intnl_UnityEngineObject_30;
+if (__intnl_SystemBoolean_59)
+{
+__intnl_SystemBoolean_60 = __lcl_currentWeather_SystemInt32_0 == __const_SystemInt32_8;
+if (__intnl_SystemBoolean_60)
+{
+__intnl_VRCUdonUdonBehaviour_2 = buffManager;
+buffManager.SendCustomEvent(__const_SystemString_10);
+__intnl_SystemObject_2 = buffManager.GetProgramVariable(__const_SystemString_11);
+__intnl_SystemBoolean_61 = (Boolean)__intnl_SystemObject_2;
+if (__intnl_SystemBoolean_61)
+{
+}
+else
+{
+__intnl_VRCUdonUdonBehaviour_3 = buffManager;
+buffManager.SendCustomEvent(__const_SystemString_12);
+__intnl_UnityEngineObject_31 = announcementManager;
+__intnl_UnityEngineObject_32 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_62 = __intnl_UnityEngineObject_31 != __intnl_UnityEngineObject_32;
+if (__intnl_SystemBoolean_62)
+{
+__intnl_VRCUdonUdonBehaviour_4 = announcementManager;
+announcementManager.SendCustomEvent(__const_SystemString_13);
+}
+}
+}
+else
+{
+__intnl_VRCUdonUdonBehaviour_2 = buffManager;
+buffManager.SendCustomEvent(__const_SystemString_10);
+__intnl_SystemObject_2 = buffManager.GetProgramVariable(__const_SystemString_11);
+__intnl_SystemBoolean_61 = (Boolean)__intnl_SystemObject_2;
+if (__intnl_SystemBoolean_61)
+{
+__intnl_VRCUdonUdonBehaviour_3 = buffManager;
+buffManager.SendCustomEvent(__const_SystemString_14);
+}
+}
+}
+if (enableDebugLogs)
+{
+__intnl_UnityEngineObject_31 = currentConfig;
+__intnl_UnityEngineObject_32 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_60 = __intnl_UnityEngineObject_31 != __intnl_UnityEngineObject_32;
+if (__intnl_SystemBoolean_60)
+{
+__intnl_VRCUdonUdonBehaviour_2 = currentConfig;
+currentConfig.SendCustomEvent(__const_SystemString_15);
+__intnl_SystemObject_2 = currentConfig.GetProgramVariable(__const_SystemString_16);
+__intnl_SystemString_0 = (String)__intnl_SystemObject_2;
+__lcl_currentName_SystemString_0 = __intnl_SystemString_0;
+}
+else
+{
+__lcl_currentName_SystemString_0 = __const_SystemString_17;
+}
+}
+__intnl_UnityEngineObject_31 = __lcl_config_VRCUdonUdonBehaviour_0;
+__intnl_UnityEngineObject_32 = currentConfig;
+__intnl_SystemBoolean_60 = __intnl_UnityEngineObject_31 != __intnl_UnityEngineObject_32;
+if (__intnl_SystemBoolean_60)
+{
+if (enableDebugLogs)
+{
+__intnl_UnityEngineObject_33 = currentConfig;
+__intnl_UnityEngineObject_34 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_61 = __intnl_UnityEngineObject_33 != __intnl_UnityEngineObject_34;
+if (__intnl_SystemBoolean_61)
+{
+__intnl_VRCUdonUdonBehaviour_2 = currentConfig;
+currentConfig.SendCustomEvent(__const_SystemString_15);
+__intnl_SystemObject_2 = currentConfig.GetProgramVariable(__const_SystemString_16);
+__intnl_SystemString_0 = (String)__intnl_SystemObject_2;
+__lcl_fromName_SystemString_0 = __intnl_SystemString_0;
+}
+else
+{
+__lcl_fromName_SystemString_0 = __const_SystemString_17;
+}
+}
+__0_newConfig__param = __lcl_config_VRCUdonUdonBehaviour_0;
+UNDEF_ab452_17432();
+}
+else
+{
+if (enableDebugLogs)
+{
+}
+}
+}
+private void UNDEF_ab452_17432()
+{
+__intnl_UnityEngineObject_35 = __0_newConfig__param;
+__intnl_UnityEngineObject_36 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_63 = __intnl_UnityEngineObject_35 == __intnl_UnityEngineObject_36;
+if (__intnl_SystemBoolean_63)
+{
+return;
+}
+if (isTransitioning)
+{
+if (enableDebugLogs)
+{
+__intnl_UnityEngineObject_37 = toConfig;
+__intnl_UnityEngineObject_38 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_64 = __intnl_UnityEngineObject_37 != __intnl_UnityEngineObject_38;
+if (__intnl_SystemBoolean_64)
+{
+__intnl_VRCUdonUdonBehaviour_5 = toConfig;
+toConfig.SendCustomEvent(__const_SystemString_15);
+__intnl_SystemObject_3 = toConfig.GetProgramVariable(__const_SystemString_16);
+__intnl_SystemString_1 = (String)__intnl_SystemObject_3;
+__lcl_fromName_SystemString_1 = __intnl_SystemString_1;
+}
+else
+{
+__lcl_fromName_SystemString_1 = __const_SystemString_18;
+}
+__intnl_VRCUdonUdonBehaviour_6 = __0_newConfig__param;
+__0_newConfig__param.SendCustomEvent(__const_SystemString_15);
+__intnl_SystemObject_4 = __0_newConfig__param.GetProgramVariable(__const_SystemString_16);
+__intnl_SystemString_2 = (String)__intnl_SystemObject_4;
+__lcl_toName_SystemString_0 = __intnl_SystemString_2;
+}
+__intnl_SystemSingle_10 = Time.time;
+__lcl_elapsed_SystemSingle_0 = __intnl_SystemSingle_10 - atmosphericTransitionStartTime;
+__intnl_SystemSingle_11 = __lcl_elapsed_SystemSingle_0 / atmosphericTransitionDuration;
+__lcl_progress_SystemSingle_0 = Mathf.Clamp01(__intnl_SystemSingle_11);
+__intnl_UnityEngineObject_37 = toConfig;
+__intnl_UnityEngineObject_38 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_65 = __intnl_UnityEngineObject_37 != __intnl_UnityEngineObject_38;
+if (__intnl_SystemBoolean_65)
+{
+__intnl_SystemObject_3 = toConfig.GetProgramVariable(__const_SystemString_19);
+__intnl_UnityEngineRenderingPostProcessingPostProcessVolume_0 = (PostProcessVolume)__intnl_SystemObject_3;
+__intnl_UnityEngineObject_39 = __intnl_UnityEngineRenderingPostProcessingPostProcessVolume_0;
+__intnl_UnityEngineObject_40 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_65 = __intnl_UnityEngineObject_39 != __intnl_UnityEngineObject_40;
+}
+__intnl_SystemBoolean_64 = __intnl_SystemBoolean_65;
+if (__intnl_SystemBoolean_64)
+{
+__intnl_SystemObject_4 = toConfig.GetProgramVariable(__const_SystemString_19);
+__intnl_UnityEngineRenderingPostProcessingPostProcessVolume_1 = (PostProcessVolume)__intnl_SystemObject_4;
+__intnl_SystemBoolean_64 = __intnl_UnityEngineRenderingPostProcessingPostProcessVolume_1.enabled;
+}
+if (__intnl_SystemBoolean_64)
+{
+__intnl_SystemObject_5 = toConfig.GetProgramVariable(__const_SystemString_19);
+__intnl_UnityEngineRenderingPostProcessingPostProcessVolume_2 = (PostProcessVolume)__intnl_SystemObject_5;
+fromPostProcessWeight = __intnl_UnityEngineRenderingPostProcessingPostProcessVolume_2.weight;
+}
+else
+{
+fromPostProcessWeight = __const_SystemSingle_2;
+}
+fromConfig = currentConfig;
+toConfig = __0_newConfig__param;
+currentConfig = __0_newConfig__param;
+__lcl_carryOverProgress_SystemSingle_0 = __lcl_progress_SystemSingle_0 * __const_SystemSingle_4;
+__intnl_SystemSingle_12 = Time.time;
+__intnl_SystemSingle_13 = __lcl_carryOverProgress_SystemSingle_0 * atmosphericTransitionDuration;
+atmosphericTransitionStartTime = __intnl_SystemSingle_12 - __intnl_SystemSingle_13;
+weatherEffectSpawned = __const_SystemBoolean_1;
+}
+else
+{
+fromConfig = currentConfig;
+toConfig = __0_newConfig__param;
+currentConfig = __0_newConfig__param;
+atmosphericTransitionStartTime = Time.time;
+isTransitioning = __const_SystemBoolean_0;
+weatherEffectSpawned = __const_SystemBoolean_1;
+__intnl_UnityEngineObject_37 = sunLight;
+__intnl_UnityEngineObject_38 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_64 = __intnl_UnityEngineObject_37 != __intnl_UnityEngineObject_38;
+if (__intnl_SystemBoolean_64)
+{
+fromSunColor = sunLight.color;
+}
+else
+{
+fromSunColor = __const_UnityEngineColor_0;
+}
+__intnl_UnityEngineObject_39 = sunLight;
+__intnl_UnityEngineObject_40 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_65 = __intnl_UnityEngineObject_39 != __intnl_UnityEngineObject_40;
+if (__intnl_SystemBoolean_65)
+{
+fromSunIntensity = sunLight.intensity;
+}
+else
+{
+fromSunIntensity = __const_SystemSingle_3;
+}
+fromAmbientColor = RenderSettings.ambientLight;
+fromAmbientIntensity = RenderSettings.ambientIntensity;
+fromFogColor = RenderSettings.fogColor;
+fromFogDensity = RenderSettings.fogDensity;
+__intnl_UnityEngineMaterial_0 = RenderSettings.skybox;
+__intnl_UnityEngineObject_41 = __intnl_UnityEngineMaterial_0;
+__intnl_UnityEngineObject_42 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_66 = __intnl_UnityEngineObject_41 != __intnl_UnityEngineObject_42;
+if (__intnl_SystemBoolean_66)
+{
+__intnl_UnityEngineMaterial_1 = RenderSettings.skybox;
+fromSkyboxFogIntensity = __intnl_UnityEngineMaterial_1.GetFloat(__const_SystemString_20);
+__intnl_UnityEngineMaterial_2 = RenderSettings.skybox;
+fromSkyboxFogHeight = __intnl_UnityEngineMaterial_2.GetFloat(__const_SystemString_21);
+}
+fromPostProcessWeight = __const_SystemSingle_2;
+__intnl_UnityEngineObject_43 = fromConfig;
+__intnl_UnityEngineObject_44 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_68 = __intnl_UnityEngineObject_43 != __intnl_UnityEngineObject_44;
+if (__intnl_SystemBoolean_68)
+{
+__intnl_SystemObject_3 = fromConfig.GetProgramVariable(__const_SystemString_19);
+__intnl_UnityEngineRenderingPostProcessingPostProcessVolume_0 = (PostProcessVolume)__intnl_SystemObject_3;
+__intnl_UnityEngineObject_45 = __intnl_UnityEngineRenderingPostProcessingPostProcessVolume_0;
+__intnl_UnityEngineObject_46 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_68 = __intnl_UnityEngineObject_45 != __intnl_UnityEngineObject_46;
+}
+__intnl_SystemBoolean_67 = __intnl_SystemBoolean_68;
+if (__intnl_SystemBoolean_67)
+{
+__intnl_SystemObject_4 = fromConfig.GetProgramVariable(__const_SystemString_19);
+__intnl_UnityEngineRenderingPostProcessingPostProcessVolume_1 = (PostProcessVolume)__intnl_SystemObject_4;
+__intnl_SystemBoolean_67 = __intnl_UnityEngineRenderingPostProcessingPostProcessVolume_1.enabled;
+}
+if (__intnl_SystemBoolean_67)
+{
+__intnl_SystemObject_5 = fromConfig.GetProgramVariable(__const_SystemString_19);
+__intnl_UnityEngineRenderingPostProcessingPostProcessVolume_2 = (PostProcessVolume)__intnl_SystemObject_5;
+fromPostProcessWeight = __intnl_UnityEngineRenderingPostProcessingPostProcessVolume_2.weight;
+}
+}
+toPostProcessWeight = __const_SystemSingle_2;
+__intnl_UnityEngineObject_37 = toConfig;
+__intnl_UnityEngineObject_38 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_64 = __intnl_UnityEngineObject_37 != __intnl_UnityEngineObject_38;
+if (__intnl_SystemBoolean_64)
+{
+__intnl_SystemObject_3 = toConfig.GetProgramVariable(__const_SystemString_19);
+__intnl_UnityEngineRenderingPostProcessingPostProcessVolume_0 = (PostProcessVolume)__intnl_SystemObject_3;
+__intnl_UnityEngineObject_39 = __intnl_UnityEngineRenderingPostProcessingPostProcessVolume_0;
+__intnl_UnityEngineObject_40 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_64 = __intnl_UnityEngineObject_39 != __intnl_UnityEngineObject_40;
+}
+if (__intnl_SystemBoolean_64)
+{
+__intnl_SystemObject_4 = toConfig.GetProgramVariable(__const_SystemString_22);
+toPostProcessWeight = Convert.ToSingle(__intnl_SystemObject_4);
+__intnl_SystemObject_5 = toConfig.GetProgramVariable(__const_SystemString_19);
+__intnl_UnityEngineRenderingPostProcessingPostProcessVolume_1 = (PostProcessVolume)__intnl_SystemObject_5;
+__intnl_UnityEngineRenderingPostProcessingPostProcessVolume_1.enabled = __const_SystemBoolean_0;
+__intnl_SystemObject_6 = toConfig.GetProgramVariable(__const_SystemString_19);
+__intnl_UnityEngineRenderingPostProcessingPostProcessVolume_2 = (PostProcessVolume)__intnl_SystemObject_6;
+__intnl_UnityEngineRenderingPostProcessingPostProcessVolume_2.weight = __const_SystemSingle_2;
+}
+__lcl_sameWeatherType_SystemBoolean_0 = __const_SystemBoolean_1;
+__intnl_UnityEngineObject_41 = fromConfig;
+__intnl_UnityEngineObject_42 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_65 = __intnl_UnityEngineObject_41 != __intnl_UnityEngineObject_42;
+if (__intnl_SystemBoolean_65)
+{
+__intnl_UnityEngineObject_43 = toConfig;
+__intnl_UnityEngineObject_44 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_65 = __intnl_UnityEngineObject_43 != __intnl_UnityEngineObject_44;
+}
+if (__intnl_SystemBoolean_65)
+{
+__intnl_VRCUdonUdonBehaviour_5 = fromConfig;
+fromConfig.SendCustomEvent(__const_SystemString_23);
+__intnl_SystemObject_4 = fromConfig.GetProgramVariable(__const_SystemString_24);
+__intnl_SystemInt32_24 = Convert.ToInt32(__intnl_SystemObject_4);
+__intnl_SystemInt32_23 = __intnl_SystemInt32_24;
+__intnl_VRCUdonUdonBehaviour_6 = toConfig;
+toConfig.SendCustomEvent(__const_SystemString_23);
+__intnl_SystemObject_5 = toConfig.GetProgramVariable(__const_SystemString_24);
+__intnl_SystemInt32_26 = Convert.ToInt32(__intnl_SystemObject_5);
+__intnl_SystemInt32_25 = __intnl_SystemInt32_26;
+__lcl_sameWeatherType_SystemBoolean_0 = __intnl_SystemInt32_23 == __intnl_SystemInt32_25;
+}
+__intnl_SystemBoolean_66 = !__lcl_sameWeatherType_SystemBoolean_0;
+if (__intnl_SystemBoolean_66)
+{
+__intnl_UnityEngineObject_45 = fromConfig;
+__intnl_UnityEngineObject_46 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_66 = __intnl_UnityEngineObject_45 != __intnl_UnityEngineObject_46;
+}
+if (__intnl_SystemBoolean_66)
+{
+__intnl_VRCUdonUdonBehaviour_5 = fromConfig;
+fromConfig.SendCustomEvent(__const_SystemString_25);
+__intnl_SystemObject_4 = fromConfig.GetProgramVariable(__const_SystemString_26);
+__intnl_UnityEngineGameObject_0 = (GameObject)__intnl_SystemObject_4;
+__lcl_oldWeatherEffect_UnityEngineGameObject_0 = __intnl_UnityEngineGameObject_0;
+__intnl_UnityEngineObject_47 = __lcl_oldWeatherEffect_UnityEngineGameObject_0;
+__intnl_UnityEngineObject_48 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_67 = __intnl_UnityEngineObject_47 != __intnl_UnityEngineObject_48;
+if (__intnl_SystemBoolean_67)
+{
+__intnl_UnityEngineObject_49 = dyingWeatherEffect;
+__intnl_UnityEngineObject_50 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_68 = __intnl_UnityEngineObject_49 != __intnl_UnityEngineObject_50;
+if (__intnl_SystemBoolean_68)
+{
+__intnl_UnityEngineObject_51 = dyingWeatherEffect;
+Object.Destroy(__intnl_UnityEngineObject_51);
+dyingWeatherEffect = (GameObject)__const_SystemObject_0;
+}
+dyingWeatherEffect = __lcl_oldWeatherEffect_UnityEngineGameObject_0;
+dyingWeatherEffectTimer = __const_SystemSingle_5;
+__intnl_UnityEngineGameObject_1 = (GameObject)__const_SystemObject_0;
+fromConfig.SetProgramVariable(__const_SystemString_27, __intnl_UnityEngineGameObject_1);
+fromConfig.SendCustomEvent(__const_SystemString_28);
+__intnl_UnityEngineTransform_2 = dyingWeatherEffect.transform;
+__lcl_particles_UnityEngineParticleSystemArray_0 = (ParticleSystem[])(__intnl_UnityEngineTransform_2.GetComponentsInChildren(__const_SystemType_0));
+__intnl_SystemBoolean_69 = __lcl_particles_UnityEngineParticleSystemArray_0 != __const_SystemObject_0;
+if (__intnl_SystemBoolean_69)
+{
+break;
+}
+__intnl_SystemInt32_23 = __lcl_particles_UnityEngineParticleSystemArray_0.Length;
+__intnl_SystemInt32_24 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemBoolean_70 = __intnl_SystemInt32_24 < __intnl_SystemInt32_23;
+if (__intnl_SystemBoolean_70)
+{
+break;
+}
+__lcl_ps_UnityEngineParticleSystem_0 = (ParticleSystem)(__lcl_particles_UnityEngineParticleSystemArray_0[__intnl_SystemInt32_24]);
+__lcl_ps_UnityEngineParticleSystem_0.Stop(__const_SystemBoolean_0, __const_UnityEngineParticleSystemStopBehavior_0);
+__intnl_SystemInt32_24 = __intnl_SystemInt32_24 + __const_SystemInt32_0;
+}
+if (enableDebugLogs)
+{
+}
+}
+}
+else
+{
+__intnl_SystemBoolean_67 = __lcl_sameWeatherType_SystemBoolean_0;
+if (__intnl_SystemBoolean_67)
+{
+__intnl_SystemBoolean_67 = enableDebugLogs;
+}
+if (__intnl_SystemBoolean_67)
+{
+}
+}
+__0_config__param = toConfig;
+__0_GetCurrentWeatherAudioClip();
+__lcl_weatherAudio_UnityEngineAudioClip_0 = __0___0_GetCurrentWeatherAudioClip__ret;
+__intnl_VRCUdonUdonBehaviour_5 = toConfig;
+toConfig.SendCustomEvent(__const_SystemString_29);
+__intnl_SystemObject_4 = toConfig.GetProgramVariable(__const_SystemString_30);
+__intnl_SystemSingle_10 = Convert.ToSingle(__intnl_SystemObject_4);
+__lcl_weatherVolume_SystemSingle_0 = __intnl_SystemSingle_10;
+__intnl_UnityEngineObject_47 = fromConfig;
+__intnl_UnityEngineObject_48 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_68 = __intnl_UnityEngineObject_47 != __intnl_UnityEngineObject_48;
+if (__intnl_SystemBoolean_68)
+{
+__0_config__param = fromConfig;
+__0_GetCurrentWeatherAudioClip();
+__lcl_currentAudio_UnityEngineAudioClip_0 = __0___0_GetCurrentWeatherAudioClip__ret;
+}
+else
+{
+__lcl_currentAudio_UnityEngineAudioClip_0 = (AudioClip)__const_SystemObject_0;
+}
+__intnl_SystemBoolean_69 = !__lcl_sameWeatherType_SystemBoolean_0;
+if (__intnl_SystemBoolean_69)
+{
+}
+else
+{
+__intnl_UnityEngineObject_49 = __lcl_weatherAudio_UnityEngineAudioClip_0;
+__intnl_UnityEngineObject_50 = __lcl_currentAudio_UnityEngineAudioClip_0;
+__intnl_SystemBoolean_69 = __intnl_UnityEngineObject_49 != __intnl_UnityEngineObject_50;
+}
+__lcl_shouldTransitionAudio_SystemBoolean_0 = __intnl_SystemBoolean_69;
+if (__lcl_shouldTransitionAudio_SystemBoolean_0)
+{
+__intnl_UnityEngineObject_51 = __lcl_weatherAudio_UnityEngineAudioClip_0;
+__intnl_UnityEngineObject_52 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_70 = __intnl_UnityEngineObject_51 != __intnl_UnityEngineObject_52;
+if (__intnl_SystemBoolean_70)
+{
+__0_clip__param = __lcl_weatherAudio_UnityEngineAudioClip_0;
+__0_targetVolume__param = __lcl_weatherVolume_SystemSingle_0;
+UNDEF_ab452_24464();
+}
+else
+{
+UNDEF_ab452_24788();
+}
+__intnl_SystemBoolean_71 = enableDebugLogs;
+if (__intnl_SystemBoolean_71)
+{
+__intnl_SystemBoolean_71 = __lcl_sameWeatherType_SystemBoolean_0;
+}
+if (__intnl_SystemBoolean_71)
+{
+}
+}
+else
+{
+if (enableDebugLogs)
+{
+}
+}
+if (enableDebugLogs)
+{
+__intnl_SystemObject_5 = toConfig.GetProgramVariable(__const_SystemString_31);
+__intnl_SystemBoolean_70 = (Boolean)__intnl_SystemObject_5;
+if (__intnl_SystemBoolean_70)
+{
+__intnl_SystemObject_6 = toConfig.GetProgramVariable(__const_SystemString_32);
+__intnl_SystemSingle_11 = Convert.ToSingle(__intnl_SystemObject_6);
+__lcl_toFogDensity_SystemSingle_0 = baseFogDensity * __intnl_SystemSingle_11;
+}
+else
+{
+__lcl_toFogDensity_SystemSingle_0 = __const_SystemSingle_2;
+}
+if (__lcl_sameWeatherType_SystemBoolean_0)
+{
+}
+}
+}
+private void UNDEF_ab452_17484()
+{
+if (isTransitioning)
+{
+UNDEF_ab452_21640();
+}
+}
+private void UNDEF_ab452_21640()
+{
+__intnl_SystemSingle_14 = Time.time;
+__lcl_elapsed_SystemSingle_1 = __intnl_SystemSingle_14 - atmosphericTransitionStartTime;
+__intnl_SystemSingle_15 = __lcl_elapsed_SystemSingle_1 / atmosphericTransitionDuration;
+__lcl_t_SystemSingle_0 = Mathf.Clamp01(__intnl_SystemSingle_15);
+__intnl_SystemBoolean_72 = !weatherEffectSpawned;
+if (__intnl_SystemBoolean_72)
+{
+__intnl_SystemBoolean_72 = __lcl_t_SystemSingle_0 >= __const_SystemSingle_6;
+}
+if (__intnl_SystemBoolean_72)
+{
+weatherEffectSpawned = __const_SystemBoolean_0;
+if (enableDebugLogs)
+{
+}
+}
+__intnl_UnityEngineObject_53 = sunLight;
+__intnl_UnityEngineObject_54 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_73 = __intnl_UnityEngineObject_53 != __intnl_UnityEngineObject_54;
+if (__intnl_SystemBoolean_73)
+{
+__intnl_UnityEngineObject_55 = toConfig;
+__intnl_UnityEngineObject_56 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_73 = __intnl_UnityEngineObject_55 != __intnl_UnityEngineObject_56;
+}
+if (__intnl_SystemBoolean_73)
+{
+__intnl_SystemObject_7 = toConfig.GetProgramVariable(__const_SystemString_33);
+__lcl_toSunColor_UnityEngineColor_0 = (Color)__intnl_SystemObject_7;
+__intnl_SystemObject_8 = toConfig.GetProgramVariable(__const_SystemString_34);
+__intnl_SystemSingle_16 = Convert.ToSingle(__intnl_SystemObject_8);
+__intnl_SystemObject_9 = toConfig.GetProgramVariable(__const_SystemString_35);
+__intnl_SystemSingle_17 = Convert.ToSingle(__intnl_SystemObject_9);
+__lcl_toSunIntensity_SystemSingle_0 = __intnl_SystemSingle_16 * __intnl_SystemSingle_17;
+__intnl_UnityEngineColor_0 = Color.Lerp(fromSunColor, __lcl_toSunColor_UnityEngineColor_0, __lcl_t_SystemSingle_0);
+sunLight.color = __intnl_UnityEngineColor_0;
+__intnl_SystemSingle_18 = Mathf.Lerp(fromSunIntensity, __lcl_toSunIntensity_SystemSingle_0, __lcl_t_SystemSingle_0);
+sunLight.intensity = __intnl_SystemSingle_18;
+}
+__intnl_UnityEngineObject_57 = toConfig;
+__intnl_UnityEngineObject_58 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_74 = __intnl_UnityEngineObject_57 != __intnl_UnityEngineObject_58;
+if (__intnl_SystemBoolean_74)
+{
+__intnl_SystemObject_7 = toConfig.GetProgramVariable(__const_SystemString_36);
+__intnl_UnityEngineColor_0 = (Color)__intnl_SystemObject_7;
+__intnl_UnityEngineColor_1 = Color.Lerp(fromAmbientColor, __intnl_UnityEngineColor_0, __lcl_t_SystemSingle_0);
+RenderSettings.ambientLight = __intnl_UnityEngineColor_1;
+__intnl_SystemObject_8 = toConfig.GetProgramVariable(__const_SystemString_37);
+__intnl_SystemSingle_16 = Convert.ToSingle(__intnl_SystemObject_8);
+__intnl_SystemSingle_17 = Mathf.Lerp(fromAmbientIntensity, __intnl_SystemSingle_16, __lcl_t_SystemSingle_0);
+RenderSettings.ambientIntensity = __intnl_SystemSingle_17;
+}
+__intnl_UnityEngineObject_59 = toConfig;
+__intnl_UnityEngineObject_60 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_75 = __intnl_UnityEngineObject_59 != __intnl_UnityEngineObject_60;
+if (__intnl_SystemBoolean_75)
+{
+__intnl_SystemObject_7 = toConfig.GetProgramVariable(__const_SystemString_31);
+__intnl_SystemBoolean_76 = (Boolean)__intnl_SystemObject_7;
+if (__intnl_SystemBoolean_76)
+{
+}
+else
+{
+__intnl_SystemBoolean_76 = fromFogDensity > __const_SystemSingle_7;
+}
+__lcl_shouldHaveFog_SystemBoolean_0 = __intnl_SystemBoolean_76;
+if (__lcl_shouldHaveFog_SystemBoolean_0)
+{
+RenderSettings.fog = __const_SystemBoolean_0;
+__intnl_SystemObject_8 = toConfig.GetProgramVariable(__const_SystemString_31);
+__intnl_SystemBoolean_77 = (Boolean)__intnl_SystemObject_8;
+if (__intnl_SystemBoolean_77)
+{
+__intnl_SystemObject_9 = toConfig.GetProgramVariable(__const_SystemString_38);
+__lcl_toFogColor_UnityEngineColor_0 = (Color)__intnl_SystemObject_9;
+}
+else
+{
+__lcl_toFogColor_UnityEngineColor_0 = fromFogColor;
+}
+__lcl_lerpedFogColor_UnityEngineColor_0 = Color.Lerp(fromFogColor, __lcl_toFogColor_UnityEngineColor_0, __lcl_t_SystemSingle_0);
+RenderSettings.fogColor = __lcl_lerpedFogColor_UnityEngineColor_0;
+__intnl_SystemObject_10 = toConfig.GetProgramVariable(__const_SystemString_31);
+__intnl_SystemBoolean_78 = (Boolean)__intnl_SystemObject_10;
+if (__intnl_SystemBoolean_78)
+{
+__intnl_SystemObject_11 = toConfig.GetProgramVariable(__const_SystemString_32);
+__intnl_SystemSingle_16 = Convert.ToSingle(__intnl_SystemObject_11);
+__lcl_toFogDensity_SystemSingle_1 = baseFogDensity * __intnl_SystemSingle_16;
+}
+else
+{
+__lcl_toFogDensity_SystemSingle_1 = __const_SystemSingle_2;
+}
+__lcl_lerpedFogDensity_SystemSingle_0 = Mathf.Lerp(fromFogDensity, __lcl_toFogDensity_SystemSingle_1, __lcl_t_SystemSingle_0);
+RenderSettings.fogDensity = __lcl_lerpedFogDensity_SystemSingle_0;
+}
+else
+{
+RenderSettings.fog = __const_SystemBoolean_1;
+}
+}
+__intnl_UnityEngineMaterial_3 = RenderSettings.skybox;
+__intnl_UnityEngineObject_61 = __intnl_UnityEngineMaterial_3;
+__intnl_UnityEngineObject_62 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_76 = __intnl_UnityEngineObject_61 != __intnl_UnityEngineObject_62;
+if (__intnl_SystemBoolean_76)
+{
+__intnl_UnityEngineObject_63 = toConfig;
+__intnl_UnityEngineObject_64 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_76 = __intnl_UnityEngineObject_63 != __intnl_UnityEngineObject_64;
+}
+if (__intnl_SystemBoolean_76)
+{
+__intnl_SystemObject_7 = toConfig.GetProgramVariable(__const_SystemString_39);
+__lcl_toFogIntensity_SystemSingle_0 = Convert.ToSingle(__intnl_SystemObject_7);
+__intnl_SystemObject_8 = toConfig.GetProgramVariable(__const_SystemString_40);
+__lcl_toFogHeight_SystemSingle_0 = Convert.ToSingle(__intnl_SystemObject_8);
+__intnl_UnityEngineMaterial_4 = RenderSettings.skybox;
+__intnl_SystemSingle_16 = Mathf.Lerp(fromSkyboxFogIntensity, __lcl_toFogIntensity_SystemSingle_0, __lcl_t_SystemSingle_0);
+__intnl_UnityEngineMaterial_4.SetFloat(__const_SystemString_20, __intnl_SystemSingle_16);
+__intnl_UnityEngineMaterial_5 = RenderSettings.skybox;
+__intnl_SystemSingle_17 = Mathf.Lerp(fromSkyboxFogHeight, __lcl_toFogHeight_SystemSingle_0, __lcl_t_SystemSingle_0);
+__intnl_UnityEngineMaterial_5.SetFloat(__const_SystemString_21, __intnl_SystemSingle_17);
+}
+__intnl_UnityEngineObject_65 = fromConfig;
+__intnl_UnityEngineObject_66 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_78 = __intnl_UnityEngineObject_65 != __intnl_UnityEngineObject_66;
+if (__intnl_SystemBoolean_78)
+{
+__intnl_SystemObject_7 = fromConfig.GetProgramVariable(__const_SystemString_19);
+__intnl_UnityEngineRenderingPostProcessingPostProcessVolume_3 = (PostProcessVolume)__intnl_SystemObject_7;
+__intnl_UnityEngineObject_67 = __intnl_UnityEngineRenderingPostProcessingPostProcessVolume_3;
+__intnl_UnityEngineObject_68 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_78 = __intnl_UnityEngineObject_67 != __intnl_UnityEngineObject_68;
+}
+__intnl_SystemBoolean_77 = __intnl_SystemBoolean_78;
+if (__intnl_SystemBoolean_77)
+{
+__intnl_SystemObject_8 = fromConfig.GetProgramVariable(__const_SystemString_19);
+__intnl_UnityEngineRenderingPostProcessingPostProcessVolume_4 = (PostProcessVolume)__intnl_SystemObject_8;
+__intnl_SystemBoolean_77 = __intnl_UnityEngineRenderingPostProcessingPostProcessVolume_4.enabled;
+}
+if (__intnl_SystemBoolean_77)
+{
+__intnl_SystemObject_9 = fromConfig.GetProgramVariable(__const_SystemString_19);
+__intnl_UnityEngineRenderingPostProcessingPostProcessVolume_5 = (PostProcessVolume)__intnl_SystemObject_9;
+__intnl_SystemSingle_16 = Mathf.Lerp(fromPostProcessWeight, __const_SystemSingle_2, __lcl_t_SystemSingle_0);
+__intnl_UnityEngineRenderingPostProcessingPostProcessVolume_5.weight = __intnl_SystemSingle_16;
+}
+__intnl_UnityEngineObject_69 = toConfig;
+__intnl_UnityEngineObject_70 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_80 = __intnl_UnityEngineObject_69 != __intnl_UnityEngineObject_70;
+if (__intnl_SystemBoolean_80)
+{
+__intnl_SystemObject_9 = toConfig.GetProgramVariable(__const_SystemString_19);
+__intnl_UnityEngineRenderingPostProcessingPostProcessVolume_5 = (PostProcessVolume)__intnl_SystemObject_9;
+__intnl_UnityEngineObject_71 = __intnl_UnityEngineRenderingPostProcessingPostProcessVolume_5;
+__intnl_UnityEngineObject_72 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_80 = __intnl_UnityEngineObject_71 != __intnl_UnityEngineObject_72;
+}
+__intnl_SystemBoolean_79 = __intnl_SystemBoolean_80;
+if (__intnl_SystemBoolean_79)
+{
+__intnl_SystemObject_10 = toConfig.GetProgramVariable(__const_SystemString_19);
+__intnl_UnityEngineRenderingPostProcessingPostProcessVolume_6 = (PostProcessVolume)__intnl_SystemObject_10;
+__intnl_SystemBoolean_79 = __intnl_UnityEngineRenderingPostProcessingPostProcessVolume_6.enabled;
+}
+if (__intnl_SystemBoolean_79)
+{
+__intnl_SystemObject_11 = toConfig.GetProgramVariable(__const_SystemString_19);
+__intnl_UnityEngineRenderingPostProcessingPostProcessVolume_7 = (PostProcessVolume)__intnl_SystemObject_11;
+__intnl_SystemSingle_16 = Mathf.Lerp(__const_SystemSingle_2, toPostProcessWeight, __lcl_t_SystemSingle_0);
+__intnl_UnityEngineRenderingPostProcessingPostProcessVolume_7.weight = __intnl_SystemSingle_16;
+}
+__intnl_UnityEngineMaterial_4 = RenderSettings.skybox;
+__intnl_UnityEngineObject_73 = __intnl_UnityEngineMaterial_4;
+__intnl_UnityEngineObject_74 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_82 = __intnl_UnityEngineObject_73 != __intnl_UnityEngineObject_74;
+if (__intnl_SystemBoolean_82)
+{
+__intnl_UnityEngineObject_75 = toConfig;
+__intnl_UnityEngineObject_76 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_82 = __intnl_UnityEngineObject_75 != __intnl_UnityEngineObject_76;
+}
+__intnl_SystemBoolean_81 = __intnl_SystemBoolean_82;
+if (__intnl_SystemBoolean_81)
+{
+__intnl_SystemObject_11 = toConfig.GetProgramVariable(__const_SystemString_41);
+__intnl_UnityEngineCubemap_0 = (Cubemap)__intnl_SystemObject_11;
+__intnl_UnityEngineObject_77 = __intnl_UnityEngineCubemap_0;
+__intnl_UnityEngineObject_78 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_81 = __intnl_UnityEngineObject_77 != __intnl_UnityEngineObject_78;
+}
+if (__intnl_SystemBoolean_81)
+{
+__intnl_UnityEngineMaterial_5 = RenderSettings.skybox;
+__intnl_UnityEngineObject_79 = fromConfig;
+__intnl_UnityEngineObject_80 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_83 = __intnl_UnityEngineObject_79 != __intnl_UnityEngineObject_80;
+if (__intnl_SystemBoolean_83)
+{
+__intnl_SystemObject_12 = fromConfig.GetProgramVariable(__const_SystemString_41);
+__intnl_UnityEngineCubemap_1 = (Cubemap)__intnl_SystemObject_12;
+__intnl_UnityEngineObject_81 = __intnl_UnityEngineCubemap_1;
+__intnl_UnityEngineObject_82 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_83 = __intnl_UnityEngineObject_81 != __intnl_UnityEngineObject_82;
+}
+if (__intnl_SystemBoolean_83)
+{
+__intnl_SystemObject_13 = fromConfig.GetProgramVariable(__const_SystemString_41);
+__intnl_UnityEngineCubemap_2 = (Cubemap)__intnl_SystemObject_13;
+}
+else
+{
+__intnl_SystemObject_14 = toConfig.GetProgramVariable(__const_SystemString_41);
+__intnl_UnityEngineCubemap_2 = (Cubemap)__intnl_SystemObject_14;
+}
+__intnl_UnityEngineTexture_0 = __intnl_UnityEngineCubemap_2;
+__intnl_UnityEngineMaterial_5.SetTexture(__const_SystemString_42, __intnl_UnityEngineTexture_0);
+__intnl_UnityEngineMaterial_6 = RenderSettings.skybox;
+__intnl_SystemObject_15 = toConfig.GetProgramVariable(__const_SystemString_41);
+__intnl_UnityEngineCubemap_3 = (Cubemap)__intnl_SystemObject_15;
+__intnl_UnityEngineTexture_1 = __intnl_UnityEngineCubemap_3;
+__intnl_UnityEngineMaterial_6.SetTexture(__const_SystemString_43, __intnl_UnityEngineTexture_1);
+__intnl_UnityEngineMaterial_7 = RenderSettings.skybox;
+__intnl_UnityEngineMaterial_7.SetFloat(__const_SystemString_44, __lcl_t_SystemSingle_0);
+}
+__intnl_SystemBoolean_83 = __lcl_t_SystemSingle_0 >= __const_SystemSingle_3;
+if (__intnl_SystemBoolean_83)
+{
+UNDEF_ab452_23636();
+}
+}
+private void UNDEF_ab452_23636()
+{
+__lcl_sameWeatherType_SystemBoolean_1 = __const_SystemBoolean_1;
+__intnl_UnityEngineObject_83 = fromConfig;
+__intnl_UnityEngineObject_84 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_84 = __intnl_UnityEngineObject_83 != __intnl_UnityEngineObject_84;
+if (__intnl_SystemBoolean_84)
+{
+__intnl_UnityEngineObject_85 = toConfig;
+__intnl_UnityEngineObject_86 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_84 = __intnl_UnityEngineObject_85 != __intnl_UnityEngineObject_86;
+}
+if (__intnl_SystemBoolean_84)
+{
+__intnl_VRCUdonUdonBehaviour_7 = fromConfig;
+fromConfig.SendCustomEvent(__const_SystemString_23);
+__intnl_SystemObject_16 = fromConfig.GetProgramVariable(__const_SystemString_24);
+__intnl_SystemInt32_28 = Convert.ToInt32(__intnl_SystemObject_16);
+__intnl_SystemInt32_27 = __intnl_SystemInt32_28;
+__intnl_VRCUdonUdonBehaviour_8 = toConfig;
+toConfig.SendCustomEvent(__const_SystemString_23);
+__intnl_SystemObject_17 = toConfig.GetProgramVariable(__const_SystemString_24);
+__intnl_SystemInt32_30 = Convert.ToInt32(__intnl_SystemObject_17);
+__intnl_SystemInt32_29 = __intnl_SystemInt32_30;
+__lcl_sameWeatherType_SystemBoolean_1 = __intnl_SystemInt32_27 == __intnl_SystemInt32_29;
+}
+__intnl_UnityEngineObject_87 = fromConfig;
+__intnl_UnityEngineObject_88 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_85 = __intnl_UnityEngineObject_87 != __intnl_UnityEngineObject_88;
+if (__intnl_SystemBoolean_85)
+{
+__intnl_UnityEngineObject_89 = fromConfig;
+__intnl_UnityEngineObject_90 = toConfig;
+__intnl_SystemBoolean_85 = __intnl_UnityEngineObject_89 != __intnl_UnityEngineObject_90;
+}
+if (__intnl_SystemBoolean_85)
+{
+__intnl_SystemObject_16 = fromConfig.GetProgramVariable(__const_SystemString_19);
+__intnl_UnityEngineRenderingPostProcessingPostProcessVolume_8 = (PostProcessVolume)__intnl_SystemObject_16;
+__intnl_UnityEngineObject_91 = __intnl_UnityEngineRenderingPostProcessingPostProcessVolume_8;
+__intnl_UnityEngineObject_92 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_86 = __intnl_UnityEngineObject_91 != __intnl_UnityEngineObject_92;
+if (__intnl_SystemBoolean_86)
+{
+__intnl_SystemObject_17 = fromConfig.GetProgramVariable(__const_SystemString_19);
+__intnl_UnityEngineRenderingPostProcessingPostProcessVolume_9 = (PostProcessVolume)__intnl_SystemObject_17;
+__intnl_UnityEngineRenderingPostProcessingPostProcessVolume_9.enabled = __const_SystemBoolean_1;
+__intnl_SystemObject_18 = fromConfig.GetProgramVariable(__const_SystemString_19);
+__intnl_UnityEngineRenderingPostProcessingPostProcessVolume_10 = (PostProcessVolume)__intnl_SystemObject_18;
+__intnl_UnityEngineRenderingPostProcessingPostProcessVolume_10.weight = __const_SystemSingle_2;
+}
+}
+__intnl_UnityEngineObject_91 = toConfig;
+__intnl_UnityEngineObject_92 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_86 = __intnl_UnityEngineObject_91 != __intnl_UnityEngineObject_92;
+if (__intnl_SystemBoolean_86)
+{
+RenderSettings.fogDensity = baseFogDensity;
+if (enableDebugLogs)
+{
+}
+__intnl_SystemBoolean_87 = __lcl_sameWeatherType_SystemBoolean_1;
+if (__intnl_SystemBoolean_87)
+{
+__intnl_UnityEngineObject_93 = fromConfig;
+__intnl_UnityEngineObject_94 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_87 = __intnl_UnityEngineObject_93 != __intnl_UnityEngineObject_94;
+}
+if (__intnl_SystemBoolean_87)
+{
+__intnl_VRCUdonUdonBehaviour_7 = fromConfig;
+fromConfig.SendCustomEvent(__const_SystemString_25);
+__intnl_SystemObject_16 = fromConfig.GetProgramVariable(__const_SystemString_26);
+__intnl_UnityEngineGameObject_2 = (GameObject)__intnl_SystemObject_16;
+__lcl_existingWeatherEffect_UnityEngineGameObject_0 = __intnl_UnityEngineGameObject_2;
+__intnl_UnityEngineObject_95 = __lcl_existingWeatherEffect_UnityEngineGameObject_0;
+__intnl_UnityEngineObject_96 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_88 = __intnl_UnityEngineObject_95 != __intnl_UnityEngineObject_96;
+if (__intnl_SystemBoolean_88)
+{
+toConfig.SetProgramVariable(__const_SystemString_27, __lcl_existingWeatherEffect_UnityEngineGameObject_0);
+toConfig.SendCustomEvent(__const_SystemString_28);
+if (enableDebugLogs)
+{
+}
+}
+__intnl_VRCUdonUdonBehaviour_8 = weatherSpawnTarget;
+__intnl_UnityEngineLight_0 = sunLight;
+toConfig.SetProgramVariable(__const_SystemString_45, sunLight);
+toConfig.SetProgramVariable(__const_SystemString_46, weatherSpawnTarget);
+toConfig.SetProgramVariable(__const_SystemString_47, __const_SystemBoolean_0);
+toConfig.SendCustomEvent(__const_SystemString_48);
+__intnl_UnityEngineGameObject_3 = (GameObject)__const_SystemObject_0;
+fromConfig.SetProgramVariable(__const_SystemString_27, __intnl_UnityEngineGameObject_3);
+fromConfig.SendCustomEvent(__const_SystemString_28);
+if (enableDebugLogs)
+{
+}
+}
+else
+{
+__intnl_VRCUdonUdonBehaviour_7 = weatherSpawnTarget;
+__intnl_UnityEngineLight_0 = sunLight;
+toConfig.SetProgramVariable(__const_SystemString_45, sunLight);
+toConfig.SetProgramVariable(__const_SystemString_46, weatherSpawnTarget);
+toConfig.SetProgramVariable(__const_SystemString_47, __const_SystemBoolean_0);
+toConfig.SendCustomEvent(__const_SystemString_48);
+}
+if (enableDebugLogs)
+{
+}
+UNDEF_ab452_28968();
+}
+isTransitioning = __const_SystemBoolean_1;
+fromConfig = (UdonBehaviour)__const_SystemObject_0;
+weatherEffectSpawned = __const_SystemBoolean_1;
+}
+private void UNDEF_ab452_24464()
+{
+__intnl_UnityEngineObject_97 = __0_clip__param;
+__intnl_UnityEngineObject_98 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_89 = __intnl_UnityEngineObject_97 == __intnl_UnityEngineObject_98;
+if (__intnl_SystemBoolean_89)
+{
+return;
+}
+__intnl_UnityEngineObject_99 = weatherAudioSource;
+__intnl_UnityEngineObject_100 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_90 = __intnl_UnityEngineObject_99 == __intnl_UnityEngineObject_100;
+if (__intnl_SystemBoolean_90)
+{
+}
+else
+{
+__intnl_UnityEngineObject_101 = weatherAudioSourceB;
+__intnl_UnityEngineObject_102 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_90 = __intnl_UnityEngineObject_101 == __intnl_UnityEngineObject_102;
+}
+if (__intnl_SystemBoolean_90)
+{
+return;
+}
+__0_targetVolume__param = __0_targetVolume__param * masterWeatherVolume;
+if (isAudioTransitioning)
+{
+UNDEF_ab452_25680();
+}
+if (isUsingSourceA)
+{
+__lcl_newSource_UnityEngineAudioSource_0 = weatherAudioSourceB;
+}
+else
+{
+__lcl_newSource_UnityEngineAudioSource_0 = weatherAudioSource;
+}
+isUsingSourceA = !isUsingSourceA;
+fromSource = currentAudioSource;
+toSource = __lcl_newSource_UnityEngineAudioSource_0;
+__intnl_UnityEngineObject_103 = fromSource;
+__intnl_UnityEngineObject_104 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_91 = __intnl_UnityEngineObject_103 != __intnl_UnityEngineObject_104;
+if (__intnl_SystemBoolean_91)
+{
+fromVolume = fromSource.volume;
+}
+else
+{
+fromVolume = __const_SystemSingle_2;
+}
+toVolume = __0_targetVolume__param;
+toSource.clip = __0_clip__param;
+toSource.volume = __const_SystemSingle_2;
+toSource.Play();
+audioTransitionStartTime = Time.time;
+isAudioTransitioning = __const_SystemBoolean_0;
+currentAudioSource = __lcl_newSource_UnityEngineAudioSource_0;
+if (enableDebugLogs)
+{
+}
+}
+private void UNDEF_ab452_24788()
+{
+__intnl_UnityEngineObject_105 = currentAudioSource;
+__intnl_UnityEngineObject_106 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_92 = __intnl_UnityEngineObject_105 != __intnl_UnityEngineObject_106;
+if (__intnl_SystemBoolean_92)
+{
+__intnl_SystemBoolean_92 = currentAudioSource.isPlaying;
+}
+if (__intnl_SystemBoolean_92)
+{
+if (isAudioTransitioning)
+{
+UNDEF_ab452_25680();
+}
+fromSource = currentAudioSource;
+toSource = (AudioSource)__const_SystemObject_0;
+fromVolume = fromSource.volume;
+toVolume = __const_SystemSingle_2;
+audioTransitionStartTime = Time.time;
+isAudioTransitioning = __const_SystemBoolean_0;
+if (enableDebugLogs)
+{
+}
+}
+}
+private void UNDEF_ab452_24840()
+{
+if (isAudioTransitioning)
+{
+UNDEF_ab452_25332();
+}
+}
+private void UNDEF_ab452_25332()
+{
+__intnl_SystemSingle_19 = Time.time;
+__lcl_elapsed_SystemSingle_2 = __intnl_SystemSingle_19 - audioTransitionStartTime;
+__intnl_SystemSingle_20 = __lcl_elapsed_SystemSingle_2 / audioTransitionDuration;
+__lcl_t_SystemSingle_1 = Mathf.Clamp01(__intnl_SystemSingle_20);
+__intnl_UnityEngineObject_107 = fromSource;
+__intnl_UnityEngineObject_108 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_93 = __intnl_UnityEngineObject_107 != __intnl_UnityEngineObject_108;
+if (__intnl_SystemBoolean_93)
+{
+__intnl_SystemSingle_21 = Mathf.Lerp(fromVolume, __const_SystemSingle_2, __lcl_t_SystemSingle_1);
+fromSource.volume = __intnl_SystemSingle_21;
+}
+__intnl_UnityEngineObject_109 = toSource;
+__intnl_UnityEngineObject_110 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_94 = __intnl_UnityEngineObject_109 != __intnl_UnityEngineObject_110;
+if (__intnl_SystemBoolean_94)
+{
+__intnl_SystemSingle_21 = Mathf.Lerp(__const_SystemSingle_2, toVolume, __lcl_t_SystemSingle_1);
+toSource.volume = __intnl_SystemSingle_21;
+}
+__intnl_SystemBoolean_95 = __lcl_t_SystemSingle_1 >= __const_SystemSingle_3;
+if (__intnl_SystemBoolean_95)
+{
+UNDEF_ab452_25680();
+}
+}
+private void UNDEF_ab452_25680()
+{
+__intnl_UnityEngineObject_111 = fromSource;
+__intnl_UnityEngineObject_112 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_96 = __intnl_UnityEngineObject_111 != __intnl_UnityEngineObject_112;
+if (__intnl_SystemBoolean_96)
+{
+fromSource.Stop();
+fromSource.volume = __const_SystemSingle_2;
+__intnl_UnityEngineAudioClip_0 = (AudioClip)__const_SystemObject_0;
+fromSource.clip = __intnl_UnityEngineAudioClip_0;
+}
+__intnl_UnityEngineObject_113 = toSource;
+__intnl_UnityEngineObject_114 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_97 = __intnl_UnityEngineObject_113 != __intnl_UnityEngineObject_114;
+if (__intnl_SystemBoolean_97)
+{
+toSource.volume = toVolume;
+}
+isAudioTransitioning = __const_SystemBoolean_1;
+if (enableDebugLogs)
+{
+}
+}
+private void __0_FindAtmosphericConfig()
+{
+__intnl_SystemBoolean_98 = allAtmosphericConfigs == __const_SystemObject_0;
+if (__intnl_SystemBoolean_98)
+{
+__0___0_FindAtmosphericConfig__ret = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+__lcl_i_SystemInt32_7 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_31 = allAtmosphericConfigs.Length;
+__intnl_SystemBoolean_99 = __lcl_i_SystemInt32_7 < __intnl_SystemInt32_31;
+if (__intnl_SystemBoolean_99)
+{
+break;
+}
+__lcl_config_VRCUdonUdonBehaviour_1 = (UdonBehaviour)(allAtmosphericConfigs[__lcl_i_SystemInt32_7]);
+__intnl_UnityEngineObject_115 = __lcl_config_VRCUdonUdonBehaviour_1;
+__intnl_UnityEngineObject_116 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_100 = __intnl_UnityEngineObject_115 == __intnl_UnityEngineObject_116;
+if (__intnl_SystemBoolean_100)
+{
+}
+else
+{
+__intnl_SystemInt32_32 = __0_time__param;
+__lcl_config_VRCUdonUdonBehaviour_1.SetProgramVariable(__const_SystemString_49, __0_time__param);
+__lcl_config_VRCUdonUdonBehaviour_1.SendCustomEvent(__const_SystemString_50);
+__intnl_SystemObject_19 = __lcl_config_VRCUdonUdonBehaviour_1.GetProgramVariable(__const_SystemString_51);
+__intnl_SystemBoolean_101 = (Boolean)__intnl_SystemObject_19;
+if (__intnl_SystemBoolean_101)
+{
+}
+else
+{
+}
+__lcl_config_VRCUdonUdonBehaviour_1.SendCustomEvent(__const_SystemString_23);
+__intnl_SystemObject_20 = __lcl_config_VRCUdonUdonBehaviour_1.GetProgramVariable(__const_SystemString_24);
+__intnl_SystemInt32_34 = Convert.ToInt32(__intnl_SystemObject_20);
+__intnl_SystemInt32_33 = __intnl_SystemInt32_34;
+__intnl_SystemBoolean_102 = __intnl_SystemInt32_33 != __0_weather__param;
+if (__intnl_SystemBoolean_102)
+{
+}
+else
+{
+__0___0_FindAtmosphericConfig__ret = __lcl_config_VRCUdonUdonBehaviour_1;
+return;
+}
+}
+__lcl_i_SystemInt32_7 = __lcl_i_SystemInt32_7 + __const_SystemInt32_0;
+}
+__0___0_FindAtmosphericConfig__ret = (UdonBehaviour)__const_SystemObject_0;
+return;
+}
+public void GetCurrentWeatherType()
+{
+__intnl_SystemBoolean_103 = useHeightFiltering;
+if (__intnl_SystemBoolean_103)
+{
+__intnl_SystemBoolean_103 = localPlayer != __const_SystemObject_0;
+}
+if (__intnl_SystemBoolean_103)
+{
+__intnl_UnityEngineVector3_4 = localPlayer.GetPosition();
+__lcl_playerY_SystemSingle_2 = __intnl_UnityEngineVector3_4.y;
+__intnl_SystemBoolean_104 = __lcl_playerY_SystemSingle_2 < indoorHeightThreshold;
+if (__intnl_SystemBoolean_104)
+{
+if (enableDebugLogs)
+{
+}
+__0_GetCurrentWeatherType__ret = belowThresholdWeather;
+return;
+}
+}
+if (syncedMoonrainActive)
+{
+__0_GetCurrentWeatherType__ret = __const_SystemInt32_9;
+return;
+}
+__intnl_SystemBoolean_105 = syncedBiomeWeatherIndices == __const_SystemObject_0;
+if (__intnl_SystemBoolean_105)
+{
+}
+else
+{
+__intnl_SystemBoolean_105 = biomeWeatherOffsets == __const_SystemObject_0;
+}
+__intnl_SystemBoolean_104 = __intnl_SystemBoolean_105;
+if (__intnl_SystemBoolean_104)
+{
+}
+else
+{
+__intnl_SystemBoolean_104 = biomeAllowedWeatherTypes == __const_SystemObject_0;
+}
+if (__intnl_SystemBoolean_104)
+{
+__0_GetCurrentWeatherType__ret = __const_SystemInt32_6;
+return;
+}
+__intnl_SystemBoolean_107 = currentBiomeIndex >= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_107)
+{
+__intnl_SystemInt32_35 = biomeNames.Length;
+__intnl_SystemBoolean_107 = currentBiomeIndex < __intnl_SystemInt32_35;
+}
+__intnl_SystemBoolean_106 = __intnl_SystemBoolean_107;
+if (__intnl_SystemBoolean_106)
+{
+__intnl_SystemInt32_36 = syncedBiomeWeatherIndices.Length;
+__intnl_SystemBoolean_106 = currentBiomeIndex < __intnl_SystemInt32_36;
+}
+if (__intnl_SystemBoolean_106)
+{
+__lcl_weatherIndex_SystemInt32_0 = syncedBiomeWeatherIndices[currentBiomeIndex];
+__lcl_offset_SystemInt32_2 = biomeWeatherOffsets[currentBiomeIndex];
+__intnl_SystemInt32_37 = __lcl_offset_SystemInt32_2 + __lcl_weatherIndex_SystemInt32_0;
+__intnl_SystemBoolean_108 = __intnl_SystemInt32_37 >= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_108)
+{
+__intnl_SystemInt32_38 = __lcl_offset_SystemInt32_2 + __lcl_weatherIndex_SystemInt32_0;
+__intnl_SystemInt32_39 = biomeAllowedWeatherTypes.Length;
+__intnl_SystemBoolean_108 = __intnl_SystemInt32_38 < __intnl_SystemInt32_39;
+}
+if (__intnl_SystemBoolean_108)
+{
+__intnl_SystemInt32_40 = __lcl_offset_SystemInt32_2 + __lcl_weatherIndex_SystemInt32_0;
+__0_GetCurrentWeatherType__ret = biomeAllowedWeatherTypes[__intnl_SystemInt32_40];
+return;
+}
+}
+else
+{
+__intnl_SystemBoolean_108 = defaultAllowedWeatherTypes != __const_SystemObject_0;
+if (__intnl_SystemBoolean_108)
+{
+__intnl_SystemBoolean_109 = syncedDefaultWeatherIndex >= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_109)
+{
+__intnl_SystemInt32_37 = defaultAllowedWeatherTypes.Length;
+__intnl_SystemBoolean_109 = syncedDefaultWeatherIndex < __intnl_SystemInt32_37;
+}
+if (__intnl_SystemBoolean_109)
+{
+__0_GetCurrentWeatherType__ret = defaultAllowedWeatherTypes[syncedDefaultWeatherIndex];
+return;
+}
+}
+}
+__0_GetCurrentWeatherType__ret = __const_SystemInt32_6;
+return;
+}
+public void GetCurrentBiomeName()
+{
+__intnl_SystemBoolean_110 = currentBiomeIndex >= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_110)
+{
+__intnl_SystemInt32_41 = biomeNames.Length;
+__intnl_SystemBoolean_110 = currentBiomeIndex < __intnl_SystemInt32_41;
+}
+if (__intnl_SystemBoolean_110)
+{
+__0_GetCurrentBiomeName__ret = biomeNames[currentBiomeIndex];
+return;
+}
+__0_GetCurrentBiomeName__ret = __const_SystemString_7;
+return;
+}
+public void GetCurrentConfig()
+{
+__0_GetCurrentConfig__ret = currentConfig;
+return;
+}
+public void IsMoonrainActive()
+{
+__0_IsMoonrainActive__ret = syncedMoonrainActive;
+return;
+}
+private void UNDEF_ab452_28968()
+{
+__intnl_UnityEngineObject_117 = weatherDisplayText;
+__intnl_UnityEngineObject_118 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_111 = __intnl_UnityEngineObject_117 == __intnl_UnityEngineObject_118;
+if (__intnl_SystemBoolean_111)
+{
+__intnl_UnityEngineObject_119 = weatherDisplayTextVR;
+__intnl_UnityEngineObject_120 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_111 = __intnl_UnityEngineObject_119 == __intnl_UnityEngineObject_120;
+}
+if (__intnl_SystemBoolean_111)
+{
+return;
+}
+__lcl_weatherText_SystemString_0 = __const_SystemString_52;
+__intnl_UnityEngineObject_121 = currentConfig;
+__intnl_UnityEngineObject_122 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_112 = __intnl_UnityEngineObject_121 != __intnl_UnityEngineObject_122;
+if (__intnl_SystemBoolean_112)
+{
+__intnl_VRCUdonUdonBehaviour_9 = currentConfig;
+currentConfig.SendCustomEvent(__const_SystemString_15);
+__intnl_SystemObject_21 = currentConfig.GetProgramVariable(__const_SystemString_16);
+__intnl_SystemString_3 = (String)__intnl_SystemObject_21;
+__lcl_weatherText_SystemString_0 = __intnl_SystemString_3;
+}
+else
+{
+GetCurrentWeatherType();
+__lcl_currentWeather_SystemInt32_1 = __0_GetCurrentWeatherType__ret;
+__1_weather__param = __lcl_currentWeather_SystemInt32_1;
+__0_WeatherTypeToString();
+__lcl_weatherText_SystemString_0 = __0___0_WeatherTypeToString__ret;
+}
+__intnl_UnityEngineObject_123 = weatherDisplayText;
+__intnl_UnityEngineObject_124 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_113 = __intnl_UnityEngineObject_123 != __intnl_UnityEngineObject_124;
+if (__intnl_SystemBoolean_113)
+{
+weatherDisplayText.text = __lcl_weatherText_SystemString_0;
+}
+__intnl_UnityEngineObject_125 = weatherDisplayTextVR;
+__intnl_UnityEngineObject_126 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_114 = __intnl_UnityEngineObject_125 != __intnl_UnityEngineObject_126;
+if (__intnl_SystemBoolean_114)
+{
+weatherDisplayTextVR.text = __lcl_weatherText_SystemString_0;
+}
+if (enableDebugLogs)
+{
+}
+}
+private void __0_WeatherTypeToString()
+{
+__intnl_SystemBoolean_115 = __1_weather__param >= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_115)
+{
+__intnl_SystemBoolean_116 = __1_weather__param <= __const_SystemInt32_10;
+if (__intnl_SystemBoolean_116)
+{
+__intnl_SystemUInt32_0 = __gintnl_SystemUInt32Array_0[__1_weather__param];
+__0___0_WeatherTypeToString__ret = __const_SystemString_53;
+return;
+__0___0_WeatherTypeToString__ret = __const_SystemString_54;
+return;
+__0___0_WeatherTypeToString__ret = __const_SystemString_55;
+return;
+__0___0_WeatherTypeToString__ret = __const_SystemString_56;
+return;
+__0___0_WeatherTypeToString__ret = __const_SystemString_57;
+return;
+__0___0_WeatherTypeToString__ret = __const_SystemString_58;
+return;
+__0___0_WeatherTypeToString__ret = __const_SystemString_59;
+return;
+}
+}
+__0___0_WeatherTypeToString__ret = __const_SystemString_18;
+return;
+}
+public void _onDeserialization()
+{
+if (hasReceivedInitialSync)
+{
+}
+else
+{
+hasReceivedInitialSync = __const_SystemBoolean_0;
+if (enableDebugLogs)
+{
+}
+}
+if (enableDebugLogs)
+{
+__intnl_SystemBoolean_117 = currentBiomeIndex >= __const_SystemInt32_1;
+if (__intnl_SystemBoolean_117)
+{
+__intnl_SystemInt32_42 = biomeNames.Length;
+__intnl_SystemBoolean_117 = currentBiomeIndex < __intnl_SystemInt32_42;
+}
+if (__intnl_SystemBoolean_117)
+{
+__lcl_biomeName_SystemString_1 = biomeNames[currentBiomeIndex];
+}
+else
+{
+__lcl_biomeName_SystemString_1 = __const_SystemString_7;
+}
+}
+UNDEF_ab452_12176();
+UNDEF_ab452_28968();
+}
+public void _onOwnershipTransferred()
+{
+__lcl_wasOwner_SystemBoolean_0 = isMasterClient;
+isMasterClient = Networking.IsOwner(__this_UnityEngineGameObject_0);
+__intnl_SystemBoolean_118 = isMasterClient;
+if (__intnl_SystemBoolean_118)
+{
+__intnl_SystemBoolean_118 = !__lcl_wasOwner_SystemBoolean_0;
+}
+if (__intnl_SystemBoolean_118)
+{
+if (syncedMoonrainActive)
+{
+__intnl_SystemBoolean_119 = currentTimeOfDay == __const_SystemInt32_2;
+if (__intnl_SystemBoolean_119)
+{
+moonrainCheckedThisNight = __const_SystemBoolean_0;
+}
+else
+{
+syncedMoonrainActive = __const_SystemBoolean_1;
+moonrainCheckedThisNight = __const_SystemBoolean_1;
+}
+}
+else
+{
+moonrainCheckedThisNight = currentTimeOfDay == __const_SystemInt32_2;
+}
+UNDEF_ab452_2916();
+__this_VRCUdonUdonBehaviour_6.RequestSerialization();
+}
+}
+private void __0_GetCurrentWeatherAudioClip()
+{
+__intnl_UnityEngineObject_127 = __0_config__param;
+__intnl_UnityEngineObject_128 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_120 = __intnl_UnityEngineObject_127 == __intnl_UnityEngineObject_128;
+if (__intnl_SystemBoolean_120)
+{
+__0___0_GetCurrentWeatherAudioClip__ret = (AudioClip)__const_SystemObject_0;
+return;
+}
+if (isIndoorMode)
+{
+__intnl_VRCUdonUdonBehaviour_10 = __0_config__param;
+__0_config__param.SendCustomEvent(__const_SystemString_60);
+__intnl_SystemObject_22 = __0_config__param.GetProgramVariable(__const_SystemString_61);
+__intnl_UnityEngineAudioClip_1 = (AudioClip)__intnl_SystemObject_22;
+__lcl_indoorClip_UnityEngineAudioClip_0 = __intnl_UnityEngineAudioClip_1;
+__intnl_UnityEngineObject_129 = __lcl_indoorClip_UnityEngineAudioClip_0;
+__intnl_UnityEngineObject_130 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_121 = __intnl_UnityEngineObject_129 != __intnl_UnityEngineObject_130;
+if (__intnl_SystemBoolean_121)
+{
+if (enableDebugLogs)
+{
+}
+__0___0_GetCurrentWeatherAudioClip__ret = __lcl_indoorClip_UnityEngineAudioClip_0;
+return;
+}
+if (enableDebugLogs)
+{
+}
+}
+__intnl_VRCUdonUdonBehaviour_10 = __0_config__param;
+__0_config__param.SendCustomEvent(__const_SystemString_62);
+__intnl_SystemObject_22 = __0_config__param.GetProgramVariable(__const_SystemString_63);
+__intnl_UnityEngineAudioClip_1 = (AudioClip)__intnl_SystemObject_22;
+__lcl_outdoorClip_UnityEngineAudioClip_0 = __intnl_UnityEngineAudioClip_1;
+__intnl_SystemBoolean_121 = enableDebugLogs;
+if (__intnl_SystemBoolean_121)
+{
+__intnl_UnityEngineObject_129 = __lcl_outdoorClip_UnityEngineAudioClip_0;
+__intnl_UnityEngineObject_130 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_121 = __intnl_UnityEngineObject_129 != __intnl_UnityEngineObject_130;
+}
+if (__intnl_SystemBoolean_121)
+{
+}
+__0___0_GetCurrentWeatherAudioClip__ret = __lcl_outdoorClip_UnityEngineAudioClip_0;
+return;
+}
+public void __0_SetIndoorMode()
+{
+__intnl_SystemBoolean_122 = isIndoorMode == __0_indoor__param;
+if (__intnl_SystemBoolean_122)
+{
+return;
+}
+isIndoorMode = __0_indoor__param;
+__intnl_UnityEngineObject_131 = currentConfig;
+__intnl_UnityEngineObject_132 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_123 = __intnl_UnityEngineObject_131 != __intnl_UnityEngineObject_132;
+if (__intnl_SystemBoolean_123)
+{
+break;
+}
+__0_config__param = currentConfig;
+__0_GetCurrentWeatherAudioClip();
+__lcl_newAudio_UnityEngineAudioClip_0 = __0___0_GetCurrentWeatherAudioClip__ret;
+__intnl_VRCUdonUdonBehaviour_11 = currentConfig;
+currentConfig.SendCustomEvent(__const_SystemString_29);
+__intnl_SystemObject_23 = currentConfig.GetProgramVariable(__const_SystemString_30);
+__intnl_SystemSingle_22 = Convert.ToSingle(__intnl_SystemObject_23);
+__lcl_volume_SystemSingle_0 = __intnl_SystemSingle_22;
+__intnl_UnityEngineObject_133 = __lcl_newAudio_UnityEngineAudioClip_0;
+__intnl_UnityEngineObject_134 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_124 = __intnl_UnityEngineObject_133 != __intnl_UnityEngineObject_134;
+if (__intnl_SystemBoolean_124)
+{
+break;
+}
+__intnl_UnityEngineObject_135 = currentAudioSource;
+__intnl_UnityEngineObject_136 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_125 = __intnl_UnityEngineObject_135 != __intnl_UnityEngineObject_136;
+if (__intnl_SystemBoolean_125)
+{
+__lcl_currentAudio_UnityEngineAudioClip_1 = currentAudioSource.clip;
+}
+else
+{
+__lcl_currentAudio_UnityEngineAudioClip_1 = (AudioClip)__const_SystemObject_0;
+}
+__intnl_UnityEngineObject_137 = __lcl_newAudio_UnityEngineAudioClip_0;
+__intnl_UnityEngineObject_138 = __lcl_currentAudio_UnityEngineAudioClip_1;
+__intnl_SystemBoolean_126 = __intnl_UnityEngineObject_137 != __intnl_UnityEngineObject_138;
+if (__intnl_SystemBoolean_126)
+{
+break;
+}
+__0_clip__param = __lcl_newAudio_UnityEngineAudioClip_0;
+__0_targetVolume__param = __lcl_volume_SystemSingle_0;
+UNDEF_ab452_24464();
+if (enableDebugLogs)
+{
+}
+}
+public void __0_SetWeatherVolume()
+{
+masterWeatherVolume = Mathf.Clamp01(__0_volume__param);
+__intnl_UnityEngineObject_139 = currentAudioSource;
+__intnl_UnityEngineObject_140 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_127 = __intnl_UnityEngineObject_139 != __intnl_UnityEngineObject_140;
+if (__intnl_SystemBoolean_127)
+{
+__intnl_SystemBoolean_127 = currentAudioSource.isPlaying;
+}
+if (__intnl_SystemBoolean_127)
+{
+__intnl_UnityEngineObject_141 = currentConfig;
+__intnl_UnityEngineObject_142 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_128 = __intnl_UnityEngineObject_141 != __intnl_UnityEngineObject_142;
+if (__intnl_SystemBoolean_128)
+{
+__intnl_VRCUdonUdonBehaviour_12 = currentConfig;
+currentConfig.SendCustomEvent(__const_SystemString_29);
+__intnl_SystemObject_24 = currentConfig.GetProgramVariable(__const_SystemString_30);
+__intnl_SystemSingle_23 = Convert.ToSingle(__intnl_SystemObject_24);
+__lcl_baseVolume_SystemSingle_0 = __intnl_SystemSingle_23;
+__intnl_SystemSingle_24 = __lcl_baseVolume_SystemSingle_0 * masterWeatherVolume;
+currentAudioSource.volume = __intnl_SystemSingle_24;
+}
+}
+__intnl_SystemBoolean_128 = isAudioTransitioning;
+if (__intnl_SystemBoolean_128)
+{
+__intnl_UnityEngineObject_141 = toSource;
+__intnl_UnityEngineObject_142 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_128 = __intnl_UnityEngineObject_141 != __intnl_UnityEngineObject_142;
+}
+if (__intnl_SystemBoolean_128)
+{
+toVolume = toVolume * masterWeatherVolume;
+}
+if (enableDebugLogs)
+{
+}
+}
+public void GetWeatherVolume()
+{
+__0_GetWeatherVolume__ret = masterWeatherVolume;
+return;
+}
+private void UNDEF_ab452_33232()
+{
+__intnl_SystemBoolean_129 = biomeCenters == __const_SystemObject_0;
+if (__intnl_SystemBoolean_129)
+{
+return;
+}
+__lcl_i_SystemInt32_8 = __const_SystemInt32_1;
+for (;;)
+{
+__intnl_SystemInt32_43 = biomeCenters.Length;
+__intnl_SystemBoolean_130 = __lcl_i_SystemInt32_8 < __intnl_SystemInt32_43;
+if (__intnl_SystemBoolean_130)
+{
+break;
+}
+__intnl_UnityEngineTransform_3 = (Transform)(biomeCenters[__lcl_i_SystemInt32_8]);
+__intnl_UnityEngineObject_143 = __intnl_UnityEngineTransform_3;
+__intnl_UnityEngineObject_144 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_131 = __intnl_UnityEngineObject_143 == __intnl_UnityEngineObject_144;
+if (__intnl_SystemBoolean_131)
+{
+}
+else
+{
+__intnl_SystemInt32_44 = biomeGizmoColors.Length;
+__intnl_SystemBoolean_132 = __lcl_i_SystemInt32_8 < __intnl_SystemInt32_44;
+if (__intnl_SystemBoolean_132)
+{
+__lcl_gizmoColor_UnityEngineColor_0 = biomeGizmoColors[__lcl_i_SystemInt32_8];
+}
+else
+{
+__lcl_gizmoColor_UnityEngineColor_0 = __const_UnityEngineColor_1;
+}
+__intnl_SystemInt32_45 = biomeRadii.Length;
+__intnl_SystemBoolean_133 = __lcl_i_SystemInt32_8 < __intnl_SystemInt32_45;
+if (__intnl_SystemBoolean_133)
+{
+__lcl_radius_SystemSingle_0 = biomeRadii[__lcl_i_SystemInt32_8];
+}
+else
+{
+__lcl_radius_SystemSingle_0 = __const_SystemSingle_8;
+}
+__intnl_SystemSingle_25 = __lcl_gizmoColor_UnityEngineColor_0.r;
+__intnl_SystemSingle_26 = __lcl_gizmoColor_UnityEngineColor_0.g;
+__intnl_SystemSingle_27 = __lcl_gizmoColor_UnityEngineColor_0.b;
+__intnl_UnityEngineColor_2 = Color.ctor(__intnl_SystemSingle_25, __intnl_SystemSingle_26, __intnl_SystemSingle_27, __const_SystemSingle_9);
+Gizmos.color = __intnl_UnityEngineColor_2;
+__intnl_UnityEngineTransform_4 = (Transform)(biomeCenters[__lcl_i_SystemInt32_8]);
+__intnl_UnityEngineVector3_5 = __intnl_UnityEngineTransform_4.position;
+Gizmos.DrawSphere(__intnl_UnityEngineVector3_5, __lcl_radius_SystemSingle_0);
+Gizmos.color = __lcl_gizmoColor_UnityEngineColor_0;
+__intnl_UnityEngineTransform_5 = (Transform)(biomeCenters[__lcl_i_SystemInt32_8]);
+__intnl_UnityEngineVector3_6 = __intnl_UnityEngineTransform_5.position;
+Gizmos.DrawWireSphere(__intnl_UnityEngineVector3_6, __lcl_radius_SystemSingle_0);
+}
+__lcl_i_SystemInt32_8 = __lcl_i_SystemInt32_8 + __const_SystemInt32_0;
+}
+}
+}

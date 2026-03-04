@@ -1,0 +1,324 @@
+void _start()
+16 JUMP 1360
+32 JUMP 1948
+48 JUMP 1976
+64 JUMP 2424
+84 return;
+void _update()
+108 if (isRespawning) //228
+{
+respawnTimer = op_Subtraction(__intnl_SystemSingle_0, respawnTimer);// 156
+204 if (__intnl_SystemBoolean_0) //228
+{
+220 JUMP 2308
+}
+}
+244 __intnl_SystemBoolean_0 = needsRecoveryCheck
+256 if (__intnl_SystemBoolean_0) //312
+{
+}
+320 if (__intnl_SystemBoolean_0) //344
+{
+336 JUMP 3452
+}
+356 return;
+void _interact()
+388 __intnl_SystemBoolean_1 = isPickedUp
+400 if (__intnl_SystemBoolean_1) //432
+{
+}
+440 if (__intnl_SystemBoolean_1) //484
+{
+456 JUMP 2424
+476 return;
+}
+492 if (isRespawning) //520
+{
+512 return;
+}
+536 __intnl_UnityEngineObject_0 = inventoryManager
+556 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+600 if (__intnl_SystemBoolean_2) //680
+{
+624 __intnl_UnityEngineObject_2 = itemDatabase
+644 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+}
+688 if (__intnl_SystemBoolean_2) //1132
+{
+712 __intnl_SystemInt32_0 = questItemId
+G_itemDatabase.SetProgramVariable(questItemId, __const_SystemString_0);// 740
+G_itemDatabase.SendCustomEvent(__const_SystemString_1);// 764
+820 __intnl_VRCUdonUdonBehaviour_0 = __intnl_SystemObject_0
+840 __lcl_item_VRCUdonUdonBehaviour_0 = __intnl_VRCUdonUdonBehaviour_0
+860 __intnl_UnityEngineObject_4 = __lcl_item_VRCUdonUdonBehaviour_0
+880 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+924 if (__intnl_SystemBoolean_3) //1132
+{
+948 __intnl_SystemInt32_1 = questItemId
+968 __intnl_SystemInt32_2 = quantity
+G_inventoryManager.SetProgramVariable(questItemId, __const_SystemString_0);// 996
+G_inventoryManager.SetProgramVariable(quantity, __const_SystemString_3);// 1028
+G_inventoryManager.SendCustomEvent(__const_SystemString_4);// 1052
+1068 JUMP 2648
+1084 if (canRespawn) //1116
+{
+1100 JUMP 2192
+1108 JUMP 1132
+}
+1124 JUMP 2112
+}
+}
+1144 return;
+void _onPlayerRestored()
+1200 if (__intnl_SystemBoolean_4) //1216
+{
+1208 JUMP 1264
+}
+1272 if (__intnl_SystemBoolean_4) //1300
+{
+1292 return;
+}
+1308 JUMP 5000
+1324 JUMP 3072
+1344 return;
+1376 __intnl_UnityEngineObject_6 = inventoryManager
+1396 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+1440 if (__intnl_SystemBoolean_6) //1640
+{
+__lcl_managerObj_UnityEngineGameObject_0 = Find(__const_SystemString_5);// 1464
+1488 __intnl_UnityEngineObject_8 = __lcl_managerObj_UnityEngineGameObject_0
+1508 __intnl_UnityEngineObject_9 = __const_SystemObject_0
+1552 if (__intnl_SystemBoolean_7) //1640
+{
+1608 __1__intnlparam = __intnl_UnityEngineTransform_0
+1612 JUMP 5796
+1636 inventoryManager = __0__intnlparam
+}
+}
+1656 __intnl_UnityEngineObject_8 = itemDatabase
+1676 __intnl_UnityEngineObject_9 = __const_SystemObject_0
+1720 if (__intnl_SystemBoolean_7) //1920
+{
+__lcl_databaseObj_UnityEngineGameObject_0 = Find(__const_SystemString_6);// 1744
+1768 __intnl_UnityEngineObject_10 = __lcl_databaseObj_UnityEngineGameObject_0
+1788 __intnl_UnityEngineObject_11 = __const_SystemObject_0
+1832 if (__intnl_SystemBoolean_8) //1920
+{
+1888 __3__intnlparam = __intnl_UnityEngineTransform_0
+1892 JUMP 6304
+1916 itemDatabase = __2__intnlparam
+}
+}
+1932 return;
+1960 return;
+1992 __intnl_UnityEngineObject_12 = visualObject
+2012 __intnl_UnityEngineObject_13 = __const_SystemObject_0
+2056 if (__intnl_SystemBoolean_9) //2084
+{
+2080 visualObject = __this_UnityEngineGameObject_0
+}
+2096 return;
+2128 isPickedUp = __const_SystemBoolean_0
+2140 JUMP 2424
+2156 JUMP 5320
+2176 return;
+2208 isRespawning = __const_SystemBoolean_0
+2228 respawnTimer = respawnTime
+2240 JUMP 2424
+2256 if (canRespawn) //2280
+{
+2272 JUMP 5636
+}
+2292 return;
+2324 isRespawning = __const_SystemBoolean_1
+2344 isPickedUp = __const_SystemBoolean_1
+2356 JUMP 2424
+2372 if (canRespawn) //2396
+{
+2388 JUMP 5720
+}
+2408 return;
+2456 if (__intnl_SystemBoolean_10) //2488
+{
+}
+2504 __lcl_shouldBeVisible_SystemBoolean_0 = __intnl_SystemBoolean_10
+2524 __intnl_UnityEngineObject_14 = visualObject
+2544 __intnl_UnityEngineObject_15 = __const_SystemObject_0
+2588 if (__intnl_SystemBoolean_11) //2620
+{
+gameObject.SetActive(__lcl_shouldBeVisible_SystemBoolean_0);// 2612
+}
+2632 return;
+2664 __intnl_UnityEngineObject_16 = pickupEffectPrefab
+2684 __intnl_UnityEngineObject_17 = __const_SystemObject_0
+2728 if (__intnl_SystemBoolean_12) //2844
+{
+2760 __5__intnlparam = pickupEffectPrefab
+2764 JUMP 6812
+__4__intnlparam.get_transform().set_position(__intnl_UnityEngineVector3_0);// 2836
+}
+2860 __intnl_UnityEngineObject_18 = pickupAudioSource
+2880 __intnl_UnityEngineObject_19 = __const_SystemObject_0
+2924 if (__intnl_SystemBoolean_13) //3004
+{
+2948 __intnl_UnityEngineObject_20 = pickupSound
+2968 __intnl_UnityEngineObject_21 = __const_SystemObject_0
+}
+3012 if (__intnl_SystemBoolean_13) //3044
+{
+G_pickupAudioSource.PlayOneShot(pickupSound);// 3036
+}
+3056 return;
+3104 if (__intnl_SystemBoolean_14) //3120
+{
+3112 JUMP 3140
+}
+3136 __intnl_SystemBoolean_14 = canRespawn
+3148 if (__intnl_SystemBoolean_14) //3176
+{
+3168 return;
+}
+3192 needsRecoveryCheck = __const_SystemBoolean_0
+3212 recoveryCheckAttempts = __const_SystemInt32_0
+recoveryCheckTime = op_Addition(__const_SystemSingle_1, __intnl_SystemSingle_1);// 3256
+3272 if (debugMode) //3424
+{
+Log(__intnl_SystemString_3);// 3416
+}
+3436 return;
+recoveryCheckAttempts = op_Addition(__const_SystemInt32_1, recoveryCheckAttempts);// 3476
+3500 __intnl_UnityEngineObject_22 = inventoryManager
+3520 __intnl_UnityEngineObject_23 = __const_SystemObject_0
+3564 if (__intnl_SystemBoolean_15) //4000
+{
+3612 if (__intnl_SystemBoolean_16) //3848
+{
+recoveryCheckTime = op_Addition(__const_SystemSingle_2, __intnl_SystemSingle_2);// 3660
+3676 if (debugMode) //3828
+{
+Log(__intnl_SystemString_7);// 3820
+}
+3840 return;
+}
+3856 if (debugMode) //3944
+{
+LogWarning(__intnl_SystemString_5);// 3936
+}
+3960 needsRecoveryCheck = __const_SystemBoolean_1
+3972 JUMP 2424
+3992 return;
+}
+4016 __intnl_SystemInt32_3 = questItemId
+__0__intnlparam.SetProgramVariable(questItemId, __const_SystemString_15);// 4044
+__0__intnlparam.SendCustomEvent(__const_SystemString_16);// 4068
+4148 __lcl_currentQuantity_SystemInt32_0 = __intnl_SystemInt32_4
+4192 if (__intnl_SystemBoolean_16) //4416
+{
+4216 needsRecoveryCheck = __const_SystemBoolean_1
+4228 JUMP 2424
+4244 if (debugMode) //4396
+{
+Log(__intnl_SystemString_7);// 4388
+}
+4408 return;
+}
+4456 if (__intnl_SystemBoolean_17) //4756
+{
+recoveryCheckTime = op_Addition(__const_SystemSingle_2, __intnl_SystemSingle_2);// 4504
+4520 if (debugMode) //4736
+{
+Log(__intnl_SystemString_9);// 4728
+}
+4748 return;
+}
+4772 needsRecoveryCheck = __const_SystemBoolean_1
+4792 isPickedUp = __const_SystemBoolean_1
+4804 JUMP 5320
+4820 JUMP 2424
+Log(__intnl_SystemString_7);// 4964
+4984 return;
+__lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0 = get_LocalPlayer();// 5008
+5056 if (__intnl_SystemBoolean_18) //5084
+{
+5076 return;
+}
+isPickedUp = GetBool(__intnl_SystemString_10, __lcl_localPlayer_VRCSDKBaseVRCPlayerApi_0);// 5140
+5156 if (canRespawn) //5180
+{
+5172 JUMP 5404
+}
+5196 __intnl_SystemBoolean_19 = isPickedUp
+5208 if (__intnl_SystemBoolean_19) //5240
+{
+}
+5248 if (__intnl_SystemBoolean_19) //5276
+{
+5268 return;
+}
+5284 JUMP 2424
+5304 return;
+SetBool(isPickedUp, __intnl_SystemString_11);// 5368
+5388 return;
+__lcl_localPlayer_VRCSDKBaseVRCPlayerApi_1 = get_LocalPlayer();// 5412
+5460 if (__intnl_SystemBoolean_20) //5488
+{
+5480 return;
+}
+__lcl_wasRespawning_SystemBoolean_0 = GetBool(__intnl_SystemString_12, __lcl_localPlayer_VRCSDKBaseVRCPlayerApi_1);// 5544
+5560 if (__lcl_wasRespawning_SystemBoolean_0) //5608
+{
+5584 isRespawning = __const_SystemBoolean_0
+5604 respawnTimer = respawnTime
+}
+5620 return;
+SetBool(__const_SystemBoolean_0, __intnl_SystemString_13);// 5684
+5704 return;
+SetBool(__const_SystemBoolean_1, __intnl_SystemString_14);// 5768
+5788 return;
+5844 __lcl_udonBehaviours_UnityEngineComponentArray_0 = __intnl_UnityEngineComponentArray_0
+5864 __lcl_targetID_SystemInt64_0 = __const_SystemInt64_0
+5908 __intnl_SystemInt32_6 = __const_SystemInt32_0
+5952 if (__intnl_SystemBoolean_21) //6244
+{
+__lcl_behaviour_VRCUdonUdonBehaviour_0 = L_managerObj.get_transform().GetComponents(__const_SystemType_0).Get(__intnl_SystemInt32_6);// 5984
+__lcl_idValue_SystemObject_0 = L_behaviour.GetProgramVariable(__const_SystemString_28);// 6016
+6064 if (__intnl_SystemBoolean_22) //6128
+{
+}
+6136 if (__intnl_SystemBoolean_22) //6204
+{
+6160 __intnl_UnityEngineComponent_0 = __lcl_behaviour_VRCUdonUdonBehaviour_0
+6180 __0__intnlparam = __intnl_UnityEngineComponent_0
+6196 return;
+}
+6236 JUMP 5912
+}
+6260 __0__intnlparam = __const_SystemObject_0
+6276 return;
+6296 return;
+6352 __lcl_udonBehaviours_UnityEngineComponentArray_1 = __intnl_UnityEngineComponentArray_1
+6372 __lcl_targetID_SystemInt64_1 = __const_SystemInt64_1
+6416 __intnl_SystemInt32_8 = __const_SystemInt32_0
+6460 if (__intnl_SystemBoolean_23) //6752
+{
+__lcl_behaviour_VRCUdonUdonBehaviour_1 = L_databaseObj.get_transform().GetComponents(__const_SystemType_0).Get(__intnl_SystemInt32_8);// 6492
+__lcl_idValue_SystemObject_1 = L_behaviour.GetProgramVariable(__const_SystemString_28);// 6524
+6572 if (__intnl_SystemBoolean_24) //6636
+{
+}
+6644 if (__intnl_SystemBoolean_24) //6712
+{
+6668 __intnl_UnityEngineComponent_1 = __lcl_behaviour_VRCUdonUdonBehaviour_1
+6688 __2__intnlparam = __intnl_UnityEngineComponent_1
+6704 return;
+}
+6744 JUMP 6420
+}
+6768 __2__intnlparam = __const_SystemObject_0
+6784 return;
+6804 return;
+__4__intnlparam = Instantiate(__5__intnlparam);// 6828
+6848 return;
+6868 return;
+6892 __6__intnlparam = __const_SystemObject_0
+6908 return;

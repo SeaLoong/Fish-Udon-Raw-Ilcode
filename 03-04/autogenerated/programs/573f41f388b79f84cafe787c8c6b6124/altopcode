@@ -1,0 +1,285 @@
+void _start()
+16 JUMP 692
+40 __intnl_UnityEngineObject_0 = dayNightCycle
+60 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+104 if (__intnl_SystemBoolean_0) //288
+{
+136 __intnl_VRCUdonUdonBehaviour_0 = dayNightCycle
+G_dayNightCycle.SendCustomEvent(__const_SystemString_0);// 148
+228 __intnl_SystemInt32_0 = __intnl_SystemInt32_1
+248 currentTimeOfDay = __intnl_SystemInt32_0
+276 __1_timeOfDay__param = currentTimeOfDay
+280 JUMP 1276
+}
+300 return;
+void _update()
+332 __intnl_UnityEngineObject_2 = dayNightCycle
+352 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+396 if (__intnl_SystemBoolean_1) //648
+{
+428 __intnl_VRCUdonUdonBehaviour_1 = dayNightCycle
+G_dayNightCycle.SendCustomEvent(__const_SystemString_0);// 440
+520 __intnl_SystemInt32_2 = __intnl_SystemInt32_3
+540 __lcl_newTimeOfDay_SystemInt32_0 = __intnl_SystemInt32_2
+584 if (__intnl_SystemBoolean_2) //648
+{
+608 currentTimeOfDay = __lcl_newTimeOfDay_SystemInt32_0
+636 __0_timeOfDay__param = currentTimeOfDay
+640 JUMP 1028
+}
+}
+656 JUMP 3532
+676 return;
+708 __intnl_UnityEngineObject_4 = baseAmbienceSource
+728 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+772 if (__intnl_SystemBoolean_3) //788
+{
+780 JUMP 860
+}
+804 __intnl_UnityEngineObject_6 = baseAmbienceClip
+824 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+868 if (__intnl_SystemBoolean_3) //896
+{
+888 return;
+}
+G_baseAmbienceSource.set_clip(baseAmbienceClip);// 912
+G_baseAmbienceSource.set_volume(baseAmbienceVolume);// 936
+G_baseAmbienceSource.set_loop(__const_SystemBoolean_0);// 960
+G_baseAmbienceSource.Play();// 976
+992 if (enableDebugLogs) //1000
+{
+}
+1012 return;
+1036 JUMP 1964
+1060 __lcl_newAudioSource_UnityEngineAudioSource_0 = __0_GetNextAvailableAudioSource__ret
+1080 __intnl_UnityEngineObject_8 = __lcl_newAudioSource_UnityEngineAudioSource_0
+1100 __intnl_UnityEngineObject_9 = currentTimeAudioSource
+1144 if (__intnl_SystemBoolean_4) //1248
+{
+1176 __0_from__param = currentTimeAudioSource
+1196 __0_to__param = __lcl_newAudioSource_UnityEngineAudioSource_0
+1216 __4_timeOfDay__param = __0_timeOfDay__param
+1220 JUMP 2864
+1244 currentTimeAudioSource = __lcl_newAudioSource_UnityEngineAudioSource_0
+}
+1260 return;
+1292 __intnl_UnityEngineObject_10 = timeAudioSourceA
+1312 __intnl_UnityEngineObject_11 = __const_SystemObject_0
+1356 if (__intnl_SystemBoolean_5) //1380
+{
+G_timeAudioSourceA.Stop();// 1372
+}
+1396 __intnl_UnityEngineObject_12 = timeAudioSourceB
+1416 __intnl_UnityEngineObject_13 = __const_SystemObject_0
+1460 if (__intnl_SystemBoolean_6) //1484
+{
+G_timeAudioSourceB.Stop();// 1476
+}
+1500 __lcl_newAudioSource_UnityEngineAudioSource_1 = timeAudioSourceA
+1528 __2_timeOfDay__param = __1_timeOfDay__param
+1532 JUMP 2136
+1556 __lcl_newClip_UnityEngineAudioClip_0 = __0___0_GetAudioClipForTime__ret
+1584 __3_timeOfDay__param = __1_timeOfDay__param
+1588 JUMP 2500
+1612 __lcl_newVolume_SystemSingle_0 = __0___0_GetVolumeForTime__ret
+1632 __intnl_UnityEngineObject_14 = __lcl_newAudioSource_UnityEngineAudioSource_1
+1652 __intnl_UnityEngineObject_15 = __const_SystemObject_0
+1696 if (__intnl_SystemBoolean_7) //1776
+{
+1720 __intnl_UnityEngineObject_16 = __lcl_newClip_UnityEngineAudioClip_0
+1740 __intnl_UnityEngineObject_17 = __const_SystemObject_0
+}
+1784 if (__intnl_SystemBoolean_7) //1880
+{
+G_timeAudioSourceA.set_clip(__lcl_newClip_UnityEngineAudioClip_0);// 1808
+G_timeAudioSourceA.set_volume(__lcl_newVolume_SystemSingle_0);// 1832
+G_timeAudioSourceA.set_loop(__const_SystemBoolean_0);// 1856
+G_timeAudioSourceA.Play();// 1872
+}
+1896 currentTimeAudioSource = __lcl_newAudioSource_UnityEngineAudioSource_1
+1916 isUsingSourceA = __const_SystemBoolean_0
+1928 if (enableDebugLogs) //1936
+{
+}
+1948 return;
+1972 if (isUsingSourceA) //2048
+{
+1996 isUsingSourceA = __const_SystemBoolean_1
+2016 __0_GetNextAvailableAudioSource__ret = timeAudioSourceB
+2032 return;
+2040 JUMP 2108
+}
+2064 isUsingSourceA = __const_SystemBoolean_0
+2084 __0_GetNextAvailableAudioSource__ret = timeAudioSourceA
+2100 return;
+2120 return;
+2176 if (__intnl_SystemBoolean_8) //2432
+{
+2224 if (__intnl_SystemBoolean_9) //2432
+{
+2264 return;
+2288 __0___0_GetAudioClipForTime__ret = morningAudioClip
+2304 return;
+2328 __0___0_GetAudioClipForTime__ret = dayAudioClip
+2344 return;
+2368 __0___0_GetAudioClipForTime__ret = eveningAudioClip
+2384 return;
+2408 __0___0_GetAudioClipForTime__ret = nightAudioClip
+2424 return;
+}
+}
+2448 __0___0_GetAudioClipForTime__ret = __const_SystemObject_0
+2464 return;
+2484 return;
+2540 if (__intnl_SystemBoolean_10) //2796
+{
+2588 if (__intnl_SystemBoolean_11) //2796
+{
+2628 return;
+2652 __0___0_GetVolumeForTime__ret = morningVolume
+2668 return;
+2692 __0___0_GetVolumeForTime__ret = dayVolume
+2708 return;
+2732 __0___0_GetVolumeForTime__ret = eveningVolume
+2748 return;
+2772 __0___0_GetVolumeForTime__ret = nightVolume
+2788 return;
+}
+}
+2812 __0___0_GetVolumeForTime__ret = __const_SystemSingle_0
+2828 return;
+2848 return;
+2872 if (isTransitioning) //2896
+{
+2888 JUMP 4092
+}
+2912 fromAudioSource = __0_from__param
+2932 toAudioSource = __0_to__param
+2952 __intnl_UnityEngineObject_18 = fromAudioSource
+2972 __intnl_UnityEngineObject_19 = __const_SystemObject_0
+3016 if (__intnl_SystemBoolean_12) //3056
+{
+fromStartVolume = G_currentTimeAudioSource.get_volume();// 3040
+3048 JUMP 3076
+}
+3072 fromStartVolume = __const_SystemSingle_1
+3100 __3_timeOfDay__param = __4_timeOfDay__param
+3104 JUMP 2500
+3128 toTargetVolume = __0___0_GetVolumeForTime__ret
+3148 __intnl_UnityEngineObject_20 = toAudioSource
+3168 __intnl_UnityEngineObject_21 = __const_SystemObject_0
+3212 if (__intnl_SystemBoolean_13) //3452
+{
+3244 __2_timeOfDay__param = __4_timeOfDay__param
+3248 JUMP 2136
+3272 __lcl_newClip_UnityEngineAudioClip_1 = __0___0_GetAudioClipForTime__ret
+3292 __intnl_UnityEngineObject_22 = __lcl_newClip_UnityEngineAudioClip_1
+3312 __intnl_UnityEngineObject_23 = __const_SystemObject_0
+3356 if (__intnl_SystemBoolean_14) //3452
+{
+GetNextAvailableAudioSource.set_clip(__lcl_newClip_UnityEngineAudioClip_1);// 3380
+GetNextAvailableAudioSource.set_volume(__const_SystemSingle_1);// 3404
+GetNextAvailableAudioSource.set_loop(__const_SystemBoolean_0);// 3428
+GetNextAvailableAudioSource.Play();// 3444
+}
+}
+transitionStartTime = get_time();// 3460
+3484 isTransitioning = __const_SystemBoolean_0
+3496 if (enableDebugLogs) //3504
+{
+}
+3516 return;
+3540 if (isTransitioning) //3556
+{
+3548 JUMP 3576
+}
+3568 return;
+__lcl_elapsed_SystemSingle_0 = op_Subtraction(transitionStartTime, __intnl_SystemSingle_0);// 3616
+__lcl_t_SystemSingle_0 = Clamp01(__intnl_SystemSingle_1);// 3672
+3696 __intnl_UnityEngineObject_24 = fromAudioSource
+3716 __intnl_UnityEngineObject_25 = __const_SystemObject_0
+3760 if (__intnl_SystemBoolean_15) //3856
+{
+G_currentTimeAudioSource.set_volume(__intnl_SystemSingle_3);// 3848
+}
+3872 __intnl_UnityEngineObject_26 = toAudioSource
+3892 __intnl_UnityEngineObject_27 = __const_SystemObject_0
+3936 if (__intnl_SystemBoolean_16) //4000
+{
+GetNextAvailableAudioSource.set_volume(__intnl_SystemSingle_2);// 3992
+}
+4040 if (__intnl_SystemBoolean_17) //4064
+{
+4056 JUMP 4092
+}
+4076 return;
+4108 __intnl_UnityEngineObject_28 = fromAudioSource
+4128 __intnl_UnityEngineObject_29 = __const_SystemObject_0
+4172 if (__intnl_SystemBoolean_18) //4196
+{
+G_currentTimeAudioSource.Stop();// 4188
+}
+4212 __intnl_UnityEngineObject_30 = toAudioSource
+4232 __intnl_UnityEngineObject_31 = __const_SystemObject_0
+4276 if (__intnl_SystemBoolean_19) //4308
+{
+GetNextAvailableAudioSource.set_volume(toTargetVolume);// 4300
+}
+4324 isTransitioning = __const_SystemBoolean_1
+4336 if (enableDebugLogs) //4344
+{
+}
+4356 return;
+void __0_SetBaseAmbienceVolume()
+baseAmbienceVolume = Clamp01(__0_volume__param);// 4388
+4412 __intnl_UnityEngineObject_32 = baseAmbienceSource
+4432 __intnl_UnityEngineObject_33 = __const_SystemObject_0
+4476 if (__intnl_SystemBoolean_20) //4508
+{
+G_baseAmbienceSource.set_volume(baseAmbienceVolume);// 4500
+}
+4520 return;
+void __0_SetTimeAmbienceVolume()
+__1_volume__param = Clamp01(__1_volume__param);// 4552
+4600 if (__intnl_SystemBoolean_21) //4808
+{
+4648 if (__intnl_SystemBoolean_22) //4808
+{
+4688 return;
+4712 morningVolume = __1_volume__param
+4716 JUMP 4808
+4740 dayVolume = __1_volume__param
+4744 JUMP 4808
+4768 eveningVolume = __1_volume__param
+4772 JUMP 4808
+4796 nightVolume = __1_volume__param
+4800 JUMP 4808
+}
+}
+4848 if (__intnl_SystemBoolean_24) //4928
+{
+4872 __intnl_UnityEngineObject_34 = currentTimeAudioSource
+4892 __intnl_UnityEngineObject_35 = __const_SystemObject_0
+}
+4944 __intnl_SystemBoolean_23 = __intnl_SystemBoolean_24
+4956 if (__intnl_SystemBoolean_23) //4988
+{
+}
+4996 if (__intnl_SystemBoolean_23) //5028
+{
+G_timeAudioSourceA.set_volume(__1_volume__param);// 5020
+}
+5040 return;
+void ForceTimeAmbienceUpdate()
+5072 __intnl_UnityEngineObject_36 = dayNightCycle
+5092 __intnl_UnityEngineObject_37 = __const_SystemObject_0
+5136 if (__intnl_SystemBoolean_25) //5320
+{
+5168 __intnl_VRCUdonUdonBehaviour_2 = dayNightCycle
+G_dayNightCycle.SendCustomEvent(__const_SystemString_0);// 5180
+5260 __intnl_SystemInt32_4 = __intnl_SystemInt32_5
+5280 currentTimeOfDay = __intnl_SystemInt32_4
+5308 __0_timeOfDay__param = currentTimeOfDay
+5312 JUMP 1028
+}
+5332 return;

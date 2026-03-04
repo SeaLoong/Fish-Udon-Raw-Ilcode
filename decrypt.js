@@ -5,11 +5,17 @@
  * remote endpoints. Uses the custom key derivation algorithm (1000-round
  * S-box mixing) extracted from Udon IL bytecode.
  *
+ * 混淆方案（口令）: decoded[i] = (raw[i] ^ k[i % k.length]) ^ ((i * 15 + 69) & 255)
+ *   其中 k 为 7 字节密钥因子数组
+ * 混淆方案（盐值）: decoded[i] = (raw[i] ^ 96) ^ (i & 31)
+ *
  * Data sources:
  *   encrypted/roles.txt  ← https://gamerexde.github.io/trickforge-public/roles.txt (trusted)
  *   encrypted/all.txt    ← https://api.trickforgestudios.com/api/v1/roles/vrc/all (untrusted/fallback)
  *
- * Usage: node decrypt.js
+ * Usage:
+ *   node decrypt.js
+ *
  * Output: decrypted/roles.json, decrypted/all.json (pretty-printed)
  */
 
@@ -29,16 +35,37 @@ const AES_SBOX = [
   0x94, 0x9b, 0x1e, 0x87, 0xe9, 0xce, 0x55, 0x28, 0xdf, 0x8c, 0xa1, 0x89, 0x0d, 0xbf, 0xe6, 0x42, 0x68, 0x41, 0x99, 0x2d, 0x0f, 0xb0, 0x54, 0xbb, 0x16,
 ];
 
-// ── XOR-obfuscated passphrase & salt (from IL) ──
-const PP_RAW = [206, 150, 228, 196, 226, 220, 230, 238, 253, 219, 224, 209, 253, 205, 155, 220, 197, 243, 237, 147, 204, 150, 246, 236, 157, 248, 224, 241, 203, 218, 228, 245];
-const SALT_RAW = [242, 228, 231, 212, 243, 215, 230, 214, 251, 154, 207, 233, 213, 236, 156, 197, 214, 144, 212, 215, 151, 148, 238, 229, 198, 222, 243, 221, 159, 231, 207, 205];
+// ══════════════════════════════════════════════════════════════════════
+//  加密参数 — 从 DiscordRoleManager IL 字节码提取
+//
+//  混淆方案（口令）: decoded[i] = (raw[i] ^ k[i % k.length]) ^ ((i * 15 + 69) & 255)
+//    其中 k 为 7 字节密钥因子: [91, 13, 177, 166, 164, 151, 73]
+//  混淆方案（盐值）: decoded[i] = (raw[i] ^ 96) ^ (i & 31)
+//  口令: "iCdX1ONKFplcYOZ41GJvLr9rYUsEkzXe"
+//  盐值: "eumW2MJmU0FSVVnEa9hcNLs0Cw9ggIjQ"
+//  派生密钥: da42028b0b24a0a98e18b95e9b7d19d9dfd5ce3cc20316c530714ad3c7e712e1
+// ══════════════════════════════════════════════════════════════════════
+const PP_RAW = [119, 26, 182, 140, 20, 72, 152, 190, 246, 13, 17, 45, 55, 14, 22, 31, 181, 165, 189, 131, 116, 169, 187, 93, 82, 77, 47, 214, 217, 143, 238, 213];
+const SALT_RAW = [5, 20, 15, 52, 86, 40, 44, 10, 61, 89, 44, 56, 58, 59, 0, 42, 17, 72, 26, 16, 58, 57, 5, 71, 59, 14, 67, 28, 27, 52, 20, 46];
+const K_RAW = [91, 13, 177, 166, 164, 151, 73]; // 7 字节密钥因子
 
-function xorDecode(raw) {
+function xorDecodePP(raw) {
   let s = '';
-  for (let i = 0; i < raw.length; i++) s += String.fromCharCode(raw[i] ^ 163 ^ (i & 15));
+  for (let i = 0; i < raw.length; i++) {
+    s += String.fromCharCode((raw[i] ^ K_RAW[i % K_RAW.length]) ^ ((i * 15 + 69) & 255));
+  }
   return s;
 }
 
+function xorDecodeSalt(raw) {
+  let s = '';
+  for (let i = 0; i < raw.length; i++) {
+    s += String.fromCharCode((raw[i] ^ 96) ^ (i & 31));
+  }
+  return s;
+}
+
+// ── 密钥派生函数 ──
 function fishDeriveKey(passphraseBytes, saltBytes) {
   const combined = Buffer.concat([passphraseBytes, saltBytes]);
   let derived = Buffer.alloc(32);
@@ -61,11 +88,11 @@ function fishDeriveKey(passphraseBytes, saltBytes) {
 }
 
 function buildKey() {
-  const ppStr = xorDecode(PP_RAW);
-  const saltStr = xorDecode(SALT_RAW);
+  const ppStr = xorDecodePP(PP_RAW);
+  const saltStr = xorDecodeSalt(SALT_RAW);
   const ppBytes = Buffer.from(ppStr, 'utf8');
   const saltBytes = Buffer.from(saltStr, 'utf8');
-  return fishDeriveKey(ppBytes, saltBytes);
+  return { key: fishDeriveKey(ppBytes, saltBytes), ppStr, saltStr };
 }
 
 function decrypt(base64Data, keyBytes) {
@@ -79,8 +106,7 @@ function decrypt(base64Data, keyBytes) {
 }
 
 // ── Main ──
-const key = buildKey();
-console.log('Derived key:', key.toString('hex'));
+const { key, ppStr, saltStr } = buildKey();
 
 const files = [
   { src: 'encrypted/all.txt', dst: 'decrypted/all.json' },
@@ -90,14 +116,20 @@ const files = [
 const decryptedDir = path.join(__dirname, 'decrypted');
 if (!fs.existsSync(decryptedDir)) fs.mkdirSync(decryptedDir);
 
+console.log('Fish World AES-256-CBC Decryption');
+console.log('='.repeat(50));
+console.log(`口令: "${ppStr}"`);
+console.log(`盐值: "${saltStr}"`);
+console.log(`派生密钥: ${key.toString('hex')}`);
+
 for (const { src, dst } of files) {
   const srcPath = path.join(__dirname, src);
   const dstPath = path.join(__dirname, dst);
-  console.log(`\nDecrypting ${src} ...`);
+  console.log(`\n解密 ${src} ...`);
   try {
     const raw = fs.readFileSync(srcPath, 'utf8').trim();
     const plaintext = decrypt(raw, key);
-    // Auto-format JSON output
+
     let output;
     try {
       const parsed = JSON.parse(plaintext);
@@ -110,6 +142,6 @@ for (const { src, dst } of files) {
     }
     fs.writeFileSync(dstPath, output, 'utf8');
   } catch (e) {
-    console.error(`  ERROR: ${e.message}`);
+    console.error(`  错误: ${e.message}`);
   }
 }

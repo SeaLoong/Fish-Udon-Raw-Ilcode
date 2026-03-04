@@ -1,0 +1,158 @@
+void __0_SetupSlot()
+24 day = __0_dayNumber__param
+44 isClaimed = __0_claimed__param
+64 isCurrentDay = __0_current__param
+84 __intnl_SystemBoolean_0 = __0_current__param
+96 if (__intnl_SystemBoolean_0) //128
+{
+}
+144 canClaim = __intnl_SystemBoolean_0
+164 __intnl_UnityEngineObject_0 = dayNumberText
+184 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+228 if (__intnl_SystemBoolean_1) //292
+{
+G_dayNumberText.set_text(__intnl_SystemString_0);// 284
+}
+308 __intnl_UnityEngineObject_2 = rewardNameText
+328 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+372 if (__intnl_SystemBoolean_2) //404
+{
+G_rewardNameText.set_text(__0_rewardName__param);// 396
+}
+420 __intnl_UnityEngineObject_4 = rewardIconImage
+440 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+484 if (__intnl_SystemBoolean_3) //660
+{
+508 __intnl_UnityEngineObject_6 = __0_rewardIcon__param
+528 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+572 if (__intnl_SystemBoolean_4) //636
+{
+G_rewardIconImage.set_sprite(__0_rewardIcon__param);// 596
+G_rewardIconImage.set_enabled(__const_SystemBoolean_0);// 620
+628 JUMP 660
+}
+G_rewardIconImage.set_enabled(__const_SystemBoolean_1);// 652
+}
+668 JUMP 1544
+684 JUMP 2360
+704 return;
+void _OnClaimButtonClick()
+736 __intnl_UnityEngineObject_8 = rewardManager
+756 __intnl_UnityEngineObject_9 = __const_SystemObject_0
+800 if (__intnl_SystemBoolean_5) //816
+{
+808 JUMP 936
+}
+840 __intnl_VRCUdonUdonBehaviour_0 = rewardManager
+G_rewardManager.SendCustomEvent(__const_SystemString_1);// 852
+908 __intnl_SystemBoolean_6 = __intnl_SystemObject_0
+944 if (__intnl_SystemBoolean_5) //972
+{
+964 return;
+}
+980 if (canClaim) //996
+{
+988 JUMP 1016
+}
+1008 return;
+1032 __intnl_UnityEngineObject_10 = claimButton
+1052 __intnl_UnityEngineObject_11 = __const_SystemObject_0
+1096 if (__intnl_SystemBoolean_7) //1128
+{
+G_claimButton.set_interactable(__const_SystemBoolean_1);// 1120
+}
+1176 __intnl_SystemBoolean_8 = __intnl_SystemObject_1
+1188 if (__intnl_SystemBoolean_8) //1472
+{
+1212 __intnl_SystemInt32_0 = day
+G_rewardManager.SetProgramVariable(day, __const_SystemString_4);// 1240
+G_rewardManager.SendCustomEvent(__const_SystemString_5);// 1264
+1320 __intnl_SystemBoolean_9 = __intnl_SystemObject_2
+1340 __lcl_success_SystemBoolean_0 = __intnl_SystemBoolean_9
+1352 if (__lcl_success_SystemBoolean_0) //1452
+{
+1376 isClaimed = __const_SystemBoolean_0
+1396 isCurrentDay = __const_SystemBoolean_1
+1416 canClaim = __const_SystemBoolean_1
+1428 JUMP 1544
+1444 JUMP 2360
+}
+1464 return;
+}
+1496 __intnl_VRCUdonUdonBehaviour_1 = rewardManager
+G_rewardManager.SendCustomEvent(__const_SystemString_7);// 1508
+1528 return;
+1560 __intnl_UnityEngineObject_12 = claimedCheckmark
+1580 __intnl_UnityEngineObject_13 = __const_SystemObject_0
+1624 if (__intnl_SystemBoolean_10) //1656
+{
+G_claimedCheckmark.SetActive(isClaimed);// 1648
+}
+1672 __intnl_UnityEngineObject_14 = currentDayHighlight
+1692 __intnl_UnityEngineObject_15 = __const_SystemObject_0
+1736 if (__intnl_SystemBoolean_11) //1768
+{
+G_currentDayHighlight.SetActive(isCurrentDay);// 1760
+}
+1784 __intnl_UnityEngineObject_16 = lockedOverlay
+1804 __intnl_UnityEngineObject_17 = __const_SystemObject_0
+1848 if (__intnl_SystemBoolean_12) //1964
+{
+1872 __intnl_UnityEngineGameObject_0 = lockedOverlay
+1908 if (__intnl_SystemBoolean_13) //1940
+{
+}
+G_lockedOverlay.SetActive(__intnl_SystemBoolean_13);// 1956
+}
+1980 __intnl_UnityEngineObject_18 = backgroundImage
+2000 __intnl_UnityEngineObject_19 = __const_SystemObject_0
+2044 if (__intnl_SystemBoolean_13) //2172
+{
+2060 if (isClaimed) //2100
+{
+G_backgroundImage.set_color(claimedColor);// 2084
+2092 JUMP 2172
+}
+2108 if (isCurrentDay) //2148
+{
+G_backgroundImage.set_color(currentColor);// 2132
+2140 JUMP 2172
+}
+G_backgroundImage.set_color(lockedColor);// 2164
+}
+2188 __intnl_UnityEngineObject_20 = rewardIconImage
+2208 __intnl_UnityEngineObject_21 = __const_SystemObject_0
+2252 if (__intnl_SystemBoolean_14) //2332
+{
+2268 if (isClaimed) //2308
+{
+G_rewardIconImage.set_color(__const_UnityEngineColor_0);// 2292
+2300 JUMP 2332
+}
+G_rewardIconImage.set_color(__const_UnityEngineColor_1);// 2324
+}
+2344 return;
+2376 __intnl_UnityEngineObject_22 = claimButton
+2396 __intnl_UnityEngineObject_23 = __const_SystemObject_0
+2440 if (__intnl_SystemBoolean_15) //2468
+{
+2460 return;
+}
+G_claimButton.get_gameObject().SetActive(canClaim);// 2508
+2524 if (canClaim) //2540
+{
+2532 JUMP 2560
+}
+2552 return;
+2576 __intnl_UnityEngineObject_24 = claimButtonText
+2596 __intnl_UnityEngineObject_25 = __const_SystemObject_0
+2640 if (__intnl_SystemBoolean_16) //2672
+{
+G_claimButtonText.set_text(claimAvailableText);// 2664
+}
+__lcl_buttonColors_UnityEngineUIColorBlock_0 = G_claimButton.get_colors();// 2688
+L_buttonColors.set_normalColor(buttonClaimableColor);// 2712
+L_buttonColors.set_highlightedColor(__intnl_UnityEngineColor_0);// 2768
+L_buttonColors.set_pressedColor(__intnl_UnityEngineColor_1);// 2824
+G_claimButton.set_colors(__lcl_buttonColors_UnityEngineUIColorBlock_0);// 2848
+2868 return;

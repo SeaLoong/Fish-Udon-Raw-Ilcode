@@ -93,8 +93,9 @@ function DeriveKey(passphrase: string, salt: byte[]) → byte[32]:
 | `__const_SystemInt32_0`   | 24           | **256**  | Modulus: `round % 256`                |
 | `__const_SystemInt32_256` | 551          | **255**  | Bitmask: `mixed & 0xFF`               |
 | `__const_SystemInt32_257` | 577          | **1000** | Total rounds                          |
-| `__const_SystemInt32_34`  | —            | **31**   | Prev offset: `(j + 31) % 32`          |
-| `__const_SystemInt32_35`  | —            | **32**   | Derived key length / modulus          |
+| `__const_SystemInt32_34`  | —            | **255**  | Passphrase mask AND width              |
+| `__const_SystemInt32_35`  | —            | **96**   | Salt XOR constant                      |
+| `__const_SystemInt32_32`  | —            | **31**   | Salt AND mask                          |
 | `__const_SystemByte_82`   | 206          | **0**    | Default salt byte (when salt is null) |
 
 ### Instruction-Level Trace of One Mixing Iteration
@@ -123,12 +124,13 @@ From raw opcode (instructions 23916–24260):
 The AES-256 key is **derived at runtime**, not hardcoded or stored:
 
 1. **DiscordRoleManager.\_start()** constructs a 32-byte passphrase and 32-byte salt from obfuscated byte constants
-2. Each byte is **XOR-deobfuscated**: `decoded[i] = (raw[i] ^ 163) ^ (i & 15)`
-3. Decoded bytes are cast to `char[]`, then constructed into `String` objects
-4. The passphrase string is passed directly to CryptoAES256GPU
-5. The salt string is first UTF-8 encoded (`Encoding.UTF8.GetBytes()`) to produce a `byte[]` before passing
-6. `DeriveKey` is called, producing a 32-byte key
-7. The result is cached as `_cachedKey` for subsequent decryption calls
+2. Passphrase is deobfuscated using **7-byte key factor + polynomial mask**: `decoded[i] = (raw[i] ^ k[i % 7]) ^ ((i * 15 + 69) & 255)`
+3. Salt is deobfuscated using an **independent XOR formula**: `decoded[i] = (raw[i] ^ 96) ^ (i & 31)`
+4. Decoded bytes are cast to `char[]`, then constructed into `String` objects
+5. The passphrase string is passed directly to CryptoAES256GPU
+6. The salt string is first UTF-8 encoded (`Encoding.UTF8.GetBytes()`) to produce a `byte[]` before passing
+7. `DeriveKey` is called, producing a 32-byte key
+8. The result is cached as `_cachedKey` for subsequent decryption calls
 
 The 32-byte hardcoded byte constants form the **obfuscated input**. After XOR deobfuscation, they become ASCII passphrase and salt strings. The final 32-byte AES key is produced by 1000 rounds of iterative mixing with S-box substitution.
 
@@ -144,9 +146,9 @@ After XOR deobfuscation, all decoded values fall in the ASCII range (32–122). 
 ### Correct Derived Key
 
 ```text
-Passphrase: "m4EdEzCJVqIyRc6pfQL3k0SH6RIYdtIY"
-Salt:       "QFFtTqCrP0fAzB1iu2uw02KAmtZu0Iba"
-Key (hex):  f2ebf5452421480686863c3e7c6664ae1e6d416c2b66abbcbc8175f3ce0e827a
+Passphrase: "iCdX1ONKFplcYOZ41GJvLr9rYUsEkzXe"
+Salt:       "eumW2MJmU0FSVVnEa9hcNLs0Cw9ggIjQ"
+Key (hex):  da42028b0b24a0a98e18b95e9b7d19d9dfd5ce3cc20316c530714ad3c7e712e1
 ```
 
 Verified by successfully decrypting live data from `https://gamerexde.github.io/trickforge-public/roles.txt`.
@@ -155,99 +157,100 @@ Verified by successfully decrypting live data from `https://gamerexde.github.io/
 
 ## 4. Passphrase & Salt Values
 
-### Raw Passphrase Bytes (32 bytes)
+### Passphrase Deobfuscation Scheme
 
-Constructed in DiscordRoleManager.\_start() at instructions 6448–7904:
-
-| Index | Byte Const | Heap Addr | Value   | Index | Byte Const | Heap Addr | Value   |
-| ----- | ---------- | --------- | ------- | ----- | ---------- | --------- | ------- |
-| 0     | byte_0     | 104       | **206** | 16    | byte_14    | 132       | **197** |
-| 1     | byte_1     | 105       | **150** | 17    | byte_15    | 134       | **243** |
-| 2     | byte_2     | 106       | **228** | 18    | byte_16    | 136       | **237** |
-| 3     | byte_3     | 108       | **196** | 19    | byte_17    | 138       | **147** |
-| 4     | byte_4     | 110       | **226** | 20    | byte_18    | 140       | **204** |
-| 5     | byte_5     | 112       | **220** | 21    | byte_1     | 105       | **150** |
-| 6     | byte_6     | 114       | **230** | 22    | byte_19    | 143       | **246** |
-| 7     | byte_7     | 116       | **238** | 23    | byte_20    | 145       | **236** |
-| 8     | byte_8     | 118       | **253** | 24    | byte_21    | 147       | **157** |
-| 9     | byte_9     | 120       | **219** | 25    | byte_22    | 149       | **248** |
-| 10    | byte_10    | 122       | **224** | 26    | byte_10    | 122       | **224** |
-| 11    | byte_11    | 124       | **209** | 27    | byte_23    | 152       | **241** |
-| 12    | byte_8     | 118       | **253** | 28    | byte_24    | 154       | **203** |
-| 13    | byte_12    | 127       | **205** | 29    | byte_25    | 156       | **218** |
-| 14    | byte_13    | 129       | **155** | 30    | byte_2     | 106       | **228** |
-| 15    | byte_5     | 112       | **220** | 31    | byte_26    | 159       | **245** |
-
-**Passphrase array:**
+Uses a **7-byte key factor array `k`** and **polynomial mask**:
 
 ```text
-[206, 150, 228, 196, 226, 220, 230, 238, 253, 219, 224, 209, 253, 205, 155, 220,
- 197, 243, 237, 147, 204, 150, 246, 236, 157, 248, 224, 241, 203, 218, 228, 245]
+k = [91, 13, 177, 166, 164, 151, 73]    // __const_SystemByte_32..37 + byte_9
+decoded[i] = (raw[i] ^ k[i % 7]) ^ ((i * 15 + 69) & 255)
 ```
 
-Hex: `CE 96 E4 C4 E2 DC E6 EE FD DB E0 D1 FD CD 9B DC C5 F3 ED 93 CC 96 F6 EC 9D F8 E0 F1 CB DA E4 F5`
+Corresponding IL instructions (opcode 8036–8300):
+
+```text
+8036  k.Length → int_6
+8060  i % int_6 → int_7                    // i % k.length
+8092  k[int_7] → byte_1                    // k[i % k.length]
+8140  ToInt32(byte_1) → int_8
+8148  int_5 (=ToInt32(a[i]))
+8172  int_5 XOR int_8 → int_9              // raw[i] ^ k[i%k.len]
+8180  i * __const_SystemInt32_16(=15) → int_10   // i * 15
+8220  int_10 + __const_SystemInt32_33(=69) → int_11  // i*15 + 69
+8252  int_11 AND __const_SystemInt32_34(=255) → int_12  // (i*15+69) & 255
+8300  int_9 XOR int_12 → int_13            // final decoded char
+```
+
+### Salt Deobfuscation Scheme
+
+Salt uses an **independent, simpler** formula (does not use key factor k):
+
+```text
+decoded[i] = (raw[i] ^ 96) ^ (i & 31)
+```
+
+Corresponding IL instructions (opcode 9696–9800):
+
+```text
+9696  ToInt32(a[i]) → int_16
+9720  int_16 XOR __const_SystemInt32_35(=96) → int_17   // raw[i] ^ 96
+9752  i AND __const_SystemInt32_32(=31) → int_18         // i & 31
+9800  int_17 XOR int_18 → int_19                         // final decoded char
+```
+
+### Deobfuscation Constants
+
+| Constant                  | Value    | Purpose                       |
+| ------------------------- | -------- | ----------------------------- |
+| `__const_SystemInt32_33`  | **69**   | Passphrase polynomial addend  |
+| `__const_SystemInt32_16`  | **15**   | Passphrase mask multiplier    |
+| `__const_SystemInt32_34`  | **255**  | Passphrase mask AND width     |
+| `__const_SystemInt32_35`  | **96**   | Salt XOR constant             |
+| `__const_SystemInt32_32`  | **31**   | Salt AND mask                 |
+
+### Key Factor k (7 bytes)
+
+```text
+Raw:     [91, 13, 177, 166, 164, 151, 73]
+Hex:     5B 0D B1 A6 A4 97 49
+```
+
+Constructed from `__const_SystemByte_32` (91), `byte_9` (13), `byte_33` (177), `byte_34` (166), `byte_35` (164), `byte_36` (151), `byte_37` (73).
+
+IL construction location at opcode 7632–7824:
+```text
+7632  PUSH byte_32(=91)   → k[0]
+7664  PUSH byte_9(=13)    → k[1]
+7696  PUSH byte_33(=177)  → k[2]
+7728  PUSH byte_34(=166)  → k[3]
+7760  PUSH byte_35(=164)  → k[4]
+7792  PUSH byte_36(=151)  → k[5]
+7824  PUSH byte_37(=73)   → k[6]
+```
+
+### Raw Passphrase Bytes (32 bytes)
+
+Constructed in DiscordRoleManager.\_start() using **32 independent** `__const_SystemByte_0..31`:
+
+```text
+Raw:     [119, 26, 182, 140, 20, 72, 152, 190, 246, 13, 17, 45, 55, 14, 22, 31,
+          181, 165, 189, 131, 116, 169, 187, 93, 82, 77, 47, 214, 217, 143, 238, 213]
+Hex:     77 1A B6 8C 14 48 98 BE F6 0D 11 2D 37 0E 16 1F B5 A5 BD 83 74 A9 BB 5D 52 4D 2F D6 D9 8F EE D5
+Decoded: i  C  d  X  1  O  N  K  F  p  l  c  Y  O  Z  4  1  G  J  v  L  r  9  r  Y  U  s  E  k  z  X  e
+String:  "iCdX1ONKFplcYOZ41GJvLr9rYUsEkzXe"
+```
 
 ### Raw Salt Bytes (32 bytes)
 
-Constructed at instructions 7948–9424:
-
-| Index | Byte Const | Heap Addr | Value   | Index | Byte Const | Heap Addr | Value   |
-| ----- | ---------- | --------- | ------- | ----- | ---------- | --------- | ------- |
-| 0     | byte_27    | 161       | **242** | 16    | byte_31    | 165       | **214** |
-| 1     | byte_2     | 106       | **228** | 17    | byte_38    | 172       | **144** |
-| 2     | byte_28    | 162       | **231** | 18    | byte_29    | 163       | **212** |
-| 3     | byte_29    | 163       | **212** | 19    | byte_30    | 164       | **215** |
-| 4     | byte_15    | 134       | **243** | 20    | byte_39    | 173       | **151** |
-| 5     | byte_30    | 164       | **215** | 21    | byte_40    | 174       | **148** |
-| 6     | byte_6     | 114       | **230** | 22    | byte_7     | 116       | **238** |
-| 7     | byte_31    | 165       | **214** | 23    | byte_41    | 175       | **229** |
-| 8     | byte_32    | 166       | **251** | 24    | byte_42    | 176       | **198** |
-| 9     | byte_33    | 167       | **154** | 25    | byte_43    | 177       | **222** |
-| 10    | byte_34    | 168       | **207** | 26    | byte_15    | 134       | **243** |
-| 11    | byte_35    | 169       | **233** | 27    | byte_44    | 178       | **221** |
-| 12    | byte_36    | 170       | **213** | 28    | byte_45    | 179       | **159** |
-| 13    | byte_20    | 145       | **236** | 29    | byte_28    | 162       | **231** |
-| 14    | byte_37    | 171       | **156** | 30    | byte_34    | 168       | **207** |
-| 15    | byte_14    | 132       | **197** | 31    | byte_12    | 127       | **205** |
-
-**Salt array:**
+Some constants are reused across positions in the salt array (e.g., `byte_43` at indices 6 and 10, `byte_48` at indices 12 and 20):
 
 ```text
-[242, 228, 231, 212, 243, 215, 230, 214, 251, 154, 207, 233, 213, 236, 156, 197,
- 214, 144, 212, 215, 151, 148, 238, 229, 198, 222, 243, 221, 159, 231, 207, 205]
+Raw:     [5, 20, 15, 52, 86, 40, 44, 10, 61, 89, 44, 56, 58, 59, 0, 42,
+          17, 72, 26, 16, 58, 57, 5, 71, 59, 14, 67, 28, 27, 52, 20, 46]
+Hex:     05 14 0F 34 56 28 2C 0A 3D 59 2C 38 3A 3B 00 2A 11 48 1A 10 3A 39 05 47 3B 0E 43 1C 1B 34 14 2E
+Decoded: e  u  m  W  2  M  J  m  U  0  F  S  V  V  n  E  a  9  h  c  N  L  s  0  C  w  9  g  g  I  j  Q
+String:  "eumW2MJmU0FSVVnEa9hcNLs0Cw9ggIjQ"
 ```
-
-Hex: `F2 E4 E7 D4 F3 D7 E6 D6 FB 9A CF E9 D5 EC 9C C5 D6 90 D4 D7 97 94 EE E5 C6 DE F3 DD 9F E7 CF CD`
-
-### XOR Deobfuscation
-
-The raw byte arrays shown above are **obfuscated**. At runtime, each byte is decoded before use:
-
-```text
-decoded[i] = (raw[i] ^ 163) ^ (i & 15)
-```
-
-This is implemented in DiscordRoleManager.\_start() via the IL instructions at addresses 7500–7920 (passphrase) and 9000–9430 (salt). The constants `163` and `15` come from `__const_SystemInt32_33` and `__const_SystemInt32_16` respectively.
-
-**Decoded passphrase** (32 ASCII characters):
-
-```text
-Raw:     [206, 150, 228, 196, 226, 220, 230, 238, 253, 219, 224, 209, 253, 205, 155, 220,
-          197, 243, 237, 147, 204, 150, 246, 236, 157, 248, 224, 241, 203, 218, 228, 245]
-Decoded: m  4  E  d  E  z  C  J  V  q  I  y  R  c  6  p  f  Q  L  3  k  0  S  H  6  R  I  Y  d  t  I  Y
-String:  "m4EdEzCJVqIyRc6pfQL3k0SH6RIYdtIY"
-```
-
-**Decoded salt** (32 ASCII characters):
-
-```text
-Raw:     [242, 228, 231, 212, 243, 215, 230, 214, 251, 154, 207, 233, 213, 236, 156, 197,
-          214, 144, 212, 215, 151, 148, 238, 229, 198, 222, 243, 221, 159, 231, 207, 205]
-Decoded: Q  F  F  t  T  q  C  r  P  0  f  A  z  B  1  i  u  2  u  w  0  2  K  A  m  t  Z  u  0  I  b  a
-String:  "QFFtTqCrP0fAzB1iu2uw02KAmtZu0Iba"
-```
-
-> Note: Both arrays reuse byte constants across positions (e.g., `byte_8` at passphrase indices 8 and 12; `byte_15` at salt indices 4 and 26). This is compiler deduplication of identical literal values.
 
 ---
 
@@ -314,18 +317,19 @@ The rcon table is standard: `[0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80, 0x
 ### Phase 1: Initialization (DiscordRoleManager.\_start)
 
 ```text
-1. Construct passphrase byte[32] from obfuscated heap constants
-2. XOR-deobfuscate each byte: decoded[i] = (raw[i] ^ 163) ^ (i & 15)
-3. Cast decoded bytes → char[], build String (passphrase = "m4EdEzCJVqIyRc6pfQL3k0SH6RIYdtIY")
-4. Construct salt byte[32] from obfuscated heap constants
-5. XOR-deobfuscate each byte (same formula)
-6. Cast decoded bytes → char[], build String (saltString = "QFFtTqCrP0fAzB1iu2uw02KAmtZu0Iba")
-7. saltBytes = Encoding.UTF8.GetBytes(saltString)           → 32 bytes (ASCII)
-8. Set CryptoAES256GPU.passphrase = passphrase (string)
-9. Set CryptoAES256GPU.salt = saltBytes (byte[])
-10. Call CryptoAES256GPU.DeriveKey()
-11. _cachedKey = GetProgramVariable("__0___0_DeriveKey__ret")
-12. Schedule data fetch
+1. Construct passphrase byte[32] from obfuscated heap constants (byte_0..byte_31)
+2. Construct key factor k[7] from byte_32, byte_9, byte_33..byte_37
+3. Deobfuscate passphrase: decoded[i] = (raw[i] ^ k[i % 7]) ^ ((i * 15 + 69) & 255)
+4. Cast decoded bytes → char[], build String (passphrase = "iCdX1ONKFplcYOZ41GJvLr9rYUsEkzXe")
+5. Construct salt byte[32] from obfuscated heap constants (byte_38..byte_58 etc.)
+6. Deobfuscate salt: decoded[i] = (raw[i] ^ 96) ^ (i & 31)
+7. Cast decoded bytes → char[], build String (saltString = "eumW2MJmU0FSVVnEa9hcNLs0Cw9ggIjQ")
+8. saltBytes = Encoding.UTF8.GetBytes(saltString)           → 32 bytes (ASCII)
+9. Set CryptoAES256GPU.passphrase = passphrase (string)
+10. Set CryptoAES256GPU.salt = saltBytes (byte[])
+11. Call CryptoAES256GPU.DeriveKey()
+12. _cachedKey = GetProgramVariable("__0___0_DeriveKey__ret")
+13. Schedule data fetch
 ```
 
 ### Phase 2: Data Fetch
@@ -374,9 +378,18 @@ DiscordRoleManager                    CryptoAES256GPU
 ─────────────────                    ────────────────
 _start()
   │
-  ├─ Build passphrase (32 obfuscated bytes → XOR decode → 32 ASCII chars)
-  ├─ Build salt (32 obfuscated bytes → XOR decode → 32 ASCII chars)
-  ├─ UTF8.GetBytes(salt) → 32 bytes (ASCII)
+  ├─ Build passphrase a[32] from byte_0..byte_31
+  ├─ Build key factor k[7] from byte_32, byte_9, byte_33..byte_37
+  ├─ Deobfuscate passphrase: for i in 0..31:
+  │     decoded[i] = (a[i] ^ k[i % 7]) ^ ((i * 15 + 69) & 255)
+  ├─ passphrase = "iCdX1ONKFplcYOZ41GJvLr9rYUsEkzXe"
+  │
+  ├─ Build salt a[32] from byte_38, byte_4, byte_39..byte_58
+  ├─ Deobfuscate salt: for i in 0..31:
+  │     decoded[i] = (a[i] ^ 96) ^ (i & 31)
+  ├─ saltStr = "eumW2MJmU0FSVVnEa9hcNLs0Cw9ggIjQ"
+  ├─ saltBytes = UTF8.GetBytes(saltStr) → 32 bytes
+  │
   ├─ SetProgramVariable("passphrase", string)
   ├─ SetProgramVariable("salt", byte[])
   ├─ SendCustomEvent("DeriveKey") ──→ __0_DeriveKey()
@@ -421,8 +434,8 @@ From DiscordRoleManager `variablesjs`:
 | `useEncryption`             | `true`                                                    |
 | `LOCAL_STAFF_DISPLAY_NAMES` | `["KittehKun", "Godfall", "svenssko", "Gamerexde"]`       |
 | `guessIt`                   | `"AKIxUr2cbklAc9yDoXqjovAPyhkIQFPu"`                      |
-| `initialRetryDelay`         | `5.0`                                                     |
-| `maxRetryDelay`             | `60.0`                                                    |
+| `initialRetryDelay`         | `10.0`                                                    |
+| `maxRetryDelay`             | `120.0`                                                   |
 | `maxRetries`                | `5`                                                       |
 
 > Note: `guessIt` at heap address 82 is a separate serialized string field — it is **not** the passphrase and is not used in the derivation process. The actual passphrase and salt are constructed from inline byte constants at runtime.

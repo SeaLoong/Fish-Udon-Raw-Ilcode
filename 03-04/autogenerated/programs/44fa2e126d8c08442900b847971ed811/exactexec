@@ -1,0 +1,245 @@
+using UnityEngine;
+using System;
+using VRC.SDKBase;
+using UnityEngine.UI;
+using Object = UnityEngine.Object;
+public class udoncrashtest : UdonSharp.UdonSharpBehaviour
+{
+public AudioClip[] despawnSounds;
+private Single __intnl_SystemSingle_0 = 0f;
+public AudioClip[] spawnSounds;
+private Transform __intnl_UnityEngineTransform_0 = null;
+private Vector3 __lcl_toCreature_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Single nextCheckTime = 0f;
+private UInt32 __gintnl_SystemUInt32_5 = 1916;
+private UInt32 __gintnl_SystemUInt32_4 = 1688;
+private UInt32 __gintnl_SystemUInt32_1 = 548;
+private UInt32 __gintnl_SystemUInt32_0 = 372;
+private UInt32 __gintnl_SystemUInt32_3 = 792;
+private UInt32 __gintnl_SystemUInt32_2 = 636;
+private Boolean __const_SystemBoolean_0 = true;
+private Boolean __const_SystemBoolean_1 = false;
+private AudioClip __intnl_UnityEngineAudioClip_1 = null;
+public Single checkInterval;
+private Object __intnl_UnityEngineObject_5 = null;
+private Object __intnl_UnityEngineObject_4 = null;
+private Object __intnl_UnityEngineObject_3 = null;
+private Object __intnl_UnityEngineObject_2 = null;
+private Object __intnl_UnityEngineObject_1 = null;
+private Object __intnl_UnityEngineObject_0 = null;
+private Int64 __refl_typeid = -7115441273750370218;
+private Transform __intnl_UnityEngineTransform_5 = null;
+private UInt32 __const_SystemUInt32_0 = 4294967295;
+private Vector3 __lcl_creaturePos_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private Vector3 __const_UnityEngineVector3_0 = new Vector3(0f, 0f, 1f);
+private Single __intnl_SystemSingle_2 = 0f;
+public Single despawnDistance;
+private Transform __intnl_UnityEngineTransform_2 = null;
+private Vector3 __intnl_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private object __const_SystemObject_0 = null;
+private Single __intnl_SystemSingle_1 = 0f;
+public GameObject creature;
+private Vector3 __lcl_lookDir_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+private TrackingDataType __const_VRCSDKBaseVRCPlayerApiTrackingDataType_0 = TrackingDataType.Head;
+public Single lookThreshold;
+private Single __lcl_dot_SystemSingle_0 = 0f;
+private AudioClip __intnl_UnityEngineAudioClip_0 = null;
+private UInt32 __intnl_returnJump_SystemUInt32_0 = 0;
+public AudioSource audioSource;
+public KeyCode debugSpawnKey;
+private TrackingData __lcl_head_VRCSDKBaseVRCPlayerApiTrackingData_0 = VRC.SDKBase.VRCPlayerApi+TrackingData;
+private Single __lcl_dist_SystemSingle_0 = 0f;
+private Transform __intnl_UnityEngineTransform_4 = null;
+private Vector3 __intnl_UnityEngineVector3_2 = new Vector3(0f, 0f, 0f);
+private Boolean creatureActive = false;
+private String __refl_typename = "SpookySighting";
+private Int32 __intnl_SystemInt32_1 = 0;
+private Int32 __intnl_SystemInt32_0 = 0;
+private Int32 __intnl_SystemInt32_3 = 0;
+private Int32 __intnl_SystemInt32_2 = 0;
+private Int32 __intnl_SystemInt32_5 = 0;
+private Int32 __intnl_SystemInt32_4 = 0;
+private Int32 __intnl_SystemInt32_7 = 0;
+private Int32 __intnl_SystemInt32_6 = 0;
+private Int32 __intnl_SystemInt32_8 = 0;
+public Single spawnChance;
+private Single __intnl_SystemSingle_3 = 0f;
+public Boolean debugMode;
+private Transform __lcl_spot_UnityEngineTransform_0 = null;
+private Transform __intnl_UnityEngineTransform_1 = null;
+private Vector3 hiddenPos = new Vector3(0f, -5000f, 0f);
+private Vector3 __intnl_UnityEngineVector3_1 = new Vector3(0f, 0f, 0f);
+private Vector3 __lcl_headPos_UnityEngineVector3_0 = new Vector3(0f, 0f, 0f);
+public Toggle enabledToggle;
+private VRCPlayerApi localPlayer = null;
+private Transform __intnl_UnityEngineTransform_6 = null;
+public Transform[] spawnLocations;
+private Quaternion __intnl_UnityEngineQuaternion_0 = new Quaternion(0f, 0f, 0f, 0f);
+private Int32 __const_SystemInt32_0 = 0;
+private Boolean __intnl_SystemBoolean_8 = false;
+private Boolean __intnl_SystemBoolean_9 = false;
+private Boolean __intnl_SystemBoolean_0 = false;
+private Boolean __intnl_SystemBoolean_1 = false;
+private Boolean __intnl_SystemBoolean_2 = false;
+private Boolean __intnl_SystemBoolean_3 = false;
+private Boolean __intnl_SystemBoolean_4 = false;
+private Boolean __intnl_SystemBoolean_5 = false;
+private Boolean __intnl_SystemBoolean_6 = false;
+private Boolean __intnl_SystemBoolean_7 = false;
+private Boolean isEnabled = true;
+private Transform __intnl_UnityEngineTransform_3 = null;
+private Vector3 __intnl_UnityEngineVector3_3 = new Vector3(0f, 0f, 0f);
+
+
+public void _start()
+{
+localPlayer = Networking.LocalPlayer;
+__intnl_UnityEngineTransform_0 = creature.transform;
+__intnl_UnityEngineTransform_0.position = hiddenPos;
+__intnl_SystemSingle_0 = Time.time;
+nextCheckTime = __intnl_SystemSingle_0 + checkInterval;
+}
+public void OnSpookyToggleChanged()
+{
+__intnl_UnityEngineObject_0 = enabledToggle;
+__intnl_UnityEngineObject_1 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_0 = __intnl_UnityEngineObject_0 != __intnl_UnityEngineObject_1;
+if (__intnl_SystemBoolean_0)
+{
+__intnl_SystemBoolean_0 = enabledToggle.isOn;
+}
+isEnabled = __intnl_SystemBoolean_0;
+__intnl_SystemBoolean_1 = !isEnabled;
+if (__intnl_SystemBoolean_1)
+{
+__intnl_SystemBoolean_1 = creatureActive;
+}
+if (__intnl_SystemBoolean_1)
+{
+UNDEF_44fa2_2400();
+}
+}
+public void _update()
+{
+__intnl_SystemBoolean_2 = localPlayer == __const_SystemObject_0;
+if (__intnl_SystemBoolean_2)
+{
+}
+else
+{
+__intnl_SystemBoolean_2 = !isEnabled;
+}
+if (__intnl_SystemBoolean_2)
+{
+return;
+}
+if (creatureActive)
+{
+UNDEF_44fa2_1936();
+}
+else
+{
+__intnl_SystemSingle_1 = Time.time;
+__intnl_SystemBoolean_3 = __intnl_SystemSingle_1 >= nextCheckTime;
+if (__intnl_SystemBoolean_3)
+{
+UNDEF_44fa2_812();
+}
+}
+}
+private void UNDEF_44fa2_812()
+{
+__intnl_SystemSingle_2 = Time.time;
+nextCheckTime = __intnl_SystemSingle_2 + checkInterval;
+__intnl_SystemSingle_3 = Random.value;
+__intnl_SystemBoolean_4 = __intnl_SystemSingle_3 <= spawnChance;
+if (__intnl_SystemBoolean_4)
+{
+UNDEF_44fa2_1480();
+}
+}
+private void UNDEF_44fa2_1480()
+{
+__intnl_SystemInt32_0 = spawnLocations.Length;
+__intnl_SystemBoolean_5 = __intnl_SystemInt32_0 == __const_SystemInt32_0;
+if (__intnl_SystemBoolean_5)
+{
+return;
+}
+__intnl_SystemInt32_1 = spawnLocations.Length;
+__intnl_SystemInt32_2 = Random.Range(__const_SystemInt32_0, __intnl_SystemInt32_1);
+__lcl_spot_UnityEngineTransform_0 = (Transform)(spawnLocations[__intnl_SystemInt32_2]);
+__intnl_UnityEngineTransform_1 = creature.transform;
+__intnl_UnityEngineVector3_0 = __lcl_spot_UnityEngineTransform_0.position;
+__intnl_UnityEngineTransform_1.position = __intnl_UnityEngineVector3_0;
+creatureActive = __const_SystemBoolean_0;
+__intnl_UnityEngineObject_2 = audioSource;
+__intnl_UnityEngineObject_3 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_6 = __intnl_UnityEngineObject_2 != __intnl_UnityEngineObject_3;
+if (__intnl_SystemBoolean_6)
+{
+__intnl_SystemInt32_3 = spawnSounds.Length;
+__intnl_SystemBoolean_6 = __intnl_SystemInt32_3 > __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_6)
+{
+__intnl_UnityEngineTransform_2 = audioSource.transform;
+__intnl_UnityEngineTransform_3 = creature.transform;
+__intnl_UnityEngineVector3_1 = __intnl_UnityEngineTransform_3.position;
+__intnl_UnityEngineTransform_2.position = __intnl_UnityEngineVector3_1;
+__intnl_SystemInt32_4 = spawnSounds.Length;
+__intnl_SystemInt32_5 = Random.Range(__const_SystemInt32_0, __intnl_SystemInt32_4);
+__intnl_UnityEngineAudioClip_0 = (AudioClip)(spawnSounds[__intnl_SystemInt32_5]);
+audioSource.PlayOneShot(__intnl_UnityEngineAudioClip_0);
+}
+}
+private void UNDEF_44fa2_1936()
+{
+__lcl_head_VRCSDKBaseVRCPlayerApiTrackingData_0 = localPlayer.GetTrackingData(__const_VRCSDKBaseVRCPlayerApiTrackingDataType_0);
+__lcl_headPos_UnityEngineVector3_0 = __lcl_head_VRCSDKBaseVRCPlayerApiTrackingData_0.position;
+__intnl_UnityEngineTransform_4 = creature.transform;
+__lcl_creaturePos_UnityEngineVector3_0 = __intnl_UnityEngineTransform_4.position;
+__lcl_dist_SystemSingle_0 = Vector3.Distance(__lcl_headPos_UnityEngineVector3_0, __lcl_creaturePos_UnityEngineVector3_0);
+__intnl_SystemBoolean_7 = __lcl_dist_SystemSingle_0 < despawnDistance;
+if (__intnl_SystemBoolean_7)
+{
+UNDEF_44fa2_2400();
+return;
+}
+__intnl_UnityEngineQuaternion_0 = __lcl_head_VRCSDKBaseVRCPlayerApiTrackingData_0.rotation;
+__lcl_lookDir_UnityEngineVector3_0 = __intnl_UnityEngineQuaternion_0 * __const_UnityEngineVector3_0;
+__intnl_UnityEngineVector3_2 = __lcl_creaturePos_UnityEngineVector3_0 - __lcl_headPos_UnityEngineVector3_0;
+__lcl_toCreature_UnityEngineVector3_0 = __intnl_UnityEngineVector3_2.normalized;
+__lcl_dot_SystemSingle_0 = Vector3.Dot(__lcl_lookDir_UnityEngineVector3_0, __lcl_toCreature_UnityEngineVector3_0);
+__intnl_SystemBoolean_8 = __lcl_dot_SystemSingle_0 > lookThreshold;
+if (__intnl_SystemBoolean_8)
+{
+UNDEF_44fa2_2400();
+}
+}
+private void UNDEF_44fa2_2400()
+{
+__intnl_UnityEngineObject_4 = audioSource;
+__intnl_UnityEngineObject_5 = (Object)__const_SystemObject_0;
+__intnl_SystemBoolean_9 = __intnl_UnityEngineObject_4 != __intnl_UnityEngineObject_5;
+if (__intnl_SystemBoolean_9)
+{
+__intnl_SystemInt32_6 = despawnSounds.Length;
+__intnl_SystemBoolean_9 = __intnl_SystemInt32_6 > __const_SystemInt32_0;
+}
+if (__intnl_SystemBoolean_9)
+{
+__intnl_UnityEngineTransform_5 = audioSource.transform;
+__intnl_UnityEngineTransform_6 = creature.transform;
+__intnl_UnityEngineVector3_3 = __intnl_UnityEngineTransform_6.position;
+__intnl_UnityEngineTransform_5.position = __intnl_UnityEngineVector3_3;
+__intnl_SystemInt32_7 = despawnSounds.Length;
+__intnl_SystemInt32_8 = Random.Range(__const_SystemInt32_0, __intnl_SystemInt32_7);
+__intnl_UnityEngineAudioClip_1 = (AudioClip)(despawnSounds[__intnl_SystemInt32_8]);
+audioSource.PlayOneShot(__intnl_UnityEngineAudioClip_1);
+}
+__intnl_UnityEngineTransform_5 = creature.transform;
+__intnl_UnityEngineTransform_5.position = hiddenPos;
+creatureActive = __const_SystemBoolean_1;
+}
+}

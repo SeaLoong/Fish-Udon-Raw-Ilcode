@@ -1,0 +1,213 @@
+void _start()
+localPlayer = get_LocalPlayer();// 16
+killCollider = transform.GetComponent(__const_SystemType_0);// 48
+72 __intnl_UnityEngineObject_0 = deathSound
+92 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+136 if (__intnl_SystemBoolean_0) //208
+{
+G_deathSound.Stop();// 152
+G_deathSound.set_playOnAwake(__const_SystemBoolean_0);// 176
+G_deathSound.set_spatialBlend(__const_SystemSingle_0);// 200
+}
+224 __intnl_UnityEngineObject_2 = remoteDeathSound
+244 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+288 if (__intnl_SystemBoolean_1) //360
+{
+G_remoteDeathSound.Stop();// 304
+G_remoteDeathSound.set_playOnAwake(__const_SystemBoolean_0);// 328
+G_remoteDeathSound.set_spatialBlend(__const_SystemSingle_1);// 352
+}
+this.SendCustomEventDelayedSeconds(__const_VRCUdonCommonEnumsEventTiming_0, __const_SystemSingle_2, __const_SystemString_0);// 392
+412 return;
+void Initialize()
+444 initialized = __const_SystemBoolean_1
+460 return;
+void _update()
+484 if (initialized) //500
+{
+492 JUMP 520
+}
+512 return;
+560 if (__intnl_SystemBoolean_2) //576
+{
+568 JUMP 624
+}
+632 if (__intnl_SystemBoolean_2) //660
+{
+652 return;
+}
+748 if (__intnl_SystemBoolean_4) //776
+{
+768 return;
+}
+792 __intnl_UnityEngineObject_4 = killCollider
+812 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+856 if (__intnl_SystemBoolean_5) //884
+{
+876 return;
+}
+__lcl_playerPos_UnityEngineVector3_0 = G_localPlayer.GetPosition();// 900
+__lcl_localPos_UnityEngineVector3_0 = transform.InverseTransformPoint(__lcl_playerPos_UnityEngineVector3_0);// 932
+__lcl_half_UnityEngineVector3_0 = op_Multiply(__const_SystemSingle_3, __intnl_UnityEngineVector3_0);// 988
+__lcl_center_UnityEngineVector3_0 = G_killCollider.get_center();// 1012
+1164 if (__intnl_SystemBoolean_10) //1308
+{
+}
+1324 __intnl_SystemBoolean_9 = __intnl_SystemBoolean_10
+1336 if (__intnl_SystemBoolean_9) //1480
+{
+}
+1496 __intnl_SystemBoolean_8 = __intnl_SystemBoolean_9
+1508 if (__intnl_SystemBoolean_8) //1652
+{
+}
+1668 __intnl_SystemBoolean_7 = __intnl_SystemBoolean_8
+1680 if (__intnl_SystemBoolean_7) //1824
+{
+}
+1840 __intnl_SystemBoolean_6 = __intnl_SystemBoolean_7
+1852 if (__intnl_SystemBoolean_6) //1996
+{
+}
+2012 __lcl_inside_SystemBoolean_0 = __intnl_SystemBoolean_6
+2024 if (__lcl_inside_SystemBoolean_0) //2048
+{
+2040 JUMP 2620
+}
+2060 return;
+void _onPlayerTriggerEnter()
+2108 if (__intnl_SystemBoolean_11) //2124
+{
+2116 JUMP 2144
+}
+2136 return;
+2152 if (initialized) //2168
+{
+2160 JUMP 2188
+}
+2180 return;
+2276 if (__intnl_SystemBoolean_12) //2304
+{
+2296 return;
+}
+2312 JUMP 2620
+2332 return;
+void _onPlayerTriggerStay()
+2380 if (__intnl_SystemBoolean_13) //2396
+{
+2388 JUMP 2416
+}
+2408 return;
+2424 if (initialized) //2440
+{
+2432 JUMP 2460
+}
+2452 return;
+2548 if (__intnl_SystemBoolean_14) //2576
+{
+2568 return;
+}
+2584 JUMP 2620
+2604 return;
+2660 if (__intnl_SystemBoolean_15) //2676
+{
+2668 JUMP 2724
+}
+2732 if (__intnl_SystemBoolean_15) //2760
+{
+2752 return;
+}
+lastDeathTime = get_time();// 2768
+2792 __intnl_UnityEngineObject_6 = deathSound
+2812 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+2856 if (__intnl_SystemBoolean_17) //2960
+{
+2904 __intnl_UnityEngineObject_8 = __intnl_UnityEngineAudioClip_0
+2924 __intnl_UnityEngineObject_9 = __const_SystemObject_0
+}
+2968 if (__intnl_SystemBoolean_17) //2992
+{
+G_deathSound.Play();// 2984
+}
+3008 __intnl_UnityEngineObject_10 = deathParticles
+3028 __intnl_UnityEngineObject_11 = __const_SystemObject_0
+3072 if (__intnl_SystemBoolean_18) //3168
+{
+G_deathParticles.get_transform().set_position(__intnl_UnityEngineVector3_1);// 3144
+G_deathParticles.Play();// 3160
+}
+3184 __intnl_UnityEngineObject_12 = remoteDeathSound
+3204 __intnl_UnityEngineObject_13 = __const_SystemObject_0
+3248 if (__intnl_SystemBoolean_19) //3352
+{
+3296 __intnl_UnityEngineObject_14 = __intnl_UnityEngineAudioClip_1
+3316 __intnl_UnityEngineObject_15 = __const_SystemObject_0
+}
+3360 if (__intnl_SystemBoolean_19) //3484
+{
+SetOwner(__this_UnityEngineGameObject_0, localPlayer);// 3384
+syncedDeathPosition = G_localPlayer.GetPosition();// 3408
+syncedDeathTick = op_Addition(__const_SystemInt32_0, syncedDeathTick);// 3440
+3464 lastProcessedTick = syncedDeathTick
+this.RequestSerialization();// 3476
+}
+3492 JUMP 3908
+3512 return;
+void _onDeserialization()
+3568 if (__intnl_SystemBoolean_20) //3596
+{
+3588 return;
+}
+3612 lastProcessedTick = syncedDeathTick
+3632 __intnl_UnityEngineObject_16 = remoteDeathSound
+3652 __intnl_UnityEngineObject_17 = __const_SystemObject_0
+3696 if (__intnl_SystemBoolean_21) //3800
+{
+3744 __intnl_UnityEngineObject_18 = __intnl_UnityEngineAudioClip_2
+3764 __intnl_UnityEngineObject_19 = __const_SystemObject_0
+}
+3808 if (__intnl_SystemBoolean_21) //3880
+{
+G_remoteDeathSound.get_transform().set_position(syncedDeathPosition);// 3856
+G_remoteDeathSound.Play();// 3872
+}
+3892 return;
+void RespawnPlayer()
+3948 if (__intnl_SystemBoolean_22) //3964
+{
+3956 JUMP 4012
+}
+4020 if (__intnl_SystemBoolean_22) //4048
+{
+4040 return;
+}
+4064 __intnl_UnityEngineObject_20 = dynamicMusicSystem
+4084 __intnl_UnityEngineObject_21 = __const_SystemObject_0
+4128 if (__intnl_SystemBoolean_24) //4180
+{
+4160 __intnl_VRCUdonUdonBehaviour_0 = dynamicMusicSystem
+G_dynamicMusicSystem.SendCustomEvent(__const_SystemString_1);// 4172
+}
+4196 __intnl_UnityEngineObject_22 = respawnPoint
+4216 __intnl_UnityEngineObject_23 = __const_SystemObject_0
+4260 if (__intnl_SystemBoolean_25) //4356
+{
+G_localPlayer.TeleportTo(__intnl_UnityEngineQuaternion_0, __intnl_UnityEngineVector3_2);// 4340
+4348 JUMP 4372
+}
+G_localPlayer.Respawn();// 4364
+4384 return;
+void _onPlayerRespawn()
+4432 if (__intnl_SystemBoolean_26) //4448
+{
+4440 JUMP 4468
+}
+4460 return;
+4484 __intnl_UnityEngineObject_24 = dynamicMusicSystem
+4504 __intnl_UnityEngineObject_25 = __const_SystemObject_0
+4548 if (__intnl_SystemBoolean_27) //4600
+{
+4580 __intnl_VRCUdonUdonBehaviour_1 = dynamicMusicSystem
+G_dynamicMusicSystem.SendCustomEvent(__const_SystemString_1);// 4592
+}
+4612 return;

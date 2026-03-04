@@ -1,0 +1,219 @@
+void _start()
+localPlayer = get_LocalPlayer();// 16
+32 JUMP 204
+56 __lcl_count_SystemInt32_0 = __0_ValidateConfig__ret
+100 if (__intnl_SystemBoolean_0) //152
+{
+this.set_enabled(__const_SystemBoolean_0);// 124
+144 return;
+}
+claimed = ValidateConfig.ctor();// 168
+188 return;
+244 if (__intnl_SystemBoolean_1) //260
+{
+252 JUMP 316
+}
+324 if (__intnl_SystemBoolean_1) //372
+{
+348 __0_ValidateConfig__ret = __const_SystemInt32_0
+364 return;
+}
+412 if (__intnl_SystemBoolean_3) //428
+{
+420 JUMP 460
+}
+476 __intnl_SystemBoolean_2 = __intnl_SystemBoolean_3
+488 if (__intnl_SystemBoolean_2) //504
+{
+496 JUMP 536
+}
+544 if (__intnl_SystemBoolean_2) //592
+{
+568 __0_ValidateConfig__ret = __const_SystemInt32_1
+584 return;
+}
+680 if (__intnl_SystemBoolean_5) //696
+{
+688 JUMP 776
+}
+792 __intnl_SystemBoolean_4 = __intnl_SystemBoolean_5
+804 if (__intnl_SystemBoolean_4) //820
+{
+812 JUMP 900
+}
+908 if (__intnl_SystemBoolean_4) //956
+{
+932 __0_ValidateConfig__ret = __const_SystemInt32_1
+948 return;
+}
+__0_ValidateConfig__ret = G_products.get_Length();// 972
+992 return;
+1012 return;
+void _onPlayerRestored()
+1060 if (__intnl_SystemBoolean_6) //1076
+{
+1068 JUMP 1096
+}
+1088 return;
+1112 persistenceLoaded = __const_SystemBoolean_1
+1132 __lcl_i_SystemInt32_0 = __const_SystemInt32_0
+1200 if (__intnl_SystemBoolean_7) //1456
+{
+1248 if (__intnl_SystemBoolean_8) //1264
+{
+1256 JUMP 1272
+}
+1264 JUMP 1416
+__lcl_key_SystemString_0 = Concat(__lcl_i_SystemInt32_0, __const_SystemString_0);// 1296
+1344 if (__intnl_SystemBoolean_9) //1416
+{
+G_claimed.Set(__intnl_SystemBoolean_10, __lcl_i_SystemInt32_0);// 1408
+}
+__lcl_i_SystemInt32_0 = op_Addition(__const_SystemInt32_2, __lcl_i_SystemInt32_0);// 1440
+1448 JUMP 1136
+}
+this.SendCustomEventDelayedSeconds(__const_VRCUdonCommonEnumsEventTiming_0, __const_SystemSingle_0, __const_SystemString_1);// 1488
+1508 return;
+void _CheckAndGrantRewards()
+1540 __lcl_i_SystemInt32_1 = __const_SystemInt32_0
+1608 if (__intnl_SystemBoolean_11) //1812
+{
+1656 if (__intnl_SystemBoolean_12) //1720
+{
+}
+1728 if (__intnl_SystemBoolean_12) //1772
+{
+1760 __0_index__param = __lcl_i_SystemInt32_1
+1764 JUMP 2700
+}
+__lcl_i_SystemInt32_1 = op_Addition(__const_SystemInt32_2, __lcl_i_SystemInt32_1);// 1796
+1804 JUMP 1544
+}
+1824 return;
+void _onPurchaseConfirmed()
+1880 if (__intnl_SystemBoolean_14) //1896
+{
+1888 JUMP 1944
+}
+1952 if (__intnl_SystemBoolean_14) //1980
+{
+1972 return;
+}
+2020 if (__intnl_SystemBoolean_16) //2048
+{
+2040 return;
+}
+2056 if (persistenceLoaded) //2072
+{
+2064 JUMP 2092
+}
+2084 return;
+2108 __lcl_i_SystemInt32_2 = __const_SystemInt32_0
+2176 if (__intnl_SystemBoolean_17) //2672
+{
+2232 __intnl_UnityEngineObject_0 = __intnl_VRCEconomyUdonProduct_0
+2252 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+2296 if (__intnl_SystemBoolean_18) //2312
+{
+2304 JUMP 2632
+}
+2432 if (__intnl_SystemBoolean_19) //2448
+{
+2440 JUMP 2632
+}
+2488 if (__intnl_SystemBoolean_20) //2596
+{
+2536 if (__intnl_SystemBoolean_21) //2552
+{
+2544 JUMP 2588
+}
+2576 __1_index__param = __lcl_i_SystemInt32_2
+2580 JUMP 3564
+2588 JUMP 2632
+}
+2620 __1_index__param = __lcl_i_SystemInt32_2
+2624 JUMP 3564
+__lcl_i_SystemInt32_2 = op_Addition(__const_SystemInt32_2, __lcl_i_SystemInt32_2);// 2656
+2664 JUMP 2112
+}
+2684 return;
+2740 if (__intnl_SystemBoolean_22) //2756
+{
+2748 JUMP 2812
+}
+2820 if (__intnl_SystemBoolean_22) //2848
+{
+2840 return;
+}
+2896 __intnl_UnityEngineObject_2 = __intnl_VRCEconomyUdonProduct_2
+2916 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+2960 if (__intnl_SystemBoolean_23) //2988
+{
+2980 return;
+}
+3028 if (__intnl_SystemBoolean_24) //3056
+{
+3048 return;
+}
+3064 if (debugBypassOwnership) //3100
+{
+3088 __lcl_ownsProduct_SystemBoolean_0 = __const_SystemBoolean_1
+3092 JUMP 3184
+}
+3148 __intnl_VRCEconomyIProduct_0 = __intnl_VRCEconomyUdonProduct_3
+__lcl_ownsProduct_SystemBoolean_0 = DoesPlayerOwnProduct(__intnl_VRCEconomyIProduct_0, localPlayer);// 3176
+3192 if (__lcl_ownsProduct_SystemBoolean_0) //3236
+{
+3224 __1_index__param = __0_index__param
+3228 JUMP 3564
+}
+3248 return;
+void _ReloadFromPersistence()
+3304 if (__intnl_SystemBoolean_25) //3332
+{
+3324 return;
+}
+3348 __lcl_i_SystemInt32_3 = __const_SystemInt32_0
+3416 if (__intnl_SystemBoolean_26) //3496
+{
+G_claimed.Set(__const_SystemBoolean_0, __lcl_i_SystemInt32_3);// 3448
+__lcl_i_SystemInt32_3 = op_Addition(__const_SystemInt32_2, __lcl_i_SystemInt32_3);// 3480
+3488 JUMP 3352
+}
+this.SendCustomEventDelayedSeconds(__const_VRCUdonCommonEnumsEventTiming_0, __const_SystemSingle_0, __const_SystemString_1);// 3528
+3548 return;
+3604 if (__intnl_SystemBoolean_27) //3644
+{
+}
+3652 if (__intnl_SystemBoolean_27) //3680
+{
+3672 return;
+}
+__lcl_item_VRCUdonUdonBehaviour_0 = G_rewardItems.Get(__1_index__param);// 3704
+__lcl_quantity_SystemInt32_0 = G_rewardQuantities.Get(__1_index__param);// 3736
+3760 __intnl_UnityEngineObject_4 = __lcl_item_VRCUdonUdonBehaviour_0
+3780 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+3824 if (__intnl_SystemBoolean_28) //3852
+{
+3844 return;
+}
+3892 if (__intnl_SystemBoolean_29) //3920
+{
+3912 return;
+}
+3936 __intnl_UnityEngineObject_6 = questInventoryManager
+3956 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+4000 if (__intnl_SystemBoolean_30) //4028
+{
+4020 return;
+}
+G_questInventoryManager.SetProgramVariable(__lcl_item_VRCUdonUdonBehaviour_0, __const_SystemString_2);// 4052
+G_questInventoryManager.SetProgramVariable(__lcl_quantity_SystemInt32_0, __const_SystemString_3);// 4084
+G_questInventoryManager.SetProgramVariable(__const_SystemBoolean_1, __const_SystemString_4);// 4116
+G_questInventoryManager.SendCustomEvent(__const_SystemString_5);// 4140
+4188 if (__intnl_SystemBoolean_31) //4284
+{
+G_claimed.Set(__const_SystemBoolean_1, __1_index__param);// 4220
+SetBool(__const_SystemBoolean_1, __intnl_SystemString_2);// 4276
+}
+4296 return;

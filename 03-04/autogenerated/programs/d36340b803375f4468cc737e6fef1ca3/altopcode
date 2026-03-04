@@ -1,0 +1,149 @@
+void _start()
+localPlayer = get_LocalPlayer();// 16
+64 if (__intnl_SystemBoolean_0) //80
+{
+72 JUMP 136
+}
+144 if (__intnl_SystemBoolean_0) //172
+{
+164 return;
+}
+180 JUMP 300
+200 return;
+void _onPlayerDataUpdated()
+248 if (__intnl_SystemBoolean_1) //272
+{
+264 JUMP 300
+}
+284 return;
+340 if (__intnl_SystemBoolean_2) //368
+{
+360 return;
+}
+416 if (__intnl_SystemBoolean_3) //600
+{
+464 if (__intnl_SystemBoolean_4) //528
+{
+}
+536 if (__intnl_SystemBoolean_4) //572
+{
+560 currentHomePoint = __lcl_savedHome_SystemInt32_0
+564 JUMP 592
+}
+588 currentHomePoint = defaultHomePoint
+592 JUMP 620
+}
+616 currentHomePoint = defaultHomePoint
+668 if (__intnl_SystemBoolean_4) //696
+{
+692 hasStartedGame = __lcl_started_SystemBoolean_0
+}
+708 return;
+void _StartGame()
+764 if (__intnl_SystemBoolean_5) //792
+{
+784 return;
+}
+808 hasStartedGame = __const_SystemBoolean_0
+SetBool(__const_SystemBoolean_0, __const_SystemString_1);// 828
+852 __intnl_UnityEngineObject_0 = playerStats
+872 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+916 if (__intnl_SystemBoolean_6) //1040
+{
+948 __intnl_VRCUdonUdonBehaviour_0 = playerStats
+G_playerStats.SendCustomEvent(__const_SystemString_2);// 960
+1016 __intnl_SystemBoolean_7 = __intnl_SystemObject_0
+1036 __intnl_SystemBoolean_6 = __intnl_SystemBoolean_7
+}
+1056 __lcl_tutorialCompleted_SystemBoolean_0 = __intnl_SystemBoolean_6
+1092 if (__intnl_SystemBoolean_8) //1172
+{
+1116 __intnl_UnityEngineObject_2 = tutorialManager
+1136 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+}
+1180 if (__intnl_SystemBoolean_8) //1240
+{
+1212 __intnl_VRCUdonUdonBehaviour_1 = tutorialManager
+G_tutorialManager.SendCustomEvent(__const_SystemString_4);// 1224
+1232 JUMP 1256
+}
+1248 JUMP 1284
+1268 return;
+void TeleportToHome()
+1324 if (__intnl_SystemBoolean_9) //1352
+{
+1344 return;
+}
+1376 __0_index__param = currentHomePoint
+1380 JUMP 2260
+1404 __lcl_home_UnityEngineTransform_0 = __0___0_GetHomePointTransform__ret
+1424 __intnl_UnityEngineObject_4 = __lcl_home_UnityEngineTransform_0
+1444 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+1488 if (__intnl_SystemBoolean_10) //1660
+{
+1520 __0_index__param = defaultHomePoint
+1524 JUMP 2260
+1548 __lcl_home_UnityEngineTransform_0 = __0___0_GetHomePointTransform__ret
+1568 __intnl_UnityEngineObject_6 = __lcl_home_UnityEngineTransform_0
+1588 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+1632 if (__intnl_SystemBoolean_11) //1660
+{
+1652 return;
+}
+}
+1676 __intnl_UnityEngineObject_6 = spawnRoomManager
+1696 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+1740 if (__intnl_SystemBoolean_11) //1792
+{
+1772 __intnl_VRCUdonUdonBehaviour_2 = spawnRoomManager
+G_spawnRoomManager.SendCustomEvent(__const_SystemString_5);// 1784
+}
+G_localPlayer.TeleportTo(__intnl_UnityEngineQuaternion_0, __intnl_UnityEngineVector3_0);// 1864
+1884 return;
+void __0_SetHomePoint()
+1940 if (__intnl_SystemBoolean_12) //1956
+{
+1948 JUMP 2012
+}
+2020 if (__intnl_SystemBoolean_12) //2048
+{
+2040 return;
+}
+2096 __intnl_UnityEngineObject_8 = __intnl_UnityEngineTransform_0
+2116 __intnl_UnityEngineObject_9 = __const_SystemObject_0
+2160 if (__intnl_SystemBoolean_13) //2188
+{
+2180 return;
+}
+2204 currentHomePoint = __0_homePointIndex__param
+SetInt(__0_homePointIndex__param, __const_SystemString_0);// 2224
+2244 return;
+void __0_GetHomePointTransform()
+2300 if (__intnl_SystemBoolean_15) //2316
+{
+2308 JUMP 2348
+}
+2364 __intnl_SystemBoolean_14 = __intnl_SystemBoolean_15
+2376 if (__intnl_SystemBoolean_14) //2392
+{
+2384 JUMP 2448
+}
+2456 if (__intnl_SystemBoolean_14) //2504
+{
+2480 __0___0_GetHomePointTransform__ret = __const_SystemObject_0
+2496 return;
+}
+__0___0_GetHomePointTransform__ret = G_homePoints.Get(__0_index__param);// 2528
+2548 return;
+2568 return;
+void GetCurrentHomePoint()
+2600 __0_GetCurrentHomePoint__ret = currentHomePoint
+2616 return;
+2636 return;
+void _onPlayerRespawn()
+2684 if (__intnl_SystemBoolean_16) //2700
+{
+2692 JUMP 2720
+}
+2712 return;
+2732 return;

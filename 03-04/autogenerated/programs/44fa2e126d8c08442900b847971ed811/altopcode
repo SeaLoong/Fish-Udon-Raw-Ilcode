@@ -1,0 +1,94 @@
+void _start()
+localPlayer = get_LocalPlayer();// 16
+G_creature.get_transform().set_position(hiddenPos);// 64
+nextCheckTime = op_Addition(checkInterval, __intnl_SystemSingle_0);// 112
+132 return;
+void OnSpookyToggleChanged()
+164 __intnl_UnityEngineObject_0 = enabledToggle
+184 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+228 if (__intnl_SystemBoolean_0) //260
+{
+}
+276 isEnabled = __intnl_SystemBoolean_0
+312 if (__intnl_SystemBoolean_1) //340
+{
+336 __intnl_SystemBoolean_1 = creatureActive
+}
+348 if (__intnl_SystemBoolean_1) //372
+{
+364 JUMP 1944
+}
+384 return;
+void _update()
+440 if (__intnl_SystemBoolean_2) //456
+{
+448 JUMP 480
+}
+488 if (__intnl_SystemBoolean_2) //516
+{
+508 return;
+}
+524 if (creatureActive) //556
+{
+540 JUMP 1488
+548 JUMP 636
+}
+612 if (__intnl_SystemBoolean_3) //636
+{
+628 JUMP 664
+}
+648 return;
+nextCheckTime = op_Addition(checkInterval, __intnl_SystemSingle_2);// 704
+768 if (__intnl_SystemBoolean_4) //792
+{
+784 JUMP 820
+}
+804 return;
+884 if (__intnl_SystemBoolean_5) //912
+{
+904 return;
+}
+__lcl_spot_UnityEngineTransform_0 = G_spawnLocations.Get(__intnl_SystemInt32_2);// 992
+G_creature.get_transform().set_position(__intnl_UnityEngineVector3_0);// 1064
+1088 creatureActive = __const_SystemBoolean_0
+1108 __intnl_UnityEngineObject_2 = audioSource
+1128 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+1172 if (__intnl_SystemBoolean_6) //1236
+{
+}
+1244 if (__intnl_SystemBoolean_6) //1460
+{
+G_audioSource.get_transform().set_position(__intnl_UnityEngineVector3_1);// 1340
+G_audioSource.PlayOneShot(__intnl_UnityEngineAudioClip_0);// 1452
+}
+1472 return;
+__lcl_head_VRCSDKBaseVRCPlayerApiTrackingData_0 = G_localPlayer.GetTrackingData(__const_VRCSDKBaseVRCPlayerApiTrackingDataType_0);// 1512
+__lcl_headPos_UnityEngineVector3_0 = L_head.get_position();// 1536
+__lcl_creaturePos_UnityEngineVector3_0 = G_creature.get_transform().get_position();// 1584
+__lcl_dist_SystemSingle_0 = Distance(__lcl_creaturePos_UnityEngineVector3_0, __lcl_headPos_UnityEngineVector3_0);// 1616
+1664 if (__intnl_SystemBoolean_7) //1708
+{
+1680 JUMP 1944
+1700 return;
+}
+__lcl_lookDir_UnityEngineVector3_0 = op_Multiply(__const_UnityEngineVector3_0, __intnl_UnityEngineQuaternion_0);// 1756
+__lcl_toCreature_UnityEngineVector3_0 = op_Subtraction(__lcl_headPos_UnityEngineVector3_0, __lcl_creaturePos_UnityEngineVector3_0).get_normalized();// 1812
+__lcl_dot_SystemSingle_0 = Dot(__lcl_toCreature_UnityEngineVector3_0, __lcl_lookDir_UnityEngineVector3_0);// 1844
+1892 if (__intnl_SystemBoolean_8) //1916
+{
+1908 JUMP 1944
+}
+1928 return;
+1960 __intnl_UnityEngineObject_4 = audioSource
+1980 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+2024 if (__intnl_SystemBoolean_9) //2088
+{
+}
+2096 if (__intnl_SystemBoolean_9) //2312
+{
+G_audioSource.get_transform().set_position(__intnl_UnityEngineVector3_3);// 2192
+G_audioSource.PlayOneShot(__intnl_UnityEngineAudioClip_1);// 2304
+}
+G_creature.get_transform().set_position(hiddenPos);// 2352
+2376 creatureActive = __const_SystemBoolean_1
+2392 return;

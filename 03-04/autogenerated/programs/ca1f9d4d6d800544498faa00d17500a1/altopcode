@@ -1,0 +1,523 @@
+void _start()
+localPlayer = get_LocalPlayer();// 16
+32 JUMP 2188
+48 JUMP 1464
+68 return;
+void _onPlayerRestored()
+116 if (__intnl_SystemBoolean_0) //132
+{
+124 JUMP 152
+}
+144 return;
+160 JUMP 248
+176 JUMP 7352
+192 JUMP 3944
+216 initialized = __const_SystemBoolean_0
+232 return;
+256 if (debugBypassOwnership) //292
+{
+280 isSupporter = __const_SystemBoolean_0
+284 JUMP 460
+}
+308 __intnl_UnityEngineObject_0 = supporterProduct
+328 __intnl_UnityEngineObject_1 = __const_SystemObject_0
+372 if (__intnl_SystemBoolean_1) //440
+{
+396 __intnl_VRCEconomyIProduct_0 = supporterProduct
+isSupporter = DoesPlayerOwnProduct(__intnl_VRCEconomyIProduct_0, localPlayer);// 424
+432 JUMP 460
+}
+456 isSupporter = __const_SystemBoolean_1
+468 JUMP 1464
+488 return;
+void _onPurchaseConfirmed()
+544 if (__intnl_SystemBoolean_2) //560
+{
+552 JUMP 608
+}
+616 if (__intnl_SystemBoolean_2) //644
+{
+636 return;
+}
+660 __intnl_UnityEngineObject_2 = supporterProduct
+680 __intnl_UnityEngineObject_3 = __const_SystemObject_0
+724 if (__intnl_SystemBoolean_4) //740
+{
+732 JUMP 772
+}
+780 if (__intnl_SystemBoolean_4) //808
+{
+800 return;
+}
+896 if (__intnl_SystemBoolean_5) //956
+{
+920 isSupporter = __const_SystemBoolean_0
+932 JUMP 1464
+948 JUMP 3944
+}
+968 return;
+void _onPurchaseExpired()
+1024 if (__intnl_SystemBoolean_6) //1040
+{
+1032 JUMP 1088
+}
+1096 if (__intnl_SystemBoolean_6) //1124
+{
+1116 return;
+}
+1140 __intnl_UnityEngineObject_4 = supporterProduct
+1160 __intnl_UnityEngineObject_5 = __const_SystemObject_0
+1204 if (__intnl_SystemBoolean_8) //1220
+{
+1212 JUMP 1252
+}
+1260 if (__intnl_SystemBoolean_8) //1288
+{
+1280 return;
+}
+1376 if (__intnl_SystemBoolean_9) //1436
+{
+1400 isSupporter = __const_SystemBoolean_1
+1412 JUMP 1464
+1428 JUMP 3944
+}
+1448 return;
+1480 __intnl_UnityEngineObject_6 = lockedOverlay
+1500 __intnl_UnityEngineObject_7 = __const_SystemObject_0
+1544 if (__intnl_SystemBoolean_10) //1600
+{
+G_lockedOverlay.SetActive(__intnl_SystemBoolean_11);// 1592
+}
+1616 __intnl_UnityEngineObject_8 = openPanelButton
+1636 __intnl_UnityEngineObject_9 = __const_SystemObject_0
+1680 if (__intnl_SystemBoolean_11) //1712
+{
+G_openPanelButton.set_interactable(isSupporter);// 1704
+}
+1728 __intnl_UnityEngineObject_10 = hueSlider
+1748 __intnl_UnityEngineObject_11 = __const_SystemObject_0
+1792 if (__intnl_SystemBoolean_12) //1824
+{
+G_hueSlider.set_interactable(isSupporter);// 1816
+}
+1840 __intnl_UnityEngineObject_12 = saturationSlider
+1860 __intnl_UnityEngineObject_13 = __const_SystemObject_0
+1904 if (__intnl_SystemBoolean_13) //1936
+{
+G_saturationSlider.set_interactable(isSupporter);// 1928
+}
+1952 __intnl_UnityEngineObject_14 = lightnessSlider
+1972 __intnl_UnityEngineObject_15 = __const_SystemObject_0
+2016 if (__intnl_SystemBoolean_14) //2048
+{
+G_lightnessSlider.set_interactable(isSupporter);// 2040
+}
+2064 __intnl_UnityEngineObject_16 = intensitySlider
+2084 __intnl_UnityEngineObject_17 = __const_SystemObject_0
+2128 if (__intnl_SystemBoolean_15) //2160
+{
+G_intensitySlider.set_interactable(isSupporter);// 2152
+}
+2172 return;
+2204 __intnl_UnityEngineObject_18 = hueSlider
+2224 __intnl_UnityEngineObject_19 = __const_SystemObject_0
+2268 if (__intnl_SystemBoolean_16) //2348
+{
+G_hueSlider.set_minValue(__const_SystemSingle_0);// 2292
+G_hueSlider.set_maxValue(__const_SystemSingle_1);// 2316
+G_hueSlider.set_value(currentHue);// 2340
+}
+2364 __intnl_UnityEngineObject_20 = saturationSlider
+2384 __intnl_UnityEngineObject_21 = __const_SystemObject_0
+2428 if (__intnl_SystemBoolean_17) //2508
+{
+G_saturationSlider.set_minValue(__const_SystemSingle_0);// 2452
+G_saturationSlider.set_maxValue(__const_SystemSingle_1);// 2476
+G_saturationSlider.set_value(currentSaturation);// 2500
+}
+2524 __intnl_UnityEngineObject_22 = lightnessSlider
+2544 __intnl_UnityEngineObject_23 = __const_SystemObject_0
+2588 if (__intnl_SystemBoolean_18) //2668
+{
+G_lightnessSlider.set_minValue(__const_SystemSingle_2);// 2612
+G_lightnessSlider.set_maxValue(__const_SystemSingle_1);// 2636
+G_lightnessSlider.set_value(currentLightness);// 2660
+}
+2684 __intnl_UnityEngineObject_24 = intensitySlider
+2704 __intnl_UnityEngineObject_25 = __const_SystemObject_0
+2748 if (__intnl_SystemBoolean_19) //2828
+{
+G_intensitySlider.set_minValue(__const_SystemSingle_0);// 2772
+G_intensitySlider.set_maxValue(__const_SystemSingle_3);// 2796
+G_intensitySlider.set_value(currentIntensity);// 2820
+}
+2840 return;
+void OnHueChanged()
+2888 if (__intnl_SystemBoolean_20) //2904
+{
+2896 JUMP 2976
+}
+2920 __intnl_UnityEngineObject_26 = hueSlider
+2940 __intnl_UnityEngineObject_27 = __const_SystemObject_0
+2984 if (__intnl_SystemBoolean_20) //3012
+{
+3004 return;
+}
+currentHue = G_hueSlider.get_value();// 3028
+3044 JUMP 3944
+3060 JUMP 6988
+3080 return;
+void OnSaturationChanged()
+3128 if (__intnl_SystemBoolean_21) //3144
+{
+3136 JUMP 3216
+}
+3160 __intnl_UnityEngineObject_28 = saturationSlider
+3180 __intnl_UnityEngineObject_29 = __const_SystemObject_0
+3224 if (__intnl_SystemBoolean_21) //3252
+{
+3244 return;
+}
+currentSaturation = G_saturationSlider.get_value();// 3268
+3284 JUMP 3944
+3300 JUMP 6988
+3320 return;
+void OnLightnessChanged()
+3368 if (__intnl_SystemBoolean_22) //3384
+{
+3376 JUMP 3456
+}
+3400 __intnl_UnityEngineObject_30 = lightnessSlider
+3420 __intnl_UnityEngineObject_31 = __const_SystemObject_0
+3464 if (__intnl_SystemBoolean_22) //3492
+{
+3484 return;
+}
+currentLightness = G_lightnessSlider.get_value();// 3508
+3524 JUMP 3944
+3540 JUMP 6988
+3560 return;
+void OnIntensityChanged()
+3608 if (__intnl_SystemBoolean_23) //3624
+{
+3616 JUMP 3696
+}
+3640 __intnl_UnityEngineObject_32 = intensitySlider
+3660 __intnl_UnityEngineObject_33 = __const_SystemObject_0
+3704 if (__intnl_SystemBoolean_23) //3732
+{
+3724 return;
+}
+currentIntensity = G_intensitySlider.get_value();// 3748
+3764 JUMP 3944
+3780 JUMP 6988
+3800 return;
+void OnTrailToggle()
+3824 if (isSupporter) //3840
+{
+3832 JUMP 3860
+}
+3852 return;
+trailEnabled = op_UnaryNegation(trailEnabled);// 3876
+3892 JUMP 3944
+3908 JUMP 6988
+3928 return;
+3960 __intnl_SystemBoolean_24 = isSupporter
+3972 if (__intnl_SystemBoolean_24) //4000
+{
+3996 __intnl_SystemBoolean_24 = trailEnabled
+}
+4008 if (__intnl_SystemBoolean_24) //4120
+{
+4040 __0_h__param = currentHue
+4060 __0_s__param = currentSaturation
+4080 __0_l__param = currentLightness
+4084 JUMP 5404
+4108 __lcl_trailColor_UnityEngineColor_0 = __0___0_HSLToRGB__ret
+4112 JUMP 4184
+}
+4128 if (isSupporter) //4164
+{
+4152 __lcl_trailColor_UnityEngineColor_0 = __const_UnityEngineColor_0
+4156 JUMP 4184
+}
+4180 __lcl_trailColor_UnityEngineColor_0 = defaultTrailColor
+4200 __intnl_UnityEngineObject_34 = colorPreview
+4220 __intnl_UnityEngineObject_35 = __const_SystemObject_0
+4264 if (__intnl_SystemBoolean_25) //4436
+{
+4296 __0_h__param = currentHue
+4316 __0_s__param = currentSaturation
+4336 __0_l__param = currentLightness
+4340 JUMP 5404
+4364 __lcl_previewColor_UnityEngineColor_0 = __0___0_HSLToRGB__ret
+HSLToRGB.set_a(__const_SystemSingle_1);// 4384
+4408 __intnl_UnityEngineColor_0 = __lcl_previewColor_UnityEngineColor_0
+G_colorPreview.set_color(__lcl_previewColor_UnityEngineColor_0);// 4428
+}
+4460 __0_color__param = __lcl_trailColor_UnityEngineColor_0
+4464 JUMP 4500
+4484 return;
+4508 JUMP 9364
+4532 __lcl_localRod_VRCUdonUdonBehaviour_0 = __0__intnlparam
+4552 __intnl_UnityEngineObject_36 = __lcl_localRod_VRCUdonUdonBehaviour_0
+4572 __intnl_UnityEngineObject_37 = __const_SystemObject_0
+4616 if (__intnl_SystemBoolean_26) //4920
+{
+__lcl_hdrColor_UnityEngineColor_0 = ctor(__intnl_SystemSingle_6, __intnl_SystemSingle_5, __intnl_SystemSingle_3, __intnl_SystemSingle_1);// 4856
+__0__intnlparam.SetProgramVariable(__lcl_hdrColor_UnityEngineColor_0, __const_SystemString_0);// 4888
+__0__intnlparam.SendCustomEvent(__const_SystemString_1);// 4912
+}
+4932 return;
+4988 __intnl_UnityEngineObject_38 = __intnl_UnityEngineMaterial_0
+5008 __intnl_UnityEngineObject_39 = __const_SystemObject_0
+5052 if (__intnl_SystemBoolean_27) //5080
+{
+5072 return;
+}
+__lcl_hdrColor_UnityEngineColor_1 = ctor(__intnl_SystemSingle_13, __intnl_SystemSingle_12, __intnl_SystemSingle_10, __intnl_SystemSingle_8);// 5312
+__0_tr__param.get_material().SetColor(__lcl_hdrColor_UnityEngineColor_1, __const_SystemString_2);// 5368
+5388 return;
+5444 if (__intnl_SystemBoolean_28) //5520
+{
+5468 __lcl_b_SystemSingle_0 = __0_l__param
+5488 __lcl_g_SystemSingle_0 = __0_l__param
+5508 __lcl_r_SystemSingle_0 = __0_l__param
+5512 JUMP 6152
+}
+5560 if (__intnl_SystemBoolean_29) //5640
+{
+__lcl_q_SystemSingle_0 = op_Multiplication(__intnl_SystemSingle_14, __0_l__param);// 5624
+5632 JUMP 5736
+}
+__lcl_q_SystemSingle_0 = op_Subtraction(__intnl_SystemSingle_16, __intnl_SystemSingle_15);// 5728
+__lcl_p_SystemSingle_0 = op_Subtraction(__lcl_q_SystemSingle_0, __intnl_SystemSingle_17);// 5792
+5856 __0_p__param = __lcl_p_SystemSingle_0
+5876 __0_q__param = __lcl_q_SystemSingle_0
+5896 __0_t__param = __intnl_SystemSingle_18
+5900 JUMP 6248
+5924 __lcl_r_SystemSingle_0 = __0___0_HueToRGB__ret
+5952 __0_p__param = __lcl_p_SystemSingle_0
+5972 __0_q__param = __lcl_q_SystemSingle_0
+5992 __0_t__param = __0_h__param
+5996 JUMP 6248
+6020 __lcl_g_SystemSingle_0 = __0___0_HueToRGB__ret
+6080 __0_p__param = __lcl_p_SystemSingle_0
+6100 __0_q__param = __lcl_q_SystemSingle_0
+6120 __0_t__param = __intnl_SystemSingle_19
+6124 JUMP 6248
+6148 __lcl_b_SystemSingle_0 = __0___0_HueToRGB__ret
+__0___0_HSLToRGB__ret = ctor(__const_SystemSingle_1, __lcl_b_SystemSingle_0, __lcl_g_SystemSingle_0, __lcl_r_SystemSingle_0);// 6192
+6212 return;
+6232 return;
+6288 if (__intnl_SystemBoolean_30) //6328
+{
+__0_t__param = op_Addition(__const_SystemSingle_1, __0_t__param);// 6320
+}
+6368 if (__intnl_SystemBoolean_31) //6408
+{
+__0_t__param = op_Subtraction(__const_SystemSingle_1, __0_t__param);// 6400
+}
+6448 if (__intnl_SystemBoolean_32) //6604
+{
+__0___0_HueToRGB__ret = op_Addition(__intnl_SystemSingle_22, __0_p__param);// 6576
+6596 return;
+}
+6644 if (__intnl_SystemBoolean_33) //6692
+{
+6668 __0___0_HueToRGB__ret = __0_q__param
+6684 return;
+}
+6732 if (__intnl_SystemBoolean_34) //6920
+{
+__0___0_HueToRGB__ret = op_Addition(__intnl_SystemSingle_26, __0_p__param);// 6892
+6912 return;
+}
+6936 __0___0_HueToRGB__ret = __0_p__param
+6952 return;
+6972 return;
+7004 _trailSaveDirty = __const_SystemBoolean_0
+7016 if (_trailSaveScheduled) //7032
+{
+7024 JUMP 7092
+}
+7048 _trailSaveScheduled = __const_SystemBoolean_0
+this.SendCustomEventDelayedSeconds(__const_VRCUdonCommonEnumsEventTiming_0, __const_SystemSingle_9, __const_SystemString_3);// 7084
+7104 return;
+void _FlushTrailSave()
+7136 _trailSaveScheduled = __const_SystemBoolean_1
+7148 if (_trailSaveDirty) //7164
+{
+7156 JUMP 7184
+}
+7176 return;
+7200 _trailSaveDirty = __const_SystemBoolean_1
+SetFloat(currentHue, __const_SystemString_4);// 7220
+SetFloat(currentSaturation, __const_SystemString_5);// 7244
+SetFloat(currentLightness, __const_SystemString_6);// 7268
+SetFloat(currentIntensity, __const_SystemString_7);// 7292
+SetBool(trailEnabled, __const_SystemString_8);// 7316
+7336 return;
+7392 if (__intnl_SystemBoolean_35) //7432
+{
+currentHue = GetFloat(__const_SystemString_4, localPlayer);// 7424
+}
+7472 if (__intnl_SystemBoolean_36) //7512
+{
+currentSaturation = GetFloat(__const_SystemString_5, localPlayer);// 7504
+}
+7552 if (__intnl_SystemBoolean_37) //7592
+{
+currentLightness = GetFloat(__const_SystemString_6, localPlayer);// 7584
+}
+7632 if (__intnl_SystemBoolean_38) //7672
+{
+currentIntensity = GetFloat(__const_SystemString_7, localPlayer);// 7664
+}
+7712 if (__intnl_SystemBoolean_39) //7752
+{
+trailEnabled = GetBool(__const_SystemString_8, localPlayer);// 7744
+}
+7768 __intnl_UnityEngineObject_40 = hueSlider
+7788 __intnl_UnityEngineObject_41 = __const_SystemObject_0
+7832 if (__intnl_SystemBoolean_40) //7864
+{
+G_hueSlider.SetValueWithoutNotify(currentHue);// 7856
+}
+7880 __intnl_UnityEngineObject_42 = saturationSlider
+7900 __intnl_UnityEngineObject_43 = __const_SystemObject_0
+7944 if (__intnl_SystemBoolean_41) //7976
+{
+G_saturationSlider.SetValueWithoutNotify(currentSaturation);// 7968
+}
+7992 __intnl_UnityEngineObject_44 = lightnessSlider
+8012 __intnl_UnityEngineObject_45 = __const_SystemObject_0
+8056 if (__intnl_SystemBoolean_42) //8088
+{
+G_lightnessSlider.SetValueWithoutNotify(currentLightness);// 8080
+}
+8104 __intnl_UnityEngineObject_46 = intensitySlider
+8124 __intnl_UnityEngineObject_47 = __const_SystemObject_0
+8168 if (__intnl_SystemBoolean_43) //8200
+{
+G_intensitySlider.SetValueWithoutNotify(currentIntensity);// 8192
+}
+8212 return;
+void RefreshTrail()
+8236 if (initialized) //8260
+{
+8252 JUMP 3944
+}
+8272 return;
+void __0_ApplyTrailToRenderer()
+8304 __intnl_UnityEngineObject_48 = __1_tr__param
+8324 __intnl_UnityEngineObject_49 = __const_SystemObject_0
+8368 if (__intnl_SystemBoolean_44) //8396
+{
+8388 return;
+}
+8404 JUMP 3944
+8424 return;
+void OpenPanel()
+8456 __intnl_UnityEngineObject_50 = trailCustomizationPanel
+8476 __intnl_UnityEngineObject_51 = __const_SystemObject_0
+8520 if (__intnl_SystemBoolean_45) //8552
+{
+G_trailCustomizationPanel.SetActive(__const_SystemBoolean_0);// 8544
+}
+8564 return;
+void ClosePanel()
+8596 __intnl_UnityEngineObject_52 = trailCustomizationPanel
+8616 __intnl_UnityEngineObject_53 = __const_SystemObject_0
+8660 if (__intnl_SystemBoolean_46) //8692
+{
+G_trailCustomizationPanel.SetActive(__const_SystemBoolean_1);// 8684
+}
+8704 return;
+void ResetToDefaults()
+8728 if (isSupporter) //8744
+{
+8736 JUMP 8764
+}
+8756 return;
+8780 currentHue = __const_SystemSingle_0
+8800 currentSaturation = __const_SystemSingle_0
+8820 currentLightness = __const_SystemSingle_10
+8840 currentIntensity = __const_SystemSingle_10
+8860 trailEnabled = __const_SystemBoolean_0
+8880 __intnl_UnityEngineObject_54 = hueSlider
+8900 __intnl_UnityEngineObject_55 = __const_SystemObject_0
+8944 if (__intnl_SystemBoolean_47) //8976
+{
+G_hueSlider.set_value(currentHue);// 8968
+}
+8992 __intnl_UnityEngineObject_56 = saturationSlider
+9012 __intnl_UnityEngineObject_57 = __const_SystemObject_0
+9056 if (__intnl_SystemBoolean_48) //9088
+{
+G_saturationSlider.set_value(currentSaturation);// 9080
+}
+9104 __intnl_UnityEngineObject_58 = lightnessSlider
+9124 __intnl_UnityEngineObject_59 = __const_SystemObject_0
+9168 if (__intnl_SystemBoolean_49) //9200
+{
+G_lightnessSlider.set_value(currentLightness);// 9192
+}
+9216 __intnl_UnityEngineObject_60 = intensitySlider
+9236 __intnl_UnityEngineObject_61 = __const_SystemObject_0
+9280 if (__intnl_SystemBoolean_50) //9312
+{
+G_intensitySlider.set_value(currentIntensity);// 9304
+}
+9320 JUMP 3944
+9336 JUMP 6988
+9356 return;
+9404 __2__intnlparam = __intnl_VRCSDKBaseVRCPlayerApi_0
+9408 JUMP 9476
+9432 __0__intnlparam = __1__intnlparam
+9448 return;
+9468 return;
+__lcl_objects_UnityEngineGameObjectArray_0 = GetPlayerObjects(__2__intnlparam);// 9492
+9516 __lcl_i_SystemInt32_0 = __const_SystemInt32_0
+9584 if (__intnl_SystemBoolean_51) //9912
+{
+9656 if (__intnl_SystemBoolean_52) //9672
+{
+9664 JUMP 9680
+}
+9672 JUMP 9872
+9760 __4__intnlparam = __intnl_UnityEngineTransform_0
+9764 JUMP 9972
+9788 __lcl_foundScript_VRCUdonUdonBehaviour_0 = __3__intnlparam
+9824 if (__intnl_SystemBoolean_53) //9872
+{
+9848 __1__intnlparam = __lcl_foundScript_VRCUdonUdonBehaviour_0
+9864 return;
+}
+__lcl_i_SystemInt32_0 = op_Addition(__const_SystemInt32_1, __lcl_i_SystemInt32_0);// 9896
+9904 JUMP 9520
+}
+9928 __1__intnlparam = __const_SystemObject_0
+9944 return;
+9964 return;
+10020 __lcl_udonBehaviours_UnityEngineComponentArray_0 = __intnl_UnityEngineComponentArray_0
+10040 __lcl_targetID_SystemInt64_0 = __const_SystemInt64_0
+10084 __intnl_SystemInt32_2 = __const_SystemInt32_0
+10128 if (__intnl_SystemBoolean_54) //10420
+{
+__lcl_behaviour_VRCUdonUdonBehaviour_0 = L_objects.Get(__lcl_i_SystemInt32_0).get_transform().GetComponentsInChildren(__const_SystemType_0).Get(__intnl_SystemInt32_2);// 10160
+__lcl_idValue_SystemObject_0 = L_behaviour.GetProgramVariable(__const_SystemString_9);// 10192
+10240 if (__intnl_SystemBoolean_55) //10304
+{
+}
+10312 if (__intnl_SystemBoolean_55) //10380
+{
+10336 __intnl_UnityEngineComponent_0 = __lcl_behaviour_VRCUdonUdonBehaviour_0
+10356 __3__intnlparam = __intnl_UnityEngineComponent_0
+10372 return;
+}
+10412 JUMP 10088
+}
+10436 __3__intnlparam = __const_SystemObject_0
+10452 return;
+10472 return;
