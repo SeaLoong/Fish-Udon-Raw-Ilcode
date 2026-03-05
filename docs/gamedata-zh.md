@@ -19,10 +19,27 @@
 9. [宠物系统](#9-宠物系统)
 10. [玩家成长系统](#10-玩家成长系统)
 11. [经济系统](#11-经济系统)
+    - [11.6 废铁老虎机](#116-废铁老虎机)
+    - [11.7 商店分布](#117-商店分布)
 12. [物品与兑换码](#12-物品与兑换码)
+    - [12.3 地面遗物拾取点](#123-地面遗物拾取点)
+    - [12.4 地图导航系统](#124-地图导航系统)
+    - [12.5 特殊水域](#125-特殊水域)
 13. [NPC 与任务系统](#13-npc-与任务系统)
+    - [13.2 任务链完整指南](#132-任务链完整指南)
+    - [13.4 古代神殿系统](#134-古代神殿系统)
+    - [13.5 Vlad 流浪商人](#135-vlad-流浪商人)
+    - [13.6 幽灵目击系统](#136-幽灵目击系统spookysighting)
+    - [13.7 HP 生命系统](#137-hp-生命系统)
+    - [13.8 旅馆与出生点系统](#138-旅馆与出生点系统)
+    - [13.9 回城石](#139-回城石hearthstone)
+    - [13.10 特殊装备获取](#1310-特殊装备获取)
+    - [13.11 NPC 提示数据库](#1311-npc-提示数据库)
+    - [13.12 追溯任务检查器](#1312-追溯任务检查器)
 14. [动态音乐系统](#14-动态音乐系统)
 15. [技术系统](#15-技术系统)
+    - [15.5 Supporter 粒子拖尾系统](#155-supporter-粒子拖尾系统)
+    - [15.6 VRC Economy 商品奖励系统](#156-vrc-economy-商品奖励系统)
 16. [理论最优装备组合](#16-理论最优装备组合)
 17. [隐藏内容与未实装数据](#17-隐藏内容与未实装数据)
 
@@ -42,13 +59,18 @@ pie title 昼夜循环 (20 分钟一周期)
     "夜晚 (6 min)" : 6
 ```
 
-| 参数     | 值                 |
-| -------- | ------------------ |
-| 完整周期 | 1200 s（20 分钟）  |
-| 白天时长 | 10 分钟（50%）     |
-| 夜晚时长 | 10 分钟（50%）     |
-| 初始时刻 | 0.25（从早晨开始） |
-| 午夜角度 | 90°                |
+| 参数 | IL 变量名 | 值 |
+| --- | --- | --- |
+| 完整周期 | `cycleDurationSeconds` | **1200 s**（20 分钟） |
+| 早晨占比 | `morningDuration` | 0.2 → **4 分钟** |
+| 白天占比 | `dayDuration` | 0.3 → **6 分钟** |
+| 傍晚占比 | `eveningDuration` | 0.2 → **4 分钟** |
+| 夜晚占比 | `nightDuration` | 0.3 → **6 分钟** |
+| 初始时刻 | `startTimeNormalized` | 0.25（从早晨开始） |
+| 午夜角度 | `midnightAngle` | 90° |
+| 光照曲线 | `lightIntensityCurve` | AnimationCurve (0,0)→(1,1) |
+
+> **时段划分**：早晨+傍晚合计 8 分钟（40%），白天+夜晚合计 12 分钟（60%）。白天时段（早晨+白天）共 10 分钟，夜间时段（傍晚+夜晚）共 10 分钟。
 
 ### 1.2 天气与生态区
 
@@ -557,26 +579,29 @@ flowchart LR
 | 吸引   | 鱼竿 + 鱼线 + 浮漂 + 附魔 + 成就 | 0.0% ~ 100% 上限 |
 | 大物率 | 鱼竿 + 鱼线 + 浮漂 + 附魔        | 1.0× ~ 无上限    |
 
-### 4.2 鱼竿（17 种）
+### 4.2 鱼竿（16 个 ID，17 条数据 — ID 14 有两个条目）
 
-| ID  | 名称         | 幸运    | 力量 | 专长 | 吸引   | 大物率 | 最大重量       | 商店价格    |
-| --- | ------------ | ------- | ---- | ---- | ------ | ------ | -------------- | ----------- |
-| 0   | 木棍钓竿     | −50     | 0    | 0    | 0      | −100   | 5 kg           | —           |
-| 1   | 坚固木竿     | 15      | 0    | 5    | 20     | 0      | 30 kg          | 2,000       |
-| 2   | 伸缩鱼竿     | 10      | 15   | 15   | 10     | 5      | 2,005 kg       | 15,000      |
-| 3   | 暗木鱼竿     | 30      | 10   | 10   | 30     | 5      | 1,800 kg       | 25,000      |
-| 4   | **符文钢竿** | **90**  | 25   | 20   | 30     | 40     | **100,000 kg** | —           |
-| 5   | DEBUG 鱼竿   | 0       | 0    | 0    | 0      | 0      | 1 kg           | 隐藏        |
-| 6   | 阳叶鱼竿     | 10      | 5    | 10   | 20     | 15     | 250 kg         | —           |
-| 7   | 极速鱼竿     | 1       | 5    | 5    | **60** | 0      | 1,500 kg       | 55,000      |
-| 8   | 幸运鱼竿     | **100** | 10   | 5    | 10     | 65     | 1,500 kg       | 75,000      |
-| 9   | 玩具鱼竿     | 0       | 0    | 0    | 0      | 0      | 15 kg          | 750         |
-| 10  | 外星鱼竿     | 55      | 10   | 10   | 45     | 30     | 32,000 kg      | —           |
-| 11  | 永恒之竿     | 150     | 30   | 30   | 50     | 10     | 500,000 kg     | 等级500解锁 |
-| 12  | 法老之竿     | **222** | 20   | 40   | −10    | 35     | 100,000 kg     | **750,000** |
-| 13  | 细长鱼竿     | 20      | 10   | 10   | 25     | 20     | 500 kg         | 10,000      |
-| 14  | 打磨木竿     | 40      | 10   | 10   | 10     | 45     | 500 kg         | 15,000      |
-| 15  | 锈牙鱼竿     | 70      | 20   | 20   | 25     | 35     | 35,000 kg      | 250,000     |
+| ID   | 名称                     | 幸运    | 力量   | 专长   | 吸引   | 大物率 | 最大重量       | 商店价格    |
+| ---- | ------------------------ | ------- | ------ | ------ | ------ | ------ | -------------- | ----------- |
+| 0    | 木棍钓竿                 | −50     | 0      | 0      | 0      | −100   | 5 kg           | —           |
+| 1    | 坚固木竿                 | 15      | 0      | 5      | 20     | 0      | 30 kg          | 2,000       |
+| 2    | 伸缩鱼竿                 | 10      | 15     | 15     | 10     | 5      | 2,005 kg       | 15,000      |
+| 3    | 暗木鱼竿                 | 30      | 10     | 10     | 30     | 5      | 1,800 kg       | 25,000      |
+| 4    | **符文钢竿**             | **90**  | 25     | 20     | 30     | 40     | **100,000 kg** | —           |
+| 5    | DEBUG 鱼竿               | 0       | 0      | 0      | 0      | 0      | 1 kg           | 隐藏        |
+| 6    | 阳叶鱼竿                 | 10      | 5      | 10     | 20     | 15     | 250 kg         | —           |
+| 7    | 极速鱼竿                 | 1       | 5      | 5      | **60** | 0      | 1,500 kg       | 55,000      |
+| 8    | 幸运鱼竿                 | **100** | 10     | 5      | 10     | 65     | 1,500 kg       | 75,000      |
+| 9    | 玩具鱼竿                 | 0       | 0      | 0      | 0      | 0      | 15 kg          | 750         |
+| 10   | 外星鱼竿                 | 55      | 10     | 10     | 45     | 30     | 32,000 kg      | —           |
+| 11   | 永恒之竿                 | 150     | 30     | 30     | 50     | 10     | 500,000 kg     | 等级500解锁 |
+| 12   | 法老之竿                 | **222** | 20     | 40     | −10    | 35     | 100,000 kg     | **750,000** |
+| 13   | 细长鱼竿                 | 20      | 10     | 10     | 25     | 20     | 500 kg         | 10,000      |
+| 14-A | 打磨木竿                 | 40      | 10     | 10     | 10     | 45     | 500 kg         | —           |
+| 14-B | **金属鱼竿** ⚠️ ID 冲突 | 0       | **55** | **55** | 10     | 10     | 1,000 kg       | **15,000**  |
+| 15   | 锈牙鱼竿                 | 70      | 20     | 20     | 25     | 35     | 35,000 kg      | 250,000     |
+
+> ⚠️ **ID 冲突说明**：鱼竿 ID 14 在 IL 代码中存在两个条目——**打磨木竿 (Polished Wood Rod)** 和**金属鱼竿 (Metallic Rod)**。两者来自不同的变量源（分别为 `variablesjs_3883` 和 `variablesjs_4047`）。商店中以 15,000 金币出售的是**金属鱼竿**（专长55/力量55），它是游戏内力量与专长最高的可购买鱼竿。由于 ID 冲突，运行时加载顺序将决定哪个条目生效。
 
 ### 4.3 鱼线（9 种）
 
@@ -600,9 +625,18 @@ flowchart LR
 | 1   | 蓝色浮标           | 5      | 0    | 0    | 0    | 0      | 100      |
 | 2   | 猫形浮标           | 5      | 0    | 0    | 0    | 10     | 2,000    |
 | 3   | **幸运浮标**       | **40** | 0    | 0    | 0    | 0      | 10,000   |
+| 4   | 哑弹浮标           | 5      | 0    | 5    | 0    | 0      | 1,000    |
+| 5   | Paulie 的浮标      | 0      | 0    | 5    | 5    | 0      | —        |
+| 6   | 默认方块浮标       | 0      | 5    | 0    | 0    | 0      | —        |
 | 7   | DEBUG 浮标         | 0      | 50   | 50   | 50   | 50     | 隐藏     |
+| 8   | 波霸汉堡浮标       | 0      | 5    | 0    | 0    | 0      | —        |
+| 9   | 汉堡浮标           | 0      | 5    | 0    | 0    | 0      | —        |
+| 10  | 磁带浮标           | 0      | 5    | 0    | 0    | 0      | —        |
+| 11  | 软盘浮标           | 0      | 5    | 0    | 0    | 0      | —        |
 | 12  | 装饰浮标           | 10     | 5    | 0    | 10   | 0      | 10,000   |
 | 13  | **彩虹史莱姆浮标** | **30** | 10   | 0    | 10   | 10     | —        |
+
+> **Paulie 的浮标**（ID:5）为完成 Paulie 任务链的奖励。**默认方块浮标**（ID:6）为特殊获取。ID 8-11 的浮标（波霸汉堡、汉堡、磁带、软盘）均提供 +5 力量，为收藏/装饰向浮标。
 
 ### 4.5 特殊商品
 
@@ -619,12 +653,39 @@ flowchart LR
 
 ### 5.1 遗物品质 → 附魔稀有度概率
 
-| 遗物品质 | 普通  | 稀有  | 罕见  | 史诗  | 传说     |
-| -------- | ----- | ----- | ----- | ----- | -------- |
-| 普通遗物 | 75.3% | 18.1% | 5.0%  | 1.5%  | **0.1%** |
-| 稀有遗物 | 20.8% | 52.6% | 20.8% | 5.2%  | 0.7%     |
-| 史诗遗物 | 2.3%  | 22.2% | 62.2% | 11.1% | 2.2%     |
-| 传说遗物 | 5.6%  | 16.7% | 33.3% | 38.9% | **5.6%** |
+**来源：** `EnchantmentDatabase`（哈希 `5cb0b`）— `variablesjs_3422`
+
+#### IL 原始权重值
+
+| 遗物品质 | Common | Uncommon | Rare | Epic | Legendary | 权重总和 |
+| --- | --- | --- | --- | --- | --- | --- |
+| **Common Relic** | 75 | 18 | 5 | 1.5 | 0.1 | 99.6 |
+| **Rare Relic** | 12.4 | 50.6 | 20 | 4 | 0.5 | 87.5 |
+| **Epic Relic** | 0 | 14.2 | 39.8 | 6 | 1 | 61.0 |
+| **Legendary Relic** | 4.7 | 15 | 30 | 35 | 5 | 89.7 |
+
+#### 归一化概率百分比
+
+| 遗物品质 | Common | Uncommon | Rare | Epic | **Legendary** |
+| --- | --- | --- | --- | --- | --- |
+| **Common Relic** | 75.3% | 18.1% | 5.0% | 1.5% | **0.10%** |
+| **Rare Relic** | 14.2% | 57.8% | 22.9% | 4.6% | **0.57%** |
+| **Epic Relic** | 0% | 23.3% | 65.2% | 9.8% | **1.64%** |
+| **Legendary Relic** | 5.2% | 16.7% | 33.4% | 39.0% | **5.57%** |
+
+> **注意**：IL 原始权重总和不等于 100，需归一化后计算实际概率。Epic Relic 的传说附魔概率约 1.64%（而非 1%），Rare Relic 约 0.57%。
+
+#### Visual Roll 权重（开箱动画展示用）
+
+| 稀有度 | 累积阈值 | 实际区间 | 展示概率 |
+| --- | --- | --- | --- |
+| Legendary | 11.2 | 0 ~ 11.2 | **11.2%** |
+| Epic | 34.6 | 11.2 ~ 34.6 | 23.4% |
+| Rare | 62.0 | 34.6 ~ 62.0 | 27.4% |
+| Uncommon | 87.1 | 62.0 ~ 87.1 | 25.1% |
+| Common | 100.0 | 87.1 ~ 100.0 | 12.9% |
+
+> **设计意图**：视觉滚动动画中传说品质的展示概率（11.2%）远高于实际掉落概率（0.1%~5.6%），旨在增强开箱时的刺激感。玩家频繁看到高稀有度闪过，但最终停留的位置才是实际结果。
 
 ### 5.2 完整附魔数据表
 
@@ -712,7 +773,126 @@ flowchart LR
 | 被动幸运         | 永久添加到幸运总值                     | +250 幸运        |
 | 速度恶魔         | 增加吸引统计                           | +60 吸引         |
 
-### 5.4 海域事件与附魔叠加
+### 5.4 附魔数据模型
+
+**来源：** `Enchantment`（哈希 `2d630`，383 行）— 18 个公共字段
+
+| # | 字段 | 类型 | 说明 |
+| --- | --- | --- | --- |
+| 1 | enchantmentId | Int32 | 唯一标识符 |
+| 2 | enchantmentName | String | 附魔名称 |
+| 3 | description | String | 描述文本 |
+| 4 | rarity | Int32 | 稀有度 (0-4) |
+| 5 | equipmentType | Int32 | 0=鱼竿, 1=鱼线, 2=浮漂 |
+| 6 | enabled | Boolean | 是否启用 |
+| 7 | luckBonus | Int32 | 幸运加成 |
+| 8 | strengthBonus | Int32 | 力量加成 |
+| 9 | expertiseBonus | Int32 | 专精加成 |
+| 10 | attractionRateBonus | Int32 | 吸引率加成（%格式） |
+| 11 | bigCatchRateBonus | Int32 | 大鱼率加成 |
+| 12 | maxWeightBonus | Single | 最大重量加成 (kg) |
+| 13 | hasSpecialEffect | Boolean | 是否有特殊效果 |
+| 14 | specialEffect | Int32 | 特殊效果类型 (0-11) |
+| 15 | specialEffectValue | Single | 特殊效果数值 |
+| 16 | enchantmentIcon | Sprite | 图标 |
+| 17 | glowColor | Color | 发光颜色 |
+| 18 | enchantVFXPrefab | GameObject | 特效预制体 |
+
+#### 稀有度与颜色系统
+
+| 稀有度 | 名称 | 颜色 (RGBA) | 显示 |
+| --- | --- | --- | --- |
+| 0 | Common（普通） | (0.2, 0.8, 0.2, 1) | 绿色 |
+| 1 | Uncommon（优秀） | (0.2, 0.5, 1.0, 1) | 蓝色 |
+| 2 | Rare（稀有） | (0.7, 0.2, 0.9, 1) | 紫色 |
+| 3 | Epic（史诗） | (1.0, 0.85, 0.2, 1) | 金色 |
+| 4 | Legendary（传说） | (1.0, 0.2, 0.2, 1) | 红色 |
+
+#### 11 种特殊效果类型
+
+| 类型 ID | 效果 | 描述格式 |
+| --- | --- | --- |
+| 1 | 双倍捕获 | `"{value}% chance to catch 2 fish at once"` |
+| 2 | 变异倍率 | `"{value}x mutation chance"` |
+| 3 | 全区域钩鱼 | `"{value}% chance to hook fish from any zone"` |
+| 4 | 出售价值 | `"Earn {value}% of fish value on catch"` |
+| 5 | 经验加成 | `"+{value}% bonus XP on catch"` |
+| 6 | 仅夜间 | `"Stat bonuses only active at night"` |
+| 7 | 仅白天 | `"Stat bonuses only active during daytime"` |
+| 8 | 仅雾天 | `"Stat bonuses only active in foggy weather"` |
+| 9 | 仅雨/暴风 | `"Stat bonuses only active in rain/storms"` |
+| 10 | 诅咒转化 | `"{value}% chance to convert fish to cursed"` |
+| 11 | 闪光转化 | `"{value}% chance to convert fish to shiny"` |
+
+> **条件型附魔**（类型 6-9）：统计加成仅在满足时间/天气条件时生效。条件判定由 `EnchantmentManager`（哈希 `9fdb6`）实时检查。
+
+### 5.5 附魔祭坛交互流程
+
+**来源：** `EnchantmentAltarUI`（哈希 `9fba0`，1774 行）+ `EnchantmentDatabase`（哈希 `5cb0b`）+ `EnchantmentAltar`（哈希 `dfed1`）+ `EnchantmentAnimationController`（哈希 `7cc31`）
+
+```mermaid
+flowchart TD
+    A["玩家接近祭坛\n(交互距离内)"] --> B["交互触发\n桌面/手柄/VR\n冷却 0.5s"]
+    B --> C["打开祭坛 UI"]
+    C --> D["选择装备\n(鱼竿/鱼线/浮漂筛选)"]
+    D --> E["选择遗物\n(仅显示持有的遗物)"]
+    E --> F{"两项都选中?\nequipmentId ≠ −1\nrelicId ≠ −1"}
+    F -->|否| G["附魔按钮禁用"]
+    F -->|是| H["点击附魔按钮"]
+    H --> I["验证: 遗物数量 > 0?"]
+    I -->|否| J["记录错误并返回"]
+    I -->|是| K["读取 relicRarity"]
+    K --> L["RollRandomEnchantment\n(relicRarity, equipmentType)"]
+    L --> M{"roll 成功?"}
+    M -->|否| N["返回（无可用附魔）"]
+    M -->|是| O["消耗 1 个遗物"]
+    O --> P["关闭 UI"]
+    P --> Q{"有动画控制器?"}
+    Q -->|是| R["播放滚动动画\n(逐渐减速)"]
+    R --> S["显示最终结果\n播放稀有度音效"]
+    S --> T["ApplySpecificEnchantment\n(移除旧附魔 → 写入新附魔)"]
+    Q -->|否| T
+    T --> U["通知 EquipmentStatsManager\n重新计算属性"]
+    U --> V["重新打开祭坛 UI"]
+```
+
+#### 遗物稀有度 → 附魔品质加权随机
+
+**来源：** `EnchantmentDatabase.__0_RollEnchantmentRarity()`
+
+遗物的 `relicRarity` 值决定附魔稀有度的权重分布。每种遗物稀有度对应一组 5 个可配置权重（`commonWeight / uncommonWeight / rareWeight / epicWeight / legendaryWeight`），通过加权随机算法选择附魔稀有度：
+
+```text
+total = Σ(各稀有度权重)
+roll = Random(0, total)
+累加判定: Common → Uncommon → Rare → Epic → Legendary
+```
+
+> **高品质遗物（如 Epic/Legendary Relic）会显著提高获得高稀有度附魔的概率。** 权重值在 Unity Editor 中配置，非硬编码。
+
+#### 动画控制器
+
+| 参数 | 说明 |
+| --- | --- |
+| rollingDuration | 滚动动画总时长 |
+| startTicksPerSecond | 初始切换速率（快） |
+| endTicksPerSecond | 结束切换速率（慢，减速效果） |
+| resultDisplayDuration | 结果展示持续时间 |
+| maxAttempts = 10 | 避免连续显示相同附魔的重试上限 |
+
+#### 祭坛音效
+
+| 事件 | 音效 |
+| --- | --- |
+| 打开祭坛 | altarOpenSound |
+| 附魔成功 | enchantSuccessSound |
+| 普通品质结果 | commonVictorySound |
+| 优秀品质结果 | uncommonVictorySound |
+| 稀有品质结果 | rareVictorySound |
+| 史诗品质结果 | epicVictorySound |
+| 传说品质结果 | legendaryVictorySound |
+
+### 5.6 海域事件与附魔叠加
 
 ```text
 最终变异概率 = 海域事件变异倍率 × 附魔变异倍率 × 基础变异概率
@@ -752,15 +932,21 @@ flowchart LR
 
 ### 6.2 世界幸运增益（全服共享，可购买）
 
-| 等级 | 持续时间 | 幸运倍数 |
-| ---- | -------- | -------- |
-| 1级  | 30 分钟  | 2.0×     |
-| 2级  | 45 分钟  | 4.0×     |
-| 3级  | 90 分钟  | 8.0×     |
+**来源：** `BuffManager`（哈希 `fbccb`）+ `UdonProductRewardManager`（哈希 `6069f`）
 
-- 升级时剩余时间按 50% 折损转换
-- 通过 VRC 经济系统购买
-- 全服同步广播
+| 等级   | 持续时间           | 幸运倍数 | 购买方式              |
+| ------ | ------------------ | -------- | --------------------- |
+| Tier 1 | 1800 秒（30 分钟） | 2.0×     | VRC Economy 实付产品  |
+| Tier 2 | 2700 秒（45 分钟） | 4.0×     | VRC Economy 实付产品  |
+| Tier 3 | 5400 秒（90 分钟） | 8.0×     | VRC Economy 实付产品  |
+
+#### 购买与升级机制
+
+- **VRC Economy**：通过 VRChat 内置经济系统付费购买，属于真金白银的消费项目
+- **全服生效**：任何一位玩家购买后，**整个服务器所有玩家**均享受幸运加成
+- **升级折损**：从低等级升到高等级时，剩余时间按 **50% 折损**转换到新等级
+- **全服广播**：购买触发全服通知，所有玩家可见
+- **UI 差异化**：3 个等级对应 3 个不同的图标和专属音效，用于视觉区分当前 Buff 等级
 
 ### 6.3 综合幸运最终公式
 
@@ -822,19 +1008,177 @@ flowchart TD
 
 ### 8.1 船只数据
 
-| ID  | 名称         | 价格          | 速度   | 加速 | 转向 | 加速器     |
-| --- | ------------ | ------------- | ------ | ---- | ---- | ---------- |
-| 0   | 冲浪板       | 800           | 5      | 2    | 70   | 无         |
-| 1   | 划艇         | 3,000         | 5      | 2    | 50   | 无         |
-| 2   | 小艇         | 30,000        | 10     | 4    | 65   | 无         |
-| 3   | **豪华快艇** | **1,000,000** | **25** | 5    | 65   | 2.0×/8s CD |
-| 4   | 小型游艇     | 200,000       | 20     | 3    | 55   | 1.2×       |
-| 5   | 爱好者船     | 15,000        | 8      | 3    | 80   | 无         |
-| 6   | 独木舟       | 2,000         | 5      | 2    | 50   | 无         |
+| ID  | 名称         | 价格          | 速度   | 加速 | 减速 | 转向 | 船体大小 | 加速器                 |
+| --- | ------------ | ------------- | ------ | ---- | ---- | ---- | -------- | ---------------------- |
+| 0   | 冲浪板       | 800           | 5      | 2    | 6    | 70   | 0.50     | 无                     |
+| 1   | 划艇         | 3,000         | 5      | 2    | 6    | 50   | 0.15     | 无                     |
+| 2   | 小艇         | 30,000        | 10     | 4    | 4    | 65   | 0.10     | 无                     |
+| 3   | **豪华快艇** | **1,000,000** | **25** | 5    | 4    | 65   | 0.50     | **2.0×/3s 持续/8s CD** |
+| 4   | 小型游艇     | 200,000       | 20     | 3    | 4    | 55   | 0.40     | 1.2×/3s 持续/5s CD     |
+| 5   | 爱好者船     | 15,000        | 8      | 3    | 4    | 80   | 0.10     | 无                     |
+| 6   | 独木舟       | 2,000         | 5      | 2    | 6    | 50   | 0.15     | 无                     |
 
-**船只物理**：水面高度 11.9，浮力幅度 0.06，浮力速度 1.0
+> **加速器参数说明**：仅豪华快艇（ID:3）和小型游艇（ID:4）拥有加速器功能。格式为 `倍率/持续时间/冷却时间`。豪华快艇加速 2.0× 持续 3 秒，冷却 8 秒；小型游艇加速 1.2× 持续 3 秒，冷却 5 秒。
 
-### 8.2 船只皮肤
+### 8.2 船只物理引擎
+
+**来源：** `BoatController`（哈希 `292a2`，4655 行）— 运动学刚体（Kinematic Rigidbody），**不使用 Unity 物理力**，全部基于 Transform 手动计算。
+
+#### 核心速度公式
+
+```text
+targetSpeed = forwardInput × maxSpeed
+若 isBoosting:     targetSpeed ×= boostMultiplier
+若 isDrifting 且有转向且非Boost: targetSpeed ×= driftSpeedReduction
+
+accelPerSecond = (maxSpeed × acceleration) / 10
+decelPerSecond = (maxSpeed × deceleration) / 10
+
+speedChangeRate = (加速中) accelPerSecond : decelPerSecond
+若 isBoosting:     speedChangeRate ×= 2
+
+currentSpeed = MoveTowards(currentSpeed, targetSpeed, speedChangeRate × Δt)
+```
+
+```mermaid
+flowchart LR
+    A["forwardInput\n(−1~1)"] --> B["× maxSpeed"]
+    B --> C{"isBoosting?"}
+    C -->|是| D["× boostMultiplier"]
+    C -->|否| E{"isDrifting\n+ 转向中?"}
+    E -->|是| F["× driftSpeedReduction\n(默认0.7)"]
+    E -->|否| G["targetSpeed"]
+    D --> G
+    F --> G
+    G --> H["MoveTowards\n(加/减速)"]
+    H --> I["currentSpeed"]
+```
+
+#### 默认船只参数（无数据库条目时）
+
+| 参数 | 默认值 | 说明 |
+| --- | --- | --- |
+| maxSpeed | 5 | 最大速度 |
+| acceleration | 1 | 加速率 |
+| deceleration | 1 | 减速率 |
+| turnSpeed | 55°/s | 转向速度 |
+| turnTiltAmount | −10° | 转弯倾斜 |
+| driftTurnMultiplier | 3× | 漂移转向增幅 |
+| driftSpeedReduction | 0.7 | 漂移速度衰减 |
+| driftTiltAmount | −15° | 漂移倾斜 |
+| driftMomentumBlend | 0.8 | 漂移动量混合 |
+| driftTransitionSpeed | 3 | 漂移过渡速率 |
+| boostMultiplier | 2× | 加速倍率 |
+| boostDuration | 3s | 加速持续 |
+| boostCooldown | 5s | 加速冷却 |
+| boostTiltAmount | 20° | 加速前倾 |
+
+#### 转向系统
+
+```text
+effectiveTurnSpeed = turnSpeed × Lerp(1, driftTurnMultiplier, driftTransition)
+turnAmount = turnInput × effectiveTurnSpeed × Δt
+turnAmount ×= Clamp01(|currentSpeed| / maxSpeed)   // 低速转弯弱
+若倒车: turnAmount ×= −1
+currentYaw += turnAmount
+```
+
+#### 漂移系统
+
+| 触发方式 | 条件 |
+| --- | --- |
+| 桌面 | 按住跳跃键（Space） |
+| VR | 左扳机 ≥ vrTriggerThreshold |
+
+```text
+漂移激活时:
+  · forwardInput 强制设为 1（自动全速，需 currentSpeed > 0.5）
+  · 转向倍率逐渐过渡至 driftTurnMultiplier（默认3×）
+  · 速度衰减至 driftSpeedReduction（默认0.7×）
+  · 速度方向通过 Slerp 缓慢跟随船头（blend = 0.8 × Δt × 2）
+普通状态:
+  · 速度方向通过 Slerp 快速跟随船头（blend = Δt × 3）
+最终移动:
+  movementDir = Slerp(船头, 速度方向, driftTransition)
+  newPos = pos + movementDir × currentSpeed × Δt
+```
+
+#### 加速系统（Boost）
+
+```text
+触发: enableBoost && cooldownTimer ≤ 0 && !isBoosting
+      桌面: LeftShift | VR: 右摇杆纵轴 ≥ 0.99
+
+激活: boostTimeRemaining = boostDuration (默认3s)
+持续: targetSpeed ×= boostMultiplier (默认2×)
+      speedChangeRate ×= 2
+      漂移速度衰减不生效
+结束: boostCooldownTimer = boostCooldown (默认5s)
+视觉: 前倾 targetTiltX = −5 × (speed / maxSpeed)
+```
+
+#### 搁浅/地形检测
+
+```text
+sizeScale = Lerp(0.3, 1, boatSize)
+射线: 从 pos + scaledRayStartHeight 向下，距离 = groundCheckDistance + scaledRayStartHeight
+      layerMask = terrainLayerMask
+
+搁浅判定: terrainHeight > waterYLevel + scaledBeachThreshold
+脱离判定: terrainHeight < waterYLevel − scaledUnbeachThreshold
+完全搁浅: 搁浅 + |speed| < 0.1 持续 2秒 → 速度清零、rigidbody Sleep
+
+地形跟随:
+  搁浅时 targetY = terrainHeight + scaledBottomOffset
+  水上时 targetY = waterYLevel
+  smoothedY = Lerp(currentY, targetY, terrainFollowSpeed × Δt)
+  收敛阈值: |差值| < 0.02 时直接吸附
+
+地形对齐旋转:
+  targetPitch = Asin(Dot(法线, 船头)) × rad2deg
+  targetRoll  = −Asin(Dot(法线, 船右)) × rad2deg
+  平滑: LerpAngle(current, target, terrainAlignSpeed × Δt)
+```
+
+#### 碰撞处理
+
+```text
+前方碰撞检测:
+  checkDist = scaledForwardCheckDistance × (1 + |speed| / maxSpeed)
+  若坡度 > maxClimbableSlope:
+    brakeFactor = Clamp01(distance / scaledForwardCheckDistance)
+    brakeStrength = (1 − brakeFactor) × deceleration × 4
+    紧急停止: distance < 0.5 → speed = 0
+
+实体碰撞 (onCollisionEnter):
+  1. speed 立即归零
+  2. 停止 Boost → 启动冷却
+  3. 停止漂移，重置所有转向/倾斜
+  4. rigidbody velocity/angularVelocity 归零 + Sleep
+```
+
+#### 浮力摆动系统
+
+```text
+bobbingTimer += Δt × bobbingSpeed
+bob = Sin(bobbingTimer) × bobbingAmount
+targetPos.y += bob
+
+// 微摆 roll (固定参数)
+roll = Sin(bobbingTimer × 0.7) × 2°
+```
+
+#### 其他常量
+
+| 参数 | 值 | 说明 |
+| --- | --- | --- |
+| IsMoving 阈值 | \|speed\| > 0.1 | 判定为移动中 |
+| 无人船 Despawn | 60s | 无人认领自动消失 |
+| 出生保护 | 2s | spawnGraceTimer（不会搁浅） |
+| 隐藏位置 | (0, 10000, 0) | 船只停放/回收位置 |
+| 速度归一化分母 | 10 | accel/decel 公式分母 |
+
+### 8.3 船只皮肤
 
 **来源：** `BoatSkinDatabase`（33 种皮肤）
 
@@ -906,6 +1250,52 @@ flowchart TD
 | Default Skin（默认）            | 免费 | 默认                |
 | Beta Tester Skin（Beta 测试者） | 750  | **已禁用/不可购买** |
 
+### 8.4 船只商店系统
+
+**来源：** `BoatShopUIScript`（哈希 `b556f`）— 4 个实例
+
+| 参数 | IL 变量名 | 值 |
+| --- | --- | --- |
+| 商店实例数 | — | **4 个**船只商店 |
+| 可购买船只 | `availableBoatIds` | `[0,1,2,3,4,5,6]`（全部 7 种） |
+| 生成冷却 | `spawnCooldown` | **1 秒** |
+| 联网商店数 | `allBoatShops` | 4 个（全服共享状态） |
+
+**各商店生成点数量：**
+
+| 商店实例 | 生成点数 | 说明 |
+| --- | --- | --- |
+| 商店 #1 | 7 个 | — |
+| 商店 #2 | 6 个 | 生成点较少 |
+| 商店 #3 | 7 个 | — |
+| 商店 #4 | 7 个 | — |
+
+**UI 界面功能**：购买列表（含星级评价：TopSpeed/Acceleration/Sturdiness/Boost）→ 详情面板（价格+描述）→ 购买确认 → 已拥有船只列表 → 皮肤定制面板。
+
+### 8.5 船只网络同步
+
+**来源：** `SimpleBoatSyncManager`（哈希 `1e9b1`）
+
+| 参数 | IL 变量名 | 值 | 说明 |
+| --- | --- | --- | --- |
+| 动态插槽数 | `dynamicSlotCount` | **100** | 最多 100 艘船同时存在 |
+| 最大玩家数 | `maxPlayers` | **40** | 服务器上限 40 人 |
+| 插值速度 | `interpolationSpeed` | **15** | 位置平滑过渡 |
+| 同步频率 | `syncRate` | **5 Hz** | 每秒同步 5 次 |
+| 玩家同步池 | `playerSyncPool` | 40 个槽位 | 每玩家一个同步对象 |
+
+> **机制说明**：每位玩家的船只位置每秒同步 5 次，远端玩家看到的船只通过 `interpolationSpeed=15` 平滑插值渲染，避免卡顿。100 个动态插槽支持多船并存场景。
+
+### 8.6 船只随处放置
+
+**来源：** `BoatPlacerSpawnAnywhere`（哈希 `0d4fe`）
+
+| 参数 | 值 |
+| --- | --- |
+| 生成冷却 | 1 秒 |
+
+> 此系统允许已拥有的船只在任意水域放置，而非仅限商店码头。
+
 ---
 
 ## 9. 宠物系统
@@ -973,6 +1363,24 @@ flowchart LR
 | 浮动幅度       | 0.1 |
 | 动画剔除距离   | 25  |
 | DEBUG 钓鱼间隔 | 5 s |
+
+### 9.5 宠物放置系统
+
+**来源：** `PetScripts PLACER`（哈希 `89e20`）
+
+| 参数 | IL 变量名 | 值 | 说明 |
+| --- | --- | --- | --- |
+| 最低等级要求 | `requiredLevel` | **5** | 5 级以下无法放置宠物 |
+| 最大放置距离 | `maxPlacementDistance` | **10** | 10 米内可放置 |
+| 放置键 | `placeKey` | **323（Mouse0/左键）** | 左键确认放置 |
+| 预览切换键 | `togglePreviewKey` | **112（F1）** | F1 键显示/隐藏放置预览 |
+| 有效颜色 | `validColor` | (0,1,0,1) 绿色 | 可放置区域显示绿色 |
+| 无效颜色 | `invalidColor` | (1,0,0,1) 红色 | 不可放置区域显示红色 |
+| 射线线宽 | `raycastLineWidth` | 0.01 | VR 射线可视化宽度 |
+| 水面检测层 | `waterLayerMask` | 16 | 水面检测用层 |
+| 障碍物检测层 | `obstacleLayerMask` | 2048 | 障碍物检测用层 |
+
+> **放置流程**：按 F1 开启预览模式 → 射线指向水面（绿色=有效/红色=无效）→ 左键确认放置。宠物只能放置在水面上，且距离不超过 10 米。需达到 5 级才能使用此功能。
 
 ---
 
@@ -1160,7 +1568,73 @@ flowchart LR
 - 时间/天气偏好：2.0×
 - **合计：最高 15× 基础价格**（附魔加成另算）
 
-### 11.3 每日奖励
+### 11.3 出售系统详解
+
+**来源：** `ShopManager`（哈希 `762cb`，3594 行）
+
+#### 卖鱼最终价格
+
+```text
+finalPrice = Max(1, RoundToInt(baseValue × sellValueMultiplier))
+```
+
+其中 `baseValue` 由 fishEntry（鱼种条目）的 `CalculateFishValue` 方法计算，接收 weight、sizeModifier、shaderModifier、fishModifier 四个参数。`sellValueMultiplier` 为 Unity Editor 中配置的公开属性。
+
+> **注意**：附魔加成（moneyMaker、pocketWatcher、doubleUp）**不在 ShopManager 中计算**，而是由 fishEntry/fishModifier/playerStats 在 `baseValue` 计算阶段处理。
+
+#### 出售队列机制
+
+```mermaid
+flowchart TD
+    A["打开商店"] --> B["加载玩家库存\n跳过锁定鱼"]
+    B --> C["Available 区域\n(未锁定鱼列表)"]
+    C -->|"点击鱼"| D["移入 Sell Queue"]
+    D -->|"再次点击"| C
+    C -->|"全部添加"| D
+    D --> E["实时计算\ntotalSellValue"]
+    E --> F["点击卖出"]
+    F --> G["从 inventory 移除\n(按 caughtFishId 匹配)"]
+    G --> H["AddMoney + AddFishSold\n→ playerStats"]
+    H --> I["刷新 UI\n播放音效"]
+```
+
+**两种出售模式**：
+
+| 模式 | 函数 | 特点 |
+| --- | --- | --- |
+| 队列出售 | `_SellQueuedFish()` | 手动选择每条鱼，支持反悔移回 |
+| 一键出售 | `_SellAllUnlockedFish()` | 直接操作 inventory data，不经过队列 |
+
+- 队列最大容量：**100** 条鱼（数组预分配长度）
+- 数组压缩：移除元素后，后续元素左移填充空位
+- 防重入锁：`_isSelling` 标记防止重复出售
+
+#### 体型修饰符映射
+
+| 原始值 | 映射名称 | 效果 |
+| --- | --- | --- |
+| 0 | Normal（正常） | 无前缀显示 |
+| 1 | Huge（巨大） | ×1.5 价值 |
+| 2 | Tiny（微小） | 降低价值 |
+
+#### 着色器修饰符映射（24种）
+
+| ID | 名称 | 颜色标记 | ID | 名称 | 颜色标记 |
+| --- | --- | --- | --- | --- | --- |
+| 0 | Normal | #F5F5F5 | 12 | Rainbow | #808080 |
+| 1 | Albino | #00FFFF | 13 | Stone | #000000 |
+| 2 | Shiny | #FFD700 | 14 | Zebra | #FF8C00 |
+| 3 | Golden | #6B8E8E | 15 | Tiger | #556B2F |
+| 4 | Ghastly | #FFFFFF | 16 | Camo | #FFFF00 |
+| 5 | Blessed | #FF0000 | 17 | Electric | #CCCCCC |
+| 6 | Cursed | #39FF14 | 18 | Static | #4B0082 |
+| 7 | Radioactive | #FF00FF | 19 | Void | #87CEEB |
+| 8 | Glitched | #C2B280 | 20 | Frozen | #1A1A1A |
+| 9 | Sandy | #88FFFF | 21 | Shadow | #FFFF00 |
+| 10 | Holographic | #FF6600 | 22 | Negative | #9966FF |
+| 11 | Burning | #FF6B6B | 23 | Galaxy | #00FFFF |
+
+### 11.4 每日奖励
 
 **来源：** `DailyRewardDatabase`
 
@@ -1188,7 +1662,7 @@ flowchart LR
 
 **兜底奖励**（所有唯一奖励领完后）：15 个额外碎片 + 750 金币
 
-### 11.4 悬赏任务系统
+### 11.5 悬赏任务系统
 
 **来源：** `BountyManager`（哈希 `60b1a`）
 
@@ -1219,6 +1693,100 @@ flowchart TD
 
 > **每日悬赏理论最大收入**：4 × 1,000 = 4,000 金币 + 3 个遗物碎片（可用于附魔祭坛）+ 5 XP
 
+### 11.6 废铁（Scrap Metal）生成系统
+
+**来源：** `ScrapMetalManager`（哈希 `d01ec`）
+
+| 参数 | IL 变量名 | 值 | 说明 |
+| --- | --- | --- | --- |
+| 生成点总数 | `scrapObjects` | **46 个** | 地图上共 46 个废铁刷新点 |
+| 激活比例 | `activeFraction` | **0.25** | 每次仅 25% 的点位激活（约 11~12 个） |
+| 每次拾取量 | `scrapQuantity` | **1** | 每个点位拾取 1 个废铁 |
+| 废铁物品 ID | `scrapQuestItemId` | **13** | 对应任务物品数据库 ID=13 |
+| 调试模式 | `debugMode` | `false` | — |
+
+> **刷新机制**：ScrapMetalManager 在每次刷新周期中，随机选取 46 个生成点中的 25%（约 11~12 个）激活。玩家拾取后该点位失效，等待下次刷新。废铁的用途：
+> 1. **老虎机**（§11.7）：每次消耗 1 个废铁旋转
+> 2. **Oga NPC**：废金属兑换商人
+> 3. **地面散落**：46 个拾取实例（哈希 `18152`，含 `scrapIndex`/`pickupSound`/`pickupEffectPrefab`）
+
+### 11.7 废铁老虎机系统
+
+**来源：** `ScrapSlotMachineManager`（哈希 `a68c9`）
+
+用废铁（Scrap Metal，itemId=13）驱动的老虎机赌博系统。每次消耗 **1 个 Scrap Metal** 旋转一次。
+
+#### 机器参数
+
+| 参数               | 值     | 说明               |
+| ------------------ | ------ | ------------------ |
+| `scrapCostPerSpin` | 1      | 每次消耗 1 个废铁  |
+| `stripSlotCount`   | 60     | 滚轮格子数         |
+| `winnerSlotIndex`  | 50     | 获胜判定在第 50 格 |
+| `spinDuration`     | 4 秒   | 旋转持续时间       |
+| `easingPower`      | 3      | 缓动指数（减速）   |
+| `startTickInterval`| 0.05 s | 起始跳动间隔       |
+| `endTickInterval`  | 0.3 s  | 结束跳动间隔       |
+
+#### 完整奖品表（10 种，总权重 61.6）
+
+| # | 奖品             | 类型   | 值          | 权重 | 概率       | 展示加速 |
+| - | ---------------- | ------ | ----------- | ---- | ---------- | -------- |
+| 0 | 500 金币         | 💰金币 | 500         | 10   | **16.2%**  | ×1       |
+| 1 | 1,000 金币       | 💰金币 | 1,000       | 10   | **16.2%**  | ×1       |
+| 2 | **10,000 金币**  | 💰金币 | 10,000      | 0.5  | **0.81%**  | ×10      |
+| 3 | 古代遗物碎片     | 🎒物品 | itemId=2    | 10   | **16.2%**  | ×1       |
+| 4 | 苔藓遗物         | 🎒物品 | itemId=3    | 1    | **1.62%**  | ×10      |
+| 5 | **强力遗物**     | 🎒物品 | itemId=4    | 0.1  | **0.16%**  | ×20      |
+| 6 | 速度药水         | 🎒物品 | itemId=15   | 5    | **8.1%**   | ×2       |
+| 7 | 幸运药水         | 🎒物品 | itemId=16   | 5    | **8.1%**   | ×2       |
+| 8 | 500 XP           | ⭐经验 | 500         | 10   | **16.2%**  | ×1       |
+| 9 | 废铁（回本）     | 🎒物品 | itemId=13   | 10   | **16.2%**  | ×1       |
+
+> **奖励类型编码**：0=XP, 1=金币, 2=物品
+
+#### 奖励期望值分析
+
+```text
+每次旋转消耗: 1 × Scrap Metal
+金币期望: 500×16.2% + 1000×16.2% + 10000×0.81% ≈ $324
+遗物概率: 古代碎片 16.2% + 苔藓遗物 1.62% + 强力遗物 0.16%
+药水概率: 速度药水 8.1% + 幸运药水 8.1%
+回本概率(再获得废铁): 16.2%
+```
+
+```mermaid
+pie title 老虎机奖品概率分布（总权重 61.6）
+    "500 金币 (16.2%)" : 10
+    "1000 金币 (16.2%)" : 10
+    "10000 金币 (0.81%)" : 0.5
+    "古代遗物碎片 (16.2%)" : 10
+    "苔藓遗物 (1.62%)" : 1
+    "强力遗物 (0.16%)" : 0.1
+    "速度药水 (8.1%)" : 5
+    "幸运药水 (8.1%)" : 5
+    "500 XP (16.2%)" : 10
+    "废铁回本 (16.2%)" : 10
+```
+
+> **最稀有奖品**：强力遗物仅 **0.16%** 概率，平均需要旋转约 **625 次**才能获得一个。这是除钓鱼外获取高品质遗物的另一条途径。废铁可通过 NPC Oga 兑换、兑换码 `1MVISITS`（5 个）、以及地面拾取获得。
+
+### 11.8 商店分布
+
+**来源：** `ShopUIManager`（哈希 `efdec`）
+
+| 商店名              | 位置             | 说明           |
+| ------------------- | ---------------- | -------------- |
+| Crescent Isle       | 新月岛主商店     | 基础装备       |
+| Coconut Bay         | 椰子湾商店       | —              |
+| Desert              | 沙漠商店         | —              |
+| Swamp               | 沼泽商店         | —              |
+| Lighthouse          | 灯塔商店         | —              |
+| Enchanting Isle     | 附魔岛           | 附魔专用       |
+| **GiuseppeShop**    | Giuseppe 的商店  | 特殊 NPC 商店  |
+
+> NPC 提示数据库第 17 条证实：*"Different vendors actually sell different goods!"* — 各岛商店出售不同的物品。
+
 ---
 
 ## 12. 物品与兑换码
@@ -1248,19 +1816,19 @@ flowchart TD
 
 #### 任务物品（NPC 对话需求）
 
-| ID  | 物品名             | 用途                  | 可堆叠 | 可用于对话需求 |
-| --- | ------------------ | --------------------- | ------ | -------------- |
-| 6   | Paulie 的锯子      | 交给 NPC Paulie       | ✗      | ✓              |
-| 7   | 神秘外星果汁       | NPC 任务链            | ✗      | ✓              |
-| 8   | Glorpina 的照片    | 交给 NPC Glorpingo    | ✗      | ✓              |
-| 9   | 幽灵头骨           | NPC 任务              | ✗      | ✓              |
-| 10  | Celly 的钥匙       | 交给 NPC Celly        | ✗      | ✓              |
-| 11  | 远古守护祝福       | 特殊保护效果          | ✗      | ✓              |
-| 13  | 废金属 Scrap Metal | 交给 NPC Oga 兑换奖励 | ✓(64)  | ✓              |
-| 14  | 一个囚犯？         | 需要帮助释放          | ✗      | ✓              |
-| 17  | 神秘绿宝石         | 未知用途              | ✗      | ✗              |
-| 18  | 神秘红宝石         | 未知用途              | ✗      | ✗              |
-| 19  | 神秘蓝宝石         | 未知用途              | ✗      | ✗              |
+| ID  | 物品名             | 用途                            | 获取方式                                        | 堆叠 |
+| --- | ------------------ | ------------------------------- | ----------------------------------------------- | ---- |
+| 6   | Paulie 的锯子      | 交给 Paulie → 获得浮漂          | 地图特定位置拾取（`d45fd` spawner）              | ✗    |
+| 7   | 神秘外星果汁       | 交给外星 NPC → 获得外星鱼竿     | **商店购买 $200,000**（购后消失）               | ✗    |
+| 8   | Glorpina 的照片    | 交给 Glorpingo → 完成寻妻任务   | quest_glorpingo_picture 事件奖励（交付物品后得） | ✗    |
+| 9   | 幽灵头骨           | NPC 任务物品                    | 地图特定位置拾取（`d45fd` spawner）              | ✗    |
+| 10  | Celly 的钥匙       | 交给 Celly → 解锁成就#23        | 地图特定位置拾取（`d45fd` spawner）              | ✗    |
+| 11  | 远古守护祝福       | Joeblo 任务需求 + 危险区域保护  | **古代神殿三石合成**（详见 §13.4）               | ✗    |
+| 13  | 废金属 Scrap Metal | 老虎机货币 / NPC Oga 兑换       | 地面拾取（46个生成点）/ 兑换码 `1MVISITS`(×5)   | ✓(64)|
+| 14  | 一个囚犯？         | 释放囚犯任务                    | 特定区域触发                                    | ✗    |
+| 17  | 神秘绿宝石         | 古代神殿合成材料（详见 §13.4）  | 地图拾取（GemGreen spawner `d45fd`）             | ✗    |
+| 18  | 神秘红宝石         | 古代神殿合成材料（详见 §13.4）  | **仅月雨夜钓取**（鱼 ID:118，一次性）           | ✗    |
+| 19  | 神秘蓝宝石         | 古代神殿合成材料（详见 §13.4）  | **商店购买 $50,000**（购后消失）                | ✗    |
 
 #### 特殊货币
 
@@ -1303,6 +1871,51 @@ flowchart TD
 
 > **每个兑换码支持的奖励类型**：金币、至多 2 种任务物品（各带数量）、船只皮肤、宠物。过期时间格式为 `day/month/year`，空字符串表示永不过期。
 
+### 12.3 地面遗物拾取点
+
+**来源：** `GroundItem`（哈希 `31273`，8 个实例）
+
+地图上分布有 **8 个固定遗物拾取点**，玩家可直接拾取：
+
+| 名称                | 数量 | 遗物品质     | 说明                       |
+| ------------------- | ---- | ------------ | -------------------------- |
+| Broken Relic Piece  | 5 个 | 0（普通）    | 分布在地图各处             |
+| Mossy Relic         | 2 个 | 2（稀有）    | 较隐蔽的位置               |
+| **Powerful Relic**  | 1 个 | 3（史诗）    | **全图仅 1 个**，极难发现  |
+
+> **Godly Relic 没有地面拾取点**（对应 Godly Relic 鱼已被禁用的设定）。目前获取遗物的途径：
+> 1. **钓鱼**：遗物鱼（稀有度 8）— 基础 3% 概率池，古代碎片占 86%
+> 2. **地面拾取**：上述 8 个固定点位
+> 3. **悬赏系统**：每日最后悬赏奖励 3× 古代遗物碎片
+> 4. **老虎机**：强力遗物 0.16% / 苔藓遗物 1.62% / 古代碎片 16.2%
+> 5. **每日签到**：第 4 天奖励 2× 遗物
+
+### 12.4 地图导航系统
+
+**来源：** `MapUI`（哈希 `d6b32`）
+
+| 目的地按钮         | 目的地名称       | 说明             |
+| ------------------ | ---------------- | ---------------- |
+| Crescent Isle      | 新月岛           | 主岛/出生点      |
+| Coconut Bay        | 椰子湾           | —                |
+| Luxian Dunes       | 卢西安沙丘       | —                |
+| Volcanic Depths    | 火山深处         | —                |
+| Tanglewood         | 缠木海岸         | 沼泽区           |
+| **Alien Pyramid**  | **外星人金字塔** | 隐藏区域         |
+| Open Sea           | 公海             | 海上航行         |
+
+### 12.5 特殊水域钓鱼点
+
+**来源：** `SpecialWaterZone`（哈希 `444b2`，5 个实例）
+
+| 区域名                       | 水域类型 | 说明               |
+| ---------------------------- | -------- | ------------------ |
+| Coconut Bay Freshwater       | 淡水     | 椰子湾的淡水池     |
+| Crescent Town Freshwater     | 淡水     | 新月镇的淡水区     |
+| Luxian Dunes Freshwater      | 淡水     | 沙漠绿洲淡水       |
+| Lights Hope Swampwater       | 沼泽水   | 教堂附近的沼泽     |
+| Lava Zone Lavawater          | 岩浆     | 火山区域的岩浆     |
+
 ---
 
 ## 13. NPC 与任务系统
@@ -1314,7 +1927,7 @@ flowchart TD
 ```mermaid
 flowchart TD
     subgraph ShopKeepers["商店 NPC"]
-        Vlad["Vlad\n装备商人"]
+        Vlad["Vlad\n流浪商人（每15分钟传送）"]
         Giuseppe["Giuseppe\n商人"]
         Oga["Oga\n废金属兑换"]
     end
@@ -1342,18 +1955,107 @@ flowchart TD
     end
 ```
 
-### 13.2 NPC 任务链
+### 13.2 NPC 任务链详解
 
-| 任务线       | 起始 NPC  | 需要物品                                     | 奖励称号                    | 经验奖励 |
-| ------------ | --------- | -------------------------------------------- | --------------------------- | -------- |
-| 考古学家之路 | Harrison  | 未知                                         | Archaeologist（考古学家）   | —        |
-| 寻妻之旅     | Glorpingo | Picture of Glorpina（Glorpina 的照片，ID:8） | Honorary Glorpingus         | 300 XP   |
-| 寻找钥匙     | Celly     | Celly's Keys（Celly 的钥匙，ID:10）          | Pastrami Enjoyer            | 300 XP   |
-| 修理工具     | Paulie    | Paulie's Saw（Paulie 的锯子，ID:6）          | Paulie's Bobber（浮漂奖励） | —        |
-| 勇者试炼     | Joeblo    | 未知                                         | Shield Hero（盾之勇者）     | 300 XP   |
-| 废金属兑换   | Oga       | Scrap Metal（废金属，ID:13）× N              | 未知奖励                    | —        |
-| 囚犯救援     | 未知      | A Prisoner?（一个囚犯？，ID:14）             | 未知                        | —        |
-| 外星研究     | 未知      | Mysterious Alien Juice（神秘外星果汁，ID:7） | 解锁外星鱼竿？              | —        |
+**来源：** `DialogueEventController`（哈希 `5ec35`，17 个 variablesjs 文件）
+
+以下所有奖励均从 IL 代码 variablesjs 文件中精确提取确认。
+
+#### 任务 1：外星人果汁 → 外星鱼竿
+
+| 项目     | 详情                                                    |
+| -------- | ------------------------------------------------------- |
+| 事件 ID  | `quest_alien_rod`（variablesjs_3514）                   |
+| 起始 NPC | 外星人金字塔区域的外星 NPC                               |
+| 前置条件 | 拥有神秘外星果汁（itemId=7）                            |
+| 物品获取 | **商店购买 $200,000**（购买后从商店消失，见 §4.5）       |
+| 完成步骤 | 携带外星果汁 → 前往 Alien Pyramid → 与 NPC 对话交付     |
+| **奖励** | **rewardRodIds=[10] → 外星鱼竿（Alien Rod）**           |
+
+#### 任务 2：Sunleaf 商店 → 阳叶鱼竿
+
+| 项目     | 详情                                                     |
+| -------- | -------------------------------------------------------- |
+| 事件 ID  | `quest_sunleaf_rod`（variablesjs_3906）                  |
+| 起始 NPC | Sunleaf Exports 商店相关 NPC                             |
+| 触发事件 | `DialogueEventSunleafShopOpen` — 首次开启 Sunleaf 商店  |
+| **奖励** | **rewardRodIds=[6] → 阳叶鱼竿（Sunleaf Rod）**          |
+
+#### 任务 3：Glorpingo 寻妻 → 荣誉 Glorpingus
+
+| 项目     | 详情                                                                     |
+| -------- | ------------------------------------------------------------------------ |
+| 事件 ID  | `quest_glorpingo_picture`（variablesjs_4196）+ RewardEvent（variablesjs_1709） |
+| 起始 NPC | Glorpingo                                                                |
+| 任务目标 | 找到 Glorpingo 的妻子 Glorpina                                           |
+| 完成步骤 | ① 与 Glorpingo 对话接取任务 → ② 在地图上找到 Glorpina → ③ 与 Glorpina 对话获得照片 → ④ 将照片交回 Glorpingo |
+| 物品流转 | removeQuestItemIds=[1] → rewardQuestItemIds=[8]（交付后获得 Picture of Glorpina） |
+| **奖励** | achievementIndicesToUnlock=[22] → **Honorary Glorpingus 称号 + 300 XP**  |
+
+#### 任务 4：Paulie 修理 → Paulie 的浮漂
+
+| 项目     | 详情                                                    |
+| -------- | ------------------------------------------------------- |
+| 事件 ID  | `quest_duck_bobber`（variablesjs_4301）                 |
+| 起始 NPC | Paulie                                                  |
+| 前置条件 | 拥有 Paulie 的锯子（itemId=6）                          |
+| 物品获取 | 地图特定位置拾取（`d45fd` spawner）                      |
+| 完成步骤 | 在地图找到锯子 → 交给 Paulie                             |
+| **奖励** | **rewardBobberIds=[5] → Paulie's Bobber（浮漂 ID:5）**  |
+
+#### 任务 5：Celly 寻钥匙 → 意面爱好者
+
+| 项目     | 详情                                                          |
+| -------- | ------------------------------------------------------------- |
+| 事件文件 | variablesjs_3890                                              |
+| 起始 NPC | Celly                                                         |
+| 前置条件 | 拥有 Celly 的钥匙（itemId=10）                                |
+| 物品获取 | 地图特定位置拾取（`d45fd` spawner）                            |
+| 完成步骤 | 在地图找到钥匙 → 交给 Celly                                   |
+| 物品流转 | removeQuestItemIds=[1]×10 → rewardQuestItemIds=[15]×13        |
+| **奖励** | achievementIndicesToUnlock=[23] → **Pastrami Enjoyer 称号 + 300 XP** + 13× 速度药水 |
+
+#### 任务 6：Joeblo 勇者试炼 → 盾之勇者
+
+| 项目     | 详情                                                          |
+| -------- | ------------------------------------------------------------- |
+| 起始 NPC | Joeblo                                                        |
+| 前置条件 | 拥有 Protective Blessing of the Ancients（itemId=11）         |
+| 物品获取 | **古代神殿三石合成**（详见 §13.4）：收集三色宝石 → 神殿放置 → 获得祝福 |
+| 宝石获取 | 💚绿宝石(17)=地面拾取 / ❤️红宝石(18)=月雨夜钓（一次性）/ 💙蓝宝石(19)=商店$50,000 |
+| 完成步骤 | ① 收集三色宝石 → ② 前往 Shrine of the Ancients 合成祝福 → ③ 携带祝福前往 Joeblo（可能需通过 Shrine Kill Zone） → ④ 与 Joeblo 对话完成 |
+| **奖励** | **Shield Hero（盾之勇者）称号 + 300 XP**                      |
+
+> **重要提示**：Protective Blessing 的描述为"保护祝福，以防石头砸头"。神殿区域设有 **Shrine Kill Zone**（即死区域），暗示玩家需要此祝福才能安全通过前往 Joeblo 的区域。
+
+#### 任务 7：Harrison 考古 → 考古学家
+
+| 项目     | 详情                                                    |
+| -------- | ------------------------------------------------------- |
+| 起始 NPC | Harrison                                                |
+| 任务目标 | 帮助 Harrison 完成考古调查                               |
+| 完成步骤 | 与 Harrison 对话，完成其系列对话事件（`5ec35`）          |
+| **奖励** | **Archaeologist（考古学家）称号**                        |
+
+#### 任务 8：废金属兑换 → Oga 商人
+
+| 项目     | 详情                                                    |
+| -------- | ------------------------------------------------------- |
+| NPC      | Oga                                                     |
+| 机制     | 交付 Scrap Metal（itemId=13）兑换奖励                   |
+| 废铁来源 | 地面拾取（46 个生成点）/ 兑换码 `1MVISITS` / 老虎机回本 |
+
+#### 其他对话事件
+
+| 事件名                           | 说明                                    |
+| -------------------------------- | --------------------------------------- |
+| `DialogueEventSunleafShopOpen`   | 打开 Sunleaf Exports 商店               |
+| `DialogueEventCoconutBaySpawn`   | Coconut Bay 生成事件                    |
+| `DialogueEventVlad`              | 触发 Vlad 相关事件                      |
+| `ItatoTeleport`                  | Itato NPC 传送服务                      |
+| `Purify Event`                   | 净化事件（可能在神殿或教堂）            |
+| `WakeEvent`                      | 唤醒事件                                |
+| `GiveRod`                        | 赠予钓竿事件                            |
 
 ### 13.3 对话系统机制
 
@@ -1365,6 +2067,435 @@ flowchart TD
 | NPC 追踪   | ✓    | NPC 头部追踪玩家                 |
 | 日程系统   | ✓    | NPC 按日程行动（行走/跑步/坐下） |
 | 忙碌状态   | ✓    | NPC 对话时停止移动并面向玩家     |
+
+### 13.4 古代神殿系统（Shrine of the Ancients）
+
+**来源：** `ShrineOfTheAncients`（哈希 `73c85`）+ `KillZone`（哈希 `77800`）
+
+#### 三色宝石收集
+
+| 宝石             | itemId | 获取方式                                     | 难度       |
+| ---------------- | ------ | -------------------------------------------- | ---------- |
+| 💚 神秘绿宝石   | 17     | 地图特定位置拾取（GemGreen spawner `d45fd`） | ★☆☆ 中等   |
+| ❤️ 神秘红宝石   | 18     | 仅在月雨（Moonrain）夜晚钓取，**一次性获取** | ★★★ 极稀有 |
+| 💙 神秘蓝宝石   | 19     | 商店购买 $50,000                             | ★☆☆ 花钱   |
+
+#### 神殿机制参数
+
+| 参数                   | 值                                            | 说明                 |
+| ---------------------- | --------------------------------------------- | -------------------- |
+| `gemItemIds`           | `[17, 18, 19]`                                | 需要的三颗宝石 ID   |
+| `rewardItemId`         | 11                                            | 奖励：远古守护祝福   |
+| `blendShapeIndices`    | `[0, 1, 2]`                                   | 三个宝石槽位形态键   |
+| `blendShapeAnimDuration` | 0.2 秒                                      | 放置宝石动画时长     |
+| `completionMessage`    | "The Ancients offer you a blessing..."         | 合成成功提示         |
+| `noGemMessage`         | "You have nothing to offer the shrine."        | 无宝石时提示         |
+
+#### 完整流程
+
+```mermaid
+flowchart TD
+    A["💚 获得 Green Gem\n（地图拾取）"] --> D
+    B["❤️ 获得 Red Gem\n（月雨夜钓取，仅一次）"] --> D
+    C["💙 获得 Blue Gem\n（商店 $50,000）"] --> D
+    D["🏛️ 前往 Shrine of the Ancients"] --> E["放置三颗宝石到神殿槽位"]
+    E --> F{三颗全部放置?}
+    F -->|否| G["'You have nothing to offer the shrine.'"]
+    F -->|是| H["🎁 'The Ancients offer you a blessing...'\n获得 Protective Blessing（itemId=11）"]
+    H --> I["📦 用 Blessing 完成 Joeblo 任务链\n→ 获得 Shield Hero 称号 + 300 XP"]
+```
+
+> **重要关联**：`Protective Blessing of the Ancients`（itemId=11）不是直接任务物品，而是通过神殿三石合成获得。玩家必须先收集三颗宝石、在神殿合成祝福后，才能进入 Joeblo 的勇者试炼任务线。  
+> 神殿区域设有 **Shrine Kill Zone**（即死区域），可能需要该祝福才能安全通过——这与物品描述"保护祝福，以防石头砸头"相呼应。
+
+### 13.5 Vlad 流浪商人系统
+
+**来源：** `Vlad`（哈希 `f48b1`）+ `VladShopUIScript`（哈希 `75426`）+ `VladShopCanvas`（哈希 `6c29b`）
+
+#### 核心机制
+
+| 参数               | 值                 | 说明                          |
+| ------------------ | ------------------ | ----------------------------- |
+| `teleportInterval` | **900 秒（15 分钟）** | 每 15 分钟 Vlad 传送到新位置 |
+| `teleportPoints`   | **8 个**           | 地图上 8 个可能的出现点       |
+| NPC 引用           | → `NPCController`  | 具有标准 NPC 对话系统         |
+
+#### Vlad 商店参数
+
+| 参数                | 值                | 说明                           |
+| ------------------- | ----------------- | ------------------------------ |
+| `autoCloseDistance`  | 5 m               | 离开 5 米自动关闭商店          |
+| `availableItems`    | **3 种**          | 同时出售 3 种物品              |
+| 确认机制            | 双重确认          | "Are you sure?" → "Really sure?" |
+| 已拥有显示          | "Owned"           | 已购买物品显示灰色             |
+| 买不起显示          | "Can't Afford"    | 金币不足时的提示               |
+
+#### 出售范围
+
+Vlad 的商店引用了全部核心数据库：`rodDatabase`、`lineDatabase`、`bobberDatabase`、`boatDatabase`、`questItemDatabase`、`rodCustomizationManager`——意味着他可以出售**所有类型的装备和任务物品**，很可能出售特殊/限定物品如 Runesteel Rod 等。
+
+```mermaid
+flowchart LR
+    Timer["⏱️ 15分钟计时器"] --> TP["随机选择8个传送点之一"]
+    TP --> Vlad["🧙 Vlad 出现在新位置"]
+    Vlad --> Player["玩家靠近交互"]
+    Player --> Shop["🛒 打开 VladShop\n展示3种可购买物品"]
+    Shop --> Confirm["第一次确认\n'Are you sure?'"]
+    Confirm --> Confirm2["第二次确认\n'Really sure?'"]
+    Confirm2 --> Buy["✅ 购买成功"]
+    Player -->|"离开 5m"| Close["❌ 商店自动关闭"]
+```
+
+### 13.6 幽灵目击系统（SpookySighting）
+
+**来源：** `SpookySighting`（哈希 `44fa2`）
+
+这是一个**超稀有随机事件**——地图上会出现神秘的黑色幽灵身影。
+
+#### 核心参数
+
+| 参数              | 值                       | 说明                                |
+| ----------------- | ------------------------ | ----------------------------------- |
+| `checkInterval`   | **1200 秒（20 分钟）**   | 每 20 分钟检查一次是否触发          |
+| `spawnChance`     | **0.01（1%）**           | 每次检查仅 1% 概率出现              |
+| `lookThreshold`   | 0.95                     | 必须几乎正对才触发消失              |
+| `despawnDistance`  | 45 m                     | 靠近 45 米内自动消失                |
+| `spawnLocations`  | **13 个**                | 地图上 13 个可能的出现位置          |
+| 音效              | spawn + despawn          | 出现和消失时各有专属音效            |
+
+#### 概率分析
+
+- 每次检查概率：1%
+- 检查间隔：20 分钟
+- **平均遇到一次所需时间**：1/0.01 × 20 分钟 = **2000 分钟 ≈ 33.3 小时**
+- 这是游戏中最稀有的随机事件之一，属于彩蛋级别
+
+> 对应了 NPC 提示数据库中的线索：*"There's been sightings of a mysterious black figure around the islands..."* 和 *"A ghost has been sighted recently, things are getting spooky..."*
+
+### 13.7 HP 生命值系统
+
+**来源：** `HealthSystem`（哈希 `16d22`）+ `KillZone`（哈希 `77800`）
+
+游戏包含完整的生命值系统：
+
+| 参数                   | 值         | 说明                    |
+| ---------------------- | ---------- | ----------------------- |
+| `maxHealth`            | **100**    | 最大生命值 100 点       |
+| `healthRegenPerSecond` | **1**      | 每秒回复 1 点 HP        |
+| `deathFadeDuration`    | 1 秒       | 死亡时屏幕渐黑时间      |
+| `respawnDelay`         | **3 秒**   | 死亡后 3 秒重生         |
+| 音效                   | damage + death | 受伤和死亡各有音效  |
+| 重生点                 | → homePointManager | 在家传送点重生  |
+
+#### 伤害来源
+
+- **KillZone** — 普通即死区域（悬崖、深水等）
+- **Shrine Kill Zone** — 神殿专属即死区域（可能需要 Protective Blessing 才能安全通过）
+
+> 这解释了为什么 `Protective Blessing of the Ancients` 描述是"保护祝福，以防石头砸头"——玩家需要此祝福才能安全进入某些危险区域（如前往 Joeblo 的路径）。
+
+### 13.8 旅馆传送系统（Inn / Home Point）
+
+**来源：** `DialogueEventController`（哈希 `5ec35`）+ `HomePointManager`
+
+游戏中有 **4 个旅馆**，分别位于 4 个主要区域。与旅馆 NPC 对话可设置复活/传送点。
+
+| 事件文件          | 设置位置            | Home Point 索引 | NPC 类型               |
+| ----------------- | ------------------- | --------------- | ---------------------- |
+| variablesjs_3476  | Crescent Isle 新月岛 | 1               | CrescentInnDialogueEvent |
+| variablesjs_3469  | Tanglewood 缠木     | 2               | SwampInnDialogueEvent    |
+| variablesjs_3901  | Luxian Dunes 沙丘   | 3               | LuxianInnDialogueEvent   |
+| variablesjs_4267  | Coconut Bay 椰子湾  | 0               | CoconutBayInnEvent       |
+
+```mermaid
+flowchart LR
+    Inn["🏨 旅馆 NPC"] --> Dialog["对话选择\n'设为复活点'"]
+    Dialog --> Set["设置 homePointIndex"]
+    Set --> Msg["'Home point set to [区域名]!'"]
+    Death["☠️ 死亡"] --> Respawn["在 homePointIndex\n对应位置重生"]
+    HS["💎 回城石"] --> Respawn
+```
+
+### 13.9 回城石（HearthStone）
+
+**来源：** `HearthStone`（哈希 `17d35`）
+
+| 参数             | 值       | 说明                      |
+| ---------------- | -------- | ------------------------- |
+| 绑定事件         | dialogueEvent | 触发传送对话事件     |
+| UI 面板          | ✓        | 有专属 UI 界面            |
+| 传送动画         | 0.45 秒  | 传送回 Home Point 的动画  |
+
+> 回城石可随时将玩家传送回当前设置的 Home Point（旅馆复活点）。
+
+### 13.10 特殊装备获取
+
+**来源：** `SpecialEquipmentReward`（哈希 `1eaf2`，3 个实例）
+
+以下特殊装备通过特定程序获取，**不可在普通商店购买**：
+
+| 装备               | 类型   | ID    | 推测获取方式                                     |
+| ------------------ | ------ | ----- | ------------------------------------------------ |
+| **符文钢竿**       | 鱼竿   | rodId=4    | 火山区域任务/NPC（"由 Crescent Volcano 最好的铁匠锻造"） |
+| **冥犬皮毛**       | 鱼线   | lineId=5   | 击败地狱犬/特殊 Boss                             |
+| **彩虹史莱姆浮漂** | 浮漂   | bobberId=13 | 击败/找到彩虹史莱姆                              |
+
+> 这三件装备在 §4 中列出了完整属性。它们是游戏中最强力的非购买装备之一（符文钢竿幸运+90、冥犬皮毛力量/专长+50/50、彩虹浮漂幸运+30）。
+
+### 13.11 NPC 提示数据库（35 条）
+
+**来源：** `TipDatabase`（哈希 `34fcb`）
+
+NPC 随机说出的对话提示，包含大量游戏线索：
+
+| #  | 提示内容                                                                           | 隐含线索                     |
+| -- | ---------------------------------------------------------------------------------- | ---------------------------- |
+| 1  | "Did you know fishes actually have great memories?"                                | 纯趣味                       |
+| 2  | "Did you know some fishes actually use rocks to open shellfish?"                   | 纯趣味                       |
+| 3  | "Fishes have been around for over 450 million years!"                              | 纯趣味                       |
+| 4  | **"There's been sightings of a mysterious black figure around the islands..."**    | → **SpookySighting 系统**    |
+| 5  | "My friend told me they got scammed by a fat italian guy, be careful!"             | → **Giuseppe NPC**           |
+| 6  | **"I hope the explorers that went into the portal in Crescent Isle are fine..."**  | → **新月岛传送门**           |
+| 7  | **"The Luxian pyramid is said to hold many secrets..."**                           | → **Alien Pyramid 隐藏区域** |
+| 8  | "My step-brother's dad's... caught Grombolitis, and DIED!"                         | 世界观                       |
+| 9  | "Did you get your Cronkolitis vaccine?"                                            | 世界观                       |
+| 10 | **"It never snows here... I wish we could have a snow island..."**                 | **暗示未来雪岛 DLC**        |
+| 11 | "My friend is a 6 on the Norwood scale..."                                         | 纯幽默                       |
+| 12 | **"Different fishes actually live in different locations!"**                        | → 区域系统                   |
+| 13 | **"They say you might get more lucky if you fish during the moonrain!"**           | → **月雨钓鱼加成**           |
+| 14 | "I wish I had a {positive} fishing pole..."                                        | 模板文本                     |
+| 15 | "My favorite thing to say is : {oneliner}"                                         | 模板文本                     |
+| 16 | "Apparently if you stare at the sun too long, you'll go blind!"                    | 纯趣味                       |
+| 17 | **"Different vendors actually sell different goods!"**                              | → **各岛商店物品不同**       |
+| 18 | "Raddit has actually been banned in all 4 countries."                               | 世界观：4 个国家              |
+| 19 | "ALIENS ARE REAL!!"                                                                | → **外星人任务线**           |
+| 20 | "THE EARTH IS FLAT!!"                                                              | 幽默                         |
+| 21 | **"I heard you can use relics to infuse strange powers into equipment..."**         | → **遗物附魔系统**           |
+| 22 | **"Did you know that Vlad mains Little Mac in Smash? That guy is straight EVIL!"** | → **Vlad NPC 性格线索**      |
+| 23 | "If a little worm said hello to you, would you say hello back?"                    | 幽默                         |
+| 24 | **"The Tanglewood Church has actually been asking for volunteers recently..."**     | → **教堂任务线索**           |
+| 25 | **"A ghost has been sighted recently, things are getting spooky..."**               | → **SpookySighting**         |
+| 26 | **"I heard someone got their head blown SMOOVE off in the tanglewood swamp!"**     | → **沼泽区危险区域**         |
+| 27 | "Staying hydrated is good for you!"                                                | 纯趣味                       |
+| 28 | **"They say a MEGALODON roams our waters!"**                                       | → **巨齿鲨稀有鱼**           |
+| 29 | "They say the early worm catches the bird..."                                      | 幽默                         |
+| 30 | "If you smash a fish's head in with a rock, they stop moving! Freaky."             | 暗黑幽默                     |
+| 31 | "I really hope no one I know is on OnlyFish..."                                    | 幽默                         |
+| 32 | **"Have you ever seen an Astrocetacean? Every night I stare at the sky hoping!"**  | → **太空鲸鱼彩蛋**           |
+| 33 | **"There are super big space whales known as Astrocetaceans!"**                     | → **太空鲸鱼生物**           |
+| 34 | **"Do you think there's life beyond Aqualon?"**                                    | 世界名称：**Aqualon**        |
+| 35 | **"I wonder what's causing all these whirlpools!"**                                | → **海洋事件世界观**         |
+
+> 加粗条目包含实际游戏线索，指向已确认的游戏系统（如 SpookySighting、Alien Pyramid、月雨机制、遗物附魔等）。世界名称确认为 **Aqualon**。
+
+### 13.12 追溯任务检查器
+
+**来源：** `RetroactiveQuestChecker`（哈希 `b27ff`）
+
+| 参数                         | 值    | 说明                                         |
+| ---------------------------- | ----- | -------------------------------------------- |
+| `glorpingoAchievementIndex`  | 22    | 检查 Glorpingo 任务成就                      |
+| `checkDelay`                 | 60 秒 | 每 60 秒检查一次                             |
+
+> 此系统每 60 秒检查玩家是否已完成 Glorpingo 任务但未获得对应成就，用于修复老玩家的数据遗漏。
+
+### 13.13 游泳与体力系统
+
+**来源：** `SwimZone`（哈希 `72e01`）
+
+```mermaid
+flowchart TD
+    A["进入水域"] --> B{速度 > 5?}
+    B -->|是| C["快速入水特效\nfastEnterSound"]
+    B -->|否| D["缓慢入水特效\nslowEnterSound"]
+    C --> E["游泳状态"]
+    D --> E
+    E --> F["体力消耗\n15/秒"]
+    F --> G{体力 > 0?}
+    G -->|是| H["正常游泳\nswimSpeed=2"]
+    G -->|否| I["体力耗尽\n溺水伤害 25 HP/秒"]
+    H --> J["离开水域"]
+    J --> K["体力恢复延迟 2s"]
+    K --> L["体力恢复 15/秒"]
+    I --> M{HP > 0?}
+    M -->|否| N["死亡重生"]
+```
+
+#### 游泳参数
+
+| 参数 | IL 变量名 | 值 | 说明 |
+| --- | --- | --- | --- |
+| 游泳速度 | `swimSpeed` | **2** | 基础移动速度 |
+| 游泳加速度 | `swimAcceleration` | **5** | — |
+| 水中阻力 | `swimDrag` | **6** | 高于加速度，确保不会无限加速 |
+| 上浮速度 | `riseSpeed` | **2** | 向水面上浮 |
+| 水面跳跃力 | `surfaceJumpForce` | **10** | 在水面可跳出水面 |
+| 水面缓冲高度 | `surfaceBufferHeight` | **0.2** | — |
+| 淡入速度 | `fadeSpeed` | **2** | 水下视觉效果过渡 |
+
+#### 体力系统
+
+| 参数 | IL 变量名 | 值 | 说明 |
+| --- | --- | --- | --- |
+| 最大体力 | `maxStamina` | **100** | — |
+| 体力消耗速率 | `staminaDrainRate` | **15/秒** | 游泳时持续消耗 |
+| 体力恢复速率 | `staminaRegenRate` | **15/秒** | 与消耗速率相同 |
+| 恢复延迟 | `staminaRegenDelay` | **2 秒** | 离水后 2 秒开始恢复 |
+| 溺水伤害 | `healthDamageRate` | **25 HP/秒** | 体力耗尽后的 HP 损失 |
+
+> **体力时间窗**：满体力（100）÷ 消耗（15/秒）= 约 **6.67 秒**可持续游泳。体力耗尽后 4 秒内溺水致死（100 HP ÷ 25/秒）。
+
+| 其他参数 | 值 | 说明 |
+| --- | --- | --- |
+| 安全区数量 | `swimSafeZones` = 6 个 | 不消耗体力的水域 |
+| 额外游泳区 | `extraSwimZones` = 1 个 | 扩展游泳区域 |
+| 溅水粒子寿命 | `splashParticleLifetime` = 3 秒 | — |
+| 快速入水阈值 | `fastEntrySpeedThreshold` = 5 | 速度>5 触发大溅水 |
+
+### 13.14 NPC 控制器详细参数
+
+**来源：** `NPCController`（哈希 `7c242`）— 43 个实例
+
+#### 通用参数
+
+| 参数 | IL 变量名 | 默认值 |
+| --- | --- | --- |
+| 头部追踪速度 | `headTrackingSpeed` | **3** |
+| 最大头部旋转角 | `maxHeadRotationAngle` | **60°** |
+| 交互按键 | `interactionKey` | **101（E 键）** |
+| 嘴巴变化间隔 | `mouthChangeInterval` | **0.15 秒** |
+| 嘴巴闲置概率 | `mouthIdleChance` | **0.3**（30%） |
+
+#### 部分 NPC 特殊参数
+
+| NPC 名称 | 音调倍数 | 语音数 | 头部追踪 | 交互距离 |
+| --- | --- | --- | --- | --- |
+| **Itato** | 1.3× | 11 个 | ✓ | 2.5 |
+| **Glorpingo** | 1.0× | 15 个 | ✗（禁用） | 2.5 |
+| **Paulie** | 2.0×（高音） | 20 个 | ✓ | 2.5 |
+| **Marley** | 1.0× | 11 个 | ✓ | 3.0 |
+
+> 每个 NPC 实例包含 `characterName`、`useCustomPitch`、`characterPitchMultiplier`、`voiceSounds[]`、`enableHeadTracking` 等参数。Paulie 的 2.0× 音调使其语音明显高于其他角色。
+
+### 13.15 NPC 对话数据系统
+
+**来源：** `DialogueData`（哈希 `faedc`）— **93 个实例**（游戏内最大的单一数据源之一）
+
+每个对话实例包含以下字段：
+
+| 字段 | 类型 | 说明 |
+| --- | --- | --- |
+| `dialogueID` | Int32 | 对话唯一标识 |
+| `isOneTimeDialogue` | Boolean | 是否一次性对话（完成后不再触发） |
+| `oneLiner` | Boolean | 是否单行对话（无选项） |
+| `nicknameForPlayer` | String | NPC 对玩家的称呼 |
+| `positiveWord` / `negativeWord` | String | 肯定/否定回复的关键词 |
+| `mainQuestion1` ~ `mainQuestion3` | String | NPC 的 3 个主要问题 |
+| `answerOptions[]` | String[] | 玩家可选回答 |
+| `response0Lines[]` ~ `response3Lines[]` | String[] | 各选项对应的 NPC 回复 |
+| `tipAnswerIndices` | Int32[] | 触发提示的回答索引 |
+| `eventAnswerIndices` | Int32[] | 触发事件的回答索引 |
+| `consumeRequiredFish` | Boolean | 是否消耗指定鱼 |
+| `requiredFishEntryIds` | Int32[] | 任务所需鱼种 ID |
+| `consumeRequiredItems` | Boolean | 是否消耗指定物品 |
+| `requiredItemIds` | Int32[] | 任务所需物品 ID |
+
+> **93 个对话实例覆盖了所有 NPC 的完整对话树**，包括主线任务对话、支线对话、商店交互对话和闲聊。配合 `DialogueEventController`（哈希 `5ec35`，17 个实例）处理对话触发的事件和奖励发放。
+
+### 13.16 NPC 实体网络同步
+
+**来源：** `NPCEntity`（哈希 `d4f55`）— 42 个实例
+
+| 参数 | 说明 |
+| --- | --- |
+| `sleepCheckInterval` | 休眠检测间隔 |
+| `sleepDistance` | 超过此距离进入休眠 |
+| `remoteRotationLerpSpeed` | 远程旋转插值速度 |
+| `remotePositionLerpSpeed` | 远程位置插值速度 |
+| `maxResyncRequestsBeforeClaim` | 重同步上限后抢占所有权 |
+| `ownershipClaimDelay` | 所有权请求延迟 |
+
+> NPC 实体使用距离检测优化：当玩家距离超过 `sleepDistance` 时 NPC 进入休眠状态减少网络开销。42 个 NPC 实例涵盖 BillyBob、Pristina 等所有角色。
+
+### 13.17 教程系统
+
+**来源：** `TutorialRoom`（哈希 `f624d`）+ `TutorialTips`（哈希 `bb589`）
+
+#### 教程房间（新手引导）
+
+| 参数 | IL 变量名 | 值 |
+| --- | --- | --- |
+| 强制启动 | `forceStartTutorial` | `true` |
+| 自动推进延迟 | `autoAdvanceDelay` | **3 秒** |
+| 黑屏时长 | `blackDuration` | **0.3 秒** |
+| 淡入时长 | `fadeInDuration` | **0.5 秒** |
+| 淡出时长 | `fadeOutDuration` | **0.5 秒** |
+
+**教程 5 步骤：**
+
+| 顺序 | 幻灯片名称 | 内容 |
+| --- | --- | --- |
+| 1 | `slideSummonRod` | 召唤鱼竿（按 T 键） |
+| 2 | `slideCastLine` | 抛出鱼线 |
+| 3 | `slideWaitBite` | 等待鱼咬钩 |
+| 4 | `slideCatch` | 收线钓鱼 |
+| 5 | `slidePocket` | 收入背包 |
+
+#### 教程提示（持续提醒）
+
+| 参数 | IL 变量名 | 值 | 说明 |
+| --- | --- | --- | --- |
+| 宠物弹窗自动消失 | `petPopupAutoDismissTime` | **120 秒** | 宠物解锁弹窗 2 分钟后自动消失 |
+| 背包提醒间隔 | `backpackReminderInterval` | **900 秒**（15 分钟） | 定期提醒检查背包 |
+| 背包首次延迟 | `backpackInitialDelay` | **300 秒**（5 分钟） | 进入世界 5 分钟后开始提醒 |
+| 背包显示时长 | `backpackDisplayDuration` | **10 秒** | — |
+| 提醒展示时长 | `reminderDisplayDuration` | **15 秒** | — |
+| 最大提醒游戏时长 | `maxPlaytimeForReminders` | **3600 秒**（1 小时） | 游玩超 1 小时后停止提醒 |
+| 钓竿附近距离 | `rodNearbyDistance` | **10** | 10 米内检测鱼竿 |
+| 提醒间隔 | `reminderInterval` | **300 秒**（5 分钟） | 钓竿召唤提醒 |
+| 图标切换间隔 | `iconCycleInterval` | **1 秒** | 图标动画切换 |
+| 初始提醒延迟 | `initialReminderDelay` | **10 秒** | — |
+
+> **新手保护设计**：游戏在前 1 小时内持续提醒新玩家使用背包和召唤钓竿。超过 1 小时游戏时长后，所有教程提醒自动关闭。
+
+### 13.18 钓竿召唤/传送系统
+
+**来源：** `RodTeleportSystem`（哈希 `8fac6`）
+
+| 参数 | IL 变量名 | 值 | 说明 |
+| --- | --- | --- | --- |
+| 召唤按键 | `teleportKey` | **116（T 键）** | 长按 T 召唤钓竿 |
+| 充能时长 | `fillDuration` | **1 秒** | 按住 1 秒完成充能 |
+| 动画时长 | `animationDuration` | **0.5 秒** | 钓竿出现动画 |
+| 传送距离 | `teleportDistance` | **1** | 钓竿出现在面前 1 米处 |
+| 传送高度 | `teleportHeight` | **1.2** | 钓竿出现在 1.2 米高度 |
+| 摇杆阈值 | `joystickThreshold` | **0.7** | VR 摇杆灵敏度 |
+| VR 手部偏移 | `handCanvasOffset` | (0, 0.1, 0) | VR 充能进度条偏移 |
+
+> **操作流程**：长按 T 键 → 充能进度条填满（1 秒）→ 钓竿传送到玩家面前（高度 1.2m，距离 1m）→ 出现动画（0.5 秒）。VR 模式下充能进度条显示在手部上方。
+
+### 13.19 全服公告系统
+
+**来源：** `AnnouncementManager`（哈希 `94b69`）
+
+| 参数 | IL 变量名 | 值 |
+| --- | --- | --- |
+| 展示时长 | `displayDuration` | **5 秒** |
+| 弹入动画 | `scaleInDuration` | **1 秒** |
+| 弹出动画 | `scaleOutDuration` | **1 秒** |
+| 抖动幅度 | `wobbleAmplitude` | **2.5** |
+| 抖动速度 | `wobbleSpeed` | **4** |
+
+#### 公告文本内容（IL 硬编码）
+
+| 触发条件 | IL 变量名 | 公告文本 |
+| --- | --- | --- |
+| 月雨天气 | `weatherLuckText` | **"Moonrain is active! 2x Luck!"** |
+| 世界 Buff 1 级 | `worldLuckTextTier1` | **"{PLAYER} Activated 2x Luck!"** |
+| 世界 Buff 2 级 | `worldLuckTextTier2` | **"{PLAYER} Upgraded the lobby to 4x Luck!"** |
+| 世界 Buff 3 级 | `worldLuckTextTier3` | **"{PLAYER} Maxed out the lobby to 8x Luck!"** |
+
+> **`{PLAYER}` 占位符**会被替换为购买 World Buff 的玩家显示名。所有公告同时显示在桌面版和 VR 版的 TextMeshProUGUI 组件上。
 
 ---
 
@@ -1485,20 +2616,22 @@ flowchart TD
 
 #### 鱼类存储编码
 
-每条鱼存储为 DataList 格式：
+每条鱼存储为 DataList 格式（**最少 6 个字段**）：
 
 ```text
-[fishId, fishEntryId, fishWeight, combinedModifiers, isLocked]
+[isLocked, caughtFishId, fishEntryId, weight, sizeModifierRaw, shaderModifierRaw]
 ```
 
-**修饰器编码算法**：
+| 索引 | 字段 | 类型 | 说明 |
+| --- | --- | --- | --- |
+| [0] | isLocked | Double→Int32 | 1=已锁定, 其他=未锁定 |
+| [1] | caughtFishId | Double→Int32→String | 每条鱼的唯一捕获标识 |
+| [2] | fishEntryId | Double→Int32 | 鱼种 ID（查询 fishDatabase） |
+| [3] | weight | Double→Single | 鱼重量 (kg) |
+| [4] | sizeModifierRaw | Double→Int32 | 体型修饰 (0=Normal, 1=Huge, 2=Tiny) |
+| [5] | shaderModifierRaw | Double→Int32 | 着色器修饰 (0-23，详见 §11.3) |
 
-```text
-combinedModifiers = sizeModifier × 100 + shaderModifier
-解码：
-sizeModifier = combinedModifiers / 100   （整除）
-shaderModifier = combinedModifiers % 100  （取余）
-```
+> **来源确认**：此结构从 `ShopManager`（哈希 `762cb`）的 `UNDEF_762cb_9676()` 函数（行 1597-1711）中按字段读取顺序精确提取。字段计数判定：`slot.Count < 6` 则跳过该条目。
 
 ### 15.3 排行榜系统
 
@@ -1530,16 +2663,36 @@ sortedIndices[]        — 排序后索引（冒泡排序）
 
 #### 角色标记系统
 
+**来源：** `DiscordRewardGranter`（哈希 `f6f51`）
+
 解密后的 JSON 数据格式：`"VRChat用户名": "角色标记"`
 
-| 标记    | 含义                  | 游戏内特权                   |
-| ------- | --------------------- | ---------------------------- |
-| `p`     | **Patreon 支持者**    | Lucky Cat 宠物、Patreon 称号 |
-| `n`     | **Nitro Booster**     | Nitro 钓鱼蛙、Nitro 称号     |
-| `s`     | **Staff（工作人员）** | 特殊权限                     |
-| `p,n`   | Patreon + Nitro       | 双重奖励                     |
-| `p,s,n` | 全部角色              | 最高权限                     |
-| （空）  | 普通 Discord 成员     | 基础 Discord 奖励            |
+| 标记    | 含义                  | 游戏内精确奖励（IL确认）                   |
+| ------- | --------------------- | ------------------------------------------ |
+| `n`     | **Nitro Booster**     | achievementId=**20** + petId=**3**（Fishing Frog Nitro）、Nitro 称号 |
+| `p`     | **Patreon 支持者**    | achievementId=**19** + petId=**4**（Lucky Cat）、Patreon 称号 |
+| `s`     | **Staff（工作人员）** | staffAchievementName=**"GM"**、特殊权限     |
+| `p,n`   | Patreon + Nitro       | 双重奖励（同时获得上述两套）                |
+| `p,s,n` | 全部角色              | 最高权限（三套全部）                        |
+| （空）  | 普通 Discord 成员     | 基础 Discord 奖励                           |
+
+> **IL 来源确认**：`DiscordRewardGranter`（`f6f51`）中硬编码了标记→奖励映射。`"n"` 对应 Nitro Booster 奖励路径，`"p"` 对应 Patreon 支持者奖励路径，`"s"` 触发 `staffAchievementName="GM"` 的特殊成就。
+
+#### 奖励发放流程
+
+```mermaid
+flowchart TD
+    A["DiscordRewardGranter\n哈希 f6f51"] --> B["解密角色 JSON"]
+    B --> C{匹配标记}
+    C -->|"n"| D["achievementId=20\npetId=3\nFishing Frog Nitro"]
+    C -->|"p"| E["achievementId=19\npetId=4\nLucky Cat"]
+    C -->|"s"| F["staffAchievementName='GM'\n特殊Staff权限"]
+    C -->|多标记| G["逐个处理\n叠加所有对应奖励"]
+    D --> H["AchievementManager\n解锁对应成就/称号"]
+    E --> H
+    F --> H
+    G --> H
+```
 
 #### 加密传输流程
 
@@ -1560,6 +2713,118 @@ sequenceDiagram
     VRC->>VRC: PKCS7 去填充 → JSON
     VRC->>VRC: 解析角色权限 → 发放奖励
 ```
+
+### 15.5 Supporter 粒子拖尾系统
+
+**来源：** `SupporterTrailManager`（哈希 `ca1f9`）— 21,310 行
+
+| 参数 | 值 | 说明 |
+| --- | --- | --- |
+| 触发条件 | Patreon/Supporter 标记 | 通过 Discord 角色验证 |
+| 效果类型 | 粒子拖尾特效 | 跟随玩家角色显示 |
+| 渲染方式 | ParticleSystem | VRChat 兼容粒子系统 |
+| 网络同步 | 全服可见 | 其他玩家可看到拖尾效果 |
+
+> **功能说明**：当玩家被验证为 Patreon 支持者后，`SupporterTrailManager` 会在该玩家角色身后生成持续的粒子拖尾特效。该效果通过 VRC 网络同步，对服务器内所有玩家可见，作为支持者的视觉标识。
+
+### 15.6 VRC Economy 商品奖励系统
+
+**来源：** `UdonProductRewardManager`（哈希 `6069f`）— 8,780 行
+
+| 参数 | 值 | 说明 |
+| --- | --- | --- |
+| 商品数量 | 1 | 单个 VRC Economy 商品 |
+| oneTimePurchase | `true` | 仅可购买一次（不可重复购买） |
+| rewardQuantities | `[5]` | 购买后获得 5 个奖励物品 |
+| 触发方式 | VRC Economy API | 通过 VRChat 内置经济系统购买 |
+
+> **机制说明**：`UdonProductRewardManager` 管理 VRChat 内置经济系统（VRC Economy）的付费商品。该商品标记为 `oneTimePurchase=true`，确保每位玩家只能购买一次。购买成功后立即发放 `rewardQuantities=[5]` 所定义的奖励数量。此系统与 §6.2 世界幸运 Buff 的 VRC Economy 购买共用底层 API。
+
+### 15.7 VR 手腕 HUD
+
+**来源：** `WristHUD`（哈希 `c6402`）— **仅限 VR 模式**
+
+| 参数 | IL 变量名 | 值 | 说明 |
+| --- | --- | --- | --- |
+| 桌面模式 | `enableForDesktop` | `false` | **VR 专属功能** |
+| 默认手 | `toggleRightHand` | `false` | 默认左手显示 |
+| HUD 缩放 | `hudScale` | **0.01** | — |
+| 手上方高度 | `heightAboveHand` | **0.15** | 15cm 偏移 |
+| 位置平滑速度 | `positionSmoothSpeed` | **15** | — |
+| 缩放动画速度 | `scaleAnimationSpeed` | **8** | — |
+| 手掌朝头阈值 | `palmTowardHeadThreshold` | **0.5** | 手掌正对头部时显示 |
+| 手掌朝上阈值 | `palmUpThreshold` | **0.3** | 手掌向上时显示 |
+| 区域刷新间隔 | `zoneUpdateInterval` | **60 秒** | — |
+| 时间天气刷新 | `timeWeatherUpdateInterval` | **30 秒** | — |
+
+**显示内容：**
+
+| 显示项 | UI 组件 |
+| --- | --- |
+| 💰 金币 | `moneyText` |
+| ⭐ 等级 | `levelText` |
+| 🕐 时间 | `timeOfDayText` |
+| 🌤️ 天气 | `weatherText` |
+| 📍 区域 | `zoneNameText` |
+| 📊 经验条 | `xpBarFill` |
+
+> **触发方式**：VR 玩家翻转手掌面向头部即可查看 HUD。桌面版玩家无法使用此功能，但可通过手机 UI（`PhoneUIManager`，哈希 `21d8c`）获取类似信息。
+
+### 15.8 版本检查系统
+
+**来源：** `VersionChecker`（哈希 `8bdb0`）
+
+| 参数 | IL 变量名 | 值 |
+| --- | --- | --- |
+| 当前版本 | `currentVersion` | **"1.0.4"** |
+| 可信 URL | `trustedVersionUrl` | `https://gamerexde.github.io/trickforge-public/version.txt` |
+| 非可信 URL | `untrustedVersionUrl` | `https://api.trickforgestudios.com/api/v1/version/fish` |
+| 检查间隔 | `checkInterval` | **200 秒** |
+| 初始重试延迟 | `initialRetryDelay` | **10 秒** |
+| 最大重试延迟 | `maxRetryDelay` | **120 秒** |
+| 最大重试次数 | `maxRetries` | **5** |
+| 大厅版本前缀 | `lobbyVersionPrefix` | `"Instance Version Number: "` |
+
+> **双源验证**：系统同时从 GitHub Pages（可信源）和 TrickForge API（非可信源）获取最新版本号。若当前版本落后，桌面/VR 分别显示弹窗提醒更新。开发商：**TrickForge Studios**。
+
+### 15.9 音频设置管理
+
+**来源：** `AudioSettingsManager`（哈希 `d2ecf`）
+
+| 参数 | IL 变量名 | 默认值 | 说明 |
+| --- | --- | --- | --- |
+| 持久化 | `enablePersistence` | `true` | 保存到玩家存档 |
+| 音效音量 | `sfxVolume` | **0.76** | 76% |
+| 环境音量 | `ambientVolume` | **1.0** | 100% |
+| 音乐音量 | `musicVolume` | **0.5** | 50% |
+
+**额外音源基础音量：**
+
+| 类别 | 音源数 | 基础音量数组 |
+| --- | --- | --- |
+| 音效 (SFX) | 10 | `[1,1,1,1,1,1,1,0.3,0.3,0.3]` |
+| 环境 (Ambient) | 9 | `[1,1,0.82,1,0.5,1,0.5,1,1]` |
+| 音乐 (Music) | 4 | `[1,0.5,0.5,0.5]` |
+
+> 后 3 个音效源基础音量仅 0.3（较安静），可能是 UI 提示音等次要音效。环境音源 #5 和 #7 基础音量 0.5，用于远处环境声。
+
+### 15.10 室内音频区域
+
+**来源：** `SyncZone`（哈希 `d95a3`）— 8 个实例
+
+| 参数 | 说明 |
+| --- | --- |
+| `silenceDynamicMusic` | 是否静音动态音乐系统 |
+| `indoorLowPassCutoff` | 室内低通滤波截止频率 |
+| `isIndoorZone` | 是否为室内区域 |
+
+> 当玩家进入室内区域时，`SyncZone` 应用 `indoorLowPassCutoff` 低通滤波（默认 3344 Hz），模拟室内声音效果——外部声音被墙壁隔绝后变得低沉。部分区域同时设置 `silenceDynamicMusic=true` 完全关闭背景音乐。8 个实例覆盖所有室内建筑。
+
+### 15.11 出生房间管理
+
+**来源：** `SpawnRoomManager`（哈希 `14c0b`）
+
+负责玩家登录后的初始出生位置管理，与教程系统（§13.17）和旅馆系统（§13.8）联动。新玩家进入教程房间，老玩家传送到上次设定的出生点。
 
 ---
 
